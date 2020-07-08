@@ -29,7 +29,20 @@ namespace Scribe
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditorForm));
+            this.EditorStatusStrip = new System.Windows.Forms.StatusStrip();
             this.SuspendLayout();
+            // 
+            // EditorStatusStrip
+            // 
+            this.EditorStatusStrip.AccessibleDescription = "The status of the application.";
+            this.EditorStatusStrip.AccessibleName = "Editor Status";
+            this.EditorStatusStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.StatusBar;
+            this.EditorStatusStrip.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EditorStatusStrip.Location = new System.Drawing.Point(0, 739);
+            this.EditorStatusStrip.Name = "EditorStatusStrip";
+            this.EditorStatusStrip.Size = new System.Drawing.Size(984, 22);
+            this.EditorStatusStrip.SizingGrip = false;
+            this.EditorStatusStrip.TabIndex = 0;
             // 
             // EditorForm
             // 
@@ -39,6 +52,7 @@ namespace Scribe
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 761);
+            this.Controls.Add(this.EditorStatusStrip);
             this.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("ParquetIcon")));
@@ -47,10 +61,13 @@ namespace Scribe
             this.Name = "EditorForm";
             this.Text = "Scribe";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.StatusStrip EditorStatusStrip;
     }
 }
 
