@@ -1,4 +1,4 @@
-﻿namespace Scribe
+namespace Scribe
 {
     partial class EditorForm
     {
@@ -28,10 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditorForm));
+            this.SuspendLayout();
+            // 
+            // EditorForm
+            // 
+            this.AccessibleDescription = "The primary interactive editor window.";
+            this.AccessibleName = "Editor Window";
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(984, 761);
+            this.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("ParquetIcon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.Name = "EditorForm";
+            this.Text = "Scribe";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
