@@ -30,6 +30,7 @@ namespace Scribe
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditorForm));
             this.EditorStatusStrip = new System.Windows.Forms.StatusStrip();
+            this.MainMenuBar = new System.Windows.Forms.MenuStrip();
             this.SuspendLayout();
             // 
             // EditorStatusStrip
@@ -44,6 +45,17 @@ namespace Scribe
             this.EditorStatusStrip.SizingGrip = false;
             this.EditorStatusStrip.TabIndex = 0;
             // 
+            // MainMenuBar
+            // 
+            this.MainMenuBar.AccessibleDescription = "The application\'s menu.";
+            this.MainMenuBar.AccessibleName = "Main Menu";
+            this.MainMenuBar.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
+            this.MainMenuBar.Location = new System.Drawing.Point(0, 0);
+            this.MainMenuBar.Name = "MainMenuBar";
+            this.MainMenuBar.Size = new System.Drawing.Size(984, 24);
+            this.MainMenuBar.TabIndex = 1;
+            this.MainMenuBar.Text = "Main Menu";
+            // 
             // EditorForm
             // 
             this.AccessibleDescription = "The primary interactive editor window.";
@@ -53,9 +65,10 @@ namespace Scribe
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 761);
             this.Controls.Add(this.EditorStatusStrip);
+            this.Controls.Add(this.MainMenuBar);
             this.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("ParquetIcon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "EditorForm";
@@ -68,6 +81,7 @@ namespace Scribe
         #endregion
 
         private System.Windows.Forms.StatusStrip EditorStatusStrip;
+        private System.Windows.Forms.MenuStrip MainMenuBar;
     }
 }
 
