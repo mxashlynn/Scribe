@@ -40,7 +40,7 @@ namespace Scribe
             this.EditorStatusStrip.AccessibleDescription = "The status of the application.";
             this.EditorStatusStrip.AccessibleName = "Editor Status";
             this.EditorStatusStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.StatusBar;
-            this.EditorStatusStrip.Font = SystemFonts.StatusFont;
+            this.EditorStatusStrip.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EditorStatusStrip.Location = new System.Drawing.Point(0, 739);
             this.EditorStatusStrip.Name = "EditorStatusStrip";
             this.EditorStatusStrip.Size = new System.Drawing.Size(984, 22);
@@ -52,7 +52,7 @@ namespace Scribe
             this.MainMenuBar.AccessibleDescription = "The application\'s menu.";
             this.MainMenuBar.AccessibleName = "Main Menu";
             this.MainMenuBar.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
-            this.MainMenuBar.Font = SystemFonts.MenuFont;
+            this.MainMenuBar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.MainMenuBar.Location = new System.Drawing.Point(0, 0);
             this.MainMenuBar.Name = "MainMenuBar";
             this.MainMenuBar.Size = new System.Drawing.Size(984, 24);
@@ -64,12 +64,12 @@ namespace Scribe
             this.AccessibleDescription = "The primary interactive editor window.";
             this.AccessibleName = "Editor Window";
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 761);
             this.Controls.Add(this.EditorStatusStrip);
             this.Controls.Add(this.MainMenuBar);
-            this.Font = SystemFonts.DialogFont;
+            this.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
