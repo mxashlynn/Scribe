@@ -37,31 +37,31 @@ namespace Scribe
             this.NewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LoadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.ToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UndoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RedoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.ToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.CutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CopyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.ToolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.SelectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RollerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CheckMapStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.CheckMapStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ListNameCollisionsStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ToolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.ListIDRangesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ListMaxIDsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ListTagsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.ToolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.OptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ScribeHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DocumentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.ToolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenuBar.SuspendLayout();
             this.SuspendLayout();
@@ -101,7 +101,7 @@ namespace Scribe
             this.NewToolStripMenuItem,
             this.LoadToolStripMenuItem,
             this.SaveToolStripMenuItem,
-            this.ToolStripSeparator,
+            this.ToolStripSeparator1,
             this.ExitToolStripMenuItem});
             this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
             this.FileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -134,10 +134,10 @@ namespace Scribe
             this.SaveToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.SaveToolStripMenuItem.Text = "&Save";
             // 
-            // ToolStripSeparator
+            // ToolStripSeparator1
             // 
-            this.ToolStripSeparator.Name = "ToolStripSeparator";
-            this.ToolStripSeparator.Size = new System.Drawing.Size(140, 6);
+            this.ToolStripSeparator1.Name = "ToolStripSeparator1";
+            this.ToolStripSeparator1.Size = new System.Drawing.Size(140, 6);
             // 
             // ExitToolStripMenuItem
             // 
@@ -150,11 +150,11 @@ namespace Scribe
             this.EditToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.UndoToolStripMenuItem,
             this.RedoToolStripMenuItem,
-            this.ToolStripSeparator3,
+            this.ToolStripSeparator2,
             this.CutToolStripMenuItem,
             this.CopyToolStripMenuItem,
             this.PasteToolStripMenuItem,
-            this.ToolStripSeparator4,
+            this.ToolStripSeparator3,
             this.SelectAllToolStripMenuItem});
             this.EditToolStripMenuItem.Name = "EditToolStripMenuItem";
             this.EditToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
@@ -176,10 +176,10 @@ namespace Scribe
             this.RedoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.RedoToolStripMenuItem.Text = "&Redo";
             // 
-            // toolStripSeparator3
+            // ToolStripSeparator2
             // 
-            this.ToolStripSeparator3.Name = "toolStripSeparator3";
-            this.ToolStripSeparator3.Size = new System.Drawing.Size(141, 6);
+            this.ToolStripSeparator2.Name = "ToolStripSeparator2";
+            this.ToolStripSeparator2.Size = new System.Drawing.Size(141, 6);
             // 
             // CutToolStripMenuItem
             // 
@@ -211,10 +211,10 @@ namespace Scribe
             this.PasteToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.PasteToolStripMenuItem.Text = "&Paste";
             // 
-            // ToolStripSeparator4
+            // ToolStripSeparator3
             // 
-            this.ToolStripSeparator4.Name = "ToolStripSeparator4";
-            this.ToolStripSeparator4.Size = new System.Drawing.Size(141, 6);
+            this.ToolStripSeparator3.Name = "ToolStripSeparator3";
+            this.ToolStripSeparator3.Size = new System.Drawing.Size(141, 6);
             // 
             // SelectAllToolStripMenuItem
             // 
@@ -226,7 +226,7 @@ namespace Scribe
             // 
             this.ToolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.RollerToolStripMenuItem,
-            this.ToolStripSeparator2,
+            this.ToolStripSeparator5,
             this.OptionsToolStripMenuItem});
             this.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem";
             this.ToolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
@@ -235,9 +235,9 @@ namespace Scribe
             // RollerToolStripMenuItem
             // 
             this.RollerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CheckMapStripMenuItem1,
+            this.CheckMapStripMenuItem,
             this.ListNameCollisionsStripMenuItem2,
-            this.ToolStripSeparator1,
+            this.ToolStripSeparator4,
             this.ListIDRangesToolStripMenuItem,
             this.ListMaxIDsToolStripMenuItem,
             this.ListTagsToolStripMenuItem});
@@ -245,11 +245,11 @@ namespace Scribe
             this.RollerToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.RollerToolStripMenuItem.Text = "&Roller";
             // 
-            // CheckMapStripMenuItem1
+            // CheckMapStripMenuItem
             // 
-            this.CheckMapStripMenuItem1.Name = "CheckMapStripMenuItem1";
-            this.CheckMapStripMenuItem1.Size = new System.Drawing.Size(195, 22);
-            this.CheckMapStripMenuItem1.Text = "Check &Map Adjacency";
+            this.CheckMapStripMenuItem.Name = "CheckMapStripMenuItem";
+            this.CheckMapStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.CheckMapStripMenuItem.Text = "Check &Map Adjacency";
             // 
             // ListNameCollisionsStripMenuItem2
             // 
@@ -257,10 +257,10 @@ namespace Scribe
             this.ListNameCollisionsStripMenuItem2.Size = new System.Drawing.Size(195, 22);
             this.ListNameCollisionsStripMenuItem2.Text = "List &Name Collisions";
             // 
-            // ToolStripSeparator1
+            // ToolStripSeparator4
             // 
-            this.ToolStripSeparator1.Name = "ToolStripSeparator1";
-            this.ToolStripSeparator1.Size = new System.Drawing.Size(192, 6);
+            this.ToolStripSeparator4.Name = "ToolStripSeparator4";
+            this.ToolStripSeparator4.Size = new System.Drawing.Size(192, 6);
             // 
             // ListIDRangesToolStripMenuItem
             // 
@@ -280,10 +280,10 @@ namespace Scribe
             this.ListTagsToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.ListTagsToolStripMenuItem.Text = "List &Tags";
             // 
-            // ToolStripSeparator2
+            // ToolStripSeparator5
             // 
-            this.ToolStripSeparator2.Name = "ToolStripSeparator2";
-            this.ToolStripSeparator2.Size = new System.Drawing.Size(113, 6);
+            this.ToolStripSeparator5.Name = "ToolStripSeparator5";
+            this.ToolStripSeparator5.Size = new System.Drawing.Size(113, 6);
             // 
             // OptionsToolStripMenuItem
             // 
@@ -296,7 +296,7 @@ namespace Scribe
             this.HelpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ScribeHelpToolStripMenuItem,
             this.DocumentationToolStripMenuItem,
-            this.ToolStripSeparator5,
+            this.ToolStripSeparator6,
             this.AboutToolStripMenuItem});
             this.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem";
             this.HelpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
@@ -314,10 +314,10 @@ namespace Scribe
             this.DocumentationToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.DocumentationToolStripMenuItem.Text = "Parquet &Documentation";
             // 
-            // ToolStripSeparator5
+            // ToolStripSeparator6
             // 
-            this.ToolStripSeparator5.Name = "ToolStripSeparator5";
-            this.ToolStripSeparator5.Size = new System.Drawing.Size(198, 6);
+            this.ToolStripSeparator6.Name = "ToolStripSeparator6";
+            this.ToolStripSeparator6.Size = new System.Drawing.Size(198, 6);
             // 
             // AboutToolStripMenuItem
             // 
@@ -356,17 +356,17 @@ namespace Scribe
         private System.Windows.Forms.ToolStripMenuItem FileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem NewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem LoadToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator ToolStripSeparator;
+        private System.Windows.Forms.ToolStripSeparator ToolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem SaveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ExitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem EditToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem UndoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem RedoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator ToolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator ToolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem CutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CopyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem PasteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator ToolStripSeparator4;
+        private System.Windows.Forms.ToolStripSeparator ToolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem SelectAllToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ToolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem RollerToolStripMenuItem;
@@ -374,15 +374,15 @@ namespace Scribe
         private System.Windows.Forms.ToolStripMenuItem HelpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ScribeHelpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem DocumentationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator ToolStripSeparator5;
+        private System.Windows.Forms.ToolStripSeparator ToolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem AboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem CheckMapStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem CheckMapStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ListNameCollisionsStripMenuItem2;
-        private System.Windows.Forms.ToolStripSeparator ToolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator ToolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem ListIDRangesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ListMaxIDsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ListTagsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator ToolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator ToolStripSeparator5;
     }
 }
 
