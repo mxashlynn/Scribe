@@ -1,3 +1,5 @@
+using System.Drawing;
+
 namespace Scribe
 {
     partial class EditorForm
@@ -38,7 +40,7 @@ namespace Scribe
             this.EditorStatusStrip.AccessibleDescription = "The status of the application.";
             this.EditorStatusStrip.AccessibleName = "Editor Status";
             this.EditorStatusStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.StatusBar;
-            this.EditorStatusStrip.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EditorStatusStrip.Font = SystemFonts.StatusFont;
             this.EditorStatusStrip.Location = new System.Drawing.Point(0, 739);
             this.EditorStatusStrip.Name = "EditorStatusStrip";
             this.EditorStatusStrip.Size = new System.Drawing.Size(984, 22);
@@ -50,6 +52,7 @@ namespace Scribe
             this.MainMenuBar.AccessibleDescription = "The application\'s menu.";
             this.MainMenuBar.AccessibleName = "Main Menu";
             this.MainMenuBar.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
+            this.MainMenuBar.Font = SystemFonts.MenuFont;
             this.MainMenuBar.Location = new System.Drawing.Point(0, 0);
             this.MainMenuBar.Name = "MainMenuBar";
             this.MainMenuBar.Size = new System.Drawing.Size(984, 24);
@@ -66,7 +69,7 @@ namespace Scribe
             this.ClientSize = new System.Drawing.Size(984, 761);
             this.Controls.Add(this.EditorStatusStrip);
             this.Controls.Add(this.MainMenuBar);
-            this.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = SystemFonts.DialogFont;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
