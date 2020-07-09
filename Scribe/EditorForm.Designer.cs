@@ -74,6 +74,7 @@ namespace Scribe
             this.RoomsTabPage = new System.Windows.Forms.TabPage();
             this.ScriptsTabPage = new System.Windows.Forms.TabPage();
             this.LibraryTabPage = new System.Windows.Forms.TabPage();
+            this.SearchLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.MainMenuBar.SuspendLayout();
             this.EditorTabs.SuspendLayout();
             this.SuspendLayout();
@@ -436,6 +437,16 @@ namespace Scribe
             this.LibraryTabPage.TabIndex = 9;
             this.LibraryTabPage.Text = "Library";
             // 
+            // SearchLayoutPanel
+            // 
+            this.SearchLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SearchLayoutPanel.Location = new System.Drawing.Point(12, 27);
+            this.SearchLayoutPanel.Name = "SearchLayoutPanel";
+            this.SearchLayoutPanel.Size = new System.Drawing.Size(956, 20);
+            this.SearchLayoutPanel.TabIndex = 4;
+            // 
             // EditorForm
             // 
             this.AccessibleDescription = "The primary interactive editor window.";
@@ -444,6 +455,7 @@ namespace Scribe
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 761);
+            this.Controls.Add(this.SearchLayoutPanel);
             this.Controls.Add(this.EditorTabs);
             this.Controls.Add(this.EditorStatusStrip);
             this.Controls.Add(this.MainMenuBar);
@@ -507,6 +519,7 @@ namespace Scribe
         private System.Windows.Forms.TabPage RoomsTabPage;
         private System.Windows.Forms.TabPage ScriptsTabPage;
         private System.Windows.Forms.TabPage LibraryTabPage;
+        private System.Windows.Forms.FlowLayoutPanel SearchLayoutPanel;
     }
 }
 
