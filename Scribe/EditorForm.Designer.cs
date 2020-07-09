@@ -64,8 +64,16 @@ namespace Scribe
             this.ToolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditorTabs = new System.Windows.Forms.TabControl();
-            this.InfoTabPage = new System.Windows.Forms.TabPage();
+            this.GameTabPage = new System.Windows.Forms.TabPage();
             this.BeingsTabPage = new System.Windows.Forms.TabPage();
+            this.BiomesTabPage = new System.Windows.Forms.TabPage();
+            this.CraftingTabPage = new System.Windows.Forms.TabPage();
+            this.ItemsTabPage = new System.Windows.Forms.TabPage();
+            this.MapsTabPage = new System.Windows.Forms.TabPage();
+            this.ParquetsTabPage = new System.Windows.Forms.TabPage();
+            this.RoomsTabPage = new System.Windows.Forms.TabPage();
+            this.ScriptsTabPage = new System.Windows.Forms.TabPage();
+            this.LibraryTabPage = new System.Windows.Forms.TabPage();
             this.MainMenuBar.SuspendLayout();
             this.EditorTabs.SuspendLayout();
             this.SuspendLayout();
@@ -328,23 +336,31 @@ namespace Scribe
             this.EditorTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EditorTabs.Controls.Add(this.InfoTabPage);
+            this.EditorTabs.Controls.Add(this.GameTabPage);
             this.EditorTabs.Controls.Add(this.BeingsTabPage);
+            this.EditorTabs.Controls.Add(this.BiomesTabPage);
+            this.EditorTabs.Controls.Add(this.CraftingTabPage);
+            this.EditorTabs.Controls.Add(this.ItemsTabPage);
+            this.EditorTabs.Controls.Add(this.MapsTabPage);
+            this.EditorTabs.Controls.Add(this.ParquetsTabPage);
+            this.EditorTabs.Controls.Add(this.RoomsTabPage);
+            this.EditorTabs.Controls.Add(this.ScriptsTabPage);
+            this.EditorTabs.Controls.Add(this.LibraryTabPage);
             this.EditorTabs.Location = new System.Drawing.Point(12, 27);
             this.EditorTabs.Name = "EditorTabs";
             this.EditorTabs.SelectedIndex = 0;
             this.EditorTabs.Size = new System.Drawing.Size(960, 696);
             this.EditorTabs.TabIndex = 2;
             // 
-            // InfoTabPage
+            // GameTabPage
             // 
-            this.InfoTabPage.Location = new System.Drawing.Point(4, 22);
-            this.InfoTabPage.Name = "InfoTabPage";
-            this.InfoTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.InfoTabPage.Size = new System.Drawing.Size(952, 670);
-            this.InfoTabPage.TabIndex = 0;
-            this.InfoTabPage.Text = "Information";
-            this.InfoTabPage.UseVisualStyleBackColor = true;
+            this.GameTabPage.Location = new System.Drawing.Point(4, 22);
+            this.GameTabPage.Name = "GameTabPage";
+            this.GameTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.GameTabPage.Size = new System.Drawing.Size(952, 670);
+            this.GameTabPage.TabIndex = 0;
+            this.GameTabPage.Text = "Game";
+            this.GameTabPage.UseVisualStyleBackColor = true;
             // 
             // BeingsTabPage
             // 
@@ -355,6 +371,70 @@ namespace Scribe
             this.BeingsTabPage.TabIndex = 1;
             this.BeingsTabPage.Text = "Beings";
             this.BeingsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // BiomesTabPage
+            // 
+            this.BiomesTabPage.Location = new System.Drawing.Point(4, 22);
+            this.BiomesTabPage.Name = "BiomesTabPage";
+            this.BiomesTabPage.Size = new System.Drawing.Size(952, 670);
+            this.BiomesTabPage.TabIndex = 2;
+            this.BiomesTabPage.Text = "Biomes";
+            // 
+            // CraftingTabPage
+            // 
+            this.CraftingTabPage.Location = new System.Drawing.Point(4, 22);
+            this.CraftingTabPage.Name = "CraftingTabPage";
+            this.CraftingTabPage.Size = new System.Drawing.Size(952, 670);
+            this.CraftingTabPage.TabIndex = 3;
+            this.CraftingTabPage.Text = "Crafting";
+            // 
+            // ItemsTabPage
+            // 
+            this.ItemsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.ItemsTabPage.Name = "ItemsTabPage";
+            this.ItemsTabPage.Size = new System.Drawing.Size(952, 670);
+            this.ItemsTabPage.TabIndex = 4;
+            this.ItemsTabPage.Text = "Items";
+            // 
+            // MapsTabPage
+            // 
+            this.MapsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.MapsTabPage.Name = "MapsTabPage";
+            this.MapsTabPage.Size = new System.Drawing.Size(952, 670);
+            this.MapsTabPage.TabIndex = 5;
+            this.MapsTabPage.Text = "Maps";
+            // 
+            // ParquetsTabPage
+            // 
+            this.ParquetsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.ParquetsTabPage.Name = "ParquetsTabPage";
+            this.ParquetsTabPage.Size = new System.Drawing.Size(952, 670);
+            this.ParquetsTabPage.TabIndex = 6;
+            this.ParquetsTabPage.Text = "Parquets";
+            // 
+            // RoomsTabPage
+            // 
+            this.RoomsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.RoomsTabPage.Name = "RoomsTabPage";
+            this.RoomsTabPage.Size = new System.Drawing.Size(952, 670);
+            this.RoomsTabPage.TabIndex = 7;
+            this.RoomsTabPage.Text = "Rooms";
+            // 
+            // ScriptsTabPage
+            // 
+            this.ScriptsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.ScriptsTabPage.Name = "ScriptsTabPage";
+            this.ScriptsTabPage.Size = new System.Drawing.Size(952, 670);
+            this.ScriptsTabPage.TabIndex = 8;
+            this.ScriptsTabPage.Text = "Scripting";
+            // 
+            // LibraryTabPage
+            // 
+            this.LibraryTabPage.Location = new System.Drawing.Point(4, 22);
+            this.LibraryTabPage.Name = "LibraryTabPage";
+            this.LibraryTabPage.Size = new System.Drawing.Size(952, 670);
+            this.LibraryTabPage.TabIndex = 9;
+            this.LibraryTabPage.Text = "Library";
             // 
             // EditorForm
             // 
@@ -417,8 +497,16 @@ namespace Scribe
         private System.Windows.Forms.ToolStripMenuItem ListTagsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator ToolStripSeparator5;
         private System.Windows.Forms.TabControl EditorTabs;
-        private System.Windows.Forms.TabPage InfoTabPage;
+        private System.Windows.Forms.TabPage GameTabPage;
         private System.Windows.Forms.TabPage BeingsTabPage;
+        private System.Windows.Forms.TabPage BiomesTabPage;
+        private System.Windows.Forms.TabPage CraftingTabPage;
+        private System.Windows.Forms.TabPage ItemsTabPage;
+        private System.Windows.Forms.TabPage MapsTabPage;
+        private System.Windows.Forms.TabPage ParquetsTabPage;
+        private System.Windows.Forms.TabPage RoomsTabPage;
+        private System.Windows.Forms.TabPage ScriptsTabPage;
+        private System.Windows.Forms.TabPage LibraryTabPage;
     }
 }
 
