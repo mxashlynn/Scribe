@@ -347,10 +347,10 @@ namespace Scribe
             this.EditorTabs.Controls.Add(this.RoomsTabPage);
             this.EditorTabs.Controls.Add(this.ScriptsTabPage);
             this.EditorTabs.Controls.Add(this.LibraryTabPage);
-            this.EditorTabs.Location = new System.Drawing.Point(12, 27);
+            this.EditorTabs.Location = new System.Drawing.Point(12, 53);
             this.EditorTabs.Name = "EditorTabs";
-            this.EditorTabs.SelectedIndex = 0;
-            this.EditorTabs.Size = new System.Drawing.Size(960, 696);
+            this.EditorTabs.SelectedIndex = 5;
+            this.EditorTabs.Size = new System.Drawing.Size(960, 670);
             this.EditorTabs.TabIndex = 2;
             // 
             // GameTabPage
@@ -358,82 +358,88 @@ namespace Scribe
             this.GameTabPage.Location = new System.Drawing.Point(4, 22);
             this.GameTabPage.Name = "GameTabPage";
             this.GameTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.GameTabPage.Size = new System.Drawing.Size(952, 670);
+            this.GameTabPage.Size = new System.Drawing.Size(952, 644);
             this.GameTabPage.TabIndex = 0;
             this.GameTabPage.Text = "Game";
-            this.GameTabPage.UseVisualStyleBackColor = true;
             // 
             // BeingsTabPage
             // 
             this.BeingsTabPage.Location = new System.Drawing.Point(4, 22);
             this.BeingsTabPage.Name = "BeingsTabPage";
             this.BeingsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.BeingsTabPage.Size = new System.Drawing.Size(952, 670);
+            this.BeingsTabPage.Size = new System.Drawing.Size(952, 644);
             this.BeingsTabPage.TabIndex = 1;
             this.BeingsTabPage.Text = "Beings";
-            this.BeingsTabPage.UseVisualStyleBackColor = true;
             // 
             // BiomesTabPage
             // 
+            this.BiomesTabPage.BackColor = System.Drawing.Color.Transparent;
             this.BiomesTabPage.Location = new System.Drawing.Point(4, 22);
             this.BiomesTabPage.Name = "BiomesTabPage";
-            this.BiomesTabPage.Size = new System.Drawing.Size(952, 670);
+            this.BiomesTabPage.Size = new System.Drawing.Size(952, 644);
             this.BiomesTabPage.TabIndex = 2;
             this.BiomesTabPage.Text = "Biomes";
             // 
             // CraftingTabPage
             // 
+            this.CraftingTabPage.BackColor = System.Drawing.Color.Transparent;
             this.CraftingTabPage.Location = new System.Drawing.Point(4, 22);
             this.CraftingTabPage.Name = "CraftingTabPage";
-            this.CraftingTabPage.Size = new System.Drawing.Size(952, 670);
+            this.CraftingTabPage.Size = new System.Drawing.Size(952, 644);
             this.CraftingTabPage.TabIndex = 3;
             this.CraftingTabPage.Text = "Crafting";
             // 
             // ItemsTabPage
             // 
+            this.ItemsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.ItemsTabPage.Location = new System.Drawing.Point(4, 22);
             this.ItemsTabPage.Name = "ItemsTabPage";
-            this.ItemsTabPage.Size = new System.Drawing.Size(952, 670);
+            this.ItemsTabPage.Size = new System.Drawing.Size(952, 644);
             this.ItemsTabPage.TabIndex = 4;
             this.ItemsTabPage.Text = "Items";
             // 
             // MapsTabPage
             // 
+            this.MapsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.MapsTabPage.Location = new System.Drawing.Point(4, 22);
             this.MapsTabPage.Name = "MapsTabPage";
-            this.MapsTabPage.Size = new System.Drawing.Size(952, 670);
+            this.MapsTabPage.Size = new System.Drawing.Size(952, 644);
             this.MapsTabPage.TabIndex = 5;
             this.MapsTabPage.Text = "Maps";
             // 
             // ParquetsTabPage
             // 
+            this.ParquetsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.ParquetsTabPage.Location = new System.Drawing.Point(4, 22);
             this.ParquetsTabPage.Name = "ParquetsTabPage";
-            this.ParquetsTabPage.Size = new System.Drawing.Size(952, 670);
+            this.ParquetsTabPage.Size = new System.Drawing.Size(952, 644);
             this.ParquetsTabPage.TabIndex = 6;
             this.ParquetsTabPage.Text = "Parquets";
             // 
             // RoomsTabPage
             // 
+            this.RoomsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.RoomsTabPage.Location = new System.Drawing.Point(4, 22);
             this.RoomsTabPage.Name = "RoomsTabPage";
-            this.RoomsTabPage.Size = new System.Drawing.Size(952, 670);
+            this.RoomsTabPage.Size = new System.Drawing.Size(952, 644);
             this.RoomsTabPage.TabIndex = 7;
             this.RoomsTabPage.Text = "Rooms";
             // 
             // ScriptsTabPage
             // 
+            this.ScriptsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.ScriptsTabPage.Location = new System.Drawing.Point(4, 22);
             this.ScriptsTabPage.Name = "ScriptsTabPage";
-            this.ScriptsTabPage.Size = new System.Drawing.Size(952, 670);
+            this.ScriptsTabPage.Size = new System.Drawing.Size(952, 644);
             this.ScriptsTabPage.TabIndex = 8;
             this.ScriptsTabPage.Text = "Scripting";
             // 
             // LibraryTabPage
             // 
+            this.LibraryTabPage.BackColor = System.Drawing.Color.Transparent;
             this.LibraryTabPage.Location = new System.Drawing.Point(4, 22);
             this.LibraryTabPage.Name = "LibraryTabPage";
-            this.LibraryTabPage.Size = new System.Drawing.Size(952, 670);
+            this.LibraryTabPage.Size = new System.Drawing.Size(952, 644);
             this.LibraryTabPage.TabIndex = 9;
             this.LibraryTabPage.Text = "Library";
             // 
