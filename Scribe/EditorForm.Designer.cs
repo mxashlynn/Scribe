@@ -109,7 +109,6 @@ namespace Scribe
             // 
             // NewToolStripMenuItem
             // 
-            this.NewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("NewToolStripMenuItem.Image")));
             this.NewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NewToolStripMenuItem.Name = "NewToolStripMenuItem";
             this.NewToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
@@ -118,7 +117,6 @@ namespace Scribe
             // 
             // LoadToolStripMenuItem
             // 
-            this.LoadToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("LoadToolStripMenuItem.Image")));
             this.LoadToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem";
             this.LoadToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
@@ -127,7 +125,6 @@ namespace Scribe
             // 
             // SaveToolStripMenuItem
             // 
-            this.SaveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("SaveToolStripMenuItem.Image")));
             this.SaveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
             this.SaveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
@@ -184,7 +181,6 @@ namespace Scribe
             // CutToolStripMenuItem
             // 
             this.CutToolStripMenuItem.Enabled = false;
-            this.CutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("CutToolStripMenuItem.Image")));
             this.CutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.CutToolStripMenuItem.Name = "CutToolStripMenuItem";
             this.CutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
@@ -194,7 +190,6 @@ namespace Scribe
             // CopyToolStripMenuItem
             // 
             this.CopyToolStripMenuItem.Enabled = false;
-            this.CopyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("CopyToolStripMenuItem.Image")));
             this.CopyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.CopyToolStripMenuItem.Name = "CopyToolStripMenuItem";
             this.CopyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
@@ -204,7 +199,6 @@ namespace Scribe
             // PasteToolStripMenuItem
             // 
             this.PasteToolStripMenuItem.Enabled = false;
-            this.PasteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("PasteToolStripMenuItem.Image")));
             this.PasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.PasteToolStripMenuItem.Name = "PasteToolStripMenuItem";
             this.PasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
@@ -248,36 +242,36 @@ namespace Scribe
             // CheckMapStripMenuItem
             // 
             this.CheckMapStripMenuItem.Name = "CheckMapStripMenuItem";
-            this.CheckMapStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.CheckMapStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.CheckMapStripMenuItem.Text = "Check &Map Adjacency";
             // 
             // ListNameCollisionsStripMenuItem2
             // 
             this.ListNameCollisionsStripMenuItem2.Name = "ListNameCollisionsStripMenuItem2";
-            this.ListNameCollisionsStripMenuItem2.Size = new System.Drawing.Size(195, 22);
+            this.ListNameCollisionsStripMenuItem2.Size = new System.Drawing.Size(192, 22);
             this.ListNameCollisionsStripMenuItem2.Text = "List &Name Collisions";
             // 
             // ToolStripSeparator4
             // 
             this.ToolStripSeparator4.Name = "ToolStripSeparator4";
-            this.ToolStripSeparator4.Size = new System.Drawing.Size(192, 6);
+            this.ToolStripSeparator4.Size = new System.Drawing.Size(189, 6);
             // 
             // ListIDRangesToolStripMenuItem
             // 
             this.ListIDRangesToolStripMenuItem.Name = "ListIDRangesToolStripMenuItem";
-            this.ListIDRangesToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.ListIDRangesToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.ListIDRangesToolStripMenuItem.Text = "List ID &Ranges";
             // 
             // ListMaxIDsToolStripMenuItem
             // 
             this.ListMaxIDsToolStripMenuItem.Name = "ListMaxIDsToolStripMenuItem";
-            this.ListMaxIDsToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.ListMaxIDsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.ListMaxIDsToolStripMenuItem.Text = "List Maximum &IDs";
             // 
             // ListTagsToolStripMenuItem
             // 
             this.ListTagsToolStripMenuItem.Name = "ListTagsToolStripMenuItem";
-            this.ListTagsToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.ListTagsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.ListTagsToolStripMenuItem.Text = "List &Tags";
             // 
             // ToolStripSeparator5
