@@ -84,6 +84,7 @@ namespace Scribe
             this.StoryIDFilterCheckBox = new System.Windows.Forms.CheckBox();
             this.TagsCheckBox = new System.Windows.Forms.CheckBox();
             this.EverythingCheckBox = new System.Windows.Forms.CheckBox();
+            this.FlavorFilterComboBox = new System.Windows.Forms.ComboBox();
             this.MainMenuBar.SuspendLayout();
             this.EditorTabs.SuspendLayout();
             this.FiltersTableLayoutPanel.SuspendLayout();
@@ -455,15 +456,16 @@ namespace Scribe
             // 
             // FiltersTableLayoutPanel
             // 
-            this.FiltersTableLayoutPanel.ColumnCount = 8;
-            this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.22275F));
-            this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.77725F));
-            this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
-            this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 136F));
-            this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
-            this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 111F));
-            this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
-            this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 157F));
+            this.FiltersTableLayoutPanel.ColumnCount = 9;
+            this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.FiltersTableLayoutPanel.Controls.Add(this.FilterLabel, 0, 0);
             this.FiltersTableLayoutPanel.Controls.Add(this.FlavorLabel, 6, 0);
             this.FiltersTableLayoutPanel.Controls.Add(this.FilterTextBox, 1, 0);
@@ -473,6 +475,7 @@ namespace Scribe
             this.FiltersTableLayoutPanel.Controls.Add(this.StoryIDFilterCheckBox, 2, 1);
             this.FiltersTableLayoutPanel.Controls.Add(this.TagsCheckBox, 3, 1);
             this.FiltersTableLayoutPanel.Controls.Add(this.EverythingCheckBox, 4, 1);
+            this.FiltersTableLayoutPanel.Controls.Add(this.FlavorFilterComboBox, 7, 0);
             this.FiltersTableLayoutPanel.Location = new System.Drawing.Point(16, 28);
             this.FiltersTableLayoutPanel.Name = "FiltersTableLayoutPanel";
             this.FiltersTableLayoutPanel.RowCount = 2;
@@ -493,7 +496,7 @@ namespace Scribe
             // FlavorLabel
             // 
             this.FlavorLabel.AutoSize = true;
-            this.FlavorLabel.Location = new System.Drawing.Point(724, 0);
+            this.FlavorLabel.Location = new System.Drawing.Point(705, 0);
             this.FlavorLabel.Name = "FlavorLabel";
             this.FlavorLabel.Size = new System.Drawing.Size(37, 13);
             this.FlavorLabel.TabIndex = 1;
@@ -501,15 +504,15 @@ namespace Scribe
             // 
             // FilterTextBox
             // 
-            this.FilterTextBox.Location = new System.Drawing.Point(52, 3);
+            this.FilterTextBox.Location = new System.Drawing.Point(53, 3);
             this.FilterTextBox.Name = "FilterTextBox";
-            this.FilterTextBox.Size = new System.Drawing.Size(156, 20);
+            this.FilterTextBox.Size = new System.Drawing.Size(144, 20);
             this.FilterTextBox.TabIndex = 2;
             // 
             // NameFilterCheckBox
             // 
             this.NameFilterCheckBox.AutoSize = true;
-            this.NameFilterCheckBox.Location = new System.Drawing.Point(214, 3);
+            this.NameFilterCheckBox.Location = new System.Drawing.Point(203, 3);
             this.NameFilterCheckBox.Name = "NameFilterCheckBox";
             this.NameFilterCheckBox.Size = new System.Drawing.Size(53, 17);
             this.NameFilterCheckBox.TabIndex = 3;
@@ -519,7 +522,7 @@ namespace Scribe
             // DescriptionCheckBox
             // 
             this.DescriptionCheckBox.AutoSize = true;
-            this.DescriptionCheckBox.Location = new System.Drawing.Point(343, 3);
+            this.DescriptionCheckBox.Location = new System.Drawing.Point(303, 3);
             this.DescriptionCheckBox.Name = "DescriptionCheckBox";
             this.DescriptionCheckBox.Size = new System.Drawing.Size(79, 17);
             this.DescriptionCheckBox.TabIndex = 4;
@@ -529,7 +532,7 @@ namespace Scribe
             // CommentCheckBox
             // 
             this.CommentCheckBox.AutoSize = true;
-            this.CommentCheckBox.Location = new System.Drawing.Point(479, 3);
+            this.CommentCheckBox.Location = new System.Drawing.Point(403, 3);
             this.CommentCheckBox.Name = "CommentCheckBox";
             this.CommentCheckBox.Size = new System.Drawing.Size(71, 17);
             this.CommentCheckBox.TabIndex = 5;
@@ -539,7 +542,7 @@ namespace Scribe
             // StoryIDFilterCheckBox
             // 
             this.StoryIDFilterCheckBox.AutoSize = true;
-            this.StoryIDFilterCheckBox.Location = new System.Drawing.Point(214, 27);
+            this.StoryIDFilterCheckBox.Location = new System.Drawing.Point(203, 27);
             this.StoryIDFilterCheckBox.Name = "StoryIDFilterCheckBox";
             this.StoryIDFilterCheckBox.Size = new System.Drawing.Size(66, 17);
             this.StoryIDFilterCheckBox.TabIndex = 6;
@@ -549,7 +552,7 @@ namespace Scribe
             // TagsCheckBox
             // 
             this.TagsCheckBox.AutoSize = true;
-            this.TagsCheckBox.Location = new System.Drawing.Point(343, 27);
+            this.TagsCheckBox.Location = new System.Drawing.Point(303, 27);
             this.TagsCheckBox.Name = "TagsCheckBox";
             this.TagsCheckBox.Size = new System.Drawing.Size(49, 17);
             this.TagsCheckBox.TabIndex = 7;
@@ -559,12 +562,36 @@ namespace Scribe
             // EverythingCheckBox
             // 
             this.EverythingCheckBox.AutoSize = true;
-            this.EverythingCheckBox.Location = new System.Drawing.Point(479, 27);
+            this.EverythingCheckBox.Location = new System.Drawing.Point(403, 27);
             this.EverythingCheckBox.Name = "EverythingCheckBox";
-            this.EverythingCheckBox.Size = new System.Drawing.Size(77, 17);
+            this.EverythingCheckBox.Size = new System.Drawing.Size(78, 17);
             this.EverythingCheckBox.TabIndex = 8;
-            this.EverythingCheckBox.Text = "checkBox6";
+            this.EverythingCheckBox.Text = "Everything";
             this.EverythingCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // FlavorFilterComboBox
+            // 
+            this.FlavorFilterComboBox.FormattingEnabled = true;
+            this.FlavorFilterComboBox.Items.AddRange(new object[] {
+            "(Any)",
+            "Bland",
+            "Sweet",
+            "Salty",
+            "Sour",
+            "Bitter",
+            "Savoury",
+            "Pungent",
+            "Fresh",
+            "Metalic",
+            "Astringent",
+            "Numbing",
+            "Chemical",
+            "(None)"});
+            this.FlavorFilterComboBox.Location = new System.Drawing.Point(755, 3);
+            this.FlavorFilterComboBox.Name = "FlavorFilterComboBox";
+            this.FlavorFilterComboBox.Size = new System.Drawing.Size(121, 21);
+            this.FlavorFilterComboBox.TabIndex = 9;
+            this.FlavorFilterComboBox.Text = "(Any)";
             // 
             // EditorForm
             // 
@@ -650,6 +677,7 @@ namespace Scribe
         private System.Windows.Forms.CheckBox StoryIDFilterCheckBox;
         private System.Windows.Forms.CheckBox TagsCheckBox;
         private System.Windows.Forms.CheckBox EverythingCheckBox;
+        private System.Windows.Forms.ComboBox FlavorFilterComboBox;
     }
 }
 
