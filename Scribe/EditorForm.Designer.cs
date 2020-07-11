@@ -169,6 +169,7 @@ namespace Scribe
             // 
             // NewToolStripMenuItem
             // 
+            this.NewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("NewToolStripMenuItem.Image")));
             this.NewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NewToolStripMenuItem.Name = "NewToolStripMenuItem";
             this.NewToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
@@ -177,6 +178,7 @@ namespace Scribe
             // 
             // LoadToolStripMenuItem
             // 
+            this.LoadToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("LoadToolStripMenuItem.Image")));
             this.LoadToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem";
             this.LoadToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
@@ -185,6 +187,7 @@ namespace Scribe
             // 
             // SaveToolStripMenuItem
             // 
+            this.SaveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("SaveToolStripMenuItem.Image")));
             this.SaveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
             this.SaveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
@@ -198,6 +201,7 @@ namespace Scribe
             // 
             // ExitToolStripMenuItem
             // 
+            this.ExitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ExitToolStripMenuItem.Image")));
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
             this.ExitToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.ExitToolStripMenuItem.Text = "E&xit";
@@ -220,6 +224,7 @@ namespace Scribe
             // UndoToolStripMenuItem
             // 
             this.UndoToolStripMenuItem.Enabled = false;
+            this.UndoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("UndoToolStripMenuItem.Image")));
             this.UndoToolStripMenuItem.Name = "UndoToolStripMenuItem";
             this.UndoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
             this.UndoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
@@ -228,6 +233,7 @@ namespace Scribe
             // RedoToolStripMenuItem
             // 
             this.RedoToolStripMenuItem.Enabled = false;
+            this.RedoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("RedoToolStripMenuItem.Image")));
             this.RedoToolStripMenuItem.Name = "RedoToolStripMenuItem";
             this.RedoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
             this.RedoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
@@ -241,6 +247,7 @@ namespace Scribe
             // CutToolStripMenuItem
             // 
             this.CutToolStripMenuItem.Enabled = false;
+            this.CutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("CutToolStripMenuItem.Image")));
             this.CutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.CutToolStripMenuItem.Name = "CutToolStripMenuItem";
             this.CutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
@@ -250,6 +257,7 @@ namespace Scribe
             // CopyToolStripMenuItem
             // 
             this.CopyToolStripMenuItem.Enabled = false;
+            this.CopyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("CopyToolStripMenuItem.Image")));
             this.CopyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.CopyToolStripMenuItem.Name = "CopyToolStripMenuItem";
             this.CopyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
@@ -259,6 +267,7 @@ namespace Scribe
             // PasteToolStripMenuItem
             // 
             this.PasteToolStripMenuItem.Enabled = false;
+            this.PasteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("PasteToolStripMenuItem.Image")));
             this.PasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.PasteToolStripMenuItem.Name = "PasteToolStripMenuItem";
             this.PasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
@@ -272,6 +281,7 @@ namespace Scribe
             // 
             // SelectAllToolStripMenuItem
             // 
+            this.SelectAllToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("SelectAllToolStripMenuItem.Image")));
             this.SelectAllToolStripMenuItem.Name = "SelectAllToolStripMenuItem";
             this.SelectAllToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.SelectAllToolStripMenuItem.Text = "Select &All";
@@ -295,18 +305,21 @@ namespace Scribe
             this.ListIDRangesToolStripMenuItem,
             this.ListMaxIDsToolStripMenuItem,
             this.ListTagsToolStripMenuItem});
+            this.RollerToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("RollerToolStripMenuItem.Image")));
             this.RollerToolStripMenuItem.Name = "RollerToolStripMenuItem";
             this.RollerToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.RollerToolStripMenuItem.Text = "&Roller";
             // 
             // CheckMapStripMenuItem
             // 
+            this.CheckMapStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("CheckMapStripMenuItem.Image")));
             this.CheckMapStripMenuItem.Name = "CheckMapStripMenuItem";
             this.CheckMapStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.CheckMapStripMenuItem.Text = "Check &Map Adjacency";
             // 
             // ListNameCollisionsStripMenuItem2
             // 
+            this.ListNameCollisionsStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("ListNameCollisionsStripMenuItem2.Image")));
             this.ListNameCollisionsStripMenuItem2.Name = "ListNameCollisionsStripMenuItem2";
             this.ListNameCollisionsStripMenuItem2.Size = new System.Drawing.Size(192, 22);
             this.ListNameCollisionsStripMenuItem2.Text = "List &Name Collisions";
@@ -318,18 +331,21 @@ namespace Scribe
             // 
             // ListIDRangesToolStripMenuItem
             // 
+            this.ListIDRangesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ListIDRangesToolStripMenuItem.Image")));
             this.ListIDRangesToolStripMenuItem.Name = "ListIDRangesToolStripMenuItem";
             this.ListIDRangesToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.ListIDRangesToolStripMenuItem.Text = "List ID &Ranges";
             // 
             // ListMaxIDsToolStripMenuItem
             // 
+            this.ListMaxIDsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ListMaxIDsToolStripMenuItem.Image")));
             this.ListMaxIDsToolStripMenuItem.Name = "ListMaxIDsToolStripMenuItem";
             this.ListMaxIDsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.ListMaxIDsToolStripMenuItem.Text = "List Maximum &IDs";
             // 
             // ListTagsToolStripMenuItem
             // 
+            this.ListTagsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ListTagsToolStripMenuItem.Image")));
             this.ListTagsToolStripMenuItem.Name = "ListTagsToolStripMenuItem";
             this.ListTagsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.ListTagsToolStripMenuItem.Text = "List &Tags";
@@ -341,6 +357,7 @@ namespace Scribe
             // 
             // OptionsToolStripMenuItem
             // 
+            this.OptionsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("OptionsToolStripMenuItem.Image")));
             this.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem";
             this.OptionsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.OptionsToolStripMenuItem.Text = "&Options";
@@ -358,12 +375,14 @@ namespace Scribe
             // 
             // ScribeHelpToolStripMenuItem
             // 
+            this.ScribeHelpToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ScribeHelpToolStripMenuItem.Image")));
             this.ScribeHelpToolStripMenuItem.Name = "ScribeHelpToolStripMenuItem";
             this.ScribeHelpToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.ScribeHelpToolStripMenuItem.Text = "Scribe &Help";
             // 
             // DocumentationToolStripMenuItem
             // 
+            this.DocumentationToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("DocumentationToolStripMenuItem.Image")));
             this.DocumentationToolStripMenuItem.Name = "DocumentationToolStripMenuItem";
             this.DocumentationToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.DocumentationToolStripMenuItem.Text = "Parquet &Documentation";
@@ -375,6 +394,7 @@ namespace Scribe
             // 
             // AboutToolStripMenuItem
             // 
+            this.AboutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("AboutToolStripMenuItem.Image")));
             this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
             this.AboutToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.AboutToolStripMenuItem.Text = "&About...";
