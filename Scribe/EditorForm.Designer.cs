@@ -32,6 +32,8 @@ namespace Scribe
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditorForm));
             this.EditorStatusStrip = new System.Windows.Forms.StatusStrip();
+            this.MainToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.MainMenuBar = new System.Windows.Forms.MenuStrip();
             this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -99,6 +101,7 @@ namespace Scribe
             this.SaltySelector = new System.Windows.Forms.Label();
             this.NumbingSelector = new System.Windows.Forms.Label();
             this.AllFlavorsSelector = new System.Windows.Forms.Label();
+            this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
             this.EditorTabs.SuspendLayout();
             this.FiltersTableLayoutPanel.SuspendLayout();
@@ -113,11 +116,27 @@ namespace Scribe
             this.EditorStatusStrip.AccessibleName = "Editor Status";
             this.EditorStatusStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.StatusBar;
             this.EditorStatusStrip.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EditorStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MainToolStripStatusLabel,
+            this.toolStripProgressBar1});
+            this.EditorStatusStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.EditorStatusStrip.Location = new System.Drawing.Point(0, 739);
             this.EditorStatusStrip.Name = "EditorStatusStrip";
             this.EditorStatusStrip.Size = new System.Drawing.Size(984, 22);
             this.EditorStatusStrip.SizingGrip = false;
             this.EditorStatusStrip.TabIndex = 0;
+            // 
+            // MainToolStripStatusLabel
+            // 
+            this.MainToolStripStatusLabel.Name = "MainToolStripStatusLabel";
+            this.MainToolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
+            this.MainToolStripStatusLabel.Text = "Ready";
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
             // 
             // MainMenuBar
             // 
@@ -378,7 +397,7 @@ namespace Scribe
             this.EditorTabs.Location = new System.Drawing.Point(12, 111);
             this.EditorTabs.Name = "EditorTabs";
             this.EditorTabs.SelectedIndex = 0;
-            this.EditorTabs.Size = new System.Drawing.Size(960, 590);
+            this.EditorTabs.Size = new System.Drawing.Size(960, 625);
             this.EditorTabs.TabIndex = 2;
             // 
             // GameTabPage
@@ -386,7 +405,7 @@ namespace Scribe
             this.GameTabPage.Location = new System.Drawing.Point(4, 22);
             this.GameTabPage.Name = "GameTabPage";
             this.GameTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.GameTabPage.Size = new System.Drawing.Size(952, 564);
+            this.GameTabPage.Size = new System.Drawing.Size(952, 599);
             this.GameTabPage.TabIndex = 0;
             this.GameTabPage.Text = "Game";
             // 
@@ -395,7 +414,7 @@ namespace Scribe
             this.BeingsTabPage.Location = new System.Drawing.Point(4, 22);
             this.BeingsTabPage.Name = "BeingsTabPage";
             this.BeingsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.BeingsTabPage.Size = new System.Drawing.Size(952, 564);
+            this.BeingsTabPage.Size = new System.Drawing.Size(952, 599);
             this.BeingsTabPage.TabIndex = 1;
             this.BeingsTabPage.Text = "Beings";
             // 
@@ -404,7 +423,7 @@ namespace Scribe
             this.BiomesTabPage.BackColor = System.Drawing.Color.Transparent;
             this.BiomesTabPage.Location = new System.Drawing.Point(4, 22);
             this.BiomesTabPage.Name = "BiomesTabPage";
-            this.BiomesTabPage.Size = new System.Drawing.Size(952, 564);
+            this.BiomesTabPage.Size = new System.Drawing.Size(952, 599);
             this.BiomesTabPage.TabIndex = 2;
             this.BiomesTabPage.Text = "Biomes";
             // 
@@ -413,7 +432,7 @@ namespace Scribe
             this.CraftingTabPage.BackColor = System.Drawing.Color.Transparent;
             this.CraftingTabPage.Location = new System.Drawing.Point(4, 22);
             this.CraftingTabPage.Name = "CraftingTabPage";
-            this.CraftingTabPage.Size = new System.Drawing.Size(952, 564);
+            this.CraftingTabPage.Size = new System.Drawing.Size(952, 599);
             this.CraftingTabPage.TabIndex = 3;
             this.CraftingTabPage.Text = "Crafting";
             // 
@@ -422,7 +441,7 @@ namespace Scribe
             this.ItemsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.ItemsTabPage.Location = new System.Drawing.Point(4, 22);
             this.ItemsTabPage.Name = "ItemsTabPage";
-            this.ItemsTabPage.Size = new System.Drawing.Size(952, 564);
+            this.ItemsTabPage.Size = new System.Drawing.Size(952, 599);
             this.ItemsTabPage.TabIndex = 4;
             this.ItemsTabPage.Text = "Items";
             // 
@@ -431,7 +450,7 @@ namespace Scribe
             this.MapsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.MapsTabPage.Location = new System.Drawing.Point(4, 22);
             this.MapsTabPage.Name = "MapsTabPage";
-            this.MapsTabPage.Size = new System.Drawing.Size(952, 564);
+            this.MapsTabPage.Size = new System.Drawing.Size(952, 599);
             this.MapsTabPage.TabIndex = 5;
             this.MapsTabPage.Text = "Maps";
             // 
@@ -440,7 +459,7 @@ namespace Scribe
             this.ParquetsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.ParquetsTabPage.Location = new System.Drawing.Point(4, 22);
             this.ParquetsTabPage.Name = "ParquetsTabPage";
-            this.ParquetsTabPage.Size = new System.Drawing.Size(952, 564);
+            this.ParquetsTabPage.Size = new System.Drawing.Size(952, 599);
             this.ParquetsTabPage.TabIndex = 6;
             this.ParquetsTabPage.Text = "Parquets";
             // 
@@ -449,7 +468,7 @@ namespace Scribe
             this.RoomsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.RoomsTabPage.Location = new System.Drawing.Point(4, 22);
             this.RoomsTabPage.Name = "RoomsTabPage";
-            this.RoomsTabPage.Size = new System.Drawing.Size(952, 564);
+            this.RoomsTabPage.Size = new System.Drawing.Size(952, 599);
             this.RoomsTabPage.TabIndex = 7;
             this.RoomsTabPage.Text = "Rooms";
             // 
@@ -458,7 +477,7 @@ namespace Scribe
             this.ScriptsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.ScriptsTabPage.Location = new System.Drawing.Point(4, 22);
             this.ScriptsTabPage.Name = "ScriptsTabPage";
-            this.ScriptsTabPage.Size = new System.Drawing.Size(952, 564);
+            this.ScriptsTabPage.Size = new System.Drawing.Size(952, 599);
             this.ScriptsTabPage.TabIndex = 8;
             this.ScriptsTabPage.Text = "Scripting";
             // 
@@ -467,7 +486,7 @@ namespace Scribe
             this.LibraryTabPage.BackColor = System.Drawing.Color.Transparent;
             this.LibraryTabPage.Location = new System.Drawing.Point(4, 22);
             this.LibraryTabPage.Name = "LibraryTabPage";
-            this.LibraryTabPage.Size = new System.Drawing.Size(952, 564);
+            this.LibraryTabPage.Size = new System.Drawing.Size(952, 599);
             this.LibraryTabPage.TabIndex = 9;
             this.LibraryTabPage.Text = "Library";
             // 
@@ -845,6 +864,8 @@ namespace Scribe
             this.MaximizeBox = false;
             this.Name = "EditorForm";
             this.Text = "Scribe";
+            this.EditorStatusStrip.ResumeLayout(false);
+            this.EditorStatusStrip.PerformLayout();
             this.MainMenuBar.ResumeLayout(false);
             this.MainMenuBar.PerformLayout();
             this.EditorTabs.ResumeLayout(false);
@@ -929,6 +950,8 @@ namespace Scribe
         private System.Windows.Forms.Label SaltySelector;
         private System.Windows.Forms.Label NumbingSelector;
         private System.Windows.Forms.Label AllFlavorsSelector;
+        private System.Windows.Forms.ToolStripStatusLabel MainToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
     }
 }
 
