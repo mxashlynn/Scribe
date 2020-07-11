@@ -917,7 +917,6 @@ namespace Scribe
         private System.Windows.Forms.TableLayoutPanel FlavorTableLayoutPanel;
         private System.Windows.Forms.Label SweetSelector;
         private System.Windows.Forms.Label BlandSelector;
-        private System.Windows.Forms.TableLayoutPanel Flavo0;
         private System.Windows.Forms.Label SavourySelector;
         private System.Windows.Forms.Label MetallicSelector;
         private System.Windows.Forms.Label FreshSelector;
