@@ -74,9 +74,19 @@ namespace Scribe
             this.RoomsTabPage = new System.Windows.Forms.TabPage();
             this.ScriptsTabPage = new System.Windows.Forms.TabPage();
             this.LibraryTabPage = new System.Windows.Forms.TabPage();
-            this.SearchLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.FiltersTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.FilterLabel = new System.Windows.Forms.Label();
+            this.FlavorLabel = new System.Windows.Forms.Label();
+            this.FilterTextBox = new System.Windows.Forms.TextBox();
+            this.NameFilterCheckBox = new System.Windows.Forms.CheckBox();
+            this.DescriptionCheckBox = new System.Windows.Forms.CheckBox();
+            this.CommentCheckBox = new System.Windows.Forms.CheckBox();
+            this.StoryIDFilterCheckBox = new System.Windows.Forms.CheckBox();
+            this.TagsCheckBox = new System.Windows.Forms.CheckBox();
+            this.EverythingCheckBox = new System.Windows.Forms.CheckBox();
             this.MainMenuBar.SuspendLayout();
             this.EditorTabs.SuspendLayout();
+            this.FiltersTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // EditorStatusStrip
@@ -347,10 +357,10 @@ namespace Scribe
             this.EditorTabs.Controls.Add(this.RoomsTabPage);
             this.EditorTabs.Controls.Add(this.ScriptsTabPage);
             this.EditorTabs.Controls.Add(this.LibraryTabPage);
-            this.EditorTabs.Location = new System.Drawing.Point(12, 53);
+            this.EditorTabs.Location = new System.Drawing.Point(12, 83);
             this.EditorTabs.Name = "EditorTabs";
-            this.EditorTabs.SelectedIndex = 5;
-            this.EditorTabs.Size = new System.Drawing.Size(960, 670);
+            this.EditorTabs.SelectedIndex = 0;
+            this.EditorTabs.Size = new System.Drawing.Size(960, 640);
             this.EditorTabs.TabIndex = 2;
             // 
             // GameTabPage
@@ -358,7 +368,7 @@ namespace Scribe
             this.GameTabPage.Location = new System.Drawing.Point(4, 22);
             this.GameTabPage.Name = "GameTabPage";
             this.GameTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.GameTabPage.Size = new System.Drawing.Size(952, 644);
+            this.GameTabPage.Size = new System.Drawing.Size(952, 614);
             this.GameTabPage.TabIndex = 0;
             this.GameTabPage.Text = "Game";
             // 
@@ -367,7 +377,7 @@ namespace Scribe
             this.BeingsTabPage.Location = new System.Drawing.Point(4, 22);
             this.BeingsTabPage.Name = "BeingsTabPage";
             this.BeingsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.BeingsTabPage.Size = new System.Drawing.Size(952, 644);
+            this.BeingsTabPage.Size = new System.Drawing.Size(952, 614);
             this.BeingsTabPage.TabIndex = 1;
             this.BeingsTabPage.Text = "Beings";
             // 
@@ -376,7 +386,7 @@ namespace Scribe
             this.BiomesTabPage.BackColor = System.Drawing.Color.Transparent;
             this.BiomesTabPage.Location = new System.Drawing.Point(4, 22);
             this.BiomesTabPage.Name = "BiomesTabPage";
-            this.BiomesTabPage.Size = new System.Drawing.Size(952, 644);
+            this.BiomesTabPage.Size = new System.Drawing.Size(952, 614);
             this.BiomesTabPage.TabIndex = 2;
             this.BiomesTabPage.Text = "Biomes";
             // 
@@ -385,7 +395,7 @@ namespace Scribe
             this.CraftingTabPage.BackColor = System.Drawing.Color.Transparent;
             this.CraftingTabPage.Location = new System.Drawing.Point(4, 22);
             this.CraftingTabPage.Name = "CraftingTabPage";
-            this.CraftingTabPage.Size = new System.Drawing.Size(952, 644);
+            this.CraftingTabPage.Size = new System.Drawing.Size(952, 614);
             this.CraftingTabPage.TabIndex = 3;
             this.CraftingTabPage.Text = "Crafting";
             // 
@@ -394,7 +404,7 @@ namespace Scribe
             this.ItemsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.ItemsTabPage.Location = new System.Drawing.Point(4, 22);
             this.ItemsTabPage.Name = "ItemsTabPage";
-            this.ItemsTabPage.Size = new System.Drawing.Size(952, 644);
+            this.ItemsTabPage.Size = new System.Drawing.Size(952, 614);
             this.ItemsTabPage.TabIndex = 4;
             this.ItemsTabPage.Text = "Items";
             // 
@@ -403,7 +413,7 @@ namespace Scribe
             this.MapsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.MapsTabPage.Location = new System.Drawing.Point(4, 22);
             this.MapsTabPage.Name = "MapsTabPage";
-            this.MapsTabPage.Size = new System.Drawing.Size(952, 644);
+            this.MapsTabPage.Size = new System.Drawing.Size(952, 614);
             this.MapsTabPage.TabIndex = 5;
             this.MapsTabPage.Text = "Maps";
             // 
@@ -412,7 +422,7 @@ namespace Scribe
             this.ParquetsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.ParquetsTabPage.Location = new System.Drawing.Point(4, 22);
             this.ParquetsTabPage.Name = "ParquetsTabPage";
-            this.ParquetsTabPage.Size = new System.Drawing.Size(952, 644);
+            this.ParquetsTabPage.Size = new System.Drawing.Size(952, 614);
             this.ParquetsTabPage.TabIndex = 6;
             this.ParquetsTabPage.Text = "Parquets";
             // 
@@ -421,7 +431,7 @@ namespace Scribe
             this.RoomsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.RoomsTabPage.Location = new System.Drawing.Point(4, 22);
             this.RoomsTabPage.Name = "RoomsTabPage";
-            this.RoomsTabPage.Size = new System.Drawing.Size(952, 644);
+            this.RoomsTabPage.Size = new System.Drawing.Size(952, 614);
             this.RoomsTabPage.TabIndex = 7;
             this.RoomsTabPage.Text = "Rooms";
             // 
@@ -430,7 +440,7 @@ namespace Scribe
             this.ScriptsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.ScriptsTabPage.Location = new System.Drawing.Point(4, 22);
             this.ScriptsTabPage.Name = "ScriptsTabPage";
-            this.ScriptsTabPage.Size = new System.Drawing.Size(952, 644);
+            this.ScriptsTabPage.Size = new System.Drawing.Size(952, 614);
             this.ScriptsTabPage.TabIndex = 8;
             this.ScriptsTabPage.Text = "Scripting";
             // 
@@ -439,19 +449,122 @@ namespace Scribe
             this.LibraryTabPage.BackColor = System.Drawing.Color.Transparent;
             this.LibraryTabPage.Location = new System.Drawing.Point(4, 22);
             this.LibraryTabPage.Name = "LibraryTabPage";
-            this.LibraryTabPage.Size = new System.Drawing.Size(952, 644);
+            this.LibraryTabPage.Size = new System.Drawing.Size(952, 614);
             this.LibraryTabPage.TabIndex = 9;
             this.LibraryTabPage.Text = "Library";
             // 
-            // SearchLayoutPanel
+            // FiltersTableLayoutPanel
             // 
-            this.SearchLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SearchLayoutPanel.Location = new System.Drawing.Point(12, 27);
-            this.SearchLayoutPanel.Name = "SearchLayoutPanel";
-            this.SearchLayoutPanel.Size = new System.Drawing.Size(956, 20);
-            this.SearchLayoutPanel.TabIndex = 4;
+            this.FiltersTableLayoutPanel.ColumnCount = 8;
+            this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.22275F));
+            this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.77725F));
+            this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
+            this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 136F));
+            this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
+            this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 111F));
+            this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
+            this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 157F));
+            this.FiltersTableLayoutPanel.Controls.Add(this.FilterLabel, 0, 0);
+            this.FiltersTableLayoutPanel.Controls.Add(this.FlavorLabel, 6, 0);
+            this.FiltersTableLayoutPanel.Controls.Add(this.FilterTextBox, 1, 0);
+            this.FiltersTableLayoutPanel.Controls.Add(this.NameFilterCheckBox, 2, 0);
+            this.FiltersTableLayoutPanel.Controls.Add(this.DescriptionCheckBox, 3, 0);
+            this.FiltersTableLayoutPanel.Controls.Add(this.CommentCheckBox, 4, 0);
+            this.FiltersTableLayoutPanel.Controls.Add(this.StoryIDFilterCheckBox, 2, 1);
+            this.FiltersTableLayoutPanel.Controls.Add(this.TagsCheckBox, 3, 1);
+            this.FiltersTableLayoutPanel.Controls.Add(this.EverythingCheckBox, 4, 1);
+            this.FiltersTableLayoutPanel.Location = new System.Drawing.Point(16, 28);
+            this.FiltersTableLayoutPanel.Name = "FiltersTableLayoutPanel";
+            this.FiltersTableLayoutPanel.RowCount = 2;
+            this.FiltersTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.FiltersTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.FiltersTableLayoutPanel.Size = new System.Drawing.Size(952, 49);
+            this.FiltersTableLayoutPanel.TabIndex = 3;
+            // 
+            // FilterLabel
+            // 
+            this.FilterLabel.AutoSize = true;
+            this.FilterLabel.Location = new System.Drawing.Point(3, 0);
+            this.FilterLabel.Name = "FilterLabel";
+            this.FilterLabel.Size = new System.Drawing.Size(31, 13);
+            this.FilterLabel.TabIndex = 0;
+            this.FilterLabel.Text = "Filter";
+            // 
+            // FlavorLabel
+            // 
+            this.FlavorLabel.AutoSize = true;
+            this.FlavorLabel.Location = new System.Drawing.Point(724, 0);
+            this.FlavorLabel.Name = "FlavorLabel";
+            this.FlavorLabel.Size = new System.Drawing.Size(37, 13);
+            this.FlavorLabel.TabIndex = 1;
+            this.FlavorLabel.Text = "Flavor";
+            // 
+            // FilterTextBox
+            // 
+            this.FilterTextBox.Location = new System.Drawing.Point(52, 3);
+            this.FilterTextBox.Name = "FilterTextBox";
+            this.FilterTextBox.Size = new System.Drawing.Size(156, 20);
+            this.FilterTextBox.TabIndex = 2;
+            // 
+            // NameFilterCheckBox
+            // 
+            this.NameFilterCheckBox.AutoSize = true;
+            this.NameFilterCheckBox.Location = new System.Drawing.Point(214, 3);
+            this.NameFilterCheckBox.Name = "NameFilterCheckBox";
+            this.NameFilterCheckBox.Size = new System.Drawing.Size(53, 17);
+            this.NameFilterCheckBox.TabIndex = 3;
+            this.NameFilterCheckBox.Text = "Name";
+            this.NameFilterCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // DescriptionCheckBox
+            // 
+            this.DescriptionCheckBox.AutoSize = true;
+            this.DescriptionCheckBox.Location = new System.Drawing.Point(343, 3);
+            this.DescriptionCheckBox.Name = "DescriptionCheckBox";
+            this.DescriptionCheckBox.Size = new System.Drawing.Size(79, 17);
+            this.DescriptionCheckBox.TabIndex = 4;
+            this.DescriptionCheckBox.Text = "Description";
+            this.DescriptionCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // CommentCheckBox
+            // 
+            this.CommentCheckBox.AutoSize = true;
+            this.CommentCheckBox.Location = new System.Drawing.Point(479, 3);
+            this.CommentCheckBox.Name = "CommentCheckBox";
+            this.CommentCheckBox.Size = new System.Drawing.Size(71, 17);
+            this.CommentCheckBox.TabIndex = 5;
+            this.CommentCheckBox.Text = "Comment";
+            this.CommentCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // StoryIDFilterCheckBox
+            // 
+            this.StoryIDFilterCheckBox.AutoSize = true;
+            this.StoryIDFilterCheckBox.Location = new System.Drawing.Point(214, 27);
+            this.StoryIDFilterCheckBox.Name = "StoryIDFilterCheckBox";
+            this.StoryIDFilterCheckBox.Size = new System.Drawing.Size(66, 17);
+            this.StoryIDFilterCheckBox.TabIndex = 6;
+            this.StoryIDFilterCheckBox.Text = "Story ID";
+            this.StoryIDFilterCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // TagsCheckBox
+            // 
+            this.TagsCheckBox.AutoSize = true;
+            this.TagsCheckBox.Location = new System.Drawing.Point(343, 27);
+            this.TagsCheckBox.Name = "TagsCheckBox";
+            this.TagsCheckBox.Size = new System.Drawing.Size(49, 17);
+            this.TagsCheckBox.TabIndex = 7;
+            this.TagsCheckBox.Text = "Tags";
+            this.TagsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // EverythingCheckBox
+            // 
+            this.EverythingCheckBox.AutoSize = true;
+            this.EverythingCheckBox.Location = new System.Drawing.Point(479, 27);
+            this.EverythingCheckBox.Name = "EverythingCheckBox";
+            this.EverythingCheckBox.Size = new System.Drawing.Size(77, 17);
+            this.EverythingCheckBox.TabIndex = 8;
+            this.EverythingCheckBox.Text = "checkBox6";
+            this.EverythingCheckBox.UseVisualStyleBackColor = true;
             // 
             // EditorForm
             // 
@@ -461,7 +574,7 @@ namespace Scribe
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 761);
-            this.Controls.Add(this.SearchLayoutPanel);
+            this.Controls.Add(this.FiltersTableLayoutPanel);
             this.Controls.Add(this.EditorTabs);
             this.Controls.Add(this.EditorStatusStrip);
             this.Controls.Add(this.MainMenuBar);
@@ -475,6 +588,8 @@ namespace Scribe
             this.MainMenuBar.ResumeLayout(false);
             this.MainMenuBar.PerformLayout();
             this.EditorTabs.ResumeLayout(false);
+            this.FiltersTableLayoutPanel.ResumeLayout(false);
+            this.FiltersTableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -525,7 +640,16 @@ namespace Scribe
         private System.Windows.Forms.TabPage RoomsTabPage;
         private System.Windows.Forms.TabPage ScriptsTabPage;
         private System.Windows.Forms.TabPage LibraryTabPage;
-        private System.Windows.Forms.FlowLayoutPanel SearchLayoutPanel;
+        private System.Windows.Forms.TableLayoutPanel FiltersTableLayoutPanel;
+        private System.Windows.Forms.Label FilterLabel;
+        private System.Windows.Forms.Label FlavorLabel;
+        private System.Windows.Forms.TextBox FilterTextBox;
+        private System.Windows.Forms.CheckBox NameFilterCheckBox;
+        private System.Windows.Forms.CheckBox DescriptionCheckBox;
+        private System.Windows.Forms.CheckBox CommentCheckBox;
+        private System.Windows.Forms.CheckBox StoryIDFilterCheckBox;
+        private System.Windows.Forms.CheckBox TagsCheckBox;
+        private System.Windows.Forms.CheckBox EverythingCheckBox;
     }
 }
 
