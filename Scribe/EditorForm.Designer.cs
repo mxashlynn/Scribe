@@ -67,12 +67,6 @@ namespace Scribe
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditorTabs = new System.Windows.Forms.TabControl();
             this.GameTabPage = new System.Windows.Forms.TabPage();
-            this.LibraryInfoGroupBox = new System.Windows.Forms.GroupBox();
-            this.LibraryInfoTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.VersionLabel = new System.Windows.Forms.Label();
-            this.VersionExample = new System.Windows.Forms.Label();
-            this.WorkingDirectoryLabel = new System.Windows.Forms.Label();
-            this.WorkingDirectoryExample = new System.Windows.Forms.Label();
             this.FileFormatGroupBox = new System.Windows.Forms.GroupBox();
             this.FileFormatTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.PrimaryDelimiterLabel = new System.Windows.Forms.Label();
@@ -91,6 +85,12 @@ namespace Scribe
             this.DimensionalDelimiterExample = new System.Windows.Forms.Label();
             this.DimensionalTerminatorLabel = new System.Windows.Forms.Label();
             this.DimensionalTerminatorExample = new System.Windows.Forms.Label();
+            this.LibraryInfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.LibraryInfoTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.VersionLabel = new System.Windows.Forms.Label();
+            this.VersionExample = new System.Windows.Forms.Label();
+            this.WorkingDirectoryLabel = new System.Windows.Forms.Label();
+            this.WorkingDirectoryExample = new System.Windows.Forms.Label();
             this.BeingsTabPage = new System.Windows.Forms.TabPage();
             this.BiomesTabPage = new System.Windows.Forms.TabPage();
             this.CraftingTabPage = new System.Windows.Forms.TabPage();
@@ -131,6 +131,8 @@ namespace Scribe
             this.GameTabPage.SuspendLayout();
             this.FileFormatGroupBox.SuspendLayout();
             this.FileFormatTableLayoutPanel.SuspendLayout();
+            this.LibraryInfoGroupBox.SuspendLayout();
+            this.LibraryInfoTableLayoutPanel.SuspendLayout();
             this.FiltersTableLayoutPanel.SuspendLayout();
             this.FilterGroupBox.SuspendLayout();
             this.FlavorFilterGroupBox.SuspendLayout();
@@ -458,76 +460,6 @@ namespace Scribe
             this.GameTabPage.TabIndex = 0;
             this.GameTabPage.Text = "Game";
             // 
-            // LibraryInfoGroupBox
-            // 
-            this.LibraryInfoGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LibraryInfoGroupBox.Controls.Add(this.LibraryInfoTableLayoutPanel);
-            this.LibraryInfoGroupBox.Location = new System.Drawing.Point(6, 496);
-            this.LibraryInfoGroupBox.Name = "LibraryInfoGroupBox";
-            this.LibraryInfoGroupBox.Size = new System.Drawing.Size(289, 100);
-            this.LibraryInfoGroupBox.TabIndex = 0;
-            this.LibraryInfoGroupBox.TabStop = false;
-            this.LibraryInfoGroupBox.Text = "Library Info";
-            // 
-            // LibraryInfoTableLayoutPanel
-            // 
-            this.LibraryInfoTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LibraryInfoTableLayoutPanel.ColumnCount = 2;
-            this.LibraryInfoTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.LibraryInfoTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.LibraryInfoTableLayoutPanel.Controls.Add(this.VersionLabel, 0, 0);
-            this.LibraryInfoTableLayoutPanel.Controls.Add(this.VersionExample, 1, 0);
-            this.LibraryInfoTableLayoutPanel.Controls.Add(this.WorkingDirectoryLabel, 2, 0);
-            this.LibraryInfoTableLayoutPanel.Controls.Add(this.WorkingDirectoryExample, 3, 0);
-            this.LibraryInfoTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
-            this.LibraryInfoTableLayoutPanel.Name = "LibraryInfoTableLayoutPanel";
-            this.LibraryInfoTableLayoutPanel.RowCount = 2;
-            this.LibraryInfoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.LibraryInfoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            // 
-            // VersionLabel
-            // 
-            this.VersionLabel.AutoSize = true;
-            this.VersionLabel.Location = new System.Drawing.Point(50, 5);
-            this.VersionLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.VersionLabel.Name = "VersionLabel";
-            this.VersionLabel.Size = new System.Drawing.Size(87, 13);
-            this.VersionLabel.TabIndex = 0;
-            this.VersionLabel.Text = "Version";
-            // 
-            // VersionExample
-            // 
-            this.VersionExample.AutoSize = true;
-            this.VersionExample.Location = new System.Drawing.Point(179, 5);
-            this.VersionExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.VersionExample.Name = "VersionExample";
-            this.VersionExample.Size = new System.Drawing.Size(11, 13);
-            this.VersionExample.TabIndex = 1;
-            this.VersionExample.Text = "0.0.0";
-            // 
-            // WorkingDirectoryLabel
-            // 
-            this.WorkingDirectoryLabel.AutoSize = true;
-            this.WorkingDirectoryLabel.Location = new System.Drawing.Point(50, 5);
-            this.WorkingDirectoryLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.WorkingDirectoryLabel.Name = "WorkingDirectoryLabel";
-            this.WorkingDirectoryLabel.Size = new System.Drawing.Size(87, 13);
-            this.WorkingDirectoryLabel.TabIndex = 0;
-            this.WorkingDirectoryLabel.Text = "Working Directory";
-            // 
-            // WorkingDirectoryExample
-            // 
-            this.WorkingDirectoryExample.AutoSize = true;
-            this.WorkingDirectoryExample.Location = new System.Drawing.Point(179, 5);
-            this.WorkingDirectoryExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.WorkingDirectoryExample.Name = "WorkingDirectoryExample";
-            this.WorkingDirectoryExample.Size = new System.Drawing.Size(11, 13);
-            this.WorkingDirectoryExample.TabIndex = 1;
-            this.WorkingDirectoryExample.Text = "C:\\";
-            // 
             // FileFormatGroupBox
             // 
             this.FileFormatGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -736,6 +668,78 @@ namespace Scribe
             this.DimensionalTerminatorExample.Size = new System.Drawing.Size(15, 13);
             this.DimensionalTerminatorExample.TabIndex = 15;
             this.DimensionalTerminatorExample.Text = "≡";
+            // 
+            // LibraryInfoGroupBox
+            // 
+            this.LibraryInfoGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LibraryInfoGroupBox.Controls.Add(this.LibraryInfoTableLayoutPanel);
+            this.LibraryInfoGroupBox.Location = new System.Drawing.Point(6, 496);
+            this.LibraryInfoGroupBox.Name = "LibraryInfoGroupBox";
+            this.LibraryInfoGroupBox.Size = new System.Drawing.Size(289, 100);
+            this.LibraryInfoGroupBox.TabIndex = 0;
+            this.LibraryInfoGroupBox.TabStop = false;
+            this.LibraryInfoGroupBox.Text = "Library Info";
+            // 
+            // LibraryInfoTableLayoutPanel
+            // 
+            this.LibraryInfoTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LibraryInfoTableLayoutPanel.ColumnCount = 2;
+            this.LibraryInfoTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.LibraryInfoTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.LibraryInfoTableLayoutPanel.Controls.Add(this.VersionLabel, 0, 0);
+            this.LibraryInfoTableLayoutPanel.Controls.Add(this.VersionExample, 1, 0);
+            this.LibraryInfoTableLayoutPanel.Controls.Add(this.WorkingDirectoryLabel, 2, 0);
+            this.LibraryInfoTableLayoutPanel.Controls.Add(this.WorkingDirectoryExample, 3, 0);
+            this.LibraryInfoTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
+            this.LibraryInfoTableLayoutPanel.Name = "LibraryInfoTableLayoutPanel";
+            this.LibraryInfoTableLayoutPanel.RowCount = 2;
+            this.LibraryInfoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.LibraryInfoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.LibraryInfoTableLayoutPanel.Size = new System.Drawing.Size(289, 100);
+            this.LibraryInfoTableLayoutPanel.TabIndex = 0;
+            // 
+            // VersionLabel
+            // 
+            this.VersionLabel.AutoSize = true;
+            this.VersionLabel.Location = new System.Drawing.Point(50, 5);
+            this.VersionLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.VersionLabel.Name = "VersionLabel";
+            this.VersionLabel.Size = new System.Drawing.Size(42, 13);
+            this.VersionLabel.TabIndex = 0;
+            this.VersionLabel.Text = "Version";
+            // 
+            // VersionExample
+            // 
+            this.VersionExample.AutoSize = true;
+            this.VersionExample.Location = new System.Drawing.Point(147, 5);
+            this.VersionExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.VersionExample.Name = "VersionExample";
+            this.VersionExample.Size = new System.Drawing.Size(33, 13);
+            this.VersionExample.TabIndex = 1;
+            this.VersionExample.Text = "0.0.0";
+            // 
+            // WorkingDirectoryLabel
+            // 
+            this.WorkingDirectoryLabel.AutoSize = true;
+            this.WorkingDirectoryLabel.Location = new System.Drawing.Point(50, 55);
+            this.WorkingDirectoryLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.WorkingDirectoryLabel.Name = "WorkingDirectoryLabel";
+            this.WorkingDirectoryLabel.Size = new System.Drawing.Size(51, 26);
+            this.WorkingDirectoryLabel.TabIndex = 0;
+            this.WorkingDirectoryLabel.Text = "Working Directory";
+            // 
+            // WorkingDirectoryExample
+            // 
+            this.WorkingDirectoryExample.AutoSize = true;
+            this.WorkingDirectoryExample.Location = new System.Drawing.Point(147, 55);
+            this.WorkingDirectoryExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.WorkingDirectoryExample.Name = "WorkingDirectoryExample";
+            this.WorkingDirectoryExample.Size = new System.Drawing.Size(22, 13);
+            this.WorkingDirectoryExample.TabIndex = 1;
+            this.WorkingDirectoryExample.Text = "C:\\";
             // 
             // BeingsTabPage
             // 
@@ -1201,6 +1205,9 @@ namespace Scribe
             this.FileFormatGroupBox.ResumeLayout(false);
             this.FileFormatTableLayoutPanel.ResumeLayout(false);
             this.FileFormatTableLayoutPanel.PerformLayout();
+            this.LibraryInfoGroupBox.ResumeLayout(false);
+            this.LibraryInfoTableLayoutPanel.ResumeLayout(false);
+            this.LibraryInfoTableLayoutPanel.PerformLayout();
             this.FiltersTableLayoutPanel.ResumeLayout(false);
             this.FiltersTableLayoutPanel.PerformLayout();
             this.FilterGroupBox.ResumeLayout(false);
