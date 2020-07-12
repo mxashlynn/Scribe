@@ -101,9 +101,12 @@ namespace Scribe
             this.SaltySelector = new System.Windows.Forms.Label();
             this.NumbingSelector = new System.Windows.Forms.Label();
             this.AllFlavorsSelector = new System.Windows.Forms.Label();
+            this.LibraryInfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.FileFormatGroupBox = new System.Windows.Forms.GroupBox();
             this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
             this.EditorTabs.SuspendLayout();
+            this.GameTabPage.SuspendLayout();
             this.FiltersTableLayoutPanel.SuspendLayout();
             this.FilterGroupBox.SuspendLayout();
             this.FlavorFilterGroupBox.SuspendLayout();
@@ -422,6 +425,8 @@ namespace Scribe
             // 
             // GameTabPage
             // 
+            this.GameTabPage.Controls.Add(this.FileFormatGroupBox);
+            this.GameTabPage.Controls.Add(this.LibraryInfoGroupBox);
             this.GameTabPage.Location = new System.Drawing.Point(4, 22);
             this.GameTabPage.Name = "GameTabPage";
             this.GameTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -864,6 +869,28 @@ namespace Scribe
             this.AllFlavorsSelector.TabIndex = 0;
             this.AllFlavorsSelector.Text = "(All)";
             // 
+            // LibraryInfoGroupBox
+            // 
+            this.LibraryInfoGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LibraryInfoGroupBox.Location = new System.Drawing.Point(6, 496);
+            this.LibraryInfoGroupBox.Name = "LibraryInfoGroupBox";
+            this.LibraryInfoGroupBox.Size = new System.Drawing.Size(289, 100);
+            this.LibraryInfoGroupBox.TabIndex = 0;
+            this.LibraryInfoGroupBox.TabStop = false;
+            this.LibraryInfoGroupBox.Text = "Library Info";
+            // 
+            // FileFormatGroupBox
+            // 
+            this.FileFormatGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FileFormatGroupBox.Location = new System.Drawing.Point(301, 499);
+            this.FileFormatGroupBox.Name = "FileFormatGroupBox";
+            this.FileFormatGroupBox.Size = new System.Drawing.Size(645, 97);
+            this.FileFormatGroupBox.TabIndex = 0;
+            this.FileFormatGroupBox.TabStop = false;
+            this.FileFormatGroupBox.Text = "File Format";
+            // 
             // EditorForm
             // 
             this.AccessibleDescription = "The primary interactive editor window.";
@@ -889,6 +916,7 @@ namespace Scribe
             this.MainMenuBar.ResumeLayout(false);
             this.MainMenuBar.PerformLayout();
             this.EditorTabs.ResumeLayout(false);
+            this.GameTabPage.ResumeLayout(false);
             this.FiltersTableLayoutPanel.ResumeLayout(false);
             this.FiltersTableLayoutPanel.PerformLayout();
             this.FilterGroupBox.ResumeLayout(false);
@@ -972,6 +1000,8 @@ namespace Scribe
         private System.Windows.Forms.Label AllFlavorsSelector;
         private System.Windows.Forms.ToolStripStatusLabel MainToolStripStatusLabel;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private System.Windows.Forms.GroupBox LibraryInfoGroupBox;
+        private System.Windows.Forms.GroupBox FileFormatGroupBox;
     }
 }
 
