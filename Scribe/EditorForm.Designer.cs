@@ -103,6 +103,7 @@ namespace Scribe
             this.AllFlavorsSelector = new System.Windows.Forms.Label();
             this.LibraryInfoGroupBox = new System.Windows.Forms.GroupBox();
             this.FileFormatGroupBox = new System.Windows.Forms.GroupBox();
+            this.FileFormatTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
             this.EditorTabs.SuspendLayout();
@@ -111,6 +112,7 @@ namespace Scribe
             this.FilterGroupBox.SuspendLayout();
             this.FlavorFilterGroupBox.SuspendLayout();
             this.FlavorTableLayoutPanel.SuspendLayout();
+            this.FileFormatGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // EditorStatusStrip
@@ -884,12 +886,34 @@ namespace Scribe
             // 
             this.FileFormatGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.FileFormatGroupBox.Controls.Add(this.FileFormatTableLayoutPanel);
             this.FileFormatGroupBox.Location = new System.Drawing.Point(301, 499);
             this.FileFormatGroupBox.Name = "FileFormatGroupBox";
             this.FileFormatGroupBox.Size = new System.Drawing.Size(645, 97);
             this.FileFormatGroupBox.TabIndex = 0;
             this.FileFormatGroupBox.TabStop = false;
             this.FileFormatGroupBox.Text = "File Format";
+            // 
+            // FileFormatTableLayoutPanel
+            // 
+            this.FileFormatTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FileFormatTableLayoutPanel.ColumnCount = 6;
+            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.83792F));
+            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.495411F));
+            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.83792F));
+            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.495411F));
+            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.83792F));
+            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.495411F));
+            this.FileFormatTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
+            this.FileFormatTableLayoutPanel.Name = "FileFormatTableLayoutPanel";
+            this.FileFormatTableLayoutPanel.RowCount = 3;
+            this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.FileFormatTableLayoutPanel.Size = new System.Drawing.Size(633, 72);
+            this.FileFormatTableLayoutPanel.TabIndex = 1;
             // 
             // EditorForm
             // 
@@ -923,6 +947,7 @@ namespace Scribe
             this.FlavorFilterGroupBox.ResumeLayout(false);
             this.FlavorTableLayoutPanel.ResumeLayout(false);
             this.FlavorTableLayoutPanel.PerformLayout();
+            this.FileFormatGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1002,6 +1027,7 @@ namespace Scribe
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         private System.Windows.Forms.GroupBox LibraryInfoGroupBox;
         private System.Windows.Forms.GroupBox FileFormatGroupBox;
+        private System.Windows.Forms.TableLayoutPanel FileFormatTableLayoutPanel;
     }
 }
 
