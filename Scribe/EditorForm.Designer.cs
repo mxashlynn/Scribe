@@ -505,140 +505,140 @@ namespace Scribe
             // PrimaryDelimiterLabel
             // 
             this.PrimaryDelimiterLabel.AutoSize = true;
-            this.PrimaryDelimiterLabel.Location = new System.Drawing.Point(3, 0);
+            this.PrimaryDelimiterLabel.Location = new System.Drawing.Point(50, 5);
             this.PrimaryDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
             this.PrimaryDelimiterLabel.Name = "PrimaryDelimiterLabel";
-            this.PrimaryDelimiterLabel.Size = new System.Drawing.Size(35, 13);
+            this.PrimaryDelimiterLabel.Size = new System.Drawing.Size(87, 13);
             this.PrimaryDelimiterLabel.TabIndex = 0;
             this.PrimaryDelimiterLabel.Text = "Primary Delimiter";
             // 
             // PrimaryDelimiterExample
             // 
             this.PrimaryDelimiterExample.AutoSize = true;
-            this.PrimaryDelimiterExample.Location = new System.Drawing.Point(179, 0);
+            this.PrimaryDelimiterExample.Location = new System.Drawing.Point(179, 5);
             this.PrimaryDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.PrimaryDelimiterExample.Name = "PrimaryDelimiterExample";
-            this.PrimaryDelimiterExample.Size = new System.Drawing.Size(27, 23);
+            this.PrimaryDelimiterExample.Size = new System.Drawing.Size(11, 13);
             this.PrimaryDelimiterExample.TabIndex = 1;
             this.PrimaryDelimiterExample.Text = ",";
             // 
             // SecondaryDelimiterLabel
             // 
             this.SecondaryDelimiterLabel.AutoSize = true;
-            this.SecondaryDelimiterLabel.Location = new System.Drawing.Point(213, 0);
+            this.SecondaryDelimiterLabel.Location = new System.Drawing.Point(260, 5);
             this.SecondaryDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
             this.SecondaryDelimiterLabel.Name = "SecondaryDelimiterLabel";
-            this.SecondaryDelimiterLabel.Size = new System.Drawing.Size(35, 13);
+            this.SecondaryDelimiterLabel.Size = new System.Drawing.Size(102, 13);
             this.SecondaryDelimiterLabel.TabIndex = 2;
             this.SecondaryDelimiterLabel.Text = "Secondary Delimiter";
             // 
             // SecondaryDelimiterExample
             // 
             this.SecondaryDelimiterExample.AutoSize = true;
-            this.SecondaryDelimiterExample.Location = new System.Drawing.Point(389, 0);
+            this.SecondaryDelimiterExample.Location = new System.Drawing.Point(389, 5);
             this.SecondaryDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.SecondaryDelimiterExample.Name = "SecondaryDelimiterExample";
-            this.SecondaryDelimiterExample.Size = new System.Drawing.Size(27, 23);
+            this.SecondaryDelimiterExample.Size = new System.Drawing.Size(18, 13);
             this.SecondaryDelimiterExample.TabIndex = 3;
             this.SecondaryDelimiterExample.Text = "∟";
             // 
             // InternalDelimiterLabel
             // 
             this.InternalDelimiterLabel.AutoSize = true;
-            this.InternalDelimiterLabel.Location = new System.Drawing.Point(423, 0);
+            this.InternalDelimiterLabel.Location = new System.Drawing.Point(470, 5);
             this.InternalDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
             this.InternalDelimiterLabel.Name = "InternalDelimiterLabel";
-            this.InternalDelimiterLabel.Size = new System.Drawing.Size(35, 13);
+            this.InternalDelimiterLabel.Size = new System.Drawing.Size(111, 13);
             this.InternalDelimiterLabel.TabIndex = 4;
             this.InternalDelimiterLabel.Text = "InternalDelimiterLabel";
             // 
             // InternalDelimiterExample
             // 
             this.InternalDelimiterExample.AutoSize = true;
-            this.InternalDelimiterExample.Location = new System.Drawing.Point(599, 0);
+            this.InternalDelimiterExample.Location = new System.Drawing.Point(599, 5);
             this.InternalDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.InternalDelimiterExample.Name = "InternalDelimiterExample";
-            this.InternalDelimiterExample.Size = new System.Drawing.Size(29, 23);
+            this.InternalDelimiterExample.Size = new System.Drawing.Size(11, 13);
             this.InternalDelimiterExample.TabIndex = 5;
             this.InternalDelimiterExample.Text = "·";
             // 
             // ElementDelimiterLabel
             // 
             this.ElementDelimiterLabel.AutoSize = true;
-            this.ElementDelimiterLabel.Location = new System.Drawing.Point(3, 23);
+            this.ElementDelimiterLabel.Location = new System.Drawing.Point(50, 28);
             this.ElementDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
             this.ElementDelimiterLabel.Name = "ElementDelimiterLabel";
-            this.ElementDelimiterLabel.Size = new System.Drawing.Size(35, 13);
+            this.ElementDelimiterLabel.Size = new System.Drawing.Size(89, 13);
             this.ElementDelimiterLabel.TabIndex = 6;
             this.ElementDelimiterLabel.Text = "Element Delimiter";
             // 
             // ElementDelimiterExample
             // 
             this.ElementDelimiterExample.AutoSize = true;
-            this.ElementDelimiterExample.Location = new System.Drawing.Point(179, 23);
+            this.ElementDelimiterExample.Location = new System.Drawing.Point(179, 28);
             this.ElementDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.ElementDelimiterExample.Name = "ElementDelimiterExample";
-            this.ElementDelimiterExample.Size = new System.Drawing.Size(27, 23);
+            this.ElementDelimiterExample.Size = new System.Drawing.Size(13, 13);
             this.ElementDelimiterExample.TabIndex = 7;
             this.ElementDelimiterExample.Text = "–";
             // 
             // NameDelimiterLabel
             // 
             this.NameDelimiterLabel.AutoSize = true;
-            this.NameDelimiterLabel.Location = new System.Drawing.Point(213, 23);
+            this.NameDelimiterLabel.Location = new System.Drawing.Point(260, 28);
             this.NameDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
             this.NameDelimiterLabel.Name = "NameDelimiterLabel";
-            this.NameDelimiterLabel.Size = new System.Drawing.Size(35, 13);
+            this.NameDelimiterLabel.Size = new System.Drawing.Size(78, 13);
             this.NameDelimiterLabel.TabIndex = 8;
             this.NameDelimiterLabel.Text = "Name Delimiter";
             // 
             // NameDelimiterExample
             // 
             this.NameDelimiterExample.AutoSize = true;
-            this.NameDelimiterExample.Location = new System.Drawing.Point(389, 23);
+            this.NameDelimiterExample.Location = new System.Drawing.Point(389, 28);
             this.NameDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.NameDelimiterExample.Name = "NameDelimiterExample";
-            this.NameDelimiterExample.Size = new System.Drawing.Size(27, 23);
+            this.NameDelimiterExample.Size = new System.Drawing.Size(13, 13);
             this.NameDelimiterExample.TabIndex = 9;
             this.NameDelimiterExample.Text = "§";
             // 
             // PronounDelimiterLabel
             // 
             this.PronounDelimiterLabel.AutoSize = true;
-            this.PronounDelimiterLabel.Location = new System.Drawing.Point(423, 23);
+            this.PronounDelimiterLabel.Location = new System.Drawing.Point(470, 28);
             this.PronounDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
             this.PronounDelimiterLabel.Name = "PronounDelimiterLabel";
-            this.PronounDelimiterLabel.Size = new System.Drawing.Size(41, 13);
+            this.PronounDelimiterLabel.Size = new System.Drawing.Size(91, 13);
             this.PronounDelimiterLabel.TabIndex = 10;
             this.PronounDelimiterLabel.Text = "Pronoun Delimiter";
             // 
             // PronounDelimiterExample
             // 
             this.PronounDelimiterExample.AutoSize = true;
-            this.PronounDelimiterExample.Location = new System.Drawing.Point(599, 23);
+            this.PronounDelimiterExample.Location = new System.Drawing.Point(599, 28);
             this.PronounDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.PronounDelimiterExample.Name = "PronounDelimiterExample";
-            this.PronounDelimiterExample.Size = new System.Drawing.Size(29, 23);
+            this.PronounDelimiterExample.Size = new System.Drawing.Size(11, 13);
             this.PronounDelimiterExample.TabIndex = 11;
             this.PronounDelimiterExample.Text = "|";
             // 
             // DimensionalDelimiterLabel
             // 
             this.DimensionalDelimiterLabel.AutoSize = true;
-            this.DimensionalDelimiterLabel.Location = new System.Drawing.Point(3, 46);
+            this.DimensionalDelimiterLabel.Location = new System.Drawing.Point(50, 51);
             this.DimensionalDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
             this.DimensionalDelimiterLabel.Name = "DimensionalDelimiterLabel";
-            this.DimensionalDelimiterLabel.Size = new System.Drawing.Size(41, 13);
+            this.DimensionalDelimiterLabel.Size = new System.Drawing.Size(107, 13);
             this.DimensionalDelimiterLabel.TabIndex = 12;
             this.DimensionalDelimiterLabel.Text = "Dimensional Delimiter";
             // 
             // DimensionalDelimiterExample
             // 
             this.DimensionalDelimiterExample.AutoSize = true;
-            this.DimensionalDelimiterExample.Location = new System.Drawing.Point(179, 46);
+            this.DimensionalDelimiterExample.Location = new System.Drawing.Point(179, 51);
             this.DimensionalDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.DimensionalDelimiterExample.Name = "DimensionalDelimiterExample";
-            this.DimensionalDelimiterExample.Size = new System.Drawing.Size(27, 26);
+            this.DimensionalDelimiterExample.Size = new System.Drawing.Size(15, 13);
             this.DimensionalDelimiterExample.TabIndex = 13;
             this.DimensionalDelimiterExample.Text = "×";
             // 
@@ -655,11 +655,10 @@ namespace Scribe
             // DimensionalTerminatorExample
             // 
             this.DimensionalTerminatorExample.AutoSize = true;
-            this.DimensionalTerminatorExample.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.DimensionalTerminatorExample.Location = new System.Drawing.Point(389, 51);
             this.DimensionalTerminatorExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.DimensionalTerminatorExample.Name = "DimensionalTerminatorExample";
-            this.DimensionalTerminatorExample.Size = new System.Drawing.Size(18, 16);
+            this.DimensionalTerminatorExample.Size = new System.Drawing.Size(15, 13);
             this.DimensionalTerminatorExample.TabIndex = 15;
             this.DimensionalTerminatorExample.Text = "≡";
             // 
