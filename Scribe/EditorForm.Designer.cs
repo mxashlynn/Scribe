@@ -99,7 +99,6 @@ namespace Scribe
             this.ParquetsTabPage = new System.Windows.Forms.TabPage();
             this.RoomsTabPage = new System.Windows.Forms.TabPage();
             this.ScriptsTabPage = new System.Windows.Forms.TabPage();
-            this.LibraryTabPage = new System.Windows.Forms.TabPage();
             this.FiltersTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.FilterTextBox = new System.Windows.Forms.TextBox();
             this.NameFilterCheckBox = new System.Windows.Forms.CheckBox();
@@ -442,10 +441,9 @@ namespace Scribe
             this.EditorTabs.Controls.Add(this.ParquetsTabPage);
             this.EditorTabs.Controls.Add(this.RoomsTabPage);
             this.EditorTabs.Controls.Add(this.ScriptsTabPage);
-            this.EditorTabs.Controls.Add(this.LibraryTabPage);
             this.EditorTabs.Location = new System.Drawing.Point(12, 111);
             this.EditorTabs.Name = "EditorTabs";
-            this.EditorTabs.SelectedIndex = 0;
+            this.EditorTabs.SelectedIndex = 9;
             this.EditorTabs.Size = new System.Drawing.Size(960, 625);
             this.EditorTabs.TabIndex = 2;
             // 
@@ -812,15 +810,6 @@ namespace Scribe
             this.ScriptsTabPage.Size = new System.Drawing.Size(952, 599);
             this.ScriptsTabPage.TabIndex = 8;
             this.ScriptsTabPage.Text = "Scripting";
-            // 
-            // LibraryTabPage
-            // 
-            this.LibraryTabPage.BackColor = System.Drawing.Color.Transparent;
-            this.LibraryTabPage.Location = new System.Drawing.Point(4, 22);
-            this.LibraryTabPage.Name = "LibraryTabPage";
-            this.LibraryTabPage.Size = new System.Drawing.Size(952, 599);
-            this.LibraryTabPage.TabIndex = 9;
-            this.LibraryTabPage.Text = "Library";
             // 
             // FiltersTableLayoutPanel
             // 
@@ -1263,7 +1252,6 @@ namespace Scribe
         private System.Windows.Forms.TabPage ParquetsTabPage;
         private System.Windows.Forms.TabPage RoomsTabPage;
         private System.Windows.Forms.TabPage ScriptsTabPage;
-        private System.Windows.Forms.TabPage LibraryTabPage;
         private System.Windows.Forms.TableLayoutPanel FiltersTableLayoutPanel;
         private System.Windows.Forms.TextBox FilterTextBox;
         private System.Windows.Forms.CheckBox NameFilterCheckBox;
