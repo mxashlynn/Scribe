@@ -685,8 +685,8 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LibraryInfoTableLayoutPanel.ColumnCount = 2;
-            this.LibraryInfoTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.LibraryInfoTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.LibraryInfoTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.LibraryInfoTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
             this.LibraryInfoTableLayoutPanel.Controls.Add(this.VersionLabel, 0, 0);
             this.LibraryInfoTableLayoutPanel.Controls.Add(this.VersionExample, 1, 0);
             this.LibraryInfoTableLayoutPanel.Controls.Add(this.WorkingDirectoryLabel, 2, 0);
@@ -696,46 +696,58 @@ namespace Scribe
             this.LibraryInfoTableLayoutPanel.RowCount = 2;
             this.LibraryInfoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.LibraryInfoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.LibraryInfoTableLayoutPanel.Size = new System.Drawing.Size(289, 100);
+            this.LibraryInfoTableLayoutPanel.Size = new System.Drawing.Size(277, 75);
             this.LibraryInfoTableLayoutPanel.TabIndex = 0;
             // 
             // VersionLabel
             // 
+            this.VersionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.VersionLabel.AutoSize = true;
-            this.VersionLabel.Location = new System.Drawing.Point(50, 5);
-            this.VersionLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.VersionLabel.Location = new System.Drawing.Point(1, 1);
+            this.VersionLabel.Margin = new System.Windows.Forms.Padding(1);
             this.VersionLabel.Name = "VersionLabel";
-            this.VersionLabel.Size = new System.Drawing.Size(42, 13);
+            this.VersionLabel.Size = new System.Drawing.Size(67, 35);
             this.VersionLabel.TabIndex = 0;
             this.VersionLabel.Text = "Version";
             // 
             // VersionExample
             // 
+            this.VersionExample.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.VersionExample.AutoSize = true;
-            this.VersionExample.Location = new System.Drawing.Point(147, 5);
-            this.VersionExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.VersionExample.Location = new System.Drawing.Point(70, 1);
+            this.VersionExample.Margin = new System.Windows.Forms.Padding(1);
             this.VersionExample.Name = "VersionExample";
-            this.VersionExample.Size = new System.Drawing.Size(33, 13);
+            this.VersionExample.Size = new System.Drawing.Size(206, 35);
             this.VersionExample.TabIndex = 1;
             this.VersionExample.Text = "0.0.0";
             // 
             // WorkingDirectoryLabel
             // 
+            this.WorkingDirectoryLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.WorkingDirectoryLabel.AutoSize = true;
-            this.WorkingDirectoryLabel.Location = new System.Drawing.Point(50, 55);
-            this.WorkingDirectoryLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.WorkingDirectoryLabel.Location = new System.Drawing.Point(1, 38);
+            this.WorkingDirectoryLabel.Margin = new System.Windows.Forms.Padding(1);
             this.WorkingDirectoryLabel.Name = "WorkingDirectoryLabel";
-            this.WorkingDirectoryLabel.Size = new System.Drawing.Size(51, 26);
+            this.WorkingDirectoryLabel.Size = new System.Drawing.Size(67, 36);
             this.WorkingDirectoryLabel.TabIndex = 0;
             this.WorkingDirectoryLabel.Text = "Working Directory";
             // 
             // WorkingDirectoryExample
             // 
+            this.WorkingDirectoryExample.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.WorkingDirectoryExample.AutoSize = true;
-            this.WorkingDirectoryExample.Location = new System.Drawing.Point(147, 55);
-            this.WorkingDirectoryExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.WorkingDirectoryExample.Location = new System.Drawing.Point(70, 38);
+            this.WorkingDirectoryExample.Margin = new System.Windows.Forms.Padding(1);
             this.WorkingDirectoryExample.Name = "WorkingDirectoryExample";
-            this.WorkingDirectoryExample.Size = new System.Drawing.Size(22, 13);
+            this.WorkingDirectoryExample.Size = new System.Drawing.Size(206, 36);
             this.WorkingDirectoryExample.TabIndex = 1;
             this.WorkingDirectoryExample.Text = "C:\\";
             // 
