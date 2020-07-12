@@ -67,6 +67,25 @@ namespace Scribe
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditorTabs = new System.Windows.Forms.TabControl();
             this.GameTabPage = new System.Windows.Forms.TabPage();
+            this.FileFormatGroupBox = new System.Windows.Forms.GroupBox();
+            this.FileFormatTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.PrimaryDelimiterLabel = new System.Windows.Forms.Label();
+            this.PrimaryDelimiterExample = new System.Windows.Forms.Label();
+            this.SecondaryDelimiterLabel = new System.Windows.Forms.Label();
+            this.SecondaryDelimiterExample = new System.Windows.Forms.Label();
+            this.InternalDelimiterLabel = new System.Windows.Forms.Label();
+            this.InternalDelimiterExample = new System.Windows.Forms.Label();
+            this.ElementDelimiterLabel = new System.Windows.Forms.Label();
+            this.ElementDelimiterExample = new System.Windows.Forms.Label();
+            this.NameDelimiterLabel = new System.Windows.Forms.Label();
+            this.NameDelimiterExample = new System.Windows.Forms.Label();
+            this.PronounDelimiterLabel = new System.Windows.Forms.Label();
+            this.PronounDelimiterExample = new System.Windows.Forms.Label();
+            this.DimensionalDelimiterLabel = new System.Windows.Forms.Label();
+            this.DimensionalDelimiterExample = new System.Windows.Forms.Label();
+            this.DimensionalTerminatorLabel = new System.Windows.Forms.Label();
+            this.DimensionalTerminatorExample = new System.Windows.Forms.Label();
+            this.LibraryInfoGroupBox = new System.Windows.Forms.GroupBox();
             this.BeingsTabPage = new System.Windows.Forms.TabPage();
             this.BiomesTabPage = new System.Windows.Forms.TabPage();
             this.CraftingTabPage = new System.Windows.Forms.TabPage();
@@ -101,18 +120,16 @@ namespace Scribe
             this.SaltySelector = new System.Windows.Forms.Label();
             this.NumbingSelector = new System.Windows.Forms.Label();
             this.AllFlavorsSelector = new System.Windows.Forms.Label();
-            this.LibraryInfoGroupBox = new System.Windows.Forms.GroupBox();
-            this.FileFormatGroupBox = new System.Windows.Forms.GroupBox();
-            this.FileFormatTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
             this.EditorTabs.SuspendLayout();
             this.GameTabPage.SuspendLayout();
+            this.FileFormatGroupBox.SuspendLayout();
+            this.FileFormatTableLayoutPanel.SuspendLayout();
             this.FiltersTableLayoutPanel.SuspendLayout();
             this.FilterGroupBox.SuspendLayout();
             this.FlavorFilterGroupBox.SuspendLayout();
             this.FlavorTableLayoutPanel.SuspendLayout();
-            this.FileFormatGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // EditorStatusStrip
@@ -435,6 +452,227 @@ namespace Scribe
             this.GameTabPage.Size = new System.Drawing.Size(952, 599);
             this.GameTabPage.TabIndex = 0;
             this.GameTabPage.Text = "Game";
+            // 
+            // FileFormatGroupBox
+            // 
+            this.FileFormatGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FileFormatGroupBox.Controls.Add(this.FileFormatTableLayoutPanel);
+            this.FileFormatGroupBox.Location = new System.Drawing.Point(301, 499);
+            this.FileFormatGroupBox.Name = "FileFormatGroupBox";
+            this.FileFormatGroupBox.Size = new System.Drawing.Size(645, 97);
+            this.FileFormatGroupBox.TabIndex = 0;
+            this.FileFormatGroupBox.TabStop = false;
+            this.FileFormatGroupBox.Text = "File Format";
+            // 
+            // FileFormatTableLayoutPanel
+            // 
+            this.FileFormatTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FileFormatTableLayoutPanel.ColumnCount = 6;
+            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.83792F));
+            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.495411F));
+            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.83792F));
+            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.495411F));
+            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.83792F));
+            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.495411F));
+            this.FileFormatTableLayoutPanel.Controls.Add(this.PrimaryDelimiterLabel, 0, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.PrimaryDelimiterExample, 1, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.SecondaryDelimiterLabel, 2, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.SecondaryDelimiterExample, 3, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.InternalDelimiterLabel, 4, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.InternalDelimiterExample, 5, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.ElementDelimiterLabel, 0, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.ElementDelimiterExample, 1, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.NameDelimiterLabel, 2, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.NameDelimiterExample, 3, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.PronounDelimiterLabel, 4, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.PronounDelimiterExample, 5, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.DimensionalDelimiterLabel, 0, 2);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.DimensionalDelimiterExample, 1, 2);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.DimensionalTerminatorLabel, 2, 2);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.DimensionalTerminatorExample, 3, 2);
+            this.FileFormatTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
+            this.FileFormatTableLayoutPanel.Name = "FileFormatTableLayoutPanel";
+            this.FileFormatTableLayoutPanel.RowCount = 3;
+            this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.FileFormatTableLayoutPanel.Size = new System.Drawing.Size(633, 72);
+            this.FileFormatTableLayoutPanel.TabIndex = 1;
+            // 
+            // PrimaryDelimiterLabel
+            // 
+            this.PrimaryDelimiterLabel.AutoSize = true;
+            this.PrimaryDelimiterLabel.Location = new System.Drawing.Point(3, 0);
+            this.PrimaryDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.PrimaryDelimiterLabel.Name = "PrimaryDelimiterLabel";
+            this.PrimaryDelimiterLabel.Size = new System.Drawing.Size(35, 13);
+            this.PrimaryDelimiterLabel.TabIndex = 0;
+            this.PrimaryDelimiterLabel.Text = "Primary Delimiter";
+            // 
+            // PrimaryDelimiterExample
+            // 
+            this.PrimaryDelimiterExample.AutoSize = true;
+            this.PrimaryDelimiterExample.Location = new System.Drawing.Point(179, 0);
+            this.PrimaryDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.PrimaryDelimiterExample.Name = "PrimaryDelimiterExample";
+            this.PrimaryDelimiterExample.Size = new System.Drawing.Size(27, 23);
+            this.PrimaryDelimiterExample.TabIndex = 1;
+            this.PrimaryDelimiterExample.Text = ",";
+            // 
+            // SecondaryDelimiterLabel
+            // 
+            this.SecondaryDelimiterLabel.AutoSize = true;
+            this.SecondaryDelimiterLabel.Location = new System.Drawing.Point(213, 0);
+            this.SecondaryDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.SecondaryDelimiterLabel.Name = "SecondaryDelimiterLabel";
+            this.SecondaryDelimiterLabel.Size = new System.Drawing.Size(35, 13);
+            this.SecondaryDelimiterLabel.TabIndex = 2;
+            this.SecondaryDelimiterLabel.Text = "Secondary Delimiter";
+            // 
+            // SecondaryDelimiterExample
+            // 
+            this.SecondaryDelimiterExample.AutoSize = true;
+            this.SecondaryDelimiterExample.Location = new System.Drawing.Point(389, 0);
+            this.SecondaryDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.SecondaryDelimiterExample.Name = "SecondaryDelimiterExample";
+            this.SecondaryDelimiterExample.Size = new System.Drawing.Size(27, 23);
+            this.SecondaryDelimiterExample.TabIndex = 3;
+            this.SecondaryDelimiterExample.Text = "∟";
+            // 
+            // InternalDelimiterLabel
+            // 
+            this.InternalDelimiterLabel.AutoSize = true;
+            this.InternalDelimiterLabel.Location = new System.Drawing.Point(423, 0);
+            this.InternalDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.InternalDelimiterLabel.Name = "InternalDelimiterLabel";
+            this.InternalDelimiterLabel.Size = new System.Drawing.Size(35, 13);
+            this.InternalDelimiterLabel.TabIndex = 4;
+            this.InternalDelimiterLabel.Text = "InternalDelimiterLabel";
+            // 
+            // InternalDelimiterExample
+            // 
+            this.InternalDelimiterExample.AutoSize = true;
+            this.InternalDelimiterExample.Location = new System.Drawing.Point(599, 0);
+            this.InternalDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.InternalDelimiterExample.Name = "InternalDelimiterExample";
+            this.InternalDelimiterExample.Size = new System.Drawing.Size(29, 23);
+            this.InternalDelimiterExample.TabIndex = 5;
+            this.InternalDelimiterExample.Text = "·";
+            // 
+            // ElementDelimiterLabel
+            // 
+            this.ElementDelimiterLabel.AutoSize = true;
+            this.ElementDelimiterLabel.Location = new System.Drawing.Point(3, 23);
+            this.ElementDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.ElementDelimiterLabel.Name = "ElementDelimiterLabel";
+            this.ElementDelimiterLabel.Size = new System.Drawing.Size(35, 13);
+            this.ElementDelimiterLabel.TabIndex = 6;
+            this.ElementDelimiterLabel.Text = "Element Delimiter";
+            // 
+            // ElementDelimiterExample
+            // 
+            this.ElementDelimiterExample.AutoSize = true;
+            this.ElementDelimiterExample.Location = new System.Drawing.Point(179, 23);
+            this.ElementDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.ElementDelimiterExample.Name = "ElementDelimiterExample";
+            this.ElementDelimiterExample.Size = new System.Drawing.Size(27, 23);
+            this.ElementDelimiterExample.TabIndex = 7;
+            this.ElementDelimiterExample.Text = "–";
+            // 
+            // NameDelimiterLabel
+            // 
+            this.NameDelimiterLabel.AutoSize = true;
+            this.NameDelimiterLabel.Location = new System.Drawing.Point(213, 23);
+            this.NameDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.NameDelimiterLabel.Name = "NameDelimiterLabel";
+            this.NameDelimiterLabel.Size = new System.Drawing.Size(35, 13);
+            this.NameDelimiterLabel.TabIndex = 8;
+            this.NameDelimiterLabel.Text = "Name Delimiter";
+            // 
+            // NameDelimiterExample
+            // 
+            this.NameDelimiterExample.AutoSize = true;
+            this.NameDelimiterExample.Location = new System.Drawing.Point(389, 23);
+            this.NameDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.NameDelimiterExample.Name = "NameDelimiterExample";
+            this.NameDelimiterExample.Size = new System.Drawing.Size(27, 23);
+            this.NameDelimiterExample.TabIndex = 9;
+            this.NameDelimiterExample.Text = "§";
+            // 
+            // PronounDelimiterLabel
+            // 
+            this.PronounDelimiterLabel.AutoSize = true;
+            this.PronounDelimiterLabel.Location = new System.Drawing.Point(423, 23);
+            this.PronounDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.PronounDelimiterLabel.Name = "PronounDelimiterLabel";
+            this.PronounDelimiterLabel.Size = new System.Drawing.Size(41, 13);
+            this.PronounDelimiterLabel.TabIndex = 10;
+            this.PronounDelimiterLabel.Text = "Pronoun Delimiter";
+            // 
+            // PronounDelimiterExample
+            // 
+            this.PronounDelimiterExample.AutoSize = true;
+            this.PronounDelimiterExample.Location = new System.Drawing.Point(599, 23);
+            this.PronounDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.PronounDelimiterExample.Name = "PronounDelimiterExample";
+            this.PronounDelimiterExample.Size = new System.Drawing.Size(29, 23);
+            this.PronounDelimiterExample.TabIndex = 11;
+            this.PronounDelimiterExample.Text = "|";
+            // 
+            // DimensionalDelimiterLabel
+            // 
+            this.DimensionalDelimiterLabel.AutoSize = true;
+            this.DimensionalDelimiterLabel.Location = new System.Drawing.Point(3, 46);
+            this.DimensionalDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.DimensionalDelimiterLabel.Name = "DimensionalDelimiterLabel";
+            this.DimensionalDelimiterLabel.Size = new System.Drawing.Size(41, 13);
+            this.DimensionalDelimiterLabel.TabIndex = 12;
+            this.DimensionalDelimiterLabel.Text = "Dimensional Delimiter";
+            // 
+            // DimensionalDelimiterExample
+            // 
+            this.DimensionalDelimiterExample.AutoSize = true;
+            this.DimensionalDelimiterExample.Location = new System.Drawing.Point(179, 46);
+            this.DimensionalDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.DimensionalDelimiterExample.Name = "DimensionalDelimiterExample";
+            this.DimensionalDelimiterExample.Size = new System.Drawing.Size(27, 26);
+            this.DimensionalDelimiterExample.TabIndex = 13;
+            this.DimensionalDelimiterExample.Text = "×";
+            // 
+            // DimensionalTerminatorLabel
+            // 
+            this.DimensionalTerminatorLabel.AutoSize = true;
+            this.DimensionalTerminatorLabel.Location = new System.Drawing.Point(260, 51);
+            this.DimensionalTerminatorLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.DimensionalTerminatorLabel.Name = "DimensionalTerminatorLabel";
+            this.DimensionalTerminatorLabel.Size = new System.Drawing.Size(118, 13);
+            this.DimensionalTerminatorLabel.TabIndex = 14;
+            this.DimensionalTerminatorLabel.Text = "Dimensional Terminator";
+            // 
+            // DimensionalTerminatorExample
+            // 
+            this.DimensionalTerminatorExample.AutoSize = true;
+            this.DimensionalTerminatorExample.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.DimensionalTerminatorExample.Location = new System.Drawing.Point(389, 51);
+            this.DimensionalTerminatorExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.DimensionalTerminatorExample.Name = "DimensionalTerminatorExample";
+            this.DimensionalTerminatorExample.Size = new System.Drawing.Size(18, 16);
+            this.DimensionalTerminatorExample.TabIndex = 15;
+            this.DimensionalTerminatorExample.Text = "≡";
+            // 
+            // LibraryInfoGroupBox
+            // 
+            this.LibraryInfoGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LibraryInfoGroupBox.Location = new System.Drawing.Point(6, 496);
+            this.LibraryInfoGroupBox.Name = "LibraryInfoGroupBox";
+            this.LibraryInfoGroupBox.Size = new System.Drawing.Size(289, 100);
+            this.LibraryInfoGroupBox.TabIndex = 0;
+            this.LibraryInfoGroupBox.TabStop = false;
+            this.LibraryInfoGroupBox.Text = "Library Info";
             // 
             // BeingsTabPage
             // 
@@ -871,50 +1109,6 @@ namespace Scribe
             this.AllFlavorsSelector.TabIndex = 0;
             this.AllFlavorsSelector.Text = "(All)";
             // 
-            // LibraryInfoGroupBox
-            // 
-            this.LibraryInfoGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LibraryInfoGroupBox.Location = new System.Drawing.Point(6, 496);
-            this.LibraryInfoGroupBox.Name = "LibraryInfoGroupBox";
-            this.LibraryInfoGroupBox.Size = new System.Drawing.Size(289, 100);
-            this.LibraryInfoGroupBox.TabIndex = 0;
-            this.LibraryInfoGroupBox.TabStop = false;
-            this.LibraryInfoGroupBox.Text = "Library Info";
-            // 
-            // FileFormatGroupBox
-            // 
-            this.FileFormatGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FileFormatGroupBox.Controls.Add(this.FileFormatTableLayoutPanel);
-            this.FileFormatGroupBox.Location = new System.Drawing.Point(301, 499);
-            this.FileFormatGroupBox.Name = "FileFormatGroupBox";
-            this.FileFormatGroupBox.Size = new System.Drawing.Size(645, 97);
-            this.FileFormatGroupBox.TabIndex = 0;
-            this.FileFormatGroupBox.TabStop = false;
-            this.FileFormatGroupBox.Text = "File Format";
-            // 
-            // FileFormatTableLayoutPanel
-            // 
-            this.FileFormatTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FileFormatTableLayoutPanel.ColumnCount = 6;
-            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.83792F));
-            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.495411F));
-            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.83792F));
-            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.495411F));
-            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.83792F));
-            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.495411F));
-            this.FileFormatTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
-            this.FileFormatTableLayoutPanel.Name = "FileFormatTableLayoutPanel";
-            this.FileFormatTableLayoutPanel.RowCount = 3;
-            this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.FileFormatTableLayoutPanel.Size = new System.Drawing.Size(633, 72);
-            this.FileFormatTableLayoutPanel.TabIndex = 1;
-            // 
             // EditorForm
             // 
             this.AccessibleDescription = "The primary interactive editor window.";
@@ -941,13 +1135,15 @@ namespace Scribe
             this.MainMenuBar.PerformLayout();
             this.EditorTabs.ResumeLayout(false);
             this.GameTabPage.ResumeLayout(false);
+            this.FileFormatGroupBox.ResumeLayout(false);
+            this.FileFormatTableLayoutPanel.ResumeLayout(false);
+            this.FileFormatTableLayoutPanel.PerformLayout();
             this.FiltersTableLayoutPanel.ResumeLayout(false);
             this.FiltersTableLayoutPanel.PerformLayout();
             this.FilterGroupBox.ResumeLayout(false);
             this.FlavorFilterGroupBox.ResumeLayout(false);
             this.FlavorTableLayoutPanel.ResumeLayout(false);
             this.FlavorTableLayoutPanel.PerformLayout();
-            this.FileFormatGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1028,6 +1224,22 @@ namespace Scribe
         private System.Windows.Forms.GroupBox LibraryInfoGroupBox;
         private System.Windows.Forms.GroupBox FileFormatGroupBox;
         private System.Windows.Forms.TableLayoutPanel FileFormatTableLayoutPanel;
+        private System.Windows.Forms.Label PrimaryDelimiterLabel;
+        private System.Windows.Forms.Label PrimaryDelimiterExample;
+        private System.Windows.Forms.Label SecondaryDelimiterLabel;
+        private System.Windows.Forms.Label SecondaryDelimiterExample;
+        private System.Windows.Forms.Label InternalDelimiterLabel;
+        private System.Windows.Forms.Label InternalDelimiterExample;
+        private System.Windows.Forms.Label ElementDelimiterLabel;
+        private System.Windows.Forms.Label ElementDelimiterExample;
+        private System.Windows.Forms.Label NameDelimiterLabel;
+        private System.Windows.Forms.Label NameDelimiterExample;
+        private System.Windows.Forms.Label PronounDelimiterLabel;
+        private System.Windows.Forms.Label PronounDelimiterExample;
+        private System.Windows.Forms.Label DimensionalDelimiterLabel;
+        private System.Windows.Forms.Label DimensionalDelimiterExample;
+        private System.Windows.Forms.Label DimensionalTerminatorLabel;
+        private System.Windows.Forms.Label DimensionalTerminatorExample;
     }
 }
 
