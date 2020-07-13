@@ -67,6 +67,8 @@ namespace Scribe
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditorTabs = new System.Windows.Forms.TabControl();
             this.GameTabPage = new System.Windows.Forms.TabPage();
+            this.GameIconEditButton = new System.Windows.Forms.Button();
+            this.GameIconPictureBox = new System.Windows.Forms.PictureBox();
             this.GameTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.GameNameLabel = new System.Windows.Forms.Label();
             this.GameDescriptionLabel = new System.Windows.Forms.Label();
@@ -149,6 +151,7 @@ namespace Scribe
             this.MainMenuBar.SuspendLayout();
             this.EditorTabs.SuspendLayout();
             this.GameTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GameIconPictureBox)).BeginInit();
             this.GameTableLayoutPanel.SuspendLayout();
             this.FileFormatGroupBox.SuspendLayout();
             this.FileFormatTableLayoutPanel.SuspendLayout();
@@ -471,6 +474,8 @@ namespace Scribe
             // 
             // GameTabPage
             // 
+            this.GameTabPage.Controls.Add(this.GameIconEditButton);
+            this.GameTabPage.Controls.Add(this.GameIconPictureBox);
             this.GameTabPage.Controls.Add(this.GameTableLayoutPanel);
             this.GameTabPage.Controls.Add(this.GameIDLabel);
             this.GameTabPage.Controls.Add(this.GameIDTextBox);
@@ -484,6 +489,25 @@ namespace Scribe
             this.GameTabPage.Size = new System.Drawing.Size(952, 599);
             this.GameTabPage.TabIndex = 0;
             this.GameTabPage.Text = "Game";
+            // 
+            // GameIconEditButton
+            // 
+            this.GameIconEditButton.Location = new System.Drawing.Point(812, 468);
+            this.GameIconEditButton.Name = "GameIconEditButton";
+            this.GameIconEditButton.Size = new System.Drawing.Size(128, 23);
+            this.GameIconEditButton.TabIndex = 7;
+            this.GameIconEditButton.Text = "Edit Image";
+            this.GameIconEditButton.UseVisualStyleBackColor = true;
+            // 
+            // GameIconPictureBox
+            // 
+            this.GameIconPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.GameIconPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.GameIconPictureBox.Location = new System.Drawing.Point(758, 280);
+            this.GameIconPictureBox.Name = "GameIconPictureBox";
+            this.GameIconPictureBox.Size = new System.Drawing.Size(182, 182);
+            this.GameIconPictureBox.TabIndex = 6;
+            this.GameIconPictureBox.TabStop = false;
             // 
             // GameTableLayoutPanel
             // 
@@ -675,7 +699,7 @@ namespace Scribe
             // GameIDTextBox
             // 
             this.GameIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.GameIDTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.GameIDTextBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.GameIDTextBox.Location = new System.Drawing.Point(812, 16);
             this.GameIDTextBox.Name = "GameIDTextBox";
             this.GameIDTextBox.Size = new System.Drawing.Size(131, 20);
@@ -1447,6 +1471,7 @@ namespace Scribe
             this.EditorTabs.ResumeLayout(false);
             this.GameTabPage.ResumeLayout(false);
             this.GameTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GameIconPictureBox)).EndInit();
             this.GameTableLayoutPanel.ResumeLayout(false);
             this.GameTableLayoutPanel.PerformLayout();
             this.FileFormatGroupBox.ResumeLayout(false);
@@ -1582,6 +1607,8 @@ namespace Scribe
         private System.Windows.Forms.TextBox GameEpisodeNumberTextBox;
         private System.Windows.Forms.TextBox GamePlayerCharacterIDTextBox;
         private System.Windows.Forms.TextBox GameFirstScriptIDTextBox;
+        private System.Windows.Forms.Button GameIconEditButton;
+        private System.Windows.Forms.PictureBox GameIconPictureBox;
     }
 }
 
