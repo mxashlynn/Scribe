@@ -67,6 +67,19 @@ namespace Scribe
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditorTabs = new System.Windows.Forms.TabControl();
             this.GameTabPage = new System.Windows.Forms.TabPage();
+            this.GameTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.GameNameLabel = new System.Windows.Forms.Label();
+            this.GameDescriptionLabel = new System.Windows.Forms.Label();
+            this.GameCommentLabel = new System.Windows.Forms.Label();
+            this.GameIsEpisodeLabel = new System.Windows.Forms.Label();
+            this.GameEpisodeTitleLabel = new System.Windows.Forms.Label();
+            this.GameEpisodeNumberLabel = new System.Windows.Forms.Label();
+            this.GamePlayerCharacterIDLabel = new System.Windows.Forms.Label();
+            this.GameFirstScriptIDLabel = new System.Windows.Forms.Label();
+            this.GameIDLabel = new System.Windows.Forms.Label();
+            this.GameIDTextBox = new System.Windows.Forms.TextBox();
+            this.NewGameButton = new System.Windows.Forms.Button();
+            this.GamesListBox = new System.Windows.Forms.ListBox();
             this.FileFormatGroupBox = new System.Windows.Forms.GroupBox();
             this.FileFormatTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.PrimaryDelimiterLabel = new System.Windows.Forms.Label();
@@ -128,6 +141,7 @@ namespace Scribe
             this.MainMenuBar.SuspendLayout();
             this.EditorTabs.SuspendLayout();
             this.GameTabPage.SuspendLayout();
+            this.GameTableLayoutPanel.SuspendLayout();
             this.FileFormatGroupBox.SuspendLayout();
             this.FileFormatTableLayoutPanel.SuspendLayout();
             this.LibraryInfoGroupBox.SuspendLayout();
@@ -449,6 +463,11 @@ namespace Scribe
             // 
             // GameTabPage
             // 
+            this.GameTabPage.Controls.Add(this.GameTableLayoutPanel);
+            this.GameTabPage.Controls.Add(this.GameIDLabel);
+            this.GameTabPage.Controls.Add(this.GameIDTextBox);
+            this.GameTabPage.Controls.Add(this.NewGameButton);
+            this.GameTabPage.Controls.Add(this.GamesListBox);
             this.GameTabPage.Controls.Add(this.FileFormatGroupBox);
             this.GameTabPage.Controls.Add(this.LibraryInfoGroupBox);
             this.GameTabPage.Location = new System.Drawing.Point(4, 22);
@@ -457,6 +476,148 @@ namespace Scribe
             this.GameTabPage.Size = new System.Drawing.Size(952, 599);
             this.GameTabPage.TabIndex = 0;
             this.GameTabPage.Text = "Game";
+            // 
+            // GameTableLayoutPanel
+            // 
+            this.GameTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.GameTableLayoutPanel.ColumnCount = 3;
+            this.GameTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.GameTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.GameTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.GameTableLayoutPanel.Controls.Add(this.GameNameLabel, 0, 0);
+            this.GameTableLayoutPanel.Controls.Add(this.GameDescriptionLabel, 0, 1);
+            this.GameTableLayoutPanel.Controls.Add(this.GameCommentLabel, 0, 2);
+            this.GameTableLayoutPanel.Controls.Add(this.GameIsEpisodeLabel, 0, 3);
+            this.GameTableLayoutPanel.Controls.Add(this.GameEpisodeTitleLabel, 0, 4);
+            this.GameTableLayoutPanel.Controls.Add(this.GameEpisodeNumberLabel, 0, 5);
+            this.GameTableLayoutPanel.Controls.Add(this.GamePlayerCharacterIDLabel, 0, 6);
+            this.GameTableLayoutPanel.Controls.Add(this.GameFirstScriptIDLabel, 0, 7);
+            this.GameTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
+            this.GameTableLayoutPanel.Name = "GameTableLayoutPanel";
+            this.GameTableLayoutPanel.RowCount = 9;
+            this.GameTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.GameTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.GameTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.GameTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.GameTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.GameTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.GameTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.GameTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.GameTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.GameTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
+            this.GameTableLayoutPanel.TabIndex = 5;
+            // 
+            // GameNameLabel
+            // 
+            this.GameNameLabel.AutoSize = true;
+            this.GameNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.GameNameLabel.Name = "GameNameLabel";
+            this.GameNameLabel.Size = new System.Drawing.Size(34, 13);
+            this.GameNameLabel.TabIndex = 0;
+            this.GameNameLabel.Text = "Name";
+            // 
+            // GameDescriptionLabel
+            // 
+            this.GameDescriptionLabel.AutoSize = true;
+            this.GameDescriptionLabel.Location = new System.Drawing.Point(3, 25);
+            this.GameDescriptionLabel.Name = "GameDescriptionLabel";
+            this.GameDescriptionLabel.Size = new System.Drawing.Size(60, 13);
+            this.GameDescriptionLabel.TabIndex = 3;
+            this.GameDescriptionLabel.Text = "Description";
+            // 
+            // GameCommentLabel
+            // 
+            this.GameCommentLabel.AutoSize = true;
+            this.GameCommentLabel.Location = new System.Drawing.Point(3, 50);
+            this.GameCommentLabel.Name = "GameCommentLabel";
+            this.GameCommentLabel.Size = new System.Drawing.Size(52, 13);
+            this.GameCommentLabel.TabIndex = 6;
+            this.GameCommentLabel.Text = "Comment";
+            // 
+            // GameIsEpisodeLabel
+            // 
+            this.GameIsEpisodeLabel.AutoSize = true;
+            this.GameIsEpisodeLabel.Location = new System.Drawing.Point(3, 75);
+            this.GameIsEpisodeLabel.Name = "GameIsEpisodeLabel";
+            this.GameIsEpisodeLabel.Size = new System.Drawing.Size(61, 13);
+            this.GameIsEpisodeLabel.TabIndex = 9;
+            this.GameIsEpisodeLabel.Text = "Is Episode?";
+            // 
+            // GameEpisodeTitleLabel
+            // 
+            this.GameEpisodeTitleLabel.AutoSize = true;
+            this.GameEpisodeTitleLabel.Location = new System.Drawing.Point(3, 100);
+            this.GameEpisodeTitleLabel.Name = "GameEpisodeTitleLabel";
+            this.GameEpisodeTitleLabel.Size = new System.Drawing.Size(67, 13);
+            this.GameEpisodeTitleLabel.TabIndex = 12;
+            this.GameEpisodeTitleLabel.Text = "Episode Title";
+            // 
+            // GameEpisodeNumberLabel
+            // 
+            this.GameEpisodeNumberLabel.AutoSize = true;
+            this.GameEpisodeNumberLabel.Location = new System.Drawing.Point(3, 125);
+            this.GameEpisodeNumberLabel.Name = "GameEpisodeNumberLabel";
+            this.GameEpisodeNumberLabel.Size = new System.Drawing.Size(84, 13);
+            this.GameEpisodeNumberLabel.TabIndex = 15;
+            this.GameEpisodeNumberLabel.Text = "Episode Number";
+            // 
+            // GamePlayerCharacterIDLabel
+            // 
+            this.GamePlayerCharacterIDLabel.AutoSize = true;
+            this.GamePlayerCharacterIDLabel.Location = new System.Drawing.Point(3, 150);
+            this.GamePlayerCharacterIDLabel.Name = "GamePlayerCharacterIDLabel";
+            this.GamePlayerCharacterIDLabel.Size = new System.Drawing.Size(102, 13);
+            this.GamePlayerCharacterIDLabel.TabIndex = 18;
+            this.GamePlayerCharacterIDLabel.Text = "Player Character ID";
+            // 
+            // GameFirstScriptIDLabel
+            // 
+            this.GameFirstScriptIDLabel.AutoSize = true;
+            this.GameFirstScriptIDLabel.Location = new System.Drawing.Point(3, 175);
+            this.GameFirstScriptIDLabel.Name = "GameFirstScriptIDLabel";
+            this.GameFirstScriptIDLabel.Size = new System.Drawing.Size(41, 13);
+            this.GameFirstScriptIDLabel.TabIndex = 21;
+            this.GameFirstScriptIDLabel.Text = "label22";
+            // 
+            // GameIDLabel
+            // 
+            this.GameIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.GameIDLabel.AutoSize = true;
+            this.GameIDLabel.Location = new System.Drawing.Point(758, 19);
+            this.GameIDLabel.Name = "GameIDLabel";
+            this.GameIDLabel.Size = new System.Drawing.Size(48, 13);
+            this.GameIDLabel.TabIndex = 4;
+            this.GameIDLabel.Text = "Game ID";
+            // 
+            // GameIDTextBox
+            // 
+            this.GameIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.GameIDTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.GameIDTextBox.Location = new System.Drawing.Point(812, 16);
+            this.GameIDTextBox.Name = "GameIDTextBox";
+            this.GameIDTextBox.Size = new System.Drawing.Size(131, 20);
+            this.GameIDTextBox.TabIndex = 3;
+            this.GameIDTextBox.Text = "-2020202020";
+            // 
+            // NewGameButton
+            // 
+            this.NewGameButton.Location = new System.Drawing.Point(159, 468);
+            this.NewGameButton.Name = "NewGameButton";
+            this.NewGameButton.Size = new System.Drawing.Size(129, 23);
+            this.NewGameButton.TabIndex = 2;
+            this.NewGameButton.Text = "Add New Game";
+            this.NewGameButton.UseVisualStyleBackColor = true;
+            // 
+            // GamesListBox
+            // 
+            this.GamesListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.GamesListBox.FormattingEnabled = true;
+            this.GamesListBox.Location = new System.Drawing.Point(9, 16);
+            this.GamesListBox.Name = "GamesListBox";
+            this.GamesListBox.Size = new System.Drawing.Size(279, 446);
+            this.GamesListBox.TabIndex = 1;
             // 
             // FileFormatGroupBox
             // 
@@ -1203,6 +1364,9 @@ namespace Scribe
             this.MainMenuBar.PerformLayout();
             this.EditorTabs.ResumeLayout(false);
             this.GameTabPage.ResumeLayout(false);
+            this.GameTabPage.PerformLayout();
+            this.GameTableLayoutPanel.ResumeLayout(false);
+            this.GameTableLayoutPanel.PerformLayout();
             this.FileFormatGroupBox.ResumeLayout(false);
             this.FileFormatTableLayoutPanel.ResumeLayout(false);
             this.FileFormatTableLayoutPanel.PerformLayout();
@@ -1315,6 +1479,19 @@ namespace Scribe
         private System.Windows.Forms.Label DimensionalDelimiterExample;
         private System.Windows.Forms.Label DimensionalTerminatorLabel;
         private System.Windows.Forms.Label DimensionalTerminatorExample;
+        private System.Windows.Forms.Button NewGameButton;
+        private System.Windows.Forms.ListBox GamesListBox;
+        private System.Windows.Forms.TableLayoutPanel GameTableLayoutPanel;
+        private System.Windows.Forms.Label GameIDLabel;
+        private System.Windows.Forms.TextBox GameIDTextBox;
+        private System.Windows.Forms.Label GameNameLabel;
+        private System.Windows.Forms.Label GameDescriptionLabel;
+        private System.Windows.Forms.Label GameCommentLabel;
+        private System.Windows.Forms.Label GameIsEpisodeLabel;
+        private System.Windows.Forms.Label GameEpisodeTitleLabel;
+        private System.Windows.Forms.Label GameEpisodeNumberLabel;
+        private System.Windows.Forms.Label GamePlayerCharacterIDLabel;
+        private System.Windows.Forms.Label GameFirstScriptIDLabel;
     }
 }
 
