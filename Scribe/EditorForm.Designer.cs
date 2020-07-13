@@ -820,9 +820,9 @@ namespace Scribe
             this.InternalDelimiterLabel.Location = new System.Drawing.Point(470, 5);
             this.InternalDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
             this.InternalDelimiterLabel.Name = "InternalDelimiterLabel";
-            this.InternalDelimiterLabel.Size = new System.Drawing.Size(111, 13);
+            this.InternalDelimiterLabel.Size = new System.Drawing.Size(89, 13);
             this.InternalDelimiterLabel.TabIndex = 4;
-            this.InternalDelimiterLabel.Text = "InternalDelimiterLabel";
+            this.InternalDelimiterLabel.Text = "Internal Delimiter";
             // 
             // InternalDelimiterExample
             // 
