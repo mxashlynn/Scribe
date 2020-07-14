@@ -116,6 +116,35 @@ namespace Scribe
             this.WorkingDirectoryExample = new System.Windows.Forms.Label();
             this.BeingsTabPage = new System.Windows.Forms.TabPage();
             this.BiomesTabPage = new System.Windows.Forms.TabPage();
+            this.BiomeAddEntryRequirementButton = new System.Windows.Forms.Button();
+            this.BiomeDeleteEntryRequirementButton = new System.Windows.Forms.Button();
+            this.BiomesListBox = new System.Windows.Forms.ListBox();
+            this.BiomeConfigGroupBox = new System.Windows.Forms.GroupBox();
+            this.BiomeConfigTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.BiomesPictureEditButton = new System.Windows.Forms.Button();
+            this.BiomeTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.BiomeAddParquetCriterionButton = new System.Windows.Forms.Button();
+            this.BiomeDeleteParquetCriterionButton = new System.Windows.Forms.Button();
+            this.BiomeEntryRequirementsListBox = new System.Windows.Forms.ListBox();
+            this.BiomeParquetCriteriaListBox = new System.Windows.Forms.ListBox();
+            this.BiomeIsLiquidBasedCheckBox = new System.Windows.Forms.CheckBox();
+            this.BiomeIsRoomBasedCheckBox = new System.Windows.Forms.CheckBox();
+            this.BiomeNameLabel = new System.Windows.Forms.Label();
+            this.BiomeDescriptionLabel = new System.Windows.Forms.Label();
+            this.BiomeCommentLabel = new System.Windows.Forms.Label();
+            this.BiomeTierLabel = new System.Windows.Forms.Label();
+            this.BiomeIsRoomBasedLabel = new System.Windows.Forms.Label();
+            this.BiomeIsLiquidBasedLabel = new System.Windows.Forms.Label();
+            this.BiomeParquetCriteriaLabel = new System.Windows.Forms.Label();
+            this.BiomeEntryRequirementsLabel = new System.Windows.Forms.Label();
+            this.BiomeNameTextBox = new System.Windows.Forms.TextBox();
+            this.BiomeDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.BiomeCommentTextBox = new System.Windows.Forms.TextBox();
+            this.BiomeTierTextBox = new System.Windows.Forms.TextBox();
+            this.BiomesPictureBox = new System.Windows.Forms.PictureBox();
+            this.BiomeIDLabel = new System.Windows.Forms.Label();
+            this.AddNewBiomeButton = new System.Windows.Forms.Button();
+            this.BiomesIDTextBox = new System.Windows.Forms.TextBox();
             this.CraftingTabPage = new System.Windows.Forms.TabPage();
             this.ItemsTabPage = new System.Windows.Forms.TabPage();
             this.MapsTabPage = new System.Windows.Forms.TabPage();
@@ -157,6 +186,10 @@ namespace Scribe
             this.FileFormatTableLayoutPanel.SuspendLayout();
             this.LibraryInfoGroupBox.SuspendLayout();
             this.LibraryInfoTableLayoutPanel.SuspendLayout();
+            this.BiomesTabPage.SuspendLayout();
+            this.BiomeConfigGroupBox.SuspendLayout();
+            this.BiomeTableLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BiomesPictureBox)).BeginInit();
             this.FiltersTableLayoutPanel.SuspendLayout();
             this.FilterGroupBox.SuspendLayout();
             this.FlavorFilterGroupBox.SuspendLayout();
@@ -1030,11 +1063,341 @@ namespace Scribe
             // BiomesTabPage
             // 
             this.BiomesTabPage.BackColor = System.Drawing.Color.Transparent;
+            this.BiomesTabPage.Controls.Add(this.BiomeAddEntryRequirementButton);
+            this.BiomesTabPage.Controls.Add(this.BiomeDeleteEntryRequirementButton);
+            this.BiomesTabPage.Controls.Add(this.BiomesListBox);
+            this.BiomesTabPage.Controls.Add(this.BiomeConfigGroupBox);
+            this.BiomesTabPage.Controls.Add(this.BiomesPictureEditButton);
+            this.BiomesTabPage.Controls.Add(this.BiomeTableLayoutPanel);
+            this.BiomesTabPage.Controls.Add(this.BiomesPictureBox);
+            this.BiomesTabPage.Controls.Add(this.BiomeIDLabel);
+            this.BiomesTabPage.Controls.Add(this.AddNewBiomeButton);
+            this.BiomesTabPage.Controls.Add(this.BiomesIDTextBox);
             this.BiomesTabPage.Location = new System.Drawing.Point(4, 22);
             this.BiomesTabPage.Name = "BiomesTabPage";
             this.BiomesTabPage.Size = new System.Drawing.Size(952, 599);
             this.BiomesTabPage.TabIndex = 2;
             this.BiomesTabPage.Text = "Biomes";
+            // 
+            // BiomeAddEntryRequirementButton
+            // 
+            this.BiomeAddEntryRequirementButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiomeAddEntryRequirementButton.Location = new System.Drawing.Point(604, 468);
+            this.BiomeAddEntryRequirementButton.Name = "BiomeAddEntryRequirementButton";
+            this.BiomeAddEntryRequirementButton.Size = new System.Drawing.Size(129, 23);
+            this.BiomeAddEntryRequirementButton.TabIndex = 2;
+            this.BiomeAddEntryRequirementButton.Text = "Add Requirement";
+            this.BiomeAddEntryRequirementButton.UseVisualStyleBackColor = true;
+            // 
+            // BiomeDeleteEntryRequirementButton
+            // 
+            this.BiomeDeleteEntryRequirementButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiomeDeleteEntryRequirementButton.Location = new System.Drawing.Point(453, 468);
+            this.BiomeDeleteEntryRequirementButton.Name = "BiomeDeleteEntryRequirementButton";
+            this.BiomeDeleteEntryRequirementButton.Size = new System.Drawing.Size(129, 23);
+            this.BiomeDeleteEntryRequirementButton.TabIndex = 2;
+            this.BiomeDeleteEntryRequirementButton.Text = "Remove Requirement";
+            this.BiomeDeleteEntryRequirementButton.UseVisualStyleBackColor = true;
+            // 
+            // BiomesListBox
+            // 
+            this.BiomesListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.BiomesListBox.FormattingEnabled = true;
+            this.BiomesListBox.Location = new System.Drawing.Point(9, 16);
+            this.BiomesListBox.Name = "BiomesListBox";
+            this.BiomesListBox.Size = new System.Drawing.Size(279, 446);
+            this.BiomesListBox.TabIndex = 1;
+            // 
+            // BiomeConfigGroupBox
+            // 
+            this.BiomeConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiomeConfigGroupBox.Controls.Add(this.BiomeConfigTableLayoutPanel);
+            this.BiomeConfigGroupBox.Location = new System.Drawing.Point(9, 499);
+            this.BiomeConfigGroupBox.Name = "BiomeConfigGroupBox";
+            this.BiomeConfigGroupBox.Size = new System.Drawing.Size(937, 97);
+            this.BiomeConfigGroupBox.TabIndex = 0;
+            this.BiomeConfigGroupBox.TabStop = false;
+            this.BiomeConfigGroupBox.Text = "Configuration";
+            // 
+            // BiomeConfigTableLayoutPanel
+            // 
+            this.BiomeConfigTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiomeConfigTableLayoutPanel.ColumnCount = 3;
+            this.BiomeConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.BiomeConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.BiomeConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.BiomeConfigTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
+            this.BiomeConfigTableLayoutPanel.Name = "BiomeConfigTableLayoutPanel";
+            this.BiomeConfigTableLayoutPanel.RowCount = 3;
+            this.BiomeConfigTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.BiomeConfigTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.BiomeConfigTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.BiomeConfigTableLayoutPanel.Size = new System.Drawing.Size(925, 72);
+            this.BiomeConfigTableLayoutPanel.TabIndex = 1;
+            // 
+            // BiomesPictureEditButton
+            // 
+            this.BiomesPictureEditButton.Location = new System.Drawing.Point(812, 468);
+            this.BiomesPictureEditButton.Name = "BiomesPictureEditButton";
+            this.BiomesPictureEditButton.Size = new System.Drawing.Size(128, 23);
+            this.BiomesPictureEditButton.TabIndex = 7;
+            this.BiomesPictureEditButton.Text = "Edit Image";
+            this.BiomesPictureEditButton.UseVisualStyleBackColor = true;
+            // 
+            // BiomeTableLayoutPanel
+            // 
+            this.BiomeTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.BiomeTableLayoutPanel.ColumnCount = 3;
+            this.BiomeTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.BiomeTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.BiomeTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.BiomeTableLayoutPanel.Controls.Add(this.BiomeAddParquetCriterionButton, 2, 7);
+            this.BiomeTableLayoutPanel.Controls.Add(this.BiomeDeleteParquetCriterionButton, 1, 7);
+            this.BiomeTableLayoutPanel.Controls.Add(this.BiomeEntryRequirementsListBox, 1, 8);
+            this.BiomeTableLayoutPanel.Controls.Add(this.BiomeParquetCriteriaListBox, 1, 6);
+            this.BiomeTableLayoutPanel.Controls.Add(this.BiomeIsLiquidBasedCheckBox, 1, 5);
+            this.BiomeTableLayoutPanel.Controls.Add(this.BiomeIsRoomBasedCheckBox, 1, 4);
+            this.BiomeTableLayoutPanel.Controls.Add(this.BiomeNameLabel, 0, 0);
+            this.BiomeTableLayoutPanel.Controls.Add(this.BiomeDescriptionLabel, 0, 1);
+            this.BiomeTableLayoutPanel.Controls.Add(this.BiomeCommentLabel, 0, 2);
+            this.BiomeTableLayoutPanel.Controls.Add(this.BiomeTierLabel, 0, 3);
+            this.BiomeTableLayoutPanel.Controls.Add(this.BiomeIsRoomBasedLabel, 0, 4);
+            this.BiomeTableLayoutPanel.Controls.Add(this.BiomeIsLiquidBasedLabel, 0, 5);
+            this.BiomeTableLayoutPanel.Controls.Add(this.BiomeParquetCriteriaLabel, 0, 6);
+            this.BiomeTableLayoutPanel.Controls.Add(this.BiomeEntryRequirementsLabel, 0, 8);
+            this.BiomeTableLayoutPanel.Controls.Add(this.BiomeNameTextBox, 1, 0);
+            this.BiomeTableLayoutPanel.Controls.Add(this.BiomeDescriptionTextBox, 1, 1);
+            this.BiomeTableLayoutPanel.Controls.Add(this.BiomeCommentTextBox, 1, 2);
+            this.BiomeTableLayoutPanel.Controls.Add(this.BiomeTierTextBox, 1, 3);
+            this.BiomeTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
+            this.BiomeTableLayoutPanel.Name = "BiomeTableLayoutPanel";
+            this.BiomeTableLayoutPanel.RowCount = 9;
+            this.BiomeTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.BiomeTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.BiomeTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.BiomeTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.BiomeTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.BiomeTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.BiomeTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.BiomeTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.BiomeTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.BiomeTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.BiomeTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
+            this.BiomeTableLayoutPanel.TabIndex = 5;
+            // 
+            // BiomeAddParquetCriterionButton
+            // 
+            this.BiomeAddParquetCriterionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiomeAddParquetCriterionButton.Location = new System.Drawing.Point(297, 316);
+            this.BiomeAddParquetCriterionButton.Name = "BiomeAddParquetCriterionButton";
+            this.BiomeAddParquetCriterionButton.Size = new System.Drawing.Size(129, 23);
+            this.BiomeAddParquetCriterionButton.TabIndex = 2;
+            this.BiomeAddParquetCriterionButton.Text = "Add Criterion";
+            this.BiomeAddParquetCriterionButton.UseVisualStyleBackColor = true;
+            // 
+            // BiomeDeleteParquetCriterionButton
+            // 
+            this.BiomeDeleteParquetCriterionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiomeDeleteParquetCriterionButton.Location = new System.Drawing.Point(146, 316);
+            this.BiomeDeleteParquetCriterionButton.Name = "BiomeDeleteParquetCriterionButton";
+            this.BiomeDeleteParquetCriterionButton.Size = new System.Drawing.Size(129, 23);
+            this.BiomeDeleteParquetCriterionButton.TabIndex = 2;
+            this.BiomeDeleteParquetCriterionButton.Text = "Remove Criterion";
+            this.BiomeDeleteParquetCriterionButton.UseVisualStyleBackColor = true;
+            // 
+            // BiomeEntryRequirementsListBox
+            // 
+            this.BiomeEntryRequirementsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.BiomeTableLayoutPanel.SetColumnSpan(this.BiomeEntryRequirementsListBox, 2);
+            this.BiomeEntryRequirementsListBox.FormattingEnabled = true;
+            this.BiomeEntryRequirementsListBox.Location = new System.Drawing.Point(131, 346);
+            this.BiomeEntryRequirementsListBox.Name = "BiomeEntryRequirementsListBox";
+            this.BiomeEntryRequirementsListBox.Size = new System.Drawing.Size(279, 95);
+            this.BiomeEntryRequirementsListBox.TabIndex = 1;
+            // 
+            // BiomeParquetCriteriaListBox
+            // 
+            this.BiomeParquetCriteriaListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.BiomeTableLayoutPanel.SetColumnSpan(this.BiomeParquetCriteriaListBox, 2);
+            this.BiomeParquetCriteriaListBox.FormattingEnabled = true;
+            this.BiomeParquetCriteriaListBox.Location = new System.Drawing.Point(131, 213);
+            this.BiomeParquetCriteriaListBox.Name = "BiomeParquetCriteriaListBox";
+            this.BiomeParquetCriteriaListBox.Size = new System.Drawing.Size(279, 95);
+            this.BiomeParquetCriteriaListBox.TabIndex = 1;
+            // 
+            // BiomeIsLiquidBasedCheckBox
+            // 
+            this.BiomeIsLiquidBasedCheckBox.AutoSize = true;
+            this.BiomeIsLiquidBasedCheckBox.Location = new System.Drawing.Point(131, 188);
+            this.BiomeIsLiquidBasedCheckBox.Name = "BiomeIsLiquidBasedCheckBox";
+            this.BiomeIsLiquidBasedCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.BiomeIsLiquidBasedCheckBox.TabIndex = 22;
+            this.BiomeIsLiquidBasedCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // BiomeIsRoomBasedCheckBox
+            // 
+            this.BiomeIsRoomBasedCheckBox.AutoSize = true;
+            this.BiomeIsRoomBasedCheckBox.Location = new System.Drawing.Point(131, 163);
+            this.BiomeIsRoomBasedCheckBox.Name = "BiomeIsRoomBasedCheckBox";
+            this.BiomeIsRoomBasedCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.BiomeIsRoomBasedCheckBox.TabIndex = 22;
+            this.BiomeIsRoomBasedCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // BiomeNameLabel
+            // 
+            this.BiomeNameLabel.AutoSize = true;
+            this.BiomeNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.BiomeNameLabel.Name = "BiomeNameLabel";
+            this.BiomeNameLabel.Size = new System.Drawing.Size(34, 13);
+            this.BiomeNameLabel.TabIndex = 0;
+            this.BiomeNameLabel.Text = "Name";
+            // 
+            // BiomeDescriptionLabel
+            // 
+            this.BiomeDescriptionLabel.AutoSize = true;
+            this.BiomeDescriptionLabel.Location = new System.Drawing.Point(3, 25);
+            this.BiomeDescriptionLabel.Name = "BiomeDescriptionLabel";
+            this.BiomeDescriptionLabel.Size = new System.Drawing.Size(60, 13);
+            this.BiomeDescriptionLabel.TabIndex = 3;
+            this.BiomeDescriptionLabel.Text = "Description";
+            // 
+            // BiomeCommentLabel
+            // 
+            this.BiomeCommentLabel.AutoSize = true;
+            this.BiomeCommentLabel.Location = new System.Drawing.Point(3, 80);
+            this.BiomeCommentLabel.Name = "BiomeCommentLabel";
+            this.BiomeCommentLabel.Size = new System.Drawing.Size(52, 13);
+            this.BiomeCommentLabel.TabIndex = 6;
+            this.BiomeCommentLabel.Text = "Comment";
+            // 
+            // BiomeTierLabel
+            // 
+            this.BiomeTierLabel.AutoSize = true;
+            this.BiomeTierLabel.Location = new System.Drawing.Point(3, 135);
+            this.BiomeTierLabel.Name = "BiomeTierLabel";
+            this.BiomeTierLabel.Size = new System.Drawing.Size(25, 13);
+            this.BiomeTierLabel.TabIndex = 9;
+            this.BiomeTierLabel.Text = "Tier";
+            // 
+            // BiomeIsRoomBasedLabel
+            // 
+            this.BiomeIsRoomBasedLabel.AutoSize = true;
+            this.BiomeIsRoomBasedLabel.Location = new System.Drawing.Point(3, 160);
+            this.BiomeIsRoomBasedLabel.Name = "BiomeIsRoomBasedLabel";
+            this.BiomeIsRoomBasedLabel.Size = new System.Drawing.Size(84, 13);
+            this.BiomeIsRoomBasedLabel.TabIndex = 12;
+            this.BiomeIsRoomBasedLabel.Text = "Is Room-Based?";
+            // 
+            // BiomeIsLiquidBasedLabel
+            // 
+            this.BiomeIsLiquidBasedLabel.AutoSize = true;
+            this.BiomeIsLiquidBasedLabel.Location = new System.Drawing.Point(3, 185);
+            this.BiomeIsLiquidBasedLabel.Name = "BiomeIsLiquidBasedLabel";
+            this.BiomeIsLiquidBasedLabel.Size = new System.Drawing.Size(84, 13);
+            this.BiomeIsLiquidBasedLabel.TabIndex = 15;
+            this.BiomeIsLiquidBasedLabel.Text = "Is Liquid-Based?";
+            // 
+            // BiomeParquetCriteriaLabel
+            // 
+            this.BiomeParquetCriteriaLabel.AutoSize = true;
+            this.BiomeParquetCriteriaLabel.Location = new System.Drawing.Point(3, 210);
+            this.BiomeParquetCriteriaLabel.Name = "BiomeParquetCriteriaLabel";
+            this.BiomeParquetCriteriaLabel.Size = new System.Drawing.Size(83, 13);
+            this.BiomeParquetCriteriaLabel.TabIndex = 18;
+            this.BiomeParquetCriteriaLabel.Text = "Parquet Criteria";
+            // 
+            // BiomeEntryRequirementsLabel
+            // 
+            this.BiomeEntryRequirementsLabel.AutoSize = true;
+            this.BiomeEntryRequirementsLabel.Location = new System.Drawing.Point(3, 343);
+            this.BiomeEntryRequirementsLabel.Name = "BiomeEntryRequirementsLabel";
+            this.BiomeEntryRequirementsLabel.Size = new System.Drawing.Size(102, 13);
+            this.BiomeEntryRequirementsLabel.TabIndex = 21;
+            this.BiomeEntryRequirementsLabel.Text = "Entry Requirements";
+            // 
+            // BiomeNameTextBox
+            // 
+            this.BiomeNameTextBox.Location = new System.Drawing.Point(131, 3);
+            this.BiomeNameTextBox.Name = "BiomeNameTextBox";
+            this.BiomeNameTextBox.Size = new System.Drawing.Size(144, 20);
+            this.BiomeNameTextBox.TabIndex = 23;
+            // 
+            // BiomeDescriptionTextBox
+            // 
+            this.BiomeDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiomeTableLayoutPanel.SetColumnSpan(this.BiomeDescriptionTextBox, 2);
+            this.BiomeDescriptionTextBox.Location = new System.Drawing.Point(131, 28);
+            this.BiomeDescriptionTextBox.Multiline = true;
+            this.BiomeDescriptionTextBox.Name = "BiomeDescriptionTextBox";
+            this.BiomeDescriptionTextBox.Size = new System.Drawing.Size(295, 49);
+            this.BiomeDescriptionTextBox.TabIndex = 24;
+            // 
+            // BiomeCommentTextBox
+            // 
+            this.BiomeCommentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiomeTableLayoutPanel.SetColumnSpan(this.BiomeCommentTextBox, 2);
+            this.BiomeCommentTextBox.Location = new System.Drawing.Point(131, 83);
+            this.BiomeCommentTextBox.Multiline = true;
+            this.BiomeCommentTextBox.Name = "BiomeCommentTextBox";
+            this.BiomeCommentTextBox.Size = new System.Drawing.Size(295, 49);
+            this.BiomeCommentTextBox.TabIndex = 25;
+            // 
+            // BiomeTierTextBox
+            // 
+            this.BiomeTierTextBox.Location = new System.Drawing.Point(131, 138);
+            this.BiomeTierTextBox.Name = "BiomeTierTextBox";
+            this.BiomeTierTextBox.Size = new System.Drawing.Size(144, 20);
+            this.BiomeTierTextBox.TabIndex = 26;
+            // 
+            // BiomesPictureBox
+            // 
+            this.BiomesPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiomesPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BiomesPictureBox.Location = new System.Drawing.Point(758, 280);
+            this.BiomesPictureBox.Name = "BiomesPictureBox";
+            this.BiomesPictureBox.Size = new System.Drawing.Size(182, 182);
+            this.BiomesPictureBox.TabIndex = 6;
+            this.BiomesPictureBox.TabStop = false;
+            // 
+            // BiomeIDLabel
+            // 
+            this.BiomeIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiomeIDLabel.AutoSize = true;
+            this.BiomeIDLabel.Location = new System.Drawing.Point(758, 19);
+            this.BiomeIDLabel.Name = "BiomeIDLabel";
+            this.BiomeIDLabel.Size = new System.Drawing.Size(49, 13);
+            this.BiomeIDLabel.TabIndex = 4;
+            this.BiomeIDLabel.Text = "Biome ID";
+            // 
+            // AddNewBiomeButton
+            // 
+            this.AddNewBiomeButton.Location = new System.Drawing.Point(159, 468);
+            this.AddNewBiomeButton.Name = "AddNewBiomeButton";
+            this.AddNewBiomeButton.Size = new System.Drawing.Size(129, 23);
+            this.AddNewBiomeButton.TabIndex = 2;
+            this.AddNewBiomeButton.Text = "Add New Biome";
+            this.AddNewBiomeButton.UseVisualStyleBackColor = true;
+            // 
+            // BiomesIDTextBox
+            // 
+            this.BiomesIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiomesIDTextBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BiomesIDTextBox.Location = new System.Drawing.Point(812, 16);
+            this.BiomesIDTextBox.Name = "BiomesIDTextBox";
+            this.BiomesIDTextBox.Size = new System.Drawing.Size(131, 20);
+            this.BiomesIDTextBox.TabIndex = 3;
+            this.BiomesIDTextBox.Text = "-2020202020";
             // 
             // CraftingTabPage
             // 
@@ -1480,6 +1843,12 @@ namespace Scribe
             this.LibraryInfoGroupBox.ResumeLayout(false);
             this.LibraryInfoTableLayoutPanel.ResumeLayout(false);
             this.LibraryInfoTableLayoutPanel.PerformLayout();
+            this.BiomesTabPage.ResumeLayout(false);
+            this.BiomesTabPage.PerformLayout();
+            this.BiomeConfigGroupBox.ResumeLayout(false);
+            this.BiomeTableLayoutPanel.ResumeLayout(false);
+            this.BiomeTableLayoutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BiomesPictureBox)).EndInit();
             this.FiltersTableLayoutPanel.ResumeLayout(false);
             this.FiltersTableLayoutPanel.PerformLayout();
             this.FilterGroupBox.ResumeLayout(false);
@@ -1609,6 +1978,35 @@ namespace Scribe
         private System.Windows.Forms.TextBox GameFirstScriptIDTextBox;
         private System.Windows.Forms.Button GameIconEditButton;
         private System.Windows.Forms.PictureBox GameIconPictureBox;
+        private System.Windows.Forms.ListBox BiomesListBox;
+        private System.Windows.Forms.GroupBox BiomeConfigGroupBox;
+        private System.Windows.Forms.Button BiomesPictureEditButton;
+        private System.Windows.Forms.TableLayoutPanel BiomeTableLayoutPanel;
+        private System.Windows.Forms.Label BiomeNameLabel;
+        private System.Windows.Forms.Label BiomeDescriptionLabel;
+        private System.Windows.Forms.Label BiomeCommentLabel;
+        private System.Windows.Forms.Label BiomeTierLabel;
+        private System.Windows.Forms.Label BiomeIsRoomBasedLabel;
+        private System.Windows.Forms.Label BiomeIsLiquidBasedLabel;
+        private System.Windows.Forms.Label BiomeParquetCriteriaLabel;
+        private System.Windows.Forms.Label BiomeEntryRequirementsLabel;
+        private System.Windows.Forms.TextBox BiomeNameTextBox;
+        private System.Windows.Forms.TextBox BiomeDescriptionTextBox;
+        private System.Windows.Forms.TextBox BiomeCommentTextBox;
+        private System.Windows.Forms.TextBox BiomeTierTextBox;
+        private System.Windows.Forms.PictureBox BiomesPictureBox;
+        private System.Windows.Forms.Label BiomeIDLabel;
+        private System.Windows.Forms.Button AddNewBiomeButton;
+        private System.Windows.Forms.TextBox BiomesIDTextBox;
+        private System.Windows.Forms.CheckBox BiomeIsLiquidBasedCheckBox;
+        private System.Windows.Forms.CheckBox BiomeIsRoomBasedCheckBox;
+        private System.Windows.Forms.Button BiomeAddEntryRequirementButton;
+        private System.Windows.Forms.Button BiomeDeleteEntryRequirementButton;
+        private System.Windows.Forms.Button BiomeAddParquetCriterionButton;
+        private System.Windows.Forms.Button BiomeDeleteParquetCriterionButton;
+        private System.Windows.Forms.ListBox BiomeEntryRequirementsListBox;
+        private System.Windows.Forms.ListBox BiomeParquetCriteriaListBox;
+        private System.Windows.Forms.TableLayoutPanel BiomeConfigTableLayoutPanel;
     }
 }
 
