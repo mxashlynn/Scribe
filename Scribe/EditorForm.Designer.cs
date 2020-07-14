@@ -121,6 +121,12 @@ namespace Scribe
             this.BiomesListBox = new System.Windows.Forms.ListBox();
             this.BiomeConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.BiomeConfigTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.BiomeLandThresholdFactorLabel = new System.Windows.Forms.Label();
+            this.BiomeLiquidThresholdFactorLabel = new System.Windows.Forms.Label();
+            this.BiomeLandThresholdTextBox = new System.Windows.Forms.TextBox();
+            this.BiomeLiquidThresholdFactorTextBox = new System.Windows.Forms.TextBox();
+            this.BiomeRoomThresholdFactorTextBox = new System.Windows.Forms.TextBox();
+            this.BiomeRoomThresholdFactorLabel = new System.Windows.Forms.Label();
             this.BiomesPictureEditButton = new System.Windows.Forms.Button();
             this.BiomeTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.BiomeAddParquetCriterionButton = new System.Windows.Forms.Button();
@@ -188,6 +194,7 @@ namespace Scribe
             this.LibraryInfoTableLayoutPanel.SuspendLayout();
             this.BiomesTabPage.SuspendLayout();
             this.BiomeConfigGroupBox.SuspendLayout();
+            this.BiomeConfigTableLayoutPanel.SuspendLayout();
             this.BiomeTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BiomesPictureBox)).BeginInit();
             this.FiltersTableLayoutPanel.SuspendLayout();
@@ -1127,9 +1134,15 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomeConfigTableLayoutPanel.ColumnCount = 3;
-            this.BiomeConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.BiomeConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.BiomeConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.BiomeConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.BiomeConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.BiomeConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.BiomeConfigTableLayoutPanel.Controls.Add(this.BiomeLandThresholdFactorLabel, 0, 0);
+            this.BiomeConfigTableLayoutPanel.Controls.Add(this.BiomeLiquidThresholdFactorLabel, 0, 1);
+            this.BiomeConfigTableLayoutPanel.Controls.Add(this.BiomeLandThresholdTextBox, 1, 0);
+            this.BiomeConfigTableLayoutPanel.Controls.Add(this.BiomeLiquidThresholdFactorTextBox, 1, 1);
+            this.BiomeConfigTableLayoutPanel.Controls.Add(this.BiomeRoomThresholdFactorTextBox, 1, 2);
+            this.BiomeConfigTableLayoutPanel.Controls.Add(this.BiomeRoomThresholdFactorLabel, 0, 2);
             this.BiomeConfigTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
             this.BiomeConfigTableLayoutPanel.Name = "BiomeConfigTableLayoutPanel";
             this.BiomeConfigTableLayoutPanel.RowCount = 3;
@@ -1138,6 +1151,66 @@ namespace Scribe
             this.BiomeConfigTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.BiomeConfigTableLayoutPanel.Size = new System.Drawing.Size(925, 72);
             this.BiomeConfigTableLayoutPanel.TabIndex = 1;
+            // 
+            // BiomeLandThresholdFactorLabel
+            // 
+            this.BiomeLandThresholdFactorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiomeLandThresholdFactorLabel.AutoSize = true;
+            this.BiomeLandThresholdFactorLabel.Location = new System.Drawing.Point(21, 0);
+            this.BiomeLandThresholdFactorLabel.Name = "BiomeLandThresholdFactorLabel";
+            this.BiomeLandThresholdFactorLabel.Size = new System.Drawing.Size(114, 24);
+            this.BiomeLandThresholdFactorLabel.TabIndex = 0;
+            this.BiomeLandThresholdFactorLabel.Text = "Land Threshold Factor";
+            // 
+            // BiomeLiquidThresholdFactorLabel
+            // 
+            this.BiomeLiquidThresholdFactorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiomeLiquidThresholdFactorLabel.AutoSize = true;
+            this.BiomeLiquidThresholdFactorLabel.Location = new System.Drawing.Point(17, 24);
+            this.BiomeLiquidThresholdFactorLabel.Name = "BiomeLiquidThresholdFactorLabel";
+            this.BiomeLiquidThresholdFactorLabel.Size = new System.Drawing.Size(118, 24);
+            this.BiomeLiquidThresholdFactorLabel.TabIndex = 1;
+            this.BiomeLiquidThresholdFactorLabel.Text = "Liquid Threshold Factor";
+            // 
+            // BiomeLandThresholdTextBox
+            // 
+            this.BiomeLandThresholdTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.BiomeLandThresholdTextBox.Location = new System.Drawing.Point(141, 3);
+            this.BiomeLandThresholdTextBox.Name = "BiomeLandThresholdTextBox";
+            this.BiomeLandThresholdTextBox.Size = new System.Drawing.Size(132, 20);
+            this.BiomeLandThresholdTextBox.TabIndex = 2;
+            // 
+            // BiomeLiquidThresholdFactorTextBox
+            // 
+            this.BiomeLiquidThresholdFactorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.BiomeLiquidThresholdFactorTextBox.Location = new System.Drawing.Point(141, 27);
+            this.BiomeLiquidThresholdFactorTextBox.Name = "BiomeLiquidThresholdFactorTextBox";
+            this.BiomeLiquidThresholdFactorTextBox.Size = new System.Drawing.Size(132, 20);
+            this.BiomeLiquidThresholdFactorTextBox.TabIndex = 3;
+            // 
+            // BiomeRoomThresholdFactorTextBox
+            // 
+            this.BiomeRoomThresholdFactorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.BiomeRoomThresholdFactorTextBox.Location = new System.Drawing.Point(141, 51);
+            this.BiomeRoomThresholdFactorTextBox.Name = "BiomeRoomThresholdFactorTextBox";
+            this.BiomeRoomThresholdFactorTextBox.Size = new System.Drawing.Size(132, 20);
+            this.BiomeRoomThresholdFactorTextBox.TabIndex = 4;
+            // 
+            // BiomeRoomThresholdFactorLabel
+            // 
+            this.BiomeRoomThresholdFactorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiomeRoomThresholdFactorLabel.AutoSize = true;
+            this.BiomeRoomThresholdFactorLabel.Location = new System.Drawing.Point(17, 48);
+            this.BiomeRoomThresholdFactorLabel.Name = "BiomeRoomThresholdFactorLabel";
+            this.BiomeRoomThresholdFactorLabel.Size = new System.Drawing.Size(118, 24);
+            this.BiomeRoomThresholdFactorLabel.TabIndex = 5;
+            this.BiomeRoomThresholdFactorLabel.Text = "Room Threshold Factor";
             // 
             // BiomesPictureEditButton
             // 
@@ -1846,6 +1919,8 @@ namespace Scribe
             this.BiomesTabPage.ResumeLayout(false);
             this.BiomesTabPage.PerformLayout();
             this.BiomeConfigGroupBox.ResumeLayout(false);
+            this.BiomeConfigTableLayoutPanel.ResumeLayout(false);
+            this.BiomeConfigTableLayoutPanel.PerformLayout();
             this.BiomeTableLayoutPanel.ResumeLayout(false);
             this.BiomeTableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BiomesPictureBox)).EndInit();
@@ -2007,6 +2082,12 @@ namespace Scribe
         private System.Windows.Forms.ListBox BiomeEntryRequirementsListBox;
         private System.Windows.Forms.ListBox BiomeParquetCriteriaListBox;
         private System.Windows.Forms.TableLayoutPanel BiomeConfigTableLayoutPanel;
+        private System.Windows.Forms.Label BiomeLandThresholdFactorLabel;
+        private System.Windows.Forms.Label BiomeLiquidThresholdFactorLabel;
+        private System.Windows.Forms.TextBox BiomeLandThresholdTextBox;
+        private System.Windows.Forms.TextBox BiomeLiquidThresholdFactorTextBox;
+        private System.Windows.Forms.TextBox BiomeRoomThresholdFactorTextBox;
+        private System.Windows.Forms.Label BiomeRoomThresholdFactorLabel;
     }
 }
 
