@@ -76,16 +76,16 @@ namespace Scribe
             this.GameIsEpisodeLabel = new System.Windows.Forms.Label();
             this.GameEpisodeTitleLabel = new System.Windows.Forms.Label();
             this.GameEpisodeNumberLabel = new System.Windows.Forms.Label();
-            this.GamePlayerCharacterIDLabel = new System.Windows.Forms.Label();
-            this.GameFirstScriptIDLabel = new System.Windows.Forms.Label();
+            this.GamePlayerCharacterLabel = new System.Windows.Forms.Label();
+            this.GameFirstScriptLabel = new System.Windows.Forms.Label();
             this.GameIsEpisodeCheckBox = new System.Windows.Forms.CheckBox();
             this.GameNameTextBox = new System.Windows.Forms.TextBox();
             this.GameDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.GameCommentTextBox = new System.Windows.Forms.TextBox();
             this.GameEpisodeTitleTextBox = new System.Windows.Forms.TextBox();
             this.GameEpisodeNumberTextBox = new System.Windows.Forms.TextBox();
-            this.GamePlayerCharacterIDTextBox = new System.Windows.Forms.TextBox();
-            this.GameFirstScriptIDTextBox = new System.Windows.Forms.TextBox();
+            this.GamePlayerCharacterTextBox = new System.Windows.Forms.TextBox();
+            this.GameFirstScriptTextBox = new System.Windows.Forms.TextBox();
             this.GameIDLabel = new System.Windows.Forms.Label();
             this.GameIDTextBox = new System.Windows.Forms.TextBox();
             this.NewGameButton = new System.Windows.Forms.Button();
@@ -563,16 +563,16 @@ namespace Scribe
             this.GameTableLayoutPanel.Controls.Add(this.GameIsEpisodeLabel, 0, 3);
             this.GameTableLayoutPanel.Controls.Add(this.GameEpisodeTitleLabel, 0, 4);
             this.GameTableLayoutPanel.Controls.Add(this.GameEpisodeNumberLabel, 0, 5);
-            this.GameTableLayoutPanel.Controls.Add(this.GamePlayerCharacterIDLabel, 0, 6);
-            this.GameTableLayoutPanel.Controls.Add(this.GameFirstScriptIDLabel, 0, 7);
+            this.GameTableLayoutPanel.Controls.Add(this.GamePlayerCharacterLabel, 0, 6);
+            this.GameTableLayoutPanel.Controls.Add(this.GameFirstScriptLabel, 0, 7);
             this.GameTableLayoutPanel.Controls.Add(this.GameIsEpisodeCheckBox, 1, 3);
             this.GameTableLayoutPanel.Controls.Add(this.GameNameTextBox, 1, 0);
             this.GameTableLayoutPanel.Controls.Add(this.GameDescriptionTextBox, 1, 1);
             this.GameTableLayoutPanel.Controls.Add(this.GameCommentTextBox, 1, 2);
             this.GameTableLayoutPanel.Controls.Add(this.GameEpisodeTitleTextBox, 1, 4);
             this.GameTableLayoutPanel.Controls.Add(this.GameEpisodeNumberTextBox, 1, 5);
-            this.GameTableLayoutPanel.Controls.Add(this.GamePlayerCharacterIDTextBox, 1, 6);
-            this.GameTableLayoutPanel.Controls.Add(this.GameFirstScriptIDTextBox, 1, 7);
+            this.GameTableLayoutPanel.Controls.Add(this.GamePlayerCharacterTextBox, 1, 6);
+            this.GameTableLayoutPanel.Controls.Add(this.GameFirstScriptTextBox, 1, 7);
             this.GameTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
             this.GameTableLayoutPanel.Name = "GameTableLayoutPanel";
             this.GameTableLayoutPanel.RowCount = 9;
@@ -642,23 +642,23 @@ namespace Scribe
             this.GameEpisodeNumberLabel.TabIndex = 15;
             this.GameEpisodeNumberLabel.Text = "Episode Number";
             // 
-            // GamePlayerCharacterIDLabel
+            // GamePlayerCharacterLabel
             // 
-            this.GamePlayerCharacterIDLabel.AutoSize = true;
-            this.GamePlayerCharacterIDLabel.Location = new System.Drawing.Point(3, 210);
-            this.GamePlayerCharacterIDLabel.Name = "GamePlayerCharacterIDLabel";
-            this.GamePlayerCharacterIDLabel.Size = new System.Drawing.Size(102, 13);
-            this.GamePlayerCharacterIDLabel.TabIndex = 18;
-            this.GamePlayerCharacterIDLabel.Text = "Player Character ID";
+            this.GamePlayerCharacterLabel.AutoSize = true;
+            this.GamePlayerCharacterLabel.Location = new System.Drawing.Point(3, 210);
+            this.GamePlayerCharacterLabel.Name = "GamePlayerCharacterLabel";
+            this.GamePlayerCharacterLabel.Size = new System.Drawing.Size(88, 13);
+            this.GamePlayerCharacterLabel.TabIndex = 18;
+            this.GamePlayerCharacterLabel.Text = "Player Character";
             // 
-            // GameFirstScriptIDLabel
+            // GameFirstScriptLabel
             // 
-            this.GameFirstScriptIDLabel.AutoSize = true;
-            this.GameFirstScriptIDLabel.Location = new System.Drawing.Point(3, 235);
-            this.GameFirstScriptIDLabel.Name = "GameFirstScriptIDLabel";
-            this.GameFirstScriptIDLabel.Size = new System.Drawing.Size(72, 13);
-            this.GameFirstScriptIDLabel.TabIndex = 21;
-            this.GameFirstScriptIDLabel.Text = "First Script ID";
+            this.GameFirstScriptLabel.AutoSize = true;
+            this.GameFirstScriptLabel.Location = new System.Drawing.Point(3, 235);
+            this.GameFirstScriptLabel.Name = "GameFirstScriptLabel";
+            this.GameFirstScriptLabel.Size = new System.Drawing.Size(58, 13);
+            this.GameFirstScriptLabel.TabIndex = 21;
+            this.GameFirstScriptLabel.Text = "First Script";
             // 
             // GameIsEpisodeCheckBox
             // 
@@ -712,19 +712,19 @@ namespace Scribe
             this.GameEpisodeNumberTextBox.Size = new System.Drawing.Size(147, 20);
             this.GameEpisodeNumberTextBox.TabIndex = 27;
             // 
-            // GamePlayerCharacterIDTextBox
+            // GamePlayerCharacterTextBox
             // 
-            this.GamePlayerCharacterIDTextBox.Location = new System.Drawing.Point(131, 213);
-            this.GamePlayerCharacterIDTextBox.Name = "GamePlayerCharacterIDTextBox";
-            this.GamePlayerCharacterIDTextBox.Size = new System.Drawing.Size(147, 20);
-            this.GamePlayerCharacterIDTextBox.TabIndex = 28;
+            this.GamePlayerCharacterTextBox.Location = new System.Drawing.Point(131, 213);
+            this.GamePlayerCharacterTextBox.Name = "GamePlayerCharacterTextBox";
+            this.GamePlayerCharacterTextBox.Size = new System.Drawing.Size(147, 20);
+            this.GamePlayerCharacterTextBox.TabIndex = 28;
             // 
-            // GameFirstScriptIDTextBox
+            // GameFirstScriptTextBox
             // 
-            this.GameFirstScriptIDTextBox.Location = new System.Drawing.Point(131, 238);
-            this.GameFirstScriptIDTextBox.Name = "GameFirstScriptIDTextBox";
-            this.GameFirstScriptIDTextBox.Size = new System.Drawing.Size(147, 20);
-            this.GameFirstScriptIDTextBox.TabIndex = 29;
+            this.GameFirstScriptTextBox.Location = new System.Drawing.Point(131, 238);
+            this.GameFirstScriptTextBox.Name = "GameFirstScriptTextBox";
+            this.GameFirstScriptTextBox.Size = new System.Drawing.Size(147, 20);
+            this.GameFirstScriptTextBox.TabIndex = 29;
             // 
             // GameIDLabel
             // 
@@ -2041,16 +2041,16 @@ namespace Scribe
         private System.Windows.Forms.Label GameIsEpisodeLabel;
         private System.Windows.Forms.Label GameEpisodeTitleLabel;
         private System.Windows.Forms.Label GameEpisodeNumberLabel;
-        private System.Windows.Forms.Label GamePlayerCharacterIDLabel;
-        private System.Windows.Forms.Label GameFirstScriptIDLabel;
+        private System.Windows.Forms.Label GamePlayerCharacterLabel;
+        private System.Windows.Forms.Label GameFirstScriptLabel;
         private System.Windows.Forms.CheckBox GameIsEpisodeCheckBox;
         private System.Windows.Forms.TextBox GameNameTextBox;
         private System.Windows.Forms.TextBox GameDescriptionTextBox;
         private System.Windows.Forms.TextBox GameCommentTextBox;
         private System.Windows.Forms.TextBox GameEpisodeTitleTextBox;
         private System.Windows.Forms.TextBox GameEpisodeNumberTextBox;
-        private System.Windows.Forms.TextBox GamePlayerCharacterIDTextBox;
-        private System.Windows.Forms.TextBox GameFirstScriptIDTextBox;
+        private System.Windows.Forms.TextBox GamePlayerCharacterTextBox;
+        private System.Windows.Forms.TextBox GameFirstScriptTextBox;
         private System.Windows.Forms.Button GameIconEditButton;
         private System.Windows.Forms.PictureBox GameIconPictureBox;
         private System.Windows.Forms.ListBox BiomesListBox;
