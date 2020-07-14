@@ -1,15 +1,15 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Scribe
 {
+    /// <summary>
+    /// A GUI application used to edit game definitions consumed by the <see cref="ParquetClassLibrary"/>.
+    /// </summary>
     static class Program
     {
         /// <summary>
-        ///  The main entry point for the application.
+        /// Entry point to a GUI application used to edit game definitions consumed by the <see cref="ParquetClassLibrary"/>.
         /// </summary>
         [STAThread]
         static void Main()
