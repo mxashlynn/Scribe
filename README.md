@@ -1,2 +1,2 @@
 # Scribe
-Graphical editors for Parquet game objects.
+A graphical editor for 2D building, crafting, and narrative sandbox games using the [Parquet](https://github.com/mxashlynn/Parquet) system.
