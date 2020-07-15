@@ -374,6 +374,7 @@ namespace Scribe
             // 
             // SelectAllToolStripMenuItem
             // 
+            this.SelectAllToolStripMenuItem.Enabled = false;
             this.SelectAllToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("SelectAllToolStripMenuItem.Image")));
             this.SelectAllToolStripMenuItem.Name = "SelectAllToolStripMenuItem";
             this.SelectAllToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
