@@ -232,6 +232,11 @@ namespace Scribe
             this.BiomeConfigTableLayoutPanel.SuspendLayout();
             this.BiomeTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BiomePictureBox)).BeginInit();
+            this.RoomsTabPage.SuspendLayout();
+            this.RoomConfigGroupBox.SuspendLayout();
+            this.RoomConfigTableLayoutPanel.SuspendLayout();
+            this.RoomTableLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RoomPictureBox)).BeginInit();
             this.FiltersTableLayoutPanel.SuspendLayout();
             this.FilterGroupBox.SuspendLayout();
             this.FlavorFilterGroupBox.SuspendLayout();
@@ -2375,6 +2380,14 @@ namespace Scribe
             this.BiomeTableLayoutPanel.ResumeLayout(false);
             this.BiomeTableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BiomePictureBox)).EndInit();
+            this.RoomsTabPage.ResumeLayout(false);
+            this.RoomsTabPage.PerformLayout();
+            this.RoomConfigGroupBox.ResumeLayout(false);
+            this.RoomConfigTableLayoutPanel.ResumeLayout(false);
+            this.RoomConfigTableLayoutPanel.PerformLayout();
+            this.RoomTableLayoutPanel.ResumeLayout(false);
+            this.RoomTableLayoutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RoomPictureBox)).EndInit();
             this.FiltersTableLayoutPanel.ResumeLayout(false);
             this.FiltersTableLayoutPanel.PerformLayout();
             this.FilterGroupBox.ResumeLayout(false);
