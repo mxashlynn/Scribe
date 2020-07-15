@@ -118,7 +118,7 @@ namespace Scribe
             this.BiomesTabPage = new System.Windows.Forms.TabPage();
             this.BiomeAddEntryRequirementButton = new System.Windows.Forms.Button();
             this.BiomeDeleteEntryRequirementButton = new System.Windows.Forms.Button();
-            this.BiomesListBox = new System.Windows.Forms.ListBox();
+            this.BiomeListBox = new System.Windows.Forms.ListBox();
             this.BiomeConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.BiomeConfigTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.BiomeLandThresholdFactorLabel = new System.Windows.Forms.Label();
@@ -127,7 +127,7 @@ namespace Scribe
             this.BiomeLiquidThresholdFactorTextBox = new System.Windows.Forms.TextBox();
             this.BiomeRoomThresholdFactorTextBox = new System.Windows.Forms.TextBox();
             this.BiomeRoomThresholdFactorLabel = new System.Windows.Forms.Label();
-            this.BiomesPictureEditButton = new System.Windows.Forms.Button();
+            this.BiomePictureEditButton = new System.Windows.Forms.Button();
             this.BiomeTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.BiomeAddParquetCriterionButton = new System.Windows.Forms.Button();
             this.BiomeDeleteParquetCriterionButton = new System.Windows.Forms.Button();
@@ -150,7 +150,7 @@ namespace Scribe
             this.BiomesPictureBox = new System.Windows.Forms.PictureBox();
             this.BiomeIDLabel = new System.Windows.Forms.Label();
             this.AddNewBiomeButton = new System.Windows.Forms.Button();
-            this.BiomesIDTextBox = new System.Windows.Forms.TextBox();
+            this.BiomeIDTextBox = new System.Windows.Forms.TextBox();
             this.CraftingTabPage = new System.Windows.Forms.TabPage();
             this.ItemsTabPage = new System.Windows.Forms.TabPage();
             this.MapsTabPage = new System.Windows.Forms.TabPage();
@@ -1092,14 +1092,14 @@ namespace Scribe
             this.BiomesTabPage.BackColor = System.Drawing.Color.Transparent;
             this.BiomesTabPage.Controls.Add(this.BiomeAddEntryRequirementButton);
             this.BiomesTabPage.Controls.Add(this.BiomeDeleteEntryRequirementButton);
-            this.BiomesTabPage.Controls.Add(this.BiomesListBox);
+            this.BiomesTabPage.Controls.Add(this.BiomeListBox);
             this.BiomesTabPage.Controls.Add(this.BiomeConfigGroupBox);
-            this.BiomesTabPage.Controls.Add(this.BiomesPictureEditButton);
+            this.BiomesTabPage.Controls.Add(this.BiomePictureEditButton);
             this.BiomesTabPage.Controls.Add(this.BiomeTableLayoutPanel);
             this.BiomesTabPage.Controls.Add(this.BiomesPictureBox);
             this.BiomesTabPage.Controls.Add(this.BiomeIDLabel);
             this.BiomesTabPage.Controls.Add(this.AddNewBiomeButton);
-            this.BiomesTabPage.Controls.Add(this.BiomesIDTextBox);
+            this.BiomesTabPage.Controls.Add(this.BiomeIDTextBox);
             this.BiomesTabPage.Location = new System.Drawing.Point(4, 22);
             this.BiomesTabPage.Name = "BiomesTabPage";
             this.BiomesTabPage.Size = new System.Drawing.Size(952, 599);
@@ -1126,15 +1126,15 @@ namespace Scribe
             this.BiomeDeleteEntryRequirementButton.Text = "Remove Requirement";
             this.BiomeDeleteEntryRequirementButton.UseVisualStyleBackColor = true;
             // 
-            // BiomesListBox
+            // BiomeListBox
             // 
-            this.BiomesListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.BiomeListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.BiomesListBox.FormattingEnabled = true;
-            this.BiomesListBox.Location = new System.Drawing.Point(9, 16);
-            this.BiomesListBox.Name = "BiomesListBox";
-            this.BiomesListBox.Size = new System.Drawing.Size(279, 446);
-            this.BiomesListBox.TabIndex = 1;
+            this.BiomeListBox.FormattingEnabled = true;
+            this.BiomeListBox.Location = new System.Drawing.Point(9, 16);
+            this.BiomeListBox.Name = "BiomeListBox";
+            this.BiomeListBox.Size = new System.Drawing.Size(279, 446);
+            this.BiomeListBox.TabIndex = 1;
             // 
             // BiomeConfigGroupBox
             // 
@@ -1232,14 +1232,14 @@ namespace Scribe
             this.BiomeRoomThresholdFactorLabel.TabIndex = 5;
             this.BiomeRoomThresholdFactorLabel.Text = "Room Threshold Factor";
             // 
-            // BiomesPictureEditButton
+            // BiomePictureEditButton
             // 
-            this.BiomesPictureEditButton.Location = new System.Drawing.Point(812, 468);
-            this.BiomesPictureEditButton.Name = "BiomesPictureEditButton";
-            this.BiomesPictureEditButton.Size = new System.Drawing.Size(128, 23);
-            this.BiomesPictureEditButton.TabIndex = 7;
-            this.BiomesPictureEditButton.Text = "Edit Image";
-            this.BiomesPictureEditButton.UseVisualStyleBackColor = true;
+            this.BiomePictureEditButton.Location = new System.Drawing.Point(812, 468);
+            this.BiomePictureEditButton.Name = "BiomePictureEditButton";
+            this.BiomePictureEditButton.Size = new System.Drawing.Size(128, 23);
+            this.BiomePictureEditButton.TabIndex = 7;
+            this.BiomePictureEditButton.Text = "Edit Image";
+            this.BiomePictureEditButton.UseVisualStyleBackColor = true;
             // 
             // BiomeTableLayoutPanel
             // 
@@ -1482,15 +1482,15 @@ namespace Scribe
             this.AddNewBiomeButton.Text = "Add New Biome";
             this.AddNewBiomeButton.UseVisualStyleBackColor = true;
             // 
-            // BiomesIDTextBox
+            // BiomeIDTextBox
             // 
-            this.BiomesIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BiomesIDTextBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.BiomesIDTextBox.Location = new System.Drawing.Point(812, 16);
-            this.BiomesIDTextBox.Name = "BiomesIDTextBox";
-            this.BiomesIDTextBox.Size = new System.Drawing.Size(131, 20);
-            this.BiomesIDTextBox.TabIndex = 3;
-            this.BiomesIDTextBox.Text = "-2020202020";
+            this.BiomeIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiomeIDTextBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BiomeIDTextBox.Location = new System.Drawing.Point(812, 16);
+            this.BiomeIDTextBox.Name = "BiomeIDTextBox";
+            this.BiomeIDTextBox.Size = new System.Drawing.Size(131, 20);
+            this.BiomeIDTextBox.TabIndex = 3;
+            this.BiomeIDTextBox.Text = "-2020202020";
             // 
             // CraftingTabPage
             // 
@@ -2072,9 +2072,9 @@ namespace Scribe
         private System.Windows.Forms.TextBox GameFirstScriptTextBox;
         private System.Windows.Forms.Button GameIconEditButton;
         private System.Windows.Forms.PictureBox GameIconPictureBox;
-        private System.Windows.Forms.ListBox BiomesListBox;
+        private System.Windows.Forms.ListBox BiomeListBox;
         private System.Windows.Forms.GroupBox BiomeConfigGroupBox;
-        private System.Windows.Forms.Button BiomesPictureEditButton;
+        private System.Windows.Forms.Button BiomePictureEditButton;
         private System.Windows.Forms.TableLayoutPanel BiomeTableLayoutPanel;
         private System.Windows.Forms.Label BiomeNameLabel;
         private System.Windows.Forms.Label BiomeDescriptionLabel;
@@ -2091,7 +2091,7 @@ namespace Scribe
         private System.Windows.Forms.PictureBox BiomesPictureBox;
         private System.Windows.Forms.Label BiomeIDLabel;
         private System.Windows.Forms.Button AddNewBiomeButton;
-        private System.Windows.Forms.TextBox BiomesIDTextBox;
+        private System.Windows.Forms.TextBox BiomeIDTextBox;
         private System.Windows.Forms.CheckBox BiomeIsLiquidBasedCheckBox;
         private System.Windows.Forms.CheckBox BiomeIsRoomBasedCheckBox;
         private System.Windows.Forms.Button BiomeAddEntryRequirementButton;
