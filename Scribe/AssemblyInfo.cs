@@ -8,7 +8,7 @@ using Scribe;
 [assembly: AssemblyTitle("Scribe")]
 [assembly: AssemblyDescription("An editor for Parquet-based games.")]
 [assembly: AssemblyCompany("Magical Girlfriends")]
-[assembly: AssemblyCopyright("2018-2020 Paige Ashlynn")]
+[assembly: AssemblyCopyright("© 2018-2020 Paige Ashlynn")]
 [assembly: AssemblyProduct("Scribe")]
 [assembly: AssemblyVersion(AssemblyInfo.ScribeVersion)]
 [assembly: AssemblyInformationalVersion(AssemblyInfo.ScribeVersion)]
@@ -38,5 +38,8 @@ namespace Scribe
         /// - Build: Procedural updates that do not imply any changes, such as when rebuilding for APK/IPA submission.
         /// </remarks>
         public const string ScribeVersion = "0.2.0.0";
+
+        /// <summary>Describes where to find the source code.</summary>
+        public const string ScribeRepository = "https://github.com/mxashlynn/Scribe";
     }
 }

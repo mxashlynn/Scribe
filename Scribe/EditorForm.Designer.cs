@@ -491,6 +491,7 @@ namespace Scribe
             this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
             this.AboutToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.AboutToolStripMenuItem.Text = "&About...";
+            this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutMenuItem_Click);
             // 
             // EditorTabs
             // 
@@ -1159,7 +1160,7 @@ namespace Scribe
             this.BiomeLandThresholdFactorLabel.AutoSize = true;
             this.BiomeLandThresholdFactorLabel.Location = new System.Drawing.Point(21, 0);
             this.BiomeLandThresholdFactorLabel.Name = "BiomeLandThresholdFactorLabel";
-            this.BiomeLandThresholdFactorLabel.Size = new System.Drawing.Size(114, 24);
+            this.BiomeLandThresholdFactorLabel.Size = new System.Drawing.Size(114, 23);
             this.BiomeLandThresholdFactorLabel.TabIndex = 0;
             this.BiomeLandThresholdFactorLabel.Text = "Land Threshold Factor";
             // 
@@ -1168,9 +1169,9 @@ namespace Scribe
             this.BiomeLiquidThresholdFactorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomeLiquidThresholdFactorLabel.AutoSize = true;
-            this.BiomeLiquidThresholdFactorLabel.Location = new System.Drawing.Point(17, 24);
+            this.BiomeLiquidThresholdFactorLabel.Location = new System.Drawing.Point(17, 23);
             this.BiomeLiquidThresholdFactorLabel.Name = "BiomeLiquidThresholdFactorLabel";
-            this.BiomeLiquidThresholdFactorLabel.Size = new System.Drawing.Size(118, 24);
+            this.BiomeLiquidThresholdFactorLabel.Size = new System.Drawing.Size(118, 23);
             this.BiomeLiquidThresholdFactorLabel.TabIndex = 1;
             this.BiomeLiquidThresholdFactorLabel.Text = "Liquid Threshold Factor";
             // 
@@ -1187,7 +1188,7 @@ namespace Scribe
             // 
             this.BiomeLiquidThresholdFactorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.BiomeLiquidThresholdFactorTextBox.Location = new System.Drawing.Point(141, 27);
+            this.BiomeLiquidThresholdFactorTextBox.Location = new System.Drawing.Point(141, 26);
             this.BiomeLiquidThresholdFactorTextBox.Name = "BiomeLiquidThresholdFactorTextBox";
             this.BiomeLiquidThresholdFactorTextBox.Size = new System.Drawing.Size(132, 20);
             this.BiomeLiquidThresholdFactorTextBox.TabIndex = 3;
@@ -1196,7 +1197,7 @@ namespace Scribe
             // 
             this.BiomeRoomThresholdFactorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.BiomeRoomThresholdFactorTextBox.Location = new System.Drawing.Point(141, 51);
+            this.BiomeRoomThresholdFactorTextBox.Location = new System.Drawing.Point(141, 49);
             this.BiomeRoomThresholdFactorTextBox.Name = "BiomeRoomThresholdFactorTextBox";
             this.BiomeRoomThresholdFactorTextBox.Size = new System.Drawing.Size(132, 20);
             this.BiomeRoomThresholdFactorTextBox.TabIndex = 4;
@@ -1206,9 +1207,9 @@ namespace Scribe
             this.BiomeRoomThresholdFactorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomeRoomThresholdFactorLabel.AutoSize = true;
-            this.BiomeRoomThresholdFactorLabel.Location = new System.Drawing.Point(17, 48);
+            this.BiomeRoomThresholdFactorLabel.Location = new System.Drawing.Point(17, 46);
             this.BiomeRoomThresholdFactorLabel.Name = "BiomeRoomThresholdFactorLabel";
-            this.BiomeRoomThresholdFactorLabel.Size = new System.Drawing.Size(118, 24);
+            this.BiomeRoomThresholdFactorLabel.Size = new System.Drawing.Size(118, 26);
             this.BiomeRoomThresholdFactorLabel.TabIndex = 5;
             this.BiomeRoomThresholdFactorLabel.Text = "Room Threshold Factor";
             // 

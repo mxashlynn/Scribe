@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
+using System;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -12,12 +9,13 @@ namespace Scribe
         public AboutBox()
         {
             InitializeComponent();
-            this.Text = String.Format("About {0}", AssemblyTitle);
-            this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
-            this.labelCopyright.Text = AssemblyCopyright;
-            this.labelCompanyName.Text = AssemblyCompany;
-            this.textBoxDescription.Text = AssemblyDescription;
+
+            Text = $"About {AssemblyTitle}";
+            LabelProductName.Text = AssemblyProduct;
+            LabelVersion.Text = $"Version {AssemblyInfo.ScribeVersion}";
+            LabelCopyright.Text = AssemblyCopyright;
+            LabelCompanyName.Text = $"Created by {AssemblyCompany}";
+            TextBoxDescription.Text = $"{AssemblyDescription}{Environment.NewLine}  {Environment.NewLine}A game built with this system offers many of the features of contemporary quest-driven building games but in a simple, top-down world and without combat.{Environment.NewLine}  {Environment.NewLine}For more information visit: {AssemblyInfo.ScribeRepository}";
         }
 
         #region Assembly Attribute Accessors
@@ -36,14 +34,6 @@ namespace Scribe
                     }
                 }
                 return System.IO.Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
-            }
-        }
-
-        public string AssemblyVersion
-        {
-            get
-            {
-                return Assembly.GetExecutingAssembly().GetName().Version.ToString();
             }
         }
 
@@ -99,5 +89,13 @@ namespace Scribe
             }
         }
         #endregion
+
+        /// <summary>
+        /// Closes the <see cref="AboutBox"/>.
+        /// </summary>
+        /// <param name="sender">The originator of the event.</param>
+        /// <param name="e">Additional event data.</param>
+        private void OKButton_Click(object sender, EventArgs e)
+            => Close();
     }
 }
