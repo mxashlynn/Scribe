@@ -8,9 +8,15 @@ namespace Scribe
     /// </summary>
     public partial class EditorForm : Form
     {
-        #region Child Forms
+        #region Child Forms and Data
         /// <summary>Reference to the dialogue displaying information about the application.</summary>
         private AboutBox AboutWindow;
+
+        /// <summary>A reminder to save before quitting.</summary>
+        private const string ExitWarningMessage = "Really quit?  Unsaved changes will be lost!";
+
+        /// <summary>A description of the purpose of the dialogue.</summary>
+        private const string ExitWarningCaption = "Exit Scribe";
         #endregion
 
         #region Initialization
@@ -26,6 +32,19 @@ namespace Scribe
             MainMenuBar.Font = SystemFonts.MenuFont;
             Font = SystemFonts.DialogFont;
              */
+
+            #region Default Event Handlers
+            FormClosing += new FormClosingEventHandler((object sender, FormClosingEventArgs e) =>
+            {
+                if (MessageBox.Show(ExitWarningMessage,
+                                    ExitWarningCaption,
+                                    MessageBoxButtons.YesNo,
+                                    MessageBoxIcon.Warning) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            });
+            #endregion
         }
         #endregion
 
@@ -60,7 +79,7 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="e">Addional event data.</param>
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
-            => throw new NotImplementedException();
+            => Close();
 
         /// <summary>
         /// Responds to a user selecting the "Undo" menu item.
