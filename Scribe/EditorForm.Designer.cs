@@ -149,7 +149,7 @@ namespace Scribe
             this.BiomeTierTextBox = new System.Windows.Forms.TextBox();
             this.BiomesPictureBox = new System.Windows.Forms.PictureBox();
             this.BiomeIDLabel = new System.Windows.Forms.Label();
-            this.AddNewBiomeButton = new System.Windows.Forms.Button();
+            this.BiomeAddNewBiomeButton = new System.Windows.Forms.Button();
             this.BiomeIDTextBox = new System.Windows.Forms.TextBox();
             this.CraftingTabPage = new System.Windows.Forms.TabPage();
             this.ItemsTabPage = new System.Windows.Forms.TabPage();
@@ -1098,7 +1098,7 @@ namespace Scribe
             this.BiomesTabPage.Controls.Add(this.BiomeTableLayoutPanel);
             this.BiomesTabPage.Controls.Add(this.BiomesPictureBox);
             this.BiomesTabPage.Controls.Add(this.BiomeIDLabel);
-            this.BiomesTabPage.Controls.Add(this.AddNewBiomeButton);
+            this.BiomesTabPage.Controls.Add(this.BiomeAddNewBiomeButton);
             this.BiomesTabPage.Controls.Add(this.BiomeIDTextBox);
             this.BiomesTabPage.Location = new System.Drawing.Point(4, 22);
             this.BiomesTabPage.Name = "BiomesTabPage";
@@ -1473,14 +1473,14 @@ namespace Scribe
             this.BiomeIDLabel.TabIndex = 4;
             this.BiomeIDLabel.Text = "Biome ID";
             // 
-            // AddNewBiomeButton
+            // BiomeAddNewBiomeButton
             // 
-            this.AddNewBiomeButton.Location = new System.Drawing.Point(159, 468);
-            this.AddNewBiomeButton.Name = "AddNewBiomeButton";
-            this.AddNewBiomeButton.Size = new System.Drawing.Size(129, 23);
-            this.AddNewBiomeButton.TabIndex = 2;
-            this.AddNewBiomeButton.Text = "Add New Biome";
-            this.AddNewBiomeButton.UseVisualStyleBackColor = true;
+            this.BiomeAddNewBiomeButton.Location = new System.Drawing.Point(159, 468);
+            this.BiomeAddNewBiomeButton.Name = "BiomeAddNewBiomeButton";
+            this.BiomeAddNewBiomeButton.Size = new System.Drawing.Size(129, 23);
+            this.BiomeAddNewBiomeButton.TabIndex = 2;
+            this.BiomeAddNewBiomeButton.Text = "Add New Biome";
+            this.BiomeAddNewBiomeButton.UseVisualStyleBackColor = true;
             // 
             // BiomeIDTextBox
             // 
@@ -2090,7 +2090,7 @@ namespace Scribe
         private System.Windows.Forms.TextBox BiomeTierTextBox;
         private System.Windows.Forms.PictureBox BiomesPictureBox;
         private System.Windows.Forms.Label BiomeIDLabel;
-        private System.Windows.Forms.Button AddNewBiomeButton;
+        private System.Windows.Forms.Button BiomeAddNewBiomeButton;
         private System.Windows.Forms.TextBox BiomeIDTextBox;
         private System.Windows.Forms.CheckBox BiomeIsLiquidBasedCheckBox;
         private System.Windows.Forms.CheckBox BiomeIsRoomBasedCheckBox;
