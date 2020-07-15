@@ -225,11 +225,11 @@ namespace Scribe
             this.MainToolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.MainToolStripStatusLabel.Text = "Ready";
             // 
-            // toolStripProgressBar1
+            // ToolStripProgressBar
             // 
-            this.toolStripProgressBar1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
+            this.ToolStripProgressBar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.ToolStripProgressBar.Name = "ToolStripProgressBar";
+            this.ToolStripProgressBar.Size = new System.Drawing.Size(100, 16);
             // 
             // MainMenuBar
             // 
@@ -393,7 +393,7 @@ namespace Scribe
             // 
             this.RollerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CheckMapStripMenuItem,
-            this.ListNameCollisionsStripMenuItem2,
+            this.ListNameCollisionsStripMenuItem,
             this.ToolStripSeparator4,
             this.ListIDRangesToolStripMenuItem,
             this.ListMaxIDsToolStripMenuItem,
@@ -410,12 +410,13 @@ namespace Scribe
             this.CheckMapStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.CheckMapStripMenuItem.Text = "Check &Map Adjacency";
             // 
-            // ListNameCollisionsStripMenuItem2
+            // ListNameCollisionsStripMenuItem
             // 
-            this.ListNameCollisionsStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("ListNameCollisionsStripMenuItem2.Image")));
-            this.ListNameCollisionsStripMenuItem2.Name = "ListNameCollisionsStripMenuItem2";
-            this.ListNameCollisionsStripMenuItem2.Size = new System.Drawing.Size(192, 22);
-            this.ListNameCollisionsStripMenuItem2.Text = "List &Name Collisions";
+            this.ListNameCollisionsStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ListNameCollisionsStripMenuItem.Image")));
+            this.ListNameCollisionsStripMenuItem.Name = "ListNameCollisionsStripMenuItem";
+            this.ListNameCollisionsStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.ListNameCollisionsStripMenuItem.Text = "List &Name Collisions";
+            this.ListNameCollisionsStripMenuItem.Click += new System.EventHandler(this.ListNameCollisionsStripMenuItem_Click);
             // 
             // ToolStripSeparator4
             // 
@@ -1964,7 +1965,7 @@ namespace Scribe
         private System.Windows.Forms.ToolStripSeparator ToolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem AboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CheckMapStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ListNameCollisionsStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem ListNameCollisionsStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator ToolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem ListIDRangesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ListMaxIDsToolStripMenuItem;
@@ -2006,7 +2007,7 @@ namespace Scribe
         private System.Windows.Forms.Label NumbingSelector;
         private System.Windows.Forms.Label AllFlavorsSelector;
         private System.Windows.Forms.ToolStripStatusLabel MainToolStripStatusLabel;
-        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private System.Windows.Forms.ToolStripProgressBar ToolStripProgressBar;
         private System.Windows.Forms.GroupBox LibraryInfoGroupBox;
         private System.Windows.Forms.GroupBox FileFormatGroupBox;
         private System.Windows.Forms.TableLayoutPanel LibraryInfoTableLayoutPanel;
