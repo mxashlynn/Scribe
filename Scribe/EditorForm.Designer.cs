@@ -1,4 +1,4 @@
-using System.Drawing;
+using System;
 
 namespace Scribe
 {
@@ -33,7 +33,7 @@ namespace Scribe
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditorForm));
             this.EditorStatusStrip = new System.Windows.Forms.StatusStrip();
             this.MainToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.ToolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.MainMenuBar = new System.Windows.Forms.MenuStrip();
             this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,7 +53,7 @@ namespace Scribe
             this.ToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RollerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CheckMapStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ListNameCollisionsStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ListNameCollisionsStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.ListIDRangesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ListMaxIDsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -211,7 +211,7 @@ namespace Scribe
             this.EditorStatusStrip.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EditorStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MainToolStripStatusLabel,
-            this.toolStripProgressBar1});
+            this.ToolStripProgressBar});
             this.EditorStatusStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.EditorStatusStrip.Location = new System.Drawing.Point(0, 739);
             this.EditorStatusStrip.Name = "EditorStatusStrip";
@@ -268,6 +268,7 @@ namespace Scribe
             this.NewToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.NewToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.NewToolStripMenuItem.Text = "&New";
+            this.NewToolStripMenuItem.Click += new System.EventHandler(this.NewToolStripMenuItem_Click);
             // 
             // LoadToolStripMenuItem
             // 
@@ -277,6 +278,7 @@ namespace Scribe
             this.LoadToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.LoadToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.LoadToolStripMenuItem.Text = "&Load";
+            this.LoadToolStripMenuItem.Click += new System.EventHandler(this.LoadToolStripMenuItem_Click);
             // 
             // SaveToolStripMenuItem
             // 
@@ -286,6 +288,7 @@ namespace Scribe
             this.SaveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.SaveToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.SaveToolStripMenuItem.Text = "&Save";
+            this.SaveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // ToolStripSeparator1
             // 
@@ -298,6 +301,7 @@ namespace Scribe
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
             this.ExitToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.ExitToolStripMenuItem.Text = "E&xit";
+            this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // EditToolStripMenuItem
             // 
@@ -322,6 +326,7 @@ namespace Scribe
             this.UndoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
             this.UndoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.UndoToolStripMenuItem.Text = "&Undo";
+            this.UndoToolStripMenuItem.Click += new System.EventHandler(this.UndoToolStripMenuItem_Click);
             // 
             // RedoToolStripMenuItem
             // 
@@ -331,6 +336,7 @@ namespace Scribe
             this.RedoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
             this.RedoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.RedoToolStripMenuItem.Text = "&Redo";
+            this.RedoToolStripMenuItem.Click += new System.EventHandler(this.RedoToolStripMenuItem_Click);
             // 
             // ToolStripSeparator2
             // 
@@ -346,6 +352,7 @@ namespace Scribe
             this.CutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
             this.CutToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.CutToolStripMenuItem.Text = "Cu&t";
+            this.CutToolStripMenuItem.Click += new System.EventHandler(this.CutToolStripMenuItem_Click);
             // 
             // CopyToolStripMenuItem
             // 
@@ -356,6 +363,7 @@ namespace Scribe
             this.CopyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
             this.CopyToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.CopyToolStripMenuItem.Text = "&Copy";
+            this.CopyToolStripMenuItem.Click += new System.EventHandler(this.CopyToolStripMenuItem_Click);
             // 
             // PasteToolStripMenuItem
             // 
@@ -366,6 +374,7 @@ namespace Scribe
             this.PasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
             this.PasteToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.PasteToolStripMenuItem.Text = "&Paste";
+            this.PasteToolStripMenuItem.Click += new System.EventHandler(this.PasteToolStripMenuItem_Click);
             // 
             // ToolStripSeparator3
             // 
@@ -379,6 +388,7 @@ namespace Scribe
             this.SelectAllToolStripMenuItem.Name = "SelectAllToolStripMenuItem";
             this.SelectAllToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.SelectAllToolStripMenuItem.Text = "Select &All";
+            this.SelectAllToolStripMenuItem.Click += new System.EventHandler(this.SelectAllToolStripMenuItem_Click);
             // 
             // ToolsToolStripMenuItem
             // 
@@ -410,6 +420,7 @@ namespace Scribe
             this.CheckMapStripMenuItem.Name = "CheckMapStripMenuItem";
             this.CheckMapStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.CheckMapStripMenuItem.Text = "Check &Map Adjacency";
+            this.CheckMapStripMenuItem.Click += new System.EventHandler(this.CheckMapStripMenuItem_Click);
             // 
             // ListNameCollisionsStripMenuItem
             // 
@@ -430,6 +441,7 @@ namespace Scribe
             this.ListIDRangesToolStripMenuItem.Name = "ListIDRangesToolStripMenuItem";
             this.ListIDRangesToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.ListIDRangesToolStripMenuItem.Text = "List ID &Ranges";
+            this.ListIDRangesToolStripMenuItem.Click += new System.EventHandler(this.ListIDRangesToolStripMenuItem_Click);
             // 
             // ListMaxIDsToolStripMenuItem
             // 
@@ -437,6 +449,7 @@ namespace Scribe
             this.ListMaxIDsToolStripMenuItem.Name = "ListMaxIDsToolStripMenuItem";
             this.ListMaxIDsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.ListMaxIDsToolStripMenuItem.Text = "List Maximum &IDs";
+            this.ListMaxIDsToolStripMenuItem.Click += new System.EventHandler(this.ListMaxIDsToolStripMenuItem_Click);
             // 
             // ListTagsToolStripMenuItem
             // 
@@ -444,6 +457,7 @@ namespace Scribe
             this.ListTagsToolStripMenuItem.Name = "ListTagsToolStripMenuItem";
             this.ListTagsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.ListTagsToolStripMenuItem.Text = "List &Tags";
+            this.ListTagsToolStripMenuItem.Click += new System.EventHandler(this.ListTagsToolStripMenuItem_Click);
             // 
             // ToolStripSeparator5
             // 
@@ -456,6 +470,7 @@ namespace Scribe
             this.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem";
             this.OptionsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.OptionsToolStripMenuItem.Text = "&Options";
+            this.OptionsToolStripMenuItem.Click += new System.EventHandler(this.OptionsToolStripMenuItem_Click);
             // 
             // HelpToolStripMenuItem
             // 
@@ -474,6 +489,7 @@ namespace Scribe
             this.ScribeHelpToolStripMenuItem.Name = "ScribeHelpToolStripMenuItem";
             this.ScribeHelpToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.ScribeHelpToolStripMenuItem.Text = "Scribe &Help";
+            this.ScribeHelpToolStripMenuItem.Click += new System.EventHandler(this.ScribeHelpToolStripMenuItem_Click);
             // 
             // DocumentationToolStripMenuItem
             // 
@@ -481,6 +497,7 @@ namespace Scribe
             this.DocumentationToolStripMenuItem.Name = "DocumentationToolStripMenuItem";
             this.DocumentationToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.DocumentationToolStripMenuItem.Text = "Parquet &Documentation";
+            this.DocumentationToolStripMenuItem.Click += new System.EventHandler(this.DocumentationToolStripMenuItem_Click);
             // 
             // ToolStripSeparator6
             // 
@@ -1937,7 +1954,6 @@ namespace Scribe
             this.PerformLayout();
 
         }
-
         #endregion
 
         private System.Windows.Forms.StatusStrip EditorStatusStrip;

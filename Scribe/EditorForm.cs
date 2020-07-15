@@ -8,9 +8,12 @@ namespace Scribe
     /// </summary>
     public partial class EditorForm : Form
     {
+        #region Child Forms
         /// <summary>Reference to the dialogue displaying information about the application.</summary>
         private AboutBox AboutWindow;
+        #endregion
 
+        #region Initialization
         /// <summary>
         /// Constructs a new instance of the main editor UI.
         /// </summary>
@@ -24,6 +27,152 @@ namespace Scribe
             Font = SystemFonts.DialogFont;
              */
         }
+        #endregion
+
+        #region Menu Item Events
+        /// <summary>
+        /// Responds to a user selecting the "New" menu item.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="e">Addional event data.</param>
+        private void NewToolStripMenuItem_Click(object sender, EventArgs e)
+            => throw new NotImplementedException();
+
+        /// <summary>
+        /// Responds to a user selecting the "Load" menu item.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="e">Addional event data.</param>
+        private void LoadToolStripMenuItem_Click(object sender, EventArgs e)
+            => throw new NotImplementedException();
+
+        /// <summary>
+        /// Responds to a user selecting the "Save" menu item.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="e">Addional event data.</param>
+        private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
+            => throw new NotImplementedException();
+
+        /// <summary>
+        /// Responds to a user selecting the "Exit" menu item.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="e">Addional event data.</param>
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
+            => throw new NotImplementedException();
+
+        /// <summary>
+        /// Responds to a user selecting the "Undo" menu item.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="e">Addional event data.</param>
+        private void UndoToolStripMenuItem_Click(object sender, EventArgs e)
+            => throw new NotImplementedException();
+
+        /// <summary>
+        /// Responds to a user selecting the "Redo" menu item.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="e">Addional event data.</param>
+        private void RedoToolStripMenuItem_Click(object sender, EventArgs e)
+            => throw new NotImplementedException();
+
+        /// <summary>
+        /// Responds to a user selecting the "Cut" menu item.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="e">Addional event data.</param>
+        private void CutToolStripMenuItem_Click(object sender, EventArgs e)
+            => throw new NotImplementedException();
+
+        /// <summary>
+        /// Responds to a user selecting the "Copy" menu item.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="e">Addional event data.</param>
+        private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
+            => throw new NotImplementedException();
+
+        /// <summary>
+        /// Responds to a user selecting the "Paste" menu item.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="e">Addional event data.</param>
+        private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
+            => throw new NotImplementedException();
+
+        /// <summary>
+        /// Responds to a user selecting the "Select All" menu item.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="e">Addional event data.</param>
+        private void SelectAllToolStripMenuItem_Click(object sender, EventArgs e)
+            => throw new NotImplementedException();
+
+        /// <summary>
+        /// Responds to a user selecting the "Check Map" menu item.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="e">Addional event data.</param>
+        private void CheckMapStripMenuItem_Click(object sender, EventArgs e)
+            => throw new NotImplementedException();
+
+        /// <summary>
+        /// Responds to a user selecting the "List Naming Collisions" menu item.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="e">Addional event data.</param>
+        private void ListNameCollisionsStripMenuItem_Click(object sender, EventArgs e)
+            => throw new NotImplementedException();
+
+        /// <summary>
+        /// Responds to a user selecting the "List ID Ranges" menu item.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="e">Addional event data.</param>
+        private void ListIDRangesToolStripMenuItem_Click(object sender, EventArgs e)
+            => throw new NotImplementedException();
+
+        /// <summary>
+        /// Responds to a user selecting the "List Max IDs" menu item.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="e">Addional event data.</param>
+        private void ListMaxIDsToolStripMenuItem_Click(object sender, EventArgs e)
+            => throw new NotImplementedException();
+
+        /// <summary>
+        /// Responds to a user selecting the "List Tags" menu item.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="e">Addional event data.</param>
+        private void ListTagsToolStripMenuItem_Click(object sender, EventArgs e)
+            => throw new NotImplementedException();
+
+        /// <summary>
+        /// Responds to a user selecting the "Options" menu item.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="e">Addional event data.</param>
+        private void OptionsToolStripMenuItem_Click(object sender, EventArgs e)
+            => throw new NotImplementedException();
+
+        /// <summary>
+        /// Responds to a user selecting the "Scribe Help" menu item.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="e">Addional event data.</param>
+        private void ScribeHelpToolStripMenuItem_Click(object sender, EventArgs e)
+            => throw new NotImplementedException();
+
+        /// <summary>
+        /// Responds to a user selecting the "Documentation" menu item.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="e">Addional event data.</param>
+        private void DocumentationToolStripMenuItem_Click(object sender, EventArgs e)
+            => throw new NotImplementedException();
 
         /// <summary>
         /// Responds to a user selecting the "About" menu item.
@@ -35,5 +184,6 @@ namespace Scribe
             AboutWindow ??= new AboutBox();
             AboutWindow.ShowDialog();
         }
+        #endregion
     }
 }
