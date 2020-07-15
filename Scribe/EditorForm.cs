@@ -16,13 +16,13 @@ namespace Scribe
         /// </summary>
         public EditorForm()
         {
-            /*  TODO These might not be needed.  Add these if the fonts are wonky.
-            this.EditorStatusStrip.Font = SystemFonts.StatusFont;
-            this.MainMenuBar.Font = SystemFonts.MenuFont;
-            this.Font = SystemFonts.DialogFont;
-             */
-
             InitializeComponent();
+
+            /*  TODO These might not be needed.  Add these if the fonts are wonky.
+            EditorStatusStrip.Font = SystemFonts.StatusFont;
+            MainMenuBar.Font = SystemFonts.MenuFont;
+            Font = SystemFonts.DialogFont;
+             */
         }
 
         /// <summary>
