@@ -2321,7 +2321,6 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Left)));
             this.RoomTableLayoutPanel.SetColumnSpan(this.RoomRequiredFurnishingsListBox, 2);
             this.RoomRequiredFurnishingsListBox.Location = new System.Drawing.Point(145, 163);
-            this.RoomRequiredFurnishingsListBox.Multiline = true;
             this.RoomRequiredFurnishingsListBox.Name = "RoomRequiredFurnishingsListBox";
             this.RoomRequiredFurnishingsListBox.Size = new System.Drawing.Size(279, 69);
             this.RoomRequiredFurnishingsListBox.TabIndex = 28;
