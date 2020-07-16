@@ -605,7 +605,7 @@ namespace Scribe
             this.EditorTabs.Location = new System.Drawing.Point(12, 111);
             this.EditorTabs.Name = "EditorTabs";
             this.EditorTabs.SelectedIndex = 9;
-            this.EditorTabs.Size = new System.Drawing.Size(960, 625);
+            this.EditorTabs.Size = new System.Drawing.Size(961, 625);
             this.EditorTabs.TabIndex = 2;
             // 
             // GameTabPage
@@ -622,7 +622,7 @@ namespace Scribe
             this.GameTabPage.Location = new System.Drawing.Point(4, 22);
             this.GameTabPage.Name = "GameTabPage";
             this.GameTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.GameTabPage.Size = new System.Drawing.Size(952, 599);
+            this.GameTabPage.Size = new System.Drawing.Size(953, 599);
             this.GameTabPage.TabIndex = 0;
             this.GameTabPage.Text = "Game";
             // 
@@ -639,7 +639,7 @@ namespace Scribe
             // 
             this.GameIconPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.GameIconPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.GameIconPictureBox.Location = new System.Drawing.Point(758, 280);
+            this.GameIconPictureBox.Location = new System.Drawing.Point(759, 280);
             this.GameIconPictureBox.Name = "GameIconPictureBox";
             this.GameIconPictureBox.Size = new System.Drawing.Size(182, 182);
             this.GameIconPictureBox.TabIndex = 6;
@@ -826,7 +826,7 @@ namespace Scribe
             // 
             this.GameIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.GameIDLabel.AutoSize = true;
-            this.GameIDLabel.Location = new System.Drawing.Point(758, 19);
+            this.GameIDLabel.Location = new System.Drawing.Point(759, 19);
             this.GameIDLabel.Name = "GameIDLabel";
             this.GameIDLabel.Size = new System.Drawing.Size(48, 13);
             this.GameIDLabel.TabIndex = 4;
@@ -836,7 +836,7 @@ namespace Scribe
             // 
             this.GameIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.GameIDTextBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.GameIDTextBox.Location = new System.Drawing.Point(812, 16);
+            this.GameIDTextBox.Location = new System.Drawing.Point(813, 16);
             this.GameIDTextBox.Name = "GameIDTextBox";
             this.GameIDTextBox.Size = new System.Drawing.Size(131, 20);
             this.GameIDTextBox.TabIndex = 3;
@@ -868,7 +868,7 @@ namespace Scribe
             this.FileFormatGroupBox.Controls.Add(this.FileFormatTableLayoutPanel);
             this.FileFormatGroupBox.Location = new System.Drawing.Point(301, 499);
             this.FileFormatGroupBox.Name = "FileFormatGroupBox";
-            this.FileFormatGroupBox.Size = new System.Drawing.Size(645, 97);
+            this.FileFormatGroupBox.Size = new System.Drawing.Size(646, 97);
             this.FileFormatGroupBox.TabIndex = 0;
             this.FileFormatGroupBox.TabStop = false;
             this.FileFormatGroupBox.Text = "File Format";
@@ -907,7 +907,7 @@ namespace Scribe
             this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.FileFormatTableLayoutPanel.Size = new System.Drawing.Size(633, 72);
+            this.FileFormatTableLayoutPanel.Size = new System.Drawing.Size(634, 72);
             this.FileFormatTableLayoutPanel.TabIndex = 1;
             // 
             // FileFormatPrimaryDelimiterLabel
@@ -1077,7 +1077,7 @@ namespace Scribe
             this.LibraryInfoGroupBox.Controls.Add(this.LibraryInfoTableLayoutPanel);
             this.LibraryInfoGroupBox.Location = new System.Drawing.Point(6, 496);
             this.LibraryInfoGroupBox.Name = "LibraryInfoGroupBox";
-            this.LibraryInfoGroupBox.Size = new System.Drawing.Size(289, 100);
+            this.LibraryInfoGroupBox.Size = new System.Drawing.Size(290, 100);
             this.LibraryInfoGroupBox.TabIndex = 0;
             this.LibraryInfoGroupBox.TabStop = false;
             this.LibraryInfoGroupBox.Text = "Library Info";
@@ -1099,7 +1099,7 @@ namespace Scribe
             this.LibraryInfoTableLayoutPanel.RowCount = 2;
             this.LibraryInfoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.LibraryInfoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.LibraryInfoTableLayoutPanel.Size = new System.Drawing.Size(277, 75);
+            this.LibraryInfoTableLayoutPanel.Size = new System.Drawing.Size(278, 75);
             this.LibraryInfoTableLayoutPanel.TabIndex = 0;
             // 
             // LibraryVersionLabel
@@ -1124,7 +1124,7 @@ namespace Scribe
             this.LibraryVersionExample.Location = new System.Drawing.Point(70, 1);
             this.LibraryVersionExample.Margin = new System.Windows.Forms.Padding(1);
             this.LibraryVersionExample.Name = "LibraryVersionExample";
-            this.LibraryVersionExample.Size = new System.Drawing.Size(206, 35);
+            this.LibraryVersionExample.Size = new System.Drawing.Size(207, 35);
             this.LibraryVersionExample.TabIndex = 1;
             this.LibraryVersionExample.Text = "0.0.0";
             // 
@@ -1150,7 +1150,7 @@ namespace Scribe
             this.LibraryWorkingDirectoryExample.Location = new System.Drawing.Point(70, 38);
             this.LibraryWorkingDirectoryExample.Margin = new System.Windows.Forms.Padding(1);
             this.LibraryWorkingDirectoryExample.Name = "LibraryWorkingDirectoryExample";
-            this.LibraryWorkingDirectoryExample.Size = new System.Drawing.Size(206, 36);
+            this.LibraryWorkingDirectoryExample.Size = new System.Drawing.Size(207, 36);
             this.LibraryWorkingDirectoryExample.TabIndex = 1;
             this.LibraryWorkingDirectoryExample.Text = "C:\\";
             // 
@@ -1592,14 +1592,14 @@ namespace Scribe
             this.ItemsTabPage.Controls.Add(this.ItemIDTextBox);
             this.ItemsTabPage.Location = new System.Drawing.Point(4, 22);
             this.ItemsTabPage.Name = "ItemsTabPage";
-            this.ItemsTabPage.Size = new System.Drawing.Size(952, 599);
+            this.ItemsTabPage.Size = new System.Drawing.Size(953, 599);
             this.ItemsTabPage.TabIndex = 4;
             this.ItemsTabPage.Text = "Items";
             // 
             // ItemAddEntryRequirementButton
             // 
             this.ItemAddEntryRequirementButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemAddEntryRequirementButton.Location = new System.Drawing.Point(604, 468);
+            this.ItemAddEntryRequirementButton.Location = new System.Drawing.Point(605, 468);
             this.ItemAddEntryRequirementButton.Name = "ItemAddEntryRequirementButton";
             this.ItemAddEntryRequirementButton.Size = new System.Drawing.Size(129, 23);
             this.ItemAddEntryRequirementButton.TabIndex = 2;
@@ -1609,7 +1609,7 @@ namespace Scribe
             // ItemDeleteEntryRequirementButton
             // 
             this.ItemDeleteEntryRequirementButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemDeleteEntryRequirementButton.Location = new System.Drawing.Point(453, 468);
+            this.ItemDeleteEntryRequirementButton.Location = new System.Drawing.Point(454, 468);
             this.ItemDeleteEntryRequirementButton.Name = "ItemDeleteEntryRequirementButton";
             this.ItemDeleteEntryRequirementButton.Size = new System.Drawing.Size(129, 23);
             this.ItemDeleteEntryRequirementButton.TabIndex = 2;
@@ -1633,7 +1633,7 @@ namespace Scribe
             this.ItemConfigGroupBox.Controls.Add(this.ItemConfigTableLayoutPanel);
             this.ItemConfigGroupBox.Location = new System.Drawing.Point(9, 499);
             this.ItemConfigGroupBox.Name = "ItemConfigGroupBox";
-            this.ItemConfigGroupBox.Size = new System.Drawing.Size(937, 97);
+            this.ItemConfigGroupBox.Size = new System.Drawing.Size(938, 97);
             this.ItemConfigGroupBox.TabIndex = 0;
             this.ItemConfigGroupBox.TabStop = false;
             this.ItemConfigGroupBox.Text = "Configuration";
@@ -1657,7 +1657,7 @@ namespace Scribe
             this.ItemConfigTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.ItemConfigTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.ItemConfigTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.ItemConfigTableLayoutPanel.Size = new System.Drawing.Size(925, 72);
+            this.ItemConfigTableLayoutPanel.Size = new System.Drawing.Size(926, 72);
             this.ItemConfigTableLayoutPanel.TabIndex = 1;
             // 
             // ItemMinWalkableSpacesLabel
@@ -1925,7 +1925,7 @@ namespace Scribe
             // 
             this.ItemPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ItemPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ItemPictureBox.Location = new System.Drawing.Point(758, 280);
+            this.ItemPictureBox.Location = new System.Drawing.Point(759, 280);
             this.ItemPictureBox.Name = "ItemPictureBox";
             this.ItemPictureBox.Size = new System.Drawing.Size(182, 182);
             this.ItemPictureBox.TabIndex = 6;
@@ -1935,7 +1935,7 @@ namespace Scribe
             // 
             this.ItemIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ItemIDLabel.AutoSize = true;
-            this.ItemIDLabel.Location = new System.Drawing.Point(758, 19);
+            this.ItemIDLabel.Location = new System.Drawing.Point(759, 19);
             this.ItemIDLabel.Name = "ItemIDLabel";
             this.ItemIDLabel.Size = new System.Drawing.Size(43, 13);
             this.ItemIDLabel.TabIndex = 4;
@@ -1954,7 +1954,7 @@ namespace Scribe
             // 
             this.ItemIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ItemIDTextBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ItemIDTextBox.Location = new System.Drawing.Point(812, 16);
+            this.ItemIDTextBox.Location = new System.Drawing.Point(813, 16);
             this.ItemIDTextBox.Name = "ItemIDTextBox";
             this.ItemIDTextBox.Size = new System.Drawing.Size(131, 20);
             this.ItemIDTextBox.TabIndex = 3;
@@ -1993,14 +1993,14 @@ namespace Scribe
             this.RoomsTabPage.Controls.Add(this.RoomIDTextBox);
             this.RoomsTabPage.Location = new System.Drawing.Point(4, 22);
             this.RoomsTabPage.Name = "RoomsTabPage";
-            this.RoomsTabPage.Size = new System.Drawing.Size(952, 599);
+            this.RoomsTabPage.Size = new System.Drawing.Size(953, 599);
             this.RoomsTabPage.TabIndex = 7;
             this.RoomsTabPage.Text = "Rooms";
             // 
             // RoomAddBlockButton
             // 
             this.RoomAddBlockButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomAddBlockButton.Location = new System.Drawing.Point(604, 468);
+            this.RoomAddBlockButton.Location = new System.Drawing.Point(605, 468);
             this.RoomAddBlockButton.Name = "RoomAddBlockButton";
             this.RoomAddBlockButton.Size = new System.Drawing.Size(129, 23);
             this.RoomAddBlockButton.TabIndex = 2;
@@ -2010,7 +2010,7 @@ namespace Scribe
             // RoomDeleteBlockButton
             // 
             this.RoomDeleteBlockButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomDeleteBlockButton.Location = new System.Drawing.Point(453, 468);
+            this.RoomDeleteBlockButton.Location = new System.Drawing.Point(454, 468);
             this.RoomDeleteBlockButton.Name = "RoomDeleteBlockButton";
             this.RoomDeleteBlockButton.Size = new System.Drawing.Size(129, 23);
             this.RoomDeleteBlockButton.TabIndex = 2;
@@ -2034,7 +2034,7 @@ namespace Scribe
             this.RoomConfigGroupBox.Controls.Add(this.RoomConfigTableLayoutPanel);
             this.RoomConfigGroupBox.Location = new System.Drawing.Point(9, 499);
             this.RoomConfigGroupBox.Name = "RoomConfigGroupBox";
-            this.RoomConfigGroupBox.Size = new System.Drawing.Size(937, 97);
+            this.RoomConfigGroupBox.Size = new System.Drawing.Size(938, 97);
             this.RoomConfigGroupBox.TabIndex = 0;
             this.RoomConfigGroupBox.TabStop = false;
             this.RoomConfigGroupBox.Text = "Configuration";
@@ -2058,7 +2058,7 @@ namespace Scribe
             this.RoomConfigTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.RoomConfigTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.RoomConfigTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.RoomConfigTableLayoutPanel.Size = new System.Drawing.Size(925, 72);
+            this.RoomConfigTableLayoutPanel.Size = new System.Drawing.Size(926, 72);
             this.RoomConfigTableLayoutPanel.TabIndex = 1;
             // 
             // RoomMinWalkableSpacesLabel
@@ -2165,7 +2165,7 @@ namespace Scribe
             // RoomDeleteFurnishingsButton
             // 
             this.RoomDeleteFurnishingsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomDeleteFurnishingsButton.Location = new System.Drawing.Point(152, 238);
+            this.RoomDeleteFurnishingsButton.Location = new System.Drawing.Point(154, 238);
             this.RoomDeleteFurnishingsButton.Name = "RoomDeleteFurnishingsButton";
             this.RoomDeleteFurnishingsButton.Size = new System.Drawing.Size(129, 23);
             this.RoomDeleteFurnishingsButton.TabIndex = 29;
@@ -2185,7 +2185,7 @@ namespace Scribe
             // RoomDeleteFloorButton
             // 
             this.RoomDeleteFloorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomDeleteFloorButton.Location = new System.Drawing.Point(152, 343);
+            this.RoomDeleteFloorButton.Location = new System.Drawing.Point(154, 343);
             this.RoomDeleteFloorButton.Name = "RoomDeleteFloorButton";
             this.RoomDeleteFloorButton.Size = new System.Drawing.Size(129, 23);
             this.RoomDeleteFloorButton.TabIndex = 2;
@@ -2198,7 +2198,7 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Left)));
             this.RoomTableLayoutPanel.SetColumnSpan(this.RoomRequiredBlocksListBox, 2);
             this.RoomRequiredBlocksListBox.FormattingEnabled = true;
-            this.RoomRequiredBlocksListBox.Location = new System.Drawing.Point(145, 373);
+            this.RoomRequiredBlocksListBox.Location = new System.Drawing.Point(146, 373);
             this.RoomRequiredBlocksListBox.Name = "RoomRequiredBlocksListBox";
             this.RoomRequiredBlocksListBox.Size = new System.Drawing.Size(279, 69);
             this.RoomRequiredBlocksListBox.TabIndex = 1;
@@ -2209,7 +2209,7 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Left)));
             this.RoomTableLayoutPanel.SetColumnSpan(this.RoomRequiredFloorsListBox, 2);
             this.RoomRequiredFloorsListBox.FormattingEnabled = true;
-            this.RoomRequiredFloorsListBox.Location = new System.Drawing.Point(145, 268);
+            this.RoomRequiredFloorsListBox.Location = new System.Drawing.Point(146, 268);
             this.RoomRequiredFloorsListBox.Name = "RoomRequiredFloorsListBox";
             this.RoomRequiredFloorsListBox.Size = new System.Drawing.Size(279, 69);
             this.RoomRequiredFloorsListBox.TabIndex = 1;
@@ -2270,7 +2270,7 @@ namespace Scribe
             // 
             // RoomNameTextBox
             // 
-            this.RoomNameTextBox.Location = new System.Drawing.Point(145, 3);
+            this.RoomNameTextBox.Location = new System.Drawing.Point(146, 3);
             this.RoomNameTextBox.Name = "RoomNameTextBox";
             this.RoomNameTextBox.Size = new System.Drawing.Size(136, 20);
             this.RoomNameTextBox.TabIndex = 23;
@@ -2281,10 +2281,10 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomTableLayoutPanel.SetColumnSpan(this.RoomDescriptionTextBox, 2);
-            this.RoomDescriptionTextBox.Location = new System.Drawing.Point(145, 28);
+            this.RoomDescriptionTextBox.Location = new System.Drawing.Point(146, 28);
             this.RoomDescriptionTextBox.Multiline = true;
             this.RoomDescriptionTextBox.Name = "RoomDescriptionTextBox";
-            this.RoomDescriptionTextBox.Size = new System.Drawing.Size(281, 49);
+            this.RoomDescriptionTextBox.Size = new System.Drawing.Size(280, 49);
             this.RoomDescriptionTextBox.TabIndex = 24;
             // 
             // RoomCommentTextBox
@@ -2293,15 +2293,15 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomTableLayoutPanel.SetColumnSpan(this.RoomCommentTextBox, 2);
-            this.RoomCommentTextBox.Location = new System.Drawing.Point(145, 83);
+            this.RoomCommentTextBox.Location = new System.Drawing.Point(146, 83);
             this.RoomCommentTextBox.Multiline = true;
             this.RoomCommentTextBox.Name = "RoomCommentTextBox";
-            this.RoomCommentTextBox.Size = new System.Drawing.Size(281, 49);
+            this.RoomCommentTextBox.Size = new System.Drawing.Size(280, 49);
             this.RoomCommentTextBox.TabIndex = 25;
             // 
             // RoomTierTextBox
             // 
-            this.RoomTierTextBox.Location = new System.Drawing.Point(145, 138);
+            this.RoomTierTextBox.Location = new System.Drawing.Point(146, 138);
             this.RoomTierTextBox.Name = "RoomTierTextBox";
             this.RoomTierTextBox.Size = new System.Drawing.Size(136, 20);
             this.RoomTierTextBox.TabIndex = 26;
@@ -2314,22 +2314,22 @@ namespace Scribe
             this.RoomRequiredFurnishingsLabel.Size = new System.Drawing.Size(128, 13);
             this.RoomRequiredFurnishingsLabel.TabIndex = 27;
             this.RoomRequiredFurnishingsLabel.Text = "Required Furnishing Tags";
-            //
+            // 
             // RoomRequiredFurnishingsListBox
-            //
-            this.RoomRequiredFurnishingsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            // 
+            this.RoomRequiredFurnishingsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.RoomTableLayoutPanel.SetColumnSpan(this.RoomRequiredFurnishingsListBox, 2);
-            this.RoomRequiredFurnishingsListBox.Location = new System.Drawing.Point(145, 163);
+            this.RoomRequiredFurnishingsListBox.Location = new System.Drawing.Point(146, 163);
             this.RoomRequiredFurnishingsListBox.Name = "RoomRequiredFurnishingsListBox";
             this.RoomRequiredFurnishingsListBox.Size = new System.Drawing.Size(279, 69);
             this.RoomRequiredFurnishingsListBox.TabIndex = 28;
-            //
+            // 
             // RoomPictureBox
             // 
             this.RoomPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.RoomPictureBox.Location = new System.Drawing.Point(758, 280);
+            this.RoomPictureBox.Location = new System.Drawing.Point(759, 280);
             this.RoomPictureBox.Name = "RoomPictureBox";
             this.RoomPictureBox.Size = new System.Drawing.Size(182, 182);
             this.RoomPictureBox.TabIndex = 6;
@@ -2339,7 +2339,7 @@ namespace Scribe
             // 
             this.RoomIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomIDLabel.AutoSize = true;
-            this.RoomIDLabel.Location = new System.Drawing.Point(758, 19);
+            this.RoomIDLabel.Location = new System.Drawing.Point(759, 19);
             this.RoomIDLabel.Name = "RoomIDLabel";
             this.RoomIDLabel.Size = new System.Drawing.Size(48, 13);
             this.RoomIDLabel.TabIndex = 4;
@@ -2358,7 +2358,7 @@ namespace Scribe
             // 
             this.RoomIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomIDTextBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.RoomIDTextBox.Location = new System.Drawing.Point(812, 16);
+            this.RoomIDTextBox.Location = new System.Drawing.Point(813, 16);
             this.RoomIDTextBox.Name = "RoomIDTextBox";
             this.RoomIDTextBox.Size = new System.Drawing.Size(131, 20);
             this.RoomIDTextBox.TabIndex = 3;
