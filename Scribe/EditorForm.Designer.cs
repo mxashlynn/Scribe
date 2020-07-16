@@ -154,8 +154,8 @@ namespace Scribe
             this.BiomeIDTextBox = new System.Windows.Forms.TextBox();
             this.CraftingTabPage = new System.Windows.Forms.TabPage();
             this.ItemsTabPage = new System.Windows.Forms.TabPage();
-            this.ItemAddEntryRequirementButton = new System.Windows.Forms.Button();
-            this.ItemDeleteEntryRequirementButton = new System.Windows.Forms.Button();
+            this.ItemAddTagButton = new System.Windows.Forms.Button();
+            this.ItemDeleteTagButton = new System.Windows.Forms.Button();
             this.ItemListBox = new System.Windows.Forms.ListBox();
             this.ItemInventoriesGroupBox = new System.Windows.Forms.GroupBox();
             this.ItemOpenInvetoryEditorButton = new System.Windows.Forms.Button();
@@ -165,7 +165,7 @@ namespace Scribe
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.ItemStackMaxTextBox = new System.Windows.Forms.TextBox();
             this.ItemRarityTextBox = new System.Windows.Forms.TextBox();
-            this.ItemEntryRequirementsListBox = new System.Windows.Forms.ListBox();
+            this.ItemTagListBox = new System.Windows.Forms.ListBox();
             this.ItemNameLabel = new System.Windows.Forms.Label();
             this.ItemDescriptionLabel = new System.Windows.Forms.Label();
             this.ItemCommentLabel = new System.Windows.Forms.Label();
@@ -173,15 +173,15 @@ namespace Scribe
             this.ItemPriceLabel = new System.Windows.Forms.Label();
             this.ItemRarityLabel = new System.Windows.Forms.Label();
             this.ItemStackMaxLabel = new System.Windows.Forms.Label();
-            this.ItemEntryRequirementsLabel = new System.Windows.Forms.Label();
+            this.ItemTagsLabel = new System.Windows.Forms.Label();
             this.ItemNameTextBox = new System.Windows.Forms.TextBox();
             this.ItemDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.ItemCommentTextBox = new System.Windows.Forms.TextBox();
             this.ItemPriceTextBox = new System.Windows.Forms.TextBox();
             this.ItemSubtypeComboBox = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.ItemEffectWhileHeldLabel = new System.Windows.Forms.Label();
+            this.ItemEffectWhenUsedLabel = new System.Windows.Forms.Label();
+            this.ItemParquetLabel = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.ItemPictureBox = new System.Windows.Forms.PictureBox();
@@ -1590,8 +1590,8 @@ namespace Scribe
             // ItemsTabPage
             // 
             this.ItemsTabPage.BackColor = System.Drawing.Color.Transparent;
-            this.ItemsTabPage.Controls.Add(this.ItemAddEntryRequirementButton);
-            this.ItemsTabPage.Controls.Add(this.ItemDeleteEntryRequirementButton);
+            this.ItemsTabPage.Controls.Add(this.ItemAddTagButton);
+            this.ItemsTabPage.Controls.Add(this.ItemDeleteTagButton);
             this.ItemsTabPage.Controls.Add(this.ItemListBox);
             this.ItemsTabPage.Controls.Add(this.ItemInventoriesGroupBox);
             this.ItemsTabPage.Controls.Add(this.ItemPictureEditButton);
@@ -1606,25 +1606,25 @@ namespace Scribe
             this.ItemsTabPage.TabIndex = 4;
             this.ItemsTabPage.Text = "Items";
             // 
-            // ItemAddEntryRequirementButton
+            // ItemAddTagButton
             // 
-            this.ItemAddEntryRequirementButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemAddEntryRequirementButton.Location = new System.Drawing.Point(605, 468);
-            this.ItemAddEntryRequirementButton.Name = "ItemAddEntryRequirementButton";
-            this.ItemAddEntryRequirementButton.Size = new System.Drawing.Size(129, 23);
-            this.ItemAddEntryRequirementButton.TabIndex = 2;
-            this.ItemAddEntryRequirementButton.Text = "Add Requirement";
-            this.ItemAddEntryRequirementButton.UseVisualStyleBackColor = true;
+            this.ItemAddTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemAddTagButton.Location = new System.Drawing.Point(605, 468);
+            this.ItemAddTagButton.Name = "ItemAddTagButton";
+            this.ItemAddTagButton.Size = new System.Drawing.Size(129, 23);
+            this.ItemAddTagButton.TabIndex = 2;
+            this.ItemAddTagButton.Text = "Add Tag";
+            this.ItemAddTagButton.UseVisualStyleBackColor = true;
             // 
-            // ItemDeleteEntryRequirementButton
+            // ItemDeleteTagButton
             // 
-            this.ItemDeleteEntryRequirementButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemDeleteEntryRequirementButton.Location = new System.Drawing.Point(454, 468);
-            this.ItemDeleteEntryRequirementButton.Name = "ItemDeleteEntryRequirementButton";
-            this.ItemDeleteEntryRequirementButton.Size = new System.Drawing.Size(129, 23);
-            this.ItemDeleteEntryRequirementButton.TabIndex = 2;
-            this.ItemDeleteEntryRequirementButton.Text = "Remove Requirement";
-            this.ItemDeleteEntryRequirementButton.UseVisualStyleBackColor = true;
+            this.ItemDeleteTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemDeleteTagButton.Location = new System.Drawing.Point(454, 468);
+            this.ItemDeleteTagButton.Name = "ItemDeleteTagButton";
+            this.ItemDeleteTagButton.Size = new System.Drawing.Size(129, 23);
+            this.ItemDeleteTagButton.TabIndex = 2;
+            this.ItemDeleteTagButton.Text = "Remove Tag";
+            this.ItemDeleteTagButton.UseVisualStyleBackColor = true;
             // 
             // ItemListBox
             // 
@@ -1688,7 +1688,7 @@ namespace Scribe
             this.ItemTableLayoutPanel.Controls.Add(this.comboBox1, 1, 8);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemStackMaxTextBox, 1, 6);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemRarityTextBox, 1, 5);
-            this.ItemTableLayoutPanel.Controls.Add(this.ItemEntryRequirementsListBox, 1, 10);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemTagListBox, 1, 10);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemNameLabel, 0, 0);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemDescriptionLabel, 0, 1);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemCommentLabel, 0, 2);
@@ -1696,15 +1696,15 @@ namespace Scribe
             this.ItemTableLayoutPanel.Controls.Add(this.ItemPriceLabel, 0, 4);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemRarityLabel, 0, 5);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemStackMaxLabel, 0, 6);
-            this.ItemTableLayoutPanel.Controls.Add(this.ItemEntryRequirementsLabel, 0, 10);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemTagsLabel, 0, 10);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemNameTextBox, 1, 0);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemDescriptionTextBox, 1, 1);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemCommentTextBox, 1, 2);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemPriceTextBox, 1, 4);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemSubtypeComboBox, 1, 3);
-            this.ItemTableLayoutPanel.Controls.Add(this.label1, 0, 7);
-            this.ItemTableLayoutPanel.Controls.Add(this.label2, 0, 8);
-            this.ItemTableLayoutPanel.Controls.Add(this.label3, 0, 9);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemEffectWhileHeldLabel, 0, 7);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemEffectWhenUsedLabel, 0, 8);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemParquetLabel, 0, 9);
             this.ItemTableLayoutPanel.Controls.Add(this.comboBox2, 1, 7);
             this.ItemTableLayoutPanel.Controls.Add(this.comboBox3, 1, 9);
             this.ItemTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
@@ -1746,16 +1746,16 @@ namespace Scribe
             this.ItemRarityTextBox.Size = new System.Drawing.Size(144, 20);
             this.ItemRarityTextBox.TabIndex = 27;
             // 
-            // ItemEntryRequirementsListBox
+            // ItemTagListBox
             // 
-            this.ItemEntryRequirementsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.ItemTagListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.ItemTableLayoutPanel.SetColumnSpan(this.ItemEntryRequirementsListBox, 2);
-            this.ItemEntryRequirementsListBox.FormattingEnabled = true;
-            this.ItemEntryRequirementsListBox.Location = new System.Drawing.Point(131, 313);
-            this.ItemEntryRequirementsListBox.Name = "ItemEntryRequirementsListBox";
-            this.ItemEntryRequirementsListBox.Size = new System.Drawing.Size(295, 121);
-            this.ItemEntryRequirementsListBox.TabIndex = 1;
+            this.ItemTableLayoutPanel.SetColumnSpan(this.ItemTagListBox, 2);
+            this.ItemTagListBox.FormattingEnabled = true;
+            this.ItemTagListBox.Location = new System.Drawing.Point(131, 313);
+            this.ItemTagListBox.Name = "ItemTagListBox";
+            this.ItemTagListBox.Size = new System.Drawing.Size(295, 121);
+            this.ItemTagListBox.TabIndex = 1;
             // 
             // ItemNameLabel
             // 
@@ -1820,14 +1820,14 @@ namespace Scribe
             this.ItemStackMaxLabel.TabIndex = 18;
             this.ItemStackMaxLabel.Text = "Stack Max";
             // 
-            // ItemEntryRequirementsLabel
+            // ItemTagsLabel
             // 
-            this.ItemEntryRequirementsLabel.AutoSize = true;
-            this.ItemEntryRequirementsLabel.Location = new System.Drawing.Point(3, 310);
-            this.ItemEntryRequirementsLabel.Name = "ItemEntryRequirementsLabel";
-            this.ItemEntryRequirementsLabel.Size = new System.Drawing.Size(102, 13);
-            this.ItemEntryRequirementsLabel.TabIndex = 21;
-            this.ItemEntryRequirementsLabel.Text = "Entry Requirements";
+            this.ItemTagsLabel.AutoSize = true;
+            this.ItemTagsLabel.Location = new System.Drawing.Point(3, 310);
+            this.ItemTagsLabel.Name = "ItemTagsLabel";
+            this.ItemTagsLabel.Size = new System.Drawing.Size(30, 13);
+            this.ItemTagsLabel.TabIndex = 21;
+            this.ItemTagsLabel.Text = "Tags";
             // 
             // ItemNameTextBox
             // 
@@ -1875,32 +1875,32 @@ namespace Scribe
             this.ItemSubtypeComboBox.Size = new System.Drawing.Size(144, 21);
             this.ItemSubtypeComboBox.TabIndex = 29;
             // 
-            // label1
+            // ItemEffectWhileHeldLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 235);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "label1";
+            this.ItemEffectWhileHeldLabel.AutoSize = true;
+            this.ItemEffectWhileHeldLabel.Location = new System.Drawing.Point(3, 235);
+            this.ItemEffectWhileHeldLabel.Name = "ItemEffectWhileHeldLabel";
+            this.ItemEffectWhileHeldLabel.Size = new System.Drawing.Size(89, 13);
+            this.ItemEffectWhileHeldLabel.TabIndex = 31;
+            this.ItemEffectWhileHeldLabel.Text = "Effect While Held";
             // 
-            // label2
+            // ItemEffectWhenUsedLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 260);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "label2";
+            this.ItemEffectWhenUsedLabel.AutoSize = true;
+            this.ItemEffectWhenUsedLabel.Location = new System.Drawing.Point(3, 260);
+            this.ItemEffectWhenUsedLabel.Name = "ItemEffectWhenUsedLabel";
+            this.ItemEffectWhenUsedLabel.Size = new System.Drawing.Size(94, 13);
+            this.ItemEffectWhenUsedLabel.TabIndex = 32;
+            this.ItemEffectWhenUsedLabel.Text = "Effect When Used";
             // 
-            // label3
+            // ItemParquetLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 285);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "label3";
+            this.ItemParquetLabel.AutoSize = true;
+            this.ItemParquetLabel.Location = new System.Drawing.Point(3, 285);
+            this.ItemParquetLabel.Name = "ItemParquetLabel";
+            this.ItemParquetLabel.Size = new System.Drawing.Size(98, 13);
+            this.ItemParquetLabel.TabIndex = 33;
+            this.ItemParquetLabel.Text = "Equivalent Parquet";
             // 
             // comboBox2
             // 
@@ -2986,7 +2986,7 @@ namespace Scribe
         private System.Windows.Forms.Label ItemPriceLabel;
         private System.Windows.Forms.Label ItemRarityLabel;
         private System.Windows.Forms.Label ItemStackMaxLabel;
-        private System.Windows.Forms.Label ItemEntryRequirementsLabel;
+        private System.Windows.Forms.Label ItemTagsLabel;
         private System.Windows.Forms.TextBox ItemNameTextBox;
         private System.Windows.Forms.TextBox ItemDescriptionTextBox;
         private System.Windows.Forms.TextBox ItemCommentTextBox;
@@ -2995,9 +2995,9 @@ namespace Scribe
         private System.Windows.Forms.Label ItemIDLabel;
         private System.Windows.Forms.Button ItemAddNewItemButton;
         private System.Windows.Forms.TextBox ItemIDTextBox;
-        private System.Windows.Forms.Button ItemAddEntryRequirementButton;
-        private System.Windows.Forms.Button ItemDeleteEntryRequirementButton;
-        private System.Windows.Forms.ListBox ItemEntryRequirementsListBox;
+        private System.Windows.Forms.Button ItemAddTagButton;
+        private System.Windows.Forms.Button ItemDeleteTagButton;
+        private System.Windows.Forms.ListBox ItemTagListBox;
         private System.Windows.Forms.Button RoomAddFurnishingsButton;
         private System.Windows.Forms.Button RoomDeleteFurnishingsButton;
         private System.Windows.Forms.Label RoomRequiredFurnishingsLabel;
@@ -3008,9 +3008,9 @@ namespace Scribe
         private System.Windows.Forms.TextBox ItemRarityTextBox;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox ItemSubtypeComboBox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label ItemEffectWhileHeldLabel;
+        private System.Windows.Forms.Label ItemEffectWhenUsedLabel;
+        private System.Windows.Forms.Label ItemParquetLabel;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
     }
