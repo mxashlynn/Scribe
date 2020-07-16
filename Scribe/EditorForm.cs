@@ -16,6 +16,12 @@ namespace Scribe
         private OptionsBox OptionsWindow;
 
         /// <summary>A reminder to save before quitting.</summary>
+        private const string ReloadWarningMessage = "Abandon unsaved changes and reload data?";
+
+        /// <summary>A description of the purpose of the dialogue.</summary>
+        private const string ReloadWarningCaption = "Reload";
+
+        /// <summary>A reminder to save before quitting.</summary>
         private const string ExitWarningMessage = "Really quit?  Unsaved changes will be lost!";
 
         /// <summary>A description of the purpose of the dialogue.</summary>
@@ -67,6 +73,22 @@ namespace Scribe
         /// <param name="e">Addional event data.</param>
         private void LoadToolStripMenuItem_Click(object sender, EventArgs e)
             => throw new NotImplementedException();
+
+        /// <summary>
+        /// Responds to a user selecting the "Reload" menu item.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="e">Addional event data.</param>
+        private void ReloadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(ExitWarningMessage,
+                                ExitWarningCaption,
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                throw new NotImplementedException();
+            }
+        }
 
         /// <summary>
         /// Responds to a user selecting the "Save" menu item.

@@ -38,6 +38,7 @@ namespace Scribe
             this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LoadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ReloadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -329,6 +330,7 @@ namespace Scribe
             this.FileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NewToolStripMenuItem,
             this.LoadToolStripMenuItem,
+            this.ReloadToolStripMenuItem,
             this.SaveToolStripMenuItem,
             this.ToolStripSeparator1,
             this.ExitToolStripMenuItem});
@@ -355,6 +357,14 @@ namespace Scribe
             this.LoadToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.LoadToolStripMenuItem.Text = "&Load";
             this.LoadToolStripMenuItem.Click += new System.EventHandler(this.LoadToolStripMenuItem_Click);
+            // 
+            // ReloadToolStripMenuItem
+            // 
+            this.ReloadToolStripMenuItem.Name = "ReloadToolStripMenuItem";
+            this.ReloadToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.F5));
+            this.ReloadToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.ReloadToolStripMenuItem.Text = "&Reload";
+            this.ReloadToolStripMenuItem.Click += new System.EventHandler(this.ReloadToolStripMenuItem_Click);
             // 
             // SaveToolStripMenuItem
             // 
@@ -2804,6 +2814,7 @@ namespace Scribe
         private System.Windows.Forms.ToolStripMenuItem FileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem NewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem LoadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ReloadToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator ToolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem SaveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ExitToolStripMenuItem;
