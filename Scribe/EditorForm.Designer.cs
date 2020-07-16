@@ -242,9 +242,9 @@ namespace Scribe
             this.FlavorFilterGroupBox.SuspendLayout();
             this.FlavorTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
-            //
+            // 
             // EditorStatusStrip
-            //
+            // 
             this.EditorStatusStrip.AccessibleDescription = "The status of the application.";
             this.EditorStatusStrip.AccessibleName = "Editor Status";
             this.EditorStatusStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.StatusBar;
@@ -258,21 +258,21 @@ namespace Scribe
             this.EditorStatusStrip.Size = new System.Drawing.Size(984, 22);
             this.EditorStatusStrip.SizingGrip = false;
             this.EditorStatusStrip.TabIndex = 0;
-            //
+            // 
             // MainToolStripStatusLabel
-            //
+            // 
             this.MainToolStripStatusLabel.Name = "MainToolStripStatusLabel";
             this.MainToolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.MainToolStripStatusLabel.Text = "Ready";
-            //
+            // 
             // ToolStripProgressBar
-            //
+            // 
             this.ToolStripProgressBar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.ToolStripProgressBar.Name = "ToolStripProgressBar";
             this.ToolStripProgressBar.Size = new System.Drawing.Size(100, 16);
-            //
+            // 
             // MainMenuBar
-            //
+            // 
             this.MainMenuBar.AccessibleDescription = "The application\'s menu.";
             this.MainMenuBar.AccessibleName = "Main Menu";
             this.MainMenuBar.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
@@ -287,9 +287,9 @@ namespace Scribe
             this.MainMenuBar.Size = new System.Drawing.Size(984, 24);
             this.MainMenuBar.TabIndex = 1;
             this.MainMenuBar.Text = "Main Menu";
-            //
+            // 
             // FileToolStripMenuItem
-            //
+            // 
             this.FileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NewToolStripMenuItem,
             this.LoadToolStripMenuItem,
@@ -299,9 +299,9 @@ namespace Scribe
             this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
             this.FileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.FileToolStripMenuItem.Text = "&File";
-            //
+            // 
             // NewToolStripMenuItem
-            //
+            // 
             this.NewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("NewToolStripMenuItem.Image")));
             this.NewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NewToolStripMenuItem.Name = "NewToolStripMenuItem";
@@ -309,9 +309,9 @@ namespace Scribe
             this.NewToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.NewToolStripMenuItem.Text = "&New";
             this.NewToolStripMenuItem.Click += new System.EventHandler(this.NewToolStripMenuItem_Click);
-            //
+            // 
             // LoadToolStripMenuItem
-            //
+            // 
             this.LoadToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("LoadToolStripMenuItem.Image")));
             this.LoadToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem";
@@ -319,9 +319,9 @@ namespace Scribe
             this.LoadToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.LoadToolStripMenuItem.Text = "&Load";
             this.LoadToolStripMenuItem.Click += new System.EventHandler(this.LoadToolStripMenuItem_Click);
-            //
+            // 
             // SaveToolStripMenuItem
-            //
+            // 
             this.SaveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("SaveToolStripMenuItem.Image")));
             this.SaveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
@@ -329,22 +329,22 @@ namespace Scribe
             this.SaveToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.SaveToolStripMenuItem.Text = "&Save";
             this.SaveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
-            //
+            // 
             // ToolStripSeparator1
-            //
+            // 
             this.ToolStripSeparator1.Name = "ToolStripSeparator1";
             this.ToolStripSeparator1.Size = new System.Drawing.Size(140, 6);
-            //
+            // 
             // ExitToolStripMenuItem
-            //
+            // 
             this.ExitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ExitToolStripMenuItem.Image")));
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
             this.ExitToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.ExitToolStripMenuItem.Text = "E&xit";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
-            //
+            // 
             // EditToolStripMenuItem
-            //
+            // 
             this.EditToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.UndoToolStripMenuItem,
             this.RedoToolStripMenuItem,
@@ -357,9 +357,9 @@ namespace Scribe
             this.EditToolStripMenuItem.Name = "EditToolStripMenuItem";
             this.EditToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.EditToolStripMenuItem.Text = "&Edit";
-            //
+            // 
             // UndoToolStripMenuItem
-            //
+            // 
             this.UndoToolStripMenuItem.Enabled = false;
             this.UndoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("UndoToolStripMenuItem.Image")));
             this.UndoToolStripMenuItem.Name = "UndoToolStripMenuItem";
@@ -367,9 +367,9 @@ namespace Scribe
             this.UndoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.UndoToolStripMenuItem.Text = "&Undo";
             this.UndoToolStripMenuItem.Click += new System.EventHandler(this.UndoToolStripMenuItem_Click);
-            //
+            // 
             // RedoToolStripMenuItem
-            //
+            // 
             this.RedoToolStripMenuItem.Enabled = false;
             this.RedoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("RedoToolStripMenuItem.Image")));
             this.RedoToolStripMenuItem.Name = "RedoToolStripMenuItem";
@@ -377,14 +377,14 @@ namespace Scribe
             this.RedoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.RedoToolStripMenuItem.Text = "&Redo";
             this.RedoToolStripMenuItem.Click += new System.EventHandler(this.RedoToolStripMenuItem_Click);
-            //
+            // 
             // ToolStripSeparator2
-            //
+            // 
             this.ToolStripSeparator2.Name = "ToolStripSeparator2";
             this.ToolStripSeparator2.Size = new System.Drawing.Size(141, 6);
-            //
+            // 
             // CutToolStripMenuItem
-            //
+            // 
             this.CutToolStripMenuItem.Enabled = false;
             this.CutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("CutToolStripMenuItem.Image")));
             this.CutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -393,9 +393,9 @@ namespace Scribe
             this.CutToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.CutToolStripMenuItem.Text = "Cu&t";
             this.CutToolStripMenuItem.Click += new System.EventHandler(this.CutToolStripMenuItem_Click);
-            //
+            // 
             // CopyToolStripMenuItem
-            //
+            // 
             this.CopyToolStripMenuItem.Enabled = false;
             this.CopyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("CopyToolStripMenuItem.Image")));
             this.CopyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -404,9 +404,9 @@ namespace Scribe
             this.CopyToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.CopyToolStripMenuItem.Text = "&Copy";
             this.CopyToolStripMenuItem.Click += new System.EventHandler(this.CopyToolStripMenuItem_Click);
-            //
+            // 
             // PasteToolStripMenuItem
-            //
+            // 
             this.PasteToolStripMenuItem.Enabled = false;
             this.PasteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("PasteToolStripMenuItem.Image")));
             this.PasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -415,23 +415,23 @@ namespace Scribe
             this.PasteToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.PasteToolStripMenuItem.Text = "&Paste";
             this.PasteToolStripMenuItem.Click += new System.EventHandler(this.PasteToolStripMenuItem_Click);
-            //
+            // 
             // ToolStripSeparator3
-            //
+            // 
             this.ToolStripSeparator3.Name = "ToolStripSeparator3";
             this.ToolStripSeparator3.Size = new System.Drawing.Size(141, 6);
-            //
+            // 
             // SelectAllToolStripMenuItem
-            //
+            // 
             this.SelectAllToolStripMenuItem.Enabled = false;
             this.SelectAllToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("SelectAllToolStripMenuItem.Image")));
             this.SelectAllToolStripMenuItem.Name = "SelectAllToolStripMenuItem";
             this.SelectAllToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.SelectAllToolStripMenuItem.Text = "Select &All";
             this.SelectAllToolStripMenuItem.Click += new System.EventHandler(this.SelectAllToolStripMenuItem_Click);
-            //
+            // 
             // ToolsToolStripMenuItem
-            //
+            // 
             this.ToolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.RollerToolStripMenuItem,
             this.ToolStripSeparator5,
@@ -439,9 +439,9 @@ namespace Scribe
             this.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem";
             this.ToolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.ToolsToolStripMenuItem.Text = "&Tools";
-            //
+            // 
             // RollerToolStripMenuItem
-            //
+            // 
             this.RollerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CheckMapStripMenuItem,
             this.ListNameCollisionsStripMenuItem,
@@ -453,67 +453,67 @@ namespace Scribe
             this.RollerToolStripMenuItem.Name = "RollerToolStripMenuItem";
             this.RollerToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.RollerToolStripMenuItem.Text = "&Roller";
-            //
+            // 
             // CheckMapStripMenuItem
-            //
+            // 
             this.CheckMapStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("CheckMapStripMenuItem.Image")));
             this.CheckMapStripMenuItem.Name = "CheckMapStripMenuItem";
             this.CheckMapStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.CheckMapStripMenuItem.Text = "Check &Map Adjacency";
             this.CheckMapStripMenuItem.Click += new System.EventHandler(this.CheckMapStripMenuItem_Click);
-            //
+            // 
             // ListNameCollisionsStripMenuItem
-            //
+            // 
             this.ListNameCollisionsStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ListNameCollisionsStripMenuItem.Image")));
             this.ListNameCollisionsStripMenuItem.Name = "ListNameCollisionsStripMenuItem";
             this.ListNameCollisionsStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.ListNameCollisionsStripMenuItem.Text = "List &Name Collisions";
             this.ListNameCollisionsStripMenuItem.Click += new System.EventHandler(this.ListNameCollisionsStripMenuItem_Click);
-            //
+            // 
             // ToolStripSeparator4
-            //
+            // 
             this.ToolStripSeparator4.Name = "ToolStripSeparator4";
             this.ToolStripSeparator4.Size = new System.Drawing.Size(189, 6);
-            //
+            // 
             // ListIDRangesToolStripMenuItem
-            //
+            // 
             this.ListIDRangesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ListIDRangesToolStripMenuItem.Image")));
             this.ListIDRangesToolStripMenuItem.Name = "ListIDRangesToolStripMenuItem";
             this.ListIDRangesToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.ListIDRangesToolStripMenuItem.Text = "List ID &Ranges";
             this.ListIDRangesToolStripMenuItem.Click += new System.EventHandler(this.ListIDRangesToolStripMenuItem_Click);
-            //
+            // 
             // ListMaxIDsToolStripMenuItem
-            //
+            // 
             this.ListMaxIDsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ListMaxIDsToolStripMenuItem.Image")));
             this.ListMaxIDsToolStripMenuItem.Name = "ListMaxIDsToolStripMenuItem";
             this.ListMaxIDsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.ListMaxIDsToolStripMenuItem.Text = "List Maximum &IDs";
             this.ListMaxIDsToolStripMenuItem.Click += new System.EventHandler(this.ListMaxIDsToolStripMenuItem_Click);
-            //
+            // 
             // ListTagsToolStripMenuItem
-            //
+            // 
             this.ListTagsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ListTagsToolStripMenuItem.Image")));
             this.ListTagsToolStripMenuItem.Name = "ListTagsToolStripMenuItem";
             this.ListTagsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.ListTagsToolStripMenuItem.Text = "List &Tags";
             this.ListTagsToolStripMenuItem.Click += new System.EventHandler(this.ListTagsToolStripMenuItem_Click);
-            //
+            // 
             // ToolStripSeparator5
-            //
+            // 
             this.ToolStripSeparator5.Name = "ToolStripSeparator5";
             this.ToolStripSeparator5.Size = new System.Drawing.Size(113, 6);
-            //
+            // 
             // OptionsToolStripMenuItem
-            //
+            // 
             this.OptionsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("OptionsToolStripMenuItem.Image")));
             this.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem";
             this.OptionsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.OptionsToolStripMenuItem.Text = "&Options";
             this.OptionsToolStripMenuItem.Click += new System.EventHandler(this.OptionsToolStripMenuItem_Click);
-            //
+            // 
             // HelpToolStripMenuItem
-            //
+            // 
             this.HelpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ScribeHelpToolStripMenuItem,
             this.DocumentationToolStripMenuItem,
@@ -522,40 +522,40 @@ namespace Scribe
             this.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem";
             this.HelpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.HelpToolStripMenuItem.Text = "&Help";
-            //
+            // 
             // ScribeHelpToolStripMenuItem
-            //
+            // 
             this.ScribeHelpToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ScribeHelpToolStripMenuItem.Image")));
             this.ScribeHelpToolStripMenuItem.Name = "ScribeHelpToolStripMenuItem";
             this.ScribeHelpToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.ScribeHelpToolStripMenuItem.Text = "Scribe &Help";
             this.ScribeHelpToolStripMenuItem.Click += new System.EventHandler(this.ScribeHelpToolStripMenuItem_Click);
-            //
+            // 
             // DocumentationToolStripMenuItem
-            //
+            // 
             this.DocumentationToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("DocumentationToolStripMenuItem.Image")));
             this.DocumentationToolStripMenuItem.Name = "DocumentationToolStripMenuItem";
             this.DocumentationToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.DocumentationToolStripMenuItem.Text = "Parquet &Documentation";
             this.DocumentationToolStripMenuItem.Click += new System.EventHandler(this.DocumentationToolStripMenuItem_Click);
-            //
+            // 
             // ToolStripSeparator6
-            //
+            // 
             this.ToolStripSeparator6.Name = "ToolStripSeparator6";
             this.ToolStripSeparator6.Size = new System.Drawing.Size(198, 6);
-            //
+            // 
             // AboutToolStripMenuItem
-            //
+            // 
             this.AboutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("AboutToolStripMenuItem.Image")));
             this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
             this.AboutToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.AboutToolStripMenuItem.Text = "&About...";
             this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutMenuItem_Click);
-            //
+            // 
             // EditorTabs
-            //
-            this.EditorTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.EditorTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.EditorTabs.Controls.Add(this.GameTabPage);
             this.EditorTabs.Controls.Add(this.BeingsTabPage);
@@ -571,9 +571,9 @@ namespace Scribe
             this.EditorTabs.SelectedIndex = 9;
             this.EditorTabs.Size = new System.Drawing.Size(960, 625);
             this.EditorTabs.TabIndex = 2;
-            //
+            // 
             // GameTabPage
-            //
+            // 
             this.GameTabPage.Controls.Add(this.GameIconEditButton);
             this.GameTabPage.Controls.Add(this.GameIconPictureBox);
             this.GameTabPage.Controls.Add(this.GameTableLayoutPanel);
@@ -589,18 +589,18 @@ namespace Scribe
             this.GameTabPage.Size = new System.Drawing.Size(952, 599);
             this.GameTabPage.TabIndex = 0;
             this.GameTabPage.Text = "Game";
-            //
+            // 
             // GameIconEditButton
-            //
+            // 
             this.GameIconEditButton.Location = new System.Drawing.Point(812, 468);
             this.GameIconEditButton.Name = "GameIconEditButton";
             this.GameIconEditButton.Size = new System.Drawing.Size(128, 23);
             this.GameIconEditButton.TabIndex = 7;
             this.GameIconEditButton.Text = "Edit Image";
             this.GameIconEditButton.UseVisualStyleBackColor = true;
-            //
+            // 
             // GameIconPictureBox
-            //
+            // 
             this.GameIconPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.GameIconPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.GameIconPictureBox.Location = new System.Drawing.Point(758, 280);
@@ -608,10 +608,10 @@ namespace Scribe
             this.GameIconPictureBox.Size = new System.Drawing.Size(182, 182);
             this.GameIconPictureBox.TabIndex = 6;
             this.GameIconPictureBox.TabStop = false;
-            //
+            // 
             // GameTableLayoutPanel
-            //
-            this.GameTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            // 
+            this.GameTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.GameTableLayoutPanel.ColumnCount = 2;
             this.GameTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
@@ -647,147 +647,147 @@ namespace Scribe
             this.GameTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.GameTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.GameTableLayoutPanel.TabIndex = 5;
-            //
+            // 
             // GameNameLabel
-            //
+            // 
             this.GameNameLabel.AutoSize = true;
             this.GameNameLabel.Location = new System.Drawing.Point(3, 0);
             this.GameNameLabel.Name = "GameNameLabel";
             this.GameNameLabel.Size = new System.Drawing.Size(34, 13);
             this.GameNameLabel.TabIndex = 0;
             this.GameNameLabel.Text = "Name";
-            //
+            // 
             // GameDescriptionLabel
-            //
+            // 
             this.GameDescriptionLabel.AutoSize = true;
             this.GameDescriptionLabel.Location = new System.Drawing.Point(3, 25);
             this.GameDescriptionLabel.Name = "GameDescriptionLabel";
             this.GameDescriptionLabel.Size = new System.Drawing.Size(60, 13);
             this.GameDescriptionLabel.TabIndex = 3;
             this.GameDescriptionLabel.Text = "Description";
-            //
+            // 
             // GameCommentLabel
-            //
+            // 
             this.GameCommentLabel.AutoSize = true;
             this.GameCommentLabel.Location = new System.Drawing.Point(3, 80);
             this.GameCommentLabel.Name = "GameCommentLabel";
             this.GameCommentLabel.Size = new System.Drawing.Size(52, 13);
             this.GameCommentLabel.TabIndex = 6;
             this.GameCommentLabel.Text = "Comment";
-            //
+            // 
             // GameIsEpisodeLabel
-            //
+            // 
             this.GameIsEpisodeLabel.AutoSize = true;
             this.GameIsEpisodeLabel.Location = new System.Drawing.Point(3, 135);
             this.GameIsEpisodeLabel.Name = "GameIsEpisodeLabel";
             this.GameIsEpisodeLabel.Size = new System.Drawing.Size(61, 13);
             this.GameIsEpisodeLabel.TabIndex = 9;
             this.GameIsEpisodeLabel.Text = "Is Episode?";
-            //
+            // 
             // GameEpisodeTitleLabel
-            //
+            // 
             this.GameEpisodeTitleLabel.AutoSize = true;
             this.GameEpisodeTitleLabel.Location = new System.Drawing.Point(3, 160);
             this.GameEpisodeTitleLabel.Name = "GameEpisodeTitleLabel";
             this.GameEpisodeTitleLabel.Size = new System.Drawing.Size(67, 13);
             this.GameEpisodeTitleLabel.TabIndex = 12;
             this.GameEpisodeTitleLabel.Text = "Episode Title";
-            //
+            // 
             // GameEpisodeNumberLabel
-            //
+            // 
             this.GameEpisodeNumberLabel.AutoSize = true;
             this.GameEpisodeNumberLabel.Location = new System.Drawing.Point(3, 185);
             this.GameEpisodeNumberLabel.Name = "GameEpisodeNumberLabel";
             this.GameEpisodeNumberLabel.Size = new System.Drawing.Size(84, 13);
             this.GameEpisodeNumberLabel.TabIndex = 15;
             this.GameEpisodeNumberLabel.Text = "Episode Number";
-            //
+            // 
             // GamePlayerCharacterLabel
-            //
+            // 
             this.GamePlayerCharacterLabel.AutoSize = true;
             this.GamePlayerCharacterLabel.Location = new System.Drawing.Point(3, 210);
             this.GamePlayerCharacterLabel.Name = "GamePlayerCharacterLabel";
             this.GamePlayerCharacterLabel.Size = new System.Drawing.Size(88, 13);
             this.GamePlayerCharacterLabel.TabIndex = 18;
             this.GamePlayerCharacterLabel.Text = "Player Character";
-            //
+            // 
             // GameFirstScriptLabel
-            //
+            // 
             this.GameFirstScriptLabel.AutoSize = true;
             this.GameFirstScriptLabel.Location = new System.Drawing.Point(3, 235);
             this.GameFirstScriptLabel.Name = "GameFirstScriptLabel";
             this.GameFirstScriptLabel.Size = new System.Drawing.Size(58, 13);
             this.GameFirstScriptLabel.TabIndex = 21;
             this.GameFirstScriptLabel.Text = "First Script";
-            //
+            // 
             // GameIsEpisodeCheckBox
-            //
+            // 
             this.GameIsEpisodeCheckBox.AutoSize = true;
             this.GameIsEpisodeCheckBox.Location = new System.Drawing.Point(131, 138);
             this.GameIsEpisodeCheckBox.Name = "GameIsEpisodeCheckBox";
             this.GameIsEpisodeCheckBox.Size = new System.Drawing.Size(15, 14);
             this.GameIsEpisodeCheckBox.TabIndex = 22;
             this.GameIsEpisodeCheckBox.UseVisualStyleBackColor = true;
-            //
+            // 
             // GameNameTextBox
-            //
+            // 
             this.GameNameTextBox.Location = new System.Drawing.Point(131, 3);
             this.GameNameTextBox.Name = "GameNameTextBox";
             this.GameNameTextBox.Size = new System.Drawing.Size(147, 20);
             this.GameNameTextBox.TabIndex = 23;
-            //
+            // 
             // GameDescriptionTextBox
-            //
-            this.GameDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.GameDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GameDescriptionTextBox.Location = new System.Drawing.Point(131, 28);
             this.GameDescriptionTextBox.Multiline = true;
             this.GameDescriptionTextBox.Name = "GameDescriptionTextBox";
             this.GameDescriptionTextBox.Size = new System.Drawing.Size(295, 49);
             this.GameDescriptionTextBox.TabIndex = 24;
-            //
+            // 
             // GameCommentTextBox
-            //
-            this.GameCommentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.GameCommentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GameCommentTextBox.Location = new System.Drawing.Point(131, 83);
             this.GameCommentTextBox.Multiline = true;
             this.GameCommentTextBox.Name = "GameCommentTextBox";
             this.GameCommentTextBox.Size = new System.Drawing.Size(295, 49);
             this.GameCommentTextBox.TabIndex = 25;
-            //
+            // 
             // GameEpisodeTitleTextBox
-            //
+            // 
             this.GameEpisodeTitleTextBox.Location = new System.Drawing.Point(131, 163);
             this.GameEpisodeTitleTextBox.Name = "GameEpisodeTitleTextBox";
             this.GameEpisodeTitleTextBox.Size = new System.Drawing.Size(147, 20);
             this.GameEpisodeTitleTextBox.TabIndex = 26;
-            //
+            // 
             // GameEpisodeNumberTextBox
-            //
+            // 
             this.GameEpisodeNumberTextBox.Location = new System.Drawing.Point(131, 188);
             this.GameEpisodeNumberTextBox.Name = "GameEpisodeNumberTextBox";
             this.GameEpisodeNumberTextBox.Size = new System.Drawing.Size(147, 20);
             this.GameEpisodeNumberTextBox.TabIndex = 27;
-            //
+            // 
             // GamePlayerCharacterTextBox
-            //
+            // 
             this.GamePlayerCharacterTextBox.Location = new System.Drawing.Point(131, 213);
             this.GamePlayerCharacterTextBox.Name = "GamePlayerCharacterTextBox";
             this.GamePlayerCharacterTextBox.Size = new System.Drawing.Size(147, 20);
             this.GamePlayerCharacterTextBox.TabIndex = 28;
-            //
+            // 
             // GameFirstScriptTextBox
-            //
+            // 
             this.GameFirstScriptTextBox.Location = new System.Drawing.Point(131, 238);
             this.GameFirstScriptTextBox.Name = "GameFirstScriptTextBox";
             this.GameFirstScriptTextBox.Size = new System.Drawing.Size(147, 20);
             this.GameFirstScriptTextBox.TabIndex = 29;
-            //
+            // 
             // GameIDLabel
-            //
+            // 
             this.GameIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.GameIDLabel.AutoSize = true;
             this.GameIDLabel.Location = new System.Drawing.Point(758, 19);
@@ -795,9 +795,9 @@ namespace Scribe
             this.GameIDLabel.Size = new System.Drawing.Size(48, 13);
             this.GameIDLabel.TabIndex = 4;
             this.GameIDLabel.Text = "Game ID";
-            //
+            // 
             // GameIDTextBox
-            //
+            // 
             this.GameIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.GameIDTextBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.GameIDTextBox.Location = new System.Drawing.Point(812, 16);
@@ -805,29 +805,29 @@ namespace Scribe
             this.GameIDTextBox.Size = new System.Drawing.Size(131, 20);
             this.GameIDTextBox.TabIndex = 3;
             this.GameIDTextBox.Text = "-2020202020";
-            //
+            // 
             // NewGameButton
-            //
+            // 
             this.NewGameButton.Location = new System.Drawing.Point(159, 468);
             this.NewGameButton.Name = "NewGameButton";
             this.NewGameButton.Size = new System.Drawing.Size(129, 23);
             this.NewGameButton.TabIndex = 2;
             this.NewGameButton.Text = "Add New Game";
             this.NewGameButton.UseVisualStyleBackColor = true;
-            //
+            // 
             // GamesListBox
-            //
-            this.GamesListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            // 
+            this.GamesListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.GamesListBox.FormattingEnabled = true;
             this.GamesListBox.Location = new System.Drawing.Point(9, 16);
             this.GamesListBox.Name = "GamesListBox";
             this.GamesListBox.Size = new System.Drawing.Size(279, 446);
             this.GamesListBox.TabIndex = 1;
-            //
+            // 
             // FileFormatGroupBox
-            //
-            this.FileFormatGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.FileFormatGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FileFormatGroupBox.Controls.Add(this.FileFormatTableLayoutPanel);
             this.FileFormatGroupBox.Location = new System.Drawing.Point(301, 499);
@@ -836,11 +836,11 @@ namespace Scribe
             this.FileFormatGroupBox.TabIndex = 0;
             this.FileFormatGroupBox.TabStop = false;
             this.FileFormatGroupBox.Text = "File Format";
-            //
+            // 
             // FileFormatTableLayoutPanel
-            //
-            this.FileFormatTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.FileFormatTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FileFormatTableLayoutPanel.ColumnCount = 6;
             this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.83792F));
@@ -873,9 +873,9 @@ namespace Scribe
             this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.FileFormatTableLayoutPanel.Size = new System.Drawing.Size(633, 72);
             this.FileFormatTableLayoutPanel.TabIndex = 1;
-            //
+            // 
             // PrimaryDelimiterLabel
-            //
+            // 
             this.PrimaryDelimiterLabel.AutoSize = true;
             this.PrimaryDelimiterLabel.Location = new System.Drawing.Point(50, 5);
             this.PrimaryDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
@@ -883,9 +883,9 @@ namespace Scribe
             this.PrimaryDelimiterLabel.Size = new System.Drawing.Size(87, 13);
             this.PrimaryDelimiterLabel.TabIndex = 0;
             this.PrimaryDelimiterLabel.Text = "Primary Delimiter";
-            //
+            // 
             // PrimaryDelimiterExample
-            //
+            // 
             this.PrimaryDelimiterExample.AutoSize = true;
             this.PrimaryDelimiterExample.Location = new System.Drawing.Point(179, 5);
             this.PrimaryDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
@@ -893,9 +893,9 @@ namespace Scribe
             this.PrimaryDelimiterExample.Size = new System.Drawing.Size(11, 13);
             this.PrimaryDelimiterExample.TabIndex = 1;
             this.PrimaryDelimiterExample.Text = ",";
-            //
+            // 
             // SecondaryDelimiterLabel
-            //
+            // 
             this.SecondaryDelimiterLabel.AutoSize = true;
             this.SecondaryDelimiterLabel.Location = new System.Drawing.Point(260, 5);
             this.SecondaryDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
@@ -903,9 +903,9 @@ namespace Scribe
             this.SecondaryDelimiterLabel.Size = new System.Drawing.Size(102, 13);
             this.SecondaryDelimiterLabel.TabIndex = 2;
             this.SecondaryDelimiterLabel.Text = "Secondary Delimiter";
-            //
+            // 
             // SecondaryDelimiterExample
-            //
+            // 
             this.SecondaryDelimiterExample.AutoSize = true;
             this.SecondaryDelimiterExample.Location = new System.Drawing.Point(389, 5);
             this.SecondaryDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
@@ -913,9 +913,9 @@ namespace Scribe
             this.SecondaryDelimiterExample.Size = new System.Drawing.Size(18, 13);
             this.SecondaryDelimiterExample.TabIndex = 3;
             this.SecondaryDelimiterExample.Text = "∟";
-            //
+            // 
             // InternalDelimiterLabel
-            //
+            // 
             this.InternalDelimiterLabel.AutoSize = true;
             this.InternalDelimiterLabel.Location = new System.Drawing.Point(470, 5);
             this.InternalDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
@@ -923,9 +923,9 @@ namespace Scribe
             this.InternalDelimiterLabel.Size = new System.Drawing.Size(89, 13);
             this.InternalDelimiterLabel.TabIndex = 4;
             this.InternalDelimiterLabel.Text = "Internal Delimiter";
-            //
+            // 
             // InternalDelimiterExample
-            //
+            // 
             this.InternalDelimiterExample.AutoSize = true;
             this.InternalDelimiterExample.Location = new System.Drawing.Point(599, 5);
             this.InternalDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
@@ -933,9 +933,9 @@ namespace Scribe
             this.InternalDelimiterExample.Size = new System.Drawing.Size(11, 13);
             this.InternalDelimiterExample.TabIndex = 5;
             this.InternalDelimiterExample.Text = "·";
-            //
+            // 
             // ElementDelimiterLabel
-            //
+            // 
             this.ElementDelimiterLabel.AutoSize = true;
             this.ElementDelimiterLabel.Location = new System.Drawing.Point(50, 28);
             this.ElementDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
@@ -943,9 +943,9 @@ namespace Scribe
             this.ElementDelimiterLabel.Size = new System.Drawing.Size(89, 13);
             this.ElementDelimiterLabel.TabIndex = 6;
             this.ElementDelimiterLabel.Text = "Element Delimiter";
-            //
+            // 
             // ElementDelimiterExample
-            //
+            // 
             this.ElementDelimiterExample.AutoSize = true;
             this.ElementDelimiterExample.Location = new System.Drawing.Point(179, 28);
             this.ElementDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
@@ -953,9 +953,9 @@ namespace Scribe
             this.ElementDelimiterExample.Size = new System.Drawing.Size(13, 13);
             this.ElementDelimiterExample.TabIndex = 7;
             this.ElementDelimiterExample.Text = "–";
-            //
+            // 
             // NameDelimiterLabel
-            //
+            // 
             this.NameDelimiterLabel.AutoSize = true;
             this.NameDelimiterLabel.Location = new System.Drawing.Point(260, 28);
             this.NameDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
@@ -963,9 +963,9 @@ namespace Scribe
             this.NameDelimiterLabel.Size = new System.Drawing.Size(78, 13);
             this.NameDelimiterLabel.TabIndex = 8;
             this.NameDelimiterLabel.Text = "Name Delimiter";
-            //
+            // 
             // NameDelimiterExample
-            //
+            // 
             this.NameDelimiterExample.AutoSize = true;
             this.NameDelimiterExample.Location = new System.Drawing.Point(389, 28);
             this.NameDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
@@ -973,9 +973,9 @@ namespace Scribe
             this.NameDelimiterExample.Size = new System.Drawing.Size(13, 13);
             this.NameDelimiterExample.TabIndex = 9;
             this.NameDelimiterExample.Text = "§";
-            //
+            // 
             // PronounDelimiterLabel
-            //
+            // 
             this.PronounDelimiterLabel.AutoSize = true;
             this.PronounDelimiterLabel.Location = new System.Drawing.Point(470, 28);
             this.PronounDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
@@ -983,9 +983,9 @@ namespace Scribe
             this.PronounDelimiterLabel.Size = new System.Drawing.Size(91, 13);
             this.PronounDelimiterLabel.TabIndex = 10;
             this.PronounDelimiterLabel.Text = "Pronoun Delimiter";
-            //
+            // 
             // PronounDelimiterExample
-            //
+            // 
             this.PronounDelimiterExample.AutoSize = true;
             this.PronounDelimiterExample.Location = new System.Drawing.Point(599, 28);
             this.PronounDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
@@ -993,9 +993,9 @@ namespace Scribe
             this.PronounDelimiterExample.Size = new System.Drawing.Size(11, 13);
             this.PronounDelimiterExample.TabIndex = 11;
             this.PronounDelimiterExample.Text = "|";
-            //
+            // 
             // DimensionalDelimiterLabel
-            //
+            // 
             this.DimensionalDelimiterLabel.AutoSize = true;
             this.DimensionalDelimiterLabel.Location = new System.Drawing.Point(50, 51);
             this.DimensionalDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
@@ -1003,9 +1003,9 @@ namespace Scribe
             this.DimensionalDelimiterLabel.Size = new System.Drawing.Size(107, 13);
             this.DimensionalDelimiterLabel.TabIndex = 12;
             this.DimensionalDelimiterLabel.Text = "Dimensional Delimiter";
-            //
+            // 
             // DimensionalDelimiterExample
-            //
+            // 
             this.DimensionalDelimiterExample.AutoSize = true;
             this.DimensionalDelimiterExample.Location = new System.Drawing.Point(179, 51);
             this.DimensionalDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
@@ -1013,9 +1013,9 @@ namespace Scribe
             this.DimensionalDelimiterExample.Size = new System.Drawing.Size(15, 13);
             this.DimensionalDelimiterExample.TabIndex = 13;
             this.DimensionalDelimiterExample.Text = "×";
-            //
+            // 
             // DimensionalTerminatorLabel
-            //
+            // 
             this.DimensionalTerminatorLabel.AutoSize = true;
             this.DimensionalTerminatorLabel.Location = new System.Drawing.Point(260, 51);
             this.DimensionalTerminatorLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
@@ -1023,9 +1023,9 @@ namespace Scribe
             this.DimensionalTerminatorLabel.Size = new System.Drawing.Size(118, 13);
             this.DimensionalTerminatorLabel.TabIndex = 14;
             this.DimensionalTerminatorLabel.Text = "Dimensional Terminator";
-            //
+            // 
             // DimensionalTerminatorExample
-            //
+            // 
             this.DimensionalTerminatorExample.AutoSize = true;
             this.DimensionalTerminatorExample.Location = new System.Drawing.Point(389, 51);
             this.DimensionalTerminatorExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
@@ -1033,10 +1033,10 @@ namespace Scribe
             this.DimensionalTerminatorExample.Size = new System.Drawing.Size(15, 13);
             this.DimensionalTerminatorExample.TabIndex = 15;
             this.DimensionalTerminatorExample.Text = "≡";
-            //
+            // 
             // LibraryInfoGroupBox
-            //
-            this.LibraryInfoGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.LibraryInfoGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LibraryInfoGroupBox.Controls.Add(this.LibraryInfoTableLayoutPanel);
             this.LibraryInfoGroupBox.Location = new System.Drawing.Point(6, 496);
@@ -1045,11 +1045,11 @@ namespace Scribe
             this.LibraryInfoGroupBox.TabIndex = 0;
             this.LibraryInfoGroupBox.TabStop = false;
             this.LibraryInfoGroupBox.Text = "Library Info";
-            //
+            // 
             // LibraryInfoTableLayoutPanel
-            //
-            this.LibraryInfoTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.LibraryInfoTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LibraryInfoTableLayoutPanel.ColumnCount = 2;
             this.LibraryInfoTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -1065,11 +1065,11 @@ namespace Scribe
             this.LibraryInfoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.LibraryInfoTableLayoutPanel.Size = new System.Drawing.Size(277, 75);
             this.LibraryInfoTableLayoutPanel.TabIndex = 0;
-            //
+            // 
             // VersionLabel
-            //
-            this.VersionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.VersionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.VersionLabel.AutoSize = true;
             this.VersionLabel.Location = new System.Drawing.Point(1, 1);
@@ -1078,11 +1078,11 @@ namespace Scribe
             this.VersionLabel.Size = new System.Drawing.Size(67, 35);
             this.VersionLabel.TabIndex = 0;
             this.VersionLabel.Text = "Version";
-            //
+            // 
             // VersionExample
-            //
-            this.VersionExample.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.VersionExample.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.VersionExample.AutoSize = true;
             this.VersionExample.Location = new System.Drawing.Point(70, 1);
@@ -1091,11 +1091,11 @@ namespace Scribe
             this.VersionExample.Size = new System.Drawing.Size(206, 35);
             this.VersionExample.TabIndex = 1;
             this.VersionExample.Text = "0.0.0";
-            //
+            // 
             // WorkingDirectoryLabel
-            //
-            this.WorkingDirectoryLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.WorkingDirectoryLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.WorkingDirectoryLabel.AutoSize = true;
             this.WorkingDirectoryLabel.Location = new System.Drawing.Point(1, 38);
@@ -1104,11 +1104,11 @@ namespace Scribe
             this.WorkingDirectoryLabel.Size = new System.Drawing.Size(67, 36);
             this.WorkingDirectoryLabel.TabIndex = 0;
             this.WorkingDirectoryLabel.Text = "Working Directory";
-            //
+            // 
             // WorkingDirectoryExample
-            //
-            this.WorkingDirectoryExample.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.WorkingDirectoryExample.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.WorkingDirectoryExample.AutoSize = true;
             this.WorkingDirectoryExample.Location = new System.Drawing.Point(70, 38);
@@ -1117,18 +1117,18 @@ namespace Scribe
             this.WorkingDirectoryExample.Size = new System.Drawing.Size(206, 36);
             this.WorkingDirectoryExample.TabIndex = 1;
             this.WorkingDirectoryExample.Text = "C:\\";
-            //
+            // 
             // BeingsTabPage
-            //
+            // 
             this.BeingsTabPage.Location = new System.Drawing.Point(4, 22);
             this.BeingsTabPage.Name = "BeingsTabPage";
             this.BeingsTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.BeingsTabPage.Size = new System.Drawing.Size(952, 599);
             this.BeingsTabPage.TabIndex = 1;
             this.BeingsTabPage.Text = "Beings";
-            //
+            // 
             // BiomesTabPage
-            //
+            // 
             this.BiomesTabPage.BackColor = System.Drawing.Color.Transparent;
             this.BiomesTabPage.Controls.Add(this.BiomeAddEntryRequirementButton);
             this.BiomesTabPage.Controls.Add(this.BiomeDeleteEntryRequirementButton);
@@ -1145,9 +1145,9 @@ namespace Scribe
             this.BiomesTabPage.Size = new System.Drawing.Size(952, 599);
             this.BiomesTabPage.TabIndex = 2;
             this.BiomesTabPage.Text = "Biomes";
-            //
+            // 
             // BiomeAddEntryRequirementButton
-            //
+            // 
             this.BiomeAddEntryRequirementButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomeAddEntryRequirementButton.Location = new System.Drawing.Point(604, 468);
             this.BiomeAddEntryRequirementButton.Name = "BiomeAddEntryRequirementButton";
@@ -1155,9 +1155,9 @@ namespace Scribe
             this.BiomeAddEntryRequirementButton.TabIndex = 2;
             this.BiomeAddEntryRequirementButton.Text = "Add Requirement";
             this.BiomeAddEntryRequirementButton.UseVisualStyleBackColor = true;
-            //
+            // 
             // BiomeDeleteEntryRequirementButton
-            //
+            // 
             this.BiomeDeleteEntryRequirementButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomeDeleteEntryRequirementButton.Location = new System.Drawing.Point(453, 468);
             this.BiomeDeleteEntryRequirementButton.Name = "BiomeDeleteEntryRequirementButton";
@@ -1165,20 +1165,20 @@ namespace Scribe
             this.BiomeDeleteEntryRequirementButton.TabIndex = 2;
             this.BiomeDeleteEntryRequirementButton.Text = "Remove Requirement";
             this.BiomeDeleteEntryRequirementButton.UseVisualStyleBackColor = true;
-            //
+            // 
             // BiomeListBox
-            //
-            this.BiomeListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            // 
+            this.BiomeListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.BiomeListBox.FormattingEnabled = true;
             this.BiomeListBox.Location = new System.Drawing.Point(9, 16);
             this.BiomeListBox.Name = "BiomeListBox";
             this.BiomeListBox.Size = new System.Drawing.Size(279, 446);
             this.BiomeListBox.TabIndex = 1;
-            //
+            // 
             // BiomeConfigGroupBox
-            //
-            this.BiomeConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.BiomeConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomeConfigGroupBox.Controls.Add(this.BiomeConfigTableLayoutPanel);
             this.BiomeConfigGroupBox.Location = new System.Drawing.Point(9, 499);
@@ -1187,11 +1187,11 @@ namespace Scribe
             this.BiomeConfigGroupBox.TabIndex = 0;
             this.BiomeConfigGroupBox.TabStop = false;
             this.BiomeConfigGroupBox.Text = "Configuration";
-            //
+            // 
             // BiomeConfigTableLayoutPanel
-            //
-            this.BiomeConfigTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.BiomeConfigTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomeConfigTableLayoutPanel.ColumnCount = 3;
             this.BiomeConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
@@ -1211,10 +1211,10 @@ namespace Scribe
             this.BiomeConfigTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.BiomeConfigTableLayoutPanel.Size = new System.Drawing.Size(925, 72);
             this.BiomeConfigTableLayoutPanel.TabIndex = 1;
-            //
+            // 
             // BiomeLandThresholdFactorLabel
-            //
-            this.BiomeLandThresholdFactorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            // 
+            this.BiomeLandThresholdFactorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomeLandThresholdFactorLabel.AutoSize = true;
             this.BiomeLandThresholdFactorLabel.Location = new System.Drawing.Point(21, 0);
@@ -1222,10 +1222,10 @@ namespace Scribe
             this.BiomeLandThresholdFactorLabel.Size = new System.Drawing.Size(114, 23);
             this.BiomeLandThresholdFactorLabel.TabIndex = 0;
             this.BiomeLandThresholdFactorLabel.Text = "Land Threshold Factor";
-            //
+            // 
             // BiomeLiquidThresholdFactorLabel
-            //
-            this.BiomeLiquidThresholdFactorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            // 
+            this.BiomeLiquidThresholdFactorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomeLiquidThresholdFactorLabel.AutoSize = true;
             this.BiomeLiquidThresholdFactorLabel.Location = new System.Drawing.Point(17, 23);
@@ -1233,37 +1233,37 @@ namespace Scribe
             this.BiomeLiquidThresholdFactorLabel.Size = new System.Drawing.Size(118, 23);
             this.BiomeLiquidThresholdFactorLabel.TabIndex = 1;
             this.BiomeLiquidThresholdFactorLabel.Text = "Liquid Threshold Factor";
-            //
+            // 
             // BiomeLandThresholdTextBox
-            //
-            this.BiomeLandThresholdTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            // 
+            this.BiomeLandThresholdTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.BiomeLandThresholdTextBox.Location = new System.Drawing.Point(141, 3);
             this.BiomeLandThresholdTextBox.Name = "BiomeLandThresholdTextBox";
             this.BiomeLandThresholdTextBox.Size = new System.Drawing.Size(132, 20);
             this.BiomeLandThresholdTextBox.TabIndex = 2;
-            //
+            // 
             // BiomeLiquidThresholdFactorTextBox
-            //
-            this.BiomeLiquidThresholdFactorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            // 
+            this.BiomeLiquidThresholdFactorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.BiomeLiquidThresholdFactorTextBox.Location = new System.Drawing.Point(141, 26);
             this.BiomeLiquidThresholdFactorTextBox.Name = "BiomeLiquidThresholdFactorTextBox";
             this.BiomeLiquidThresholdFactorTextBox.Size = new System.Drawing.Size(132, 20);
             this.BiomeLiquidThresholdFactorTextBox.TabIndex = 3;
-            //
+            // 
             // BiomeRoomThresholdFactorTextBox
-            //
-            this.BiomeRoomThresholdFactorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            // 
+            this.BiomeRoomThresholdFactorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.BiomeRoomThresholdFactorTextBox.Location = new System.Drawing.Point(141, 49);
             this.BiomeRoomThresholdFactorTextBox.Name = "BiomeRoomThresholdFactorTextBox";
             this.BiomeRoomThresholdFactorTextBox.Size = new System.Drawing.Size(132, 20);
             this.BiomeRoomThresholdFactorTextBox.TabIndex = 4;
-            //
+            // 
             // BiomeRoomThresholdFactorLabel
-            //
-            this.BiomeRoomThresholdFactorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            // 
+            this.BiomeRoomThresholdFactorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomeRoomThresholdFactorLabel.AutoSize = true;
             this.BiomeRoomThresholdFactorLabel.Location = new System.Drawing.Point(17, 46);
@@ -1271,19 +1271,19 @@ namespace Scribe
             this.BiomeRoomThresholdFactorLabel.Size = new System.Drawing.Size(118, 26);
             this.BiomeRoomThresholdFactorLabel.TabIndex = 5;
             this.BiomeRoomThresholdFactorLabel.Text = "Room Threshold Factor";
-            //
+            // 
             // BiomePictureEditButton
-            //
+            // 
             this.BiomePictureEditButton.Location = new System.Drawing.Point(812, 468);
             this.BiomePictureEditButton.Name = "BiomePictureEditButton";
             this.BiomePictureEditButton.Size = new System.Drawing.Size(128, 23);
             this.BiomePictureEditButton.TabIndex = 7;
             this.BiomePictureEditButton.Text = "Edit Image";
             this.BiomePictureEditButton.UseVisualStyleBackColor = true;
-            //
+            // 
             // BiomeTableLayoutPanel
-            //
-            this.BiomeTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            // 
+            this.BiomeTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.BiomeTableLayoutPanel.ColumnCount = 3;
             this.BiomeTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
@@ -1322,9 +1322,9 @@ namespace Scribe
             this.BiomeTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.BiomeTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.BiomeTableLayoutPanel.TabIndex = 5;
-            //
+            // 
             // BiomeAddParquetCriterionButton
-            //
+            // 
             this.BiomeAddParquetCriterionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomeAddParquetCriterionButton.Location = new System.Drawing.Point(297, 316);
             this.BiomeAddParquetCriterionButton.Name = "BiomeAddParquetCriterionButton";
@@ -1332,9 +1332,9 @@ namespace Scribe
             this.BiomeAddParquetCriterionButton.TabIndex = 2;
             this.BiomeAddParquetCriterionButton.Text = "Add Criterion";
             this.BiomeAddParquetCriterionButton.UseVisualStyleBackColor = true;
-            //
+            // 
             // BiomeDeleteParquetCriterionButton
-            //
+            // 
             this.BiomeDeleteParquetCriterionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomeDeleteParquetCriterionButton.Location = new System.Drawing.Point(146, 316);
             this.BiomeDeleteParquetCriterionButton.Name = "BiomeDeleteParquetCriterionButton";
@@ -1342,10 +1342,10 @@ namespace Scribe
             this.BiomeDeleteParquetCriterionButton.TabIndex = 2;
             this.BiomeDeleteParquetCriterionButton.Text = "Remove Criterion";
             this.BiomeDeleteParquetCriterionButton.UseVisualStyleBackColor = true;
-            //
+            // 
             // BiomeEntryRequirementsListBox
-            //
-            this.BiomeEntryRequirementsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            // 
+            this.BiomeEntryRequirementsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.BiomeTableLayoutPanel.SetColumnSpan(this.BiomeEntryRequirementsListBox, 2);
             this.BiomeEntryRequirementsListBox.FormattingEnabled = true;
@@ -1353,10 +1353,10 @@ namespace Scribe
             this.BiomeEntryRequirementsListBox.Name = "BiomeEntryRequirementsListBox";
             this.BiomeEntryRequirementsListBox.Size = new System.Drawing.Size(279, 95);
             this.BiomeEntryRequirementsListBox.TabIndex = 1;
-            //
+            // 
             // BiomeParquetCriteriaListBox
-            //
-            this.BiomeParquetCriteriaListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            // 
+            this.BiomeParquetCriteriaListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.BiomeTableLayoutPanel.SetColumnSpan(this.BiomeParquetCriteriaListBox, 2);
             this.BiomeParquetCriteriaListBox.FormattingEnabled = true;
@@ -1364,108 +1364,108 @@ namespace Scribe
             this.BiomeParquetCriteriaListBox.Name = "BiomeParquetCriteriaListBox";
             this.BiomeParquetCriteriaListBox.Size = new System.Drawing.Size(279, 95);
             this.BiomeParquetCriteriaListBox.TabIndex = 1;
-            //
+            // 
             // BiomeIsLiquidBasedCheckBox
-            //
+            // 
             this.BiomeIsLiquidBasedCheckBox.AutoSize = true;
             this.BiomeIsLiquidBasedCheckBox.Location = new System.Drawing.Point(131, 188);
             this.BiomeIsLiquidBasedCheckBox.Name = "BiomeIsLiquidBasedCheckBox";
             this.BiomeIsLiquidBasedCheckBox.Size = new System.Drawing.Size(15, 14);
             this.BiomeIsLiquidBasedCheckBox.TabIndex = 22;
             this.BiomeIsLiquidBasedCheckBox.UseVisualStyleBackColor = true;
-            //
+            // 
             // BiomeIsRoomBasedCheckBox
-            //
+            // 
             this.BiomeIsRoomBasedCheckBox.AutoSize = true;
             this.BiomeIsRoomBasedCheckBox.Location = new System.Drawing.Point(131, 163);
             this.BiomeIsRoomBasedCheckBox.Name = "BiomeIsRoomBasedCheckBox";
             this.BiomeIsRoomBasedCheckBox.Size = new System.Drawing.Size(15, 14);
             this.BiomeIsRoomBasedCheckBox.TabIndex = 22;
             this.BiomeIsRoomBasedCheckBox.UseVisualStyleBackColor = true;
-            //
+            // 
             // BiomeNameLabel
-            //
+            // 
             this.BiomeNameLabel.AutoSize = true;
             this.BiomeNameLabel.Location = new System.Drawing.Point(3, 0);
             this.BiomeNameLabel.Name = "BiomeNameLabel";
             this.BiomeNameLabel.Size = new System.Drawing.Size(34, 13);
             this.BiomeNameLabel.TabIndex = 0;
             this.BiomeNameLabel.Text = "Name";
-            //
+            // 
             // BiomeDescriptionLabel
-            //
+            // 
             this.BiomeDescriptionLabel.AutoSize = true;
             this.BiomeDescriptionLabel.Location = new System.Drawing.Point(3, 25);
             this.BiomeDescriptionLabel.Name = "BiomeDescriptionLabel";
             this.BiomeDescriptionLabel.Size = new System.Drawing.Size(60, 13);
             this.BiomeDescriptionLabel.TabIndex = 3;
             this.BiomeDescriptionLabel.Text = "Description";
-            //
+            // 
             // BiomeCommentLabel
-            //
+            // 
             this.BiomeCommentLabel.AutoSize = true;
             this.BiomeCommentLabel.Location = new System.Drawing.Point(3, 80);
             this.BiomeCommentLabel.Name = "BiomeCommentLabel";
             this.BiomeCommentLabel.Size = new System.Drawing.Size(52, 13);
             this.BiomeCommentLabel.TabIndex = 6;
             this.BiomeCommentLabel.Text = "Comment";
-            //
+            // 
             // BiomeTierLabel
-            //
+            // 
             this.BiomeTierLabel.AutoSize = true;
             this.BiomeTierLabel.Location = new System.Drawing.Point(3, 135);
             this.BiomeTierLabel.Name = "BiomeTierLabel";
             this.BiomeTierLabel.Size = new System.Drawing.Size(25, 13);
             this.BiomeTierLabel.TabIndex = 9;
             this.BiomeTierLabel.Text = "Tier";
-            //
+            // 
             // BiomeIsRoomBasedLabel
-            //
+            // 
             this.BiomeIsRoomBasedLabel.AutoSize = true;
             this.BiomeIsRoomBasedLabel.Location = new System.Drawing.Point(3, 160);
             this.BiomeIsRoomBasedLabel.Name = "BiomeIsRoomBasedLabel";
             this.BiomeIsRoomBasedLabel.Size = new System.Drawing.Size(84, 13);
             this.BiomeIsRoomBasedLabel.TabIndex = 12;
             this.BiomeIsRoomBasedLabel.Text = "Is Room-Based?";
-            //
+            // 
             // BiomeIsLiquidBasedLabel
-            //
+            // 
             this.BiomeIsLiquidBasedLabel.AutoSize = true;
             this.BiomeIsLiquidBasedLabel.Location = new System.Drawing.Point(3, 185);
             this.BiomeIsLiquidBasedLabel.Name = "BiomeIsLiquidBasedLabel";
             this.BiomeIsLiquidBasedLabel.Size = new System.Drawing.Size(84, 13);
             this.BiomeIsLiquidBasedLabel.TabIndex = 15;
             this.BiomeIsLiquidBasedLabel.Text = "Is Liquid-Based?";
-            //
+            // 
             // BiomeParquetCriteriaLabel
-            //
+            // 
             this.BiomeParquetCriteriaLabel.AutoSize = true;
             this.BiomeParquetCriteriaLabel.Location = new System.Drawing.Point(3, 210);
             this.BiomeParquetCriteriaLabel.Name = "BiomeParquetCriteriaLabel";
             this.BiomeParquetCriteriaLabel.Size = new System.Drawing.Size(83, 13);
             this.BiomeParquetCriteriaLabel.TabIndex = 18;
             this.BiomeParquetCriteriaLabel.Text = "Parquet Criteria";
-            //
+            // 
             // BiomeEntryRequirementsLabel
-            //
+            // 
             this.BiomeEntryRequirementsLabel.AutoSize = true;
             this.BiomeEntryRequirementsLabel.Location = new System.Drawing.Point(3, 343);
             this.BiomeEntryRequirementsLabel.Name = "BiomeEntryRequirementsLabel";
             this.BiomeEntryRequirementsLabel.Size = new System.Drawing.Size(102, 13);
             this.BiomeEntryRequirementsLabel.TabIndex = 21;
             this.BiomeEntryRequirementsLabel.Text = "Entry Requirements";
-            //
+            // 
             // BiomeNameTextBox
-            //
+            // 
             this.BiomeNameTextBox.Location = new System.Drawing.Point(131, 3);
             this.BiomeNameTextBox.Name = "BiomeNameTextBox";
             this.BiomeNameTextBox.Size = new System.Drawing.Size(144, 20);
             this.BiomeNameTextBox.TabIndex = 23;
-            //
+            // 
             // BiomeDescriptionTextBox
-            //
-            this.BiomeDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.BiomeDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomeTableLayoutPanel.SetColumnSpan(this.BiomeDescriptionTextBox, 2);
             this.BiomeDescriptionTextBox.Location = new System.Drawing.Point(131, 28);
@@ -1473,11 +1473,11 @@ namespace Scribe
             this.BiomeDescriptionTextBox.Name = "BiomeDescriptionTextBox";
             this.BiomeDescriptionTextBox.Size = new System.Drawing.Size(295, 49);
             this.BiomeDescriptionTextBox.TabIndex = 24;
-            //
+            // 
             // BiomeCommentTextBox
-            //
-            this.BiomeCommentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.BiomeCommentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomeTableLayoutPanel.SetColumnSpan(this.BiomeCommentTextBox, 2);
             this.BiomeCommentTextBox.Location = new System.Drawing.Point(131, 83);
@@ -1485,16 +1485,16 @@ namespace Scribe
             this.BiomeCommentTextBox.Name = "BiomeCommentTextBox";
             this.BiomeCommentTextBox.Size = new System.Drawing.Size(295, 49);
             this.BiomeCommentTextBox.TabIndex = 25;
-            //
+            // 
             // BiomeTierTextBox
-            //
+            // 
             this.BiomeTierTextBox.Location = new System.Drawing.Point(131, 138);
             this.BiomeTierTextBox.Name = "BiomeTierTextBox";
             this.BiomeTierTextBox.Size = new System.Drawing.Size(144, 20);
             this.BiomeTierTextBox.TabIndex = 26;
-            //
+            // 
             // BiomePictureBox
-            //
+            // 
             this.BiomePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomePictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.BiomePictureBox.Location = new System.Drawing.Point(758, 280);
@@ -1502,9 +1502,9 @@ namespace Scribe
             this.BiomePictureBox.Size = new System.Drawing.Size(182, 182);
             this.BiomePictureBox.TabIndex = 6;
             this.BiomePictureBox.TabStop = false;
-            //
+            // 
             // BiomeIDLabel
-            //
+            // 
             this.BiomeIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomeIDLabel.AutoSize = true;
             this.BiomeIDLabel.Location = new System.Drawing.Point(758, 19);
@@ -1512,18 +1512,18 @@ namespace Scribe
             this.BiomeIDLabel.Size = new System.Drawing.Size(49, 13);
             this.BiomeIDLabel.TabIndex = 4;
             this.BiomeIDLabel.Text = "Biome ID";
-            //
+            // 
             // BiomeAddNewBiomeButton
-            //
+            // 
             this.BiomeAddNewBiomeButton.Location = new System.Drawing.Point(159, 468);
             this.BiomeAddNewBiomeButton.Name = "BiomeAddNewBiomeButton";
             this.BiomeAddNewBiomeButton.Size = new System.Drawing.Size(129, 23);
             this.BiomeAddNewBiomeButton.TabIndex = 2;
             this.BiomeAddNewBiomeButton.Text = "Add New Biome";
             this.BiomeAddNewBiomeButton.UseVisualStyleBackColor = true;
-            //
+            // 
             // BiomeIDTextBox
-            //
+            // 
             this.BiomeIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomeIDTextBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.BiomeIDTextBox.Location = new System.Drawing.Point(812, 16);
@@ -1531,45 +1531,45 @@ namespace Scribe
             this.BiomeIDTextBox.Size = new System.Drawing.Size(131, 20);
             this.BiomeIDTextBox.TabIndex = 3;
             this.BiomeIDTextBox.Text = "-2020202020";
-            //
+            // 
             // CraftingTabPage
-            //
+            // 
             this.CraftingTabPage.BackColor = System.Drawing.Color.Transparent;
             this.CraftingTabPage.Location = new System.Drawing.Point(4, 22);
             this.CraftingTabPage.Name = "CraftingTabPage";
             this.CraftingTabPage.Size = new System.Drawing.Size(952, 599);
             this.CraftingTabPage.TabIndex = 3;
             this.CraftingTabPage.Text = "Crafting";
-            //
+            // 
             // ItemsTabPage
-            //
+            // 
             this.ItemsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.ItemsTabPage.Location = new System.Drawing.Point(4, 22);
             this.ItemsTabPage.Name = "ItemsTabPage";
             this.ItemsTabPage.Size = new System.Drawing.Size(952, 599);
             this.ItemsTabPage.TabIndex = 4;
             this.ItemsTabPage.Text = "Items";
-            //
+            // 
             // MapsTabPage
-            //
+            // 
             this.MapsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.MapsTabPage.Location = new System.Drawing.Point(4, 22);
             this.MapsTabPage.Name = "MapsTabPage";
             this.MapsTabPage.Size = new System.Drawing.Size(952, 599);
             this.MapsTabPage.TabIndex = 5;
             this.MapsTabPage.Text = "Maps";
-            //
+            // 
             // ParquetsTabPage
-            //
+            // 
             this.ParquetsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.ParquetsTabPage.Location = new System.Drawing.Point(4, 22);
             this.ParquetsTabPage.Name = "ParquetsTabPage";
             this.ParquetsTabPage.Size = new System.Drawing.Size(952, 599);
             this.ParquetsTabPage.TabIndex = 6;
             this.ParquetsTabPage.Text = "Parquets";
-            //
+            // 
             // RoomsTabPage
-            //
+            // 
             this.RoomsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.RoomsTabPage.Controls.Add(this.RoomAddEntryRequirementButton);
             this.RoomsTabPage.Controls.Add(this.RoomDeleteEntryRequirementButton);
@@ -1586,9 +1586,9 @@ namespace Scribe
             this.RoomsTabPage.Size = new System.Drawing.Size(952, 599);
             this.RoomsTabPage.TabIndex = 7;
             this.RoomsTabPage.Text = "Rooms";
-            //
+            // 
             // RoomAddEntryRequirementButton
-            //
+            // 
             this.RoomAddEntryRequirementButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomAddEntryRequirementButton.Location = new System.Drawing.Point(604, 468);
             this.RoomAddEntryRequirementButton.Name = "RoomAddEntryRequirementButton";
@@ -1596,9 +1596,9 @@ namespace Scribe
             this.RoomAddEntryRequirementButton.TabIndex = 2;
             this.RoomAddEntryRequirementButton.Text = "Add Requirement";
             this.RoomAddEntryRequirementButton.UseVisualStyleBackColor = true;
-            //
+            // 
             // RoomDeleteEntryRequirementButton
-            //
+            // 
             this.RoomDeleteEntryRequirementButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomDeleteEntryRequirementButton.Location = new System.Drawing.Point(453, 468);
             this.RoomDeleteEntryRequirementButton.Name = "RoomDeleteEntryRequirementButton";
@@ -1606,20 +1606,20 @@ namespace Scribe
             this.RoomDeleteEntryRequirementButton.TabIndex = 2;
             this.RoomDeleteEntryRequirementButton.Text = "Remove Requirement";
             this.RoomDeleteEntryRequirementButton.UseVisualStyleBackColor = true;
-            //
+            // 
             // RoomListBox
-            //
-            this.RoomListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            // 
+            this.RoomListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.RoomListBox.FormattingEnabled = true;
             this.RoomListBox.Location = new System.Drawing.Point(9, 16);
             this.RoomListBox.Name = "RoomListBox";
             this.RoomListBox.Size = new System.Drawing.Size(279, 446);
             this.RoomListBox.TabIndex = 1;
-            //
+            // 
             // RoomConfigGroupBox
-            //
-            this.RoomConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.RoomConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomConfigGroupBox.Controls.Add(this.RoomConfigTableLayoutPanel);
             this.RoomConfigGroupBox.Location = new System.Drawing.Point(9, 499);
@@ -1628,11 +1628,11 @@ namespace Scribe
             this.RoomConfigGroupBox.TabIndex = 0;
             this.RoomConfigGroupBox.TabStop = false;
             this.RoomConfigGroupBox.Text = "Configuration";
-            //
+            // 
             // RoomConfigTableLayoutPanel
-            //
-            this.RoomConfigTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.RoomConfigTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomConfigTableLayoutPanel.ColumnCount = 3;
             this.RoomConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
@@ -1652,10 +1652,10 @@ namespace Scribe
             this.RoomConfigTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.RoomConfigTableLayoutPanel.Size = new System.Drawing.Size(925, 72);
             this.RoomConfigTableLayoutPanel.TabIndex = 1;
-            //
+            // 
             // RoomLandThresholdFactorLabel
-            //
-            this.RoomLandThresholdFactorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            // 
+            this.RoomLandThresholdFactorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomLandThresholdFactorLabel.AutoSize = true;
             this.RoomLandThresholdFactorLabel.Location = new System.Drawing.Point(21, 0);
@@ -1663,10 +1663,10 @@ namespace Scribe
             this.RoomLandThresholdFactorLabel.Size = new System.Drawing.Size(114, 23);
             this.RoomLandThresholdFactorLabel.TabIndex = 0;
             this.RoomLandThresholdFactorLabel.Text = "Land Threshold Factor";
-            //
+            // 
             // RoomLiquidThresholdFactorLabel
-            //
-            this.RoomLiquidThresholdFactorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            // 
+            this.RoomLiquidThresholdFactorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomLiquidThresholdFactorLabel.AutoSize = true;
             this.RoomLiquidThresholdFactorLabel.Location = new System.Drawing.Point(17, 23);
@@ -1674,37 +1674,37 @@ namespace Scribe
             this.RoomLiquidThresholdFactorLabel.Size = new System.Drawing.Size(118, 23);
             this.RoomLiquidThresholdFactorLabel.TabIndex = 1;
             this.RoomLiquidThresholdFactorLabel.Text = "Liquid Threshold Factor";
-            //
+            // 
             // RoomLandThresholdTextBox
-            //
-            this.RoomLandThresholdTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            // 
+            this.RoomLandThresholdTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.RoomLandThresholdTextBox.Location = new System.Drawing.Point(141, 3);
             this.RoomLandThresholdTextBox.Name = "RoomLandThresholdTextBox";
             this.RoomLandThresholdTextBox.Size = new System.Drawing.Size(132, 20);
             this.RoomLandThresholdTextBox.TabIndex = 2;
-            //
+            // 
             // RoomLiquidThresholdFactorTextBox
-            //
-            this.RoomLiquidThresholdFactorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            // 
+            this.RoomLiquidThresholdFactorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.RoomLiquidThresholdFactorTextBox.Location = new System.Drawing.Point(141, 26);
             this.RoomLiquidThresholdFactorTextBox.Name = "RoomLiquidThresholdFactorTextBox";
             this.RoomLiquidThresholdFactorTextBox.Size = new System.Drawing.Size(132, 20);
             this.RoomLiquidThresholdFactorTextBox.TabIndex = 3;
-            //
+            // 
             // RoomRoomThresholdFactorTextBox
-            //
-            this.RoomRoomThresholdFactorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            // 
+            this.RoomRoomThresholdFactorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.RoomRoomThresholdFactorTextBox.Location = new System.Drawing.Point(141, 49);
             this.RoomRoomThresholdFactorTextBox.Name = "RoomRoomThresholdFactorTextBox";
             this.RoomRoomThresholdFactorTextBox.Size = new System.Drawing.Size(132, 20);
             this.RoomRoomThresholdFactorTextBox.TabIndex = 4;
-            //
+            // 
             // RoomRoomThresholdFactorLabel
-            //
-            this.RoomRoomThresholdFactorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            // 
+            this.RoomRoomThresholdFactorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomRoomThresholdFactorLabel.AutoSize = true;
             this.RoomRoomThresholdFactorLabel.Location = new System.Drawing.Point(17, 46);
@@ -1712,19 +1712,19 @@ namespace Scribe
             this.RoomRoomThresholdFactorLabel.Size = new System.Drawing.Size(118, 26);
             this.RoomRoomThresholdFactorLabel.TabIndex = 5;
             this.RoomRoomThresholdFactorLabel.Text = "Room Threshold Factor";
-            //
+            // 
             // RoomPictureEditButton
-            //
+            // 
             this.RoomPictureEditButton.Location = new System.Drawing.Point(812, 468);
             this.RoomPictureEditButton.Name = "RoomPictureEditButton";
             this.RoomPictureEditButton.Size = new System.Drawing.Size(128, 23);
             this.RoomPictureEditButton.TabIndex = 7;
             this.RoomPictureEditButton.Text = "Edit Image";
             this.RoomPictureEditButton.UseVisualStyleBackColor = true;
-            //
+            // 
             // RoomTableLayoutPanel
-            //
-            this.RoomTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            // 
+            this.RoomTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.RoomTableLayoutPanel.ColumnCount = 3;
             this.RoomTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
@@ -1763,9 +1763,9 @@ namespace Scribe
             this.RoomTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.RoomTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.RoomTableLayoutPanel.TabIndex = 5;
-            //
+            // 
             // RoomAddParquetCriterionButton
-            //
+            // 
             this.RoomAddParquetCriterionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomAddParquetCriterionButton.Location = new System.Drawing.Point(297, 316);
             this.RoomAddParquetCriterionButton.Name = "RoomAddParquetCriterionButton";
@@ -1773,9 +1773,9 @@ namespace Scribe
             this.RoomAddParquetCriterionButton.TabIndex = 2;
             this.RoomAddParquetCriterionButton.Text = "Add Criterion";
             this.RoomAddParquetCriterionButton.UseVisualStyleBackColor = true;
-            //
+            // 
             // RoomDeleteParquetCriterionButton
-            //
+            // 
             this.RoomDeleteParquetCriterionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomDeleteParquetCriterionButton.Location = new System.Drawing.Point(146, 316);
             this.RoomDeleteParquetCriterionButton.Name = "RoomDeleteParquetCriterionButton";
@@ -1783,10 +1783,10 @@ namespace Scribe
             this.RoomDeleteParquetCriterionButton.TabIndex = 2;
             this.RoomDeleteParquetCriterionButton.Text = "Remove Criterion";
             this.RoomDeleteParquetCriterionButton.UseVisualStyleBackColor = true;
-            //
+            // 
             // RoomEntryRequirementsListBox
-            //
-            this.RoomEntryRequirementsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            // 
+            this.RoomEntryRequirementsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.RoomTableLayoutPanel.SetColumnSpan(this.RoomEntryRequirementsListBox, 2);
             this.RoomEntryRequirementsListBox.FormattingEnabled = true;
@@ -1794,10 +1794,10 @@ namespace Scribe
             this.RoomEntryRequirementsListBox.Name = "RoomEntryRequirementsListBox";
             this.RoomEntryRequirementsListBox.Size = new System.Drawing.Size(279, 95);
             this.RoomEntryRequirementsListBox.TabIndex = 1;
-            //
+            // 
             // RoomParquetCriteriaListBox
-            //
-            this.RoomParquetCriteriaListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            // 
+            this.RoomParquetCriteriaListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.RoomTableLayoutPanel.SetColumnSpan(this.RoomParquetCriteriaListBox, 2);
             this.RoomParquetCriteriaListBox.FormattingEnabled = true;
@@ -1805,108 +1805,108 @@ namespace Scribe
             this.RoomParquetCriteriaListBox.Name = "RoomParquetCriteriaListBox";
             this.RoomParquetCriteriaListBox.Size = new System.Drawing.Size(279, 95);
             this.RoomParquetCriteriaListBox.TabIndex = 1;
-            //
+            // 
             // RoomIsLiquidBasedCheckBox
-            //
+            // 
             this.RoomIsLiquidBasedCheckBox.AutoSize = true;
             this.RoomIsLiquidBasedCheckBox.Location = new System.Drawing.Point(131, 188);
             this.RoomIsLiquidBasedCheckBox.Name = "RoomIsLiquidBasedCheckBox";
             this.RoomIsLiquidBasedCheckBox.Size = new System.Drawing.Size(15, 14);
             this.RoomIsLiquidBasedCheckBox.TabIndex = 22;
             this.RoomIsLiquidBasedCheckBox.UseVisualStyleBackColor = true;
-            //
+            // 
             // RoomIsRoomBasedCheckBox
-            //
+            // 
             this.RoomIsRoomBasedCheckBox.AutoSize = true;
             this.RoomIsRoomBasedCheckBox.Location = new System.Drawing.Point(131, 163);
             this.RoomIsRoomBasedCheckBox.Name = "RoomIsRoomBasedCheckBox";
             this.RoomIsRoomBasedCheckBox.Size = new System.Drawing.Size(15, 14);
             this.RoomIsRoomBasedCheckBox.TabIndex = 22;
             this.RoomIsRoomBasedCheckBox.UseVisualStyleBackColor = true;
-            //
+            // 
             // RoomNameLabel
-            //
+            // 
             this.RoomNameLabel.AutoSize = true;
             this.RoomNameLabel.Location = new System.Drawing.Point(3, 0);
             this.RoomNameLabel.Name = "RoomNameLabel";
             this.RoomNameLabel.Size = new System.Drawing.Size(34, 13);
             this.RoomNameLabel.TabIndex = 0;
             this.RoomNameLabel.Text = "Name";
-            //
+            // 
             // RoomDescriptionLabel
-            //
+            // 
             this.RoomDescriptionLabel.AutoSize = true;
             this.RoomDescriptionLabel.Location = new System.Drawing.Point(3, 25);
             this.RoomDescriptionLabel.Name = "RoomDescriptionLabel";
             this.RoomDescriptionLabel.Size = new System.Drawing.Size(60, 13);
             this.RoomDescriptionLabel.TabIndex = 3;
             this.RoomDescriptionLabel.Text = "Description";
-            //
+            // 
             // RoomCommentLabel
-            //
+            // 
             this.RoomCommentLabel.AutoSize = true;
             this.RoomCommentLabel.Location = new System.Drawing.Point(3, 80);
             this.RoomCommentLabel.Name = "RoomCommentLabel";
             this.RoomCommentLabel.Size = new System.Drawing.Size(52, 13);
             this.RoomCommentLabel.TabIndex = 6;
             this.RoomCommentLabel.Text = "Comment";
-            //
+            // 
             // RoomTierLabel
-            //
+            // 
             this.RoomTierLabel.AutoSize = true;
             this.RoomTierLabel.Location = new System.Drawing.Point(3, 135);
             this.RoomTierLabel.Name = "RoomTierLabel";
             this.RoomTierLabel.Size = new System.Drawing.Size(25, 13);
             this.RoomTierLabel.TabIndex = 9;
             this.RoomTierLabel.Text = "Tier";
-            //
+            // 
             // RoomIsRoomBasedLabel
-            //
+            // 
             this.RoomIsRoomBasedLabel.AutoSize = true;
             this.RoomIsRoomBasedLabel.Location = new System.Drawing.Point(3, 160);
             this.RoomIsRoomBasedLabel.Name = "RoomIsRoomBasedLabel";
             this.RoomIsRoomBasedLabel.Size = new System.Drawing.Size(84, 13);
             this.RoomIsRoomBasedLabel.TabIndex = 12;
             this.RoomIsRoomBasedLabel.Text = "Is Room-Based?";
-            //
+            // 
             // RoomIsLiquidBasedLabel
-            //
+            // 
             this.RoomIsLiquidBasedLabel.AutoSize = true;
             this.RoomIsLiquidBasedLabel.Location = new System.Drawing.Point(3, 185);
             this.RoomIsLiquidBasedLabel.Name = "RoomIsLiquidBasedLabel";
             this.RoomIsLiquidBasedLabel.Size = new System.Drawing.Size(84, 13);
             this.RoomIsLiquidBasedLabel.TabIndex = 15;
             this.RoomIsLiquidBasedLabel.Text = "Is Liquid-Based?";
-            //
+            // 
             // RoomParquetCriteriaLabel
-            //
+            // 
             this.RoomParquetCriteriaLabel.AutoSize = true;
             this.RoomParquetCriteriaLabel.Location = new System.Drawing.Point(3, 210);
             this.RoomParquetCriteriaLabel.Name = "RoomParquetCriteriaLabel";
             this.RoomParquetCriteriaLabel.Size = new System.Drawing.Size(83, 13);
             this.RoomParquetCriteriaLabel.TabIndex = 18;
             this.RoomParquetCriteriaLabel.Text = "Parquet Criteria";
-            //
+            // 
             // RoomEntryRequirementsLabel
-            //
+            // 
             this.RoomEntryRequirementsLabel.AutoSize = true;
             this.RoomEntryRequirementsLabel.Location = new System.Drawing.Point(3, 343);
             this.RoomEntryRequirementsLabel.Name = "RoomEntryRequirementsLabel";
             this.RoomEntryRequirementsLabel.Size = new System.Drawing.Size(102, 13);
             this.RoomEntryRequirementsLabel.TabIndex = 21;
             this.RoomEntryRequirementsLabel.Text = "Entry Requirements";
-            //
+            // 
             // RoomNameTextBox
-            //
+            // 
             this.RoomNameTextBox.Location = new System.Drawing.Point(131, 3);
             this.RoomNameTextBox.Name = "RoomNameTextBox";
             this.RoomNameTextBox.Size = new System.Drawing.Size(144, 20);
             this.RoomNameTextBox.TabIndex = 23;
-            //
+            // 
             // RoomDescriptionTextBox
-            //
-            this.RoomDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.RoomDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomTableLayoutPanel.SetColumnSpan(this.RoomDescriptionTextBox, 2);
             this.RoomDescriptionTextBox.Location = new System.Drawing.Point(131, 28);
@@ -1914,11 +1914,11 @@ namespace Scribe
             this.RoomDescriptionTextBox.Name = "RoomDescriptionTextBox";
             this.RoomDescriptionTextBox.Size = new System.Drawing.Size(295, 49);
             this.RoomDescriptionTextBox.TabIndex = 24;
-            //
+            // 
             // RoomCommentTextBox
-            //
-            this.RoomCommentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.RoomCommentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomTableLayoutPanel.SetColumnSpan(this.RoomCommentTextBox, 2);
             this.RoomCommentTextBox.Location = new System.Drawing.Point(131, 83);
@@ -1926,16 +1926,16 @@ namespace Scribe
             this.RoomCommentTextBox.Name = "RoomCommentTextBox";
             this.RoomCommentTextBox.Size = new System.Drawing.Size(295, 49);
             this.RoomCommentTextBox.TabIndex = 25;
-            //
+            // 
             // RoomTierTextBox
-            //
+            // 
             this.RoomTierTextBox.Location = new System.Drawing.Point(131, 138);
             this.RoomTierTextBox.Name = "RoomTierTextBox";
             this.RoomTierTextBox.Size = new System.Drawing.Size(144, 20);
             this.RoomTierTextBox.TabIndex = 26;
-            //
+            // 
             // RoomPictureBox
-            //
+            // 
             this.RoomPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.RoomPictureBox.Location = new System.Drawing.Point(758, 280);
@@ -1943,9 +1943,9 @@ namespace Scribe
             this.RoomPictureBox.Size = new System.Drawing.Size(182, 182);
             this.RoomPictureBox.TabIndex = 6;
             this.RoomPictureBox.TabStop = false;
-            //
+            // 
             // RoomIDLabel
-            //
+            // 
             this.RoomIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomIDLabel.AutoSize = true;
             this.RoomIDLabel.Location = new System.Drawing.Point(758, 19);
@@ -1953,18 +1953,18 @@ namespace Scribe
             this.RoomIDLabel.Size = new System.Drawing.Size(48, 13);
             this.RoomIDLabel.TabIndex = 4;
             this.RoomIDLabel.Text = "Room ID";
-            //
+            // 
             // RoomAddNewRoomButton
-            //
+            // 
             this.RoomAddNewRoomButton.Location = new System.Drawing.Point(159, 468);
             this.RoomAddNewRoomButton.Name = "RoomAddNewRoomButton";
             this.RoomAddNewRoomButton.Size = new System.Drawing.Size(129, 23);
             this.RoomAddNewRoomButton.TabIndex = 2;
             this.RoomAddNewRoomButton.Text = "Add New Room";
             this.RoomAddNewRoomButton.UseVisualStyleBackColor = true;
-            //
+            // 
             // RoomIDTextBox
-            //
+            // 
             this.RoomIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomIDTextBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.RoomIDTextBox.Location = new System.Drawing.Point(812, 16);
@@ -1972,19 +1972,19 @@ namespace Scribe
             this.RoomIDTextBox.Size = new System.Drawing.Size(131, 20);
             this.RoomIDTextBox.TabIndex = 3;
             this.RoomIDTextBox.Text = "-2020202020";
-            //
+            // 
             // ScriptsTabPage
-            //
+            // 
             this.ScriptsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.ScriptsTabPage.Location = new System.Drawing.Point(4, 22);
             this.ScriptsTabPage.Name = "ScriptsTabPage";
             this.ScriptsTabPage.Size = new System.Drawing.Size(952, 599);
             this.ScriptsTabPage.TabIndex = 8;
             this.ScriptsTabPage.Text = "Scripting";
-            //
+            // 
             // FiltersTableLayoutPanel
-            //
-            this.FiltersTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.FiltersTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FiltersTableLayoutPanel.ColumnCount = 4;
             this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
@@ -2006,16 +2006,16 @@ namespace Scribe
             this.FiltersTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.FiltersTableLayoutPanel.Size = new System.Drawing.Size(443, 50);
             this.FiltersTableLayoutPanel.TabIndex = 3;
-            //
+            // 
             // FilterTextBox
-            //
+            // 
             this.FilterTextBox.Location = new System.Drawing.Point(3, 3);
             this.FilterTextBox.Name = "FilterTextBox";
             this.FilterTextBox.Size = new System.Drawing.Size(144, 20);
             this.FilterTextBox.TabIndex = 2;
-            //
+            // 
             // NameFilterCheckBox
-            //
+            // 
             this.NameFilterCheckBox.AutoSize = true;
             this.NameFilterCheckBox.Location = new System.Drawing.Point(153, 3);
             this.NameFilterCheckBox.Name = "NameFilterCheckBox";
@@ -2023,9 +2023,9 @@ namespace Scribe
             this.NameFilterCheckBox.TabIndex = 3;
             this.NameFilterCheckBox.Text = "Name";
             this.NameFilterCheckBox.UseVisualStyleBackColor = true;
-            //
+            // 
             // StoryIDFilterCheckBox
-            //
+            // 
             this.StoryIDFilterCheckBox.AutoSize = true;
             this.StoryIDFilterCheckBox.Location = new System.Drawing.Point(153, 28);
             this.StoryIDFilterCheckBox.Name = "StoryIDFilterCheckBox";
@@ -2033,9 +2033,9 @@ namespace Scribe
             this.StoryIDFilterCheckBox.TabIndex = 6;
             this.StoryIDFilterCheckBox.Text = "Story ID";
             this.StoryIDFilterCheckBox.UseVisualStyleBackColor = true;
-            //
+            // 
             // DescriptionCheckBox
-            //
+            // 
             this.DescriptionCheckBox.AutoSize = true;
             this.DescriptionCheckBox.Location = new System.Drawing.Point(253, 3);
             this.DescriptionCheckBox.Name = "DescriptionCheckBox";
@@ -2043,9 +2043,9 @@ namespace Scribe
             this.DescriptionCheckBox.TabIndex = 4;
             this.DescriptionCheckBox.Text = "Description";
             this.DescriptionCheckBox.UseVisualStyleBackColor = true;
-            //
+            // 
             // TagsCheckBox
-            //
+            // 
             this.TagsCheckBox.AutoSize = true;
             this.TagsCheckBox.Location = new System.Drawing.Point(253, 28);
             this.TagsCheckBox.Name = "TagsCheckBox";
@@ -2053,9 +2053,9 @@ namespace Scribe
             this.TagsCheckBox.TabIndex = 7;
             this.TagsCheckBox.Text = "Tags";
             this.TagsCheckBox.UseVisualStyleBackColor = true;
-            //
+            // 
             // CommentCheckBox
-            //
+            // 
             this.CommentCheckBox.AutoSize = true;
             this.CommentCheckBox.Location = new System.Drawing.Point(353, 3);
             this.CommentCheckBox.Name = "CommentCheckBox";
@@ -2063,9 +2063,9 @@ namespace Scribe
             this.CommentCheckBox.TabIndex = 5;
             this.CommentCheckBox.Text = "Comment";
             this.CommentCheckBox.UseVisualStyleBackColor = true;
-            //
+            // 
             // MoreCheckBox
-            //
+            // 
             this.MoreCheckBox.AutoSize = true;
             this.MoreCheckBox.Location = new System.Drawing.Point(353, 28);
             this.MoreCheckBox.Name = "MoreCheckBox";
@@ -2073,9 +2073,9 @@ namespace Scribe
             this.MoreCheckBox.TabIndex = 8;
             this.MoreCheckBox.Text = "More";
             this.MoreCheckBox.UseVisualStyleBackColor = true;
-            //
+            // 
             // FilterGroupBox
-            //
+            // 
             this.FilterGroupBox.Controls.Add(this.FiltersTableLayoutPanel);
             this.FilterGroupBox.Location = new System.Drawing.Point(16, 27);
             this.FilterGroupBox.Name = "FilterGroupBox";
@@ -2083,9 +2083,9 @@ namespace Scribe
             this.FilterGroupBox.TabIndex = 4;
             this.FilterGroupBox.TabStop = false;
             this.FilterGroupBox.Text = "Filter By Text";
-            //
+            // 
             // FlavorFilterGroupBox
-            //
+            // 
             this.FlavorFilterGroupBox.Controls.Add(this.FlavorTableLayoutPanel);
             this.FlavorFilterGroupBox.Location = new System.Drawing.Point(477, 27);
             this.FlavorFilterGroupBox.Name = "FlavorFilterGroupBox";
@@ -2093,9 +2093,9 @@ namespace Scribe
             this.FlavorFilterGroupBox.TabIndex = 5;
             this.FlavorFilterGroupBox.TabStop = false;
             this.FlavorFilterGroupBox.Text = "Filter By Flavor";
-            //
+            // 
             // FlavorTableLayoutPanel
-            //
+            // 
             this.FlavorTableLayoutPanel.ColumnCount = 7;
             this.FlavorTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.25F));
             this.FlavorTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.25F));
@@ -2125,11 +2125,11 @@ namespace Scribe
             this.FlavorTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.FlavorTableLayoutPanel.Size = new System.Drawing.Size(479, 52);
             this.FlavorTableLayoutPanel.TabIndex = 0;
-            //
+            // 
             // SavourySelector
-            //
-            this.SavourySelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.SavourySelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SavourySelector.AutoSize = true;
             this.SavourySelector.BackColor = System.Drawing.Color.PapayaWhip;
@@ -2140,11 +2140,11 @@ namespace Scribe
             this.SavourySelector.Size = new System.Drawing.Size(62, 26);
             this.SavourySelector.TabIndex = 0;
             this.SavourySelector.Text = "Savoury";
-            //
+            // 
             // MetallicSelector
-            //
-            this.MetallicSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.MetallicSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MetallicSelector.AutoSize = true;
             this.MetallicSelector.BackColor = System.Drawing.Color.Gainsboro;
@@ -2155,11 +2155,11 @@ namespace Scribe
             this.MetallicSelector.Size = new System.Drawing.Size(62, 26);
             this.MetallicSelector.TabIndex = 0;
             this.MetallicSelector.Text = "Metallic";
-            //
+            // 
             // FreshSelector
-            //
-            this.FreshSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.FreshSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FreshSelector.AutoSize = true;
             this.FreshSelector.BackColor = System.Drawing.Color.LightCyan;
@@ -2170,11 +2170,11 @@ namespace Scribe
             this.FreshSelector.Size = new System.Drawing.Size(62, 26);
             this.FreshSelector.TabIndex = 0;
             this.FreshSelector.Text = "Fresh";
-            //
+            // 
             // PungentSelector
-            //
-            this.PungentSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.PungentSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PungentSelector.AutoSize = true;
             this.PungentSelector.BackColor = System.Drawing.Color.Pink;
@@ -2185,11 +2185,11 @@ namespace Scribe
             this.PungentSelector.Size = new System.Drawing.Size(62, 26);
             this.PungentSelector.TabIndex = 0;
             this.PungentSelector.Text = "Pungent";
-            //
+            // 
             // NoFlavorsSelector
-            //
-            this.NoFlavorsSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.NoFlavorsSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.NoFlavorsSelector.AutoSize = true;
             this.NoFlavorsSelector.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -2200,11 +2200,11 @@ namespace Scribe
             this.NoFlavorsSelector.Size = new System.Drawing.Size(63, 26);
             this.NoFlavorsSelector.TabIndex = 0;
             this.NoFlavorsSelector.Text = "(None)";
-            //
+            // 
             // ChemicalSelector
-            //
-            this.ChemicalSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.ChemicalSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ChemicalSelector.AutoSize = true;
             this.ChemicalSelector.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -2215,11 +2215,11 @@ namespace Scribe
             this.ChemicalSelector.Size = new System.Drawing.Size(62, 26);
             this.ChemicalSelector.TabIndex = 0;
             this.ChemicalSelector.Text = "Chemical";
-            //
+            // 
             // AstringentSelector
-            //
-            this.AstringentSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.AstringentSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.AstringentSelector.AutoSize = true;
             this.AstringentSelector.BackColor = System.Drawing.Color.Moccasin;
@@ -2230,11 +2230,11 @@ namespace Scribe
             this.AstringentSelector.Size = new System.Drawing.Size(64, 26);
             this.AstringentSelector.TabIndex = 0;
             this.AstringentSelector.Text = "Astringent";
-            //
+            // 
             // SweetSelector
-            //
-            this.SweetSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.SweetSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SweetSelector.AutoSize = true;
             this.SweetSelector.BackColor = System.Drawing.Color.MistyRose;
@@ -2245,11 +2245,11 @@ namespace Scribe
             this.SweetSelector.Size = new System.Drawing.Size(62, 26);
             this.SweetSelector.TabIndex = 0;
             this.SweetSelector.Text = "Sweet";
-            //
+            // 
             // BlandSelector
-            //
-            this.BlandSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.BlandSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BlandSelector.AutoSize = true;
             this.BlandSelector.BackColor = System.Drawing.Color.NavajoWhite;
@@ -2260,11 +2260,11 @@ namespace Scribe
             this.BlandSelector.Size = new System.Drawing.Size(62, 26);
             this.BlandSelector.TabIndex = 0;
             this.BlandSelector.Text = "Bland";
-            //
+            // 
             // BitterSelector
-            //
-            this.BitterSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.BitterSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BitterSelector.AutoSize = true;
             this.BitterSelector.BackColor = System.Drawing.Color.LightGreen;
@@ -2275,11 +2275,11 @@ namespace Scribe
             this.BitterSelector.Size = new System.Drawing.Size(64, 26);
             this.BitterSelector.TabIndex = 0;
             this.BitterSelector.Text = "Bitter";
-            //
+            // 
             // SourSelector
-            //
-            this.SourSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.SourSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SourSelector.AutoSize = true;
             this.SourSelector.BackColor = System.Drawing.Color.LemonChiffon;
@@ -2290,11 +2290,11 @@ namespace Scribe
             this.SourSelector.Size = new System.Drawing.Size(62, 26);
             this.SourSelector.TabIndex = 0;
             this.SourSelector.Text = "Sour";
-            //
+            // 
             // SaltySelector
-            //
-            this.SaltySelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.SaltySelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SaltySelector.AutoSize = true;
             this.SaltySelector.BackColor = System.Drawing.Color.PowderBlue;
@@ -2305,11 +2305,11 @@ namespace Scribe
             this.SaltySelector.Size = new System.Drawing.Size(62, 26);
             this.SaltySelector.TabIndex = 0;
             this.SaltySelector.Text = "Salty";
-            //
+            // 
             // NumbingSelector
-            //
-            this.NumbingSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.NumbingSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.NumbingSelector.AutoSize = true;
             this.NumbingSelector.BackColor = System.Drawing.Color.Plum;
@@ -2320,11 +2320,11 @@ namespace Scribe
             this.NumbingSelector.Size = new System.Drawing.Size(62, 26);
             this.NumbingSelector.TabIndex = 0;
             this.NumbingSelector.Text = "Numbing";
-            //
+            // 
             // AllFlavorsSelector
-            //
-            this.AllFlavorsSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.AllFlavorsSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.AllFlavorsSelector.AutoSize = true;
             this.AllFlavorsSelector.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -2335,9 +2335,9 @@ namespace Scribe
             this.AllFlavorsSelector.Size = new System.Drawing.Size(63, 26);
             this.AllFlavorsSelector.TabIndex = 0;
             this.AllFlavorsSelector.Text = "(All)";
-            //
+            // 
             // EditorForm
-            //
+            // 
             this.AccessibleDescription = "The primary interactive editor window.";
             this.AccessibleName = "Editor Window";
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
