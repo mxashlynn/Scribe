@@ -92,28 +92,28 @@ namespace Scribe
             this.GamesListBox = new System.Windows.Forms.ListBox();
             this.FileFormatGroupBox = new System.Windows.Forms.GroupBox();
             this.FileFormatTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.PrimaryDelimiterLabel = new System.Windows.Forms.Label();
-            this.PrimaryDelimiterExample = new System.Windows.Forms.Label();
-            this.SecondaryDelimiterLabel = new System.Windows.Forms.Label();
-            this.SecondaryDelimiterExample = new System.Windows.Forms.Label();
-            this.InternalDelimiterLabel = new System.Windows.Forms.Label();
-            this.InternalDelimiterExample = new System.Windows.Forms.Label();
-            this.ElementDelimiterLabel = new System.Windows.Forms.Label();
-            this.ElementDelimiterExample = new System.Windows.Forms.Label();
-            this.NameDelimiterLabel = new System.Windows.Forms.Label();
-            this.NameDelimiterExample = new System.Windows.Forms.Label();
-            this.PronounDelimiterLabel = new System.Windows.Forms.Label();
-            this.PronounDelimiterExample = new System.Windows.Forms.Label();
-            this.DimensionalDelimiterLabel = new System.Windows.Forms.Label();
-            this.DimensionalDelimiterExample = new System.Windows.Forms.Label();
-            this.DimensionalTerminatorLabel = new System.Windows.Forms.Label();
-            this.DimensionalTerminatorExample = new System.Windows.Forms.Label();
+            this.FileFormatPrimaryDelimiterLabel = new System.Windows.Forms.Label();
+            this.FileFormatPrimaryDelimiterExample = new System.Windows.Forms.Label();
+            this.FileFormatSecondaryDelimiterLabel = new System.Windows.Forms.Label();
+            this.FileFormatSecondaryDelimiterExample = new System.Windows.Forms.Label();
+            this.FileFormatInternalDelimiterLabel = new System.Windows.Forms.Label();
+            this.FileFormatInternalDelimiterExample = new System.Windows.Forms.Label();
+            this.FileFormatElementDelimiterLabel = new System.Windows.Forms.Label();
+            this.FileFormatElementDelimiterExample = new System.Windows.Forms.Label();
+            this.FileFormatNameDelimiterLabel = new System.Windows.Forms.Label();
+            this.FileFormatNameDelimiterExample = new System.Windows.Forms.Label();
+            this.FileFormatPronounDelimiterLabel = new System.Windows.Forms.Label();
+            this.FileFormatPronounDelimiterExample = new System.Windows.Forms.Label();
+            this.FileFormatDimensionalDelimiterLabel = new System.Windows.Forms.Label();
+            this.FileFormatDimensionalDelimiterExample = new System.Windows.Forms.Label();
+            this.FileFormatDimensionalTerminatorLabel = new System.Windows.Forms.Label();
+            this.FileFormatDimensionalTerminatorExample = new System.Windows.Forms.Label();
             this.LibraryInfoGroupBox = new System.Windows.Forms.GroupBox();
             this.LibraryInfoTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.VersionLabel = new System.Windows.Forms.Label();
-            this.VersionExample = new System.Windows.Forms.Label();
-            this.WorkingDirectoryLabel = new System.Windows.Forms.Label();
-            this.WorkingDirectoryExample = new System.Windows.Forms.Label();
+            this.LibraryVersionLabel = new System.Windows.Forms.Label();
+            this.LibraryVersionExample = new System.Windows.Forms.Label();
+            this.LibraryWorkingDirectoryLabel = new System.Windows.Forms.Label();
+            this.LibraryWorkingDirectoryExample = new System.Windows.Forms.Label();
             this.BeingsTabPage = new System.Windows.Forms.TabPage();
             this.BiomesTabPage = new System.Windows.Forms.TabPage();
             this.BiomeAddEntryRequirementButton = new System.Windows.Forms.Button();
@@ -885,22 +885,22 @@ namespace Scribe
             this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.495411F));
             this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.83792F));
             this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.495411F));
-            this.FileFormatTableLayoutPanel.Controls.Add(this.PrimaryDelimiterLabel, 0, 0);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.PrimaryDelimiterExample, 1, 0);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.SecondaryDelimiterLabel, 2, 0);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.SecondaryDelimiterExample, 3, 0);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.InternalDelimiterLabel, 4, 0);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.InternalDelimiterExample, 5, 0);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.ElementDelimiterLabel, 0, 1);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.ElementDelimiterExample, 1, 1);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.NameDelimiterLabel, 2, 1);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.NameDelimiterExample, 3, 1);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.PronounDelimiterLabel, 4, 1);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.PronounDelimiterExample, 5, 1);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.DimensionalDelimiterLabel, 0, 2);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.DimensionalDelimiterExample, 1, 2);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.DimensionalTerminatorLabel, 2, 2);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.DimensionalTerminatorExample, 3, 2);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPrimaryDelimiterLabel, 0, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPrimaryDelimiterExample, 1, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatSecondaryDelimiterLabel, 2, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatSecondaryDelimiterExample, 3, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatInternalDelimiterLabel, 4, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatInternalDelimiterExample, 5, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatElementDelimiterLabel, 0, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatElementDelimiterExample, 1, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatNameDelimiterLabel, 2, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatNameDelimiterExample, 3, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPronounDelimiterLabel, 4, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPronounDelimiterExample, 5, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalDelimiterLabel, 0, 2);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalDelimiterExample, 1, 2);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalTerminatorLabel, 2, 2);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalTerminatorExample, 3, 2);
             this.FileFormatTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
             this.FileFormatTableLayoutPanel.Name = "FileFormatTableLayoutPanel";
             this.FileFormatTableLayoutPanel.RowCount = 3;
@@ -910,165 +910,165 @@ namespace Scribe
             this.FileFormatTableLayoutPanel.Size = new System.Drawing.Size(633, 72);
             this.FileFormatTableLayoutPanel.TabIndex = 1;
             //
-            // PrimaryDelimiterLabel
+            // FileFormatPrimaryDelimiterLabel
             //
-            this.PrimaryDelimiterLabel.AutoSize = true;
-            this.PrimaryDelimiterLabel.Location = new System.Drawing.Point(50, 5);
-            this.PrimaryDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.PrimaryDelimiterLabel.Name = "PrimaryDelimiterLabel";
-            this.PrimaryDelimiterLabel.Size = new System.Drawing.Size(87, 13);
-            this.PrimaryDelimiterLabel.TabIndex = 0;
-            this.PrimaryDelimiterLabel.Text = "Primary Delimiter";
+            this.FileFormatPrimaryDelimiterLabel.AutoSize = true;
+            this.FileFormatPrimaryDelimiterLabel.Location = new System.Drawing.Point(50, 5);
+            this.FileFormatPrimaryDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.FileFormatPrimaryDelimiterLabel.Name = "FileFormatPrimaryDelimiterLabel";
+            this.FileFormatPrimaryDelimiterLabel.Size = new System.Drawing.Size(87, 13);
+            this.FileFormatPrimaryDelimiterLabel.TabIndex = 0;
+            this.FileFormatPrimaryDelimiterLabel.Text = "Primary Delimiter";
             //
-            // PrimaryDelimiterExample
+            // FileFormatPrimaryDelimiterExample
             //
-            this.PrimaryDelimiterExample.AutoSize = true;
-            this.PrimaryDelimiterExample.Location = new System.Drawing.Point(179, 5);
-            this.PrimaryDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.PrimaryDelimiterExample.Name = "PrimaryDelimiterExample";
-            this.PrimaryDelimiterExample.Size = new System.Drawing.Size(11, 13);
-            this.PrimaryDelimiterExample.TabIndex = 1;
-            this.PrimaryDelimiterExample.Text = ",";
+            this.FileFormatPrimaryDelimiterExample.AutoSize = true;
+            this.FileFormatPrimaryDelimiterExample.Location = new System.Drawing.Point(179, 5);
+            this.FileFormatPrimaryDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatPrimaryDelimiterExample.Name = "FileFormatPrimaryDelimiterExample";
+            this.FileFormatPrimaryDelimiterExample.Size = new System.Drawing.Size(11, 13);
+            this.FileFormatPrimaryDelimiterExample.TabIndex = 1;
+            this.FileFormatPrimaryDelimiterExample.Text = ",";
             //
-            // SecondaryDelimiterLabel
+            // FileFormatSecondaryDelimiterLabel
             //
-            this.SecondaryDelimiterLabel.AutoSize = true;
-            this.SecondaryDelimiterLabel.Location = new System.Drawing.Point(260, 5);
-            this.SecondaryDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.SecondaryDelimiterLabel.Name = "SecondaryDelimiterLabel";
-            this.SecondaryDelimiterLabel.Size = new System.Drawing.Size(102, 13);
-            this.SecondaryDelimiterLabel.TabIndex = 2;
-            this.SecondaryDelimiterLabel.Text = "Secondary Delimiter";
+            this.FileFormatSecondaryDelimiterLabel.AutoSize = true;
+            this.FileFormatSecondaryDelimiterLabel.Location = new System.Drawing.Point(260, 5);
+            this.FileFormatSecondaryDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.FileFormatSecondaryDelimiterLabel.Name = "FileFormatSecondaryDelimiterLabel";
+            this.FileFormatSecondaryDelimiterLabel.Size = new System.Drawing.Size(102, 13);
+            this.FileFormatSecondaryDelimiterLabel.TabIndex = 2;
+            this.FileFormatSecondaryDelimiterLabel.Text = "Secondary Delimiter";
             //
-            // SecondaryDelimiterExample
+            // FileFormatSecondaryDelimiterExample
             //
-            this.SecondaryDelimiterExample.AutoSize = true;
-            this.SecondaryDelimiterExample.Location = new System.Drawing.Point(389, 5);
-            this.SecondaryDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.SecondaryDelimiterExample.Name = "SecondaryDelimiterExample";
-            this.SecondaryDelimiterExample.Size = new System.Drawing.Size(18, 13);
-            this.SecondaryDelimiterExample.TabIndex = 3;
-            this.SecondaryDelimiterExample.Text = "∟";
+            this.FileFormatSecondaryDelimiterExample.AutoSize = true;
+            this.FileFormatSecondaryDelimiterExample.Location = new System.Drawing.Point(389, 5);
+            this.FileFormatSecondaryDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatSecondaryDelimiterExample.Name = "FileFormatSecondaryDelimiterExample";
+            this.FileFormatSecondaryDelimiterExample.Size = new System.Drawing.Size(18, 13);
+            this.FileFormatSecondaryDelimiterExample.TabIndex = 3;
+            this.FileFormatSecondaryDelimiterExample.Text = "∟";
             //
-            // InternalDelimiterLabel
+            // FileFormatInternalDelimiterLabel
             //
-            this.InternalDelimiterLabel.AutoSize = true;
-            this.InternalDelimiterLabel.Location = new System.Drawing.Point(470, 5);
-            this.InternalDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.InternalDelimiterLabel.Name = "InternalDelimiterLabel";
-            this.InternalDelimiterLabel.Size = new System.Drawing.Size(89, 13);
-            this.InternalDelimiterLabel.TabIndex = 4;
-            this.InternalDelimiterLabel.Text = "Internal Delimiter";
+            this.FileFormatInternalDelimiterLabel.AutoSize = true;
+            this.FileFormatInternalDelimiterLabel.Location = new System.Drawing.Point(470, 5);
+            this.FileFormatInternalDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.FileFormatInternalDelimiterLabel.Name = "FileFormatInternalDelimiterLabel";
+            this.FileFormatInternalDelimiterLabel.Size = new System.Drawing.Size(89, 13);
+            this.FileFormatInternalDelimiterLabel.TabIndex = 4;
+            this.FileFormatInternalDelimiterLabel.Text = "Internal Delimiter";
             //
-            // InternalDelimiterExample
+            // FileFormatInternalDelimiterExample
             //
-            this.InternalDelimiterExample.AutoSize = true;
-            this.InternalDelimiterExample.Location = new System.Drawing.Point(599, 5);
-            this.InternalDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.InternalDelimiterExample.Name = "InternalDelimiterExample";
-            this.InternalDelimiterExample.Size = new System.Drawing.Size(11, 13);
-            this.InternalDelimiterExample.TabIndex = 5;
-            this.InternalDelimiterExample.Text = "·";
+            this.FileFormatInternalDelimiterExample.AutoSize = true;
+            this.FileFormatInternalDelimiterExample.Location = new System.Drawing.Point(599, 5);
+            this.FileFormatInternalDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatInternalDelimiterExample.Name = "FileFormatInternalDelimiterExample";
+            this.FileFormatInternalDelimiterExample.Size = new System.Drawing.Size(11, 13);
+            this.FileFormatInternalDelimiterExample.TabIndex = 5;
+            this.FileFormatInternalDelimiterExample.Text = "·";
             //
-            // ElementDelimiterLabel
+            // FileFormatElementDelimiterLabel
             //
-            this.ElementDelimiterLabel.AutoSize = true;
-            this.ElementDelimiterLabel.Location = new System.Drawing.Point(50, 28);
-            this.ElementDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.ElementDelimiterLabel.Name = "ElementDelimiterLabel";
-            this.ElementDelimiterLabel.Size = new System.Drawing.Size(89, 13);
-            this.ElementDelimiterLabel.TabIndex = 6;
-            this.ElementDelimiterLabel.Text = "Element Delimiter";
+            this.FileFormatElementDelimiterLabel.AutoSize = true;
+            this.FileFormatElementDelimiterLabel.Location = new System.Drawing.Point(50, 28);
+            this.FileFormatElementDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.FileFormatElementDelimiterLabel.Name = "FileFormatElementDelimiterLabel";
+            this.FileFormatElementDelimiterLabel.Size = new System.Drawing.Size(89, 13);
+            this.FileFormatElementDelimiterLabel.TabIndex = 6;
+            this.FileFormatElementDelimiterLabel.Text = "Element Delimiter";
             //
-            // ElementDelimiterExample
+            // FileFormatElementDelimiterExample
             //
-            this.ElementDelimiterExample.AutoSize = true;
-            this.ElementDelimiterExample.Location = new System.Drawing.Point(179, 28);
-            this.ElementDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.ElementDelimiterExample.Name = "ElementDelimiterExample";
-            this.ElementDelimiterExample.Size = new System.Drawing.Size(13, 13);
-            this.ElementDelimiterExample.TabIndex = 7;
-            this.ElementDelimiterExample.Text = "–";
+            this.FileFormatElementDelimiterExample.AutoSize = true;
+            this.FileFormatElementDelimiterExample.Location = new System.Drawing.Point(179, 28);
+            this.FileFormatElementDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatElementDelimiterExample.Name = "FileFormatElementDelimiterExample";
+            this.FileFormatElementDelimiterExample.Size = new System.Drawing.Size(13, 13);
+            this.FileFormatElementDelimiterExample.TabIndex = 7;
+            this.FileFormatElementDelimiterExample.Text = "–";
             //
-            // NameDelimiterLabel
+            // FileFormatNameDelimiterLabel
             //
-            this.NameDelimiterLabel.AutoSize = true;
-            this.NameDelimiterLabel.Location = new System.Drawing.Point(260, 28);
-            this.NameDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.NameDelimiterLabel.Name = "NameDelimiterLabel";
-            this.NameDelimiterLabel.Size = new System.Drawing.Size(78, 13);
-            this.NameDelimiterLabel.TabIndex = 8;
-            this.NameDelimiterLabel.Text = "Name Delimiter";
+            this.FileFormatNameDelimiterLabel.AutoSize = true;
+            this.FileFormatNameDelimiterLabel.Location = new System.Drawing.Point(260, 28);
+            this.FileFormatNameDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.FileFormatNameDelimiterLabel.Name = "FileFormatNameDelimiterLabel";
+            this.FileFormatNameDelimiterLabel.Size = new System.Drawing.Size(78, 13);
+            this.FileFormatNameDelimiterLabel.TabIndex = 8;
+            this.FileFormatNameDelimiterLabel.Text = "Name Delimiter";
             //
-            // NameDelimiterExample
+            // FileFormatNameDelimiterExample
             //
-            this.NameDelimiterExample.AutoSize = true;
-            this.NameDelimiterExample.Location = new System.Drawing.Point(389, 28);
-            this.NameDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.NameDelimiterExample.Name = "NameDelimiterExample";
-            this.NameDelimiterExample.Size = new System.Drawing.Size(13, 13);
-            this.NameDelimiterExample.TabIndex = 9;
-            this.NameDelimiterExample.Text = "§";
+            this.FileFormatNameDelimiterExample.AutoSize = true;
+            this.FileFormatNameDelimiterExample.Location = new System.Drawing.Point(389, 28);
+            this.FileFormatNameDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatNameDelimiterExample.Name = "FileFormatNameDelimiterExample";
+            this.FileFormatNameDelimiterExample.Size = new System.Drawing.Size(13, 13);
+            this.FileFormatNameDelimiterExample.TabIndex = 9;
+            this.FileFormatNameDelimiterExample.Text = "§";
             //
-            // PronounDelimiterLabel
+            // FileFormatPronounDelimiterLabel
             //
-            this.PronounDelimiterLabel.AutoSize = true;
-            this.PronounDelimiterLabel.Location = new System.Drawing.Point(470, 28);
-            this.PronounDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.PronounDelimiterLabel.Name = "PronounDelimiterLabel";
-            this.PronounDelimiterLabel.Size = new System.Drawing.Size(91, 13);
-            this.PronounDelimiterLabel.TabIndex = 10;
-            this.PronounDelimiterLabel.Text = "Pronoun Delimiter";
+            this.FileFormatPronounDelimiterLabel.AutoSize = true;
+            this.FileFormatPronounDelimiterLabel.Location = new System.Drawing.Point(470, 28);
+            this.FileFormatPronounDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.FileFormatPronounDelimiterLabel.Name = "FileFormatPronounDelimiterLabel";
+            this.FileFormatPronounDelimiterLabel.Size = new System.Drawing.Size(91, 13);
+            this.FileFormatPronounDelimiterLabel.TabIndex = 10;
+            this.FileFormatPronounDelimiterLabel.Text = "Pronoun Delimiter";
             //
-            // PronounDelimiterExample
+            // FileFormatPronounDelimiterExample
             //
-            this.PronounDelimiterExample.AutoSize = true;
-            this.PronounDelimiterExample.Location = new System.Drawing.Point(599, 28);
-            this.PronounDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.PronounDelimiterExample.Name = "PronounDelimiterExample";
-            this.PronounDelimiterExample.Size = new System.Drawing.Size(11, 13);
-            this.PronounDelimiterExample.TabIndex = 11;
-            this.PronounDelimiterExample.Text = "|";
+            this.FileFormatPronounDelimiterExample.AutoSize = true;
+            this.FileFormatPronounDelimiterExample.Location = new System.Drawing.Point(599, 28);
+            this.FileFormatPronounDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatPronounDelimiterExample.Name = "FileFormatPronounDelimiterExample";
+            this.FileFormatPronounDelimiterExample.Size = new System.Drawing.Size(11, 13);
+            this.FileFormatPronounDelimiterExample.TabIndex = 11;
+            this.FileFormatPronounDelimiterExample.Text = "|";
             //
-            // DimensionalDelimiterLabel
+            // FileFormatDimensionalDelimiterLabel
             //
-            this.DimensionalDelimiterLabel.AutoSize = true;
-            this.DimensionalDelimiterLabel.Location = new System.Drawing.Point(50, 51);
-            this.DimensionalDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.DimensionalDelimiterLabel.Name = "DimensionalDelimiterLabel";
-            this.DimensionalDelimiterLabel.Size = new System.Drawing.Size(107, 13);
-            this.DimensionalDelimiterLabel.TabIndex = 12;
-            this.DimensionalDelimiterLabel.Text = "Dimensional Delimiter";
+            this.FileFormatDimensionalDelimiterLabel.AutoSize = true;
+            this.FileFormatDimensionalDelimiterLabel.Location = new System.Drawing.Point(50, 51);
+            this.FileFormatDimensionalDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.FileFormatDimensionalDelimiterLabel.Name = "FileFormatDimensionalDelimiterLabel";
+            this.FileFormatDimensionalDelimiterLabel.Size = new System.Drawing.Size(107, 13);
+            this.FileFormatDimensionalDelimiterLabel.TabIndex = 12;
+            this.FileFormatDimensionalDelimiterLabel.Text = "Dimensional Delimiter";
             //
-            // DimensionalDelimiterExample
+            // FileFormatDimensionalDelimiterExample
             //
-            this.DimensionalDelimiterExample.AutoSize = true;
-            this.DimensionalDelimiterExample.Location = new System.Drawing.Point(179, 51);
-            this.DimensionalDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.DimensionalDelimiterExample.Name = "DimensionalDelimiterExample";
-            this.DimensionalDelimiterExample.Size = new System.Drawing.Size(15, 13);
-            this.DimensionalDelimiterExample.TabIndex = 13;
-            this.DimensionalDelimiterExample.Text = "×";
+            this.FileFormatDimensionalDelimiterExample.AutoSize = true;
+            this.FileFormatDimensionalDelimiterExample.Location = new System.Drawing.Point(179, 51);
+            this.FileFormatDimensionalDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatDimensionalDelimiterExample.Name = "FileFormatDimensionalDelimiterExample";
+            this.FileFormatDimensionalDelimiterExample.Size = new System.Drawing.Size(15, 13);
+            this.FileFormatDimensionalDelimiterExample.TabIndex = 13;
+            this.FileFormatDimensionalDelimiterExample.Text = "×";
             //
-            // DimensionalTerminatorLabel
+            // FileFormatDimensionalTerminatorLabel
             //
-            this.DimensionalTerminatorLabel.AutoSize = true;
-            this.DimensionalTerminatorLabel.Location = new System.Drawing.Point(260, 51);
-            this.DimensionalTerminatorLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.DimensionalTerminatorLabel.Name = "DimensionalTerminatorLabel";
-            this.DimensionalTerminatorLabel.Size = new System.Drawing.Size(118, 13);
-            this.DimensionalTerminatorLabel.TabIndex = 14;
-            this.DimensionalTerminatorLabel.Text = "Dimensional Terminator";
+            this.FileFormatDimensionalTerminatorLabel.AutoSize = true;
+            this.FileFormatDimensionalTerminatorLabel.Location = new System.Drawing.Point(260, 51);
+            this.FileFormatDimensionalTerminatorLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.FileFormatDimensionalTerminatorLabel.Name = "FileFormatDimensionalTerminatorLabel";
+            this.FileFormatDimensionalTerminatorLabel.Size = new System.Drawing.Size(118, 13);
+            this.FileFormatDimensionalTerminatorLabel.TabIndex = 14;
+            this.FileFormatDimensionalTerminatorLabel.Text = "Dimensional Terminator";
             //
-            // DimensionalTerminatorExample
+            // FileFormatDimensionalTerminatorExample
             //
-            this.DimensionalTerminatorExample.AutoSize = true;
-            this.DimensionalTerminatorExample.Location = new System.Drawing.Point(389, 51);
-            this.DimensionalTerminatorExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.DimensionalTerminatorExample.Name = "DimensionalTerminatorExample";
-            this.DimensionalTerminatorExample.Size = new System.Drawing.Size(15, 13);
-            this.DimensionalTerminatorExample.TabIndex = 15;
-            this.DimensionalTerminatorExample.Text = "≡";
+            this.FileFormatDimensionalTerminatorExample.AutoSize = true;
+            this.FileFormatDimensionalTerminatorExample.Location = new System.Drawing.Point(389, 51);
+            this.FileFormatDimensionalTerminatorExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatDimensionalTerminatorExample.Name = "FileFormatDimensionalTerminatorExample";
+            this.FileFormatDimensionalTerminatorExample.Size = new System.Drawing.Size(15, 13);
+            this.FileFormatDimensionalTerminatorExample.TabIndex = 15;
+            this.FileFormatDimensionalTerminatorExample.Text = "≡";
             //
             // LibraryInfoGroupBox
             //
@@ -1090,10 +1090,10 @@ namespace Scribe
             this.LibraryInfoTableLayoutPanel.ColumnCount = 2;
             this.LibraryInfoTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.LibraryInfoTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.LibraryInfoTableLayoutPanel.Controls.Add(this.VersionLabel, 0, 0);
-            this.LibraryInfoTableLayoutPanel.Controls.Add(this.VersionExample, 1, 0);
-            this.LibraryInfoTableLayoutPanel.Controls.Add(this.WorkingDirectoryLabel, 2, 0);
-            this.LibraryInfoTableLayoutPanel.Controls.Add(this.WorkingDirectoryExample, 3, 0);
+            this.LibraryInfoTableLayoutPanel.Controls.Add(this.LibraryVersionLabel, 0, 0);
+            this.LibraryInfoTableLayoutPanel.Controls.Add(this.LibraryVersionExample, 1, 0);
+            this.LibraryInfoTableLayoutPanel.Controls.Add(this.LibraryWorkingDirectoryLabel, 2, 0);
+            this.LibraryInfoTableLayoutPanel.Controls.Add(this.LibraryWorkingDirectoryExample, 3, 0);
             this.LibraryInfoTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
             this.LibraryInfoTableLayoutPanel.Name = "LibraryInfoTableLayoutPanel";
             this.LibraryInfoTableLayoutPanel.RowCount = 2;
@@ -1102,57 +1102,57 @@ namespace Scribe
             this.LibraryInfoTableLayoutPanel.Size = new System.Drawing.Size(277, 75);
             this.LibraryInfoTableLayoutPanel.TabIndex = 0;
             //
-            // VersionLabel
+            // LibraryVersionLabel
             //
-            this.VersionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.LibraryVersionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.VersionLabel.AutoSize = true;
-            this.VersionLabel.Location = new System.Drawing.Point(1, 1);
-            this.VersionLabel.Margin = new System.Windows.Forms.Padding(1);
-            this.VersionLabel.Name = "VersionLabel";
-            this.VersionLabel.Size = new System.Drawing.Size(67, 35);
-            this.VersionLabel.TabIndex = 0;
-            this.VersionLabel.Text = "Version";
+            this.LibraryVersionLabel.AutoSize = true;
+            this.LibraryVersionLabel.Location = new System.Drawing.Point(1, 1);
+            this.LibraryVersionLabel.Margin = new System.Windows.Forms.Padding(1);
+            this.LibraryVersionLabel.Name = "LibraryVersionLabel";
+            this.LibraryVersionLabel.Size = new System.Drawing.Size(67, 35);
+            this.LibraryVersionLabel.TabIndex = 0;
+            this.LibraryVersionLabel.Text = "Version";
             //
-            // VersionExample
+            // LibraryVersionExample
             //
-            this.VersionExample.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.LibraryVersionExample.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.VersionExample.AutoSize = true;
-            this.VersionExample.Location = new System.Drawing.Point(70, 1);
-            this.VersionExample.Margin = new System.Windows.Forms.Padding(1);
-            this.VersionExample.Name = "VersionExample";
-            this.VersionExample.Size = new System.Drawing.Size(206, 35);
-            this.VersionExample.TabIndex = 1;
-            this.VersionExample.Text = "0.0.0";
+            this.LibraryVersionExample.AutoSize = true;
+            this.LibraryVersionExample.Location = new System.Drawing.Point(70, 1);
+            this.LibraryVersionExample.Margin = new System.Windows.Forms.Padding(1);
+            this.LibraryVersionExample.Name = "LibraryVersionExample";
+            this.LibraryVersionExample.Size = new System.Drawing.Size(206, 35);
+            this.LibraryVersionExample.TabIndex = 1;
+            this.LibraryVersionExample.Text = "0.0.0";
             //
-            // WorkingDirectoryLabel
+            // LibraryWorkingDirectoryLabel
             //
-            this.WorkingDirectoryLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.LibraryWorkingDirectoryLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.WorkingDirectoryLabel.AutoSize = true;
-            this.WorkingDirectoryLabel.Location = new System.Drawing.Point(1, 38);
-            this.WorkingDirectoryLabel.Margin = new System.Windows.Forms.Padding(1);
-            this.WorkingDirectoryLabel.Name = "WorkingDirectoryLabel";
-            this.WorkingDirectoryLabel.Size = new System.Drawing.Size(67, 36);
-            this.WorkingDirectoryLabel.TabIndex = 0;
-            this.WorkingDirectoryLabel.Text = "Working Directory";
+            this.LibraryWorkingDirectoryLabel.AutoSize = true;
+            this.LibraryWorkingDirectoryLabel.Location = new System.Drawing.Point(1, 38);
+            this.LibraryWorkingDirectoryLabel.Margin = new System.Windows.Forms.Padding(1);
+            this.LibraryWorkingDirectoryLabel.Name = "LibraryWorkingDirectoryLabel";
+            this.LibraryWorkingDirectoryLabel.Size = new System.Drawing.Size(67, 36);
+            this.LibraryWorkingDirectoryLabel.TabIndex = 0;
+            this.LibraryWorkingDirectoryLabel.Text = "Working Directory";
             //
-            // WorkingDirectoryExample
+            // LibraryWorkingDirectoryExample
             //
-            this.WorkingDirectoryExample.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.LibraryWorkingDirectoryExample.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.WorkingDirectoryExample.AutoSize = true;
-            this.WorkingDirectoryExample.Location = new System.Drawing.Point(70, 38);
-            this.WorkingDirectoryExample.Margin = new System.Windows.Forms.Padding(1);
-            this.WorkingDirectoryExample.Name = "WorkingDirectoryExample";
-            this.WorkingDirectoryExample.Size = new System.Drawing.Size(206, 36);
-            this.WorkingDirectoryExample.TabIndex = 1;
-            this.WorkingDirectoryExample.Text = "C:\\";
+            this.LibraryWorkingDirectoryExample.AutoSize = true;
+            this.LibraryWorkingDirectoryExample.Location = new System.Drawing.Point(70, 38);
+            this.LibraryWorkingDirectoryExample.Margin = new System.Windows.Forms.Padding(1);
+            this.LibraryWorkingDirectoryExample.Name = "LibraryWorkingDirectoryExample";
+            this.LibraryWorkingDirectoryExample.Size = new System.Drawing.Size(206, 36);
+            this.LibraryWorkingDirectoryExample.TabIndex = 1;
+            this.LibraryWorkingDirectoryExample.Text = "C:\\";
             //
             // BeingsTabPage
             //
@@ -2869,26 +2869,26 @@ namespace Scribe
         private System.Windows.Forms.GroupBox FileFormatGroupBox;
         private System.Windows.Forms.TableLayoutPanel LibraryInfoTableLayoutPanel;
         private System.Windows.Forms.TableLayoutPanel FileFormatTableLayoutPanel;
-        private System.Windows.Forms.Label VersionLabel;
-        private System.Windows.Forms.Label VersionExample;
-        private System.Windows.Forms.Label WorkingDirectoryLabel;
-        private System.Windows.Forms.Label WorkingDirectoryExample;
-        private System.Windows.Forms.Label PrimaryDelimiterLabel;
-        private System.Windows.Forms.Label PrimaryDelimiterExample;
-        private System.Windows.Forms.Label SecondaryDelimiterLabel;
-        private System.Windows.Forms.Label SecondaryDelimiterExample;
-        private System.Windows.Forms.Label InternalDelimiterLabel;
-        private System.Windows.Forms.Label InternalDelimiterExample;
-        private System.Windows.Forms.Label ElementDelimiterLabel;
-        private System.Windows.Forms.Label ElementDelimiterExample;
-        private System.Windows.Forms.Label NameDelimiterLabel;
-        private System.Windows.Forms.Label NameDelimiterExample;
-        private System.Windows.Forms.Label PronounDelimiterLabel;
-        private System.Windows.Forms.Label PronounDelimiterExample;
-        private System.Windows.Forms.Label DimensionalDelimiterLabel;
-        private System.Windows.Forms.Label DimensionalDelimiterExample;
-        private System.Windows.Forms.Label DimensionalTerminatorLabel;
-        private System.Windows.Forms.Label DimensionalTerminatorExample;
+        private System.Windows.Forms.Label LibraryVersionLabel;
+        private System.Windows.Forms.Label LibraryVersionExample;
+        private System.Windows.Forms.Label LibraryWorkingDirectoryLabel;
+        private System.Windows.Forms.Label LibraryWorkingDirectoryExample;
+        private System.Windows.Forms.Label FileFormatPrimaryDelimiterLabel;
+        private System.Windows.Forms.Label FileFormatPrimaryDelimiterExample;
+        private System.Windows.Forms.Label FileFormatSecondaryDelimiterLabel;
+        private System.Windows.Forms.Label FileFormatSecondaryDelimiterExample;
+        private System.Windows.Forms.Label FileFormatInternalDelimiterLabel;
+        private System.Windows.Forms.Label FileFormatInternalDelimiterExample;
+        private System.Windows.Forms.Label FileFormatElementDelimiterLabel;
+        private System.Windows.Forms.Label FileFormatElementDelimiterExample;
+        private System.Windows.Forms.Label FileFormatNameDelimiterLabel;
+        private System.Windows.Forms.Label FileFormatNameDelimiterExample;
+        private System.Windows.Forms.Label FileFormatPronounDelimiterLabel;
+        private System.Windows.Forms.Label FileFormatPronounDelimiterExample;
+        private System.Windows.Forms.Label FileFormatDimensionalDelimiterLabel;
+        private System.Windows.Forms.Label FileFormatDimensionalDelimiterExample;
+        private System.Windows.Forms.Label FileFormatDimensionalTerminatorLabel;
+        private System.Windows.Forms.Label FileFormatDimensionalTerminatorExample;
         private System.Windows.Forms.Button NewGameButton;
         private System.Windows.Forms.ListBox GamesListBox;
         private System.Windows.Forms.TableLayoutPanel GameTableLayoutPanel;
