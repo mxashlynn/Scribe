@@ -200,24 +200,24 @@ namespace Scribe
             this.RoomMaxWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
             this.RoomPictureEditButton = new System.Windows.Forms.Button();
             this.RoomTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.RoomAddCriterionButton = new System.Windows.Forms.Button();
+            this.RoomDeleteCriterionButton = new System.Windows.Forms.Button();
             this.RoomAddParquetCriterionButton = new System.Windows.Forms.Button();
             this.RoomDeleteParquetCriterionButton = new System.Windows.Forms.Button();
             this.RoomEntryRequirementsListBox = new System.Windows.Forms.ListBox();
             this.RoomParquetCriteriaListBox = new System.Windows.Forms.ListBox();
-            this.RoomIsLiquidBasedCheckBox = new System.Windows.Forms.CheckBox();
-            this.RoomIsRoomBasedCheckBox = new System.Windows.Forms.CheckBox();
             this.RoomNameLabel = new System.Windows.Forms.Label();
             this.RoomDescriptionLabel = new System.Windows.Forms.Label();
             this.RoomCommentLabel = new System.Windows.Forms.Label();
             this.RoomTierLabel = new System.Windows.Forms.Label();
-            this.RoomIsRoomBasedLabel = new System.Windows.Forms.Label();
-            this.RoomIsLiquidBasedLabel = new System.Windows.Forms.Label();
             this.RoomParquetCriteriaLabel = new System.Windows.Forms.Label();
             this.RoomEntryRequirementsLabel = new System.Windows.Forms.Label();
             this.RoomNameTextBox = new System.Windows.Forms.TextBox();
             this.RoomDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.RoomCommentTextBox = new System.Windows.Forms.TextBox();
             this.RoomTierTextBox = new System.Windows.Forms.TextBox();
+            this.RoomCriteriaLabel = new System.Windows.Forms.Label();
+            this.RoomCriteriaTextBox = new System.Windows.Forms.TextBox();
             this.RoomPictureBox = new System.Windows.Forms.PictureBox();
             this.RoomIDLabel = new System.Windows.Forms.Label();
             this.RoomAddNewRoomButton = new System.Windows.Forms.Button();
@@ -2118,24 +2118,25 @@ namespace Scribe
             this.RoomTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.RoomTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.RoomTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.RoomTableLayoutPanel.Controls.Add(this.RoomAddCriterionButton, 2, 5);
+            this.RoomTableLayoutPanel.Controls.Add(this.RoomDeleteCriterionButton, 1, 5);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomAddParquetCriterionButton, 2, 7);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomDeleteParquetCriterionButton, 1, 7);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomEntryRequirementsListBox, 1, 8);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomParquetCriteriaListBox, 1, 6);
-            this.RoomTableLayoutPanel.Controls.Add(this.RoomIsLiquidBasedCheckBox, 1, 5);
-            this.RoomTableLayoutPanel.Controls.Add(this.RoomIsRoomBasedCheckBox, 1, 4);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomNameLabel, 0, 0);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomDescriptionLabel, 0, 1);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomCommentLabel, 0, 2);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomTierLabel, 0, 3);
-            this.RoomTableLayoutPanel.Controls.Add(this.RoomIsRoomBasedLabel, 0, 4);
-            this.RoomTableLayoutPanel.Controls.Add(this.RoomIsLiquidBasedLabel, 0, 5);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomParquetCriteriaLabel, 0, 6);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomEntryRequirementsLabel, 0, 8);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomNameTextBox, 1, 0);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomDescriptionTextBox, 1, 1);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomCommentTextBox, 1, 2);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomTierTextBox, 1, 3);
+            this.RoomTableLayoutPanel.Controls.Add(this.RoomCriteriaLabel, 0, 4);
+            this.RoomTableLayoutPanel.Controls.Add(this.RoomCriteriaTextBox, 1, 4);
+            this.RoomTableLayoutPanel.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.RoomTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
             this.RoomTableLayoutPanel.Name = "RoomTableLayoutPanel";
             this.RoomTableLayoutPanel.RowCount = 9;
@@ -2143,19 +2144,38 @@ namespace Scribe
             this.RoomTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.RoomTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.RoomTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.RoomTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.RoomTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.RoomTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.RoomTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.RoomTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.RoomTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.RoomTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.RoomTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.RoomTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.RoomTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.RoomTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.RoomTableLayoutPanel.TabIndex = 5;
+            //
+            // RoomAddCriterionButton
+            //
+            this.RoomAddCriterionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RoomAddCriterionButton.Location = new System.Drawing.Point(297, 238);
+            this.RoomAddCriterionButton.Name = "RoomAddCriterionButton";
+            this.RoomAddCriterionButton.Size = new System.Drawing.Size(129, 23);
+            this.RoomAddCriterionButton.TabIndex = 30;
+            this.RoomAddCriterionButton.Text = "Add Criterion";
+            this.RoomAddCriterionButton.UseVisualStyleBackColor = true;
+            //
+            // RoomDeleteCriterionButton
+            //
+            this.RoomDeleteCriterionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RoomDeleteCriterionButton.Location = new System.Drawing.Point(146, 238);
+            this.RoomDeleteCriterionButton.Name = "RoomDeleteCriterionButton";
+            this.RoomDeleteCriterionButton.Size = new System.Drawing.Size(129, 23);
+            this.RoomDeleteCriterionButton.TabIndex = 29;
+            this.RoomDeleteCriterionButton.Text = "Remove Criterion";
+            this.RoomDeleteCriterionButton.UseVisualStyleBackColor = true;
             //
             // RoomAddParquetCriterionButton
             //
             this.RoomAddParquetCriterionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomAddParquetCriterionButton.Location = new System.Drawing.Point(297, 316);
+            this.RoomAddParquetCriterionButton.Location = new System.Drawing.Point(297, 343);
             this.RoomAddParquetCriterionButton.Name = "RoomAddParquetCriterionButton";
             this.RoomAddParquetCriterionButton.Size = new System.Drawing.Size(129, 23);
             this.RoomAddParquetCriterionButton.TabIndex = 2;
@@ -2165,7 +2185,7 @@ namespace Scribe
             // RoomDeleteParquetCriterionButton
             //
             this.RoomDeleteParquetCriterionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomDeleteParquetCriterionButton.Location = new System.Drawing.Point(146, 316);
+            this.RoomDeleteParquetCriterionButton.Location = new System.Drawing.Point(146, 343);
             this.RoomDeleteParquetCriterionButton.Name = "RoomDeleteParquetCriterionButton";
             this.RoomDeleteParquetCriterionButton.Size = new System.Drawing.Size(129, 23);
             this.RoomDeleteParquetCriterionButton.TabIndex = 2;
@@ -2178,9 +2198,9 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Left)));
             this.RoomTableLayoutPanel.SetColumnSpan(this.RoomEntryRequirementsListBox, 2);
             this.RoomEntryRequirementsListBox.FormattingEnabled = true;
-            this.RoomEntryRequirementsListBox.Location = new System.Drawing.Point(131, 346);
+            this.RoomEntryRequirementsListBox.Location = new System.Drawing.Point(131, 373);
             this.RoomEntryRequirementsListBox.Name = "RoomEntryRequirementsListBox";
-            this.RoomEntryRequirementsListBox.Size = new System.Drawing.Size(279, 95);
+            this.RoomEntryRequirementsListBox.Size = new System.Drawing.Size(279, 69);
             this.RoomEntryRequirementsListBox.TabIndex = 1;
             //
             // RoomParquetCriteriaListBox
@@ -2189,28 +2209,10 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Left)));
             this.RoomTableLayoutPanel.SetColumnSpan(this.RoomParquetCriteriaListBox, 2);
             this.RoomParquetCriteriaListBox.FormattingEnabled = true;
-            this.RoomParquetCriteriaListBox.Location = new System.Drawing.Point(131, 213);
+            this.RoomParquetCriteriaListBox.Location = new System.Drawing.Point(131, 268);
             this.RoomParquetCriteriaListBox.Name = "RoomParquetCriteriaListBox";
-            this.RoomParquetCriteriaListBox.Size = new System.Drawing.Size(279, 95);
+            this.RoomParquetCriteriaListBox.Size = new System.Drawing.Size(279, 69);
             this.RoomParquetCriteriaListBox.TabIndex = 1;
-            //
-            // RoomIsLiquidBasedCheckBox
-            //
-            this.RoomIsLiquidBasedCheckBox.AutoSize = true;
-            this.RoomIsLiquidBasedCheckBox.Location = new System.Drawing.Point(131, 188);
-            this.RoomIsLiquidBasedCheckBox.Name = "RoomIsLiquidBasedCheckBox";
-            this.RoomIsLiquidBasedCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.RoomIsLiquidBasedCheckBox.TabIndex = 22;
-            this.RoomIsLiquidBasedCheckBox.UseVisualStyleBackColor = true;
-            //
-            // RoomIsRoomBasedCheckBox
-            //
-            this.RoomIsRoomBasedCheckBox.AutoSize = true;
-            this.RoomIsRoomBasedCheckBox.Location = new System.Drawing.Point(131, 163);
-            this.RoomIsRoomBasedCheckBox.Name = "RoomIsRoomBasedCheckBox";
-            this.RoomIsRoomBasedCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.RoomIsRoomBasedCheckBox.TabIndex = 22;
-            this.RoomIsRoomBasedCheckBox.UseVisualStyleBackColor = true;
             //
             // RoomNameLabel
             //
@@ -2244,32 +2246,14 @@ namespace Scribe
             this.RoomTierLabel.AutoSize = true;
             this.RoomTierLabel.Location = new System.Drawing.Point(3, 135);
             this.RoomTierLabel.Name = "RoomTierLabel";
-            this.RoomTierLabel.Size = new System.Drawing.Size(25, 13);
+            this.RoomTierLabel.Size = new System.Drawing.Size(105, 13);
             this.RoomTierLabel.TabIndex = 9;
-            this.RoomTierLabel.Text = "Tier";
-            //
-            // RoomIsRoomBasedLabel
-            //
-            this.RoomIsRoomBasedLabel.AutoSize = true;
-            this.RoomIsRoomBasedLabel.Location = new System.Drawing.Point(3, 160);
-            this.RoomIsRoomBasedLabel.Name = "RoomIsRoomBasedLabel";
-            this.RoomIsRoomBasedLabel.Size = new System.Drawing.Size(84, 13);
-            this.RoomIsRoomBasedLabel.TabIndex = 12;
-            this.RoomIsRoomBasedLabel.Text = "Is Room-Based?";
-            //
-            // RoomIsLiquidBasedLabel
-            //
-            this.RoomIsLiquidBasedLabel.AutoSize = true;
-            this.RoomIsLiquidBasedLabel.Location = new System.Drawing.Point(3, 185);
-            this.RoomIsLiquidBasedLabel.Name = "RoomIsLiquidBasedLabel";
-            this.RoomIsLiquidBasedLabel.Size = new System.Drawing.Size(84, 13);
-            this.RoomIsLiquidBasedLabel.TabIndex = 15;
-            this.RoomIsLiquidBasedLabel.Text = "Is Liquid-Based?";
+            this.RoomTierLabel.Text = "Min. Walkable Floors";
             //
             // RoomParquetCriteriaLabel
             //
             this.RoomParquetCriteriaLabel.AutoSize = true;
-            this.RoomParquetCriteriaLabel.Location = new System.Drawing.Point(3, 210);
+            this.RoomParquetCriteriaLabel.Location = new System.Drawing.Point(3, 265);
             this.RoomParquetCriteriaLabel.Name = "RoomParquetCriteriaLabel";
             this.RoomParquetCriteriaLabel.Size = new System.Drawing.Size(83, 13);
             this.RoomParquetCriteriaLabel.TabIndex = 18;
@@ -2278,7 +2262,7 @@ namespace Scribe
             // RoomEntryRequirementsLabel
             //
             this.RoomEntryRequirementsLabel.AutoSize = true;
-            this.RoomEntryRequirementsLabel.Location = new System.Drawing.Point(3, 343);
+            this.RoomEntryRequirementsLabel.Location = new System.Drawing.Point(3, 370);
             this.RoomEntryRequirementsLabel.Name = "RoomEntryRequirementsLabel";
             this.RoomEntryRequirementsLabel.Size = new System.Drawing.Size(102, 13);
             this.RoomEntryRequirementsLabel.TabIndex = 21;
@@ -2321,6 +2305,26 @@ namespace Scribe
             this.RoomTierTextBox.Name = "RoomTierTextBox";
             this.RoomTierTextBox.Size = new System.Drawing.Size(144, 20);
             this.RoomTierTextBox.TabIndex = 26;
+            //
+            // RoomCriteriaLabel
+            //
+            this.RoomCriteriaLabel.AutoSize = true;
+            this.RoomCriteriaLabel.Location = new System.Drawing.Point(3, 160);
+            this.RoomCriteriaLabel.Name = "RoomCriteriaLabel";
+            this.RoomCriteriaLabel.Size = new System.Drawing.Size(42, 13);
+            this.RoomCriteriaLabel.TabIndex = 27;
+            this.RoomCriteriaLabel.Text = "Criteria";
+            //
+            // RoomCriteriaTextBox
+            //
+            this.RoomCriteriaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.RoomTableLayoutPanel.SetColumnSpan(this.RoomCriteriaTextBox, 2);
+            this.RoomCriteriaTextBox.Location = new System.Drawing.Point(131, 163);
+            this.RoomCriteriaTextBox.Multiline = true;
+            this.RoomCriteriaTextBox.Name = "RoomCriteriaTextBox";
+            this.RoomCriteriaTextBox.Size = new System.Drawing.Size(279, 69);
+            this.RoomCriteriaTextBox.TabIndex = 28;
             //
             // RoomPictureBox
             //
@@ -2955,8 +2959,6 @@ namespace Scribe
         private System.Windows.Forms.Label RoomDescriptionLabel;
         private System.Windows.Forms.Label RoomCommentLabel;
         private System.Windows.Forms.Label RoomTierLabel;
-        private System.Windows.Forms.Label RoomIsRoomBasedLabel;
-        private System.Windows.Forms.Label RoomIsLiquidBasedLabel;
         private System.Windows.Forms.Label RoomParquetCriteriaLabel;
         private System.Windows.Forms.Label RoomEntryRequirementsLabel;
         private System.Windows.Forms.TextBox RoomNameTextBox;
@@ -2967,8 +2969,6 @@ namespace Scribe
         private System.Windows.Forms.Label RoomIDLabel;
         private System.Windows.Forms.Button RoomAddNewRoomButton;
         private System.Windows.Forms.TextBox RoomIDTextBox;
-        private System.Windows.Forms.CheckBox RoomIsLiquidBasedCheckBox;
-        private System.Windows.Forms.CheckBox RoomIsRoomBasedCheckBox;
         private System.Windows.Forms.Button RoomAddEntryRequirementButton;
         private System.Windows.Forms.Button RoomDeleteEntryRequirementButton;
         private System.Windows.Forms.Button RoomAddParquetCriterionButton;
@@ -3013,6 +3013,10 @@ namespace Scribe
         private System.Windows.Forms.Label ItemMaxWalkableSpacesLabel;
         private System.Windows.Forms.TextBox ItemMinWalkableSpacesTextBox;
         private System.Windows.Forms.TextBox ItemMaxWalkableSpacesTextBox;
+        private System.Windows.Forms.Button RoomAddCriterionButton;
+        private System.Windows.Forms.Button RoomDeleteCriterionButton;
+        private System.Windows.Forms.Label RoomCriteriaLabel;
+        private System.Windows.Forms.TextBox RoomCriteriaTextBox;
     }
 }
 
