@@ -158,21 +158,32 @@ namespace Scribe
             this.ItemDeleteEntryRequirementButton = new System.Windows.Forms.Button();
             this.ItemListBox = new System.Windows.Forms.ListBox();
             this.ItemInventoriesGroupBox = new System.Windows.Forms.GroupBox();
+            this.ItemOpenInvetoryEditorButton = new System.Windows.Forms.Button();
+            this.ItemInventoryListBox = new System.Windows.Forms.ListBox();
             this.ItemPictureEditButton = new System.Windows.Forms.Button();
             this.ItemTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.ItemStackMaxTextBox = new System.Windows.Forms.TextBox();
+            this.ItemRarityTextBox = new System.Windows.Forms.TextBox();
             this.ItemEntryRequirementsListBox = new System.Windows.Forms.ListBox();
             this.ItemNameLabel = new System.Windows.Forms.Label();
             this.ItemDescriptionLabel = new System.Windows.Forms.Label();
             this.ItemCommentLabel = new System.Windows.Forms.Label();
-            this.ItemTierLabel = new System.Windows.Forms.Label();
-            this.ItemIsItemBasedLabel = new System.Windows.Forms.Label();
-            this.ItemIsLiquidBasedLabel = new System.Windows.Forms.Label();
-            this.ItemParquetCriteriaLabel = new System.Windows.Forms.Label();
+            this.ItemSubtypeLabel = new System.Windows.Forms.Label();
+            this.ItemPriceLabel = new System.Windows.Forms.Label();
+            this.ItemRarityLabel = new System.Windows.Forms.Label();
+            this.ItemStackMaxLabel = new System.Windows.Forms.Label();
             this.ItemEntryRequirementsLabel = new System.Windows.Forms.Label();
             this.ItemNameTextBox = new System.Windows.Forms.TextBox();
             this.ItemDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.ItemCommentTextBox = new System.Windows.Forms.TextBox();
-            this.ItemTierTextBox = new System.Windows.Forms.TextBox();
+            this.ItemPriceTextBox = new System.Windows.Forms.TextBox();
+            this.ItemSubtypeComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.ItemPictureBox = new System.Windows.Forms.PictureBox();
             this.ItemIDLabel = new System.Windows.Forms.Label();
             this.ItemAddNewItemButton = new System.Windows.Forms.Button();
@@ -239,8 +250,6 @@ namespace Scribe
             this.FlavorSaltySelector = new System.Windows.Forms.Label();
             this.FlavorNumbingSelector = new System.Windows.Forms.Label();
             this.FlavorAllFlavorsSelector = new System.Windows.Forms.Label();
-            this.ItemInventoryListBox = new System.Windows.Forms.ListBox();
-            this.ItemOpenInvetoryEditorButton = new System.Windows.Forms.Button();
             this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
             this.EditorTabs.SuspendLayout();
@@ -1388,7 +1397,7 @@ namespace Scribe
             this.BiomeEntryRequirementsListBox.FormattingEnabled = true;
             this.BiomeEntryRequirementsListBox.Location = new System.Drawing.Point(131, 346);
             this.BiomeEntryRequirementsListBox.Name = "BiomeEntryRequirementsListBox";
-            this.BiomeEntryRequirementsListBox.Size = new System.Drawing.Size(279, 95);
+            this.BiomeEntryRequirementsListBox.Size = new System.Drawing.Size(295, 95);
             this.BiomeEntryRequirementsListBox.TabIndex = 1;
             // 
             // BiomeParquetCriteriaListBox
@@ -1399,7 +1408,7 @@ namespace Scribe
             this.BiomeParquetCriteriaListBox.FormattingEnabled = true;
             this.BiomeParquetCriteriaListBox.Location = new System.Drawing.Point(131, 213);
             this.BiomeParquetCriteriaListBox.Name = "BiomeParquetCriteriaListBox";
-            this.BiomeParquetCriteriaListBox.Size = new System.Drawing.Size(279, 95);
+            this.BiomeParquetCriteriaListBox.Size = new System.Drawing.Size(295, 95);
             this.BiomeParquetCriteriaListBox.TabIndex = 1;
             // 
             // BiomeIsLiquidBasedCheckBox
@@ -1640,6 +1649,25 @@ namespace Scribe
             this.ItemInventoriesGroupBox.TabStop = false;
             this.ItemInventoriesGroupBox.Text = "Inventories";
             // 
+            // ItemOpenInvetoryEditorButton
+            // 
+            this.ItemOpenInvetoryEditorButton.Location = new System.Drawing.Point(285, 74);
+            this.ItemOpenInvetoryEditorButton.Name = "ItemOpenInvetoryEditorButton";
+            this.ItemOpenInvetoryEditorButton.Size = new System.Drawing.Size(129, 23);
+            this.ItemOpenInvetoryEditorButton.TabIndex = 3;
+            this.ItemOpenInvetoryEditorButton.Text = "Open Inventory Editor";
+            this.ItemOpenInvetoryEditorButton.UseVisualStyleBackColor = true;
+            // 
+            // ItemInventoryListBox
+            // 
+            this.ItemInventoryListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ItemInventoryListBox.FormattingEnabled = true;
+            this.ItemInventoryListBox.Location = new System.Drawing.Point(6, 15);
+            this.ItemInventoryListBox.Name = "ItemInventoryListBox";
+            this.ItemInventoryListBox.Size = new System.Drawing.Size(273, 82);
+            this.ItemInventoryListBox.TabIndex = 2;
+            // 
             // ItemPictureEditButton
             // 
             this.ItemPictureEditButton.Location = new System.Drawing.Point(812, 468);
@@ -1657,25 +1685,35 @@ namespace Scribe
             this.ItemTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.ItemTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.ItemTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.ItemTableLayoutPanel.Controls.Add(this.ItemEntryRequirementsListBox, 1, 9);
+            this.ItemTableLayoutPanel.Controls.Add(this.comboBox1, 1, 8);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemStackMaxTextBox, 1, 6);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemRarityTextBox, 1, 5);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemEntryRequirementsListBox, 1, 10);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemNameLabel, 0, 0);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemDescriptionLabel, 0, 1);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemCommentLabel, 0, 2);
-            this.ItemTableLayoutPanel.Controls.Add(this.ItemTierLabel, 0, 3);
-            this.ItemTableLayoutPanel.Controls.Add(this.ItemIsItemBasedLabel, 0, 4);
-            this.ItemTableLayoutPanel.Controls.Add(this.ItemIsLiquidBasedLabel, 0, 5);
-            this.ItemTableLayoutPanel.Controls.Add(this.ItemParquetCriteriaLabel, 0, 6);
-            this.ItemTableLayoutPanel.Controls.Add(this.ItemEntryRequirementsLabel, 0, 9);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemSubtypeLabel, 0, 3);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemPriceLabel, 0, 4);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemRarityLabel, 0, 5);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemStackMaxLabel, 0, 6);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemEntryRequirementsLabel, 0, 10);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemNameTextBox, 1, 0);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemDescriptionTextBox, 1, 1);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemCommentTextBox, 1, 2);
-            this.ItemTableLayoutPanel.Controls.Add(this.ItemTierTextBox, 1, 3);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemPriceTextBox, 1, 4);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemSubtypeComboBox, 1, 3);
+            this.ItemTableLayoutPanel.Controls.Add(this.label1, 0, 7);
+            this.ItemTableLayoutPanel.Controls.Add(this.label2, 0, 8);
+            this.ItemTableLayoutPanel.Controls.Add(this.label3, 0, 9);
+            this.ItemTableLayoutPanel.Controls.Add(this.comboBox2, 1, 7);
+            this.ItemTableLayoutPanel.Controls.Add(this.comboBox3, 1, 9);
             this.ItemTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
             this.ItemTableLayoutPanel.Name = "ItemTableLayoutPanel";
-            this.ItemTableLayoutPanel.RowCount = 10;
+            this.ItemTableLayoutPanel.RowCount = 11;
             this.ItemTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.ItemTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.ItemTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.ItemTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.ItemTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.ItemTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.ItemTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
@@ -1686,15 +1724,37 @@ namespace Scribe
             this.ItemTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.ItemTableLayoutPanel.TabIndex = 5;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(131, 263);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(144, 21);
+            this.comboBox1.TabIndex = 30;
+            // 
+            // ItemStackMaxTextBox
+            // 
+            this.ItemStackMaxTextBox.Location = new System.Drawing.Point(131, 213);
+            this.ItemStackMaxTextBox.Name = "ItemStackMaxTextBox";
+            this.ItemStackMaxTextBox.Size = new System.Drawing.Size(144, 20);
+            this.ItemStackMaxTextBox.TabIndex = 28;
+            // 
+            // ItemRarityTextBox
+            // 
+            this.ItemRarityTextBox.Location = new System.Drawing.Point(131, 188);
+            this.ItemRarityTextBox.Name = "ItemRarityTextBox";
+            this.ItemRarityTextBox.Size = new System.Drawing.Size(144, 20);
+            this.ItemRarityTextBox.TabIndex = 27;
+            // 
             // ItemEntryRequirementsListBox
             // 
             this.ItemEntryRequirementsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.ItemTableLayoutPanel.SetColumnSpan(this.ItemEntryRequirementsListBox, 2);
             this.ItemEntryRequirementsListBox.FormattingEnabled = true;
-            this.ItemEntryRequirementsListBox.Location = new System.Drawing.Point(131, 288);
+            this.ItemEntryRequirementsListBox.Location = new System.Drawing.Point(131, 313);
             this.ItemEntryRequirementsListBox.Name = "ItemEntryRequirementsListBox";
-            this.ItemEntryRequirementsListBox.Size = new System.Drawing.Size(279, 147);
+            this.ItemEntryRequirementsListBox.Size = new System.Drawing.Size(295, 121);
             this.ItemEntryRequirementsListBox.TabIndex = 1;
             // 
             // ItemNameLabel
@@ -1724,46 +1784,46 @@ namespace Scribe
             this.ItemCommentLabel.TabIndex = 6;
             this.ItemCommentLabel.Text = "Comment";
             // 
-            // ItemTierLabel
+            // ItemSubtypeLabel
             // 
-            this.ItemTierLabel.AutoSize = true;
-            this.ItemTierLabel.Location = new System.Drawing.Point(3, 135);
-            this.ItemTierLabel.Name = "ItemTierLabel";
-            this.ItemTierLabel.Size = new System.Drawing.Size(25, 13);
-            this.ItemTierLabel.TabIndex = 9;
-            this.ItemTierLabel.Text = "Tier";
+            this.ItemSubtypeLabel.AutoSize = true;
+            this.ItemSubtypeLabel.Location = new System.Drawing.Point(3, 135);
+            this.ItemSubtypeLabel.Name = "ItemSubtypeLabel";
+            this.ItemSubtypeLabel.Size = new System.Drawing.Size(47, 13);
+            this.ItemSubtypeLabel.TabIndex = 9;
+            this.ItemSubtypeLabel.Text = "Subtype";
             // 
-            // ItemIsItemBasedLabel
+            // ItemPriceLabel
             // 
-            this.ItemIsItemBasedLabel.AutoSize = true;
-            this.ItemIsItemBasedLabel.Location = new System.Drawing.Point(3, 160);
-            this.ItemIsItemBasedLabel.Name = "ItemIsItemBasedLabel";
-            this.ItemIsItemBasedLabel.Size = new System.Drawing.Size(79, 13);
-            this.ItemIsItemBasedLabel.TabIndex = 12;
-            this.ItemIsItemBasedLabel.Text = "Is Item-Based?";
+            this.ItemPriceLabel.AutoSize = true;
+            this.ItemPriceLabel.Location = new System.Drawing.Point(3, 160);
+            this.ItemPriceLabel.Name = "ItemPriceLabel";
+            this.ItemPriceLabel.Size = new System.Drawing.Size(30, 13);
+            this.ItemPriceLabel.TabIndex = 12;
+            this.ItemPriceLabel.Text = "Price";
             // 
-            // ItemIsLiquidBasedLabel
+            // ItemRarityLabel
             // 
-            this.ItemIsLiquidBasedLabel.AutoSize = true;
-            this.ItemIsLiquidBasedLabel.Location = new System.Drawing.Point(3, 185);
-            this.ItemIsLiquidBasedLabel.Name = "ItemIsLiquidBasedLabel";
-            this.ItemIsLiquidBasedLabel.Size = new System.Drawing.Size(84, 13);
-            this.ItemIsLiquidBasedLabel.TabIndex = 15;
-            this.ItemIsLiquidBasedLabel.Text = "Is Liquid-Based?";
+            this.ItemRarityLabel.AutoSize = true;
+            this.ItemRarityLabel.Location = new System.Drawing.Point(3, 185);
+            this.ItemRarityLabel.Name = "ItemRarityLabel";
+            this.ItemRarityLabel.Size = new System.Drawing.Size(36, 13);
+            this.ItemRarityLabel.TabIndex = 15;
+            this.ItemRarityLabel.Text = "Rarity";
             // 
-            // ItemParquetCriteriaLabel
+            // ItemStackMaxLabel
             // 
-            this.ItemParquetCriteriaLabel.AutoSize = true;
-            this.ItemParquetCriteriaLabel.Location = new System.Drawing.Point(3, 210);
-            this.ItemParquetCriteriaLabel.Name = "ItemParquetCriteriaLabel";
-            this.ItemParquetCriteriaLabel.Size = new System.Drawing.Size(83, 13);
-            this.ItemParquetCriteriaLabel.TabIndex = 18;
-            this.ItemParquetCriteriaLabel.Text = "Parquet Criteria";
+            this.ItemStackMaxLabel.AutoSize = true;
+            this.ItemStackMaxLabel.Location = new System.Drawing.Point(3, 210);
+            this.ItemStackMaxLabel.Name = "ItemStackMaxLabel";
+            this.ItemStackMaxLabel.Size = new System.Drawing.Size(56, 13);
+            this.ItemStackMaxLabel.TabIndex = 18;
+            this.ItemStackMaxLabel.Text = "Stack Max";
             // 
             // ItemEntryRequirementsLabel
             // 
             this.ItemEntryRequirementsLabel.AutoSize = true;
-            this.ItemEntryRequirementsLabel.Location = new System.Drawing.Point(3, 285);
+            this.ItemEntryRequirementsLabel.Location = new System.Drawing.Point(3, 310);
             this.ItemEntryRequirementsLabel.Name = "ItemEntryRequirementsLabel";
             this.ItemEntryRequirementsLabel.Size = new System.Drawing.Size(102, 13);
             this.ItemEntryRequirementsLabel.TabIndex = 21;
@@ -1800,12 +1860,63 @@ namespace Scribe
             this.ItemCommentTextBox.Size = new System.Drawing.Size(295, 49);
             this.ItemCommentTextBox.TabIndex = 25;
             // 
-            // ItemTierTextBox
+            // ItemPriceTextBox
             // 
-            this.ItemTierTextBox.Location = new System.Drawing.Point(131, 138);
-            this.ItemTierTextBox.Name = "ItemTierTextBox";
-            this.ItemTierTextBox.Size = new System.Drawing.Size(144, 20);
-            this.ItemTierTextBox.TabIndex = 26;
+            this.ItemPriceTextBox.Location = new System.Drawing.Point(131, 163);
+            this.ItemPriceTextBox.Name = "ItemPriceTextBox";
+            this.ItemPriceTextBox.Size = new System.Drawing.Size(144, 20);
+            this.ItemPriceTextBox.TabIndex = 26;
+            // 
+            // ItemSubtypeComboBox
+            // 
+            this.ItemSubtypeComboBox.FormattingEnabled = true;
+            this.ItemSubtypeComboBox.Location = new System.Drawing.Point(131, 138);
+            this.ItemSubtypeComboBox.Name = "ItemSubtypeComboBox";
+            this.ItemSubtypeComboBox.Size = new System.Drawing.Size(144, 21);
+            this.ItemSubtypeComboBox.TabIndex = 29;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 235);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 260);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "label2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 285);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "label3";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(131, 238);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(144, 21);
+            this.comboBox2.TabIndex = 34;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(131, 288);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(144, 21);
+            this.comboBox3.TabIndex = 35;
             // 
             // ItemPictureBox
             // 
@@ -2613,25 +2724,6 @@ namespace Scribe
             this.FlavorAllFlavorsSelector.TabIndex = 0;
             this.FlavorAllFlavorsSelector.Text = "(All)";
             // 
-            // ItemInventoryListBox
-            // 
-            this.ItemInventoryListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.ItemInventoryListBox.FormattingEnabled = true;
-            this.ItemInventoryListBox.Location = new System.Drawing.Point(6, 15);
-            this.ItemInventoryListBox.Name = "ItemInventoryListBox";
-            this.ItemInventoryListBox.Size = new System.Drawing.Size(273, 82);
-            this.ItemInventoryListBox.TabIndex = 2;
-            // 
-            // ItemOpenInvetoryEditorButton
-            // 
-            this.ItemOpenInvetoryEditorButton.Location = new System.Drawing.Point(285, 74);
-            this.ItemOpenInvetoryEditorButton.Name = "ItemOpenInvetoryEditorButton";
-            this.ItemOpenInvetoryEditorButton.Size = new System.Drawing.Size(129, 23);
-            this.ItemOpenInvetoryEditorButton.TabIndex = 3;
-            this.ItemOpenInvetoryEditorButton.Text = "Open Inventory Editor";
-            this.ItemOpenInvetoryEditorButton.UseVisualStyleBackColor = true;
-            // 
             // EditorForm
             // 
             this.AccessibleDescription = "The primary interactive editor window.";
@@ -2890,15 +2982,15 @@ namespace Scribe
         private System.Windows.Forms.Label ItemNameLabel;
         private System.Windows.Forms.Label ItemDescriptionLabel;
         private System.Windows.Forms.Label ItemCommentLabel;
-        private System.Windows.Forms.Label ItemTierLabel;
-        private System.Windows.Forms.Label ItemIsItemBasedLabel;
-        private System.Windows.Forms.Label ItemIsLiquidBasedLabel;
-        private System.Windows.Forms.Label ItemParquetCriteriaLabel;
+        private System.Windows.Forms.Label ItemSubtypeLabel;
+        private System.Windows.Forms.Label ItemPriceLabel;
+        private System.Windows.Forms.Label ItemRarityLabel;
+        private System.Windows.Forms.Label ItemStackMaxLabel;
         private System.Windows.Forms.Label ItemEntryRequirementsLabel;
         private System.Windows.Forms.TextBox ItemNameTextBox;
         private System.Windows.Forms.TextBox ItemDescriptionTextBox;
         private System.Windows.Forms.TextBox ItemCommentTextBox;
-        private System.Windows.Forms.TextBox ItemTierTextBox;
+        private System.Windows.Forms.TextBox ItemPriceTextBox;
         private System.Windows.Forms.PictureBox ItemPictureBox;
         private System.Windows.Forms.Label ItemIDLabel;
         private System.Windows.Forms.Button ItemAddNewItemButton;
@@ -2912,6 +3004,15 @@ namespace Scribe
         private System.Windows.Forms.ListBox RoomRequiredFurnishingsListBox;
         private System.Windows.Forms.Button ItemOpenInvetoryEditorButton;
         private System.Windows.Forms.ListBox ItemInventoryListBox;
+        private System.Windows.Forms.TextBox ItemStackMaxTextBox;
+        private System.Windows.Forms.TextBox ItemRarityTextBox;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox ItemSubtypeComboBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }
 
