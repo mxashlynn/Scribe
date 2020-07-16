@@ -361,8 +361,8 @@ namespace Scribe
             // ReloadToolStripMenuItem
             // 
             this.ReloadToolStripMenuItem.Name = "ReloadToolStripMenuItem";
-            this.ReloadToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(System.Windows.Forms.Keys.F5));
-            this.ReloadToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.ReloadToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.ReloadToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.ReloadToolStripMenuItem.Text = "&Reload";
             this.ReloadToolStripMenuItem.Click += new System.EventHandler(this.ReloadToolStripMenuItem_Click);
             // 
@@ -1169,7 +1169,7 @@ namespace Scribe
             this.BeingsTabPage.Location = new System.Drawing.Point(4, 22);
             this.BeingsTabPage.Name = "BeingsTabPage";
             this.BeingsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.BeingsTabPage.Size = new System.Drawing.Size(952, 599);
+            this.BeingsTabPage.Size = new System.Drawing.Size(953, 599);
             this.BeingsTabPage.TabIndex = 1;
             this.BeingsTabPage.Text = "Beings";
             // 
@@ -1188,7 +1188,7 @@ namespace Scribe
             this.BiomesTabPage.Controls.Add(this.BiomeIDTextBox);
             this.BiomesTabPage.Location = new System.Drawing.Point(4, 22);
             this.BiomesTabPage.Name = "BiomesTabPage";
-            this.BiomesTabPage.Size = new System.Drawing.Size(952, 599);
+            this.BiomesTabPage.Size = new System.Drawing.Size(953, 599);
             this.BiomesTabPage.TabIndex = 2;
             this.BiomesTabPage.Text = "Biomes";
             // 
@@ -1583,7 +1583,7 @@ namespace Scribe
             this.CraftingTabPage.BackColor = System.Drawing.Color.Transparent;
             this.CraftingTabPage.Location = new System.Drawing.Point(4, 22);
             this.CraftingTabPage.Name = "CraftingTabPage";
-            this.CraftingTabPage.Size = new System.Drawing.Size(952, 599);
+            this.CraftingTabPage.Size = new System.Drawing.Size(953, 599);
             this.CraftingTabPage.TabIndex = 3;
             this.CraftingTabPage.Text = "Crafting";
             // 
@@ -1975,7 +1975,7 @@ namespace Scribe
             this.MapsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.MapsTabPage.Location = new System.Drawing.Point(4, 22);
             this.MapsTabPage.Name = "MapsTabPage";
-            this.MapsTabPage.Size = new System.Drawing.Size(952, 599);
+            this.MapsTabPage.Size = new System.Drawing.Size(953, 599);
             this.MapsTabPage.TabIndex = 5;
             this.MapsTabPage.Text = "Maps";
             // 
@@ -1984,7 +1984,7 @@ namespace Scribe
             this.ParquetsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.ParquetsTabPage.Location = new System.Drawing.Point(4, 22);
             this.ParquetsTabPage.Name = "ParquetsTabPage";
-            this.ParquetsTabPage.Size = new System.Drawing.Size(952, 599);
+            this.ParquetsTabPage.Size = new System.Drawing.Size(953, 599);
             this.ParquetsTabPage.TabIndex = 6;
             this.ParquetsTabPage.Text = "Parquets";
             // 
@@ -2379,7 +2379,7 @@ namespace Scribe
             this.ScriptsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.ScriptsTabPage.Location = new System.Drawing.Point(4, 22);
             this.ScriptsTabPage.Name = "ScriptsTabPage";
-            this.ScriptsTabPage.Size = new System.Drawing.Size(952, 599);
+            this.ScriptsTabPage.Size = new System.Drawing.Size(953, 599);
             this.ScriptsTabPage.TabIndex = 8;
             this.ScriptsTabPage.Text = "Scripting";
             // 
