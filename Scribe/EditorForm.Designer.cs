@@ -217,7 +217,7 @@ namespace Scribe
             this.RoomCommentTextBox = new System.Windows.Forms.TextBox();
             this.RoomTierTextBox = new System.Windows.Forms.TextBox();
             this.RoomRequiredFurnishingsLabel = new System.Windows.Forms.Label();
-            this.RoomRequiredFurnishingsTextBox = new System.Windows.Forms.TextBox();
+            this.RoomRequiredFurnishingsListBox = new System.Windows.Forms.ListBox();
             this.RoomPictureBox = new System.Windows.Forms.PictureBox();
             this.RoomIDLabel = new System.Windows.Forms.Label();
             this.RoomAddNewRoomButton = new System.Windows.Forms.Button();
@@ -2314,18 +2314,18 @@ namespace Scribe
             this.RoomRequiredFurnishingsLabel.Size = new System.Drawing.Size(128, 13);
             this.RoomRequiredFurnishingsLabel.TabIndex = 27;
             this.RoomRequiredFurnishingsLabel.Text = "Required Furnishing Tags";
-            // 
-            // RoomRequiredFurnishingsTextBox
-            // 
-            this.RoomRequiredFurnishingsTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            //
+            // RoomRequiredFurnishingsListBox
+            //
+            this.RoomRequiredFurnishingsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.RoomTableLayoutPanel.SetColumnSpan(this.RoomRequiredFurnishingsTextBox, 2);
-            this.RoomRequiredFurnishingsTextBox.Location = new System.Drawing.Point(145, 163);
-            this.RoomRequiredFurnishingsTextBox.Multiline = true;
-            this.RoomRequiredFurnishingsTextBox.Name = "RoomRequiredFurnishingsTextBox";
-            this.RoomRequiredFurnishingsTextBox.Size = new System.Drawing.Size(279, 69);
-            this.RoomRequiredFurnishingsTextBox.TabIndex = 28;
-            // 
+            this.RoomTableLayoutPanel.SetColumnSpan(this.RoomRequiredFurnishingsListBox, 2);
+            this.RoomRequiredFurnishingsListBox.Location = new System.Drawing.Point(145, 163);
+            this.RoomRequiredFurnishingsListBox.Multiline = true;
+            this.RoomRequiredFurnishingsListBox.Name = "RoomRequiredFurnishingsListBox";
+            this.RoomRequiredFurnishingsListBox.Size = new System.Drawing.Size(279, 69);
+            this.RoomRequiredFurnishingsListBox.TabIndex = 28;
+            //
             // RoomPictureBox
             // 
             this.RoomPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -3016,7 +3016,7 @@ namespace Scribe
         private System.Windows.Forms.Button RoomAddFurnishingsButton;
         private System.Windows.Forms.Button RoomDeleteFurnishingsButton;
         private System.Windows.Forms.Label RoomRequiredFurnishingsLabel;
-        private System.Windows.Forms.TextBox RoomRequiredFurnishingsTextBox;
+        private System.Windows.Forms.TextBox RoomRequiredFurnishingsListBox;
     }
 }
 
