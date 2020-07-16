@@ -161,7 +161,7 @@ namespace Scribe
             this.ItemMinWalkableSpacesLabel = new System.Windows.Forms.Label();
             this.ItemMaxWalkableSpacesLabel = new System.Windows.Forms.Label();
             this.ItemMinWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
-            this.ItemRoomMaxWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
+            this.ItemMaxWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
             this.ItemPictureEditButton = new System.Windows.Forms.Button();
             this.ItemTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.ItemAddParquetCriterionButton = new System.Windows.Forms.Button();
@@ -263,6 +263,11 @@ namespace Scribe
             this.BiomeConfigTableLayoutPanel.SuspendLayout();
             this.BiomeTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BiomePictureBox)).BeginInit();
+            this.ItemsTabPage.SuspendLayout();
+            this.ItemConfigGroupBox.SuspendLayout();
+            this.ItemConfigTableLayoutPanel.SuspendLayout();
+            this.ItemTableLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemPictureBox)).BeginInit();
             this.RoomsTabPage.SuspendLayout();
             this.RoomConfigGroupBox.SuspendLayout();
             this.RoomConfigTableLayoutPanel.SuspendLayout();
@@ -2763,6 +2768,14 @@ namespace Scribe
             this.BiomeTableLayoutPanel.ResumeLayout(false);
             this.BiomeTableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BiomePictureBox)).EndInit();
+            this.ItemsTabPage.ResumeLayout(false);
+            this.ItemsTabPage.PerformLayout();
+            this.ItemConfigGroupBox.ResumeLayout(false);
+            this.ItemConfigTableLayoutPanel.ResumeLayout(false);
+            this.ItemConfigTableLayoutPanel.PerformLayout();
+            this.ItemTableLayoutPanel.ResumeLayout(false);
+            this.ItemTableLayoutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemPictureBox)).EndInit();
             this.RoomsTabPage.ResumeLayout(false);
             this.RoomsTabPage.PerformLayout();
             this.RoomConfigGroupBox.ResumeLayout(false);
