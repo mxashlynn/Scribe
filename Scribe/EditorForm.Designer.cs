@@ -153,6 +153,39 @@ namespace Scribe
             this.BiomeIDTextBox = new System.Windows.Forms.TextBox();
             this.CraftingTabPage = new System.Windows.Forms.TabPage();
             this.ItemsTabPage = new System.Windows.Forms.TabPage();
+            this.ItemAddEntryRequirementButton = new System.Windows.Forms.Button();
+            this.ItemDeleteEntryRequirementButton = new System.Windows.Forms.Button();
+            this.ItemListBox = new System.Windows.Forms.ListBox();
+            this.ItemConfigGroupBox = new System.Windows.Forms.GroupBox();
+            this.ItemConfigTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.ItemMinWalkableSpacesLabel = new System.Windows.Forms.Label();
+            this.ItemMaxWalkableSpacesLabel = new System.Windows.Forms.Label();
+            this.ItemMinWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
+            this.ItemRoomMaxWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
+            this.ItemPictureEditButton = new System.Windows.Forms.Button();
+            this.ItemTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.ItemAddParquetCriterionButton = new System.Windows.Forms.Button();
+            this.ItemDeleteParquetCriterionButton = new System.Windows.Forms.Button();
+            this.ItemEntryRequirementsListBox = new System.Windows.Forms.ListBox();
+            this.ItemParquetCriteriaListBox = new System.Windows.Forms.ListBox();
+            this.ItemIsLiquidBasedCheckBox = new System.Windows.Forms.CheckBox();
+            this.ItemIsItemBasedCheckBox = new System.Windows.Forms.CheckBox();
+            this.ItemNameLabel = new System.Windows.Forms.Label();
+            this.ItemDescriptionLabel = new System.Windows.Forms.Label();
+            this.ItemCommentLabel = new System.Windows.Forms.Label();
+            this.ItemTierLabel = new System.Windows.Forms.Label();
+            this.ItemIsItemBasedLabel = new System.Windows.Forms.Label();
+            this.ItemIsLiquidBasedLabel = new System.Windows.Forms.Label();
+            this.ItemParquetCriteriaLabel = new System.Windows.Forms.Label();
+            this.ItemEntryRequirementsLabel = new System.Windows.Forms.Label();
+            this.ItemNameTextBox = new System.Windows.Forms.TextBox();
+            this.ItemDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.ItemCommentTextBox = new System.Windows.Forms.TextBox();
+            this.ItemTierTextBox = new System.Windows.Forms.TextBox();
+            this.ItemPictureBox = new System.Windows.Forms.PictureBox();
+            this.ItemIDLabel = new System.Windows.Forms.Label();
+            this.ItemAddNewItemButton = new System.Windows.Forms.Button();
+            this.ItemIDTextBox = new System.Windows.Forms.TextBox();
             this.MapsTabPage = new System.Windows.Forms.TabPage();
             this.ParquetsTabPage = new System.Windows.Forms.TabPage();
             this.RoomsTabPage = new System.Windows.Forms.TabPage();
@@ -1529,45 +1562,419 @@ namespace Scribe
             this.BiomeIDTextBox.Size = new System.Drawing.Size(131, 20);
             this.BiomeIDTextBox.TabIndex = 3;
             this.BiomeIDTextBox.Text = "-2020202020";
-            // 
+            //
             // CraftingTabPage
-            // 
+            //
             this.CraftingTabPage.BackColor = System.Drawing.Color.Transparent;
             this.CraftingTabPage.Location = new System.Drawing.Point(4, 22);
             this.CraftingTabPage.Name = "CraftingTabPage";
             this.CraftingTabPage.Size = new System.Drawing.Size(952, 599);
             this.CraftingTabPage.TabIndex = 3;
             this.CraftingTabPage.Text = "Crafting";
-            // 
+            //
             // ItemsTabPage
-            // 
+            //
             this.ItemsTabPage.BackColor = System.Drawing.Color.Transparent;
+            this.ItemsTabPage.Controls.Add(this.ItemAddEntryRequirementButton);
+            this.ItemsTabPage.Controls.Add(this.ItemDeleteEntryRequirementButton);
+            this.ItemsTabPage.Controls.Add(this.ItemListBox);
+            this.ItemsTabPage.Controls.Add(this.ItemConfigGroupBox);
+            this.ItemsTabPage.Controls.Add(this.ItemPictureEditButton);
+            this.ItemsTabPage.Controls.Add(this.ItemTableLayoutPanel);
+            this.ItemsTabPage.Controls.Add(this.ItemPictureBox);
+            this.ItemsTabPage.Controls.Add(this.ItemIDLabel);
+            this.ItemsTabPage.Controls.Add(this.ItemAddNewItemButton);
+            this.ItemsTabPage.Controls.Add(this.ItemIDTextBox);
             this.ItemsTabPage.Location = new System.Drawing.Point(4, 22);
             this.ItemsTabPage.Name = "ItemsTabPage";
             this.ItemsTabPage.Size = new System.Drawing.Size(952, 599);
             this.ItemsTabPage.TabIndex = 4;
             this.ItemsTabPage.Text = "Items";
-            // 
+            //
+            // ItemAddEntryRequirementButton
+            //
+            this.ItemAddEntryRequirementButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemAddEntryRequirementButton.Location = new System.Drawing.Point(604, 468);
+            this.ItemAddEntryRequirementButton.Name = "ItemAddEntryRequirementButton";
+            this.ItemAddEntryRequirementButton.Size = new System.Drawing.Size(129, 23);
+            this.ItemAddEntryRequirementButton.TabIndex = 2;
+            this.ItemAddEntryRequirementButton.Text = "Add Requirement";
+            this.ItemAddEntryRequirementButton.UseVisualStyleBackColor = true;
+            //
+            // ItemDeleteEntryRequirementButton
+            //
+            this.ItemDeleteEntryRequirementButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemDeleteEntryRequirementButton.Location = new System.Drawing.Point(453, 468);
+            this.ItemDeleteEntryRequirementButton.Name = "ItemDeleteEntryRequirementButton";
+            this.ItemDeleteEntryRequirementButton.Size = new System.Drawing.Size(129, 23);
+            this.ItemDeleteEntryRequirementButton.TabIndex = 2;
+            this.ItemDeleteEntryRequirementButton.Text = "Remove Requirement";
+            this.ItemDeleteEntryRequirementButton.UseVisualStyleBackColor = true;
+            //
+            // ItemListBox
+            //
+            this.ItemListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ItemListBox.FormattingEnabled = true;
+            this.ItemListBox.Location = new System.Drawing.Point(9, 16);
+            this.ItemListBox.Name = "ItemListBox";
+            this.ItemListBox.Size = new System.Drawing.Size(279, 446);
+            this.ItemListBox.TabIndex = 1;
+            //
+            // ItemConfigGroupBox
+            //
+            this.ItemConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemConfigGroupBox.Controls.Add(this.ItemConfigTableLayoutPanel);
+            this.ItemConfigGroupBox.Location = new System.Drawing.Point(9, 499);
+            this.ItemConfigGroupBox.Name = "ItemConfigGroupBox";
+            this.ItemConfigGroupBox.Size = new System.Drawing.Size(937, 97);
+            this.ItemConfigGroupBox.TabIndex = 0;
+            this.ItemConfigGroupBox.TabStop = false;
+            this.ItemConfigGroupBox.Text = "Configuration";
+            //
+            // ItemConfigTableLayoutPanel
+            //
+            this.ItemConfigTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemConfigTableLayoutPanel.ColumnCount = 3;
+            this.ItemConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17F));
+            this.ItemConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13F));
+            this.ItemConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.ItemConfigTableLayoutPanel.Controls.Add(this.ItemMinWalkableSpacesLabel, 0, 0);
+            this.ItemConfigTableLayoutPanel.Controls.Add(this.ItemMaxWalkableSpacesLabel, 0, 1);
+            this.ItemConfigTableLayoutPanel.Controls.Add(this.ItemMinWalkableSpacesTextBox, 1, 0);
+            this.ItemConfigTableLayoutPanel.Controls.Add(this.ItemMaxWalkableSpacesTextBox, 1, 1);
+            this.ItemConfigTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
+            this.ItemConfigTableLayoutPanel.Name = "ItemConfigTableLayoutPanel";
+            this.ItemConfigTableLayoutPanel.RowCount = 3;
+            this.ItemConfigTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.ItemConfigTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.ItemConfigTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.ItemConfigTableLayoutPanel.Size = new System.Drawing.Size(925, 72);
+            this.ItemConfigTableLayoutPanel.TabIndex = 1;
+            //
+            // ItemMinWalkableSpacesLabel
+            //
+            this.ItemMinWalkableSpacesLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemMinWalkableSpacesLabel.AutoSize = true;
+            this.ItemMinWalkableSpacesLabel.Location = new System.Drawing.Point(24, 0);
+            this.ItemMinWalkableSpacesLabel.Name = "ItemMinWalkableSpacesLabel";
+            this.ItemMinWalkableSpacesLabel.Size = new System.Drawing.Size(130, 24);
+            this.ItemMinWalkableSpacesLabel.TabIndex = 0;
+            this.ItemMinWalkableSpacesLabel.Text = "Minimum Walkable Spaces";
+            //
+            // ItemMaxWalkableSpacesLabel
+            //
+            this.ItemMaxWalkableSpacesLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemMaxWalkableSpacesLabel.AutoSize = true;
+            this.ItemMaxWalkableSpacesLabel.Location = new System.Drawing.Point(20, 24);
+            this.ItemMaxWalkableSpacesLabel.Name = "ItemMaxWalkableSpacesLabel";
+            this.ItemMaxWalkableSpacesLabel.Size = new System.Drawing.Size(134, 24);
+            this.ItemMaxWalkableSpacesLabel.TabIndex = 1;
+            this.ItemMaxWalkableSpacesLabel.Text = "Maximum Walkable Spaces";
+            //
+            // ItemMinWalkableSpacesTextBox
+            //
+            this.ItemMinWalkableSpacesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ItemMinWalkableSpacesTextBox.Location = new System.Drawing.Point(160, 3);
+            this.ItemMinWalkableSpacesTextBox.Name = "ItemMinWalkableSpacesTextBox";
+            this.ItemMinWalkableSpacesTextBox.Size = new System.Drawing.Size(114, 20);
+            this.ItemMinWalkableSpacesTextBox.TabIndex = 2;
+            //
+            // ItemMaxWalkableSpacesTextBox
+            //
+            this.ItemMaxWalkableSpacesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ItemMaxWalkableSpacesTextBox.Location = new System.Drawing.Point(160, 27);
+            this.ItemMaxWalkableSpacesTextBox.Name = "ItemMaxWalkableSpacesTextBox";
+            this.ItemMaxWalkableSpacesTextBox.Size = new System.Drawing.Size(114, 20);
+            this.ItemMaxWalkableSpacesTextBox.TabIndex = 3;
+            //
+            // ItemPictureEditButton
+            //
+            this.ItemPictureEditButton.Location = new System.Drawing.Point(812, 468);
+            this.ItemPictureEditButton.Name = "ItemPictureEditButton";
+            this.ItemPictureEditButton.Size = new System.Drawing.Size(128, 23);
+            this.ItemPictureEditButton.TabIndex = 7;
+            this.ItemPictureEditButton.Text = "Edit Image";
+            this.ItemPictureEditButton.UseVisualStyleBackColor = true;
+            //
+            // ItemTableLayoutPanel
+            //
+            this.ItemTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ItemTableLayoutPanel.ColumnCount = 3;
+            this.ItemTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.ItemTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.ItemTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemAddParquetCriterionButton, 2, 7);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemDeleteParquetCriterionButton, 1, 7);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemEntryRequirementsListBox, 1, 8);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemParquetCriteriaListBox, 1, 6);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemIsLiquidBasedCheckBox, 1, 5);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemIsItemBasedCheckBox, 1, 4);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemNameLabel, 0, 0);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemDescriptionLabel, 0, 1);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemCommentLabel, 0, 2);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemTierLabel, 0, 3);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemIsItemBasedLabel, 0, 4);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemIsLiquidBasedLabel, 0, 5);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemParquetCriteriaLabel, 0, 6);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemEntryRequirementsLabel, 0, 8);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemNameTextBox, 1, 0);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemDescriptionTextBox, 1, 1);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemCommentTextBox, 1, 2);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemTierTextBox, 1, 3);
+            this.ItemTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
+            this.ItemTableLayoutPanel.Name = "ItemTableLayoutPanel";
+            this.ItemTableLayoutPanel.RowCount = 9;
+            this.ItemTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.ItemTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.ItemTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.ItemTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.ItemTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.ItemTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.ItemTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.ItemTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.ItemTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.ItemTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.ItemTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
+            this.ItemTableLayoutPanel.TabIndex = 5;
+            //
+            // ItemAddParquetCriterionButton
+            //
+            this.ItemAddParquetCriterionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemAddParquetCriterionButton.Location = new System.Drawing.Point(297, 316);
+            this.ItemAddParquetCriterionButton.Name = "ItemAddParquetCriterionButton";
+            this.ItemAddParquetCriterionButton.Size = new System.Drawing.Size(129, 23);
+            this.ItemAddParquetCriterionButton.TabIndex = 2;
+            this.ItemAddParquetCriterionButton.Text = "Add Criterion";
+            this.ItemAddParquetCriterionButton.UseVisualStyleBackColor = true;
+            //
+            // ItemDeleteParquetCriterionButton
+            //
+            this.ItemDeleteParquetCriterionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemDeleteParquetCriterionButton.Location = new System.Drawing.Point(146, 316);
+            this.ItemDeleteParquetCriterionButton.Name = "ItemDeleteParquetCriterionButton";
+            this.ItemDeleteParquetCriterionButton.Size = new System.Drawing.Size(129, 23);
+            this.ItemDeleteParquetCriterionButton.TabIndex = 2;
+            this.ItemDeleteParquetCriterionButton.Text = "Remove Criterion";
+            this.ItemDeleteParquetCriterionButton.UseVisualStyleBackColor = true;
+            //
+            // ItemEntryRequirementsListBox
+            //
+            this.ItemEntryRequirementsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ItemTableLayoutPanel.SetColumnSpan(this.ItemEntryRequirementsListBox, 2);
+            this.ItemEntryRequirementsListBox.FormattingEnabled = true;
+            this.ItemEntryRequirementsListBox.Location = new System.Drawing.Point(131, 346);
+            this.ItemEntryRequirementsListBox.Name = "ItemEntryRequirementsListBox";
+            this.ItemEntryRequirementsListBox.Size = new System.Drawing.Size(279, 95);
+            this.ItemEntryRequirementsListBox.TabIndex = 1;
+            //
+            // ItemParquetCriteriaListBox
+            //
+            this.ItemParquetCriteriaListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ItemTableLayoutPanel.SetColumnSpan(this.ItemParquetCriteriaListBox, 2);
+            this.ItemParquetCriteriaListBox.FormattingEnabled = true;
+            this.ItemParquetCriteriaListBox.Location = new System.Drawing.Point(131, 213);
+            this.ItemParquetCriteriaListBox.Name = "ItemParquetCriteriaListBox";
+            this.ItemParquetCriteriaListBox.Size = new System.Drawing.Size(279, 95);
+            this.ItemParquetCriteriaListBox.TabIndex = 1;
+            //
+            // ItemIsLiquidBasedCheckBox
+            //
+            this.ItemIsLiquidBasedCheckBox.AutoSize = true;
+            this.ItemIsLiquidBasedCheckBox.Location = new System.Drawing.Point(131, 188);
+            this.ItemIsLiquidBasedCheckBox.Name = "ItemIsLiquidBasedCheckBox";
+            this.ItemIsLiquidBasedCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.ItemIsLiquidBasedCheckBox.TabIndex = 22;
+            this.ItemIsLiquidBasedCheckBox.UseVisualStyleBackColor = true;
+            //
+            // ItemIsItemBasedCheckBox
+            //
+            this.ItemIsItemBasedCheckBox.AutoSize = true;
+            this.ItemIsItemBasedCheckBox.Location = new System.Drawing.Point(131, 163);
+            this.ItemIsItemBasedCheckBox.Name = "ItemIsItemBasedCheckBox";
+            this.ItemIsItemBasedCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.ItemIsItemBasedCheckBox.TabIndex = 22;
+            this.ItemIsItemBasedCheckBox.UseVisualStyleBackColor = true;
+            //
+            // ItemNameLabel
+            //
+            this.ItemNameLabel.AutoSize = true;
+            this.ItemNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.ItemNameLabel.Name = "ItemNameLabel";
+            this.ItemNameLabel.Size = new System.Drawing.Size(34, 13);
+            this.ItemNameLabel.TabIndex = 0;
+            this.ItemNameLabel.Text = "Name";
+            //
+            // ItemDescriptionLabel
+            //
+            this.ItemDescriptionLabel.AutoSize = true;
+            this.ItemDescriptionLabel.Location = new System.Drawing.Point(3, 25);
+            this.ItemDescriptionLabel.Name = "ItemDescriptionLabel";
+            this.ItemDescriptionLabel.Size = new System.Drawing.Size(60, 13);
+            this.ItemDescriptionLabel.TabIndex = 3;
+            this.ItemDescriptionLabel.Text = "Description";
+            //
+            // ItemCommentLabel
+            //
+            this.ItemCommentLabel.AutoSize = true;
+            this.ItemCommentLabel.Location = new System.Drawing.Point(3, 80);
+            this.ItemCommentLabel.Name = "ItemCommentLabel";
+            this.ItemCommentLabel.Size = new System.Drawing.Size(52, 13);
+            this.ItemCommentLabel.TabIndex = 6;
+            this.ItemCommentLabel.Text = "Comment";
+            //
+            // ItemTierLabel
+            //
+            this.ItemTierLabel.AutoSize = true;
+            this.ItemTierLabel.Location = new System.Drawing.Point(3, 135);
+            this.ItemTierLabel.Name = "ItemTierLabel";
+            this.ItemTierLabel.Size = new System.Drawing.Size(25, 13);
+            this.ItemTierLabel.TabIndex = 9;
+            this.ItemTierLabel.Text = "Tier";
+            //
+            // ItemIsItemBasedLabel
+            //
+            this.ItemIsItemBasedLabel.AutoSize = true;
+            this.ItemIsItemBasedLabel.Location = new System.Drawing.Point(3, 160);
+            this.ItemIsItemBasedLabel.Name = "ItemIsItemBasedLabel";
+            this.ItemIsItemBasedLabel.Size = new System.Drawing.Size(84, 13);
+            this.ItemIsItemBasedLabel.TabIndex = 12;
+            this.ItemIsItemBasedLabel.Text = "Is Item-Based?";
+            //
+            // ItemIsLiquidBasedLabel
+            //
+            this.ItemIsLiquidBasedLabel.AutoSize = true;
+            this.ItemIsLiquidBasedLabel.Location = new System.Drawing.Point(3, 185);
+            this.ItemIsLiquidBasedLabel.Name = "ItemIsLiquidBasedLabel";
+            this.ItemIsLiquidBasedLabel.Size = new System.Drawing.Size(84, 13);
+            this.ItemIsLiquidBasedLabel.TabIndex = 15;
+            this.ItemIsLiquidBasedLabel.Text = "Is Liquid-Based?";
+            //
+            // ItemParquetCriteriaLabel
+            //
+            this.ItemParquetCriteriaLabel.AutoSize = true;
+            this.ItemParquetCriteriaLabel.Location = new System.Drawing.Point(3, 210);
+            this.ItemParquetCriteriaLabel.Name = "ItemParquetCriteriaLabel";
+            this.ItemParquetCriteriaLabel.Size = new System.Drawing.Size(83, 13);
+            this.ItemParquetCriteriaLabel.TabIndex = 18;
+            this.ItemParquetCriteriaLabel.Text = "Parquet Criteria";
+            //
+            // ItemEntryRequirementsLabel
+            //
+            this.ItemEntryRequirementsLabel.AutoSize = true;
+            this.ItemEntryRequirementsLabel.Location = new System.Drawing.Point(3, 343);
+            this.ItemEntryRequirementsLabel.Name = "ItemEntryRequirementsLabel";
+            this.ItemEntryRequirementsLabel.Size = new System.Drawing.Size(102, 13);
+            this.ItemEntryRequirementsLabel.TabIndex = 21;
+            this.ItemEntryRequirementsLabel.Text = "Entry Requirements";
+            //
+            // ItemNameTextBox
+            //
+            this.ItemNameTextBox.Location = new System.Drawing.Point(131, 3);
+            this.ItemNameTextBox.Name = "ItemNameTextBox";
+            this.ItemNameTextBox.Size = new System.Drawing.Size(144, 20);
+            this.ItemNameTextBox.TabIndex = 23;
+            //
+            // ItemDescriptionTextBox
+            //
+            this.ItemDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemTableLayoutPanel.SetColumnSpan(this.ItemDescriptionTextBox, 2);
+            this.ItemDescriptionTextBox.Location = new System.Drawing.Point(131, 28);
+            this.ItemDescriptionTextBox.Multiline = true;
+            this.ItemDescriptionTextBox.Name = "ItemDescriptionTextBox";
+            this.ItemDescriptionTextBox.Size = new System.Drawing.Size(295, 49);
+            this.ItemDescriptionTextBox.TabIndex = 24;
+            //
+            // ItemCommentTextBox
+            //
+            this.ItemCommentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemTableLayoutPanel.SetColumnSpan(this.ItemCommentTextBox, 2);
+            this.ItemCommentTextBox.Location = new System.Drawing.Point(131, 83);
+            this.ItemCommentTextBox.Multiline = true;
+            this.ItemCommentTextBox.Name = "ItemCommentTextBox";
+            this.ItemCommentTextBox.Size = new System.Drawing.Size(295, 49);
+            this.ItemCommentTextBox.TabIndex = 25;
+            //
+            // ItemTierTextBox
+            //
+            this.ItemTierTextBox.Location = new System.Drawing.Point(131, 138);
+            this.ItemTierTextBox.Name = "ItemTierTextBox";
+            this.ItemTierTextBox.Size = new System.Drawing.Size(144, 20);
+            this.ItemTierTextBox.TabIndex = 26;
+            //
+            // ItemPictureBox
+            //
+            this.ItemPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.ItemPictureBox.Location = new System.Drawing.Point(758, 280);
+            this.ItemPictureBox.Name = "ItemPictureBox";
+            this.ItemPictureBox.Size = new System.Drawing.Size(182, 182);
+            this.ItemPictureBox.TabIndex = 6;
+            this.ItemPictureBox.TabStop = false;
+            //
+            // ItemIDLabel
+            //
+            this.ItemIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemIDLabel.AutoSize = true;
+            this.ItemIDLabel.Location = new System.Drawing.Point(758, 19);
+            this.ItemIDLabel.Name = "ItemIDLabel";
+            this.ItemIDLabel.Size = new System.Drawing.Size(48, 13);
+            this.ItemIDLabel.TabIndex = 4;
+            this.ItemIDLabel.Text = "Item ID";
+            //
+            // ItemAddNewItemButton
+            //
+            this.ItemAddNewItemButton.Location = new System.Drawing.Point(159, 468);
+            this.ItemAddNewItemButton.Name = "ItemAddNewItemButton";
+            this.ItemAddNewItemButton.Size = new System.Drawing.Size(129, 23);
+            this.ItemAddNewItemButton.TabIndex = 2;
+            this.ItemAddNewItemButton.Text = "Add New Item";
+            this.ItemAddNewItemButton.UseVisualStyleBackColor = true;
+            //
+            // ItemIDTextBox
+            //
+            this.ItemIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemIDTextBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.ItemIDTextBox.Location = new System.Drawing.Point(812, 16);
+            this.ItemIDTextBox.Name = "ItemIDTextBox";
+            this.ItemIDTextBox.Size = new System.Drawing.Size(131, 20);
+            this.ItemIDTextBox.TabIndex = 3;
+            this.ItemIDTextBox.Text = "-2020202020";
+            //
             // MapsTabPage
-            // 
+            //
             this.MapsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.MapsTabPage.Location = new System.Drawing.Point(4, 22);
             this.MapsTabPage.Name = "MapsTabPage";
             this.MapsTabPage.Size = new System.Drawing.Size(952, 599);
             this.MapsTabPage.TabIndex = 5;
             this.MapsTabPage.Text = "Maps";
-            // 
+            //
             // ParquetsTabPage
-            // 
+            //
             this.ParquetsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.ParquetsTabPage.Location = new System.Drawing.Point(4, 22);
             this.ParquetsTabPage.Name = "ParquetsTabPage";
             this.ParquetsTabPage.Size = new System.Drawing.Size(952, 599);
             this.ParquetsTabPage.TabIndex = 6;
             this.ParquetsTabPage.Text = "Parquets";
-            // 
+            //
             // RoomsTabPage
-            // 
+            //
             this.RoomsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.RoomsTabPage.Controls.Add(this.RoomAddEntryRequirementButton);
             this.RoomsTabPage.Controls.Add(this.RoomDeleteEntryRequirementButton);
@@ -2527,7 +2934,6 @@ namespace Scribe
         private System.Windows.Forms.TextBox BiomeLiquidThresholdFactorTextBox;
         private System.Windows.Forms.TextBox BiomeRoomThresholdFactorTextBox;
         private System.Windows.Forms.Label BiomeRoomThresholdFactorLabel;
-
         private System.Windows.Forms.ListBox RoomListBox;
         private System.Windows.Forms.GroupBox RoomConfigGroupBox;
         private System.Windows.Forms.Button RoomPictureEditButton;
@@ -2561,7 +2967,39 @@ namespace Scribe
         private System.Windows.Forms.Label RoomMaxWalkableSpacesLabel;
         private System.Windows.Forms.TextBox RoomMinWalkableSpacesTextBox;
         private System.Windows.Forms.TextBox RoomMaxWalkableSpacesTextBox;
-        private System.Windows.Forms.TextBox MaxWalkableSpacesTextBox;
+        private System.Windows.Forms.ListBox ItemListBox;
+        private System.Windows.Forms.GroupBox ItemConfigGroupBox;
+        private System.Windows.Forms.Button ItemPictureEditButton;
+        private System.Windows.Forms.TableLayoutPanel ItemTableLayoutPanel;
+        private System.Windows.Forms.Label ItemNameLabel;
+        private System.Windows.Forms.Label ItemDescriptionLabel;
+        private System.Windows.Forms.Label ItemCommentLabel;
+        private System.Windows.Forms.Label ItemTierLabel;
+        private System.Windows.Forms.Label ItemIsItemBasedLabel;
+        private System.Windows.Forms.Label ItemIsLiquidBasedLabel;
+        private System.Windows.Forms.Label ItemParquetCriteriaLabel;
+        private System.Windows.Forms.Label ItemEntryRequirementsLabel;
+        private System.Windows.Forms.TextBox ItemNameTextBox;
+        private System.Windows.Forms.TextBox ItemDescriptionTextBox;
+        private System.Windows.Forms.TextBox ItemCommentTextBox;
+        private System.Windows.Forms.TextBox ItemTierTextBox;
+        private System.Windows.Forms.PictureBox ItemPictureBox;
+        private System.Windows.Forms.Label ItemIDLabel;
+        private System.Windows.Forms.Button ItemAddNewItemButton;
+        private System.Windows.Forms.TextBox ItemIDTextBox;
+        private System.Windows.Forms.CheckBox ItemIsLiquidBasedCheckBox;
+        private System.Windows.Forms.CheckBox ItemIsItemBasedCheckBox;
+        private System.Windows.Forms.Button ItemAddEntryRequirementButton;
+        private System.Windows.Forms.Button ItemDeleteEntryRequirementButton;
+        private System.Windows.Forms.Button ItemAddParquetCriterionButton;
+        private System.Windows.Forms.Button ItemDeleteParquetCriterionButton;
+        private System.Windows.Forms.ListBox ItemEntryRequirementsListBox;
+        private System.Windows.Forms.ListBox ItemParquetCriteriaListBox;
+        private System.Windows.Forms.TableLayoutPanel ItemConfigTableLayoutPanel;
+        private System.Windows.Forms.Label ItemMinWalkableSpacesLabel;
+        private System.Windows.Forms.Label ItemMaxWalkableSpacesLabel;
+        private System.Windows.Forms.TextBox ItemMinWalkableSpacesTextBox;
+        private System.Windows.Forms.TextBox ItemMaxWalkableSpacesTextBox;
     }
 }
 
