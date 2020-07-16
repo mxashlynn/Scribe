@@ -3016,7 +3016,7 @@ namespace Scribe
         private System.Windows.Forms.Button RoomAddFurnishingsButton;
         private System.Windows.Forms.Button RoomDeleteFurnishingsButton;
         private System.Windows.Forms.Label RoomRequiredFurnishingsLabel;
-        private System.Windows.Forms.TextBox RoomRequiredFurnishingsListBox;
+        private System.Windows.Forms.ListBox RoomRequiredFurnishingsListBox;
     }
 }
 
