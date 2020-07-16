@@ -161,12 +161,10 @@ namespace Scribe
             this.RoomListBox = new System.Windows.Forms.ListBox();
             this.RoomConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.RoomConfigTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.RoomLandThresholdFactorLabel = new System.Windows.Forms.Label();
-            this.RoomLiquidThresholdFactorLabel = new System.Windows.Forms.Label();
-            this.RoomLandThresholdTextBox = new System.Windows.Forms.TextBox();
-            this.RoomLiquidThresholdFactorTextBox = new System.Windows.Forms.TextBox();
-            this.RoomRoomThresholdFactorTextBox = new System.Windows.Forms.TextBox();
-            this.RoomRoomThresholdFactorLabel = new System.Windows.Forms.Label();
+            this.RoomMinWalkableSpacesLabel = new System.Windows.Forms.Label();
+            this.RoomMaxWalkableSpacesLabel = new System.Windows.Forms.Label();
+            this.RoomMinWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
+            this.RoomMaxWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
             this.RoomPictureEditButton = new System.Windows.Forms.Button();
             this.RoomTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.RoomAddParquetCriterionButton = new System.Windows.Forms.Button();
@@ -1635,15 +1633,13 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomConfigTableLayoutPanel.ColumnCount = 3;
-            this.RoomConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.RoomConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.RoomConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17F));
+            this.RoomConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13F));
             this.RoomConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.RoomConfigTableLayoutPanel.Controls.Add(this.RoomLandThresholdFactorLabel, 0, 0);
-            this.RoomConfigTableLayoutPanel.Controls.Add(this.RoomLiquidThresholdFactorLabel, 0, 1);
-            this.RoomConfigTableLayoutPanel.Controls.Add(this.RoomLandThresholdTextBox, 1, 0);
-            this.RoomConfigTableLayoutPanel.Controls.Add(this.RoomLiquidThresholdFactorTextBox, 1, 1);
-            this.RoomConfigTableLayoutPanel.Controls.Add(this.RoomRoomThresholdFactorTextBox, 1, 2);
-            this.RoomConfigTableLayoutPanel.Controls.Add(this.RoomRoomThresholdFactorLabel, 0, 2);
+            this.RoomConfigTableLayoutPanel.Controls.Add(this.RoomMinWalkableSpacesLabel, 0, 0);
+            this.RoomConfigTableLayoutPanel.Controls.Add(this.RoomMaxWalkableSpacesLabel, 0, 1);
+            this.RoomConfigTableLayoutPanel.Controls.Add(this.RoomMinWalkableSpacesTextBox, 1, 0);
+            this.RoomConfigTableLayoutPanel.Controls.Add(this.RoomMaxWalkableSpacesTextBox, 1, 1);
             this.RoomConfigTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
             this.RoomConfigTableLayoutPanel.Name = "RoomConfigTableLayoutPanel";
             this.RoomConfigTableLayoutPanel.RowCount = 3;
@@ -1653,65 +1649,45 @@ namespace Scribe
             this.RoomConfigTableLayoutPanel.Size = new System.Drawing.Size(925, 72);
             this.RoomConfigTableLayoutPanel.TabIndex = 1;
             // 
-            // RoomLandThresholdFactorLabel
+            // RoomMinWalkableSpacesLabel
             // 
-            this.RoomLandThresholdFactorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.RoomMinWalkableSpacesLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomLandThresholdFactorLabel.AutoSize = true;
-            this.RoomLandThresholdFactorLabel.Location = new System.Drawing.Point(21, 0);
-            this.RoomLandThresholdFactorLabel.Name = "RoomLandThresholdFactorLabel";
-            this.RoomLandThresholdFactorLabel.Size = new System.Drawing.Size(114, 23);
-            this.RoomLandThresholdFactorLabel.TabIndex = 0;
-            this.RoomLandThresholdFactorLabel.Text = "Land Threshold Factor";
+            this.RoomMinWalkableSpacesLabel.AutoSize = true;
+            this.RoomMinWalkableSpacesLabel.Location = new System.Drawing.Point(24, 0);
+            this.RoomMinWalkableSpacesLabel.Name = "RoomMinWalkableSpacesLabel";
+            this.RoomMinWalkableSpacesLabel.Size = new System.Drawing.Size(130, 24);
+            this.RoomMinWalkableSpacesLabel.TabIndex = 0;
+            this.RoomMinWalkableSpacesLabel.Text = "Minimum Walkable Spaces";
             // 
-            // RoomLiquidThresholdFactorLabel
+            // RoomMaxWalkableSpacesLabel
             // 
-            this.RoomLiquidThresholdFactorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.RoomMaxWalkableSpacesLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomLiquidThresholdFactorLabel.AutoSize = true;
-            this.RoomLiquidThresholdFactorLabel.Location = new System.Drawing.Point(17, 23);
-            this.RoomLiquidThresholdFactorLabel.Name = "RoomLiquidThresholdFactorLabel";
-            this.RoomLiquidThresholdFactorLabel.Size = new System.Drawing.Size(118, 23);
-            this.RoomLiquidThresholdFactorLabel.TabIndex = 1;
-            this.RoomLiquidThresholdFactorLabel.Text = "Liquid Threshold Factor";
+            this.RoomMaxWalkableSpacesLabel.AutoSize = true;
+            this.RoomMaxWalkableSpacesLabel.Location = new System.Drawing.Point(20, 24);
+            this.RoomMaxWalkableSpacesLabel.Name = "RoomMaxWalkableSpacesLabel";
+            this.RoomMaxWalkableSpacesLabel.Size = new System.Drawing.Size(134, 24);
+            this.RoomMaxWalkableSpacesLabel.TabIndex = 1;
+            this.RoomMaxWalkableSpacesLabel.Text = "Maximum Walkable Spaces";
             // 
-            // RoomLandThresholdTextBox
+            // RoomMinWalkableSpacesTextBox
             // 
-            this.RoomLandThresholdTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.RoomMinWalkableSpacesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.RoomLandThresholdTextBox.Location = new System.Drawing.Point(141, 3);
-            this.RoomLandThresholdTextBox.Name = "RoomLandThresholdTextBox";
-            this.RoomLandThresholdTextBox.Size = new System.Drawing.Size(132, 20);
-            this.RoomLandThresholdTextBox.TabIndex = 2;
+            this.RoomMinWalkableSpacesTextBox.Location = new System.Drawing.Point(160, 3);
+            this.RoomMinWalkableSpacesTextBox.Name = "RoomMinWalkableSpacesTextBox";
+            this.RoomMinWalkableSpacesTextBox.Size = new System.Drawing.Size(114, 20);
+            this.RoomMinWalkableSpacesTextBox.TabIndex = 2;
             // 
-            // RoomLiquidThresholdFactorTextBox
+            // RoomMaxWalkableSpacesTextBox
             // 
-            this.RoomLiquidThresholdFactorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.RoomMaxWalkableSpacesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.RoomLiquidThresholdFactorTextBox.Location = new System.Drawing.Point(141, 26);
-            this.RoomLiquidThresholdFactorTextBox.Name = "RoomLiquidThresholdFactorTextBox";
-            this.RoomLiquidThresholdFactorTextBox.Size = new System.Drawing.Size(132, 20);
-            this.RoomLiquidThresholdFactorTextBox.TabIndex = 3;
-            // 
-            // RoomRoomThresholdFactorTextBox
-            // 
-            this.RoomRoomThresholdFactorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.RoomRoomThresholdFactorTextBox.Location = new System.Drawing.Point(141, 49);
-            this.RoomRoomThresholdFactorTextBox.Name = "RoomRoomThresholdFactorTextBox";
-            this.RoomRoomThresholdFactorTextBox.Size = new System.Drawing.Size(132, 20);
-            this.RoomRoomThresholdFactorTextBox.TabIndex = 4;
-            // 
-            // RoomRoomThresholdFactorLabel
-            // 
-            this.RoomRoomThresholdFactorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomRoomThresholdFactorLabel.AutoSize = true;
-            this.RoomRoomThresholdFactorLabel.Location = new System.Drawing.Point(17, 46);
-            this.RoomRoomThresholdFactorLabel.Name = "RoomRoomThresholdFactorLabel";
-            this.RoomRoomThresholdFactorLabel.Size = new System.Drawing.Size(118, 26);
-            this.RoomRoomThresholdFactorLabel.TabIndex = 5;
-            this.RoomRoomThresholdFactorLabel.Text = "Room Threshold Factor";
+            this.RoomMaxWalkableSpacesTextBox.Location = new System.Drawing.Point(160, 27);
+            this.RoomMaxWalkableSpacesTextBox.Name = "RoomMaxWalkableSpacesTextBox";
+            this.RoomMaxWalkableSpacesTextBox.Size = new System.Drawing.Size(114, 20);
+            this.RoomMaxWalkableSpacesTextBox.TabIndex = 3;
             // 
             // RoomPictureEditButton
             // 
@@ -2581,12 +2557,11 @@ namespace Scribe
         private System.Windows.Forms.ListBox RoomEntryRequirementsListBox;
         private System.Windows.Forms.ListBox RoomParquetCriteriaListBox;
         private System.Windows.Forms.TableLayoutPanel RoomConfigTableLayoutPanel;
-        private System.Windows.Forms.Label RoomLandThresholdFactorLabel;
-        private System.Windows.Forms.Label RoomLiquidThresholdFactorLabel;
-        private System.Windows.Forms.TextBox RoomLandThresholdTextBox;
-        private System.Windows.Forms.TextBox RoomLiquidThresholdFactorTextBox;
-        private System.Windows.Forms.TextBox RoomRoomThresholdFactorTextBox;
-        private System.Windows.Forms.Label RoomRoomThresholdFactorLabel;
+        private System.Windows.Forms.Label RoomMinWalkableSpacesLabel;
+        private System.Windows.Forms.Label RoomMaxWalkableSpacesLabel;
+        private System.Windows.Forms.TextBox RoomMinWalkableSpacesTextBox;
+        private System.Windows.Forms.TextBox RoomMaxWalkableSpacesTextBox;
+        private System.Windows.Forms.TextBox MaxWalkableSpacesTextBox;
     }
 }
 
