@@ -81,8 +81,8 @@ namespace Scribe
         /// <param name="e">Addional event data.</param>
         private void ReloadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(ExitWarningMessage,
-                                ExitWarningCaption,
+            if (MessageBox.Show(ReloadWarningMessage,
+                                ReloadWarningCaption,
                                 MessageBoxButtons.YesNo,
                                 MessageBoxIcon.Warning) == DialogResult.Yes)
             {
