@@ -2135,7 +2135,7 @@ namespace Scribe
             this.RoomTableLayoutPanel.Controls.Add(this.RoomCommentTextBox, 1, 2);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomTierTextBox, 1, 3);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomRequiredFurnishingsLabel, 0, 4);
-            this.RoomTableLayoutPanel.Controls.Add(this.RoomRequiredFurnishingsTextBox, 1, 4);
+            this.RoomTableLayoutPanel.Controls.Add(this.RoomRequiredFurnishingsListBox, 1, 4);
             this.RoomTableLayoutPanel.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.RoomTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
             this.RoomTableLayoutPanel.Name = "RoomTableLayoutPanel";
