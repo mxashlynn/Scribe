@@ -12,6 +12,9 @@ namespace Scribe
         /// <summary>Reference to the dialogue displaying information about the application.</summary>
         private AboutBox AboutWindow;
 
+        /// <summary>Reference to the dialogue displaying information about the application.</summary>
+        private OptionsBox OptionsWindow;
+
         /// <summary>A reminder to save before quitting.</summary>
         private const string ExitWarningMessage = "Really quit?  Unsaved changes will be lost!";
 
@@ -175,7 +178,10 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="e">Addional event data.</param>
         private void OptionsToolStripMenuItem_Click(object sender, EventArgs e)
-            => throw new NotImplementedException();
+        {
+            OptionsWindow ??= new OptionsBox();
+            OptionsWindow.ShowDialog();
+        }
 
         /// <summary>
         /// Responds to a user selecting the "Scribe Help" menu item.

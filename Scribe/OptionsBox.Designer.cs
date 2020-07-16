@@ -27,51 +27,51 @@ namespace Scribe
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.ApplyButton = new System.Windows.Forms.Button();
+            this.TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.OkayButton = new System.Windows.Forms.Button();
             this.LabelTheme = new System.Windows.Forms.Label();
+            this.PanelEditorTheme = new System.Windows.Forms.Panel();
             this.RadioButtonColorfulTheme = new System.Windows.Forms.RadioButton();
             this.RadioButtonLightTheme = new System.Windows.Forms.RadioButton();
-            this.PanelEditorTheme = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel.SuspendLayout();
+            this.TableLayoutPanel.SuspendLayout();
             this.PanelEditorTheme.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel
+            // TableLayoutPanel
             // 
-            this.tableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel.ColumnCount = 2;
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel.Controls.Add(this.ApplyButton, 1, 5);
-            this.tableLayoutPanel.Controls.Add(this.LabelTheme, 0, 0);
-            this.tableLayoutPanel.Controls.Add(this.PanelEditorTheme, 1, 0);
-            this.tableLayoutPanel.Location = new System.Drawing.Point(10, 10);
-            this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tableLayoutPanel.Name = "tableLayoutPanel";
-            this.tableLayoutPanel.RowCount = 6;
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(486, 306);
-            this.tableLayoutPanel.TabIndex = 0;
+            this.TableLayoutPanel.ColumnCount = 2;
+            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
+            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.TableLayoutPanel.Controls.Add(this.OkayButton, 1, 5);
+            this.TableLayoutPanel.Controls.Add(this.LabelTheme, 0, 0);
+            this.TableLayoutPanel.Controls.Add(this.PanelEditorTheme, 1, 0);
+            this.TableLayoutPanel.Location = new System.Drawing.Point(10, 10);
+            this.TableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.TableLayoutPanel.Name = "TableLayoutPanel";
+            this.TableLayoutPanel.RowCount = 6;
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.TableLayoutPanel.Size = new System.Drawing.Size(486, 306);
+            this.TableLayoutPanel.TabIndex = 0;
             // 
-            // ApplyButton
+            // OkayButton
             // 
-            this.ApplyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ApplyButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ApplyButton.Location = new System.Drawing.Point(394, 276);
-            this.ApplyButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.ApplyButton.Name = "ApplyButton";
-            this.ApplyButton.Size = new System.Drawing.Size(88, 27);
-            this.ApplyButton.TabIndex = 24;
-            this.ApplyButton.Text = "&Apply";
+            this.OkayButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.OkayButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.OkayButton.Location = new System.Drawing.Point(394, 276);
+            this.OkayButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.OkayButton.Name = "OkayButton";
+            this.OkayButton.Size = new System.Drawing.Size(88, 27);
+            this.OkayButton.TabIndex = 24;
+            this.OkayButton.Text = "&OK";
             // 
             // LabelTheme
             // 
@@ -85,9 +85,22 @@ namespace Scribe
             this.LabelTheme.Text = "Editor Theme";
             this.LabelTheme.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // PanelEditorTheme
+            // 
+            this.PanelEditorTheme.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PanelEditorTheme.Controls.Add(this.RadioButtonColorfulTheme);
+            this.PanelEditorTheme.Controls.Add(this.RadioButtonLightTheme);
+            this.PanelEditorTheme.Location = new System.Drawing.Point(163, 3);
+            this.PanelEditorTheme.Name = "PanelEditorTheme";
+            this.PanelEditorTheme.Size = new System.Drawing.Size(320, 24);
+            this.PanelEditorTheme.TabIndex = 28;
+            // 
             // RadioButtonColorfulTheme
             // 
             this.RadioButtonColorfulTheme.AutoSize = true;
+            this.RadioButtonColorfulTheme.Checked = true;
             this.RadioButtonColorfulTheme.Location = new System.Drawing.Point(0, 5);
             this.RadioButtonColorfulTheme.Name = "RadioButtonColorfulTheme";
             this.RadioButtonColorfulTheme.Size = new System.Drawing.Size(75, 19);
@@ -103,41 +116,28 @@ namespace Scribe
             this.RadioButtonLightTheme.Name = "RadioButtonLightTheme";
             this.RadioButtonLightTheme.Size = new System.Drawing.Size(52, 19);
             this.RadioButtonLightTheme.TabIndex = 2;
-            this.RadioButtonLightTheme.TabStop = true;
             this.RadioButtonLightTheme.Text = "Light";
             this.RadioButtonLightTheme.UseVisualStyleBackColor = true;
             // 
-            // PanelEditorTheme
-            // 
-            this.PanelEditorTheme.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PanelEditorTheme.Controls.Add(this.RadioButtonColorfulTheme);
-            this.PanelEditorTheme.Controls.Add(this.RadioButtonLightTheme);
-            this.PanelEditorTheme.Location = new System.Drawing.Point(163, 3);
-            this.PanelEditorTheme.Name = "PanelEditorTheme";
-            this.PanelEditorTheme.Size = new System.Drawing.Size(320, 24);
-            this.PanelEditorTheme.TabIndex = 28;
-            // 
             // OptionsBox
             // 
-            this.AcceptButton = this.ApplyButton;
+            this.AcceptButton = this.OkayButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(507, 327);
-            this.Controls.Add(this.tableLayoutPanel);
+            this.Controls.Add(this.TableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "OptionsBox";
-            this.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Scribe Options";
-            this.tableLayoutPanel.ResumeLayout(false);
-            this.tableLayoutPanel.PerformLayout();
+            this.TableLayoutPanel.ResumeLayout(false);
+            this.TableLayoutPanel.PerformLayout();
             this.PanelEditorTheme.ResumeLayout(false);
             this.PanelEditorTheme.PerformLayout();
             this.ResumeLayout(false);
@@ -146,8 +146,8 @@ namespace Scribe
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
-        private System.Windows.Forms.Button ApplyButton;
+        private System.Windows.Forms.TableLayoutPanel TableLayoutPanel;
+        private System.Windows.Forms.Button OkayButton;
         private System.Windows.Forms.Label LabelTheme;
         private System.Windows.Forms.Panel PanelEditorTheme;
         private System.Windows.Forms.RadioButton RadioButtonColorfulTheme;
