@@ -225,29 +225,29 @@ namespace Scribe
             this.ScriptsTabPage = new System.Windows.Forms.TabPage();
             this.FiltersTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.FilterTextBox = new System.Windows.Forms.TextBox();
-            this.NameFilterCheckBox = new System.Windows.Forms.CheckBox();
-            this.StoryIDFilterCheckBox = new System.Windows.Forms.CheckBox();
-            this.DescriptionCheckBox = new System.Windows.Forms.CheckBox();
-            this.TagsCheckBox = new System.Windows.Forms.CheckBox();
-            this.CommentCheckBox = new System.Windows.Forms.CheckBox();
-            this.MoreCheckBox = new System.Windows.Forms.CheckBox();
+            this.FilterByNameCheckBox = new System.Windows.Forms.CheckBox();
+            this.FilterByStoryIDCheckBox = new System.Windows.Forms.CheckBox();
+            this.FilterByDescriptionCheckBox = new System.Windows.Forms.CheckBox();
+            this.FilterByTagsCheckBox = new System.Windows.Forms.CheckBox();
+            this.FilterByCommentCheckBox = new System.Windows.Forms.CheckBox();
+            this.FilterByMoreCheckBox = new System.Windows.Forms.CheckBox();
             this.FilterGroupBox = new System.Windows.Forms.GroupBox();
             this.FlavorFilterGroupBox = new System.Windows.Forms.GroupBox();
             this.FlavorTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.SavourySelector = new System.Windows.Forms.Label();
-            this.MetallicSelector = new System.Windows.Forms.Label();
-            this.FreshSelector = new System.Windows.Forms.Label();
-            this.PungentSelector = new System.Windows.Forms.Label();
-            this.NoFlavorsSelector = new System.Windows.Forms.Label();
-            this.ChemicalSelector = new System.Windows.Forms.Label();
-            this.AstringentSelector = new System.Windows.Forms.Label();
-            this.SweetSelector = new System.Windows.Forms.Label();
-            this.BlandSelector = new System.Windows.Forms.Label();
-            this.BitterSelector = new System.Windows.Forms.Label();
-            this.SourSelector = new System.Windows.Forms.Label();
-            this.SaltySelector = new System.Windows.Forms.Label();
-            this.NumbingSelector = new System.Windows.Forms.Label();
-            this.AllFlavorsSelector = new System.Windows.Forms.Label();
+            this.FlavorSavourySelector = new System.Windows.Forms.Label();
+            this.FlavorMetallicSelector = new System.Windows.Forms.Label();
+            this.FlavorFreshSelector = new System.Windows.Forms.Label();
+            this.FlavorPungentSelector = new System.Windows.Forms.Label();
+            this.FlavorNoFlavorsSelector = new System.Windows.Forms.Label();
+            this.FlavorChemicalSelector = new System.Windows.Forms.Label();
+            this.FlavorAstringentSelector = new System.Windows.Forms.Label();
+            this.FlavorSweetSelector = new System.Windows.Forms.Label();
+            this.FlavorBlandSelector = new System.Windows.Forms.Label();
+            this.FlavorBitterSelector = new System.Windows.Forms.Label();
+            this.FlavorSourSelector = new System.Windows.Forms.Label();
+            this.FlavorSaltySelector = new System.Windows.Forms.Label();
+            this.FlavorNumbingSelector = new System.Windows.Forms.Label();
+            this.FlavorAllFlavorsSelector = new System.Windows.Forms.Label();
             this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
             this.EditorTabs.SuspendLayout();
@@ -2380,12 +2380,12 @@ namespace Scribe
             this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.FiltersTableLayoutPanel.Controls.Add(this.FilterTextBox, 0, 0);
-            this.FiltersTableLayoutPanel.Controls.Add(this.NameFilterCheckBox, 1, 0);
-            this.FiltersTableLayoutPanel.Controls.Add(this.StoryIDFilterCheckBox, 1, 1);
-            this.FiltersTableLayoutPanel.Controls.Add(this.DescriptionCheckBox, 2, 0);
-            this.FiltersTableLayoutPanel.Controls.Add(this.TagsCheckBox, 2, 1);
-            this.FiltersTableLayoutPanel.Controls.Add(this.CommentCheckBox, 3, 0);
-            this.FiltersTableLayoutPanel.Controls.Add(this.MoreCheckBox, 3, 1);
+            this.FiltersTableLayoutPanel.Controls.Add(this.FilterByNameCheckBox, 1, 0);
+            this.FiltersTableLayoutPanel.Controls.Add(this.FilterByStoryIDCheckBox, 1, 1);
+            this.FiltersTableLayoutPanel.Controls.Add(this.FilterByDescriptionCheckBox, 2, 0);
+            this.FiltersTableLayoutPanel.Controls.Add(this.FilterByTagsCheckBox, 2, 1);
+            this.FiltersTableLayoutPanel.Controls.Add(this.FilterByCommentCheckBox, 3, 0);
+            this.FiltersTableLayoutPanel.Controls.Add(this.FilterByMoreCheckBox, 3, 1);
             this.FiltersTableLayoutPanel.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.FiltersTableLayoutPanel.Location = new System.Drawing.Point(6, 21);
             this.FiltersTableLayoutPanel.Name = "FiltersTableLayoutPanel";
@@ -2402,65 +2402,65 @@ namespace Scribe
             this.FilterTextBox.Size = new System.Drawing.Size(144, 20);
             this.FilterTextBox.TabIndex = 2;
             //
-            // NameFilterCheckBox
+            // FilterByNameCheckBox
             //
-            this.NameFilterCheckBox.AutoSize = true;
-            this.NameFilterCheckBox.Location = new System.Drawing.Point(153, 3);
-            this.NameFilterCheckBox.Name = "NameFilterCheckBox";
-            this.NameFilterCheckBox.Size = new System.Drawing.Size(53, 17);
-            this.NameFilterCheckBox.TabIndex = 3;
-            this.NameFilterCheckBox.Text = "Name";
-            this.NameFilterCheckBox.UseVisualStyleBackColor = true;
+            this.FilterByNameCheckBox.AutoSize = true;
+            this.FilterByNameCheckBox.Location = new System.Drawing.Point(153, 3);
+            this.FilterByNameCheckBox.Name = "FilterByNameCheckBox";
+            this.FilterByNameCheckBox.Size = new System.Drawing.Size(53, 17);
+            this.FilterByNameCheckBox.TabIndex = 3;
+            this.FilterByNameCheckBox.Text = "Name";
+            this.FilterByNameCheckBox.UseVisualStyleBackColor = true;
             //
-            // StoryIDFilterCheckBox
+            // FilterByStoryIDCheckBox
             //
-            this.StoryIDFilterCheckBox.AutoSize = true;
-            this.StoryIDFilterCheckBox.Location = new System.Drawing.Point(153, 28);
-            this.StoryIDFilterCheckBox.Name = "StoryIDFilterCheckBox";
-            this.StoryIDFilterCheckBox.Size = new System.Drawing.Size(66, 17);
-            this.StoryIDFilterCheckBox.TabIndex = 6;
-            this.StoryIDFilterCheckBox.Text = "Story ID";
-            this.StoryIDFilterCheckBox.UseVisualStyleBackColor = true;
+            this.FilterByStoryIDCheckBox.AutoSize = true;
+            this.FilterByStoryIDCheckBox.Location = new System.Drawing.Point(153, 28);
+            this.FilterByStoryIDCheckBox.Name = "FilterByStoryIDCheckBox";
+            this.FilterByStoryIDCheckBox.Size = new System.Drawing.Size(66, 17);
+            this.FilterByStoryIDCheckBox.TabIndex = 6;
+            this.FilterByStoryIDCheckBox.Text = "Story ID";
+            this.FilterByStoryIDCheckBox.UseVisualStyleBackColor = true;
             //
-            // DescriptionCheckBox
+            // FilterByDescriptionCheckBox
             //
-            this.DescriptionCheckBox.AutoSize = true;
-            this.DescriptionCheckBox.Location = new System.Drawing.Point(253, 3);
-            this.DescriptionCheckBox.Name = "DescriptionCheckBox";
-            this.DescriptionCheckBox.Size = new System.Drawing.Size(79, 17);
-            this.DescriptionCheckBox.TabIndex = 4;
-            this.DescriptionCheckBox.Text = "Description";
-            this.DescriptionCheckBox.UseVisualStyleBackColor = true;
+            this.FilterByDescriptionCheckBox.AutoSize = true;
+            this.FilterByDescriptionCheckBox.Location = new System.Drawing.Point(253, 3);
+            this.FilterByDescriptionCheckBox.Name = "FilterByDescriptionCheckBox";
+            this.FilterByDescriptionCheckBox.Size = new System.Drawing.Size(79, 17);
+            this.FilterByDescriptionCheckBox.TabIndex = 4;
+            this.FilterByDescriptionCheckBox.Text = "Description";
+            this.FilterByDescriptionCheckBox.UseVisualStyleBackColor = true;
             //
-            // TagsCheckBox
+            // FilterByTagsCheckBox
             //
-            this.TagsCheckBox.AutoSize = true;
-            this.TagsCheckBox.Location = new System.Drawing.Point(253, 28);
-            this.TagsCheckBox.Name = "TagsCheckBox";
-            this.TagsCheckBox.Size = new System.Drawing.Size(49, 17);
-            this.TagsCheckBox.TabIndex = 7;
-            this.TagsCheckBox.Text = "Tags";
-            this.TagsCheckBox.UseVisualStyleBackColor = true;
+            this.FilterByTagsCheckBox.AutoSize = true;
+            this.FilterByTagsCheckBox.Location = new System.Drawing.Point(253, 28);
+            this.FilterByTagsCheckBox.Name = "FilterByTagsCheckBox";
+            this.FilterByTagsCheckBox.Size = new System.Drawing.Size(49, 17);
+            this.FilterByTagsCheckBox.TabIndex = 7;
+            this.FilterByTagsCheckBox.Text = "Tags";
+            this.FilterByTagsCheckBox.UseVisualStyleBackColor = true;
             //
-            // CommentCheckBox
+            // FilterByCommentCheckBox
             //
-            this.CommentCheckBox.AutoSize = true;
-            this.CommentCheckBox.Location = new System.Drawing.Point(353, 3);
-            this.CommentCheckBox.Name = "CommentCheckBox";
-            this.CommentCheckBox.Size = new System.Drawing.Size(71, 17);
-            this.CommentCheckBox.TabIndex = 5;
-            this.CommentCheckBox.Text = "Comment";
-            this.CommentCheckBox.UseVisualStyleBackColor = true;
+            this.FilterByCommentCheckBox.AutoSize = true;
+            this.FilterByCommentCheckBox.Location = new System.Drawing.Point(353, 3);
+            this.FilterByCommentCheckBox.Name = "FilterByCommentCheckBox";
+            this.FilterByCommentCheckBox.Size = new System.Drawing.Size(71, 17);
+            this.FilterByCommentCheckBox.TabIndex = 5;
+            this.FilterByCommentCheckBox.Text = "Comment";
+            this.FilterByCommentCheckBox.UseVisualStyleBackColor = true;
             //
-            // MoreCheckBox
+            // FilterByMoreCheckBox
             //
-            this.MoreCheckBox.AutoSize = true;
-            this.MoreCheckBox.Location = new System.Drawing.Point(353, 28);
-            this.MoreCheckBox.Name = "MoreCheckBox";
-            this.MoreCheckBox.Size = new System.Drawing.Size(50, 17);
-            this.MoreCheckBox.TabIndex = 8;
-            this.MoreCheckBox.Text = "More";
-            this.MoreCheckBox.UseVisualStyleBackColor = true;
+            this.FilterByMoreCheckBox.AutoSize = true;
+            this.FilterByMoreCheckBox.Location = new System.Drawing.Point(353, 28);
+            this.FilterByMoreCheckBox.Name = "FilterByMoreCheckBox";
+            this.FilterByMoreCheckBox.Size = new System.Drawing.Size(50, 17);
+            this.FilterByMoreCheckBox.TabIndex = 8;
+            this.FilterByMoreCheckBox.Text = "More";
+            this.FilterByMoreCheckBox.UseVisualStyleBackColor = true;
             //
             // FilterGroupBox
             //
@@ -2492,20 +2492,20 @@ namespace Scribe
             this.FlavorTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.75F));
             this.FlavorTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.25F));
             this.FlavorTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14F));
-            this.FlavorTableLayoutPanel.Controls.Add(this.SavourySelector, 0, 1);
-            this.FlavorTableLayoutPanel.Controls.Add(this.MetallicSelector, 0, 1);
-            this.FlavorTableLayoutPanel.Controls.Add(this.FreshSelector, 0, 1);
-            this.FlavorTableLayoutPanel.Controls.Add(this.PungentSelector, 0, 1);
-            this.FlavorTableLayoutPanel.Controls.Add(this.NoFlavorsSelector, 0, 1);
-            this.FlavorTableLayoutPanel.Controls.Add(this.ChemicalSelector, 0, 1);
-            this.FlavorTableLayoutPanel.Controls.Add(this.AstringentSelector, 0, 1);
-            this.FlavorTableLayoutPanel.Controls.Add(this.SweetSelector, 1, 0);
-            this.FlavorTableLayoutPanel.Controls.Add(this.BlandSelector, 0, 0);
-            this.FlavorTableLayoutPanel.Controls.Add(this.BitterSelector, 4, 0);
-            this.FlavorTableLayoutPanel.Controls.Add(this.SourSelector, 3, 0);
-            this.FlavorTableLayoutPanel.Controls.Add(this.SaltySelector, 2, 0);
-            this.FlavorTableLayoutPanel.Controls.Add(this.NumbingSelector, 5, 0);
-            this.FlavorTableLayoutPanel.Controls.Add(this.AllFlavorsSelector, 6, 0);
+            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorSavourySelector, 0, 1);
+            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorMetallicSelector, 0, 1);
+            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorFreshSelector, 0, 1);
+            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorPungentSelector, 0, 1);
+            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorNoFlavorsSelector, 0, 1);
+            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorChemicalSelector, 0, 1);
+            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorAstringentSelector, 0, 1);
+            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorSweetSelector, 1, 0);
+            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorBlandSelector, 0, 0);
+            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorBitterSelector, 4, 0);
+            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorSourSelector, 3, 0);
+            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorSaltySelector, 2, 0);
+            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorNumbingSelector, 5, 0);
+            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorAllFlavorsSelector, 6, 0);
             this.FlavorTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
             this.FlavorTableLayoutPanel.Name = "FlavorTableLayoutPanel";
             this.FlavorTableLayoutPanel.RowCount = 2;
@@ -2514,215 +2514,215 @@ namespace Scribe
             this.FlavorTableLayoutPanel.Size = new System.Drawing.Size(479, 52);
             this.FlavorTableLayoutPanel.TabIndex = 0;
             //
-            // SavourySelector
+            // FlavorSavourySelector
             //
-            this.SavourySelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.FlavorSavourySelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SavourySelector.AutoSize = true;
-            this.SavourySelector.BackColor = System.Drawing.Color.PapayaWhip;
-            this.SavourySelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SavourySelector.Location = new System.Drawing.Point(3, 26);
-            this.SavourySelector.Name = "SavourySelector";
-            this.SavourySelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.SavourySelector.Size = new System.Drawing.Size(62, 26);
-            this.SavourySelector.TabIndex = 0;
-            this.SavourySelector.Text = "Savoury";
+            this.FlavorSavourySelector.AutoSize = true;
+            this.FlavorSavourySelector.BackColor = System.Drawing.Color.PapayaWhip;
+            this.FlavorSavourySelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorSavourySelector.Location = new System.Drawing.Point(3, 26);
+            this.FlavorSavourySelector.Name = "FlavorSavourySelector";
+            this.FlavorSavourySelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.FlavorSavourySelector.Size = new System.Drawing.Size(62, 26);
+            this.FlavorSavourySelector.TabIndex = 0;
+            this.FlavorSavourySelector.Text = "Savoury";
             //
-            // MetallicSelector
+            // FlavorMetallicSelector
             //
-            this.MetallicSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.FlavorMetallicSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.MetallicSelector.AutoSize = true;
-            this.MetallicSelector.BackColor = System.Drawing.Color.Gainsboro;
-            this.MetallicSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MetallicSelector.Location = new System.Drawing.Point(207, 26);
-            this.MetallicSelector.Name = "MetallicSelector";
-            this.MetallicSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.MetallicSelector.Size = new System.Drawing.Size(62, 26);
-            this.MetallicSelector.TabIndex = 0;
-            this.MetallicSelector.Text = "Metallic";
+            this.FlavorMetallicSelector.AutoSize = true;
+            this.FlavorMetallicSelector.BackColor = System.Drawing.Color.Gainsboro;
+            this.FlavorMetallicSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorMetallicSelector.Location = new System.Drawing.Point(207, 26);
+            this.FlavorMetallicSelector.Name = "FlavorMetallicSelector";
+            this.FlavorMetallicSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.FlavorMetallicSelector.Size = new System.Drawing.Size(62, 26);
+            this.FlavorMetallicSelector.TabIndex = 0;
+            this.FlavorMetallicSelector.Text = "Metallic";
             //
-            // FreshSelector
+            // FlavorFreshSelector
             //
-            this.FreshSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.FlavorFreshSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.FreshSelector.AutoSize = true;
-            this.FreshSelector.BackColor = System.Drawing.Color.LightCyan;
-            this.FreshSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FreshSelector.Location = new System.Drawing.Point(139, 26);
-            this.FreshSelector.Name = "FreshSelector";
-            this.FreshSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.FreshSelector.Size = new System.Drawing.Size(62, 26);
-            this.FreshSelector.TabIndex = 0;
-            this.FreshSelector.Text = "Fresh";
+            this.FlavorFreshSelector.AutoSize = true;
+            this.FlavorFreshSelector.BackColor = System.Drawing.Color.LightCyan;
+            this.FlavorFreshSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorFreshSelector.Location = new System.Drawing.Point(139, 26);
+            this.FlavorFreshSelector.Name = "FlavorFreshSelector";
+            this.FlavorFreshSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.FlavorFreshSelector.Size = new System.Drawing.Size(62, 26);
+            this.FlavorFreshSelector.TabIndex = 0;
+            this.FlavorFreshSelector.Text = "Fresh";
             //
-            // PungentSelector
+            // FlavorPungentSelector
             //
-            this.PungentSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.FlavorPungentSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.PungentSelector.AutoSize = true;
-            this.PungentSelector.BackColor = System.Drawing.Color.Pink;
-            this.PungentSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PungentSelector.Location = new System.Drawing.Point(71, 26);
-            this.PungentSelector.Name = "PungentSelector";
-            this.PungentSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.PungentSelector.Size = new System.Drawing.Size(62, 26);
-            this.PungentSelector.TabIndex = 0;
-            this.PungentSelector.Text = "Pungent";
+            this.FlavorPungentSelector.AutoSize = true;
+            this.FlavorPungentSelector.BackColor = System.Drawing.Color.Pink;
+            this.FlavorPungentSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorPungentSelector.Location = new System.Drawing.Point(71, 26);
+            this.FlavorPungentSelector.Name = "FlavorPungentSelector";
+            this.FlavorPungentSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.FlavorPungentSelector.Size = new System.Drawing.Size(62, 26);
+            this.FlavorPungentSelector.TabIndex = 0;
+            this.FlavorPungentSelector.Text = "Pungent";
             //
-            // NoFlavorsSelector
+            // FlavorNoFlavorsSelector
             //
-            this.NoFlavorsSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.FlavorNoFlavorsSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.NoFlavorsSelector.AutoSize = true;
-            this.NoFlavorsSelector.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.NoFlavorsSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.NoFlavorsSelector.Location = new System.Drawing.Point(413, 26);
-            this.NoFlavorsSelector.Name = "NoFlavorsSelector";
-            this.NoFlavorsSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.NoFlavorsSelector.Size = new System.Drawing.Size(63, 26);
-            this.NoFlavorsSelector.TabIndex = 0;
-            this.NoFlavorsSelector.Text = "(None)";
+            this.FlavorNoFlavorsSelector.AutoSize = true;
+            this.FlavorNoFlavorsSelector.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.FlavorNoFlavorsSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorNoFlavorsSelector.Location = new System.Drawing.Point(413, 26);
+            this.FlavorNoFlavorsSelector.Name = "FlavorNoFlavorsSelector";
+            this.FlavorNoFlavorsSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.FlavorNoFlavorsSelector.Size = new System.Drawing.Size(63, 26);
+            this.FlavorNoFlavorsSelector.TabIndex = 0;
+            this.FlavorNoFlavorsSelector.Text = "(None)";
             //
-            // ChemicalSelector
+            // FlavorChemicalSelector
             //
-            this.ChemicalSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.FlavorChemicalSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ChemicalSelector.AutoSize = true;
-            this.ChemicalSelector.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ChemicalSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ChemicalSelector.Location = new System.Drawing.Point(345, 26);
-            this.ChemicalSelector.Name = "ChemicalSelector";
-            this.ChemicalSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.ChemicalSelector.Size = new System.Drawing.Size(62, 26);
-            this.ChemicalSelector.TabIndex = 0;
-            this.ChemicalSelector.Text = "Chemical";
+            this.FlavorChemicalSelector.AutoSize = true;
+            this.FlavorChemicalSelector.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.FlavorChemicalSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorChemicalSelector.Location = new System.Drawing.Point(345, 26);
+            this.FlavorChemicalSelector.Name = "FlavorChemicalSelector";
+            this.FlavorChemicalSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.FlavorChemicalSelector.Size = new System.Drawing.Size(62, 26);
+            this.FlavorChemicalSelector.TabIndex = 0;
+            this.FlavorChemicalSelector.Text = "Chemical";
             //
-            // AstringentSelector
+            // FlavorAstringentSelector
             //
-            this.AstringentSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.FlavorAstringentSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.AstringentSelector.AutoSize = true;
-            this.AstringentSelector.BackColor = System.Drawing.Color.Moccasin;
-            this.AstringentSelector.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AstringentSelector.Location = new System.Drawing.Point(275, 26);
-            this.AstringentSelector.Name = "AstringentSelector";
-            this.AstringentSelector.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.AstringentSelector.Size = new System.Drawing.Size(64, 26);
-            this.AstringentSelector.TabIndex = 0;
-            this.AstringentSelector.Text = "Astringent";
+            this.FlavorAstringentSelector.AutoSize = true;
+            this.FlavorAstringentSelector.BackColor = System.Drawing.Color.Moccasin;
+            this.FlavorAstringentSelector.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorAstringentSelector.Location = new System.Drawing.Point(275, 26);
+            this.FlavorAstringentSelector.Name = "FlavorAstringentSelector";
+            this.FlavorAstringentSelector.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.FlavorAstringentSelector.Size = new System.Drawing.Size(64, 26);
+            this.FlavorAstringentSelector.TabIndex = 0;
+            this.FlavorAstringentSelector.Text = "Astringent";
             //
-            // SweetSelector
+            // FlavorSweetSelector
             //
-            this.SweetSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.FlavorSweetSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SweetSelector.AutoSize = true;
-            this.SweetSelector.BackColor = System.Drawing.Color.MistyRose;
-            this.SweetSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SweetSelector.Location = new System.Drawing.Point(71, 0);
-            this.SweetSelector.Name = "SweetSelector";
-            this.SweetSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.SweetSelector.Size = new System.Drawing.Size(62, 26);
-            this.SweetSelector.TabIndex = 0;
-            this.SweetSelector.Text = "Sweet";
+            this.FlavorSweetSelector.AutoSize = true;
+            this.FlavorSweetSelector.BackColor = System.Drawing.Color.MistyRose;
+            this.FlavorSweetSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorSweetSelector.Location = new System.Drawing.Point(71, 0);
+            this.FlavorSweetSelector.Name = "FlavorSweetSelector";
+            this.FlavorSweetSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.FlavorSweetSelector.Size = new System.Drawing.Size(62, 26);
+            this.FlavorSweetSelector.TabIndex = 0;
+            this.FlavorSweetSelector.Text = "Sweet";
             //
-            // BlandSelector
+            // FlavorBlandSelector
             //
-            this.BlandSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.FlavorBlandSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlandSelector.AutoSize = true;
-            this.BlandSelector.BackColor = System.Drawing.Color.NavajoWhite;
-            this.BlandSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BlandSelector.Location = new System.Drawing.Point(3, 0);
-            this.BlandSelector.Name = "BlandSelector";
-            this.BlandSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.BlandSelector.Size = new System.Drawing.Size(62, 26);
-            this.BlandSelector.TabIndex = 0;
-            this.BlandSelector.Text = "Bland";
+            this.FlavorBlandSelector.AutoSize = true;
+            this.FlavorBlandSelector.BackColor = System.Drawing.Color.NavajoWhite;
+            this.FlavorBlandSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorBlandSelector.Location = new System.Drawing.Point(3, 0);
+            this.FlavorBlandSelector.Name = "FlavorBlandSelector";
+            this.FlavorBlandSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.FlavorBlandSelector.Size = new System.Drawing.Size(62, 26);
+            this.FlavorBlandSelector.TabIndex = 0;
+            this.FlavorBlandSelector.Text = "Bland";
             //
-            // BitterSelector
+            // FlavorBitterSelector
             //
-            this.BitterSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.FlavorBitterSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.BitterSelector.AutoSize = true;
-            this.BitterSelector.BackColor = System.Drawing.Color.LightGreen;
-            this.BitterSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BitterSelector.Location = new System.Drawing.Point(275, 0);
-            this.BitterSelector.Name = "BitterSelector";
-            this.BitterSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.BitterSelector.Size = new System.Drawing.Size(64, 26);
-            this.BitterSelector.TabIndex = 0;
-            this.BitterSelector.Text = "Bitter";
+            this.FlavorBitterSelector.AutoSize = true;
+            this.FlavorBitterSelector.BackColor = System.Drawing.Color.LightGreen;
+            this.FlavorBitterSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorBitterSelector.Location = new System.Drawing.Point(275, 0);
+            this.FlavorBitterSelector.Name = "FlavorBitterSelector";
+            this.FlavorBitterSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.FlavorBitterSelector.Size = new System.Drawing.Size(64, 26);
+            this.FlavorBitterSelector.TabIndex = 0;
+            this.FlavorBitterSelector.Text = "Bitter";
             //
-            // SourSelector
+            // FlavorSourSelector
             //
-            this.SourSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.FlavorSourSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SourSelector.AutoSize = true;
-            this.SourSelector.BackColor = System.Drawing.Color.LemonChiffon;
-            this.SourSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SourSelector.Location = new System.Drawing.Point(207, 0);
-            this.SourSelector.Name = "SourSelector";
-            this.SourSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.SourSelector.Size = new System.Drawing.Size(62, 26);
-            this.SourSelector.TabIndex = 0;
-            this.SourSelector.Text = "Sour";
+            this.FlavorSourSelector.AutoSize = true;
+            this.FlavorSourSelector.BackColor = System.Drawing.Color.LemonChiffon;
+            this.FlavorSourSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorSourSelector.Location = new System.Drawing.Point(207, 0);
+            this.FlavorSourSelector.Name = "FlavorSourSelector";
+            this.FlavorSourSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.FlavorSourSelector.Size = new System.Drawing.Size(62, 26);
+            this.FlavorSourSelector.TabIndex = 0;
+            this.FlavorSourSelector.Text = "Sour";
             //
-            // SaltySelector
+            // FlavorSaltySelector
             //
-            this.SaltySelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.FlavorSaltySelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SaltySelector.AutoSize = true;
-            this.SaltySelector.BackColor = System.Drawing.Color.PowderBlue;
-            this.SaltySelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SaltySelector.Location = new System.Drawing.Point(139, 0);
-            this.SaltySelector.Name = "SaltySelector";
-            this.SaltySelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.SaltySelector.Size = new System.Drawing.Size(62, 26);
-            this.SaltySelector.TabIndex = 0;
-            this.SaltySelector.Text = "Salty";
+            this.FlavorSaltySelector.AutoSize = true;
+            this.FlavorSaltySelector.BackColor = System.Drawing.Color.PowderBlue;
+            this.FlavorSaltySelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorSaltySelector.Location = new System.Drawing.Point(139, 0);
+            this.FlavorSaltySelector.Name = "FlavorSaltySelector";
+            this.FlavorSaltySelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.FlavorSaltySelector.Size = new System.Drawing.Size(62, 26);
+            this.FlavorSaltySelector.TabIndex = 0;
+            this.FlavorSaltySelector.Text = "Salty";
             //
-            // NumbingSelector
+            // FlavorNumbingSelector
             //
-            this.NumbingSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.FlavorNumbingSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.NumbingSelector.AutoSize = true;
-            this.NumbingSelector.BackColor = System.Drawing.Color.Plum;
-            this.NumbingSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.NumbingSelector.Location = new System.Drawing.Point(345, 0);
-            this.NumbingSelector.Name = "NumbingSelector";
-            this.NumbingSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.NumbingSelector.Size = new System.Drawing.Size(62, 26);
-            this.NumbingSelector.TabIndex = 0;
-            this.NumbingSelector.Text = "Numbing";
+            this.FlavorNumbingSelector.AutoSize = true;
+            this.FlavorNumbingSelector.BackColor = System.Drawing.Color.Plum;
+            this.FlavorNumbingSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorNumbingSelector.Location = new System.Drawing.Point(345, 0);
+            this.FlavorNumbingSelector.Name = "FlavorNumbingSelector";
+            this.FlavorNumbingSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.FlavorNumbingSelector.Size = new System.Drawing.Size(62, 26);
+            this.FlavorNumbingSelector.TabIndex = 0;
+            this.FlavorNumbingSelector.Text = "Numbing";
             //
-            // AllFlavorsSelector
+            // FlavorAllFlavorsSelector
             //
-            this.AllFlavorsSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.FlavorAllFlavorsSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.AllFlavorsSelector.AutoSize = true;
-            this.AllFlavorsSelector.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.AllFlavorsSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AllFlavorsSelector.Location = new System.Drawing.Point(413, 0);
-            this.AllFlavorsSelector.Name = "AllFlavorsSelector";
-            this.AllFlavorsSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.AllFlavorsSelector.Size = new System.Drawing.Size(63, 26);
-            this.AllFlavorsSelector.TabIndex = 0;
-            this.AllFlavorsSelector.Text = "(All)";
+            this.FlavorAllFlavorsSelector.AutoSize = true;
+            this.FlavorAllFlavorsSelector.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FlavorAllFlavorsSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorAllFlavorsSelector.Location = new System.Drawing.Point(413, 0);
+            this.FlavorAllFlavorsSelector.Name = "FlavorAllFlavorsSelector";
+            this.FlavorAllFlavorsSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.FlavorAllFlavorsSelector.Size = new System.Drawing.Size(63, 26);
+            this.FlavorAllFlavorsSelector.TabIndex = 0;
+            this.FlavorAllFlavorsSelector.Text = "(All)";
             //
             // EditorForm
             //
@@ -2840,29 +2840,29 @@ namespace Scribe
         private System.Windows.Forms.TabPage ScriptsTabPage;
         private System.Windows.Forms.TableLayoutPanel FiltersTableLayoutPanel;
         private System.Windows.Forms.TextBox FilterTextBox;
-        private System.Windows.Forms.CheckBox NameFilterCheckBox;
-        private System.Windows.Forms.CheckBox DescriptionCheckBox;
-        private System.Windows.Forms.CheckBox CommentCheckBox;
-        private System.Windows.Forms.CheckBox StoryIDFilterCheckBox;
-        private System.Windows.Forms.CheckBox TagsCheckBox;
-        private System.Windows.Forms.CheckBox MoreCheckBox;
+        private System.Windows.Forms.CheckBox FilterByNameCheckBox;
+        private System.Windows.Forms.CheckBox FilterByDescriptionCheckBox;
+        private System.Windows.Forms.CheckBox FilterByCommentCheckBox;
+        private System.Windows.Forms.CheckBox FilterByStoryIDCheckBox;
+        private System.Windows.Forms.CheckBox FilterByTagsCheckBox;
+        private System.Windows.Forms.CheckBox FilterByMoreCheckBox;
         private System.Windows.Forms.GroupBox FilterGroupBox;
         private System.Windows.Forms.GroupBox FlavorFilterGroupBox;
         private System.Windows.Forms.TableLayoutPanel FlavorTableLayoutPanel;
-        private System.Windows.Forms.Label SweetSelector;
-        private System.Windows.Forms.Label BlandSelector;
-        private System.Windows.Forms.Label SavourySelector;
-        private System.Windows.Forms.Label MetallicSelector;
-        private System.Windows.Forms.Label FreshSelector;
-        private System.Windows.Forms.Label PungentSelector;
-        private System.Windows.Forms.Label NoFlavorsSelector;
-        private System.Windows.Forms.Label ChemicalSelector;
-        private System.Windows.Forms.Label AstringentSelector;
-        private System.Windows.Forms.Label BitterSelector;
-        private System.Windows.Forms.Label SourSelector;
-        private System.Windows.Forms.Label SaltySelector;
-        private System.Windows.Forms.Label NumbingSelector;
-        private System.Windows.Forms.Label AllFlavorsSelector;
+        private System.Windows.Forms.Label FlavorSweetSelector;
+        private System.Windows.Forms.Label FlavorBlandSelector;
+        private System.Windows.Forms.Label FlavorSavourySelector;
+        private System.Windows.Forms.Label FlavorMetallicSelector;
+        private System.Windows.Forms.Label FlavorFreshSelector;
+        private System.Windows.Forms.Label FlavorPungentSelector;
+        private System.Windows.Forms.Label FlavorNoFlavorsSelector;
+        private System.Windows.Forms.Label FlavorChemicalSelector;
+        private System.Windows.Forms.Label FlavorAstringentSelector;
+        private System.Windows.Forms.Label FlavorBitterSelector;
+        private System.Windows.Forms.Label FlavorSourSelector;
+        private System.Windows.Forms.Label FlavorSaltySelector;
+        private System.Windows.Forms.Label FlavorNumbingSelector;
+        private System.Windows.Forms.Label FlavorAllFlavorsSelector;
         private System.Windows.Forms.ToolStripStatusLabel MainToolStripStatusLabel;
         private System.Windows.Forms.ToolStripProgressBar ToolStripProgressBar;
         private System.Windows.Forms.GroupBox LibraryInfoGroupBox;
