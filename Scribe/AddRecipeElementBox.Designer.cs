@@ -43,8 +43,8 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TableLayoutPanel.ColumnCount = 2;
-            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
+            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.TableLayoutPanel.Controls.Add(this.CancelButtonControl, 0, 2);
             this.TableLayoutPanel.Controls.Add(this.OkayButton, 1, 2);
             this.TableLayoutPanel.Controls.Add(this.ElementTagLabel, 0, 0);
@@ -63,9 +63,9 @@ namespace Scribe
             // CancelButtonControl
             // 
             this.CancelButtonControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CancelButtonControl.Location = new System.Drawing.Point(7, 89);
+            this.CancelButtonControl.Location = new System.Drawing.Point(3, 89);
             this.CancelButtonControl.Name = "CancelButtonControl";
-            this.CancelButtonControl.Size = new System.Drawing.Size(75, 23);
+            this.CancelButtonControl.Size = new System.Drawing.Size(74, 23);
             this.CancelButtonControl.TabIndex = 8;
             this.CancelButtonControl.Text = "Cancel";
             this.CancelButtonControl.UseVisualStyleBackColor = true;
@@ -94,10 +94,10 @@ namespace Scribe
             this.ElementTagTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ElementTagTextBox.Location = new System.Drawing.Point(88, 3);
+            this.ElementTagTextBox.Location = new System.Drawing.Point(83, 3);
             this.ElementTagTextBox.Multiline = true;
             this.ElementTagTextBox.Name = "ElementTagTextBox";
-            this.ElementTagTextBox.Size = new System.Drawing.Size(167, 49);
+            this.ElementTagTextBox.Size = new System.Drawing.Size(172, 49);
             this.ElementTagTextBox.TabIndex = 5;
             // 
             // ElementAmountLabel
@@ -111,7 +111,7 @@ namespace Scribe
             // 
             // ElementAmountTextBox
             // 
-            this.ElementAmountTextBox.Location = new System.Drawing.Point(88, 58);
+            this.ElementAmountTextBox.Location = new System.Drawing.Point(83, 58);
             this.ElementAmountTextBox.Name = "ElementAmountTextBox";
             this.ElementAmountTextBox.Size = new System.Drawing.Size(100, 23);
             this.ElementAmountTextBox.TabIndex = 7;

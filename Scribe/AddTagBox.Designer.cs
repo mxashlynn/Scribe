@@ -41,8 +41,8 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TableLayoutPanel.ColumnCount = 2;
-            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
+            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.TableLayoutPanel.Controls.Add(this.CancelButtonControl, 0, 1);
             this.TableLayoutPanel.Controls.Add(this.OkayButton, 1, 1);
             this.TableLayoutPanel.Controls.Add(this.NewTagLabel, 0, 0);
@@ -58,9 +58,9 @@ namespace Scribe
             // CancelButtonControl
             // 
             this.CancelButtonControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CancelButtonControl.Location = new System.Drawing.Point(7, 59);
+            this.CancelButtonControl.Location = new System.Drawing.Point(3, 59);
             this.CancelButtonControl.Name = "CancelButtonControl";
-            this.CancelButtonControl.Size = new System.Drawing.Size(75, 23);
+            this.CancelButtonControl.Size = new System.Drawing.Size(74, 23);
             this.CancelButtonControl.TabIndex = 9;
             this.CancelButtonControl.Text = "Cancel";
             this.CancelButtonControl.UseVisualStyleBackColor = true;
@@ -89,10 +89,10 @@ namespace Scribe
             this.NewTagTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.NewTagTextBox.Location = new System.Drawing.Point(88, 3);
+            this.NewTagTextBox.Location = new System.Drawing.Point(83, 3);
             this.NewTagTextBox.Multiline = true;
             this.NewTagTextBox.Name = "NewTagTextBox";
-            this.NewTagTextBox.Size = new System.Drawing.Size(167, 49);
+            this.NewTagTextBox.Size = new System.Drawing.Size(172, 49);
             this.NewTagTextBox.TabIndex = 2;
             // 
             // AddTagBox
