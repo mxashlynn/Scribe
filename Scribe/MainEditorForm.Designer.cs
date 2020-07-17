@@ -30,6 +30,7 @@ namespace Scribe
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainEditorForm));
             this.EditorStatusStrip = new System.Windows.Forms.StatusStrip();
             this.MainToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -250,6 +251,7 @@ namespace Scribe
             this.FlavorSaltySelector = new System.Windows.Forms.Label();
             this.FlavorNumbingSelector = new System.Windows.Forms.Label();
             this.FlavorAllFlavorsSelector = new System.Windows.Forms.Label();
+            this.EditorToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
             this.EditorTabs.SuspendLayout();
@@ -3013,6 +3015,7 @@ namespace Scribe
         private System.Windows.Forms.Label ItemParquetLabel;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ToolTip EditorToolTip;
     }
 }
 

@@ -28,6 +28,7 @@ namespace Scribe
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.CapacityLabel = new System.Windows.Forms.Label();
             this.InventorySlotsLabel = new System.Windows.Forms.Label();
             this.RemoveSlotButton = new System.Windows.Forms.Button();
@@ -37,6 +38,7 @@ namespace Scribe
             this.TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.OkayButton = new System.Windows.Forms.Button();
             this.CancelButtonControl = new System.Windows.Forms.Button();
+            this.EditorToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.TableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -175,5 +177,6 @@ namespace Scribe
         private System.Windows.Forms.TableLayoutPanel TableLayoutPanel;
         private System.Windows.Forms.Button OkayButton;
         private System.Windows.Forms.Button CancelButtonControl;
+        private System.Windows.Forms.ToolTip EditorToolTip;
     }
 }
