@@ -6,7 +6,7 @@ namespace Scribe
     /// <summary>
     /// The primary editing interface.
     /// </summary>
-    public partial class EditorForm : Form
+    public partial class MainEditorForm : Form
     {
         #region Child Forms and Data
         /// <summary>Reference to the dialogue displaying information about the application.</summary>
@@ -32,7 +32,7 @@ namespace Scribe
         /// <summary>
         /// Constructs a new instance of the main editor UI.
         /// </summary>
-        public EditorForm()
+        public MainEditorForm()
         {
             InitializeComponent();
 

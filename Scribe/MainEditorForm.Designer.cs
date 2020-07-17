@@ -2,7 +2,7 @@ using System;
 
 namespace Scribe
 {
-    partial class EditorForm
+    partial class MainEditorForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -30,7 +30,7 @@ namespace Scribe
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditorForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainEditorForm));
             this.EditorStatusStrip = new System.Windows.Forms.StatusStrip();
             this.MainToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.ToolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
@@ -2724,7 +2724,7 @@ namespace Scribe
             this.FlavorAllFlavorsSelector.TabIndex = 0;
             this.FlavorAllFlavorsSelector.Text = "(All)";
             // 
-            // EditorForm
+            // MainEditorForm
             // 
             this.AccessibleDescription = "The primary interactive editor window.";
             this.AccessibleName = "Editor Window";
@@ -2742,7 +2742,7 @@ namespace Scribe
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.Name = "EditorForm";
+            this.Name = "MainEditorForm";
             this.Text = "Scribe";
             this.EditorStatusStrip.ResumeLayout(false);
             this.EditorStatusStrip.PerformLayout();
