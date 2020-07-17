@@ -31,6 +31,7 @@ namespace Scribe
             this.OkayButton = new System.Windows.Forms.Button();
             this.NewTagLabel = new System.Windows.Forms.Label();
             this.NewTagTextBox = new System.Windows.Forms.TextBox();
+            this.CancelButtonControl = new System.Windows.Forms.Button();
             this.TableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,6 +43,7 @@ namespace Scribe
             this.TableLayoutPanel.ColumnCount = 2;
             this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
             this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
+            this.TableLayoutPanel.Controls.Add(this.CancelButtonControl, 0, 1);
             this.TableLayoutPanel.Controls.Add(this.OkayButton, 1, 1);
             this.TableLayoutPanel.Controls.Add(this.NewTagLabel, 0, 0);
             this.TableLayoutPanel.Controls.Add(this.NewTagTextBox, 1, 0);
@@ -83,11 +85,22 @@ namespace Scribe
             this.NewTagTextBox.Size = new System.Drawing.Size(167, 49);
             this.NewTagTextBox.TabIndex = 2;
             // 
+            // CancelButtonControl
+            // 
+            this.CancelButtonControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CancelButtonControl.Location = new System.Drawing.Point(7, 59);
+            this.CancelButtonControl.Name = "CancelButtonControl";
+            this.CancelButtonControl.Size = new System.Drawing.Size(75, 23);
+            this.CancelButtonControl.TabIndex = 9;
+            this.CancelButtonControl.Text = "&Cancel";
+            this.CancelButtonControl.UseVisualStyleBackColor = true;
+            // 
             // AddTagBox
             // 
             this.AcceptButton = this.OkayButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.CancelButtonControl;
             this.ClientSize = new System.Drawing.Size(284, 111);
             this.Controls.Add(this.TableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
@@ -96,7 +109,7 @@ namespace Scribe
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(300, 150);
             this.Name = "AddTagBox";
-            this.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -113,5 +126,6 @@ namespace Scribe
         private System.Windows.Forms.Button OkayButton;
         private System.Windows.Forms.Label NewTagLabel;
         private System.Windows.Forms.TextBox NewTagTextBox;
+        private System.Windows.Forms.Button CancelButtonControl;
     }
 }
