@@ -67,7 +67,7 @@ namespace Scribe
             this.CancelButtonControl.Name = "CancelButtonControl";
             this.CancelButtonControl.Size = new System.Drawing.Size(75, 23);
             this.CancelButtonControl.TabIndex = 8;
-            this.CancelButtonControl.Text = "&Cancel";
+            this.CancelButtonControl.Text = "Cancel";
             this.CancelButtonControl.UseVisualStyleBackColor = true;
             // 
             // OkayButton

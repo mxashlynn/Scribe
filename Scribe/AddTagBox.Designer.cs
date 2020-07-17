@@ -28,10 +28,10 @@ namespace Scribe
         private void InitializeComponent()
         {
             this.TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.CancelButtonControl = new System.Windows.Forms.Button();
             this.OkayButton = new System.Windows.Forms.Button();
             this.NewTagLabel = new System.Windows.Forms.Label();
             this.NewTagTextBox = new System.Windows.Forms.TextBox();
-            this.CancelButtonControl = new System.Windows.Forms.Button();
             this.TableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +54,16 @@ namespace Scribe
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.TableLayoutPanel.Size = new System.Drawing.Size(258, 85);
             this.TableLayoutPanel.TabIndex = 0;
+            // 
+            // CancelButtonControl
+            // 
+            this.CancelButtonControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CancelButtonControl.Location = new System.Drawing.Point(7, 59);
+            this.CancelButtonControl.Name = "CancelButtonControl";
+            this.CancelButtonControl.Size = new System.Drawing.Size(75, 23);
+            this.CancelButtonControl.TabIndex = 9;
+            this.CancelButtonControl.Text = "Cancel";
+            this.CancelButtonControl.UseVisualStyleBackColor = true;
             // 
             // OkayButton
             // 
@@ -84,16 +94,6 @@ namespace Scribe
             this.NewTagTextBox.Name = "NewTagTextBox";
             this.NewTagTextBox.Size = new System.Drawing.Size(167, 49);
             this.NewTagTextBox.TabIndex = 2;
-            // 
-            // CancelButtonControl
-            // 
-            this.CancelButtonControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CancelButtonControl.Location = new System.Drawing.Point(7, 59);
-            this.CancelButtonControl.Name = "CancelButtonControl";
-            this.CancelButtonControl.Size = new System.Drawing.Size(75, 23);
-            this.CancelButtonControl.TabIndex = 9;
-            this.CancelButtonControl.Text = "&Cancel";
-            this.CancelButtonControl.UseVisualStyleBackColor = true;
             // 
             // AddTagBox
             // 

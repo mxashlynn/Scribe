@@ -36,7 +36,7 @@ namespace Scribe
             this.LabelCopyright = new System.Windows.Forms.Label();
             this.LabelCompanyName = new System.Windows.Forms.Label();
             this.TextBoxDescription = new System.Windows.Forms.TextBox();
-            this.OKButton = new System.Windows.Forms.Button();
+            this.OkayButton = new System.Windows.Forms.Button();
             this.AboutToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
@@ -53,7 +53,7 @@ namespace Scribe
             this.tableLayoutPanel.Controls.Add(this.LabelCopyright, 1, 2);
             this.tableLayoutPanel.Controls.Add(this.LabelCompanyName, 1, 3);
             this.tableLayoutPanel.Controls.Add(this.TextBoxDescription, 1, 4);
-            this.tableLayoutPanel.Controls.Add(this.OKButton, 1, 6);
+            this.tableLayoutPanel.Controls.Add(this.OkayButton, 1, 6);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.Location = new System.Drawing.Point(10, 10);
             this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -146,23 +146,24 @@ namespace Scribe
             this.TextBoxDescription.TabStop = false;
             this.TextBoxDescription.Text = "Description";
             // 
-            // OKButton
+            // OkayButton
             // 
-            this.OKButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.OKButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.OKButton.Location = new System.Drawing.Point(395, 277);
-            this.OKButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.OKButton.Name = "OKButton";
-            this.OKButton.Size = new System.Drawing.Size(88, 27);
-            this.OKButton.TabIndex = 24;
-            this.OKButton.Text = "&OK";
-            this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
+            this.OkayButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.OkayButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.OkayButton.Location = new System.Drawing.Point(395, 277);
+            this.OkayButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.OkayButton.Name = "OkayButton";
+            this.OkayButton.Size = new System.Drawing.Size(88, 27);
+            this.OkayButton.TabIndex = 24;
+            this.OkayButton.Text = "&OK";
+            this.OkayButton.Click += new System.EventHandler(this.OKButton_Click);
             // 
             // AboutBox
             // 
-            this.AcceptButton = this.OKButton;
+            this.AcceptButton = this.OkayButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.OkayButton;
             this.ClientSize = new System.Drawing.Size(507, 327);
             this.Controls.Add(this.tableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -191,7 +192,7 @@ namespace Scribe
         private System.Windows.Forms.Label LabelCopyright;
         private System.Windows.Forms.Label LabelCompanyName;
         private System.Windows.Forms.TextBox TextBoxDescription;
-        private System.Windows.Forms.Button OKButton;
+        private System.Windows.Forms.Button OkayButton;
         private System.Windows.Forms.ToolTip AboutToolTip;
     }
 }
