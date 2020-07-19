@@ -154,6 +154,8 @@ namespace Scribe
             this.BiomeAddNewBiomeButton = new System.Windows.Forms.Button();
             this.BiomeIDTextBox = new System.Windows.Forms.TextBox();
             this.CraftingTabPage = new System.Windows.Forms.TabPage();
+            this.CraftsConfigGroupBox = new System.Windows.Forms.GroupBox();
+            this.CraftingConfigTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.ItemsTabPage = new System.Windows.Forms.TabPage();
             this.ItemAddTagButton = new System.Windows.Forms.Button();
             this.ItemDeleteTagButton = new System.Windows.Forms.Button();
@@ -252,6 +254,14 @@ namespace Scribe
             this.FlavorNumbingSelector = new System.Windows.Forms.Label();
             this.FlavorAllFlavorsSelector = new System.Windows.Forms.Label();
             this.EditorToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
             this.EditorTabs.SuspendLayout();
@@ -267,6 +277,9 @@ namespace Scribe
             this.BiomeConfigTableLayoutPanel.SuspendLayout();
             this.BiomeTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BiomePictureBox)).BeginInit();
+            this.CraftingTabPage.SuspendLayout();
+            this.CraftsConfigGroupBox.SuspendLayout();
+            this.CraftingConfigTableLayoutPanel.SuspendLayout();
             this.ItemsTabPage.SuspendLayout();
             this.ItemInventoriesGroupBox.SuspendLayout();
             this.ItemTableLayoutPanel.SuspendLayout();
@@ -1583,11 +1596,52 @@ namespace Scribe
             // CraftingTabPage
             // 
             this.CraftingTabPage.BackColor = System.Drawing.Color.Transparent;
+            this.CraftingTabPage.Controls.Add(this.CraftsConfigGroupBox);
             this.CraftingTabPage.Location = new System.Drawing.Point(4, 22);
             this.CraftingTabPage.Name = "CraftingTabPage";
             this.CraftingTabPage.Size = new System.Drawing.Size(953, 599);
             this.CraftingTabPage.TabIndex = 3;
             this.CraftingTabPage.Text = "Crafting";
+            // 
+            // CraftsConfigGroupBox
+            // 
+            this.CraftsConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CraftsConfigGroupBox.Controls.Add(this.CraftingConfigTableLayoutPanel);
+            this.CraftsConfigGroupBox.Location = new System.Drawing.Point(6, 496);
+            this.CraftsConfigGroupBox.Name = "CraftsConfigGroupBox";
+            this.CraftsConfigGroupBox.Size = new System.Drawing.Size(940, 100);
+            this.CraftsConfigGroupBox.TabIndex = 0;
+            this.CraftsConfigGroupBox.TabStop = false;
+            this.CraftsConfigGroupBox.Text = "Configuration";
+            // 
+            // CraftingConfigTableLayoutPanel
+            // 
+            this.CraftingConfigTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CraftingConfigTableLayoutPanel.ColumnCount = 5;
+            this.CraftingConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17F));
+            this.CraftingConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13F));
+            this.CraftingConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17F));
+            this.CraftingConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13F));
+            this.CraftingConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.CraftingConfigTableLayoutPanel.Controls.Add(this.label1, 0, 0);
+            this.CraftingConfigTableLayoutPanel.Controls.Add(this.label2, 0, 1);
+            this.CraftingConfigTableLayoutPanel.Controls.Add(this.label3, 2, 0);
+            this.CraftingConfigTableLayoutPanel.Controls.Add(this.label4, 2, 1);
+            this.CraftingConfigTableLayoutPanel.Controls.Add(this.textBox1, 1, 0);
+            this.CraftingConfigTableLayoutPanel.Controls.Add(this.textBox2, 1, 1);
+            this.CraftingConfigTableLayoutPanel.Controls.Add(this.textBox3, 3, 0);
+            this.CraftingConfigTableLayoutPanel.Controls.Add(this.textBox4, 3, 1);
+            this.CraftingConfigTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
+            this.CraftingConfigTableLayoutPanel.Name = "CraftingConfigTableLayoutPanel";
+            this.CraftingConfigTableLayoutPanel.RowCount = 3;
+            this.CraftingConfigTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.CraftingConfigTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.CraftingConfigTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.CraftingConfigTableLayoutPanel.Size = new System.Drawing.Size(928, 75);
+            this.CraftingConfigTableLayoutPanel.TabIndex = 0;
             // 
             // ItemsTabPage
             // 
@@ -2726,6 +2780,70 @@ namespace Scribe
             this.FlavorAllFlavorsSelector.TabIndex = 0;
             this.FlavorAllFlavorsSelector.Text = "(All)";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "label2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(280, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "label3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(280, 25);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "label4";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(160, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(23, 20);
+            this.textBox1.TabIndex = 4;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(160, 28);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(114, 20);
+            this.textBox2.TabIndex = 5;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(437, 3);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(114, 20);
+            this.textBox3.TabIndex = 6;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(437, 28);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(114, 20);
+            this.textBox4.TabIndex = 7;
+            // 
             // MainEditorForm
             // 
             this.AccessibleDescription = "The primary interactive editor window.";
@@ -2770,6 +2888,10 @@ namespace Scribe
             this.BiomeTableLayoutPanel.ResumeLayout(false);
             this.BiomeTableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BiomePictureBox)).EndInit();
+            this.CraftingTabPage.ResumeLayout(false);
+            this.CraftsConfigGroupBox.ResumeLayout(false);
+            this.CraftingConfigTableLayoutPanel.ResumeLayout(false);
+            this.CraftingConfigTableLayoutPanel.PerformLayout();
             this.ItemsTabPage.ResumeLayout(false);
             this.ItemsTabPage.PerformLayout();
             this.ItemInventoriesGroupBox.ResumeLayout(false);
@@ -3016,6 +3138,16 @@ namespace Scribe
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ToolTip EditorToolTip;
+        private System.Windows.Forms.GroupBox CraftsConfigGroupBox;
+        private System.Windows.Forms.TableLayoutPanel CraftingConfigTableLayoutPanel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }
 
