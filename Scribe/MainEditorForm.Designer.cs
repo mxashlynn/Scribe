@@ -156,6 +156,14 @@ namespace Scribe
             this.CraftingTabPage = new System.Windows.Forms.TabPage();
             this.CraftsConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CraftingConfigTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.MinIngredientCountLabel = new System.Windows.Forms.Label();
+            this.MinProductCountLabel = new System.Windows.Forms.Label();
+            this.MaxIngredientCountLabel = new System.Windows.Forms.Label();
+            this.MaxProductCountLabel = new System.Windows.Forms.Label();
+            this.MinIngredientCountTextBox = new System.Windows.Forms.TextBox();
+            this.MinProductCountTextBox = new System.Windows.Forms.TextBox();
+            this.MaxIngredientCountTextBox = new System.Windows.Forms.TextBox();
+            this.MaxProductCountTextBox = new System.Windows.Forms.TextBox();
             this.ItemsTabPage = new System.Windows.Forms.TabPage();
             this.ItemAddTagButton = new System.Windows.Forms.Button();
             this.ItemDeleteTagButton = new System.Windows.Forms.Button();
@@ -254,14 +262,6 @@ namespace Scribe
             this.FlavorNumbingSelector = new System.Windows.Forms.Label();
             this.FlavorAllFlavorsSelector = new System.Windows.Forms.Label();
             this.EditorToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
             this.EditorTabs.SuspendLayout();
@@ -1626,14 +1626,14 @@ namespace Scribe
             this.CraftingConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17F));
             this.CraftingConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13F));
             this.CraftingConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.CraftingConfigTableLayoutPanel.Controls.Add(this.label1, 0, 0);
-            this.CraftingConfigTableLayoutPanel.Controls.Add(this.label2, 0, 1);
-            this.CraftingConfigTableLayoutPanel.Controls.Add(this.label3, 2, 0);
-            this.CraftingConfigTableLayoutPanel.Controls.Add(this.label4, 2, 1);
-            this.CraftingConfigTableLayoutPanel.Controls.Add(this.textBox1, 1, 0);
-            this.CraftingConfigTableLayoutPanel.Controls.Add(this.textBox2, 1, 1);
-            this.CraftingConfigTableLayoutPanel.Controls.Add(this.textBox3, 3, 0);
-            this.CraftingConfigTableLayoutPanel.Controls.Add(this.textBox4, 3, 1);
+            this.CraftingConfigTableLayoutPanel.Controls.Add(this.MinIngredientCountLabel, 0, 0);
+            this.CraftingConfigTableLayoutPanel.Controls.Add(this.MinProductCountLabel, 0, 1);
+            this.CraftingConfigTableLayoutPanel.Controls.Add(this.MaxIngredientCountLabel, 2, 0);
+            this.CraftingConfigTableLayoutPanel.Controls.Add(this.MaxProductCountLabel, 2, 1);
+            this.CraftingConfigTableLayoutPanel.Controls.Add(this.MinIngredientCountTextBox, 1, 0);
+            this.CraftingConfigTableLayoutPanel.Controls.Add(this.MinProductCountTextBox, 1, 1);
+            this.CraftingConfigTableLayoutPanel.Controls.Add(this.MaxIngredientCountTextBox, 3, 0);
+            this.CraftingConfigTableLayoutPanel.Controls.Add(this.MaxProductCountTextBox, 3, 1);
             this.CraftingConfigTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
             this.CraftingConfigTableLayoutPanel.Name = "CraftingConfigTableLayoutPanel";
             this.CraftingConfigTableLayoutPanel.RowCount = 3;
@@ -1642,6 +1642,70 @@ namespace Scribe
             this.CraftingConfigTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.CraftingConfigTableLayoutPanel.Size = new System.Drawing.Size(928, 75);
             this.CraftingConfigTableLayoutPanel.TabIndex = 0;
+            // 
+            // MinIngredientCountLabel
+            // 
+            this.MinIngredientCountLabel.AutoSize = true;
+            this.MinIngredientCountLabel.Location = new System.Drawing.Point(3, 0);
+            this.MinIngredientCountLabel.Name = "MinIngredientCountLabel";
+            this.MinIngredientCountLabel.Size = new System.Drawing.Size(135, 13);
+            this.MinIngredientCountLabel.TabIndex = 0;
+            this.MinIngredientCountLabel.Text = "Minimum Ingredient Count ";
+            // 
+            // MinProductCountLabel
+            // 
+            this.MinProductCountLabel.AutoSize = true;
+            this.MinProductCountLabel.Location = new System.Drawing.Point(3, 24);
+            this.MinProductCountLabel.Name = "MinProductCountLabel";
+            this.MinProductCountLabel.Size = new System.Drawing.Size(119, 13);
+            this.MinProductCountLabel.TabIndex = 1;
+            this.MinProductCountLabel.Text = "Minimum Product Count";
+            // 
+            // MaxIngredientCountLabel
+            // 
+            this.MaxIngredientCountLabel.AutoSize = true;
+            this.MaxIngredientCountLabel.Location = new System.Drawing.Point(280, 0);
+            this.MaxIngredientCountLabel.Name = "MaxIngredientCountLabel";
+            this.MaxIngredientCountLabel.Size = new System.Drawing.Size(139, 13);
+            this.MaxIngredientCountLabel.TabIndex = 2;
+            this.MaxIngredientCountLabel.Text = "Maximum Ingredient Count ";
+            // 
+            // MaxProductCountLabel
+            // 
+            this.MaxProductCountLabel.AutoSize = true;
+            this.MaxProductCountLabel.Location = new System.Drawing.Point(280, 24);
+            this.MaxProductCountLabel.Name = "MaxProductCountLabel";
+            this.MaxProductCountLabel.Size = new System.Drawing.Size(123, 13);
+            this.MaxProductCountLabel.TabIndex = 3;
+            this.MaxProductCountLabel.Text = "Maximum Product Count";
+            // 
+            // MinIngredientCountTextBox
+            // 
+            this.MinIngredientCountTextBox.Location = new System.Drawing.Point(160, 3);
+            this.MinIngredientCountTextBox.Name = "MinIngredientCountTextBox";
+            this.MinIngredientCountTextBox.Size = new System.Drawing.Size(114, 20);
+            this.MinIngredientCountTextBox.TabIndex = 4;
+            // 
+            // MinProductCountTextBox
+            // 
+            this.MinProductCountTextBox.Location = new System.Drawing.Point(160, 27);
+            this.MinProductCountTextBox.Name = "MinProductCountTextBox";
+            this.MinProductCountTextBox.Size = new System.Drawing.Size(114, 20);
+            this.MinProductCountTextBox.TabIndex = 5;
+            // 
+            // MaxIngredientCountTextBox
+            // 
+            this.MaxIngredientCountTextBox.Location = new System.Drawing.Point(437, 3);
+            this.MaxIngredientCountTextBox.Name = "MaxIngredientCountTextBox";
+            this.MaxIngredientCountTextBox.Size = new System.Drawing.Size(114, 20);
+            this.MaxIngredientCountTextBox.TabIndex = 6;
+            // 
+            // MaxProductCountTextBox
+            // 
+            this.MaxProductCountTextBox.Location = new System.Drawing.Point(437, 27);
+            this.MaxProductCountTextBox.Name = "MaxProductCountTextBox";
+            this.MaxProductCountTextBox.Size = new System.Drawing.Size(114, 20);
+            this.MaxProductCountTextBox.TabIndex = 7;
             // 
             // ItemsTabPage
             // 
@@ -2780,70 +2844,6 @@ namespace Scribe
             this.FlavorAllFlavorsSelector.TabIndex = 0;
             this.FlavorAllFlavorsSelector.Text = "(All)";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(280, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(280, 25);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "label4";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(160, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(23, 20);
-            this.textBox1.TabIndex = 4;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(160, 28);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(114, 20);
-            this.textBox2.TabIndex = 5;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(437, 3);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(114, 20);
-            this.textBox3.TabIndex = 6;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(437, 28);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(114, 20);
-            this.textBox4.TabIndex = 7;
-            // 
             // MainEditorForm
             // 
             this.AccessibleDescription = "The primary interactive editor window.";
@@ -3140,14 +3140,14 @@ namespace Scribe
         private System.Windows.Forms.ToolTip EditorToolTip;
         private System.Windows.Forms.GroupBox CraftsConfigGroupBox;
         private System.Windows.Forms.TableLayoutPanel CraftingConfigTableLayoutPanel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label MinIngredientCountLabel;
+        private System.Windows.Forms.Label MinProductCountLabel;
+        private System.Windows.Forms.Label MaxIngredientCountLabel;
+        private System.Windows.Forms.Label MaxProductCountLabel;
+        private System.Windows.Forms.TextBox MinIngredientCountTextBox;
+        private System.Windows.Forms.TextBox MinProductCountTextBox;
+        private System.Windows.Forms.TextBox MaxIngredientCountTextBox;
+        private System.Windows.Forms.TextBox MaxProductCountTextBox;
     }
 }
 
