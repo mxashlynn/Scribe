@@ -156,14 +156,14 @@ namespace Scribe
             this.CraftingTabPage = new System.Windows.Forms.TabPage();
             this.CraftsConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CraftingConfigTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.MinIngredientCountLabel = new System.Windows.Forms.Label();
-            this.MinProductCountLabel = new System.Windows.Forms.Label();
-            this.MaxIngredientCountLabel = new System.Windows.Forms.Label();
-            this.MaxProductCountLabel = new System.Windows.Forms.Label();
-            this.MinIngredientCountTextBox = new System.Windows.Forms.TextBox();
-            this.MinProductCountTextBox = new System.Windows.Forms.TextBox();
-            this.MaxIngredientCountTextBox = new System.Windows.Forms.TextBox();
-            this.MaxProductCountTextBox = new System.Windows.Forms.TextBox();
+            this.CraftingMinIngredientCountLabel = new System.Windows.Forms.Label();
+            this.CraftingMinProductCountLabel = new System.Windows.Forms.Label();
+            this.CraftingMaxIngredientCountLabel = new System.Windows.Forms.Label();
+            this.CraftingMaxProductCountLabel = new System.Windows.Forms.Label();
+            this.CraftingMinIngredientCountTextBox = new System.Windows.Forms.TextBox();
+            this.CraftingMinProductCountTextBox = new System.Windows.Forms.TextBox();
+            this.CraftingMaxIngredientCountTextBox = new System.Windows.Forms.TextBox();
+            this.CraftingMaxProductCountTextBox = new System.Windows.Forms.TextBox();
             this.ItemsTabPage = new System.Windows.Forms.TabPage();
             this.ItemAddTagButton = new System.Windows.Forms.Button();
             this.ItemDeleteTagButton = new System.Windows.Forms.Button();
@@ -1626,14 +1626,14 @@ namespace Scribe
             this.CraftingConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17F));
             this.CraftingConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13F));
             this.CraftingConfigTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.CraftingConfigTableLayoutPanel.Controls.Add(this.MinIngredientCountLabel, 0, 0);
-            this.CraftingConfigTableLayoutPanel.Controls.Add(this.MinProductCountLabel, 0, 1);
-            this.CraftingConfigTableLayoutPanel.Controls.Add(this.MaxIngredientCountLabel, 2, 0);
-            this.CraftingConfigTableLayoutPanel.Controls.Add(this.MaxProductCountLabel, 2, 1);
-            this.CraftingConfigTableLayoutPanel.Controls.Add(this.MinIngredientCountTextBox, 1, 0);
-            this.CraftingConfigTableLayoutPanel.Controls.Add(this.MinProductCountTextBox, 1, 1);
-            this.CraftingConfigTableLayoutPanel.Controls.Add(this.MaxIngredientCountTextBox, 3, 0);
-            this.CraftingConfigTableLayoutPanel.Controls.Add(this.MaxProductCountTextBox, 3, 1);
+            this.CraftingConfigTableLayoutPanel.Controls.Add(this.CraftingMinIngredientCountLabel, 0, 0);
+            this.CraftingConfigTableLayoutPanel.Controls.Add(this.CraftingMinProductCountLabel, 0, 1);
+            this.CraftingConfigTableLayoutPanel.Controls.Add(this.CraftingMaxIngredientCountLabel, 2, 0);
+            this.CraftingConfigTableLayoutPanel.Controls.Add(this.CraftingMaxProductCountLabel, 2, 1);
+            this.CraftingConfigTableLayoutPanel.Controls.Add(this.CraftingMinIngredientCountTextBox, 1, 0);
+            this.CraftingConfigTableLayoutPanel.Controls.Add(this.CraftingMinProductCountTextBox, 1, 1);
+            this.CraftingConfigTableLayoutPanel.Controls.Add(this.CraftingMaxIngredientCountTextBox, 3, 0);
+            this.CraftingConfigTableLayoutPanel.Controls.Add(this.CraftingMaxProductCountTextBox, 3, 1);
             this.CraftingConfigTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
             this.CraftingConfigTableLayoutPanel.Name = "CraftingConfigTableLayoutPanel";
             this.CraftingConfigTableLayoutPanel.RowCount = 3;
@@ -1642,73 +1642,73 @@ namespace Scribe
             this.CraftingConfigTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.CraftingConfigTableLayoutPanel.Size = new System.Drawing.Size(928, 75);
             this.CraftingConfigTableLayoutPanel.TabIndex = 0;
-            // 
-            // MinIngredientCountLabel
-            // 
-            this.MinIngredientCountLabel.AutoSize = true;
-            this.MinIngredientCountLabel.Location = new System.Drawing.Point(3, 0);
-            this.MinIngredientCountLabel.Name = "MinIngredientCountLabel";
-            this.MinIngredientCountLabel.Size = new System.Drawing.Size(135, 13);
-            this.MinIngredientCountLabel.TabIndex = 0;
-            this.MinIngredientCountLabel.Text = "Minimum Ingredient Count ";
-            // 
-            // MinProductCountLabel
-            // 
-            this.MinProductCountLabel.AutoSize = true;
-            this.MinProductCountLabel.Location = new System.Drawing.Point(3, 24);
-            this.MinProductCountLabel.Name = "MinProductCountLabel";
-            this.MinProductCountLabel.Size = new System.Drawing.Size(119, 13);
-            this.MinProductCountLabel.TabIndex = 1;
-            this.MinProductCountLabel.Text = "Minimum Product Count";
-            // 
-            // MaxIngredientCountLabel
-            // 
-            this.MaxIngredientCountLabel.AutoSize = true;
-            this.MaxIngredientCountLabel.Location = new System.Drawing.Point(280, 0);
-            this.MaxIngredientCountLabel.Name = "MaxIngredientCountLabel";
-            this.MaxIngredientCountLabel.Size = new System.Drawing.Size(139, 13);
-            this.MaxIngredientCountLabel.TabIndex = 2;
-            this.MaxIngredientCountLabel.Text = "Maximum Ingredient Count ";
-            // 
-            // MaxProductCountLabel
-            // 
-            this.MaxProductCountLabel.AutoSize = true;
-            this.MaxProductCountLabel.Location = new System.Drawing.Point(280, 24);
-            this.MaxProductCountLabel.Name = "MaxProductCountLabel";
-            this.MaxProductCountLabel.Size = new System.Drawing.Size(123, 13);
-            this.MaxProductCountLabel.TabIndex = 3;
-            this.MaxProductCountLabel.Text = "Maximum Product Count";
-            // 
-            // MinIngredientCountTextBox
-            // 
-            this.MinIngredientCountTextBox.Location = new System.Drawing.Point(160, 3);
-            this.MinIngredientCountTextBox.Name = "MinIngredientCountTextBox";
-            this.MinIngredientCountTextBox.Size = new System.Drawing.Size(114, 20);
-            this.MinIngredientCountTextBox.TabIndex = 4;
-            // 
-            // MinProductCountTextBox
-            // 
-            this.MinProductCountTextBox.Location = new System.Drawing.Point(160, 27);
-            this.MinProductCountTextBox.Name = "MinProductCountTextBox";
-            this.MinProductCountTextBox.Size = new System.Drawing.Size(114, 20);
-            this.MinProductCountTextBox.TabIndex = 5;
-            // 
-            // MaxIngredientCountTextBox
-            // 
-            this.MaxIngredientCountTextBox.Location = new System.Drawing.Point(437, 3);
-            this.MaxIngredientCountTextBox.Name = "MaxIngredientCountTextBox";
-            this.MaxIngredientCountTextBox.Size = new System.Drawing.Size(114, 20);
-            this.MaxIngredientCountTextBox.TabIndex = 6;
-            // 
-            // MaxProductCountTextBox
-            // 
-            this.MaxProductCountTextBox.Location = new System.Drawing.Point(437, 27);
-            this.MaxProductCountTextBox.Name = "MaxProductCountTextBox";
-            this.MaxProductCountTextBox.Size = new System.Drawing.Size(114, 20);
-            this.MaxProductCountTextBox.TabIndex = 7;
-            // 
+            //
+            // CraftingMinIngredientCountLabel
+            //
+            this.CraftingMinIngredientCountLabel.AutoSize = true;
+            this.CraftingMinIngredientCountLabel.Location = new System.Drawing.Point(3, 0);
+            this.CraftingMinIngredientCountLabel.Name = "CraftingMinIngredientCountLabel";
+            this.CraftingMinIngredientCountLabel.Size = new System.Drawing.Size(135, 13);
+            this.CraftingMinIngredientCountLabel.TabIndex = 0;
+            this.CraftingMinIngredientCountLabel.Text = "Minimum Ingredient Count ";
+            //
+            // CraftingMinProductCountLabel
+            //
+            this.CraftingMinProductCountLabel.AutoSize = true;
+            this.CraftingMinProductCountLabel.Location = new System.Drawing.Point(3, 24);
+            this.CraftingMinProductCountLabel.Name = "CraftingMinProductCountLabel";
+            this.CraftingMinProductCountLabel.Size = new System.Drawing.Size(119, 13);
+            this.CraftingMinProductCountLabel.TabIndex = 1;
+            this.CraftingMinProductCountLabel.Text = "Minimum Product Count";
+            //
+            // CraftingMaxIngredientCountLabel
+            //
+            this.CraftingMaxIngredientCountLabel.AutoSize = true;
+            this.CraftingMaxIngredientCountLabel.Location = new System.Drawing.Point(280, 0);
+            this.CraftingMaxIngredientCountLabel.Name = "CraftingMaxIngredientCountLabel";
+            this.CraftingMaxIngredientCountLabel.Size = new System.Drawing.Size(139, 13);
+            this.CraftingMaxIngredientCountLabel.TabIndex = 2;
+            this.CraftingMaxIngredientCountLabel.Text = "Maximum Ingredient Count ";
+            //
+            // CraftingMaxProductCountLabel
+            //
+            this.CraftingMaxProductCountLabel.AutoSize = true;
+            this.CraftingMaxProductCountLabel.Location = new System.Drawing.Point(280, 24);
+            this.CraftingMaxProductCountLabel.Name = "CraftingMaxProductCountLabel";
+            this.CraftingMaxProductCountLabel.Size = new System.Drawing.Size(123, 13);
+            this.CraftingMaxProductCountLabel.TabIndex = 3;
+            this.CraftingMaxProductCountLabel.Text = "Maximum Product Count";
+            //
+            // CraftingMinIngredientCountTextBox
+            //
+            this.CraftingMinIngredientCountTextBox.Location = new System.Drawing.Point(160, 3);
+            this.CraftingMinIngredientCountTextBox.Name = "CraftingMinIngredientCountTextBox";
+            this.CraftingMinIngredientCountTextBox.Size = new System.Drawing.Size(114, 20);
+            this.CraftingMinIngredientCountTextBox.TabIndex = 4;
+            //
+            // CraftingMinProductCountTextBox
+            //
+            this.CraftingMinProductCountTextBox.Location = new System.Drawing.Point(160, 27);
+            this.CraftingMinProductCountTextBox.Name = "CraftingMinProductCountTextBox";
+            this.CraftingMinProductCountTextBox.Size = new System.Drawing.Size(114, 20);
+            this.CraftingMinProductCountTextBox.TabIndex = 5;
+            //
+            // CraftingMaxIngredientCountTextBox
+            //
+            this.CraftingMaxIngredientCountTextBox.Location = new System.Drawing.Point(437, 3);
+            this.CraftingMaxIngredientCountTextBox.Name = "CraftingMaxIngredientCountTextBox";
+            this.CraftingMaxIngredientCountTextBox.Size = new System.Drawing.Size(114, 20);
+            this.CraftingMaxIngredientCountTextBox.TabIndex = 6;
+            //
+            // CraftingMaxProductCountTextBox
+            //
+            this.CraftingMaxProductCountTextBox.Location = new System.Drawing.Point(437, 27);
+            this.CraftingMaxProductCountTextBox.Name = "CraftingMaxProductCountTextBox";
+            this.CraftingMaxProductCountTextBox.Size = new System.Drawing.Size(114, 20);
+            this.CraftingMaxProductCountTextBox.TabIndex = 7;
+            //
             // ItemsTabPage
-            // 
+            //
             this.ItemsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.ItemsTabPage.Controls.Add(this.ItemAddTagButton);
             this.ItemsTabPage.Controls.Add(this.ItemDeleteTagButton);
@@ -3140,14 +3140,14 @@ namespace Scribe
         private System.Windows.Forms.ToolTip EditorToolTip;
         private System.Windows.Forms.GroupBox CraftsConfigGroupBox;
         private System.Windows.Forms.TableLayoutPanel CraftingConfigTableLayoutPanel;
-        private System.Windows.Forms.Label MinIngredientCountLabel;
-        private System.Windows.Forms.Label MinProductCountLabel;
-        private System.Windows.Forms.Label MaxIngredientCountLabel;
-        private System.Windows.Forms.Label MaxProductCountLabel;
-        private System.Windows.Forms.TextBox MinIngredientCountTextBox;
-        private System.Windows.Forms.TextBox MinProductCountTextBox;
-        private System.Windows.Forms.TextBox MaxIngredientCountTextBox;
-        private System.Windows.Forms.TextBox MaxProductCountTextBox;
+        private System.Windows.Forms.Label CraftingMinIngredientCountLabel;
+        private System.Windows.Forms.Label CraftingMinProductCountLabel;
+        private System.Windows.Forms.Label CraftingMaxIngredientCountLabel;
+        private System.Windows.Forms.Label CraftingMaxProductCountLabel;
+        private System.Windows.Forms.TextBox CraftingMinIngredientCountTextBox;
+        private System.Windows.Forms.TextBox CraftingMinProductCountTextBox;
+        private System.Windows.Forms.TextBox CraftingMaxIngredientCountTextBox;
+        private System.Windows.Forms.TextBox CraftingMaxProductCountTextBox;
     }
 }
 
