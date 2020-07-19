@@ -168,13 +168,11 @@ namespace Scribe
             this.CraftingNameLabel = new System.Windows.Forms.Label();
             this.CraftingDescriptionLabel = new System.Windows.Forms.Label();
             this.CraftingCommentLabel = new System.Windows.Forms.Label();
-            this.CraftingTierLabel = new System.Windows.Forms.Label();
             this.CraftingRequiredFloorsLabel = new System.Windows.Forms.Label();
             this.CraftingRequiredBlocksLabel = new System.Windows.Forms.Label();
             this.CraftingNameTextBox = new System.Windows.Forms.TextBox();
             this.CraftingDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.CraftingCommentTextBox = new System.Windows.Forms.TextBox();
-            this.CraftingTierTextBox = new System.Windows.Forms.TextBox();
             this.CraftingRequiredFurnishingsLabel = new System.Windows.Forms.Label();
             this.CraftingRequiredFurnishingsListBox = new System.Windows.Forms.ListBox();
             this.CraftingPictureBox = new System.Windows.Forms.PictureBox();
@@ -1697,13 +1695,11 @@ namespace Scribe
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingNameLabel, 0, 0);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingDescriptionLabel, 0, 1);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingCommentLabel, 0, 2);
-            this.CraftingTableLayoutPanel.Controls.Add(this.CraftingTierLabel, 0, 3);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingRequiredFloorsLabel, 0, 6);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingRequiredBlocksLabel, 0, 8);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingNameTextBox, 1, 0);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingDescriptionTextBox, 1, 1);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingCommentTextBox, 1, 2);
-            this.CraftingTableLayoutPanel.Controls.Add(this.CraftingTierTextBox, 1, 3);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingRequiredFurnishingsLabel, 0, 4);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingRequiredFurnishingsListBox, 1, 4);
             this.CraftingTableLayoutPanel.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
@@ -1811,15 +1807,6 @@ namespace Scribe
             this.CraftingCommentLabel.TabIndex = 6;
             this.CraftingCommentLabel.Text = "Comment";
             // 
-            // CraftingTierLabel
-            // 
-            this.CraftingTierLabel.AutoSize = true;
-            this.CraftingTierLabel.Location = new System.Drawing.Point(3, 135);
-            this.CraftingTierLabel.Name = "CraftingTierLabel";
-            this.CraftingTierLabel.Size = new System.Drawing.Size(125, 13);
-            this.CraftingTierLabel.TabIndex = 9;
-            this.CraftingTierLabel.Text = "Minimum Walkable Floors";
-            // 
             // CraftingRequiredFloorsLabel
             // 
             this.CraftingRequiredFloorsLabel.AutoSize = true;
@@ -1868,13 +1855,6 @@ namespace Scribe
             this.CraftingCommentTextBox.Name = "CraftingCommentTextBox";
             this.CraftingCommentTextBox.Size = new System.Drawing.Size(280, 49);
             this.CraftingCommentTextBox.TabIndex = 25;
-            // 
-            // CraftingTierTextBox
-            // 
-            this.CraftingTierTextBox.Location = new System.Drawing.Point(146, 138);
-            this.CraftingTierTextBox.Name = "CraftingTierTextBox";
-            this.CraftingTierTextBox.Size = new System.Drawing.Size(136, 20);
-            this.CraftingTierTextBox.TabIndex = 26;
             // 
             // CraftingRequiredFurnishingsLabel
             // 
@@ -3299,13 +3279,11 @@ namespace Scribe
         private System.Windows.Forms.Label CraftingNameLabel;
         private System.Windows.Forms.Label CraftingDescriptionLabel;
         private System.Windows.Forms.Label CraftingCommentLabel;
-        private System.Windows.Forms.Label CraftingTierLabel;
         private System.Windows.Forms.Label CraftingRequiredFloorsLabel;
         private System.Windows.Forms.Label CraftingRequiredBlocksLabel;
         private System.Windows.Forms.TextBox CraftingNameTextBox;
         private System.Windows.Forms.TextBox CraftingDescriptionTextBox;
         private System.Windows.Forms.TextBox CraftingCommentTextBox;
-        private System.Windows.Forms.TextBox CraftingTierTextBox;
         private System.Windows.Forms.PictureBox CraftingPictureBox;
         private System.Windows.Forms.Label CraftingIDLabel;
         private System.Windows.Forms.Button CraftingAddNewCraftingButton;
