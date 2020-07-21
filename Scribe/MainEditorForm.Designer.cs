@@ -225,6 +225,7 @@ namespace Scribe
             this.ItemAddNewItemButton = new System.Windows.Forms.Button();
             this.ItemIDTextBox = new System.Windows.Forms.TextBox();
             this.MapsTabPage = new System.Windows.Forms.TabPage();
+            this.MapsComingSoonLabel = new System.Windows.Forms.Label();
             this.ParquetsTabPage = new System.Windows.Forms.TabPage();
             this.RoomsTabPage = new System.Windows.Forms.TabPage();
             this.RoomAddBlockButton = new System.Windows.Forms.Button();
@@ -261,6 +262,7 @@ namespace Scribe
             this.RoomAddNewRoomButton = new System.Windows.Forms.Button();
             this.RoomIDTextBox = new System.Windows.Forms.TextBox();
             this.ScriptsTabPage = new System.Windows.Forms.TabPage();
+            this.ScriptingComingSoonLabel = new System.Windows.Forms.Label();
             this.FiltersTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.FilterTextBox = new System.Windows.Forms.TextBox();
             this.FilterByNameCheckBox = new System.Windows.Forms.CheckBox();
@@ -311,11 +313,13 @@ namespace Scribe
             this.ItemInventoriesGroupBox.SuspendLayout();
             this.ItemTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ItemPictureBox)).BeginInit();
+            this.MapsTabPage.SuspendLayout();
             this.RoomsTabPage.SuspendLayout();
             this.RoomConfigGroupBox.SuspendLayout();
             this.RoomConfigTableLayoutPanel.SuspendLayout();
             this.RoomTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPictureBox)).BeginInit();
+            this.ScriptsTabPage.SuspendLayout();
             this.FiltersTableLayoutPanel.SuspendLayout();
             this.FilterGroupBox.SuspendLayout();
             this.FlavorFilterGroupBox.SuspendLayout();
@@ -1731,7 +1735,7 @@ namespace Scribe
             // CraftingDeleteFurnishingsButton
             // 
             this.CraftingDeleteFurnishingsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingDeleteFurnishingsButton.Location = new System.Drawing.Point(152, 221);
+            this.CraftingDeleteFurnishingsButton.Location = new System.Drawing.Point(154, 221);
             this.CraftingDeleteFurnishingsButton.Name = "CraftingDeleteFurnishingsButton";
             this.CraftingDeleteFurnishingsButton.Size = new System.Drawing.Size(129, 23);
             this.CraftingDeleteFurnishingsButton.TabIndex = 29;
@@ -1751,7 +1755,7 @@ namespace Scribe
             // CraftingDeleteFloorButton
             // 
             this.CraftingDeleteFloorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingDeleteFloorButton.Location = new System.Drawing.Point(152, 334);
+            this.CraftingDeleteFloorButton.Location = new System.Drawing.Point(154, 334);
             this.CraftingDeleteFloorButton.Name = "CraftingDeleteFloorButton";
             this.CraftingDeleteFloorButton.Size = new System.Drawing.Size(129, 23);
             this.CraftingDeleteFloorButton.TabIndex = 2;
@@ -1764,7 +1768,7 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Left)));
             this.CraftingTableLayoutPanel.SetColumnSpan(this.CraftingRequiredBlocksListBox, 2);
             this.CraftingRequiredBlocksListBox.FormattingEnabled = true;
-            this.CraftingRequiredBlocksListBox.Location = new System.Drawing.Point(145, 364);
+            this.CraftingRequiredBlocksListBox.Location = new System.Drawing.Point(146, 364);
             this.CraftingRequiredBlocksListBox.Name = "CraftingRequiredBlocksListBox";
             this.CraftingRequiredBlocksListBox.Size = new System.Drawing.Size(279, 69);
             this.CraftingRequiredBlocksListBox.TabIndex = 1;
@@ -1775,7 +1779,7 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Left)));
             this.CraftingTableLayoutPanel.SetColumnSpan(this.CraftingRequiredFloorsListBox, 2);
             this.CraftingRequiredFloorsListBox.FormattingEnabled = true;
-            this.CraftingRequiredFloorsListBox.Location = new System.Drawing.Point(145, 251);
+            this.CraftingRequiredFloorsListBox.Location = new System.Drawing.Point(146, 251);
             this.CraftingRequiredFloorsListBox.Name = "CraftingRequiredFloorsListBox";
             this.CraftingRequiredFloorsListBox.Size = new System.Drawing.Size(279, 69);
             this.CraftingRequiredFloorsListBox.TabIndex = 1;
@@ -1827,7 +1831,7 @@ namespace Scribe
             // 
             // CraftingNameTextBox
             // 
-            this.CraftingNameTextBox.Location = new System.Drawing.Point(145, 3);
+            this.CraftingNameTextBox.Location = new System.Drawing.Point(146, 3);
             this.CraftingNameTextBox.Name = "CraftingNameTextBox";
             this.CraftingNameTextBox.Size = new System.Drawing.Size(136, 20);
             this.CraftingNameTextBox.TabIndex = 23;
@@ -1838,10 +1842,10 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CraftingTableLayoutPanel.SetColumnSpan(this.CraftingDescriptionTextBox, 2);
-            this.CraftingDescriptionTextBox.Location = new System.Drawing.Point(145, 28);
+            this.CraftingDescriptionTextBox.Location = new System.Drawing.Point(146, 28);
             this.CraftingDescriptionTextBox.Multiline = true;
             this.CraftingDescriptionTextBox.Name = "CraftingDescriptionTextBox";
-            this.CraftingDescriptionTextBox.Size = new System.Drawing.Size(281, 49);
+            this.CraftingDescriptionTextBox.Size = new System.Drawing.Size(280, 49);
             this.CraftingDescriptionTextBox.TabIndex = 24;
             // 
             // CraftingCommentTextBox
@@ -1850,10 +1854,10 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CraftingTableLayoutPanel.SetColumnSpan(this.CraftingCommentTextBox, 2);
-            this.CraftingCommentTextBox.Location = new System.Drawing.Point(145, 83);
+            this.CraftingCommentTextBox.Location = new System.Drawing.Point(146, 83);
             this.CraftingCommentTextBox.Multiline = true;
             this.CraftingCommentTextBox.Name = "CraftingCommentTextBox";
-            this.CraftingCommentTextBox.Size = new System.Drawing.Size(281, 49);
+            this.CraftingCommentTextBox.Size = new System.Drawing.Size(280, 49);
             this.CraftingCommentTextBox.TabIndex = 25;
             // 
             // CraftingProductsLabel
@@ -1870,7 +1874,7 @@ namespace Scribe
             this.CraftingProductsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.CraftingTableLayoutPanel.SetColumnSpan(this.CraftingProductsListBox, 2);
-            this.CraftingProductsListBox.Location = new System.Drawing.Point(145, 138);
+            this.CraftingProductsListBox.Location = new System.Drawing.Point(146, 138);
             this.CraftingProductsListBox.Name = "CraftingProductsListBox";
             this.CraftingProductsListBox.Size = new System.Drawing.Size(279, 69);
             this.CraftingProductsListBox.TabIndex = 28;
@@ -2391,11 +2395,22 @@ namespace Scribe
             // MapsTabPage
             // 
             this.MapsTabPage.BackColor = System.Drawing.Color.Transparent;
+            this.MapsTabPage.Controls.Add(this.MapsComingSoonLabel);
             this.MapsTabPage.Location = new System.Drawing.Point(4, 22);
             this.MapsTabPage.Name = "MapsTabPage";
             this.MapsTabPage.Size = new System.Drawing.Size(953, 599);
             this.MapsTabPage.TabIndex = 5;
             this.MapsTabPage.Text = "Maps";
+            // 
+            // MapsComingSoonLabel
+            // 
+            this.MapsComingSoonLabel.AutoSize = true;
+            this.MapsComingSoonLabel.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MapsComingSoonLabel.Location = new System.Drawing.Point(420, 278);
+            this.MapsComingSoonLabel.Name = "MapsComingSoonLabel";
+            this.MapsComingSoonLabel.Size = new System.Drawing.Size(136, 25);
+            this.MapsComingSoonLabel.TabIndex = 0;
+            this.MapsComingSoonLabel.Text = "Coming Soon";
             // 
             // ParquetsTabPage
             // 
@@ -2795,11 +2810,22 @@ namespace Scribe
             // ScriptsTabPage
             // 
             this.ScriptsTabPage.BackColor = System.Drawing.Color.Transparent;
+            this.ScriptsTabPage.Controls.Add(this.ScriptingComingSoonLabel);
             this.ScriptsTabPage.Location = new System.Drawing.Point(4, 22);
             this.ScriptsTabPage.Name = "ScriptsTabPage";
             this.ScriptsTabPage.Size = new System.Drawing.Size(953, 599);
             this.ScriptsTabPage.TabIndex = 8;
             this.ScriptsTabPage.Text = "Scripting";
+            // 
+            // ScriptingComingSoonLabel
+            // 
+            this.ScriptingComingSoonLabel.AutoSize = true;
+            this.ScriptingComingSoonLabel.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ScriptingComingSoonLabel.Location = new System.Drawing.Point(420, 278);
+            this.ScriptingComingSoonLabel.Name = "ScriptingComingSoonLabel";
+            this.ScriptingComingSoonLabel.Size = new System.Drawing.Size(136, 25);
+            this.ScriptingComingSoonLabel.TabIndex = 0;
+            this.ScriptingComingSoonLabel.Text = "Coming Soon";
             // 
             // FiltersTableLayoutPanel
             // 
@@ -3213,6 +3239,8 @@ namespace Scribe
             this.ItemTableLayoutPanel.ResumeLayout(false);
             this.ItemTableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ItemPictureBox)).EndInit();
+            this.MapsTabPage.ResumeLayout(false);
+            this.MapsTabPage.PerformLayout();
             this.RoomsTabPage.ResumeLayout(false);
             this.RoomsTabPage.PerformLayout();
             this.RoomConfigGroupBox.ResumeLayout(false);
@@ -3221,6 +3249,8 @@ namespace Scribe
             this.RoomTableLayoutPanel.ResumeLayout(false);
             this.RoomTableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPictureBox)).EndInit();
+            this.ScriptsTabPage.ResumeLayout(false);
+            this.ScriptsTabPage.PerformLayout();
             this.FiltersTableLayoutPanel.ResumeLayout(false);
             this.FiltersTableLayoutPanel.PerformLayout();
             this.FilterGroupBox.ResumeLayout(false);
@@ -3489,6 +3519,8 @@ namespace Scribe
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ToolTip EditorToolTip;
         private System.Windows.Forms.ListBox CraftingProductsListBox;
+        private System.Windows.Forms.Label ScriptingComingSoonLabel;
+        private System.Windows.Forms.Label MapsComingSoonLabel;
     }
 }
 
