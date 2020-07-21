@@ -173,6 +173,7 @@ namespace Scribe
             this.CraftingCommentTextBox = new System.Windows.Forms.TextBox();
             this.CraftingProductsLabel = new System.Windows.Forms.Label();
             this.CraftingProductsListBox = new System.Windows.Forms.ListBox();
+            this.CraftingStrikePatternTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.CraftingPictureBox = new System.Windows.Forms.PictureBox();
             this.CraftingIDLabel = new System.Windows.Forms.Label();
             this.CraftingAddNewCraftingButton = new System.Windows.Forms.Button();
@@ -289,8 +290,6 @@ namespace Scribe
             this.FlavorNumbingSelector = new System.Windows.Forms.Label();
             this.FlavorAllFlavorsSelector = new System.Windows.Forms.Label();
             this.EditorToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.CraftingStrikePatternDataGridView = new System.Windows.Forms.DataGridView();
-            this.CraftingStrikePatternLabel = new System.Windows.Forms.Label();
             this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
             this.EditorTabs.SuspendLayout();
@@ -326,7 +325,6 @@ namespace Scribe
             this.FilterGroupBox.SuspendLayout();
             this.FlavorFilterGroupBox.SuspendLayout();
             this.FlavorTableLayoutPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CraftingStrikePatternDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // EditorStatusStrip
@@ -1707,8 +1705,7 @@ namespace Scribe
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingCommentTextBox, 1, 2);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingProductsLabel, 0, 3);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingProductsListBox, 1, 3);
-            this.CraftingTableLayoutPanel.Controls.Add(this.CraftingStrikePatternDataGridView, 1, 7);
-            this.CraftingTableLayoutPanel.Controls.Add(this.CraftingStrikePatternLabel, 0, 7);
+            this.CraftingTableLayoutPanel.Controls.Add(this.CraftingStrikePatternTableLayoutPanel, 1, 7);
             this.CraftingTableLayoutPanel.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.CraftingTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
             this.CraftingTableLayoutPanel.Name = "CraftingTableLayoutPanel";
@@ -1860,6 +1857,27 @@ namespace Scribe
             this.CraftingProductsListBox.Name = "CraftingProductsListBox";
             this.CraftingProductsListBox.Size = new System.Drawing.Size(279, 43);
             this.CraftingProductsListBox.TabIndex = 28;
+            // 
+            // CraftingStrikePatternTableLayoutPanel
+            // 
+            this.CraftingStrikePatternTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CraftingStrikePatternTableLayoutPanel.ColumnCount = 4;
+            this.CraftingTableLayoutPanel.SetColumnSpan(this.CraftingStrikePatternTableLayoutPanel, 2);
+            this.CraftingStrikePatternTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.CraftingStrikePatternTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.CraftingStrikePatternTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.CraftingStrikePatternTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.CraftingStrikePatternTableLayoutPanel.Location = new System.Drawing.Point(146, 308);
+            this.CraftingStrikePatternTableLayoutPanel.Name = "CraftingStrikePatternTableLayoutPanel";
+            this.CraftingStrikePatternTableLayoutPanel.RowCount = 4;
+            this.CraftingStrikePatternTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.CraftingStrikePatternTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.CraftingStrikePatternTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.CraftingStrikePatternTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.CraftingStrikePatternTableLayoutPanel.Size = new System.Drawing.Size(280, 135);
+            this.CraftingStrikePatternTableLayoutPanel.TabIndex = 31;
             // 
             // CraftingPictureBox
             // 
@@ -3183,28 +3201,6 @@ namespace Scribe
             this.FlavorAllFlavorsSelector.TabIndex = 0;
             this.FlavorAllFlavorsSelector.Text = "(All)";
             // 
-            // CraftingStrikePatternDataGridView
-            // 
-            this.CraftingStrikePatternDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingStrikePatternDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CraftingTableLayoutPanel.SetColumnSpan(this.CraftingStrikePatternDataGridView, 2);
-            this.CraftingStrikePatternDataGridView.Location = new System.Drawing.Point(146, 308);
-            this.CraftingStrikePatternDataGridView.Name = "CraftingStrikePatternDataGridView";
-            this.CraftingStrikePatternDataGridView.Size = new System.Drawing.Size(280, 135);
-            this.CraftingStrikePatternDataGridView.TabIndex = 31;
-            this.CraftingStrikePatternDataGridView.Text = "dataGridView1";
-            // 
-            // CraftingStrikePatternLabel
-            // 
-            this.CraftingStrikePatternLabel.AutoSize = true;
-            this.CraftingStrikePatternLabel.Location = new System.Drawing.Point(3, 305);
-            this.CraftingStrikePatternLabel.Name = "CraftingStrikePatternLabel";
-            this.CraftingStrikePatternLabel.Size = new System.Drawing.Size(73, 13);
-            this.CraftingStrikePatternLabel.TabIndex = 32;
-            this.CraftingStrikePatternLabel.Text = "Strike Pattern";
-            // 
             // MainEditorForm
             // 
             this.AccessibleDescription = "The primary interactive editor window.";
@@ -3281,7 +3277,6 @@ namespace Scribe
             this.FlavorFilterGroupBox.ResumeLayout(false);
             this.FlavorTableLayoutPanel.ResumeLayout(false);
             this.FlavorTableLayoutPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CraftingStrikePatternDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3543,10 +3538,9 @@ namespace Scribe
         private System.Windows.Forms.ListBox CraftingProductsListBox;
         private System.Windows.Forms.Label ScriptingComingSoonLabel;
         private System.Windows.Forms.Label MapsComingSoonLabel;
+        private System.Windows.Forms.TableLayoutPanel CraftingStrikePatternTableLayoutPanel;
         private System.Windows.Forms.Label CraftingStrikePatternDimensionLabelLabel;
         private System.Windows.Forms.Label CraftingStrikePatternDimensionLabelExample;
-        private System.Windows.Forms.DataGridView CraftingStrikePatternDataGridView;
-        private System.Windows.Forms.Label CraftingStrikePatternLabel;
     }
 }
 
