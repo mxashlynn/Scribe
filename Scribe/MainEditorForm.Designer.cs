@@ -154,11 +154,10 @@ namespace Scribe
             this.BiomeAddNewBiomeButton = new System.Windows.Forms.Button();
             this.BiomeIDTextBox = new System.Windows.Forms.TextBox();
             this.CraftingTabPage = new System.Windows.Forms.TabPage();
-            this.CraftingAddBlockButton = new System.Windows.Forms.Button();
-            this.CraftingDeleteBlockButton = new System.Windows.Forms.Button();
             this.CraftingListBox = new System.Windows.Forms.ListBox();
             this.CraftingPictureEditButton = new System.Windows.Forms.Button();
             this.CraftingTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.CraftingOpenPatternEditorButton = new System.Windows.Forms.Button();
             this.CraftingAddProductButton = new System.Windows.Forms.Button();
             this.CraftingRemoveProductButton = new System.Windows.Forms.Button();
             this.CraftingAddIngredientButton = new System.Windows.Forms.Button();
@@ -173,7 +172,8 @@ namespace Scribe
             this.CraftingCommentTextBox = new System.Windows.Forms.TextBox();
             this.CraftingProductsLabel = new System.Windows.Forms.Label();
             this.CraftingProductsListBox = new System.Windows.Forms.ListBox();
-            this.CraftingStrikePatternTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.CraftingStrikePatternLabel = new System.Windows.Forms.Label();
+            this.CraftingStrikePatternComingSoonLabel = new System.Windows.Forms.Label();
             this.CraftingPictureBox = new System.Windows.Forms.PictureBox();
             this.CraftingIDLabel = new System.Windows.Forms.Label();
             this.CraftingAddNewCraftingButton = new System.Windows.Forms.Button();
@@ -1628,8 +1628,6 @@ namespace Scribe
             // CraftingTabPage
             // 
             this.CraftingTabPage.BackColor = System.Drawing.Color.Transparent;
-            this.CraftingTabPage.Controls.Add(this.CraftingAddBlockButton);
-            this.CraftingTabPage.Controls.Add(this.CraftingDeleteBlockButton);
             this.CraftingTabPage.Controls.Add(this.CraftingListBox);
             this.CraftingTabPage.Controls.Add(this.CraftingPictureEditButton);
             this.CraftingTabPage.Controls.Add(this.CraftingTableLayoutPanel);
@@ -1643,26 +1641,6 @@ namespace Scribe
             this.CraftingTabPage.Size = new System.Drawing.Size(953, 599);
             this.CraftingTabPage.TabIndex = 3;
             this.CraftingTabPage.Text = "Crafting";
-            // 
-            // CraftingAddBlockButton
-            // 
-            this.CraftingAddBlockButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingAddBlockButton.Location = new System.Drawing.Point(605, 468);
-            this.CraftingAddBlockButton.Name = "CraftingAddBlockButton";
-            this.CraftingAddBlockButton.Size = new System.Drawing.Size(129, 23);
-            this.CraftingAddBlockButton.TabIndex = 2;
-            this.CraftingAddBlockButton.Text = "Add Block Tag";
-            this.CraftingAddBlockButton.UseVisualStyleBackColor = true;
-            // 
-            // CraftingDeleteBlockButton
-            // 
-            this.CraftingDeleteBlockButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingDeleteBlockButton.Location = new System.Drawing.Point(454, 468);
-            this.CraftingDeleteBlockButton.Name = "CraftingDeleteBlockButton";
-            this.CraftingDeleteBlockButton.Size = new System.Drawing.Size(129, 23);
-            this.CraftingDeleteBlockButton.TabIndex = 2;
-            this.CraftingDeleteBlockButton.Text = "Remove Block Tag";
-            this.CraftingDeleteBlockButton.UseVisualStyleBackColor = true;
             // 
             // CraftingListBox
             // 
@@ -1691,6 +1669,7 @@ namespace Scribe
             this.CraftingTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.CraftingTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.CraftingTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.CraftingTableLayoutPanel.Controls.Add(this.CraftingOpenPatternEditorButton, 2, 7);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingAddProductButton, 2, 4);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingRemoveProductButton, 1, 4);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingAddIngredientButton, 2, 6);
@@ -1705,7 +1684,8 @@ namespace Scribe
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingCommentTextBox, 1, 2);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingProductsLabel, 0, 3);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingProductsListBox, 1, 3);
-            this.CraftingTableLayoutPanel.Controls.Add(this.CraftingStrikePatternTableLayoutPanel, 1, 7);
+            this.CraftingTableLayoutPanel.Controls.Add(this.CraftingStrikePatternLabel, 0, 7);
+            this.CraftingTableLayoutPanel.Controls.Add(this.CraftingStrikePatternComingSoonLabel, 1, 7);
             this.CraftingTableLayoutPanel.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.CraftingTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
             this.CraftingTableLayoutPanel.Name = "CraftingTableLayoutPanel";
@@ -1720,6 +1700,16 @@ namespace Scribe
             this.CraftingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.CraftingTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.CraftingTableLayoutPanel.TabIndex = 5;
+            // 
+            // CraftingOpenPatternEditorButton
+            // 
+            this.CraftingOpenPatternEditorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CraftingOpenPatternEditorButton.Location = new System.Drawing.Point(297, 420);
+            this.CraftingOpenPatternEditorButton.Name = "CraftingOpenPatternEditorButton";
+            this.CraftingOpenPatternEditorButton.Size = new System.Drawing.Size(129, 23);
+            this.CraftingOpenPatternEditorButton.TabIndex = 2;
+            this.CraftingOpenPatternEditorButton.Text = "Open Pattern Editor";
+            this.CraftingOpenPatternEditorButton.UseVisualStyleBackColor = true;
             // 
             // CraftingAddProductButton
             // 
@@ -1858,26 +1848,29 @@ namespace Scribe
             this.CraftingProductsListBox.Size = new System.Drawing.Size(279, 43);
             this.CraftingProductsListBox.TabIndex = 28;
             // 
-            // CraftingStrikePatternTableLayoutPanel
+            // CraftingStrikePatternLabel
             // 
-            this.CraftingStrikePatternTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.CraftingStrikePatternLabel.AutoSize = true;
+            this.CraftingStrikePatternLabel.Location = new System.Drawing.Point(3, 305);
+            this.CraftingStrikePatternLabel.Name = "CraftingStrikePatternLabel";
+            this.CraftingStrikePatternLabel.Size = new System.Drawing.Size(115, 13);
+            this.CraftingStrikePatternLabel.TabIndex = 31;
+            this.CraftingStrikePatternLabel.Text = "Crafting Strike Pattern";
+            // 
+            // CraftingStrikePatternComingSoonLabel
+            // 
+            this.CraftingStrikePatternComingSoonLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingStrikePatternTableLayoutPanel.ColumnCount = 4;
-            this.CraftingTableLayoutPanel.SetColumnSpan(this.CraftingStrikePatternTableLayoutPanel, 2);
-            this.CraftingStrikePatternTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.CraftingStrikePatternTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.CraftingStrikePatternTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.CraftingStrikePatternTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.CraftingStrikePatternTableLayoutPanel.Location = new System.Drawing.Point(146, 308);
-            this.CraftingStrikePatternTableLayoutPanel.Name = "CraftingStrikePatternTableLayoutPanel";
-            this.CraftingStrikePatternTableLayoutPanel.RowCount = 4;
-            this.CraftingStrikePatternTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.CraftingStrikePatternTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.CraftingStrikePatternTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.CraftingStrikePatternTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.CraftingStrikePatternTableLayoutPanel.Size = new System.Drawing.Size(280, 135);
-            this.CraftingStrikePatternTableLayoutPanel.TabIndex = 31;
+            this.CraftingStrikePatternComingSoonLabel.AutoSize = true;
+            this.CraftingStrikePatternComingSoonLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CraftingStrikePatternComingSoonLabel.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.CraftingStrikePatternComingSoonLabel.Location = new System.Drawing.Point(146, 305);
+            this.CraftingStrikePatternComingSoonLabel.Name = "CraftingStrikePatternComingSoonLabel";
+            this.CraftingStrikePatternComingSoonLabel.Size = new System.Drawing.Size(137, 141);
+            this.CraftingStrikePatternComingSoonLabel.TabIndex = 32;
+            this.CraftingStrikePatternComingSoonLabel.Text = "Maybe one day we will have a preview image here.";
+            this.CraftingStrikePatternComingSoonLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CraftingPictureBox
             // 
@@ -1901,11 +1894,11 @@ namespace Scribe
             // 
             // CraftingAddNewCraftingButton
             // 
-            this.CraftingAddNewCraftingButton.Location = new System.Drawing.Point(159, 468);
+            this.CraftingAddNewCraftingButton.Location = new System.Drawing.Point(142, 468);
             this.CraftingAddNewCraftingButton.Name = "CraftingAddNewCraftingButton";
-            this.CraftingAddNewCraftingButton.Size = new System.Drawing.Size(129, 23);
+            this.CraftingAddNewCraftingButton.Size = new System.Drawing.Size(146, 23);
             this.CraftingAddNewCraftingButton.TabIndex = 2;
-            this.CraftingAddNewCraftingButton.Text = "Add New Crafting";
+            this.CraftingAddNewCraftingButton.Text = "Add New Crafting Recipe";
             this.CraftingAddNewCraftingButton.UseVisualStyleBackColor = true;
             // 
             // CraftingIDTextBox
@@ -3337,8 +3330,7 @@ namespace Scribe
         private System.Windows.Forms.Label CraftingIDLabel;
         private System.Windows.Forms.Button CraftingAddNewCraftingButton;
         private System.Windows.Forms.TextBox CraftingIDTextBox;
-        private System.Windows.Forms.Button CraftingAddBlockButton;
-        private System.Windows.Forms.Button CraftingDeleteBlockButton;
+        private System.Windows.Forms.Button CraftingOpenPatternEditorButton;
         private System.Windows.Forms.Button CraftingAddIngredientButton;
         private System.Windows.Forms.Button CraftingRemoveIngredientButton;
         private System.Windows.Forms.ListBox CraftingIngredientsBox;
@@ -3538,9 +3530,10 @@ namespace Scribe
         private System.Windows.Forms.ListBox CraftingProductsListBox;
         private System.Windows.Forms.Label ScriptingComingSoonLabel;
         private System.Windows.Forms.Label MapsComingSoonLabel;
-        private System.Windows.Forms.TableLayoutPanel CraftingStrikePatternTableLayoutPanel;
         private System.Windows.Forms.Label CraftingStrikePatternDimensionLabelLabel;
         private System.Windows.Forms.Label CraftingStrikePatternDimensionLabelExample;
+        private System.Windows.Forms.Label CraftingStrikePatternLabel;
+        private System.Windows.Forms.Label CraftingStrikePatternComingSoonLabel;
     }
 }
 
