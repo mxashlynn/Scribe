@@ -119,7 +119,7 @@ namespace Scribe
             this.BeingsTabPage = new System.Windows.Forms.TabPage();
             this.BiomesTabPage = new System.Windows.Forms.TabPage();
             this.BiomeAddEntryRequirementButton = new System.Windows.Forms.Button();
-            this.BiomeDeleteEntryRequirementButton = new System.Windows.Forms.Button();
+            this.BiomeRemoveEntryRequirementButton = new System.Windows.Forms.Button();
             this.BiomeListBox = new System.Windows.Forms.ListBox();
             this.BiomeConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.BiomeConfigTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -132,7 +132,7 @@ namespace Scribe
             this.BiomePictureEditButton = new System.Windows.Forms.Button();
             this.BiomeTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.BiomeAddParquetCriterionButton = new System.Windows.Forms.Button();
-            this.BiomeDeleteParquetCriterionButton = new System.Windows.Forms.Button();
+            this.BiomeRemoveParquetCriterionButton = new System.Windows.Forms.Button();
             this.BiomeEntryRequirementsListBox = new System.Windows.Forms.ListBox();
             this.BiomeParquetCriteriaListBox = new System.Windows.Forms.ListBox();
             this.BiomeIsLiquidBasedCheckBox = new System.Windows.Forms.CheckBox();
@@ -192,14 +192,14 @@ namespace Scribe
             this.CraftingStrikePatternDimensionLabelExample = new System.Windows.Forms.Label();
             this.ItemsTabPage = new System.Windows.Forms.TabPage();
             this.ItemAddTagButton = new System.Windows.Forms.Button();
-            this.ItemDeleteTagButton = new System.Windows.Forms.Button();
+            this.ItemRemoveTagButton = new System.Windows.Forms.Button();
             this.ItemListBox = new System.Windows.Forms.ListBox();
             this.ItemInventoriesGroupBox = new System.Windows.Forms.GroupBox();
             this.ItemOpenInvetoryEditorButton = new System.Windows.Forms.Button();
             this.ItemInventoryListBox = new System.Windows.Forms.ListBox();
             this.ItemPictureEditButton = new System.Windows.Forms.Button();
             this.ItemTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.ItemEffectWhenUsedComboBox = new System.Windows.Forms.ComboBox();
             this.ItemStackMaxTextBox = new System.Windows.Forms.TextBox();
             this.ItemRarityTextBox = new System.Windows.Forms.TextBox();
             this.ItemTagListBox = new System.Windows.Forms.ListBox();
@@ -219,8 +219,8 @@ namespace Scribe
             this.ItemEffectWhileHeldLabel = new System.Windows.Forms.Label();
             this.ItemEffectWhenUsedLabel = new System.Windows.Forms.Label();
             this.ItemParquetLabel = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.ItemEffectWhileHeldComboBox = new System.Windows.Forms.ComboBox();
+            this.ItemEquivalentParquetComboBox = new System.Windows.Forms.ComboBox();
             this.ItemPictureBox = new System.Windows.Forms.PictureBox();
             this.ItemIDLabel = new System.Windows.Forms.Label();
             this.ItemAddNewItemButton = new System.Windows.Forms.Button();
@@ -230,7 +230,7 @@ namespace Scribe
             this.ParquetsTabPage = new System.Windows.Forms.TabPage();
             this.RoomsTabPage = new System.Windows.Forms.TabPage();
             this.RoomAddBlockButton = new System.Windows.Forms.Button();
-            this.RoomDeleteBlockButton = new System.Windows.Forms.Button();
+            this.RoomRemoveBlockButton = new System.Windows.Forms.Button();
             this.RoomListBox = new System.Windows.Forms.ListBox();
             this.RoomConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.RoomConfigTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -241,9 +241,9 @@ namespace Scribe
             this.RoomPictureEditButton = new System.Windows.Forms.Button();
             this.RoomTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.RoomAddFurnishingsButton = new System.Windows.Forms.Button();
-            this.RoomDeleteFurnishingsButton = new System.Windows.Forms.Button();
+            this.RoomRemoveFurnishingsButton = new System.Windows.Forms.Button();
             this.RoomAddFloorButton = new System.Windows.Forms.Button();
-            this.RoomDeleteFloorButton = new System.Windows.Forms.Button();
+            this.RoomRemoveFloorButton = new System.Windows.Forms.Button();
             this.RoomRequiredBlocksListBox = new System.Windows.Forms.ListBox();
             this.RoomRequiredFloorsListBox = new System.Windows.Forms.ListBox();
             this.RoomNameLabel = new System.Windows.Forms.Label();
@@ -1224,7 +1224,7 @@ namespace Scribe
             // 
             this.BiomesTabPage.BackColor = System.Drawing.Color.Transparent;
             this.BiomesTabPage.Controls.Add(this.BiomeAddEntryRequirementButton);
-            this.BiomesTabPage.Controls.Add(this.BiomeDeleteEntryRequirementButton);
+            this.BiomesTabPage.Controls.Add(this.BiomeRemoveEntryRequirementButton);
             this.BiomesTabPage.Controls.Add(this.BiomeListBox);
             this.BiomesTabPage.Controls.Add(this.BiomeConfigGroupBox);
             this.BiomesTabPage.Controls.Add(this.BiomePictureEditButton);
@@ -1249,15 +1249,15 @@ namespace Scribe
             this.BiomeAddEntryRequirementButton.Text = "Add Requirement";
             this.BiomeAddEntryRequirementButton.UseVisualStyleBackColor = true;
             // 
-            // BiomeDeleteEntryRequirementButton
+            // BiomeRemoveEntryRequirementButton
             // 
-            this.BiomeDeleteEntryRequirementButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BiomeDeleteEntryRequirementButton.Location = new System.Drawing.Point(453, 468);
-            this.BiomeDeleteEntryRequirementButton.Name = "BiomeDeleteEntryRequirementButton";
-            this.BiomeDeleteEntryRequirementButton.Size = new System.Drawing.Size(129, 23);
-            this.BiomeDeleteEntryRequirementButton.TabIndex = 2;
-            this.BiomeDeleteEntryRequirementButton.Text = "Remove Requirement";
-            this.BiomeDeleteEntryRequirementButton.UseVisualStyleBackColor = true;
+            this.BiomeRemoveEntryRequirementButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiomeRemoveEntryRequirementButton.Location = new System.Drawing.Point(453, 468);
+            this.BiomeRemoveEntryRequirementButton.Name = "BiomeRemoveEntryRequirementButton";
+            this.BiomeRemoveEntryRequirementButton.Size = new System.Drawing.Size(129, 23);
+            this.BiomeRemoveEntryRequirementButton.TabIndex = 2;
+            this.BiomeRemoveEntryRequirementButton.Text = "Remove Requirement";
+            this.BiomeRemoveEntryRequirementButton.UseVisualStyleBackColor = true;
             // 
             // BiomeListBox
             // 
@@ -1383,7 +1383,7 @@ namespace Scribe
             this.BiomeTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.BiomeTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.BiomeTableLayoutPanel.Controls.Add(this.BiomeAddParquetCriterionButton, 2, 7);
-            this.BiomeTableLayoutPanel.Controls.Add(this.BiomeDeleteParquetCriterionButton, 1, 7);
+            this.BiomeTableLayoutPanel.Controls.Add(this.BiomeRemoveParquetCriterionButton, 1, 7);
             this.BiomeTableLayoutPanel.Controls.Add(this.BiomeEntryRequirementsListBox, 1, 8);
             this.BiomeTableLayoutPanel.Controls.Add(this.BiomeParquetCriteriaListBox, 1, 6);
             this.BiomeTableLayoutPanel.Controls.Add(this.BiomeIsLiquidBasedCheckBox, 1, 5);
@@ -1426,15 +1426,15 @@ namespace Scribe
             this.BiomeAddParquetCriterionButton.Text = "Add Criterion";
             this.BiomeAddParquetCriterionButton.UseVisualStyleBackColor = true;
             // 
-            // BiomeDeleteParquetCriterionButton
+            // BiomeRemoveParquetCriterionButton
             // 
-            this.BiomeDeleteParquetCriterionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BiomeDeleteParquetCriterionButton.Location = new System.Drawing.Point(146, 316);
-            this.BiomeDeleteParquetCriterionButton.Name = "BiomeDeleteParquetCriterionButton";
-            this.BiomeDeleteParquetCriterionButton.Size = new System.Drawing.Size(129, 23);
-            this.BiomeDeleteParquetCriterionButton.TabIndex = 2;
-            this.BiomeDeleteParquetCriterionButton.Text = "Remove Criterion";
-            this.BiomeDeleteParquetCriterionButton.UseVisualStyleBackColor = true;
+            this.BiomeRemoveParquetCriterionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiomeRemoveParquetCriterionButton.Location = new System.Drawing.Point(146, 316);
+            this.BiomeRemoveParquetCriterionButton.Name = "BiomeRemoveParquetCriterionButton";
+            this.BiomeRemoveParquetCriterionButton.Size = new System.Drawing.Size(129, 23);
+            this.BiomeRemoveParquetCriterionButton.TabIndex = 2;
+            this.BiomeRemoveParquetCriterionButton.Text = "Remove Criterion";
+            this.BiomeRemoveParquetCriterionButton.UseVisualStyleBackColor = true;
             // 
             // BiomeEntryRequirementsListBox
             // 
@@ -2039,7 +2039,7 @@ namespace Scribe
             // 
             this.ItemsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.ItemsTabPage.Controls.Add(this.ItemAddTagButton);
-            this.ItemsTabPage.Controls.Add(this.ItemDeleteTagButton);
+            this.ItemsTabPage.Controls.Add(this.ItemRemoveTagButton);
             this.ItemsTabPage.Controls.Add(this.ItemListBox);
             this.ItemsTabPage.Controls.Add(this.ItemInventoriesGroupBox);
             this.ItemsTabPage.Controls.Add(this.ItemPictureEditButton);
@@ -2064,15 +2064,15 @@ namespace Scribe
             this.ItemAddTagButton.Text = "Add Tag";
             this.ItemAddTagButton.UseVisualStyleBackColor = true;
             // 
-            // ItemDeleteTagButton
+            // ItemRemoveTagButton
             // 
-            this.ItemDeleteTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemDeleteTagButton.Location = new System.Drawing.Point(454, 468);
-            this.ItemDeleteTagButton.Name = "ItemDeleteTagButton";
-            this.ItemDeleteTagButton.Size = new System.Drawing.Size(129, 23);
-            this.ItemDeleteTagButton.TabIndex = 2;
-            this.ItemDeleteTagButton.Text = "Remove Tag";
-            this.ItemDeleteTagButton.UseVisualStyleBackColor = true;
+            this.ItemRemoveTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemRemoveTagButton.Location = new System.Drawing.Point(454, 468);
+            this.ItemRemoveTagButton.Name = "ItemRemoveTagButton";
+            this.ItemRemoveTagButton.Size = new System.Drawing.Size(129, 23);
+            this.ItemRemoveTagButton.TabIndex = 2;
+            this.ItemRemoveTagButton.Text = "Remove Tag";
+            this.ItemRemoveTagButton.UseVisualStyleBackColor = true;
             // 
             // ItemListBox
             // 
@@ -2133,7 +2133,7 @@ namespace Scribe
             this.ItemTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.ItemTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.ItemTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.ItemTableLayoutPanel.Controls.Add(this.comboBox1, 1, 8);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemEffectWhenUsedComboBox, 1, 8);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemStackMaxTextBox, 1, 6);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemRarityTextBox, 1, 5);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemTagListBox, 1, 10);
@@ -2153,8 +2153,8 @@ namespace Scribe
             this.ItemTableLayoutPanel.Controls.Add(this.ItemEffectWhileHeldLabel, 0, 7);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemEffectWhenUsedLabel, 0, 8);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemParquetLabel, 0, 9);
-            this.ItemTableLayoutPanel.Controls.Add(this.comboBox2, 1, 7);
-            this.ItemTableLayoutPanel.Controls.Add(this.comboBox3, 1, 9);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemEffectWhileHeldComboBox, 1, 7);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemEquivalentParquetComboBox, 1, 9);
             this.ItemTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
             this.ItemTableLayoutPanel.Name = "ItemTableLayoutPanel";
             this.ItemTableLayoutPanel.RowCount = 11;
@@ -2172,13 +2172,13 @@ namespace Scribe
             this.ItemTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.ItemTableLayoutPanel.TabIndex = 5;
             // 
-            // comboBox1
+            // ItemEffectWhenUsedComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(131, 263);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(144, 21);
-            this.comboBox1.TabIndex = 30;
+            this.ItemEffectWhenUsedComboBox.FormattingEnabled = true;
+            this.ItemEffectWhenUsedComboBox.Location = new System.Drawing.Point(131, 263);
+            this.ItemEffectWhenUsedComboBox.Name = "ItemEffectWhenUsedComboBox";
+            this.ItemEffectWhenUsedComboBox.Size = new System.Drawing.Size(144, 21);
+            this.ItemEffectWhenUsedComboBox.TabIndex = 30;
             // 
             // ItemStackMaxTextBox
             // 
@@ -2350,21 +2350,21 @@ namespace Scribe
             this.ItemParquetLabel.TabIndex = 33;
             this.ItemParquetLabel.Text = "Equivalent Parquet";
             // 
-            // comboBox2
+            // ItemEffectWhileHeldComboBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(131, 238);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(144, 21);
-            this.comboBox2.TabIndex = 34;
+            this.ItemEffectWhileHeldComboBox.FormattingEnabled = true;
+            this.ItemEffectWhileHeldComboBox.Location = new System.Drawing.Point(131, 238);
+            this.ItemEffectWhileHeldComboBox.Name = "ItemEffectWhileHeldComboBox";
+            this.ItemEffectWhileHeldComboBox.Size = new System.Drawing.Size(144, 21);
+            this.ItemEffectWhileHeldComboBox.TabIndex = 34;
             // 
-            // comboBox3
+            // ItemEquivalentParquetComboBox
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(131, 288);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(144, 21);
-            this.comboBox3.TabIndex = 35;
+            this.ItemEquivalentParquetComboBox.FormattingEnabled = true;
+            this.ItemEquivalentParquetComboBox.Location = new System.Drawing.Point(131, 288);
+            this.ItemEquivalentParquetComboBox.Name = "ItemEquivalentParquetComboBox";
+            this.ItemEquivalentParquetComboBox.Size = new System.Drawing.Size(144, 21);
+            this.ItemEquivalentParquetComboBox.TabIndex = 35;
             // 
             // ItemPictureBox
             // 
@@ -2438,7 +2438,7 @@ namespace Scribe
             // 
             this.RoomsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.RoomsTabPage.Controls.Add(this.RoomAddBlockButton);
-            this.RoomsTabPage.Controls.Add(this.RoomDeleteBlockButton);
+            this.RoomsTabPage.Controls.Add(this.RoomRemoveBlockButton);
             this.RoomsTabPage.Controls.Add(this.RoomListBox);
             this.RoomsTabPage.Controls.Add(this.RoomConfigGroupBox);
             this.RoomsTabPage.Controls.Add(this.RoomPictureEditButton);
@@ -2463,15 +2463,15 @@ namespace Scribe
             this.RoomAddBlockButton.Text = "Add Block Tag";
             this.RoomAddBlockButton.UseVisualStyleBackColor = true;
             // 
-            // RoomDeleteBlockButton
+            // RoomRemoveBlockButton
             // 
-            this.RoomDeleteBlockButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomDeleteBlockButton.Location = new System.Drawing.Point(454, 468);
-            this.RoomDeleteBlockButton.Name = "RoomDeleteBlockButton";
-            this.RoomDeleteBlockButton.Size = new System.Drawing.Size(129, 23);
-            this.RoomDeleteBlockButton.TabIndex = 2;
-            this.RoomDeleteBlockButton.Text = "Remove Block Tag";
-            this.RoomDeleteBlockButton.UseVisualStyleBackColor = true;
+            this.RoomRemoveBlockButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RoomRemoveBlockButton.Location = new System.Drawing.Point(454, 468);
+            this.RoomRemoveBlockButton.Name = "RoomRemoveBlockButton";
+            this.RoomRemoveBlockButton.Size = new System.Drawing.Size(129, 23);
+            this.RoomRemoveBlockButton.TabIndex = 2;
+            this.RoomRemoveBlockButton.Text = "Remove Block Tag";
+            this.RoomRemoveBlockButton.UseVisualStyleBackColor = true;
             // 
             // RoomListBox
             // 
@@ -2575,9 +2575,9 @@ namespace Scribe
             this.RoomTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.RoomTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.RoomTableLayoutPanel.Controls.Add(this.RoomAddFurnishingsButton, 2, 5);
-            this.RoomTableLayoutPanel.Controls.Add(this.RoomDeleteFurnishingsButton, 1, 5);
+            this.RoomTableLayoutPanel.Controls.Add(this.RoomRemoveFurnishingsButton, 1, 5);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomAddFloorButton, 2, 7);
-            this.RoomTableLayoutPanel.Controls.Add(this.RoomDeleteFloorButton, 1, 7);
+            this.RoomTableLayoutPanel.Controls.Add(this.RoomRemoveFloorButton, 1, 7);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomRequiredBlocksListBox, 1, 8);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomRequiredFloorsListBox, 1, 6);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomNameLabel, 0, 0);
@@ -2618,15 +2618,15 @@ namespace Scribe
             this.RoomAddFurnishingsButton.Text = "Add Furnishing Tag";
             this.RoomAddFurnishingsButton.UseVisualStyleBackColor = true;
             // 
-            // RoomDeleteFurnishingsButton
+            // RoomRemoveFurnishingsButton
             // 
-            this.RoomDeleteFurnishingsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomDeleteFurnishingsButton.Location = new System.Drawing.Point(154, 238);
-            this.RoomDeleteFurnishingsButton.Name = "RoomDeleteFurnishingsButton";
-            this.RoomDeleteFurnishingsButton.Size = new System.Drawing.Size(129, 23);
-            this.RoomDeleteFurnishingsButton.TabIndex = 29;
-            this.RoomDeleteFurnishingsButton.Text = "Remove Furnishing Tag";
-            this.RoomDeleteFurnishingsButton.UseVisualStyleBackColor = true;
+            this.RoomRemoveFurnishingsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RoomRemoveFurnishingsButton.Location = new System.Drawing.Point(154, 238);
+            this.RoomRemoveFurnishingsButton.Name = "RoomRemoveFurnishingsButton";
+            this.RoomRemoveFurnishingsButton.Size = new System.Drawing.Size(129, 23);
+            this.RoomRemoveFurnishingsButton.TabIndex = 29;
+            this.RoomRemoveFurnishingsButton.Text = "Remove Furnishing Tag";
+            this.RoomRemoveFurnishingsButton.UseVisualStyleBackColor = true;
             // 
             // RoomAddFloorButton
             // 
@@ -2638,15 +2638,15 @@ namespace Scribe
             this.RoomAddFloorButton.Text = "Add Floor Tag";
             this.RoomAddFloorButton.UseVisualStyleBackColor = true;
             // 
-            // RoomDeleteFloorButton
+            // RoomRemoveFloorButton
             // 
-            this.RoomDeleteFloorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomDeleteFloorButton.Location = new System.Drawing.Point(154, 343);
-            this.RoomDeleteFloorButton.Name = "RoomDeleteFloorButton";
-            this.RoomDeleteFloorButton.Size = new System.Drawing.Size(129, 23);
-            this.RoomDeleteFloorButton.TabIndex = 2;
-            this.RoomDeleteFloorButton.Text = "Remove Floor Tag";
-            this.RoomDeleteFloorButton.UseVisualStyleBackColor = true;
+            this.RoomRemoveFloorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RoomRemoveFloorButton.Location = new System.Drawing.Point(154, 343);
+            this.RoomRemoveFloorButton.Name = "RoomRemoveFloorButton";
+            this.RoomRemoveFloorButton.Size = new System.Drawing.Size(129, 23);
+            this.RoomRemoveFloorButton.TabIndex = 2;
+            this.RoomRemoveFloorButton.Text = "Remove Floor Tag";
+            this.RoomRemoveFloorButton.UseVisualStyleBackColor = true;
             // 
             // RoomRequiredBlocksListBox
             // 
@@ -3447,9 +3447,9 @@ namespace Scribe
         private System.Windows.Forms.CheckBox BiomeIsLiquidBasedCheckBox;
         private System.Windows.Forms.CheckBox BiomeIsRoomBasedCheckBox;
         private System.Windows.Forms.Button BiomeAddEntryRequirementButton;
-        private System.Windows.Forms.Button BiomeDeleteEntryRequirementButton;
+        private System.Windows.Forms.Button BiomeRemoveEntryRequirementButton;
         private System.Windows.Forms.Button BiomeAddParquetCriterionButton;
-        private System.Windows.Forms.Button BiomeDeleteParquetCriterionButton;
+        private System.Windows.Forms.Button BiomeRemoveParquetCriterionButton;
         private System.Windows.Forms.ListBox BiomeEntryRequirementsListBox;
         private System.Windows.Forms.ListBox BiomeParquetCriteriaListBox;
         private System.Windows.Forms.TableLayoutPanel BiomeConfigTableLayoutPanel;
@@ -3478,9 +3478,9 @@ namespace Scribe
         private System.Windows.Forms.Button RoomAddNewRoomButton;
         private System.Windows.Forms.TextBox RoomIDTextBox;
         private System.Windows.Forms.Button RoomAddBlockButton;
-        private System.Windows.Forms.Button RoomDeleteBlockButton;
+        private System.Windows.Forms.Button RoomRemoveBlockButton;
         private System.Windows.Forms.Button RoomAddFloorButton;
-        private System.Windows.Forms.Button RoomDeleteFloorButton;
+        private System.Windows.Forms.Button RoomRemoveFloorButton;
         private System.Windows.Forms.ListBox RoomRequiredBlocksListBox;
         private System.Windows.Forms.ListBox RoomRequiredFloorsListBox;
         private System.Windows.Forms.TableLayoutPanel RoomConfigTableLayoutPanel;
@@ -3509,23 +3509,23 @@ namespace Scribe
         private System.Windows.Forms.Button ItemAddNewItemButton;
         private System.Windows.Forms.TextBox ItemIDTextBox;
         private System.Windows.Forms.Button ItemAddTagButton;
-        private System.Windows.Forms.Button ItemDeleteTagButton;
+        private System.Windows.Forms.Button ItemRemoveTagButton;
         private System.Windows.Forms.ListBox ItemTagListBox;
         private System.Windows.Forms.Button RoomAddFurnishingsButton;
-        private System.Windows.Forms.Button RoomDeleteFurnishingsButton;
+        private System.Windows.Forms.Button RoomRemoveFurnishingsButton;
         private System.Windows.Forms.Label RoomRequiredFurnishingsLabel;
         private System.Windows.Forms.ListBox RoomRequiredFurnishingsListBox;
         private System.Windows.Forms.Button ItemOpenInvetoryEditorButton;
         private System.Windows.Forms.ListBox ItemInventoryListBox;
         private System.Windows.Forms.TextBox ItemStackMaxTextBox;
         private System.Windows.Forms.TextBox ItemRarityTextBox;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox ItemEffectWhenUsedComboBox;
         private System.Windows.Forms.ComboBox ItemSubtypeComboBox;
         private System.Windows.Forms.Label ItemEffectWhileHeldLabel;
         private System.Windows.Forms.Label ItemEffectWhenUsedLabel;
         private System.Windows.Forms.Label ItemParquetLabel;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox ItemEffectWhileHeldComboBox;
+        private System.Windows.Forms.ComboBox ItemEquivalentParquetComboBox;
         private System.Windows.Forms.ToolTip EditorToolTip;
         private System.Windows.Forms.ListBox CraftingProductsListBox;
         private System.Windows.Forms.Label ScriptingComingSoonLabel;
