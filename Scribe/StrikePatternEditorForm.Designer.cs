@@ -63,7 +63,7 @@ namespace Scribe
             this.StrikePatternTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.StrikePatternTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.StrikePatternTableLayoutPanel.Controls.Add(this.StrikePanelGroupBox1, 0, 0);
-            this.StrikePatternTableLayoutPanel.Controls.Add(this.StrikePanelGroupBox2, 1, 0);
+            this.StrikePatternTableLayoutPanel.Controls.Add(this.StrikePanelGroupBox1_, 1, 0);
 //            this.StrikePatternTableLayoutPanel.Controls.Add(this.StrikePanelGroupBox3, 2, 0);
 //            this.StrikePatternTableLayoutPanel.Controls.Add(this.StrikePanelGroupBox4, 3, 0);
 //            this.StrikePatternTableLayoutPanel.Controls.Add(this.StrikePanelGroupBox5, 0, 1);
@@ -89,6 +89,7 @@ namespace Scribe
             this.StrikePatternTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.StrikePatternTableLayoutPanel.Size = new System.Drawing.Size(940, 677);
             this.StrikePatternTableLayoutPanel.TabIndex = 0;
+            //
             // ButtonTableLayoutPanel
             //
             this.ButtonTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
@@ -128,6 +129,7 @@ namespace Scribe
             this.CancelButtonControl.Text = "Cancel";
             this.CancelButtonControl.UseVisualStyleBackColor = true;
 
+            // *********
             // 
             // StrikePanelGroupBox1
             // 
@@ -277,6 +279,160 @@ namespace Scribe
             this.GoalEndTextBox1.TabIndex = 6;
             this.GoalEndTextBox1.Text = "80";
 
+            // ************
+
+
+            //
+            // StrikePanelGroupBox1_
+            //
+            this.StrikePanelGroupBox1_.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.StrikePanelGroupBox1_.Controls.Add(this.PanelActiveCheckBox1_);
+            this.StrikePanelGroupBox1_.Controls.Add(this.StrikePanelTableLayoutPanel1_);
+            this.StrikePanelGroupBox1_.Location = new System.Drawing.Point(3, 0);
+            this.StrikePanelGroupBox1_.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.StrikePanelGroupBox1_.Name = "StrikePanelGroupBox1_";
+            this.StrikePanelGroupBox1_.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.StrikePanelGroupBox1_.Size = new System.Drawing.Size(229, 158);
+            this.StrikePanelGroupBox1_.TabIndex = 4;
+            this.StrikePanelGroupBox1_.TabStop = false;
+            //
+            // PanelActiveCheckBox1_
+            //
+            this.PanelActiveCheckBox1_.AutoSize = true;
+            this.PanelActiveCheckBox1_.Checked = true;
+            this.PanelActiveCheckBox1_.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.PanelActiveCheckBox1_.Location = new System.Drawing.Point(9, 0);
+            this.PanelActiveCheckBox1_.Name = "PanelActiveCheckBox1_";
+            this.PanelActiveCheckBox1_.Size = new System.Drawing.Size(91, 19);
+            this.PanelActiveCheckBox1_.TabIndex = 4;
+            this.PanelActiveCheckBox1_.Text = "Panel Active";
+            this.PanelActiveCheckBox1_.UseVisualStyleBackColor = true;
+            //
+            // StrikePanelTableLayoutPanel1_
+            //
+            this.StrikePanelTableLayoutPanel1_.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.StrikePanelTableLayoutPanel1_.ColumnCount = 3;
+            this.StrikePanelTableLayoutPanel1_.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43F));
+            this.StrikePanelTableLayoutPanel1_.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23F));
+            this.StrikePanelTableLayoutPanel1_.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34F));
+            this.StrikePanelTableLayoutPanel1_.Controls.Add(this.RangeStartLabel1_, 0, 0);
+            this.StrikePanelTableLayoutPanel1_.Controls.Add(this.RangeEndLabel1_, 2, 0);
+            this.StrikePanelTableLayoutPanel1_.Controls.Add(this.RangeStartTextBox1_, 0, 1);
+            this.StrikePanelTableLayoutPanel1_.Controls.Add(this.RangeEndTextBox1_, 2, 1);
+            this.StrikePanelTableLayoutPanel1_.Controls.Add(this.StrikeRangeDiagramPictureBox1_, 0, 2);
+            this.StrikePanelTableLayoutPanel1_.Controls.Add(this.GoalStartLabel1_, 0, 3);
+            this.StrikePanelTableLayoutPanel1_.Controls.Add(this.GoalEndLabel1_, 2, 3);
+            this.StrikePanelTableLayoutPanel1_.Controls.Add(this.GoalStartTextBox1_, 0, 4);
+            this.StrikePanelTableLayoutPanel1_.Controls.Add(this.GoalEndTextBox2, 2, 4);
+            this.StrikePanelTableLayoutPanel1_.Location = new System.Drawing.Point(6, 19);
+            this.StrikePanelTableLayoutPanel1_.Name = "StrikePanelTableLayoutPanel1_";
+            this.StrikePanelTableLayoutPanel1_.RowCount = 5;
+            this.StrikePanelTableLayoutPanel1_.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.StrikePanelTableLayoutPanel1_.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.StrikePanelTableLayoutPanel1_.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.StrikePanelTableLayoutPanel1_.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.StrikePanelTableLayoutPanel1_.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.StrikePanelTableLayoutPanel1_.Size = new System.Drawing.Size(217, 133);
+            this.StrikePanelTableLayoutPanel1_.TabIndex = 3;
+            //
+            // RangeStartLabel1_
+            //
+            this.RangeStartLabel1_.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RangeStartLabel1_.AutoSize = true;
+            this.RangeStartLabel1_.Location = new System.Drawing.Point(3, 0);
+            this.RangeStartLabel1_.Name = "RangeStartLabel1_";
+            this.RangeStartLabel1_.Size = new System.Drawing.Size(87, 15);
+            this.RangeStartLabel1_.TabIndex = 3;
+            this.RangeStartLabel1_.Text = "Range Start";
+            this.RangeStartLabel1_.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            //
+            // RangeEndLabel1_
+            //
+            this.RangeEndLabel1_.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RangeEndLabel1_.AutoSize = true;
+            this.RangeEndLabel1_.Location = new System.Drawing.Point(145, 0);
+            this.RangeEndLabel1_.Name = "RangeEndLabel1_";
+            this.RangeEndLabel1_.Size = new System.Drawing.Size(69, 15);
+            this.RangeEndLabel1_.TabIndex = 3;
+            this.RangeEndLabel1_.Text = "Range End";
+            this.RangeEndLabel1_.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            //
+            // RangeStartTextBox1_
+            //
+            this.RangeStartTextBox1_.Location = new System.Drawing.Point(3, 23);
+            this.RangeStartTextBox1_.Name = "RangeStartTextBox1_";
+            this.RangeStartTextBox1_.Size = new System.Drawing.Size(40, 23);
+            this.RangeStartTextBox1_.TabIndex = 6;
+            this.RangeStartTextBox1_.Text = "0";
+            //
+            // RangeEndTextBox1_
+            //
+            this.RangeEndTextBox1_.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RangeEndTextBox1_.Location = new System.Drawing.Point(174, 23);
+            this.RangeEndTextBox1_.Name = "RangeEndTextBox1_";
+            this.RangeEndTextBox1_.Size = new System.Drawing.Size(40, 23);
+            this.RangeEndTextBox1_.TabIndex = 6;
+            this.RangeEndTextBox1_.Text = "1_00";
+            //
+            // StrikeRangeDiagramPictureBox1_
+            //
+            this.StrikeRangeDiagramPictureBox1_.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.StrikeRangeDiagramPictureBox1_.BackColor = System.Drawing.Color.Transparent;
+            this.StrikePanelTableLayoutPanel1_.SetColumnSpan(this.StrikeRangeDiagramPictureBox1_, 3);
+            this.StrikeRangeDiagramPictureBox1_.Image = ((System.Drawing.Image)(resources.GetObject("StrikeRangeDiagramPictureBox1_.Image")));
+            this.StrikeRangeDiagramPictureBox1_.Location = new System.Drawing.Point(1_6, 49);
+            this.StrikeRangeDiagramPictureBox1_.Name = "StrikeRangeDiagramPictureBox1_";
+            this.StrikeRangeDiagramPictureBox1_.Size = new System.Drawing.Size(184, 34);
+            this.StrikeRangeDiagramPictureBox1_.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.StrikeRangeDiagramPictureBox1_.TabIndex = 2;
+            this.StrikeRangeDiagramPictureBox1_.TabStop = false;
+            //
+            // GoalStartLabel1_
+            //
+            this.GoalStartLabel1_.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GoalStartLabel1_.AutoSize = true;
+            this.GoalStartLabel1_.Location = new System.Drawing.Point(3, 86);
+            this.GoalStartLabel1_.Name = "GoalStartLabel1_";
+            this.GoalStartLabel1_.Size = new System.Drawing.Size(87, 15);
+            this.GoalStartLabel1_.TabIndex = 4;
+            this.GoalStartLabel1_.Text = "Goal Start";
+            this.GoalStartLabel1_.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            //
+            // GoalEndLabel1_
+            //
+            this.GoalEndLabel1_.AutoSize = true;
+            this.GoalEndLabel1_.Location = new System.Drawing.Point(145, 86);
+            this.GoalEndLabel1_.Name = "GoalEndLabel1_";
+            this.GoalEndLabel1_.Size = new System.Drawing.Size(54, 15);
+            this.GoalEndLabel1_.TabIndex = 5;
+            this.GoalEndLabel1_.Text = "Goal End";
+            //
+            // GoalStartTextBox1_
+            //
+            this.GoalStartTextBox1_.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.GoalStartTextBox1_.Location = new System.Drawing.Point(50, 109);
+            this.GoalStartTextBox1_.Name = "GoalStartTextBox1_";
+            this.GoalStartTextBox1_.Size = new System.Drawing.Size(40, 23);
+            this.GoalStartTextBox1_.TabIndex = 6;
+            this.GoalStartTextBox1_.Text = "45";
+            //
+            // GoalEndTextBox1_
+            //
+            this.GoalEndTextBox1_.Location = new System.Drawing.Point(145, 109);
+            this.GoalEndTextBox1_.Name = "GoalEndTextBox1_";
+            this.GoalEndTextBox1_.Size = new System.Drawing.Size(40, 23);
+            this.GoalEndTextBox1_.TabIndex = 6;
+            this.GoalEndTextBox1_.Text = "80";
+
+            // *********
+
             //
             // StrikePatternEditorForm
             // 
@@ -297,7 +453,6 @@ namespace Scribe
             ((System.ComponentModel.ISupportInitialize)(this.StrikeRangeDiagramPictureBox1)).EndInit();
             this.ButtonTableLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
 
         #endregion
@@ -306,6 +461,7 @@ namespace Scribe
         private System.Windows.Forms.TableLayoutPanel ButtonTableLayoutPanel;
         private System.Windows.Forms.Button OkayButton;
         private System.Windows.Forms.Button CancelButtonControl;
+
         private System.Windows.Forms.GroupBox StrikePanelGroupBox1;
         private System.Windows.Forms.CheckBox PanelActiveCheckBox1;
         private System.Windows.Forms.TableLayoutPanel StrikePanelTableLayoutPanel1;
@@ -318,5 +474,18 @@ namespace Scribe
         private System.Windows.Forms.TextBox RangeEndTextBox1;
         private System.Windows.Forms.TextBox GoalEndTextBox1;
         private System.Windows.Forms.TextBox GoalStartTextBox1;
+
+        private System.Windows.Forms.GroupBox StrikePanelGroupBox1_;
+        private System.Windows.Forms.CheckBox PanelActiveCheckBox1_;
+        private System.Windows.Forms.TableLayoutPanel StrikePanelTableLayoutPanel1_;
+        private System.Windows.Forms.PictureBox StrikeRangeDiagramPictureBox1_;
+        private System.Windows.Forms.Label RangeStartLabel1_;
+        private System.Windows.Forms.Label RangeEndLabel1_;
+        private System.Windows.Forms.Label GoalStartLabel1_;
+        private System.Windows.Forms.Label GoalEndLabel1_;
+        private System.Windows.Forms.TextBox RangeStartTextBox1_;
+        private System.Windows.Forms.TextBox RangeEndTextBox1_;
+        private System.Windows.Forms.TextBox GoalEndTextBox1_;
+        private System.Windows.Forms.TextBox GoalStartTextBox1_;
     }
 }
