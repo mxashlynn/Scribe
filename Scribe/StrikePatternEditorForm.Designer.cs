@@ -111,6 +111,7 @@ namespace Scribe
             this.CancelButtonControl.TabIndex = 1;
             this.CancelButtonControl.Text = "Cancel";
             this.CancelButtonControl.UseVisualStyleBackColor = true;
+
             // 
             // StrikePanelGroupBox1
             // 
