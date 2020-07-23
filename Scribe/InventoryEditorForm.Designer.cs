@@ -89,7 +89,7 @@ namespace Scribe
             this.SlotsListBox.ItemHeight = 15;
             this.SlotsListBox.Location = new System.Drawing.Point(133, 33);
             this.SlotsListBox.Name = "SlotsListBox";
-            this.SlotsListBox.Size = new System.Drawing.Size(254, 124);
+            this.SlotsListBox.Size = new System.Drawing.Size(264, 124);
             this.SlotsListBox.TabIndex = 37;
             // 
             // CapacityTextBox
