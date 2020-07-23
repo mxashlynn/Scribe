@@ -43,7 +43,7 @@ namespace Scribe
             this.GoalStartLabel1 = new System.Windows.Forms.Label();
             this.GoalEndLabel1 = new System.Windows.Forms.Label();
             this.GoalStartTextBox1 = new System.Windows.Forms.TextBox();
-            this.GoalEndTextBox2 = new System.Windows.Forms.TextBox();
+            this.GoalEndTextBox1 = new System.Windows.Forms.TextBox();
             this.ButtonTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.StrikePatternTableLayoutPanel.SuspendLayout();
             this.StrikePanelGroupBox1.SuspendLayout();
@@ -237,14 +237,14 @@ namespace Scribe
             this.GoalStartTextBox1.TabIndex = 6;
             this.GoalStartTextBox1.Text = "45";
             // 
-            // GoalEndTextBox2
-            // 
-            this.GoalEndTextBox2.Location = new System.Drawing.Point(145, 109);
-            this.GoalEndTextBox2.Name = "GoalEndTextBox2";
-            this.GoalEndTextBox2.Size = new System.Drawing.Size(40, 23);
-            this.GoalEndTextBox2.TabIndex = 6;
-            this.GoalEndTextBox2.Text = "80";
-            // 
+            // GoalEndTextBox1
+            //
+            this.GoalEndTextBox1.Location = new System.Drawing.Point(145, 109);
+            this.GoalEndTextBox1.Name = "GoalEndTextBox1";
+            this.GoalEndTextBox1.Size = new System.Drawing.Size(40, 23);
+            this.GoalEndTextBox1.TabIndex = 6;
+            this.GoalEndTextBox1.Text = "80";
+
             // ButtonTableLayoutPanel
             // 
             this.ButtonTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -299,7 +299,7 @@ namespace Scribe
         private System.Windows.Forms.Label GoalEndLabel1;
         private System.Windows.Forms.TextBox RangeStartTextBox1;
         private System.Windows.Forms.TextBox RangeEndTextBox1;
-        private System.Windows.Forms.TextBox GoalEndTextBox2;
+        private System.Windows.Forms.TextBox GoalEndTextBox1;
         private System.Windows.Forms.TextBox GoalStartTextBox1;
         private System.Windows.Forms.TableLayoutPanel ButtonTableLayoutPanel;
     }
