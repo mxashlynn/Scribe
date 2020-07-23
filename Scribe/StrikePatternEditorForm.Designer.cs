@@ -175,7 +175,7 @@ namespace Scribe
             this.StrikePanelTableLayoutPanel1.Controls.Add(this.GoalStartLabel1, 0, 3);
             this.StrikePanelTableLayoutPanel1.Controls.Add(this.GoalEndLabel1, 2, 3);
             this.StrikePanelTableLayoutPanel1.Controls.Add(this.GoalStartTextBox1, 0, 4);
-            this.StrikePanelTableLayoutPanel1.Controls.Add(this.GoalEndTextBox2, 2, 4);
+            this.StrikePanelTableLayoutPanel1.Controls.Add(this.GoalEndTextBox1, 2, 4);
             this.StrikePanelTableLayoutPanel1.Location = new System.Drawing.Point(6, 19);
             this.StrikePanelTableLayoutPanel1.Name = "StrikePanelTableLayoutPanel1";
             this.StrikePanelTableLayoutPanel1.RowCount = 5;
@@ -327,7 +327,7 @@ namespace Scribe
             this.StrikePanelTableLayoutPanel1_.Controls.Add(this.GoalStartLabel1_, 0, 3);
             this.StrikePanelTableLayoutPanel1_.Controls.Add(this.GoalEndLabel1_, 2, 3);
             this.StrikePanelTableLayoutPanel1_.Controls.Add(this.GoalStartTextBox1_, 0, 4);
-            this.StrikePanelTableLayoutPanel1_.Controls.Add(this.GoalEndTextBox2, 2, 4);
+            this.StrikePanelTableLayoutPanel1_.Controls.Add(this.GoalEndTextBox1, 2, 4);
             this.StrikePanelTableLayoutPanel1_.Location = new System.Drawing.Point(6, 19);
             this.StrikePanelTableLayoutPanel1_.Name = "StrikePanelTableLayoutPanel1_";
             this.StrikePanelTableLayoutPanel1_.RowCount = 5;
