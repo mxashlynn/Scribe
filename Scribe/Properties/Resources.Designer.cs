@@ -61,21 +61,22 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string IconLogo {
-            get {
-                return ResourceManager.GetString("IconLogo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon ParquetIcon {
             get {
                 object obj = ResourceManager.GetObject("ParquetIcon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StrikeRangeDiagram {
+            get {
+                object obj = ResourceManager.GetObject("StrikeRangeDiagram", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
