@@ -31,6 +31,7 @@ namespace Scribe
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StrikePatternEditorForm));
             this.StrikePatternTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.OkayButton = new System.Windows.Forms.Button();
+            this.ButtonTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.CancelButtonControl = new System.Windows.Forms.Button();
             this.StrikePanelGroupBox1 = new System.Windows.Forms.GroupBox();
             this.PanelActiveCheckBox1 = new System.Windows.Forms.CheckBox();
@@ -44,10 +45,24 @@ namespace Scribe
             this.GoalEndLabel1 = new System.Windows.Forms.Label();
             this.GoalStartTextBox1 = new System.Windows.Forms.TextBox();
             this.GoalEndTextBox1 = new System.Windows.Forms.TextBox();
-            this.ButtonTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.StrikePanelGroupBox2 = new System.Windows.Forms.GroupBox();
+            this.PanelActiveCheckBox2 = new System.Windows.Forms.CheckBox();
+            this.StrikePanelTableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.RangeStartLabel2 = new System.Windows.Forms.Label();
+            this.RangeEndLabel2 = new System.Windows.Forms.Label();
+            this.RangeStartTextBox2 = new System.Windows.Forms.TextBox();
+            this.RangeEndTextBox2 = new System.Windows.Forms.TextBox();
+            this.StrikeRangeDiagramPictureBox2 = new System.Windows.Forms.PictureBox();
+            this.GoalStartLabel2 = new System.Windows.Forms.Label();
+            this.GoalEndLabel2 = new System.Windows.Forms.Label();
+            this.GoalStartTextBox2 = new System.Windows.Forms.TextBox();
+            this.GoalEndTextBox2 = new System.Windows.Forms.TextBox();
             this.StrikePatternTableLayoutPanel.SuspendLayout();
             this.StrikePanelGroupBox1.SuspendLayout();
             this.StrikePanelTableLayoutPanel1.SuspendLayout();
+
+
+
             ((System.ComponentModel.ISupportInitialize)(this.StrikeRangeDiagramPictureBox1)).BeginInit();
             this.ButtonTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
@@ -461,26 +476,26 @@ namespace Scribe
         private System.Windows.Forms.GroupBox StrikePanelGroupBox1;
         private System.Windows.Forms.CheckBox PanelActiveCheckBox1;
         private System.Windows.Forms.TableLayoutPanel StrikePanelTableLayoutPanel1;
-        private System.Windows.Forms.PictureBox StrikeRangeDiagramPictureBox1;
         private System.Windows.Forms.Label RangeStartLabel1;
         private System.Windows.Forms.Label RangeEndLabel1;
-        private System.Windows.Forms.Label GoalStartLabel1;
-        private System.Windows.Forms.Label GoalEndLabel1;
         private System.Windows.Forms.TextBox RangeStartTextBox1;
         private System.Windows.Forms.TextBox RangeEndTextBox1;
+        private System.Windows.Forms.PictureBox StrikeRangeDiagramPictureBox1;
+        private System.Windows.Forms.Label GoalStartLabel1;
+        private System.Windows.Forms.Label GoalEndLabel1;
         private System.Windows.Forms.TextBox GoalEndTextBox1;
         private System.Windows.Forms.TextBox GoalStartTextBox1;
 
         private System.Windows.Forms.GroupBox StrikePanelGroupBox2;
         private System.Windows.Forms.CheckBox PanelActiveCheckBox2;
         private System.Windows.Forms.TableLayoutPanel StrikePanelTableLayoutPanel2;
-        private System.Windows.Forms.PictureBox StrikeRangeDiagramPictureBox2;
         private System.Windows.Forms.Label RangeStartLabel2;
         private System.Windows.Forms.Label RangeEndLabel2;
-        private System.Windows.Forms.Label GoalStartLabel2;
-        private System.Windows.Forms.Label GoalEndLabel2;
         private System.Windows.Forms.TextBox RangeStartTextBox2;
         private System.Windows.Forms.TextBox RangeEndTextBox2;
+        private System.Windows.Forms.PictureBox StrikeRangeDiagramPictureBox2;
+        private System.Windows.Forms.Label GoalStartLabel2;
+        private System.Windows.Forms.Label GoalEndLabel2;
         private System.Windows.Forms.TextBox GoalEndTextBox2;
         private System.Windows.Forms.TextBox GoalStartTextBox2;
     }
