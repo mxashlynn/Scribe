@@ -89,6 +89,22 @@ namespace Scribe
             this.StrikePatternTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.StrikePatternTableLayoutPanel.Size = new System.Drawing.Size(940, 677);
             this.StrikePatternTableLayoutPanel.TabIndex = 0;
+            // ButtonTableLayoutPanel
+            //
+            this.ButtonTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ButtonTableLayoutPanel.ColumnCount = 2;
+            this.ButtonTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.ButtonTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.ButtonTableLayoutPanel.Controls.Add(this.OkayButton, 1, 0);
+            this.ButtonTableLayoutPanel.Controls.Add(this.CancelButtonControl, 0, 0);
+            this.ButtonTableLayoutPanel.Location = new System.Drawing.Point(708, 647);
+            this.ButtonTableLayoutPanel.Name = "ButtonTableLayoutPanel";
+            this.ButtonTableLayoutPanel.RowCount = 1;
+            this.ButtonTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ButtonTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.ButtonTableLayoutPanel.Size = new System.Drawing.Size(229, 27);
+            this.ButtonTableLayoutPanel.TabIndex = 5;
             // 
             // OkayButton
             // 
@@ -261,23 +277,7 @@ namespace Scribe
             this.GoalEndTextBox1.TabIndex = 6;
             this.GoalEndTextBox1.Text = "80";
 
-            // ButtonTableLayoutPanel
-            // 
-            this.ButtonTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonTableLayoutPanel.ColumnCount = 2;
-            this.ButtonTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.ButtonTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.ButtonTableLayoutPanel.Controls.Add(this.OkayButton, 1, 0);
-            this.ButtonTableLayoutPanel.Controls.Add(this.CancelButtonControl, 0, 0);
-            this.ButtonTableLayoutPanel.Location = new System.Drawing.Point(708, 647);
-            this.ButtonTableLayoutPanel.Name = "ButtonTableLayoutPanel";
-            this.ButtonTableLayoutPanel.RowCount = 1;
-            this.ButtonTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ButtonTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.ButtonTableLayoutPanel.Size = new System.Drawing.Size(229, 27);
-            this.ButtonTableLayoutPanel.TabIndex = 5;
-            // 
+            //
             // StrikePatternEditorForm
             // 
             this.AcceptButton = this.OkayButton;
@@ -303,6 +303,7 @@ namespace Scribe
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel StrikePatternTableLayoutPanel;
+        private System.Windows.Forms.TableLayoutPanel ButtonTableLayoutPanel;
         private System.Windows.Forms.Button OkayButton;
         private System.Windows.Forms.Button CancelButtonControl;
         private System.Windows.Forms.GroupBox StrikePanelGroupBox1;
@@ -317,6 +318,5 @@ namespace Scribe
         private System.Windows.Forms.TextBox RangeEndTextBox1;
         private System.Windows.Forms.TextBox GoalEndTextBox1;
         private System.Windows.Forms.TextBox GoalStartTextBox1;
-        private System.Windows.Forms.TableLayoutPanel ButtonTableLayoutPanel;
     }
 }
