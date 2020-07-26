@@ -227,7 +227,7 @@ namespace Scribe
             this.ItemIDTextBox = new System.Windows.Forms.TextBox();
             this.MapsTabPage = new System.Windows.Forms.TabPage();
             this.MapsComingSoonLabel = new System.Windows.Forms.Label();
-            this.ParquetsTabPage = new System.Windows.Forms.TabPage();
+            this.FloorsTabPage = new System.Windows.Forms.TabPage();
             this.RoomsTabPage = new System.Windows.Forms.TabPage();
             this.RoomAddBlockButton = new System.Windows.Forms.Button();
             this.RoomRemoveBlockButton = new System.Windows.Forms.Button();
@@ -290,6 +290,26 @@ namespace Scribe
             this.FlavorNumbingSelector = new System.Windows.Forms.Label();
             this.FlavorAllFlavorsSelector = new System.Windows.Forms.Label();
             this.EditorToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.FloorListBox = new System.Windows.Forms.ListBox();
+            this.FloorEditImageButton = new System.Windows.Forms.Button();
+            this.FloorNameLabel = new System.Windows.Forms.Label();
+            this.FloorDescriptionLabel = new System.Windows.Forms.Label();
+            this.FloorCommentLabel = new System.Windows.Forms.Label();
+            this.ParquetEquivalentItemIDLabel = new System.Windows.Forms.Label();
+            this.FloorModificationToolLabel = new System.Windows.Forms.Label();
+            this.ParquetNameTextBox = new System.Windows.Forms.TextBox();
+            this.FloorDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.FloorCommentTextBox = new System.Windows.Forms.TextBox();
+            this.FloorlItemIDComboBox = new System.Windows.Forms.ComboBox();
+            this.FloorModificationToolComboBox = new System.Windows.Forms.ComboBox();
+            this.FloorPictureBox = new System.Windows.Forms.PictureBox();
+            this.FloorIDLabel = new System.Windows.Forms.Label();
+            this.ParquetsAddNewButton = new System.Windows.Forms.Button();
+            this.FloorIDTextBox = new System.Windows.Forms.TextBox();
+            this.FloorConfigGroupBox = new System.Windows.Forms.GroupBox();
+            this.FloorLayoutTabelPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.FloorTrenchName = new System.Windows.Forms.Label();
+            this.FloorTrenchNameTextBox = new System.Windows.Forms.TextBox();
             this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
             this.EditorTabs.SuspendLayout();
@@ -315,6 +335,7 @@ namespace Scribe
             this.ItemTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ItemPictureBox)).BeginInit();
             this.MapsTabPage.SuspendLayout();
+            this.FloorsTabPage.SuspendLayout();
             this.RoomsTabPage.SuspendLayout();
             this.RoomConfigGroupBox.SuspendLayout();
             this.RoomConfigTableLayoutPanel.SuspendLayout();
@@ -325,6 +346,8 @@ namespace Scribe
             this.FilterGroupBox.SuspendLayout();
             this.FlavorFilterGroupBox.SuspendLayout();
             this.FlavorTableLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FloorPictureBox)).BeginInit();
+            this.FloorLayoutTabelPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // EditorStatusStrip
@@ -656,7 +679,7 @@ namespace Scribe
             this.EditorTabs.Controls.Add(this.CraftingTabPage);
             this.EditorTabs.Controls.Add(this.ItemsTabPage);
             this.EditorTabs.Controls.Add(this.MapsTabPage);
-            this.EditorTabs.Controls.Add(this.ParquetsTabPage);
+            this.EditorTabs.Controls.Add(this.FloorsTabPage);
             this.EditorTabs.Controls.Add(this.RoomsTabPage);
             this.EditorTabs.Controls.Add(this.ScriptsTabPage);
             this.EditorTabs.Location = new System.Drawing.Point(12, 111);
@@ -2425,14 +2448,22 @@ namespace Scribe
             this.MapsComingSoonLabel.TabIndex = 0;
             this.MapsComingSoonLabel.Text = "Coming Soon";
             // 
-            // ParquetsTabPage
+            // FloorsTabPage
             // 
-            this.ParquetsTabPage.BackColor = System.Drawing.Color.Transparent;
-            this.ParquetsTabPage.Location = new System.Drawing.Point(4, 22);
-            this.ParquetsTabPage.Name = "ParquetsTabPage";
-            this.ParquetsTabPage.Size = new System.Drawing.Size(953, 599);
-            this.ParquetsTabPage.TabIndex = 6;
-            this.ParquetsTabPage.Text = "Parquets";
+            this.FloorsTabPage.BackColor = System.Drawing.Color.Transparent;
+            this.FloorsTabPage.Controls.Add(this.FloorLayoutTabelPanel);
+            this.FloorsTabPage.Controls.Add(this.FloorConfigGroupBox);
+            this.FloorsTabPage.Controls.Add(this.FloorIDTextBox);
+            this.FloorsTabPage.Controls.Add(this.ParquetsAddNewButton);
+            this.FloorsTabPage.Controls.Add(this.FloorListBox);
+            this.FloorsTabPage.Controls.Add(this.FloorIDLabel);
+            this.FloorsTabPage.Controls.Add(this.FloorEditImageButton);
+            this.FloorsTabPage.Controls.Add(this.FloorPictureBox);
+            this.FloorsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.FloorsTabPage.Name = "FloorsTabPage";
+            this.FloorsTabPage.Size = new System.Drawing.Size(953, 599);
+            this.FloorsTabPage.TabIndex = 6;
+            this.FloorsTabPage.Text = "Floors";
             // 
             // RoomsTabPage
             // 
@@ -3194,6 +3225,219 @@ namespace Scribe
             this.FlavorAllFlavorsSelector.TabIndex = 0;
             this.FlavorAllFlavorsSelector.Text = "(All)";
             // 
+            // FloorListBox
+            // 
+            this.FloorListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.FloorListBox.FormattingEnabled = true;
+            this.FloorListBox.Location = new System.Drawing.Point(9, 16);
+            this.FloorListBox.Name = "FloorListBox";
+            this.FloorListBox.Size = new System.Drawing.Size(279, 446);
+            this.FloorListBox.TabIndex = 1;
+            // 
+            // FloorEditImageButton
+            // 
+            this.FloorEditImageButton.Location = new System.Drawing.Point(815, 468);
+            this.FloorEditImageButton.Name = "FloorEditImageButton";
+            this.FloorEditImageButton.Size = new System.Drawing.Size(128, 23);
+            this.FloorEditImageButton.TabIndex = 7;
+            this.FloorEditImageButton.Text = "Edit Image";
+            this.FloorEditImageButton.UseVisualStyleBackColor = true;
+            // 
+            // FloorNameLabel
+            // 
+            this.FloorNameLabel.AutoSize = true;
+            this.FloorNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.FloorNameLabel.Name = "FloorNameLabel";
+            this.FloorNameLabel.Size = new System.Drawing.Size(34, 13);
+            this.FloorNameLabel.TabIndex = 0;
+            this.FloorNameLabel.Text = "Name";
+            // 
+            // FloorDescriptionLabel
+            // 
+            this.FloorDescriptionLabel.AutoSize = true;
+            this.FloorDescriptionLabel.Location = new System.Drawing.Point(3, 25);
+            this.FloorDescriptionLabel.Name = "FloorDescriptionLabel";
+            this.FloorDescriptionLabel.Size = new System.Drawing.Size(60, 13);
+            this.FloorDescriptionLabel.TabIndex = 3;
+            this.FloorDescriptionLabel.Text = "Description";
+            // 
+            // FloorCommentLabel
+            // 
+            this.FloorCommentLabel.AutoSize = true;
+            this.FloorCommentLabel.Location = new System.Drawing.Point(3, 80);
+            this.FloorCommentLabel.Name = "FloorCommentLabel";
+            this.FloorCommentLabel.Size = new System.Drawing.Size(52, 13);
+            this.FloorCommentLabel.TabIndex = 6;
+            this.FloorCommentLabel.Text = "Comment";
+            // 
+            // ParquetEquivalentItemIDLabel
+            // 
+            this.ParquetEquivalentItemIDLabel.AutoSize = true;
+            this.ParquetEquivalentItemIDLabel.Location = new System.Drawing.Point(3, 135);
+            this.ParquetEquivalentItemIDLabel.Name = "ParquetEquivalentItemIDLabel";
+            this.ParquetEquivalentItemIDLabel.Size = new System.Drawing.Size(82, 13);
+            this.ParquetEquivalentItemIDLabel.TabIndex = 9;
+            this.ParquetEquivalentItemIDLabel.Text = "Equivalent Item";
+            // 
+            // FloorModificationToolLabel
+            // 
+            this.FloorModificationToolLabel.AutoSize = true;
+            this.FloorModificationToolLabel.Location = new System.Drawing.Point(3, 336);
+            this.FloorModificationToolLabel.Name = "FloorModificationToolLabel";
+            this.FloorModificationToolLabel.Size = new System.Drawing.Size(87, 13);
+            this.FloorModificationToolLabel.TabIndex = 12;
+            this.FloorModificationToolLabel.Text = "Modification Tool";
+            // 
+            // ParquetNameTextBox
+            // 
+            this.ParquetNameTextBox.Location = new System.Drawing.Point(131, 3);
+            this.ParquetNameTextBox.Name = "ParquetNameTextBox";
+            this.ParquetNameTextBox.Size = new System.Drawing.Size(144, 20);
+            this.ParquetNameTextBox.TabIndex = 23;
+            // 
+            // FloorDescriptionTextBox
+            // 
+            this.FloorDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorLayoutTabelPanel.SetColumnSpan(this.FloorDescriptionTextBox, 2);
+            this.FloorDescriptionTextBox.Location = new System.Drawing.Point(131, 28);
+            this.FloorDescriptionTextBox.Multiline = true;
+            this.FloorDescriptionTextBox.Name = "FloorDescriptionTextBox";
+            this.FloorDescriptionTextBox.Size = new System.Drawing.Size(295, 49);
+            this.FloorDescriptionTextBox.TabIndex = 24;
+            // 
+            // FloorCommentTextBox
+            // 
+            this.FloorCommentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorLayoutTabelPanel.SetColumnSpan(this.FloorCommentTextBox, 2);
+            this.FloorCommentTextBox.Location = new System.Drawing.Point(131, 83);
+            this.FloorCommentTextBox.Multiline = true;
+            this.FloorCommentTextBox.Name = "FloorCommentTextBox";
+            this.FloorCommentTextBox.Size = new System.Drawing.Size(295, 49);
+            this.FloorCommentTextBox.TabIndex = 25;
+            // 
+            // FloorlItemIDComboBox
+            // 
+            this.FloorlItemIDComboBox.FormattingEnabled = true;
+            this.FloorlItemIDComboBox.Location = new System.Drawing.Point(131, 138);
+            this.FloorlItemIDComboBox.Name = "FloorlItemIDComboBox";
+            this.FloorlItemIDComboBox.Size = new System.Drawing.Size(144, 21);
+            this.FloorlItemIDComboBox.TabIndex = 29;
+            // 
+            // FloorModificationToolComboBox
+            // 
+            this.FloorModificationToolComboBox.FormattingEnabled = true;
+            this.FloorModificationToolComboBox.Location = new System.Drawing.Point(131, 339);
+            this.FloorModificationToolComboBox.Name = "FloorModificationToolComboBox";
+            this.FloorModificationToolComboBox.Size = new System.Drawing.Size(144, 21);
+            this.FloorModificationToolComboBox.TabIndex = 34;
+            // 
+            // FloorPictureBox
+            // 
+            this.FloorPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.FloorPictureBox.Location = new System.Drawing.Point(761, 280);
+            this.FloorPictureBox.Name = "FloorPictureBox";
+            this.FloorPictureBox.Size = new System.Drawing.Size(182, 182);
+            this.FloorPictureBox.TabIndex = 6;
+            this.FloorPictureBox.TabStop = false;
+            // 
+            // FloorIDLabel
+            // 
+            this.FloorIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorIDLabel.AutoSize = true;
+            this.FloorIDLabel.Location = new System.Drawing.Point(761, 19);
+            this.FloorIDLabel.Name = "FloorIDLabel";
+            this.FloorIDLabel.Size = new System.Drawing.Size(45, 13);
+            this.FloorIDLabel.TabIndex = 4;
+            this.FloorIDLabel.Text = "Floor ID";
+            // 
+            // ParquetsAddNewButton
+            // 
+            this.ParquetsAddNewButton.Location = new System.Drawing.Point(159, 468);
+            this.ParquetsAddNewButton.Name = "ParquetsAddNewButton";
+            this.ParquetsAddNewButton.Size = new System.Drawing.Size(129, 23);
+            this.ParquetsAddNewButton.TabIndex = 2;
+            this.ParquetsAddNewButton.Text = "Add New Item";
+            this.ParquetsAddNewButton.UseVisualStyleBackColor = true;
+            // 
+            // FloorIDTextBox
+            // 
+            this.FloorIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorIDTextBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.FloorIDTextBox.Location = new System.Drawing.Point(812, 16);
+            this.FloorIDTextBox.Name = "FloorIDTextBox";
+            this.FloorIDTextBox.Size = new System.Drawing.Size(131, 20);
+            this.FloorIDTextBox.TabIndex = 3;
+            this.FloorIDTextBox.Text = "-2020202020";
+            // 
+            // FloorConfigGroupBox
+            // 
+            this.FloorConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorConfigGroupBox.Location = new System.Drawing.Point(9, 497);
+            this.FloorConfigGroupBox.Name = "FloorConfigGroupBox";
+            this.FloorConfigGroupBox.Size = new System.Drawing.Size(938, 96);
+            this.FloorConfigGroupBox.TabIndex = 0;
+            this.FloorConfigGroupBox.TabStop = false;
+            // 
+            // FloorLayoutTabelPanel
+            // 
+            this.FloorLayoutTabelPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.FloorLayoutTabelPanel.ColumnCount = 3;
+            this.FloorLayoutTabelPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.FloorLayoutTabelPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.FloorLayoutTabelPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.FloorLayoutTabelPanel.Controls.Add(this.FloorNameLabel, 0, 0);
+            this.FloorLayoutTabelPanel.Controls.Add(this.FloorDescriptionLabel, 0, 1);
+            this.FloorLayoutTabelPanel.Controls.Add(this.FloorCommentLabel, 0, 2);
+            this.FloorLayoutTabelPanel.Controls.Add(this.ParquetEquivalentItemIDLabel, 0, 3);
+            this.FloorLayoutTabelPanel.Controls.Add(this.ParquetNameTextBox, 1, 0);
+            this.FloorLayoutTabelPanel.Controls.Add(this.FloorDescriptionTextBox, 1, 1);
+            this.FloorLayoutTabelPanel.Controls.Add(this.FloorCommentTextBox, 1, 2);
+            this.FloorLayoutTabelPanel.Controls.Add(this.FloorlItemIDComboBox, 1, 3);
+            this.FloorLayoutTabelPanel.Controls.Add(this.FloorModificationToolLabel, 0, 8);
+            this.FloorLayoutTabelPanel.Controls.Add(this.FloorModificationToolComboBox, 1, 8);
+            this.FloorLayoutTabelPanel.Controls.Add(this.FloorTrenchName, 0, 9);
+            this.FloorLayoutTabelPanel.Controls.Add(this.FloorTrenchNameTextBox, 1, 9);
+            this.FloorLayoutTabelPanel.Location = new System.Drawing.Point(307, 16);
+            this.FloorLayoutTabelPanel.Name = "FloorLayoutTabelPanel";
+            this.FloorLayoutTabelPanel.RowCount = 11;
+            this.FloorLayoutTabelPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.FloorLayoutTabelPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.FloorLayoutTabelPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.FloorLayoutTabelPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.FloorLayoutTabelPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.FloorLayoutTabelPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.FloorLayoutTabelPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.FloorLayoutTabelPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.FloorLayoutTabelPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.FloorLayoutTabelPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.FloorLayoutTabelPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.FloorLayoutTabelPanel.Size = new System.Drawing.Size(429, 446);
+            this.FloorLayoutTabelPanel.TabIndex = 5;
+            // 
+            // FloorTrenchName
+            // 
+            this.FloorTrenchName.AutoSize = true;
+            this.FloorTrenchName.Location = new System.Drawing.Point(3, 361);
+            this.FloorTrenchName.Name = "FloorTrenchName";
+            this.FloorTrenchName.Size = new System.Drawing.Size(70, 13);
+            this.FloorTrenchName.TabIndex = 0;
+            this.FloorTrenchName.Text = "Trench Name";
+            // 
+            // FloorTrenchNameTextBox
+            // 
+            this.FloorTrenchNameTextBox.Location = new System.Drawing.Point(131, 364);
+            this.FloorTrenchNameTextBox.Name = "FloorTrenchNameTextBox";
+            this.FloorTrenchNameTextBox.Size = new System.Drawing.Size(144, 20);
+            this.FloorTrenchNameTextBox.TabIndex = 23;
+            // 
             // MainEditorForm
             // 
             this.AccessibleDescription = "The primary interactive editor window.";
@@ -3254,6 +3498,8 @@ namespace Scribe
             ((System.ComponentModel.ISupportInitialize)(this.ItemPictureBox)).EndInit();
             this.MapsTabPage.ResumeLayout(false);
             this.MapsTabPage.PerformLayout();
+            this.FloorsTabPage.ResumeLayout(false);
+            this.FloorsTabPage.PerformLayout();
             this.RoomsTabPage.ResumeLayout(false);
             this.RoomsTabPage.PerformLayout();
             this.RoomConfigGroupBox.ResumeLayout(false);
@@ -3270,6 +3516,9 @@ namespace Scribe
             this.FlavorFilterGroupBox.ResumeLayout(false);
             this.FlavorTableLayoutPanel.ResumeLayout(false);
             this.FlavorTableLayoutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FloorPictureBox)).EndInit();
+            this.FloorLayoutTabelPanel.ResumeLayout(false);
+            this.FloorLayoutTabelPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3347,7 +3596,7 @@ namespace Scribe
         private System.Windows.Forms.TextBox CraftingMaxProductCountTextBox;
         private System.Windows.Forms.TabPage ItemsTabPage;
         private System.Windows.Forms.TabPage MapsTabPage;
-        private System.Windows.Forms.TabPage ParquetsTabPage;
+        private System.Windows.Forms.TabPage FloorsTabPage;
         private System.Windows.Forms.TabPage RoomsTabPage;
         private System.Windows.Forms.TabPage ScriptsTabPage;
         private System.Windows.Forms.TableLayoutPanel FiltersTableLayoutPanel;
@@ -3534,6 +3783,30 @@ namespace Scribe
         private System.Windows.Forms.Label CraftingStrikePatternDimensionLabelExample;
         private System.Windows.Forms.Label CraftingStrikePatternLabel;
         private System.Windows.Forms.Label CraftingStrikePatternComingSoonLabel;
+        private System.Windows.Forms.ListBox ParquetListBox;
+        private System.Windows.Forms.Button FloorEditImageButton;
+        private System.Windows.Forms.TableLayoutPanel FloorLayoutTabelPanel;
+        private System.Windows.Forms.Label FloorNameLabel;
+        private System.Windows.Forms.Label FloorDescriptionLabel;
+        private System.Windows.Forms.Label FloorCommentLabel;
+        private System.Windows.Forms.Label ParquetEquivalentItemIDLabel;
+        private System.Windows.Forms.Label FloorModificationToolLabel;
+        private System.Windows.Forms.TextBox ParquetNameTextBox;
+        private System.Windows.Forms.TextBox FloorDescriptionTextBox;
+        private System.Windows.Forms.TextBox FloorCommentTextBox;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.PictureBox FloorPictureBox;
+        private System.Windows.Forms.Label FloorIDLabel;
+        private System.Windows.Forms.Button ParquetsAddNewButton;
+        private System.Windows.Forms.TextBox FloorIDTextBox;
+        private System.Windows.Forms.GroupBox Config;
+        private System.Windows.Forms.GroupBox FloorConfigGroupBox;
+        private System.Windows.Forms.Label FloorTrenchName;
+        private System.Windows.Forms.TextBox FloorTrenchNameTextBox;
+        private System.Windows.Forms.ListBox FloorListBox;
+        private System.Windows.Forms.ComboBox FloorlItemIDComboBox;
+        private System.Windows.Forms.ComboBox FloorModificationToolComboBox;
     }
 }
 
