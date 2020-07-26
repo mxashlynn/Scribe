@@ -651,7 +651,7 @@ namespace Scribe
             this.StrikePanelTableLayoutPanel3.Controls.Add(this.RangeEndLabel3, 2, 0);
             this.StrikePanelTableLayoutPanel3.Controls.Add(this.RangeStartTextBox3, 0, 1);
             this.StrikePanelTableLayoutPanel3.Controls.Add(this.RangeEndTextBox3, 2, 1);
-            this.StrikePanelTableLayoutPanel3.Controls.Add(this.StrikeRangeDiagramPictureBox1, 0, 2);
+            this.StrikePanelTableLayoutPanel3.Controls.Add(this.StrikeRangeDiagramPictureBox3, 0, 2);
             this.StrikePanelTableLayoutPanel3.Controls.Add(this.GoalStartLabel3, 0, 3);
             this.StrikePanelTableLayoutPanel3.Controls.Add(this.GoalEndLabel3, 2, 3);
             this.StrikePanelTableLayoutPanel3.Controls.Add(this.GoalStartTextBox3, 0, 4);
