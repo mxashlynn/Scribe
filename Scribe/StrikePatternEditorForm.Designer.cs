@@ -114,7 +114,7 @@ namespace Scribe
             this.RangeStartLabel8 = new System.Windows.Forms.Label();
             this.RangeEndLabel8 = new System.Windows.Forms.Label();
             this.RangeStartTextBox8 = new System.Windows.Forms.TextBox();
-            this.RangeEndTextBox2 = new System.Windows.Forms.TextBox();
+            this.RangeEndTextBox8 = new System.Windows.Forms.TextBox();
             this.StrikeRangeDiagramPictureBox8 = new System.Windows.Forms.PictureBox();
             this.GoalStartLabel8 = new System.Windows.Forms.Label();
             this.GoalEndLabel8 = new System.Windows.Forms.Label();
