@@ -712,7 +712,7 @@ namespace Scribe
             //
             this.StrikeRangeDiagramPictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.StrikeRangeDiagramPictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.StrikePanelTableLayoutPanel3.SetColumnSpan(this.StrikeRangeDiagramPictureBox1, 3);
+            this.StrikePanelTableLayoutPanel3.SetColumnSpan(this.StrikeRangeDiagramPictureBox3, 3);
             this.StrikeRangeDiagramPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("StrikeRangeDiagramPictureBox3.Image")));
             this.StrikeRangeDiagramPictureBox3.Location = new System.Drawing.Point(16, 49);
             this.StrikeRangeDiagramPictureBox3.Name = "StrikeRangeDiagramPictureBox3";
