@@ -539,7 +539,7 @@ namespace Scribe
             this.StrikeRangeDiagramPictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.StrikeRangeDiagramPictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.StrikePanelTableLayoutPanel2.SetColumnSpan(this.StrikeRangeDiagramPictureBox2, 3);
-            this.StrikeRangeDiagramPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("StrikeRangeDiagramPictureBox3.Image")));
+            this.StrikeRangeDiagramPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("StrikeRangeDiagramPictureBox2.Image")));
             this.StrikeRangeDiagramPictureBox2.Location = new System.Drawing.Point(16, 49);
             this.StrikeRangeDiagramPictureBox2.Name = "StrikeRangeDiagramPictureBox2";
             this.StrikeRangeDiagramPictureBox2.Size = new System.Drawing.Size(184, 34);
@@ -687,7 +687,7 @@ namespace Scribe
             this.StrikeRangeDiagramPictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.StrikeRangeDiagramPictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.StrikePanelTableLayoutPanel3.SetColumnSpan(this.StrikeRangeDiagramPictureBox1, 3);
-            this.StrikeRangeDiagramPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("StrikeRangeDiagramPictureBox4.Image")));
+            this.StrikeRangeDiagramPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("StrikeRangeDiagramPictureBox3.Image")));
             this.StrikeRangeDiagramPictureBox3.Location = new System.Drawing.Point(16, 49);
             this.StrikeRangeDiagramPictureBox3.Name = "StrikeRangeDiagramPictureBox3";
             this.StrikeRangeDiagramPictureBox3.Size = new System.Drawing.Size(184, 34);
