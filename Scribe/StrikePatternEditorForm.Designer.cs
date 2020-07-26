@@ -618,7 +618,7 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StrikePanelGroupBox3.Controls.Add(this.PanelActiveCheckBox3);
             this.StrikePanelGroupBox3.Controls.Add(this.StrikePanelTableLayoutPanel3);
-            this.StrikePanelGroupBox3.Location = new System.Drawing.Point(3, 0);
+            this.StrikePanelGroupBox3.Location = new System.Drawing.Point(473, 0);
             this.StrikePanelGroupBox3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.StrikePanelGroupBox3.Name = "StrikePanelGroupBox3";
             this.StrikePanelGroupBox3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
@@ -766,7 +766,7 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StrikePanelGroupBox4.Controls.Add(this.PanelActiveCheckBox4);
             this.StrikePanelGroupBox4.Controls.Add(this.StrikePanelTableLayoutPanel4);
-            this.StrikePanelGroupBox4.Location = new System.Drawing.Point(238, 0);
+            this.StrikePanelGroupBox4.Location = new System.Drawing.Point(708, 0);
             this.StrikePanelGroupBox4.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.StrikePanelGroupBox4.Name = "StrikePanelGroupBox4";
             this.StrikePanelGroupBox4.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
@@ -914,7 +914,7 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StrikePanelGroupBox5.Controls.Add(this.PanelActiveCheckBox5);
             this.StrikePanelGroupBox5.Controls.Add(this.StrikePanelTableLayoutPanel5);
-            this.StrikePanelGroupBox5.Location = new System.Drawing.Point(238, 0);
+            this.StrikePanelGroupBox5.Location = new System.Drawing.Point(3, 161);
             this.StrikePanelGroupBox5.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.StrikePanelGroupBox5.Name = "StrikePanelGroupBox5";
             this.StrikePanelGroupBox5.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
@@ -1062,7 +1062,7 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StrikePanelGroupBox6.Controls.Add(this.PanelActiveCheckBox6);
             this.StrikePanelGroupBox6.Controls.Add(this.StrikePanelTableLayoutPanel6);
-            this.StrikePanelGroupBox6.Location = new System.Drawing.Point(238, 0);
+            this.StrikePanelGroupBox6.Location = new System.Drawing.Point(238, 161);
             this.StrikePanelGroupBox6.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.StrikePanelGroupBox6.Name = "StrikePanelGroupBox6";
             this.StrikePanelGroupBox6.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
@@ -1210,7 +1210,7 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StrikePanelGroupBox7.Controls.Add(this.PanelActiveCheckBox7);
             this.StrikePanelGroupBox7.Controls.Add(this.StrikePanelTableLayoutPanel7);
-            this.StrikePanelGroupBox7.Location = new System.Drawing.Point(238, 0);
+            this.StrikePanelGroupBox7.Location = new System.Drawing.Point(473, 161);
             this.StrikePanelGroupBox7.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.StrikePanelGroupBox7.Name = "StrikePanelGroupBox7";
             this.StrikePanelGroupBox7.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
@@ -1358,7 +1358,7 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StrikePanelGroupBox8.Controls.Add(this.PanelActiveCheckBox8);
             this.StrikePanelGroupBox8.Controls.Add(this.StrikePanelTableLayoutPanel8);
-            this.StrikePanelGroupBox8.Location = new System.Drawing.Point(238, 0);
+            this.StrikePanelGroupBox8.Location = new System.Drawing.Point(708, 161);
             this.StrikePanelGroupBox8.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.StrikePanelGroupBox8.Name = "StrikePanelGroupBox8";
             this.StrikePanelGroupBox8.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
@@ -1506,7 +1506,7 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StrikePanelGroupBox9.Controls.Add(this.PanelActiveCheckBox9);
             this.StrikePanelGroupBox9.Controls.Add(this.StrikePanelTableLayoutPanel9);
-            this.StrikePanelGroupBox9.Location = new System.Drawing.Point(238, 0);
+            this.StrikePanelGroupBox9.Location = new System.Drawing.Point(3, 322);
             this.StrikePanelGroupBox9.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.StrikePanelGroupBox9.Name = "StrikePanelGroupBox9";
             this.StrikePanelGroupBox9.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
@@ -1654,7 +1654,7 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StrikePanelGroupBox10.Controls.Add(this.PanelActiveCheckBox10);
             this.StrikePanelGroupBox10.Controls.Add(this.StrikePanelTableLayoutPanel10);
-            this.StrikePanelGroupBox10.Location = new System.Drawing.Point(238, 0);
+            this.StrikePanelGroupBox10.Location = new System.Drawing.Point(238, 322);
             this.StrikePanelGroupBox10.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.StrikePanelGroupBox10.Name = "StrikePanelGroupBox10";
             this.StrikePanelGroupBox10.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
@@ -1802,7 +1802,7 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StrikePanelGroupBox11.Controls.Add(this.PanelActiveCheckBox11);
             this.StrikePanelGroupBox11.Controls.Add(this.StrikePanelTableLayoutPanel11);
-            this.StrikePanelGroupBox11.Location = new System.Drawing.Point(238, 0);
+            this.StrikePanelGroupBox11.Location = new System.Drawing.Point(473, 322);
             this.StrikePanelGroupBox11.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.StrikePanelGroupBox11.Name = "StrikePanelGroupBox11";
             this.StrikePanelGroupBox11.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
@@ -1950,7 +1950,7 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StrikePanelGroupBox12.Controls.Add(this.PanelActiveCheckBox12);
             this.StrikePanelGroupBox12.Controls.Add(this.StrikePanelTableLayoutPanel12);
-            this.StrikePanelGroupBox12.Location = new System.Drawing.Point(238, 0);
+            this.StrikePanelGroupBox12.Location = new System.Drawing.Point(708, 322);
             this.StrikePanelGroupBox12.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.StrikePanelGroupBox12.Name = "StrikePanelGroupBox12";
             this.StrikePanelGroupBox12.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
@@ -2098,7 +2098,7 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StrikePanelGroupBox13.Controls.Add(this.PanelActiveCheckBox13);
             this.StrikePanelGroupBox13.Controls.Add(this.StrikePanelTableLayoutPanel13);
-            this.StrikePanelGroupBox13.Location = new System.Drawing.Point(238, 0);
+            this.StrikePanelGroupBox13.Location = new System.Drawing.Point(3, 483);
             this.StrikePanelGroupBox13.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.StrikePanelGroupBox13.Name = "StrikePanelGroupBox13";
             this.StrikePanelGroupBox13.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
@@ -2246,7 +2246,7 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StrikePanelGroupBox14.Controls.Add(this.PanelActiveCheckBox14);
             this.StrikePanelGroupBox14.Controls.Add(this.StrikePanelTableLayoutPanel14);
-            this.StrikePanelGroupBox14.Location = new System.Drawing.Point(238, 0);
+            this.StrikePanelGroupBox14.Location = new System.Drawing.Point(238, 483);
             this.StrikePanelGroupBox14.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.StrikePanelGroupBox14.Name = "StrikePanelGroupBox14";
             this.StrikePanelGroupBox14.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
@@ -2394,7 +2394,7 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StrikePanelGroupBox15.Controls.Add(this.PanelActiveCheckBox15);
             this.StrikePanelGroupBox15.Controls.Add(this.StrikePanelTableLayoutPanel15);
-            this.StrikePanelGroupBox15.Location = new System.Drawing.Point(238, 0);
+            this.StrikePanelGroupBox15.Location = new System.Drawing.Point(473, 483);
             this.StrikePanelGroupBox15.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.StrikePanelGroupBox15.Name = "StrikePanelGroupBox15";
             this.StrikePanelGroupBox15.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
@@ -2542,7 +2542,7 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StrikePanelGroupBox16.Controls.Add(this.PanelActiveCheckBox16);
             this.StrikePanelGroupBox16.Controls.Add(this.StrikePanelTableLayoutPanel16);
-            this.StrikePanelGroupBox16.Location = new System.Drawing.Point(238, 0);
+            this.StrikePanelGroupBox16.Location = new System.Drawing.Point(708, 483);
             this.StrikePanelGroupBox16.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.StrikePanelGroupBox16.Name = "StrikePanelGroupBox16";
             this.StrikePanelGroupBox16.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
