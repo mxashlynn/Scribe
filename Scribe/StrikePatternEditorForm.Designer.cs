@@ -649,7 +649,7 @@ namespace Scribe
             this.StrikePanelTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34F));
             this.StrikePanelTableLayoutPanel3.Controls.Add(this.RangeStartLabel3, 0, 0);
             this.StrikePanelTableLayoutPanel3.Controls.Add(this.RangeEndLabel3, 2, 0);
-            this.StrikePanelTableLayoutPanel3.Controls.Add(this.RangeStartTextBox1, 0, 1);
+            this.StrikePanelTableLayoutPanel3.Controls.Add(this.RangeStartTextBox3, 0, 1);
             this.StrikePanelTableLayoutPanel3.Controls.Add(this.RangeEndTextBox3, 2, 1);
             this.StrikePanelTableLayoutPanel3.Controls.Add(this.StrikeRangeDiagramPictureBox1, 0, 2);
             this.StrikePanelTableLayoutPanel3.Controls.Add(this.GoalStartLabel3, 0, 3);
