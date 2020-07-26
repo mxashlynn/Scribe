@@ -222,8 +222,8 @@ namespace Scribe
             this.GoalEndLabel16 = new System.Windows.Forms.Label();
             this.GoalStartTextBox16 = new System.Windows.Forms.TextBox();
             this.GoalEndTextBox16 = new System.Windows.Forms.TextBox();
-            this.OkayButton = new System.Windows.Forms.Button();
             this.ButtonTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.OkayButton = new System.Windows.Forms.Button();
             this.CancelButtonControl = new System.Windows.Forms.Button();
             this.StrikePatternTableLayoutPanel.SuspendLayout();
             this.StrikePanelGroupBox1.SuspendLayout();
@@ -2683,17 +2683,6 @@ namespace Scribe
             this.GoalEndTextBox16.TabIndex = 6;
             this.GoalEndTextBox16.Text = "80";
             // 
-            // OkayButton
-            //
-            this.OkayButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.OkayButton.Location = new System.Drawing.Point(117, 3);
-            this.OkayButton.Name = "OkayButton";
-            this.OkayButton.Size = new System.Drawing.Size(109, 21);
-            this.OkayButton.TabIndex = 0;
-            this.OkayButton.Text = "&OK";
-            this.OkayButton.UseVisualStyleBackColor = true;
-            // 
             // ButtonTableLayoutPanel
             // 
             this.ButtonTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -2710,6 +2699,17 @@ namespace Scribe
             this.ButtonTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.ButtonTableLayoutPanel.Size = new System.Drawing.Size(229, 27);
             this.ButtonTableLayoutPanel.TabIndex = 5;
+            // 
+            // OkayButton
+            //
+            this.OkayButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.OkayButton.Location = new System.Drawing.Point(117, 3);
+            this.OkayButton.Name = "OkayButton";
+            this.OkayButton.Size = new System.Drawing.Size(109, 21);
+            this.OkayButton.TabIndex = 0;
+            this.OkayButton.Text = "&OK";
+            this.OkayButton.UseVisualStyleBackColor = true;
             // 
             // CancelButtonControl
             // 
