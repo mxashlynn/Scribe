@@ -2701,8 +2701,8 @@ namespace Scribe
             this.ButtonTableLayoutPanel.TabIndex = 5;
             // 
             // OkayButton
-            //
-            this.OkayButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            // 
+            this.OkayButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.OkayButton.Location = new System.Drawing.Point(117, 3);
             this.OkayButton.Name = "OkayButton";
