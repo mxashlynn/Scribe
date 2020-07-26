@@ -707,9 +707,9 @@ namespace Scribe
             this.RangeEndTextBox3.Size = new System.Drawing.Size(40, 23);
             this.RangeEndTextBox3.TabIndex = 6;
             this.RangeEndTextBox3.Text = "100";
-            //
+            // 
             // StrikeRangeDiagramPictureBox3
-            //
+            // 
             this.StrikeRangeDiagramPictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.StrikeRangeDiagramPictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.StrikePanelTableLayoutPanel3.SetColumnSpan(this.StrikeRangeDiagramPictureBox3, 3);
@@ -720,7 +720,7 @@ namespace Scribe
             this.StrikeRangeDiagramPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.StrikeRangeDiagramPictureBox3.TabIndex = 2;
             this.StrikeRangeDiagramPictureBox3.TabStop = false;
-            //
+            // 
             // GoalStartLabel3
             // 
             this.GoalStartLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
