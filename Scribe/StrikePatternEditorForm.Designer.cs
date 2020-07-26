@@ -54,6 +54,8 @@ namespace Scribe
             this.GoalEndLabel2 = new System.Windows.Forms.Label();
             this.GoalStartTextBox2 = new System.Windows.Forms.TextBox();
             this.GoalEndTextBox2 = new System.Windows.Forms.TextBox();
+            this.StrikePanelGroupBox3 = new System.Windows.Forms.GroupBox();
+            this.PanelActiveCheckBox3 = new System.Windows.Forms.CheckBox();
             this.StrikePanelTableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.RangeStartLabel3 = new System.Windows.Forms.Label();
             this.RangeEndLabel3 = new System.Windows.Forms.Label();
@@ -76,6 +78,8 @@ namespace Scribe
             this.GoalEndLabel4 = new System.Windows.Forms.Label();
             this.GoalStartTextBox4 = new System.Windows.Forms.TextBox();
             this.GoalEndTextBox4 = new System.Windows.Forms.TextBox();
+            this.StrikePanelGroupBox5 = new System.Windows.Forms.GroupBox();
+            this.PanelActiveCheckBox5 = new System.Windows.Forms.CheckBox();
             this.StrikePanelTableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.RangeStartLabel5 = new System.Windows.Forms.Label();
             this.RangeEndLabel5 = new System.Windows.Forms.Label();
@@ -98,6 +102,8 @@ namespace Scribe
             this.GoalEndLabel6 = new System.Windows.Forms.Label();
             this.GoalStartTextBox6 = new System.Windows.Forms.TextBox();
             this.GoalEndTextBox6 = new System.Windows.Forms.TextBox();
+            this.StrikePanelGroupBox7 = new System.Windows.Forms.GroupBox();
+            this.PanelActiveCheckBox7 = new System.Windows.Forms.CheckBox();
             this.StrikePanelTableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.RangeStartLabel7 = new System.Windows.Forms.Label();
             this.RangeEndLabel7 = new System.Windows.Forms.Label();
@@ -120,6 +126,8 @@ namespace Scribe
             this.GoalEndLabel8 = new System.Windows.Forms.Label();
             this.GoalStartTextBox8 = new System.Windows.Forms.TextBox();
             this.GoalEndTextBox8 = new System.Windows.Forms.TextBox();
+            this.StrikePanelGroupBox9 = new System.Windows.Forms.GroupBox();
+            this.PanelActiveCheckBox9 = new System.Windows.Forms.CheckBox();
             this.StrikePanelTableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.RangeStartLabel9 = new System.Windows.Forms.Label();
             this.RangeEndLabel9 = new System.Windows.Forms.Label();
@@ -130,6 +138,8 @@ namespace Scribe
             this.GoalEndLabel9 = new System.Windows.Forms.Label();
             this.GoalStartTextBox9 = new System.Windows.Forms.TextBox();
             this.GoalEndTextBox9 = new System.Windows.Forms.TextBox();
+            this.StrikePanelGroupBox10 = new System.Windows.Forms.GroupBox();
+            this.PanelActiveCheckBox10 = new System.Windows.Forms.CheckBox();
             this.StrikePanelTableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.RangeStartLabel10 = new System.Windows.Forms.Label();
             this.RangeEndLabel10 = new System.Windows.Forms.Label();
@@ -140,6 +150,18 @@ namespace Scribe
             this.GoalEndLabel10 = new System.Windows.Forms.Label();
             this.GoalStartTextBox10 = new System.Windows.Forms.TextBox();
             this.GoalEndTextBox10 = new System.Windows.Forms.TextBox();
+            this.StrikePanelGroupBox11 = new System.Windows.Forms.GroupBox();
+            this.PanelActiveCheckBox11 = new System.Windows.Forms.CheckBox();
+            this.StrikePanelTableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.RangeStartLabel11 = new System.Windows.Forms.Label();
+            this.RangeEndLabel11 = new System.Windows.Forms.Label();
+            this.RangeStartTextBox11 = new System.Windows.Forms.TextBox();
+            this.RangeEndTextBox11 = new System.Windows.Forms.TextBox();
+            this.StrikeRangeDiagramPictureBox11 = new System.Windows.Forms.PictureBox();
+            this.GoalStartLabel11 = new System.Windows.Forms.Label();
+            this.GoalEndLabel11 = new System.Windows.Forms.Label();
+            this.GoalStartTextBox11 = new System.Windows.Forms.TextBox();
+            this.GoalEndTextBox11 = new System.Windows.Forms.TextBox();
             this.StrikePanelGroupBox12 = new System.Windows.Forms.GroupBox();
             this.PanelActiveCheckBox12 = new System.Windows.Forms.CheckBox();
             this.StrikePanelTableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
@@ -152,6 +174,8 @@ namespace Scribe
             this.GoalEndLabel12 = new System.Windows.Forms.Label();
             this.GoalStartTextBox12 = new System.Windows.Forms.TextBox();
             this.GoalEndTextBox12 = new System.Windows.Forms.TextBox();
+            this.StrikePanelGroupBox13 = new System.Windows.Forms.GroupBox();
+            this.PanelActiveCheckBox13 = new System.Windows.Forms.CheckBox();
             this.StrikePanelTableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.RangeStartLabel13 = new System.Windows.Forms.Label();
             this.RangeEndLabel13 = new System.Windows.Forms.Label();
@@ -174,6 +198,8 @@ namespace Scribe
             this.GoalEndLabel14 = new System.Windows.Forms.Label();
             this.GoalStartTextBox14 = new System.Windows.Forms.TextBox();
             this.GoalEndTextBox14 = new System.Windows.Forms.TextBox();
+            this.StrikePanelGroupBox15 = new System.Windows.Forms.GroupBox();
+            this.PanelActiveCheckBox15 = new System.Windows.Forms.CheckBox();
             this.StrikePanelTableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.RangeStartLabel15 = new System.Windows.Forms.Label();
             this.RangeEndLabel15 = new System.Windows.Forms.Label();
