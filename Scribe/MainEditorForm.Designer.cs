@@ -90,7 +90,7 @@ namespace Scribe
             this.GameFirstScriptTextBox = new System.Windows.Forms.TextBox();
             this.GameIDLabel = new System.Windows.Forms.Label();
             this.GameIDTextBox = new System.Windows.Forms.TextBox();
-            this.NewGameButton = new System.Windows.Forms.Button();
+            this.GamesAddNewGameButton = new System.Windows.Forms.Button();
             this.GamesListBox = new System.Windows.Forms.ListBox();
             this.FileFormatGroupBox = new System.Windows.Forms.GroupBox();
             this.FileFormatTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -249,7 +249,7 @@ namespace Scribe
             this.FloorAddBiomeTagButton = new System.Windows.Forms.Button();
             this.FloorConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.FloorIDTextBox = new System.Windows.Forms.TextBox();
-            this.ParquetsAddNewButton = new System.Windows.Forms.Button();
+            this.FloorAddNewFloorButton = new System.Windows.Forms.Button();
             this.FloorListBox = new System.Windows.Forms.ListBox();
             this.FloorIDLabel = new System.Windows.Forms.Label();
             this.FloorEditImageButton = new System.Windows.Forms.Button();
@@ -321,6 +321,12 @@ namespace Scribe
             this.BlocksTabPage = new System.Windows.Forms.TabPage();
             this.FurnishingsTabPage = new System.Windows.Forms.TabPage();
             this.CollectiblesTabPage = new System.Windows.Forms.TabPage();
+            this.GamesRemoveGameButton = new System.Windows.Forms.Button();
+            this.BiomesRemoveBiomeButton = new System.Windows.Forms.Button();
+            this.CraftingRemoveCraftingButton = new System.Windows.Forms.Button();
+            this.ItemsRemoveItemButton = new System.Windows.Forms.Button();
+            this.RoomRemoveRoomButton = new System.Windows.Forms.Button();
+            this.FloorRemoveFloorButton = new System.Windows.Forms.Button();
             this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
             this.EditorTabs.SuspendLayout();
@@ -704,12 +710,13 @@ namespace Scribe
             // 
             // GameTabPage
             // 
+            this.GameTabPage.Controls.Add(this.GamesRemoveGameButton);
             this.GameTabPage.Controls.Add(this.GameIconEditButton);
             this.GameTabPage.Controls.Add(this.GameIconPictureBox);
             this.GameTabPage.Controls.Add(this.GameTableLayoutPanel);
             this.GameTabPage.Controls.Add(this.GameIDLabel);
             this.GameTabPage.Controls.Add(this.GameIDTextBox);
-            this.GameTabPage.Controls.Add(this.NewGameButton);
+            this.GameTabPage.Controls.Add(this.GamesAddNewGameButton);
             this.GameTabPage.Controls.Add(this.GamesListBox);
             this.GameTabPage.Controls.Add(this.FileFormatGroupBox);
             this.GameTabPage.Controls.Add(this.LibraryInfoGroupBox);
@@ -936,14 +943,14 @@ namespace Scribe
             this.GameIDTextBox.TabIndex = 3;
             this.GameIDTextBox.Text = "-2020202020";
             // 
-            // NewGameButton
+            // GamesAddNewGameButton
             // 
-            this.NewGameButton.Location = new System.Drawing.Point(159, 468);
-            this.NewGameButton.Name = "NewGameButton";
-            this.NewGameButton.Size = new System.Drawing.Size(129, 23);
-            this.NewGameButton.TabIndex = 2;
-            this.NewGameButton.Text = "Add New Game";
-            this.NewGameButton.UseVisualStyleBackColor = true;
+            this.GamesAddNewGameButton.Location = new System.Drawing.Point(159, 468);
+            this.GamesAddNewGameButton.Name = "GamesAddNewGameButton";
+            this.GamesAddNewGameButton.Size = new System.Drawing.Size(129, 23);
+            this.GamesAddNewGameButton.TabIndex = 2;
+            this.GamesAddNewGameButton.Text = "Add New Game";
+            this.GamesAddNewGameButton.UseVisualStyleBackColor = true;
             // 
             // GamesListBox
             // 
@@ -1260,6 +1267,7 @@ namespace Scribe
             // BiomesTabPage
             // 
             this.BiomesTabPage.BackColor = System.Drawing.Color.Transparent;
+            this.BiomesTabPage.Controls.Add(this.BiomesRemoveBiomeButton);
             this.BiomesTabPage.Controls.Add(this.BiomeAddEntryRequirementButton);
             this.BiomesTabPage.Controls.Add(this.BiomeRemoveEntryRequirementButton);
             this.BiomesTabPage.Controls.Add(this.BiomeListBox);
@@ -1665,6 +1673,7 @@ namespace Scribe
             // CraftingTabPage
             // 
             this.CraftingTabPage.BackColor = System.Drawing.Color.Transparent;
+            this.CraftingTabPage.Controls.Add(this.CraftingRemoveCraftingButton);
             this.CraftingTabPage.Controls.Add(this.CraftingListBox);
             this.CraftingTabPage.Controls.Add(this.CraftingPictureEditButton);
             this.CraftingTabPage.Controls.Add(this.CraftingTableLayoutPanel);
@@ -2075,6 +2084,7 @@ namespace Scribe
             // ItemsTabPage
             // 
             this.ItemsTabPage.BackColor = System.Drawing.Color.Transparent;
+            this.ItemsTabPage.Controls.Add(this.ItemsRemoveItemButton);
             this.ItemsTabPage.Controls.Add(this.ItemAddTagButton);
             this.ItemsTabPage.Controls.Add(this.ItemRemoveTagButton);
             this.ItemsTabPage.Controls.Add(this.ItemListBox);
@@ -2465,10 +2475,11 @@ namespace Scribe
             // FloorsTabPage
             // 
             this.FloorsTabPage.BackColor = System.Drawing.Color.Transparent;
+            this.FloorsTabPage.Controls.Add(this.FloorRemoveFloorButton);
             this.FloorsTabPage.Controls.Add(this.FloorLayoutTabelPanel);
             this.FloorsTabPage.Controls.Add(this.FloorConfigGroupBox);
             this.FloorsTabPage.Controls.Add(this.FloorIDTextBox);
-            this.FloorsTabPage.Controls.Add(this.ParquetsAddNewButton);
+            this.FloorsTabPage.Controls.Add(this.FloorAddNewFloorButton);
             this.FloorsTabPage.Controls.Add(this.FloorListBox);
             this.FloorsTabPage.Controls.Add(this.FloorIDLabel);
             this.FloorsTabPage.Controls.Add(this.FloorEditImageButton);
@@ -2714,14 +2725,14 @@ namespace Scribe
             this.FloorIDTextBox.TabIndex = 3;
             this.FloorIDTextBox.Text = "-2020202020";
             // 
-            // ParquetsAddNewButton
+            // FloorAddNewFloorButton
             // 
-            this.ParquetsAddNewButton.Location = new System.Drawing.Point(159, 468);
-            this.ParquetsAddNewButton.Name = "ParquetsAddNewButton";
-            this.ParquetsAddNewButton.Size = new System.Drawing.Size(129, 23);
-            this.ParquetsAddNewButton.TabIndex = 2;
-            this.ParquetsAddNewButton.Text = "Add New Item";
-            this.ParquetsAddNewButton.UseVisualStyleBackColor = true;
+            this.FloorAddNewFloorButton.Location = new System.Drawing.Point(159, 468);
+            this.FloorAddNewFloorButton.Name = "FloorAddNewFloorButton";
+            this.FloorAddNewFloorButton.Size = new System.Drawing.Size(129, 23);
+            this.FloorAddNewFloorButton.TabIndex = 2;
+            this.FloorAddNewFloorButton.Text = "Add New Floor";
+            this.FloorAddNewFloorButton.UseVisualStyleBackColor = true;
             // 
             // FloorListBox
             // 
@@ -2765,6 +2776,7 @@ namespace Scribe
             // RoomsTabPage
             // 
             this.RoomsTabPage.BackColor = System.Drawing.Color.Transparent;
+            this.RoomsTabPage.Controls.Add(this.RoomRemoveRoomButton);
             this.RoomsTabPage.Controls.Add(this.RoomAddBlockButton);
             this.RoomsTabPage.Controls.Add(this.RoomRemoveBlockButton);
             this.RoomsTabPage.Controls.Add(this.RoomListBox);
@@ -3566,6 +3578,60 @@ namespace Scribe
             this.CollectiblesTabPage.TabIndex = 11;
             this.CollectiblesTabPage.Text = "Collectibles";
             // 
+            // GamesRemoveGameButton
+            // 
+            this.GamesRemoveGameButton.Location = new System.Drawing.Point(24, 468);
+            this.GamesRemoveGameButton.Name = "GamesRemoveGameButton";
+            this.GamesRemoveGameButton.Size = new System.Drawing.Size(129, 23);
+            this.GamesRemoveGameButton.TabIndex = 2;
+            this.GamesRemoveGameButton.Text = "Remove Game";
+            this.GamesRemoveGameButton.UseVisualStyleBackColor = true;
+            // 
+            // BiomesRemoveBiomeButton
+            // 
+            this.BiomesRemoveBiomeButton.Location = new System.Drawing.Point(24, 468);
+            this.BiomesRemoveBiomeButton.Name = "BiomesRemoveBiomeButton";
+            this.BiomesRemoveBiomeButton.Size = new System.Drawing.Size(129, 23);
+            this.BiomesRemoveBiomeButton.TabIndex = 2;
+            this.BiomesRemoveBiomeButton.Text = "Remove Biome";
+            this.BiomesRemoveBiomeButton.UseVisualStyleBackColor = true;
+            // 
+            // CraftingRemoveCraftingButton
+            // 
+            this.CraftingRemoveCraftingButton.Location = new System.Drawing.Point(9, 468);
+            this.CraftingRemoveCraftingButton.Name = "CraftingRemoveCraftingButton";
+            this.CraftingRemoveCraftingButton.Size = new System.Drawing.Size(127, 23);
+            this.CraftingRemoveCraftingButton.TabIndex = 2;
+            this.CraftingRemoveCraftingButton.Text = "Remove Crafting Recipe";
+            this.CraftingRemoveCraftingButton.UseVisualStyleBackColor = true;
+            // 
+            // ItemsRemoveItemButton
+            // 
+            this.ItemsRemoveItemButton.Location = new System.Drawing.Point(24, 468);
+            this.ItemsRemoveItemButton.Name = "ItemsRemoveItemButton";
+            this.ItemsRemoveItemButton.Size = new System.Drawing.Size(129, 23);
+            this.ItemsRemoveItemButton.TabIndex = 2;
+            this.ItemsRemoveItemButton.Text = "Remove Item";
+            this.ItemsRemoveItemButton.UseVisualStyleBackColor = true;
+            // 
+            // RoomRemoveRoomButton
+            // 
+            this.RoomRemoveRoomButton.Location = new System.Drawing.Point(24, 468);
+            this.RoomRemoveRoomButton.Name = "RoomRemoveRoomButton";
+            this.RoomRemoveRoomButton.Size = new System.Drawing.Size(129, 23);
+            this.RoomRemoveRoomButton.TabIndex = 2;
+            this.RoomRemoveRoomButton.Text = "Remove Room";
+            this.RoomRemoveRoomButton.UseVisualStyleBackColor = true;
+            // 
+            // FloorRemoveFloorButton
+            // 
+            this.FloorRemoveFloorButton.Location = new System.Drawing.Point(24, 468);
+            this.FloorRemoveFloorButton.Name = "FloorRemoveFloorButton";
+            this.FloorRemoveFloorButton.Size = new System.Drawing.Size(129, 23);
+            this.FloorRemoveFloorButton.TabIndex = 2;
+            this.FloorRemoveFloorButton.Text = "Remove Floor";
+            this.FloorRemoveFloorButton.UseVisualStyleBackColor = true;
+            // 
             // MainEditorForm
             // 
             this.AccessibleDescription = "The primary interactive editor window.";
@@ -3778,7 +3844,7 @@ namespace Scribe
         private System.Windows.Forms.Label FileFormatDimensionalDelimiterExample;
         private System.Windows.Forms.Label FileFormatDimensionalTerminatorLabel;
         private System.Windows.Forms.Label FileFormatDimensionalTerminatorExample;
-        private System.Windows.Forms.Button NewGameButton;
+        private System.Windows.Forms.Button GamesAddNewGameButton;
         private System.Windows.Forms.ListBox GamesListBox;
         private System.Windows.Forms.TableLayoutPanel GameTableLayoutPanel;
         private System.Windows.Forms.Label GameIDLabel;
@@ -3926,7 +3992,7 @@ namespace Scribe
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.PictureBox FloorPictureBox;
         private System.Windows.Forms.Label FloorIDLabel;
-        private System.Windows.Forms.Button ParquetsAddNewButton;
+        private System.Windows.Forms.Button FloorAddNewFloorButton;
         private System.Windows.Forms.TextBox FloorIDTextBox;
         private System.Windows.Forms.GroupBox Config;
         private System.Windows.Forms.GroupBox FloorConfigGroupBox;
@@ -3946,6 +4012,12 @@ namespace Scribe
         private System.Windows.Forms.TabPage BlocksTabPage;
         private System.Windows.Forms.TabPage FurnishingsTabPage;
         private System.Windows.Forms.TabPage CollectiblesTabPage;
+        private System.Windows.Forms.Button GamesRemoveGameButton;
+        private System.Windows.Forms.Button BiomesRemoveBiomeButton;
+        private System.Windows.Forms.Button CraftingRemoveCraftingButton;
+        private System.Windows.Forms.Button ItemsRemoveItemButton;
+        private System.Windows.Forms.Button RoomRemoveRoomButton;
+        private System.Windows.Forms.Button FloorRemoveFloorButton;
     }
 }
 
