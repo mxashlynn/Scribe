@@ -288,6 +288,23 @@ namespace Scribe
             this.FloorEditImageButton = new System.Windows.Forms.Button();
             this.FloorPictureBox = new System.Windows.Forms.PictureBox();
             this.BlocksTabPage = new System.Windows.Forms.TabPage();
+            this.BlockTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.BlockNameLabel = new System.Windows.Forms.Label();
+            this.BlockDescriptionLabel = new System.Windows.Forms.Label();
+            this.BlockCommentLabel = new System.Windows.Forms.Label();
+            this.BlockEquivalentItemLabel = new System.Windows.Forms.Label();
+            this.BlockNameTextBox = new System.Windows.Forms.TextBox();
+            this.BlockDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.BlockCommentTextBox = new System.Windows.Forms.TextBox();
+            this.BlockEquivalentItemComboBox = new System.Windows.Forms.ComboBox();
+            this.BlockPictureBox = new System.Windows.Forms.PictureBox();
+            this.BlockEditImageButton = new System.Windows.Forms.Button();
+            this.BlockIDLabel = new System.Windows.Forms.Label();
+            this.BlockListBox = new System.Windows.Forms.ListBox();
+            this.BlockAddNewBlockButton = new System.Windows.Forms.Button();
+            this.BlockIDTextBox = new System.Windows.Forms.TextBox();
+            this.BlockConfigGroupBox = new System.Windows.Forms.GroupBox();
+            this.BlockRemoveBlockButton = new System.Windows.Forms.Button();
             this.FurnishingsTabPage = new System.Windows.Forms.TabPage();
             this.CollectiblesTabPage = new System.Windows.Forms.TabPage();
             this.RoomRecipesTabPage = new System.Windows.Forms.TabPage();
@@ -359,6 +376,9 @@ namespace Scribe
             this.FloorsTabPage.SuspendLayout();
             this.FloorLayoutTabelPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FloorPictureBox)).BeginInit();
+            this.BlocksTabPage.SuspendLayout();
+            this.BlockTableLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BlockPictureBox)).BeginInit();
             this.RoomRecipesTabPage.SuspendLayout();
             this.RoomConfigGroupBox.SuspendLayout();
             this.RoomConfigTableLayoutPanel.SuspendLayout();
@@ -3194,11 +3214,205 @@ namespace Scribe
             // 
             // BlocksTabPage
             // 
+            this.BlocksTabPage.Controls.Add(this.BlockTableLayoutPanel);
+            this.BlocksTabPage.Controls.Add(this.BlockPictureBox);
+            this.BlocksTabPage.Controls.Add(this.BlockEditImageButton);
+            this.BlocksTabPage.Controls.Add(this.BlockIDLabel);
+            this.BlocksTabPage.Controls.Add(this.BlockListBox);
+            this.BlocksTabPage.Controls.Add(this.BlockAddNewBlockButton);
+            this.BlocksTabPage.Controls.Add(this.BlockIDTextBox);
+            this.BlocksTabPage.Controls.Add(this.BlockConfigGroupBox);
+            this.BlocksTabPage.Controls.Add(this.BlockRemoveBlockButton);
             this.BlocksTabPage.Location = new System.Drawing.Point(4, 22);
             this.BlocksTabPage.Name = "BlocksTabPage";
             this.BlocksTabPage.Size = new System.Drawing.Size(953, 599);
             this.BlocksTabPage.TabIndex = 9;
             this.BlocksTabPage.Text = "Blocks";
+            // 
+            // BlockTableLayoutPanel
+            // 
+            this.BlockTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.BlockTableLayoutPanel.ColumnCount = 3;
+            this.BlockTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.BlockTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.BlockTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.BlockTableLayoutPanel.Controls.Add(this.BlockNameLabel, 0, 0);
+            this.BlockTableLayoutPanel.Controls.Add(this.BlockDescriptionLabel, 0, 1);
+            this.BlockTableLayoutPanel.Controls.Add(this.BlockCommentLabel, 0, 2);
+            this.BlockTableLayoutPanel.Controls.Add(this.BlockEquivalentItemLabel, 0, 3);
+            this.BlockTableLayoutPanel.Controls.Add(this.BlockNameTextBox, 1, 0);
+            this.BlockTableLayoutPanel.Controls.Add(this.BlockDescriptionTextBox, 1, 1);
+            this.BlockTableLayoutPanel.Controls.Add(this.BlockCommentTextBox, 1, 2);
+            this.BlockTableLayoutPanel.Controls.Add(this.BlockEquivalentItemComboBox, 1, 3);
+            this.BlockTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
+            this.BlockTableLayoutPanel.Name = "BlockTableLayoutPanel";
+            this.BlockTableLayoutPanel.RowCount = 11;
+            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.BlockTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
+            this.BlockTableLayoutPanel.TabIndex = 5;
+            // 
+            // BlockNameLabel
+            // 
+            this.BlockNameLabel.AutoSize = true;
+            this.BlockNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.BlockNameLabel.Name = "BlockNameLabel";
+            this.BlockNameLabel.Size = new System.Drawing.Size(34, 13);
+            this.BlockNameLabel.TabIndex = 0;
+            this.BlockNameLabel.Text = "Name";
+            // 
+            // BlockDescriptionLabel
+            // 
+            this.BlockDescriptionLabel.AutoSize = true;
+            this.BlockDescriptionLabel.Location = new System.Drawing.Point(3, 25);
+            this.BlockDescriptionLabel.Name = "BlockDescriptionLabel";
+            this.BlockDescriptionLabel.Size = new System.Drawing.Size(60, 13);
+            this.BlockDescriptionLabel.TabIndex = 3;
+            this.BlockDescriptionLabel.Text = "Description";
+            // 
+            // BlockCommentLabel
+            // 
+            this.BlockCommentLabel.AutoSize = true;
+            this.BlockCommentLabel.Location = new System.Drawing.Point(3, 80);
+            this.BlockCommentLabel.Name = "BlockCommentLabel";
+            this.BlockCommentLabel.Size = new System.Drawing.Size(52, 13);
+            this.BlockCommentLabel.TabIndex = 6;
+            this.BlockCommentLabel.Text = "Comment";
+            // 
+            // BlockEquivalentItemLabel
+            // 
+            this.BlockEquivalentItemLabel.AutoSize = true;
+            this.BlockEquivalentItemLabel.Location = new System.Drawing.Point(3, 135);
+            this.BlockEquivalentItemLabel.Name = "BlockEquivalentItemLabel";
+            this.BlockEquivalentItemLabel.Size = new System.Drawing.Size(82, 13);
+            this.BlockEquivalentItemLabel.TabIndex = 9;
+            this.BlockEquivalentItemLabel.Text = "Equivalent Item";
+            // 
+            // BlockNameTextBox
+            // 
+            this.BlockNameTextBox.Location = new System.Drawing.Point(131, 3);
+            this.BlockNameTextBox.Name = "BlockNameTextBox";
+            this.BlockNameTextBox.Size = new System.Drawing.Size(144, 20);
+            this.BlockNameTextBox.TabIndex = 23;
+            // 
+            // BlockDescriptionTextBox
+            // 
+            this.BlockDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlockTableLayoutPanel.SetColumnSpan(this.BlockDescriptionTextBox, 2);
+            this.BlockDescriptionTextBox.Location = new System.Drawing.Point(131, 28);
+            this.BlockDescriptionTextBox.Multiline = true;
+            this.BlockDescriptionTextBox.Name = "BlockDescriptionTextBox";
+            this.BlockDescriptionTextBox.Size = new System.Drawing.Size(295, 49);
+            this.BlockDescriptionTextBox.TabIndex = 24;
+            // 
+            // BlockCommentTextBox
+            // 
+            this.BlockCommentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlockTableLayoutPanel.SetColumnSpan(this.BlockCommentTextBox, 2);
+            this.BlockCommentTextBox.Location = new System.Drawing.Point(131, 83);
+            this.BlockCommentTextBox.Multiline = true;
+            this.BlockCommentTextBox.Name = "BlockCommentTextBox";
+            this.BlockCommentTextBox.Size = new System.Drawing.Size(295, 49);
+            this.BlockCommentTextBox.TabIndex = 25;
+            // 
+            // BlockEquivalentItemComboBox
+            // 
+            this.BlockEquivalentItemComboBox.FormattingEnabled = true;
+            this.BlockEquivalentItemComboBox.Location = new System.Drawing.Point(131, 138);
+            this.BlockEquivalentItemComboBox.Name = "BlockEquivalentItemComboBox";
+            this.BlockEquivalentItemComboBox.Size = new System.Drawing.Size(144, 21);
+            this.BlockEquivalentItemComboBox.TabIndex = 29;
+            // 
+            // BlockPictureBox
+            // 
+            this.BlockPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlockPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BlockPictureBox.Location = new System.Drawing.Point(761, 280);
+            this.BlockPictureBox.Name = "BlockPictureBox";
+            this.BlockPictureBox.Size = new System.Drawing.Size(182, 182);
+            this.BlockPictureBox.TabIndex = 6;
+            this.BlockPictureBox.TabStop = false;
+            // 
+            // BlockEditImageButton
+            // 
+            this.BlockEditImageButton.Location = new System.Drawing.Point(815, 468);
+            this.BlockEditImageButton.Name = "BlockEditImageButton";
+            this.BlockEditImageButton.Size = new System.Drawing.Size(128, 23);
+            this.BlockEditImageButton.TabIndex = 7;
+            this.BlockEditImageButton.Text = "Edit Image";
+            this.BlockEditImageButton.UseVisualStyleBackColor = true;
+            // 
+            // BlockIDLabel
+            // 
+            this.BlockIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlockIDLabel.AutoSize = true;
+            this.BlockIDLabel.Location = new System.Drawing.Point(761, 19);
+            this.BlockIDLabel.Name = "BlockIDLabel";
+            this.BlockIDLabel.Size = new System.Drawing.Size(45, 13);
+            this.BlockIDLabel.TabIndex = 4;
+            this.BlockIDLabel.Text = "Block ID";
+            // 
+            // BlockListBox
+            // 
+            this.BlockListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.BlockListBox.FormattingEnabled = true;
+            this.BlockListBox.Location = new System.Drawing.Point(9, 16);
+            this.BlockListBox.Name = "BlockListBox";
+            this.BlockListBox.Size = new System.Drawing.Size(279, 446);
+            this.BlockListBox.TabIndex = 1;
+            // 
+            // BlockAddNewBlockButton
+            // 
+            this.BlockAddNewBlockButton.Location = new System.Drawing.Point(159, 468);
+            this.BlockAddNewBlockButton.Name = "BlockAddNewBlockButton";
+            this.BlockAddNewBlockButton.Size = new System.Drawing.Size(129, 23);
+            this.BlockAddNewBlockButton.TabIndex = 2;
+            this.BlockAddNewBlockButton.Text = "Add New Block";
+            this.BlockAddNewBlockButton.UseVisualStyleBackColor = true;
+            // 
+            // BlockIDTextBox
+            // 
+            this.BlockIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlockIDTextBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BlockIDTextBox.Location = new System.Drawing.Point(812, 16);
+            this.BlockIDTextBox.Name = "BlockIDTextBox";
+            this.BlockIDTextBox.Size = new System.Drawing.Size(131, 20);
+            this.BlockIDTextBox.TabIndex = 3;
+            this.BlockIDTextBox.Text = "-2020202020";
+            // 
+            // BlockConfigGroupBox
+            // 
+            this.BlockConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlockConfigGroupBox.Location = new System.Drawing.Point(9, 497);
+            this.BlockConfigGroupBox.Name = "BlockConfigGroupBox";
+            this.BlockConfigGroupBox.Size = new System.Drawing.Size(938, 96);
+            this.BlockConfigGroupBox.TabIndex = 0;
+            this.BlockConfigGroupBox.TabStop = false;
+            // 
+            // BlockRemoveBlockButton
+            // 
+            this.BlockRemoveBlockButton.Location = new System.Drawing.Point(24, 468);
+            this.BlockRemoveBlockButton.Name = "BlockRemoveBlockButton";
+            this.BlockRemoveBlockButton.Size = new System.Drawing.Size(129, 23);
+            this.BlockRemoveBlockButton.TabIndex = 2;
+            this.BlockRemoveBlockButton.Text = "Remove Block";
+            this.BlockRemoveBlockButton.UseVisualStyleBackColor = true;
             // 
             // FurnishingsTabPage
             // 
@@ -3703,6 +3917,11 @@ namespace Scribe
             this.FloorLayoutTabelPanel.ResumeLayout(false);
             this.FloorLayoutTabelPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FloorPictureBox)).EndInit();
+            this.BlocksTabPage.ResumeLayout(false);
+            this.BlocksTabPage.PerformLayout();
+            this.BlockTableLayoutPanel.ResumeLayout(false);
+            this.BlockTableLayoutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BlockPictureBox)).EndInit();
             this.RoomRecipesTabPage.ResumeLayout(false);
             this.RoomRecipesTabPage.PerformLayout();
             this.RoomConfigGroupBox.ResumeLayout(false);
@@ -3986,6 +4205,23 @@ namespace Scribe
         private System.Windows.Forms.Button FloorRemoveRoomTagButton;
 
         private System.Windows.Forms.TabPage BlocksTabPage;
+        private System.Windows.Forms.TableLayoutPanel BlockTableLayoutPanel;
+        private System.Windows.Forms.Label BlockNameLabel;
+        private System.Windows.Forms.Label BlockDescriptionLabel;
+        private System.Windows.Forms.Label BlockCommentLabel;
+        private System.Windows.Forms.Label BlockEquivalentItemLabel;
+        private System.Windows.Forms.ComboBox BlockEquivalentItemComboBox;
+        private System.Windows.Forms.TextBox BlockNameTextBox;
+        private System.Windows.Forms.TextBox BlockDescriptionTextBox;
+        private System.Windows.Forms.TextBox BlockCommentTextBox;
+        private System.Windows.Forms.PictureBox BlockPictureBox;
+        private System.Windows.Forms.Button BlockEditImageButton;
+        private System.Windows.Forms.Label BlockIDLabel;
+        private System.Windows.Forms.ListBox BlockListBox;
+        private System.Windows.Forms.Button BlockAddNewBlockButton;
+        private System.Windows.Forms.TextBox BlockIDTextBox;
+        private System.Windows.Forms.Button BlockRemoveBlockButton;
+        private System.Windows.Forms.GroupBox BlockConfigGroupBox;
 
         private System.Windows.Forms.TabPage FurnishingsTabPage;
 
