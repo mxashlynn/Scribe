@@ -229,18 +229,24 @@ namespace Scribe
             this.MapsComingSoonLabel = new System.Windows.Forms.Label();
             this.FloorsTabPage = new System.Windows.Forms.TabPage();
             this.FloorLayoutTabelPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.FloorDescriptionTextBox = new System.Windows.Forms.TextBox();
-            this.FloorCommentTextBox = new System.Windows.Forms.TextBox();
+            this.FloorAddRoomTagButton = new System.Windows.Forms.Button();
             this.FloorNameLabel = new System.Windows.Forms.Label();
             this.FloorDescriptionLabel = new System.Windows.Forms.Label();
             this.FloorCommentLabel = new System.Windows.Forms.Label();
             this.ParquetEquivalentItemIDLabel = new System.Windows.Forms.Label();
             this.ParquetNameTextBox = new System.Windows.Forms.TextBox();
+            this.FloorDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.FloorCommentTextBox = new System.Windows.Forms.TextBox();
             this.FloorlItemIDComboBox = new System.Windows.Forms.ComboBox();
             this.FloorModificationToolLabel = new System.Windows.Forms.Label();
             this.FloorModificationToolComboBox = new System.Windows.Forms.ComboBox();
             this.FloorTrenchName = new System.Windows.Forms.Label();
             this.FloorTrenchNameTextBox = new System.Windows.Forms.TextBox();
+            this.FloorAddsToBiomeLabel = new System.Windows.Forms.Label();
+            this.FloorAddsToRoomLabel = new System.Windows.Forms.Label();
+            this.FloorAddsToBiomeListBox = new System.Windows.Forms.ListBox();
+            this.FloorAddsToRoomListBox = new System.Windows.Forms.ListBox();
+            this.FloorAddBiomeTagButton = new System.Windows.Forms.Button();
             this.FloorConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.FloorIDTextBox = new System.Windows.Forms.TextBox();
             this.ParquetsAddNewButton = new System.Windows.Forms.Button();
@@ -310,9 +316,8 @@ namespace Scribe
             this.FlavorNumbingSelector = new System.Windows.Forms.Label();
             this.FlavorAllFlavorsSelector = new System.Windows.Forms.Label();
             this.EditorToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.FloorRemoveBiomeTagButton = new System.Windows.Forms.Button();
+            this.FloorRemoveRoomTagButton = new System.Windows.Forms.Button();
             this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
             this.EditorTabs.SuspendLayout();
@@ -2476,6 +2481,9 @@ namespace Scribe
             this.FloorLayoutTabelPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.FloorLayoutTabelPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.FloorLayoutTabelPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.FloorLayoutTabelPanel.Controls.Add(this.FloorRemoveRoomTagButton, 1, 7);
+            this.FloorLayoutTabelPanel.Controls.Add(this.FloorRemoveBiomeTagButton, 1, 5);
+            this.FloorLayoutTabelPanel.Controls.Add(this.FloorAddRoomTagButton, 2, 7);
             this.FloorLayoutTabelPanel.Controls.Add(this.FloorNameLabel, 0, 0);
             this.FloorLayoutTabelPanel.Controls.Add(this.FloorDescriptionLabel, 0, 1);
             this.FloorLayoutTabelPanel.Controls.Add(this.FloorCommentLabel, 0, 2);
@@ -2488,9 +2496,11 @@ namespace Scribe
             this.FloorLayoutTabelPanel.Controls.Add(this.FloorModificationToolComboBox, 1, 8);
             this.FloorLayoutTabelPanel.Controls.Add(this.FloorTrenchName, 0, 9);
             this.FloorLayoutTabelPanel.Controls.Add(this.FloorTrenchNameTextBox, 1, 9);
-            this.FloorLayoutTabelPanel.Controls.Add(this.label1, 0, 4);
-            this.FloorLayoutTabelPanel.Controls.Add(this.label2, 0, 6);
-            this.FloorLayoutTabelPanel.Controls.Add(this.listBox1, 1, 4);
+            this.FloorLayoutTabelPanel.Controls.Add(this.FloorAddsToBiomeLabel, 0, 4);
+            this.FloorLayoutTabelPanel.Controls.Add(this.FloorAddsToRoomLabel, 0, 6);
+            this.FloorLayoutTabelPanel.Controls.Add(this.FloorAddsToBiomeListBox, 1, 4);
+            this.FloorLayoutTabelPanel.Controls.Add(this.FloorAddsToRoomListBox, 1, 6);
+            this.FloorLayoutTabelPanel.Controls.Add(this.FloorAddBiomeTagButton, 2, 5);
             this.FloorLayoutTabelPanel.Location = new System.Drawing.Point(307, 16);
             this.FloorLayoutTabelPanel.Name = "FloorLayoutTabelPanel";
             this.FloorLayoutTabelPanel.RowCount = 11;
@@ -2508,29 +2518,15 @@ namespace Scribe
             this.FloorLayoutTabelPanel.Size = new System.Drawing.Size(429, 446);
             this.FloorLayoutTabelPanel.TabIndex = 5;
             // 
-            // FloorDescriptionTextBox
+            // FloorAddRoomTagButton
             // 
-            this.FloorDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorLayoutTabelPanel.SetColumnSpan(this.FloorDescriptionTextBox, 2);
-            this.FloorDescriptionTextBox.Location = new System.Drawing.Point(131, 28);
-            this.FloorDescriptionTextBox.Multiline = true;
-            this.FloorDescriptionTextBox.Name = "FloorDescriptionTextBox";
-            this.FloorDescriptionTextBox.Size = new System.Drawing.Size(295, 49);
-            this.FloorDescriptionTextBox.TabIndex = 24;
-            // 
-            // FloorCommentTextBox
-            // 
-            this.FloorCommentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorLayoutTabelPanel.SetColumnSpan(this.FloorCommentTextBox, 2);
-            this.FloorCommentTextBox.Location = new System.Drawing.Point(131, 83);
-            this.FloorCommentTextBox.Multiline = true;
-            this.FloorCommentTextBox.Name = "FloorCommentTextBox";
-            this.FloorCommentTextBox.Size = new System.Drawing.Size(295, 49);
-            this.FloorCommentTextBox.TabIndex = 25;
+            this.FloorAddRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorAddRoomTagButton.Location = new System.Drawing.Point(297, 343);
+            this.FloorAddRoomTagButton.Name = "FloorAddRoomTagButton";
+            this.FloorAddRoomTagButton.Size = new System.Drawing.Size(129, 23);
+            this.FloorAddRoomTagButton.TabIndex = 38;
+            this.FloorAddRoomTagButton.Text = "Add Room Tag";
+            this.FloorAddRoomTagButton.UseVisualStyleBackColor = true;
             // 
             // FloorNameLabel
             // 
@@ -2575,6 +2571,30 @@ namespace Scribe
             this.ParquetNameTextBox.Size = new System.Drawing.Size(144, 20);
             this.ParquetNameTextBox.TabIndex = 23;
             // 
+            // FloorDescriptionTextBox
+            // 
+            this.FloorDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorLayoutTabelPanel.SetColumnSpan(this.FloorDescriptionTextBox, 2);
+            this.FloorDescriptionTextBox.Location = new System.Drawing.Point(131, 28);
+            this.FloorDescriptionTextBox.Multiline = true;
+            this.FloorDescriptionTextBox.Name = "FloorDescriptionTextBox";
+            this.FloorDescriptionTextBox.Size = new System.Drawing.Size(295, 49);
+            this.FloorDescriptionTextBox.TabIndex = 24;
+            // 
+            // FloorCommentTextBox
+            // 
+            this.FloorCommentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorLayoutTabelPanel.SetColumnSpan(this.FloorCommentTextBox, 2);
+            this.FloorCommentTextBox.Location = new System.Drawing.Point(131, 83);
+            this.FloorCommentTextBox.Multiline = true;
+            this.FloorCommentTextBox.Name = "FloorCommentTextBox";
+            this.FloorCommentTextBox.Size = new System.Drawing.Size(295, 49);
+            this.FloorCommentTextBox.TabIndex = 25;
+            // 
             // FloorlItemIDComboBox
             // 
             this.FloorlItemIDComboBox.FormattingEnabled = true;
@@ -2615,6 +2635,58 @@ namespace Scribe
             this.FloorTrenchNameTextBox.Name = "FloorTrenchNameTextBox";
             this.FloorTrenchNameTextBox.Size = new System.Drawing.Size(144, 20);
             this.FloorTrenchNameTextBox.TabIndex = 23;
+            // 
+            // FloorAddsToBiomeLabel
+            // 
+            this.FloorAddsToBiomeLabel.AutoSize = true;
+            this.FloorAddsToBiomeLabel.Location = new System.Drawing.Point(3, 160);
+            this.FloorAddsToBiomeLabel.Name = "FloorAddsToBiomeLabel";
+            this.FloorAddsToBiomeLabel.Size = new System.Drawing.Size(75, 13);
+            this.FloorAddsToBiomeLabel.TabIndex = 35;
+            this.FloorAddsToBiomeLabel.Text = "Adds to Biome";
+            // 
+            // FloorAddsToRoomLabel
+            // 
+            this.FloorAddsToRoomLabel.AutoSize = true;
+            this.FloorAddsToRoomLabel.Location = new System.Drawing.Point(3, 265);
+            this.FloorAddsToRoomLabel.Name = "FloorAddsToRoomLabel";
+            this.FloorAddsToRoomLabel.Size = new System.Drawing.Size(74, 13);
+            this.FloorAddsToRoomLabel.TabIndex = 36;
+            this.FloorAddsToRoomLabel.Text = "Adds to Room";
+            // 
+            // FloorAddsToBiomeListBox
+            // 
+            this.FloorAddsToBiomeListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorLayoutTabelPanel.SetColumnSpan(this.FloorAddsToBiomeListBox, 2);
+            this.FloorAddsToBiomeListBox.FormattingEnabled = true;
+            this.FloorAddsToBiomeListBox.Location = new System.Drawing.Point(131, 163);
+            this.FloorAddsToBiomeListBox.Name = "FloorAddsToBiomeListBox";
+            this.FloorAddsToBiomeListBox.Size = new System.Drawing.Size(295, 69);
+            this.FloorAddsToBiomeListBox.TabIndex = 37;
+            // 
+            // FloorAddsToRoomListBox
+            // 
+            this.FloorAddsToRoomListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorLayoutTabelPanel.SetColumnSpan(this.FloorAddsToRoomListBox, 2);
+            this.FloorAddsToRoomListBox.FormattingEnabled = true;
+            this.FloorAddsToRoomListBox.Location = new System.Drawing.Point(131, 268);
+            this.FloorAddsToRoomListBox.Name = "FloorAddsToRoomListBox";
+            this.FloorAddsToRoomListBox.Size = new System.Drawing.Size(295, 69);
+            this.FloorAddsToRoomListBox.TabIndex = 37;
+            // 
+            // FloorAddBiomeTagButton
+            // 
+            this.FloorAddBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorAddBiomeTagButton.Location = new System.Drawing.Point(297, 238);
+            this.FloorAddBiomeTagButton.Name = "FloorAddBiomeTagButton";
+            this.FloorAddBiomeTagButton.Size = new System.Drawing.Size(129, 23);
+            this.FloorAddBiomeTagButton.TabIndex = 38;
+            this.FloorAddBiomeTagButton.Text = "Add Biome Tag";
+            this.FloorAddBiomeTagButton.UseVisualStyleBackColor = true;
             // 
             // FloorConfigGroupBox
             // 
@@ -3444,35 +3516,25 @@ namespace Scribe
             this.FlavorAllFlavorsSelector.TabIndex = 0;
             this.FlavorAllFlavorsSelector.Text = "(All)";
             // 
-            // label1
+            // FloorRemoveBiomeTagButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 160);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 35;
-            this.label1.Text = "label1";
+            this.FloorRemoveBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorRemoveBiomeTagButton.Location = new System.Drawing.Point(146, 238);
+            this.FloorRemoveBiomeTagButton.Name = "FloorRemoveBiomeTagButton";
+            this.FloorRemoveBiomeTagButton.Size = new System.Drawing.Size(129, 23);
+            this.FloorRemoveBiomeTagButton.TabIndex = 38;
+            this.FloorRemoveBiomeTagButton.Text = "Remove Biome Tag";
+            this.FloorRemoveBiomeTagButton.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // FloorRemoveRoomTagButton
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 265);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 36;
-            this.label2.Text = "label2";
-            // 
-            // listBox1
-            // 
-            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorLayoutTabelPanel.SetColumnSpan(this.listBox1, 2);
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(131, 163);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(295, 69);
-            this.listBox1.TabIndex = 37;
+            this.FloorRemoveRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorRemoveRoomTagButton.Location = new System.Drawing.Point(146, 343);
+            this.FloorRemoveRoomTagButton.Name = "FloorRemoveRoomTagButton";
+            this.FloorRemoveRoomTagButton.Size = new System.Drawing.Size(129, 23);
+            this.FloorRemoveRoomTagButton.TabIndex = 38;
+            this.FloorRemoveRoomTagButton.Text = "Remove Room Tag";
+            this.FloorRemoveRoomTagButton.UseVisualStyleBackColor = true;
             // 
             // MainEditorForm
             // 
@@ -3843,9 +3905,14 @@ namespace Scribe
         private System.Windows.Forms.ListBox FloorListBox;
         private System.Windows.Forms.ComboBox FloorlItemIDComboBox;
         private System.Windows.Forms.ComboBox FloorModificationToolComboBox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label FloorAddsToBiomeLabel;
+        private System.Windows.Forms.Label FloorAddsToRoomLabel;
+        private System.Windows.Forms.ListBox FloorAddsToBiomeListBox;
+        private System.Windows.Forms.ListBox FloorAddsToRoomListBox;
+        private System.Windows.Forms.Button FloorAddRoomTagButton;
+        private System.Windows.Forms.Button FloorAddBiomeTagButton;
+        private System.Windows.Forms.Button FloorRemoveBiomeTagButton;
+        private System.Windows.Forms.Button FloorRemoveRoomTagButton;
     }
 }
 
