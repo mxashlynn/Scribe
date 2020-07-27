@@ -68,7 +68,7 @@ namespace Scribe
             this.ToolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditorTabs = new System.Windows.Forms.TabControl();
-            this.GameTabPage = new System.Windows.Forms.TabPage();
+            this.GamesTabPage = new System.Windows.Forms.TabPage();
             this.GameIconEditButton = new System.Windows.Forms.Button();
             this.GameIconPictureBox = new System.Windows.Forms.PictureBox();
             this.GameTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -153,7 +153,7 @@ namespace Scribe
             this.BiomeIDLabel = new System.Windows.Forms.Label();
             this.BiomeAddNewBiomeButton = new System.Windows.Forms.Button();
             this.BiomeIDTextBox = new System.Windows.Forms.TextBox();
-            this.CraftingTabPage = new System.Windows.Forms.TabPage();
+            this.CraftingRecipesTabPage = new System.Windows.Forms.TabPage();
             this.CraftingListBox = new System.Windows.Forms.ListBox();
             this.CraftingPictureEditButton = new System.Windows.Forms.Button();
             this.CraftingTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -233,8 +233,8 @@ namespace Scribe
             this.FloorNameLabel = new System.Windows.Forms.Label();
             this.FloorDescriptionLabel = new System.Windows.Forms.Label();
             this.FloorCommentLabel = new System.Windows.Forms.Label();
-            this.ParquetEquivalentItemIDLabel = new System.Windows.Forms.Label();
-            this.ParquetNameTextBox = new System.Windows.Forms.TextBox();
+            this.FloorEquivalentItemIDLabel = new System.Windows.Forms.Label();
+            this.FloorNameTextBox = new System.Windows.Forms.TextBox();
             this.FloorDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.FloorCommentTextBox = new System.Windows.Forms.TextBox();
             this.FloorlItemIDComboBox = new System.Windows.Forms.ComboBox();
@@ -330,7 +330,7 @@ namespace Scribe
             this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
             this.EditorTabs.SuspendLayout();
-            this.GameTabPage.SuspendLayout();
+            this.GamesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GameIconPictureBox)).BeginInit();
             this.GameTableLayoutPanel.SuspendLayout();
             this.FileFormatGroupBox.SuspendLayout();
@@ -342,7 +342,7 @@ namespace Scribe
             this.BiomeConfigTableLayoutPanel.SuspendLayout();
             this.BiomeTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BiomePictureBox)).BeginInit();
-            this.CraftingTabPage.SuspendLayout();
+            this.CraftingRecipesTabPage.SuspendLayout();
             this.CraftingTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CraftingPictureBox)).BeginInit();
             this.CraftsConfigGroupBox.SuspendLayout();
@@ -690,10 +690,10 @@ namespace Scribe
             this.EditorTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EditorTabs.Controls.Add(this.GameTabPage);
+            this.EditorTabs.Controls.Add(this.GamesTabPage);
             this.EditorTabs.Controls.Add(this.BeingsTabPage);
             this.EditorTabs.Controls.Add(this.BiomesTabPage);
-            this.EditorTabs.Controls.Add(this.CraftingTabPage);
+            this.EditorTabs.Controls.Add(this.CraftingRecipesTabPage);
             this.EditorTabs.Controls.Add(this.ItemsTabPage);
             this.EditorTabs.Controls.Add(this.MapsTabPage);
             this.EditorTabs.Controls.Add(this.FloorsTabPage);
@@ -708,24 +708,24 @@ namespace Scribe
             this.EditorTabs.Size = new System.Drawing.Size(961, 625);
             this.EditorTabs.TabIndex = 2;
             // 
-            // GameTabPage
+            // GamesTabPage
             // 
-            this.GameTabPage.Controls.Add(this.GamesRemoveGameButton);
-            this.GameTabPage.Controls.Add(this.GameIconEditButton);
-            this.GameTabPage.Controls.Add(this.GameIconPictureBox);
-            this.GameTabPage.Controls.Add(this.GameTableLayoutPanel);
-            this.GameTabPage.Controls.Add(this.GameIDLabel);
-            this.GameTabPage.Controls.Add(this.GameIDTextBox);
-            this.GameTabPage.Controls.Add(this.GamesAddNewGameButton);
-            this.GameTabPage.Controls.Add(this.GamesListBox);
-            this.GameTabPage.Controls.Add(this.FileFormatGroupBox);
-            this.GameTabPage.Controls.Add(this.LibraryInfoGroupBox);
-            this.GameTabPage.Location = new System.Drawing.Point(4, 22);
-            this.GameTabPage.Name = "GameTabPage";
-            this.GameTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.GameTabPage.Size = new System.Drawing.Size(953, 599);
-            this.GameTabPage.TabIndex = 0;
-            this.GameTabPage.Text = "Game";
+            this.GamesTabPage.Controls.Add(this.GamesRemoveGameButton);
+            this.GamesTabPage.Controls.Add(this.GameIconEditButton);
+            this.GamesTabPage.Controls.Add(this.GameIconPictureBox);
+            this.GamesTabPage.Controls.Add(this.GameTableLayoutPanel);
+            this.GamesTabPage.Controls.Add(this.GameIDLabel);
+            this.GamesTabPage.Controls.Add(this.GameIDTextBox);
+            this.GamesTabPage.Controls.Add(this.GamesAddNewGameButton);
+            this.GamesTabPage.Controls.Add(this.GamesListBox);
+            this.GamesTabPage.Controls.Add(this.FileFormatGroupBox);
+            this.GamesTabPage.Controls.Add(this.LibraryInfoGroupBox);
+            this.GamesTabPage.Location = new System.Drawing.Point(4, 22);
+            this.GamesTabPage.Name = "GamesTabPage";
+            this.GamesTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.GamesTabPage.Size = new System.Drawing.Size(953, 599);
+            this.GamesTabPage.TabIndex = 0;
+            this.GamesTabPage.Text = "Game";
             // 
             // GameIconEditButton
             // 
@@ -1670,23 +1670,23 @@ namespace Scribe
             this.BiomeIDTextBox.TabIndex = 3;
             this.BiomeIDTextBox.Text = "-2020202020";
             // 
-            // CraftingTabPage
+            // CraftingRecipesTabPage
             // 
-            this.CraftingTabPage.BackColor = System.Drawing.Color.Transparent;
-            this.CraftingTabPage.Controls.Add(this.CraftingRemoveCraftingButton);
-            this.CraftingTabPage.Controls.Add(this.CraftingListBox);
-            this.CraftingTabPage.Controls.Add(this.CraftingPictureEditButton);
-            this.CraftingTabPage.Controls.Add(this.CraftingTableLayoutPanel);
-            this.CraftingTabPage.Controls.Add(this.CraftingPictureBox);
-            this.CraftingTabPage.Controls.Add(this.CraftingIDLabel);
-            this.CraftingTabPage.Controls.Add(this.CraftingAddNewCraftingButton);
-            this.CraftingTabPage.Controls.Add(this.CraftingIDTextBox);
-            this.CraftingTabPage.Controls.Add(this.CraftsConfigGroupBox);
-            this.CraftingTabPage.Location = new System.Drawing.Point(4, 22);
-            this.CraftingTabPage.Name = "CraftingTabPage";
-            this.CraftingTabPage.Size = new System.Drawing.Size(953, 599);
-            this.CraftingTabPage.TabIndex = 3;
-            this.CraftingTabPage.Text = "Crafting";
+            this.CraftingRecipesTabPage.BackColor = System.Drawing.Color.Transparent;
+            this.CraftingRecipesTabPage.Controls.Add(this.CraftingRemoveCraftingButton);
+            this.CraftingRecipesTabPage.Controls.Add(this.CraftingListBox);
+            this.CraftingRecipesTabPage.Controls.Add(this.CraftingPictureEditButton);
+            this.CraftingRecipesTabPage.Controls.Add(this.CraftingTableLayoutPanel);
+            this.CraftingRecipesTabPage.Controls.Add(this.CraftingPictureBox);
+            this.CraftingRecipesTabPage.Controls.Add(this.CraftingIDLabel);
+            this.CraftingRecipesTabPage.Controls.Add(this.CraftingAddNewCraftingButton);
+            this.CraftingRecipesTabPage.Controls.Add(this.CraftingIDTextBox);
+            this.CraftingRecipesTabPage.Controls.Add(this.CraftsConfigGroupBox);
+            this.CraftingRecipesTabPage.Location = new System.Drawing.Point(4, 22);
+            this.CraftingRecipesTabPage.Name = "CraftingRecipesTabPage";
+            this.CraftingRecipesTabPage.Size = new System.Drawing.Size(953, 599);
+            this.CraftingRecipesTabPage.TabIndex = 3;
+            this.CraftingRecipesTabPage.Text = "Crafting";
             // 
             // CraftingListBox
             // 
@@ -2504,8 +2504,8 @@ namespace Scribe
             this.FloorLayoutTabelPanel.Controls.Add(this.FloorNameLabel, 0, 0);
             this.FloorLayoutTabelPanel.Controls.Add(this.FloorDescriptionLabel, 0, 1);
             this.FloorLayoutTabelPanel.Controls.Add(this.FloorCommentLabel, 0, 2);
-            this.FloorLayoutTabelPanel.Controls.Add(this.ParquetEquivalentItemIDLabel, 0, 3);
-            this.FloorLayoutTabelPanel.Controls.Add(this.ParquetNameTextBox, 1, 0);
+            this.FloorLayoutTabelPanel.Controls.Add(this.FloorEquivalentItemIDLabel, 0, 3);
+            this.FloorLayoutTabelPanel.Controls.Add(this.FloorNameTextBox, 1, 0);
             this.FloorLayoutTabelPanel.Controls.Add(this.FloorDescriptionTextBox, 1, 1);
             this.FloorLayoutTabelPanel.Controls.Add(this.FloorCommentTextBox, 1, 2);
             this.FloorLayoutTabelPanel.Controls.Add(this.FloorlItemIDComboBox, 1, 3);
@@ -2572,21 +2572,21 @@ namespace Scribe
             this.FloorCommentLabel.TabIndex = 6;
             this.FloorCommentLabel.Text = "Comment";
             // 
-            // ParquetEquivalentItemIDLabel
+            // FloorEquivalentItemIDLabel
             // 
-            this.ParquetEquivalentItemIDLabel.AutoSize = true;
-            this.ParquetEquivalentItemIDLabel.Location = new System.Drawing.Point(3, 135);
-            this.ParquetEquivalentItemIDLabel.Name = "ParquetEquivalentItemIDLabel";
-            this.ParquetEquivalentItemIDLabel.Size = new System.Drawing.Size(82, 13);
-            this.ParquetEquivalentItemIDLabel.TabIndex = 9;
-            this.ParquetEquivalentItemIDLabel.Text = "Equivalent Item";
+            this.FloorEquivalentItemIDLabel.AutoSize = true;
+            this.FloorEquivalentItemIDLabel.Location = new System.Drawing.Point(3, 135);
+            this.FloorEquivalentItemIDLabel.Name = "FloorEquivalentItemIDLabel";
+            this.FloorEquivalentItemIDLabel.Size = new System.Drawing.Size(82, 13);
+            this.FloorEquivalentItemIDLabel.TabIndex = 9;
+            this.FloorEquivalentItemIDLabel.Text = "Equivalent Item";
             // 
-            // ParquetNameTextBox
+            // FloorNameTextBox
             // 
-            this.ParquetNameTextBox.Location = new System.Drawing.Point(131, 3);
-            this.ParquetNameTextBox.Name = "ParquetNameTextBox";
-            this.ParquetNameTextBox.Size = new System.Drawing.Size(144, 20);
-            this.ParquetNameTextBox.TabIndex = 23;
+            this.FloorNameTextBox.Location = new System.Drawing.Point(131, 3);
+            this.FloorNameTextBox.Name = "FloorNameTextBox";
+            this.FloorNameTextBox.Size = new System.Drawing.Size(144, 20);
+            this.FloorNameTextBox.TabIndex = 23;
             // 
             // FloorDescriptionTextBox
             // 
@@ -3657,8 +3657,8 @@ namespace Scribe
             this.MainMenuBar.ResumeLayout(false);
             this.MainMenuBar.PerformLayout();
             this.EditorTabs.ResumeLayout(false);
-            this.GameTabPage.ResumeLayout(false);
-            this.GameTabPage.PerformLayout();
+            this.GamesTabPage.ResumeLayout(false);
+            this.GamesTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GameIconPictureBox)).EndInit();
             this.GameTableLayoutPanel.ResumeLayout(false);
             this.GameTableLayoutPanel.PerformLayout();
@@ -3676,8 +3676,8 @@ namespace Scribe
             this.BiomeTableLayoutPanel.ResumeLayout(false);
             this.BiomeTableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BiomePictureBox)).EndInit();
-            this.CraftingTabPage.ResumeLayout(false);
-            this.CraftingTabPage.PerformLayout();
+            this.CraftingRecipesTabPage.ResumeLayout(false);
+            this.CraftingRecipesTabPage.PerformLayout();
             this.CraftingTableLayoutPanel.ResumeLayout(false);
             this.CraftingTableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CraftingPictureBox)).EndInit();
@@ -3719,7 +3719,10 @@ namespace Scribe
         }
         #endregion
 
+        private System.Windows.Forms.ToolStripStatusLabel MainToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripProgressBar ToolStripProgressBar;
         private System.Windows.Forms.StatusStrip EditorStatusStrip;
+        private System.Windows.Forms.ToolTip EditorToolTip;
         private System.Windows.Forms.MenuStrip MainMenuBar;
         private System.Windows.Forms.ToolStripMenuItem FileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem NewToolStripMenuItem;
@@ -3752,47 +3755,7 @@ namespace Scribe
         private System.Windows.Forms.ToolStripMenuItem ListMaxIDsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ListTagsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator ToolStripSeparator5;
-        private System.Windows.Forms.TabControl EditorTabs;
-        private System.Windows.Forms.TabPage GameTabPage;
-        private System.Windows.Forms.TabPage BeingsTabPage;
-        private System.Windows.Forms.TabPage BiomesTabPage;
-        private System.Windows.Forms.TabPage CraftingTabPage;
-        private System.Windows.Forms.ListBox CraftingListBox;
-        private System.Windows.Forms.TableLayoutPanel CraftingConfigTableLayoutPanel;
-        private System.Windows.Forms.GroupBox CraftsConfigGroupBox;
-        private System.Windows.Forms.Button CraftingPictureEditButton;
-        private System.Windows.Forms.TableLayoutPanel CraftingTableLayoutPanel;
-        private System.Windows.Forms.Label CraftingNameLabel;
-        private System.Windows.Forms.Label CraftingDescriptionLabel;
-        private System.Windows.Forms.Label CraftingCommentLabel;
-        private System.Windows.Forms.Label CraftingIngredientsLabel;
-        private System.Windows.Forms.TextBox CraftingNameTextBox;
-        private System.Windows.Forms.TextBox CraftingDescriptionTextBox;
-        private System.Windows.Forms.TextBox CraftingCommentTextBox;
-        private System.Windows.Forms.PictureBox CraftingPictureBox;
-        private System.Windows.Forms.Label CraftingIDLabel;
-        private System.Windows.Forms.Button CraftingAddNewCraftingButton;
-        private System.Windows.Forms.TextBox CraftingIDTextBox;
-        private System.Windows.Forms.Button CraftingOpenPatternEditorButton;
-        private System.Windows.Forms.Button CraftingAddIngredientButton;
-        private System.Windows.Forms.Button CraftingRemoveIngredientButton;
-        private System.Windows.Forms.ListBox CraftingIngredientsBox;
-        private System.Windows.Forms.Button CraftingAddProductButton;
-        private System.Windows.Forms.Button CraftingRemoveProductButton;
-        private System.Windows.Forms.Label CraftingProductsLabel;
-        private System.Windows.Forms.Label CraftingMinIngredientCountLabel;
-        private System.Windows.Forms.Label CraftingMinProductCountLabel;
-        private System.Windows.Forms.Label CraftingMaxIngredientCountLabel;
-        private System.Windows.Forms.Label CraftingMaxProductCountLabel;
-        private System.Windows.Forms.TextBox CraftingMinIngredientCountTextBox;
-        private System.Windows.Forms.TextBox CraftingMinProductCountTextBox;
-        private System.Windows.Forms.TextBox CraftingMaxIngredientCountTextBox;
-        private System.Windows.Forms.TextBox CraftingMaxProductCountTextBox;
-        private System.Windows.Forms.TabPage ItemsTabPage;
-        private System.Windows.Forms.TabPage MapsTabPage;
-        private System.Windows.Forms.TabPage FloorsTabPage;
-        private System.Windows.Forms.TabPage RoomsTabPage;
-        private System.Windows.Forms.TabPage ScriptsTabPage;
+
         private System.Windows.Forms.TableLayoutPanel FiltersTableLayoutPanel;
         private System.Windows.Forms.TextBox FilterTextBox;
         private System.Windows.Forms.CheckBox FilterByNameCheckBox;
@@ -3818,8 +3781,10 @@ namespace Scribe
         private System.Windows.Forms.Label FlavorSaltySelector;
         private System.Windows.Forms.Label FlavorNumbingSelector;
         private System.Windows.Forms.Label FlavorAllFlavorsSelector;
-        private System.Windows.Forms.ToolStripStatusLabel MainToolStripStatusLabel;
-        private System.Windows.Forms.ToolStripProgressBar ToolStripProgressBar;
+
+        private System.Windows.Forms.TabControl EditorTabs;
+
+        private System.Windows.Forms.TabPage GamesTabPage;
         private System.Windows.Forms.GroupBox LibraryInfoGroupBox;
         private System.Windows.Forms.GroupBox FileFormatGroupBox;
         private System.Windows.Forms.TableLayoutPanel LibraryInfoTableLayoutPanel;
@@ -3845,6 +3810,7 @@ namespace Scribe
         private System.Windows.Forms.Label FileFormatDimensionalTerminatorLabel;
         private System.Windows.Forms.Label FileFormatDimensionalTerminatorExample;
         private System.Windows.Forms.Button GamesAddNewGameButton;
+        private System.Windows.Forms.Button GamesRemoveGameButton;
         private System.Windows.Forms.ListBox GamesListBox;
         private System.Windows.Forms.TableLayoutPanel GameTableLayoutPanel;
         private System.Windows.Forms.Label GameIDLabel;
@@ -3867,6 +3833,10 @@ namespace Scribe
         private System.Windows.Forms.TextBox GameFirstScriptTextBox;
         private System.Windows.Forms.Button GameIconEditButton;
         private System.Windows.Forms.PictureBox GameIconPictureBox;
+
+        private System.Windows.Forms.TabPage BeingsTabPage;
+
+        private System.Windows.Forms.TabPage BiomesTabPage;
         private System.Windows.Forms.ListBox BiomeListBox;
         private System.Windows.Forms.GroupBox BiomeConfigGroupBox;
         private System.Windows.Forms.Button BiomePictureEditButton;
@@ -3886,6 +3856,7 @@ namespace Scribe
         private System.Windows.Forms.PictureBox BiomePictureBox;
         private System.Windows.Forms.Label BiomeIDLabel;
         private System.Windows.Forms.Button BiomeAddNewBiomeButton;
+        private System.Windows.Forms.Button BiomesRemoveBiomeButton;
         private System.Windows.Forms.TextBox BiomeIDTextBox;
         private System.Windows.Forms.CheckBox BiomeIsLiquidBasedCheckBox;
         private System.Windows.Forms.CheckBox BiomeIsRoomBasedCheckBox;
@@ -3902,35 +3873,47 @@ namespace Scribe
         private System.Windows.Forms.TextBox BiomeLiquidThresholdFactorTextBox;
         private System.Windows.Forms.TextBox BiomeRoomThresholdFactorTextBox;
         private System.Windows.Forms.Label BiomeRoomThresholdFactorLabel;
-        private System.Windows.Forms.ListBox RoomListBox;
-        private System.Windows.Forms.GroupBox RoomConfigGroupBox;
-        private System.Windows.Forms.Button RoomPictureEditButton;
-        private System.Windows.Forms.TableLayoutPanel RoomTableLayoutPanel;
-        private System.Windows.Forms.Label RoomNameLabel;
-        private System.Windows.Forms.Label RoomDescriptionLabel;
-        private System.Windows.Forms.Label RoomCommentLabel;
-        private System.Windows.Forms.Label RoomTierLabel;
-        private System.Windows.Forms.Label RoomRequiredFloorsLabel;
-        private System.Windows.Forms.Label RoomRequiredBlocksLabel;
-        private System.Windows.Forms.TextBox RoomNameTextBox;
-        private System.Windows.Forms.TextBox RoomDescriptionTextBox;
-        private System.Windows.Forms.TextBox RoomCommentTextBox;
-        private System.Windows.Forms.TextBox RoomTierTextBox;
-        private System.Windows.Forms.PictureBox RoomPictureBox;
-        private System.Windows.Forms.Label RoomIDLabel;
-        private System.Windows.Forms.Button RoomAddNewRoomButton;
-        private System.Windows.Forms.TextBox RoomIDTextBox;
-        private System.Windows.Forms.Button RoomAddBlockButton;
-        private System.Windows.Forms.Button RoomRemoveBlockButton;
-        private System.Windows.Forms.Button RoomAddFloorButton;
-        private System.Windows.Forms.Button RoomRemoveFloorButton;
-        private System.Windows.Forms.ListBox RoomRequiredBlocksListBox;
-        private System.Windows.Forms.ListBox RoomRequiredFloorsListBox;
-        private System.Windows.Forms.TableLayoutPanel RoomConfigTableLayoutPanel;
-        private System.Windows.Forms.Label RoomMinWalkableSpacesLabel;
-        private System.Windows.Forms.Label RoomMaxWalkableSpacesLabel;
-        private System.Windows.Forms.TextBox RoomMinWalkableSpacesTextBox;
-        private System.Windows.Forms.TextBox RoomMaxWalkableSpacesTextBox;
+
+        private System.Windows.Forms.TabPage CraftingRecipesTabPage;
+        private System.Windows.Forms.ListBox CraftingListBox;
+        private System.Windows.Forms.TableLayoutPanel CraftingConfigTableLayoutPanel;
+        private System.Windows.Forms.GroupBox CraftsConfigGroupBox;
+        private System.Windows.Forms.Button CraftingPictureEditButton;
+        private System.Windows.Forms.TableLayoutPanel CraftingTableLayoutPanel;
+        private System.Windows.Forms.Label CraftingNameLabel;
+        private System.Windows.Forms.Label CraftingDescriptionLabel;
+        private System.Windows.Forms.Label CraftingCommentLabel;
+        private System.Windows.Forms.Label CraftingIngredientsLabel;
+        private System.Windows.Forms.TextBox CraftingNameTextBox;
+        private System.Windows.Forms.TextBox CraftingDescriptionTextBox;
+        private System.Windows.Forms.TextBox CraftingCommentTextBox;
+        private System.Windows.Forms.PictureBox CraftingPictureBox;
+        private System.Windows.Forms.Label CraftingIDLabel;
+        private System.Windows.Forms.Button CraftingAddNewCraftingButton;
+        private System.Windows.Forms.Button CraftingRemoveCraftingButton;
+        private System.Windows.Forms.TextBox CraftingIDTextBox;
+        private System.Windows.Forms.Button CraftingOpenPatternEditorButton;
+        private System.Windows.Forms.Button CraftingAddIngredientButton;
+        private System.Windows.Forms.Button CraftingRemoveIngredientButton;
+        private System.Windows.Forms.ListBox CraftingIngredientsBox;
+        private System.Windows.Forms.Button CraftingAddProductButton;
+        private System.Windows.Forms.Button CraftingRemoveProductButton;
+        private System.Windows.Forms.Label CraftingProductsLabel;
+        private System.Windows.Forms.Label CraftingMinIngredientCountLabel;
+        private System.Windows.Forms.Label CraftingMinProductCountLabel;
+        private System.Windows.Forms.Label CraftingMaxIngredientCountLabel;
+        private System.Windows.Forms.Label CraftingMaxProductCountLabel;
+        private System.Windows.Forms.TextBox CraftingMinIngredientCountTextBox;
+        private System.Windows.Forms.TextBox CraftingMinProductCountTextBox;
+        private System.Windows.Forms.TextBox CraftingMaxIngredientCountTextBox;
+        private System.Windows.Forms.TextBox CraftingMaxProductCountTextBox;
+        private System.Windows.Forms.ListBox CraftingProductsListBox;
+        private System.Windows.Forms.Label CraftingStrikePatternDimensionLabelLabel;
+        private System.Windows.Forms.Label CraftingStrikePatternDimensionLabelExample;
+        private System.Windows.Forms.Label CraftingStrikePatternLabel;
+        private System.Windows.Forms.Label CraftingStrikePatternComingSoonLabel;
+
+        private System.Windows.Forms.TabPage ItemsTabPage;
         private System.Windows.Forms.ListBox ItemListBox;
         private System.Windows.Forms.GroupBox ItemInventoriesGroupBox;
         private System.Windows.Forms.Button ItemPictureEditButton;
@@ -3950,6 +3933,7 @@ namespace Scribe
         private System.Windows.Forms.PictureBox ItemPictureBox;
         private System.Windows.Forms.Label ItemIDLabel;
         private System.Windows.Forms.Button ItemAddNewItemButton;
+        private System.Windows.Forms.Button ItemsRemoveItemButton;
         private System.Windows.Forms.TextBox ItemIDTextBox;
         private System.Windows.Forms.Button ItemAddTagButton;
         private System.Windows.Forms.Button ItemRemoveTagButton;
@@ -3969,32 +3953,30 @@ namespace Scribe
         private System.Windows.Forms.Label ItemParquetLabel;
         private System.Windows.Forms.ComboBox ItemEffectWhileHeldComboBox;
         private System.Windows.Forms.ComboBox ItemEquivalentParquetComboBox;
-        private System.Windows.Forms.ToolTip EditorToolTip;
-        private System.Windows.Forms.ListBox CraftingProductsListBox;
-        private System.Windows.Forms.Label ScriptingComingSoonLabel;
+
+        private System.Windows.Forms.TabPage MapsTabPage;
         private System.Windows.Forms.Label MapsComingSoonLabel;
-        private System.Windows.Forms.Label CraftingStrikePatternDimensionLabelLabel;
-        private System.Windows.Forms.Label CraftingStrikePatternDimensionLabelExample;
-        private System.Windows.Forms.Label CraftingStrikePatternLabel;
-        private System.Windows.Forms.Label CraftingStrikePatternComingSoonLabel;
-        private System.Windows.Forms.ListBox ParquetListBox;
+
+        private System.Windows.Forms.TabPage FloorsTabPage;
+        // TODO private System.Windows.Forms.ListBox ParquetListBox;
         private System.Windows.Forms.Button FloorEditImageButton;
         private System.Windows.Forms.TableLayoutPanel FloorLayoutTabelPanel;
         private System.Windows.Forms.Label FloorNameLabel;
         private System.Windows.Forms.Label FloorDescriptionLabel;
         private System.Windows.Forms.Label FloorCommentLabel;
-        private System.Windows.Forms.Label ParquetEquivalentItemIDLabel;
+        private System.Windows.Forms.Label FloorEquivalentItemIDLabel;
         private System.Windows.Forms.Label FloorModificationToolLabel;
-        private System.Windows.Forms.TextBox ParquetNameTextBox;
+        private System.Windows.Forms.TextBox FloorNameTextBox;
         private System.Windows.Forms.TextBox FloorDescriptionTextBox;
         private System.Windows.Forms.TextBox FloorCommentTextBox;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        // TODO private System.Windows.Forms.ComboBox comboBox2;
+        // TODO private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.PictureBox FloorPictureBox;
         private System.Windows.Forms.Label FloorIDLabel;
         private System.Windows.Forms.Button FloorAddNewFloorButton;
+        private System.Windows.Forms.Button FloorRemoveFloorButton;
         private System.Windows.Forms.TextBox FloorIDTextBox;
-        private System.Windows.Forms.GroupBox Config;
+        // TODO private System.Windows.Forms.GroupBox Config;
         private System.Windows.Forms.GroupBox FloorConfigGroupBox;
         private System.Windows.Forms.Label FloorTrenchName;
         private System.Windows.Forms.TextBox FloorTrenchNameTextBox;
@@ -4009,15 +3991,47 @@ namespace Scribe
         private System.Windows.Forms.Button FloorAddBiomeTagButton;
         private System.Windows.Forms.Button FloorRemoveBiomeTagButton;
         private System.Windows.Forms.Button FloorRemoveRoomTagButton;
+
         private System.Windows.Forms.TabPage BlocksTabPage;
+
         private System.Windows.Forms.TabPage FurnishingsTabPage;
+
         private System.Windows.Forms.TabPage CollectiblesTabPage;
-        private System.Windows.Forms.Button GamesRemoveGameButton;
-        private System.Windows.Forms.Button BiomesRemoveBiomeButton;
-        private System.Windows.Forms.Button CraftingRemoveCraftingButton;
-        private System.Windows.Forms.Button ItemsRemoveItemButton;
+
+        private System.Windows.Forms.TabPage RoomsTabPage;
+        private System.Windows.Forms.ListBox RoomListBox;
+        private System.Windows.Forms.GroupBox RoomConfigGroupBox;
+        private System.Windows.Forms.Button RoomPictureEditButton;
+        private System.Windows.Forms.TableLayoutPanel RoomTableLayoutPanel;
+        private System.Windows.Forms.Label RoomNameLabel;
+        private System.Windows.Forms.Label RoomDescriptionLabel;
+        private System.Windows.Forms.Label RoomCommentLabel;
+        private System.Windows.Forms.Label RoomTierLabel;
+        private System.Windows.Forms.Label RoomRequiredFloorsLabel;
+        private System.Windows.Forms.Label RoomRequiredBlocksLabel;
+        private System.Windows.Forms.TextBox RoomNameTextBox;
+        private System.Windows.Forms.TextBox RoomDescriptionTextBox;
+        private System.Windows.Forms.TextBox RoomCommentTextBox;
+        private System.Windows.Forms.TextBox RoomTierTextBox;
+        private System.Windows.Forms.PictureBox RoomPictureBox;
+        private System.Windows.Forms.Label RoomIDLabel;
+        private System.Windows.Forms.Button RoomAddNewRoomButton;
         private System.Windows.Forms.Button RoomRemoveRoomButton;
-        private System.Windows.Forms.Button FloorRemoveFloorButton;
+        private System.Windows.Forms.TextBox RoomIDTextBox;
+        private System.Windows.Forms.Button RoomAddBlockButton;
+        private System.Windows.Forms.Button RoomRemoveBlockButton;
+        private System.Windows.Forms.Button RoomAddFloorButton;
+        private System.Windows.Forms.Button RoomRemoveFloorButton;
+        private System.Windows.Forms.ListBox RoomRequiredBlocksListBox;
+        private System.Windows.Forms.ListBox RoomRequiredFloorsListBox;
+        private System.Windows.Forms.TableLayoutPanel RoomConfigTableLayoutPanel;
+        private System.Windows.Forms.Label RoomMinWalkableSpacesLabel;
+        private System.Windows.Forms.Label RoomMaxWalkableSpacesLabel;
+        private System.Windows.Forms.TextBox RoomMinWalkableSpacesTextBox;
+        private System.Windows.Forms.TextBox RoomMaxWalkableSpacesTextBox;
+
+        private System.Windows.Forms.TabPage ScriptsTabPage;
+        private System.Windows.Forms.Label ScriptingComingSoonLabel;
     }
 }
 
