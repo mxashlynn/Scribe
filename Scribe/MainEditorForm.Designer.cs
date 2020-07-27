@@ -32,12 +32,10 @@ namespace Scribe
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainEditorForm));
-
             this.MainToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.ToolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.EditorStatusStrip = new System.Windows.Forms.StatusStrip();
             this.EditorToolTip = new System.Windows.Forms.ToolTip(this.components);
-
             this.MainMenuBar = new System.Windows.Forms.MenuStrip();
             this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,7 +68,6 @@ namespace Scribe
             this.DocumentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-
             this.FiltersTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.FilterTextBox = new System.Windows.Forms.TextBox();
             this.FilterByNameCheckBox = new System.Windows.Forms.CheckBox();
@@ -81,7 +78,7 @@ namespace Scribe
             this.FilterByMoreCheckBox = new System.Windows.Forms.CheckBox();
             this.FilterGroupBox = new System.Windows.Forms.GroupBox();
             this.FlavorFilterGroupBox = new System.Windows.Forms.GroupBox();
-            this.FlavorTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.FlavorsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.FlavorSavourySelector = new System.Windows.Forms.Label();
             this.FlavorMetallicSelector = new System.Windows.Forms.Label();
             this.FlavorFreshSelector = new System.Windows.Forms.Label();
@@ -96,34 +93,9 @@ namespace Scribe
             this.FlavorSaltySelector = new System.Windows.Forms.Label();
             this.FlavorNumbingSelector = new System.Windows.Forms.Label();
             this.FlavorAllFlavorsSelector = new System.Windows.Forms.Label();
-
             this.EditorTabs = new System.Windows.Forms.TabControl();
-
             this.GamesTabPage = new System.Windows.Forms.TabPage();
-            this.LibraryInfoGroupBox = new System.Windows.Forms.GroupBox();
-            this.LibraryInfoTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.LibraryVersionLabel = new System.Windows.Forms.Label();
-            this.LibraryVersionExample = new System.Windows.Forms.Label();
-            this.LibraryWorkingDirectoryLabel = new System.Windows.Forms.Label();
-            this.LibraryWorkingDirectoryExample = new System.Windows.Forms.Label();
-            this.FileFormatGroupBox = new System.Windows.Forms.GroupBox();
-            this.FileFormatTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.FileFormatPrimaryDelimiterLabel = new System.Windows.Forms.Label();
-            this.FileFormatPrimaryDelimiterExample = new System.Windows.Forms.Label();
-            this.FileFormatSecondaryDelimiterLabel = new System.Windows.Forms.Label();
-            this.FileFormatSecondaryDelimiterExample = new System.Windows.Forms.Label();
-            this.FileFormatInternalDelimiterLabel = new System.Windows.Forms.Label();
-            this.FileFormatInternalDelimiterExample = new System.Windows.Forms.Label();
-            this.FileFormatElementDelimiterLabel = new System.Windows.Forms.Label();
-            this.FileFormatElementDelimiterExample = new System.Windows.Forms.Label();
-            this.FileFormatNameDelimiterLabel = new System.Windows.Forms.Label();
-            this.FileFormatNameDelimiterExample = new System.Windows.Forms.Label();
-            this.FileFormatPronounDelimiterLabel = new System.Windows.Forms.Label();
-            this.FileFormatPronounDelimiterExample = new System.Windows.Forms.Label();
-            this.FileFormatDimensionalDelimiterLabel = new System.Windows.Forms.Label();
-            this.FileFormatDimensionalDelimiterExample = new System.Windows.Forms.Label();
-            this.FileFormatDimensionalTerminatorLabel = new System.Windows.Forms.Label();
-            this.FileFormatDimensionalTerminatorExample = new System.Windows.Forms.Label();
+            this.GameRemoveGameButton = new System.Windows.Forms.Button();
             this.GameIconEditButton = new System.Windows.Forms.Button();
             this.GameIconPictureBox = new System.Windows.Forms.PictureBox();
             this.GameTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -146,12 +118,34 @@ namespace Scribe
             this.GameIDLabel = new System.Windows.Forms.Label();
             this.GameIDTextBox = new System.Windows.Forms.TextBox();
             this.GameAddNewGameButton = new System.Windows.Forms.Button();
-            this.GamesRemoveGameButton = new System.Windows.Forms.Button();
             this.GameListBox = new System.Windows.Forms.ListBox();
-
+            this.FileFormatGroupBox = new System.Windows.Forms.GroupBox();
+            this.FileFormatTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.FileFormatPrimaryDelimiterLabel = new System.Windows.Forms.Label();
+            this.FileFormatPrimaryDelimiterExample = new System.Windows.Forms.Label();
+            this.FileFormatSecondaryDelimiterLabel = new System.Windows.Forms.Label();
+            this.FileFormatSecondaryDelimiterExample = new System.Windows.Forms.Label();
+            this.FileFormatInternalDelimiterLabel = new System.Windows.Forms.Label();
+            this.FileFormatInternalDelimiterExample = new System.Windows.Forms.Label();
+            this.FileFormatElementDelimiterLabel = new System.Windows.Forms.Label();
+            this.FileFormatElementDelimiterExample = new System.Windows.Forms.Label();
+            this.FileFormatNameDelimiterLabel = new System.Windows.Forms.Label();
+            this.FileFormatNameDelimiterExample = new System.Windows.Forms.Label();
+            this.FileFormatPronounDelimiterLabel = new System.Windows.Forms.Label();
+            this.FileFormatPronounDelimiterExample = new System.Windows.Forms.Label();
+            this.FileFormatDimensionalDelimiterLabel = new System.Windows.Forms.Label();
+            this.FileFormatDimensionalDelimiterExample = new System.Windows.Forms.Label();
+            this.FileFormatDimensionalTerminatorLabel = new System.Windows.Forms.Label();
+            this.FileFormatDimensionalTerminatorExample = new System.Windows.Forms.Label();
+            this.LibraryInfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.LibraryInfoTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.LibraryVersionLabel = new System.Windows.Forms.Label();
+            this.LibraryVersionExample = new System.Windows.Forms.Label();
+            this.LibraryWorkingDirectoryLabel = new System.Windows.Forms.Label();
+            this.LibraryWorkingDirectoryExample = new System.Windows.Forms.Label();
             this.BeingsTabPage = new System.Windows.Forms.TabPage();
-
             this.BiomesTabPage = new System.Windows.Forms.TabPage();
+            this.BiomeRemoveBiomeButton = new System.Windows.Forms.Button();
             this.BiomeAddEntryRequirementButton = new System.Windows.Forms.Button();
             this.BiomeRemoveEntryRequirementButton = new System.Windows.Forms.Button();
             this.BiomeListBox = new System.Windows.Forms.ListBox();
@@ -186,10 +180,9 @@ namespace Scribe
             this.BiomePictureBox = new System.Windows.Forms.PictureBox();
             this.BiomeIDLabel = new System.Windows.Forms.Label();
             this.BiomeAddNewBiomeButton = new System.Windows.Forms.Button();
-            this.BiomeRemoveBiomeButton = new System.Windows.Forms.Button();
             this.BiomeIDTextBox = new System.Windows.Forms.TextBox();
-
             this.CraftingRecipesTabPage = new System.Windows.Forms.TabPage();
+            this.CraftingRemoveCraftingButton = new System.Windows.Forms.Button();
             this.CraftingListBox = new System.Windows.Forms.ListBox();
             this.CraftingPictureEditButton = new System.Windows.Forms.Button();
             this.CraftingTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -213,7 +206,6 @@ namespace Scribe
             this.CraftingPictureBox = new System.Windows.Forms.PictureBox();
             this.CraftingIDLabel = new System.Windows.Forms.Label();
             this.CraftingAddNewCraftingButton = new System.Windows.Forms.Button();
-            this.CraftingRemoveCraftingButton = new System.Windows.Forms.Button();
             this.CraftingIDTextBox = new System.Windows.Forms.TextBox();
             this.CraftingConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CraftingConfigTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -227,8 +219,8 @@ namespace Scribe
             this.CraftingMaxProductCountTextBox = new System.Windows.Forms.TextBox();
             this.CraftingStrikePatternDimensionLabelLabel = new System.Windows.Forms.Label();
             this.CraftingStrikePatternDimensionLabelExample = new System.Windows.Forms.Label();
-
             this.ItemsTabPage = new System.Windows.Forms.TabPage();
+            this.ItemRemoveItemButton = new System.Windows.Forms.Button();
             this.ItemAddTagButton = new System.Windows.Forms.Button();
             this.ItemRemoveTagButton = new System.Windows.Forms.Button();
             this.ItemListBox = new System.Windows.Forms.ListBox();
@@ -262,14 +254,14 @@ namespace Scribe
             this.ItemPictureBox = new System.Windows.Forms.PictureBox();
             this.ItemIDLabel = new System.Windows.Forms.Label();
             this.ItemAddNewItemButton = new System.Windows.Forms.Button();
-            this.ItemRemoveItemButton = new System.Windows.Forms.Button();
             this.ItemIDTextBox = new System.Windows.Forms.TextBox();
-
             this.MapsTabPage = new System.Windows.Forms.TabPage();
-            this.MapsComingSoonLabel = new System.Windows.Forms.Label();
-
+            this.MapComingSoonLabel = new System.Windows.Forms.Label();
             this.FloorsTabPage = new System.Windows.Forms.TabPage();
+            this.FloorRemoveFloorButton = new System.Windows.Forms.Button();
             this.FloorLayoutTabelPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.FloorRemoveRoomTagButton = new System.Windows.Forms.Button();
+            this.FloorRemoveBiomeTagButton = new System.Windows.Forms.Button();
             this.FloorAddRoomTagButton = new System.Windows.Forms.Button();
             this.FloorNameLabel = new System.Windows.Forms.Label();
             this.FloorDescriptionLabel = new System.Windows.Forms.Label();
@@ -288,22 +280,18 @@ namespace Scribe
             this.FloorAddsToBiomeListBox = new System.Windows.Forms.ListBox();
             this.FloorAddsToRoomListBox = new System.Windows.Forms.ListBox();
             this.FloorAddBiomeTagButton = new System.Windows.Forms.Button();
-            this.FloorRemoveBiomeTagButton = new System.Windows.Forms.Button();
-            this.FloorRemoveRoomTagButton = new System.Windows.Forms.Button();
             this.FloorConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.FloorIDTextBox = new System.Windows.Forms.TextBox();
             this.FloorAddNewFloorButton = new System.Windows.Forms.Button();
-            this.FloorRemoveFloorButton = new System.Windows.Forms.Button();
             this.FloorListBox = new System.Windows.Forms.ListBox();
             this.FloorIDLabel = new System.Windows.Forms.Label();
             this.FloorEditImageButton = new System.Windows.Forms.Button();
             this.FloorPictureBox = new System.Windows.Forms.PictureBox();
-
             this.BlocksTabPage = new System.Windows.Forms.TabPage();
             this.FurnishingsTabPage = new System.Windows.Forms.TabPage();
             this.CollectiblesTabPage = new System.Windows.Forms.TabPage();
-
-            this.RoomsTabPage = new System.Windows.Forms.TabPage();
+            this.RoomRecipesTabPage = new System.Windows.Forms.TabPage();
+            this.RoomRemoveRoomButton = new System.Windows.Forms.Button();
             this.RoomAddBlockButton = new System.Windows.Forms.Button();
             this.RoomRemoveBlockButton = new System.Windows.Forms.Button();
             this.RoomListBox = new System.Windows.Forms.ListBox();
@@ -336,14 +324,15 @@ namespace Scribe
             this.RoomPictureBox = new System.Windows.Forms.PictureBox();
             this.RoomIDLabel = new System.Windows.Forms.Label();
             this.RoomAddNewRoomButton = new System.Windows.Forms.Button();
-            this.RoomRemoveRoomButton = new System.Windows.Forms.Button();
             this.RoomIDTextBox = new System.Windows.Forms.TextBox();
-
             this.ScriptsTabPage = new System.Windows.Forms.TabPage();
             this.ScriptingComingSoonLabel = new System.Windows.Forms.Label();
-
             this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
+            this.FiltersTableLayoutPanel.SuspendLayout();
+            this.FilterGroupBox.SuspendLayout();
+            this.FlavorFilterGroupBox.SuspendLayout();
+            this.FlavorsTableLayoutPanel.SuspendLayout();
             this.EditorTabs.SuspendLayout();
             this.GamesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GameIconPictureBox)).BeginInit();
@@ -370,18 +359,13 @@ namespace Scribe
             this.FloorsTabPage.SuspendLayout();
             this.FloorLayoutTabelPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FloorPictureBox)).BeginInit();
-            this.RoomsTabPage.SuspendLayout();
+            this.RoomRecipesTabPage.SuspendLayout();
             this.RoomConfigGroupBox.SuspendLayout();
             this.RoomConfigTableLayoutPanel.SuspendLayout();
             this.RoomTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPictureBox)).BeginInit();
             this.ScriptsTabPage.SuspendLayout();
-            this.FiltersTableLayoutPanel.SuspendLayout();
-            this.FilterGroupBox.SuspendLayout();
-            this.FlavorFilterGroupBox.SuspendLayout();
-            this.FlavorTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
-
             // 
             // MainToolStripStatusLabel
             // 
@@ -410,10 +394,6 @@ namespace Scribe
             this.EditorStatusStrip.Size = new System.Drawing.Size(984, 22);
             this.EditorStatusStrip.SizingGrip = false;
             this.EditorStatusStrip.TabIndex = 0;
-            // 
-            // EditorToolTip
-            // 
-
             // 
             // MainMenuBar
             // 
@@ -707,7 +687,7 @@ namespace Scribe
             // 
             // FiltersTableLayoutPanel
             // 
-            this.FiltersTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.FiltersTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FiltersTableLayoutPanel.ColumnCount = 4;
             this.FiltersTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
@@ -809,7 +789,7 @@ namespace Scribe
             // 
             // FlavorFilterGroupBox
             // 
-            this.FlavorFilterGroupBox.Controls.Add(this.FlavorTableLayoutPanel);
+            this.FlavorFilterGroupBox.Controls.Add(this.FlavorsTableLayoutPanel);
             this.FlavorFilterGroupBox.Location = new System.Drawing.Point(477, 27);
             this.FlavorFilterGroupBox.Name = "FlavorFilterGroupBox";
             this.FlavorFilterGroupBox.Size = new System.Drawing.Size(491, 78);
@@ -817,42 +797,42 @@ namespace Scribe
             this.FlavorFilterGroupBox.TabStop = false;
             this.FlavorFilterGroupBox.Text = "Filter By Flavor";
             // 
-            // FlavorTableLayoutPanel
+            // FlavorsTableLayoutPanel
             // 
-            this.FlavorTableLayoutPanel.ColumnCount = 7;
-            this.FlavorTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.25F));
-            this.FlavorTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.25F));
-            this.FlavorTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.25F));
-            this.FlavorTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.25F));
-            this.FlavorTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.75F));
-            this.FlavorTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.25F));
-            this.FlavorTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14F));
-            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorSavourySelector, 0, 1);
-            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorMetallicSelector, 0, 1);
-            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorFreshSelector, 0, 1);
-            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorPungentSelector, 0, 1);
-            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorNoFlavorsSelector, 0, 1);
-            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorChemicalSelector, 0, 1);
-            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorAstringentSelector, 0, 1);
-            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorSweetSelector, 1, 0);
-            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorBlandSelector, 0, 0);
-            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorBitterSelector, 4, 0);
-            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorSourSelector, 3, 0);
-            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorSaltySelector, 2, 0);
-            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorNumbingSelector, 5, 0);
-            this.FlavorTableLayoutPanel.Controls.Add(this.FlavorAllFlavorsSelector, 6, 0);
-            this.FlavorTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
-            this.FlavorTableLayoutPanel.Name = "FlavorTableLayoutPanel";
-            this.FlavorTableLayoutPanel.RowCount = 2;
-            this.FlavorTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.FlavorTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.FlavorTableLayoutPanel.Size = new System.Drawing.Size(479, 52);
-            this.FlavorTableLayoutPanel.TabIndex = 0;
+            this.FlavorsTableLayoutPanel.ColumnCount = 7;
+            this.FlavorsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.25F));
+            this.FlavorsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.25F));
+            this.FlavorsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.25F));
+            this.FlavorsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.25F));
+            this.FlavorsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.75F));
+            this.FlavorsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.25F));
+            this.FlavorsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14F));
+            this.FlavorsTableLayoutPanel.Controls.Add(this.FlavorSavourySelector, 0, 1);
+            this.FlavorsTableLayoutPanel.Controls.Add(this.FlavorMetallicSelector, 0, 1);
+            this.FlavorsTableLayoutPanel.Controls.Add(this.FlavorFreshSelector, 0, 1);
+            this.FlavorsTableLayoutPanel.Controls.Add(this.FlavorPungentSelector, 0, 1);
+            this.FlavorsTableLayoutPanel.Controls.Add(this.FlavorNoFlavorsSelector, 0, 1);
+            this.FlavorsTableLayoutPanel.Controls.Add(this.FlavorChemicalSelector, 0, 1);
+            this.FlavorsTableLayoutPanel.Controls.Add(this.FlavorAstringentSelector, 0, 1);
+            this.FlavorsTableLayoutPanel.Controls.Add(this.FlavorSweetSelector, 1, 0);
+            this.FlavorsTableLayoutPanel.Controls.Add(this.FlavorBlandSelector, 0, 0);
+            this.FlavorsTableLayoutPanel.Controls.Add(this.FlavorBitterSelector, 4, 0);
+            this.FlavorsTableLayoutPanel.Controls.Add(this.FlavorSourSelector, 3, 0);
+            this.FlavorsTableLayoutPanel.Controls.Add(this.FlavorSaltySelector, 2, 0);
+            this.FlavorsTableLayoutPanel.Controls.Add(this.FlavorNumbingSelector, 5, 0);
+            this.FlavorsTableLayoutPanel.Controls.Add(this.FlavorAllFlavorsSelector, 6, 0);
+            this.FlavorsTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
+            this.FlavorsTableLayoutPanel.Name = "FlavorsTableLayoutPanel";
+            this.FlavorsTableLayoutPanel.RowCount = 2;
+            this.FlavorsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.FlavorsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.FlavorsTableLayoutPanel.Size = new System.Drawing.Size(479, 52);
+            this.FlavorsTableLayoutPanel.TabIndex = 0;
             // 
             // FlavorSavourySelector
             // 
-            this.FlavorSavourySelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.FlavorSavourySelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FlavorSavourySelector.AutoSize = true;
             this.FlavorSavourySelector.BackColor = System.Drawing.Color.PapayaWhip;
@@ -866,8 +846,8 @@ namespace Scribe
             // 
             // FlavorMetallicSelector
             // 
-            this.FlavorMetallicSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.FlavorMetallicSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FlavorMetallicSelector.AutoSize = true;
             this.FlavorMetallicSelector.BackColor = System.Drawing.Color.Gainsboro;
@@ -881,8 +861,8 @@ namespace Scribe
             // 
             // FlavorFreshSelector
             // 
-            this.FlavorFreshSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.FlavorFreshSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FlavorFreshSelector.AutoSize = true;
             this.FlavorFreshSelector.BackColor = System.Drawing.Color.LightCyan;
@@ -896,8 +876,8 @@ namespace Scribe
             // 
             // FlavorPungentSelector
             // 
-            this.FlavorPungentSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.FlavorPungentSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FlavorPungentSelector.AutoSize = true;
             this.FlavorPungentSelector.BackColor = System.Drawing.Color.Pink;
@@ -911,8 +891,8 @@ namespace Scribe
             // 
             // FlavorNoFlavorsSelector
             // 
-            this.FlavorNoFlavorsSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.FlavorNoFlavorsSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FlavorNoFlavorsSelector.AutoSize = true;
             this.FlavorNoFlavorsSelector.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -926,8 +906,8 @@ namespace Scribe
             // 
             // FlavorChemicalSelector
             // 
-            this.FlavorChemicalSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.FlavorChemicalSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FlavorChemicalSelector.AutoSize = true;
             this.FlavorChemicalSelector.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -941,8 +921,8 @@ namespace Scribe
             // 
             // FlavorAstringentSelector
             // 
-            this.FlavorAstringentSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.FlavorAstringentSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FlavorAstringentSelector.AutoSize = true;
             this.FlavorAstringentSelector.BackColor = System.Drawing.Color.Moccasin;
@@ -956,8 +936,8 @@ namespace Scribe
             // 
             // FlavorSweetSelector
             // 
-            this.FlavorSweetSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.FlavorSweetSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FlavorSweetSelector.AutoSize = true;
             this.FlavorSweetSelector.BackColor = System.Drawing.Color.MistyRose;
@@ -971,8 +951,8 @@ namespace Scribe
             // 
             // FlavorBlandSelector
             // 
-            this.FlavorBlandSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.FlavorBlandSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FlavorBlandSelector.AutoSize = true;
             this.FlavorBlandSelector.BackColor = System.Drawing.Color.NavajoWhite;
@@ -986,8 +966,8 @@ namespace Scribe
             // 
             // FlavorBitterSelector
             // 
-            this.FlavorBitterSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.FlavorBitterSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FlavorBitterSelector.AutoSize = true;
             this.FlavorBitterSelector.BackColor = System.Drawing.Color.LightGreen;
@@ -1001,8 +981,8 @@ namespace Scribe
             // 
             // FlavorSourSelector
             // 
-            this.FlavorSourSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.FlavorSourSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FlavorSourSelector.AutoSize = true;
             this.FlavorSourSelector.BackColor = System.Drawing.Color.LemonChiffon;
@@ -1016,8 +996,8 @@ namespace Scribe
             // 
             // FlavorSaltySelector
             // 
-            this.FlavorSaltySelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.FlavorSaltySelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FlavorSaltySelector.AutoSize = true;
             this.FlavorSaltySelector.BackColor = System.Drawing.Color.PowderBlue;
@@ -1031,8 +1011,8 @@ namespace Scribe
             // 
             // FlavorNumbingSelector
             // 
-            this.FlavorNumbingSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.FlavorNumbingSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FlavorNumbingSelector.AutoSize = true;
             this.FlavorNumbingSelector.BackColor = System.Drawing.Color.Plum;
@@ -1046,8 +1026,8 @@ namespace Scribe
             // 
             // FlavorAllFlavorsSelector
             // 
-            this.FlavorAllFlavorsSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.FlavorAllFlavorsSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FlavorAllFlavorsSelector.AutoSize = true;
             this.FlavorAllFlavorsSelector.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -1058,7 +1038,6 @@ namespace Scribe
             this.FlavorAllFlavorsSelector.Size = new System.Drawing.Size(63, 26);
             this.FlavorAllFlavorsSelector.TabIndex = 0;
             this.FlavorAllFlavorsSelector.Text = "(All)";
-
             // 
             // EditorTabs
             // 
@@ -1075,18 +1054,17 @@ namespace Scribe
             this.EditorTabs.Controls.Add(this.BlocksTabPage);
             this.EditorTabs.Controls.Add(this.FurnishingsTabPage);
             this.EditorTabs.Controls.Add(this.CollectiblesTabPage);
-            this.EditorTabs.Controls.Add(this.RoomsTabPage);
+            this.EditorTabs.Controls.Add(this.RoomRecipesTabPage);
             this.EditorTabs.Controls.Add(this.ScriptsTabPage);
             this.EditorTabs.Location = new System.Drawing.Point(12, 111);
             this.EditorTabs.Name = "EditorTabs";
             this.EditorTabs.SelectedIndex = 9;
             this.EditorTabs.Size = new System.Drawing.Size(961, 625);
             this.EditorTabs.TabIndex = 2;
-
             // 
             // GamesTabPage
             // 
-            this.GamesTabPage.Controls.Add(this.GamesRemoveGameButton);
+            this.GamesTabPage.Controls.Add(this.GameRemoveGameButton);
             this.GamesTabPage.Controls.Add(this.GameIconEditButton);
             this.GamesTabPage.Controls.Add(this.GameIconPictureBox);
             this.GamesTabPage.Controls.Add(this.GameTableLayoutPanel);
@@ -1103,298 +1081,14 @@ namespace Scribe
             this.GamesTabPage.TabIndex = 0;
             this.GamesTabPage.Text = "Game";
             // 
-            // LibraryInfoGroupBox
+            // GameRemoveGameButton
             // 
-            this.LibraryInfoGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LibraryInfoGroupBox.Controls.Add(this.LibraryInfoTableLayoutPanel);
-            this.LibraryInfoGroupBox.Location = new System.Drawing.Point(6, 496);
-            this.LibraryInfoGroupBox.Name = "LibraryInfoGroupBox";
-            this.LibraryInfoGroupBox.Size = new System.Drawing.Size(290, 100);
-            this.LibraryInfoGroupBox.TabIndex = 0;
-            this.LibraryInfoGroupBox.TabStop = false;
-            this.LibraryInfoGroupBox.Text = "Library Info";
-            // 
-            // LibraryInfoTableLayoutPanel
-            // 
-            this.LibraryInfoTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LibraryInfoTableLayoutPanel.ColumnCount = 2;
-            this.LibraryInfoTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.LibraryInfoTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.LibraryInfoTableLayoutPanel.Controls.Add(this.LibraryVersionLabel, 0, 0);
-            this.LibraryInfoTableLayoutPanel.Controls.Add(this.LibraryVersionExample, 1, 0);
-            this.LibraryInfoTableLayoutPanel.Controls.Add(this.LibraryWorkingDirectoryLabel, 2, 0);
-            this.LibraryInfoTableLayoutPanel.Controls.Add(this.LibraryWorkingDirectoryExample, 3, 0);
-            this.LibraryInfoTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
-            this.LibraryInfoTableLayoutPanel.Name = "LibraryInfoTableLayoutPanel";
-            this.LibraryInfoTableLayoutPanel.RowCount = 2;
-            this.LibraryInfoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.LibraryInfoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.LibraryInfoTableLayoutPanel.Size = new System.Drawing.Size(278, 75);
-            this.LibraryInfoTableLayoutPanel.TabIndex = 0;
-            // 
-            // LibraryVersionLabel
-            // 
-            this.LibraryVersionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LibraryVersionLabel.AutoSize = true;
-            this.LibraryVersionLabel.Location = new System.Drawing.Point(1, 1);
-            this.LibraryVersionLabel.Margin = new System.Windows.Forms.Padding(1);
-            this.LibraryVersionLabel.Name = "LibraryVersionLabel";
-            this.LibraryVersionLabel.Size = new System.Drawing.Size(67, 35);
-            this.LibraryVersionLabel.TabIndex = 0;
-            this.LibraryVersionLabel.Text = "Version";
-            // 
-            // LibraryVersionExample
-            // 
-            this.LibraryVersionExample.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LibraryVersionExample.AutoSize = true;
-            this.LibraryVersionExample.Location = new System.Drawing.Point(70, 1);
-            this.LibraryVersionExample.Margin = new System.Windows.Forms.Padding(1);
-            this.LibraryVersionExample.Name = "LibraryVersionExample";
-            this.LibraryVersionExample.Size = new System.Drawing.Size(207, 35);
-            this.LibraryVersionExample.TabIndex = 1;
-            this.LibraryVersionExample.Text = "0.0.0";
-            // 
-            // LibraryWorkingDirectoryLabel
-            // 
-            this.LibraryWorkingDirectoryLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LibraryWorkingDirectoryLabel.AutoSize = true;
-            this.LibraryWorkingDirectoryLabel.Location = new System.Drawing.Point(1, 38);
-            this.LibraryWorkingDirectoryLabel.Margin = new System.Windows.Forms.Padding(1);
-            this.LibraryWorkingDirectoryLabel.Name = "LibraryWorkingDirectoryLabel";
-            this.LibraryWorkingDirectoryLabel.Size = new System.Drawing.Size(67, 36);
-            this.LibraryWorkingDirectoryLabel.TabIndex = 0;
-            this.LibraryWorkingDirectoryLabel.Text = "Working Directory";
-            // 
-            // LibraryWorkingDirectoryExample
-            // 
-            this.LibraryWorkingDirectoryExample.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LibraryWorkingDirectoryExample.AutoSize = true;
-            this.LibraryWorkingDirectoryExample.Location = new System.Drawing.Point(70, 38);
-            this.LibraryWorkingDirectoryExample.Margin = new System.Windows.Forms.Padding(1);
-            this.LibraryWorkingDirectoryExample.Name = "LibraryWorkingDirectoryExample";
-            this.LibraryWorkingDirectoryExample.Size = new System.Drawing.Size(207, 36);
-            this.LibraryWorkingDirectoryExample.TabIndex = 1;
-            this.LibraryWorkingDirectoryExample.Text = "C:\\";
-            // 
-            // FileFormatGroupBox
-            // 
-            this.FileFormatGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FileFormatGroupBox.Controls.Add(this.FileFormatTableLayoutPanel);
-            this.FileFormatGroupBox.Location = new System.Drawing.Point(301, 499);
-            this.FileFormatGroupBox.Name = "FileFormatGroupBox";
-            this.FileFormatGroupBox.Size = new System.Drawing.Size(646, 97);
-            this.FileFormatGroupBox.TabIndex = 0;
-            this.FileFormatGroupBox.TabStop = false;
-            this.FileFormatGroupBox.Text = "File Format";
-            // 
-            // FileFormatTableLayoutPanel
-            // 
-            this.FileFormatTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FileFormatTableLayoutPanel.ColumnCount = 6;
-            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.83792F));
-            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.495411F));
-            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.83792F));
-            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.495411F));
-            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.83792F));
-            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.495411F));
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPrimaryDelimiterLabel, 0, 0);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPrimaryDelimiterExample, 1, 0);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatSecondaryDelimiterLabel, 2, 0);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatSecondaryDelimiterExample, 3, 0);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatInternalDelimiterLabel, 4, 0);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatInternalDelimiterExample, 5, 0);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatElementDelimiterLabel, 0, 1);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatElementDelimiterExample, 1, 1);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatNameDelimiterLabel, 2, 1);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatNameDelimiterExample, 3, 1);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPronounDelimiterLabel, 4, 1);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPronounDelimiterExample, 5, 1);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalDelimiterLabel, 0, 2);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalDelimiterExample, 1, 2);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalTerminatorLabel, 2, 2);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalTerminatorExample, 3, 2);
-            this.FileFormatTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
-            this.FileFormatTableLayoutPanel.Name = "FileFormatTableLayoutPanel";
-            this.FileFormatTableLayoutPanel.RowCount = 3;
-            this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.FileFormatTableLayoutPanel.Size = new System.Drawing.Size(634, 72);
-            this.FileFormatTableLayoutPanel.TabIndex = 1;
-            // 
-            // FileFormatPrimaryDelimiterLabel
-            // 
-            this.FileFormatPrimaryDelimiterLabel.AutoSize = true;
-            this.FileFormatPrimaryDelimiterLabel.Location = new System.Drawing.Point(50, 5);
-            this.FileFormatPrimaryDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.FileFormatPrimaryDelimiterLabel.Name = "FileFormatPrimaryDelimiterLabel";
-            this.FileFormatPrimaryDelimiterLabel.Size = new System.Drawing.Size(87, 13);
-            this.FileFormatPrimaryDelimiterLabel.TabIndex = 0;
-            this.FileFormatPrimaryDelimiterLabel.Text = "Primary Delimiter";
-            // 
-            // FileFormatPrimaryDelimiterExample
-            // 
-            this.FileFormatPrimaryDelimiterExample.AutoSize = true;
-            this.FileFormatPrimaryDelimiterExample.Location = new System.Drawing.Point(179, 5);
-            this.FileFormatPrimaryDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.FileFormatPrimaryDelimiterExample.Name = "FileFormatPrimaryDelimiterExample";
-            this.FileFormatPrimaryDelimiterExample.Size = new System.Drawing.Size(11, 13);
-            this.FileFormatPrimaryDelimiterExample.TabIndex = 1;
-            this.FileFormatPrimaryDelimiterExample.Text = ",";
-            // 
-            // FileFormatSecondaryDelimiterLabel
-            // 
-            this.FileFormatSecondaryDelimiterLabel.AutoSize = true;
-            this.FileFormatSecondaryDelimiterLabel.Location = new System.Drawing.Point(260, 5);
-            this.FileFormatSecondaryDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.FileFormatSecondaryDelimiterLabel.Name = "FileFormatSecondaryDelimiterLabel";
-            this.FileFormatSecondaryDelimiterLabel.Size = new System.Drawing.Size(102, 13);
-            this.FileFormatSecondaryDelimiterLabel.TabIndex = 2;
-            this.FileFormatSecondaryDelimiterLabel.Text = "Secondary Delimiter";
-            // 
-            // FileFormatSecondaryDelimiterExample
-            // 
-            this.FileFormatSecondaryDelimiterExample.AutoSize = true;
-            this.FileFormatSecondaryDelimiterExample.Location = new System.Drawing.Point(389, 5);
-            this.FileFormatSecondaryDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.FileFormatSecondaryDelimiterExample.Name = "FileFormatSecondaryDelimiterExample";
-            this.FileFormatSecondaryDelimiterExample.Size = new System.Drawing.Size(18, 13);
-            this.FileFormatSecondaryDelimiterExample.TabIndex = 3;
-            this.FileFormatSecondaryDelimiterExample.Text = "∟";
-            // 
-            // FileFormatInternalDelimiterLabel
-            // 
-            this.FileFormatInternalDelimiterLabel.AutoSize = true;
-            this.FileFormatInternalDelimiterLabel.Location = new System.Drawing.Point(470, 5);
-            this.FileFormatInternalDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.FileFormatInternalDelimiterLabel.Name = "FileFormatInternalDelimiterLabel";
-            this.FileFormatInternalDelimiterLabel.Size = new System.Drawing.Size(89, 13);
-            this.FileFormatInternalDelimiterLabel.TabIndex = 4;
-            this.FileFormatInternalDelimiterLabel.Text = "Internal Delimiter";
-            // 
-            // FileFormatInternalDelimiterExample
-            // 
-            this.FileFormatInternalDelimiterExample.AutoSize = true;
-            this.FileFormatInternalDelimiterExample.Location = new System.Drawing.Point(599, 5);
-            this.FileFormatInternalDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.FileFormatInternalDelimiterExample.Name = "FileFormatInternalDelimiterExample";
-            this.FileFormatInternalDelimiterExample.Size = new System.Drawing.Size(11, 13);
-            this.FileFormatInternalDelimiterExample.TabIndex = 5;
-            this.FileFormatInternalDelimiterExample.Text = "·";
-            // 
-            // FileFormatElementDelimiterLabel
-            // 
-            this.FileFormatElementDelimiterLabel.AutoSize = true;
-            this.FileFormatElementDelimiterLabel.Location = new System.Drawing.Point(50, 28);
-            this.FileFormatElementDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.FileFormatElementDelimiterLabel.Name = "FileFormatElementDelimiterLabel";
-            this.FileFormatElementDelimiterLabel.Size = new System.Drawing.Size(89, 13);
-            this.FileFormatElementDelimiterLabel.TabIndex = 6;
-            this.FileFormatElementDelimiterLabel.Text = "Element Delimiter";
-            // 
-            // FileFormatElementDelimiterExample
-            // 
-            this.FileFormatElementDelimiterExample.AutoSize = true;
-            this.FileFormatElementDelimiterExample.Location = new System.Drawing.Point(179, 28);
-            this.FileFormatElementDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.FileFormatElementDelimiterExample.Name = "FileFormatElementDelimiterExample";
-            this.FileFormatElementDelimiterExample.Size = new System.Drawing.Size(13, 13);
-            this.FileFormatElementDelimiterExample.TabIndex = 7;
-            this.FileFormatElementDelimiterExample.Text = "–";
-            // 
-            // FileFormatNameDelimiterLabel
-            // 
-            this.FileFormatNameDelimiterLabel.AutoSize = true;
-            this.FileFormatNameDelimiterLabel.Location = new System.Drawing.Point(260, 28);
-            this.FileFormatNameDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.FileFormatNameDelimiterLabel.Name = "FileFormatNameDelimiterLabel";
-            this.FileFormatNameDelimiterLabel.Size = new System.Drawing.Size(78, 13);
-            this.FileFormatNameDelimiterLabel.TabIndex = 8;
-            this.FileFormatNameDelimiterLabel.Text = "Name Delimiter";
-            // 
-            // FileFormatNameDelimiterExample
-            // 
-            this.FileFormatNameDelimiterExample.AutoSize = true;
-            this.FileFormatNameDelimiterExample.Location = new System.Drawing.Point(389, 28);
-            this.FileFormatNameDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.FileFormatNameDelimiterExample.Name = "FileFormatNameDelimiterExample";
-            this.FileFormatNameDelimiterExample.Size = new System.Drawing.Size(13, 13);
-            this.FileFormatNameDelimiterExample.TabIndex = 9;
-            this.FileFormatNameDelimiterExample.Text = "§";
-            // 
-            // FileFormatPronounDelimiterLabel
-            // 
-            this.FileFormatPronounDelimiterLabel.AutoSize = true;
-            this.FileFormatPronounDelimiterLabel.Location = new System.Drawing.Point(470, 28);
-            this.FileFormatPronounDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.FileFormatPronounDelimiterLabel.Name = "FileFormatPronounDelimiterLabel";
-            this.FileFormatPronounDelimiterLabel.Size = new System.Drawing.Size(91, 13);
-            this.FileFormatPronounDelimiterLabel.TabIndex = 10;
-            this.FileFormatPronounDelimiterLabel.Text = "Pronoun Delimiter";
-            // 
-            // FileFormatPronounDelimiterExample
-            // 
-            this.FileFormatPronounDelimiterExample.AutoSize = true;
-            this.FileFormatPronounDelimiterExample.Location = new System.Drawing.Point(599, 28);
-            this.FileFormatPronounDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.FileFormatPronounDelimiterExample.Name = "FileFormatPronounDelimiterExample";
-            this.FileFormatPronounDelimiterExample.Size = new System.Drawing.Size(11, 13);
-            this.FileFormatPronounDelimiterExample.TabIndex = 11;
-            this.FileFormatPronounDelimiterExample.Text = "|";
-            // 
-            // FileFormatDimensionalDelimiterLabel
-            // 
-            this.FileFormatDimensionalDelimiterLabel.AutoSize = true;
-            this.FileFormatDimensionalDelimiterLabel.Location = new System.Drawing.Point(50, 51);
-            this.FileFormatDimensionalDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.FileFormatDimensionalDelimiterLabel.Name = "FileFormatDimensionalDelimiterLabel";
-            this.FileFormatDimensionalDelimiterLabel.Size = new System.Drawing.Size(107, 13);
-            this.FileFormatDimensionalDelimiterLabel.TabIndex = 12;
-            this.FileFormatDimensionalDelimiterLabel.Text = "Dimensional Delimiter";
-            // 
-            // FileFormatDimensionalDelimiterExample
-            // 
-            this.FileFormatDimensionalDelimiterExample.AutoSize = true;
-            this.FileFormatDimensionalDelimiterExample.Location = new System.Drawing.Point(179, 51);
-            this.FileFormatDimensionalDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.FileFormatDimensionalDelimiterExample.Name = "FileFormatDimensionalDelimiterExample";
-            this.FileFormatDimensionalDelimiterExample.Size = new System.Drawing.Size(15, 13);
-            this.FileFormatDimensionalDelimiterExample.TabIndex = 13;
-            this.FileFormatDimensionalDelimiterExample.Text = "×";
-            // 
-            // FileFormatDimensionalTerminatorLabel
-            // 
-            this.FileFormatDimensionalTerminatorLabel.AutoSize = true;
-            this.FileFormatDimensionalTerminatorLabel.Location = new System.Drawing.Point(260, 51);
-            this.FileFormatDimensionalTerminatorLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.FileFormatDimensionalTerminatorLabel.Name = "FileFormatDimensionalTerminatorLabel";
-            this.FileFormatDimensionalTerminatorLabel.Size = new System.Drawing.Size(118, 13);
-            this.FileFormatDimensionalTerminatorLabel.TabIndex = 14;
-            this.FileFormatDimensionalTerminatorLabel.Text = "Dimensional Terminator";
-            // 
-            // FileFormatDimensionalTerminatorExample
-            // 
-            this.FileFormatDimensionalTerminatorExample.AutoSize = true;
-            this.FileFormatDimensionalTerminatorExample.Location = new System.Drawing.Point(389, 51);
-            this.FileFormatDimensionalTerminatorExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.FileFormatDimensionalTerminatorExample.Name = "FileFormatDimensionalTerminatorExample";
-            this.FileFormatDimensionalTerminatorExample.Size = new System.Drawing.Size(15, 13);
-            this.FileFormatDimensionalTerminatorExample.TabIndex = 15;
-            this.FileFormatDimensionalTerminatorExample.Text = "≡";
+            this.GameRemoveGameButton.Location = new System.Drawing.Point(24, 468);
+            this.GameRemoveGameButton.Name = "GameRemoveGameButton";
+            this.GameRemoveGameButton.Size = new System.Drawing.Size(129, 23);
+            this.GameRemoveGameButton.TabIndex = 2;
+            this.GameRemoveGameButton.Text = "Remove Game";
+            this.GameRemoveGameButton.UseVisualStyleBackColor = true;
             // 
             // GameIconEditButton
             // 
@@ -1621,15 +1315,6 @@ namespace Scribe
             this.GameAddNewGameButton.Text = "Add New Game";
             this.GameAddNewGameButton.UseVisualStyleBackColor = true;
             // 
-            // GamesRemoveGameButton
-            // 
-            this.GamesRemoveGameButton.Location = new System.Drawing.Point(24, 468);
-            this.GamesRemoveGameButton.Name = "GamesRemoveGameButton";
-            this.GamesRemoveGameButton.Size = new System.Drawing.Size(129, 23);
-            this.GamesRemoveGameButton.TabIndex = 2;
-            this.GamesRemoveGameButton.Text = "Remove Game";
-            this.GamesRemoveGameButton.UseVisualStyleBackColor = true;
-            // 
             // GameListBox
             // 
             this.GameListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1639,7 +1324,299 @@ namespace Scribe
             this.GameListBox.Name = "GameListBox";
             this.GameListBox.Size = new System.Drawing.Size(279, 446);
             this.GameListBox.TabIndex = 1;
-
+            // 
+            // FileFormatGroupBox
+            // 
+            this.FileFormatGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FileFormatGroupBox.Controls.Add(this.FileFormatTableLayoutPanel);
+            this.FileFormatGroupBox.Location = new System.Drawing.Point(301, 499);
+            this.FileFormatGroupBox.Name = "FileFormatGroupBox";
+            this.FileFormatGroupBox.Size = new System.Drawing.Size(646, 97);
+            this.FileFormatGroupBox.TabIndex = 0;
+            this.FileFormatGroupBox.TabStop = false;
+            this.FileFormatGroupBox.Text = "File Format";
+            // 
+            // FileFormatTableLayoutPanel
+            // 
+            this.FileFormatTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FileFormatTableLayoutPanel.ColumnCount = 6;
+            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.83792F));
+            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.495411F));
+            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.83792F));
+            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.495411F));
+            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.83792F));
+            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.495411F));
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPrimaryDelimiterLabel, 0, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPrimaryDelimiterExample, 1, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatSecondaryDelimiterLabel, 2, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatSecondaryDelimiterExample, 3, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatInternalDelimiterLabel, 4, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatInternalDelimiterExample, 5, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatElementDelimiterLabel, 0, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatElementDelimiterExample, 1, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatNameDelimiterLabel, 2, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatNameDelimiterExample, 3, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPronounDelimiterLabel, 4, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPronounDelimiterExample, 5, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalDelimiterLabel, 0, 2);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalDelimiterExample, 1, 2);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalTerminatorLabel, 2, 2);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalTerminatorExample, 3, 2);
+            this.FileFormatTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
+            this.FileFormatTableLayoutPanel.Name = "FileFormatTableLayoutPanel";
+            this.FileFormatTableLayoutPanel.RowCount = 3;
+            this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.FileFormatTableLayoutPanel.Size = new System.Drawing.Size(634, 72);
+            this.FileFormatTableLayoutPanel.TabIndex = 1;
+            // 
+            // FileFormatPrimaryDelimiterLabel
+            // 
+            this.FileFormatPrimaryDelimiterLabel.AutoSize = true;
+            this.FileFormatPrimaryDelimiterLabel.Location = new System.Drawing.Point(50, 5);
+            this.FileFormatPrimaryDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.FileFormatPrimaryDelimiterLabel.Name = "FileFormatPrimaryDelimiterLabel";
+            this.FileFormatPrimaryDelimiterLabel.Size = new System.Drawing.Size(87, 13);
+            this.FileFormatPrimaryDelimiterLabel.TabIndex = 0;
+            this.FileFormatPrimaryDelimiterLabel.Text = "Primary Delimiter";
+            // 
+            // FileFormatPrimaryDelimiterExample
+            // 
+            this.FileFormatPrimaryDelimiterExample.AutoSize = true;
+            this.FileFormatPrimaryDelimiterExample.Location = new System.Drawing.Point(179, 5);
+            this.FileFormatPrimaryDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatPrimaryDelimiterExample.Name = "FileFormatPrimaryDelimiterExample";
+            this.FileFormatPrimaryDelimiterExample.Size = new System.Drawing.Size(11, 13);
+            this.FileFormatPrimaryDelimiterExample.TabIndex = 1;
+            this.FileFormatPrimaryDelimiterExample.Text = ",";
+            // 
+            // FileFormatSecondaryDelimiterLabel
+            // 
+            this.FileFormatSecondaryDelimiterLabel.AutoSize = true;
+            this.FileFormatSecondaryDelimiterLabel.Location = new System.Drawing.Point(260, 5);
+            this.FileFormatSecondaryDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.FileFormatSecondaryDelimiterLabel.Name = "FileFormatSecondaryDelimiterLabel";
+            this.FileFormatSecondaryDelimiterLabel.Size = new System.Drawing.Size(102, 13);
+            this.FileFormatSecondaryDelimiterLabel.TabIndex = 2;
+            this.FileFormatSecondaryDelimiterLabel.Text = "Secondary Delimiter";
+            // 
+            // FileFormatSecondaryDelimiterExample
+            // 
+            this.FileFormatSecondaryDelimiterExample.AutoSize = true;
+            this.FileFormatSecondaryDelimiterExample.Location = new System.Drawing.Point(389, 5);
+            this.FileFormatSecondaryDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatSecondaryDelimiterExample.Name = "FileFormatSecondaryDelimiterExample";
+            this.FileFormatSecondaryDelimiterExample.Size = new System.Drawing.Size(18, 13);
+            this.FileFormatSecondaryDelimiterExample.TabIndex = 3;
+            this.FileFormatSecondaryDelimiterExample.Text = "∟";
+            // 
+            // FileFormatInternalDelimiterLabel
+            // 
+            this.FileFormatInternalDelimiterLabel.AutoSize = true;
+            this.FileFormatInternalDelimiterLabel.Location = new System.Drawing.Point(470, 5);
+            this.FileFormatInternalDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.FileFormatInternalDelimiterLabel.Name = "FileFormatInternalDelimiterLabel";
+            this.FileFormatInternalDelimiterLabel.Size = new System.Drawing.Size(89, 13);
+            this.FileFormatInternalDelimiterLabel.TabIndex = 4;
+            this.FileFormatInternalDelimiterLabel.Text = "Internal Delimiter";
+            // 
+            // FileFormatInternalDelimiterExample
+            // 
+            this.FileFormatInternalDelimiterExample.AutoSize = true;
+            this.FileFormatInternalDelimiterExample.Location = new System.Drawing.Point(599, 5);
+            this.FileFormatInternalDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatInternalDelimiterExample.Name = "FileFormatInternalDelimiterExample";
+            this.FileFormatInternalDelimiterExample.Size = new System.Drawing.Size(11, 13);
+            this.FileFormatInternalDelimiterExample.TabIndex = 5;
+            this.FileFormatInternalDelimiterExample.Text = "·";
+            // 
+            // FileFormatElementDelimiterLabel
+            // 
+            this.FileFormatElementDelimiterLabel.AutoSize = true;
+            this.FileFormatElementDelimiterLabel.Location = new System.Drawing.Point(50, 28);
+            this.FileFormatElementDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.FileFormatElementDelimiterLabel.Name = "FileFormatElementDelimiterLabel";
+            this.FileFormatElementDelimiterLabel.Size = new System.Drawing.Size(89, 13);
+            this.FileFormatElementDelimiterLabel.TabIndex = 6;
+            this.FileFormatElementDelimiterLabel.Text = "Element Delimiter";
+            // 
+            // FileFormatElementDelimiterExample
+            // 
+            this.FileFormatElementDelimiterExample.AutoSize = true;
+            this.FileFormatElementDelimiterExample.Location = new System.Drawing.Point(179, 28);
+            this.FileFormatElementDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatElementDelimiterExample.Name = "FileFormatElementDelimiterExample";
+            this.FileFormatElementDelimiterExample.Size = new System.Drawing.Size(13, 13);
+            this.FileFormatElementDelimiterExample.TabIndex = 7;
+            this.FileFormatElementDelimiterExample.Text = "–";
+            // 
+            // FileFormatNameDelimiterLabel
+            // 
+            this.FileFormatNameDelimiterLabel.AutoSize = true;
+            this.FileFormatNameDelimiterLabel.Location = new System.Drawing.Point(260, 28);
+            this.FileFormatNameDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.FileFormatNameDelimiterLabel.Name = "FileFormatNameDelimiterLabel";
+            this.FileFormatNameDelimiterLabel.Size = new System.Drawing.Size(78, 13);
+            this.FileFormatNameDelimiterLabel.TabIndex = 8;
+            this.FileFormatNameDelimiterLabel.Text = "Name Delimiter";
+            // 
+            // FileFormatNameDelimiterExample
+            // 
+            this.FileFormatNameDelimiterExample.AutoSize = true;
+            this.FileFormatNameDelimiterExample.Location = new System.Drawing.Point(389, 28);
+            this.FileFormatNameDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatNameDelimiterExample.Name = "FileFormatNameDelimiterExample";
+            this.FileFormatNameDelimiterExample.Size = new System.Drawing.Size(13, 13);
+            this.FileFormatNameDelimiterExample.TabIndex = 9;
+            this.FileFormatNameDelimiterExample.Text = "§";
+            // 
+            // FileFormatPronounDelimiterLabel
+            // 
+            this.FileFormatPronounDelimiterLabel.AutoSize = true;
+            this.FileFormatPronounDelimiterLabel.Location = new System.Drawing.Point(470, 28);
+            this.FileFormatPronounDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.FileFormatPronounDelimiterLabel.Name = "FileFormatPronounDelimiterLabel";
+            this.FileFormatPronounDelimiterLabel.Size = new System.Drawing.Size(91, 13);
+            this.FileFormatPronounDelimiterLabel.TabIndex = 10;
+            this.FileFormatPronounDelimiterLabel.Text = "Pronoun Delimiter";
+            // 
+            // FileFormatPronounDelimiterExample
+            // 
+            this.FileFormatPronounDelimiterExample.AutoSize = true;
+            this.FileFormatPronounDelimiterExample.Location = new System.Drawing.Point(599, 28);
+            this.FileFormatPronounDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatPronounDelimiterExample.Name = "FileFormatPronounDelimiterExample";
+            this.FileFormatPronounDelimiterExample.Size = new System.Drawing.Size(11, 13);
+            this.FileFormatPronounDelimiterExample.TabIndex = 11;
+            this.FileFormatPronounDelimiterExample.Text = "|";
+            // 
+            // FileFormatDimensionalDelimiterLabel
+            // 
+            this.FileFormatDimensionalDelimiterLabel.AutoSize = true;
+            this.FileFormatDimensionalDelimiterLabel.Location = new System.Drawing.Point(50, 51);
+            this.FileFormatDimensionalDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.FileFormatDimensionalDelimiterLabel.Name = "FileFormatDimensionalDelimiterLabel";
+            this.FileFormatDimensionalDelimiterLabel.Size = new System.Drawing.Size(107, 13);
+            this.FileFormatDimensionalDelimiterLabel.TabIndex = 12;
+            this.FileFormatDimensionalDelimiterLabel.Text = "Dimensional Delimiter";
+            // 
+            // FileFormatDimensionalDelimiterExample
+            // 
+            this.FileFormatDimensionalDelimiterExample.AutoSize = true;
+            this.FileFormatDimensionalDelimiterExample.Location = new System.Drawing.Point(179, 51);
+            this.FileFormatDimensionalDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatDimensionalDelimiterExample.Name = "FileFormatDimensionalDelimiterExample";
+            this.FileFormatDimensionalDelimiterExample.Size = new System.Drawing.Size(15, 13);
+            this.FileFormatDimensionalDelimiterExample.TabIndex = 13;
+            this.FileFormatDimensionalDelimiterExample.Text = "×";
+            // 
+            // FileFormatDimensionalTerminatorLabel
+            // 
+            this.FileFormatDimensionalTerminatorLabel.AutoSize = true;
+            this.FileFormatDimensionalTerminatorLabel.Location = new System.Drawing.Point(260, 51);
+            this.FileFormatDimensionalTerminatorLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.FileFormatDimensionalTerminatorLabel.Name = "FileFormatDimensionalTerminatorLabel";
+            this.FileFormatDimensionalTerminatorLabel.Size = new System.Drawing.Size(118, 13);
+            this.FileFormatDimensionalTerminatorLabel.TabIndex = 14;
+            this.FileFormatDimensionalTerminatorLabel.Text = "Dimensional Terminator";
+            // 
+            // FileFormatDimensionalTerminatorExample
+            // 
+            this.FileFormatDimensionalTerminatorExample.AutoSize = true;
+            this.FileFormatDimensionalTerminatorExample.Location = new System.Drawing.Point(389, 51);
+            this.FileFormatDimensionalTerminatorExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatDimensionalTerminatorExample.Name = "FileFormatDimensionalTerminatorExample";
+            this.FileFormatDimensionalTerminatorExample.Size = new System.Drawing.Size(15, 13);
+            this.FileFormatDimensionalTerminatorExample.TabIndex = 15;
+            this.FileFormatDimensionalTerminatorExample.Text = "≡";
+            // 
+            // LibraryInfoGroupBox
+            // 
+            this.LibraryInfoGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LibraryInfoGroupBox.Controls.Add(this.LibraryInfoTableLayoutPanel);
+            this.LibraryInfoGroupBox.Location = new System.Drawing.Point(6, 496);
+            this.LibraryInfoGroupBox.Name = "LibraryInfoGroupBox";
+            this.LibraryInfoGroupBox.Size = new System.Drawing.Size(290, 100);
+            this.LibraryInfoGroupBox.TabIndex = 0;
+            this.LibraryInfoGroupBox.TabStop = false;
+            this.LibraryInfoGroupBox.Text = "Library Info";
+            // 
+            // LibraryInfoTableLayoutPanel
+            // 
+            this.LibraryInfoTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LibraryInfoTableLayoutPanel.ColumnCount = 2;
+            this.LibraryInfoTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.LibraryInfoTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.LibraryInfoTableLayoutPanel.Controls.Add(this.LibraryVersionLabel, 0, 0);
+            this.LibraryInfoTableLayoutPanel.Controls.Add(this.LibraryVersionExample, 1, 0);
+            this.LibraryInfoTableLayoutPanel.Controls.Add(this.LibraryWorkingDirectoryLabel, 2, 0);
+            this.LibraryInfoTableLayoutPanel.Controls.Add(this.LibraryWorkingDirectoryExample, 3, 0);
+            this.LibraryInfoTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
+            this.LibraryInfoTableLayoutPanel.Name = "LibraryInfoTableLayoutPanel";
+            this.LibraryInfoTableLayoutPanel.RowCount = 2;
+            this.LibraryInfoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.LibraryInfoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.LibraryInfoTableLayoutPanel.Size = new System.Drawing.Size(278, 75);
+            this.LibraryInfoTableLayoutPanel.TabIndex = 0;
+            // 
+            // LibraryVersionLabel
+            // 
+            this.LibraryVersionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LibraryVersionLabel.AutoSize = true;
+            this.LibraryVersionLabel.Location = new System.Drawing.Point(1, 1);
+            this.LibraryVersionLabel.Margin = new System.Windows.Forms.Padding(1);
+            this.LibraryVersionLabel.Name = "LibraryVersionLabel";
+            this.LibraryVersionLabel.Size = new System.Drawing.Size(67, 35);
+            this.LibraryVersionLabel.TabIndex = 0;
+            this.LibraryVersionLabel.Text = "Version";
+            // 
+            // LibraryVersionExample
+            // 
+            this.LibraryVersionExample.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LibraryVersionExample.AutoSize = true;
+            this.LibraryVersionExample.Location = new System.Drawing.Point(70, 1);
+            this.LibraryVersionExample.Margin = new System.Windows.Forms.Padding(1);
+            this.LibraryVersionExample.Name = "LibraryVersionExample";
+            this.LibraryVersionExample.Size = new System.Drawing.Size(207, 35);
+            this.LibraryVersionExample.TabIndex = 1;
+            this.LibraryVersionExample.Text = "0.0.0";
+            // 
+            // LibraryWorkingDirectoryLabel
+            // 
+            this.LibraryWorkingDirectoryLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LibraryWorkingDirectoryLabel.AutoSize = true;
+            this.LibraryWorkingDirectoryLabel.Location = new System.Drawing.Point(1, 38);
+            this.LibraryWorkingDirectoryLabel.Margin = new System.Windows.Forms.Padding(1);
+            this.LibraryWorkingDirectoryLabel.Name = "LibraryWorkingDirectoryLabel";
+            this.LibraryWorkingDirectoryLabel.Size = new System.Drawing.Size(67, 36);
+            this.LibraryWorkingDirectoryLabel.TabIndex = 0;
+            this.LibraryWorkingDirectoryLabel.Text = "Working Directory";
+            // 
+            // LibraryWorkingDirectoryExample
+            // 
+            this.LibraryWorkingDirectoryExample.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LibraryWorkingDirectoryExample.AutoSize = true;
+            this.LibraryWorkingDirectoryExample.Location = new System.Drawing.Point(70, 38);
+            this.LibraryWorkingDirectoryExample.Margin = new System.Windows.Forms.Padding(1);
+            this.LibraryWorkingDirectoryExample.Name = "LibraryWorkingDirectoryExample";
+            this.LibraryWorkingDirectoryExample.Size = new System.Drawing.Size(207, 36);
+            this.LibraryWorkingDirectoryExample.TabIndex = 1;
+            this.LibraryWorkingDirectoryExample.Text = "C:\\";
             // 
             // BeingsTabPage
             // 
@@ -1649,7 +1626,6 @@ namespace Scribe
             this.BeingsTabPage.Size = new System.Drawing.Size(953, 599);
             this.BeingsTabPage.TabIndex = 1;
             this.BeingsTabPage.Text = "Beings";
-
             // 
             // BiomesTabPage
             // 
@@ -1670,6 +1646,15 @@ namespace Scribe
             this.BiomesTabPage.Size = new System.Drawing.Size(953, 599);
             this.BiomesTabPage.TabIndex = 2;
             this.BiomesTabPage.Text = "Biomes";
+            // 
+            // BiomeRemoveBiomeButton
+            // 
+            this.BiomeRemoveBiomeButton.Location = new System.Drawing.Point(24, 468);
+            this.BiomeRemoveBiomeButton.Name = "BiomeRemoveBiomeButton";
+            this.BiomeRemoveBiomeButton.Size = new System.Drawing.Size(129, 23);
+            this.BiomeRemoveBiomeButton.TabIndex = 2;
+            this.BiomeRemoveBiomeButton.Text = "Remove Biome";
+            this.BiomeRemoveBiomeButton.UseVisualStyleBackColor = true;
             // 
             // BiomeAddEntryRequirementButton
             // 
@@ -2047,15 +2032,6 @@ namespace Scribe
             this.BiomeAddNewBiomeButton.Text = "Add New Biome";
             this.BiomeAddNewBiomeButton.UseVisualStyleBackColor = true;
             // 
-            // BiomeRemoveBiomeButton
-            // 
-            this.BiomeRemoveBiomeButton.Location = new System.Drawing.Point(24, 468);
-            this.BiomeRemoveBiomeButton.Name = "BiomeRemoveBiomeButton";
-            this.BiomeRemoveBiomeButton.Size = new System.Drawing.Size(129, 23);
-            this.BiomeRemoveBiomeButton.TabIndex = 2;
-            this.BiomeRemoveBiomeButton.Text = "Remove Biome";
-            this.BiomeRemoveBiomeButton.UseVisualStyleBackColor = true;
-            // 
             // BiomeIDTextBox
             // 
             this.BiomeIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -2065,7 +2041,6 @@ namespace Scribe
             this.BiomeIDTextBox.Size = new System.Drawing.Size(131, 20);
             this.BiomeIDTextBox.TabIndex = 3;
             this.BiomeIDTextBox.Text = "-2020202020";
-
             // 
             // CraftingRecipesTabPage
             // 
@@ -2084,6 +2059,15 @@ namespace Scribe
             this.CraftingRecipesTabPage.Size = new System.Drawing.Size(953, 599);
             this.CraftingRecipesTabPage.TabIndex = 3;
             this.CraftingRecipesTabPage.Text = "Crafting";
+            // 
+            // CraftingRemoveCraftingButton
+            // 
+            this.CraftingRemoveCraftingButton.Location = new System.Drawing.Point(9, 468);
+            this.CraftingRemoveCraftingButton.Name = "CraftingRemoveCraftingButton";
+            this.CraftingRemoveCraftingButton.Size = new System.Drawing.Size(127, 23);
+            this.CraftingRemoveCraftingButton.TabIndex = 2;
+            this.CraftingRemoveCraftingButton.Text = "Remove Crafting Recipe";
+            this.CraftingRemoveCraftingButton.UseVisualStyleBackColor = true;
             // 
             // CraftingListBox
             // 
@@ -2344,15 +2328,6 @@ namespace Scribe
             this.CraftingAddNewCraftingButton.Text = "Add New Crafting Recipe";
             this.CraftingAddNewCraftingButton.UseVisualStyleBackColor = true;
             // 
-            // CraftingRemoveCraftingButton
-            // 
-            this.CraftingRemoveCraftingButton.Location = new System.Drawing.Point(9, 468);
-            this.CraftingRemoveCraftingButton.Name = "CraftingRemoveCraftingButton";
-            this.CraftingRemoveCraftingButton.Size = new System.Drawing.Size(127, 23);
-            this.CraftingRemoveCraftingButton.TabIndex = 2;
-            this.CraftingRemoveCraftingButton.Text = "Remove Crafting Recipe";
-            this.CraftingRemoveCraftingButton.UseVisualStyleBackColor = true;
-            // 
             // CraftingIDTextBox
             // 
             this.CraftingIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -2486,7 +2461,6 @@ namespace Scribe
             this.CraftingStrikePatternDimensionLabelExample.Size = new System.Drawing.Size(31, 13);
             this.CraftingStrikePatternDimensionLabelExample.TabIndex = 9;
             this.CraftingStrikePatternDimensionLabelExample.Text = "2 x 2";
-
             // 
             // ItemsTabPage
             // 
@@ -2507,6 +2481,15 @@ namespace Scribe
             this.ItemsTabPage.Size = new System.Drawing.Size(953, 599);
             this.ItemsTabPage.TabIndex = 4;
             this.ItemsTabPage.Text = "Items";
+            // 
+            // ItemRemoveItemButton
+            // 
+            this.ItemRemoveItemButton.Location = new System.Drawing.Point(24, 468);
+            this.ItemRemoveItemButton.Name = "ItemRemoveItemButton";
+            this.ItemRemoveItemButton.Size = new System.Drawing.Size(129, 23);
+            this.ItemRemoveItemButton.TabIndex = 2;
+            this.ItemRemoveItemButton.Text = "Remove Item";
+            this.ItemRemoveItemButton.UseVisualStyleBackColor = true;
             // 
             // ItemAddTagButton
             // 
@@ -2849,15 +2832,6 @@ namespace Scribe
             this.ItemAddNewItemButton.Text = "Add New Item";
             this.ItemAddNewItemButton.UseVisualStyleBackColor = true;
             // 
-            // ItemRemoveItemButton
-            // 
-            this.ItemRemoveItemButton.Location = new System.Drawing.Point(24, 468);
-            this.ItemRemoveItemButton.Name = "ItemRemoveItemButton";
-            this.ItemRemoveItemButton.Size = new System.Drawing.Size(129, 23);
-            this.ItemRemoveItemButton.TabIndex = 2;
-            this.ItemRemoveItemButton.Text = "Remove Item";
-            this.ItemRemoveItemButton.UseVisualStyleBackColor = true;
-            // 
             // ItemIDTextBox
             // 
             this.ItemIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -2867,28 +2841,26 @@ namespace Scribe
             this.ItemIDTextBox.Size = new System.Drawing.Size(131, 20);
             this.ItemIDTextBox.TabIndex = 3;
             this.ItemIDTextBox.Text = "-2020202020";
-
             // 
             // MapsTabPage
             // 
             this.MapsTabPage.BackColor = System.Drawing.Color.Transparent;
-            this.MapsTabPage.Controls.Add(this.MapsComingSoonLabel);
+            this.MapsTabPage.Controls.Add(this.MapComingSoonLabel);
             this.MapsTabPage.Location = new System.Drawing.Point(4, 22);
             this.MapsTabPage.Name = "MapsTabPage";
             this.MapsTabPage.Size = new System.Drawing.Size(953, 599);
             this.MapsTabPage.TabIndex = 5;
             this.MapsTabPage.Text = "Maps";
             // 
-            // MapsComingSoonLabel
+            // MapComingSoonLabel
             // 
-            this.MapsComingSoonLabel.AutoSize = true;
-            this.MapsComingSoonLabel.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MapsComingSoonLabel.Location = new System.Drawing.Point(420, 278);
-            this.MapsComingSoonLabel.Name = "MapsComingSoonLabel";
-            this.MapsComingSoonLabel.Size = new System.Drawing.Size(136, 25);
-            this.MapsComingSoonLabel.TabIndex = 0;
-            this.MapsComingSoonLabel.Text = "Coming Soon";
-
+            this.MapComingSoonLabel.AutoSize = true;
+            this.MapComingSoonLabel.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MapComingSoonLabel.Location = new System.Drawing.Point(420, 278);
+            this.MapComingSoonLabel.Name = "MapComingSoonLabel";
+            this.MapComingSoonLabel.Size = new System.Drawing.Size(136, 25);
+            this.MapComingSoonLabel.TabIndex = 0;
+            this.MapComingSoonLabel.Text = "Coming Soon";
             // 
             // FloorsTabPage
             // 
@@ -2907,6 +2879,15 @@ namespace Scribe
             this.FloorsTabPage.Size = new System.Drawing.Size(953, 599);
             this.FloorsTabPage.TabIndex = 6;
             this.FloorsTabPage.Text = "Floors";
+            // 
+            // FloorRemoveFloorButton
+            // 
+            this.FloorRemoveFloorButton.Location = new System.Drawing.Point(24, 468);
+            this.FloorRemoveFloorButton.Name = "FloorRemoveFloorButton";
+            this.FloorRemoveFloorButton.Size = new System.Drawing.Size(129, 23);
+            this.FloorRemoveFloorButton.TabIndex = 2;
+            this.FloorRemoveFloorButton.Text = "Remove Floor";
+            this.FloorRemoveFloorButton.UseVisualStyleBackColor = true;
             // 
             // FloorLayoutTabelPanel
             // 
@@ -2952,6 +2933,26 @@ namespace Scribe
             this.FloorLayoutTabelPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.FloorLayoutTabelPanel.Size = new System.Drawing.Size(429, 446);
             this.FloorLayoutTabelPanel.TabIndex = 5;
+            // 
+            // FloorRemoveRoomTagButton
+            // 
+            this.FloorRemoveRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorRemoveRoomTagButton.Location = new System.Drawing.Point(146, 343);
+            this.FloorRemoveRoomTagButton.Name = "FloorRemoveRoomTagButton";
+            this.FloorRemoveRoomTagButton.Size = new System.Drawing.Size(129, 23);
+            this.FloorRemoveRoomTagButton.TabIndex = 38;
+            this.FloorRemoveRoomTagButton.Text = "Remove Room Tag";
+            this.FloorRemoveRoomTagButton.UseVisualStyleBackColor = true;
+            // 
+            // FloorRemoveBiomeTagButton
+            // 
+            this.FloorRemoveBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorRemoveBiomeTagButton.Location = new System.Drawing.Point(146, 238);
+            this.FloorRemoveBiomeTagButton.Name = "FloorRemoveBiomeTagButton";
+            this.FloorRemoveBiomeTagButton.Size = new System.Drawing.Size(129, 23);
+            this.FloorRemoveBiomeTagButton.TabIndex = 38;
+            this.FloorRemoveBiomeTagButton.Text = "Remove Biome Tag";
+            this.FloorRemoveBiomeTagButton.UseVisualStyleBackColor = true;
             // 
             // FloorAddRoomTagButton
             // 
@@ -3152,15 +3153,6 @@ namespace Scribe
             this.FloorAddNewFloorButton.Text = "Add New Floor";
             this.FloorAddNewFloorButton.UseVisualStyleBackColor = true;
             // 
-            // FloorRemoveFloorButton
-            // 
-            this.FloorRemoveFloorButton.Location = new System.Drawing.Point(24, 468);
-            this.FloorRemoveFloorButton.Name = "FloorRemoveFloorButton";
-            this.FloorRemoveFloorButton.Size = new System.Drawing.Size(129, 23);
-            this.FloorRemoveFloorButton.TabIndex = 2;
-            this.FloorRemoveFloorButton.Text = "Remove Floor";
-            this.FloorRemoveFloorButton.UseVisualStyleBackColor = true;
-            // 
             // FloorListBox
             // 
             this.FloorListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -3200,27 +3192,6 @@ namespace Scribe
             this.FloorPictureBox.TabIndex = 6;
             this.FloorPictureBox.TabStop = false;
             // 
-            // FloorRemoveBiomeTagButton
-            // 
-            this.FloorRemoveBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorRemoveBiomeTagButton.Location = new System.Drawing.Point(146, 238);
-            this.FloorRemoveBiomeTagButton.Name = "FloorRemoveBiomeTagButton";
-            this.FloorRemoveBiomeTagButton.Size = new System.Drawing.Size(129, 23);
-            this.FloorRemoveBiomeTagButton.TabIndex = 38;
-            this.FloorRemoveBiomeTagButton.Text = "Remove Biome Tag";
-            this.FloorRemoveBiomeTagButton.UseVisualStyleBackColor = true;
-            // 
-            // FloorRemoveRoomTagButton
-            // 
-            this.FloorRemoveRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorRemoveRoomTagButton.Location = new System.Drawing.Point(146, 343);
-            this.FloorRemoveRoomTagButton.Name = "FloorRemoveRoomTagButton";
-            this.FloorRemoveRoomTagButton.Size = new System.Drawing.Size(129, 23);
-            this.FloorRemoveRoomTagButton.TabIndex = 38;
-            this.FloorRemoveRoomTagButton.Text = "Remove Room Tag";
-            this.FloorRemoveRoomTagButton.UseVisualStyleBackColor = true;
-
-            // 
             // BlocksTabPage
             // 
             this.BlocksTabPage.Location = new System.Drawing.Point(4, 22);
@@ -3228,7 +3199,6 @@ namespace Scribe
             this.BlocksTabPage.Size = new System.Drawing.Size(953, 599);
             this.BlocksTabPage.TabIndex = 9;
             this.BlocksTabPage.Text = "Blocks";
-
             // 
             // FurnishingsTabPage
             // 
@@ -3237,7 +3207,6 @@ namespace Scribe
             this.FurnishingsTabPage.Size = new System.Drawing.Size(953, 599);
             this.FurnishingsTabPage.TabIndex = 10;
             this.FurnishingsTabPage.Text = "Furnishings";
-
             // 
             // CollectiblesTabPage
             // 
@@ -3246,27 +3215,35 @@ namespace Scribe
             this.CollectiblesTabPage.Size = new System.Drawing.Size(953, 599);
             this.CollectiblesTabPage.TabIndex = 11;
             this.CollectiblesTabPage.Text = "Collectibles";
-
             // 
-            // RoomsTabPage
+            // RoomRecipesTabPage
             // 
-            this.RoomsTabPage.BackColor = System.Drawing.Color.Transparent;
-            this.RoomsTabPage.Controls.Add(this.RoomRemoveRoomButton);
-            this.RoomsTabPage.Controls.Add(this.RoomAddBlockButton);
-            this.RoomsTabPage.Controls.Add(this.RoomRemoveBlockButton);
-            this.RoomsTabPage.Controls.Add(this.RoomListBox);
-            this.RoomsTabPage.Controls.Add(this.RoomConfigGroupBox);
-            this.RoomsTabPage.Controls.Add(this.RoomPictureEditButton);
-            this.RoomsTabPage.Controls.Add(this.RoomTableLayoutPanel);
-            this.RoomsTabPage.Controls.Add(this.RoomPictureBox);
-            this.RoomsTabPage.Controls.Add(this.RoomIDLabel);
-            this.RoomsTabPage.Controls.Add(this.RoomAddNewRoomButton);
-            this.RoomsTabPage.Controls.Add(this.RoomIDTextBox);
-            this.RoomsTabPage.Location = new System.Drawing.Point(4, 22);
-            this.RoomsTabPage.Name = "RoomsTabPage";
-            this.RoomsTabPage.Size = new System.Drawing.Size(953, 599);
-            this.RoomsTabPage.TabIndex = 7;
-            this.RoomsTabPage.Text = "Rooms";
+            this.RoomRecipesTabPage.BackColor = System.Drawing.Color.Transparent;
+            this.RoomRecipesTabPage.Controls.Add(this.RoomRemoveRoomButton);
+            this.RoomRecipesTabPage.Controls.Add(this.RoomAddBlockButton);
+            this.RoomRecipesTabPage.Controls.Add(this.RoomRemoveBlockButton);
+            this.RoomRecipesTabPage.Controls.Add(this.RoomListBox);
+            this.RoomRecipesTabPage.Controls.Add(this.RoomConfigGroupBox);
+            this.RoomRecipesTabPage.Controls.Add(this.RoomPictureEditButton);
+            this.RoomRecipesTabPage.Controls.Add(this.RoomTableLayoutPanel);
+            this.RoomRecipesTabPage.Controls.Add(this.RoomPictureBox);
+            this.RoomRecipesTabPage.Controls.Add(this.RoomIDLabel);
+            this.RoomRecipesTabPage.Controls.Add(this.RoomAddNewRoomButton);
+            this.RoomRecipesTabPage.Controls.Add(this.RoomIDTextBox);
+            this.RoomRecipesTabPage.Location = new System.Drawing.Point(4, 22);
+            this.RoomRecipesTabPage.Name = "RoomRecipesTabPage";
+            this.RoomRecipesTabPage.Size = new System.Drawing.Size(953, 599);
+            this.RoomRecipesTabPage.TabIndex = 7;
+            this.RoomRecipesTabPage.Text = "Rooms";
+            // 
+            // RoomRemoveRoomButton
+            // 
+            this.RoomRemoveRoomButton.Location = new System.Drawing.Point(24, 468);
+            this.RoomRemoveRoomButton.Name = "RoomRemoveRoomButton";
+            this.RoomRemoveRoomButton.Size = new System.Drawing.Size(129, 23);
+            this.RoomRemoveRoomButton.TabIndex = 2;
+            this.RoomRemoveRoomButton.Text = "Remove Room";
+            this.RoomRemoveRoomButton.UseVisualStyleBackColor = true;
             // 
             // RoomAddBlockButton
             // 
@@ -3625,15 +3602,6 @@ namespace Scribe
             this.RoomAddNewRoomButton.Text = "Add New Room";
             this.RoomAddNewRoomButton.UseVisualStyleBackColor = true;
             // 
-            // RoomRemoveRoomButton
-            // 
-            this.RoomRemoveRoomButton.Location = new System.Drawing.Point(24, 468);
-            this.RoomRemoveRoomButton.Name = "RoomRemoveRoomButton";
-            this.RoomRemoveRoomButton.Size = new System.Drawing.Size(129, 23);
-            this.RoomRemoveRoomButton.TabIndex = 2;
-            this.RoomRemoveRoomButton.Text = "Remove Room";
-            this.RoomRemoveRoomButton.UseVisualStyleBackColor = true;
-            // 
             // RoomIDTextBox
             // 
             this.RoomIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -3643,7 +3611,6 @@ namespace Scribe
             this.RoomIDTextBox.Size = new System.Drawing.Size(131, 20);
             this.RoomIDTextBox.TabIndex = 3;
             this.RoomIDTextBox.Text = "-2020202020";
-
             // 
             // ScriptsTabPage
             // 
@@ -3664,7 +3631,6 @@ namespace Scribe
             this.ScriptingComingSoonLabel.Size = new System.Drawing.Size(136, 25);
             this.ScriptingComingSoonLabel.TabIndex = 0;
             this.ScriptingComingSoonLabel.Text = "Coming Soon";
-
             // 
             // MainEditorForm
             // 
@@ -3690,6 +3656,12 @@ namespace Scribe
             this.EditorStatusStrip.PerformLayout();
             this.MainMenuBar.ResumeLayout(false);
             this.MainMenuBar.PerformLayout();
+            this.FiltersTableLayoutPanel.ResumeLayout(false);
+            this.FiltersTableLayoutPanel.PerformLayout();
+            this.FilterGroupBox.ResumeLayout(false);
+            this.FlavorFilterGroupBox.ResumeLayout(false);
+            this.FlavorsTableLayoutPanel.ResumeLayout(false);
+            this.FlavorsTableLayoutPanel.PerformLayout();
             this.EditorTabs.ResumeLayout(false);
             this.GamesTabPage.ResumeLayout(false);
             this.GamesTabPage.PerformLayout();
@@ -3731,8 +3703,8 @@ namespace Scribe
             this.FloorLayoutTabelPanel.ResumeLayout(false);
             this.FloorLayoutTabelPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FloorPictureBox)).EndInit();
-            this.RoomsTabPage.ResumeLayout(false);
-            this.RoomsTabPage.PerformLayout();
+            this.RoomRecipesTabPage.ResumeLayout(false);
+            this.RoomRecipesTabPage.PerformLayout();
             this.RoomConfigGroupBox.ResumeLayout(false);
             this.RoomConfigTableLayoutPanel.ResumeLayout(false);
             this.RoomConfigTableLayoutPanel.PerformLayout();
@@ -3741,14 +3713,9 @@ namespace Scribe
             ((System.ComponentModel.ISupportInitialize)(this.RoomPictureBox)).EndInit();
             this.ScriptsTabPage.ResumeLayout(false);
             this.ScriptsTabPage.PerformLayout();
-            this.FiltersTableLayoutPanel.ResumeLayout(false);
-            this.FiltersTableLayoutPanel.PerformLayout();
-            this.FilterGroupBox.ResumeLayout(false);
-            this.FlavorFilterGroupBox.ResumeLayout(false);
-            this.FlavorTableLayoutPanel.ResumeLayout(false);
-            this.FlavorTableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
         #endregion
 
@@ -3800,7 +3767,7 @@ namespace Scribe
         private System.Windows.Forms.CheckBox FilterByMoreCheckBox;
         private System.Windows.Forms.GroupBox FilterGroupBox;
         private System.Windows.Forms.GroupBox FlavorFilterGroupBox;
-        private System.Windows.Forms.TableLayoutPanel FlavorTableLayoutPanel;
+        private System.Windows.Forms.TableLayoutPanel FlavorsTableLayoutPanel;
         private System.Windows.Forms.Label FlavorSweetSelector;
         private System.Windows.Forms.Label FlavorBlandSelector;
         private System.Windows.Forms.Label FlavorSavourySelector;
@@ -3844,7 +3811,7 @@ namespace Scribe
         private System.Windows.Forms.Label FileFormatDimensionalTerminatorLabel;
         private System.Windows.Forms.Label FileFormatDimensionalTerminatorExample;
         private System.Windows.Forms.Button GameAddNewGameButton;
-        private System.Windows.Forms.Button GamesRemoveGameButton;
+        private System.Windows.Forms.Button GameRemoveGameButton;
         private System.Windows.Forms.ListBox GameListBox;
         private System.Windows.Forms.TableLayoutPanel GameTableLayoutPanel;
         private System.Windows.Forms.Label GameIDLabel;
@@ -3985,7 +3952,7 @@ namespace Scribe
         private System.Windows.Forms.ComboBox ItemEquivalentParquetComboBox;
 
         private System.Windows.Forms.TabPage MapsTabPage;
-        private System.Windows.Forms.Label MapsComingSoonLabel;
+        private System.Windows.Forms.Label MapComingSoonLabel;
 
         private System.Windows.Forms.TabPage FloorsTabPage;
         private System.Windows.Forms.Button FloorEditImageButton;
@@ -4024,7 +3991,7 @@ namespace Scribe
 
         private System.Windows.Forms.TabPage CollectiblesTabPage;
 
-        private System.Windows.Forms.TabPage RoomsTabPage;
+        private System.Windows.Forms.TabPage RoomRecipesTabPage;
         private System.Windows.Forms.ListBox RoomListBox;
         private System.Windows.Forms.GroupBox RoomConfigGroupBox;
         private System.Windows.Forms.Button RoomPictureEditButton;
@@ -4064,4 +4031,3 @@ namespace Scribe
         private System.Windows.Forms.Label ScriptingComingSoonLabel;
     }
 }
-
