@@ -318,6 +318,9 @@ namespace Scribe
             this.EditorToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.FloorRemoveBiomeTagButton = new System.Windows.Forms.Button();
             this.FloorRemoveRoomTagButton = new System.Windows.Forms.Button();
+            this.BlocksTabPage = new System.Windows.Forms.TabPage();
+            this.FurnishingsTabPage = new System.Windows.Forms.TabPage();
+            this.CollectiblesTabPage = new System.Windows.Forms.TabPage();
             this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
             this.EditorTabs.SuspendLayout();
@@ -688,6 +691,9 @@ namespace Scribe
             this.EditorTabs.Controls.Add(this.ItemsTabPage);
             this.EditorTabs.Controls.Add(this.MapsTabPage);
             this.EditorTabs.Controls.Add(this.FloorsTabPage);
+            this.EditorTabs.Controls.Add(this.BlocksTabPage);
+            this.EditorTabs.Controls.Add(this.FurnishingsTabPage);
+            this.EditorTabs.Controls.Add(this.CollectiblesTabPage);
             this.EditorTabs.Controls.Add(this.RoomsTabPage);
             this.EditorTabs.Controls.Add(this.ScriptsTabPage);
             this.EditorTabs.Location = new System.Drawing.Point(12, 111);
@@ -3536,6 +3542,30 @@ namespace Scribe
             this.FloorRemoveRoomTagButton.Text = "Remove Room Tag";
             this.FloorRemoveRoomTagButton.UseVisualStyleBackColor = true;
             // 
+            // BlocksTabPage
+            // 
+            this.BlocksTabPage.Location = new System.Drawing.Point(4, 22);
+            this.BlocksTabPage.Name = "BlocksTabPage";
+            this.BlocksTabPage.Size = new System.Drawing.Size(953, 599);
+            this.BlocksTabPage.TabIndex = 9;
+            this.BlocksTabPage.Text = "Blocks";
+            // 
+            // FurnishingsTabPage
+            // 
+            this.FurnishingsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.FurnishingsTabPage.Name = "FurnishingsTabPage";
+            this.FurnishingsTabPage.Size = new System.Drawing.Size(953, 599);
+            this.FurnishingsTabPage.TabIndex = 10;
+            this.FurnishingsTabPage.Text = "Furnishings";
+            // 
+            // CollectiblesTabPage
+            // 
+            this.CollectiblesTabPage.Location = new System.Drawing.Point(4, 22);
+            this.CollectiblesTabPage.Name = "CollectiblesTabPage";
+            this.CollectiblesTabPage.Size = new System.Drawing.Size(953, 599);
+            this.CollectiblesTabPage.TabIndex = 11;
+            this.CollectiblesTabPage.Text = "Collectibles";
+            // 
             // MainEditorForm
             // 
             this.AccessibleDescription = "The primary interactive editor window.";
@@ -3913,6 +3943,9 @@ namespace Scribe
         private System.Windows.Forms.Button FloorAddBiomeTagButton;
         private System.Windows.Forms.Button FloorRemoveBiomeTagButton;
         private System.Windows.Forms.Button FloorRemoveRoomTagButton;
+        private System.Windows.Forms.TabPage BlocksTabPage;
+        private System.Windows.Forms.TabPage FurnishingsTabPage;
+        private System.Windows.Forms.TabPage CollectiblesTabPage;
     }
 }
 
