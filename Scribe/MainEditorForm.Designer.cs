@@ -289,6 +289,9 @@ namespace Scribe
             this.FloorPictureBox = new System.Windows.Forms.PictureBox();
             this.BlocksTabPage = new System.Windows.Forms.TabPage();
             this.BlockTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.BlockGatherToolComboBox = new System.Windows.Forms.ComboBox();
+            this.BlockDroppedCollectibleIDComboBox = new System.Windows.Forms.ComboBox();
+            this.BlockGatherEffectComboBox = new System.Windows.Forms.ComboBox();
             this.BlockMaxToughnessTextBox = new System.Windows.Forms.TextBox();
             this.BlockNameLabel = new System.Windows.Forms.Label();
             this.BlockDescriptionLabel = new System.Windows.Forms.Label();
@@ -316,6 +319,8 @@ namespace Scribe
             this.BlockRemoveBlockButton = new System.Windows.Forms.Button();
             this.FurnishingsTabPage = new System.Windows.Forms.TabPage();
             this.FurnishingTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.FurnishingSwapWithFurnishingComboBox = new System.Windows.Forms.ComboBox();
+            this.FurnishingEntryTypeComboBox = new System.Windows.Forms.ComboBox();
             this.FurnishingNameLabel = new System.Windows.Forms.Label();
             this.FurnishingDescriptionLabel = new System.Windows.Forms.Label();
             this.FurnishingCommentLabel = new System.Windows.Forms.Label();
@@ -324,6 +329,14 @@ namespace Scribe
             this.FurnishingDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.FurnishingCommentTextBox = new System.Windows.Forms.TextBox();
             this.FurnishingEquivalentItemComboBox = new System.Windows.Forms.ComboBox();
+            this.FurnishingEntryTypeLabel = new System.Windows.Forms.Label();
+            this.FurnishingIsWalkableLabel = new System.Windows.Forms.Label();
+            this.FurnishingIsEnclosingLabel = new System.Windows.Forms.Label();
+            this.FurnishingIsFlammableLabel = new System.Windows.Forms.Label();
+            this.FurnishingSwapWithFurnishingLabel = new System.Windows.Forms.Label();
+            this.FurnishingIsWalkableCheckBox = new System.Windows.Forms.CheckBox();
+            this.FurnishingIsEnclosingCheckBox = new System.Windows.Forms.CheckBox();
+            this.FurnishingIsFlammableCheckBox = new System.Windows.Forms.CheckBox();
             this.FurnishingRemoveFurnishingButton = new System.Windows.Forms.Button();
             this.FurnishingConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.FurnishingIDTextBox = new System.Windows.Forms.TextBox();
@@ -387,9 +400,6 @@ namespace Scribe
             this.RoomIDTextBox = new System.Windows.Forms.TextBox();
             this.ScriptsTabPage = new System.Windows.Forms.TabPage();
             this.ScriptingComingSoonLabel = new System.Windows.Forms.Label();
-            this.BlockGatherEffectComboBox = new System.Windows.Forms.ComboBox();
-            this.BlockDroppedCollectibleIDComboBox = new System.Windows.Forms.ComboBox();
-            this.BlockGatherToolComboBox = new System.Windows.Forms.ComboBox();
             this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
             this.FiltersTableLayoutPanel.SuspendLayout();
@@ -3326,6 +3336,30 @@ namespace Scribe
             this.BlockTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.BlockTableLayoutPanel.TabIndex = 5;
             // 
+            // BlockGatherToolComboBox
+            // 
+            this.BlockGatherToolComboBox.FormattingEnabled = true;
+            this.BlockGatherToolComboBox.Location = new System.Drawing.Point(131, 163);
+            this.BlockGatherToolComboBox.Name = "BlockGatherToolComboBox";
+            this.BlockGatherToolComboBox.Size = new System.Drawing.Size(144, 21);
+            this.BlockGatherToolComboBox.TabIndex = 29;
+            // 
+            // BlockDroppedCollectibleIDComboBox
+            // 
+            this.BlockDroppedCollectibleIDComboBox.FormattingEnabled = true;
+            this.BlockDroppedCollectibleIDComboBox.Location = new System.Drawing.Point(131, 213);
+            this.BlockDroppedCollectibleIDComboBox.Name = "BlockDroppedCollectibleIDComboBox";
+            this.BlockDroppedCollectibleIDComboBox.Size = new System.Drawing.Size(144, 21);
+            this.BlockDroppedCollectibleIDComboBox.TabIndex = 29;
+            // 
+            // BlockGatherEffectComboBox
+            // 
+            this.BlockGatherEffectComboBox.FormattingEnabled = true;
+            this.BlockGatherEffectComboBox.Location = new System.Drawing.Point(131, 188);
+            this.BlockGatherEffectComboBox.Name = "BlockGatherEffectComboBox";
+            this.BlockGatherEffectComboBox.Size = new System.Drawing.Size(144, 21);
+            this.BlockGatherEffectComboBox.TabIndex = 29;
+            // 
             // BlockMaxToughnessTextBox
             // 
             this.BlockMaxToughnessTextBox.Location = new System.Drawing.Point(131, 288);
@@ -3582,6 +3616,8 @@ namespace Scribe
             this.FurnishingTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.FurnishingTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.FurnishingTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingSwapWithFurnishingComboBox, 1, 8);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingEntryTypeComboBox, 1, 4);
             this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingNameLabel, 0, 0);
             this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingDescriptionLabel, 0, 1);
             this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingCommentLabel, 0, 2);
@@ -3590,22 +3626,46 @@ namespace Scribe
             this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingDescriptionTextBox, 1, 1);
             this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingCommentTextBox, 1, 2);
             this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingEquivalentItemComboBox, 1, 3);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingEntryTypeLabel, 0, 4);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingIsWalkableLabel, 0, 5);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingIsEnclosingLabel, 0, 6);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingIsFlammableLabel, 0, 7);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingSwapWithFurnishingLabel, 0, 8);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingIsWalkableCheckBox, 1, 5);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingIsEnclosingCheckBox, 1, 6);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingIsFlammableCheckBox, 1, 7);
             this.FurnishingTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
             this.FurnishingTableLayoutPanel.Name = "FurnishingTableLayoutPanel";
-            this.FurnishingTableLayoutPanel.RowCount = 11;
+            this.FurnishingTableLayoutPanel.RowCount = 10;
             this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.FurnishingTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.FurnishingTableLayoutPanel.TabIndex = 5;
+            // 
+            // FurnishingSwapWithFurnishingComboBox
+            // 
+            this.FurnishingSwapWithFurnishingComboBox.FormattingEnabled = true;
+            this.FurnishingSwapWithFurnishingComboBox.Location = new System.Drawing.Point(131, 263);
+            this.FurnishingSwapWithFurnishingComboBox.Name = "FurnishingSwapWithFurnishingComboBox";
+            this.FurnishingSwapWithFurnishingComboBox.Size = new System.Drawing.Size(144, 21);
+            this.FurnishingSwapWithFurnishingComboBox.TabIndex = 29;
+            // 
+            // FurnishingEntryTypeComboBox
+            // 
+            this.FurnishingEntryTypeComboBox.FormattingEnabled = true;
+            this.FurnishingEntryTypeComboBox.Location = new System.Drawing.Point(131, 163);
+            this.FurnishingEntryTypeComboBox.Name = "FurnishingEntryTypeComboBox";
+            this.FurnishingEntryTypeComboBox.Size = new System.Drawing.Size(144, 21);
+            this.FurnishingEntryTypeComboBox.TabIndex = 29;
             // 
             // FurnishingNameLabel
             // 
@@ -3681,6 +3741,78 @@ namespace Scribe
             this.FurnishingEquivalentItemComboBox.Name = "FurnishingEquivalentItemComboBox";
             this.FurnishingEquivalentItemComboBox.Size = new System.Drawing.Size(144, 21);
             this.FurnishingEquivalentItemComboBox.TabIndex = 29;
+            // 
+            // FurnishingEntryTypeLabel
+            // 
+            this.FurnishingEntryTypeLabel.AutoSize = true;
+            this.FurnishingEntryTypeLabel.Location = new System.Drawing.Point(3, 160);
+            this.FurnishingEntryTypeLabel.Name = "FurnishingEntryTypeLabel";
+            this.FurnishingEntryTypeLabel.Size = new System.Drawing.Size(60, 13);
+            this.FurnishingEntryTypeLabel.TabIndex = 30;
+            this.FurnishingEntryTypeLabel.Text = "Entry Type";
+            // 
+            // FurnishingIsWalkableLabel
+            // 
+            this.FurnishingIsWalkableLabel.AutoSize = true;
+            this.FurnishingIsWalkableLabel.Location = new System.Drawing.Point(3, 185);
+            this.FurnishingIsWalkableLabel.Name = "FurnishingIsWalkableLabel";
+            this.FurnishingIsWalkableLabel.Size = new System.Drawing.Size(62, 13);
+            this.FurnishingIsWalkableLabel.TabIndex = 31;
+            this.FurnishingIsWalkableLabel.Text = "Is Walkable";
+            // 
+            // FurnishingIsEnclosingLabel
+            // 
+            this.FurnishingIsEnclosingLabel.AutoSize = true;
+            this.FurnishingIsEnclosingLabel.Location = new System.Drawing.Point(3, 210);
+            this.FurnishingIsEnclosingLabel.Name = "FurnishingIsEnclosingLabel";
+            this.FurnishingIsEnclosingLabel.Size = new System.Drawing.Size(63, 13);
+            this.FurnishingIsEnclosingLabel.TabIndex = 32;
+            this.FurnishingIsEnclosingLabel.Text = "Is Enclosing";
+            // 
+            // FurnishingIsFlammableLabel
+            // 
+            this.FurnishingIsFlammableLabel.AutoSize = true;
+            this.FurnishingIsFlammableLabel.Location = new System.Drawing.Point(3, 235);
+            this.FurnishingIsFlammableLabel.Name = "FurnishingIsFlammableLabel";
+            this.FurnishingIsFlammableLabel.Size = new System.Drawing.Size(69, 13);
+            this.FurnishingIsFlammableLabel.TabIndex = 33;
+            this.FurnishingIsFlammableLabel.Text = "Is Flammable";
+            // 
+            // FurnishingSwapWithFurnishingLabel
+            // 
+            this.FurnishingSwapWithFurnishingLabel.AutoSize = true;
+            this.FurnishingSwapWithFurnishingLabel.Location = new System.Drawing.Point(3, 260);
+            this.FurnishingSwapWithFurnishingLabel.Name = "FurnishingSwapWithFurnishingLabel";
+            this.FurnishingSwapWithFurnishingLabel.Size = new System.Drawing.Size(110, 13);
+            this.FurnishingSwapWithFurnishingLabel.TabIndex = 34;
+            this.FurnishingSwapWithFurnishingLabel.Text = "Swap With Furnishing";
+            // 
+            // FurnishingIsWalkableCheckBox
+            // 
+            this.FurnishingIsWalkableCheckBox.AutoSize = true;
+            this.FurnishingIsWalkableCheckBox.Location = new System.Drawing.Point(131, 188);
+            this.FurnishingIsWalkableCheckBox.Name = "FurnishingIsWalkableCheckBox";
+            this.FurnishingIsWalkableCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.FurnishingIsWalkableCheckBox.TabIndex = 35;
+            this.FurnishingIsWalkableCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // FurnishingIsEnclosingCheckBox
+            // 
+            this.FurnishingIsEnclosingCheckBox.AutoSize = true;
+            this.FurnishingIsEnclosingCheckBox.Location = new System.Drawing.Point(131, 213);
+            this.FurnishingIsEnclosingCheckBox.Name = "FurnishingIsEnclosingCheckBox";
+            this.FurnishingIsEnclosingCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.FurnishingIsEnclosingCheckBox.TabIndex = 36;
+            this.FurnishingIsEnclosingCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // FurnishingIsFlammableCheckBox
+            // 
+            this.FurnishingIsFlammableCheckBox.AutoSize = true;
+            this.FurnishingIsFlammableCheckBox.Location = new System.Drawing.Point(131, 238);
+            this.FurnishingIsFlammableCheckBox.Name = "FurnishingIsFlammableCheckBox";
+            this.FurnishingIsFlammableCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.FurnishingIsFlammableCheckBox.TabIndex = 37;
+            this.FurnishingIsFlammableCheckBox.UseVisualStyleBackColor = true;
             // 
             // FurnishingRemoveFurnishingButton
             // 
@@ -4377,30 +4509,6 @@ namespace Scribe
             this.ScriptingComingSoonLabel.TabIndex = 0;
             this.ScriptingComingSoonLabel.Text = "Coming Soon";
             // 
-            // BlockGatherEffectComboBox
-            // 
-            this.BlockGatherEffectComboBox.FormattingEnabled = true;
-            this.BlockGatherEffectComboBox.Location = new System.Drawing.Point(131, 188);
-            this.BlockGatherEffectComboBox.Name = "BlockGatherEffectComboBox";
-            this.BlockGatherEffectComboBox.Size = new System.Drawing.Size(144, 21);
-            this.BlockGatherEffectComboBox.TabIndex = 29;
-            // 
-            // BlockDroppedCollectibleIDComboBox
-            // 
-            this.BlockDroppedCollectibleIDComboBox.FormattingEnabled = true;
-            this.BlockDroppedCollectibleIDComboBox.Location = new System.Drawing.Point(131, 213);
-            this.BlockDroppedCollectibleIDComboBox.Name = "BlockDroppedCollectibleIDComboBox";
-            this.BlockDroppedCollectibleIDComboBox.Size = new System.Drawing.Size(144, 21);
-            this.BlockDroppedCollectibleIDComboBox.TabIndex = 29;
-            // 
-            // BlockGatherToolComboBox
-            // 
-            this.BlockGatherToolComboBox.FormattingEnabled = true;
-            this.BlockGatherToolComboBox.Location = new System.Drawing.Point(131, 163);
-            this.BlockGatherToolComboBox.Name = "BlockGatherToolComboBox";
-            this.BlockGatherToolComboBox.Size = new System.Drawing.Size(144, 21);
-            this.BlockGatherToolComboBox.TabIndex = 29;
-            // 
             // MainEditorForm
             // 
             this.AccessibleDescription = "The primary interactive editor window.";
@@ -4818,6 +4926,16 @@ namespace Scribe
         private System.Windows.Forms.Label FurnishingIDLabel;
         private System.Windows.Forms.Button FurnishingEditImageButton;
         private System.Windows.Forms.PictureBox FurnishingPictureBox;
+        private System.Windows.Forms.ComboBox FurnishingEntryTypeComboBox;
+        private System.Windows.Forms.Label FurnishingEntryTypeLabel;
+        private System.Windows.Forms.Label FurnishingIsWalkableLabel;
+        private System.Windows.Forms.Label FurnishingIsEnclosingLabel;
+        private System.Windows.Forms.Label FurnishingIsFlammableLabel;
+        private System.Windows.Forms.Label FurnishingSwapWithFurnishingLabel;
+        private System.Windows.Forms.ComboBox FurnishingSwapWithFurnishingComboBox;
+        private System.Windows.Forms.CheckBox FurnishingIsWalkableCheckBox;
+        private System.Windows.Forms.CheckBox FurnishingIsEnclosingCheckBox;
+        private System.Windows.Forms.CheckBox FurnishingIsFlammableCheckBox;
 
         private System.Windows.Forms.TabPage CollectiblesTabPage;
         private System.Windows.Forms.TableLayoutPanel CollectibleTableLayoutPanel;
