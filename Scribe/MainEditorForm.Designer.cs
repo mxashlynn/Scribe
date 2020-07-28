@@ -289,6 +289,7 @@ namespace Scribe
             this.FloorPictureBox = new System.Windows.Forms.PictureBox();
             this.BlocksTabPage = new System.Windows.Forms.TabPage();
             this.BlockTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.BlockMaxToughnessTextBox = new System.Windows.Forms.TextBox();
             this.BlockNameLabel = new System.Windows.Forms.Label();
             this.BlockDescriptionLabel = new System.Windows.Forms.Label();
             this.BlockCommentLabel = new System.Windows.Forms.Label();
@@ -297,6 +298,14 @@ namespace Scribe
             this.BlockDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.BlockCommentTextBox = new System.Windows.Forms.TextBox();
             this.BlockEquivalentItemComboBox = new System.Windows.Forms.ComboBox();
+            this.BlockGatheringToolLabel = new System.Windows.Forms.Label();
+            this.BlockGatheringEffectLabel = new System.Windows.Forms.Label();
+            this.BlockDroppedCollectibleLabel = new System.Windows.Forms.Label();
+            this.BlockIsFlammableLabel = new System.Windows.Forms.Label();
+            this.BlockIsLiquidLabel = new System.Windows.Forms.Label();
+            this.BlockMaxToughnessLabel = new System.Windows.Forms.Label();
+            this.BlockIsFlammableCheckBox = new System.Windows.Forms.CheckBox();
+            this.BlockIsLiquidCheckBox = new System.Windows.Forms.CheckBox();
             this.BlockPictureBox = new System.Windows.Forms.PictureBox();
             this.BlockEditImageButton = new System.Windows.Forms.Button();
             this.BlockIDLabel = new System.Windows.Forms.Label();
@@ -378,6 +387,9 @@ namespace Scribe
             this.RoomIDTextBox = new System.Windows.Forms.TextBox();
             this.ScriptsTabPage = new System.Windows.Forms.TabPage();
             this.ScriptingComingSoonLabel = new System.Windows.Forms.Label();
+            this.BlockGatherEffectComboBox = new System.Windows.Forms.ComboBox();
+            this.BlockDroppedCollectibleIDComboBox = new System.Windows.Forms.ComboBox();
+            this.BlockGatherToolComboBox = new System.Windows.Forms.ComboBox();
             this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
             this.FiltersTableLayoutPanel.SuspendLayout();
@@ -3277,6 +3289,10 @@ namespace Scribe
             this.BlockTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.BlockTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.BlockTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.BlockTableLayoutPanel.Controls.Add(this.BlockGatherToolComboBox, 1, 4);
+            this.BlockTableLayoutPanel.Controls.Add(this.BlockDroppedCollectibleIDComboBox, 1, 6);
+            this.BlockTableLayoutPanel.Controls.Add(this.BlockGatherEffectComboBox, 1, 5);
+            this.BlockTableLayoutPanel.Controls.Add(this.BlockMaxToughnessTextBox, 1, 9);
             this.BlockTableLayoutPanel.Controls.Add(this.BlockNameLabel, 0, 0);
             this.BlockTableLayoutPanel.Controls.Add(this.BlockDescriptionLabel, 0, 1);
             this.BlockTableLayoutPanel.Controls.Add(this.BlockCommentLabel, 0, 2);
@@ -3285,6 +3301,14 @@ namespace Scribe
             this.BlockTableLayoutPanel.Controls.Add(this.BlockDescriptionTextBox, 1, 1);
             this.BlockTableLayoutPanel.Controls.Add(this.BlockCommentTextBox, 1, 2);
             this.BlockTableLayoutPanel.Controls.Add(this.BlockEquivalentItemComboBox, 1, 3);
+            this.BlockTableLayoutPanel.Controls.Add(this.BlockGatheringToolLabel, 0, 4);
+            this.BlockTableLayoutPanel.Controls.Add(this.BlockGatheringEffectLabel, 0, 5);
+            this.BlockTableLayoutPanel.Controls.Add(this.BlockDroppedCollectibleLabel, 0, 6);
+            this.BlockTableLayoutPanel.Controls.Add(this.BlockIsFlammableLabel, 0, 7);
+            this.BlockTableLayoutPanel.Controls.Add(this.BlockIsLiquidLabel, 0, 8);
+            this.BlockTableLayoutPanel.Controls.Add(this.BlockMaxToughnessLabel, 0, 9);
+            this.BlockTableLayoutPanel.Controls.Add(this.BlockIsFlammableCheckBox, 1, 7);
+            this.BlockTableLayoutPanel.Controls.Add(this.BlockIsLiquidCheckBox, 1, 8);
             this.BlockTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
             this.BlockTableLayoutPanel.Name = "BlockTableLayoutPanel";
             this.BlockTableLayoutPanel.RowCount = 11;
@@ -3292,15 +3316,22 @@ namespace Scribe
             this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.BlockTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.BlockTableLayoutPanel.TabIndex = 5;
+            // 
+            // BlockMaxToughnessTextBox
+            // 
+            this.BlockMaxToughnessTextBox.Location = new System.Drawing.Point(131, 288);
+            this.BlockMaxToughnessTextBox.Name = "BlockMaxToughnessTextBox";
+            this.BlockMaxToughnessTextBox.Size = new System.Drawing.Size(144, 20);
+            this.BlockMaxToughnessTextBox.TabIndex = 23;
             // 
             // BlockNameLabel
             // 
@@ -3376,6 +3407,78 @@ namespace Scribe
             this.BlockEquivalentItemComboBox.Name = "BlockEquivalentItemComboBox";
             this.BlockEquivalentItemComboBox.Size = new System.Drawing.Size(144, 21);
             this.BlockEquivalentItemComboBox.TabIndex = 29;
+            // 
+            // BlockGatheringToolLabel
+            // 
+            this.BlockGatheringToolLabel.AutoSize = true;
+            this.BlockGatheringToolLabel.Location = new System.Drawing.Point(3, 160);
+            this.BlockGatheringToolLabel.Name = "BlockGatheringToolLabel";
+            this.BlockGatheringToolLabel.Size = new System.Drawing.Size(77, 13);
+            this.BlockGatheringToolLabel.TabIndex = 30;
+            this.BlockGatheringToolLabel.Text = "Gathering Tool";
+            // 
+            // BlockGatheringEffectLabel
+            // 
+            this.BlockGatheringEffectLabel.AutoSize = true;
+            this.BlockGatheringEffectLabel.Location = new System.Drawing.Point(3, 185);
+            this.BlockGatheringEffectLabel.Name = "BlockGatheringEffectLabel";
+            this.BlockGatheringEffectLabel.Size = new System.Drawing.Size(86, 13);
+            this.BlockGatheringEffectLabel.TabIndex = 31;
+            this.BlockGatheringEffectLabel.Text = "Gathering Effect";
+            // 
+            // BlockDroppedCollectibleLabel
+            // 
+            this.BlockDroppedCollectibleLabel.AutoSize = true;
+            this.BlockDroppedCollectibleLabel.Location = new System.Drawing.Point(3, 210);
+            this.BlockDroppedCollectibleLabel.Name = "BlockDroppedCollectibleLabel";
+            this.BlockDroppedCollectibleLabel.Size = new System.Drawing.Size(99, 13);
+            this.BlockDroppedCollectibleLabel.TabIndex = 32;
+            this.BlockDroppedCollectibleLabel.Text = "Dropped Collectible";
+            // 
+            // BlockIsFlammableLabel
+            // 
+            this.BlockIsFlammableLabel.AutoSize = true;
+            this.BlockIsFlammableLabel.Location = new System.Drawing.Point(3, 235);
+            this.BlockIsFlammableLabel.Name = "BlockIsFlammableLabel";
+            this.BlockIsFlammableLabel.Size = new System.Drawing.Size(69, 13);
+            this.BlockIsFlammableLabel.TabIndex = 33;
+            this.BlockIsFlammableLabel.Text = "Is Flammable";
+            // 
+            // BlockIsLiquidLabel
+            // 
+            this.BlockIsLiquidLabel.AutoSize = true;
+            this.BlockIsLiquidLabel.Location = new System.Drawing.Point(3, 260);
+            this.BlockIsLiquidLabel.Name = "BlockIsLiquidLabel";
+            this.BlockIsLiquidLabel.Size = new System.Drawing.Size(46, 13);
+            this.BlockIsLiquidLabel.TabIndex = 34;
+            this.BlockIsLiquidLabel.Text = "Is Liquid";
+            // 
+            // BlockMaxToughnessLabel
+            // 
+            this.BlockMaxToughnessLabel.AutoSize = true;
+            this.BlockMaxToughnessLabel.Location = new System.Drawing.Point(3, 285);
+            this.BlockMaxToughnessLabel.Name = "BlockMaxToughnessLabel";
+            this.BlockMaxToughnessLabel.Size = new System.Drawing.Size(59, 13);
+            this.BlockMaxToughnessLabel.TabIndex = 35;
+            this.BlockMaxToughnessLabel.Text = "Toughness";
+            // 
+            // BlockIsFlammableCheckBox
+            // 
+            this.BlockIsFlammableCheckBox.AutoSize = true;
+            this.BlockIsFlammableCheckBox.Location = new System.Drawing.Point(131, 238);
+            this.BlockIsFlammableCheckBox.Name = "BlockIsFlammableCheckBox";
+            this.BlockIsFlammableCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.BlockIsFlammableCheckBox.TabIndex = 36;
+            this.BlockIsFlammableCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // BlockIsLiquidCheckBox
+            // 
+            this.BlockIsLiquidCheckBox.AutoSize = true;
+            this.BlockIsLiquidCheckBox.Location = new System.Drawing.Point(131, 263);
+            this.BlockIsLiquidCheckBox.Name = "BlockIsLiquidCheckBox";
+            this.BlockIsLiquidCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.BlockIsLiquidCheckBox.TabIndex = 37;
+            this.BlockIsLiquidCheckBox.UseVisualStyleBackColor = true;
             // 
             // BlockPictureBox
             // 
@@ -4274,6 +4377,30 @@ namespace Scribe
             this.ScriptingComingSoonLabel.TabIndex = 0;
             this.ScriptingComingSoonLabel.Text = "Coming Soon";
             // 
+            // BlockGatherEffectComboBox
+            // 
+            this.BlockGatherEffectComboBox.FormattingEnabled = true;
+            this.BlockGatherEffectComboBox.Location = new System.Drawing.Point(131, 188);
+            this.BlockGatherEffectComboBox.Name = "BlockGatherEffectComboBox";
+            this.BlockGatherEffectComboBox.Size = new System.Drawing.Size(144, 21);
+            this.BlockGatherEffectComboBox.TabIndex = 29;
+            // 
+            // BlockDroppedCollectibleIDComboBox
+            // 
+            this.BlockDroppedCollectibleIDComboBox.FormattingEnabled = true;
+            this.BlockDroppedCollectibleIDComboBox.Location = new System.Drawing.Point(131, 213);
+            this.BlockDroppedCollectibleIDComboBox.Name = "BlockDroppedCollectibleIDComboBox";
+            this.BlockDroppedCollectibleIDComboBox.Size = new System.Drawing.Size(144, 21);
+            this.BlockDroppedCollectibleIDComboBox.TabIndex = 29;
+            // 
+            // BlockGatherToolComboBox
+            // 
+            this.BlockGatherToolComboBox.FormattingEnabled = true;
+            this.BlockGatherToolComboBox.Location = new System.Drawing.Point(131, 163);
+            this.BlockGatherToolComboBox.Name = "BlockGatherToolComboBox";
+            this.BlockGatherToolComboBox.Size = new System.Drawing.Size(144, 21);
+            this.BlockGatherToolComboBox.TabIndex = 29;
+            // 
             // MainEditorForm
             // 
             this.AccessibleDescription = "The primary interactive editor window.";
@@ -4659,6 +4786,18 @@ namespace Scribe
         private System.Windows.Forms.Button BlockAddNewBlockButton;
         private System.Windows.Forms.TextBox BlockIDTextBox;
         private System.Windows.Forms.Button BlockRemoveBlockButton;
+        private System.Windows.Forms.TextBox BlockMaxToughnessTextBox;
+        private System.Windows.Forms.Label BlockGatheringToolLabel;
+        private System.Windows.Forms.Label BlockGatheringEffectLabel;
+        private System.Windows.Forms.Label BlockDroppedCollectibleLabel;
+        private System.Windows.Forms.Label BlockIsFlammableLabel;
+        private System.Windows.Forms.Label BlockIsLiquidLabel;
+        private System.Windows.Forms.Label BlockMaxToughnessLabel;
+        private System.Windows.Forms.CheckBox BlockIsFlammableCheckBox;
+        private System.Windows.Forms.CheckBox BlockIsLiquidCheckBox;
+        private System.Windows.Forms.ComboBox BlockGatherToolComboBox;
+        private System.Windows.Forms.ComboBox BlockDroppedCollectibleIDComboBox;
+        private System.Windows.Forms.ComboBox BlockGatherEffectComboBox;
         private System.Windows.Forms.GroupBox BlockConfigGroupBox;
 
         private System.Windows.Forms.TabPage FurnishingsTabPage;
