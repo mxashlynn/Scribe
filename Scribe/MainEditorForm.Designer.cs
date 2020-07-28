@@ -405,6 +405,29 @@ namespace Scribe
             this.RoomIDTextBox = new System.Windows.Forms.TextBox();
             this.ScriptsTabPage = new System.Windows.Forms.TabPage();
             this.ScriptingComingSoonLabel = new System.Windows.Forms.Label();
+            this.CritterPrimaryBehaviorComboBox = new System.Windows.Forms.ComboBox();
+            this.CritterNameLabel = new System.Windows.Forms.Label();
+            this.CritterDescriptionLabel = new System.Windows.Forms.Label();
+            this.CritterCommentLabel = new System.Windows.Forms.Label();
+            this.CritterNativeBiomeLabel = new System.Windows.Forms.Label();
+            this.CritterNameTextBox = new System.Windows.Forms.TextBox();
+            this.CritterDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.CritterCommentTextBox = new System.Windows.Forms.TextBox();
+            this.CritterNativeBiomeComboBox = new System.Windows.Forms.ComboBox();
+            this.CritterPrimaryBehaviorLabel = new System.Windows.Forms.Label();
+            this.CritterParquetAvoidsLabel = new System.Windows.Forms.Label();
+            this.CritterRemoveCritterButton = new System.Windows.Forms.Button();
+            this.CritterConfigGroupBox = new System.Windows.Forms.GroupBox();
+            this.CritterIDTextBox = new System.Windows.Forms.TextBox();
+            this.CritterAddNewCritterButton = new System.Windows.Forms.Button();
+            this.CritterListBox = new System.Windows.Forms.ListBox();
+            this.CritterIDLabel = new System.Windows.Forms.Label();
+            this.CritterEditImageButton = new System.Windows.Forms.Button();
+            this.CritterPictureBox = new System.Windows.Forms.PictureBox();
+            this.CritterTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.CritterComingSoonLabel1 = new System.Windows.Forms.Label();
+            this.CritterParquetsSoughtLabel = new System.Windows.Forms.Label();
+            this.CritterComingSoonLabel2 = new System.Windows.Forms.Label();
             this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
             this.FiltersTableLayoutPanel.SuspendLayout();
@@ -419,6 +442,7 @@ namespace Scribe
             this.FileFormatTableLayoutPanel.SuspendLayout();
             this.LibraryInfoGroupBox.SuspendLayout();
             this.LibraryInfoTableLayoutPanel.SuspendLayout();
+            this.CrittersTabPage.SuspendLayout();
             this.BiomesTabPage.SuspendLayout();
             this.BiomeConfigGroupBox.SuspendLayout();
             this.BiomeConfigTableLayoutPanel.SuspendLayout();
@@ -452,6 +476,8 @@ namespace Scribe
             this.RoomTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPictureBox)).BeginInit();
             this.ScriptsTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CritterPictureBox)).BeginInit();
+            this.CritterTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainToolStripStatusLabel
@@ -1708,6 +1734,15 @@ namespace Scribe
             // 
             // CrittersTabPage
             // 
+            this.CrittersTabPage.Controls.Add(this.CritterTableLayoutPanel);
+            this.CrittersTabPage.Controls.Add(this.CritterPictureBox);
+            this.CrittersTabPage.Controls.Add(this.CritterEditImageButton);
+            this.CrittersTabPage.Controls.Add(this.CritterIDLabel);
+            this.CrittersTabPage.Controls.Add(this.CritterListBox);
+            this.CrittersTabPage.Controls.Add(this.CritterAddNewCritterButton);
+            this.CrittersTabPage.Controls.Add(this.CritterIDTextBox);
+            this.CrittersTabPage.Controls.Add(this.CritterConfigGroupBox);
+            this.CrittersTabPage.Controls.Add(this.CritterRemoveCritterButton);
             this.CrittersTabPage.Location = new System.Drawing.Point(4, 22);
             this.CrittersTabPage.Name = "CrittersTabPage";
             this.CrittersTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -4560,6 +4595,249 @@ namespace Scribe
             this.ScriptingComingSoonLabel.TabIndex = 0;
             this.ScriptingComingSoonLabel.Text = "Coming Soon";
             // 
+            // CritterPrimaryBehaviorComboBox
+            // 
+            this.CritterPrimaryBehaviorComboBox.FormattingEnabled = true;
+            this.CritterPrimaryBehaviorComboBox.Location = new System.Drawing.Point(131, 163);
+            this.CritterPrimaryBehaviorComboBox.Name = "CritterPrimaryBehaviorComboBox";
+            this.CritterPrimaryBehaviorComboBox.Size = new System.Drawing.Size(144, 21);
+            this.CritterPrimaryBehaviorComboBox.TabIndex = 29;
+            // 
+            // CritterNameLabel
+            // 
+            this.CritterNameLabel.AutoSize = true;
+            this.CritterNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.CritterNameLabel.Name = "CritterNameLabel";
+            this.CritterNameLabel.Size = new System.Drawing.Size(34, 13);
+            this.CritterNameLabel.TabIndex = 0;
+            this.CritterNameLabel.Text = "Name";
+            // 
+            // CritterDescriptionLabel
+            // 
+            this.CritterDescriptionLabel.AutoSize = true;
+            this.CritterDescriptionLabel.Location = new System.Drawing.Point(3, 25);
+            this.CritterDescriptionLabel.Name = "CritterDescriptionLabel";
+            this.CritterDescriptionLabel.Size = new System.Drawing.Size(60, 13);
+            this.CritterDescriptionLabel.TabIndex = 3;
+            this.CritterDescriptionLabel.Text = "Description";
+            // 
+            // CritterCommentLabel
+            // 
+            this.CritterCommentLabel.AutoSize = true;
+            this.CritterCommentLabel.Location = new System.Drawing.Point(3, 80);
+            this.CritterCommentLabel.Name = "CritterCommentLabel";
+            this.CritterCommentLabel.Size = new System.Drawing.Size(52, 13);
+            this.CritterCommentLabel.TabIndex = 6;
+            this.CritterCommentLabel.Text = "Comment";
+            // 
+            // CritterNativeBiomeLabel
+            // 
+            this.CritterNativeBiomeLabel.AutoSize = true;
+            this.CritterNativeBiomeLabel.Location = new System.Drawing.Point(3, 135);
+            this.CritterNativeBiomeLabel.Name = "CritterNativeBiomeLabel";
+            this.CritterNativeBiomeLabel.Size = new System.Drawing.Size(69, 13);
+            this.CritterNativeBiomeLabel.TabIndex = 9;
+            this.CritterNativeBiomeLabel.Text = "Native Biome";
+            // 
+            // CritterNameTextBox
+            // 
+            this.CritterNameTextBox.Location = new System.Drawing.Point(131, 3);
+            this.CritterNameTextBox.Name = "CritterNameTextBox";
+            this.CritterNameTextBox.Size = new System.Drawing.Size(144, 20);
+            this.CritterNameTextBox.TabIndex = 23;
+            // 
+            // CritterDescriptionTextBox
+            // 
+            this.CritterDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CritterTableLayoutPanel.SetColumnSpan(this.CritterDescriptionTextBox, 2);
+            this.CritterDescriptionTextBox.Location = new System.Drawing.Point(131, 28);
+            this.CritterDescriptionTextBox.Multiline = true;
+            this.CritterDescriptionTextBox.Name = "CritterDescriptionTextBox";
+            this.CritterDescriptionTextBox.Size = new System.Drawing.Size(295, 49);
+            this.CritterDescriptionTextBox.TabIndex = 24;
+            // 
+            // CritterCommentTextBox
+            // 
+            this.CritterCommentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CritterTableLayoutPanel.SetColumnSpan(this.CritterCommentTextBox, 2);
+            this.CritterCommentTextBox.Location = new System.Drawing.Point(131, 83);
+            this.CritterCommentTextBox.Multiline = true;
+            this.CritterCommentTextBox.Name = "CritterCommentTextBox";
+            this.CritterCommentTextBox.Size = new System.Drawing.Size(295, 49);
+            this.CritterCommentTextBox.TabIndex = 25;
+            // 
+            // CritterNativeBiomeComboBox
+            // 
+            this.CritterNativeBiomeComboBox.FormattingEnabled = true;
+            this.CritterNativeBiomeComboBox.Location = new System.Drawing.Point(131, 138);
+            this.CritterNativeBiomeComboBox.Name = "CritterNativeBiomeComboBox";
+            this.CritterNativeBiomeComboBox.Size = new System.Drawing.Size(144, 21);
+            this.CritterNativeBiomeComboBox.TabIndex = 29;
+            // 
+            // CritterPrimaryBehaviorLabel
+            // 
+            this.CritterPrimaryBehaviorLabel.AutoSize = true;
+            this.CritterPrimaryBehaviorLabel.Location = new System.Drawing.Point(3, 160);
+            this.CritterPrimaryBehaviorLabel.Name = "CritterPrimaryBehaviorLabel";
+            this.CritterPrimaryBehaviorLabel.Size = new System.Drawing.Size(88, 13);
+            this.CritterPrimaryBehaviorLabel.TabIndex = 30;
+            this.CritterPrimaryBehaviorLabel.Text = "Primary Behavior";
+            // 
+            // CritterParquetAvoidsLabel
+            // 
+            this.CritterParquetAvoidsLabel.AutoSize = true;
+            this.CritterParquetAvoidsLabel.Location = new System.Drawing.Point(3, 185);
+            this.CritterParquetAvoidsLabel.Name = "CritterParquetAvoidsLabel";
+            this.CritterParquetAvoidsLabel.Size = new System.Drawing.Size(92, 13);
+            this.CritterParquetAvoidsLabel.TabIndex = 31;
+            this.CritterParquetAvoidsLabel.Text = "Parquets Avoided";
+            // 
+            // CritterRemoveCritterButton
+            // 
+            this.CritterRemoveCritterButton.Location = new System.Drawing.Point(24, 468);
+            this.CritterRemoveCritterButton.Name = "CritterRemoveCritterButton";
+            this.CritterRemoveCritterButton.Size = new System.Drawing.Size(129, 23);
+            this.CritterRemoveCritterButton.TabIndex = 2;
+            this.CritterRemoveCritterButton.Text = "Remove Critter";
+            this.CritterRemoveCritterButton.UseVisualStyleBackColor = true;
+            // 
+            // CritterConfigGroupBox
+            // 
+            this.CritterConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CritterConfigGroupBox.Location = new System.Drawing.Point(9, 497);
+            this.CritterConfigGroupBox.Name = "CritterConfigGroupBox";
+            this.CritterConfigGroupBox.Size = new System.Drawing.Size(938, 96);
+            this.CritterConfigGroupBox.TabIndex = 0;
+            this.CritterConfigGroupBox.TabStop = false;
+            // 
+            // CritterIDTextBox
+            // 
+            this.CritterIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CritterIDTextBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.CritterIDTextBox.Location = new System.Drawing.Point(812, 16);
+            this.CritterIDTextBox.Name = "CritterIDTextBox";
+            this.CritterIDTextBox.Size = new System.Drawing.Size(131, 20);
+            this.CritterIDTextBox.TabIndex = 3;
+            this.CritterIDTextBox.Text = "-2020202020";
+            // 
+            // CritterAddNewCritterButton
+            // 
+            this.CritterAddNewCritterButton.Location = new System.Drawing.Point(159, 468);
+            this.CritterAddNewCritterButton.Name = "CritterAddNewCritterButton";
+            this.CritterAddNewCritterButton.Size = new System.Drawing.Size(129, 23);
+            this.CritterAddNewCritterButton.TabIndex = 2;
+            this.CritterAddNewCritterButton.Text = "Add New Critter";
+            this.CritterAddNewCritterButton.UseVisualStyleBackColor = true;
+            // 
+            // CritterListBox
+            // 
+            this.CritterListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.CritterListBox.FormattingEnabled = true;
+            this.CritterListBox.Location = new System.Drawing.Point(9, 16);
+            this.CritterListBox.Name = "CritterListBox";
+            this.CritterListBox.Size = new System.Drawing.Size(279, 446);
+            this.CritterListBox.TabIndex = 1;
+            // 
+            // CritterIDLabel
+            // 
+            this.CritterIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CritterIDLabel.AutoSize = true;
+            this.CritterIDLabel.Location = new System.Drawing.Point(754, 19);
+            this.CritterIDLabel.Name = "CritterIDLabel";
+            this.CritterIDLabel.Size = new System.Drawing.Size(52, 13);
+            this.CritterIDLabel.TabIndex = 4;
+            this.CritterIDLabel.Text = "Critter ID";
+            // 
+            // CritterEditImageButton
+            // 
+            this.CritterEditImageButton.Location = new System.Drawing.Point(815, 468);
+            this.CritterEditImageButton.Name = "CritterEditImageButton";
+            this.CritterEditImageButton.Size = new System.Drawing.Size(128, 23);
+            this.CritterEditImageButton.TabIndex = 7;
+            this.CritterEditImageButton.Text = "Edit Image";
+            this.CritterEditImageButton.UseVisualStyleBackColor = true;
+            // 
+            // CritterPictureBox
+            // 
+            this.CritterPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CritterPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.CritterPictureBox.Location = new System.Drawing.Point(761, 280);
+            this.CritterPictureBox.Name = "CritterPictureBox";
+            this.CritterPictureBox.Size = new System.Drawing.Size(182, 182);
+            this.CritterPictureBox.TabIndex = 6;
+            this.CritterPictureBox.TabStop = false;
+            // 
+            // CritterTableLayoutPanel
+            // 
+            this.CritterTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.CritterTableLayoutPanel.ColumnCount = 3;
+            this.CritterTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.CritterTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.CritterTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.CritterTableLayoutPanel.Controls.Add(this.CritterPrimaryBehaviorComboBox, 1, 4);
+            this.CritterTableLayoutPanel.Controls.Add(this.CritterNameLabel, 0, 0);
+            this.CritterTableLayoutPanel.Controls.Add(this.CritterDescriptionLabel, 0, 1);
+            this.CritterTableLayoutPanel.Controls.Add(this.CritterCommentLabel, 0, 2);
+            this.CritterTableLayoutPanel.Controls.Add(this.CritterNativeBiomeLabel, 0, 3);
+            this.CritterTableLayoutPanel.Controls.Add(this.CritterNameTextBox, 1, 0);
+            this.CritterTableLayoutPanel.Controls.Add(this.CritterDescriptionTextBox, 1, 1);
+            this.CritterTableLayoutPanel.Controls.Add(this.CritterCommentTextBox, 1, 2);
+            this.CritterTableLayoutPanel.Controls.Add(this.CritterNativeBiomeComboBox, 1, 3);
+            this.CritterTableLayoutPanel.Controls.Add(this.CritterPrimaryBehaviorLabel, 0, 4);
+            this.CritterTableLayoutPanel.Controls.Add(this.CritterParquetAvoidsLabel, 0, 5);
+            this.CritterTableLayoutPanel.Controls.Add(this.CritterComingSoonLabel1, 1, 5);
+            this.CritterTableLayoutPanel.Controls.Add(this.CritterParquetsSoughtLabel, 0, 6);
+            this.CritterTableLayoutPanel.Controls.Add(this.CritterComingSoonLabel2, 1, 6);
+            this.CritterTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
+            this.CritterTableLayoutPanel.Name = "CritterTableLayoutPanel";
+            this.CritterTableLayoutPanel.RowCount = 8;
+            this.CritterTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.CritterTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.CritterTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.CritterTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.CritterTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.CritterTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.CritterTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.CritterTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.CritterTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
+            this.CritterTableLayoutPanel.TabIndex = 5;
+            // 
+            // CritterComingSoonLabel1
+            // 
+            this.CritterComingSoonLabel1.AutoSize = true;
+            this.CritterComingSoonLabel1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CritterComingSoonLabel1.Location = new System.Drawing.Point(131, 185);
+            this.CritterComingSoonLabel1.Name = "CritterComingSoonLabel1";
+            this.CritterComingSoonLabel1.Size = new System.Drawing.Size(89, 16);
+            this.CritterComingSoonLabel1.TabIndex = 32;
+            this.CritterComingSoonLabel1.Text = "Coming Soon";
+            // 
+            // CritterParquetsSoughtLabel
+            // 
+            this.CritterParquetsSoughtLabel.AutoSize = true;
+            this.CritterParquetsSoughtLabel.Location = new System.Drawing.Point(3, 210);
+            this.CritterParquetsSoughtLabel.Name = "CritterParquetsSoughtLabel";
+            this.CritterParquetsSoughtLabel.Size = new System.Drawing.Size(87, 13);
+            this.CritterParquetsSoughtLabel.TabIndex = 33;
+            this.CritterParquetsSoughtLabel.Text = "Parquets Sought";
+            // 
+            // CritterComingSoonLabel2
+            // 
+            this.CritterComingSoonLabel2.AutoSize = true;
+            this.CritterComingSoonLabel2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CritterComingSoonLabel2.Location = new System.Drawing.Point(131, 210);
+            this.CritterComingSoonLabel2.Name = "CritterComingSoonLabel2";
+            this.CritterComingSoonLabel2.Size = new System.Drawing.Size(89, 16);
+            this.CritterComingSoonLabel2.TabIndex = 34;
+            this.CritterComingSoonLabel2.Text = "Coming Soon";
+            // 
             // MainEditorForm
             // 
             this.AccessibleDescription = "The primary interactive editor window.";
@@ -4602,6 +4880,8 @@ namespace Scribe
             this.LibraryInfoGroupBox.ResumeLayout(false);
             this.LibraryInfoTableLayoutPanel.ResumeLayout(false);
             this.LibraryInfoTableLayoutPanel.PerformLayout();
+            this.CrittersTabPage.ResumeLayout(false);
+            this.CrittersTabPage.PerformLayout();
             this.BiomesTabPage.ResumeLayout(false);
             this.BiomesTabPage.PerformLayout();
             this.BiomeConfigGroupBox.ResumeLayout(false);
@@ -4656,6 +4936,9 @@ namespace Scribe
             ((System.ComponentModel.ISupportInitialize)(this.RoomPictureBox)).EndInit();
             this.ScriptsTabPage.ResumeLayout(false);
             this.ScriptsTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CritterPictureBox)).EndInit();
+            this.CritterTableLayoutPanel.ResumeLayout(false);
+            this.CritterTableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4779,6 +5062,29 @@ namespace Scribe
         private System.Windows.Forms.PictureBox GameIconPictureBox;
 
         private System.Windows.Forms.TabPage CrittersTabPage;
+        private System.Windows.Forms.TableLayoutPanel CritterTableLayoutPanel;
+        private System.Windows.Forms.ComboBox CritterPrimaryBehaviorComboBox;
+        private System.Windows.Forms.Label CritterNameLabel;
+        private System.Windows.Forms.Label CritterDescriptionLabel;
+        private System.Windows.Forms.Label CritterCommentLabel;
+        private System.Windows.Forms.Label CritterNativeBiomeLabel;
+        private System.Windows.Forms.TextBox CritterNameTextBox;
+        private System.Windows.Forms.TextBox CritterDescriptionTextBox;
+        private System.Windows.Forms.TextBox CritterCommentTextBox;
+        private System.Windows.Forms.ComboBox CritterNativeBiomeComboBox;
+        private System.Windows.Forms.Label CritterPrimaryBehaviorLabel;
+        private System.Windows.Forms.Label CritterParquetAvoidsLabel;
+        private System.Windows.Forms.Label CritterComingSoonLabel1;
+        private System.Windows.Forms.Label CritterParquetsSoughtLabel;
+        private System.Windows.Forms.Label CritterComingSoonLabel2;
+        private System.Windows.Forms.PictureBox CritterPictureBox;
+        private System.Windows.Forms.Button CritterEditImageButton;
+        private System.Windows.Forms.Label CritterIDLabel;
+        private System.Windows.Forms.ListBox CritterListBox;
+        private System.Windows.Forms.Button CritterAddNewCritterButton;
+        private System.Windows.Forms.TextBox CritterIDTextBox;
+        private System.Windows.Forms.GroupBox CritterConfigGroupBox;
+        private System.Windows.Forms.Button CritterRemoveCritterButton;
 
         private System.Windows.Forms.TabPage CharactersTabPage;
 
