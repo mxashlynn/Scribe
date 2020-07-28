@@ -347,6 +347,8 @@ namespace Scribe
             this.FurnishingPictureBox = new System.Windows.Forms.PictureBox();
             this.CollectiblesTabPage = new System.Windows.Forms.TabPage();
             this.CollectibleTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.CollectibleEffectAmountTextBox = new System.Windows.Forms.TextBox();
+            this.CollectibleCollectionEffectComboBox = new System.Windows.Forms.ComboBox();
             this.CollectibleNameLabel = new System.Windows.Forms.Label();
             this.CollectibleDescriptionLabel = new System.Windows.Forms.Label();
             this.CollectibleCommentLabel = new System.Windows.Forms.Label();
@@ -355,6 +357,8 @@ namespace Scribe
             this.CollectibleDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.CollectibleCommentTextBox = new System.Windows.Forms.TextBox();
             this.CollectibleEquivalentItemComboBox = new System.Windows.Forms.ComboBox();
+            this.CollectibleCollectionEffectLabel = new System.Windows.Forms.Label();
+            this.CollectibleEffectAmountLabel = new System.Windows.Forms.Label();
             this.CollectibleRemoveCollectibleButton = new System.Windows.Forms.Button();
             this.CollectibleConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CollectibleIDTextBox = new System.Windows.Forms.TextBox();
@@ -3916,6 +3920,8 @@ namespace Scribe
             this.CollectibleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.CollectibleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.CollectibleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleEffectAmountTextBox, 1, 5);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleCollectionEffectComboBox, 1, 4);
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleNameLabel, 0, 0);
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleDescriptionLabel, 0, 1);
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleCommentLabel, 0, 2);
@@ -3924,22 +3930,39 @@ namespace Scribe
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleDescriptionTextBox, 1, 1);
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleCommentTextBox, 1, 2);
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleEquivalentItemComboBox, 1, 3);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleCollectionEffectLabel, 0, 4);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleEffectAmountLabel, 0, 5);
             this.CollectibleTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
             this.CollectibleTableLayoutPanel.Name = "CollectibleTableLayoutPanel";
-            this.CollectibleTableLayoutPanel.RowCount = 11;
+            this.CollectibleTableLayoutPanel.RowCount = 7;
             this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.CollectibleTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.CollectibleTableLayoutPanel.TabIndex = 5;
+            // 
+            // CollectibleEffectAmountTextBox
+            // 
+            this.CollectibleEffectAmountTextBox.Location = new System.Drawing.Point(131, 188);
+            this.CollectibleEffectAmountTextBox.Name = "CollectibleEffectAmountTextBox";
+            this.CollectibleEffectAmountTextBox.Size = new System.Drawing.Size(144, 20);
+            this.CollectibleEffectAmountTextBox.TabIndex = 23;
+            // 
+            // CollectibleCollectionEffectComboBox
+            // 
+            this.CollectibleCollectionEffectComboBox.FormattingEnabled = true;
+            this.CollectibleCollectionEffectComboBox.Location = new System.Drawing.Point(131, 163);
+            this.CollectibleCollectionEffectComboBox.Name = "CollectibleCollectionEffectComboBox";
+            this.CollectibleCollectionEffectComboBox.Size = new System.Drawing.Size(144, 21);
+            this.CollectibleCollectionEffectComboBox.TabIndex = 29;
             // 
             // CollectibleNameLabel
             // 
@@ -4015,6 +4038,24 @@ namespace Scribe
             this.CollectibleEquivalentItemComboBox.Name = "CollectibleEquivalentItemComboBox";
             this.CollectibleEquivalentItemComboBox.Size = new System.Drawing.Size(144, 21);
             this.CollectibleEquivalentItemComboBox.TabIndex = 29;
+            // 
+            // CollectibleCollectionEffectLabel
+            // 
+            this.CollectibleCollectionEffectLabel.AutoSize = true;
+            this.CollectibleCollectionEffectLabel.Location = new System.Drawing.Point(3, 160);
+            this.CollectibleCollectionEffectLabel.Name = "CollectibleCollectionEffectLabel";
+            this.CollectibleCollectionEffectLabel.Size = new System.Drawing.Size(85, 13);
+            this.CollectibleCollectionEffectLabel.TabIndex = 30;
+            this.CollectibleCollectionEffectLabel.Text = "Collection Effect";
+            // 
+            // CollectibleEffectAmountLabel
+            // 
+            this.CollectibleEffectAmountLabel.AutoSize = true;
+            this.CollectibleEffectAmountLabel.Location = new System.Drawing.Point(3, 185);
+            this.CollectibleEffectAmountLabel.Name = "CollectibleEffectAmountLabel";
+            this.CollectibleEffectAmountLabel.Size = new System.Drawing.Size(76, 13);
+            this.CollectibleEffectAmountLabel.TabIndex = 31;
+            this.CollectibleEffectAmountLabel.Text = "Effect Amount";
             // 
             // CollectibleRemoveCollectibleButton
             // 
@@ -4946,6 +4987,10 @@ namespace Scribe
         private System.Windows.Forms.TextBox CollectibleNameTextBox;
         private System.Windows.Forms.TextBox CollectibleDescriptionTextBox;
         private System.Windows.Forms.TextBox CollectibleCommentTextBox;
+        private System.Windows.Forms.TextBox CollectibleEffectAmountTextBox;
+        private System.Windows.Forms.ComboBox CollectibleCollectionEffectComboBox;
+        private System.Windows.Forms.Label CollectibleCollectionEffectLabel;
+        private System.Windows.Forms.Label CollectibleEffectAmountLabel;
         private System.Windows.Forms.ComboBox CollectibleEquivalentItemComboBox;
         private System.Windows.Forms.Button CollectibleRemoveCollectibleButton;
         private System.Windows.Forms.GroupBox CollectibleConfigGroupBox;
