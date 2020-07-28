@@ -29,7 +29,7 @@ namespace Scribe
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox));
-            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.AboutTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.LabelProductName = new System.Windows.Forms.Label();
             this.LabelVersion = new System.Windows.Forms.Label();
@@ -38,36 +38,36 @@ namespace Scribe
             this.TextBoxDescription = new System.Windows.Forms.TextBox();
             this.OkayButton = new System.Windows.Forms.Button();
             this.AboutToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.tableLayoutPanel.SuspendLayout();
+            this.AboutTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel
+            // AboutTableLayoutPanel
             // 
-            this.tableLayoutPanel.ColumnCount = 2;
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.25F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.75F));
-            this.tableLayoutPanel.Controls.Add(this.LogoPictureBox, 0, 0);
-            this.tableLayoutPanel.Controls.Add(this.LabelProductName, 1, 0);
-            this.tableLayoutPanel.Controls.Add(this.LabelVersion, 1, 1);
-            this.tableLayoutPanel.Controls.Add(this.LabelCopyright, 1, 2);
-            this.tableLayoutPanel.Controls.Add(this.LabelCompanyName, 1, 3);
-            this.tableLayoutPanel.Controls.Add(this.TextBoxDescription, 1, 4);
-            this.tableLayoutPanel.Controls.Add(this.OkayButton, 1, 6);
-            this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel.Location = new System.Drawing.Point(10, 10);
-            this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tableLayoutPanel.Name = "tableLayoutPanel";
-            this.tableLayoutPanel.RowCount = 7;
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(487, 307);
-            this.tableLayoutPanel.TabIndex = 0;
+            this.AboutTableLayoutPanel.ColumnCount = 2;
+            this.AboutTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.25F));
+            this.AboutTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.75F));
+            this.AboutTableLayoutPanel.Controls.Add(this.LogoPictureBox, 0, 0);
+            this.AboutTableLayoutPanel.Controls.Add(this.LabelProductName, 1, 0);
+            this.AboutTableLayoutPanel.Controls.Add(this.LabelVersion, 1, 1);
+            this.AboutTableLayoutPanel.Controls.Add(this.LabelCopyright, 1, 2);
+            this.AboutTableLayoutPanel.Controls.Add(this.LabelCompanyName, 1, 3);
+            this.AboutTableLayoutPanel.Controls.Add(this.TextBoxDescription, 1, 4);
+            this.AboutTableLayoutPanel.Controls.Add(this.OkayButton, 1, 6);
+            this.AboutTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AboutTableLayoutPanel.Location = new System.Drawing.Point(10, 10);
+            this.AboutTableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.AboutTableLayoutPanel.Name = "AboutTableLayoutPanel";
+            this.AboutTableLayoutPanel.RowCount = 7;
+            this.AboutTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.AboutTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.AboutTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.AboutTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.AboutTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.AboutTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.AboutTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.AboutTableLayoutPanel.Size = new System.Drawing.Size(487, 307);
+            this.AboutTableLayoutPanel.TabIndex = 0;
             // 
             // LogoPictureBox
             // 
@@ -76,7 +76,7 @@ namespace Scribe
             this.LogoPictureBox.Location = new System.Drawing.Point(4, 3);
             this.LogoPictureBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.LogoPictureBox.Name = "LogoPictureBox";
-            this.tableLayoutPanel.SetRowSpan(this.LogoPictureBox, 5);
+            this.AboutTableLayoutPanel.SetRowSpan(this.LogoPictureBox, 5);
             this.LogoPictureBox.Size = new System.Drawing.Size(192, 190);
             this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.LogoPictureBox.TabIndex = 12;
@@ -140,7 +140,7 @@ namespace Scribe
             this.TextBoxDescription.Multiline = true;
             this.TextBoxDescription.Name = "TextBoxDescription";
             this.TextBoxDescription.ReadOnly = true;
-            this.tableLayoutPanel.SetRowSpan(this.TextBoxDescription, 2);
+            this.AboutTableLayoutPanel.SetRowSpan(this.TextBoxDescription, 2);
             this.TextBoxDescription.Size = new System.Drawing.Size(276, 146);
             this.TextBoxDescription.TabIndex = 23;
             this.TextBoxDescription.TabStop = false;
@@ -165,7 +165,7 @@ namespace Scribe
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.OkayButton;
             this.ClientSize = new System.Drawing.Size(507, 327);
-            this.Controls.Add(this.tableLayoutPanel);
+            this.Controls.Add(this.AboutTableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
@@ -176,8 +176,8 @@ namespace Scribe
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AboutBox";
-            this.tableLayoutPanel.ResumeLayout(false);
-            this.tableLayoutPanel.PerformLayout();
+            this.AboutTableLayoutPanel.ResumeLayout(false);
+            this.AboutTableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -185,7 +185,7 @@ namespace Scribe
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
+        private System.Windows.Forms.TableLayoutPanel AboutTableLayoutPanel;
         private System.Windows.Forms.PictureBox LogoPictureBox;
         private System.Windows.Forms.Label LabelProductName;
         private System.Windows.Forms.Label LabelVersion;
