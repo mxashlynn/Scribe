@@ -306,7 +306,41 @@ namespace Scribe
             this.BlockConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.BlockRemoveBlockButton = new System.Windows.Forms.Button();
             this.FurnishingsTabPage = new System.Windows.Forms.TabPage();
+            this.FurnishingTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.FurnishingNameLabel = new System.Windows.Forms.Label();
+            this.FurnishingDescriptionLabel = new System.Windows.Forms.Label();
+            this.FurnishingCommentLabel = new System.Windows.Forms.Label();
+            this.FurnishingEquivalentItemLabel = new System.Windows.Forms.Label();
+            this.FurnishingNameTextBox = new System.Windows.Forms.TextBox();
+            this.FurnishingDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.FurnishingCommentTextBox = new System.Windows.Forms.TextBox();
+            this.FurnishingEquivalentItemComboBox = new System.Windows.Forms.ComboBox();
+            this.FurnishingRemoveFurnishingButton = new System.Windows.Forms.Button();
+            this.FurnishingConfigGroupBox = new System.Windows.Forms.GroupBox();
+            this.FurnishingIDTextBox = new System.Windows.Forms.TextBox();
+            this.FurnishingAddNewFurnishingButton = new System.Windows.Forms.Button();
+            this.FurnishingListBox = new System.Windows.Forms.ListBox();
+            this.FurnishingIDLabel = new System.Windows.Forms.Label();
+            this.FurnishingEditImageButton = new System.Windows.Forms.Button();
+            this.FurnishingPictureBox = new System.Windows.Forms.PictureBox();
             this.CollectiblesTabPage = new System.Windows.Forms.TabPage();
+            this.CollectibleTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.CollectibleNameLabel = new System.Windows.Forms.Label();
+            this.CollectibleDescriptionLabel = new System.Windows.Forms.Label();
+            this.CollectibleCommentLabel = new System.Windows.Forms.Label();
+            this.CollectibleEquivalentItemLabel = new System.Windows.Forms.Label();
+            this.CollectibleNameTextBox = new System.Windows.Forms.TextBox();
+            this.CollectibleDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.CollectibleCommentTextBox = new System.Windows.Forms.TextBox();
+            this.CollectibleEquivalentItemComboBox = new System.Windows.Forms.ComboBox();
+            this.CollectibleRemoveCollectibleButton = new System.Windows.Forms.Button();
+            this.CollectibleConfigGroupBox = new System.Windows.Forms.GroupBox();
+            this.CollectibleIDTextBox = new System.Windows.Forms.TextBox();
+            this.CollectibleAddNewCollectibleButton = new System.Windows.Forms.Button();
+            this.CollectibleListBox = new System.Windows.Forms.ListBox();
+            this.CollectibleIDLabel = new System.Windows.Forms.Label();
+            this.CollectibleEditImageButton = new System.Windows.Forms.Button();
+            this.CollectiblePictureBox = new System.Windows.Forms.PictureBox();
             this.RoomRecipesTabPage = new System.Windows.Forms.TabPage();
             this.RoomRemoveRoomButton = new System.Windows.Forms.Button();
             this.RoomAddBlockButton = new System.Windows.Forms.Button();
@@ -379,6 +413,12 @@ namespace Scribe
             this.BlocksTabPage.SuspendLayout();
             this.BlockTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BlockPictureBox)).BeginInit();
+            this.FurnishingsTabPage.SuspendLayout();
+            this.FurnishingTableLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FurnishingPictureBox)).BeginInit();
+            this.CollectiblesTabPage.SuspendLayout();
+            this.CollectibleTableLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CollectiblePictureBox)).BeginInit();
             this.RoomRecipesTabPage.SuspendLayout();
             this.RoomConfigGroupBox.SuspendLayout();
             this.RoomConfigTableLayoutPanel.SuspendLayout();
@@ -3416,19 +3456,407 @@ namespace Scribe
             // 
             // FurnishingsTabPage
             // 
+            this.FurnishingsTabPage.Controls.Add(this.FurnishingTableLayoutPanel);
+            this.FurnishingsTabPage.Controls.Add(this.FurnishingRemoveFurnishingButton);
+            this.FurnishingsTabPage.Controls.Add(this.FurnishingConfigGroupBox);
+            this.FurnishingsTabPage.Controls.Add(this.FurnishingIDTextBox);
+            this.FurnishingsTabPage.Controls.Add(this.FurnishingAddNewFurnishingButton);
+            this.FurnishingsTabPage.Controls.Add(this.FurnishingListBox);
+            this.FurnishingsTabPage.Controls.Add(this.FurnishingIDLabel);
+            this.FurnishingsTabPage.Controls.Add(this.FurnishingEditImageButton);
+            this.FurnishingsTabPage.Controls.Add(this.FurnishingPictureBox);
             this.FurnishingsTabPage.Location = new System.Drawing.Point(4, 22);
             this.FurnishingsTabPage.Name = "FurnishingsTabPage";
             this.FurnishingsTabPage.Size = new System.Drawing.Size(953, 599);
             this.FurnishingsTabPage.TabIndex = 10;
             this.FurnishingsTabPage.Text = "Furnishings";
             // 
+            // FurnishingTableLayoutPanel
+            // 
+            this.FurnishingTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.FurnishingTableLayoutPanel.ColumnCount = 3;
+            this.FurnishingTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.FurnishingTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.FurnishingTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingNameLabel, 0, 0);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingDescriptionLabel, 0, 1);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingCommentLabel, 0, 2);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingEquivalentItemLabel, 0, 3);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingNameTextBox, 1, 0);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingDescriptionTextBox, 1, 1);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingCommentTextBox, 1, 2);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingEquivalentItemComboBox, 1, 3);
+            this.FurnishingTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
+            this.FurnishingTableLayoutPanel.Name = "FurnishingTableLayoutPanel";
+            this.FurnishingTableLayoutPanel.RowCount = 11;
+            this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.FurnishingTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
+            this.FurnishingTableLayoutPanel.TabIndex = 5;
+            // 
+            // FurnishingNameLabel
+            // 
+            this.FurnishingNameLabel.AutoSize = true;
+            this.FurnishingNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.FurnishingNameLabel.Name = "FurnishingNameLabel";
+            this.FurnishingNameLabel.Size = new System.Drawing.Size(34, 13);
+            this.FurnishingNameLabel.TabIndex = 0;
+            this.FurnishingNameLabel.Text = "Name";
+            // 
+            // FurnishingDescriptionLabel
+            // 
+            this.FurnishingDescriptionLabel.AutoSize = true;
+            this.FurnishingDescriptionLabel.Location = new System.Drawing.Point(3, 25);
+            this.FurnishingDescriptionLabel.Name = "FurnishingDescriptionLabel";
+            this.FurnishingDescriptionLabel.Size = new System.Drawing.Size(60, 13);
+            this.FurnishingDescriptionLabel.TabIndex = 3;
+            this.FurnishingDescriptionLabel.Text = "Description";
+            // 
+            // FurnishingCommentLabel
+            // 
+            this.FurnishingCommentLabel.AutoSize = true;
+            this.FurnishingCommentLabel.Location = new System.Drawing.Point(3, 80);
+            this.FurnishingCommentLabel.Name = "FurnishingCommentLabel";
+            this.FurnishingCommentLabel.Size = new System.Drawing.Size(52, 13);
+            this.FurnishingCommentLabel.TabIndex = 6;
+            this.FurnishingCommentLabel.Text = "Comment";
+            // 
+            // FurnishingEquivalentItemLabel
+            // 
+            this.FurnishingEquivalentItemLabel.AutoSize = true;
+            this.FurnishingEquivalentItemLabel.Location = new System.Drawing.Point(3, 135);
+            this.FurnishingEquivalentItemLabel.Name = "FurnishingEquivalentItemLabel";
+            this.FurnishingEquivalentItemLabel.Size = new System.Drawing.Size(82, 13);
+            this.FurnishingEquivalentItemLabel.TabIndex = 9;
+            this.FurnishingEquivalentItemLabel.Text = "Equivalent Item";
+            // 
+            // FurnishingNameTextBox
+            // 
+            this.FurnishingNameTextBox.Location = new System.Drawing.Point(131, 3);
+            this.FurnishingNameTextBox.Name = "FurnishingNameTextBox";
+            this.FurnishingNameTextBox.Size = new System.Drawing.Size(144, 20);
+            this.FurnishingNameTextBox.TabIndex = 23;
+            // 
+            // FurnishingDescriptionTextBox
+            // 
+            this.FurnishingDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingTableLayoutPanel.SetColumnSpan(this.FurnishingDescriptionTextBox, 2);
+            this.FurnishingDescriptionTextBox.Location = new System.Drawing.Point(131, 28);
+            this.FurnishingDescriptionTextBox.Multiline = true;
+            this.FurnishingDescriptionTextBox.Name = "FurnishingDescriptionTextBox";
+            this.FurnishingDescriptionTextBox.Size = new System.Drawing.Size(295, 49);
+            this.FurnishingDescriptionTextBox.TabIndex = 24;
+            // 
+            // FurnishingCommentTextBox
+            // 
+            this.FurnishingCommentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingTableLayoutPanel.SetColumnSpan(this.FurnishingCommentTextBox, 2);
+            this.FurnishingCommentTextBox.Location = new System.Drawing.Point(131, 83);
+            this.FurnishingCommentTextBox.Multiline = true;
+            this.FurnishingCommentTextBox.Name = "FurnishingCommentTextBox";
+            this.FurnishingCommentTextBox.Size = new System.Drawing.Size(295, 49);
+            this.FurnishingCommentTextBox.TabIndex = 25;
+            // 
+            // FurnishingEquivalentItemComboBox
+            // 
+            this.FurnishingEquivalentItemComboBox.FormattingEnabled = true;
+            this.FurnishingEquivalentItemComboBox.Location = new System.Drawing.Point(131, 138);
+            this.FurnishingEquivalentItemComboBox.Name = "FurnishingEquivalentItemComboBox";
+            this.FurnishingEquivalentItemComboBox.Size = new System.Drawing.Size(144, 21);
+            this.FurnishingEquivalentItemComboBox.TabIndex = 29;
+            // 
+            // FurnishingRemoveFurnishingButton
+            // 
+            this.FurnishingRemoveFurnishingButton.Location = new System.Drawing.Point(24, 468);
+            this.FurnishingRemoveFurnishingButton.Name = "FurnishingRemoveFurnishingButton";
+            this.FurnishingRemoveFurnishingButton.Size = new System.Drawing.Size(129, 23);
+            this.FurnishingRemoveFurnishingButton.TabIndex = 2;
+            this.FurnishingRemoveFurnishingButton.Text = "Remove Furnishing";
+            this.FurnishingRemoveFurnishingButton.UseVisualStyleBackColor = true;
+            // 
+            // FurnishingConfigGroupBox
+            // 
+            this.FurnishingConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingConfigGroupBox.Location = new System.Drawing.Point(9, 497);
+            this.FurnishingConfigGroupBox.Name = "FurnishingConfigGroupBox";
+            this.FurnishingConfigGroupBox.Size = new System.Drawing.Size(938, 96);
+            this.FurnishingConfigGroupBox.TabIndex = 0;
+            this.FurnishingConfigGroupBox.TabStop = false;
+            // 
+            // FurnishingIDTextBox
+            // 
+            this.FurnishingIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingIDTextBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.FurnishingIDTextBox.Location = new System.Drawing.Point(812, 16);
+            this.FurnishingIDTextBox.Name = "FurnishingIDTextBox";
+            this.FurnishingIDTextBox.Size = new System.Drawing.Size(131, 20);
+            this.FurnishingIDTextBox.TabIndex = 3;
+            this.FurnishingIDTextBox.Text = "-2020202020";
+            // 
+            // FurnishingAddNewFurnishingButton
+            // 
+            this.FurnishingAddNewFurnishingButton.Location = new System.Drawing.Point(159, 468);
+            this.FurnishingAddNewFurnishingButton.Name = "FurnishingAddNewFurnishingButton";
+            this.FurnishingAddNewFurnishingButton.Size = new System.Drawing.Size(129, 23);
+            this.FurnishingAddNewFurnishingButton.TabIndex = 2;
+            this.FurnishingAddNewFurnishingButton.Text = "Add New Furnishing";
+            this.FurnishingAddNewFurnishingButton.UseVisualStyleBackColor = true;
+            // 
+            // FurnishingListBox
+            // 
+            this.FurnishingListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.FurnishingListBox.FormattingEnabled = true;
+            this.FurnishingListBox.Location = new System.Drawing.Point(9, 16);
+            this.FurnishingListBox.Name = "FurnishingListBox";
+            this.FurnishingListBox.Size = new System.Drawing.Size(279, 446);
+            this.FurnishingListBox.TabIndex = 1;
+            // 
+            // FurnishingIDLabel
+            // 
+            this.FurnishingIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingIDLabel.AutoSize = true;
+            this.FurnishingIDLabel.Location = new System.Drawing.Point(742, 19);
+            this.FurnishingIDLabel.Name = "FurnishingIDLabel";
+            this.FurnishingIDLabel.Size = new System.Drawing.Size(70, 13);
+            this.FurnishingIDLabel.TabIndex = 4;
+            this.FurnishingIDLabel.Text = "Furnishing ID";
+            // 
+            // FurnishingEditImageButton
+            // 
+            this.FurnishingEditImageButton.Location = new System.Drawing.Point(815, 468);
+            this.FurnishingEditImageButton.Name = "FurnishingEditImageButton";
+            this.FurnishingEditImageButton.Size = new System.Drawing.Size(128, 23);
+            this.FurnishingEditImageButton.TabIndex = 7;
+            this.FurnishingEditImageButton.Text = "Edit Image";
+            this.FurnishingEditImageButton.UseVisualStyleBackColor = true;
+            // 
+            // FurnishingPictureBox
+            // 
+            this.FurnishingPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.FurnishingPictureBox.Location = new System.Drawing.Point(761, 280);
+            this.FurnishingPictureBox.Name = "FurnishingPictureBox";
+            this.FurnishingPictureBox.Size = new System.Drawing.Size(182, 182);
+            this.FurnishingPictureBox.TabIndex = 6;
+            this.FurnishingPictureBox.TabStop = false;
+            // 
             // CollectiblesTabPage
             // 
+            this.CollectiblesTabPage.Controls.Add(this.CollectibleTableLayoutPanel);
+            this.CollectiblesTabPage.Controls.Add(this.CollectibleRemoveCollectibleButton);
+            this.CollectiblesTabPage.Controls.Add(this.CollectibleConfigGroupBox);
+            this.CollectiblesTabPage.Controls.Add(this.CollectibleIDTextBox);
+            this.CollectiblesTabPage.Controls.Add(this.CollectibleAddNewCollectibleButton);
+            this.CollectiblesTabPage.Controls.Add(this.CollectibleListBox);
+            this.CollectiblesTabPage.Controls.Add(this.CollectibleIDLabel);
+            this.CollectiblesTabPage.Controls.Add(this.CollectibleEditImageButton);
+            this.CollectiblesTabPage.Controls.Add(this.CollectiblePictureBox);
             this.CollectiblesTabPage.Location = new System.Drawing.Point(4, 22);
             this.CollectiblesTabPage.Name = "CollectiblesTabPage";
             this.CollectiblesTabPage.Size = new System.Drawing.Size(953, 599);
             this.CollectiblesTabPage.TabIndex = 11;
             this.CollectiblesTabPage.Text = "Collectibles";
+            // 
+            // CollectibleTableLayoutPanel
+            // 
+            this.CollectibleTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.CollectibleTableLayoutPanel.ColumnCount = 3;
+            this.CollectibleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.CollectibleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.CollectibleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleNameLabel, 0, 0);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleDescriptionLabel, 0, 1);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleCommentLabel, 0, 2);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleEquivalentItemLabel, 0, 3);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleNameTextBox, 1, 0);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleDescriptionTextBox, 1, 1);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleCommentTextBox, 1, 2);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleEquivalentItemComboBox, 1, 3);
+            this.CollectibleTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
+            this.CollectibleTableLayoutPanel.Name = "CollectibleTableLayoutPanel";
+            this.CollectibleTableLayoutPanel.RowCount = 11;
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.CollectibleTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
+            this.CollectibleTableLayoutPanel.TabIndex = 5;
+            // 
+            // CollectibleNameLabel
+            // 
+            this.CollectibleNameLabel.AutoSize = true;
+            this.CollectibleNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.CollectibleNameLabel.Name = "CollectibleNameLabel";
+            this.CollectibleNameLabel.Size = new System.Drawing.Size(34, 13);
+            this.CollectibleNameLabel.TabIndex = 0;
+            this.CollectibleNameLabel.Text = "Name";
+            // 
+            // CollectibleDescriptionLabel
+            // 
+            this.CollectibleDescriptionLabel.AutoSize = true;
+            this.CollectibleDescriptionLabel.Location = new System.Drawing.Point(3, 25);
+            this.CollectibleDescriptionLabel.Name = "CollectibleDescriptionLabel";
+            this.CollectibleDescriptionLabel.Size = new System.Drawing.Size(60, 13);
+            this.CollectibleDescriptionLabel.TabIndex = 3;
+            this.CollectibleDescriptionLabel.Text = "Description";
+            // 
+            // CollectibleCommentLabel
+            // 
+            this.CollectibleCommentLabel.AutoSize = true;
+            this.CollectibleCommentLabel.Location = new System.Drawing.Point(3, 80);
+            this.CollectibleCommentLabel.Name = "CollectibleCommentLabel";
+            this.CollectibleCommentLabel.Size = new System.Drawing.Size(52, 13);
+            this.CollectibleCommentLabel.TabIndex = 6;
+            this.CollectibleCommentLabel.Text = "Comment";
+            // 
+            // CollectibleEquivalentItemLabel
+            // 
+            this.CollectibleEquivalentItemLabel.AutoSize = true;
+            this.CollectibleEquivalentItemLabel.Location = new System.Drawing.Point(3, 135);
+            this.CollectibleEquivalentItemLabel.Name = "CollectibleEquivalentItemLabel";
+            this.CollectibleEquivalentItemLabel.Size = new System.Drawing.Size(82, 13);
+            this.CollectibleEquivalentItemLabel.TabIndex = 9;
+            this.CollectibleEquivalentItemLabel.Text = "Equivalent Item";
+            // 
+            // CollectibleNameTextBox
+            // 
+            this.CollectibleNameTextBox.Location = new System.Drawing.Point(131, 3);
+            this.CollectibleNameTextBox.Name = "CollectibleNameTextBox";
+            this.CollectibleNameTextBox.Size = new System.Drawing.Size(144, 20);
+            this.CollectibleNameTextBox.TabIndex = 23;
+            // 
+            // CollectibleDescriptionTextBox
+            // 
+            this.CollectibleDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleTableLayoutPanel.SetColumnSpan(this.CollectibleDescriptionTextBox, 2);
+            this.CollectibleDescriptionTextBox.Location = new System.Drawing.Point(131, 28);
+            this.CollectibleDescriptionTextBox.Multiline = true;
+            this.CollectibleDescriptionTextBox.Name = "CollectibleDescriptionTextBox";
+            this.CollectibleDescriptionTextBox.Size = new System.Drawing.Size(295, 49);
+            this.CollectibleDescriptionTextBox.TabIndex = 24;
+            // 
+            // CollectibleCommentTextBox
+            // 
+            this.CollectibleCommentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleTableLayoutPanel.SetColumnSpan(this.CollectibleCommentTextBox, 2);
+            this.CollectibleCommentTextBox.Location = new System.Drawing.Point(131, 83);
+            this.CollectibleCommentTextBox.Multiline = true;
+            this.CollectibleCommentTextBox.Name = "CollectibleCommentTextBox";
+            this.CollectibleCommentTextBox.Size = new System.Drawing.Size(295, 49);
+            this.CollectibleCommentTextBox.TabIndex = 25;
+            // 
+            // CollectibleEquivalentItemComboBox
+            // 
+            this.CollectibleEquivalentItemComboBox.FormattingEnabled = true;
+            this.CollectibleEquivalentItemComboBox.Location = new System.Drawing.Point(131, 138);
+            this.CollectibleEquivalentItemComboBox.Name = "CollectibleEquivalentItemComboBox";
+            this.CollectibleEquivalentItemComboBox.Size = new System.Drawing.Size(144, 21);
+            this.CollectibleEquivalentItemComboBox.TabIndex = 29;
+            // 
+            // CollectibleRemoveCollectibleButton
+            // 
+            this.CollectibleRemoveCollectibleButton.Location = new System.Drawing.Point(24, 468);
+            this.CollectibleRemoveCollectibleButton.Name = "CollectibleRemoveCollectibleButton";
+            this.CollectibleRemoveCollectibleButton.Size = new System.Drawing.Size(129, 23);
+            this.CollectibleRemoveCollectibleButton.TabIndex = 2;
+            this.CollectibleRemoveCollectibleButton.Text = "Remove Collectible";
+            this.CollectibleRemoveCollectibleButton.UseVisualStyleBackColor = true;
+            // 
+            // CollectibleConfigGroupBox
+            // 
+            this.CollectibleConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleConfigGroupBox.Location = new System.Drawing.Point(9, 497);
+            this.CollectibleConfigGroupBox.Name = "CollectibleConfigGroupBox";
+            this.CollectibleConfigGroupBox.Size = new System.Drawing.Size(938, 96);
+            this.CollectibleConfigGroupBox.TabIndex = 0;
+            this.CollectibleConfigGroupBox.TabStop = false;
+            // 
+            // CollectibleIDTextBox
+            // 
+            this.CollectibleIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleIDTextBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.CollectibleIDTextBox.Location = new System.Drawing.Point(812, 16);
+            this.CollectibleIDTextBox.Name = "CollectibleIDTextBox";
+            this.CollectibleIDTextBox.Size = new System.Drawing.Size(131, 20);
+            this.CollectibleIDTextBox.TabIndex = 3;
+            this.CollectibleIDTextBox.Text = "-2020202020";
+            // 
+            // CollectibleAddNewCollectibleButton
+            // 
+            this.CollectibleAddNewCollectibleButton.Location = new System.Drawing.Point(159, 468);
+            this.CollectibleAddNewCollectibleButton.Name = "CollectibleAddNewCollectibleButton";
+            this.CollectibleAddNewCollectibleButton.Size = new System.Drawing.Size(129, 23);
+            this.CollectibleAddNewCollectibleButton.TabIndex = 2;
+            this.CollectibleAddNewCollectibleButton.Text = "Add New Collectible";
+            this.CollectibleAddNewCollectibleButton.UseVisualStyleBackColor = true;
+            // 
+            // CollectibleListBox
+            // 
+            this.CollectibleListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.CollectibleListBox.FormattingEnabled = true;
+            this.CollectibleListBox.Location = new System.Drawing.Point(9, 16);
+            this.CollectibleListBox.Name = "CollectibleListBox";
+            this.CollectibleListBox.Size = new System.Drawing.Size(279, 446);
+            this.CollectibleListBox.TabIndex = 1;
+            // 
+            // CollectibleIDLabel
+            // 
+            this.CollectibleIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleIDLabel.AutoSize = true;
+            this.CollectibleIDLabel.Location = new System.Drawing.Point(742, 19);
+            this.CollectibleIDLabel.Name = "CollectibleIDLabel";
+            this.CollectibleIDLabel.Size = new System.Drawing.Size(69, 13);
+            this.CollectibleIDLabel.TabIndex = 4;
+            this.CollectibleIDLabel.Text = "Collectible ID";
+            // 
+            // CollectibleEditImageButton
+            // 
+            this.CollectibleEditImageButton.Location = new System.Drawing.Point(815, 468);
+            this.CollectibleEditImageButton.Name = "CollectibleEditImageButton";
+            this.CollectibleEditImageButton.Size = new System.Drawing.Size(128, 23);
+            this.CollectibleEditImageButton.TabIndex = 7;
+            this.CollectibleEditImageButton.Text = "Edit Image";
+            this.CollectibleEditImageButton.UseVisualStyleBackColor = true;
+            // 
+            // CollectiblePictureBox
+            // 
+            this.CollectiblePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectiblePictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.CollectiblePictureBox.Location = new System.Drawing.Point(761, 280);
+            this.CollectiblePictureBox.Name = "CollectiblePictureBox";
+            this.CollectiblePictureBox.Size = new System.Drawing.Size(182, 182);
+            this.CollectiblePictureBox.TabIndex = 6;
+            this.CollectiblePictureBox.TabStop = false;
             // 
             // RoomRecipesTabPage
             // 
@@ -3922,6 +4350,16 @@ namespace Scribe
             this.BlockTableLayoutPanel.ResumeLayout(false);
             this.BlockTableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BlockPictureBox)).EndInit();
+            this.FurnishingsTabPage.ResumeLayout(false);
+            this.FurnishingsTabPage.PerformLayout();
+            this.FurnishingTableLayoutPanel.ResumeLayout(false);
+            this.FurnishingTableLayoutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FurnishingPictureBox)).EndInit();
+            this.CollectiblesTabPage.ResumeLayout(false);
+            this.CollectiblesTabPage.PerformLayout();
+            this.CollectibleTableLayoutPanel.ResumeLayout(false);
+            this.CollectibleTableLayoutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CollectiblePictureBox)).EndInit();
             this.RoomRecipesTabPage.ResumeLayout(false);
             this.RoomRecipesTabPage.PerformLayout();
             this.RoomConfigGroupBox.ResumeLayout(false);
@@ -4224,8 +4662,42 @@ namespace Scribe
         private System.Windows.Forms.GroupBox BlockConfigGroupBox;
 
         private System.Windows.Forms.TabPage FurnishingsTabPage;
+        private System.Windows.Forms.TableLayoutPanel FurnishingTableLayoutPanel;
+        private System.Windows.Forms.Label FurnishingNameLabel;
+        private System.Windows.Forms.Label FurnishingDescriptionLabel;
+        private System.Windows.Forms.Label FurnishingCommentLabel;
+        private System.Windows.Forms.Label FurnishingEquivalentItemLabel;
+        private System.Windows.Forms.TextBox FurnishingNameTextBox;
+        private System.Windows.Forms.TextBox FurnishingDescriptionTextBox;
+        private System.Windows.Forms.TextBox FurnishingCommentTextBox;
+        private System.Windows.Forms.ComboBox FurnishingEquivalentItemComboBox;
+        private System.Windows.Forms.Button FurnishingRemoveFurnishingButton;
+        private System.Windows.Forms.GroupBox FurnishingConfigGroupBox;
+        private System.Windows.Forms.TextBox FurnishingIDTextBox;
+        private System.Windows.Forms.Button FurnishingAddNewFurnishingButton;
+        private System.Windows.Forms.ListBox FurnishingListBox;
+        private System.Windows.Forms.Label FurnishingIDLabel;
+        private System.Windows.Forms.Button FurnishingEditImageButton;
+        private System.Windows.Forms.PictureBox FurnishingPictureBox;
 
         private System.Windows.Forms.TabPage CollectiblesTabPage;
+        private System.Windows.Forms.TableLayoutPanel CollectibleTableLayoutPanel;
+        private System.Windows.Forms.Label CollectibleNameLabel;
+        private System.Windows.Forms.Label CollectibleDescriptionLabel;
+        private System.Windows.Forms.Label CollectibleCommentLabel;
+        private System.Windows.Forms.Label CollectibleEquivalentItemLabel;
+        private System.Windows.Forms.TextBox CollectibleNameTextBox;
+        private System.Windows.Forms.TextBox CollectibleDescriptionTextBox;
+        private System.Windows.Forms.TextBox CollectibleCommentTextBox;
+        private System.Windows.Forms.ComboBox CollectibleEquivalentItemComboBox;
+        private System.Windows.Forms.Button CollectibleRemoveCollectibleButton;
+        private System.Windows.Forms.GroupBox CollectibleConfigGroupBox;
+        private System.Windows.Forms.TextBox CollectibleIDTextBox;
+        private System.Windows.Forms.Button CollectibleAddNewCollectibleButton;
+        private System.Windows.Forms.ListBox CollectibleListBox;
+        private System.Windows.Forms.Label CollectibleIDLabel;
+        private System.Windows.Forms.Button CollectibleEditImageButton;
+        private System.Windows.Forms.PictureBox CollectiblePictureBox;
 
         private System.Windows.Forms.TabPage RoomRecipesTabPage;
         private System.Windows.Forms.ListBox RoomListBox;
