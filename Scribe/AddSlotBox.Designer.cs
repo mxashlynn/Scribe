@@ -1,4 +1,4 @@
-﻿namespace Scribe
+namespace Scribe
 {
     partial class AddSlotBox
     {
@@ -27,58 +27,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.SlotTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.CancelButtonControl = new System.Windows.Forms.Button();
+            this.OkayButton = new System.Windows.Forms.Button();
             this.ItemLabel = new System.Windows.Forms.Label();
             this.AmountTextBox = new System.Windows.Forms.TextBox();
             this.AmountLabel = new System.Windows.Forms.Label();
             this.ItemListBox = new System.Windows.Forms.ListBox();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.SlotTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // SlotTableLayoutPanel
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.SlotTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.button2, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.ItemLabel, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.AmountTextBox, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.AmountLabel, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.ItemListBox, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(13, 13);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(258, 115);
-            this.tableLayoutPanel1.TabIndex = 2;
+            this.SlotTableLayoutPanel.ColumnCount = 2;
+            this.SlotTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.SlotTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.SlotTableLayoutPanel.Controls.Add(this.CancelButtonControl, 0, 2);
+            this.SlotTableLayoutPanel.Controls.Add(this.OkayButton, 0, 2);
+            this.SlotTableLayoutPanel.Controls.Add(this.ItemLabel, 0, 0);
+            this.SlotTableLayoutPanel.Controls.Add(this.AmountTextBox, 1, 1);
+            this.SlotTableLayoutPanel.Controls.Add(this.AmountLabel, 0, 1);
+            this.SlotTableLayoutPanel.Controls.Add(this.ItemListBox, 1, 0);
+            this.SlotTableLayoutPanel.Location = new System.Drawing.Point(13, 13);
+            this.SlotTableLayoutPanel.Name = "SlotTableLayoutPanel";
+            this.SlotTableLayoutPanel.RowCount = 3;
+            this.SlotTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.SlotTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.SlotTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.SlotTableLayoutPanel.Size = new System.Drawing.Size(258, 115);
+            this.SlotTableLayoutPanel.TabIndex = 2;
             // 
-            // button1
+            // CancelButtonControl
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(3, 89);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(74, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = true;
+            this.CancelButtonControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CancelButtonControl.Location = new System.Drawing.Point(3, 89);
+            this.CancelButtonControl.Name = "CancelButtonControl";
+            this.CancelButtonControl.Size = new System.Drawing.Size(74, 23);
+            this.CancelButtonControl.TabIndex = 14;
+            this.CancelButtonControl.Text = "Cancel";
+            this.CancelButtonControl.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // OkayButton
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(180, 89);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "&OK";
-            this.button2.UseVisualStyleBackColor = true;
+            this.OkayButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.OkayButton.Location = new System.Drawing.Point(180, 89);
+            this.OkayButton.Name = "OkayButton";
+            this.OkayButton.Size = new System.Drawing.Size(75, 23);
+            this.OkayButton.TabIndex = 9;
+            this.OkayButton.Text = "&OK";
+            this.OkayButton.UseVisualStyleBackColor = true;
             // 
             // ItemLabel
             // 
@@ -122,32 +122,34 @@
             // 
             // AddSlotBox
             // 
+            this.AcceptButton = this.OkayButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.CancelButtonControl;
             this.ClientSize = new System.Drawing.Size(284, 141);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.SlotTableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(300, 180);
             this.Name = "AddSlotBox";
-            this.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddSlotBox";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.SlotTableLayoutPanel.ResumeLayout(false);
+            this.SlotTableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TableLayoutPanel SlotTableLayoutPanel;
+        private System.Windows.Forms.Button CancelButtonControl;
+        private System.Windows.Forms.Button OkayButton;
         private System.Windows.Forms.Label ItemLabel;
         private System.Windows.Forms.TextBox AmountTextBox;
         private System.Windows.Forms.Label AmountLabel;
