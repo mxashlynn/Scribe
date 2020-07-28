@@ -143,7 +143,8 @@ namespace Scribe
             this.LibraryVersionExample = new System.Windows.Forms.Label();
             this.LibraryWorkingDirectoryLabel = new System.Windows.Forms.Label();
             this.LibraryWorkingDirectoryExample = new System.Windows.Forms.Label();
-            this.BeingsTabPage = new System.Windows.Forms.TabPage();
+            this.CrittersTabPage = new System.Windows.Forms.TabPage();
+            this.CharactersTabPage = new System.Windows.Forms.TabPage();
             this.BiomesTabPage = new System.Windows.Forms.TabPage();
             this.BiomeRemoveBiomeButton = new System.Windows.Forms.Button();
             this.BiomeAddEntryRequirementButton = new System.Windows.Forms.Button();
@@ -1131,7 +1132,8 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.EditorTabs.Controls.Add(this.GamesTabPage);
-            this.EditorTabs.Controls.Add(this.BeingsTabPage);
+            this.EditorTabs.Controls.Add(this.CrittersTabPage);
+            this.EditorTabs.Controls.Add(this.CharactersTabPage);
             this.EditorTabs.Controls.Add(this.BiomesTabPage);
             this.EditorTabs.Controls.Add(this.CraftingRecipesTabPage);
             this.EditorTabs.Controls.Add(this.ItemsTabPage);
@@ -1704,14 +1706,22 @@ namespace Scribe
             this.LibraryWorkingDirectoryExample.TabIndex = 1;
             this.LibraryWorkingDirectoryExample.Text = "C:\\";
             // 
-            // BeingsTabPage
+            // CrittersTabPage
             // 
-            this.BeingsTabPage.Location = new System.Drawing.Point(4, 22);
-            this.BeingsTabPage.Name = "BeingsTabPage";
-            this.BeingsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.BeingsTabPage.Size = new System.Drawing.Size(953, 599);
-            this.BeingsTabPage.TabIndex = 1;
-            this.BeingsTabPage.Text = "Beings";
+            this.CrittersTabPage.Location = new System.Drawing.Point(4, 22);
+            this.CrittersTabPage.Name = "CrittersTabPage";
+            this.CrittersTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.CrittersTabPage.Size = new System.Drawing.Size(953, 599);
+            this.CrittersTabPage.TabIndex = 1;
+            this.CrittersTabPage.Text = "Critters";
+            // 
+            // CharactersTabPage
+            // 
+            this.CharactersTabPage.Location = new System.Drawing.Point(4, 22);
+            this.CharactersTabPage.Name = "CharactersTabPage";
+            this.CharactersTabPage.Size = new System.Drawing.Size(953, 599);
+            this.CharactersTabPage.TabIndex = 12;
+            this.CharactersTabPage.Text = "Characters";
             // 
             // BiomesTabPage
             // 
@@ -4768,7 +4778,9 @@ namespace Scribe
         private System.Windows.Forms.Button GameIconEditButton;
         private System.Windows.Forms.PictureBox GameIconPictureBox;
 
-        private System.Windows.Forms.TabPage BeingsTabPage;
+        private System.Windows.Forms.TabPage CrittersTabPage;
+
+        private System.Windows.Forms.TabPage CharactersTabPage;
 
         private System.Windows.Forms.TabPage BiomesTabPage;
         private System.Windows.Forms.ListBox BiomeListBox;
