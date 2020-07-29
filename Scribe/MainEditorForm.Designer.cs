@@ -169,6 +169,22 @@ namespace Scribe
             this.CritterRemoveCritterButton = new System.Windows.Forms.Button();
             this.CharactersTabPage = new System.Windows.Forms.TabPage();
             this.CharacterPronounGroupBox = new System.Windows.Forms.GroupBox();
+            this.CharacterPronounTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.CharacterPronounAddNewPronoungGroupButton = new System.Windows.Forms.Button();
+            this.CharacterPronounRemovePronoungGroupButton = new System.Windows.Forms.Button();
+            this.CharacterPronounReflexiveTextBox = new System.Windows.Forms.TextBox();
+            this.CharacterPronounPossessiveTextBox = new System.Windows.Forms.TextBox();
+            this.CharacterPronounDeterminerTextBox = new System.Windows.Forms.TextBox();
+            this.CharacterPronounObjectiveTextBox = new System.Windows.Forms.TextBox();
+            this.CharacterPronounSubjectiveTextBox = new System.Windows.Forms.TextBox();
+            this.CharacterPronounListBox = new System.Windows.Forms.ListBox();
+            this.CharacterPronounSubjectiveLabel = new System.Windows.Forms.Label();
+            this.CharacterPronounObjectiveLabel = new System.Windows.Forms.Label();
+            this.CharacterPronounDeterminerLabel = new System.Windows.Forms.Label();
+            this.CharacterPronounPossessiveLabel = new System.Windows.Forms.Label();
+            this.CharacterPronounReflexiveLabel = new System.Windows.Forms.Label();
+            this.CharacterPronounKeyLabel = new System.Windows.Forms.Label();
+            this.CharacterPronounKeyExample = new System.Windows.Forms.Label();
             this.CharacterTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.CharacterAddQuestButton = new System.Windows.Forms.Button();
             this.CharacterRemoveQuestButton = new System.Windows.Forms.Button();
@@ -482,6 +498,8 @@ namespace Scribe
             this.CritterTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CritterPictureBox)).BeginInit();
             this.CharactersTabPage.SuspendLayout();
+            this.CharacterPronounGroupBox.SuspendLayout();
+            this.CharacterPronounTableLayoutPanel.SuspendLayout();
             this.CharacterTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CharacterPictureBox)).BeginInit();
             this.BiomesTabPage.SuspendLayout();
@@ -2053,11 +2071,180 @@ namespace Scribe
             // 
             this.CharacterPronounGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.CharacterPronounGroupBox.Controls.Add(this.CharacterPronounTableLayoutPanel);
             this.CharacterPronounGroupBox.Location = new System.Drawing.Point(6, 497);
             this.CharacterPronounGroupBox.Name = "CharacterPronounGroupBox";
             this.CharacterPronounGroupBox.Size = new System.Drawing.Size(938, 96);
             this.CharacterPronounGroupBox.TabIndex = 0;
             this.CharacterPronounGroupBox.TabStop = false;
+            this.CharacterPronounGroupBox.Text = "Pronouns";
+            // 
+            // CharacterPronounTableLayoutPanel
+            // 
+            this.CharacterPronounTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CharacterPronounTableLayoutPanel.ColumnCount = 6;
+            this.CharacterPronounTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.CharacterPronounTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.CharacterPronounTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.CharacterPronounTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.CharacterPronounTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.CharacterPronounTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.CharacterPronounTableLayoutPanel.Controls.Add(this.CharacterPronounAddNewPronoungGroupButton, 2, 2);
+            this.CharacterPronounTableLayoutPanel.Controls.Add(this.CharacterPronounRemovePronoungGroupButton, 1, 2);
+            this.CharacterPronounTableLayoutPanel.Controls.Add(this.CharacterPronounReflexiveTextBox, 5, 1);
+            this.CharacterPronounTableLayoutPanel.Controls.Add(this.CharacterPronounPossessiveTextBox, 4, 1);
+            this.CharacterPronounTableLayoutPanel.Controls.Add(this.CharacterPronounDeterminerTextBox, 3, 1);
+            this.CharacterPronounTableLayoutPanel.Controls.Add(this.CharacterPronounObjectiveTextBox, 2, 1);
+            this.CharacterPronounTableLayoutPanel.Controls.Add(this.CharacterPronounSubjectiveTextBox, 1, 1);
+            this.CharacterPronounTableLayoutPanel.Controls.Add(this.CharacterPronounListBox, 0, 0);
+            this.CharacterPronounTableLayoutPanel.Controls.Add(this.CharacterPronounSubjectiveLabel, 1, 0);
+            this.CharacterPronounTableLayoutPanel.Controls.Add(this.CharacterPronounObjectiveLabel, 2, 0);
+            this.CharacterPronounTableLayoutPanel.Controls.Add(this.CharacterPronounDeterminerLabel, 3, 0);
+            this.CharacterPronounTableLayoutPanel.Controls.Add(this.CharacterPronounPossessiveLabel, 4, 0);
+            this.CharacterPronounTableLayoutPanel.Controls.Add(this.CharacterPronounReflexiveLabel, 5, 0);
+            this.CharacterPronounTableLayoutPanel.Controls.Add(this.CharacterPronounKeyLabel, 4, 2);
+            this.CharacterPronounTableLayoutPanel.Controls.Add(this.CharacterPronounKeyExample, 5, 2);
+            this.CharacterPronounTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
+            this.CharacterPronounTableLayoutPanel.Name = "CharacterPronounTableLayoutPanel";
+            this.CharacterPronounTableLayoutPanel.RowCount = 3;
+            this.CharacterPronounTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.CharacterPronounTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.CharacterPronounTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.CharacterPronounTableLayoutPanel.Size = new System.Drawing.Size(926, 71);
+            this.CharacterPronounTableLayoutPanel.TabIndex = 0;
+            // 
+            // CharacterPronounAddNewPronoungGroupButton
+            // 
+            this.CharacterPronounAddNewPronoungGroupButton.Location = new System.Drawing.Point(409, 44);
+            this.CharacterPronounAddNewPronoungGroupButton.Name = "CharacterPronounAddNewPronoungGroupButton";
+            this.CharacterPronounAddNewPronoungGroupButton.Size = new System.Drawing.Size(124, 23);
+            this.CharacterPronounAddNewPronoungGroupButton.TabIndex = 2;
+            this.CharacterPronounAddNewPronoungGroupButton.Text = "Add New Group";
+            this.CharacterPronounAddNewPronoungGroupButton.UseVisualStyleBackColor = true;
+            // 
+            // CharacterPronounRemovePronoungGroupButton
+            // 
+            this.CharacterPronounRemovePronoungGroupButton.Location = new System.Drawing.Point(279, 44);
+            this.CharacterPronounRemovePronoungGroupButton.Name = "CharacterPronounRemovePronoungGroupButton";
+            this.CharacterPronounRemovePronoungGroupButton.Size = new System.Drawing.Size(124, 23);
+            this.CharacterPronounRemovePronoungGroupButton.TabIndex = 2;
+            this.CharacterPronounRemovePronoungGroupButton.Text = "Remove Group";
+            this.CharacterPronounRemovePronoungGroupButton.UseVisualStyleBackColor = true;
+            // 
+            // CharacterPronounReflexiveTextBox
+            // 
+            this.CharacterPronounReflexiveTextBox.Location = new System.Drawing.Point(799, 19);
+            this.CharacterPronounReflexiveTextBox.Name = "CharacterPronounReflexiveTextBox";
+            this.CharacterPronounReflexiveTextBox.Size = new System.Drawing.Size(124, 20);
+            this.CharacterPronounReflexiveTextBox.TabIndex = 23;
+            // 
+            // CharacterPronounPossessiveTextBox
+            // 
+            this.CharacterPronounPossessiveTextBox.Location = new System.Drawing.Point(669, 19);
+            this.CharacterPronounPossessiveTextBox.Name = "CharacterPronounPossessiveTextBox";
+            this.CharacterPronounPossessiveTextBox.Size = new System.Drawing.Size(124, 20);
+            this.CharacterPronounPossessiveTextBox.TabIndex = 23;
+            // 
+            // CharacterPronounDeterminerTextBox
+            // 
+            this.CharacterPronounDeterminerTextBox.Location = new System.Drawing.Point(539, 19);
+            this.CharacterPronounDeterminerTextBox.Name = "CharacterPronounDeterminerTextBox";
+            this.CharacterPronounDeterminerTextBox.Size = new System.Drawing.Size(124, 20);
+            this.CharacterPronounDeterminerTextBox.TabIndex = 23;
+            // 
+            // CharacterPronounObjectiveTextBox
+            // 
+            this.CharacterPronounObjectiveTextBox.Location = new System.Drawing.Point(409, 19);
+            this.CharacterPronounObjectiveTextBox.Name = "CharacterPronounObjectiveTextBox";
+            this.CharacterPronounObjectiveTextBox.Size = new System.Drawing.Size(124, 20);
+            this.CharacterPronounObjectiveTextBox.TabIndex = 23;
+            // 
+            // CharacterPronounSubjectiveTextBox
+            // 
+            this.CharacterPronounSubjectiveTextBox.Location = new System.Drawing.Point(279, 19);
+            this.CharacterPronounSubjectiveTextBox.Name = "CharacterPronounSubjectiveTextBox";
+            this.CharacterPronounSubjectiveTextBox.Size = new System.Drawing.Size(124, 20);
+            this.CharacterPronounSubjectiveTextBox.TabIndex = 23;
+            // 
+            // CharacterPronounListBox
+            // 
+            this.CharacterPronounListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CharacterPronounListBox.FormattingEnabled = true;
+            this.CharacterPronounListBox.Location = new System.Drawing.Point(0, 0);
+            this.CharacterPronounListBox.Margin = new System.Windows.Forms.Padding(0);
+            this.CharacterPronounListBox.Name = "CharacterPronounListBox";
+            this.CharacterPronounTableLayoutPanel.SetRowSpan(this.CharacterPronounListBox, 3);
+            this.CharacterPronounListBox.Size = new System.Drawing.Size(276, 69);
+            this.CharacterPronounListBox.TabIndex = 0;
+            // 
+            // CharacterPronounSubjectiveLabel
+            // 
+            this.CharacterPronounSubjectiveLabel.AutoSize = true;
+            this.CharacterPronounSubjectiveLabel.Location = new System.Drawing.Point(279, 0);
+            this.CharacterPronounSubjectiveLabel.Name = "CharacterPronounSubjectiveLabel";
+            this.CharacterPronounSubjectiveLabel.Size = new System.Drawing.Size(57, 13);
+            this.CharacterPronounSubjectiveLabel.TabIndex = 1;
+            this.CharacterPronounSubjectiveLabel.Text = "Subjective";
+            // 
+            // CharacterPronounObjectiveLabel
+            // 
+            this.CharacterPronounObjectiveLabel.AutoSize = true;
+            this.CharacterPronounObjectiveLabel.Location = new System.Drawing.Point(409, 0);
+            this.CharacterPronounObjectiveLabel.Name = "CharacterPronounObjectiveLabel";
+            this.CharacterPronounObjectiveLabel.Size = new System.Drawing.Size(53, 13);
+            this.CharacterPronounObjectiveLabel.TabIndex = 2;
+            this.CharacterPronounObjectiveLabel.Text = "Objective";
+            // 
+            // CharacterPronounDeterminerLabel
+            // 
+            this.CharacterPronounDeterminerLabel.AutoSize = true;
+            this.CharacterPronounDeterminerLabel.Location = new System.Drawing.Point(539, 0);
+            this.CharacterPronounDeterminerLabel.Name = "CharacterPronounDeterminerLabel";
+            this.CharacterPronounDeterminerLabel.Size = new System.Drawing.Size(60, 13);
+            this.CharacterPronounDeterminerLabel.TabIndex = 3;
+            this.CharacterPronounDeterminerLabel.Text = "Determiner";
+            // 
+            // CharacterPronounPossessiveLabel
+            // 
+            this.CharacterPronounPossessiveLabel.AutoSize = true;
+            this.CharacterPronounPossessiveLabel.Location = new System.Drawing.Point(669, 0);
+            this.CharacterPronounPossessiveLabel.Name = "CharacterPronounPossessiveLabel";
+            this.CharacterPronounPossessiveLabel.Size = new System.Drawing.Size(59, 13);
+            this.CharacterPronounPossessiveLabel.TabIndex = 4;
+            this.CharacterPronounPossessiveLabel.Text = "Possessive";
+            // 
+            // CharacterPronounReflexiveLabel
+            // 
+            this.CharacterPronounReflexiveLabel.AutoSize = true;
+            this.CharacterPronounReflexiveLabel.Location = new System.Drawing.Point(799, 0);
+            this.CharacterPronounReflexiveLabel.Name = "CharacterPronounReflexiveLabel";
+            this.CharacterPronounReflexiveLabel.Size = new System.Drawing.Size(52, 13);
+            this.CharacterPronounReflexiveLabel.TabIndex = 5;
+            this.CharacterPronounReflexiveLabel.Text = "Reflexive";
+            // 
+            // CharacterPronounKeyLabel
+            // 
+            this.CharacterPronounKeyLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CharacterPronounKeyLabel.AutoSize = true;
+            this.CharacterPronounKeyLabel.Location = new System.Drawing.Point(764, 58);
+            this.CharacterPronounKeyLabel.Name = "CharacterPronounKeyLabel";
+            this.CharacterPronounKeyLabel.Size = new System.Drawing.Size(29, 13);
+            this.CharacterPronounKeyLabel.TabIndex = 24;
+            this.CharacterPronounKeyLabel.Text = "Key:";
+            // 
+            // CharacterPronounKeyExample
+            // 
+            this.CharacterPronounKeyExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.CharacterPronounKeyExample.AutoSize = true;
+            this.CharacterPronounKeyExample.Location = new System.Drawing.Point(799, 58);
+            this.CharacterPronounKeyExample.Name = "CharacterPronounKeyExample";
+            this.CharacterPronounKeyExample.Size = new System.Drawing.Size(57, 13);
+            this.CharacterPronounKeyExample.TabIndex = 25;
+            this.CharacterPronounKeyExample.Text = "they/them";
             // 
             // CharacterTableLayoutPanel
             // 
@@ -5314,6 +5501,9 @@ namespace Scribe
             ((System.ComponentModel.ISupportInitialize)(this.CritterPictureBox)).EndInit();
             this.CharactersTabPage.ResumeLayout(false);
             this.CharactersTabPage.PerformLayout();
+            this.CharacterPronounGroupBox.ResumeLayout(false);
+            this.CharacterPronounTableLayoutPanel.ResumeLayout(false);
+            this.CharacterPronounTableLayoutPanel.PerformLayout();
             this.CharacterTableLayoutPanel.ResumeLayout(false);
             this.CharacterTableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CharacterPictureBox)).EndInit();
@@ -5555,6 +5745,22 @@ namespace Scribe
         private System.Windows.Forms.ListBox CharacterStartingQuestsListBox;
         private System.Windows.Forms.Button CharacterAddQuestButton;
         private System.Windows.Forms.Button CharacterRemoveQuestButton;
+        private System.Windows.Forms.TableLayoutPanel CharacterPronounTableLayoutPanel;
+        private System.Windows.Forms.ListBox CharacterPronounListBox;
+        private System.Windows.Forms.Label CharacterPronounSubjectiveLabel;
+        private System.Windows.Forms.Label CharacterPronounObjectiveLabel;
+        private System.Windows.Forms.Label CharacterPronounDeterminerLabel;
+        private System.Windows.Forms.Label CharacterPronounPossessiveLabel;
+        private System.Windows.Forms.Label CharacterPronounReflexiveLabel;
+        private System.Windows.Forms.TextBox CharacterPronounReflexiveTextBox;
+        private System.Windows.Forms.TextBox CharacterPronounDeterminerTextBox;
+        private System.Windows.Forms.TextBox CharacterPronounObjectiveTextBox;
+        private System.Windows.Forms.TextBox CharacterPronounSubjectiveTextBox;
+        private System.Windows.Forms.Button CharacterPronounAddNewPronoungGroupButton;
+        private System.Windows.Forms.Button CharacterPronounRemovePronoungGroupButton;
+        private System.Windows.Forms.TextBox CharacterPronounPossessiveTextBox;
+        private System.Windows.Forms.Label CharacterPronounKeyLabel;
+        private System.Windows.Forms.Label CharacterPronounKeyExample;
 
         private System.Windows.Forms.TabPage BiomesTabPage;
         private System.Windows.Forms.ListBox BiomeListBox;
