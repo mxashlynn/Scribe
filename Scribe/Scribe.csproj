@@ -61,6 +61,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="15.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="ParquetClassLibrary">
       <HintPath>..\ParquetClassLibrary\ParquetClassLibrary.dll</HintPath>
       <Private>true</Private>
