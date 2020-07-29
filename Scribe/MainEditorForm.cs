@@ -1,5 +1,6 @@
 using System;
 using System.Windows.Forms;
+using ParquetClassLibrary;
 
 namespace Scribe
 {
@@ -54,6 +55,43 @@ namespace Scribe
                 }
             });
             #endregion
+        }
+
+        /// <summary>
+        /// Sets up the main editor UI.
+        /// </summary>
+        /// <param name="EventData">Handled by parent.</param>
+        protected override void OnLoad(EventArgs EventData)
+        {
+            base.OnLoad(EventData);
+            UpdateLibraryDataDisplay();
+            UpdateFileFormatDisplay();
+        }
+        #endregion
+
+        #region Display Update Methods
+        /// <summary>
+        /// Sets the text used to describe the format of the saved data files the editor works with.
+        /// </summary>
+        private void UpdateFileFormatDisplay()
+        {
+            FileFormatPrimaryDelimiterExample.Text = Delimiters.PrimaryDelimiter;
+            FileFormatSecondaryDelimiterExample.Text = Delimiters.SecondaryDelimiter;
+            FileFormatInternalDelimiterExample.Text = Delimiters.InternalDelimiter;
+            FileFormatElementDelimiterExample.Text = Delimiters.ElementDelimiter;
+            FileFormatNameDelimiterExample.Text = Delimiters.NameDelimiter;
+            FileFormatPronounDelimiterExample.Text = Delimiters.PronounDelimiter;
+            FileFormatDimensionalDelimiterExample.Text = Delimiters.DimensionalDelimiter;
+            FileFormatDimensionalTerminatorExample.Text = Delimiters.DimensionalTerminator;
+        }
+
+        /// <summary>
+        /// Sets the text used to describe the library the editor supports.
+        /// </summary>
+        private void UpdateLibraryDataDisplay()
+        {
+            LibraryVersionExample.Text = ParquetClassLibrary.AssemblyInfo.LibraryVersion;
+            LibraryWorkingDirectoryExample.Text = All.WorkingDirectory;
         }
         #endregion
 

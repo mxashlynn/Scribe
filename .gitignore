@@ -91,19 +91,12 @@ Icons?
 *.unitypackage
 
 # =================== #
-# Single seat plugins #
+# Dependency Binaries #
 # =================== #
-/[Aa]ssets/AssetStoreTools*
-/[Aa]ssets/Add-Ons/TextMesh Pro/Documentation/
-/[Aa]ssets/UnityVS.meta
-/[Aa]ssets/UnityVS/Editor.meta
-/[Aa]ssets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll.meta
-/[Aa]ssets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Messaging.dll.meta
-/[Aa]ssets/UnityVS/Editor/UnityVS.VersionSpecific.dll.meta
-/[Aa]ssets/ConsolePro/**
-/[Aa]ssets/ConsolePro.meta
+ParquetClassLibrary/
 
 # ================== #
 # Random Paige Stuff #
 # ================== #
 *.old
+
