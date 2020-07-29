@@ -1563,7 +1563,7 @@ namespace Scribe
             this.FileFormatPrimaryDelimiterExample.Name = "FileFormatPrimaryDelimiterExample";
             this.FileFormatPrimaryDelimiterExample.Size = new System.Drawing.Size(11, 13);
             this.FileFormatPrimaryDelimiterExample.TabIndex = 1;
-            this.FileFormatPrimaryDelimiterExample.Text = ",";
+            this.FileFormatPrimaryDelimiterExample.Text = ";";
             // 
             // FileFormatSecondaryDelimiterLabel
             // 
@@ -1583,7 +1583,7 @@ namespace Scribe
             this.FileFormatSecondaryDelimiterExample.Name = "FileFormatSecondaryDelimiterExample";
             this.FileFormatSecondaryDelimiterExample.Size = new System.Drawing.Size(18, 13);
             this.FileFormatSecondaryDelimiterExample.TabIndex = 3;
-            this.FileFormatSecondaryDelimiterExample.Text = "∟";
+            this.FileFormatSecondaryDelimiterExample.Text = ";";
             // 
             // FileFormatInternalDelimiterLabel
             // 
@@ -1603,7 +1603,7 @@ namespace Scribe
             this.FileFormatInternalDelimiterExample.Name = "FileFormatInternalDelimiterExample";
             this.FileFormatInternalDelimiterExample.Size = new System.Drawing.Size(11, 13);
             this.FileFormatInternalDelimiterExample.TabIndex = 5;
-            this.FileFormatInternalDelimiterExample.Text = "·";
+            this.FileFormatInternalDelimiterExample.Text = ";";
             // 
             // FileFormatElementDelimiterLabel
             // 
@@ -1623,7 +1623,7 @@ namespace Scribe
             this.FileFormatElementDelimiterExample.Name = "FileFormatElementDelimiterExample";
             this.FileFormatElementDelimiterExample.Size = new System.Drawing.Size(13, 13);
             this.FileFormatElementDelimiterExample.TabIndex = 7;
-            this.FileFormatElementDelimiterExample.Text = "–";
+            this.FileFormatElementDelimiterExample.Text = ";";
             // 
             // FileFormatNameDelimiterLabel
             // 
@@ -1643,7 +1643,7 @@ namespace Scribe
             this.FileFormatNameDelimiterExample.Name = "FileFormatNameDelimiterExample";
             this.FileFormatNameDelimiterExample.Size = new System.Drawing.Size(13, 13);
             this.FileFormatNameDelimiterExample.TabIndex = 9;
-            this.FileFormatNameDelimiterExample.Text = "§";
+            this.FileFormatNameDelimiterExample.Text = ";";
             // 
             // FileFormatPronounDelimiterLabel
             // 
@@ -1663,7 +1663,7 @@ namespace Scribe
             this.FileFormatPronounDelimiterExample.Name = "FileFormatPronounDelimiterExample";
             this.FileFormatPronounDelimiterExample.Size = new System.Drawing.Size(11, 13);
             this.FileFormatPronounDelimiterExample.TabIndex = 11;
-            this.FileFormatPronounDelimiterExample.Text = "|";
+            this.FileFormatPronounDelimiterExample.Text = ";";
             // 
             // FileFormatDimensionalDelimiterLabel
             // 
@@ -1683,7 +1683,7 @@ namespace Scribe
             this.FileFormatDimensionalDelimiterExample.Name = "FileFormatDimensionalDelimiterExample";
             this.FileFormatDimensionalDelimiterExample.Size = new System.Drawing.Size(15, 13);
             this.FileFormatDimensionalDelimiterExample.TabIndex = 13;
-            this.FileFormatDimensionalDelimiterExample.Text = "×";
+            this.FileFormatDimensionalDelimiterExample.Text = ";";
             // 
             // FileFormatDimensionalTerminatorLabel
             // 
@@ -1703,7 +1703,7 @@ namespace Scribe
             this.FileFormatDimensionalTerminatorExample.Name = "FileFormatDimensionalTerminatorExample";
             this.FileFormatDimensionalTerminatorExample.Size = new System.Drawing.Size(15, 13);
             this.FileFormatDimensionalTerminatorExample.TabIndex = 15;
-            this.FileFormatDimensionalTerminatorExample.Text = "≡";
+            this.FileFormatDimensionalTerminatorExample.Text = ";";
             // 
             // LibraryInfoGroupBox
             // 
