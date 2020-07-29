@@ -90,13 +90,7 @@ Icons?
 *.iap
 *.unitypackage
 
-# =================== #
-# Dependency Binaries #
-# =================== #
-ParquetClassLibrary/
-
 # ================== #
 # Random Paige Stuff #
 # ================== #
 *.old
-

@@ -1,24 +1,8 @@
 using System.Diagnostics.CodeAnalysis;
-using System.Reflection;
-using System.Resources;
 using System.Runtime.InteropServices;
-using Scribe;
-
-// Set assembly values.
-[assembly: AssemblyTitle("Scribe")]
-[assembly: AssemblyDescription("An editor for Parquet-based games.")]
-[assembly: AssemblyCompany("Magical Girlfriends")]
-[assembly: AssemblyCopyright("© 2018-2020 Paige Ashlynn")]
-[assembly: AssemblyProduct("Scribe")]
-[assembly: AssemblyVersion(AssemblyInfo.ScribeVersion)]
-[assembly: AssemblyInformationalVersion(AssemblyInfo.ScribeVersion)]
-[assembly: AssemblyFileVersion(AssemblyInfo.ScribeVersion)]
 
 // Make no promises to maintain public services.
 [assembly: ComVisible(false)]
-
-// Declare American English as the fallback language.
-[assembly: NeutralResourcesLanguage("en-US")]
 
 namespace Scribe
 {
@@ -37,9 +21,11 @@ namespace Scribe
         /// - Patch: Fixes that do not break the API or its serialized data.
         /// - Build: Procedural updates that do not imply any changes, such as when rebuilding for APK/IPA submission.
         /// </remarks>
-        public const string ScribeVersion = "0.2.0.0";
+        public static readonly string ScribeVersion = typeof(MainEditorForm).Assembly.GetName().Version.ToString();
 
         /// <summary>Describes where to find the source code.</summary>
-        public const string ScribeRepository = "https://github.com/mxashlynn/Scribe";
+        // TODO Remove this throw after debugging.
+        public static readonly string ScribeRepository = typeof(MainEditorForm).Assembly.GetName().CodeBase ??
+            throw new System.NotImplementedException("It seems we cannot retrieve the url.");
     }
 }
