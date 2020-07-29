@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -28,6 +28,7 @@
     <RepositoryUrl>https://github.com/mxashlynn/Scribe</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <NeutralLanguage>English (United States)</NeutralLanguage>
+    <ApplicationIcon>ParquetIcon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
