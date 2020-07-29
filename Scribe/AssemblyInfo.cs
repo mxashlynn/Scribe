@@ -24,8 +24,6 @@ namespace Scribe
         public static readonly string ScribeVersion = typeof(MainEditorForm).Assembly.GetName().Version.ToString();
 
         /// <summary>Describes where to find the source code.</summary>
-        // TODO Remove this throw after debugging.
-        public static readonly string ScribeRepository = typeof(MainEditorForm).Assembly.GetName().CodeBase ??
-            throw new System.NotImplementedException("It seems we cannot retrieve the url.");
+        public static readonly string ScribeRepository = "https://github.com/mxashlynn/Scribe";
     }
 }
