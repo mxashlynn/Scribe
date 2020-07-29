@@ -3,7 +3,7 @@ using System.Windows.Forms;
 namespace Scribe
 {
     /// <summary>
-    /// A modal form that enables the user to edit a given <see cref="Inventory"/>.
+    /// A modal form that enables the user to edit a given <see cref="ParquetClassLibrary.Items.Inventory"/>.
     /// </summary>
     public partial class InventoryEditorForm : Form
     {

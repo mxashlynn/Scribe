@@ -1,15 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Scribe
 {
+    /// <summary>
+    /// A form that enables the user to edit a given <see cref="ParquetClassLibrary.Crafts.StrikePanelGrid"/>.
+    /// </summary>
     public partial class StrikePatternEditorForm : Form
     {
+        /// <summary>
+        /// Initialize a new <see cref="StrikePatternEditorForm"/>.
+        /// </summary>
         public StrikePatternEditorForm()
         {
             InitializeComponent();

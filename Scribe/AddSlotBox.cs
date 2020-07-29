@@ -3,7 +3,7 @@ using System.Windows.Forms;
 namespace Scribe
 {
     /// <summary>
-    /// A modal dialogue enabling users to add new <see cref="InventorySlot"/>s.
+    /// A modal dialogue enabling users to add new <see cref="ParquetClassLibrary.Items.InventorySlot"/>s.
     /// </summary>
     partial class AddSlotBox : Form
     {
