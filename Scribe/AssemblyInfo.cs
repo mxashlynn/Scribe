@@ -22,8 +22,5 @@ namespace Scribe
         /// - Build: Procedural updates that do not imply any changes, such as when rebuilding for APK/IPA submission.
         /// </remarks>
         public static readonly string ScribeVersion = typeof(MainEditorForm).Assembly.GetName().Version.ToString();
-
-        /// <summary>Describes where to find the source code.</summary>
-        public static readonly string ScribeRepository = "https://github.com/mxashlynn/Scribe";
     }
 }

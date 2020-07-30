@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Forms;
 using ParquetClassLibrary;
+using Scribe.Properties;
 
 namespace Scribe
 {
@@ -15,18 +16,6 @@ namespace Scribe
 
         /// <summary>Reference to the dialogue displaying information about the application.</summary>
         private OptionsBox OptionsWindow;
-
-        /// <summary>A reminder to save before quitting.</summary>
-        private const string ReloadWarningMessage = "Abandon unsaved changes and reload data?";
-
-        /// <summary>A description of the purpose of the dialogue.</summary>
-        private const string ReloadWarningCaption = "Reload";
-
-        /// <summary>A reminder to save before quitting.</summary>
-        private const string ExitWarningMessage = "Really quit?  Unsaved changes will be lost!";
-
-        /// <summary>A description of the purpose of the dialogue.</summary>
-        private const string ExitWarningCaption = "Exit Scribe";
         #endregion
 
         #region Initialization
@@ -46,8 +35,8 @@ namespace Scribe
             #region Default Event Handlers
             FormClosing += new FormClosingEventHandler((object sender, FormClosingEventArgs e) =>
             {
-                if (MessageBox.Show(ExitWarningMessage,
-                                    ExitWarningCaption,
+                if (MessageBox.Show(Resources.WarningMessageExit,
+                                    Resources.CaptionExitWarning,
                                     MessageBoxButtons.YesNo,
                                     MessageBoxIcon.Warning) == DialogResult.No)
                 {
@@ -119,8 +108,8 @@ namespace Scribe
         /// <param name="e">Addional event data.</param>
         private void ReloadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(ReloadWarningMessage,
-                                ReloadWarningCaption,
+            if (MessageBox.Show(Resources.WarningMessageReload,
+                                Resources.CaptionReloadWarning,
                                 MessageBoxButtons.YesNo,
                                 MessageBoxIcon.Warning) == DialogResult.Yes)
             {

@@ -1,6 +1,7 @@
 using System;
 using System.Reflection;
 using System.Windows.Forms;
+using Scribe.Properties;
 
 namespace Scribe
 {
@@ -13,12 +14,12 @@ namespace Scribe
         {
             InitializeComponent();
 
-            Text = $"About {AssemblyTitle}";
+            Text = $"{Resources.CaptionAbout} {AssemblyTitle}";
             LabelProductName.Text = AssemblyProduct;
-            LabelVersion.Text = $"Version {AssemblyInfo.ScribeVersion}";
+            LabelVersion.Text = $"{Resources.CaptionVersion} {AssemblyInfo.ScribeVersion}";
             LabelCopyright.Text = AssemblyCopyright;
-            LabelCompanyName.Text = $"Created by {AssemblyCompany}";
-            TextBoxDescription.Text = $"{AssemblyDescription}{Environment.NewLine}  {Environment.NewLine}A game built with this system offers many of the features of contemporary quest-driven building games but in a simple, top-down world and without combat.{Environment.NewLine}  {Environment.NewLine}For more information visit: {AssemblyInfo.ScribeRepository}";
+            LabelCompanyName.Text = AssemblyCompany;
+            TextBoxDescription.Text = $"{AssemblyDescription}{Environment.NewLine}  {Environment.NewLine}{Resources.AboutDetails}{Environment.NewLine}  {Environment.NewLine}{Resources.AboutLinkPreamble} {Resources.RepositoryURL}";
         }
 
         #region Assembly Attribute Accessors

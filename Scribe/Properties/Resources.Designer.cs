@@ -61,6 +61,60 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A game built with this system offers many of the features of contemporary quest-driven building games but in a simple, top-down world and without combat..
+        /// </summary>
+        internal static string AboutDetails {
+            get {
+                return ResourceManager.GetString("AboutDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to For more information visit:.
+        /// </summary>
+        internal static string AboutLinkPreamble {
+            get {
+                return ResourceManager.GetString("AboutLinkPreamble", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        internal static string CaptionAbout {
+            get {
+                return ResourceManager.GetString("CaptionAbout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exit Scribe.
+        /// </summary>
+        internal static string CaptionExitWarning {
+            get {
+                return ResourceManager.GetString("CaptionExitWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reload.
+        /// </summary>
+        internal static string CaptionReloadWarning {
+            get {
+                return ResourceManager.GetString("CaptionReloadWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version.
+        /// </summary>
+        internal static string CaptionVersion {
+            get {
+                return ResourceManager.GetString("CaptionVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon ParquetIcon {
@@ -71,12 +125,39 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to https://github.com/mxashlynn/Scribe.
+        /// </summary>
+        internal static string RepositoryURL {
+            get {
+                return ResourceManager.GetString("RepositoryURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap StrikeRangeDiagram {
             get {
                 object obj = ResourceManager.GetObject("StrikeRangeDiagram", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Really quit?  Unsaved changes will be lost!.
+        /// </summary>
+        internal static string WarningMessageExit {
+            get {
+                return ResourceManager.GetString("WarningMessageExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Abandon unsaved changes and reload data?.
+        /// </summary>
+        internal static string WarningMessageReload {
+            get {
+                return ResourceManager.GetString("WarningMessageReload", resourceCulture);
             }
         }
     }

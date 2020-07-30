@@ -117,11 +117,47 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutDetails" xml:space="preserve">
+    <value>A game built with this system offers many of the features of contemporary quest-driven building games but in a simple, top-down world and without combat.</value>
+    <comment>Gives more details about what the application does.</comment>
+  </data>
+  <data name="AboutLinkPreamble" xml:space="preserve">
+    <value>For more information visit:</value>
+    <comment>Introduces the project site.</comment>
+  </data>
+  <data name="CaptionAbout" xml:space="preserve">
+    <value>About</value>
+    <comment>Heading for the about box.</comment>
+  </data>
+  <data name="CaptionExitWarning" xml:space="preserve">
+    <value>Exit Scribe</value>
+    <comment>Heading for the exit warning dialogue.</comment>
+  </data>
+  <data name="CaptionReloadWarning" xml:space="preserve">
+    <value>Reload</value>
+    <comment>Heading for the reload warning dialogue.</comment>
+  </data>
+  <data name="CaptionVersion" xml:space="preserve">
+    <value>Version</value>
+    <comment>Heading for the application version.</comment>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ParquetIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ParquetIcon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="RepositoryURL" xml:space="preserve">
+    <value>https://github.com/mxashlynn/Scribe</value>
+    <comment>Where to find the source code.</comment>
+  </data>
   <data name="StrikeRangeDiagram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\StrikeRangeDiagram.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WarningMessageExit" xml:space="preserve">
+    <value>Really quit?  Unsaved changes will be lost!</value>
+    <comment>A reminder to save before quitting.</comment>
+  </data>
+  <data name="WarningMessageReload" xml:space="preserve">
+    <value>Abandon unsaved changes and reload data?</value>
+    <comment>A warning before discarding changes.</comment>
   </data>
 </root>

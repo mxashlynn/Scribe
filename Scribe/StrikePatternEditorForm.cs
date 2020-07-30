@@ -11,8 +11,6 @@ namespace Scribe
         /// Initialize a new <see cref="StrikePatternEditorForm"/>.
         /// </summary>
         public StrikePatternEditorForm()
-        {
-            InitializeComponent();
-        }
+            => InitializeComponent();
     }
 }

@@ -11,8 +11,6 @@ namespace Scribe
         /// Initialize a new <see cref="AddTagBox"/>.
         /// </summary>
         public AddTagBox()
-        {
-            InitializeComponent();
-        }
+            => InitializeComponent();
     }
 }
