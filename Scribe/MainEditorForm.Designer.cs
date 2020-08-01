@@ -1490,6 +1490,7 @@ namespace Scribe
             // 
             this.GameListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.GameListBox.DisplayMember = "Name";
             this.GameListBox.FormattingEnabled = true;
             this.GameListBox.Location = new System.Drawing.Point(9, 16);
             this.GameListBox.Name = "GameListBox";
@@ -2006,6 +2007,7 @@ namespace Scribe
             // 
             this.CritterListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.CritterListBox.DisplayMember = "Name";
             this.CritterListBox.FormattingEnabled = true;
             this.CritterListBox.Location = new System.Drawing.Point(9, 16);
             this.CritterListBox.Name = "CritterListBox";
@@ -2580,6 +2582,7 @@ namespace Scribe
             // 
             this.CharacterListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.CharacterListBox.DisplayMember = "Name";
             this.CharacterListBox.FormattingEnabled = true;
             this.CharacterListBox.Location = new System.Drawing.Point(9, 16);
             this.CharacterListBox.Name = "CharacterListBox";
@@ -2668,6 +2671,7 @@ namespace Scribe
             // 
             this.BiomeListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.BiomeListBox.DisplayMember = "Name";
             this.BiomeListBox.FormattingEnabled = true;
             this.BiomeListBox.Location = new System.Drawing.Point(9, 16);
             this.BiomeListBox.Name = "BiomeListBox";
@@ -3061,6 +3065,7 @@ namespace Scribe
             // 
             this.CraftingListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.CraftingListBox.DisplayMember = "Name";
             this.CraftingListBox.FormattingEnabled = true;
             this.CraftingListBox.Location = new System.Drawing.Point(9, 16);
             this.CraftingListBox.Name = "CraftingListBox";
@@ -3503,6 +3508,7 @@ namespace Scribe
             // 
             this.ItemListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.ItemListBox.DisplayMember = "Name";
             this.ItemListBox.FormattingEnabled = true;
             this.ItemListBox.Location = new System.Drawing.Point(9, 16);
             this.ItemListBox.Name = "ItemListBox";
@@ -4145,6 +4151,7 @@ namespace Scribe
             // 
             this.FloorListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.FloorListBox.DisplayMember = "Name";
             this.FloorListBox.FormattingEnabled = true;
             this.FloorListBox.Location = new System.Drawing.Point(9, 16);
             this.FloorListBox.Name = "FloorListBox";
@@ -4453,6 +4460,7 @@ namespace Scribe
             // 
             this.BlockListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.BlockListBox.DisplayMember = "Name";
             this.BlockListBox.FormattingEnabled = true;
             this.BlockListBox.Location = new System.Drawing.Point(9, 16);
             this.BlockListBox.Name = "BlockListBox";
@@ -4762,6 +4770,7 @@ namespace Scribe
             // 
             this.FurnishingListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.FurnishingListBox.DisplayMember = "Name";
             this.FurnishingListBox.FormattingEnabled = true;
             this.FurnishingListBox.Location = new System.Drawing.Point(9, 16);
             this.FurnishingListBox.Name = "FurnishingListBox";
@@ -5001,6 +5010,7 @@ namespace Scribe
             // 
             this.CollectibleListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.CollectibleListBox.DisplayMember = "Name";
             this.CollectibleListBox.FormattingEnabled = true;
             this.CollectibleListBox.Location = new System.Drawing.Point(9, 16);
             this.CollectibleListBox.Name = "CollectibleListBox";
@@ -5089,6 +5099,7 @@ namespace Scribe
             // 
             this.RoomListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.RoomListBox.DisplayMember = "Name";
             this.RoomListBox.FormattingEnabled = true;
             this.RoomListBox.Location = new System.Drawing.Point(9, 16);
             this.RoomListBox.Name = "RoomListBox";
