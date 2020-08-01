@@ -81,26 +81,26 @@ namespace Scribe
         /// Sets the text used to describe the format of the saved data files the editor works with.
         /// </summary>
         private void UpdateFileFormatDisplay()
-            {
-                FileFormatPrimaryDelimiterExample.Text = Delimiters.PrimaryDelimiter;
-                FileFormatSecondaryDelimiterExample.Text = Delimiters.SecondaryDelimiter;
-                FileFormatInternalDelimiterExample.Text = Delimiters.InternalDelimiter;
-                FileFormatElementDelimiterExample.Text = Delimiters.ElementDelimiter;
-                FileFormatNameDelimiterExample.Text = Delimiters.NameDelimiter;
-                FileFormatPronounDelimiterExample.Text = Delimiters.PronounDelimiter;
-                FileFormatDimensionalDelimiterExample.Text = Delimiters.DimensionalDelimiter;
-                FileFormatDimensionalTerminatorExample.Text = Delimiters.DimensionalTerminator;
-            }
+        {
+            FileFormatPrimaryDelimiterExample.Text = Delimiters.PrimaryDelimiter;
+            FileFormatSecondaryDelimiterExample.Text = Delimiters.SecondaryDelimiter;
+            FileFormatInternalDelimiterExample.Text = Delimiters.InternalDelimiter;
+            FileFormatElementDelimiterExample.Text = Delimiters.ElementDelimiter;
+            FileFormatNameDelimiterExample.Text = Delimiters.NameDelimiter;
+            FileFormatPronounDelimiterExample.Text = Delimiters.PronounDelimiter;
+            FileFormatDimensionalDelimiterExample.Text = Delimiters.DimensionalDelimiter;
+            FileFormatDimensionalTerminatorExample.Text = Delimiters.DimensionalTerminator;
+        }
 
-            /// <summary>
-            /// Sets the text used to describe the library the editor supports.
-            /// </summary>
-            private void UpdateLibraryDataDisplay()
-            {
-                LibraryVersionExample.Text = ParquetClassLibrary.AssemblyInfo.LibraryVersion;
-                LibraryWorkingDirectoryExample.Text = All.WorkingDirectory;
-            }
-            #endregion
+        /// <summary>
+        /// Sets the text used to describe the library the editor supports.
+        /// </summary>
+        private void UpdateLibraryDataDisplay()
+        {
+            LibraryVersionExample.Text = ParquetClassLibrary.AssemblyInfo.LibraryVersion;
+            LibraryWorkingDirectoryExample.Text = All.WorkingDirectory;
+        }
+        #endregion
 
         #region Menu Item Events
         /// <summary>
@@ -270,6 +270,20 @@ namespace Scribe
         /// <param name="e">Addional event data.</param>
         private void AboutMenuItem_Click(object sender, EventArgs e)
             => AboutDialogue.ShowDialog();
+        #endregion
+
+        #region Tab Refresh Methods
+        private void GamesTabPage_Enter(object sender, EventArgs e)
+        {
+            GameListBox.ClearSelected();
+            GameListBox.BeginUpdate();
+            GameListBox.Items.Clear();
+            foreach(var game in All.Games)
+            {
+                GameListBox.Items.Add(game);
+            }
+            GameListBox.EndUpdate();
+        }
         #endregion
     }
 }

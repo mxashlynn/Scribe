@@ -1251,6 +1251,7 @@ namespace Scribe
             this.GamesTabPage.Size = new System.Drawing.Size(953, 599);
             this.GamesTabPage.TabIndex = 0;
             this.GamesTabPage.Text = "Game";
+            this.GamesTabPage.Enter += new System.EventHandler(this.GamesTabPage_Enter);
             // 
             // GameRemoveGameButton
             // 
@@ -1582,7 +1583,7 @@ namespace Scribe
             this.FileFormatSecondaryDelimiterExample.Location = new System.Drawing.Point(389, 5);
             this.FileFormatSecondaryDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.FileFormatSecondaryDelimiterExample.Name = "FileFormatSecondaryDelimiterExample";
-            this.FileFormatSecondaryDelimiterExample.Size = new System.Drawing.Size(18, 13);
+            this.FileFormatSecondaryDelimiterExample.Size = new System.Drawing.Size(11, 13);
             this.FileFormatSecondaryDelimiterExample.TabIndex = 3;
             this.FileFormatSecondaryDelimiterExample.Text = ";";
             // 
@@ -1622,7 +1623,7 @@ namespace Scribe
             this.FileFormatElementDelimiterExample.Location = new System.Drawing.Point(179, 28);
             this.FileFormatElementDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.FileFormatElementDelimiterExample.Name = "FileFormatElementDelimiterExample";
-            this.FileFormatElementDelimiterExample.Size = new System.Drawing.Size(13, 13);
+            this.FileFormatElementDelimiterExample.Size = new System.Drawing.Size(11, 13);
             this.FileFormatElementDelimiterExample.TabIndex = 7;
             this.FileFormatElementDelimiterExample.Text = ";";
             // 
@@ -1642,7 +1643,7 @@ namespace Scribe
             this.FileFormatNameDelimiterExample.Location = new System.Drawing.Point(389, 28);
             this.FileFormatNameDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.FileFormatNameDelimiterExample.Name = "FileFormatNameDelimiterExample";
-            this.FileFormatNameDelimiterExample.Size = new System.Drawing.Size(13, 13);
+            this.FileFormatNameDelimiterExample.Size = new System.Drawing.Size(11, 13);
             this.FileFormatNameDelimiterExample.TabIndex = 9;
             this.FileFormatNameDelimiterExample.Text = ";";
             // 
@@ -1682,7 +1683,7 @@ namespace Scribe
             this.FileFormatDimensionalDelimiterExample.Location = new System.Drawing.Point(179, 51);
             this.FileFormatDimensionalDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.FileFormatDimensionalDelimiterExample.Name = "FileFormatDimensionalDelimiterExample";
-            this.FileFormatDimensionalDelimiterExample.Size = new System.Drawing.Size(15, 13);
+            this.FileFormatDimensionalDelimiterExample.Size = new System.Drawing.Size(11, 13);
             this.FileFormatDimensionalDelimiterExample.TabIndex = 13;
             this.FileFormatDimensionalDelimiterExample.Text = ";";
             // 
@@ -1702,7 +1703,7 @@ namespace Scribe
             this.FileFormatDimensionalTerminatorExample.Location = new System.Drawing.Point(389, 51);
             this.FileFormatDimensionalTerminatorExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.FileFormatDimensionalTerminatorExample.Name = "FileFormatDimensionalTerminatorExample";
-            this.FileFormatDimensionalTerminatorExample.Size = new System.Drawing.Size(15, 13);
+            this.FileFormatDimensionalTerminatorExample.Size = new System.Drawing.Size(11, 13);
             this.FileFormatDimensionalTerminatorExample.TabIndex = 15;
             this.FileFormatDimensionalTerminatorExample.Text = ";";
             // 
