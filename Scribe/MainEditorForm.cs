@@ -12,28 +12,28 @@ namespace Scribe
     {
         #region Child Forms and Data
         /// <summary>Dialogue displaying information about the application.</summary>
-        private AboutBox AboutDialogue;
+        private readonly AboutBox AboutDialogue = new AboutBox();
 
         /// <summary>Dialogue for adding a quest to a collection.</summary>
-        private AddQuestBox AddQuestDialogue;
+        private readonly AddQuestBox AddQuestDialogue = new AddQuestBox();
 
         /// <summary>Dialogue for adding a <see cref="ParquetClassLibrary.RecipeElement"/> to a collection.</summary>
-        private AddRecipeElementBox AddRecipeElementDialogue;
+        private readonly AddRecipeElementBox AddRecipeElementDialogue = new AddRecipeElementBox();
 
         /// <summary>Dialogue for adding a <see cref="ParquetClassLibrary.Items.InventorySlot"/> to an <see cref="ParquetClassLibrary.Items.Inventory"/>.</summary>
-        private AddSlotBox AddSlotDialogue;
+        private readonly AddSlotBox AddSlotDialogue = new AddSlotBox();
 
         /// <summary>Dialogue for adding a <see cref="ParquetClassLibrary.ModelTag"/> to a collection.</summary>
-        private AddTagBox AddTagDialogue;
+        private readonly AddTagBox AddTagDialogue = new AddTagBox();
 
         /// <summary>Window for editing an <see cref="ParquetClassLibrary.Items.Inventory"/>.</summary>
-        private InventoryEditorForm InventoryEditorWindow;
+        private readonly InventoryEditorForm InventoryEditorWindow = new InventoryEditorForm();
 
         /// <summary>Dialogue allowing customization of the application's behavior.</summary>
-        private OptionsBox OptionsDialogue;
+        private readonly OptionsBox OptionsDialogue = new OptionsBox();
 
         /// <summary>Window for editing <see cref="ParquetClassLibrary.Crafts.StrikePanelGrid"/>s.</summary>
-        private StrikePatternEditorForm StrikePatternEditorWindow;
+        private readonly StrikePatternEditorForm StrikePatternEditorWindow = new StrikePatternEditorForm();
         #endregion
 
         #region Initialization
@@ -71,24 +71,8 @@ namespace Scribe
         protected override void OnLoad(EventArgs EventData)
         {
             base.OnLoad(EventData);
-            InitializeDialogues();
             UpdateLibraryDataDisplay();
             UpdateFileFormatDisplay();
-        }
-
-        /// <summary>
-        /// Creates various subwindows that the main editor may raise.
-        /// </summary>
-        private void InitializeDialogues()
-        {
-            AboutDialogue ??= new AboutBox();
-            AddQuestDialogue ??= new AddQuestBox();
-            AddRecipeElementDialogue ??= new AddRecipeElementBox();
-            AddSlotDialogue ??= new AddSlotBox();
-            AddTagDialogue ??= new AddTagBox();
-            InventoryEditorWindow ??= new InventoryEditorForm();
-            OptionsDialogue ??= new OptionsBox();
-            StrikePatternEditorWindow ??= new StrikePatternEditorForm();
         }
         #endregion
 
