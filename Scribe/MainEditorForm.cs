@@ -11,11 +11,29 @@ namespace Scribe
     public partial class MainEditorForm : Form
     {
         #region Child Forms and Data
-        /// <summary>Reference to the dialogue displaying information about the application.</summary>
-        private AboutBox AboutWindow;
+        /// <summary>Dialogue displaying information about the application.</summary>
+        private AboutBox AboutDialogue;
 
-        /// <summary>Reference to the dialogue displaying information about the application.</summary>
-        private OptionsBox OptionsWindow;
+        /// <summary>Dialogue for adding a quest to a collection.</summary>
+        private AddQuestBox AddQuestDialogue;
+
+        /// <summary>Dialogue for adding a <see cref="ParquetClassLibrary.RecipeElement"/> to a collection.</summary>
+        private AddRecipeElementBox AddRecipeElementDialogue;
+
+        /// <summary>Dialogue for adding a <see cref="ParquetClassLibrary.Items.InventorySlot"/> to an <see cref="ParquetClassLibrary.Items.Inventory"/>.</summary>
+        private AddSlotBox AddSlotDialogue;
+
+        /// <summary>Dialogue for adding a <see cref="ParquetClassLibrary.ModelTag"/> to a collection.</summary>
+        private AddTagBox AddTagDialogue;
+
+        /// <summary>Window for editing an <see cref="ParquetClassLibrary.Items.Inventory"/>.</summary>
+        private InventoryEditorForm InventoryEditorWindow;
+
+        /// <summary>Dialogue allowing customization of the application's behavior.</summary>
+        private OptionsBox OptionsDialogue;
+
+        /// <summary>Window for editing <see cref="ParquetClassLibrary.Crafts.StrikePanelGrid"/>s.</summary>
+        private StrikePatternEditorForm StrikePatternEditorWindow;
         #endregion
 
         #region Initialization
@@ -53,8 +71,24 @@ namespace Scribe
         protected override void OnLoad(EventArgs EventData)
         {
             base.OnLoad(EventData);
+            InitializeDialogues();
             UpdateLibraryDataDisplay();
             UpdateFileFormatDisplay();
+        }
+
+        /// <summary>
+        /// Creates various subwindows that the main editor may raise.
+        /// </summary>
+        private void InitializeDialogues()
+        {
+            AboutDialogue ??= new AboutBox();
+            AddQuestDialogue ??= new AddQuestBox();
+            AddRecipeElementDialogue ??= new AddRecipeElementBox();
+            AddSlotDialogue ??= new AddSlotBox();
+            AddTagDialogue ??= new AddTagBox();
+            InventoryEditorWindow ??= new InventoryEditorForm();
+            OptionsDialogue ??= new OptionsBox();
+            StrikePatternEditorWindow ??= new StrikePatternEditorForm();
         }
         #endregion
 
@@ -63,26 +97,26 @@ namespace Scribe
         /// Sets the text used to describe the format of the saved data files the editor works with.
         /// </summary>
         private void UpdateFileFormatDisplay()
-        {
-            FileFormatPrimaryDelimiterExample.Text = Delimiters.PrimaryDelimiter;
-            FileFormatSecondaryDelimiterExample.Text = Delimiters.SecondaryDelimiter;
-            FileFormatInternalDelimiterExample.Text = Delimiters.InternalDelimiter;
-            FileFormatElementDelimiterExample.Text = Delimiters.ElementDelimiter;
-            FileFormatNameDelimiterExample.Text = Delimiters.NameDelimiter;
-            FileFormatPronounDelimiterExample.Text = Delimiters.PronounDelimiter;
-            FileFormatDimensionalDelimiterExample.Text = Delimiters.DimensionalDelimiter;
-            FileFormatDimensionalTerminatorExample.Text = Delimiters.DimensionalTerminator;
-        }
+            {
+                FileFormatPrimaryDelimiterExample.Text = Delimiters.PrimaryDelimiter;
+                FileFormatSecondaryDelimiterExample.Text = Delimiters.SecondaryDelimiter;
+                FileFormatInternalDelimiterExample.Text = Delimiters.InternalDelimiter;
+                FileFormatElementDelimiterExample.Text = Delimiters.ElementDelimiter;
+                FileFormatNameDelimiterExample.Text = Delimiters.NameDelimiter;
+                FileFormatPronounDelimiterExample.Text = Delimiters.PronounDelimiter;
+                FileFormatDimensionalDelimiterExample.Text = Delimiters.DimensionalDelimiter;
+                FileFormatDimensionalTerminatorExample.Text = Delimiters.DimensionalTerminator;
+            }
 
-        /// <summary>
-        /// Sets the text used to describe the library the editor supports.
-        /// </summary>
-        private void UpdateLibraryDataDisplay()
-        {
-            LibraryVersionExample.Text = ParquetClassLibrary.AssemblyInfo.LibraryVersion;
-            LibraryWorkingDirectoryExample.Text = All.WorkingDirectory;
-        }
-        #endregion
+            /// <summary>
+            /// Sets the text used to describe the library the editor supports.
+            /// </summary>
+            private void UpdateLibraryDataDisplay()
+            {
+                LibraryVersionExample.Text = ParquetClassLibrary.AssemblyInfo.LibraryVersion;
+                LibraryWorkingDirectoryExample.Text = All.WorkingDirectory;
+            }
+            #endregion
 
         #region Menu Item Events
         /// <summary>
@@ -227,10 +261,7 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="e">Addional event data.</param>
         private void OptionsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OptionsWindow ??= new OptionsBox();
-            OptionsWindow.ShowDialog();
-        }
+            => OptionsDialogue.ShowDialog();
 
         /// <summary>
         /// Responds to a user selecting the "Scribe Help" menu item.
@@ -254,10 +285,7 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="e">Addional event data.</param>
         private void AboutMenuItem_Click(object sender, EventArgs e)
-        {
-            AboutWindow ??= new AboutBox();
-            AboutWindow.ShowDialog();
-        }
+            => AboutDialogue.ShowDialog();
         #endregion
     }
 }
