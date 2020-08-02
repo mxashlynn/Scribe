@@ -293,14 +293,18 @@ namespace Scribe
         private void RepopulateListBox<T>(ListBox in_listbox, IEnumerable<T> in_source)
             where T : Model
         {
-            in_listbox.ClearSelected();
-            in_listbox.BeginUpdate();
-            in_listbox.Items.Clear();
-            foreach (var game in in_source)
+            if (null != in_source)
             {
-                in_listbox.Items.Add(game);
+                // TODO This should only happen if the database has actually changed and/or if the list box is empty.
+                in_listbox.ClearSelected();
+                in_listbox.BeginUpdate();
+                in_listbox.Items.Clear();
+                foreach (var game in in_source)
+                {
+                    in_listbox.Items.Add(game);
+                }
+                in_listbox.EndUpdate();
             }
-            in_listbox.EndUpdate();
         }
 
         /// <summary>
