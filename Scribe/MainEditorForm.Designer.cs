@@ -2014,6 +2014,7 @@ namespace Scribe
             this.CritterListBox.Name = "CritterListBox";
             this.CritterListBox.Size = new System.Drawing.Size(279, 446);
             this.CritterListBox.TabIndex = 1;
+            this.CritterListBox.Enter += new System.EventHandler(this.CritterListBox_Enter);
             // 
             // CritterAddNewCritterButton
             // 
@@ -2589,6 +2590,7 @@ namespace Scribe
             this.CharacterListBox.Name = "CharacterListBox";
             this.CharacterListBox.Size = new System.Drawing.Size(279, 446);
             this.CharacterListBox.TabIndex = 1;
+            this.CharacterListBox.Enter += new System.EventHandler(this.CharacterListBox_Enter);
             // 
             // CharacterIDLabel
             // 
@@ -2678,6 +2680,7 @@ namespace Scribe
             this.BiomeListBox.Name = "BiomeListBox";
             this.BiomeListBox.Size = new System.Drawing.Size(279, 446);
             this.BiomeListBox.TabIndex = 1;
+            this.BiomeListBox.Enter += new System.EventHandler(this.BiomeListBox_Enter);
             // 
             // BiomeConfigGroupBox
             // 
@@ -3072,6 +3075,7 @@ namespace Scribe
             this.CraftingListBox.Name = "CraftingListBox";
             this.CraftingListBox.Size = new System.Drawing.Size(279, 446);
             this.CraftingListBox.TabIndex = 1;
+            this.CraftingListBox.Enter += new System.EventHandler(this.CraftingListBox_Enter);
             // 
             // CraftingPictureEditButton
             // 
@@ -3515,6 +3519,7 @@ namespace Scribe
             this.ItemListBox.Name = "ItemListBox";
             this.ItemListBox.Size = new System.Drawing.Size(279, 446);
             this.ItemListBox.TabIndex = 1;
+            this.ItemListBox.Enter += new System.EventHandler(this.ItemListBox_Enter);
             // 
             // ItemInventoriesGroupBox
             // 
@@ -4158,6 +4163,7 @@ namespace Scribe
             this.FloorListBox.Name = "FloorListBox";
             this.FloorListBox.Size = new System.Drawing.Size(279, 446);
             this.FloorListBox.TabIndex = 1;
+            this.FloorListBox.Enter += new System.EventHandler(this.FloorListBox_Enter);
             // 
             // FloorIDLabel
             // 
@@ -4467,6 +4473,7 @@ namespace Scribe
             this.BlockListBox.Name = "BlockListBox";
             this.BlockListBox.Size = new System.Drawing.Size(279, 446);
             this.BlockListBox.TabIndex = 1;
+            this.BlockListBox.Enter += new System.EventHandler(this.BlockListBox_Enter);
             // 
             // BlockAddNewBlockButton
             // 
@@ -4777,6 +4784,7 @@ namespace Scribe
             this.FurnishingListBox.Name = "FurnishingListBox";
             this.FurnishingListBox.Size = new System.Drawing.Size(279, 446);
             this.FurnishingListBox.TabIndex = 1;
+            this.FurnishingListBox.Enter += new System.EventHandler(this.FurnishingListBox_Enter);
             // 
             // FurnishingIDLabel
             // 
@@ -5017,6 +5025,7 @@ namespace Scribe
             this.CollectibleListBox.Name = "CollectibleListBox";
             this.CollectibleListBox.Size = new System.Drawing.Size(279, 446);
             this.CollectibleListBox.TabIndex = 1;
+            this.CollectibleListBox.Enter += new System.EventHandler(this.CollectibleListBox_Enter);
             // 
             // CollectibleIDLabel
             // 
@@ -5106,6 +5115,7 @@ namespace Scribe
             this.RoomListBox.Name = "RoomListBox";
             this.RoomListBox.Size = new System.Drawing.Size(279, 446);
             this.RoomListBox.TabIndex = 1;
+            this.RoomListBox.Enter += new System.EventHandler(this.RoomListBox_Enter);
             // 
             // RoomConfigGroupBox
             // 

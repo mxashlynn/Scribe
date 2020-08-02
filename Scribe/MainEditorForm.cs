@@ -1,6 +1,17 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using ParquetClassLibrary;
+using ParquetClassLibrary.Beings;
+using ParquetClassLibrary.Biomes;
+using ParquetClassLibrary.Crafts;
+using ParquetClassLibrary.Games;
+using ParquetClassLibrary.Items;
+using ParquetClassLibrary.Maps;
+using ParquetClassLibrary.Parquets;
+using ParquetClassLibrary.Rooms;
+using ParquetClassLibrary.Scripts;
 using Scribe.Properties;
 
 namespace Scribe
@@ -17,22 +28,22 @@ namespace Scribe
         /// <summary>Dialogue for adding a quest to a collection.</summary>
         private readonly AddQuestBox AddQuestDialogue = new AddQuestBox();
 
-        /// <summary>Dialogue for adding a <see cref="ParquetClassLibrary.RecipeElement"/> to a collection.</summary>
+        /// <summary>Dialogue for adding a <see cref="RecipeElement"/> to a collection.</summary>
         private readonly AddRecipeElementBox AddRecipeElementDialogue = new AddRecipeElementBox();
 
-        /// <summary>Dialogue for adding a <see cref="ParquetClassLibrary.Items.InventorySlot"/> to an <see cref="ParquetClassLibrary.Items.Inventory"/>.</summary>
+        /// <summary>Dialogue for adding a <see cref="InventorySlot"/> to an <see cref="Inventory"/>.</summary>
         private readonly AddSlotBox AddSlotDialogue = new AddSlotBox();
 
-        /// <summary>Dialogue for adding a <see cref="ParquetClassLibrary.ModelTag"/> to a collection.</summary>
+        /// <summary>Dialogue for adding a <see cref="ModelTag"/> to a collection.</summary>
         private readonly AddTagBox AddTagDialogue = new AddTagBox();
 
-        /// <summary>Window for editing an <see cref="ParquetClassLibrary.Items.Inventory"/>.</summary>
+        /// <summary>Window for editing an <see cref="Inventory"/>.</summary>
         private readonly InventoryEditorForm InventoryEditorWindow = new InventoryEditorForm();
 
         /// <summary>Dialogue allowing customization of the application's behavior.</summary>
         private readonly OptionsBox OptionsDialogue = new OptionsBox();
 
-        /// <summary>Window for editing <see cref="ParquetClassLibrary.Crafts.StrikePanelGrid"/>s.</summary>
+        /// <summary>Window for editing <see cref="StrikePanelGrid"/>s.</summary>
         private readonly StrikePatternEditorForm StrikePatternEditorWindow = new StrikePatternEditorForm();
         #endregion
 
@@ -273,17 +284,112 @@ namespace Scribe
         #endregion
 
         #region Tab Refresh Methods
-        private void GamesTabPage_Enter(object sender, EventArgs e)
+        /// <summary>
+        /// Repopulates the given list with the <see cref="Model"/>s in the given collection.
+        /// </summary>
+        /// <typeparam name="T">A model type.</typeparam>
+        /// <param name="in_listbox">The UI to repopulate.</param>
+        /// <param name="in_source">The objects to populate the UI with.</param>
+        private void RepopulateListBox<T>(ListBox in_listbox, IEnumerable<T> in_source)
+            where T : Model
         {
-            GameListBox.ClearSelected();
-            GameListBox.BeginUpdate();
-            GameListBox.Items.Clear();
-            foreach(var game in All.Games)
+            in_listbox.ClearSelected();
+            in_listbox.BeginUpdate();
+            in_listbox.Items.Clear();
+            foreach (var game in in_source)
             {
-                GameListBox.Items.Add(game);
+                in_listbox.Items.Add(game);
             }
-            GameListBox.EndUpdate();
+            in_listbox.EndUpdate();
         }
+
+        /// <summary>
+        /// Repopulates the selection list box when the tab becomes active.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void GamesTabPage_Enter(object sender, EventArgs e)
+            => RepopulateListBox(GameListBox, All.Games);
+
+        /// <summary>
+        /// Repopulates the selection list box when the tab becomes active.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void CritterListBox_Enter(object sender, EventArgs e)
+            => RepopulateListBox(CritterListBox, (IEnumerable<CritterModel>)All.Beings.Where(being => being is CritterModel));
+
+        /// <summary>
+        /// Repopulates the selection list box when the tab becomes active.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void CharacterListBox_Enter(object sender, EventArgs e)
+            => RepopulateListBox(CharacterListBox, (IEnumerable<CharacterModel>)All.Beings.Where(being => being is CharacterModel));
+
+        /// <summary>
+        /// Repopulates the selection list box when the tab becomes active.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void BiomeListBox_Enter(object sender, EventArgs e)
+            => RepopulateListBox(BiomeListBox, All.Biomes);
+
+        /// <summary>
+        /// Repopulates the selection list box when the tab becomes active.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void CraftingListBox_Enter(object sender, EventArgs e)
+            => RepopulateListBox(CraftingListBox, All.CraftingRecipes);
+
+        /// <summary>
+        /// Repopulates the selection list box when the tab becomes active.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void ItemListBox_Enter(object sender, EventArgs e)
+            => RepopulateListBox(ItemListBox, All.Items);
+
+        /// <summary>
+        /// Repopulates the selection list box when the tab becomes active.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void FloorListBox_Enter(object sender, EventArgs e)
+            => RepopulateListBox(FloorListBox, (IEnumerable<FloorModel>)All.Parquets.Where(parquet => parquet is FloorModel));
+
+        /// <summary>
+        /// Repopulates the selection list box when the tab becomes active.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void BlockListBox_Enter(object sender, EventArgs e)
+            => RepopulateListBox(BlockListBox, (IEnumerable<BlockModel>)All.Parquets.Where(parquet => parquet is BlockModel));
+
+        /// <summary>
+        /// Repopulates the selection list box when the tab becomes active.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void FurnishingListBox_Enter(object sender, EventArgs e)
+            => RepopulateListBox(FurnishingListBox, (IEnumerable<FurnishingModel>)All.Parquets.Where(parquet => parquet is FurnishingModel));
+
+        /// <summary>
+        /// Repopulates the selection list box when the tab becomes active.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void CollectibleListBox_Enter(object sender, EventArgs e)
+            => RepopulateListBox(CollectibleListBox, (IEnumerable<CollectibleModel>)All.Parquets.Where(parquet => parquet is CollectibleModel));
+
+        /// <summary>
+        /// Repopulates the selection list box when the tab becomes active.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void RoomListBox_Enter(object sender, EventArgs e)
+            => RepopulateListBox(RoomListBox, All.RoomRecipes);
         #endregion
     }
 }
