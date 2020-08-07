@@ -21,7 +21,7 @@ namespace Scribe
     /// </summary>
     public partial class MainEditorForm : Form
     {
-        #region Child Forms and Data
+        #region Child Forms
         /// <summary>Dialogue displaying information about the application.</summary>
         private readonly AboutBox AboutDialogue = new AboutBox();
 
@@ -45,6 +45,10 @@ namespace Scribe
 
         /// <summary>Window for editing <see cref="StrikePanelGrid"/>s.</summary>
         private readonly StrikePatternEditorForm StrikePatternEditorWindow = new StrikePatternEditorForm();
+        #endregion
+
+        #region Project Data
+        private string ProjectDirectory = "";
         #endregion
 
         #region Initialization
@@ -82,6 +86,7 @@ namespace Scribe
         protected override void OnLoad(EventArgs EventData)
         {
             base.OnLoad(EventData);
+            ProjectDirectory = All.WorkingDirectory;
             UpdateLibraryDataDisplay();
             UpdateFileFormatDisplay();
         }
@@ -109,7 +114,7 @@ namespace Scribe
         private void UpdateLibraryDataDisplay()
         {
             LibraryVersionExample.Text = ParquetClassLibrary.AssemblyInfo.LibraryVersion;
-            LibraryWorkingDirectoryExample.Text = All.WorkingDirectory;
+            LibraryWorkingDirectoryExample.Text = ProjectDirectory;
         }
         #endregion
 
