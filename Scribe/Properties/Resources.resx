@@ -133,6 +133,10 @@
     <value>Exit Scribe</value>
     <comment>Heading for the exit warning dialogue.</comment>
   </data>
+  <data name="CaptionNewWarning" xml:space="preserve">
+    <value>New Project</value>
+    <comment>Heading for the new project warning dialogue.</comment>
+  </data>
   <data name="CaptionReloadWarning" xml:space="preserve">
     <value>Reload</value>
     <comment>Heading for the reload warning dialogue.</comment>
@@ -155,6 +159,10 @@
   <data name="WarningMessageExit" xml:space="preserve">
     <value>Really quit?  Unsaved changes will be lost!</value>
     <comment>A reminder to save before quitting.</comment>
+  </data>
+  <data name="WarningMessageNew" xml:space="preserve">
+    <value>Populate the {1} folder with a new project, deleting existing content?</value>
+    <comment>A warning before creating empty template data files.</comment>
   </data>
   <data name="WarningMessageReload" xml:space="preserve">
     <value>Abandon unsaved changes and reload data?</value>

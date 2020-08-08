@@ -97,6 +97,15 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New Project.
+        /// </summary>
+        internal static string CaptionNewWarning {
+            get {
+                return ResourceManager.GetString("CaptionNewWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reload.
         /// </summary>
         internal static string CaptionReloadWarning {
@@ -149,6 +158,15 @@ namespace Scribe.Properties {
         internal static string WarningMessageExit {
             get {
                 return ResourceManager.GetString("WarningMessageExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Populate the {1} folder with a new project, deleting existing content?.
+        /// </summary>
+        internal static string WarningMessageNew {
+            get {
+                return ResourceManager.GetString("WarningMessageNew", resourceCulture);
             }
         }
         

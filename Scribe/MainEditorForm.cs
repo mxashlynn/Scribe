@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using ParquetClassLibrary;
@@ -86,7 +87,10 @@ namespace Scribe
         protected override void OnLoad(EventArgs EventData)
         {
             base.OnLoad(EventData);
-            ProjectDirectory = All.WorkingDirectory;
+            if (string.IsNullOrEmpty(ProjectDirectory))
+            {
+                ProjectDirectory = All.WorkingDirectory;
+            }
             UpdateLibraryDataDisplay();
             UpdateFileFormatDisplay();
         }
@@ -125,7 +129,26 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="e">Addional event data.</param>
         private void NewToolStripMenuItem_Click(object sender, EventArgs e)
-            => throw new NotImplementedException();
+        {
+            var response = MessageBox.Show(string.Format(CultureInfo.CurrentCulture, Resources.WarningMessageNew, ProjectDirectory),
+                                           Resources.CaptionNewWarning,
+                                           MessageBoxButtons.YesNoCancel,
+                                           MessageBoxIcon.Warning);
+            switch (response)
+            {
+                case DialogResult.Yes:
+                    CreateTemplatesInProjectFolder();
+                    break;
+                case DialogResult.No:
+                    SelectProjectFolder();
+                    CreateTemplatesInProjectFolder();
+                    // TODO If creating templates automatically loads their content, remove this call.
+                    LoadDataFiles();
+                    break;
+                case DialogResult.Cancel:
+                    break;
+            }
+        }
 
         /// <summary>
         /// Responds to a user selecting the "Load" menu item.
@@ -133,7 +156,10 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="e">Addional event data.</param>
         private void LoadToolStripMenuItem_Click(object sender, EventArgs e)
-            => throw new NotImplementedException();
+        {
+            SelectProjectFolder();
+            LoadDataFiles();
+        }
 
         /// <summary>
         /// Responds to a user selecting the "Reload" menu item.
@@ -399,6 +425,19 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void RoomListBox_Enter(object sender, EventArgs e)
             => RepopulateListBox(RoomListBox, All.RoomRecipes);
+        #endregion
+
+        #region Editor Commands
+        // TODO These would be good candidates for moving into a dedicated non-UI class.
+
+        private void SelectProjectFolder()
+            => throw new NotImplementedException();
+
+        private void CreateTemplatesInProjectFolder()
+            => throw new NotImplementedException();
+
+        private void LoadDataFiles()
+            => throw new NotImplementedException();
         #endregion
     }
 }
