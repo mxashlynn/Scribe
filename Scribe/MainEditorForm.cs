@@ -46,10 +46,13 @@ namespace Scribe
 
         /// <summary>Window for editing <see cref="StrikePanelGrid"/>s.</summary>
         private readonly StrikePatternEditorForm StrikePatternEditorWindow = new StrikePatternEditorForm();
+
+        /// <summary>Dialogue for selecting the project folder to work in.</summary>
+        private readonly FolderBrowserDialog FolderBrowserDialogue = new FolderBrowserDialog();
         #endregion
 
         #region Project Data
-        private string ProjectDirectory = "";
+        private string ProjectFolderPath = "";
         #endregion
 
         #region Initialization
@@ -87,9 +90,9 @@ namespace Scribe
         protected override void OnLoad(EventArgs EventData)
         {
             base.OnLoad(EventData);
-            if (string.IsNullOrEmpty(ProjectDirectory))
+            if (string.IsNullOrEmpty(ProjectFolderPath))
             {
-                ProjectDirectory = All.WorkingDirectory;
+                ProjectFolderPath = All.WorkingDirectory;
             }
             UpdateLibraryDataDisplay();
             UpdateFileFormatDisplay();
@@ -118,7 +121,7 @@ namespace Scribe
         private void UpdateLibraryDataDisplay()
         {
             LibraryVersionExample.Text = ParquetClassLibrary.AssemblyInfo.LibraryVersion;
-            LibraryWorkingDirectoryExample.Text = ProjectDirectory;
+            LibraryWorkingDirectoryExample.Text = ProjectFolderPath;
         }
         #endregion
 
@@ -130,7 +133,7 @@ namespace Scribe
         /// <param name="e">Addional event data.</param>
         private void NewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var response = MessageBox.Show(string.Format(CultureInfo.CurrentCulture, Resources.WarningMessageNew, ProjectDirectory),
+            var response = MessageBox.Show(string.Format(CultureInfo.CurrentCulture, Resources.WarningMessageNew, ProjectFolderPath),
                                            Resources.CaptionNewWarning,
                                            MessageBoxButtons.YesNoCancel,
                                            MessageBoxIcon.Warning);
@@ -140,10 +143,12 @@ namespace Scribe
                     CreateTemplatesInProjectFolder();
                     break;
                 case DialogResult.No:
-                    SelectProjectFolder();
-                    CreateTemplatesInProjectFolder();
-                    // TODO If creating templates automatically loads their content, remove this call.
-                    LoadDataFiles();
+                    if (SelectProjectFolder())
+                    {
+                        CreateTemplatesInProjectFolder();
+                        // TODO If creating templates automatically loads their content, remove this call.
+                        LoadDataFiles();
+                    }
                     break;
                 case DialogResult.Cancel:
                     break;
@@ -157,8 +162,10 @@ namespace Scribe
         /// <param name="e">Addional event data.</param>
         private void LoadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SelectProjectFolder();
-            LoadDataFiles();
+            if (SelectProjectFolder())
+            {
+                LoadDataFiles();
+            }
         }
 
         /// <summary>
@@ -430,8 +437,27 @@ namespace Scribe
         #region Editor Commands
         // TODO These would be good candidates for moving into a dedicated non-UI class.
 
-        private void SelectProjectFolder()
-            => throw new NotImplementedException();
+        /// <summary>
+        /// Opens a dialogue allowing the user to select the folder in which to save data files.
+        /// </summary>
+        /// <param name="in_message">A prompt to the user, differentiating between loading existing files and creating new blank ones.</param>
+        /// <returns>True if the user selected a folder.</returns>
+        private bool SelectProjectFolder(string in_message)
+        {
+            // TODO Make this default folder selectable by the user via the options dialogue.
+            FolderBrowserDialogue.ShowNewFolderButton = true;
+            FolderBrowserDialogue.RootFolder = Environment.SpecialFolder.Desktop;
+            FolderBrowserDialogue.Description = in_message;
+            FolderBrowserDialogue.SelectedPath = ProjectFolderPath;
+
+            var response = FolderBrowserDialogue.ShowDialog();
+            if (response == DialogResult.OK)
+            {
+                ProjectFolderPath = FolderBrowserDialogue.SelectedPath;
+                return true;
+            }
+            return false;
+        }
 
         private void CreateTemplatesInProjectFolder()
             => throw new NotImplementedException();
