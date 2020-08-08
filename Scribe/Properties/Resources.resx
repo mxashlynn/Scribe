@@ -133,6 +133,10 @@
     <value>Exit Scribe</value>
     <comment>Heading for the exit warning dialogue.</comment>
   </data>
+  <data name="CaptionFolderNotEmptyError" xml:space="preserve">
+    <value>Cannot Create Templates</value>
+    <comment>Heading for non-empty project folder dialogue.</comment>
+  </data>
   <data name="CaptionNewWarning" xml:space="preserve">
     <value>New Project</value>
     <comment>Heading for the new project warning dialogue.</comment>
@@ -144,6 +148,10 @@
   <data name="CaptionVersion" xml:space="preserve">
     <value>Version</value>
     <comment>Heading for the application version.</comment>
+  </data>
+  <data name="ErrorFolderNotEmpty" xml:space="preserve">
+    <value>This folder is not empty!</value>
+    <comment>An error message if a project directory was expected to be empty.</comment>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ParquetIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using ParquetClassLibrary;
@@ -145,9 +146,11 @@ namespace Scribe
                 case DialogResult.No:
                     if (SelectProjectFolder())
                     {
-                        CreateTemplatesInProjectFolder();
-                        // TODO If creating templates automatically loads their content, remove this call.
-                        LoadDataFiles();
+                        if (CreateTemplatesInProjectFolder())
+                        {
+                            // TODO If creating templates automatically loads their content, remove this call.
+                            LoadDataFiles();
+                        }
                     }
                     break;
                 case DialogResult.Cancel:
@@ -459,10 +462,46 @@ namespace Scribe
             return false;
         }
 
-        private void CreateTemplatesInProjectFolder()
-            => throw new NotImplementedException();
+        private bool CreateTemplatesInProjectFolder()
+        {
+            while (Directory.GetFiles(ProjectFolderPath).Length > 0)
+            {
+                // Loop here to allow the user to empty the given directory if desired.
+                if (MessageBox.Show(Resources.ErrorFolderNotEmpty,
+                                    Resources.CaptionFolderNotEmptyError,
+                                    MessageBoxButtons.RetryCancel,
+                                    MessageBoxIcon.Error) == DialogResult.Cancel)
+                {
+                    // If they cancel, simply abort.
+                    return false;
+                }
+            }
+
+            // Create the templates.
+            PronounGroup.PutRecords(Enumerable.Empty<PronounGroup>());
+            // TODO Replace these throwaway allocations with a ModelCollection<>.Empty member.
+            // TODO Add methods to PutRecords for the configuration classes.
+            new ModelCollection<BeingModel>(All.BeingIDs, Enumerable.Empty<CritterModel>()).PutRecordsForType<CritterModel>();
+            new ModelCollection<BeingModel>(All.BeingIDs, Enumerable.Empty<CharacterModel>()).PutRecordsForType<CharacterModel>();
+            new ModelCollection<BiomeModel>(All.BiomeIDs, Enumerable.Empty<BiomeModel>()).PutRecordsForType<BiomeModel>();
+            new ModelCollection<CraftingRecipe>(All.CraftingRecipeIDs, Enumerable.Empty<CraftingRecipe>()).PutRecordsForType<CraftingRecipe>();
+            new ModelCollection<InteractionModel>(All.InteractionIDs, Enumerable.Empty<InteractionModel>()).PutRecordsForType<InteractionModel>();
+            new ModelCollection<MapModel>(All.MapIDs, Enumerable.Empty<MapChunk>()).PutRecordsForType<MapChunk>();
+            new ModelCollection<MapModel>(All.MapIDs, Enumerable.Empty<MapRegionSketch>()).PutRecordsForType<MapRegionSketch>();
+            new ModelCollection<MapModel>(All.MapIDs, Enumerable.Empty<MapRegion>()).PutRecordsForType<MapRegion>();
+            new ModelCollection<ParquetModel>(All.ParquetIDs, Enumerable.Empty<FloorModel>()).PutRecordsForType<FloorModel>();
+            new ModelCollection<ParquetModel>(All.ParquetIDs, Enumerable.Empty<BlockModel>()).PutRecordsForType<BlockModel>();
+            new ModelCollection<ParquetModel>(All.ParquetIDs, Enumerable.Empty<FurnishingModel>()).PutRecordsForType<FurnishingModel>();
+            new ModelCollection<ParquetModel>(All.ParquetIDs, Enumerable.Empty<CollectibleModel>()).PutRecordsForType<CollectibleModel>();
+            new ModelCollection<RoomRecipe>(All.RoomRecipeIDs, Enumerable.Empty<RoomRecipe>()).PutRecordsForType<RoomRecipe>();
+            new ModelCollection<ScriptModel>(All.ScriptIDs, Enumerable.Empty<ScriptModel>()).PutRecordsForType<ScriptModel>();
+            new ModelCollection<ItemModel>(All.ItemIDs, Enumerable.Empty<ItemModel>()).PutRecordsForType<ItemModel>();
+
+            return true;
+        }
 
         private void LoadDataFiles()
+            // TODO Change library so that ModelCollection.GetFilePath can use a specified directory instead of always using the working directory.
             => throw new NotImplementedException();
         #endregion
     }

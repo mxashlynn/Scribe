@@ -97,6 +97,15 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cannot Create Templates.
+        /// </summary>
+        internal static string CaptionFolderNotEmptyError {
+            get {
+                return ResourceManager.GetString("CaptionFolderNotEmptyError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New Project.
         /// </summary>
         internal static string CaptionNewWarning {
@@ -120,6 +129,15 @@ namespace Scribe.Properties {
         internal static string CaptionVersion {
             get {
                 return ResourceManager.GetString("CaptionVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This folder is not empty!.
+        /// </summary>
+        internal static string ErrorFolderNotEmpty {
+            get {
+                return ResourceManager.GetString("ErrorFolderNotEmpty", resourceCulture);
             }
         }
         
