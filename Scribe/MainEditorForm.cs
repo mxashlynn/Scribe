@@ -134,27 +134,10 @@ namespace Scribe
         /// <param name="e">Addional event data.</param>
         private void NewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var response = MessageBox.Show(string.Format(CultureInfo.CurrentCulture, Resources.WarningMessageNew, ProjectFolderPath),
-                                           Resources.CaptionNewWarning,
-                                           MessageBoxButtons.YesNoCancel,
-                                           MessageBoxIcon.Warning);
-            switch (response)
+            if (SelectProjectFolder(Resources.InfoMessageNew)
+                && CreateTemplatesInProjectFolder())
             {
-                case DialogResult.Yes:
-                    CreateTemplatesInProjectFolder();
-                    break;
-                case DialogResult.No:
-                    if (SelectProjectFolder())
-                    {
-                        if (CreateTemplatesInProjectFolder())
-                        {
-                            // TODO If creating templates automatically loads their content, remove this call.
-                            LoadDataFiles();
-                        }
-                    }
-                    break;
-                case DialogResult.Cancel:
-                    break;
+                LoadDataFiles();
             }
         }
 
@@ -165,7 +148,7 @@ namespace Scribe
         /// <param name="e">Addional event data.</param>
         private void LoadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (SelectProjectFolder())
+            if (SelectProjectFolder(Resources.InfoMessageLoad))
             {
                 LoadDataFiles();
             }
@@ -441,7 +424,7 @@ namespace Scribe
         // TODO These would be good candidates for moving into a dedicated non-UI class.
 
         /// <summary>
-        /// Opens a dialogue allowing the user to select the folder in which to save data files.
+        /// Opens a dialogue allowing the user to select the folder in which to data files are stored.
         /// </summary>
         /// <param name="in_message">A prompt to the user, differentiating between loading existing files and creating new blank ones.</param>
         /// <returns>True if the user selected a folder.</returns>
@@ -479,7 +462,7 @@ namespace Scribe
 
             // Create the templates.
             PronounGroup.PutRecords(Enumerable.Empty<PronounGroup>());
-            // TODO Replace these throwaway allocations with a ModelCollection<>.Empty member.
+            // TODO Replace these throwaway allocations with a ModelCollection<>.Default member.
             // TODO Add methods to PutRecords for the configuration classes.
             new ModelCollection<BeingModel>(All.BeingIDs, Enumerable.Empty<CritterModel>()).PutRecordsForType<CritterModel>();
             new ModelCollection<BeingModel>(All.BeingIDs, Enumerable.Empty<CharacterModel>()).PutRecordsForType<CharacterModel>();

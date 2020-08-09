@@ -150,8 +150,17 @@
     <comment>Heading for the application version.</comment>
   </data>
   <data name="ErrorFolderNotEmpty" xml:space="preserve">
-    <value>This folder is not empty!</value>
+    <value>This folder is not empty!
+Folder: {1}</value>
     <comment>An error message if a project directory was expected to be empty.</comment>
+  </data>
+  <data name="InfoMessageLoad" xml:space="preserve">
+    <value>Select the project folder to load.</value>
+    <comment>Instructions for loading an existing project.</comment>
+  </data>
+  <data name="InfoMessageNew" xml:space="preserve">
+    <value>Select the new project folder.</value>
+    <comment>Instructions for creating a new project.</comment>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ParquetIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -167,10 +176,6 @@
   <data name="WarningMessageExit" xml:space="preserve">
     <value>Really quit?  Unsaved changes will be lost!</value>
     <comment>A reminder to save before quitting.</comment>
-  </data>
-  <data name="WarningMessageNew" xml:space="preserve">
-    <value>Populate the {1} folder with a new project, deleting existing content?</value>
-    <comment>A warning before creating empty template data files.</comment>
   </data>
   <data name="WarningMessageReload" xml:space="preserve">
     <value>Abandon unsaved changes and reload data?</value>

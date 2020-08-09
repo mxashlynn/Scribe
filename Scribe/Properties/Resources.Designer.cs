@@ -133,11 +133,30 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This folder is not empty!.
+        ///   Looks up a localized string similar to This folder is not empty!
+        ///Folder: {1}.
         /// </summary>
         internal static string ErrorFolderNotEmpty {
             get {
                 return ResourceManager.GetString("ErrorFolderNotEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select the project folder to load..
+        /// </summary>
+        internal static string InfoMessageLoad {
+            get {
+                return ResourceManager.GetString("InfoMessageLoad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select the new project folder..
+        /// </summary>
+        internal static string InfoMessageNew {
+            get {
+                return ResourceManager.GetString("InfoMessageNew", resourceCulture);
             }
         }
         
@@ -176,15 +195,6 @@ namespace Scribe.Properties {
         internal static string WarningMessageExit {
             get {
                 return ResourceManager.GetString("WarningMessageExit", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Populate the {1} folder with a new project, deleting existing content?.
-        /// </summary>
-        internal static string WarningMessageNew {
-            get {
-                return ResourceManager.GetString("WarningMessageNew", resourceCulture);
             }
         }
         
