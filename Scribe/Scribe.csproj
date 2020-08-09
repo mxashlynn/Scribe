@@ -29,7 +29,7 @@
     <WarningsAsErrors>NU1605;CS1591</WarningsAsErrors>
 
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-    <StartupObject>Scribe.Program</StartupObject>
+    <StartupObject>Scribe.ScribeProgram</StartupObject>
     <PackageIcon>ParquetIcon.ico</PackageIcon>
   </PropertyGroup>
 
