@@ -460,25 +460,29 @@ namespace Scribe
                 }
             }
 
-            // Create the templates.
+            #region Create the Templates
             PronounGroup.PutRecords(Enumerable.Empty<PronounGroup>());
-            // TODO Replace these throwaway allocations with a ModelCollection<>.Default member.
-            // TODO Add methods to PutRecords for the configuration classes.
-            new ModelCollection<BeingModel>(All.BeingIDs, Enumerable.Empty<CritterModel>()).PutRecordsForType<CritterModel>();
-            new ModelCollection<BeingModel>(All.BeingIDs, Enumerable.Empty<CharacterModel>()).PutRecordsForType<CharacterModel>();
-            new ModelCollection<BiomeModel>(All.BiomeIDs, Enumerable.Empty<BiomeModel>()).PutRecordsForType<BiomeModel>();
-            new ModelCollection<CraftingRecipe>(All.CraftingRecipeIDs, Enumerable.Empty<CraftingRecipe>()).PutRecordsForType<CraftingRecipe>();
-            new ModelCollection<InteractionModel>(All.InteractionIDs, Enumerable.Empty<InteractionModel>()).PutRecordsForType<InteractionModel>();
-            new ModelCollection<MapModel>(All.MapIDs, Enumerable.Empty<MapChunk>()).PutRecordsForType<MapChunk>();
-            new ModelCollection<MapModel>(All.MapIDs, Enumerable.Empty<MapRegionSketch>()).PutRecordsForType<MapRegionSketch>();
-            new ModelCollection<MapModel>(All.MapIDs, Enumerable.Empty<MapRegion>()).PutRecordsForType<MapRegion>();
-            new ModelCollection<ParquetModel>(All.ParquetIDs, Enumerable.Empty<FloorModel>()).PutRecordsForType<FloorModel>();
-            new ModelCollection<ParquetModel>(All.ParquetIDs, Enumerable.Empty<BlockModel>()).PutRecordsForType<BlockModel>();
-            new ModelCollection<ParquetModel>(All.ParquetIDs, Enumerable.Empty<FurnishingModel>()).PutRecordsForType<FurnishingModel>();
-            new ModelCollection<ParquetModel>(All.ParquetIDs, Enumerable.Empty<CollectibleModel>()).PutRecordsForType<CollectibleModel>();
-            new ModelCollection<RoomRecipe>(All.RoomRecipeIDs, Enumerable.Empty<RoomRecipe>()).PutRecordsForType<RoomRecipe>();
-            new ModelCollection<ScriptModel>(All.ScriptIDs, Enumerable.Empty<ScriptModel>()).PutRecordsForType<ScriptModel>();
-            new ModelCollection<ItemModel>(All.ItemIDs, Enumerable.Empty<ItemModel>()).PutRecordsForType<ItemModel>();
+            BiomeConfiguration.PutRecord();
+            CraftConfiguration.PutRecord();
+            RoomConfiguration.PutRecord();
+
+            ModelCollection<GameModel>.Default.PutRecordsForType<GameModel>();
+            ModelCollection<BeingModel>.Default.PutRecordsForType<CritterModel>();
+            ModelCollection<BeingModel>.Default.PutRecordsForType<CharacterModel>();
+            ModelCollection<BiomeModel>.Default.PutRecordsForType<BiomeModel>();
+            ModelCollection<CraftingRecipe>.Default.PutRecordsForType<CraftingRecipe>();
+            ModelCollection<InteractionModel>.Default.PutRecordsForType<InteractionModel>();
+            ModelCollection<MapModel>.Default.PutRecordsForType<MapChunk>();
+            ModelCollection<MapModel>.Default.PutRecordsForType<MapRegionSketch>();
+            ModelCollection<MapModel>.Default.PutRecordsForType<MapRegion>();
+            ModelCollection<ParquetModel>.Default.PutRecordsForType<FloorModel>();
+            ModelCollection<ParquetModel>.Default.PutRecordsForType<BlockModel>();
+            ModelCollection<ParquetModel>.Default.PutRecordsForType<FurnishingModel>();
+            ModelCollection<ParquetModel>.Default.PutRecordsForType<CollectibleModel>();
+            ModelCollection<RoomRecipe>.Default.PutRecordsForType<RoomRecipe>();
+            ModelCollection<ScriptModel>.Default.PutRecordsForType<ScriptModel>();
+            ModelCollection<ItemModel>.Default.PutRecordsForType<ItemModel>();
+            #endregion
 
             return true;
         }
