@@ -114,7 +114,7 @@ namespace Scribe
         private void UpdateLibraryDataDisplay()
         {
             LibraryVersionExample.Text = ParquetClassLibrary.AssemblyInfo.LibraryVersion;
-            ProjectFolderExample.Text = All.ProjectDirectory;
+            LibraryProjectPathExample.Text = All.ProjectDirectory;
         }
         #endregion
 
