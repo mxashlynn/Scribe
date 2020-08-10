@@ -52,10 +52,6 @@ namespace Scribe
         private readonly FolderBrowserDialog FolderBrowserDialogue = new FolderBrowserDialog();
         #endregion
 
-        #region Project Data
-        private string ProjectFolderPath = "";
-        #endregion
-
         #region Initialization
         /// <summary>
         /// Constructs a new instance of the main editor UI.
@@ -91,10 +87,6 @@ namespace Scribe
         protected override void OnLoad(EventArgs EventData)
         {
             base.OnLoad(EventData);
-            if (string.IsNullOrEmpty(ProjectFolderPath))
-            {
-                ProjectFolderPath = All.WorkingDirectory;
-            }
             UpdateLibraryDataDisplay();
             UpdateFileFormatDisplay();
         }
@@ -122,7 +114,7 @@ namespace Scribe
         private void UpdateLibraryDataDisplay()
         {
             LibraryVersionExample.Text = ParquetClassLibrary.AssemblyInfo.LibraryVersion;
-            LibraryWorkingDirectoryExample.Text = ProjectFolderPath;
+            ProjectFolderExample.Text = All.ProjectDirectory;
         }
         #endregion
 
@@ -434,12 +426,12 @@ namespace Scribe
             FolderBrowserDialogue.ShowNewFolderButton = true;
             FolderBrowserDialogue.RootFolder = Environment.SpecialFolder.Desktop;
             FolderBrowserDialogue.Description = in_message;
-            FolderBrowserDialogue.SelectedPath = ProjectFolderPath;
+            FolderBrowserDialogue.SelectedPath = All.ProjectDirectory;
 
             var response = FolderBrowserDialogue.ShowDialog();
             if (response == DialogResult.OK)
             {
-                ProjectFolderPath = FolderBrowserDialogue.SelectedPath;
+                All.ProjectDirectory = FolderBrowserDialogue.SelectedPath;
                 return true;
             }
             return false;
@@ -447,7 +439,7 @@ namespace Scribe
 
         private bool CreateTemplatesInProjectFolder()
         {
-            while (Directory.GetFiles(ProjectFolderPath).Length > 0)
+            while (Directory.GetFiles(All.ProjectDirectory).Length > 0)
             {
                 // Loop here to allow the user to empty the given directory if desired.
                 if (MessageBox.Show(Resources.ErrorFolderNotEmpty,
@@ -488,7 +480,6 @@ namespace Scribe
         }
 
         private void LoadDataFiles()
-            // TODO Change library so that ModelCollection.GetFilePath can use a specified directory instead of always using the working directory.
             => throw new NotImplementedException();
         #endregion
     }

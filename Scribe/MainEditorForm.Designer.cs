@@ -142,7 +142,7 @@ namespace Scribe
             this.LibraryVersionLabel = new System.Windows.Forms.Label();
             this.LibraryVersionExample = new System.Windows.Forms.Label();
             this.LibraryProjectPathLabel = new System.Windows.Forms.Label();
-            this.LibraryWorkingDirectoryExample = new System.Windows.Forms.Label();
+            this.LibraryProjectPathExample = new System.Windows.Forms.Label();
             this.CrittersTabPage = new System.Windows.Forms.TabPage();
             this.CritterTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.CritterPrimaryBehaviorComboBox = new System.Windows.Forms.ComboBox();
@@ -1730,7 +1730,7 @@ namespace Scribe
             this.LibraryInfoTableLayoutPanel.Controls.Add(this.LibraryVersionLabel, 0, 0);
             this.LibraryInfoTableLayoutPanel.Controls.Add(this.LibraryVersionExample, 1, 0);
             this.LibraryInfoTableLayoutPanel.Controls.Add(this.LibraryProjectPathLabel, 2, 0);
-            this.LibraryInfoTableLayoutPanel.Controls.Add(this.LibraryWorkingDirectoryExample, 3, 0);
+            this.LibraryInfoTableLayoutPanel.Controls.Add(this.LibraryProjectPathExample, 3, 0);
             this.LibraryInfoTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
             this.LibraryInfoTableLayoutPanel.Name = "LibraryInfoTableLayoutPanel";
             this.LibraryInfoTableLayoutPanel.RowCount = 2;
@@ -1778,18 +1778,18 @@ namespace Scribe
             this.LibraryProjectPathLabel.TabIndex = 0;
             this.LibraryProjectPathLabel.Text = "Project Path";
             // 
-            // LibraryWorkingDirectoryExample
+            // LibraryProjectPathExample
             // 
-            this.LibraryWorkingDirectoryExample.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.LibraryProjectPathExample.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.LibraryWorkingDirectoryExample.AutoSize = true;
-            this.LibraryWorkingDirectoryExample.Location = new System.Drawing.Point(70, 38);
-            this.LibraryWorkingDirectoryExample.Margin = new System.Windows.Forms.Padding(1);
-            this.LibraryWorkingDirectoryExample.Name = "LibraryWorkingDirectoryExample";
-            this.LibraryWorkingDirectoryExample.Size = new System.Drawing.Size(207, 36);
-            this.LibraryWorkingDirectoryExample.TabIndex = 1;
-            this.LibraryWorkingDirectoryExample.Text = "C:\\";
+            this.LibraryProjectPathExample.AutoSize = true;
+            this.LibraryProjectPathExample.Location = new System.Drawing.Point(70, 38);
+            this.LibraryProjectPathExample.Margin = new System.Windows.Forms.Padding(1);
+            this.LibraryProjectPathExample.Name = "LibraryProjectPathExample";
+            this.LibraryProjectPathExample.Size = new System.Drawing.Size(207, 36);
+            this.LibraryProjectPathExample.TabIndex = 1;
+            this.LibraryProjectPathExample.Text = "C:\\";
             // 
             // CrittersTabPage
             // 
@@ -5663,7 +5663,7 @@ namespace Scribe
         private System.Windows.Forms.Label LibraryVersionLabel;
         private System.Windows.Forms.Label LibraryVersionExample;
         private System.Windows.Forms.Label LibraryProjectPathLabel;
-        private System.Windows.Forms.Label LibraryWorkingDirectoryExample;
+        private System.Windows.Forms.Label LibraryProjectPathExample;
         private System.Windows.Forms.Label FileFormatPrimaryDelimiterLabel;
         private System.Windows.Forms.Label FileFormatPrimaryDelimiterExample;
         private System.Windows.Forms.Label FileFormatSecondaryDelimiterLabel;
