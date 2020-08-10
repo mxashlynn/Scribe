@@ -437,6 +437,10 @@ namespace Scribe
             return false;
         }
 
+        /// <summary>
+        /// Attempts to create new, blank game data files in the current folder.
+        /// </summary>
+        /// <returns><c>true</c> if the files were successfully created; otherwise, <c>false</c>.</returns>
         private bool CreateTemplatesInProjectFolder()
         {
             while (Directory.GetFiles(All.ProjectDirectory).Length > 0)
@@ -479,8 +483,12 @@ namespace Scribe
             return true;
         }
 
+        /// <summary>
+        /// Loads game data from files in the current directory.
+        /// </summary>
+        // TODO This should probably let the user know if a file was missing or corrupt.
         private void LoadDataFiles()
-            => throw new NotImplementedException();
+            => All.LoadFromCSVs();
         #endregion
     }
 }
