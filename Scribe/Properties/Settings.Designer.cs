@@ -22,5 +22,53 @@ namespace Scribe.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Colourful")]
+        public string GUISkin {
+            get {
+                return ((string)(this["GUISkin"]));
+            }
+            set {
+                this["GUISkin"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public int AutoSaveInterval {
+            get {
+                return ((int)(this["AutoSaveInterval"]));
+            }
+            set {
+                this["AutoSaveInterval"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SuggestStoryIDs {
+            get {
+                return ((bool)(this["SuggestStoryIDs"]));
+            }
+            set {
+                this["SuggestStoryIDs"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Desktop")]
+        public string DefaultDirectory {
+            get {
+                return ((string)(this["DefaultDirectory"]));
+            }
+            set {
+                this["DefaultDirectory"] = value;
+            }
+        }
     }
 }
