@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -91,6 +90,8 @@ namespace Scribe
         {
             base.OnLoad(EventData);
 
+            // TODO This seems to be the wrong place for this, as it is not updating.
+            // We might need to put this in a process that completes only when the box is closed, or maybe when this form regains focus?
             FlavorFilterGroupBox.Enabled = Settings.Default.UseFlavorFilters;
             FlavorFilterGroupBox.Visible = Settings.Default.UseFlavorFilters;
 
