@@ -52,6 +52,9 @@ namespace Scribe
         private readonly FolderBrowserDialog FolderBrowserDialogue = new FolderBrowserDialog();
         #endregion
 
+        // TODO Use this when setting up Character tab:  Settings.Default.SuggestStoryIDs;
+        // TODO Use this when implementing auto-save:  Settings.Default.AutoSaveInterval;
+
         #region Initialization
         /// <summary>
         /// Constructs a new instance of the main editor UI.
@@ -87,6 +90,11 @@ namespace Scribe
         protected override void OnLoad(EventArgs EventData)
         {
             base.OnLoad(EventData);
+
+            FlavorFilterGroupBox.Enabled = Settings.Default.UseFlavorFilters;
+            FlavorFilterGroupBox.Visible = Settings.Default.UseFlavorFilters;
+
+            // TODO UpdateEditorTheme(Settings.Default.UseColorfulEditorTheme);
             UpdateLibraryDataDisplay();
             UpdateFileFormatDisplay();
         }
@@ -424,7 +432,9 @@ namespace Scribe
         {
             // TODO Make this default folder selectable by the user via the options dialogue.
             FolderBrowserDialogue.ShowNewFolderButton = true;
-            FolderBrowserDialogue.RootFolder = Environment.SpecialFolder.Desktop;
+            FolderBrowserDialogue.RootFolder = Settings.Default.DesktopIsDefaultDirectory
+                ? Environment.SpecialFolder.Desktop
+                : Environment.SpecialFolder.MyDocuments;
             FolderBrowserDialogue.Description = in_message;
             FolderBrowserDialogue.SelectedPath = All.ProjectDirectory;
 
