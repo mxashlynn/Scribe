@@ -25,13 +25,13 @@ namespace Scribe.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Colourful")]
-        public string GUISkin {
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool UseColorfulEditorTheme {
             get {
-                return ((string)(this["GUISkin"]));
+                return ((bool)(this["UseColorfulEditorTheme"]));
             }
             set {
-                this["GUISkin"] = value;
+                this["UseColorfulEditorTheme"] = value;
             }
         }
         
@@ -61,13 +61,25 @@ namespace Scribe.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Desktop")]
-        public string DefaultDirectory {
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DesktopIsDefaultDirectory {
             get {
-                return ((string)(this["DefaultDirectory"]));
+                return ((bool)(this["DesktopIsDefaultDirectory"]));
             }
             set {
-                this["DefaultDirectory"] = value;
+                this["DesktopIsDefaultDirectory"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool UseFlavorFilters {
+            get {
+                return ((bool)(this["UseFlavorFilters"]));
+            }
+            set {
+                this["UseFlavorFilters"] = value;
             }
         }
     }

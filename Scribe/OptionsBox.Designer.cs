@@ -28,7 +28,9 @@ namespace Scribe
         private void InitializeComponent()
         {
             this.TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.OkayButton = new System.Windows.Forms.Button();
+            this.PanelDefaultFolder = new System.Windows.Forms.Panel();
+            this.RadioButtonDefaultToDesktop = new System.Windows.Forms.RadioButton();
+            this.RadioButtonDefaultToDocuments = new System.Windows.Forms.RadioButton();
             this.LabelTheme = new System.Windows.Forms.Label();
             this.PanelEditorTheme = new System.Windows.Forms.Panel();
             this.RadioButtonColorfulTheme = new System.Windows.Forms.RadioButton();
@@ -39,14 +41,12 @@ namespace Scribe
             this.TextBoxAutoSaveInterval = new System.Windows.Forms.TextBox();
             this.LabelAutoSaveExplanation = new System.Windows.Forms.Label();
             this.LabelDefaultFolder = new System.Windows.Forms.Label();
-            this.RadioButtonDesktop = new System.Windows.Forms.RadioButton();
-            this.RadioButtonDocuments = new System.Windows.Forms.RadioButton();
-            this.PanelDefaultFolder = new System.Windows.Forms.Panel();
+            this.OkayButton = new System.Windows.Forms.Button();
             this.LabelFlavorFilter = new System.Windows.Forms.Label();
             this.CheckBoxFlavorFilters = new System.Windows.Forms.CheckBox();
             this.TableLayoutPanel.SuspendLayout();
-            this.PanelEditorTheme.SuspendLayout();
             this.PanelDefaultFolder.SuspendLayout();
+            this.PanelEditorTheme.SuspendLayout();
             this.SuspendLayout();
             // 
             // TableLayoutPanel
@@ -84,16 +84,39 @@ namespace Scribe
             this.TableLayoutPanel.Size = new System.Drawing.Size(486, 306);
             this.TableLayoutPanel.TabIndex = 0;
             // 
-            // OkayButton
+            // PanelDefaultFolder
             // 
-            this.OkayButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.OkayButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.OkayButton.Location = new System.Drawing.Point(394, 281);
-            this.OkayButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.OkayButton.Name = "OkayButton";
-            this.OkayButton.Size = new System.Drawing.Size(88, 22);
-            this.OkayButton.TabIndex = 24;
-            this.OkayButton.Text = "&OK";
+            this.PanelDefaultFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PanelDefaultFolder.Controls.Add(this.RadioButtonDefaultToDesktop);
+            this.PanelDefaultFolder.Controls.Add(this.RadioButtonDefaultToDocuments);
+            this.PanelDefaultFolder.Location = new System.Drawing.Point(163, 153);
+            this.PanelDefaultFolder.Name = "PanelDefaultFolder";
+            this.PanelDefaultFolder.Size = new System.Drawing.Size(320, 24);
+            this.PanelDefaultFolder.TabIndex = 28;
+            // 
+            // RadioButtonDefaultToDesktop
+            // 
+            this.RadioButtonDefaultToDesktop.AutoSize = true;
+            this.RadioButtonDefaultToDesktop.Checked = true;
+            this.RadioButtonDefaultToDesktop.Location = new System.Drawing.Point(0, 5);
+            this.RadioButtonDefaultToDesktop.Name = "RadioButtonDefaultToDesktop";
+            this.RadioButtonDefaultToDesktop.Size = new System.Drawing.Size(68, 19);
+            this.RadioButtonDefaultToDesktop.TabIndex = 1;
+            this.RadioButtonDefaultToDesktop.TabStop = true;
+            this.RadioButtonDefaultToDesktop.Text = "Desktop";
+            this.RadioButtonDefaultToDesktop.UseVisualStyleBackColor = true;
+            // 
+            // RadioButtonDefaultToDocuments
+            // 
+            this.RadioButtonDefaultToDocuments.AutoSize = true;
+            this.RadioButtonDefaultToDocuments.Location = new System.Drawing.Point(100, 5);
+            this.RadioButtonDefaultToDocuments.Name = "RadioButtonDefaultToDocuments";
+            this.RadioButtonDefaultToDocuments.Size = new System.Drawing.Size(86, 19);
+            this.RadioButtonDefaultToDocuments.TabIndex = 2;
+            this.RadioButtonDefaultToDocuments.Text = "Documents";
+            this.RadioButtonDefaultToDocuments.UseVisualStyleBackColor = true;
             // 
             // LabelTheme
             // 
@@ -196,48 +219,25 @@ namespace Scribe
             this.LabelDefaultFolder.TabIndex = 34;
             this.LabelDefaultFolder.Text = "Default Folder";
             // 
-            // RadioButtonDesktop
+            // OkayButton
             // 
-            this.RadioButtonDesktop.AutoSize = true;
-            this.RadioButtonDesktop.Checked = true;
-            this.RadioButtonDesktop.Location = new System.Drawing.Point(0, 5);
-            this.RadioButtonDesktop.Name = "RadioButtonDesktop";
-            this.RadioButtonDesktop.Size = new System.Drawing.Size(68, 19);
-            this.RadioButtonDesktop.TabIndex = 1;
-            this.RadioButtonDesktop.TabStop = true;
-            this.RadioButtonDesktop.Text = "Desktop";
-            this.RadioButtonDesktop.UseVisualStyleBackColor = true;
-            // 
-            // RadioButtonDocuments
-            // 
-            this.RadioButtonDocuments.AutoSize = true;
-            this.RadioButtonDocuments.Location = new System.Drawing.Point(100, 5);
-            this.RadioButtonDocuments.Name = "RadioButtonDocuments";
-            this.RadioButtonDocuments.Size = new System.Drawing.Size(86, 19);
-            this.RadioButtonDocuments.TabIndex = 2;
-            this.RadioButtonDocuments.Text = "Documents";
-            this.RadioButtonDocuments.UseVisualStyleBackColor = true;
-            // 
-            // PanelDefaultFolder
-            // 
-            this.PanelDefaultFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PanelDefaultFolder.Controls.Add(this.RadioButtonDesktop);
-            this.PanelDefaultFolder.Controls.Add(this.RadioButtonDocuments);
-            this.PanelDefaultFolder.Location = new System.Drawing.Point(163, 153);
-            this.PanelDefaultFolder.Name = "PanelDefaultFolder";
-            this.PanelDefaultFolder.Size = new System.Drawing.Size(320, 24);
-            this.PanelDefaultFolder.TabIndex = 28;
+            this.OkayButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.OkayButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.OkayButton.Location = new System.Drawing.Point(394, 281);
+            this.OkayButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.OkayButton.Name = "OkayButton";
+            this.OkayButton.Size = new System.Drawing.Size(88, 22);
+            this.OkayButton.TabIndex = 24;
+            this.OkayButton.Text = "&OK";
             // 
             // LabelFlavorFilter
             // 
             this.LabelFlavorFilter.AutoSize = true;
             this.LabelFlavorFilter.Location = new System.Drawing.Point(3, 30);
             this.LabelFlavorFilter.Name = "LabelFlavorFilter";
-            this.LabelFlavorFilter.Size = new System.Drawing.Size(105, 15);
+            this.LabelFlavorFilter.Size = new System.Drawing.Size(95, 15);
             this.LabelFlavorFilter.TabIndex = 35;
-            this.LabelFlavorFilter.Text = "Show Flavor Filters";
+            this.LabelFlavorFilter.Text = "Use Flavor Filters";
             // 
             // CheckBoxFlavorFilters
             // 
@@ -269,10 +269,10 @@ namespace Scribe
             this.Text = "Scribe Options";
             this.TableLayoutPanel.ResumeLayout(false);
             this.TableLayoutPanel.PerformLayout();
-            this.PanelEditorTheme.ResumeLayout(false);
-            this.PanelEditorTheme.PerformLayout();
             this.PanelDefaultFolder.ResumeLayout(false);
             this.PanelDefaultFolder.PerformLayout();
+            this.PanelEditorTheme.ResumeLayout(false);
+            this.PanelEditorTheme.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -286,8 +286,8 @@ namespace Scribe
         private System.Windows.Forms.RadioButton RadioButtonColorfulTheme;
         private System.Windows.Forms.RadioButton RadioButtonOSTheme;
         private System.Windows.Forms.Panel PanelDefaultFolder;
-        private System.Windows.Forms.RadioButton RadioButtonDesktop;
-        private System.Windows.Forms.RadioButton RadioButtonDocuments;
+        private System.Windows.Forms.RadioButton RadioButtonDefaultToDesktop;
+        private System.Windows.Forms.RadioButton RadioButtonDefaultToDocuments;
         private System.Windows.Forms.Label LabelSuggestStoryIDs;
         private System.Windows.Forms.CheckBox CheckBoxSuggestStoryIDs;
         private System.Windows.Forms.Label LabelAutoSaveInterval;
