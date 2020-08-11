@@ -25,6 +25,7 @@ namespace Scribe
                 Settings.Default.SuggestStoryIDs = CheckBoxSuggestStoryIDs.Checked;
                 Settings.Default.AutoSaveInterval = int.Parse(TextBoxAutoSaveInterval.Text);
                 Settings.Default.DesktopIsDefaultDirectory = RadioButtonDefaultToDesktop.Checked;
+                Settings.Default.Save();
             });
             #endregion
         }
