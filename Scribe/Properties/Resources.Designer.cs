@@ -143,6 +143,15 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This value must be an integer..
+        /// </summary>
+        internal static string ErrorIntegersOnly {
+            get {
+                return ResourceManager.GetString("ErrorIntegersOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select the project folder to load..
         /// </summary>
         internal static string InfoMessageLoad {

@@ -27,6 +27,7 @@ namespace Scribe
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.PanelDefaultFolder = new System.Windows.Forms.Panel();
             this.RadioButtonDefaultToDesktop = new System.Windows.Forms.RadioButton();
@@ -44,9 +45,11 @@ namespace Scribe
             this.OkayButton = new System.Windows.Forms.Button();
             this.LabelFlavorFilter = new System.Windows.Forms.Label();
             this.CheckBoxFlavorFilters = new System.Windows.Forms.CheckBox();
+            this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.TableLayoutPanel.SuspendLayout();
             this.PanelDefaultFolder.SuspendLayout();
             this.PanelEditorTheme.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // TableLayoutPanel
@@ -200,15 +203,16 @@ namespace Scribe
             this.TextBoxAutoSaveInterval.Size = new System.Drawing.Size(68, 23);
             this.TextBoxAutoSaveInterval.TabIndex = 32;
             this.TextBoxAutoSaveInterval.Text = "5";
+            this.TextBoxAutoSaveInterval.Validating += new System.ComponentModel.CancelEventHandler(this.TextBoxAutoSaveInterval_Validating);
             // 
             // LabelAutoSaveExplanation
             // 
             this.LabelAutoSaveExplanation.AutoSize = true;
             this.LabelAutoSaveExplanation.Location = new System.Drawing.Point(163, 120);
             this.LabelAutoSaveExplanation.Name = "LabelAutoSaveExplanation";
-            this.LabelAutoSaveExplanation.Size = new System.Drawing.Size(214, 15);
+            this.LabelAutoSaveExplanation.Size = new System.Drawing.Size(255, 15);
             this.LabelAutoSaveExplanation.TabIndex = 33;
-            this.LabelAutoSaveExplanation.Text = "Interval is in minutes.  0 = No autosave.";
+            this.LabelAutoSaveExplanation.Text = "Interval is in minutes, 0 to 60.  0 = No autosave.";
             // 
             // LabelDefaultFolder
             // 
@@ -250,6 +254,10 @@ namespace Scribe
             this.CheckBoxFlavorFilters.TabIndex = 36;
             this.CheckBoxFlavorFilters.UseVisualStyleBackColor = true;
             // 
+            // ErrorProvider
+            // 
+            this.ErrorProvider.ContainerControl = this;
+            // 
             // OptionsBox
             // 
             this.AcceptButton = this.OkayButton;
@@ -273,6 +281,7 @@ namespace Scribe
             this.PanelDefaultFolder.PerformLayout();
             this.PanelEditorTheme.ResumeLayout(false);
             this.PanelEditorTheme.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -296,5 +305,6 @@ namespace Scribe
         private System.Windows.Forms.Label LabelDefaultFolder;
         private System.Windows.Forms.Label LabelFlavorFilter;
         private System.Windows.Forms.CheckBox CheckBoxFlavorFilters;
+        private System.Windows.Forms.ErrorProvider ErrorProvider;
     }
 }

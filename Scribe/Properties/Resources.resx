@@ -152,7 +152,11 @@
   <data name="ErrorFolderNotEmpty" xml:space="preserve">
     <value>This folder is not empty!
 Folder: {1}</value>
-    <comment>An error message if a project directory was expected to be empty.</comment>
+    <comment>An error message signalling a project directory was not empty.</comment>
+  </data>
+  <data name="ErrorIntegersOnly" xml:space="preserve">
+    <value>This value must be an integer.</value>
+    <comment>An error message signaling an integer could not be parsed.</comment>
   </data>
   <data name="InfoMessageLoad" xml:space="preserve">
     <value>Select the project folder to load.</value>
