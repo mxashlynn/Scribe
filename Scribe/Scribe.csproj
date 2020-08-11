@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
     <AssemblyName>Scribe</AssemblyName>
@@ -17,7 +17,7 @@
     <PackageId>Scribe_MagicalGirlfriends</PackageId>
     <PackageTags>C# .net core netstandard game</PackageTags>
     <PackageReleaseNotes>Code and documentation are incomplete and under rapid development. Expect frequent breaking changes.</PackageReleaseNotes>
-    <ApplicationIcon>ParquetIcon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\ParquetIcon.ico</ApplicationIcon>
 
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -30,7 +30,7 @@
 
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <StartupObject>Scribe.ScribeProgram</StartupObject>
-    <PackageIcon>ParquetIcon.ico</PackageIcon>
+    <PackageIcon>Resources\ParquetIcon.ico</PackageIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -73,16 +73,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="ParquetIcon.ico">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="Resources\ParquetIcon.ico">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
     </None>
   </ItemGroup>
 
