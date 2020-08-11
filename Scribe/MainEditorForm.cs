@@ -69,16 +69,7 @@ namespace Scribe
              */
 
             #region Default Event Handlers
-            FormClosing += new FormClosingEventHandler((object sender, FormClosingEventArgs e) =>
-            {
-                if (MessageBox.Show(Resources.WarningMessageExit,
-                                    Resources.CaptionExitWarning,
-                                    MessageBoxButtons.YesNo,
-                                    MessageBoxIcon.Warning) == DialogResult.No)
-                {
-                    e.Cancel = true;
-                }
-            });
+            FormClosing += FormClosingEventHandler;
             #endregion
         }
 
@@ -91,6 +82,35 @@ namespace Scribe
             base.OnLoad(EventData);
             UpdateLibraryDataDisplay();
             UpdateFileFormatDisplay();
+        }
+        #endregion
+
+        #region Setting Up FolderBrowserDialogue
+        /// <summary>
+        /// Opens a dialogue allowing the user to select the folder in which to data files are stored.
+        /// </summary>
+        /// <remarks>
+        /// Ideally this should have been handled via sub-classing, but since <see cref="FolderBrowserDialogue"/>
+        /// is <c>sealed</c> we take care of it here.
+        /// </remarks>
+        /// <param name="in_message">A prompt to the user, differentiating between loading existing files and creating new blank ones.</param>
+        /// <returns>True if the user selected a folder.</returns>
+        private bool SelectProjectFolder(string in_message)
+        {
+            FolderBrowserDialogue.ShowNewFolderButton = true;
+            FolderBrowserDialogue.RootFolder = Settings.Default.DesktopIsDefaultDirectory
+                ? Environment.SpecialFolder.Desktop
+                : Environment.SpecialFolder.MyDocuments;
+            FolderBrowserDialogue.Description = in_message;
+            FolderBrowserDialogue.SelectedPath = All.ProjectDirectory;
+
+            var response = FolderBrowserDialogue.ShowDialog();
+            if (response == DialogResult.OK)
+            {
+                All.ProjectDirectory = FolderBrowserDialogue.SelectedPath;
+                return true;
+            }
+            return false;
         }
         #endregion
 
@@ -313,7 +333,7 @@ namespace Scribe
             => AboutDialogue.ShowDialog();
         #endregion
 
-        #region Tab Refresh Methods
+        #region Tab Refresh Events
         /// <summary>
         /// Repopulates the given list with the <see cref="Model"/>s in the given collection.
         /// </summary>
@@ -426,31 +446,25 @@ namespace Scribe
             => RepopulateListBox(RoomListBox, All.RoomRecipes);
         #endregion
 
-        #region Editor Commands
-        // TODO These would be good candidates for moving into a dedicated non-UI class.
-
+        #region Quit Editor Event
         /// <summary>
-        /// Opens a dialogue allowing the user to select the folder in which to data files are stored.
+        /// Intercepts events that would close the editor to double-check that this is desired.
         /// </summary>
-        /// <param name="in_message">A prompt to the user, differentiating between loading existing files and creating new blank ones.</param>
-        /// <returns>True if the user selected a folder.</returns>
-        private bool SelectProjectFolder(string in_message)
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Used to cancel the close event if it was not desired.</param>
+        private void FormClosingEventHandler(object sender, FormClosingEventArgs e)
         {
-            // TODO Make this default folder selectable by the user via the options dialogue.
-            FolderBrowserDialogue.ShowNewFolderButton = true;
-            FolderBrowserDialogue.RootFolder = Settings.Default.DesktopIsDefaultDirectory
-                ? Environment.SpecialFolder.Desktop
-                : Environment.SpecialFolder.MyDocuments;
-            FolderBrowserDialogue.Description = in_message;
-            FolderBrowserDialogue.SelectedPath = All.ProjectDirectory;
-
-            var response = FolderBrowserDialogue.ShowDialog();
-            if (response == DialogResult.OK)
+            if (MessageBox.Show(Resources.WarningMessageExit,
+                                Resources.CaptionExitWarning,
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Warning) == DialogResult.No)
             {
-                All.ProjectDirectory = FolderBrowserDialogue.SelectedPath;
-                return true;
+                e.Cancel = true;
             }
-            return false;
+            else
+            {
+                FormClosing -= FormClosingEventHandler;
+            }
         }
         #endregion
     }
