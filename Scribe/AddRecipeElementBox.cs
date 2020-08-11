@@ -6,7 +6,7 @@ namespace Scribe
     /// A modal dialogue that enables the user to add a new <see cref="ParquetClassLibrary.RecipeElement"/>
     /// to a collection of recipe elements.
     /// </summary>
-    partial class AddRecipeElementBox : Form
+    internal partial class AddRecipeElementBox : Form
     {
         /// <summary>
         /// Initialize a new <see cref="AddRecipeElementBox"/>.

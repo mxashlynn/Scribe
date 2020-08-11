@@ -7,7 +7,7 @@ namespace Scribe
     /// <summary>
     /// A modal dialogue that enables the user to adjust application behavior.
     /// </summary>
-    partial class OptionsBox : Form
+    internal partial class OptionsBox : Form
     {
         /// <summary>The shortest interval allowed for AutoSaveInterval.</summary>
         private const int MinimumInterval = 0;

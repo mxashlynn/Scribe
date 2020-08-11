@@ -5,7 +5,10 @@ using Scribe.Properties;
 
 namespace Scribe
 {
-    partial class AboutBox : Form
+    /// <summary>
+    /// A modal dialogue that presents descriptive information about the application and library.
+    /// </summary>
+    internal partial class AboutBox : Form
     {
         /// <summary>
         /// A modal dialogue that present descriptive information about the application and library.

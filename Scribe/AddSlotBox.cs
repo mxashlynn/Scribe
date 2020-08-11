@@ -5,7 +5,7 @@ namespace Scribe
     /// <summary>
     /// A modal dialogue enabling users to add new <see cref="ParquetClassLibrary.Items.InventorySlot"/>s.
     /// </summary>
-    partial class AddSlotBox : Form
+    internal partial class AddSlotBox : Form
     {
         /// <summary>
         /// Initializes a new <see cref="AddSlotBox"/>.

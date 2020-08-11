@@ -5,7 +5,7 @@ namespace Scribe
     /// <summary>
     /// A form that enables the user to edit a given <see cref="ParquetClassLibrary.Crafts.StrikePanelGrid"/>.
     /// </summary>
-    public partial class StrikePatternEditorForm : Form
+    internal partial class StrikePatternEditorForm : Form
     {
         /// <summary>
         /// Initialize a new <see cref="StrikePatternEditorForm"/>.
