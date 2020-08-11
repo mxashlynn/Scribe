@@ -71,12 +71,14 @@ namespace Scribe
             if (int.TryParse(TextBoxAutoSaveInterval.Text, out var newInterval))
             {
                 NewAutoSaveInterval = Math.Clamp(newInterval, MinimumInterval, MaximumInterval);
+                TextBoxAutoSaveInterval.Text = NewAutoSaveInterval.ToString();
+                ErrorProvider.SetError(TextBoxAutoSaveInterval, "");
             }
             else
             {
                 e.Cancel = true;
                 TextBoxAutoSaveInterval.Select();
-                ErrorProvider.SetError(TextBoxAutoSaveInterval, Properties.Resources.ErrorFolderNotEmpty);
+                ErrorProvider.SetError(TextBoxAutoSaveInterval, Resources.ErrorIntegersOnly);
             }
         }
     }
