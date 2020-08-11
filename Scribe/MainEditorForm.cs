@@ -89,19 +89,24 @@ namespace Scribe
         protected override void OnLoad(EventArgs EventData)
         {
             base.OnLoad(EventData);
-
-            // TODO This seems to be the wrong place for this, as it is not updating.
-            // We might need to put this in a process that completes only when the box is closed, or maybe when this form regains focus?
-            FlavorFilterGroupBox.Enabled = Settings.Default.UseFlavorFilters;
-            FlavorFilterGroupBox.Visible = Settings.Default.UseFlavorFilters;
-
-            // TODO UpdateEditorTheme(Settings.Default.UseColorfulEditorTheme);
             UpdateLibraryDataDisplay();
             UpdateFileFormatDisplay();
         }
         #endregion
 
         #region Display Update Methods
+        /// <summary>
+        /// Updates the form when it receives focus, for example after closing the options dialogue box.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void MainEditorForm_Activated(object sender, EventArgs e)
+        {
+            FlavorFilterGroupBox.Enabled = Settings.Default.UseFlavorFilters;
+            FlavorFilterGroupBox.Visible = Settings.Default.UseFlavorFilters;
+            // TODO UpdateEditorTheme(Settings.Default.UseColorfulEditorTheme);
+        }
+
         /// <summary>
         /// Sets the text used to describe the format of the saved data files the editor works with.
         /// </summary>

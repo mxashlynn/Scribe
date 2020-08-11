@@ -5494,6 +5494,7 @@ namespace Scribe
             this.MaximizeBox = false;
             this.Name = "MainEditorForm";
             this.Text = "Scribe";
+            this.Activated += new System.EventHandler(this.MainEditorForm_Activated);
             this.EditorStatusStrip.ResumeLayout(false);
             this.EditorStatusStrip.PerformLayout();
             this.MainMenuBar.ResumeLayout(false);

@@ -48,15 +48,13 @@ namespace Scribe
             base.OnLoad(EventData);
 
             RadioButtonColorfulTheme.Checked = Settings.Default.UseColorfulEditorTheme;
-            // TODO Is the line below needed?
-            //RadioButtonOSTheme.Checked = !Settings.Default.UseColorfulEditorTheme;
+            RadioButtonOSTheme.Checked = !Settings.Default.UseColorfulEditorTheme;
             CheckBoxFlavorFilters.Checked = Settings.Default.UseFlavorFilters;
             CheckBoxSuggestStoryIDs.Checked = Settings.Default.SuggestStoryIDs;
             NewAutoSaveInterval = Settings.Default.AutoSaveInterval;
             TextBoxAutoSaveInterval.Text = NewAutoSaveInterval.ToString();
             RadioButtonDefaultToDesktop.Checked = Settings.Default.DesktopIsDefaultDirectory;
-            // TODO Is the line below needed?
-            //RadioButtonDefaultToDocuments.Checked = !Settings.Default.DesktopIsDefaultDirectory;
+            RadioButtonDefaultToDocuments.Checked = !Settings.Default.DesktopIsDefaultDirectory;
         }
         #endregion
 
