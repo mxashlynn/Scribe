@@ -1216,9 +1216,9 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Right)));
             this.EditorTabs.Controls.Add(this.GamesTabPage);
             this.EditorTabs.Controls.Add(this.BlocksTabPage);
-            this.EditorTabs.Controls.Add(this.CollectiblesTabPage);
             this.EditorTabs.Controls.Add(this.FloorsTabPage);
             this.EditorTabs.Controls.Add(this.FurnishingsTabPage);
+            this.EditorTabs.Controls.Add(this.CollectiblesTabPage);
             this.EditorTabs.Controls.Add(this.CharactersTabPage);
             this.EditorTabs.Controls.Add(this.CrittersTabPage);
             this.EditorTabs.Controls.Add(this.ItemsTabPage);
