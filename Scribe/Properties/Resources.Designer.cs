@@ -88,6 +88,15 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error Loading Parquet.
+        /// </summary>
+        internal static string CaptionAccessingParquetError {
+            get {
+                return ResourceManager.GetString("CaptionAccessingParquetError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exit Scribe.
         /// </summary>
         internal static string CaptionExitWarning {
@@ -129,6 +138,15 @@ namespace Scribe.Properties {
         internal static string CaptionVersion {
             get {
                 return ResourceManager.GetString("CaptionVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There was an error accessing the Parquet library.  Data might be in an inconsistent state.  :(.
+        /// </summary>
+        internal static string ErrorAccessingParquet {
+            get {
+                return ResourceManager.GetString("ErrorAccessingParquet", resourceCulture);
             }
         }
         

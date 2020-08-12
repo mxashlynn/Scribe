@@ -129,6 +129,10 @@
     <value>About</value>
     <comment>Heading for the about box.</comment>
   </data>
+  <data name="CaptionAccessingParquetError" xml:space="preserve">
+    <value>Error Loading Parquet</value>
+    <comment>Heading for the library access error dialogue.</comment>
+  </data>
   <data name="CaptionExitWarning" xml:space="preserve">
     <value>Exit Scribe</value>
     <comment>Heading for the exit warning dialogue.</comment>
@@ -148,6 +152,10 @@
   <data name="CaptionVersion" xml:space="preserve">
     <value>Version</value>
     <comment>Heading for the application version.</comment>
+  </data>
+  <data name="ErrorAccessingParquet" xml:space="preserve">
+    <value>There was an error accessing the Parquet library.  Data might be in an inconsistent state.  :(</value>
+    <comment>A warning if the libaray assembly cannot be loaded.</comment>
   </data>
   <data name="ErrorFolderNotEmpty" xml:space="preserve">
     <value>This folder is not empty!

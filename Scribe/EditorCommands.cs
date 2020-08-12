@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -20,6 +22,35 @@ namespace Scribe
     /// </summary>
     internal static class EditorCommands
     {
+        /// <summary>Children of the <see cref="Model"/> class that do not have a graphical representation.</summary>
+        private static readonly List<string> TypeNamesWithoutGraphics;
+
+        /// <summary>Children of the <see cref="Model"/> class that have a graphical representation.</summary>
+        private static readonly List<string> GraphicalAssetPaths;
+
+
+        static EditorCommands()
+        {
+            // This comparison forces the Parquet assembly to load.
+            if (string.IsNullOrEmpty(ParquetClassLibrary.AssemblyInfo.LibraryVersion))
+            {
+                MessageBox.Show(Resources.ErrorAccessingParquet, Resources.CaptionAccessingParquetError);
+            }
+            else
+            {
+                TypeNamesWithoutGraphics = new List<string> { "Interaction", "Map", "Script" };
+                GraphicalAssetPaths = AppDomain.CurrentDomain.GetAssemblies()
+                                                 .Where(myassembly => string.Equals(myassembly.GetName().Name, "Parquet"))
+                                                 .SelectMany(myassembly => myassembly.GetExportedTypes())
+                                                 .Where(type => typeof(Model).IsAssignableFrom(type)
+                                                     && !type.IsInterface
+                                                     && !type.IsAbstract
+                                                     && !TypeNamesWithoutGraphics.Any(name => type.Name.Contains(name)))
+                                                 .Select(type => Path.Combine(All.ProjectDirectory, "Graphics", type.Name))
+                                                 .ToList();
+            }
+        }
+
         /// <summary>
         /// Attempts to create new, blank game data files in the current folder.
         /// </summary>
@@ -38,6 +69,16 @@ namespace Scribe
                     return false;
                 }
             }
+
+            #region Create the Asset Folders
+            foreach(var folderPath in GraphicalAssetPaths)
+            {
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+            }
+            #endregion
 
             #region Create the Templates
             PronounGroup.PutRecords(Enumerable.Empty<PronounGroup>());
