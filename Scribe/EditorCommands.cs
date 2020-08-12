@@ -25,10 +25,13 @@ namespace Scribe
         /// <summary>Children of the <see cref="Model"/> class that do not have a graphical representation.</summary>
         private static readonly List<string> TypeNamesWithoutGraphics;
 
-        /// <summary>Children of the <see cref="Model"/> class that have a graphical representation.</summary>
-        private static readonly List<string> GraphicalAssetPaths;
+        /// <summary>Children of the <see cref="Model"/> class that have a graphical representation, and the path to those assets.</summary>
+        private static readonly Dictionary<Type, string> GraphicalAssetPaths;
 
-
+        #region Initialization
+        /// <summary>
+        /// Initializes <see cref="EditorCommands"/> asset collections.
+        /// </summary>
         static EditorCommands()
         {
             // This comparison forces the Parquet assembly to load.
@@ -43,14 +46,19 @@ namespace Scribe
                                                  .Where(myassembly => string.Equals(myassembly.GetName().Name, "Parquet"))
                                                  .SelectMany(myassembly => myassembly.GetExportedTypes())
                                                  .Where(type => typeof(Model).IsAssignableFrom(type)
-                                                     && !type.IsInterface
-                                                     && !type.IsAbstract
-                                                     && !TypeNamesWithoutGraphics.Any(name => type.Name.Contains(name)))
-                                                 .Select(type => Path.Combine(All.ProjectDirectory, "Graphics", type.Name))
-                                                 .ToList();
+                                                             && !type.IsInterface
+                                                             && !type.IsAbstract
+                                                             && !TypeNamesWithoutGraphics.Any(name => type.Name.Contains(name)))
+                                                 .ToDictionary(type => type,
+                                                               type => Path.Combine(All.ProjectDirectory,
+                                                                                    "Graphics",
+                                                                                    type.Name.Replace("Model", "s")
+                                                                                             .Replace("Recipe", "Recipes")));
             }
         }
+        #endregion
 
+        #region Commands
         /// <summary>
         /// Attempts to create new, blank game data files in the current folder.
         /// </summary>
@@ -71,7 +79,7 @@ namespace Scribe
             }
 
             #region Create the Asset Folders
-            foreach(var folderPath in GraphicalAssetPaths)
+            foreach(var folderPath in GraphicalAssetPaths.Values)
             {
                 if (!Directory.Exists(folderPath))
                 {
@@ -113,5 +121,6 @@ namespace Scribe
         // TODO This should probably let the user know if a file was missing or corrupt.
         internal static void LoadDataFiles()
             => All.LoadFromCSVs();
+        #endregion
     }
 }
