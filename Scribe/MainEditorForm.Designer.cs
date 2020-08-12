@@ -1264,7 +1264,7 @@ namespace Scribe
             // 
             // GameIconEditButton
             // 
-            this.GameIconEditButton.Location = new System.Drawing.Point(812, 468);
+            this.GameIconEditButton.Location = new System.Drawing.Point(815, 468);
             this.GameIconEditButton.Name = "GameIconEditButton";
             this.GameIconEditButton.Size = new System.Drawing.Size(128, 23);
             this.GameIconEditButton.TabIndex = 7;
@@ -1275,9 +1275,9 @@ namespace Scribe
             // 
             this.GameIconPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.GameIconPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.GameIconPictureBox.Location = new System.Drawing.Point(759, 280);
+            this.GameIconPictureBox.Location = new System.Drawing.Point(767, 286);
             this.GameIconPictureBox.Name = "GameIconPictureBox";
-            this.GameIconPictureBox.Size = new System.Drawing.Size(182, 182);
+            this.GameIconPictureBox.Size = new System.Drawing.Size(176, 176);
             this.GameIconPictureBox.TabIndex = 6;
             this.GameIconPictureBox.TabStop = false;
             // 
@@ -2035,9 +2035,9 @@ namespace Scribe
             // 
             this.BlockPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BlockPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.BlockPictureBox.Location = new System.Drawing.Point(761, 280);
+            this.BlockPictureBox.Location = new System.Drawing.Point(767, 286);
             this.BlockPictureBox.Name = "BlockPictureBox";
-            this.BlockPictureBox.Size = new System.Drawing.Size(182, 182);
+            this.BlockPictureBox.Size = new System.Drawing.Size(176, 176);
             this.BlockPictureBox.TabIndex = 6;
             this.BlockPictureBox.TabStop = false;
             // 
@@ -2345,9 +2345,9 @@ namespace Scribe
             // 
             this.CollectiblePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CollectiblePictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.CollectiblePictureBox.Location = new System.Drawing.Point(761, 280);
+            this.CollectiblePictureBox.Location = new System.Drawing.Point(767, 286);
             this.CollectiblePictureBox.Name = "CollectiblePictureBox";
-            this.CollectiblePictureBox.Size = new System.Drawing.Size(182, 182);
+            this.CollectiblePictureBox.Size = new System.Drawing.Size(176, 176);
             this.CollectiblePictureBox.TabIndex = 6;
             this.CollectiblePictureBox.TabStop = false;
             // 
@@ -2677,9 +2677,9 @@ namespace Scribe
             // 
             this.FloorPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.FloorPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.FloorPictureBox.Location = new System.Drawing.Point(761, 280);
+            this.FloorPictureBox.Location = new System.Drawing.Point(767, 286);
             this.FloorPictureBox.Name = "FloorPictureBox";
-            this.FloorPictureBox.Size = new System.Drawing.Size(182, 182);
+            this.FloorPictureBox.Size = new System.Drawing.Size(176, 176);
             this.FloorPictureBox.TabIndex = 6;
             this.FloorPictureBox.TabStop = false;
             // 
@@ -2979,9 +2979,9 @@ namespace Scribe
             // 
             this.FurnishingPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.FurnishingPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.FurnishingPictureBox.Location = new System.Drawing.Point(761, 280);
+            this.FurnishingPictureBox.Location = new System.Drawing.Point(767, 286);
             this.FurnishingPictureBox.Name = "FurnishingPictureBox";
-            this.FurnishingPictureBox.Size = new System.Drawing.Size(182, 182);
+            this.FurnishingPictureBox.Size = new System.Drawing.Size(176, 176);
             this.FurnishingPictureBox.TabIndex = 6;
             this.FurnishingPictureBox.TabStop = false;
             // 
@@ -3546,9 +3546,9 @@ namespace Scribe
             // 
             this.CharacterPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CharacterPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.CharacterPictureBox.Location = new System.Drawing.Point(761, 280);
+            this.CharacterPictureBox.Location = new System.Drawing.Point(767, 286);
             this.CharacterPictureBox.Name = "CharacterPictureBox";
-            this.CharacterPictureBox.Size = new System.Drawing.Size(182, 182);
+            this.CharacterPictureBox.Size = new System.Drawing.Size(176, 176);
             this.CharacterPictureBox.TabIndex = 6;
             this.CharacterPictureBox.TabStop = false;
             // 
@@ -3740,9 +3740,9 @@ namespace Scribe
             // 
             this.CritterPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CritterPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.CritterPictureBox.Location = new System.Drawing.Point(761, 280);
+            this.CritterPictureBox.Location = new System.Drawing.Point(767, 286);
             this.CritterPictureBox.Name = "CritterPictureBox";
-            this.CritterPictureBox.Size = new System.Drawing.Size(182, 182);
+            this.CritterPictureBox.Size = new System.Drawing.Size(176, 176);
             this.CritterPictureBox.TabIndex = 6;
             this.CritterPictureBox.TabStop = false;
             // 
@@ -3910,7 +3910,7 @@ namespace Scribe
             // 
             // ItemPictureEditButton
             // 
-            this.ItemPictureEditButton.Location = new System.Drawing.Point(812, 468);
+            this.ItemPictureEditButton.Location = new System.Drawing.Point(816, 468);
             this.ItemPictureEditButton.Name = "ItemPictureEditButton";
             this.ItemPictureEditButton.Size = new System.Drawing.Size(128, 23);
             this.ItemPictureEditButton.TabIndex = 7;
@@ -4162,9 +4162,9 @@ namespace Scribe
             // 
             this.ItemPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ItemPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ItemPictureBox.Location = new System.Drawing.Point(759, 280);
+            this.ItemPictureBox.Location = new System.Drawing.Point(768, 286);
             this.ItemPictureBox.Name = "ItemPictureBox";
-            this.ItemPictureBox.Size = new System.Drawing.Size(182, 182);
+            this.ItemPictureBox.Size = new System.Drawing.Size(176, 176);
             this.ItemPictureBox.TabIndex = 6;
             this.ItemPictureBox.TabStop = false;
             // 
@@ -4356,7 +4356,7 @@ namespace Scribe
             // 
             // BiomePictureEditButton
             // 
-            this.BiomePictureEditButton.Location = new System.Drawing.Point(812, 468);
+            this.BiomePictureEditButton.Location = new System.Drawing.Point(815, 468);
             this.BiomePictureEditButton.Name = "BiomePictureEditButton";
             this.BiomePictureEditButton.Size = new System.Drawing.Size(128, 23);
             this.BiomePictureEditButton.TabIndex = 7;
@@ -4579,9 +4579,9 @@ namespace Scribe
             // 
             this.BiomePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomePictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.BiomePictureBox.Location = new System.Drawing.Point(758, 280);
+            this.BiomePictureBox.Location = new System.Drawing.Point(767, 281);
             this.BiomePictureBox.Name = "BiomePictureBox";
-            this.BiomePictureBox.Size = new System.Drawing.Size(182, 182);
+            this.BiomePictureBox.Size = new System.Drawing.Size(176, 176);
             this.BiomePictureBox.TabIndex = 6;
             this.BiomePictureBox.TabStop = false;
             // 
@@ -4655,7 +4655,7 @@ namespace Scribe
             // 
             // CraftingPictureEditButton
             // 
-            this.CraftingPictureEditButton.Location = new System.Drawing.Point(812, 468);
+            this.CraftingPictureEditButton.Location = new System.Drawing.Point(816, 465);
             this.CraftingPictureEditButton.Name = "CraftingPictureEditButton";
             this.CraftingPictureEditButton.Size = new System.Drawing.Size(128, 23);
             this.CraftingPictureEditButton.TabIndex = 7;
@@ -4877,9 +4877,9 @@ namespace Scribe
             // 
             this.CraftingPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CraftingPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.CraftingPictureBox.Location = new System.Drawing.Point(759, 280);
+            this.CraftingPictureBox.Location = new System.Drawing.Point(767, 283);
             this.CraftingPictureBox.Name = "CraftingPictureBox";
-            this.CraftingPictureBox.Size = new System.Drawing.Size(182, 182);
+            this.CraftingPictureBox.Size = new System.Drawing.Size(176, 176);
             this.CraftingPictureBox.TabIndex = 6;
             this.CraftingPictureBox.TabStop = false;
             // 
@@ -5173,7 +5173,7 @@ namespace Scribe
             // 
             // RoomPictureEditButton
             // 
-            this.RoomPictureEditButton.Location = new System.Drawing.Point(812, 468);
+            this.RoomPictureEditButton.Location = new System.Drawing.Point(815, 468);
             this.RoomPictureEditButton.Name = "RoomPictureEditButton";
             this.RoomPictureEditButton.Size = new System.Drawing.Size(128, 23);
             this.RoomPictureEditButton.TabIndex = 7;
@@ -5399,9 +5399,9 @@ namespace Scribe
             // 
             this.RoomPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.RoomPictureBox.Location = new System.Drawing.Point(759, 280);
+            this.RoomPictureBox.Location = new System.Drawing.Point(767, 286);
             this.RoomPictureBox.Name = "RoomPictureBox";
-            this.RoomPictureBox.Size = new System.Drawing.Size(182, 182);
+            this.RoomPictureBox.Size = new System.Drawing.Size(176, 176);
             this.RoomPictureBox.TabIndex = 6;
             this.RoomPictureBox.TabStop = false;
             // 
