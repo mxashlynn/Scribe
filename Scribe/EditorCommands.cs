@@ -50,15 +50,23 @@ namespace Scribe
                                                              && !type.IsAbstract
                                                              && !TypeNamesWithoutGraphics.Any(name => type.Name.Contains(name)))
                                                  .ToDictionary(type => type,
-                                                               type => Path.Combine(All.ProjectDirectory,
-                                                                                    "Graphics",
-                                                                                    type.Name.Replace("Model", "s")
-                                                                                             .Replace("Recipe", "Recipes")));
+                                                               type => Path.Combine("Graphics", type.Name.Replace("Model", "s")
+                                                                                                         .Replace("Recipe", "Recipes")));
             }
         }
         #endregion
 
         #region Commands
+        /// <summary>
+        /// Given a child of the <see cref="Model"/> class that has a graphical representation, returns the path to that assets.
+        /// </summary>
+        /// <param name="in_model">The model whose graphical asset is sought.</param>
+        /// <returns>The path to that asset, if any.</returns>
+        internal static string GetGraphicsPathForModel(Model in_model)
+            => GraphicalAssetPaths.ContainsKey(in_model.GetType())
+                ? Path.Combine(All.ProjectDirectory, GraphicalAssetPaths[in_model.GetType()])
+                : // TODO HERE -- Return default 16x16 or 32x32 tile!
+
         /// <summary>
         /// Attempts to create new, blank game data files in the current folder.
         /// </summary>
@@ -81,9 +89,10 @@ namespace Scribe
             #region Create the Asset Folders
             foreach(var folderPath in GraphicalAssetPaths.Values)
             {
-                if (!Directory.Exists(folderPath))
+                var pathWithRoot = Path.Combine(All.ProjectDirectory, folderPath);
+                if (!Directory.Exists(pathWithRoot))
                 {
-                    Directory.CreateDirectory(folderPath);
+                    Directory.CreateDirectory(pathWithRoot);
                 }
             }
             #endregion
