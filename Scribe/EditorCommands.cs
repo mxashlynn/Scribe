@@ -26,7 +26,7 @@ namespace Scribe
         private static readonly List<string> TypeNamesWithoutGraphics;
 
         /// <summary>Children of the <see cref="Model"/> class that have a graphical representation, and the path to those assets.</summary>
-        private static readonly Dictionary<Type, string> GraphicalAssetPaths;
+        private static readonly Dictionary<Range<ModelID>, string> GraphicalAssetPaths;
 
         /// <summary>Name of the folder under which all graphics are stored.</summary>
         private const string GraphicsFolderName = "Graphics";
@@ -52,11 +52,12 @@ namespace Scribe
                                                              && !type.IsInterface
                                                              && !type.IsAbstract
                                                              && !TypeNamesWithoutGraphics.Any(name => type.Name.Contains(name)))
-                                                 .ToDictionary(type => type,
+                                                 .ToDictionary(type => All.GetIDRangeForType(type),
                                                                type => Path.Combine(GraphicsFolderName, type.Name.Replace("Model", "s")
                                                                                                          .Replace("Recipe", "Recipes")));
             }
         }
+
         #endregion
 
         #region Commands
@@ -66,8 +67,9 @@ namespace Scribe
         /// <param name="in_model">The model whose graphical asset is sought.</param>
         /// <returns>The path to that asset, if any.</returns>
         internal static string GetGraphicsPathForModel(Model in_model)
-            => GraphicalAssetPaths.ContainsKey(in_model.GetType())
-                ? Path.Combine(All.ProjectDirectory, GraphicalAssetPaths[in_model.GetType()])
+            // TODO Add to All:   given an ID, return the range within which it is defined
+            => GraphicalAssetPaths.ContainsKey(All.GetIDRangeForType(in_model))
+                ? Path.Combine(All.ProjectDirectory, GraphicalAssetPaths[All.GetIDRangeForType(in_model)])
                 : Path.Combine(All.ProjectDirectory, GraphicsFolderName);
 
         /// <summary>
