@@ -46,6 +46,7 @@ namespace Scribe
             this.LabelFlavorFilter = new System.Windows.Forms.Label();
             this.CheckBoxFlavorFilters = new System.Windows.Forms.CheckBox();
             this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.CancelButtonControl = new System.Windows.Forms.Button();
             this.TableLayoutPanel.SuspendLayout();
             this.PanelDefaultFolder.SuspendLayout();
             this.PanelEditorTheme.SuspendLayout();
@@ -60,6 +61,7 @@ namespace Scribe
             this.TableLayoutPanel.ColumnCount = 2;
             this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
             this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
+            this.TableLayoutPanel.Controls.Add(this.CancelButtonControl, 0, 7);
             this.TableLayoutPanel.Controls.Add(this.PanelDefaultFolder, 1, 5);
             this.TableLayoutPanel.Controls.Add(this.LabelTheme, 0, 0);
             this.TableLayoutPanel.Controls.Add(this.PanelEditorTheme, 1, 0);
@@ -233,6 +235,7 @@ namespace Scribe
             this.OkayButton.Size = new System.Drawing.Size(88, 22);
             this.OkayButton.TabIndex = 24;
             this.OkayButton.Text = "&OK";
+            this.OkayButton.Click += new System.EventHandler(this.OkayButton_Click);
             // 
             // LabelFlavorFilter
             // 
@@ -258,11 +261,22 @@ namespace Scribe
             // 
             this.ErrorProvider.ContainerControl = this;
             // 
+            // CancelButtonControl
+            // 
+            this.CancelButtonControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.CancelButtonControl.Location = new System.Drawing.Point(3, 280);
+            this.CancelButtonControl.Name = "CancelButtonControl";
+            this.CancelButtonControl.Size = new System.Drawing.Size(74, 23);
+            this.CancelButtonControl.TabIndex = 8;
+            this.CancelButtonControl.Text = "Cancel";
+            this.CancelButtonControl.UseVisualStyleBackColor = true;
+            // 
             // OptionsBox
             // 
             this.AcceptButton = this.OkayButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.CancelButtonControl;
             this.ClientSize = new System.Drawing.Size(507, 327);
             this.Controls.Add(this.TableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -306,5 +320,6 @@ namespace Scribe
         private System.Windows.Forms.Label LabelFlavorFilter;
         private System.Windows.Forms.CheckBox CheckBoxFlavorFilters;
         private System.Windows.Forms.ErrorProvider ErrorProvider;
+        private System.Windows.Forms.Button CancelButtonControl;
     }
 }

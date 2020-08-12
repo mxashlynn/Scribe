@@ -23,21 +23,7 @@ namespace Scribe
         /// Initialize a new <see cref="OptionsBox"/>.
         /// </summary>
         public OptionsBox()
-        {
-            InitializeComponent();
-
-            #region Default Event Handlers
-            FormClosing += new FormClosingEventHandler((object sender, FormClosingEventArgs e) =>
-            {
-                Settings.Default.UseColorfulEditorTheme = RadioButtonColorfulTheme.Checked;
-                Settings.Default.UseFlavorFilters = CheckBoxFlavorFilters.Checked;
-                Settings.Default.SuggestStoryIDs = CheckBoxSuggestStoryIDs.Checked;
-                Settings.Default.AutoSaveInterval = NewAutoSaveInterval;
-                Settings.Default.DesktopIsDefaultDirectory = RadioButtonDefaultToDesktop.Checked;
-                Settings.Default.Save();
-            });
-            #endregion
-        }
+            => InitializeComponent();
 
         /// <summary>
         /// Sets up the <see cref="OptionsBox"/> UI.
@@ -78,6 +64,23 @@ namespace Scribe
                 TextBoxAutoSaveInterval.Select();
                 ErrorProvider.SetError(TextBoxAutoSaveInterval, Resources.ErrorIntegersOnly);
             }
+        }
+
+        /// <summary>
+        /// Responds to the Okay Button to ensure that settings are saved.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void OkayButton_Click(object sender, EventArgs e)
+        {
+            Settings.Default.UseColorfulEditorTheme = RadioButtonColorfulTheme.Checked;
+            Settings.Default.UseFlavorFilters = CheckBoxFlavorFilters.Checked;
+            Settings.Default.SuggestStoryIDs = CheckBoxSuggestStoryIDs.Checked;
+            Settings.Default.AutoSaveInterval = NewAutoSaveInterval;
+            Settings.Default.DesktopIsDefaultDirectory = RadioButtonDefaultToDesktop.Checked;
+            Settings.Default.Save();
+
+            DialogResult = DialogResult.OK;
         }
     }
 }
