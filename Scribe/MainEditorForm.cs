@@ -112,6 +112,23 @@ namespace Scribe
         }
         #endregion
 
+        private ModelID GetDefaultIDForTab(int in_tabIndex)
+            => in_tabIndex switch
+            {
+                0 => All.GameIDs.Minimum,
+                1 => All.BlockIDs.Minimum,
+                2 => All.FloorIDs.Minimum,
+                3 => All.FurnishingIDs.Minimum,
+                4 => All.CollectibleIDs.Minimum,
+                5 => All.CharacterIDs.Minimum,
+                6 => All.CritterIDs.Minimum,
+                7 => All.ItemIDs.Minimum,
+                8 => All.BiomeIDs.Minimum,
+                9 => All.CraftingRecipeIDs.Minimum,
+                10 => All.RoomRecipeIDs.Minimum,
+                _ => ModelID.None,
+            };
+
         #region Display Update Methods
         /// <summary>
         /// Updates the form when it receives focus, for example after closing the options dialogue box.
@@ -137,7 +154,13 @@ namespace Scribe
         {
             // TODO
             // Clear all inputs
-            // ReloadPictureBox
+
+            // Reload Active Picture Box
+            var picturebox = EditorTabs.TabPages[EditorTabs.SelectedIndex]?.Controls
+                                                                           .Cast<Control>()
+                                                                           .OfType<PictureBox>()
+                                                                           .First<PictureBox>();
+            picturebox?.Load(EditorCommands.GetGraphicsPathForModel(GetDefaultIDForTab(EditorTabs.SelectedIndex)));
 
             #region Repopulate Primary List Boxes
             RepopulateListBox(GameListBox, All.Games);
