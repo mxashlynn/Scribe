@@ -1278,6 +1278,7 @@ namespace Scribe
             this.GameIconPictureBox.Location = new System.Drawing.Point(767, 286);
             this.GameIconPictureBox.Name = "GameIconPictureBox";
             this.GameIconPictureBox.Size = new System.Drawing.Size(176, 176);
+            this.GameIconPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.GameIconPictureBox.TabIndex = 6;
             this.GameIconPictureBox.TabStop = false;
             // 
@@ -2038,6 +2039,7 @@ namespace Scribe
             this.BlockPictureBox.Location = new System.Drawing.Point(767, 286);
             this.BlockPictureBox.Name = "BlockPictureBox";
             this.BlockPictureBox.Size = new System.Drawing.Size(176, 176);
+            this.BlockPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BlockPictureBox.TabIndex = 6;
             this.BlockPictureBox.TabStop = false;
             // 
@@ -2348,6 +2350,7 @@ namespace Scribe
             this.CollectiblePictureBox.Location = new System.Drawing.Point(767, 286);
             this.CollectiblePictureBox.Name = "CollectiblePictureBox";
             this.CollectiblePictureBox.Size = new System.Drawing.Size(176, 176);
+            this.CollectiblePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.CollectiblePictureBox.TabIndex = 6;
             this.CollectiblePictureBox.TabStop = false;
             // 
@@ -2680,6 +2683,7 @@ namespace Scribe
             this.FloorPictureBox.Location = new System.Drawing.Point(767, 286);
             this.FloorPictureBox.Name = "FloorPictureBox";
             this.FloorPictureBox.Size = new System.Drawing.Size(176, 176);
+            this.FloorPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.FloorPictureBox.TabIndex = 6;
             this.FloorPictureBox.TabStop = false;
             // 
@@ -2982,6 +2986,7 @@ namespace Scribe
             this.FurnishingPictureBox.Location = new System.Drawing.Point(767, 286);
             this.FurnishingPictureBox.Name = "FurnishingPictureBox";
             this.FurnishingPictureBox.Size = new System.Drawing.Size(176, 176);
+            this.FurnishingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.FurnishingPictureBox.TabIndex = 6;
             this.FurnishingPictureBox.TabStop = false;
             // 
@@ -3549,6 +3554,7 @@ namespace Scribe
             this.CharacterPictureBox.Location = new System.Drawing.Point(767, 286);
             this.CharacterPictureBox.Name = "CharacterPictureBox";
             this.CharacterPictureBox.Size = new System.Drawing.Size(176, 176);
+            this.CharacterPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.CharacterPictureBox.TabIndex = 6;
             this.CharacterPictureBox.TabStop = false;
             // 
@@ -3743,6 +3749,7 @@ namespace Scribe
             this.CritterPictureBox.Location = new System.Drawing.Point(767, 286);
             this.CritterPictureBox.Name = "CritterPictureBox";
             this.CritterPictureBox.Size = new System.Drawing.Size(176, 176);
+            this.CritterPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.CritterPictureBox.TabIndex = 6;
             this.CritterPictureBox.TabStop = false;
             // 
@@ -4165,6 +4172,7 @@ namespace Scribe
             this.ItemPictureBox.Location = new System.Drawing.Point(768, 286);
             this.ItemPictureBox.Name = "ItemPictureBox";
             this.ItemPictureBox.Size = new System.Drawing.Size(176, 176);
+            this.ItemPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ItemPictureBox.TabIndex = 6;
             this.ItemPictureBox.TabStop = false;
             // 
@@ -4582,6 +4590,7 @@ namespace Scribe
             this.BiomePictureBox.Location = new System.Drawing.Point(767, 281);
             this.BiomePictureBox.Name = "BiomePictureBox";
             this.BiomePictureBox.Size = new System.Drawing.Size(176, 176);
+            this.BiomePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BiomePictureBox.TabIndex = 6;
             this.BiomePictureBox.TabStop = false;
             // 
@@ -4880,6 +4889,7 @@ namespace Scribe
             this.CraftingPictureBox.Location = new System.Drawing.Point(767, 283);
             this.CraftingPictureBox.Name = "CraftingPictureBox";
             this.CraftingPictureBox.Size = new System.Drawing.Size(176, 176);
+            this.CraftingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.CraftingPictureBox.TabIndex = 6;
             this.CraftingPictureBox.TabStop = false;
             // 
@@ -5402,6 +5412,7 @@ namespace Scribe
             this.RoomPictureBox.Location = new System.Drawing.Point(767, 286);
             this.RoomPictureBox.Name = "RoomPictureBox";
             this.RoomPictureBox.Size = new System.Drawing.Size(176, 176);
+            this.RoomPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.RoomPictureBox.TabIndex = 6;
             this.RoomPictureBox.TabStop = false;
             // 
