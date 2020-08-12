@@ -28,6 +28,9 @@ namespace Scribe
         /// <summary>Children of the <see cref="Model"/> class that have a graphical representation, and the path to those assets.</summary>
         private static readonly Dictionary<Type, string> GraphicalAssetPaths;
 
+        /// <summary>Name of the folder under which all graphics are stored.</summary>
+        private const string GraphicsFolderName = "Graphics";
+
         #region Initialization
         /// <summary>
         /// Initializes <see cref="EditorCommands"/> asset collections.
@@ -50,7 +53,7 @@ namespace Scribe
                                                              && !type.IsAbstract
                                                              && !TypeNamesWithoutGraphics.Any(name => type.Name.Contains(name)))
                                                  .ToDictionary(type => type,
-                                                               type => Path.Combine("Graphics", type.Name.Replace("Model", "s")
+                                                               type => Path.Combine(GraphicsFolderName, type.Name.Replace("Model", "s")
                                                                                                          .Replace("Recipe", "Recipes")));
             }
         }
@@ -65,7 +68,7 @@ namespace Scribe
         internal static string GetGraphicsPathForModel(Model in_model)
             => GraphicalAssetPaths.ContainsKey(in_model.GetType())
                 ? Path.Combine(All.ProjectDirectory, GraphicalAssetPaths[in_model.GetType()])
-                : // TODO HERE -- Return default 16x16 or 32x32 tile!
+                : Path.Combine(All.ProjectDirectory, GraphicsFolderName);
 
         /// <summary>
         /// Attempts to create new, blank game data files in the current folder.
