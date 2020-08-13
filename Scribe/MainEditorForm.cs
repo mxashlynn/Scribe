@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Windows.Forms;
 using ParquetClassLibrary;
 using ParquetClassLibrary.Beings;
@@ -152,20 +153,18 @@ namespace Scribe
         /// <param name="in_source">The objects to populate the UI with.</param>
         private void UpdateDisplay()
         {
-            // TODO
-            // Clear all inputs
+            #region Clear Lists and Containers
+            // TextBoxes
 
-            // Reload Active Picture Box
-            var id = GetDefaultIDForTab(EditorTabs.SelectedIndex);
-            if (EditorCommands.IDHasGraphics(id))
-            {
-                var path = Path.Combine(EditorCommands.GetGraphicsPathForModelID(id), $"{id}.png");
-                var picturebox = EditorTabs.TabPages[EditorTabs.SelectedIndex]?.Controls
-                                                                               .Cast<Control>()
-                                                                               .OfType<PictureBox>()
-                                                                               .First<PictureBox>();
-                picturebox?.Load(path);
-            }
+            // PictureBoxes
+
+            // CheckBoxes
+
+            // ComboBoxes
+
+            // ListBoxes
+
+            #endregion
 
             #region Repopulate Primary List Boxes
             RepopulateListBox(GameListBox, All.Games);
@@ -179,6 +178,30 @@ namespace Scribe
             RepopulateListBox(FurnishingListBox, All.Parquets.OfType<FurnishingModel>());
             RepopulateListBox(CollectibleListBox, All.Parquets.OfType<CollectibleModel>());
             RepopulateListBox(RoomListBox, All.RoomRecipes);
+            #endregion
+
+            #region Reload Active Picture Box
+            // TODO Right now this loads sample graphics, change it to real graphics or remove it.
+            var id = GetDefaultIDForTab(EditorTabs.SelectedIndex);
+            if (EditorCommands.IDHasGraphics(id))
+            {
+                var picturebox = EditorTabs.TabPages[EditorTabs.SelectedIndex]?.Controls
+                                                                               .Cast<Control>()
+                                                                               .OfType<PictureBox>()
+                                                                               .FirstOrDefault<PictureBox>();
+                if (null != picturebox)
+                {
+                    var path = Path.Combine(EditorCommands.GetGraphicsPathForModelID(id), $"{id}.png");
+                    if (File.Exists(path))
+                    {
+                        picturebox.Load(path);
+                    }
+                    else
+                    {
+                        picturebox.Image = Resources.NotFound;
+                    }
+                }
+            }
             #endregion
         }
 

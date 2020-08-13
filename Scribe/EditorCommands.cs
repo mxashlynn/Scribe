@@ -141,6 +141,7 @@ namespace Scribe
         /// </summary>
         // TODO This should probably let the user know if a file was missing or corrupt.
         internal static void LoadDataFiles()
+            // TODO We need a way to handle reinitializing All.
             => All.LoadFromCSVs();
         #endregion
     }
