@@ -188,7 +188,7 @@ namespace Scribe
                 var picturebox = EditorTabs.TabPages[EditorTabs.SelectedIndex]?.Controls
                                                                                .Cast<Control>()
                                                                                .OfType<PictureBox>()
-                                                                               .FirstOrDefault<PictureBox>();
+                                                                               .FirstOrDefault();
                 if (null != picturebox)
                 {
                     var path = Path.Combine(EditorCommands.GetGraphicsPathForModelID(id), $"{id}.png");
@@ -211,7 +211,7 @@ namespace Scribe
         /// <typeparam name="T">A model type.</typeparam>
         /// <param name="in_listbox">The UI to repopulate.</param>
         /// <param name="in_source">The objects to populate the UI with.</param>
-        /// <remarks>This should only be called if <see cref="ParquetClassLibrary.All"/> has actually changed.</remarks>
+        /// <remarks>This should only be called if <see cref="All"/> has actually changed.</remarks>
         private void RepopulateListBox<T>(ListBox in_listbox, IEnumerable<T> in_source)
             where T : Model
         {
