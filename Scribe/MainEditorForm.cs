@@ -156,11 +156,16 @@ namespace Scribe
             // Clear all inputs
 
             // Reload Active Picture Box
-            var picturebox = EditorTabs.TabPages[EditorTabs.SelectedIndex]?.Controls
-                                                                           .Cast<Control>()
-                                                                           .OfType<PictureBox>()
-                                                                           .First<PictureBox>();
-            picturebox?.Load(EditorCommands.GetGraphicsPathForModel(GetDefaultIDForTab(EditorTabs.SelectedIndex)));
+            var id = GetDefaultIDForTab(EditorTabs.SelectedIndex);
+            if (EditorCommands.IDHasGraphics(id))
+            {
+                var path = Path.Combine(EditorCommands.GetGraphicsPathForModelID(id), $"{id}.png");
+                var picturebox = EditorTabs.TabPages[EditorTabs.SelectedIndex]?.Controls
+                                                                               .Cast<Control>()
+                                                                               .OfType<PictureBox>()
+                                                                               .First<PictureBox>();
+                picturebox?.Load(path);
+            }
 
             #region Repopulate Primary List Boxes
             RepopulateListBox(GameListBox, All.Games);

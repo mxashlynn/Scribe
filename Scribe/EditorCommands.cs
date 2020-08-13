@@ -62,14 +62,21 @@ namespace Scribe
 
         #region Commands
         /// <summary>
-        /// Given a child of the <see cref="Model"/> class that has a graphical representation, returns the path to that assets.
+        /// Given a <see cref="ModelID"/>, determines if it has a graphical representation.
         /// </summary>
-        /// <param name="in_model">The model whose graphical asset is sought.</param>
+        /// <param name="inModelID">The <see cref="ModelID"/> for the <see cref="Model"/> whose graphics status sought.</param>
+        /// <returns><c>true</c> if the model supports graphics, otherwise <c>false</c>.</returns>
+        internal static bool IDHasGraphics(ModelID inModelID)
+            => GraphicalAssetPaths.ContainsKey(All.GetIDRangeForType(inModelID));
+
+        /// <summary>
+        /// Given a <see cref="ModelID"/> for a model that has a graphical representation, returns the path to that representaion's assets.
+        /// </summary>
+        /// <param name="inModelID">The <see cref="ModelID"/> for the <see cref="Model"/> whose graphical asset is sought.</param>
         /// <returns>The path to that asset, if any.</returns>
-        internal static string GetGraphicsPathForModel(Model in_model)
-            // TODO Add to All:   given an ID, return the range within which it is defined
-            => GraphicalAssetPaths.ContainsKey(All.GetIDRangeForType(in_model))
-                ? Path.Combine(All.ProjectDirectory, GraphicalAssetPaths[All.GetIDRangeForType(in_model)])
+        internal static string GetGraphicsPathForModelID(ModelID inModelID)
+            => GraphicalAssetPaths.ContainsKey(All.GetIDRangeForType(inModelID))
+                ? Path.Combine(All.ProjectDirectory, GraphicalAssetPaths[All.GetIDRangeForType(inModelID)])
                 : Path.Combine(All.ProjectDirectory, GraphicsFolderName);
 
         /// <summary>
@@ -114,9 +121,9 @@ namespace Scribe
             ModelCollection<BiomeModel>.Default.PutRecordsForType<BiomeModel>();
             ModelCollection<CraftingRecipe>.Default.PutRecordsForType<CraftingRecipe>();
             ModelCollection<InteractionModel>.Default.PutRecordsForType<InteractionModel>();
-            ModelCollection<MapModel>.Default.PutRecordsForType<MapChunk>();
+            ModelCollection<MapModel>.Default.PutRecordsForType<MapChunkModel>();
             ModelCollection<MapModel>.Default.PutRecordsForType<MapRegionSketch>();
-            ModelCollection<MapModel>.Default.PutRecordsForType<MapRegion>();
+            ModelCollection<MapModel>.Default.PutRecordsForType<MapRegionModel>();
             ModelCollection<ParquetModel>.Default.PutRecordsForType<FloorModel>();
             ModelCollection<ParquetModel>.Default.PutRecordsForType<BlockModel>();
             ModelCollection<ParquetModel>.Default.PutRecordsForType<FurnishingModel>();
