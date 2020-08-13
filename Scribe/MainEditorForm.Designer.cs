@@ -173,28 +173,6 @@ namespace Scribe
             this.BlockIDTextBox = new System.Windows.Forms.TextBox();
             this.BlockConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.BlockRemoveBlockButton = new System.Windows.Forms.Button();
-            this.CollectiblesTabPage = new System.Windows.Forms.TabPage();
-            this.CollectibleTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.CollectibleEffectAmountTextBox = new System.Windows.Forms.TextBox();
-            this.CollectibleCollectionEffectComboBox = new System.Windows.Forms.ComboBox();
-            this.CollectibleNameLabel = new System.Windows.Forms.Label();
-            this.CollectibleDescriptionLabel = new System.Windows.Forms.Label();
-            this.CollectibleCommentLabel = new System.Windows.Forms.Label();
-            this.CollectibleEquivalentItemLabel = new System.Windows.Forms.Label();
-            this.CollectibleNameTextBox = new System.Windows.Forms.TextBox();
-            this.CollectibleDescriptionTextBox = new System.Windows.Forms.TextBox();
-            this.CollectibleCommentTextBox = new System.Windows.Forms.TextBox();
-            this.CollectibleEquivalentItemComboBox = new System.Windows.Forms.ComboBox();
-            this.CollectibleCollectionEffectLabel = new System.Windows.Forms.Label();
-            this.CollectibleEffectAmountLabel = new System.Windows.Forms.Label();
-            this.CollectibleRemoveCollectibleButton = new System.Windows.Forms.Button();
-            this.CollectibleConfigGroupBox = new System.Windows.Forms.GroupBox();
-            this.CollectibleIDTextBox = new System.Windows.Forms.TextBox();
-            this.CollectibleAddNewCollectibleButton = new System.Windows.Forms.Button();
-            this.CollectibleListBox = new System.Windows.Forms.ListBox();
-            this.CollectibleIDLabel = new System.Windows.Forms.Label();
-            this.CollectibleEditImageButton = new System.Windows.Forms.Button();
-            this.CollectiblePictureBox = new System.Windows.Forms.PictureBox();
             this.FloorsTabPage = new System.Windows.Forms.TabPage();
             this.FloorRemoveFloorButton = new System.Windows.Forms.Button();
             this.FloorLayoutTabelPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -253,6 +231,28 @@ namespace Scribe
             this.FurnishingIDLabel = new System.Windows.Forms.Label();
             this.FurnishingEditImageButton = new System.Windows.Forms.Button();
             this.FurnishingPictureBox = new System.Windows.Forms.PictureBox();
+            this.CollectiblesTabPage = new System.Windows.Forms.TabPage();
+            this.CollectibleTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.CollectibleEffectAmountTextBox = new System.Windows.Forms.TextBox();
+            this.CollectibleCollectionEffectComboBox = new System.Windows.Forms.ComboBox();
+            this.CollectibleNameLabel = new System.Windows.Forms.Label();
+            this.CollectibleDescriptionLabel = new System.Windows.Forms.Label();
+            this.CollectibleCommentLabel = new System.Windows.Forms.Label();
+            this.CollectibleEquivalentItemLabel = new System.Windows.Forms.Label();
+            this.CollectibleNameTextBox = new System.Windows.Forms.TextBox();
+            this.CollectibleDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.CollectibleCommentTextBox = new System.Windows.Forms.TextBox();
+            this.CollectibleEquivalentItemComboBox = new System.Windows.Forms.ComboBox();
+            this.CollectibleCollectionEffectLabel = new System.Windows.Forms.Label();
+            this.CollectibleEffectAmountLabel = new System.Windows.Forms.Label();
+            this.CollectibleRemoveCollectibleButton = new System.Windows.Forms.Button();
+            this.CollectibleConfigGroupBox = new System.Windows.Forms.GroupBox();
+            this.CollectibleIDTextBox = new System.Windows.Forms.TextBox();
+            this.CollectibleAddNewCollectibleButton = new System.Windows.Forms.Button();
+            this.CollectibleListBox = new System.Windows.Forms.ListBox();
+            this.CollectibleIDLabel = new System.Windows.Forms.Label();
+            this.CollectibleEditImageButton = new System.Windows.Forms.Button();
+            this.CollectiblePictureBox = new System.Windows.Forms.PictureBox();
             this.CharactersTabPage = new System.Windows.Forms.TabPage();
             this.CharacterPronounGroupBox = new System.Windows.Forms.GroupBox();
             this.CharacterPronounTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -497,15 +497,15 @@ namespace Scribe
             this.BlocksTabPage.SuspendLayout();
             this.BlockTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BlockPictureBox)).BeginInit();
-            this.CollectiblesTabPage.SuspendLayout();
-            this.CollectibleTableLayoutPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CollectiblePictureBox)).BeginInit();
             this.FloorsTabPage.SuspendLayout();
             this.FloorLayoutTabelPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FloorPictureBox)).BeginInit();
             this.FurnishingsTabPage.SuspendLayout();
             this.FurnishingTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FurnishingPictureBox)).BeginInit();
+            this.CollectiblesTabPage.SuspendLayout();
+            this.CollectibleTableLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CollectiblePictureBox)).BeginInit();
             this.CharactersTabPage.SuspendLayout();
             this.CharacterPronounGroupBox.SuspendLayout();
             this.CharacterPronounTableLayoutPanel.SuspendLayout();
@@ -2110,247 +2110,6 @@ namespace Scribe
             this.BlockRemoveBlockButton.Text = "Remove Block";
             this.BlockRemoveBlockButton.UseVisualStyleBackColor = true;
             // 
-            // CollectiblesTabPage
-            // 
-            this.CollectiblesTabPage.Controls.Add(this.CollectibleTableLayoutPanel);
-            this.CollectiblesTabPage.Controls.Add(this.CollectibleRemoveCollectibleButton);
-            this.CollectiblesTabPage.Controls.Add(this.CollectibleConfigGroupBox);
-            this.CollectiblesTabPage.Controls.Add(this.CollectibleIDTextBox);
-            this.CollectiblesTabPage.Controls.Add(this.CollectibleAddNewCollectibleButton);
-            this.CollectiblesTabPage.Controls.Add(this.CollectibleListBox);
-            this.CollectiblesTabPage.Controls.Add(this.CollectibleIDLabel);
-            this.CollectiblesTabPage.Controls.Add(this.CollectibleEditImageButton);
-            this.CollectiblesTabPage.Controls.Add(this.CollectiblePictureBox);
-            this.CollectiblesTabPage.Location = new System.Drawing.Point(4, 22);
-            this.CollectiblesTabPage.Name = "CollectiblesTabPage";
-            this.CollectiblesTabPage.Size = new System.Drawing.Size(953, 599);
-            this.CollectiblesTabPage.TabIndex = 11;
-            this.CollectiblesTabPage.Text = "Collectibles";
-            // 
-            // CollectibleTableLayoutPanel
-            // 
-            this.CollectibleTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.CollectibleTableLayoutPanel.ColumnCount = 3;
-            this.CollectibleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.CollectibleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.CollectibleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleEffectAmountTextBox, 1, 5);
-            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleCollectionEffectComboBox, 1, 4);
-            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleNameLabel, 0, 0);
-            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleDescriptionLabel, 0, 1);
-            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleCommentLabel, 0, 2);
-            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleEquivalentItemLabel, 0, 3);
-            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleNameTextBox, 1, 0);
-            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleDescriptionTextBox, 1, 1);
-            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleCommentTextBox, 1, 2);
-            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleEquivalentItemComboBox, 1, 3);
-            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleCollectionEffectLabel, 0, 4);
-            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleEffectAmountLabel, 0, 5);
-            this.CollectibleTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
-            this.CollectibleTableLayoutPanel.Name = "CollectibleTableLayoutPanel";
-            this.CollectibleTableLayoutPanel.RowCount = 7;
-            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.CollectibleTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
-            this.CollectibleTableLayoutPanel.TabIndex = 5;
-            // 
-            // CollectibleEffectAmountTextBox
-            // 
-            this.CollectibleEffectAmountTextBox.Location = new System.Drawing.Point(131, 188);
-            this.CollectibleEffectAmountTextBox.Name = "CollectibleEffectAmountTextBox";
-            this.CollectibleEffectAmountTextBox.Size = new System.Drawing.Size(144, 20);
-            this.CollectibleEffectAmountTextBox.TabIndex = 23;
-            // 
-            // CollectibleCollectionEffectComboBox
-            // 
-            this.CollectibleCollectionEffectComboBox.FormattingEnabled = true;
-            this.CollectibleCollectionEffectComboBox.Location = new System.Drawing.Point(131, 163);
-            this.CollectibleCollectionEffectComboBox.Name = "CollectibleCollectionEffectComboBox";
-            this.CollectibleCollectionEffectComboBox.Size = new System.Drawing.Size(144, 21);
-            this.CollectibleCollectionEffectComboBox.TabIndex = 29;
-            // 
-            // CollectibleNameLabel
-            // 
-            this.CollectibleNameLabel.AutoSize = true;
-            this.CollectibleNameLabel.Location = new System.Drawing.Point(3, 0);
-            this.CollectibleNameLabel.Name = "CollectibleNameLabel";
-            this.CollectibleNameLabel.Size = new System.Drawing.Size(34, 13);
-            this.CollectibleNameLabel.TabIndex = 0;
-            this.CollectibleNameLabel.Text = "Name";
-            // 
-            // CollectibleDescriptionLabel
-            // 
-            this.CollectibleDescriptionLabel.AutoSize = true;
-            this.CollectibleDescriptionLabel.Location = new System.Drawing.Point(3, 25);
-            this.CollectibleDescriptionLabel.Name = "CollectibleDescriptionLabel";
-            this.CollectibleDescriptionLabel.Size = new System.Drawing.Size(60, 13);
-            this.CollectibleDescriptionLabel.TabIndex = 3;
-            this.CollectibleDescriptionLabel.Text = "Description";
-            // 
-            // CollectibleCommentLabel
-            // 
-            this.CollectibleCommentLabel.AutoSize = true;
-            this.CollectibleCommentLabel.Location = new System.Drawing.Point(3, 80);
-            this.CollectibleCommentLabel.Name = "CollectibleCommentLabel";
-            this.CollectibleCommentLabel.Size = new System.Drawing.Size(52, 13);
-            this.CollectibleCommentLabel.TabIndex = 6;
-            this.CollectibleCommentLabel.Text = "Comment";
-            // 
-            // CollectibleEquivalentItemLabel
-            // 
-            this.CollectibleEquivalentItemLabel.AutoSize = true;
-            this.CollectibleEquivalentItemLabel.Location = new System.Drawing.Point(3, 135);
-            this.CollectibleEquivalentItemLabel.Name = "CollectibleEquivalentItemLabel";
-            this.CollectibleEquivalentItemLabel.Size = new System.Drawing.Size(82, 13);
-            this.CollectibleEquivalentItemLabel.TabIndex = 9;
-            this.CollectibleEquivalentItemLabel.Text = "Equivalent Item";
-            // 
-            // CollectibleNameTextBox
-            // 
-            this.CollectibleNameTextBox.Location = new System.Drawing.Point(131, 3);
-            this.CollectibleNameTextBox.Name = "CollectibleNameTextBox";
-            this.CollectibleNameTextBox.Size = new System.Drawing.Size(144, 20);
-            this.CollectibleNameTextBox.TabIndex = 23;
-            // 
-            // CollectibleDescriptionTextBox
-            // 
-            this.CollectibleDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectibleTableLayoutPanel.SetColumnSpan(this.CollectibleDescriptionTextBox, 2);
-            this.CollectibleDescriptionTextBox.Location = new System.Drawing.Point(131, 28);
-            this.CollectibleDescriptionTextBox.Multiline = true;
-            this.CollectibleDescriptionTextBox.Name = "CollectibleDescriptionTextBox";
-            this.CollectibleDescriptionTextBox.Size = new System.Drawing.Size(295, 49);
-            this.CollectibleDescriptionTextBox.TabIndex = 24;
-            // 
-            // CollectibleCommentTextBox
-            // 
-            this.CollectibleCommentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectibleTableLayoutPanel.SetColumnSpan(this.CollectibleCommentTextBox, 2);
-            this.CollectibleCommentTextBox.Location = new System.Drawing.Point(131, 83);
-            this.CollectibleCommentTextBox.Multiline = true;
-            this.CollectibleCommentTextBox.Name = "CollectibleCommentTextBox";
-            this.CollectibleCommentTextBox.Size = new System.Drawing.Size(295, 49);
-            this.CollectibleCommentTextBox.TabIndex = 25;
-            // 
-            // CollectibleEquivalentItemComboBox
-            // 
-            this.CollectibleEquivalentItemComboBox.FormattingEnabled = true;
-            this.CollectibleEquivalentItemComboBox.Location = new System.Drawing.Point(131, 138);
-            this.CollectibleEquivalentItemComboBox.Name = "CollectibleEquivalentItemComboBox";
-            this.CollectibleEquivalentItemComboBox.Size = new System.Drawing.Size(144, 21);
-            this.CollectibleEquivalentItemComboBox.TabIndex = 29;
-            // 
-            // CollectibleCollectionEffectLabel
-            // 
-            this.CollectibleCollectionEffectLabel.AutoSize = true;
-            this.CollectibleCollectionEffectLabel.Location = new System.Drawing.Point(3, 160);
-            this.CollectibleCollectionEffectLabel.Name = "CollectibleCollectionEffectLabel";
-            this.CollectibleCollectionEffectLabel.Size = new System.Drawing.Size(85, 13);
-            this.CollectibleCollectionEffectLabel.TabIndex = 30;
-            this.CollectibleCollectionEffectLabel.Text = "Collection Effect";
-            // 
-            // CollectibleEffectAmountLabel
-            // 
-            this.CollectibleEffectAmountLabel.AutoSize = true;
-            this.CollectibleEffectAmountLabel.Location = new System.Drawing.Point(3, 185);
-            this.CollectibleEffectAmountLabel.Name = "CollectibleEffectAmountLabel";
-            this.CollectibleEffectAmountLabel.Size = new System.Drawing.Size(76, 13);
-            this.CollectibleEffectAmountLabel.TabIndex = 31;
-            this.CollectibleEffectAmountLabel.Text = "Effect Amount";
-            // 
-            // CollectibleRemoveCollectibleButton
-            // 
-            this.CollectibleRemoveCollectibleButton.Location = new System.Drawing.Point(24, 468);
-            this.CollectibleRemoveCollectibleButton.Name = "CollectibleRemoveCollectibleButton";
-            this.CollectibleRemoveCollectibleButton.Size = new System.Drawing.Size(129, 23);
-            this.CollectibleRemoveCollectibleButton.TabIndex = 2;
-            this.CollectibleRemoveCollectibleButton.Text = "Remove Collectible";
-            this.CollectibleRemoveCollectibleButton.UseVisualStyleBackColor = true;
-            // 
-            // CollectibleConfigGroupBox
-            // 
-            this.CollectibleConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectibleConfigGroupBox.Location = new System.Drawing.Point(9, 497);
-            this.CollectibleConfigGroupBox.Name = "CollectibleConfigGroupBox";
-            this.CollectibleConfigGroupBox.Size = new System.Drawing.Size(938, 96);
-            this.CollectibleConfigGroupBox.TabIndex = 0;
-            this.CollectibleConfigGroupBox.TabStop = false;
-            // 
-            // CollectibleIDTextBox
-            // 
-            this.CollectibleIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectibleIDTextBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.CollectibleIDTextBox.Location = new System.Drawing.Point(812, 16);
-            this.CollectibleIDTextBox.Name = "CollectibleIDTextBox";
-            this.CollectibleIDTextBox.Size = new System.Drawing.Size(131, 20);
-            this.CollectibleIDTextBox.TabIndex = 3;
-            this.CollectibleIDTextBox.Text = "-2020202020";
-            // 
-            // CollectibleAddNewCollectibleButton
-            // 
-            this.CollectibleAddNewCollectibleButton.Location = new System.Drawing.Point(159, 468);
-            this.CollectibleAddNewCollectibleButton.Name = "CollectibleAddNewCollectibleButton";
-            this.CollectibleAddNewCollectibleButton.Size = new System.Drawing.Size(129, 23);
-            this.CollectibleAddNewCollectibleButton.TabIndex = 2;
-            this.CollectibleAddNewCollectibleButton.Text = "Add New Collectible";
-            this.CollectibleAddNewCollectibleButton.UseVisualStyleBackColor = true;
-            // 
-            // CollectibleListBox
-            // 
-            this.CollectibleListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.CollectibleListBox.DisplayMember = "Name";
-            this.CollectibleListBox.FormattingEnabled = true;
-            this.CollectibleListBox.Location = new System.Drawing.Point(9, 16);
-            this.CollectibleListBox.Name = "CollectibleListBox";
-            this.CollectibleListBox.Size = new System.Drawing.Size(279, 446);
-            this.CollectibleListBox.TabIndex = 1;
-            // 
-            // CollectibleIDLabel
-            // 
-            this.CollectibleIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectibleIDLabel.AutoSize = true;
-            this.CollectibleIDLabel.Location = new System.Drawing.Point(742, 19);
-            this.CollectibleIDLabel.Name = "CollectibleIDLabel";
-            this.CollectibleIDLabel.Size = new System.Drawing.Size(69, 13);
-            this.CollectibleIDLabel.TabIndex = 4;
-            this.CollectibleIDLabel.Text = "Collectible ID";
-            // 
-            // CollectibleEditImageButton
-            // 
-            this.CollectibleEditImageButton.Location = new System.Drawing.Point(815, 468);
-            this.CollectibleEditImageButton.Name = "CollectibleEditImageButton";
-            this.CollectibleEditImageButton.Size = new System.Drawing.Size(128, 23);
-            this.CollectibleEditImageButton.TabIndex = 7;
-            this.CollectibleEditImageButton.Text = "Edit Image";
-            this.CollectibleEditImageButton.UseVisualStyleBackColor = true;
-            // 
-            // CollectiblePictureBox
-            // 
-            this.CollectiblePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectiblePictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.CollectiblePictureBox.Location = new System.Drawing.Point(767, 286);
-            this.CollectiblePictureBox.Name = "CollectiblePictureBox";
-            this.CollectiblePictureBox.Size = new System.Drawing.Size(176, 176);
-            this.CollectiblePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.CollectiblePictureBox.TabIndex = 6;
-            this.CollectiblePictureBox.TabStop = false;
-            // 
             // FloorsTabPage
             // 
             this.FloorsTabPage.BackColor = System.Drawing.Color.Transparent;
@@ -2984,6 +2743,247 @@ namespace Scribe
             this.FurnishingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.FurnishingPictureBox.TabIndex = 6;
             this.FurnishingPictureBox.TabStop = false;
+            // 
+            // CollectiblesTabPage
+            // 
+            this.CollectiblesTabPage.Controls.Add(this.CollectibleTableLayoutPanel);
+            this.CollectiblesTabPage.Controls.Add(this.CollectibleRemoveCollectibleButton);
+            this.CollectiblesTabPage.Controls.Add(this.CollectibleConfigGroupBox);
+            this.CollectiblesTabPage.Controls.Add(this.CollectibleIDTextBox);
+            this.CollectiblesTabPage.Controls.Add(this.CollectibleAddNewCollectibleButton);
+            this.CollectiblesTabPage.Controls.Add(this.CollectibleListBox);
+            this.CollectiblesTabPage.Controls.Add(this.CollectibleIDLabel);
+            this.CollectiblesTabPage.Controls.Add(this.CollectibleEditImageButton);
+            this.CollectiblesTabPage.Controls.Add(this.CollectiblePictureBox);
+            this.CollectiblesTabPage.Location = new System.Drawing.Point(4, 22);
+            this.CollectiblesTabPage.Name = "CollectiblesTabPage";
+            this.CollectiblesTabPage.Size = new System.Drawing.Size(953, 599);
+            this.CollectiblesTabPage.TabIndex = 11;
+            this.CollectiblesTabPage.Text = "Collectibles";
+            // 
+            // CollectibleTableLayoutPanel
+            // 
+            this.CollectibleTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.CollectibleTableLayoutPanel.ColumnCount = 3;
+            this.CollectibleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.CollectibleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.CollectibleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleEffectAmountTextBox, 1, 5);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleCollectionEffectComboBox, 1, 4);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleNameLabel, 0, 0);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleDescriptionLabel, 0, 1);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleCommentLabel, 0, 2);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleEquivalentItemLabel, 0, 3);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleNameTextBox, 1, 0);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleDescriptionTextBox, 1, 1);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleCommentTextBox, 1, 2);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleEquivalentItemComboBox, 1, 3);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleCollectionEffectLabel, 0, 4);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleEffectAmountLabel, 0, 5);
+            this.CollectibleTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
+            this.CollectibleTableLayoutPanel.Name = "CollectibleTableLayoutPanel";
+            this.CollectibleTableLayoutPanel.RowCount = 7;
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.CollectibleTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
+            this.CollectibleTableLayoutPanel.TabIndex = 5;
+            // 
+            // CollectibleEffectAmountTextBox
+            // 
+            this.CollectibleEffectAmountTextBox.Location = new System.Drawing.Point(131, 188);
+            this.CollectibleEffectAmountTextBox.Name = "CollectibleEffectAmountTextBox";
+            this.CollectibleEffectAmountTextBox.Size = new System.Drawing.Size(144, 20);
+            this.CollectibleEffectAmountTextBox.TabIndex = 23;
+            // 
+            // CollectibleCollectionEffectComboBox
+            // 
+            this.CollectibleCollectionEffectComboBox.FormattingEnabled = true;
+            this.CollectibleCollectionEffectComboBox.Location = new System.Drawing.Point(131, 163);
+            this.CollectibleCollectionEffectComboBox.Name = "CollectibleCollectionEffectComboBox";
+            this.CollectibleCollectionEffectComboBox.Size = new System.Drawing.Size(144, 21);
+            this.CollectibleCollectionEffectComboBox.TabIndex = 29;
+            // 
+            // CollectibleNameLabel
+            // 
+            this.CollectibleNameLabel.AutoSize = true;
+            this.CollectibleNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.CollectibleNameLabel.Name = "CollectibleNameLabel";
+            this.CollectibleNameLabel.Size = new System.Drawing.Size(34, 13);
+            this.CollectibleNameLabel.TabIndex = 0;
+            this.CollectibleNameLabel.Text = "Name";
+            // 
+            // CollectibleDescriptionLabel
+            // 
+            this.CollectibleDescriptionLabel.AutoSize = true;
+            this.CollectibleDescriptionLabel.Location = new System.Drawing.Point(3, 25);
+            this.CollectibleDescriptionLabel.Name = "CollectibleDescriptionLabel";
+            this.CollectibleDescriptionLabel.Size = new System.Drawing.Size(60, 13);
+            this.CollectibleDescriptionLabel.TabIndex = 3;
+            this.CollectibleDescriptionLabel.Text = "Description";
+            // 
+            // CollectibleCommentLabel
+            // 
+            this.CollectibleCommentLabel.AutoSize = true;
+            this.CollectibleCommentLabel.Location = new System.Drawing.Point(3, 80);
+            this.CollectibleCommentLabel.Name = "CollectibleCommentLabel";
+            this.CollectibleCommentLabel.Size = new System.Drawing.Size(52, 13);
+            this.CollectibleCommentLabel.TabIndex = 6;
+            this.CollectibleCommentLabel.Text = "Comment";
+            // 
+            // CollectibleEquivalentItemLabel
+            // 
+            this.CollectibleEquivalentItemLabel.AutoSize = true;
+            this.CollectibleEquivalentItemLabel.Location = new System.Drawing.Point(3, 135);
+            this.CollectibleEquivalentItemLabel.Name = "CollectibleEquivalentItemLabel";
+            this.CollectibleEquivalentItemLabel.Size = new System.Drawing.Size(82, 13);
+            this.CollectibleEquivalentItemLabel.TabIndex = 9;
+            this.CollectibleEquivalentItemLabel.Text = "Equivalent Item";
+            // 
+            // CollectibleNameTextBox
+            // 
+            this.CollectibleNameTextBox.Location = new System.Drawing.Point(131, 3);
+            this.CollectibleNameTextBox.Name = "CollectibleNameTextBox";
+            this.CollectibleNameTextBox.Size = new System.Drawing.Size(144, 20);
+            this.CollectibleNameTextBox.TabIndex = 23;
+            // 
+            // CollectibleDescriptionTextBox
+            // 
+            this.CollectibleDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleTableLayoutPanel.SetColumnSpan(this.CollectibleDescriptionTextBox, 2);
+            this.CollectibleDescriptionTextBox.Location = new System.Drawing.Point(131, 28);
+            this.CollectibleDescriptionTextBox.Multiline = true;
+            this.CollectibleDescriptionTextBox.Name = "CollectibleDescriptionTextBox";
+            this.CollectibleDescriptionTextBox.Size = new System.Drawing.Size(295, 49);
+            this.CollectibleDescriptionTextBox.TabIndex = 24;
+            // 
+            // CollectibleCommentTextBox
+            // 
+            this.CollectibleCommentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleTableLayoutPanel.SetColumnSpan(this.CollectibleCommentTextBox, 2);
+            this.CollectibleCommentTextBox.Location = new System.Drawing.Point(131, 83);
+            this.CollectibleCommentTextBox.Multiline = true;
+            this.CollectibleCommentTextBox.Name = "CollectibleCommentTextBox";
+            this.CollectibleCommentTextBox.Size = new System.Drawing.Size(295, 49);
+            this.CollectibleCommentTextBox.TabIndex = 25;
+            // 
+            // CollectibleEquivalentItemComboBox
+            // 
+            this.CollectibleEquivalentItemComboBox.FormattingEnabled = true;
+            this.CollectibleEquivalentItemComboBox.Location = new System.Drawing.Point(131, 138);
+            this.CollectibleEquivalentItemComboBox.Name = "CollectibleEquivalentItemComboBox";
+            this.CollectibleEquivalentItemComboBox.Size = new System.Drawing.Size(144, 21);
+            this.CollectibleEquivalentItemComboBox.TabIndex = 29;
+            // 
+            // CollectibleCollectionEffectLabel
+            // 
+            this.CollectibleCollectionEffectLabel.AutoSize = true;
+            this.CollectibleCollectionEffectLabel.Location = new System.Drawing.Point(3, 160);
+            this.CollectibleCollectionEffectLabel.Name = "CollectibleCollectionEffectLabel";
+            this.CollectibleCollectionEffectLabel.Size = new System.Drawing.Size(85, 13);
+            this.CollectibleCollectionEffectLabel.TabIndex = 30;
+            this.CollectibleCollectionEffectLabel.Text = "Collection Effect";
+            // 
+            // CollectibleEffectAmountLabel
+            // 
+            this.CollectibleEffectAmountLabel.AutoSize = true;
+            this.CollectibleEffectAmountLabel.Location = new System.Drawing.Point(3, 185);
+            this.CollectibleEffectAmountLabel.Name = "CollectibleEffectAmountLabel";
+            this.CollectibleEffectAmountLabel.Size = new System.Drawing.Size(76, 13);
+            this.CollectibleEffectAmountLabel.TabIndex = 31;
+            this.CollectibleEffectAmountLabel.Text = "Effect Amount";
+            // 
+            // CollectibleRemoveCollectibleButton
+            // 
+            this.CollectibleRemoveCollectibleButton.Location = new System.Drawing.Point(24, 468);
+            this.CollectibleRemoveCollectibleButton.Name = "CollectibleRemoveCollectibleButton";
+            this.CollectibleRemoveCollectibleButton.Size = new System.Drawing.Size(129, 23);
+            this.CollectibleRemoveCollectibleButton.TabIndex = 2;
+            this.CollectibleRemoveCollectibleButton.Text = "Remove Collectible";
+            this.CollectibleRemoveCollectibleButton.UseVisualStyleBackColor = true;
+            // 
+            // CollectibleConfigGroupBox
+            // 
+            this.CollectibleConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleConfigGroupBox.Location = new System.Drawing.Point(9, 497);
+            this.CollectibleConfigGroupBox.Name = "CollectibleConfigGroupBox";
+            this.CollectibleConfigGroupBox.Size = new System.Drawing.Size(938, 96);
+            this.CollectibleConfigGroupBox.TabIndex = 0;
+            this.CollectibleConfigGroupBox.TabStop = false;
+            // 
+            // CollectibleIDTextBox
+            // 
+            this.CollectibleIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleIDTextBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.CollectibleIDTextBox.Location = new System.Drawing.Point(812, 16);
+            this.CollectibleIDTextBox.Name = "CollectibleIDTextBox";
+            this.CollectibleIDTextBox.Size = new System.Drawing.Size(131, 20);
+            this.CollectibleIDTextBox.TabIndex = 3;
+            this.CollectibleIDTextBox.Text = "-2020202020";
+            // 
+            // CollectibleAddNewCollectibleButton
+            // 
+            this.CollectibleAddNewCollectibleButton.Location = new System.Drawing.Point(159, 468);
+            this.CollectibleAddNewCollectibleButton.Name = "CollectibleAddNewCollectibleButton";
+            this.CollectibleAddNewCollectibleButton.Size = new System.Drawing.Size(129, 23);
+            this.CollectibleAddNewCollectibleButton.TabIndex = 2;
+            this.CollectibleAddNewCollectibleButton.Text = "Add New Collectible";
+            this.CollectibleAddNewCollectibleButton.UseVisualStyleBackColor = true;
+            // 
+            // CollectibleListBox
+            // 
+            this.CollectibleListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.CollectibleListBox.DisplayMember = "Name";
+            this.CollectibleListBox.FormattingEnabled = true;
+            this.CollectibleListBox.Location = new System.Drawing.Point(9, 16);
+            this.CollectibleListBox.Name = "CollectibleListBox";
+            this.CollectibleListBox.Size = new System.Drawing.Size(279, 446);
+            this.CollectibleListBox.TabIndex = 1;
+            // 
+            // CollectibleIDLabel
+            // 
+            this.CollectibleIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleIDLabel.AutoSize = true;
+            this.CollectibleIDLabel.Location = new System.Drawing.Point(742, 19);
+            this.CollectibleIDLabel.Name = "CollectibleIDLabel";
+            this.CollectibleIDLabel.Size = new System.Drawing.Size(69, 13);
+            this.CollectibleIDLabel.TabIndex = 4;
+            this.CollectibleIDLabel.Text = "Collectible ID";
+            // 
+            // CollectibleEditImageButton
+            // 
+            this.CollectibleEditImageButton.Location = new System.Drawing.Point(815, 468);
+            this.CollectibleEditImageButton.Name = "CollectibleEditImageButton";
+            this.CollectibleEditImageButton.Size = new System.Drawing.Size(128, 23);
+            this.CollectibleEditImageButton.TabIndex = 7;
+            this.CollectibleEditImageButton.Text = "Edit Image";
+            this.CollectibleEditImageButton.UseVisualStyleBackColor = true;
+            // 
+            // CollectiblePictureBox
+            // 
+            this.CollectiblePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectiblePictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.CollectiblePictureBox.Location = new System.Drawing.Point(767, 286);
+            this.CollectiblePictureBox.Name = "CollectiblePictureBox";
+            this.CollectiblePictureBox.Size = new System.Drawing.Size(176, 176);
+            this.CollectiblePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CollectiblePictureBox.TabIndex = 6;
+            this.CollectiblePictureBox.TabStop = false;
             // 
             // CharactersTabPage
             // 
@@ -5522,11 +5522,6 @@ namespace Scribe
             this.BlockTableLayoutPanel.ResumeLayout(false);
             this.BlockTableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BlockPictureBox)).EndInit();
-            this.CollectiblesTabPage.ResumeLayout(false);
-            this.CollectiblesTabPage.PerformLayout();
-            this.CollectibleTableLayoutPanel.ResumeLayout(false);
-            this.CollectibleTableLayoutPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CollectiblePictureBox)).EndInit();
             this.FloorsTabPage.ResumeLayout(false);
             this.FloorsTabPage.PerformLayout();
             this.FloorLayoutTabelPanel.ResumeLayout(false);
@@ -5537,6 +5532,11 @@ namespace Scribe
             this.FurnishingTableLayoutPanel.ResumeLayout(false);
             this.FurnishingTableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FurnishingPictureBox)).EndInit();
+            this.CollectiblesTabPage.ResumeLayout(false);
+            this.CollectiblesTabPage.PerformLayout();
+            this.CollectibleTableLayoutPanel.ResumeLayout(false);
+            this.CollectibleTableLayoutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CollectiblePictureBox)).EndInit();
             this.CharactersTabPage.ResumeLayout(false);
             this.CharactersTabPage.PerformLayout();
             this.CharacterPronounGroupBox.ResumeLayout(false);
