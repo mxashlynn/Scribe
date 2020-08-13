@@ -169,15 +169,15 @@ namespace Scribe
 
             #region Repopulate Primary List Boxes
             RepopulateListBox(GameListBox, All.Games);
-            RepopulateListBox(CritterListBox, (IEnumerable<CritterModel>)All.Beings.Where(being => being is CritterModel));
-            RepopulateListBox(CharacterListBox, (IEnumerable<CharacterModel>)All.Beings.Where(being => being is CharacterModel));
+            RepopulateListBox(CritterListBox, All.Beings.OfType<CritterModel>());
+            RepopulateListBox(CharacterListBox, All.Beings.OfType<CharacterModel>());
             RepopulateListBox(BiomeListBox, All.Biomes);
             RepopulateListBox(CraftingListBox, All.CraftingRecipes);
             RepopulateListBox(ItemListBox, All.Items);
-            RepopulateListBox(FloorListBox, (IEnumerable<FloorModel>)All.Parquets.Where(parquet => parquet is FloorModel));
-            RepopulateListBox(BlockListBox, (IEnumerable<BlockModel>)All.Parquets.Where(parquet => parquet is BlockModel));
-            RepopulateListBox(FurnishingListBox, (IEnumerable<FurnishingModel>)All.Parquets.Where(parquet => parquet is FurnishingModel));
-            RepopulateListBox(CollectibleListBox, (IEnumerable<CollectibleModel>)All.Parquets.Where(parquet => parquet is CollectibleModel));
+            RepopulateListBox(FloorListBox, All.Parquets.OfType<FloorModel>());
+            RepopulateListBox(BlockListBox, All.Parquets.OfType<BlockModel>());
+            RepopulateListBox(FurnishingListBox, All.Parquets.OfType<FurnishingModel>());
+            RepopulateListBox(CollectibleListBox, All.Parquets.OfType<CollectibleModel>());
             RepopulateListBox(RoomListBox, All.RoomRecipes);
             #endregion
         }
