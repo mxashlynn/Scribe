@@ -154,16 +154,30 @@ namespace Scribe
         private void UpdateDisplay()
         {
             #region Clear Lists and Containers
-            // TextBoxes
-
-            // PictureBoxes
-
-            // CheckBoxes
-
-            // ComboBoxes
-
-            // ListBoxes
-
+            foreach (var textbox in this.GetAllChildrenOfType<TextBox>())
+            {
+                textbox.Clear();
+            }
+            foreach (var picturebox in this.GetAllChildrenOfType<PictureBox>())
+            {
+                picturebox.Image?.Dispose();
+                picturebox.Image = null;
+                picturebox.Update();
+            }
+            foreach (var checkbox in this.GetAllChildrenOfType<CheckBox>())
+            {
+                checkbox.Checked = false;
+            }
+            foreach (var combobox in this.GetAllChildrenOfType<ComboBox>())
+            {
+                combobox.SelectedItem = null;
+                combobox.Items.Clear();
+            }
+            foreach (var listbox in this.GetAllChildrenOfType<ListBox>())
+            {
+                listbox.SelectedItem = null;
+                listbox.Items.Clear();
+            }
             #endregion
 
             #region Repopulate Primary List Boxes
