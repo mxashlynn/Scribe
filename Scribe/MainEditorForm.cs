@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Runtime.InteropServices.ComTypes;
 using System.Windows.Forms;
 using ParquetClassLibrary;
@@ -231,7 +233,6 @@ namespace Scribe
         {
             if (null != in_source)
             {
-                // TODO This should only happen if the database has actually changed and/or if the list box is empty.
                 in_listbox.ClearSelected();
                 in_listbox.BeginUpdate();
                 in_listbox.Items.Clear();
@@ -454,6 +455,114 @@ namespace Scribe
         /// <param name="e">Addional event data.</param>
         private void AboutMenuItem_Click(object sender, EventArgs e)
             => AboutDialogue.ShowDialog();
+        #endregion
+
+        #region Edit Image Button Events
+        /// <summary>
+        /// Given a <see cref="PictureBox"/>, spawns an external image editor with the image currently loaded in the box.
+        /// </summary>
+        /// <param name="inPictureBox">The picture box whose contents should be edited.</param>
+        private void IconEditButtonClick(PictureBox inPictureBox)
+        {
+            if (inPictureBox.Image != Resources.ImageNotFoundGraphic &&
+                !string.IsNullOrEmpty(inPictureBox.ImageLocation))
+            {
+                // Make this application specifiable via options, maybe?
+                Process.Start("explorer", $"\"{inPictureBox.ImageLocation}\"");
+            }
+            else
+            {
+                SystemSounds.Beep.Play();
+            }
+        }
+
+        /// <summary>
+        /// Registers the user command for editing the loaded game icon.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void GameIconEditButton_Click(object sender, EventArgs e)
+            => IconEditButtonClick(GameIconPictureBox);
+
+        /// <summary>
+        /// Registers the user command for editing the loaded block image.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void BlockEditImageButton_Click(object sender, EventArgs e)
+            => IconEditButtonClick(BlockPictureBox);
+
+        /// <summary>
+        /// Registers the user command for editing the loaded floor image.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void FloorEditImageButton_Click(object sender, EventArgs e)
+            => IconEditButtonClick(FloorPictureBox);
+
+        /// <summary>
+        /// Registers the user command for editing the loaded furnishing image.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void FurnishingEditImageButton_Click(object sender, EventArgs e)
+            => IconEditButtonClick(FurnishingPictureBox);
+
+        /// <summary>
+        /// Registers the user command for editing the loaded collectible image.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void CollectibleEditImageButton_Click(object sender, EventArgs e)
+            => IconEditButtonClick(CollectiblePictureBox);
+
+        /// <summary>
+        /// Registers the user command for editing the loaded character image.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void CharacterEditImageButton_Click(object sender, EventArgs e)
+            => IconEditButtonClick(CharacterPictureBox);
+
+        /// <summary>
+        /// Registers the user command for editing the loaded critter image.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void CritterEditImageButton_Click(object sender, EventArgs e)
+            => IconEditButtonClick(CritterPictureBox);
+
+        /// <summary>
+        /// Registers the user command for editing the loaded item image.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void ItemPictureEditButton_Click(object sender, EventArgs e)
+            => IconEditButtonClick(ItemPictureBox);
+
+        /// <summary>
+        /// Registers the user command for editing the loaded biome icon.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void BiomePictureEditButton_Click(object sender, EventArgs e)
+            => IconEditButtonClick(BiomePictureBox);
+
+        /// <summary>
+        /// Registers the user command for editing the loaded crating recipe image.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void CraftingPictureEditButton_Click(object sender, EventArgs e)
+            => IconEditButtonClick(CraftingPictureBox);
+
+        /// <summary>
+        /// Registers the user command for editing the loaded room image.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void RoomPictureEditButton_Click(object sender, EventArgs e)
+            => IconEditButtonClick(RoomPictureBox);
         #endregion
 
         #region Quit Editor Event

@@ -1269,6 +1269,7 @@ namespace Scribe
             this.GameIconEditButton.TabIndex = 7;
             this.GameIconEditButton.Text = "Edit Image";
             this.GameIconEditButton.UseVisualStyleBackColor = true;
+            this.GameIconEditButton.Click += new System.EventHandler(this.GameIconEditButton_Click);
             // 
             // GameIconPictureBox
             // 
@@ -2050,6 +2051,7 @@ namespace Scribe
             this.BlockEditImageButton.TabIndex = 7;
             this.BlockEditImageButton.Text = "Edit Image";
             this.BlockEditImageButton.UseVisualStyleBackColor = true;
+            this.BlockEditImageButton.Click += new System.EventHandler(this.BlockEditImageButton_Click);
             // 
             // BlockIDLabel
             // 
@@ -2430,6 +2432,7 @@ namespace Scribe
             this.FloorEditImageButton.TabIndex = 7;
             this.FloorEditImageButton.Text = "Edit Image";
             this.FloorEditImageButton.UseVisualStyleBackColor = true;
+            this.FloorEditImageButton.Click += new System.EventHandler(this.FloorEditImageButton_Click);
             // 
             // FloorPictureBox
             // 
@@ -2732,6 +2735,7 @@ namespace Scribe
             this.FurnishingEditImageButton.TabIndex = 7;
             this.FurnishingEditImageButton.Text = "Edit Image";
             this.FurnishingEditImageButton.UseVisualStyleBackColor = true;
+            this.FurnishingEditImageButton.Click += new System.EventHandler(this.FurnishingEditImageButton_Click);
             // 
             // FurnishingPictureBox
             // 
@@ -2973,6 +2977,7 @@ namespace Scribe
             this.CollectibleEditImageButton.TabIndex = 7;
             this.CollectibleEditImageButton.Text = "Edit Image";
             this.CollectibleEditImageButton.UseVisualStyleBackColor = true;
+            this.CollectibleEditImageButton.Click += new System.EventHandler(this.CollectibleEditImageButton_Click);
             // 
             // CollectiblePictureBox
             // 
@@ -3540,6 +3545,7 @@ namespace Scribe
             this.CharacterEditImageButton.TabIndex = 7;
             this.CharacterEditImageButton.Text = "Edit Image";
             this.CharacterEditImageButton.UseVisualStyleBackColor = true;
+            this.CharacterEditImageButton.Click += new System.EventHandler(this.CharacterEditImageButton_Click);
             // 
             // CharacterPictureBox
             // 
@@ -3755,6 +3761,7 @@ namespace Scribe
             this.CritterEditImageButton.TabIndex = 7;
             this.CritterEditImageButton.Text = "Edit Image";
             this.CritterEditImageButton.UseVisualStyleBackColor = true;
+            this.CritterEditImageButton.Click += new System.EventHandler(this.CritterEditImageButton_Click);
             // 
             // CritterIDLabel
             // 
@@ -3915,6 +3922,7 @@ namespace Scribe
             this.ItemPictureEditButton.TabIndex = 7;
             this.ItemPictureEditButton.Text = "Edit Image";
             this.ItemPictureEditButton.UseVisualStyleBackColor = true;
+            this.ItemPictureEditButton.Click += new System.EventHandler(this.ItemPictureEditButton_Click);
             // 
             // ItemTableLayoutPanel
             // 
@@ -4361,6 +4369,7 @@ namespace Scribe
             this.BiomePictureEditButton.TabIndex = 7;
             this.BiomePictureEditButton.Text = "Edit Image";
             this.BiomePictureEditButton.UseVisualStyleBackColor = true;
+            this.BiomePictureEditButton.Click += new System.EventHandler(this.BiomePictureEditButton_Click);
             // 
             // BiomeTableLayoutPanel
             // 
@@ -4660,6 +4669,7 @@ namespace Scribe
             this.CraftingPictureEditButton.TabIndex = 7;
             this.CraftingPictureEditButton.Text = "Edit Image";
             this.CraftingPictureEditButton.UseVisualStyleBackColor = true;
+            this.CraftingPictureEditButton.Click += new System.EventHandler(this.CraftingPictureEditButton_Click);
             // 
             // CraftingTableLayoutPanel
             // 
@@ -5178,6 +5188,7 @@ namespace Scribe
             this.RoomPictureEditButton.TabIndex = 7;
             this.RoomPictureEditButton.Text = "Edit Image";
             this.RoomPictureEditButton.UseVisualStyleBackColor = true;
+            this.RoomPictureEditButton.Click += new System.EventHandler(this.RoomPictureEditButton_Click);
             // 
             // RoomTableLayoutPanel
             // 
