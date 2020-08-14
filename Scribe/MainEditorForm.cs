@@ -214,7 +214,7 @@ namespace Scribe
                     }
                     else
                     {
-                        picturebox.Image = Resources.NotFound;
+                        picturebox.Image = Resources.ImageNotFoundGraphic;
                     }
                 }
             }
