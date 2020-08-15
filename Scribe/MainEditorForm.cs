@@ -323,6 +323,24 @@ namespace Scribe
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
             => throw new NotImplementedException();
 
+
+        /// <summary>
+        /// Responds to a user selecting "Open Project Folder" menu item.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="e">Addional event data.</param>
+        private void OpenProjectFolderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(All.ProjectDirectory))
+            {
+                Process.Start("explorer", $"\"{All.ProjectDirectory}\"");
+            }
+            else
+            {
+                SystemSounds.Beep.Play();
+            }
+        }
+
         /// <summary>
         /// Responds to a user selecting the "Exit" menu item.
         /// </summary>
@@ -468,6 +486,26 @@ namespace Scribe
             if (!string.IsNullOrEmpty(path))
             {
                 Process.Start("explorer", $"\"{path}\"");
+            }
+            else
+            {
+                SystemSounds.Beep.Play();
+            }
+        }
+
+        /// <summary>
+        /// Responds to a user selecting "Edit in External Program" context menu item from a picture box.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="e">Addional event data.</param>
+        private void ToolStripMenuItemEditExternal_Click(object sender, EventArgs e)
+        {
+            var picturebox = (PictureBox)((ContextMenuStrip)((ToolStripItem)sender)?.Owner)?.SourceControl;
+            if (picturebox.Image != Resources.ImageNotFoundGraphic &&
+                !string.IsNullOrEmpty(picturebox.ImageLocation))
+            {
+                // Make this application specifiable via options, maybe?
+                Process.Start("explorer", $"\"{picturebox.ImageLocation}\"");
             }
             else
             {
