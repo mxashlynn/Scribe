@@ -623,6 +623,7 @@ namespace Scribe
             // 
             // ReloadToolStripMenuItem
             // 
+            this.ReloadToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ReloadToolStripMenuItem.Image")));
             this.ReloadToolStripMenuItem.Name = "ReloadToolStripMenuItem";
             this.ReloadToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
             this.ReloadToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
