@@ -155,6 +155,8 @@ namespace Scribe
         /// <param name="in_source">The objects to populate the UI with.</param>
         private void UpdateDisplay()
         {
+            UpdateLibraryDataDisplay();
+
             #region Clear Lists and Containers
             foreach (var textbox in this.GetAllChildrenOfType<TextBox>())
             {
