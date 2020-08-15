@@ -68,6 +68,8 @@ namespace Scribe
             this.DocumentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextMenuStripEditorForm = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ToolStripMenuItemOpenContainingFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.FiltersTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.FilterTextBox = new System.Windows.Forms.TextBox();
             this.FilterByNameCheckBox = new System.Windows.Forms.CheckBox();
@@ -482,6 +484,7 @@ namespace Scribe
             this.ScriptingComingSoonLabel = new System.Windows.Forms.Label();
             this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
+            this.ContextMenuStripEditorForm.SuspendLayout();
             this.FiltersTableLayoutPanel.SuspendLayout();
             this.FilterGroupBox.SuspendLayout();
             this.FlavorFilterGroupBox.SuspendLayout();
@@ -854,6 +857,21 @@ namespace Scribe
             this.AboutToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.AboutToolStripMenuItem.Text = "&About...";
             this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutMenuItem_Click);
+            // 
+            // ContextMenuStripEditorForm
+            // 
+            this.ContextMenuStripEditorForm.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemOpenContainingFolder});
+            this.ContextMenuStripEditorForm.Name = "ContextMenuStripMainMenu";
+            this.ContextMenuStripEditorForm.ShowImageMargin = false;
+            this.ContextMenuStripEditorForm.Size = new System.Drawing.Size(177, 26);
+            // 
+            // ToolStripMenuItemOpenContainingFolder
+            // 
+            this.ToolStripMenuItemOpenContainingFolder.Name = "ToolStripMenuItemOpenContainingFolder";
+            this.ToolStripMenuItemOpenContainingFolder.Size = new System.Drawing.Size(176, 22);
+            this.ToolStripMenuItemOpenContainingFolder.Text = "Open Containing Folder";
+            this.ToolStripMenuItemOpenContainingFolder.Click += new System.EventHandler(this.OpenContainingFolderMenuItem_Click);
             // 
             // FiltersTableLayoutPanel
             // 
@@ -1275,6 +1293,7 @@ namespace Scribe
             // 
             this.GameIconPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.GameIconPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.GameIconPictureBox.ContextMenuStrip = this.ContextMenuStripEditorForm;
             this.GameIconPictureBox.Location = new System.Drawing.Point(767, 286);
             this.GameIconPictureBox.Name = "GameIconPictureBox";
             this.GameIconPictureBox.Size = new System.Drawing.Size(176, 176);
@@ -5510,6 +5529,7 @@ namespace Scribe
             this.EditorStatusStrip.PerformLayout();
             this.MainMenuBar.ResumeLayout(false);
             this.MainMenuBar.PerformLayout();
+            this.ContextMenuStripEditorForm.ResumeLayout(false);
             this.FiltersTableLayoutPanel.ResumeLayout(false);
             this.FiltersTableLayoutPanel.PerformLayout();
             this.FilterGroupBox.ResumeLayout(false);
@@ -6065,5 +6085,7 @@ namespace Scribe
 
         private System.Windows.Forms.TabPage ScriptsTabPage;
         private System.Windows.Forms.Label ScriptingComingSoonLabel;
+        private System.Windows.Forms.ContextMenuStrip ContextMenuStripEditorForm;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemOpenContainingFolder;
     }
 }

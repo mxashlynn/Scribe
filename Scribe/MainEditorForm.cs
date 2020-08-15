@@ -455,6 +455,25 @@ namespace Scribe
         /// <param name="e">Addional event data.</param>
         private void AboutMenuItem_Click(object sender, EventArgs e)
             => AboutDialogue.ShowDialog();
+
+        /// <summary>
+        /// Responds to a user selecting "Open Containing Folder" context menu item from a picture box.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="e">Addional event data.</param>
+        private void OpenContainingFolderMenuItem_Click(object sender, EventArgs e)
+        {
+            var path = ((PictureBox)((ContextMenuStrip)((ToolStripItem)sender)?.Owner)?.SourceControl)?.ImageLocation;
+            path = Path.GetDirectoryName(path);
+            if (!string.IsNullOrEmpty(path))
+            {
+                Process.Start("explorer", $"\"{path}\"");
+            }
+            else
+            {
+                SystemSounds.Beep.Play();
+            }
+        }
         #endregion
 
         #region Edit Image Button Events
