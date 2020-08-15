@@ -55,7 +55,6 @@ namespace Scribe
         #endregion
 
         // TODO Use this when setting up Character tab:  Settings.Default.SuggestStoryIDs;
-        // TODO Use this when implementing auto-save:  Settings.Default.AutoSaveInterval;
 
         #region Initialization
         /// <summary>
@@ -72,6 +71,13 @@ namespace Scribe
              */
 
             FormClosing += FormClosingEventHandler;
+            // TODO This needs to be recursive.
+            foreach (Control childControl in Controls)
+            {
+                // TODO Use this when implementing auto-save:  Settings.Default.AutoSaveInterval;
+                // TODO This does not seem to be firing, though that might be just due to the non-recursion.
+                childControl.Validated += ContentAlteredEventHandler;
+            }
         }
 
         /// <summary>
@@ -271,6 +277,19 @@ namespace Scribe
         }
         #endregion
 
+        #region Autosave and Dirty Tracking
+        /// <summary>
+        /// Autosaves and/or marks the form dirty after an update.
+        /// </summary>
+        /// <param name="sender">The control whose content was changed.</param>
+        /// <param name="e">Ignored.</param>
+        private void ContentAlteredEventHandler(object sender, EventArgs e)
+        {
+            MessageBox.Show($"{sender.GetType().FullName} has changed.");
+        }
+
+        #endregion
+
         #region Menu Item Events
         /// <summary>
         /// Responds to a user selecting the "New" menu item.
@@ -313,7 +332,8 @@ namespace Scribe
                                 MessageBoxButtons.YesNo,
                                 MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                throw new NotImplementedException();
+                EditorCommands.LoadDataFiles();
+                UpdateDisplay();
             }
         }
 
@@ -323,7 +343,7 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="e">Addional event data.</param>
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
-            => throw new NotImplementedException();
+            => EditorCommands.SaveDataFiles();
 
 
         /// <summary>

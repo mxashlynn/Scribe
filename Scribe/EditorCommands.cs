@@ -137,12 +137,27 @@ namespace Scribe
         }
 
         /// <summary>
+        /// Saves game data to files in the current directory.
+        /// </summary>
+        internal static void SaveDataFiles()
+        {
+            if (All.CollectionsHaveBeenInitialized)
+            {
+                // TODO Let the user know if a the save fails.
+                All.SaveToCSVs();
+            }
+        }
+
+        /// <summary>
         /// Loads game data from files in the current directory.
         /// </summary>
-        // TODO This should probably let the user know if a file was missing or corrupt.
         internal static void LoadDataFiles()
-            // TODO We need a way to handle reinitializing All.
-            => All.LoadFromCSVs();
+        {
+            All.Clear();
+
+            // TODO Let the user know if a file was missing or corrupt.
+            All.LoadFromCSVs();
+        }
         #endregion
     }
 }
