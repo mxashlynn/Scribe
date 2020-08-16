@@ -141,6 +141,8 @@ namespace Scribe
         /// </summary>
         internal static void SaveDataFiles()
         {
+            // NOTE That currently this is called from the GUI thread and could block on a slow disk or network.
+            // I don't forsee this becoming an issue but it's something to keep in mind for possible optimizations.
             if (All.CollectionsHaveBeenInitialized)
             {
                 // TODO Let the user know if a the save fails.
