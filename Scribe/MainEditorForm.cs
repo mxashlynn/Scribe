@@ -70,12 +70,34 @@ namespace Scribe
         /// <summary>
         /// The moment at which the game content was most recently saved.
         /// </summary>
-        private DateTime TimeOfLastSave;
+        private DateTime TimeOfLastSync;
+
+        /// <summary>Backing field for <see cref="HasUnsavedChanges"/>.</summary>
+        private bool _hasUnsavedChanges;
 
         /// <summary>
         /// If <c>true</c> then the <see cref="MainEditorForm"/> contains unsaved data.
         /// </summary>
-        public bool IsDirty { get; private set; }
+        public bool HasUnsavedChanges
+        {
+            get => _hasUnsavedChanges;
+            private set
+            {
+                if(value)
+                {
+                    // All now contains unsaved changes.
+                    Text = Resources.CaptionMainEditorFormDirty;
+                    _hasUnsavedChanges = true;
+                }
+                else
+                {
+                    // All is now in sync with storage.
+                    Text = Resources.CaptionMainEditorFormClean;
+                    TimeOfLastSync = DateTime.Now;
+                    _hasUnsavedChanges = false;
+                }
+            }
+        }
 
         // TODO Use this when setting up Character tab:  Settings.Default.SuggestStoryIDs;
 
@@ -366,7 +388,7 @@ namespace Scribe
                                   EditableControls[typeof(TextBox)][textbox],
                                   comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
-                IsDirty = true;
+                HasUnsavedChanges = true;
                 EditableControls[typeof(TextBox)][textbox] = textbox.Text;
             }
             else if (sender is CheckBox checkbox
@@ -374,7 +396,7 @@ namespace Scribe
                                        EditableControls[typeof(CheckBox)][checkbox],
                                        comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
-                IsDirty = true;
+                HasUnsavedChanges = true;
                 EditableControls[typeof(CheckBox)][checkbox] = checkbox.Checked.ToString();
             }
             else if (sender is ComboBox combobox
@@ -382,7 +404,7 @@ namespace Scribe
                                        EditableControls[typeof(ComboBox)][combobox],
                                        comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
-                IsDirty = true;
+                HasUnsavedChanges = true;
                 EditableControls[typeof(ComboBox)][combobox] = combobox.SelectedIndex.ToString();
             }
             else if (sender is ListBox listbox
@@ -390,22 +412,22 @@ namespace Scribe
                                        EditableControls[typeof(ListBox)][listbox],
                                        comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
-                IsDirty = true;
+                HasUnsavedChanges = true;
                 EditableControls[typeof(ListBox)][listbox] = listbox.SelectedIndex.ToString();
             }
 
-            if (IsDirty)
+            if (HasUnsavedChanges)
             {
                 if (Settings.Default.AutoSaveInterval > 0
-                    && DateTime.Now.AddMinutes(-Settings.Default.AutoSaveInterval) > TimeOfLastSave)
+                    && DateTime.Now.AddMinutes(-Settings.Default.AutoSaveInterval) > TimeOfLastSync)
                 {
                     // Autosave
                     EditorCommands.SaveDataFiles();
                     // TODO Only do this if the save succeeds.
                     // TODO Deduplicate this code.
-                    IsDirty = false;
+                    HasUnsavedChanges = false;
                     Text = Resources.CaptionMainEditorFormClean;
-                    TimeOfLastSave = DateTime.Now;
+                    TimeOfLastSync = DateTime.Now;
                 }
                 else
                 {
@@ -429,9 +451,9 @@ namespace Scribe
                 EditorCommands.LoadDataFiles();
                 // TODO Only do this if the load succeeds.
                 // TODO Deduplicate this code.
-                IsDirty = false;
+                HasUnsavedChanges = false;
                 Text = Resources.CaptionMainEditorFormClean;
-                TimeOfLastSave = DateTime.Now;
+                TimeOfLastSync = DateTime.Now;
                 UpdateDisplay();
             }
         }
@@ -448,9 +470,9 @@ namespace Scribe
                 EditorCommands.LoadDataFiles();
                 // TODO Only do this if the load succeeds.
                 // TODO Deduplicate this code.
-                IsDirty = false;
+                HasUnsavedChanges = false;
                 Text = Resources.CaptionMainEditorFormClean;
-                TimeOfLastSave = DateTime.Now;
+                TimeOfLastSync = DateTime.Now;
                 UpdateDisplay();
             }
         }
@@ -470,9 +492,9 @@ namespace Scribe
                 EditorCommands.LoadDataFiles();
                 // TODO Only do this if the load succeeds.
                 // TODO Deduplicate this code.
-                IsDirty = false;
+                HasUnsavedChanges = false;
                 Text = Resources.CaptionMainEditorFormClean;
-                TimeOfLastSave = DateTime.Now;
+                TimeOfLastSync = DateTime.Now;
                 UpdateDisplay();
             }
         }
@@ -487,9 +509,9 @@ namespace Scribe
             EditorCommands.SaveDataFiles();
             // TODO Only do this if the save succeeds.
             // TODO Deduplicate this code.
-            IsDirty = false;
+            HasUnsavedChanges = false;
             Text = Resources.CaptionMainEditorFormClean;
-            TimeOfLastSave = DateTime.Now;
+            TimeOfLastSync = DateTime.Now;
         }
 
         /// <summary>
@@ -798,7 +820,7 @@ namespace Scribe
         /// <param name="e">Used to cancel the close event if it was not desired.</param>
         private void FormClosingEventHandler(object sender, FormClosingEventArgs e)
         {
-            if (IsDirty)
+            if (HasUnsavedChanges)
             {
                 if (MessageBox.Show(Resources.WarningMessageExit,
                                     Resources.CaptionExitWarning,
