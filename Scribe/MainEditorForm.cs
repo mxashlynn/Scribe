@@ -54,6 +54,7 @@ namespace Scribe
         private readonly FolderBrowserDialog FolderBrowserDialogue = new FolderBrowserDialog();
         #endregion
 
+        #region Cached Controls
         /// <summary>
         /// A collection of all editable <see cref="Control"/>s in the <see cref="MainEditorForm"/>
         /// together with the game data they currently represent, organized by <see cref="Type"/>.
@@ -64,6 +65,7 @@ namespace Scribe
         /// A collection of all editable <see cref="PictureBox"/>es in the <see cref="MainEditorForm"/>.
         /// </summary>
         private readonly List<PictureBox> PictureBoxes;
+        #endregion
 
         /// <summary>
         /// The moment at which the game content was most recently saved.
@@ -85,12 +87,7 @@ namespace Scribe
         {
             InitializeComponent();
 
-            /*  TODO These might not be needed.  Add these if the fonts are wonky.
-            EditorStatusStrip.Font = SystemFonts.StatusFont;
-            MainMenuBar.Font = SystemFonts.MenuFont;
-            Font = SystemFonts.DialogFont;
-             */
-
+            // TODO Deduplicate this code:
             IsDirty = false;
             Text = Resources.CaptionMainEditorFormClean;
             TimeOfLastSave = DateTime.Now;
@@ -439,7 +436,6 @@ namespace Scribe
                 // TODO Deduplicate this code.
                 IsDirty = false;
                 Text = Resources.CaptionMainEditorFormClean;
-                Text = "Scribe";
                 TimeOfLastSave = DateTime.Now;
                 UpdateDisplay();
             }
