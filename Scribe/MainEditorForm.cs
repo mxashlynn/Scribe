@@ -408,9 +408,7 @@ namespace Scribe
                     // TODO Deduplicate this code.
                     IsDirty = false;
                     Text = Resources.CaptionMainEditorFormClean;
-                    Text = "Scribe";
                     TimeOfLastSave = DateTime.Now;
-                    Text = Resources.CaptionMainEditorFormClean;
                 }
                 else
                 {
@@ -455,7 +453,6 @@ namespace Scribe
                 // TODO Deduplicate this code.
                 IsDirty = false;
                 Text = Resources.CaptionMainEditorFormClean;
-                Text = "Scribe";
                 TimeOfLastSave = DateTime.Now;
                 UpdateDisplay();
             }
@@ -478,7 +475,6 @@ namespace Scribe
                 // TODO Deduplicate this code.
                 IsDirty = false;
                 Text = Resources.CaptionMainEditorFormClean;
-                Text = "Scribe";
                 TimeOfLastSave = DateTime.Now;
                 UpdateDisplay();
             }
@@ -496,7 +492,6 @@ namespace Scribe
             // TODO Deduplicate this code.
             IsDirty = false;
             Text = Resources.CaptionMainEditorFormClean;
-            Text = "Scribe";
             TimeOfLastSave = DateTime.Now;
         }
 
