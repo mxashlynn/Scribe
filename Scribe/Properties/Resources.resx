@@ -141,6 +141,14 @@
     <value>Cannot Create Templates</value>
     <comment>Heading for non-empty project folder dialogue.</comment>
   </data>
+  <data name="CaptionMainEditorFormClean" xml:space="preserve">
+    <value>Scribe</value>
+    <comment>The title of the application, indicating no unsaved data.</comment>
+  </data>
+  <data name="CaptionMainEditorFormDirty" xml:space="preserve">
+    <value>Scribe *</value>
+    <comment>The title of the application, indicated unsaved data.</comment>
+  </data>
   <data name="CaptionNewWarning" xml:space="preserve">
     <value>New Project</value>
     <comment>Heading for the new project warning dialogue.</comment>

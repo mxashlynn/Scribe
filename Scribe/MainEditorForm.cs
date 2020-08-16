@@ -54,6 +54,27 @@ namespace Scribe
         private readonly FolderBrowserDialog FolderBrowserDialogue = new FolderBrowserDialog();
         #endregion
 
+        /// <summary>
+        /// A collection of all editable <see cref="Control"/>s in the <see cref="MainEditorForm"/>
+        /// together with the game data they currently represent, organized by <see cref="Type"/>.
+        /// </summary>
+        private readonly Dictionary<Type, Dictionary<Control, string>> EditableControls;
+
+        /// <summary>
+        /// A collection of all editable <see cref="PictureBox"/>es in the <see cref="MainEditorForm"/>.
+        /// </summary>
+        private readonly List<PictureBox> PictureBoxes;
+
+        /// <summary>
+        /// The moment at which the game content was most recently saved.
+        /// </summary>
+        private DateTime TimeOfLastSave;
+
+        /// <summary>
+        /// If <c>true</c> then the <see cref="MainEditorForm"/> contains unsaved data.
+        /// </summary>
+        public bool IsDirty { get; private set; }
+
         // TODO Use this when setting up Character tab:  Settings.Default.SuggestStoryIDs;
 
         #region Initialization
@@ -70,13 +91,19 @@ namespace Scribe
             Font = SystemFonts.DialogFont;
              */
 
+            IsDirty = false;
+            Text = Resources.CaptionMainEditorFormClean;
+            TimeOfLastSave = DateTime.Now;
+            EditableControls = GetEditableControls();
+            PictureBoxes = EditorTabs.GetAllChildrenOfType<PictureBox>().ToList<PictureBox>();
+
             FormClosing += FormClosingEventHandler;
-            // TODO This needs to be recursive.
-            foreach (Control childControl in Controls)
+            foreach (var kvp in EditableControls)
             {
-                // TODO Use this when implementing auto-save:  Settings.Default.AutoSaveInterval;
-                // TODO This does not seem to be firing, though that might be just due to the non-recursion.
-                childControl.Validated += ContentAlteredEventHandler;
+                foreach (var childControl in kvp.Value)
+                {
+                    childControl.Key.Validated += ContentAlteredEventHandler;
+                }
             }
         }
 
@@ -89,6 +116,38 @@ namespace Scribe
             base.OnLoad(EventData);
             UpdateLibraryDataDisplay();
             UpdateFileFormatDisplay();
+        }
+
+        /// <summary>
+        /// Finds all editable <see cref="Control"/>s in the <see cref="MainEditorForm"/> that represent editable game data.
+        /// </summary>
+        /// <returns>A dictionary containing lists of controls, organized by type.</returns>
+        private Dictionary<Type, Dictionary<Control, string>> GetEditableControls()
+        {
+            var editables = new Dictionary<Type, Dictionary<Control, string>>();
+
+            editables[typeof(TextBox)] = new Dictionary<Control, string>();
+            foreach (var textbox in EditorTabs.GetAllChildrenOfType<TextBox>())
+            {
+                editables[typeof(TextBox)][textbox] = textbox.Text;
+            }
+            editables[typeof(CheckBox)] = new Dictionary<Control, string>();
+            foreach (var checkbox in EditorTabs.GetAllChildrenOfType<CheckBox>())
+            {
+                editables[typeof(CheckBox)][checkbox] = checkbox.Checked.ToString();
+            }
+            editables[typeof(ComboBox)] = new Dictionary<Control, string>();
+            foreach (var combobox in EditorTabs.GetAllChildrenOfType<ComboBox>())
+            {
+                editables[typeof(ComboBox)][combobox] = combobox.SelectedIndex.ToString();
+            }
+            editables[typeof(ListBox)] = new Dictionary<Control, string>();
+            foreach (var listbox in EditorTabs.GetAllChildrenOfType<ListBox>())
+            {
+                editables[typeof(ListBox)][listbox] = listbox.SelectedIndex.ToString();
+            }
+
+            return editables;
         }
         #endregion
 
@@ -121,6 +180,12 @@ namespace Scribe
         }
         #endregion
 
+        #region Tab Management
+        /// <summary>
+        /// Given the index of an editor tab, return the default <see cref="ModelID"/> for the content it edits.
+        /// </summary>
+        /// <param name="in_tabIndex">The index of the tab sought.</param>
+        /// <returns>The corresponding ID.</returns>
         private ModelID GetDefaultIDForTab(int in_tabIndex)
             => in_tabIndex switch
             {
@@ -137,6 +202,7 @@ namespace Scribe
                 10 => All.RoomRecipeIDs.Minimum,
                 _ => ModelID.None,
             };
+        #endregion
 
         #region Display Update Methods
         /// <summary>
@@ -164,29 +230,45 @@ namespace Scribe
             UpdateLibraryDataDisplay();
 
             #region Clear Lists and Containers
-            foreach (var textbox in this.GetAllChildrenOfType<TextBox>())
+            foreach (var textbox in EditableControls[typeof(TextBox)])
             {
-                textbox.Clear();
+                ((TextBox)textbox.Key)?.Clear();
             }
-            foreach (var picturebox in this.GetAllChildrenOfType<PictureBox>())
+            foreach (var checkbox in EditableControls[typeof(CheckBox)])
             {
-                picturebox.Image?.Dispose();
-                picturebox.Image = null;
-                picturebox.Update();
+                var nonNullCheckbox = (CheckBox)checkbox.Key;
+                if (nonNullCheckbox != null)
+                {
+                    nonNullCheckbox.Checked = false;
+                }
             }
-            foreach (var checkbox in this.GetAllChildrenOfType<CheckBox>())
+            foreach (var combobox in EditableControls[typeof(ComboBox)])
             {
-                checkbox.Checked = false;
+                var nonNullCombobox = (ComboBox)combobox.Key;
+                if (nonNullCombobox != null)
+                {
+                    nonNullCombobox.SelectedItem = null;
+                    nonNullCombobox.Items.Clear();
+                }
             }
-            foreach (var combobox in this.GetAllChildrenOfType<ComboBox>())
+            foreach (var listbox in EditableControls[typeof(ListBox)])
             {
-                combobox.SelectedItem = null;
-                combobox.Items.Clear();
+                var nonNullListbox = (ListBox)listbox.Key;
+                if (nonNullListbox != null)
+                {
+                    nonNullListbox.SelectedItem = null;
+                    nonNullListbox.Items.Clear();
+                }
             }
-            foreach (var listbox in this.GetAllChildrenOfType<ListBox>())
+
+            foreach (var picturebox in PictureBoxes)
             {
-                listbox.SelectedItem = null;
-                listbox.Items.Clear();
+                if (picturebox != null)
+                {
+                    picturebox.Image?.Dispose();
+                    picturebox.Image = null;
+                    picturebox.Update();
+                }
             }
             #endregion
 
@@ -285,9 +367,60 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void ContentAlteredEventHandler(object sender, EventArgs e)
         {
-            MessageBox.Show($"{sender.GetType().FullName} has changed.");
-        }
+            if (sender is TextBox textbox
+                && string.Compare(textbox.Text,
+                                  EditableControls[typeof(TextBox)][textbox],
+                                  comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
+            {
+                IsDirty = true;
+                EditableControls[typeof(TextBox)][textbox] = textbox.Text;
+            }
+            else if (sender is CheckBox checkbox
+                     && string.Compare(checkbox.Checked.ToString(),
+                                       EditableControls[typeof(CheckBox)][checkbox],
+                                       comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
+            {
+                IsDirty = true;
+                EditableControls[typeof(CheckBox)][checkbox] = checkbox.Checked.ToString();
+            }
+            else if (sender is ComboBox combobox
+                     && string.Compare(combobox.SelectedIndex.ToString(),
+                                       EditableControls[typeof(ComboBox)][combobox],
+                                       comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
+            {
+                IsDirty = true;
+                EditableControls[typeof(ComboBox)][combobox] = combobox.SelectedIndex.ToString();
+            }
+            else if (sender is ListBox listbox
+                     && string.Compare(listbox.SelectedIndex.ToString(),
+                                       EditableControls[typeof(ListBox)][listbox],
+                                       comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
+            {
+                IsDirty = true;
+                EditableControls[typeof(ListBox)][listbox] = listbox.SelectedIndex.ToString();
+            }
 
+            if (IsDirty)
+            {
+                if (Settings.Default.AutoSaveInterval > 0
+                    && DateTime.Now.AddMinutes(-Settings.Default.AutoSaveInterval) > TimeOfLastSave)
+                {
+                    // Autosave
+                    EditorCommands.SaveDataFiles();
+                    // TODO Only do this if the save succeeds.
+                    // TODO Deduplicate this code.
+                    IsDirty = false;
+                    Text = Resources.CaptionMainEditorFormClean;
+                    Text = "Scribe";
+                    TimeOfLastSave = DateTime.Now;
+                    Text = Resources.CaptionMainEditorFormClean;
+                }
+                else
+                {
+                    Text = Resources.CaptionMainEditorFormDirty;
+                }
+            }
+        }
         #endregion
 
         #region Menu Item Events
@@ -302,6 +435,12 @@ namespace Scribe
                 && EditorCommands.CreateTemplatesInProjectFolder())
             {
                 EditorCommands.LoadDataFiles();
+                // TODO Only do this if the load succeeds.
+                // TODO Deduplicate this code.
+                IsDirty = false;
+                Text = Resources.CaptionMainEditorFormClean;
+                Text = "Scribe";
+                TimeOfLastSave = DateTime.Now;
                 UpdateDisplay();
             }
         }
@@ -316,6 +455,12 @@ namespace Scribe
             if (SelectProjectFolder(Resources.InfoMessageLoad))
             {
                 EditorCommands.LoadDataFiles();
+                // TODO Only do this if the load succeeds.
+                // TODO Deduplicate this code.
+                IsDirty = false;
+                Text = Resources.CaptionMainEditorFormClean;
+                Text = "Scribe";
+                TimeOfLastSave = DateTime.Now;
                 UpdateDisplay();
             }
         }
@@ -333,6 +478,12 @@ namespace Scribe
                                 MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 EditorCommands.LoadDataFiles();
+                // TODO Only do this if the load succeeds.
+                // TODO Deduplicate this code.
+                IsDirty = false;
+                Text = Resources.CaptionMainEditorFormClean;
+                Text = "Scribe";
+                TimeOfLastSave = DateTime.Now;
                 UpdateDisplay();
             }
         }
@@ -343,8 +494,15 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="e">Addional event data.</param>
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
-            => EditorCommands.SaveDataFiles();
-
+        {
+            EditorCommands.SaveDataFiles();
+            // TODO Only do this if the save succeeds.
+            // TODO Deduplicate this code.
+            IsDirty = false;
+            Text = Resources.CaptionMainEditorFormClean;
+            Text = "Scribe";
+            TimeOfLastSave = DateTime.Now;
+        }
 
         /// <summary>
         /// Responds to a user selecting "Open Project Folder" menu item.
@@ -652,16 +810,19 @@ namespace Scribe
         /// <param name="e">Used to cancel the close event if it was not desired.</param>
         private void FormClosingEventHandler(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show(Resources.WarningMessageExit,
-                                Resources.CaptionExitWarning,
-                                MessageBoxButtons.YesNo,
-                                MessageBoxIcon.Warning) == DialogResult.No)
+            if (IsDirty)
             {
-                e.Cancel = true;
-            }
-            else
-            {
-                FormClosing -= FormClosingEventHandler;
+                if (MessageBox.Show(Resources.WarningMessageExit,
+                                    Resources.CaptionExitWarning,
+                                    MessageBoxButtons.YesNo,
+                                    MessageBoxIcon.Warning) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    FormClosing -= FormClosingEventHandler;
+                }
             }
         }
         #endregion

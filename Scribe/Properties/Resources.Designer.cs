@@ -115,6 +115,24 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Scribe.
+        /// </summary>
+        internal static string CaptionMainEditorFormClean {
+            get {
+                return ResourceManager.GetString("CaptionMainEditorFormClean", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scribe *.
+        /// </summary>
+        internal static string CaptionMainEditorFormDirty {
+            get {
+                return ResourceManager.GetString("CaptionMainEditorFormDirty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New Project.
         /// </summary>
         internal static string CaptionNewWarning {
