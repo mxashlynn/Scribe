@@ -75,6 +75,15 @@ namespace Scribe
         /// <summary>Backing field for <see cref="HasUnsavedChanges"/>.</summary>
         private bool _hasUnsavedChanges;
 
+
+        /// <summary>
+        /// Determines if <see cref="All"/> out to be written to storage.
+        /// </summary>
+        /// <returns><c>true</c> if the application needs to save, <c>false</c> otherwise.</returns>
+        private bool IsTimeToAutoSave()
+            => Settings.Default.AutoSaveInterval > 0
+            && DateTime.Now.AddMinutes(-Settings.Default.AutoSaveInterval) > TimeOfLastSync;
+
         /// <summary>
         /// If <c>true</c> then the <see cref="MainEditorForm"/> contains unsaved data.
         /// </summary>
@@ -86,10 +95,9 @@ namespace Scribe
                 if (value)
                 {
                     // All is about to go out of sync with storage, check if it's time to autosave.
-                    if (Settings.Default.AutoSaveInterval > 0
-                        && DateTime.Now.AddMinutes(-Settings.Default.AutoSaveInterval) > TimeOfLastSync)
+                    if (IsTimeToAutoSave())
                     {
-                        // It's time to autosave, so write to storage.  All remains in sync.
+                        // All remains in sync.
                         EditorCommands.SaveDataFiles();
                         // TODO Only do this if the save succeeds.
                         Text = Resources.CaptionMainEditorFormClean;
