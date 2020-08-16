@@ -83,11 +83,25 @@ namespace Scribe
             get => _hasUnsavedChanges;
             private set
             {
-                if(value)
+                if (value)
                 {
-                    // All now contains unsaved changes.
-                    Text = Resources.CaptionMainEditorFormDirty;
-                    _hasUnsavedChanges = true;
+                    // All is about to go out of sync with storage, check if it's time to autosave.
+                    if (Settings.Default.AutoSaveInterval > 0
+                        && DateTime.Now.AddMinutes(-Settings.Default.AutoSaveInterval) > TimeOfLastSync)
+                    {
+                        // It's time to autosave, so write to storage.  All remains in sync.
+                        EditorCommands.SaveDataFiles();
+                        // TODO Only do this if the save succeeds.
+                        Text = Resources.CaptionMainEditorFormClean;
+                        TimeOfLastSync = DateTime.Now;
+                        _hasUnsavedChanges = false;
+                    }
+                    else
+                    {
+                        // All now contains unsaved changes.
+                        Text = Resources.CaptionMainEditorFormDirty;
+                        _hasUnsavedChanges = true;
+                    }
                 }
                 else
                 {
@@ -375,7 +389,7 @@ namespace Scribe
         }
         #endregion
 
-        #region Autosave and Dirty Tracking
+        #region Handle Changes to Data
         /// <summary>
         /// Autosaves and/or marks the form dirty after an update.
         /// </summary>
@@ -388,51 +402,32 @@ namespace Scribe
                                   EditableControls[typeof(TextBox)][textbox],
                                   comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
-                HasUnsavedChanges = true;
                 EditableControls[typeof(TextBox)][textbox] = textbox.Text;
+                HasUnsavedChanges = true;
             }
             else if (sender is CheckBox checkbox
                      && string.Compare(checkbox.Checked.ToString(),
                                        EditableControls[typeof(CheckBox)][checkbox],
                                        comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
-                HasUnsavedChanges = true;
                 EditableControls[typeof(CheckBox)][checkbox] = checkbox.Checked.ToString();
+                HasUnsavedChanges = true;
             }
             else if (sender is ComboBox combobox
                      && string.Compare(combobox.SelectedIndex.ToString(),
                                        EditableControls[typeof(ComboBox)][combobox],
                                        comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
-                HasUnsavedChanges = true;
                 EditableControls[typeof(ComboBox)][combobox] = combobox.SelectedIndex.ToString();
+                HasUnsavedChanges = true;
             }
             else if (sender is ListBox listbox
                      && string.Compare(listbox.SelectedIndex.ToString(),
                                        EditableControls[typeof(ListBox)][listbox],
                                        comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
-                HasUnsavedChanges = true;
                 EditableControls[typeof(ListBox)][listbox] = listbox.SelectedIndex.ToString();
-            }
-
-            if (HasUnsavedChanges)
-            {
-                if (Settings.Default.AutoSaveInterval > 0
-                    && DateTime.Now.AddMinutes(-Settings.Default.AutoSaveInterval) > TimeOfLastSync)
-                {
-                    // Autosave
-                    EditorCommands.SaveDataFiles();
-                    // TODO Only do this if the save succeeds.
-                    // TODO Deduplicate this code.
-                    HasUnsavedChanges = false;
-                    Text = Resources.CaptionMainEditorFormClean;
-                    TimeOfLastSync = DateTime.Now;
-                }
-                else
-                {
-                    Text = Resources.CaptionMainEditorFormDirty;
-                }
+                HasUnsavedChanges = true;
             }
         }
         #endregion
@@ -450,10 +445,7 @@ namespace Scribe
             {
                 EditorCommands.LoadDataFiles();
                 // TODO Only do this if the load succeeds.
-                // TODO Deduplicate this code.
                 HasUnsavedChanges = false;
-                Text = Resources.CaptionMainEditorFormClean;
-                TimeOfLastSync = DateTime.Now;
                 UpdateDisplay();
             }
         }
@@ -469,10 +461,7 @@ namespace Scribe
             {
                 EditorCommands.LoadDataFiles();
                 // TODO Only do this if the load succeeds.
-                // TODO Deduplicate this code.
                 HasUnsavedChanges = false;
-                Text = Resources.CaptionMainEditorFormClean;
-                TimeOfLastSync = DateTime.Now;
                 UpdateDisplay();
             }
         }
@@ -491,10 +480,7 @@ namespace Scribe
             {
                 EditorCommands.LoadDataFiles();
                 // TODO Only do this if the load succeeds.
-                // TODO Deduplicate this code.
                 HasUnsavedChanges = false;
-                Text = Resources.CaptionMainEditorFormClean;
-                TimeOfLastSync = DateTime.Now;
                 UpdateDisplay();
             }
         }
@@ -508,10 +494,7 @@ namespace Scribe
         {
             EditorCommands.SaveDataFiles();
             // TODO Only do this if the save succeeds.
-            // TODO Deduplicate this code.
             HasUnsavedChanges = false;
-            Text = Resources.CaptionMainEditorFormClean;
-            TimeOfLastSync = DateTime.Now;
         }
 
         /// <summary>
