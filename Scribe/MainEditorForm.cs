@@ -87,14 +87,10 @@ namespace Scribe
         {
             InitializeComponent();
 
-            // TODO Deduplicate this code:
-            IsDirty = false;
-            Text = Resources.CaptionMainEditorFormClean;
-            TimeOfLastSave = DateTime.Now;
-            EditableControls = GetEditableControls();
-            PictureBoxes = EditorTabs.GetAllChildrenOfType<PictureBox>().ToList<PictureBox>();
+            HasUnsavedChanges = false;
 
-            FormClosing += FormClosingEventHandler;
+            PictureBoxes = EditorTabs.GetAllChildrenOfType<PictureBox>().ToList<PictureBox>();
+            EditableControls = GetEditableControls();
             foreach (var kvp in EditableControls)
             {
                 foreach (var childControl in kvp.Value)
@@ -102,6 +98,7 @@ namespace Scribe
                     childControl.Key.Validated += ContentAlteredEventHandler;
                 }
             }
+            FormClosing += FormClosingEventHandler;
         }
 
         /// <summary>
