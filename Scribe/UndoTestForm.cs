@@ -55,11 +55,12 @@ namespace Scribe
             if (sender is TextBox textbox
                 && string.Compare(textbox.Text, OldValue, comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
-                var newValue = textbox.Text;
-                UndoManager.AddAndExecute($"value changed from {OldValue} to {newValue}.",
-                                          () => DatabaseValue = newValue,
-                                          () => DatabaseValue = OldValue);
-                OldValue = textbox.Text;
+                var localNewValue = textbox.Text;
+                var localOldValue = OldValue;
+                UndoManager.AddAndExecute($"value changed from {OldValue} to {localNewValue}.",
+                                          () => DatabaseValue = localNewValue,
+                                          () => DatabaseValue = localOldValue);
+                OldValue = localNewValue;
             }
         }
 
