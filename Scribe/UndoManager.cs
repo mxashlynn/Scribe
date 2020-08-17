@@ -12,7 +12,7 @@ namespace Scribe
         private static readonly List<Command> Commands = new List<Command>();
 
         /// <summary>The index of the <see cref="Command"/> that will be Undone next.</summary>
-        private static int CurrentCommandIndex = 0;
+        private static int CurrentCommandIndex = -1;
 
         /// <summary>
         /// Empties the <see cref="Command"/> history and resets the manager.
@@ -20,7 +20,7 @@ namespace Scribe
         internal static void Clear()
         {
             Commands.Clear();
-            CurrentCommandIndex = 0;
+            CurrentCommandIndex = -1;
         }
 
         /// <summary>
