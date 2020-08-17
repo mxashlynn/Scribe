@@ -57,21 +57,24 @@ namespace Scribe
             if (sender is TextBox textbox
                 && string.Compare(textbox.Text, OldValue, comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
+                // TODO Make this into a proper class, nevermind using Actions.
                 var localNewValue = textbox.Text;
                 var localOldValue = OldValue;
+                var message = $"value changed from {(string.IsNullOrEmpty(localOldValue) ? "null" : localOldValue)} to {(string.IsNullOrEmpty(localNewValue) ? "null" : localNewValue)}.]";
+
                 UndoManager.AddAndExecute($"value changed from {localOldValue} to {localNewValue}.",
                                           () =>
                                           {
-                                              var message = $"[EXECUTE value changed from {(string.IsNullOrEmpty(localOldValue) ? "null" : localOldValue)} to {(string.IsNullOrEmpty(localNewValue) ? "null" : localNewValue)}.]\n{(string.IsNullOrEmpty(DatabaseValue) ? "null" : DatabaseValue)} to {(string.IsNullOrEmpty(localNewValue) ? "null" : localNewValue)}";
-                                              MessageBox.Show(message);
+                                              MessageBox.Show($"[EXECUTE {message}.]\n{(string.IsNullOrEmpty(DatabaseValue) ? "null" : DatabaseValue)} to {(string.IsNullOrEmpty(localNewValue) ? "null" : localNewValue)}");
+                                              
                                               OldValue = DatabaseValue;
                                               DatabaseValue = localNewValue;
                                               textbox.Text = DatabaseValue;
                                           },
                                           () =>
                                           {
-                                              var message = $"[REVERSE value changed from {(string.IsNullOrEmpty(localOldValue) ? "null" : localOldValue)} to {(string.IsNullOrEmpty(localNewValue) ? "null" : localNewValue)}.]\n{(string.IsNullOrEmpty(DatabaseValue) ? "null" : DatabaseValue)} to {(string.IsNullOrEmpty(localOldValue) ? "null" : localOldValue)}";
-                                              MessageBox.Show(message);
+                                              MessageBox.Show($"[REVERSE {message}.]\n{(string.IsNullOrEmpty(DatabaseValue) ? "null" : DatabaseValue)} to {(string.IsNullOrEmpty(localOldValue) ? "null" : localOldValue)}");
+
                                               OldValue = DatabaseValue;
                                               DatabaseValue = localOldValue;
                                               textbox.Text = DatabaseValue;
