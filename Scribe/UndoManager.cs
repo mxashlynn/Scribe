@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Scribe
 {
@@ -41,10 +42,14 @@ namespace Scribe
         /// </summary>
         internal static void Undo()
         {
-            if (CurrentCommandIndex > 0)
+            if (CurrentCommandIndex > -1)
             {
                 Commands[CurrentCommandIndex].Reverse();
                 CurrentCommandIndex--;
+            }
+            else
+            {
+                MessageBox.Show("Did not Undo!");
             }
         }
 
@@ -53,10 +58,14 @@ namespace Scribe
         /// </summary>
         internal static void Redo()
         {
-            if (CurrentCommandIndex < Commands.Count)
+            if (CurrentCommandIndex < Commands.Count - 1)
             {
                 CurrentCommandIndex++;
                 Commands[CurrentCommandIndex].Execute();
+            }
+            else
+            {
+                MessageBox.Show("Did not Redo!");
             }
         }
     }
