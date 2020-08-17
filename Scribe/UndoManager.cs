@@ -10,7 +10,7 @@ namespace Scribe
     internal static class UndoManager
     {
         /// <summary>A history of actions taken.</summary>
-        private static readonly List<Command> Commands = new List<Command>();
+        private static List<Command> Commands = new List<Command>();
 
         /// <summary>The index of the <see cref="Command"/> that will be Undone next.</summary>
         private static int CurrentCommandIndex = -1;
@@ -32,8 +32,13 @@ namespace Scribe
         /// <param name="inReverse">How to undo the action.</param>
         internal static void AddAndExecute(string inDescription, Action inExecture, Action inReverse)
         {
-            Commands.Add(new Command(inDescription, inExecture, inReverse));
+            MessageBox.Show($"There are {Commands.Count} stored and we are pointing at index {CurrentCommandIndex}.");
             CurrentCommandIndex++;
+            if (CurrentCommandIndex > 0)
+            {
+                Commands = Commands.GetRange(0, CurrentCommandIndex);
+            }
+            Commands.Add(new Command(inDescription, inExecture, inReverse));
             Commands[CurrentCommandIndex].Execute();
         }
 
