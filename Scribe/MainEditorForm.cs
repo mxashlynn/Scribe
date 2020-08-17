@@ -67,6 +67,7 @@ namespace Scribe
         private readonly List<PictureBox> PictureBoxes;
         #endregion
 
+        #region Autosave and Save Tracking
         /// <summary>
         /// The moment at which the game content was most recently saved.
         /// </summary>
@@ -74,7 +75,6 @@ namespace Scribe
 
         /// <summary>Backing field for <see cref="HasUnsavedChanges"/>.</summary>
         private bool _hasUnsavedChanges;
-
 
         /// <summary>
         /// Determines if <see cref="All"/> out to be written to storage.
@@ -97,12 +97,10 @@ namespace Scribe
                     // All is about to go out of sync with storage, check if it's time to autosave.
                     if (IsTimeToAutoSave())
                     {
-                        // All remains in sync.
+                        // TODO It might be a good idea to move this out of the setter? 
                         EditorCommands.SaveDataFiles();
                         // TODO Only do this if the save succeeds.
-                        Text = Resources.CaptionMainEditorFormClean;
-                        TimeOfLastSync = DateTime.Now;
-                        _hasUnsavedChanges = false;
+                        HasUnsavedChanges = false;
                     }
                     else
                     {
@@ -120,6 +118,7 @@ namespace Scribe
                 }
             }
         }
+        #endregion
 
         // TODO Use this when setting up Character tab:  Settings.Default.SuggestStoryIDs;
 
