@@ -68,9 +68,9 @@ namespace Scribe
             this.LabelOldValue.AutoSize = true;
             this.LabelOldValue.Location = new System.Drawing.Point(12, 45);
             this.LabelOldValue.Name = "LabelOldValue";
-            this.LabelOldValue.Size = new System.Drawing.Size(60, 15);
+            this.LabelOldValue.Size = new System.Drawing.Size(127, 15);
             this.LabelOldValue.TabIndex = 4;
-            this.LabelOldValue.Text = "Old Value:";
+            this.LabelOldValue.Text = "Old Value: uninitialized";
             // 
             // LabelDBValue
             // 

@@ -18,6 +18,7 @@ namespace Scribe
             get => _oldValue;
             set
             {
+                MessageBox.Show($"Changing OldValue from {(string.IsNullOrEmpty(_oldValue) ? "null" : _oldValue)} to {(string.IsNullOrEmpty(value) ? "null" : value)}.");
                 _oldValue = value;
                 LabelOldValue.Text = $"Old Value: {value}";
             }
@@ -33,6 +34,7 @@ namespace Scribe
             get => _databaseValue;
             set
             {
+                MessageBox.Show($"Changing DatabaseValue from {(string.IsNullOrEmpty(_databaseValue) ? "null" : _databaseValue)} to {(string.IsNullOrEmpty(value) ? "null" : value)}.");
                 _databaseValue = value;
                 LabelDBValue.Text = $"Database Value: {value}";
             }
@@ -57,10 +59,23 @@ namespace Scribe
             {
                 var localNewValue = textbox.Text;
                 var localOldValue = OldValue;
-                UndoManager.AddAndExecute($"value changed from {OldValue} to {localNewValue}.",
-                                          () => DatabaseValue = localNewValue,
-                                          () => DatabaseValue = localOldValue);
-                OldValue = localNewValue;
+                UndoManager.AddAndExecute($"value changed from {localOldValue} to {localNewValue}.",
+                                          () =>
+                                          {
+                                              var message = $"[EXECUTE value changed from {(string.IsNullOrEmpty(localOldValue) ? "null" : localOldValue)} to {(string.IsNullOrEmpty(localNewValue) ? "null" : localNewValue)}.]\n{(string.IsNullOrEmpty(DatabaseValue) ? "null" : DatabaseValue)} to {(string.IsNullOrEmpty(localNewValue) ? "null" : localNewValue)}";
+                                              MessageBox.Show(message);
+                                              OldValue = DatabaseValue;
+                                              DatabaseValue = localNewValue;
+                                              textbox.Text = DatabaseValue;
+                                          },
+                                          () =>
+                                          {
+                                              var message = $"[REVERSE value changed from {(string.IsNullOrEmpty(localOldValue) ? "null" : localOldValue)} to {(string.IsNullOrEmpty(localNewValue) ? "null" : localNewValue)}.]\n{(string.IsNullOrEmpty(DatabaseValue) ? "null" : DatabaseValue)} to {(string.IsNullOrEmpty(localOldValue) ? "null" : localOldValue)}";
+                                              MessageBox.Show(message);
+                                              OldValue = DatabaseValue;
+                                              DatabaseValue = localOldValue;
+                                              textbox.Text = DatabaseValue;
+                                          });
             }
         }
 
