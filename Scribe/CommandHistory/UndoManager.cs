@@ -33,7 +33,7 @@ namespace Scribe.CommandHistory
         internal static void AddAndExecute(Command inCommand)
         {
             CurrentCommandIndex++;
-            if (CurrentCommandIndex > 0)
+            if (CurrentCommandIndex < Commands.Count && CurrentCommandIndex > 0)
             {
                 Commands = Commands.GetRange(0, CurrentCommandIndex);
             }
