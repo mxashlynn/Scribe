@@ -57,9 +57,7 @@ namespace Scribe.CommandHistory
             if (sender is TextBox textbox
                 && string.Compare(textbox.Text, OldValue, comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
-                // TODO Make this into a proper class, nevermind using Actions.
-
-                UndoManager.AddAndExecute(new ChangeTextCommand(OldValue, textbox.Text, textbox, ref DatabaseValue, ref OldValue));
+                UndoManager.AddAndExecute(new ChangeTextCommand(OldValue, textbox.Text, textbox, this));
             }
         }
 
