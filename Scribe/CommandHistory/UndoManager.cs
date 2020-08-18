@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace Scribe
+namespace Scribe.CommandHistory
 {
     /// <summary>
     /// Tracks requests to make changes and stores them as <see cref="Command"/> objects to enable Undo and Redo functionality.
@@ -30,7 +30,7 @@ namespace Scribe
         /// <param name="inDescription">A summary of the action.</param>
         /// <param name="inExecture">How to take the action.</param>
         /// <param name="inReverse">How to undo the action.</param>
-        internal static void AddAndExecute(string inDescription, Action inExecture, Action inReverse)
+        internal static void AddAndExecute(Command inCommand)
         {
             MessageBox.Show($"There are {Commands.Count} stored and we are pointing at index {CurrentCommandIndex}.");
             CurrentCommandIndex++;
@@ -38,7 +38,7 @@ namespace Scribe
             {
                 Commands = Commands.GetRange(0, CurrentCommandIndex);
             }
-            Commands.Add(new Command(inDescription, inExecture, inReverse));
+            Commands.Add(inCommand);
             Commands[CurrentCommandIndex].Execute();
         }
 

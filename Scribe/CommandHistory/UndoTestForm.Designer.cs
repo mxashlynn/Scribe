@@ -1,4 +1,4 @@
-namespace Scribe
+namespace Scribe.CommandHistory
 {
     partial class UndoTestForm
     {

@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace Scribe
+namespace Scribe.CommandHistory
 {
     /// <summary>
     /// A simple form used to test the undo feature before databinding is finished.
@@ -58,27 +58,8 @@ namespace Scribe
                 && string.Compare(textbox.Text, OldValue, comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
                 // TODO Make this into a proper class, nevermind using Actions.
-                var localNewValue = textbox.Text;
-                var localOldValue = OldValue;
-                var message = $"value changed from {(string.IsNullOrEmpty(localOldValue) ? "null" : localOldValue)} to {(string.IsNullOrEmpty(localNewValue) ? "null" : localNewValue)}.]";
 
-                UndoManager.AddAndExecute($"value changed from {localOldValue} to {localNewValue}.",
-                                          () =>
-                                          {
-                                              MessageBox.Show($"[EXECUTE {message}.]\n{(string.IsNullOrEmpty(DatabaseValue) ? "null" : DatabaseValue)} to {(string.IsNullOrEmpty(localNewValue) ? "null" : localNewValue)}");
-                                              
-                                              OldValue = DatabaseValue;
-                                              DatabaseValue = localNewValue;
-                                              textbox.Text = DatabaseValue;
-                                          },
-                                          () =>
-                                          {
-                                              MessageBox.Show($"[REVERSE {message}.]\n{(string.IsNullOrEmpty(DatabaseValue) ? "null" : DatabaseValue)} to {(string.IsNullOrEmpty(localOldValue) ? "null" : localOldValue)}");
-
-                                              OldValue = DatabaseValue;
-                                              DatabaseValue = localOldValue;
-                                              textbox.Text = DatabaseValue;
-                                          });
+                UndoManager.AddAndExecute(new ChangeTextCommand(OldValue, textbox.Text, textbox, ref DatabaseValue, ref OldValue));
             }
         }
 
