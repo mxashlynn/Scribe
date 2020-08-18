@@ -33,6 +33,7 @@ namespace Scribe.CommandHistory
             this.ButtonRedo = new System.Windows.Forms.Button();
             this.LabelOldValue = new System.Windows.Forms.Label();
             this.LabelDBValue = new System.Windows.Forms.Label();
+            this.LabelStoredCommands = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TextBox1
@@ -81,11 +82,21 @@ namespace Scribe.CommandHistory
             this.LabelDBValue.TabIndex = 4;
             this.LabelDBValue.Text = "Database Value:";
             // 
+            // LabelStoredCommands
+            // 
+            this.LabelStoredCommands.AutoSize = true;
+            this.LabelStoredCommands.Location = new System.Drawing.Point(12, 102);
+            this.LabelStoredCommands.Name = "LabelStoredCommands";
+            this.LabelStoredCommands.Size = new System.Drawing.Size(118, 15);
+            this.LabelStoredCommands.TabIndex = 4;
+            this.LabelStoredCommands.Text = "Stored Commands: 0";
+            // 
             // UndoTestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(239, 100);
+            this.ClientSize = new System.Drawing.Size(239, 126);
+            this.Controls.Add(this.LabelStoredCommands);
             this.Controls.Add(this.LabelDBValue);
             this.Controls.Add(this.LabelOldValue);
             this.Controls.Add(this.ButtonRedo);
@@ -105,5 +116,6 @@ namespace Scribe.CommandHistory
         private System.Windows.Forms.Button ButtonRedo;
         private System.Windows.Forms.Label LabelOldValue;
         private System.Windows.Forms.Label LabelDBValue;
+        private System.Windows.Forms.Label LabelStoredCommands;
     }
 }

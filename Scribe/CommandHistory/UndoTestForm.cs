@@ -37,6 +37,7 @@ namespace Scribe.CommandHistory
             {
                 _databaseValue = value.ToString();
                 LabelDBValue.Text = $"Database Value: {value}";
+                LabelStoredCommands.Text = $"Stored Commands: {UndoManager.Count}";
             }
         }
 

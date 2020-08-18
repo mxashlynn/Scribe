@@ -15,6 +15,35 @@ namespace Scribe.CommandHistory
         /// <summary>The index of the <see cref="Command"/> that will be Undone next.</summary>
         private static int CurrentCommandIndex = -1;
 
+        /// <summary>If <c>true</c> no more than <see cref="MaximumCommands"/> will ever be stored.</summary>
+        internal static bool CapCommandsCount = true;
+
+        /// <summary>The backing field for <see cref="MaximumCommands"/>.</summary>
+        private static int _maximumCommands = 3;
+
+        /// <summary>
+        /// If <see cref="CapCommandsCount"/> is <c>true</c>, no more than this number of <see cref="Command"/>s will ever be stored.
+        /// Cannot be less than 1.
+        /// </summary>
+        internal static int MaximumCommands
+        {
+            get => _maximumCommands;
+            set
+            {
+                if (value > 0)
+                {
+                    _maximumCommands = value;
+                }
+                if (CapCommandsCount && Commands.Count > MaximumCommands)
+                {
+                    Commands = Commands.GetRange(CurrentCommandIndex - _maximumCommands, _maximumCommands);
+                }
+            }
+        }
+
+        /// <summary>How many levels of undo are currently stored.</summary>
+        internal static int Count => Commands.Count;
+
         /// <summary>
         /// Empties the <see cref="Command"/> history and resets the manager.
         /// </summary>
@@ -35,10 +64,17 @@ namespace Scribe.CommandHistory
             CurrentCommandIndex++;
             if (CurrentCommandIndex < Commands.Count && CurrentCommandIndex > 0)
             {
+                // If the new comman supercedes any stored commands, dispose of them.
                 Commands = Commands.GetRange(0, CurrentCommandIndex);
             }
             Commands.Add(inCommand);
             Commands[CurrentCommandIndex].Execute();
+            if (CapCommandsCount && Commands.Count > MaximumCommands)
+            {
+                // Trim Excess Old Commands
+                Commands = Commands.GetRange(Commands.Count - MaximumCommands, MaximumCommands);
+                CurrentCommandIndex = Commands.Count - 1;
+            }
         }
 
         /// <summary>
