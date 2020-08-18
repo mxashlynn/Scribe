@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace Scribe.CommandHistory
 {
@@ -16,10 +14,10 @@ namespace Scribe.CommandHistory
         private static int CurrentCommandIndex = -1;
 
         /// <summary>If <c>true</c> no more than <see cref="MaximumCommands"/> will ever be stored.</summary>
-        internal static bool CapCommandsCount = true;
+        internal static bool CapCommandsCount = false;
 
         /// <summary>The backing field for <see cref="MaximumCommands"/>.</summary>
-        private static int _maximumCommands = 3;
+        private static int _maximumCommands = 100;
 
         /// <summary>
         /// If <see cref="CapCommandsCount"/> is <c>true</c>, no more than this number of <see cref="Command"/>s will ever be stored.
