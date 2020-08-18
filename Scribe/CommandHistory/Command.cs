@@ -13,7 +13,7 @@ namespace Scribe.CommandHistory
         internal string Description;
 
         /// <summary>A copy of the reference to the <see cref="Form"/> displaying the value being changed.</summary>
-        protected readonly UndoTestForm Owner;
+        protected readonly ICommander Owner;
 
         /// <summary>A copy of the reference to the <see cref="Form"/>'s <see cref="Control"/> displaying the value being changed.</summary>
         protected readonly Control EditableControl;

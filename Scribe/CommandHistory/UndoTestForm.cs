@@ -6,40 +6,39 @@ namespace Scribe.CommandHistory
     /// <summary>
     /// A simple form used to test the undo feature before databinding is finished.
     /// </summary>
-    public partial class UndoTestForm : Form
+    public partial class UndoTestForm : Form, ICommander
     {
+        /// <summary>The backing field for <see cref="OldValue"/>.</summary>
         private string _oldValue = "";
 
         /// <summary>
         /// Tracks whether or not the form's state has changed.
         /// </summary>
-        internal string OldValue
+        public string OldValue
         {
             get => _oldValue;
             set
             {
-                MessageBox.Show($"Changing OldValue from {(string.IsNullOrEmpty(_oldValue) ? "null" : _oldValue)} to {(string.IsNullOrEmpty(value) ? "null" : value)}.");
                 _oldValue = value;
                 LabelOldValue.Text = $"Old Value: {value}";
             }
         }
 
+        /// <summary>The backing field for <see cref="DatabaseValue"/>.</summary>
         private string _databaseValue = "";
 
         /// <summary>
         /// Stands in for ParquetClassLibrary.All.
         /// </summary>
-        internal string DatabaseValue
+        public object DatabaseValue
         {
             get => _databaseValue;
             set
             {
-                MessageBox.Show($"Changing DatabaseValue from {(string.IsNullOrEmpty(_databaseValue) ? "null" : _databaseValue)} to {(string.IsNullOrEmpty(value) ? "null" : value)}.");
-                _databaseValue = value;
+                _databaseValue = value.ToString();
                 LabelDBValue.Text = $"Database Value: {value}";
             }
         }
-
 
         /// <summary>
         /// Initializes a new instance of UndoTestForm.

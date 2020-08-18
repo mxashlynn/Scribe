@@ -32,7 +32,6 @@ namespace Scribe.CommandHistory
         /// <param name="inReverse">How to undo the action.</param>
         internal static void AddAndExecute(Command inCommand)
         {
-            MessageBox.Show($"There are {Commands.Count} stored and we are pointing at index {CurrentCommandIndex}.");
             CurrentCommandIndex++;
             if (CurrentCommandIndex > 0)
             {
@@ -52,10 +51,6 @@ namespace Scribe.CommandHistory
                 Commands[CurrentCommandIndex].Reverse();
                 CurrentCommandIndex--;
             }
-            else
-            {
-                MessageBox.Show("Did not Undo!");
-            }
         }
 
         /// <summary>
@@ -67,10 +62,6 @@ namespace Scribe.CommandHistory
             {
                 CurrentCommandIndex++;
                 Commands[CurrentCommandIndex].Execute();
-            }
-            else
-            {
-                MessageBox.Show("Did not Redo!");
             }
         }
     }
