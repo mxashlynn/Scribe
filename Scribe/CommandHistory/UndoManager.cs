@@ -13,15 +13,12 @@ namespace Scribe.CommandHistory
         /// <summary>The index of the <see cref="Command"/> that will be Undone next.</summary>
         private static int CurrentCommandIndex = -1;
 
-        /// <summary>If <c>true</c> no more than <see cref="MaximumCommands"/> will ever be stored.</summary>
-        internal static bool CapCommandsCount = false;
-
         /// <summary>The backing field for <see cref="MaximumCommands"/>.</summary>
         private static int _maximumCommands = 100;
 
         /// <summary>
-        /// If <see cref="CapCommandsCount"/> is <c>true</c>, no more than this number of <see cref="Command"/>s will ever be stored.
-        /// Cannot be less than 1.
+        /// How many levels of undo to maintain.
+        /// No more than this number of <see cref="Command"/>s will ever be stored.  Cannot be less than 1.
         /// </summary>
         internal static int MaximumCommands
         {
@@ -32,9 +29,10 @@ namespace Scribe.CommandHistory
                 {
                     _maximumCommands = value;
                 }
-                if (CapCommandsCount && Commands.Count > MaximumCommands)
+                if (Commands.Count > MaximumCommands)
                 {
-                    Commands = Commands.GetRange(CurrentCommandIndex - _maximumCommands, _maximumCommands);
+                    Commands = Commands.GetRange(Commands.Count - MaximumCommands, MaximumCommands);
+                    CurrentCommandIndex = Commands.Count - 1;
                 }
             }
         }
@@ -67,7 +65,7 @@ namespace Scribe.CommandHistory
             }
             Commands.Add(inCommand);
             Commands[CurrentCommandIndex].Execute();
-            if (CapCommandsCount && Commands.Count > MaximumCommands)
+            if (Commands.Count > MaximumCommands)
             {
                 // Trim Excess Old Commands
                 Commands = Commands.GetRange(Commands.Count - MaximumCommands, MaximumCommands);
