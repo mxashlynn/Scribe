@@ -11,10 +11,10 @@ namespace Scribe.ChangeHistory
         /// <summary>A summary of the action.</summary>
         internal string Description;
 
-        /// <summary>State before performing the action.</summary>
+        /// <summary>State before change.</summary>
         protected object OldState;
 
-        /// <summary>State after performing the action.</summary>
+        /// <summary>State after change.</summary>
         protected object NewState;
 
         /// <summary>The means to set the state in the backing store.</summary>
@@ -23,18 +23,18 @@ namespace Scribe.ChangeHistory
         /// <summary>The means to set the state in the backing store.</summary>
         protected readonly Action<object> SetDisplayValue;
 
-        /// <summary>The means to set the state in the change-tracker.</summary>
+        /// <summary>The means to set the state in the UI request-tracker.</summary>
         protected readonly Action<object> SetOldValue;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Change"/> class.
         /// </summary>
-        /// <param name="inOldState"></param>
-        /// <param name="inNewState"></param>
-        /// <param name="inControlName"></param>
-        /// <param name="inSetDatabaseValue"></param>
-        /// <param name="inSetDisplayValue"></param>
-        /// <param name="inSetOldValue"></param>
+        /// <param name="inOldState">State before change.</param>
+        /// <param name="inNewState">State after change.</param>
+        /// <param name="inControlName">Used in constructing a summary of the change.</param>
+        /// <param name="inSetDatabaseValue">The means to set the state in the backing store.</param>
+        /// <param name="inSetDisplayValue">The means to set the state in the backing store.</param>
+        /// <param name="inSetOldValue">The means to set the state in the UI request-tracker.</param>
         internal Change(object inOldState, object inNewState, string inControlName,
                         Action<object> inSetDatabaseValue, Action<object> inSetDisplayValue, Action<object> inSetOldValue)
         {

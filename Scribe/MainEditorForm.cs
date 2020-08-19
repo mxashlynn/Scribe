@@ -60,6 +60,7 @@ namespace Scribe
         /// A collection of all editable <see cref="Control"/>s in the <see cref="MainEditorForm"/>
         /// together with the game data they currently represent, organized by <see cref="Type"/>.
         /// </summary>
+        // TODO Should this be Dictionary<Type, Dictionary<Control, object>> so that we can use boxed value types for non-string items?
         private readonly Dictionary<Type, Dictionary<Control, string>> EditableControls;
 
         /// <summary>
