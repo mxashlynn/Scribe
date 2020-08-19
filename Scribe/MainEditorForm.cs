@@ -415,6 +415,7 @@ namespace Scribe
                                   comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
                 ChangeManager.AddAndExecute(new Change(EditableControls[typeof(TextBox)][textbox], textbox.Text, textbox.Name,
+                                            // TODO Replace _ with the means to actually update All!
                                             (object databaseValue) => { _ = databaseValue.ToString(); HasUnsavedChanges = true; },
                                             (object displayValue) => textbox.Text = displayValue.ToString(),
                                             (object oldValue) => EditableControls[typeof(TextBox)][textbox] = oldValue.ToString()));
@@ -429,6 +430,7 @@ namespace Scribe
                     ? result
                     : false;
                 ChangeManager.AddAndExecute(new Change(parsedOldValue, (bool?)checkbox.Checked, checkbox.Name,
+                                            // TODO Replace _ with the means to actually update All!
                                             (object databaseValue) => { _ = databaseValue; HasUnsavedChanges = true; },
                                             (object displayValue) => checkbox.Checked = (bool)displayValue,
                                             (object oldValue) => EditableControls[typeof(CheckBox)][checkbox] = oldValue.ToString()));
@@ -442,6 +444,7 @@ namespace Scribe
                     ? result
                     : 0;
                 ChangeManager.AddAndExecute(new Change(parsedOldValue, (int?)combobox.SelectedIndex, combobox.Name,
+                                            // TODO Replace _ with the means to actually update All!
                                             (object databaseValue) => { _ = databaseValue; HasUnsavedChanges = true; },
                                             (object displayValue) => combobox.SelectedIndex = (int)displayValue,
                                             (object oldValue) => EditableControls[typeof(ComboBox)][combobox] = oldValue.ToString()));
@@ -455,6 +458,7 @@ namespace Scribe
                     ? result
                     : 0;
                 ChangeManager.AddAndExecute(new Change(parsedOldValue, (int?)listbox.SelectedIndex, listbox.Name,
+                                            // TODO Replace _ with the means to actually update All!
                                             (object databaseValue) => { _ = databaseValue; HasUnsavedChanges = true; },
                                             (object displayValue) => listbox.SelectedIndex = (int)displayValue,
                                             (object oldValue) => EditableControls[typeof(ListBox)][listbox] = oldValue.ToString()));
