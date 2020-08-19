@@ -405,6 +405,9 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void ContentAlteredEventHandler(object sender, EventArgs e)
         {
+            // TODO Remove this debug statement.
+            MainToolStripStatusLabel.Text = ChangeManager.Count.ToString();
+
             if (sender is TextBox textbox
                 && string.Compare(textbox.Text,
                                   EditableControls[typeof(TextBox)][textbox],
