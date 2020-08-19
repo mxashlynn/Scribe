@@ -1,3 +1,4 @@
+using System;
 using System.Windows.Forms;
 
 namespace Scribe.CommandHistory
@@ -10,8 +11,9 @@ namespace Scribe.CommandHistory
         /// <summary>
         /// Initializes a new instance of the <see cref="Command"/> class.
         /// </summary>
-        internal ChangeTextCommand(object inOldState, object inNewState, Control inEditableControl, UndoTestForm inOwner)
-            : base(inOldState, inNewState, inEditableControl, inOwner)
+        internal ChangeTextCommand(object inOldState, object inNewState, Control inEditableControl,
+                                   Action<object> inSetDatabaseValue, Action<string> inSetOldValue, Func<object> inGetOldValue)
+            : base(inOldState, inNewState, inEditableControl, inSetDatabaseValue, inSetOldValue, inGetOldValue)
         { }
 
         /// <summary>
@@ -19,8 +21,8 @@ namespace Scribe.CommandHistory
         /// </summary>
         internal override void Execute()
         {
-            Owner.OldValue = NewState.ToString();
-            Owner.DatabaseValue = NewState.ToString();
+            SetOldValue(NewState.ToString());
+            SetDatabaseValue(NewState.ToString());
             ((TextBox)EditableControl).Text = NewState.ToString();
         }
 
@@ -29,8 +31,8 @@ namespace Scribe.CommandHistory
         /// </summary>
         internal override void Reverse()
         {
-            Owner.OldValue = OldState.ToString();
-            Owner.DatabaseValue = OldState.ToString();
+            SetOldValue(OldState.ToString());
+            SetDatabaseValue(OldState.ToString());
             ((TextBox)EditableControl).Text = OldState.ToString();
         }
     }

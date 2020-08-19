@@ -1,4 +1,6 @@
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 using System.Windows.Forms;
 
 namespace Scribe.CommandHistory
@@ -6,7 +8,7 @@ namespace Scribe.CommandHistory
     /// <summary>
     /// A simple form used to test the undo feature before databinding is finished.
     /// </summary>
-    public partial class UndoTestForm : Form, ICommander
+    public partial class UndoTestForm : Form
     {
         /// <summary>The backing field for <see cref="OldValue"/>.</summary>
         private string _oldValue = "";
@@ -57,7 +59,10 @@ namespace Scribe.CommandHistory
             if (sender is TextBox textbox
                 && string.Compare(textbox.Text, OldValue, comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
-                UndoManager.AddAndExecute(new ChangeTextCommand(OldValue, textbox.Text, textbox, this));
+                UndoManager.AddAndExecute(new ChangeTextCommand(OldValue, textbox.Text, textbox,
+                                          (object databaseValue) => DatabaseValue = databaseValue,
+                                          (string oldValue) => OldValue = oldValue,
+                                          () => OldValue));
             }
         }
 
