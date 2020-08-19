@@ -1,14 +1,12 @@
 using System;
-using System.Runtime.CompilerServices;
-using System.Runtime.Serialization;
 using System.Windows.Forms;
 
-namespace Scribe.CommandHistory
+namespace Scribe.ChangeHistory
 {
     /// <summary>
     /// A simple form used to test the undo feature before databinding is finished.
     /// </summary>
-    public partial class UndoTestForm : Form
+    public partial class ChangeTestForm : Form
     {
         /// <summary>The backing field for <see cref="OldValue"/>.</summary>
         private string _oldValue = "";
@@ -39,14 +37,14 @@ namespace Scribe.CommandHistory
             {
                 _databaseValue = value.ToString();
                 LabelDBValue.Text = $"Database Value: {value}";
-                LabelStoredCommands.Text = $"Stored Commands: {UndoManager.Count}";
+                LabelStoredChanges.Text = $"Stored Changes: {ChangeManager.Count}";
             }
         }
 
         /// <summary>
         /// Initializes a new instance of UndoTestForm.
         /// </summary>        
-        public UndoTestForm()
+        public ChangeTestForm()
             => InitializeComponent();
 
         /// <summary>
@@ -59,10 +57,10 @@ namespace Scribe.CommandHistory
             if (sender is TextBox textbox
                 && string.Compare(textbox.Text, OldValue, comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
-                UndoManager.AddAndExecute(new ChangeTextCommand(OldValue, textbox.Text, textbox,
-                                          (object databaseValue) => DatabaseValue = databaseValue,
-                                          (string oldValue) => OldValue = oldValue,
-                                          () => OldValue));
+                ChangeManager.AddAndExecute(new Change(OldValue, textbox.Text, textbox.Name,
+                                            (object databaseValue) => DatabaseValue = databaseValue.ToString(),
+                                            (object displayValue) => textbox.Text = displayValue.ToString(),
+                                            (object oldValue) => OldValue = oldValue.ToString()));
             }
         }
 
@@ -72,7 +70,7 @@ namespace Scribe.CommandHistory
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void ButtonUndo_Click(object sender, EventArgs e)
-            => UndoManager.Undo();
+            => ChangeManager.Undo();
 
         /// <summary>
         /// Responds to the user requesting the Redo feature.
@@ -80,6 +78,6 @@ namespace Scribe.CommandHistory
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void ButtonRedo_Click(object sender, EventArgs e)
-            => UndoManager.Redo();
+            => ChangeManager.Redo();
     }
 }

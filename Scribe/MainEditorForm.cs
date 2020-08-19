@@ -16,7 +16,7 @@ using ParquetClassLibrary.Maps;
 using ParquetClassLibrary.Parquets;
 using ParquetClassLibrary.Rooms;
 using ParquetClassLibrary.Scripts;
-using Scribe.CommandHistory;
+using Scribe.ChangeHistory;
 using Scribe.Properties;
 
 namespace Scribe

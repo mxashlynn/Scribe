@@ -18,7 +18,7 @@ namespace Scribe
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new MainEditorForm());
-            Application.Run(new CommandHistory.UndoTestForm());
+            Application.Run(new ChangeHistory.ChangeTestForm());
         }
     }
 }
