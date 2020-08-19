@@ -36,7 +36,7 @@ namespace Scribe.ChangeHistory
         /// <param name="inSetDisplayValue"></param>
         /// <param name="inSetOldValue"></param>
         internal Change(object inOldState, object inNewState, string inControlName,
-                         Action<object> inSetDatabaseValue, Action<object> inSetDisplayValue, Action<object> inSetOldValue)
+                        Action<object> inSetDatabaseValue, Action<object> inSetDisplayValue, Action<object> inSetOldValue)
         {
             Precondition.IsNotNull(inSetDatabaseValue, nameof(inSetDatabaseValue));
             Precondition.IsNotNull(inSetDisplayValue, nameof(inSetDisplayValue));

@@ -424,7 +424,10 @@ namespace Scribe
                                        EditableControls[typeof(CheckBox)][checkbox],
                                        comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
-                ChangeManager.AddAndExecute(new Change(EditableControls[typeof(CheckBox)][checkbox], checkbox.Checked, checkbox.Name,
+                var parsedOldValue = bool.TryParse(EditableControls[typeof(CheckBox)][checkbox], out var result)
+                    ? result
+                    : false;
+                ChangeManager.AddAndExecute(new Change(parsedOldValue, (bool?)checkbox.Checked, checkbox.Name,
                                             (object databaseValue) => { _ = databaseValue; HasUnsavedChanges = true; },
                                             (object displayValue) => checkbox.Checked = (bool)displayValue,
                                             (object oldValue) => EditableControls[typeof(CheckBox)][checkbox] = oldValue.ToString()));
@@ -434,7 +437,10 @@ namespace Scribe
                                        EditableControls[typeof(ComboBox)][combobox],
                                        comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
-                ChangeManager.AddAndExecute(new Change(EditableControls[typeof(ComboBox)][combobox], combobox.SelectedIndex, combobox.Name,
+                var parsedOldValue = int.TryParse(EditableControls[typeof(ComboBox)][combobox], out var result)
+                    ? result
+                    : 0;
+                ChangeManager.AddAndExecute(new Change(parsedOldValue, (int?)combobox.SelectedIndex, combobox.Name,
                                             (object databaseValue) => { _ = databaseValue; HasUnsavedChanges = true; },
                                             (object displayValue) => combobox.SelectedIndex = (int)displayValue,
                                             (object oldValue) => EditableControls[typeof(ComboBox)][combobox] = oldValue.ToString()));
@@ -444,7 +450,10 @@ namespace Scribe
                                        EditableControls[typeof(ListBox)][listbox],
                                        comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
-                ChangeManager.AddAndExecute(new Change(EditableControls[typeof(ListBox)][listbox], listbox.SelectedIndex, listbox.Name,
+                var parsedOldValue = int.TryParse(EditableControls[typeof(ListBox)][listbox], out var result)
+                    ? result
+                    : 0;
+                ChangeManager.AddAndExecute(new Change(parsedOldValue, (int?)listbox.SelectedIndex, listbox.Name,
                                             (object databaseValue) => { _ = databaseValue; HasUnsavedChanges = true; },
                                             (object displayValue) => listbox.SelectedIndex = (int)displayValue,
                                             (object oldValue) => EditableControls[typeof(ListBox)][listbox] = oldValue.ToString()));
