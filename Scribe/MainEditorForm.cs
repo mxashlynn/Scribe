@@ -407,7 +407,7 @@ namespace Scribe
         private void ContentAlteredEventHandler(object sender, EventArgs e)
         {
             // TODO Remove this debug statement.
-            MainToolStripStatusLabel.Text = ChangeManager.Count.ToString();
+            //MainToolStripStatusLabel.Text = ChangeManager.Count.ToString();
 
             if (sender is TextBox textbox
                 && string.Compare(textbox.Text,
@@ -426,9 +426,7 @@ namespace Scribe
                                        EditableControls[typeof(CheckBox)][checkbox],
                                        comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
-                var parsedOldValue = bool.TryParse(EditableControls[typeof(CheckBox)][checkbox], out var result)
-                    ? result
-                    : false;
+                var parsedOldValue = bool.TryParse(EditableControls[typeof(CheckBox)][checkbox], out var result) && result;
                 ChangeManager.AddAndExecute(new Change(parsedOldValue, (bool?)checkbox.Checked, checkbox.Name,
                                             // TODO Replace _ with the means to actually update All!
                                             (object databaseValue) => { _ = databaseValue; HasUnsavedChanges = true; },
