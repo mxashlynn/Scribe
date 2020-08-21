@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Media;
-using System.Runtime.InteropServices.ComTypes;
 using System.Windows.Forms;
 using ParquetClassLibrary;
 using ParquetClassLibrary.Beings;
