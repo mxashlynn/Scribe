@@ -219,26 +219,344 @@ namespace Scribe
         #endregion
 
         #region Tab Management
+        private const int GamesTabIndex = 0;
+        private const int BlocksTabIndex = 1;
+        private const int FloorsTabIndex = 2;
+        private const int FurnishingsTabIndex = 3;
+        private const int CollectiblesTabIndex = 4;
+        private const int CharactersTabIndex = 5;
+        private const int CrittersTabIndex = 6;
+        private const int ItemsTabIndex = 7;
+        private const int BiomeRecipesTabIndex = 8;
+        private const int CraftingRecipesTabIndex = 9;
+        private const int RoomRecipesTabIndex = 10;
+        private const int MapsTabIndex = 11;
+        private const int ScriptsTabIndex = 12;
+
         /// <summary>
         /// Given the index of an editor tab, return the default <see cref="ModelID"/> for the content it edits.
         /// </summary>
-        /// <param name="in_tabIndex">The index of the tab sought.</param>
-        /// <returns>The corresponding ID.</returns>
-        private ModelID GetDefaultIDForTab(int in_tabIndex)
-            => in_tabIndex switch
+        /// <param name="inTabIndex">The index of the tab sought.</param>
+        /// <returns>The corresponding ID, or <see cref="ModelID.None"/> on out of range input.</returns>
+        private ModelID GetDefaultIDForTab(int inTabIndex)
+            => inTabIndex switch
             {
-                0 => All.GameIDs.Minimum,
-                1 => All.BlockIDs.Minimum,
-                2 => All.FloorIDs.Minimum,
-                3 => All.FurnishingIDs.Minimum,
-                4 => All.CollectibleIDs.Minimum,
-                5 => All.CharacterIDs.Minimum,
-                6 => All.CritterIDs.Minimum,
-                7 => All.ItemIDs.Minimum,
-                8 => All.BiomeIDs.Minimum,
-                9 => All.CraftingRecipeIDs.Minimum,
-                10 => All.RoomRecipeIDs.Minimum,
+                GamesTabIndex => All.GameIDs.Minimum,
+                BlocksTabIndex => All.BlockIDs.Minimum,
+                FloorsTabIndex => All.FloorIDs.Minimum,
+                FurnishingsTabIndex => All.FurnishingIDs.Minimum,
+                CollectiblesTabIndex => All.CollectibleIDs.Minimum,
+                CharactersTabIndex => All.CharacterIDs.Minimum,
+                CrittersTabIndex => All.CritterIDs.Minimum,
+                ItemsTabIndex => All.ItemIDs.Minimum,
+                BiomeRecipesTabIndex => All.BiomeIDs.Minimum,
+                CraftingRecipesTabIndex => All.CraftingRecipeIDs.Minimum,
+                RoomRecipesTabIndex => All.RoomRecipeIDs.Minimum,
+                MapsTabIndex => throw new NotImplementedException(),
+                ScriptsTabIndex => throw new NotImplementedException(),
                 _ => ModelID.None,
+            };
+
+        /// <summary>
+        /// Given the index of an editor tab, return the <see cref="ModelID"/> for the game model currently selected on that tab.
+        /// </summary>
+        /// <param name="inTabIndex">The index of the tab housing the model sought.</param>
+        /// <returns>The identifier, or <see cref="ModelID.None"/> on out of range input.</returns>
+        private ModelID GetSelectedModelIDForTab(int inTabIndex)
+            => inTabIndex switch
+            {
+                GamesTabIndex => (GameListBox.SelectedItem as GameModel).ID,
+                BlocksTabIndex => (BlockListBox.SelectedItem as BlockModel).ID,
+                FloorsTabIndex => (FloorListBox.SelectedItem as FloorModel).ID,
+                FurnishingsTabIndex => (FurnishingListBox.SelectedItem as FurnishingModel).ID,
+                CollectiblesTabIndex => (CollectibleListBox.SelectedItem as CollectibleModel).ID,
+                CharactersTabIndex => (CharacterListBox.SelectedItem as CharacterModel).ID,
+                CrittersTabIndex => (CritterListBox.SelectedItem as CritterModel).ID,
+                ItemsTabIndex => (ItemListBox.SelectedItem as ItemModel).ID,
+                BiomeRecipesTabIndex => (BiomeListBox.SelectedItem as BiomeRecipe).ID,
+                CraftingRecipesTabIndex => (CraftingListBox.SelectedItem as CraftingRecipe).ID,
+                RoomRecipesTabIndex => (RoomListBox.SelectedItem as RoomRecipe).ID,
+                MapsTabIndex => throw new NotImplementedException(),
+                ScriptsTabIndex => throw new NotImplementedException(),
+                _ => ModelID.None,
+            };
+
+        /// <summary>
+        /// Given the index of an editor tab, return the corresponding <see cref="Model"/> from
+        /// from the appropriate <see cref="ModelCollection"/> in <see cref="All"/>.
+        /// </summary>
+        /// <param name="inTabIndex">The index of the tab sought.</param>
+        /// <returns>The model, or <c>null</c> on out of range input.</returns>
+        private Model GetSelectedModelForTab(int inTabIndex)
+            => inTabIndex switch
+            {
+                GamesTabIndex => All.Games.Get<GameModel>(GetSelectedModelIDForTab(inTabIndex)),
+                BlocksTabIndex => All.Parquets.Get<BlockModel>(GetSelectedModelIDForTab(inTabIndex)),
+                FloorsTabIndex => All.Parquets.Get<FloorModel>(GetSelectedModelIDForTab(inTabIndex)),
+                FurnishingsTabIndex => All.Parquets.Get<FurnishingModel>(GetSelectedModelIDForTab(inTabIndex)),
+                CollectiblesTabIndex => All.Parquets.Get<CollectibleModel>(GetSelectedModelIDForTab(inTabIndex)),
+                CharactersTabIndex => All.Beings.Get<CharacterModel>(GetSelectedModelIDForTab(inTabIndex)),
+                CrittersTabIndex => All.Beings.Get<CritterModel>(GetSelectedModelIDForTab(inTabIndex)),
+                ItemsTabIndex => All.Items.Get<ItemModel>(GetSelectedModelIDForTab(inTabIndex)),
+                BiomeRecipesTabIndex => All.Biomes.Get<BiomeRecipe>(GetSelectedModelIDForTab(inTabIndex)),
+                CraftingRecipesTabIndex => All.CraftingRecipes.Get<CraftingRecipe>(GetSelectedModelIDForTab(inTabIndex)),
+                RoomRecipesTabIndex => All.RoomRecipes.Get<RoomRecipe>(GetSelectedModelIDForTab(inTabIndex)),
+                MapsTabIndex => throw new NotImplementedException(),
+                ScriptsTabIndex => throw new NotImplementedException(),
+                _ => null,
+            };
+
+        /// <summary>Given the index of an editor tab and an editor <see cref="Control"/>, return the corresponding property accessor.</summary>
+        /// <param name="inTabIndex">The index of an editor tab.</param>
+        /// <param name="inControl">The <see cref="Control"/> corresponding to the property sought.</param>
+        /// <returns>A method for editing the property's value, or <c>null</c> if the input combination is not defined.</returns>
+        /// <remarks>This method exists merely to simplify the code in the <see cref="GetPropertyAccessorForModelAndTabAndControl"/> method.</remarks>
+        private Action<object> GetPropertyAccessorForTabAndControl(int inTabIndex, Control inControl)
+            => GetPropertyAccessorForModelAndTabAndControl(GetSelectedModelForTab(inTabIndex), inTabIndex, inControl);
+
+        /// <summary>
+        /// Given a <see cref="Model"/> and an editor <see cref="Control"/>, return the corresponding <see cref="Model"/> from
+        /// from the appropriate <see cref="ModelCollection"/> in <see cref="All"/>.
+        /// </summary>
+        /// <param name="inTabIndex">The index of an editor tab.</param>
+        /// <param name="inControl">The <see cref="Control"/> corresponding to the property sought.</param>
+        /// <returns>A method for editing the property's value, or <c>null</c> if the input combination is not defined.</returns>
+        /// <remarks>This method binds data in models to controls in the user interface.</remarks>
+        private Action<object> GetPropertyAccessorForModelAndTabAndControl(Model inModel, int inTabIndex, Control inControl)
+            => (inTabIndex, inControl.Name) switch
+            {
+                (GamesTabIndex, "GameNameTextBox")
+                    => (input) => (inModel as IGameModelEdit).Name = input.ToString(),
+                (GamesTabIndex, "GameDescriptionTextBox")
+                    => (input) => (inModel as IGameModelEdit).Description = input.ToString(),
+                (GamesTabIndex, "GameCommentTextBox")
+                    => (input) => (inModel as IGameModelEdit).Comment = input.ToString(),
+                (GamesTabIndex, "GameIsEpisodeCheckBox")
+                    => (input) => (inModel as IGameModelEdit).IsEpisode = (bool)input,
+                (GamesTabIndex, "GameEpisodeTitleTextBox")
+                    => (input) => (inModel as IGameModelEdit).EpisodeTitle = input.ToString(),
+                (GamesTabIndex, "GameEpisodeNumberTextBox")
+                    => (input) => (inModel as IGameModelEdit).EpisodeNumber = (int)input,
+                (GamesTabIndex, "GamePlayerCharacterTextBox")
+                    => (input) => (inModel as IGameModelEdit).PlayerCharacterID = (ModelID)input,
+                (GamesTabIndex, "GameFirstScriptTextBox")
+                    => (input) => (inModel as IGameModelEdit).FirstScriptID = (ModelID)input,
+
+                (BlocksTabIndex, "BlockNameTextBox")
+                    => (input) => (inModel as IBlockModelEdit).Name = input.ToString(),
+                (BlocksTabIndex, "BlockDescriptionTextBox")
+                    => (input) => (inModel as IBlockModelEdit).Description = input.ToString(),
+                (BlocksTabIndex, "BlockCommentTextBox")
+                    => (input) => (inModel as IBlockModelEdit).Comment = input.ToString(),
+                (BlocksTabIndex, "BlockMaxToughnessTextBox")
+                    => (input) => (inModel as IBlockModelEdit).MaxToughness = (int)input,
+                (BlocksTabIndex, "BlockIsFlammableCheckBox")
+                    => (input) => (inModel as IBlockModelEdit).IsFlammable = (bool)input,
+                (BlocksTabIndex, "BlockIsLiquidCheckBox")
+                    => (input) => (inModel as IBlockModelEdit).IsLiquid = (bool)input,
+                (BlocksTabIndex, "BlockGatherToolComboBox")
+                    => (input) => (inModel as IBlockModelEdit).GatherTool = (GatheringTool)input,
+                (BlocksTabIndex, "BlockDroppedCollectibleIDComboBox")
+                    => (input) => (inModel as IBlockModelEdit).CollectibleID = (ModelID)input,
+                (BlocksTabIndex, "BlockGatherEffectComboBox")
+                    => (input) => (inModel as IBlockModelEdit).GatherEffect = (GatheringEffect)input,
+                (BlocksTabIndex, "BlockEquivalentItemComboBox")
+                    => (input) => (inModel as IBlockModelEdit).ItemID = (ModelID)input,
+
+                (FloorsTabIndex, "FloorNameTextBox")
+                    => (input) => (inModel as IFloorModelEdit).Name = input.ToString(),
+                (FloorsTabIndex, "FloorDescriptionTextBox")
+                    => (input) => (inModel as IFloorModelEdit).Description = input.ToString(),
+                (FloorsTabIndex, "FloorCommentTextBox")
+                    => (input) => (inModel as IFloorModelEdit).Comment = input.ToString(),
+                (FloorsTabIndex, "FloorTrenchNameTextBox")
+                    => (input) => (inModel as IFloorModelEdit).TrenchName = input.ToString(),
+                (FloorsTabIndex, "FloorlItemIDComboBox")
+                    => (input) => (inModel as IFloorModelEdit).ItemID = (ModelID)input,
+                (FloorsTabIndex, "FloorModificationToolComboBox")
+                    => (input) => (inModel as IFloorModelEdit).ModTool = (ModificationTool)input,
+                (FloorsTabIndex, "FloorAddsToBiomeListBox")
+                    => (input) => (inModel as IFloorModelEdit).AddsToBiome = (ModelTag)input,
+                (FloorsTabIndex, "FloorAddsToRoomListBox")
+                    => (input) => (inModel as IFloorModelEdit).Comment = (ModelTag)input,
+
+                (FurnishingsTabIndex, "FurnishingNameTextBox")
+                    => (input) => (inModel as IFurnishingModelEdit).Name = input.ToString(),
+                (FurnishingsTabIndex, "FurnishingDescriptionTextBox")
+                    => (input) => (inModel as IFurnishingModelEdit).Description = input.ToString(),
+                (FurnishingsTabIndex, "FurnishingCommentTextBox")
+                    => (input) => (inModel as IFurnishingModelEdit).Comment = input.ToString(),
+                (FurnishingsTabIndex, "FurnishingEquivalentItemComboBox")
+                    => (input) => (inModel as IFurnishingModelEdit).ItemID = (ModelID)input,
+                (FurnishingsTabIndex, "FurnishingEntryTypeComboBox")
+                    => (input) => (inModel as IFurnishingModelEdit).Entry = (EntryType)input,
+                (FurnishingsTabIndex, "FurnishingSwapWithFurnishingComboBox")
+                    => (input) => (inModel as IFurnishingModelEdit).SwapID = (ModelID)input,
+                (FurnishingsTabIndex, "FurnishingIsEnclosingCheckBox")
+                    => (input) => (inModel as IFurnishingModelEdit).IsEnclosing = (bool)input,
+                (FurnishingsTabIndex, "FurnishingIsFlammableCheckBox")
+                    => (input) => (inModel as IFurnishingModelEdit).IsFlammable = (bool)input,
+                (FurnishingsTabIndex, "FurnishingIsWalkableCheckBox")
+                    => (input) => (inModel as IFurnishingModelEdit).IsWalkable = (bool)input,
+
+                (CollectiblesTabIndex, "CollectibleNameTextBox")
+                    => (input) => (inModel as ICollectibleModelEdit).Name = input.ToString(),
+                (CollectiblesTabIndex, "CollectibleDescriptionTextBox")
+                    => (input) => (inModel as ICollectibleModelEdit).Description = input.ToString(),
+                (CollectiblesTabIndex, "CollectibleCommentTextBox")
+                    => (input) => (inModel as ICollectibleModelEdit).Comment = input.ToString(),
+                (CollectiblesTabIndex, "CollectibleEffectAmountTextBox")
+                    => (input) => (inModel as ICollectibleModelEdit).EffectAmount = (int)input,
+                (CollectiblesTabIndex, "CollectibleCollectionEffectComboBox")
+                    => (input) => (inModel as ICollectibleModelEdit).CollectionEffect = (CollectingEffect)input,
+                (CollectiblesTabIndex, "CollectibleEquivalentItemComboBox")
+                    => (input) => (inModel as ICollectibleModelEdit).ItemID = (ModelID)input,
+
+                (CharactersTabIndex, "CharacterNameTextBox")
+                    => (input) => (inModel as ICharacterModelEdit).Name = input.ToString(),
+                (CharactersTabIndex, "CharacterDescriptionTextBox")
+                    => (input) => (inModel as ICharacterModelEdit).Description = input.ToString(),
+                (CharactersTabIndex, "CharacterCommentTextBox")
+                    => (input) => (inModel as ICharacterModelEdit).Comment = input.ToString(),
+                (CharactersTabIndex, "CharacterNativeBiomeComboBox")
+                    => (input) => (inModel as ICharacterModelEdit).NativeBiome = (ModelID)input,
+                (CharactersTabIndex, "CharacterPrimaryBehaviorComboBox")
+                    => (input) => (inModel as ICharacterModelEdit).PrimaryBehavior = (ModelID)input,
+                (CharactersTabIndex, "CharacterStoryIDTextBox")
+                    => (input) => (inModel as ICharacterModelEdit).StoryCharacterID = input.ToString(),
+                (CharactersTabIndex, "CharacterPronounComboBox")
+                    => (input) => (inModel as ICharacterModelEdit).Pronouns = input.ToString(),
+                (CharactersTabIndex, "CharacterStartingDialogueComboBox")
+                    => (input) =>
+                    {
+                        (inModel as ICharacterModelEdit).StartingDialogue.Clear();
+                        (inModel as ICharacterModelEdit).StartingDialogue.ToList().AddRange((IList<ModelID>)input);
+                    },
+                (CharactersTabIndex, "StartingInventoryComboBox")
+                    => (input) =>
+                    {
+                        (inModel as ICharacterModelEdit).StartingInventory.Clear();
+                        (inModel as ICharacterModelEdit).StartingInventory.ToList().AddRange((IList<ModelID>)input);
+                    },
+                (CharactersTabIndex, "CharacterStartingQuestsListBox")
+                    => (input) =>
+                    {
+                        (inModel as ICharacterModelEdit).StartingQuests.Clear();
+                        (inModel as ICharacterModelEdit).StartingQuests.ToList().AddRange((IList<ModelID>)input);
+                    },
+
+                (CrittersTabIndex, "CritterNameTextBox")
+                    => (input) => (inModel as ICritterModelEdit).Name = input.ToString(),
+                (CrittersTabIndex, "CritterDescriptionTextBox")
+                    => (input) => (inModel as ICritterModelEdit).Description = input.ToString(),
+                (CrittersTabIndex, "CritterCommentTextBox")
+                    => (input) => (inModel as ICritterModelEdit).Comment = input.ToString(),
+                (CrittersTabIndex, "CritterNativeBiomeComboBox")
+                    => (input) => (inModel as ICritterModelEdit).NativeBiome = (ModelID)input,
+                (CrittersTabIndex, "CritterPrimaryBehaviorComboBox")
+                    => (input) => (inModel as ICritterModelEdit).PrimaryBehavior = (ModelID)input,
+
+                (ItemsTabIndex, "ItemNameTextBox")
+                    => (input) => (inModel as IItemModelEdit).Name = input.ToString(),
+                (ItemsTabIndex, "ItemDescriptionTextBox")
+                    => (input) => (inModel as IItemModelEdit).Description = input.ToString(),
+                (ItemsTabIndex, "ItemCommentTextBox")
+                    => (input) => (inModel as IItemModelEdit).Comment = input.ToString(),
+                (ItemsTabIndex, "ItemSubtypeComboBox")
+                    => (input) => (inModel as IItemModelEdit).Subtype = (ItemType)input,
+                (ItemsTabIndex, "ItemPriceTextBox")
+                    => (input) => (inModel as IItemModelEdit).Price = (int)input,
+                (ItemsTabIndex, "ItemTagListBox")
+                    => (input) =>
+                    {
+                        (inModel as IItemModelEdit).ItemTags.Clear();
+                        (inModel as IItemModelEdit).ItemTags.ToList().AddRange((IList<ModelTag>)input);
+                    },
+                (ItemsTabIndex, "ItemStackMaxTextBox")
+                    => (input) => (inModel as IItemModelEdit).StackMax = (int)input,
+                (ItemsTabIndex, "ItemRarityTextBox")
+                    => (input) => (inModel as IItemModelEdit).Rarity = (int)input,
+                (ItemsTabIndex, "ItemEffectWhenUsedComboBox")
+                    => (input) => (inModel as IItemModelEdit).EffectWhenUsed = (ModelID)input,
+                (ItemsTabIndex, "ItemEffectWhileHeldComboBox")
+                    => (input) => (inModel as IItemModelEdit).EffectWhenUsed = (ModelID)input,
+                (ItemsTabIndex, "ItemEquivalentParquetComboBox")
+                    => (input) => (inModel as IItemModelEdit).ParquetID = (ModelID)input,
+
+                (BiomeRecipesTabIndex, "BiomeNameTextBox")
+                    => (input) => (inModel as IBiomeRecipeEdit).Name = input.ToString(),
+                (BiomeRecipesTabIndex, "BiomeDescriptionTextBox")
+                    => (input) => (inModel as IBiomeRecipeEdit).Description = input.ToString(),
+                (BiomeRecipesTabIndex, "BiomeCommentTextBox")
+                    => (input) => (inModel as IBiomeRecipeEdit).Comment = input.ToString(),
+                (BiomeRecipesTabIndex, "BiomeTierTextBox")
+                    => (input) => (inModel as IBiomeRecipeEdit).Tier = (int)input,
+                (BiomeRecipesTabIndex, "BiomeIsLiquidBasedCheckBox")
+                    => (input) => (inModel as IBiomeRecipeEdit).IsLiquidBased = (bool)input,
+                (BiomeRecipesTabIndex, "BiomeIsRoomBasedCheckBox")
+                    => (input) => (inModel as IBiomeRecipeEdit).IsRoomBased = (bool)input,
+                (BiomeRecipesTabIndex, "BiomeEntryRequirementsListBox")
+                    => (input) =>
+                    {
+                        (inModel as IBiomeRecipeEdit).EntryRequirements.Clear();
+                        (inModel as IBiomeRecipeEdit).EntryRequirements.ToList().AddRange((IList<ModelTag>)input);
+                    },
+                (BiomeRecipesTabIndex, "BiomeParquetCriteriaListBox")
+                    => (input) =>
+                    {
+                        (inModel as IBiomeRecipeEdit).ParquetCriteria.Clear();
+                        (inModel as IBiomeRecipeEdit).ParquetCriteria.ToList().AddRange((IList<ModelTag>)input);
+                    },
+
+                (CraftingRecipesTabIndex, "CraftingNameTextBox")
+                    => (input) => (inModel as ICraftingRecipeEdit).Name = input.ToString(),
+                (CraftingRecipesTabIndex, "CraftingDescriptionTextBox")
+                    => (input) => (inModel as ICraftingRecipeEdit).Description = input.ToString(),
+                (CraftingRecipesTabIndex, "CraftingCommentTextBox")
+                    => (input) => (inModel as ICraftingRecipeEdit).Comment = input.ToString(),
+                (CraftingRecipesTabIndex, "CraftingIngredientsBox")
+                    => (input) =>
+                    {
+                        (inModel as ICraftingRecipeEdit).Ingredients.Clear();
+                        (inModel as ICraftingRecipeEdit).Ingredients.ToList().AddRange((IList<RecipeElement>)input);
+                    },
+                (CraftingRecipesTabIndex, "CraftingProductsListBox")
+                    => (input) =>
+                    {
+                        (inModel as ICraftingRecipeEdit).Products.Clear();
+                        (inModel as ICraftingRecipeEdit).Products.ToList().AddRange((IList<RecipeElement>)input);
+                    },
+
+                (RoomRecipesTabIndex, "RoomNameTextBox")
+                    => (input) => (inModel as ICraftingRecipeEdit).Name = input.ToString(),
+                (RoomRecipesTabIndex, "RoomDescriptionTextBox")
+                    => (input) => (inModel as ICraftingRecipeEdit).Description = input.ToString(),
+                (RoomRecipesTabIndex, "RoomCommentTextBox")
+                    => (input) => (inModel as ICraftingRecipeEdit).Comment = input.ToString(),
+                (RoomRecipesTabIndex, "RoomMinimumWalkableSpacesTextBox")
+                    => (input) => (inModel as IRoomRecipeEdit).MinimumWalkableSpaces = (int)input,
+                (RoomRecipesTabIndex, "RoomRequiredFurnishingsListBox")
+                    => (input) =>
+                    {
+                        (inModel as IRoomRecipeEdit).OptionallyRequiredFurnishings.Clear();
+                        (inModel as IRoomRecipeEdit).OptionallyRequiredFurnishings.ToList().AddRange((IList<RecipeElement>)input);
+                    },
+                (RoomRecipesTabIndex, "RoomRequiredBlocksListBox")
+                    => (input) =>
+                    {
+                        (inModel as IRoomRecipeEdit).OptionallyRequiredPerimeterBlocks.Clear();
+                        (inModel as IRoomRecipeEdit).OptionallyRequiredPerimeterBlocks.ToList().AddRange((IList<RecipeElement>)input);
+                    },
+                (RoomRecipesTabIndex, "RoomRequiredFloorsListBox")
+                    => (input) =>
+                    {
+                        (inModel as IRoomRecipeEdit).OptionallyRequiredWalkableFloors.Clear();
+                        (inModel as IRoomRecipeEdit).OptionallyRequiredWalkableFloors.ToList().AddRange((IList<RecipeElement>)input);
+                    },
+
+                (MapsTabIndex, _) => throw new NotImplementedException(),
+                (ScriptsTabIndex, _) => throw new NotImplementedException(),
+                _ => throw new ArgumentException($"Unsupported control {inControl.Name} on tab index {inModel}."),
             };
         #endregion
 
@@ -405,17 +723,14 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void ContentAlteredEventHandler(object sender, EventArgs e)
         {
-            // TODO Remove this debug statement.
-            //MainToolStripStatusLabel.Text = ChangeManager.Count.ToString();
-
+            var PropertyAccessor = GetPropertyAccessorForTabAndControl(EditorTabs.SelectedIndex, sender as Control);
             if (sender is TextBox textbox
                 && string.Compare(textbox.Text,
                                   EditableControls[typeof(TextBox)][textbox],
                                   comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
                 ChangeManager.AddAndExecute(new Change(EditableControls[typeof(TextBox)][textbox], textbox.Text, textbox.Name,
-                                            // TODO Replace _ with the means to actually update All!
-                                            (object databaseValue) => { _ = databaseValue.ToString(); HasUnsavedChanges = true; },
+                                            (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
                                             (object displayValue) => textbox.Text = displayValue.ToString(),
                                             (object oldValue) => EditableControls[typeof(TextBox)][textbox] = oldValue.ToString()));
                 
@@ -427,8 +742,7 @@ namespace Scribe
             {
                 var parsedOldValue = bool.TryParse(EditableControls[typeof(CheckBox)][checkbox], out var result) && result;
                 ChangeManager.AddAndExecute(new Change(parsedOldValue, (bool?)checkbox.Checked, checkbox.Name,
-                                            // TODO Replace _ with the means to actually update All!
-                                            (object databaseValue) => { _ = databaseValue; HasUnsavedChanges = true; },
+                                            (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
                                             (object displayValue) => checkbox.Checked = (bool)displayValue,
                                             (object oldValue) => EditableControls[typeof(CheckBox)][checkbox] = oldValue.ToString()));
             }
@@ -441,8 +755,7 @@ namespace Scribe
                     ? result
                     : 0;
                 ChangeManager.AddAndExecute(new Change(parsedOldValue, (int?)combobox.SelectedIndex, combobox.Name,
-                                            // TODO Replace _ with the means to actually update All!
-                                            (object databaseValue) => { _ = databaseValue; HasUnsavedChanges = true; },
+                                            (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
                                             (object displayValue) => combobox.SelectedIndex = (int)displayValue,
                                             (object oldValue) => EditableControls[typeof(ComboBox)][combobox] = oldValue.ToString()));
             }
@@ -455,8 +768,7 @@ namespace Scribe
                     ? result
                     : 0;
                 ChangeManager.AddAndExecute(new Change(parsedOldValue, (int?)listbox.SelectedIndex, listbox.Name,
-                                            // TODO Replace _ with the means to actually update All!
-                                            (object databaseValue) => { _ = databaseValue; HasUnsavedChanges = true; },
+                                            (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
                                             (object displayValue) => listbox.SelectedIndex = (int)displayValue,
                                             (object oldValue) => EditableControls[typeof(ListBox)][listbox] = oldValue.ToString()));
             }
