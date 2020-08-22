@@ -118,7 +118,7 @@ namespace Scribe
             ModelCollection<GameModel>.Default.PutRecordsForType<GameModel>();
             ModelCollection<BeingModel>.Default.PutRecordsForType<CritterModel>();
             ModelCollection<BeingModel>.Default.PutRecordsForType<CharacterModel>();
-            ModelCollection<BiomeModel>.Default.PutRecordsForType<BiomeModel>();
+            ModelCollection<BiomeRecipe>.Default.PutRecordsForType<BiomeRecipe>();
             ModelCollection<CraftingRecipe>.Default.PutRecordsForType<CraftingRecipe>();
             ModelCollection<InteractionModel>.Default.PutRecordsForType<InteractionModel>();
             ModelCollection<MapModel>.Default.PutRecordsForType<MapChunkModel>();
