@@ -282,7 +282,7 @@ namespace Scribe
             this.CharacterStartingQuestsListBox = new System.Windows.Forms.ListBox();
             this.CharacterStoryIDTextBox = new System.Windows.Forms.TextBox();
             this.CharacterOpenInventoryEditorButton = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CharacterPrimaryBehaviorComboBox = new System.Windows.Forms.ComboBox();
             this.CharacterNameLabel = new System.Windows.Forms.Label();
             this.CharacterDescriptionLabel = new System.Windows.Forms.Label();
             this.CharacterCommentLabel = new System.Windows.Forms.Label();
@@ -474,7 +474,7 @@ namespace Scribe
             this.RoomNameTextBox = new System.Windows.Forms.TextBox();
             this.RoomDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.RoomCommentTextBox = new System.Windows.Forms.TextBox();
-            this.RoomTierTextBox = new System.Windows.Forms.TextBox();
+            this.RoomMinimumWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
             this.RoomRequiredFurnishingsLabel = new System.Windows.Forms.Label();
             this.RoomRequiredFurnishingsListBox = new System.Windows.Forms.ListBox();
             this.RoomPictureBox = new System.Windows.Forms.PictureBox();
@@ -3236,7 +3236,7 @@ namespace Scribe
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterStartingQuestsListBox, 1, 9);
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterStoryIDTextBox, 1, 8);
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterOpenInventoryEditorButton, 2, 12);
-            this.CharacterTableLayoutPanel.Controls.Add(this.comboBox1, 1, 4);
+            this.CharacterTableLayoutPanel.Controls.Add(this.CharacterPrimaryBehaviorComboBox, 1, 4);
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterNameLabel, 0, 0);
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterDescriptionLabel, 0, 1);
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterCommentLabel, 0, 2);
@@ -3326,13 +3326,13 @@ namespace Scribe
             this.CharacterOpenInventoryEditorButton.Text = "Open Inventory Editor";
             this.CharacterOpenInventoryEditorButton.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // CharacterPrimaryBehaviorComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(131, 163);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(144, 21);
-            this.comboBox1.TabIndex = 29;
+            this.CharacterPrimaryBehaviorComboBox.FormattingEnabled = true;
+            this.CharacterPrimaryBehaviorComboBox.Location = new System.Drawing.Point(131, 163);
+            this.CharacterPrimaryBehaviorComboBox.Name = "CharacterPrimaryBehaviorComboBox";
+            this.CharacterPrimaryBehaviorComboBox.Size = new System.Drawing.Size(144, 21);
+            this.CharacterPrimaryBehaviorComboBox.TabIndex = 29;
             // 
             // CharacterNameLabel
             // 
@@ -5250,7 +5250,7 @@ namespace Scribe
             this.RoomTableLayoutPanel.Controls.Add(this.RoomNameTextBox, 1, 0);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomDescriptionTextBox, 1, 1);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomCommentTextBox, 1, 2);
-            this.RoomTableLayoutPanel.Controls.Add(this.RoomTierTextBox, 1, 3);
+            this.RoomTableLayoutPanel.Controls.Add(this.RoomMinimumWalkableSpacesTextBox, 1, 3);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomRequiredFurnishingsLabel, 0, 4);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomRequiredFurnishingsListBox, 1, 4);
             this.RoomTableLayoutPanel.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
@@ -5416,12 +5416,12 @@ namespace Scribe
             this.RoomCommentTextBox.Size = new System.Drawing.Size(280, 49);
             this.RoomCommentTextBox.TabIndex = 25;
             // 
-            // RoomTierTextBox
+            // RoomMinimumWalkableSpacesTextBox
             // 
-            this.RoomTierTextBox.Location = new System.Drawing.Point(146, 138);
-            this.RoomTierTextBox.Name = "RoomTierTextBox";
-            this.RoomTierTextBox.Size = new System.Drawing.Size(136, 20);
-            this.RoomTierTextBox.TabIndex = 26;
+            this.RoomMinimumWalkableSpacesTextBox.Location = new System.Drawing.Point(146, 138);
+            this.RoomMinimumWalkableSpacesTextBox.Name = "RoomMinimumWalkableSpacesTextBox";
+            this.RoomMinimumWalkableSpacesTextBox.Size = new System.Drawing.Size(136, 20);
+            this.RoomMinimumWalkableSpacesTextBox.TabIndex = 26;
             // 
             // RoomRequiredFurnishingsLabel
             // 
@@ -5878,7 +5878,7 @@ namespace Scribe
         private System.Windows.Forms.TabPage CharactersTabPage;
         private System.Windows.Forms.GroupBox CharacterPronounGroupBox;
         private System.Windows.Forms.TableLayoutPanel CharacterTableLayoutPanel;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CharacterPrimaryBehaviorComboBox;
         private System.Windows.Forms.Label CharacterNameLabel;
         private System.Windows.Forms.Label CharacterDescriptionLabel;
         private System.Windows.Forms.Label CharacterCommentLabel;
@@ -6082,7 +6082,7 @@ namespace Scribe
         private System.Windows.Forms.TextBox RoomNameTextBox;
         private System.Windows.Forms.TextBox RoomDescriptionTextBox;
         private System.Windows.Forms.TextBox RoomCommentTextBox;
-        private System.Windows.Forms.TextBox RoomTierTextBox;
+        private System.Windows.Forms.TextBox RoomMinimumWalkableSpacesTextBox;
         private System.Windows.Forms.PictureBox RoomPictureBox;
         private System.Windows.Forms.Label RoomIDLabel;
         private System.Windows.Forms.Button RoomAddNewRoomButton;
