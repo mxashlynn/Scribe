@@ -310,7 +310,7 @@ namespace Scribe
         /// <param name="inTabIndex">The index of an editor tab.</param>
         /// <param name="inControl">The <see cref="Control"/> corresponding to the property sought.</param>
         /// <returns>A method for editing the property's value, or <c>null</c> if the input combination is not defined.</returns>
-        /// <remarks>This method exists merely to simplify the code in the <see cref="GetPropertyAccessorForModelAndTabAndControl"/> method.</remarks>
+        /// <remarks>This method exists merely to simplify the code in <see cref="GetPropertyAccessorForModelAndTabAndControl"/>.</remarks>
         private Action<object> GetPropertyAccessorForTabAndControl(int inTabIndex, Control inControl)
             => GetPropertyAccessorForModelAndTabAndControl(GetSelectedModelForTab(inTabIndex), inTabIndex, inControl);
 
@@ -429,20 +429,23 @@ namespace Scribe
                 (CharactersTabIndex, "CharacterStartingDialogueComboBox")
                     => (input) =>
                     {
-                        (inModel as ICharacterModelEdit).StartingDialogue.Clear();
-                        (inModel as ICharacterModelEdit).StartingDialogue.ToList().AddRange((IList<ModelID>)input);
+                        var editModel = inModel as ICharacterModelEdit;
+                        editModel.StartingDialogue.Clear();
+                        editModel.StartingDialogue.ToList().AddRange((IList<ModelID>)input);
                     },
                 (CharactersTabIndex, "StartingInventoryComboBox")
                     => (input) =>
                     {
-                        (inModel as ICharacterModelEdit).StartingInventory.Clear();
-                        (inModel as ICharacterModelEdit).StartingInventory.ToList().AddRange((IList<ModelID>)input);
+                        var editModel = inModel as ICharacterModelEdit;
+                        editModel.StartingInventory.Clear();
+                        editModel.StartingInventory.ToList().AddRange((IList<ModelID>)input);
                     },
                 (CharactersTabIndex, "CharacterStartingQuestsListBox")
                     => (input) =>
                     {
-                        (inModel as ICharacterModelEdit).StartingQuests.Clear();
-                        (inModel as ICharacterModelEdit).StartingQuests.ToList().AddRange((IList<ModelID>)input);
+                        var editModel = inModel as ICharacterModelEdit;
+                        editModel.StartingQuests.Clear();
+                        editModel.StartingQuests.ToList().AddRange((IList<ModelID>)input);
                     },
 
                 (CrittersTabIndex, "CritterNameTextBox")
@@ -469,8 +472,9 @@ namespace Scribe
                 (ItemsTabIndex, "ItemTagListBox")
                     => (input) =>
                     {
-                        (inModel as IItemModelEdit).ItemTags.Clear();
-                        (inModel as IItemModelEdit).ItemTags.ToList().AddRange((IList<ModelTag>)input);
+                        var editModel = inModel as IItemModelEdit;
+                        editModel.ItemTags.Clear();
+                        editModel.ItemTags.ToList().AddRange((IList<ModelTag>)input);
                     },
                 (ItemsTabIndex, "ItemStackMaxTextBox")
                     => (input) => (inModel as IItemModelEdit).StackMax = (int)input,
@@ -498,14 +502,16 @@ namespace Scribe
                 (BiomeRecipesTabIndex, "BiomeEntryRequirementsListBox")
                     => (input) =>
                     {
-                        (inModel as IBiomeRecipeEdit).EntryRequirements.Clear();
-                        (inModel as IBiomeRecipeEdit).EntryRequirements.ToList().AddRange((IList<ModelTag>)input);
+                        var editModel = inModel as IBiomeRecipeEdit;
+                        editModel.EntryRequirements.Clear();
+                        editModel.EntryRequirements.ToList().AddRange((IList<ModelTag>)input);
                     },
                 (BiomeRecipesTabIndex, "BiomeParquetCriteriaListBox")
                     => (input) =>
                     {
-                        (inModel as IBiomeRecipeEdit).ParquetCriteria.Clear();
-                        (inModel as IBiomeRecipeEdit).ParquetCriteria.ToList().AddRange((IList<ModelTag>)input);
+                        var editModel = inModel as IBiomeRecipeEdit;
+                        editModel.ParquetCriteria.Clear();
+                        editModel.ParquetCriteria.ToList().AddRange((IList<ModelTag>)input);
                     },
 
                 (CraftingRecipesTabIndex, "CraftingNameTextBox")
@@ -517,14 +523,16 @@ namespace Scribe
                 (CraftingRecipesTabIndex, "CraftingIngredientsBox")
                     => (input) =>
                     {
-                        (inModel as ICraftingRecipeEdit).Ingredients.Clear();
-                        (inModel as ICraftingRecipeEdit).Ingredients.ToList().AddRange((IList<RecipeElement>)input);
+                        var editModel = inModel as ICraftingRecipeEdit;
+                        editModel.Ingredients.Clear();
+                        editModel.Ingredients.ToList().AddRange((IList<RecipeElement>)input);
                     },
                 (CraftingRecipesTabIndex, "CraftingProductsListBox")
                     => (input) =>
                     {
-                        (inModel as ICraftingRecipeEdit).Products.Clear();
-                        (inModel as ICraftingRecipeEdit).Products.ToList().AddRange((IList<RecipeElement>)input);
+                        var editModel = inModel as ICraftingRecipeEdit;
+                        editModel.Products.Clear();
+                        editModel.Products.ToList().AddRange((IList<RecipeElement>)input);
                     },
 
                 (RoomRecipesTabIndex, "RoomNameTextBox")
@@ -538,20 +546,23 @@ namespace Scribe
                 (RoomRecipesTabIndex, "RoomRequiredFurnishingsListBox")
                     => (input) =>
                     {
-                        (inModel as IRoomRecipeEdit).OptionallyRequiredFurnishings.Clear();
-                        (inModel as IRoomRecipeEdit).OptionallyRequiredFurnishings.ToList().AddRange((IList<RecipeElement>)input);
+                        var editModel = inModel as IRoomRecipeEdit;
+                        editModel.OptionallyRequiredFurnishings.Clear();
+                        editModel.OptionallyRequiredFurnishings.ToList().AddRange((IList<RecipeElement>)input);
                     },
                 (RoomRecipesTabIndex, "RoomRequiredBlocksListBox")
                     => (input) =>
                     {
-                        (inModel as IRoomRecipeEdit).OptionallyRequiredPerimeterBlocks.Clear();
-                        (inModel as IRoomRecipeEdit).OptionallyRequiredPerimeterBlocks.ToList().AddRange((IList<RecipeElement>)input);
+                        var editModel = inModel as IRoomRecipeEdit;
+                        editModel.OptionallyRequiredPerimeterBlocks.Clear();
+                        editModel.OptionallyRequiredPerimeterBlocks.ToList().AddRange((IList<RecipeElement>)input);
                     },
                 (RoomRecipesTabIndex, "RoomRequiredFloorsListBox")
                     => (input) =>
                     {
-                        (inModel as IRoomRecipeEdit).OptionallyRequiredWalkableFloors.Clear();
-                        (inModel as IRoomRecipeEdit).OptionallyRequiredWalkableFloors.ToList().AddRange((IList<RecipeElement>)input);
+                        var editModel = inModel as IRoomRecipeEdit;
+                        editModel.OptionallyRequiredWalkableFloors.Clear();
+                        editModel.OptionallyRequiredWalkableFloors.ToList().AddRange((IList<RecipeElement>)input);
                     },
 
                 (MapsTabIndex, _) => throw new NotImplementedException(),
