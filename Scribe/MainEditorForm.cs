@@ -603,6 +603,19 @@ namespace Scribe
                 (BiomeRecipesTabIndex, "BiomeRoomThresholdFactorTextBox")
                     => (input) => BiomeConfiguration.RoomThresholdFactor = (double)input,
 
+                (CraftingRecipesTabIndex, "CraftingMinIngredientCountTextBox")
+                    => (input) => CraftConfiguration.IngredientCount = new Range<int>((int)input, CraftConfiguration.IngredientCount.Maximum),
+                (CraftingRecipesTabIndex, "CraftingMaxIngredientCountTextBox")
+                    => (input) => CraftConfiguration.IngredientCount = new Range<int>(CraftConfiguration.ProductCount.Minimum, (int)input),
+                (CraftingRecipesTabIndex, "CraftingMinProductCountTextBox")
+                    => (input) => CraftConfiguration.ProductCount = new Range<int>((int)input, CraftConfiguration.ProductCount.Maximum),
+                (CraftingRecipesTabIndex, "CraftingMaxProductCountTextBox")
+                    => (input) => CraftConfiguration.ProductCount = new Range<int>(CraftConfiguration.ProductCount.Minimum, (int)input),
+
+                (RoomRecipesTabIndex, "RoomMinWalkableSpacesTextBox")
+                    => (input) => RoomConfiguration.MinWalkableSpaces = (int)input,
+                (RoomRecipesTabIndex, "RoomMaxWalkableSpacesTextBox")
+                    => (input) => RoomConfiguration.MaxWalkableSpaces = (int)input,
                 #endregion
 
                 _ => null,
