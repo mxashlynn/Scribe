@@ -735,6 +735,13 @@ namespace Scribe
         private void ContentAlteredEventHandler(object sender, EventArgs e)
         {
             var PropertyAccessor = GetPropertyAccessorForTabAndControl(EditorTabs.SelectedIndex, sender as Control);
+            if (null == PropertyAccessor)
+            {
+                // TODO Remove this debug statement, or change it to a loggin statement.
+                MessageBox.Show($"Unsupported control {(sender as Control).Name} on tab index {EditorTabs.SelectedIndex}.");
+                return;
+            }
+
             if (sender is TextBox textbox
                 && string.Compare(textbox.Text,
                                   EditableControls[typeof(TextBox)][textbox],
@@ -744,7 +751,7 @@ namespace Scribe
                                             (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
                                             (object displayValue) => textbox.Text = displayValue.ToString(),
                                             (object oldValue) => EditableControls[typeof(TextBox)][textbox] = oldValue.ToString()));
-                
+
             }
             else if (sender is CheckBox checkbox
                      && string.Compare(checkbox.Checked.ToString(),
