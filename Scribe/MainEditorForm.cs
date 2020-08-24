@@ -59,8 +59,7 @@ namespace Scribe
         /// A collection of all editable <see cref="Control"/>s in the <see cref="MainEditorForm"/>
         /// together with the game data they currently represent, organized by <see cref="Type"/>.
         /// </summary>
-        // TODO Should this be Dictionary<Type, Dictionary<Control, object>> so that we can use boxed value types for non-string items?
-        private readonly Dictionary<Type, Dictionary<Control, string>> EditableControls;
+        private readonly Dictionary<Type, Dictionary<Control, object>> EditableControls;
 
         /// <summary>
         /// A collection of all editable <see cref="PictureBox"/>es in the <see cref="MainEditorForm"/>.
@@ -160,29 +159,29 @@ namespace Scribe
         /// Finds all editable <see cref="Control"/>s in the <see cref="MainEditorForm"/> that represent editable game data.
         /// </summary>
         /// <returns>A dictionary containing lists of controls, organized by type.</returns>
-        private Dictionary<Type, Dictionary<Control, string>> GetEditableControls()
+        private Dictionary<Type, Dictionary<Control, object>> GetEditableControls()
         {
-            var editables = new Dictionary<Type, Dictionary<Control, string>>();
+            var editables = new Dictionary<Type, Dictionary<Control, object>>();
 
-            editables[typeof(TextBox)] = new Dictionary<Control, string>();
+            editables[typeof(TextBox)] = new Dictionary<Control, object>();
             foreach (var textbox in EditorTabs.GetAllChildrenOfType<TextBox>())
             {
                 editables[typeof(TextBox)][textbox] = textbox.Text;
             }
-            editables[typeof(CheckBox)] = new Dictionary<Control, string>();
+            editables[typeof(CheckBox)] = new Dictionary<Control, object>();
             foreach (var checkbox in EditorTabs.GetAllChildrenOfType<CheckBox>())
             {
-                editables[typeof(CheckBox)][checkbox] = checkbox.Checked.ToString();
+                editables[typeof(CheckBox)][checkbox] = (bool?)checkbox.Checked;
             }
-            editables[typeof(ComboBox)] = new Dictionary<Control, string>();
+            editables[typeof(ComboBox)] = new Dictionary<Control, object>();
             foreach (var combobox in EditorTabs.GetAllChildrenOfType<ComboBox>())
             {
-                editables[typeof(ComboBox)][combobox] = combobox.SelectedIndex.ToString();
+                editables[typeof(ComboBox)][combobox] = (int?)combobox.SelectedIndex;
             }
-            editables[typeof(ListBox)] = new Dictionary<Control, string>();
+            editables[typeof(ListBox)] = new Dictionary<Control, object>();
             foreach (var listbox in EditorTabs.GetAllChildrenOfType<ListBox>())
             {
-                editables[typeof(ListBox)][listbox] = listbox.SelectedIndex.ToString();
+                editables[typeof(ListBox)][listbox] = (int?)listbox.SelectedIndex;
             }
 
             return editables;
@@ -814,51 +813,40 @@ namespace Scribe
 
             if (sender is TextBox textbox
                 && string.Compare(textbox.Text,
-                                  EditableControls[typeof(TextBox)][textbox],
+                                  EditableControls[typeof(TextBox)][textbox] as string,
                                   comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
                 ChangeManager.AddAndExecute(new Change(EditableControls[typeof(TextBox)][textbox], textbox.Text, textbox.Name,
                                             (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
                                             (object displayValue) => textbox.Text = displayValue.ToString(),
-                                            (object oldValue) => EditableControls[typeof(TextBox)][textbox] = oldValue.ToString()));
-
+                                            (object oldValue) => EditableControls[typeof(TextBox)][textbox] = oldValue));
             }
             else if (sender is CheckBox checkbox
-                     && string.Compare(checkbox.Checked.ToString(),
-                                       EditableControls[typeof(CheckBox)][checkbox],
-                                       comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
+                     && checkbox.Checked == (EditableControls[typeof(CheckBox)][checkbox] as bool?))
             {
-                var parsedOldValue = bool.TryParse(EditableControls[typeof(CheckBox)][checkbox], out var result) && result;
-                ChangeManager.AddAndExecute(new Change(parsedOldValue, (bool?)checkbox.Checked, checkbox.Name,
+                var oldValue = (bool?)EditableControls[typeof(CheckBox)][checkbox];
+                ChangeManager.AddAndExecute(new Change(oldValue, (bool?)checkbox.Checked, checkbox.Name,
                                             (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
                                             (object displayValue) => checkbox.Checked = (bool)displayValue,
-                                            (object oldValue) => EditableControls[typeof(CheckBox)][checkbox] = oldValue.ToString()));
+                                            (object oldValue) => EditableControls[typeof(CheckBox)][checkbox] = oldValue));
             }
             else if (sender is ComboBox combobox
-                     && string.Compare(combobox.SelectedIndex.ToString(),
-                                       EditableControls[typeof(ComboBox)][combobox],
-                                       comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
+                     && combobox.SelectedIndex == (EditableControls[typeof(ComboBox)][combobox] as int?))
             {
-                var parsedOldValue = int.TryParse(EditableControls[typeof(ComboBox)][combobox], out var result)
-                    ? result
-                    : 0;
-                ChangeManager.AddAndExecute(new Change(parsedOldValue, (int?)combobox.SelectedIndex, combobox.Name,
+                var oldValue = (int?)EditableControls[typeof(ComboBox)][combobox];
+                ChangeManager.AddAndExecute(new Change(oldValue, (int?)combobox.SelectedIndex, combobox.Name,
                                             (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
                                             (object displayValue) => combobox.SelectedIndex = (int)displayValue,
-                                            (object oldValue) => EditableControls[typeof(ComboBox)][combobox] = oldValue.ToString()));
+                                            (object oldValue) => EditableControls[typeof(ComboBox)][combobox] = oldValue));
             }
             else if (sender is ListBox listbox
-                     && string.Compare(listbox.SelectedIndex.ToString(),
-                                       EditableControls[typeof(ListBox)][listbox],
-                                       comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
+                     && listbox.SelectedIndex == (EditableControls[typeof(ListBox)][listbox] as int?))
             {
-                var parsedOldValue = int.TryParse(EditableControls[typeof(ListBox)][listbox], out var result)
-                    ? result
-                    : 0;
-                ChangeManager.AddAndExecute(new Change(parsedOldValue, (int?)listbox.SelectedIndex, listbox.Name,
+                var oldValue = (int?)EditableControls[typeof(ListBox)][listbox];
+                ChangeManager.AddAndExecute(new Change(oldValue, (int?)listbox.SelectedIndex, listbox.Name,
                                             (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
                                             (object displayValue) => listbox.SelectedIndex = (int)displayValue,
-                                            (object oldValue) => EditableControls[typeof(ListBox)][listbox] = oldValue.ToString()));
+                                            (object oldValue) => EditableControls[typeof(ListBox)][listbox] = oldValue));
             }
         }
         #endregion
