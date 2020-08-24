@@ -98,7 +98,7 @@ namespace Scribe
                     // All is about to go out of sync with storage, check if it's time to autosave.
                     if (IsTimeToAutoSave())
                     {
-                        // TODO It might be a good idea to move this out of the setter? 
+                        // TODO It might be a good idea to move this out of the setter?
                         EditorCommands.SaveDataFiles();
                         // TODO Only do this if the save succeeds.
                         HasUnsavedChanges = false;
@@ -219,6 +219,7 @@ namespace Scribe
         #endregion
 
         #region Tab Management
+        #region Tab Indices
         private const int GamesTabIndex = 0;
         private const int BlocksTabIndex = 1;
         private const int FloorsTabIndex = 2;
@@ -232,6 +233,7 @@ namespace Scribe
         private const int RoomRecipesTabIndex = 10;
         private const int MapsTabIndex = 11;
         private const int ScriptsTabIndex = 12;
+        #endregion
 
         /// <summary>
         /// Given the index of an editor tab, return the default <see cref="ModelID"/> for the content it edits.
@@ -252,8 +254,8 @@ namespace Scribe
                 BiomeRecipesTabIndex => All.BiomeIDs.Minimum,
                 CraftingRecipesTabIndex => All.CraftingRecipeIDs.Minimum,
                 RoomRecipesTabIndex => All.RoomRecipeIDs.Minimum,
-                MapsTabIndex => throw new NotImplementedException(),
-                ScriptsTabIndex => throw new NotImplementedException(),
+                MapsTabIndex => All.MapRegionIDs.Minimum,
+                ScriptsTabIndex => All.ScriptIDs.Minimum,
                 _ => ModelID.None,
             };
 
