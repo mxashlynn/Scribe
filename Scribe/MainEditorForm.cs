@@ -640,7 +640,7 @@ namespace Scribe
             };
         #endregion
 
-        #region Display Update Methods
+        #region Editor Display Update Methods
         /// <summary>
         /// Updates the form when it receives focus, for example after closing the options dialogue box.
         /// </summary>
@@ -795,6 +795,41 @@ namespace Scribe
         }
         #endregion
 
+        #region Tab Display Update Methods
+        /// <summary>
+        /// Populates the Games tab when a <see cref="GameModel"/> is selected in the GameListBox.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void GameListBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            var model = GameListBox.SelectedItem as GameModel;
+
+            if (null != model)
+            {
+                GameIDTextBox.Text = model.ID.ToString();
+                GameNameTextBox.Text = model.Name;
+                GameDescriptionTextBox.Text = model.Description;
+                GameCommentTextBox.Text = model.Comment;
+                GameIsEpisodeCheckBox.Checked = model.IsEpisode;
+                GameEpisodeTitleTextBox.Text = model.EpisodeTitle;
+                GameEpisodeNumberTextBox.Text = model.EpisodeNumber.ToString();
+                GamePlayerCharacterTextBox.Text = model.PlayerCharacterID.ToString();
+                GameFirstScriptTextBox.Text = model.FirstScriptID.ToString();
+
+                var imagePath = Path.Combine(EditorCommands.GetGraphicsPathForModelID(model.ID), $"{model.ID}.png");
+                if (File.Exists(imagePath))
+                {
+                    GameIconPictureBox.Load(imagePath);
+                }
+                else
+                {
+                    GameIconPictureBox.Image = Resources.ImageNotFoundGraphic;
+                }
+            }
+        }
+        #endregion
+
         #region Handle Changes to Data
         /// <summary>
         /// Autosaves and/or marks the form dirty after an update.
@@ -806,7 +841,7 @@ namespace Scribe
             var PropertyAccessor = GetPropertyAccessorForTabAndControl(EditorTabs.SelectedIndex, sender as Control);
             if (null == PropertyAccessor)
             {
-                // TODO Remove this debug statement, or change it to a loggin statement.
+                // TODO Remove this debug statement, or change it to a logging statement.
                 MessageBox.Show($"Unsupported control {(sender as Control).Name} on tab index {EditorTabs.SelectedIndex}.");
                 return;
             }
