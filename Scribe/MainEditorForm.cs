@@ -310,9 +310,47 @@ namespace Scribe
         /// <param name="inTabIndex">The index of an editor tab.</param>
         /// <param name="inControl">The <see cref="Control"/> corresponding to the property sought.</param>
         /// <returns>A method for editing the property's value, or <c>null</c> if the input combination is not defined.</returns>
-        /// <remarks>This method exists merely to simplify the code in <see cref="GetPropertyAccessorForModelAndTabAndControl"/>.</remarks>
         private Action<object> GetPropertyAccessorForTabAndControl(int inTabIndex, Control inControl)
-            => GetPropertyAccessorForModelAndTabAndControl(GetSelectedModelForTab(inTabIndex), inTabIndex, inControl);
+            => (inTabIndex, inControl.Name) switch
+            {
+                #region Pronouns
+                (CharactersTabIndex, "CharacterPronounSubjectiveTextBox")
+                    => (input) => (CharacterPronounListBox.SelectedItem as IPronounGroupEdit).Subjective = input.ToString(),
+                (CharactersTabIndex, "CharacterPronounObjectiveTextBox")
+                    => (input) => (CharacterPronounListBox.SelectedItem as IPronounGroupEdit).Objective = input.ToString(),
+                (CharactersTabIndex, "CharacterPronounDeterminerTextBox")
+                    => (input) => (CharacterPronounListBox.SelectedItem as IPronounGroupEdit).Determiner = input.ToString(),
+                (CharactersTabIndex, "CharacterPronounPossessiveTextBox")
+                    => (input) => (CharacterPronounListBox.SelectedItem as IPronounGroupEdit).Possessive = input.ToString(),
+                (CharactersTabIndex, "CharacterPronounReflexiveTextBox")
+                    => (input) => (CharacterPronounListBox.SelectedItem as IPronounGroupEdit).Reflexive = input.ToString(),
+                #endregion
+
+                #region Configuration
+                (BiomeRecipesTabIndex, "BiomeLandThresholdTextBox")
+                    => (input) => BiomeConfiguration.LandThresholdFactor = (double)input,
+                (BiomeRecipesTabIndex, "BiomeLiquidThresholdFactorTextBox")
+                    => (input) => BiomeConfiguration.LiquidThresholdFactor = (double)input,
+                (BiomeRecipesTabIndex, "BiomeRoomThresholdFactorTextBox")
+                    => (input) => BiomeConfiguration.RoomThresholdFactor = (double)input,
+
+                (CraftingRecipesTabIndex, "CraftingMinIngredientCountTextBox")
+                    => (input) => CraftConfiguration.IngredientCount = new Range<int>((int)input, CraftConfiguration.IngredientCount.Maximum),
+                (CraftingRecipesTabIndex, "CraftingMaxIngredientCountTextBox")
+                    => (input) => CraftConfiguration.IngredientCount = new Range<int>(CraftConfiguration.ProductCount.Minimum, (int)input),
+                (CraftingRecipesTabIndex, "CraftingMinProductCountTextBox")
+                    => (input) => CraftConfiguration.ProductCount = new Range<int>((int)input, CraftConfiguration.ProductCount.Maximum),
+                (CraftingRecipesTabIndex, "CraftingMaxProductCountTextBox")
+                    => (input) => CraftConfiguration.ProductCount = new Range<int>(CraftConfiguration.ProductCount.Minimum, (int)input),
+
+                (RoomRecipesTabIndex, "RoomMinWalkableSpacesTextBox")
+                    => (input) => RoomConfiguration.MinWalkableSpaces = (int)input,
+                (RoomRecipesTabIndex, "RoomMaxWalkableSpacesTextBox")
+                    => (input) => RoomConfiguration.MaxWalkableSpaces = (int)input,
+                #endregion
+
+                _ => GetPropertyAccessorForModelAndTabAndControl(GetSelectedModelForTab(inTabIndex), inTabIndex, inControl),
+            };
 
         /// <summary>
         /// Given a <see cref="Model"/> and an editor <see cref="Control"/>, return the corresponding <see cref="Model"/> from
@@ -587,35 +625,14 @@ namespace Scribe
                     },
                 #endregion
 
-                // TODO Implement Maps and Scripts.
+                #region Mapping
+                // TODO Implement Maps.
                 (MapsTabIndex, _) => throw new NotImplementedException(),
-                (ScriptsTabIndex, _) => throw new NotImplementedException(),
-
-                #region Pronouns
-                // TODO Implement pronouns, please~!  :D
                 #endregion
 
-                #region Configuration
-                (BiomeRecipesTabIndex, "BiomeLandThresholdTextBox")
-                    => (input) => BiomeConfiguration.LandThresholdFactor = (double)input,
-                (BiomeRecipesTabIndex, "BiomeLiquidThresholdFactorTextBox")
-                    => (input) => BiomeConfiguration.LiquidThresholdFactor = (double)input,
-                (BiomeRecipesTabIndex, "BiomeRoomThresholdFactorTextBox")
-                    => (input) => BiomeConfiguration.RoomThresholdFactor = (double)input,
-
-                (CraftingRecipesTabIndex, "CraftingMinIngredientCountTextBox")
-                    => (input) => CraftConfiguration.IngredientCount = new Range<int>((int)input, CraftConfiguration.IngredientCount.Maximum),
-                (CraftingRecipesTabIndex, "CraftingMaxIngredientCountTextBox")
-                    => (input) => CraftConfiguration.IngredientCount = new Range<int>(CraftConfiguration.ProductCount.Minimum, (int)input),
-                (CraftingRecipesTabIndex, "CraftingMinProductCountTextBox")
-                    => (input) => CraftConfiguration.ProductCount = new Range<int>((int)input, CraftConfiguration.ProductCount.Maximum),
-                (CraftingRecipesTabIndex, "CraftingMaxProductCountTextBox")
-                    => (input) => CraftConfiguration.ProductCount = new Range<int>(CraftConfiguration.ProductCount.Minimum, (int)input),
-
-                (RoomRecipesTabIndex, "RoomMinWalkableSpacesTextBox")
-                    => (input) => RoomConfiguration.MinWalkableSpaces = (int)input,
-                (RoomRecipesTabIndex, "RoomMaxWalkableSpacesTextBox")
-                    => (input) => RoomConfiguration.MaxWalkableSpaces = (int)input,
+                #region Scripting
+                // TODO Implement Scripts and Interactions.
+                (ScriptsTabIndex, _) => throw new NotImplementedException(),
                 #endregion
 
                 _ => null,
