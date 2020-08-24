@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Media;
@@ -266,17 +267,17 @@ namespace Scribe
         private ModelID GetSelectedModelIDForTab(int inTabIndex)
             => inTabIndex switch
             {
-                GamesTabIndex => (GameListBox.SelectedItem as GameModel).ID,
-                BlocksTabIndex => (BlockListBox.SelectedItem as BlockModel).ID,
-                FloorsTabIndex => (FloorListBox.SelectedItem as FloorModel).ID,
-                FurnishingsTabIndex => (FurnishingListBox.SelectedItem as FurnishingModel).ID,
-                CollectiblesTabIndex => (CollectibleListBox.SelectedItem as CollectibleModel).ID,
-                CharactersTabIndex => (CharacterListBox.SelectedItem as CharacterModel).ID,
-                CrittersTabIndex => (CritterListBox.SelectedItem as CritterModel).ID,
-                ItemsTabIndex => (ItemListBox.SelectedItem as ItemModel).ID,
-                BiomeRecipesTabIndex => (BiomeListBox.SelectedItem as BiomeRecipe).ID,
-                CraftingRecipesTabIndex => (CraftingListBox.SelectedItem as CraftingRecipe).ID,
-                RoomRecipesTabIndex => (RoomListBox.SelectedItem as RoomRecipe).ID,
+                GamesTabIndex => (GameListBox.SelectedItem as GameModel)?.ID ?? ModelID.None,
+                BlocksTabIndex => (BlockListBox.SelectedItem as BlockModel)?.ID ?? ModelID.None,
+                FloorsTabIndex => (FloorListBox.SelectedItem as FloorModel)?.ID ?? ModelID.None,
+                FurnishingsTabIndex => (FurnishingListBox.SelectedItem as FurnishingModel)?.ID ?? ModelID.None,
+                CollectiblesTabIndex => (CollectibleListBox.SelectedItem as CollectibleModel)?.ID ?? ModelID.None,
+                CharactersTabIndex => (CharacterListBox.SelectedItem as CharacterModel)?.ID ?? ModelID.None,
+                CrittersTabIndex => (CritterListBox.SelectedItem as CritterModel)?.ID ?? ModelID.None,
+                ItemsTabIndex => (ItemListBox.SelectedItem as ItemModel)?.ID ?? ModelID.None,
+                BiomeRecipesTabIndex => (BiomeListBox.SelectedItem as BiomeRecipe)?.ID ?? ModelID.None,
+                CraftingRecipesTabIndex => (CraftingListBox.SelectedItem as CraftingRecipe)?.ID ?? ModelID.None,
+                RoomRecipesTabIndex => (RoomListBox.SelectedItem as RoomRecipe)?.ID ?? ModelID.None,
                 MapsTabIndex => throw new NotImplementedException(),
                 ScriptsTabIndex => throw new NotImplementedException(),
                 _ => ModelID.None,
@@ -1148,11 +1149,18 @@ namespace Scribe
         /// <param name="inPictureBox">The picture box whose contents should be edited.</param>
         private void IconEditButtonClick(PictureBox inPictureBox)
         {
-            if (inPictureBox.Image != Resources.ImageNotFoundGraphic &&
-                !string.IsNullOrEmpty(inPictureBox.ImageLocation))
+            var id = GetSelectedModelIDForTab(EditorTabs.SelectedIndex);
+            if (id != ModelID.None)
             {
+                var pathAndFileName = Path.Combine(EditorCommands.GetGraphicsPathForModelID(id), $"{id}.png");
+                if (!File.Exists(pathAndFileName))
+                {
+                    Resources.ImageNotFoundGraphic.Save(pathAndFileName, ImageFormat.Png);
+                }
+
                 // Make this application specifiable via options, maybe?
-                Process.Start("explorer", $"\"{inPictureBox.ImageLocation}\"");
+                Process.Start("explorer", $"\"{pathAndFileName}\"");
+                inPictureBox.Load(pathAndFileName);
             }
             else
             {
