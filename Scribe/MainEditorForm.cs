@@ -907,7 +907,13 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void GameAddNewGameButton_Click(object sender, EventArgs e)
         {
-            var nextGameID = All.Games.Max(model => model.ID) + 1;
+            if (!All.CollectionsHaveBeenInitialized)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            var nextGameID = All.Games.Max(model => model?.ID ?? All.GameIDs.Minimum) + 1;
             var modelToAdd = new GameModel(nextGameID, "New Game", "", "", false, "", 0, ModelID.None, ModelID.None);
             ChangeManager.AddAndExecute(new ChangeList(modelToAdd, "add new game definition",
                                         (object databaseValue) =>
@@ -932,7 +938,7 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void GameRemoveGameButton_Click(object sender, EventArgs e)
         {
-            if (GameListBox.SelectedIndex == -1)
+            if (!All.CollectionsHaveBeenInitialized || GameListBox.SelectedIndex == -1)
             {
                 SystemSounds.Beep.Play();
                 return;
