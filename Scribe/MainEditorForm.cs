@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing.Imaging;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Media;
@@ -367,116 +368,116 @@ namespace Scribe
             {
                 #region GameModels
                 (GamesTabIndex, "GameNameTextBox")
-                    => (input) => (inModel as IGameModelEdit).Name = input.ToString(),
+                    => (input) => (inModel as IGameModelEdit).Name = (string)input,
                 (GamesTabIndex, "GameDescriptionTextBox")
-                    => (input) => (inModel as IGameModelEdit).Description = input.ToString(),
+                    => (input) => (inModel as IGameModelEdit).Description = (string)input,
                 (GamesTabIndex, "GameCommentTextBox")
-                    => (input) => (inModel as IGameModelEdit).Comment = input.ToString(),
+                    => (input) => (inModel as IGameModelEdit).Comment = (string)input,
                 (GamesTabIndex, "GameIsEpisodeCheckBox")
-                    => (input) => (inModel as IGameModelEdit).IsEpisode = (bool)input,
+                    => (input) => (inModel as IGameModelEdit).IsEpisode = input as bool? ?? bool.Parse((string)input),
                 (GamesTabIndex, "GameEpisodeTitleTextBox")
-                    => (input) => (inModel as IGameModelEdit).EpisodeTitle = input.ToString(),
+                    => (input) => (inModel as IGameModelEdit).EpisodeTitle = (string)input,
                 (GamesTabIndex, "GameEpisodeNumberTextBox")
-                    => (input) => (inModel as IGameModelEdit).EpisodeNumber = (int)input,
+                    => (input) => (inModel as IGameModelEdit).EpisodeNumber = input as int? ?? int.Parse((string)input, NumberStyles.Integer),
                 (GamesTabIndex, "GamePlayerCharacterTextBox")
-                    => (input) => (inModel as IGameModelEdit).PlayerCharacterID = (ModelID)input,
+                    => (input) => (inModel as IGameModelEdit).PlayerCharacterID = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
                 (GamesTabIndex, "GameFirstScriptTextBox")
-                    => (input) => (inModel as IGameModelEdit).FirstScriptID = (ModelID)input,
+                    => (input) => (inModel as IGameModelEdit).FirstScriptID = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
                 #endregion
 
                 #region BlockModels
                 (BlocksTabIndex, "BlockNameTextBox")
-                    => (input) => (inModel as IBlockModelEdit).Name = input.ToString(),
+                    => (input) => (inModel as IBlockModelEdit).Name = (string)input,
                 (BlocksTabIndex, "BlockDescriptionTextBox")
-                    => (input) => (inModel as IBlockModelEdit).Description = input.ToString(),
+                    => (input) => (inModel as IBlockModelEdit).Description = (string)input,
                 (BlocksTabIndex, "BlockCommentTextBox")
-                    => (input) => (inModel as IBlockModelEdit).Comment = input.ToString(),
+                    => (input) => (inModel as IBlockModelEdit).Comment = (string)input,
                 (BlocksTabIndex, "BlockMaxToughnessTextBox")
-                    => (input) => (inModel as IBlockModelEdit).MaxToughness = (int)input,
+                    => (input) => (inModel as IBlockModelEdit).MaxToughness = input as int? ?? int.Parse((string)input, NumberStyles.Integer),
                 (BlocksTabIndex, "BlockIsFlammableCheckBox")
-                    => (input) => (inModel as IBlockModelEdit).IsFlammable = (bool)input,
+                    => (input) => (inModel as IBlockModelEdit).IsFlammable = input as bool? ?? bool.Parse((string)input),
                 (BlocksTabIndex, "BlockIsLiquidCheckBox")
-                    => (input) => (inModel as IBlockModelEdit).IsLiquid = (bool)input,
+                    => (input) => (inModel as IBlockModelEdit).IsLiquid = input as bool? ?? bool.Parse((string)input),
                 (BlocksTabIndex, "BlockGatherToolComboBox")
-                    => (input) => (inModel as IBlockModelEdit).GatherTool = (GatheringTool)input,
+                    => (input) => (inModel as IBlockModelEdit).GatherTool = input as GatheringTool? ?? Enum.Parse<GatheringTool>((string)input, true),
                 (BlocksTabIndex, "BlockDroppedCollectibleIDComboBox")
-                    => (input) => (inModel as IBlockModelEdit).CollectibleID = (ModelID)input,
+                    => (input) => (inModel as IBlockModelEdit).CollectibleID = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
                 (BlocksTabIndex, "BlockGatherEffectComboBox")
-                    => (input) => (inModel as IBlockModelEdit).GatherEffect = (GatheringEffect)input,
+                    => (input) => (inModel as IBlockModelEdit).GatherEffect = input as GatheringEffect? ?? Enum.Parse<GatheringEffect>((string)input, true),
                 (BlocksTabIndex, "BlockEquivalentItemComboBox")
-                    => (input) => (inModel as IBlockModelEdit).ItemID = (ModelID)input,
+                    => (input) => (inModel as IBlockModelEdit).ItemID = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
                 #endregion
 
                 #region FloorModels
                 (FloorsTabIndex, "FloorNameTextBox")
-                    => (input) => (inModel as IFloorModelEdit).Name = input.ToString(),
+                    => (input) => (inModel as IFloorModelEdit).Name = (string)input,
                 (FloorsTabIndex, "FloorDescriptionTextBox")
-                    => (input) => (inModel as IFloorModelEdit).Description = input.ToString(),
+                    => (input) => (inModel as IFloorModelEdit).Description = (string)input,
                 (FloorsTabIndex, "FloorCommentTextBox")
-                    => (input) => (inModel as IFloorModelEdit).Comment = input.ToString(),
+                    => (input) => (inModel as IFloorModelEdit).Comment = (string)input,
                 (FloorsTabIndex, "FloorTrenchNameTextBox")
-                    => (input) => (inModel as IFloorModelEdit).TrenchName = input.ToString(),
+                    => (input) => (inModel as IFloorModelEdit).TrenchName = (string)input,
                 (FloorsTabIndex, "FloorlItemIDComboBox")
-                    => (input) => (inModel as IFloorModelEdit).ItemID = (ModelID)input,
+                    => (input) => (inModel as IFloorModelEdit).ItemID = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
                 (FloorsTabIndex, "FloorModificationToolComboBox")
-                    => (input) => (inModel as IFloorModelEdit).ModTool = (ModificationTool)input,
+                    => (input) => (inModel as IFloorModelEdit).ModTool = input as ModificationTool? ?? Enum.Parse<ModificationTool>((string)input, true),
                 (FloorsTabIndex, "FloorAddsToBiomeListBox")
-                    => (input) => (inModel as IFloorModelEdit).AddsToBiome = (ModelTag)input,
+                    => (input) => (inModel as IFloorModelEdit).AddsToBiome = input as ModelTag ?? (string)input,
                 (FloorsTabIndex, "FloorAddsToRoomListBox")
-                    => (input) => (inModel as IFloorModelEdit).Comment = (ModelTag)input,
+                    => (input) => (inModel as IFloorModelEdit).Comment = input as ModelTag ?? (string)input,
                 #endregion
 
                 #region FurnishingModels
                 (FurnishingsTabIndex, "FurnishingNameTextBox")
-                    => (input) => (inModel as IFurnishingModelEdit).Name = input.ToString(),
+                    => (input) => (inModel as IFurnishingModelEdit).Name = (string)input,
                 (FurnishingsTabIndex, "FurnishingDescriptionTextBox")
-                    => (input) => (inModel as IFurnishingModelEdit).Description = input.ToString(),
+                    => (input) => (inModel as IFurnishingModelEdit).Description = (string)input,
                 (FurnishingsTabIndex, "FurnishingCommentTextBox")
-                    => (input) => (inModel as IFurnishingModelEdit).Comment = input.ToString(),
+                    => (input) => (inModel as IFurnishingModelEdit).Comment = (string)input,
                 (FurnishingsTabIndex, "FurnishingEquivalentItemComboBox")
-                    => (input) => (inModel as IFurnishingModelEdit).ItemID = (ModelID)input,
+                    => (input) => (inModel as IFurnishingModelEdit).ItemID = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
                 (FurnishingsTabIndex, "FurnishingEntryTypeComboBox")
-                    => (input) => (inModel as IFurnishingModelEdit).Entry = (EntryType)input,
+                    => (input) => (inModel as IFurnishingModelEdit).Entry = input as EntryType? ?? Enum.Parse<EntryType>((string)input, true),
                 (FurnishingsTabIndex, "FurnishingSwapWithFurnishingComboBox")
-                    => (input) => (inModel as IFurnishingModelEdit).SwapID = (ModelID)input,
+                    => (input) => (inModel as IFurnishingModelEdit).SwapID = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
                 (FurnishingsTabIndex, "FurnishingIsEnclosingCheckBox")
-                    => (input) => (inModel as IFurnishingModelEdit).IsEnclosing = (bool)input,
+                    => (input) => (inModel as IFurnishingModelEdit).IsEnclosing = input as bool? ?? bool.Parse((string)input),
                 (FurnishingsTabIndex, "FurnishingIsFlammableCheckBox")
-                    => (input) => (inModel as IFurnishingModelEdit).IsFlammable = (bool)input,
+                    => (input) => (inModel as IFurnishingModelEdit).IsFlammable = input as bool? ?? bool.Parse((string)input),
                 (FurnishingsTabIndex, "FurnishingIsWalkableCheckBox")
-                    => (input) => (inModel as IFurnishingModelEdit).IsWalkable = (bool)input,
+                    => (input) => (inModel as IFurnishingModelEdit).IsWalkable = input as bool? ?? bool.Parse((string)input),
                 #endregion
 
                 #region CollectibleModels
                 (CollectiblesTabIndex, "CollectibleNameTextBox")
-                    => (input) => (inModel as ICollectibleModelEdit).Name = input.ToString(),
+                    => (input) => (inModel as ICollectibleModelEdit).Name = (string)input,
                 (CollectiblesTabIndex, "CollectibleDescriptionTextBox")
-                    => (input) => (inModel as ICollectibleModelEdit).Description = input.ToString(),
+                    => (input) => (inModel as ICollectibleModelEdit).Description = (string)input,
                 (CollectiblesTabIndex, "CollectibleCommentTextBox")
-                    => (input) => (inModel as ICollectibleModelEdit).Comment = input.ToString(),
+                    => (input) => (inModel as ICollectibleModelEdit).Comment = (string)input,
                 (CollectiblesTabIndex, "CollectibleEffectAmountTextBox")
-                    => (input) => (inModel as ICollectibleModelEdit).EffectAmount = (int)input,
+                    => (input) => (inModel as ICollectibleModelEdit).EffectAmount = input as int? ?? int.Parse((string)input, NumberStyles.Integer),
                 (CollectiblesTabIndex, "CollectibleCollectionEffectComboBox")
-                    => (input) => (inModel as ICollectibleModelEdit).CollectionEffect = (CollectingEffect)input,
+                    => (input) => (inModel as ICollectibleModelEdit).CollectionEffect = input as CollectingEffect? ?? Enum.Parse<CollectingEffect>((string)input, true),
                 (CollectiblesTabIndex, "CollectibleEquivalentItemComboBox")
-                    => (input) => (inModel as ICollectibleModelEdit).ItemID = (ModelID)input,
+                    => (input) => (inModel as ICollectibleModelEdit).ItemID = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
                 #endregion
 
                 #region CharacterModels
                 (CharactersTabIndex, "CharacterNameTextBox")
-                    => (input) => (inModel as ICharacterModelEdit).Name = input.ToString(),
+                    => (input) => (inModel as ICharacterModelEdit).Name = (string)input,
                 (CharactersTabIndex, "CharacterDescriptionTextBox")
-                    => (input) => (inModel as ICharacterModelEdit).Description = input.ToString(),
+                    => (input) => (inModel as ICharacterModelEdit).Description = (string)input,
                 (CharactersTabIndex, "CharacterCommentTextBox")
-                    => (input) => (inModel as ICharacterModelEdit).Comment = input.ToString(),
+                    => (input) => (inModel as ICharacterModelEdit).Comment = (string)input,
                 (CharactersTabIndex, "CharacterNativeBiomeComboBox")
-                    => (input) => (inModel as ICharacterModelEdit).NativeBiome = (ModelID)input,
+                    => (input) => (inModel as ICharacterModelEdit).NativeBiome = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
                 (CharactersTabIndex, "CharacterPrimaryBehaviorComboBox")
-                    => (input) => (inModel as ICharacterModelEdit).PrimaryBehavior = (ModelID)input,
+                    => (input) => (inModel as ICharacterModelEdit).PrimaryBehavior = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
                 (CharactersTabIndex, "CharacterStoryIDTextBox")
-                    => (input) => (inModel as ICharacterModelEdit).StoryCharacterID = input.ToString(),
+                    => (input) => (inModel as ICharacterModelEdit).StoryCharacterID = (string)input,
                 (CharactersTabIndex, "CharacterPronounComboBox")
-                    => (input) => (inModel as ICharacterModelEdit).Pronouns = input.ToString(),
+                    => (input) => (inModel as ICharacterModelEdit).Pronouns = (string)input,
                 (CharactersTabIndex, "CharacterStartingDialogueComboBox")
                     => (input) =>
                     {
@@ -502,28 +503,28 @@ namespace Scribe
 
                 #region CritterModels
                 (CrittersTabIndex, "CritterNameTextBox")
-                    => (input) => (inModel as ICritterModelEdit).Name = input.ToString(),
+                    => (input) => (inModel as ICritterModelEdit).Name = (string)input,
                 (CrittersTabIndex, "CritterDescriptionTextBox")
-                    => (input) => (inModel as ICritterModelEdit).Description = input.ToString(),
+                    => (input) => (inModel as ICritterModelEdit).Description = (string)input,
                 (CrittersTabIndex, "CritterCommentTextBox")
-                    => (input) => (inModel as ICritterModelEdit).Comment = input.ToString(),
+                    => (input) => (inModel as ICritterModelEdit).Comment = (string)input,
                 (CrittersTabIndex, "CritterNativeBiomeComboBox")
-                    => (input) => (inModel as ICritterModelEdit).NativeBiome = (ModelID)input,
+                    => (input) => (inModel as ICritterModelEdit).NativeBiome = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
                 (CrittersTabIndex, "CritterPrimaryBehaviorComboBox")
-                    => (input) => (inModel as ICritterModelEdit).PrimaryBehavior = (ModelID)input,
+                    => (input) => (inModel as ICritterModelEdit).PrimaryBehavior = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
                 #endregion
 
                 #region ItemModels
                 (ItemsTabIndex, "ItemNameTextBox")
-                    => (input) => (inModel as IItemModelEdit).Name = input.ToString(),
+                    => (input) => (inModel as IItemModelEdit).Name = (string)input,
                 (ItemsTabIndex, "ItemDescriptionTextBox")
-                    => (input) => (inModel as IItemModelEdit).Description = input.ToString(),
+                    => (input) => (inModel as IItemModelEdit).Description = (string)input,
                 (ItemsTabIndex, "ItemCommentTextBox")
-                    => (input) => (inModel as IItemModelEdit).Comment = input.ToString(),
+                    => (input) => (inModel as IItemModelEdit).Comment = (string)input,
                 (ItemsTabIndex, "ItemSubtypeComboBox")
-                    => (input) => (inModel as IItemModelEdit).Subtype = (ItemType)input,
+                    => (input) => (inModel as IItemModelEdit).Subtype = input as ItemType? ?? Enum.Parse<ItemType>((string)input, true),
                 (ItemsTabIndex, "ItemPriceTextBox")
-                    => (input) => (inModel as IItemModelEdit).Price = (int)input,
+                    => (input) => (inModel as IItemModelEdit).Price = input as int? ?? int.Parse((string)input, NumberStyles.Integer),
                 (ItemsTabIndex, "ItemTagListBox")
                     => (input) =>
                     {
@@ -532,30 +533,30 @@ namespace Scribe
                         editModel.ItemTags.ToList().AddRange((IList<ModelTag>)input);
                     },
                 (ItemsTabIndex, "ItemStackMaxTextBox")
-                    => (input) => (inModel as IItemModelEdit).StackMax = (int)input,
+                    => (input) => (inModel as IItemModelEdit).StackMax = input as int? ?? int.Parse((string)input, NumberStyles.Integer),
                 (ItemsTabIndex, "ItemRarityTextBox")
-                    => (input) => (inModel as IItemModelEdit).Rarity = (int)input,
+                    => (input) => (inModel as IItemModelEdit).Rarity = input as int? ?? int.Parse((string)input, NumberStyles.Integer),
                 (ItemsTabIndex, "ItemEffectWhenUsedComboBox")
-                    => (input) => (inModel as IItemModelEdit).EffectWhenUsed = (ModelID)input,
+                    => (input) => (inModel as IItemModelEdit).EffectWhenUsed = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
                 (ItemsTabIndex, "ItemEffectWhileHeldComboBox")
-                    => (input) => (inModel as IItemModelEdit).EffectWhenUsed = (ModelID)input,
+                    => (input) => (inModel as IItemModelEdit).EffectWhenUsed = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
                 (ItemsTabIndex, "ItemEquivalentParquetComboBox")
-                    => (input) => (inModel as IItemModelEdit).ParquetID = (ModelID)input,
+                    => (input) => (inModel as IItemModelEdit).ParquetID = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
                 #endregion
 
                 #region BiomeRecipes
                 (BiomeRecipesTabIndex, "BiomeNameTextBox")
-                    => (input) => (inModel as IBiomeRecipeEdit).Name = input.ToString(),
+                    => (input) => (inModel as IBiomeRecipeEdit).Name = (string)input,
                 (BiomeRecipesTabIndex, "BiomeDescriptionTextBox")
-                    => (input) => (inModel as IBiomeRecipeEdit).Description = input.ToString(),
+                    => (input) => (inModel as IBiomeRecipeEdit).Description = (string)input,
                 (BiomeRecipesTabIndex, "BiomeCommentTextBox")
-                    => (input) => (inModel as IBiomeRecipeEdit).Comment = input.ToString(),
+                    => (input) => (inModel as IBiomeRecipeEdit).Comment = (string)input,
                 (BiomeRecipesTabIndex, "BiomeTierTextBox")
-                    => (input) => (inModel as IBiomeRecipeEdit).Tier = (int)input,
+                    => (input) => (inModel as IBiomeRecipeEdit).Tier = input as int? ?? int.Parse((string)input, NumberStyles.Integer),
                 (BiomeRecipesTabIndex, "BiomeIsLiquidBasedCheckBox")
-                    => (input) => (inModel as IBiomeRecipeEdit).IsLiquidBased = (bool)input,
+                    => (input) => (inModel as IBiomeRecipeEdit).IsLiquidBased = input as bool? ?? bool.Parse((string)input),
                 (BiomeRecipesTabIndex, "BiomeIsRoomBasedCheckBox")
-                    => (input) => (inModel as IBiomeRecipeEdit).IsRoomBased = (bool)input,
+                    => (input) => (inModel as IBiomeRecipeEdit).IsRoomBased = input as bool? ?? bool.Parse((string)input),
                 (BiomeRecipesTabIndex, "BiomeEntryRequirementsListBox")
                     => (input) =>
                     {
@@ -574,11 +575,11 @@ namespace Scribe
 
                 #region CraftingRecipes
                 (CraftingRecipesTabIndex, "CraftingNameTextBox")
-                    => (input) => (inModel as ICraftingRecipeEdit).Name = input.ToString(),
+                    => (input) => (inModel as ICraftingRecipeEdit).Name = (string)input,
                 (CraftingRecipesTabIndex, "CraftingDescriptionTextBox")
-                    => (input) => (inModel as ICraftingRecipeEdit).Description = input.ToString(),
+                    => (input) => (inModel as ICraftingRecipeEdit).Description = (string)input,
                 (CraftingRecipesTabIndex, "CraftingCommentTextBox")
-                    => (input) => (inModel as ICraftingRecipeEdit).Comment = input.ToString(),
+                    => (input) => (inModel as ICraftingRecipeEdit).Comment = (string)input,
                 (CraftingRecipesTabIndex, "CraftingIngredientsBox")
                     => (input) =>
                     {
@@ -597,13 +598,13 @@ namespace Scribe
 
                 #region RoomRecipes
                 (RoomRecipesTabIndex, "RoomNameTextBox")
-                    => (input) => (inModel as ICraftingRecipeEdit).Name = input.ToString(),
+                    => (input) => (inModel as ICraftingRecipeEdit).Name = (string)input,
                 (RoomRecipesTabIndex, "RoomDescriptionTextBox")
-                    => (input) => (inModel as ICraftingRecipeEdit).Description = input.ToString(),
+                    => (input) => (inModel as ICraftingRecipeEdit).Description = (string)input,
                 (RoomRecipesTabIndex, "RoomCommentTextBox")
-                    => (input) => (inModel as ICraftingRecipeEdit).Comment = input.ToString(),
+                    => (input) => (inModel as ICraftingRecipeEdit).Comment = (string)input,
                 (RoomRecipesTabIndex, "RoomMinimumWalkableSpacesTextBox")
-                    => (input) => (inModel as IRoomRecipeEdit).MinimumWalkableSpaces = (int)input,
+                    => (input) => (inModel as IRoomRecipeEdit).MinimumWalkableSpaces = input as int? ?? int.Parse((string)input, NumberStyles.Integer),
                 (RoomRecipesTabIndex, "RoomRequiredFurnishingsListBox")
                     => (input) =>
                     {
