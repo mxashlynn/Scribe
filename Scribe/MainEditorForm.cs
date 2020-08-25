@@ -852,7 +852,7 @@ namespace Scribe
                                   EditableControls[typeof(TextBox)][textbox] as string,
                                   comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
-                ChangeManager.AddAndExecute(new Change(EditableControls[typeof(TextBox)][textbox], textbox.Text, textbox.Name,
+                ChangeManager.AddAndExecute(new ChangeValue(EditableControls[typeof(TextBox)][textbox], textbox.Text, textbox.Name,
                                             (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
                                             (object displayValue) => textbox.Text = displayValue.ToString(),
                                             (object oldValue) => EditableControls[typeof(TextBox)][textbox] = oldValue));
@@ -861,7 +861,7 @@ namespace Scribe
                      && checkbox.Checked == (EditableControls[typeof(CheckBox)][checkbox] as bool?))
             {
                 var oldValue = (bool?)EditableControls[typeof(CheckBox)][checkbox];
-                ChangeManager.AddAndExecute(new Change(oldValue, (bool?)checkbox.Checked, checkbox.Name,
+                ChangeManager.AddAndExecute(new ChangeValue(oldValue, (bool?)checkbox.Checked, checkbox.Name,
                                             (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
                                             (object displayValue) => checkbox.Checked = (bool)displayValue,
                                             (object oldValue) => EditableControls[typeof(CheckBox)][checkbox] = oldValue));
@@ -870,7 +870,7 @@ namespace Scribe
                      && combobox.SelectedIndex == (EditableControls[typeof(ComboBox)][combobox] as int?))
             {
                 var oldValue = (int?)EditableControls[typeof(ComboBox)][combobox];
-                ChangeManager.AddAndExecute(new Change(oldValue, (int?)combobox.SelectedIndex, combobox.Name,
+                ChangeManager.AddAndExecute(new ChangeValue(oldValue, (int?)combobox.SelectedIndex, combobox.Name,
                                             (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
                                             (object displayValue) => combobox.SelectedIndex = (int)displayValue,
                                             (object oldValue) => EditableControls[typeof(ComboBox)][combobox] = oldValue));
@@ -879,7 +879,7 @@ namespace Scribe
                      && listbox.SelectedIndex == (EditableControls[typeof(ListBox)][listbox] as int?))
             {
                 var oldValue = (int?)EditableControls[typeof(ListBox)][listbox];
-                ChangeManager.AddAndExecute(new Change(oldValue, (int?)listbox.SelectedIndex, listbox.Name,
+                ChangeManager.AddAndExecute(new ChangeValue(oldValue, (int?)listbox.SelectedIndex, listbox.Name,
                                             (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
                                             (object displayValue) => listbox.SelectedIndex = (int)displayValue,
                                             (object oldValue) => EditableControls[typeof(ListBox)][listbox] = oldValue));
@@ -893,33 +893,21 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void GameAddNewGameButton_Click(object sender, EventArgs e)
         {
-            var modelToAdd = (GameModel)GetSelectedModelForTab(EditorTabs.SelectedIndex);
-            ChangeManager.AddAndExecute(new Change(null, modelToAdd, GameListBox.Name,
+            var nextGameID = All.Games.Max(model => model.ID) + 1;
+            var modelToAdd = new GameModel(nextGameID, "New Game", "", "", false, "", 0, ModelID.None, ModelID.None);
+            ChangeManager.AddAndExecute(new ChangeList(modelToAdd, "add new game definition",
                                         (object databaseValue) =>
                                         {
-                                            if (null == databaseValue)
-                                            {
-                                                ((IModelCollectionEdit<GameModel>)All.Games).Add(modelToAdd);
-                                            }
-                                            else
-                                            {
-                                                ((IModelCollectionEdit<GameModel>)All.Games).Remove(modelToAdd);
-                                            }
+                                           ((IModelCollectionEdit<GameModel>)All.Games).Add((GameModel)databaseValue);
+                                            GameListBox.Items.Add(databaseValue);
                                             HasUnsavedChanges = true;
                                         },
-                                        (object displayValue) =>
+                                        (object databaseValue) =>
                                         {
-                                            if (null == displayValue)
-                                            {
-                                                GameListBox.Items.Add(modelToAdd);
-                                            }
-                                            else
-                                            {
-                                                GameListBox.Items.Remove(modelToAdd);
-                                            }
+                                            ((IModelCollectionEdit<GameModel>)All.Games).Remove((GameModel)databaseValue);
+                                            GameListBox.Items.Remove(databaseValue);
                                             HasUnsavedChanges = true;
-                                        },
-                                        (object oldValue) => { }));
+                                        }));
         }
 
         /// <summary>
@@ -930,32 +918,19 @@ namespace Scribe
         private void GameRemoveGameButton_Click(object sender, EventArgs e)
         {
             var modelToRemove = (GameModel)GetSelectedModelForTab(EditorTabs.SelectedIndex);
-            ChangeManager.AddAndExecute(new Change(modelToRemove, null, GameListBox.Name,
+            ChangeManager.AddAndExecute(new ChangeList(modelToRemove, $"remove {modelToRemove.Name}",
                                         (object databaseValue) =>
                                         {
-                                            if (null == databaseValue)
-                                            {
-                                                ((IModelCollectionEdit<GameModel>)All.Games).Remove(modelToRemove);
-                                            }
-                                            else
-                                            {
-                                                ((IModelCollectionEdit<GameModel>)All.Games).Add(modelToRemove);
-                                            }
+                                            ((IModelCollectionEdit<GameModel>)All.Games).Remove((GameModel)databaseValue);
+                                            GameListBox.Items.Remove(databaseValue);
                                             HasUnsavedChanges = true;
                                         },
-                                        (object displayValue) =>
+                                        (object databaseValue) =>
                                         {
-                                            if (null == displayValue)
-                                            {
-                                                GameListBox.Items.Remove(modelToRemove);
-                                            }
-                                            else
-                                            {
-                                                GameListBox.Items.Add(modelToRemove);
-                                            }
+                                            ((IModelCollectionEdit<GameModel>)All.Games).Add((GameModel)databaseValue);
+                                            GameListBox.Items.Add(databaseValue);
                                             HasUnsavedChanges = true;
-                                        },
-                                        (object oldValue) => { }));
+                                        }));
         }
         #endregion
 
