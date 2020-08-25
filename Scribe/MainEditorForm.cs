@@ -805,8 +805,22 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void GameListBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            var model = GameListBox.SelectedItem as GameModel;
-            if (null != model)
+            if (GameListBox.SelectedIndex == -1)
+            {
+                // TODO Should this actually be set to ModelID.None.ToString() ?
+                GameIDTextBox.Text = "";
+                GameNameTextBox.Text = "";
+                GameDescriptionTextBox.Text = "";
+                GameCommentTextBox.Text = "";
+                GameIsEpisodeCheckBox.Checked = false;
+                GameEpisodeTitleTextBox.Text = "";
+                GameEpisodeNumberTextBox.Text = "";
+                GamePlayerCharacterTextBox.Text = "";
+                GameFirstScriptTextBox.Text = "";
+                GameIconPictureBox.Image = Resources.ImageNotFoundGraphic;
+            }
+            else if (GameListBox.SelectedItem is GameModel model
+                    && null != model)
             {
                 GameIDTextBox.Text = model.ID.ToString();
                 GameNameTextBox.Text = model.Name;
@@ -906,6 +920,7 @@ namespace Scribe
                                         {
                                             ((IModelCollectionEdit<GameModel>)All.Games).Remove((GameModel)databaseValue);
                                             GameListBox.Items.Remove(databaseValue);
+                                            GameListBox.SelectedIndex = -1;
                                             HasUnsavedChanges = true;
                                         }));
         }
@@ -917,12 +932,19 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void GameRemoveGameButton_Click(object sender, EventArgs e)
         {
+            if (GameListBox.SelectedIndex == -1)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
             var modelToRemove = (GameModel)GetSelectedModelForTab(EditorTabs.SelectedIndex);
             ChangeManager.AddAndExecute(new ChangeList(modelToRemove, $"remove {modelToRemove.Name}",
                                         (object databaseValue) =>
                                         {
                                             ((IModelCollectionEdit<GameModel>)All.Games).Remove((GameModel)databaseValue);
                                             GameListBox.Items.Remove(databaseValue);
+                                            GameListBox.SelectedIndex = -1;
                                             HasUnsavedChanges = true;
                                         },
                                         (object databaseValue) =>
