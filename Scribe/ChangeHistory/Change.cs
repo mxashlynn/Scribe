@@ -9,12 +9,12 @@ namespace Scribe.ChangeHistory
         internal string Description;
 
         /// <summary>
-        /// How to make the change.
+        /// Make the change.
         /// </summary>
         internal abstract void Execute();
 
         /// <summary>
-        /// How to undo the change.
+        /// Reverse the change.
         /// </summary>
         internal abstract void Reverse();
     }

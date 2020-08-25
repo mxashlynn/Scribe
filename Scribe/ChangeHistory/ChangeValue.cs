@@ -51,7 +51,7 @@ namespace Scribe.ChangeHistory
         }
 
         /// <summary>
-        /// How to make the change.
+        /// Make the change.
         /// </summary>
         internal override void Execute()
         {
@@ -61,7 +61,7 @@ namespace Scribe.ChangeHistory
         }
 
         /// <summary>
-        /// How to undo the change.
+        /// Reverse the change.
         /// </summary>
         internal override void Reverse()
         {
