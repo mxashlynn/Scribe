@@ -1294,6 +1294,7 @@ namespace Scribe
             this.GameRemoveGameButton.TabIndex = 2;
             this.GameRemoveGameButton.Text = "Remove Game";
             this.GameRemoveGameButton.UseVisualStyleBackColor = true;
+            this.GameRemoveGameButton.Click += new System.EventHandler(this.GameRemoveGameButton_Click);
             // 
             // GameIconEditButton
             // 
@@ -1310,6 +1311,7 @@ namespace Scribe
             this.GameIconPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.GameIconPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.GameIconPictureBox.ContextMenuStrip = this.ContextMenuStripEditorForm;
+            this.GameIconPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("GameIconPictureBox.Image")));
             this.GameIconPictureBox.Location = new System.Drawing.Point(767, 286);
             this.GameIconPictureBox.Name = "GameIconPictureBox";
             this.GameIconPictureBox.Size = new System.Drawing.Size(176, 176);
@@ -1522,6 +1524,7 @@ namespace Scribe
             this.GameAddNewGameButton.TabIndex = 2;
             this.GameAddNewGameButton.Text = "Add New Game";
             this.GameAddNewGameButton.UseVisualStyleBackColor = true;
+            this.GameAddNewGameButton.Click += new System.EventHandler(this.GameAddNewGameButton_Click);
             // 
             // GameListBox
             // 
@@ -2072,6 +2075,7 @@ namespace Scribe
             // 
             this.BlockPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BlockPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BlockPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("BlockPictureBox.Image")));
             this.BlockPictureBox.Location = new System.Drawing.Point(767, 286);
             this.BlockPictureBox.Name = "BlockPictureBox";
             this.BlockPictureBox.Size = new System.Drawing.Size(176, 176);
@@ -2474,6 +2478,7 @@ namespace Scribe
             // 
             this.FloorPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.FloorPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.FloorPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("FloorPictureBox.Image")));
             this.FloorPictureBox.Location = new System.Drawing.Point(767, 286);
             this.FloorPictureBox.Name = "FloorPictureBox";
             this.FloorPictureBox.Size = new System.Drawing.Size(176, 176);
@@ -2777,6 +2782,7 @@ namespace Scribe
             // 
             this.FurnishingPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.FurnishingPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.FurnishingPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("FurnishingPictureBox.Image")));
             this.FurnishingPictureBox.Location = new System.Drawing.Point(767, 286);
             this.FurnishingPictureBox.Name = "FurnishingPictureBox";
             this.FurnishingPictureBox.Size = new System.Drawing.Size(176, 176);
@@ -3019,6 +3025,7 @@ namespace Scribe
             // 
             this.CollectiblePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CollectiblePictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.CollectiblePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("CollectiblePictureBox.Image")));
             this.CollectiblePictureBox.Location = new System.Drawing.Point(767, 286);
             this.CollectiblePictureBox.Name = "CollectiblePictureBox";
             this.CollectiblePictureBox.Size = new System.Drawing.Size(176, 176);
@@ -3587,6 +3594,7 @@ namespace Scribe
             // 
             this.CharacterPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CharacterPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.CharacterPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("CharacterPictureBox.Image")));
             this.CharacterPictureBox.Location = new System.Drawing.Point(767, 286);
             this.CharacterPictureBox.Name = "CharacterPictureBox";
             this.CharacterPictureBox.Size = new System.Drawing.Size(176, 176);
@@ -3782,6 +3790,7 @@ namespace Scribe
             // 
             this.CritterPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CritterPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.CritterPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("CritterPictureBox.Image")));
             this.CritterPictureBox.Location = new System.Drawing.Point(767, 286);
             this.CritterPictureBox.Name = "CritterPictureBox";
             this.CritterPictureBox.Size = new System.Drawing.Size(176, 176);
@@ -4205,6 +4214,7 @@ namespace Scribe
             // 
             this.ItemPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ItemPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.ItemPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ItemPictureBox.Image")));
             this.ItemPictureBox.Location = new System.Drawing.Point(768, 286);
             this.ItemPictureBox.Name = "ItemPictureBox";
             this.ItemPictureBox.Size = new System.Drawing.Size(176, 176);
@@ -4623,6 +4633,7 @@ namespace Scribe
             // 
             this.BiomePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomePictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BiomePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("BiomePictureBox.Image")));
             this.BiomePictureBox.Location = new System.Drawing.Point(767, 281);
             this.BiomePictureBox.Name = "BiomePictureBox";
             this.BiomePictureBox.Size = new System.Drawing.Size(176, 176);
@@ -4922,6 +4933,7 @@ namespace Scribe
             // 
             this.CraftingPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CraftingPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.CraftingPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("CraftingPictureBox.Image")));
             this.CraftingPictureBox.Location = new System.Drawing.Point(767, 283);
             this.CraftingPictureBox.Name = "CraftingPictureBox";
             this.CraftingPictureBox.Size = new System.Drawing.Size(176, 176);
@@ -5445,6 +5457,7 @@ namespace Scribe
             // 
             this.RoomPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.RoomPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("RoomPictureBox.Image")));
             this.RoomPictureBox.Location = new System.Drawing.Point(767, 286);
             this.RoomPictureBox.Name = "RoomPictureBox";
             this.RoomPictureBox.Size = new System.Drawing.Size(176, 176);
