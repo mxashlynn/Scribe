@@ -902,6 +902,7 @@ namespace Scribe
                                             }
                                             else
                                             {
+                                                // TODO Add a Remove method to the interface, or find other usage pattern.
                                                 ((IModelCollectionEdit<GameModel>)All.Games).Remove(modelToAdd);
                                             }
                                             HasUnsavedChanges = true;
