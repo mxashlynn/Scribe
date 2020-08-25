@@ -884,6 +884,78 @@ namespace Scribe
                                             (object oldValue) => EditableControls[typeof(ListBox)][listbox] = oldValue));
             }
         }
+
+        /// <summary>
+        /// Responds to the user clicking "Add New Game" on the Games tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void GameAddNewGameButton_Click(object sender, EventArgs e)
+        {
+            var modelToAdd = GetSelectedModelForTab(EditorTabs.SelectedIndex);
+            ChangeManager.AddAndExecute(new Change(null, modelToAdd, GameListBox.Name,
+                                        (object databaseValue) =>
+                                        {
+                                            if (null == databaseValue)
+                                            {
+                                                ((IModelCollectionEdit<GameModel>)All.Games).Add(modelToAdd);
+                                            }
+                                            else
+                                            {
+                                                ((IModelCollectionEdit<GameModel>)All.Games).Remove(modelToAdd);
+                                            }
+                                            HasUnsavedChanges = true;
+                                        },
+                                        (object displayValue) =>
+                                        {
+                                            if (null == displayValue)
+                                            {
+                                                GameListBox.Items.Add(modelToAdd);
+                                            }
+                                            else
+                                            {
+                                                GameListBox.Items.Remove(modelToAdd);
+                                            }
+                                            HasUnsavedChanges = true;
+                                        },
+                                        (object oldValue) => { }));
+        }
+
+        /// <summary>
+        /// Responds to the user clicking "Remove Game" on the Games tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void GameRemoveGameButton_Click(object sender, EventArgs e)
+        {
+            var modelToRemove = GetSelectedModelForTab(EditorTabs.SelectedIndex);
+            ChangeManager.AddAndExecute(new Change(modelToRemove, null, GameListBox.Name,
+                                        (object databaseValue) =>
+                                        {
+                                            if (null == databaseValue)
+                                            {
+                                                ((IModelCollectionEdit<GameModel>)All.Games).Remove(modelToRemove);
+                                            }
+                                            else
+                                            {
+                                                ((IModelCollectionEdit<GameModel>)All.Games).Add(modelToRemove);
+                                            }
+                                            HasUnsavedChanges = true;
+                                        },
+                                        (object displayValue) =>
+                                        {
+                                            if (null == displayValue)
+                                            {
+                                                GameListBox.Items.Remove(modelToRemove);
+                                            }
+                                            else
+                                            {
+                                                GameListBox.Items.Add(modelToRemove);
+                                            }
+                                            HasUnsavedChanges = true;
+                                        },
+                                        (object oldValue) => { }));
+        }
         #endregion
 
         #region Menu Item Events
