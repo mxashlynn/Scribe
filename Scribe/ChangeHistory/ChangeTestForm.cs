@@ -57,7 +57,7 @@ namespace Scribe.ChangeHistory
             if (sender is TextBox textbox
                 && string.Compare(textbox.Text, OldValue, comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
-                ChangeManager.AddAndExecute(new Change(OldValue, textbox.Text, textbox.Name,
+                ChangeManager.AddAndExecute(new ChangeValue(OldValue, textbox.Text, textbox.Name,
                                             (object databaseValue) => DatabaseValue = databaseValue.ToString(),
                                             (object displayValue) => textbox.Text = displayValue.ToString(),
                                             (object oldValue) => OldValue = oldValue.ToString()));
