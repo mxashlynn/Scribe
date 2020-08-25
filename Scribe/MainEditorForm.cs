@@ -1158,8 +1158,11 @@ namespace Scribe
                     Resources.ImageNotFoundGraphic.Save(pathAndFileName, ImageFormat.Png);
                 }
 
-                // Make this application specifiable via options, maybe?
-                Process.Start("explorer", $"\"{pathAndFileName}\"");
+                // Properly manage this resource:  See return here:  https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process.start?view=netcore-3.1
+                _ = Settings.Default.EditInApp
+                    ? Process.Start(Settings.Default.ImageEditor, $"\"{pathAndFileName}\"")
+                    : Process.Start("explorer", $"\"{pathAndFileName}\"");
+
                 inPictureBox.Load(pathAndFileName);
             }
             else

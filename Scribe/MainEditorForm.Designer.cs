@@ -1,5 +1,3 @@
-using System;
-
 namespace Scribe
 {
     partial class MainEditorForm
@@ -1535,6 +1533,7 @@ namespace Scribe
             this.GameListBox.Name = "GameListBox";
             this.GameListBox.Size = new System.Drawing.Size(279, 446);
             this.GameListBox.TabIndex = 1;
+            this.GameListBox.SelectedValueChanged += new System.EventHandler(this.GameListBox_SelectedValueChanged);
             // 
             // FileFormatGroupBox
             // 

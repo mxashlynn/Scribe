@@ -170,6 +170,10 @@
 Folder: {1}</value>
     <comment>An error message signalling a project directory was not empty.</comment>
   </data>
+  <data name="ErrorImageEditorNotFound" xml:space="preserve">
+    <value>The image editor could not be found at the specified path.</value>
+    <comment>An error message signalling that the image editor specified could not be found.</comment>
+  </data>
   <data name="ErrorIntegersOnly" xml:space="preserve">
     <value>This value must be an integer.</value>
     <comment>An error message signaling an integer could not be parsed.</comment>

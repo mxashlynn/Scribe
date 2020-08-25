@@ -179,6 +179,15 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The image editor could not be found at the specified path..
+        /// </summary>
+        internal static string ErrorImageEditorNotFound {
+            get {
+                return ResourceManager.GetString("ErrorImageEditorNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This value must be an integer..
         /// </summary>
         internal static string ErrorIntegersOnly {

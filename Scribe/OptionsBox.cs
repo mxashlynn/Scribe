@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Windows.Forms;
 using Scribe.Properties;
 
@@ -41,9 +42,13 @@ namespace Scribe
             TextBoxAutoSaveInterval.Text = NewAutoSaveInterval.ToString();
             RadioButtonDefaultToDesktop.Checked = Settings.Default.DesktopIsDefaultDirectory;
             RadioButtonDefaultToDocuments.Checked = !Settings.Default.DesktopIsDefaultDirectory;
+            RadioButtonEditInCustomApp.Checked = Settings.Default.EditInApp;
+            RadioButtonEditInOSDefault.Checked = !Settings.Default.EditInApp;
+            TextBoxImageEditorPath.Text = Settings.Default.ImageEditor;
         }
         #endregion
 
+        #region Input Validation
         /// <summary>
         /// Determines if the value entered is valid.
         /// Stores valid values for later updating the settings, otherwise signals an input error.
@@ -67,6 +72,28 @@ namespace Scribe
         }
 
         /// <summary>
+        /// Determines if the value entered is valid.
+        /// Stores valid values for later updating the settings, otherwise signals an input error.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Whether or not to discard the given text.</param>
+        private void TextBoxImageEditorPath_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            TextBoxImageEditorPath.Text = Path.GetFullPath(TextBoxImageEditorPath.Text);
+            if (File.Exists(TextBoxImageEditorPath.Text))
+            {
+                ErrorProvider.SetError(TextBoxAutoSaveInterval, "");
+            }
+            else
+            {
+                e.Cancel = true;
+                TextBoxImageEditorPath.Select();
+                ErrorProvider.SetError(LabelImageEditorPath, Resources.ErrorImageEditorNotFound);
+            }
+        }
+        #endregion
+
+        /// <summary>
         /// Responds to the Okay Button to ensure that settings are saved.
         /// </summary>
         /// <param name="sender">Ignored.</param>
@@ -78,9 +105,12 @@ namespace Scribe
             Settings.Default.SuggestStoryIDs = CheckBoxSuggestStoryIDs.Checked;
             Settings.Default.AutoSaveInterval = NewAutoSaveInterval;
             Settings.Default.DesktopIsDefaultDirectory = RadioButtonDefaultToDesktop.Checked;
+            Settings.Default.EditInApp = RadioButtonEditInCustomApp.Checked;
+            Settings.Default.ImageEditor = TextBoxImageEditorPath.Text;
             Settings.Default.Save();
 
             DialogResult = DialogResult.OK;
         }
+
     }
 }
