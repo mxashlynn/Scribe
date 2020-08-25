@@ -892,7 +892,7 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void GameAddNewGameButton_Click(object sender, EventArgs e)
         {
-            var modelToAdd = GetSelectedModelForTab(EditorTabs.SelectedIndex);
+            var modelToAdd = (GameModel)GetSelectedModelForTab(EditorTabs.SelectedIndex);
             ChangeManager.AddAndExecute(new Change(null, modelToAdd, GameListBox.Name,
                                         (object databaseValue) =>
                                         {
@@ -929,7 +929,7 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void GameRemoveGameButton_Click(object sender, EventArgs e)
         {
-            var modelToRemove = GetSelectedModelForTab(EditorTabs.SelectedIndex);
+            var modelToRemove = (GameModel)GetSelectedModelForTab(EditorTabs.SelectedIndex);
             ChangeManager.AddAndExecute(new Change(modelToRemove, null, GameListBox.Name,
                                         (object databaseValue) =>
                                         {
