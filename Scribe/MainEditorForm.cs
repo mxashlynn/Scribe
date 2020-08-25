@@ -805,7 +805,6 @@ namespace Scribe
         private void GameListBox_SelectedValueChanged(object sender, EventArgs e)
         {
             var model = GameListBox.SelectedItem as GameModel;
-
             if (null != model)
             {
                 GameIDTextBox.Text = model.ID.ToString();
@@ -1158,7 +1157,7 @@ namespace Scribe
                     Resources.ImageNotFoundGraphic.Save(pathAndFileName, ImageFormat.Png);
                 }
 
-                // Properly manage this resource:  See return here:  https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process.start?view=netcore-3.1
+                // TODO Properly manage this resource:  See return here:  https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process.start?view=netcore-3.1
                 _ = Settings.Default.EditInApp
                     ? Process.Start(Settings.Default.ImageEditor, $"\"{pathAndFileName}\"")
                     : Process.Start("explorer", $"\"{pathAndFileName}\"");
