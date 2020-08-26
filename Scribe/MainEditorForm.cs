@@ -106,7 +106,9 @@ namespace Scribe
                         }
                         else
                         {
-                            MessageBox.Show(Resources.ErrorSaveFailed, Resources.CaptionError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            SystemSounds.Beep.Play();
+                            MessageBox.Show(Resources.ErrorSaveFailed, Resources.CaptionError,
+                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                             _hasUnsavedChanges = true;
                         }
                     }
@@ -298,23 +300,28 @@ namespace Scribe
         /// <param name="inTabIndex">The index of the tab sought.</param>
         /// <returns>The model, or <c>null</c> on out of range input.</returns>
         private Model GetSelectedModelForTab(int inTabIndex)
-            => inTabIndex switch
-            {
-                GamesTabIndex => All.Games.Get<GameModel>(GetSelectedModelIDForTab(inTabIndex)),
-                BlocksTabIndex => All.Parquets.Get<BlockModel>(GetSelectedModelIDForTab(inTabIndex)),
-                FloorsTabIndex => All.Parquets.Get<FloorModel>(GetSelectedModelIDForTab(inTabIndex)),
-                FurnishingsTabIndex => All.Parquets.Get<FurnishingModel>(GetSelectedModelIDForTab(inTabIndex)),
-                CollectiblesTabIndex => All.Parquets.Get<CollectibleModel>(GetSelectedModelIDForTab(inTabIndex)),
-                CharactersTabIndex => All.Beings.Get<CharacterModel>(GetSelectedModelIDForTab(inTabIndex)),
-                CrittersTabIndex => All.Beings.Get<CritterModel>(GetSelectedModelIDForTab(inTabIndex)),
-                ItemsTabIndex => All.Items.Get<ItemModel>(GetSelectedModelIDForTab(inTabIndex)),
-                BiomeRecipesTabIndex => All.Biomes.Get<BiomeRecipe>(GetSelectedModelIDForTab(inTabIndex)),
-                CraftingRecipesTabIndex => All.CraftingRecipes.Get<CraftingRecipe>(GetSelectedModelIDForTab(inTabIndex)),
-                RoomRecipesTabIndex => All.RoomRecipes.Get<RoomRecipe>(GetSelectedModelIDForTab(inTabIndex)),
-                MapsTabIndex => throw new NotImplementedException(),
-                ScriptsTabIndex => throw new NotImplementedException(),
-                _ => null,
-            };
+        {
+            var id = GetSelectedModelIDForTab(inTabIndex);
+            return id == ModelID.None
+                ? (Model)null
+                : inTabIndex switch
+                {
+                    GamesTabIndex => All.Games.Get<GameModel>(id),
+                    BlocksTabIndex => All.Parquets.Get<BlockModel>(id),
+                    FloorsTabIndex => All.Parquets.Get<FloorModel>(id),
+                    FurnishingsTabIndex => All.Parquets.Get<FurnishingModel>(id),
+                    CollectiblesTabIndex => All.Parquets.Get<CollectibleModel>(id),
+                    CharactersTabIndex => All.Beings.Get<CharacterModel>(id),
+                    CrittersTabIndex => All.Beings.Get<CritterModel>(id),
+                    ItemsTabIndex => All.Items.Get<ItemModel>(id),
+                    BiomeRecipesTabIndex => All.Biomes.Get<BiomeRecipe>(id),
+                    CraftingRecipesTabIndex => All.CraftingRecipes.Get<CraftingRecipe>(id),
+                    RoomRecipesTabIndex => All.RoomRecipes.Get<RoomRecipe>(id),
+                    MapsTabIndex => throw new NotImplementedException(),
+                    ScriptsTabIndex => throw new NotImplementedException(),
+                    _ => null,
+                };
+        }
 
         /// <summary>Given the index of an editor tab and an editor <see cref="Control"/>, return the corresponding property accessor.</summary>
         /// <param name="inTabIndex">The index of an editor tab.</param>
@@ -920,7 +927,17 @@ namespace Scribe
                 return;
             }
 
-            var nextGameID = All.Games.Max(model => model?.ID ?? All.GameIDs.Minimum) + 1;
+            var nextGameID = All.Games.Count > 0
+                ? (ModelID)(All.Games.Max(model => model?.ID ?? All.GameIDs.Minimum) + 1)
+                : All.GameIDs.Minimum;
+            if (nextGameID > All.GameIDs.Maximum)
+            {
+                SystemSounds.Beep.Play();
+                MessageBox.Show(Resources.ErrorMaximumIDReached, Resources.CaptionError,
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             var modelToAdd = new GameModel(nextGameID, "New Game", "", "", false, "", 0, ModelID.None, ModelID.None);
             ChangeManager.AddAndExecute(new ChangeList(modelToAdd, "add new game definition",
                                         (object databaseValue) =>
@@ -952,6 +969,12 @@ namespace Scribe
             }
 
             var modelToRemove = (GameModel)GetSelectedModelForTab(EditorTabs.SelectedIndex);
+            if (null == modelToRemove)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
             ChangeManager.AddAndExecute(new ChangeList(modelToRemove, $"remove {modelToRemove.Name}",
                                         (object databaseValue) =>
                                         {
@@ -990,7 +1013,9 @@ namespace Scribe
             }
             else
             {
-                MessageBox.Show(Resources.ErrorNewFailed, Resources.CaptionError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                SystemSounds.Beep.Play();
+                MessageBox.Show(Resources.ErrorNewFailed, Resources.CaptionError,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1013,7 +1038,9 @@ namespace Scribe
             }
             else
             {
-                MessageBox.Show(Resources.ErrorLoadFailed, Resources.CaptionError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                SystemSounds.Beep.Play();
+                MessageBox.Show(Resources.ErrorLoadFailed, Resources.CaptionError,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1036,7 +1063,9 @@ namespace Scribe
                 }
                 else
                 {
-                    MessageBox.Show(Resources.ErrorLoadFailed, Resources.CaptionError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    SystemSounds.Beep.Play();
+                    MessageBox.Show(Resources.ErrorLoadFailed, Resources.CaptionError,
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -1055,7 +1084,8 @@ namespace Scribe
             }
             else
             {
-                MessageBox.Show(Resources.ErrorSaveFailed, Resources.CaptionError);
+                SystemSounds.Beep.Play();
+                MessageBox.Show(Resources.ErrorSaveFailed, Resources.CaptionError, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

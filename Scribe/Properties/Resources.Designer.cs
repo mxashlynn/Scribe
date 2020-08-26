@@ -215,6 +215,15 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The maximum number of this type of model already exists..
+        /// </summary>
+        internal static string ErrorMaximumIDReached {
+            get {
+                return ResourceManager.GetString("ErrorMaximumIDReached", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Scribe attempted to create a new project but encountered an error.  Please check the log..
         /// </summary>
         internal static string ErrorNewFailed {

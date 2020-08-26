@@ -186,6 +186,10 @@ Folder: {1}</value>
     <value>Scribe attempted to load a project but encountered an error.  Please check the log.</value>
     <comment>Error string.</comment>
   </data>
+  <data name="ErrorMaximumIDReached" xml:space="preserve">
+    <value>The maximum number of this type of model already exists.</value>
+    <comment>Error string.</comment>
+  </data>
   <data name="ErrorNewFailed" xml:space="preserve">
     <value>Scribe attempted to create a new project but encountered an error.  Please check the log.</value>
     <comment>Error string.</comment>

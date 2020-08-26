@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Windows.Forms;
 using ParquetClassLibrary;
 using ParquetClassLibrary.Beings;
@@ -41,6 +42,7 @@ namespace Scribe
             if (string.IsNullOrEmpty(ParquetClassLibrary.AssemblyInfo.LibraryVersion))
             {
                 // TODO Ideally EditorCommands should not open message boxes or interact with the UI.
+                SystemSounds.Beep.Play();
                 MessageBox.Show(Resources.ErrorAccessingParquet, Resources.CaptionAccessingParquetError,
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -91,6 +93,7 @@ namespace Scribe
             {
                 // Loop here to allow the user to empty the given directory if desired.
                 // TODO Ideally EditorCommands should not open message boxes or interact with the UI.
+                SystemSounds.Beep.Play();
                 if (MessageBox.Show(Resources.ErrorFolderNotEmpty,
                                     Resources.CaptionFolderNotEmptyError,
                                     MessageBoxButtons.RetryCancel,
