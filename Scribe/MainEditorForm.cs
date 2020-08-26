@@ -99,25 +99,32 @@ namespace Scribe
                     // All is about to go out of sync with storage, check if it's time to autosave.
                     if (IsTimeToAutoSave())
                     {
-                        // TODO It might be a good idea to move this out of the setter?
-                        EditorCommands.SaveDataFiles();
-                        // TODO Only do this if the save succeeds.
-                        HasUnsavedChanges = false;
+                        if (EditorCommands.SaveDataFiles())
+                        {
+                            _hasUnsavedChanges = false;
+                            UpdateDisplay();
+                        }
+                        else
+                        {
+                            MessageBox.Show(Resources.ErrorSaveFailed, Resources.CaptionError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            _hasUnsavedChanges = true;
+                        }
                     }
                     else
                     {
-                        // All now contains unsaved changes.
-                        Text = Resources.CaptionMainEditorFormDirty;
                         _hasUnsavedChanges = true;
                     }
                 }
                 else
                 {
                     // All is now in sync with storage.
-                    Text = Resources.CaptionMainEditorFormClean;
                     TimeOfLastSync = DateTime.Now;
                     _hasUnsavedChanges = false;
                 }
+
+                Text = _hasUnsavedChanges
+                    ? Resources.CaptionMainEditorFormDirty
+                    : Resources.CaptionMainEditorFormClean;
             }
         }
         #endregion
@@ -970,13 +977,20 @@ namespace Scribe
         /// <param name="e">Addional event data.</param>
         private void NewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (SelectProjectFolder(Resources.InfoMessageNew)
-                && EditorCommands.CreateTemplatesInProjectFolder())
+            if (!SelectProjectFolder(Resources.InfoMessageNew))
             {
-                EditorCommands.LoadDataFiles();
-                // TODO Only do this if the load succeeds.
+                return;
+            }
+
+            if (EditorCommands.CreateTemplatesInProjectFolder()
+                && EditorCommands.LoadDataFiles())
+            {
                 HasUnsavedChanges = false;
                 UpdateDisplay();
+            }
+            else
+            {
+                MessageBox.Show(Resources.ErrorNewFailed, Resources.CaptionError, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -987,12 +1001,19 @@ namespace Scribe
         /// <param name="e">Addional event data.</param>
         private void LoadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (SelectProjectFolder(Resources.InfoMessageLoad))
+            if (!SelectProjectFolder(Resources.InfoMessageLoad))
             {
-                EditorCommands.LoadDataFiles();
-                // TODO Only do this if the load succeeds.
+                return;
+            }
+
+            if (EditorCommands.LoadDataFiles())
+            {
                 HasUnsavedChanges = false;
                 UpdateDisplay();
+            }
+            else
+            {
+                MessageBox.Show(Resources.ErrorLoadFailed, Resources.CaptionError, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1008,10 +1029,15 @@ namespace Scribe
                                 MessageBoxButtons.YesNo,
                                 MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                EditorCommands.LoadDataFiles();
-                // TODO Only do this if the load succeeds.
-                HasUnsavedChanges = false;
-                UpdateDisplay();
+                if (EditorCommands.LoadDataFiles())
+                {
+                    HasUnsavedChanges = false;
+                    UpdateDisplay();
+                }
+                else
+                {
+                    MessageBox.Show(Resources.ErrorLoadFailed, Resources.CaptionError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -1022,9 +1048,15 @@ namespace Scribe
         /// <param name="e">Addional event data.</param>
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EditorCommands.SaveDataFiles();
-            // TODO Only do this if the save succeeds.
-            HasUnsavedChanges = false;
+            if (EditorCommands.SaveDataFiles())
+            {
+                HasUnsavedChanges = false;
+                UpdateDisplay();
+            }
+            else
+            {
+                MessageBox.Show(Resources.ErrorSaveFailed, Resources.CaptionError);
+            }
         }
 
         /// <summary>
