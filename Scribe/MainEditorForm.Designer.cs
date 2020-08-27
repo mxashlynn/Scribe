@@ -20,6 +20,8 @@ namespace Scribe
             base.Dispose(disposing);
         }
 
+        // TODO Once debugging is done, replace all "-2020202020" with "".
+
         #region Windows Form Designer generated code
 
         /// <summary>
