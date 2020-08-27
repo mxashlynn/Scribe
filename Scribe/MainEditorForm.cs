@@ -914,6 +914,7 @@ namespace Scribe
             }
         }
 
+        #region Game Tab
         /// <summary>
         /// Responds to the user clicking "Add New Game" on the Games tab.
         /// </summary>
@@ -990,6 +991,43 @@ namespace Scribe
                                             HasUnsavedChanges = true;
                                         }));
         }
+        #endregion
+
+        #region Blocks Tab
+        #endregion
+
+        #region Floors Tab
+        #endregion
+
+        #region Furnishings Tab
+        #endregion
+
+        #region Collectibles Tab
+        #endregion
+
+        #region Characters Tab
+        #endregion
+
+        #region Critters Tab
+        #endregion
+
+        #region Items Tab
+        #endregion
+
+        #region Biomes Tab
+        #endregion
+
+        #region Crafting Tab
+        #endregion
+
+        #region Rooms Tab
+        #endregion
+
+        #region Maps Tab
+        #endregion
+
+        #region Scripting Tab
+        #endregion
         #endregion
 
         #region Menu Item Events
