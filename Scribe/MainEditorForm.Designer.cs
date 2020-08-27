@@ -3666,6 +3666,7 @@ namespace Scribe
             // 
             // CritterPrimaryBehaviorComboBox
             // 
+            this.CritterPrimaryBehaviorComboBox.DisplayMember = "Name";
             this.CritterPrimaryBehaviorComboBox.FormattingEnabled = true;
             this.CritterPrimaryBehaviorComboBox.Location = new System.Drawing.Point(131, 163);
             this.CritterPrimaryBehaviorComboBox.Name = "CritterPrimaryBehaviorComboBox";
@@ -3741,6 +3742,7 @@ namespace Scribe
             // 
             // CritterNativeBiomeComboBox
             // 
+            this.CritterNativeBiomeComboBox.DisplayMember = "Name";
             this.CritterNativeBiomeComboBox.FormattingEnabled = true;
             this.CritterNativeBiomeComboBox.Location = new System.Drawing.Point(131, 138);
             this.CritterNativeBiomeComboBox.Name = "CritterNativeBiomeComboBox";

@@ -824,7 +824,6 @@ namespace Scribe
         {
             if (GameListBox.SelectedIndex == -1)
             {
-                // TODO Should this actually be set to ModelID.None.ToString() ?
                 GameIDTextBox.Text = "";
                 GameNameTextBox.Text = "";
                 GameDescriptionTextBox.Text = "";
@@ -857,6 +856,46 @@ namespace Scribe
                 else
                 {
                     GameIconPictureBox.Image = Resources.ImageNotFoundGraphic;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Populates the Critters tab when a <see cref="CritterModel"/> is selected in the CritterListBox.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void CritterListBox_SelectedValueChanged_1(object sender, EventArgs e)
+        {
+            if (CritterListBox.SelectedIndex == -1)
+            {
+                CritterIDTextBox.Text = "";
+                CritterNameTextBox.Text = "";
+                CritterDescriptionTextBox.Text = "";
+                CritterCommentTextBox.Text = "";
+                CritterNativeBiomeComboBox.SelectedIndex = -1;
+                CritterPrimaryBehaviorComboBox.SelectedIndex = -1;
+                CritterPictureBox.Image = Resources.ImageNotFoundGraphic;
+            }
+            else if (CritterListBox.SelectedItem is CritterModel model
+                    && null != model)
+            {
+                CritterIDTextBox.Text = model.ID.ToString();
+                CritterNameTextBox.Text = model.Name;
+                CritterDescriptionTextBox.Text = model.Description;
+                CritterCommentTextBox.Text = model.Comment;
+                // TODO Populate these combo boxes on load, new, etc.
+                CritterNativeBiomeComboBox.SelectedValue = model.NativeBiome;
+                CritterPrimaryBehaviorComboBox.SelectedValue = model.PrimaryBehavior;
+
+                var imagePath = Path.Combine(EditorCommands.GetGraphicsPathForModelID(model.ID), $"{model.ID}.png");
+                if (File.Exists(imagePath))
+                {
+                    CritterPictureBox.Load(imagePath);
+                }
+                else
+                {
+                    CritterPictureBox.Image = Resources.ImageNotFoundGraphic;
                 }
             }
         }
