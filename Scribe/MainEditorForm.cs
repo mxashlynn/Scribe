@@ -107,7 +107,7 @@ namespace Scribe
                         else
                         {
                             SystemSounds.Beep.Play();
-                            MessageBox.Show(Resources.ErrorSaveFailed, Resources.CaptionError,
+                            _ = MessageBox.Show(Resources.ErrorSaveFailed, Resources.CaptionError,
                                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                             _hasUnsavedChanges = true;
                         }
@@ -780,7 +780,7 @@ namespace Scribe
                 in_listbox.Items.Clear();
                 foreach (var game in in_source)
                 {
-                    in_listbox.Items.Add(game);
+                    _ = in_listbox.Items.Add(game);
                 }
                 in_listbox.EndUpdate();
             }
@@ -871,7 +871,7 @@ namespace Scribe
             if (null == PropertyAccessor)
             {
                 // TODO Remove this debug statement, or change it to a logging statement.
-                MessageBox.Show($"Unsupported control {(sender as Control).Name} on tab index {EditorTabs.SelectedIndex}.");
+                _ = MessageBox.Show($"Unsupported control {(sender as Control).Name} on tab index {EditorTabs.SelectedIndex}.");
                 return;
             }
 
@@ -934,7 +934,7 @@ namespace Scribe
             if (nextGameID > All.GameIDs.Maximum)
             {
                 SystemSounds.Beep.Play();
-                MessageBox.Show(Resources.ErrorMaximumIDReached, Resources.CaptionError,
+                _ = MessageBox.Show(Resources.ErrorMaximumIDReached, Resources.CaptionError,
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -944,7 +944,7 @@ namespace Scribe
                                         (object databaseValue) =>
                                         {
                                            ((IModelCollectionEdit<GameModel>)All.Games).Add((GameModel)databaseValue);
-                                            GameListBox.Items.Add(databaseValue);
+                                            _ = GameListBox.Items.Add(databaseValue);
                                             HasUnsavedChanges = true;
                                         },
                                         (object databaseValue) =>
@@ -987,7 +987,7 @@ namespace Scribe
                                         (object databaseValue) =>
                                         {
                                             ((IModelCollectionEdit<GameModel>)All.Games).Add((GameModel)databaseValue);
-                                            GameListBox.Items.Add(databaseValue);
+                                            _ = GameListBox.Items.Add(databaseValue);
                                             HasUnsavedChanges = true;
                                         }));
         }
@@ -1028,7 +1028,7 @@ namespace Scribe
             if (nextCritterID > All.CritterIDs.Maximum)
             {
                 SystemSounds.Beep.Play();
-                MessageBox.Show(Resources.ErrorMaximumIDReached, Resources.CaptionError,
+                _ = MessageBox.Show(Resources.ErrorMaximumIDReached, Resources.CaptionError,
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -1038,7 +1038,7 @@ namespace Scribe
                                         (object databaseValue) =>
                                         {
                                             ((IModelCollectionEdit<BeingModel>)All.Beings).Add((CritterModel)databaseValue);
-                                            CritterListBox.Items.Add(databaseValue);
+                                            _ = CritterListBox.Items.Add(databaseValue);
                                             HasUnsavedChanges = true;
                                         },
                                         (object databaseValue) =>
@@ -1081,7 +1081,7 @@ namespace Scribe
                                         (object databaseValue) =>
                                         {
                                             ((IModelCollectionEdit<BeingModel>)All.Beings).Add((CritterModel)databaseValue);
-                                            CritterListBox.Items.Add(databaseValue);
+                                            _ = CritterListBox.Items.Add(databaseValue);
                                             HasUnsavedChanges = true;
                                         }));
         }
@@ -1128,7 +1128,7 @@ namespace Scribe
             else
             {
                 SystemSounds.Beep.Play();
-                MessageBox.Show(Resources.ErrorNewFailed, Resources.CaptionError,
+                _ = MessageBox.Show(Resources.ErrorNewFailed, Resources.CaptionError,
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -1153,7 +1153,7 @@ namespace Scribe
             else
             {
                 SystemSounds.Beep.Play();
-                MessageBox.Show(Resources.ErrorLoadFailed, Resources.CaptionError,
+                _ = MessageBox.Show(Resources.ErrorLoadFailed, Resources.CaptionError,
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -1178,7 +1178,7 @@ namespace Scribe
                 else
                 {
                     SystemSounds.Beep.Play();
-                    MessageBox.Show(Resources.ErrorLoadFailed, Resources.CaptionError,
+                    _ = MessageBox.Show(Resources.ErrorLoadFailed, Resources.CaptionError,
                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -1199,7 +1199,7 @@ namespace Scribe
             else
             {
                 SystemSounds.Beep.Play();
-                MessageBox.Show(Resources.ErrorSaveFailed, Resources.CaptionError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = MessageBox.Show(Resources.ErrorSaveFailed, Resources.CaptionError, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1212,7 +1212,7 @@ namespace Scribe
         {
             if (!string.IsNullOrEmpty(All.ProjectDirectory))
             {
-                Process.Start("explorer", $"\"{All.ProjectDirectory}\"");
+                _ = Process.Start("explorer", $"\"{All.ProjectDirectory}\"");
             }
             else
             {
@@ -1364,7 +1364,7 @@ namespace Scribe
             path = Path.GetDirectoryName(path);
             if (!string.IsNullOrEmpty(path))
             {
-                Process.Start("explorer", $"\"{path}\"");
+                _ = Process.Start("explorer", $"\"{path}\"");
             }
             else
             {
@@ -1384,7 +1384,7 @@ namespace Scribe
                 !string.IsNullOrEmpty(picturebox.ImageLocation))
             {
                 // Make this application specifiable via options, maybe?
-                Process.Start("explorer", $"\"{picturebox.ImageLocation}\"");
+                _ = Process.Start("explorer", $"\"{picturebox.ImageLocation}\"");
             }
             else
             {

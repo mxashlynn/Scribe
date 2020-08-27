@@ -43,7 +43,7 @@ namespace Scribe
             {
                 // TODO Ideally EditorCommands should not open message boxes or interact with the UI.
                 SystemSounds.Beep.Play();
-                MessageBox.Show(Resources.ErrorAccessingParquet, Resources.CaptionAccessingParquetError,
+                _ = MessageBox.Show(Resources.ErrorAccessingParquet, Resources.CaptionAccessingParquetError,
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
@@ -110,7 +110,7 @@ namespace Scribe
                 var pathWithRoot = Path.Combine(All.ProjectDirectory, folderPath);
                 if (!Directory.Exists(pathWithRoot))
                 {
-                    Directory.CreateDirectory(pathWithRoot);
+                    _ = Directory.CreateDirectory(pathWithRoot);
                 }
             }
             #endregion
