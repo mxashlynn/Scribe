@@ -2119,6 +2119,7 @@ namespace Scribe
             this.BlockListBox.Size = new System.Drawing.Size(279, 446);
             this.BlockListBox.TabIndex = 1;
             this.BlockListBox.Tag = "Primary List Box";
+            this.BlockListBox.SelectedIndexChanged += new System.EventHandler(this.BlockListBox_SelectedIndexChanged);
             // 
             // BlockAddNewBlockButton
             // 

@@ -772,7 +772,10 @@ namespace Scribe
             #region Repopulat Secondary List and Combo Boxes
             RepopulateComboBox(GamePlayerCharacterComboBox, All.Beings.Where(being => being is CharacterModel));
             RepopulateComboBox(GameFirstScriptComboBox, All.Scripts);
-            // TODO Blocks
+            RepopulateComboBox(BlockEquivalentItemComboBox, All.Items);
+            RepopulateComboBox(BlockGatherToolComboBox, Enum.GetNames(typeof(GatheringTool)));
+            RepopulateComboBox(BlockGatherEffectComboBox, Enum.GetNames(typeof(GatheringEffect)));
+            RepopulateComboBox(BlockDroppedCollectibleIDComboBox, All.Parquets.Where(parquet => parquet is CollectibleModel));
             // TODO Floors
             // TODO Furnsihings
             // TODO Collectibles
@@ -902,6 +905,60 @@ namespace Scribe
         }
 
         /// <summary>
+        /// Populates the Blocks tab when a <see cref="BlockModel"/> is selected in the BlockListBox.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void BlockListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (BlockListBox.SelectedIndex == -1)
+            {
+                BlockIDTextBox.Text = "";
+                BlockNameTextBox.Text = "";
+                BlockDescriptionTextBox.Text = "";
+                BlockCommentTextBox.Text = "";
+                BlockEquivalentItemComboBox.SelectedIndex = -1;
+                BlockGatherToolComboBox.SelectedIndex = -1;
+                BlockGatherEffectComboBox.SelectedIndex = -1;
+                BlockDroppedCollectibleIDComboBox.SelectedIndex = -1;
+                BlockIsFlammableCheckBox.Checked = false;
+                BlockIsLiquidCheckBox.Checked = false;
+                BlockMaxToughnessTextBox.Text = "";
+                BlockPictureBox.Image = Resources.ImageNotFoundGraphic;
+            }
+            else if (BlockListBox.SelectedItem is BlockModel model
+                    && null != model)
+            {
+                BlockIDTextBox.Text = model.ID.ToString();
+                BlockNameTextBox.Text = model.Name;
+                BlockDescriptionTextBox.Text = model.Description;
+                BlockCommentTextBox.Text = model.Comment;
+                BlockEquivalentItemComboBox.SelectedValue = model.ItemID;
+                BlockGatherToolComboBox.SelectedIndex = (int)model.GatherTool;
+                BlockGatherEffectComboBox.SelectedIndex = (int)model.GatherEffect;
+                BlockDroppedCollectibleIDComboBox.SelectedValue = model.CollectibleID;
+                BlockIsFlammableCheckBox.Checked = model.IsFlammable;
+                BlockIsLiquidCheckBox.Checked = model.IsLiquid;
+                BlockMaxToughnessTextBox.Text = model.MaxToughness.ToString();
+
+                var imagePath = Path.Combine(EditorCommands.GetGraphicsPathForModelID(model.ID), $"{model.ID}.png");
+                if (File.Exists(imagePath))
+                {
+                    BlockPictureBox.Load(imagePath);
+                }
+                else
+                {
+                    BlockPictureBox.Image = Resources.ImageNotFoundGraphic;
+                }
+            }
+        }
+
+        // TODO Floors
+        // TODO Furnsihings
+        // TODO Collectibles
+        // TODO Characters
+
+        /// <summary>
         /// Populates the Critters tab when a <see cref="CritterModel"/> is selected in the CritterListBox.
         /// </summary>
         /// <param name="sender">Ignored.</param>
@@ -939,6 +996,13 @@ namespace Scribe
                 }
             }
         }
+
+        // TODO Items
+        // TODO Biomes
+        // TODO Crafts
+        // TODO Rooms
+        // TODO Maps
+        // TODO Scripts
         #endregion
 
         #region Handle Changes to Data
