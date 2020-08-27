@@ -1843,8 +1843,8 @@ namespace Scribe
             this.BlocksTabPage.Controls.Add(this.BlockListBox);
             this.BlocksTabPage.Controls.Add(this.BlockAddNewBlockButton);
             this.BlocksTabPage.Controls.Add(this.BlockIDTextBox);
-            this.BlocksTabPage.Controls.Add(this.BlockConfigGroupBox);
             this.BlocksTabPage.Controls.Add(this.BlockRemoveBlockButton);
+            this.BlocksTabPage.Controls.Add(this.BlockConfigGroupBox);
             this.BlocksTabPage.Location = new System.Drawing.Point(4, 22);
             this.BlocksTabPage.Name = "BlocksTabPage";
             this.BlocksTabPage.Size = new System.Drawing.Size(953, 599);
@@ -2161,13 +2161,13 @@ namespace Scribe
             this.FloorsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.FloorsTabPage.Controls.Add(this.FloorRemoveFloorButton);
             this.FloorsTabPage.Controls.Add(this.FloorLayoutTabelPanel);
-            this.FloorsTabPage.Controls.Add(this.FloorConfigGroupBox);
             this.FloorsTabPage.Controls.Add(this.FloorIDTextBox);
             this.FloorsTabPage.Controls.Add(this.FloorAddNewFloorButton);
             this.FloorsTabPage.Controls.Add(this.FloorListBox);
             this.FloorsTabPage.Controls.Add(this.FloorIDLabel);
             this.FloorsTabPage.Controls.Add(this.FloorEditImageButton);
             this.FloorsTabPage.Controls.Add(this.FloorPictureBox);
+            this.FloorsTabPage.Controls.Add(this.FloorConfigGroupBox);
             this.FloorsTabPage.Location = new System.Drawing.Point(4, 22);
             this.FloorsTabPage.Name = "FloorsTabPage";
             this.FloorsTabPage.Size = new System.Drawing.Size(953, 599);
@@ -2495,13 +2495,13 @@ namespace Scribe
             // 
             this.FurnishingsTabPage.Controls.Add(this.FurnishingTableLayoutPanel);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingRemoveFurnishingButton);
-            this.FurnishingsTabPage.Controls.Add(this.FurnishingConfigGroupBox);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingIDTextBox);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingAddNewFurnishingButton);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingListBox);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingIDLabel);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingEditImageButton);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingPictureBox);
+            this.FurnishingsTabPage.Controls.Add(this.FurnishingConfigGroupBox);
             this.FurnishingsTabPage.Location = new System.Drawing.Point(4, 22);
             this.FurnishingsTabPage.Name = "FurnishingsTabPage";
             this.FurnishingsTabPage.Size = new System.Drawing.Size(953, 599);
@@ -2800,13 +2800,13 @@ namespace Scribe
             // 
             this.CollectiblesTabPage.Controls.Add(this.CollectibleTableLayoutPanel);
             this.CollectiblesTabPage.Controls.Add(this.CollectibleRemoveCollectibleButton);
-            this.CollectiblesTabPage.Controls.Add(this.CollectibleConfigGroupBox);
             this.CollectiblesTabPage.Controls.Add(this.CollectibleIDTextBox);
             this.CollectiblesTabPage.Controls.Add(this.CollectibleAddNewCollectibleButton);
             this.CollectiblesTabPage.Controls.Add(this.CollectibleListBox);
             this.CollectiblesTabPage.Controls.Add(this.CollectibleIDLabel);
             this.CollectiblesTabPage.Controls.Add(this.CollectibleEditImageButton);
             this.CollectiblesTabPage.Controls.Add(this.CollectiblePictureBox);
+            this.CollectiblesTabPage.Controls.Add(this.CollectibleConfigGroupBox);
             this.CollectiblesTabPage.Location = new System.Drawing.Point(4, 22);
             this.CollectiblesTabPage.Name = "CollectiblesTabPage";
             this.CollectiblesTabPage.Size = new System.Drawing.Size(953, 599);
