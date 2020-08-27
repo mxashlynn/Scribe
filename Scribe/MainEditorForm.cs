@@ -741,28 +741,9 @@ namespace Scribe
             RepopulateListBox(RoomListBox, All.RoomRecipes);
             #endregion
 
-            #region Reload Active Picture Box
-            // TODO Right now this loads sample graphics, change it to real graphics or remove it.
-            var id = GetDefaultIDForTab(EditorTabs.SelectedIndex);
-            if (EditorCommands.IDHasGraphics(id))
-            {
-                var picturebox = EditorTabs.TabPages[EditorTabs.SelectedIndex]?.Controls
-                                                                               .Cast<Control>()
-                                                                               .OfType<PictureBox>()
-                                                                               .FirstOrDefault();
-                if (null != picturebox)
-                {
-                    var path = Path.Combine(EditorCommands.GetGraphicsPathForModelID(id), $"{id}.png");
-                    if (File.Exists(path))
-                    {
-                        picturebox.Load(path);
-                    }
-                    else
-                    {
-                        picturebox.Image = Resources.ImageNotFoundGraphic;
-                    }
-                }
-            }
+            #region Repopulat Secondary List and Combo Boxes
+            RepopulateComboBox(CritterNativeBiomeComboBox, All.Biomes);
+            RepopulateComboBox(CritterPrimaryBehaviorComboBox, All.Scripts);
             #endregion
         }
 
@@ -786,6 +767,29 @@ namespace Scribe
                     _ = in_listbox.Items.Add(model);
                 }
                 in_listbox.EndUpdate();
+            }
+        }
+
+        /// <summary>
+        /// Repopulates the given combo box with the <see cref="Model"/>s in the given collection.
+        /// </summary>
+        /// <typeparam name="T">A model type.</typeparam>
+        /// <param name="in_box">The UI to repopulate.</param>
+        /// <param name="in_source">The objects to populate the UI with.</param>
+        /// <remarks>This should only be called if <see cref="All"/> has actually changed.</remarks>
+        private void RepopulateComboBox<T>(ComboBox in_box, IEnumerable<T> in_source)
+            where T : Model
+        {
+            if (null != in_source)
+            {
+                in_box.SelectedIndex = -1;
+                in_box.BeginUpdate();
+                in_box.Items.Clear();
+                foreach (var model in in_source)
+                {
+                    _ = in_box.Items.Add(model);
+                }
+                in_box.EndUpdate();
             }
         }
 
@@ -884,7 +888,6 @@ namespace Scribe
                 CritterNameTextBox.Text = model.Name;
                 CritterDescriptionTextBox.Text = model.Description;
                 CritterCommentTextBox.Text = model.Comment;
-                // TODO Populate these combo boxes on load, new, etc.
                 CritterNativeBiomeComboBox.SelectedValue = model.NativeBiome;
                 CritterPrimaryBehaviorComboBox.SelectedValue = model.PrimaryBehavior;
 
