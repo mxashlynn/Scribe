@@ -146,6 +146,14 @@
         SUVORK5CYII=
 </value>
   </data>
+  <data name="RollerToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAJ5JREFUOE+t
+        kEEKwzAMBNPP9tBDoJc+JX8p6Avph2qqsCIbXFuSS4lgMZE0E+NJRPQ2X7tMTXk7YG3wfGgXLvAH+l66
+        oB8KEMwiGEkF6P99A8KlFEskcQUtnElMwBfOYKaWHDAKHyOYoQTnjp8kuKyfoYSw3l92fsFMJKlhxiSt
+        wJN4cCqoJRE8FCCYRTCSCtD/6QZcaGMvXJW3IyK6AaCq1hM2b8EmAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="CheckMapStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAJtJREFUOE9j
@@ -182,14 +190,6 @@
         GF7gPy7cUB0HogmC//8/zv3/6soqDAySgyjBD8AGIGN7DSMUQ0AAohQ7wGoAiEZyBV5DwH5FNwSEQXIQ
         JWCA0xCYQgyMJRBxGkIsoMwAqGbiDUC2jWTNUADSBwYgNkSIdECRZloBBgYA3nmiXUsFDPoAAAAASUVO
         RK5CYII=
-</value>
-  </data>
-  <data name="RollerToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAJ5JREFUOE+t
-        kEEKwzAMBNPP9tBDoJc+JX8p6Avph2qqsCIbXFuSS4lgMZE0E+NJRPQ2X7tMTXk7YG3wfGgXLvAH+l66
-        oB8KEMwiGEkF6P99A8KlFEskcQUtnElMwBfOYKaWHDAKHyOYoQTnjp8kuKyfoYSw3l92fsFMJKlhxiSt
-        wJN4cCqoJRE8FCCYRTCSCtD/6QZcaGMvXJW3IyK6AaCq1hM2b8EmAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="OptionsToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
