@@ -136,6 +136,8 @@ namespace Scribe
 
         // TODO Use this when setting up Character tab:  Settings.Default.SuggestStoryIDs;
 
+        // TODO Update Games Tab to replace ID text boxes with combo boxes.
+
         #region Initialization
         /// <summary>
         /// Constructs a new instance of the main editor UI.
@@ -675,11 +677,8 @@ namespace Scribe
         }
 
         /// <summary>
-        /// Repopulates the given list with the <see cref="Model"/>s in the given collection.
+        /// Clears and repopulates the primary and secondary lists after an update.
         /// </summary>
-        /// <typeparam name="T">A model type.</typeparam>
-        /// <param name="in_listbox">The UI to repopulate.</param>
-        /// <param name="in_source">The objects to populate the UI with.</param>
         private void UpdateDisplay()
         {
             UpdateLibraryDataDisplay();
@@ -726,6 +725,8 @@ namespace Scribe
                 }
             }
             #endregion
+
+            // TODO Remember to incrementally update Primary and Secondary lists after Add New and Remove button presses.
 
             #region Repopulate Primary List Boxes
             RepopulateListBox(GameListBox, All.Games);
