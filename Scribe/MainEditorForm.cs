@@ -721,7 +721,7 @@ namespace Scribe
                 if (picturebox != null)
                 {
                     picturebox.Image?.Dispose();
-                    picturebox.Image = null;
+                    picturebox.Image = Resources.ImageNotFoundGraphic;
                     picturebox.Update();
                 }
             }
@@ -767,7 +767,7 @@ namespace Scribe
         }
 
         /// <summary>
-        /// Repopulates the given list with the <see cref="Model"/>s in the given collection.
+        /// Repopulates the given list box with the <see cref="Model"/>s in the given collection.
         /// </summary>
         /// <typeparam name="T">A model type.</typeparam>
         /// <param name="in_listbox">The UI to repopulate.</param>
@@ -781,9 +781,9 @@ namespace Scribe
                 in_listbox.ClearSelected();
                 in_listbox.BeginUpdate();
                 in_listbox.Items.Clear();
-                foreach (var game in in_source)
+                foreach (var model in in_source)
                 {
-                    _ = in_listbox.Items.Add(game);
+                    _ = in_listbox.Items.Add(model);
                 }
                 in_listbox.EndUpdate();
             }
@@ -865,7 +865,7 @@ namespace Scribe
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
-        private void CritterListBox_SelectedValueChanged_1(object sender, EventArgs e)
+        private void CritterListBox_SelectedValueChanged(object sender, EventArgs e)
         {
             if (CritterListBox.SelectedIndex == -1)
             {
@@ -918,7 +918,7 @@ namespace Scribe
             var PropertyAccessor = GetPropertyAccessorForTabAndControl(EditorTabs.SelectedIndex, alteredControl);
             if (null == PropertyAccessor)
             {
-                // TODO Remove this debug statement, or change it to a logging statement.
+                // TODO Replace this debug statement with a logging statement.
                 _ = MessageBox.Show($"Unsupported control {alteredControl.Name} on tab index {EditorTabs.SelectedIndex}.");
                 return;
             }
