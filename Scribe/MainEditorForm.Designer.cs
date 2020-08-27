@@ -176,8 +176,8 @@ namespace Scribe
             this.BlockListBox = new System.Windows.Forms.ListBox();
             this.BlockAddNewBlockButton = new System.Windows.Forms.Button();
             this.BlockIDTextBox = new System.Windows.Forms.TextBox();
-            this.BlockConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.BlockRemoveBlockButton = new System.Windows.Forms.Button();
+            this.BlockConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.FloorsTabPage = new System.Windows.Forms.TabPage();
             this.FloorRemoveFloorButton = new System.Windows.Forms.Button();
             this.FloorLayoutTabelPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -201,13 +201,13 @@ namespace Scribe
             this.FloorAddsToBiomeListBox = new System.Windows.Forms.ListBox();
             this.FloorAddsToRoomListBox = new System.Windows.Forms.ListBox();
             this.FloorAddBiomeTagButton = new System.Windows.Forms.Button();
-            this.FloorConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.FloorIDTextBox = new System.Windows.Forms.TextBox();
             this.FloorAddNewFloorButton = new System.Windows.Forms.Button();
             this.FloorListBox = new System.Windows.Forms.ListBox();
             this.FloorIDLabel = new System.Windows.Forms.Label();
             this.FloorEditImageButton = new System.Windows.Forms.Button();
             this.FloorPictureBox = new System.Windows.Forms.PictureBox();
+            this.FloorConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.FurnishingsTabPage = new System.Windows.Forms.TabPage();
             this.FurnishingTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.FurnishingSwapWithFurnishingComboBox = new System.Windows.Forms.ComboBox();
@@ -229,13 +229,13 @@ namespace Scribe
             this.FurnishingIsEnclosingCheckBox = new System.Windows.Forms.CheckBox();
             this.FurnishingIsFlammableCheckBox = new System.Windows.Forms.CheckBox();
             this.FurnishingRemoveFurnishingButton = new System.Windows.Forms.Button();
-            this.FurnishingConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.FurnishingIDTextBox = new System.Windows.Forms.TextBox();
             this.FurnishingAddNewFurnishingButton = new System.Windows.Forms.Button();
             this.FurnishingListBox = new System.Windows.Forms.ListBox();
             this.FurnishingIDLabel = new System.Windows.Forms.Label();
             this.FurnishingEditImageButton = new System.Windows.Forms.Button();
             this.FurnishingPictureBox = new System.Windows.Forms.PictureBox();
+            this.FurnishingConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CollectiblesTabPage = new System.Windows.Forms.TabPage();
             this.CollectibleTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.CollectibleEffectAmountTextBox = new System.Windows.Forms.TextBox();
@@ -251,13 +251,13 @@ namespace Scribe
             this.CollectibleCollectionEffectLabel = new System.Windows.Forms.Label();
             this.CollectibleEffectAmountLabel = new System.Windows.Forms.Label();
             this.CollectibleRemoveCollectibleButton = new System.Windows.Forms.Button();
-            this.CollectibleConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CollectibleIDTextBox = new System.Windows.Forms.TextBox();
             this.CollectibleAddNewCollectibleButton = new System.Windows.Forms.Button();
             this.CollectibleListBox = new System.Windows.Forms.ListBox();
             this.CollectibleIDLabel = new System.Windows.Forms.Label();
             this.CollectibleEditImageButton = new System.Windows.Forms.Button();
             this.CollectiblePictureBox = new System.Windows.Forms.PictureBox();
+            this.CollectibleConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CharactersTabPage = new System.Windows.Forms.TabPage();
             this.CharacterPronounGroupBox = new System.Windows.Forms.GroupBox();
             this.CharacterPronounTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -2137,6 +2137,15 @@ namespace Scribe
             this.BlockIDTextBox.TabIndex = 3;
             this.BlockIDTextBox.Text = "-2020202020";
             // 
+            // BlockRemoveBlockButton
+            // 
+            this.BlockRemoveBlockButton.Location = new System.Drawing.Point(24, 468);
+            this.BlockRemoveBlockButton.Name = "BlockRemoveBlockButton";
+            this.BlockRemoveBlockButton.Size = new System.Drawing.Size(129, 23);
+            this.BlockRemoveBlockButton.TabIndex = 2;
+            this.BlockRemoveBlockButton.Text = "Remove Block";
+            this.BlockRemoveBlockButton.UseVisualStyleBackColor = true;
+            // 
             // BlockConfigGroupBox
             // 
             this.BlockConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -2146,15 +2155,6 @@ namespace Scribe
             this.BlockConfigGroupBox.Size = new System.Drawing.Size(938, 96);
             this.BlockConfigGroupBox.TabIndex = 0;
             this.BlockConfigGroupBox.TabStop = false;
-            // 
-            // BlockRemoveBlockButton
-            // 
-            this.BlockRemoveBlockButton.Location = new System.Drawing.Point(24, 468);
-            this.BlockRemoveBlockButton.Name = "BlockRemoveBlockButton";
-            this.BlockRemoveBlockButton.Size = new System.Drawing.Size(129, 23);
-            this.BlockRemoveBlockButton.TabIndex = 2;
-            this.BlockRemoveBlockButton.Text = "Remove Block";
-            this.BlockRemoveBlockButton.UseVisualStyleBackColor = true;
             // 
             // FloorsTabPage
             // 
@@ -2418,16 +2418,6 @@ namespace Scribe
             this.FloorAddBiomeTagButton.Text = "Add Biome Tag";
             this.FloorAddBiomeTagButton.UseVisualStyleBackColor = true;
             // 
-            // FloorConfigGroupBox
-            // 
-            this.FloorConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorConfigGroupBox.Location = new System.Drawing.Point(9, 497);
-            this.FloorConfigGroupBox.Name = "FloorConfigGroupBox";
-            this.FloorConfigGroupBox.Size = new System.Drawing.Size(938, 96);
-            this.FloorConfigGroupBox.TabIndex = 0;
-            this.FloorConfigGroupBox.TabStop = false;
-            // 
             // FloorIDTextBox
             // 
             this.FloorIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -2490,6 +2480,16 @@ namespace Scribe
             this.FloorPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.FloorPictureBox.TabIndex = 6;
             this.FloorPictureBox.TabStop = false;
+            // 
+            // FloorConfigGroupBox
+            // 
+            this.FloorConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorConfigGroupBox.Location = new System.Drawing.Point(9, 497);
+            this.FloorConfigGroupBox.Name = "FloorConfigGroupBox";
+            this.FloorConfigGroupBox.Size = new System.Drawing.Size(938, 96);
+            this.FloorConfigGroupBox.TabIndex = 0;
+            this.FloorConfigGroupBox.TabStop = false;
             // 
             // FurnishingsTabPage
             // 
@@ -2723,16 +2723,6 @@ namespace Scribe
             this.FurnishingRemoveFurnishingButton.Text = "Remove Furnishing";
             this.FurnishingRemoveFurnishingButton.UseVisualStyleBackColor = true;
             // 
-            // FurnishingConfigGroupBox
-            // 
-            this.FurnishingConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FurnishingConfigGroupBox.Location = new System.Drawing.Point(9, 497);
-            this.FurnishingConfigGroupBox.Name = "FurnishingConfigGroupBox";
-            this.FurnishingConfigGroupBox.Size = new System.Drawing.Size(938, 96);
-            this.FurnishingConfigGroupBox.TabIndex = 0;
-            this.FurnishingConfigGroupBox.TabStop = false;
-            // 
             // FurnishingIDTextBox
             // 
             this.FurnishingIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -2795,6 +2785,16 @@ namespace Scribe
             this.FurnishingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.FurnishingPictureBox.TabIndex = 6;
             this.FurnishingPictureBox.TabStop = false;
+            // 
+            // FurnishingConfigGroupBox
+            // 
+            this.FurnishingConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingConfigGroupBox.Location = new System.Drawing.Point(9, 497);
+            this.FurnishingConfigGroupBox.Name = "FurnishingConfigGroupBox";
+            this.FurnishingConfigGroupBox.Size = new System.Drawing.Size(938, 96);
+            this.FurnishingConfigGroupBox.TabIndex = 0;
+            this.FurnishingConfigGroupBox.TabStop = false;
             // 
             // CollectiblesTabPage
             // 
@@ -2967,16 +2967,6 @@ namespace Scribe
             this.CollectibleRemoveCollectibleButton.Text = "Remove Collectible";
             this.CollectibleRemoveCollectibleButton.UseVisualStyleBackColor = true;
             // 
-            // CollectibleConfigGroupBox
-            // 
-            this.CollectibleConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectibleConfigGroupBox.Location = new System.Drawing.Point(9, 497);
-            this.CollectibleConfigGroupBox.Name = "CollectibleConfigGroupBox";
-            this.CollectibleConfigGroupBox.Size = new System.Drawing.Size(938, 96);
-            this.CollectibleConfigGroupBox.TabIndex = 0;
-            this.CollectibleConfigGroupBox.TabStop = false;
-            // 
             // CollectibleIDTextBox
             // 
             this.CollectibleIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -3039,6 +3029,16 @@ namespace Scribe
             this.CollectiblePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.CollectiblePictureBox.TabIndex = 6;
             this.CollectiblePictureBox.TabStop = false;
+            // 
+            // CollectibleConfigGroupBox
+            // 
+            this.CollectibleConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleConfigGroupBox.Location = new System.Drawing.Point(9, 497);
+            this.CollectibleConfigGroupBox.Name = "CollectibleConfigGroupBox";
+            this.CollectibleConfigGroupBox.Size = new System.Drawing.Size(938, 96);
+            this.CollectibleConfigGroupBox.TabIndex = 0;
+            this.CollectibleConfigGroupBox.TabStop = false;
             // 
             // CharactersTabPage
             // 
