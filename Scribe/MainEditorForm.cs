@@ -305,28 +305,23 @@ namespace Scribe
         /// <param name="inTabIndex">The index of the tab sought.</param>
         /// <returns>The model, or <c>null</c> on out of range input.</returns>
         private Model GetSelectedModelForTab(int inTabIndex)
-        {
-            var id = GetSelectedModelIDForTab(inTabIndex);
-            return id == ModelID.None
-                ? (Model)null
-                : inTabIndex switch
-                {
-                    GamesTabIndex => All.Games.Get<GameModel>(id),
-                    BlocksTabIndex => All.Parquets.Get<BlockModel>(id),
-                    FloorsTabIndex => All.Parquets.Get<FloorModel>(id),
-                    FurnishingsTabIndex => All.Parquets.Get<FurnishingModel>(id),
-                    CollectiblesTabIndex => All.Parquets.Get<CollectibleModel>(id),
-                    CharactersTabIndex => All.Beings.Get<CharacterModel>(id),
-                    CrittersTabIndex => All.Beings.Get<CritterModel>(id),
-                    ItemsTabIndex => All.Items.Get<ItemModel>(id),
-                    BiomeRecipesTabIndex => All.Biomes.Get<BiomeRecipe>(id),
-                    CraftingRecipesTabIndex => All.CraftingRecipes.Get<CraftingRecipe>(id),
-                    RoomRecipesTabIndex => All.RoomRecipes.Get<RoomRecipe>(id),
-                    MapsTabIndex => throw new NotImplementedException(),
-                    ScriptsTabIndex => throw new NotImplementedException(),
-                    _ => null,
-                };
-        }
+            => inTabIndex switch
+            {
+                GamesTabIndex => GameListBox.SelectedItem as GameModel,
+                BlocksTabIndex => BlockListBox.SelectedItem as BlockModel,
+                FloorsTabIndex => FloorListBox.SelectedItem as FloorModel,
+                FurnishingsTabIndex => FurnishingListBox.SelectedItem as FurnishingModel,
+                CollectiblesTabIndex => CollectibleListBox.SelectedItem as CollectibleModel,
+                CharactersTabIndex => CharacterListBox.SelectedItem as CharacterModel,
+                CrittersTabIndex => CritterListBox.SelectedItem as CritterModel,
+                ItemsTabIndex => ItemListBox.SelectedItem as ItemModel,
+                BiomeRecipesTabIndex => BiomeListBox.SelectedItem as BiomeRecipe,
+                CraftingRecipesTabIndex => CraftingListBox.SelectedItem as CraftingRecipe,
+                RoomRecipesTabIndex => RoomListBox.SelectedItem as RoomRecipe,
+                MapsTabIndex => throw new NotImplementedException(),
+                ScriptsTabIndex => throw new NotImplementedException(),
+                _ => null,
+            };
 
         /// <summary>Given the index of an editor tab and an editor <see cref="Control"/>, return the corresponding property accessor.</summary>
         /// <param name="inTabIndex">The index of an editor tab.</param>
