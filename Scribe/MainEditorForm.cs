@@ -789,46 +789,42 @@ namespace Scribe
         }
 
         /// <summary>
-        /// Repopulates the given list box with the <see cref="Model"/>s in the given collection.
+        /// Repopulates the given list box with the given collection.
         /// </summary>
-        /// <typeparam name="T">A model type.</typeparam>
         /// <param name="in_listbox">The UI to repopulate.</param>
         /// <param name="in_source">The objects to populate the UI with.</param>
         /// <remarks>This should only be called if <see cref="All"/> has actually changed.</remarks>
-        private void RepopulateListBox<T>(ListBox in_listbox, IEnumerable<T> in_source)
-            where T : Model
+        private void RepopulateListBox(ListBox in_listbox, IEnumerable<object> in_source)
         {
             if (null != in_source)
             {
                 in_listbox.ClearSelected();
                 in_listbox.BeginUpdate();
                 in_listbox.Items.Clear();
-                foreach (var model in in_source)
+                foreach (var value in in_source)
                 {
-                    _ = in_listbox.Items.Add(model);
+                    _ = in_listbox.Items.Add(value);
                 }
                 in_listbox.EndUpdate();
             }
         }
 
         /// <summary>
-        /// Repopulates the given combo box with the <see cref="Model"/>s in the given collection.
+        /// Repopulates the given combo box with the given collection.
         /// </summary>
-        /// <typeparam name="T">A model type.</typeparam>
         /// <param name="in_box">The UI to repopulate.</param>
         /// <param name="in_source">The objects to populate the UI with.</param>
         /// <remarks>This should only be called if <see cref="All"/> has actually changed.</remarks>
-        private void RepopulateComboBox<T>(ComboBox in_box, IEnumerable<T> in_source)
-            where T : Model
+        private void RepopulateComboBox(ComboBox in_box, IEnumerable<object> in_source)
         {
             if (null != in_source)
             {
                 in_box.SelectedIndex = -1;
                 in_box.BeginUpdate();
                 in_box.Items.Clear();
-                foreach (var model in in_source)
+                foreach (var value in in_source)
                 {
-                    _ = in_box.Items.Add(model);
+                    _ = in_box.Items.Add(value);
                 }
                 in_box.EndUpdate();
             }
