@@ -870,21 +870,21 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void ContentAlteredEventHandler(object sender, EventArgs e)
         {
-            if (sender is Control control && PrimaryListBox.Equals((string)control.Tag))
+            if (!(sender is Control alteredControl) || PrimaryListBox.Equals((string)alteredControl.Tag))
             {
                 // Silently return if a primary list box is altered -- changes in these boxes are handled via buttons.
                 return;
             }
 
-            var PropertyAccessor = GetPropertyAccessorForTabAndControl(EditorTabs.SelectedIndex, sender as Control);
+            var PropertyAccessor = GetPropertyAccessorForTabAndControl(EditorTabs.SelectedIndex, alteredControl);
             if (null == PropertyAccessor)
             {
                 // TODO Remove this debug statement, or change it to a logging statement.
-                _ = MessageBox.Show($"Unsupported control {(sender as Control).Name} on tab index {EditorTabs.SelectedIndex}.");
+                _ = MessageBox.Show($"Unsupported control {alteredControl.Name} on tab index {EditorTabs.SelectedIndex}.");
                 return;
             }
 
-            if (sender is TextBox textbox
+            if (alteredControl is TextBox textbox
                 && string.Compare(textbox.Text,
                                   EditableControls[typeof(TextBox)][textbox] as string,
                                   comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
@@ -894,7 +894,7 @@ namespace Scribe
                                             (object displayValue) => textbox.Text = displayValue.ToString(),
                                             (object oldValue) => EditableControls[typeof(TextBox)][textbox] = oldValue));
             }
-            else if (sender is CheckBox checkbox
+            else if (alteredControl is CheckBox checkbox
                      && checkbox.Checked == (EditableControls[typeof(CheckBox)][checkbox] as bool?))
             {
                 var oldValue = (bool?)EditableControls[typeof(CheckBox)][checkbox];
@@ -903,7 +903,7 @@ namespace Scribe
                                             (object displayValue) => checkbox.Checked = (bool)displayValue,
                                             (object oldValue) => EditableControls[typeof(CheckBox)][checkbox] = oldValue));
             }
-            else if (sender is ComboBox combobox
+            else if (alteredControl is ComboBox combobox
                      && combobox.SelectedIndex == (EditableControls[typeof(ComboBox)][combobox] as int?))
             {
                 var oldValue = (int?)EditableControls[typeof(ComboBox)][combobox];
@@ -912,7 +912,7 @@ namespace Scribe
                                             (object displayValue) => combobox.SelectedIndex = (int)displayValue,
                                             (object oldValue) => EditableControls[typeof(ComboBox)][combobox] = oldValue));
             }
-            else if (sender is ListBox listbox
+            else if (alteredControl is ListBox listbox
                      && listbox.SelectedIndex == (EditableControls[typeof(ListBox)][listbox] as int?))
             {
                 var oldValue = (int?)EditableControls[typeof(ListBox)][listbox];
