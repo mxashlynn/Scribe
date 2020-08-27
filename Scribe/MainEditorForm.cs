@@ -1009,6 +1009,82 @@ namespace Scribe
         #endregion
 
         #region Critters Tab
+        /// <summary>
+        /// Responds to the user clicking "Add New Critter" on the Critters tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void CritterAddNewCritterButton_Click(object sender, EventArgs e)
+        {
+            if (!All.CollectionsHaveBeenInitialized)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            var nextCritterID = All.Beings.Count > 0
+                ? (ModelID)(All.Beings.Where(model => model is CritterModel).Max(model => model?.ID ?? All.CritterIDs.Minimum) + 1)
+                : All.CritterIDs.Minimum;
+            if (nextCritterID > All.CritterIDs.Maximum)
+            {
+                SystemSounds.Beep.Play();
+                MessageBox.Show(Resources.ErrorMaximumIDReached, Resources.CaptionError,
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var modelToAdd = new CritterModel(nextCritterID, "New Critter", "", "", ModelID.None, ModelID.None);
+            ChangeManager.AddAndExecute(new ChangeList(modelToAdd, "add new critter definition",
+                                        (object databaseValue) =>
+                                        {
+                                            ((IModelCollectionEdit<BeingModel>)All.Beings).Add((CritterModel)databaseValue);
+                                            CritterListBox.Items.Add(databaseValue);
+                                            HasUnsavedChanges = true;
+                                        },
+                                        (object databaseValue) =>
+                                        {
+                                            ((IModelCollectionEdit<BeingModel>)All.Beings).Remove((CritterModel)databaseValue);
+                                            CritterListBox.Items.Remove(databaseValue);
+                                            CritterListBox.SelectedIndex = -1;
+                                            HasUnsavedChanges = true;
+                                        }));
+        }
+
+        /// <summary>
+        /// Responds to the user clicking "Remove Critter" on the Critters tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void CritterRemoveCritterButton_Click(object sender, EventArgs e)
+        {
+            if (!All.CollectionsHaveBeenInitialized || CritterListBox.SelectedIndex == -1)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            var modelToRemove = (CritterModel)GetSelectedModelForTab(EditorTabs.SelectedIndex);
+            if (null == modelToRemove)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            ChangeManager.AddAndExecute(new ChangeList(modelToRemove, $"remove {modelToRemove.Name}",
+                                        (object databaseValue) =>
+                                        {
+                                            ((IModelCollectionEdit<BeingModel>)All.Beings).Remove((CritterModel)databaseValue);
+                                            CritterListBox.Items.Remove(databaseValue);
+                                            CritterListBox.SelectedIndex = -1;
+                                            HasUnsavedChanges = true;
+                                        },
+                                        (object databaseValue) =>
+                                        {
+                                            ((IModelCollectionEdit<BeingModel>)All.Beings).Add((CritterModel)databaseValue);
+                                            CritterListBox.Items.Add(databaseValue);
+                                            HasUnsavedChanges = true;
+                                        }));
+        }
         #endregion
 
         #region Items Tab

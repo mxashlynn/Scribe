@@ -3837,6 +3837,7 @@ namespace Scribe
             this.CritterAddNewCritterButton.TabIndex = 2;
             this.CritterAddNewCritterButton.Text = "Add New Critter";
             this.CritterAddNewCritterButton.UseVisualStyleBackColor = true;
+            this.CritterAddNewCritterButton.Click += new System.EventHandler(this.CritterAddNewCritterButton_Click);
             // 
             // CritterIDTextBox
             // 
@@ -3866,6 +3867,7 @@ namespace Scribe
             this.CritterRemoveCritterButton.TabIndex = 2;
             this.CritterRemoveCritterButton.Text = "Remove Critter";
             this.CritterRemoveCritterButton.UseVisualStyleBackColor = true;
+            this.CritterRemoveCritterButton.Click += new System.EventHandler(this.CritterRemoveCritterButton_Click);
             // 
             // ItemsTabPage
             // 
