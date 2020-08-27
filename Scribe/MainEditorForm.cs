@@ -999,7 +999,7 @@ namespace Scribe
                                         {
                                             ((IModelCollectionEdit<GameModel>)All.Games).Remove((GameModel)databaseValue);
                                             GameListBox.Items.Remove(databaseValue);
-                                            GameListBox.SelectedIndex = -1;
+                                            GameListBox.ClearSelected();
                                             HasUnsavedChanges = true;
                                         }));
         }
@@ -1029,7 +1029,7 @@ namespace Scribe
                                         {
                                             ((IModelCollectionEdit<GameModel>)All.Games).Remove((GameModel)databaseValue);
                                             GameListBox.Items.Remove(databaseValue);
-                                            GameListBox.SelectedIndex = -1;
+                                            GameListBox.ClearSelected();
                                             HasUnsavedChanges = true;
                                         },
                                         (object databaseValue) =>
@@ -1093,7 +1093,7 @@ namespace Scribe
                                         {
                                             ((IModelCollectionEdit<BeingModel>)All.Beings).Remove((CritterModel)databaseValue);
                                             CritterListBox.Items.Remove(databaseValue);
-                                            CritterListBox.SelectedIndex = -1;
+                                            CritterListBox.ClearSelected();
                                             HasUnsavedChanges = true;
                                         }));
         }
@@ -1123,7 +1123,7 @@ namespace Scribe
                                         {
                                             ((IModelCollectionEdit<BeingModel>)All.Beings).Remove((CritterModel)databaseValue);
                                             CritterListBox.Items.Remove(databaseValue);
-                                            CritterListBox.SelectedIndex = -1;
+                                            CritterListBox.ClearSelected();
                                             HasUnsavedChanges = true;
                                         },
                                         (object databaseValue) =>
