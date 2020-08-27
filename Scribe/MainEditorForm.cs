@@ -394,9 +394,17 @@ namespace Scribe
                 (GamesTabIndex, "GameEpisodeNumberTextBox")
                     => (input) => (inModel as IGameModelEdit).EpisodeNumber = input as int? ?? int.Parse((string)input, NumberStyles.Integer),
                 (GamesTabIndex, "GamePlayerCharacterComboBox")
-                    => (input) => (inModel as IGameModelEdit).PlayerCharacterID = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
+                    => (input) => (inModel as IGameModelEdit).PlayerCharacterID =
+                    input as ModelID? ??
+                    (input is int intInput
+                        ? (ModelID)intInput
+                        : (ModelID)int.Parse((string)input, NumberStyles.Integer)),
                 (GamesTabIndex, "GameFirstScriptComboBox")
-                    => (input) => (inModel as IGameModelEdit).FirstScriptID = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
+                    => (input) => (inModel as IGameModelEdit).FirstScriptID =
+                    input as ModelID? ??
+                    (input is int intInput
+                        ? (ModelID)intInput
+                        : (ModelID)int.Parse((string)input, NumberStyles.Integer)),
                 #endregion
 
                 #region BlockModels
@@ -413,13 +421,29 @@ namespace Scribe
                 (BlocksTabIndex, "BlockIsLiquidCheckBox")
                     => (input) => (inModel as IBlockModelEdit).IsLiquid = input as bool? ?? bool.Parse((string)input),
                 (BlocksTabIndex, "BlockGatherToolComboBox")
-                    => (input) => (inModel as IBlockModelEdit).GatherTool = input as GatheringTool? ?? Enum.Parse<GatheringTool>((string)input, true),
-                (BlocksTabIndex, "BlockDroppedCollectibleIDComboBox")
-                    => (input) => (inModel as IBlockModelEdit).CollectibleID = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
+                    => (input) => (inModel as IBlockModelEdit).GatherTool =
+                    input as GatheringTool? ??
+                    (input is int intInput
+                        ? (GatheringTool)intInput
+                        : Enum.Parse<GatheringTool>((string)input, true)),
                 (BlocksTabIndex, "BlockGatherEffectComboBox")
-                    => (input) => (inModel as IBlockModelEdit).GatherEffect = input as GatheringEffect? ?? Enum.Parse<GatheringEffect>((string)input, true),
+                    => (input) => (inModel as IBlockModelEdit).GatherEffect =
+                    input as GatheringEffect? ??
+                    (input is int intInput
+                        ? (GatheringEffect)intInput
+                        : Enum.Parse<GatheringEffect>((string)input, true)),
+                (BlocksTabIndex, "BlockDroppedCollectibleIDComboBox")
+                    => (input) => (inModel as IBlockModelEdit).CollectibleID =
+                    input as ModelID? ??
+                    (input is int intInput
+                        ? (ModelID)intInput
+                        : (ModelID)int.Parse((string)input, NumberStyles.Integer)),
                 (BlocksTabIndex, "BlockEquivalentItemComboBox")
-                    => (input) => (inModel as IBlockModelEdit).ItemID = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
+                    => (input) => (inModel as IBlockModelEdit).ItemID =
+                    input as ModelID? ??
+                    (input is int intInput
+                        ? (ModelID)intInput
+                        : (ModelID)int.Parse((string)input, NumberStyles.Integer)),
                 #endregion
 
                 #region FloorModels
@@ -523,12 +547,20 @@ namespace Scribe
                 (CrittersTabIndex, "CritterCommentTextBox")
                     => (input) => (inModel as ICritterModelEdit).Comment = (string)input,
                 (CrittersTabIndex, "CritterNativeBiomeComboBox")
-                    => (input) => (inModel as ICritterModelEdit).NativeBiome = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
+                    => (input) => (inModel as ICritterModelEdit).NativeBiome =
+                    input as ModelID? ??
+                    (input is int intInput
+                        ? (ModelID)intInput
+                        : (ModelID)int.Parse((string)input, NumberStyles.Integer)),
                 (CrittersTabIndex, "CritterPrimaryBehaviorComboBox")
-                    => (input) => (inModel as ICritterModelEdit).PrimaryBehavior = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
-                #endregion
+                    => (input) => (inModel as ICritterModelEdit).PrimaryBehavior =
+                    input as ModelID? ??
+                    (input is int intInput
+                        ? (ModelID)intInput
+                        : (ModelID)int.Parse((string)input, NumberStyles.Integer)),
+                    #endregion
 
-                #region ItemModels
+                    #region ItemModels
                 (ItemsTabIndex, "ItemNameTextBox")
                     => (input) => (inModel as IItemModelEdit).Name = (string)input,
                 (ItemsTabIndex, "ItemDescriptionTextBox")
