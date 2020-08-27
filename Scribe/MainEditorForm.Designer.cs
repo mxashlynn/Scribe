@@ -118,8 +118,8 @@ namespace Scribe
             this.GameCommentTextBox = new System.Windows.Forms.TextBox();
             this.GameEpisodeTitleTextBox = new System.Windows.Forms.TextBox();
             this.GameEpisodeNumberTextBox = new System.Windows.Forms.TextBox();
-            this.GamePlayerCharacterTextBox = new System.Windows.Forms.TextBox();
-            this.GameFirstScriptTextBox = new System.Windows.Forms.TextBox();
+            this.GamePlayerCharacterComboBox = new System.Windows.Forms.ComboBox();
+            this.GameFirstScriptComboBox = new System.Windows.Forms.ComboBox();
             this.GameIDLabel = new System.Windows.Forms.Label();
             this.GameIDTextBox = new System.Windows.Forms.TextBox();
             this.GameAddNewGameButton = new System.Windows.Forms.Button();
@@ -1343,8 +1343,8 @@ namespace Scribe
             this.GameTableLayoutPanel.Controls.Add(this.GameCommentTextBox, 1, 2);
             this.GameTableLayoutPanel.Controls.Add(this.GameEpisodeTitleTextBox, 1, 4);
             this.GameTableLayoutPanel.Controls.Add(this.GameEpisodeNumberTextBox, 1, 5);
-            this.GameTableLayoutPanel.Controls.Add(this.GamePlayerCharacterTextBox, 1, 6);
-            this.GameTableLayoutPanel.Controls.Add(this.GameFirstScriptTextBox, 1, 7);
+            this.GameTableLayoutPanel.Controls.Add(this.GamePlayerCharacterComboBox, 1, 6);
+            this.GameTableLayoutPanel.Controls.Add(this.GameFirstScriptComboBox, 1, 7);
             this.GameTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
             this.GameTableLayoutPanel.Name = "GameTableLayoutPanel";
             this.GameTableLayoutPanel.RowCount = 9;
@@ -1484,19 +1484,21 @@ namespace Scribe
             this.GameEpisodeNumberTextBox.Size = new System.Drawing.Size(147, 20);
             this.GameEpisodeNumberTextBox.TabIndex = 27;
             // 
-            // GamePlayerCharacterTextBox
+            // GamePlayerCharacterComboBox
             // 
-            this.GamePlayerCharacterTextBox.Location = new System.Drawing.Point(131, 213);
-            this.GamePlayerCharacterTextBox.Name = "GamePlayerCharacterTextBox";
-            this.GamePlayerCharacterTextBox.Size = new System.Drawing.Size(147, 20);
-            this.GamePlayerCharacterTextBox.TabIndex = 28;
+            this.GamePlayerCharacterComboBox.DisplayMember = "Name";
+            this.GamePlayerCharacterComboBox.Location = new System.Drawing.Point(131, 213);
+            this.GamePlayerCharacterComboBox.Name = "GamePlayerCharacterComboBox";
+            this.GamePlayerCharacterComboBox.Size = new System.Drawing.Size(147, 21);
+            this.GamePlayerCharacterComboBox.TabIndex = 28;
             // 
-            // GameFirstScriptTextBox
+            // GameFirstScriptComboBox
             // 
-            this.GameFirstScriptTextBox.Location = new System.Drawing.Point(131, 238);
-            this.GameFirstScriptTextBox.Name = "GameFirstScriptTextBox";
-            this.GameFirstScriptTextBox.Size = new System.Drawing.Size(147, 20);
-            this.GameFirstScriptTextBox.TabIndex = 29;
+            this.GameFirstScriptComboBox.DisplayMember = "Name";
+            this.GameFirstScriptComboBox.Location = new System.Drawing.Point(131, 238);
+            this.GameFirstScriptComboBox.Name = "GameFirstScriptComboBox";
+            this.GameFirstScriptComboBox.Size = new System.Drawing.Size(147, 21);
+            this.GameFirstScriptComboBox.TabIndex = 29;
             // 
             // GameIDLabel
             // 
@@ -5785,8 +5787,8 @@ namespace Scribe
         private System.Windows.Forms.TextBox GameCommentTextBox;
         private System.Windows.Forms.TextBox GameEpisodeTitleTextBox;
         private System.Windows.Forms.TextBox GameEpisodeNumberTextBox;
-        private System.Windows.Forms.TextBox GamePlayerCharacterTextBox;
-        private System.Windows.Forms.TextBox GameFirstScriptTextBox;
+        private System.Windows.Forms.ComboBox GamePlayerCharacterComboBox;
+        private System.Windows.Forms.ComboBox GameFirstScriptComboBox;
         private System.Windows.Forms.Button GameIconEditButton;
         private System.Windows.Forms.PictureBox GameIconPictureBox;
 

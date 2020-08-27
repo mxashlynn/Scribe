@@ -398,9 +398,9 @@ namespace Scribe
                     => (input) => (inModel as IGameModelEdit).EpisodeTitle = (string)input,
                 (GamesTabIndex, "GameEpisodeNumberTextBox")
                     => (input) => (inModel as IGameModelEdit).EpisodeNumber = input as int? ?? int.Parse((string)input, NumberStyles.Integer),
-                (GamesTabIndex, "GamePlayerCharacterTextBox")
+                (GamesTabIndex, "GamePlayerCharacterComboBox")
                     => (input) => (inModel as IGameModelEdit).PlayerCharacterID = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
-                (GamesTabIndex, "GameFirstScriptTextBox")
+                (GamesTabIndex, "GameFirstScriptComboBox")
                     => (input) => (inModel as IGameModelEdit).FirstScriptID = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
                 #endregion
 
@@ -743,6 +743,8 @@ namespace Scribe
             #endregion
 
             #region Repopulat Secondary List and Combo Boxes
+            RepopulateComboBox(GamePlayerCharacterComboBox, All.Beings.Where(being => being is CharacterModel));
+            RepopulateComboBox(GameFirstScriptComboBox, All.Scripts);
             RepopulateComboBox(CritterNativeBiomeComboBox, All.Biomes);
             RepopulateComboBox(CritterPrimaryBehaviorComboBox, All.Scripts);
             #endregion
@@ -836,8 +838,8 @@ namespace Scribe
                 GameIsEpisodeCheckBox.Checked = false;
                 GameEpisodeTitleTextBox.Text = "";
                 GameEpisodeNumberTextBox.Text = "";
-                GamePlayerCharacterTextBox.Text = "";
-                GameFirstScriptTextBox.Text = "";
+                GamePlayerCharacterComboBox.SelectedIndex = -1;
+                GameFirstScriptComboBox.SelectedIndex = -1;
                 GameIconPictureBox.Image = Resources.ImageNotFoundGraphic;
             }
             else if (GameListBox.SelectedItem is GameModel model
@@ -850,8 +852,8 @@ namespace Scribe
                 GameIsEpisodeCheckBox.Checked = model.IsEpisode;
                 GameEpisodeTitleTextBox.Text = model.EpisodeTitle;
                 GameEpisodeNumberTextBox.Text = model.EpisodeNumber.ToString();
-                GamePlayerCharacterTextBox.Text = model.PlayerCharacterID.ToString();
-                GameFirstScriptTextBox.Text = model.FirstScriptID.ToString();
+                GamePlayerCharacterComboBox.SelectedValue = model.PlayerCharacterID;
+                GameFirstScriptComboBox.SelectedValue = model.FirstScriptID;
 
                 var imagePath = Path.Combine(EditorCommands.GetGraphicsPathForModelID(model.ID), $"{model.ID}.png");
                 if (File.Exists(imagePath))
