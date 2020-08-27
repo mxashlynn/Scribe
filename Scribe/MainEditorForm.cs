@@ -27,6 +27,9 @@ namespace Scribe
     /// </summary>
     public partial class MainEditorForm : Form
     {
+        /// <summary>Tag identifying controls whose changes are not managed via the ContentAlteredEventHandler.</summary>
+        public static string PrimaryListBox = "Primary List Box";
+
         #region Child Forms
         /// <summary>Dialogue displaying information about the application.</summary>
         private readonly AboutBox AboutDialogue = new AboutBox();
@@ -867,6 +870,12 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void ContentAlteredEventHandler(object sender, EventArgs e)
         {
+            if (sender is Control control && PrimaryListBox.Equals((string)control.Tag))
+            {
+                // Silently return if a primary list box is altered -- changes in these boxes are handled via buttons.
+                return;
+            }
+
             var PropertyAccessor = GetPropertyAccessorForTabAndControl(EditorTabs.SelectedIndex, sender as Control);
             if (null == PropertyAccessor)
             {
