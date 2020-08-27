@@ -5560,6 +5560,8 @@ namespace Scribe
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(984, 761);
             this.Controls.Add(this.FlavorFilterGroupBox);
             this.Controls.Add(this.FilterGroupBox);
