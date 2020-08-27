@@ -745,8 +745,19 @@ namespace Scribe
             #region Repopulat Secondary List and Combo Boxes
             RepopulateComboBox(GamePlayerCharacterComboBox, All.Beings.Where(being => being is CharacterModel));
             RepopulateComboBox(GameFirstScriptComboBox, All.Scripts);
+            // TODO Blocks
+            // TODO Floors
+            // TODO Furnsihings
+            // TODO Collectibles
+            // TODO Characters
             RepopulateComboBox(CritterNativeBiomeComboBox, All.Biomes);
             RepopulateComboBox(CritterPrimaryBehaviorComboBox, All.Scripts);
+            // TODO Items
+            // TODO Biomes
+            // TODO Crafts
+            // TODO Rooms
+            // TODO Maps
+            // TODO Scripts
             #endregion
         }
 
