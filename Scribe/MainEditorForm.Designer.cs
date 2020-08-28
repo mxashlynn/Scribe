@@ -2955,8 +2955,8 @@ namespace Scribe
             this.CollectibleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.CollectibleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.CollectibleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleEffectAmountTextBox, 1, 5);
-            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleCollectionEffectComboBox, 1, 4);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleEffectAmountTextBox, 1, 9);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleCollectionEffectComboBox, 1, 8);
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleNameLabel, 0, 0);
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleDescriptionLabel, 0, 1);
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleCommentLabel, 0, 2);
@@ -2965,28 +2965,28 @@ namespace Scribe
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleDescriptionTextBox, 1, 1);
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleCommentTextBox, 1, 2);
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleEquivalentItemComboBox, 1, 3);
-            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleCollectionEffectLabel, 0, 4);
-            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleEffectAmountLabel, 0, 5);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleCollectionEffectLabel, 0, 8);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleEffectAmountLabel, 0, 9);
             this.CollectibleTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
             this.CollectibleTableLayoutPanel.Name = "CollectibleTableLayoutPanel";
-            this.CollectibleTableLayoutPanel.RowCount = 7;
+            this.CollectibleTableLayoutPanel.RowCount = 11;
             this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.CollectibleTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.CollectibleTableLayoutPanel.TabIndex = 5;
             // 
             // CollectibleEffectAmountTextBox
             // 
-            this.CollectibleEffectAmountTextBox.Location = new System.Drawing.Point(131, 188);
+            this.CollectibleEffectAmountTextBox.Location = new System.Drawing.Point(131, 398);
             this.CollectibleEffectAmountTextBox.Name = "CollectibleEffectAmountTextBox";
             this.CollectibleEffectAmountTextBox.Size = new System.Drawing.Size(144, 20);
             this.CollectibleEffectAmountTextBox.TabIndex = 23;
@@ -2994,7 +2994,7 @@ namespace Scribe
             // CollectibleCollectionEffectComboBox
             // 
             this.CollectibleCollectionEffectComboBox.FormattingEnabled = true;
-            this.CollectibleCollectionEffectComboBox.Location = new System.Drawing.Point(131, 163);
+            this.CollectibleCollectionEffectComboBox.Location = new System.Drawing.Point(131, 373);
             this.CollectibleCollectionEffectComboBox.Name = "CollectibleCollectionEffectComboBox";
             this.CollectibleCollectionEffectComboBox.Size = new System.Drawing.Size(144, 21);
             this.CollectibleCollectionEffectComboBox.TabIndex = 29;
@@ -3077,7 +3077,7 @@ namespace Scribe
             // CollectibleCollectionEffectLabel
             // 
             this.CollectibleCollectionEffectLabel.AutoSize = true;
-            this.CollectibleCollectionEffectLabel.Location = new System.Drawing.Point(3, 160);
+            this.CollectibleCollectionEffectLabel.Location = new System.Drawing.Point(3, 370);
             this.CollectibleCollectionEffectLabel.Name = "CollectibleCollectionEffectLabel";
             this.CollectibleCollectionEffectLabel.Size = new System.Drawing.Size(85, 13);
             this.CollectibleCollectionEffectLabel.TabIndex = 30;
@@ -3086,7 +3086,7 @@ namespace Scribe
             // CollectibleEffectAmountLabel
             // 
             this.CollectibleEffectAmountLabel.AutoSize = true;
-            this.CollectibleEffectAmountLabel.Location = new System.Drawing.Point(3, 185);
+            this.CollectibleEffectAmountLabel.Location = new System.Drawing.Point(3, 395);
             this.CollectibleEffectAmountLabel.Name = "CollectibleEffectAmountLabel";
             this.CollectibleEffectAmountLabel.Size = new System.Drawing.Size(76, 13);
             this.CollectibleEffectAmountLabel.TabIndex = 31;
