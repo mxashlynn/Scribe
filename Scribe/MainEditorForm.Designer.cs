@@ -73,6 +73,8 @@ namespace Scribe
             this.ContextMenuStripPictureBoxes = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToolStripMenuItemEditExternal = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemOpenContainingFolder = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextMenuStripIDExamples = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ToolStripMenuItemCopyID = new System.Windows.Forms.ToolStripMenuItem();
             this.FiltersTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.FilterTextBox = new System.Windows.Forms.TextBox();
             this.FilterByNameCheckBox = new System.Windows.Forms.CheckBox();
@@ -488,6 +490,7 @@ namespace Scribe
             this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
             this.ContextMenuStripPictureBoxes.SuspendLayout();
+            this.ContextMenuStripIDExamples.SuspendLayout();
             this.FiltersTableLayoutPanel.SuspendLayout();
             this.FilterGroupBox.SuspendLayout();
             this.FlavorFilterGroupBox.SuspendLayout();
@@ -890,6 +893,21 @@ namespace Scribe
             this.ToolStripMenuItemOpenContainingFolder.Size = new System.Drawing.Size(176, 22);
             this.ToolStripMenuItemOpenContainingFolder.Text = "Open Containing Folder";
             this.ToolStripMenuItemOpenContainingFolder.Click += new System.EventHandler(this.OpenContainingFolderMenuItem_Click);
+            // 
+            // ContextMenuStripIDExamples
+            // 
+            this.ContextMenuStripIDExamples.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemCopyID});
+            this.ContextMenuStripIDExamples.Name = "ContextMenuStripIDExamples";
+            this.ContextMenuStripIDExamples.Size = new System.Drawing.Size(117, 26);
+            // 
+            // ToolStripMenuItemCopyID
+            // 
+            this.ToolStripMenuItemCopyID.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemCopyID.Image")));
+            this.ToolStripMenuItemCopyID.Name = "ToolStripMenuItemCopyID";
+            this.ToolStripMenuItemCopyID.Size = new System.Drawing.Size(116, 22);
+            this.ToolStripMenuItemCopyID.Text = "Copy ID";
+            this.ToolStripMenuItemCopyID.Click += new System.EventHandler(this.CopyID_Click);
             // 
             // FiltersTableLayoutPanel
             // 
@@ -1515,6 +1533,7 @@ namespace Scribe
             this.GameIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.GameIDExample.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.GameIDExample.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.GameIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.GameIDExample.Location = new System.Drawing.Point(813, 16);
             this.GameIDExample.Name = "GameIDExample";
             this.GameIDExample.Size = new System.Drawing.Size(131, 20);
@@ -2137,6 +2156,7 @@ namespace Scribe
             this.BlockIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BlockIDExample.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.BlockIDExample.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BlockIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.BlockIDExample.Location = new System.Drawing.Point(812, 16);
             this.BlockIDExample.Name = "BlockIDExample";
             this.BlockIDExample.Size = new System.Drawing.Size(131, 20);
@@ -2430,6 +2450,7 @@ namespace Scribe
             this.FloorIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FloorIDExample.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.FloorIDExample.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FloorIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.FloorIDExample.Location = new System.Drawing.Point(812, 16);
             this.FloorIDExample.Name = "FloorIDExample";
             this.FloorIDExample.Size = new System.Drawing.Size(131, 20);
@@ -2737,6 +2758,7 @@ namespace Scribe
             this.FurnishingIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FurnishingIDExample.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.FurnishingIDExample.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FurnishingIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.FurnishingIDExample.Location = new System.Drawing.Point(812, 16);
             this.FurnishingIDExample.Name = "FurnishingIDExample";
             this.FurnishingIDExample.Size = new System.Drawing.Size(131, 20);
@@ -2983,6 +3005,7 @@ namespace Scribe
             this.CollectibleIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CollectibleIDExample.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.CollectibleIDExample.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CollectibleIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.CollectibleIDExample.Location = new System.Drawing.Point(812, 16);
             this.CollectibleIDExample.Name = "CollectibleIDExample";
             this.CollectibleIDExample.Size = new System.Drawing.Size(131, 20);
@@ -3565,6 +3588,7 @@ namespace Scribe
             this.CharacterIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CharacterIDExample.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.CharacterIDExample.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CharacterIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.CharacterIDExample.Location = new System.Drawing.Point(812, 16);
             this.CharacterIDExample.Name = "CharacterIDExample";
             this.CharacterIDExample.Size = new System.Drawing.Size(131, 20);
@@ -3870,6 +3894,7 @@ namespace Scribe
             this.CritterIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CritterIDExample.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.CritterIDExample.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CritterIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.CritterIDExample.Location = new System.Drawing.Point(812, 16);
             this.CritterIDExample.Name = "CritterIDExample";
             this.CritterIDExample.Size = new System.Drawing.Size(131, 20);
@@ -4277,6 +4302,7 @@ namespace Scribe
             this.ItemIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ItemIDExample.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ItemIDExample.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ItemIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.ItemIDExample.Location = new System.Drawing.Point(813, 16);
             this.ItemIDExample.Name = "ItemIDExample";
             this.ItemIDExample.Size = new System.Drawing.Size(131, 20);
@@ -4699,6 +4725,7 @@ namespace Scribe
             this.BiomeIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomeIDExample.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.BiomeIDExample.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BiomeIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.BiomeIDExample.Location = new System.Drawing.Point(812, 16);
             this.BiomeIDExample.Name = "BiomeIDExample";
             this.BiomeIDExample.Size = new System.Drawing.Size(131, 20);
@@ -5002,6 +5029,7 @@ namespace Scribe
             this.CraftingIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CraftingIDExample.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.CraftingIDExample.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CraftingIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.CraftingIDExample.Location = new System.Drawing.Point(813, 16);
             this.CraftingIDExample.Name = "CraftingIDExample";
             this.CraftingIDExample.Size = new System.Drawing.Size(131, 20);
@@ -5529,6 +5557,7 @@ namespace Scribe
             this.RoomIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomIDExample.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.RoomIDExample.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RoomIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.RoomIDExample.Location = new System.Drawing.Point(813, 16);
             this.RoomIDExample.Name = "RoomIDExample";
             this.RoomIDExample.Size = new System.Drawing.Size(131, 20);
@@ -5604,6 +5633,7 @@ namespace Scribe
             this.MainMenuBar.ResumeLayout(false);
             this.MainMenuBar.PerformLayout();
             this.ContextMenuStripPictureBoxes.ResumeLayout(false);
+            this.ContextMenuStripIDExamples.ResumeLayout(false);
             this.FiltersTableLayoutPanel.ResumeLayout(false);
             this.FiltersTableLayoutPanel.PerformLayout();
             this.FilterGroupBox.ResumeLayout(false);
@@ -5736,6 +5766,7 @@ namespace Scribe
         private System.Windows.Forms.ToolStripSeparator ToolStripSeparator5;
 
         private System.Windows.Forms.ContextMenuStrip ContextMenuStripPictureBoxes;
+        private System.Windows.Forms.ContextMenuStrip ContextMenuStripIDExamples;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemOpenContainingFolder;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemEditExternal;
 
@@ -6165,5 +6196,6 @@ namespace Scribe
 
         private System.Windows.Forms.TabPage ScriptsTabPage;
         private System.Windows.Forms.Label ScriptingComingSoonLabel;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemCopyID;
     }
 }

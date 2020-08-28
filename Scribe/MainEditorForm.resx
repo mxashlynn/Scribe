@@ -224,6 +224,14 @@
         AElFTkSuQmCC
 </value>
   </data>
+  <data name="ToolStripMenuItemCopyID.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAJtJREFUOE+N
+        jtENhDAMQ7v/CKxznzcCOzDBSRw2Dg2mBJ7kj1i22ybWQq9YHXjf+fd6RLUOPAykkXJMtQ68GIiRNHZB
+        tQ48Vx7bdIKl5TMdcpCJgdGIYvcgM9ABQ/kHWSAyAW42hex7PIObTUFz9DoEkPGbTUGzwjO42RSyd/Lr
+        +UW/2RQ0KzyDm00RRqnqBw5DFcjs0TEReFBrfwIkGEnZYFGuAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="GameIconPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAH1JREFUOE/N

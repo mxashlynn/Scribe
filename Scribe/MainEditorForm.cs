@@ -1531,6 +1531,24 @@ namespace Scribe
         }
 
         /// <summary>
+        /// Responds to a user selecting "Copy ID" context menu item from am ID example label.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="e">Addional event data.</param>
+        private void CopyID_Click(object sender, EventArgs e)
+        {
+            var id = GetSelectedModelIDForTab(EditorTabs.SelectedIndex).ToString();
+            if (!string.IsNullOrEmpty(id))
+            {
+                Clipboard.SetText(id);
+            }
+            else
+            {
+                SystemSounds.Beep.Play();
+            }
+        }
+
+        /// <summary>
         /// Responds to a user selecting "Edit in External Program" context menu item from a picture box.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
