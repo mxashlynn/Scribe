@@ -56,18 +56,18 @@ namespace Scribe.ChangeHistory
         internal static void AddAndExecute(Change inChange)
         {
             CurrentChangeIndex++;
-            if (CurrentChangeIndex < Changes.Count && CurrentChangeIndex > 0)
+            if (0 < Count && CurrentChangeIndex < Count)
             {
                 // If the new change supercedes any stored changes, dispose of them.
                 Changes = Changes.GetRange(0, CurrentChangeIndex);
             }
             Changes.Add(inChange);
             Changes[CurrentChangeIndex].Execute();
-            if (Changes.Count > MaximumChanges)
+            if (Count > MaximumChanges)
             {
                 // Trim excess old changes.
-                Changes = Changes.GetRange(Changes.Count - MaximumChanges, MaximumChanges);
-                CurrentChangeIndex = Changes.Count - 1;
+                Changes = Changes.GetRange(Count - MaximumChanges, MaximumChanges);
+                CurrentChangeIndex = Count - 1;
             }
         }
 
@@ -88,7 +88,7 @@ namespace Scribe.ChangeHistory
         /// </summary>
         internal static void Redo()
         {
-            if (CurrentChangeIndex < Changes.Count - 1)
+            if (CurrentChangeIndex < Count - 1)
             {
                 CurrentChangeIndex++;
                 Changes[CurrentChangeIndex].Execute();
