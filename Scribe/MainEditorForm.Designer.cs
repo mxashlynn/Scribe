@@ -4789,7 +4789,7 @@ namespace Scribe
             this.BiomePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomePictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.BiomePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("BiomePictureBox.Image")));
-            this.BiomePictureBox.Location = new System.Drawing.Point(767, 281);
+            this.BiomePictureBox.Location = new System.Drawing.Point(767, 286);
             this.BiomePictureBox.Name = "BiomePictureBox";
             this.BiomePictureBox.Size = new System.Drawing.Size(176, 176);
             this.BiomePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -5092,7 +5092,7 @@ namespace Scribe
             this.CraftingPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CraftingPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.CraftingPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("CraftingPictureBox.Image")));
-            this.CraftingPictureBox.Location = new System.Drawing.Point(767, 283);
+            this.CraftingPictureBox.Location = new System.Drawing.Point(767, 286);
             this.CraftingPictureBox.Name = "CraftingPictureBox";
             this.CraftingPictureBox.Size = new System.Drawing.Size(176, 176);
             this.CraftingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
