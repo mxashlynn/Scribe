@@ -874,7 +874,7 @@ namespace Scribe
         {
             if (GameListBox.SelectedIndex == -1)
             {
-                GameIDExample.Text = "";
+                GameIDExample.Text = ModelID.None.ToString();
                 GameNameTextBox.Text = "";
                 GameDescriptionTextBox.Text = "";
                 GameCommentTextBox.Text = "";
@@ -919,7 +919,7 @@ namespace Scribe
         {
             if (BlockListBox.SelectedIndex == -1)
             {
-                BlockIDExample.Text = "";
+                BlockIDExample.Text = ModelID.None.ToString();
                 BlockNameTextBox.Text = "";
                 BlockDescriptionTextBox.Text = "";
                 BlockCommentTextBox.Text = "";
@@ -973,7 +973,7 @@ namespace Scribe
         {
             if (CritterListBox.SelectedIndex == -1)
             {
-                CritterIDExample.Text = "";
+                CritterIDExample.Text = ModelID.None.ToString();
                 CritterNameTextBox.Text = "";
                 CritterDescriptionTextBox.Text = "";
                 CritterCommentTextBox.Text = "";

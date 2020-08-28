@@ -20,8 +20,6 @@ namespace Scribe
             base.Dispose(disposing);
         }
 
-        // TODO Once debugging is done, replace all "-2020202020" with "".
-
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -1538,7 +1536,6 @@ namespace Scribe
             this.GameIDExample.Name = "GameIDExample";
             this.GameIDExample.Size = new System.Drawing.Size(131, 20);
             this.GameIDExample.TabIndex = 3;
-            this.GameIDExample.Text = "-2020202020";
             this.GameIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // GameAddNewGameButton
@@ -2161,7 +2158,6 @@ namespace Scribe
             this.BlockIDExample.Name = "BlockIDExample";
             this.BlockIDExample.Size = new System.Drawing.Size(131, 20);
             this.BlockIDExample.TabIndex = 3;
-            this.BlockIDExample.Text = "-2020202020";
             this.BlockIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BlockRemoveBlockButton
@@ -2455,7 +2451,6 @@ namespace Scribe
             this.FloorIDExample.Name = "FloorIDExample";
             this.FloorIDExample.Size = new System.Drawing.Size(131, 20);
             this.FloorIDExample.TabIndex = 3;
-            this.FloorIDExample.Text = "-2020202020";
             this.FloorIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FloorAddNewFloorButton
@@ -2763,7 +2758,6 @@ namespace Scribe
             this.FurnishingIDExample.Name = "FurnishingIDExample";
             this.FurnishingIDExample.Size = new System.Drawing.Size(131, 20);
             this.FurnishingIDExample.TabIndex = 3;
-            this.FurnishingIDExample.Text = "-2020202020";
             this.FurnishingIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FurnishingAddNewFurnishingButton
@@ -3010,7 +3004,6 @@ namespace Scribe
             this.CollectibleIDExample.Name = "CollectibleIDExample";
             this.CollectibleIDExample.Size = new System.Drawing.Size(131, 20);
             this.CollectibleIDExample.TabIndex = 3;
-            this.CollectibleIDExample.Text = "-2020202020";
             this.CollectibleIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CollectibleAddNewCollectibleButton
@@ -3593,7 +3586,6 @@ namespace Scribe
             this.CharacterIDExample.Name = "CharacterIDExample";
             this.CharacterIDExample.Size = new System.Drawing.Size(131, 20);
             this.CharacterIDExample.TabIndex = 3;
-            this.CharacterIDExample.Text = "-2020202020";
             this.CharacterIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CharacterAddNewCharacterButton
@@ -3899,7 +3891,6 @@ namespace Scribe
             this.CritterIDExample.Name = "CritterIDExample";
             this.CritterIDExample.Size = new System.Drawing.Size(131, 20);
             this.CritterIDExample.TabIndex = 3;
-            this.CritterIDExample.Text = "-2020202020";
             this.CritterIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CritterConfigGroupBox
@@ -4307,7 +4298,6 @@ namespace Scribe
             this.ItemIDExample.Name = "ItemIDExample";
             this.ItemIDExample.Size = new System.Drawing.Size(131, 20);
             this.ItemIDExample.TabIndex = 3;
-            this.ItemIDExample.Text = "-2020202020";
             this.ItemIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BiomesTabPage
@@ -4730,7 +4720,6 @@ namespace Scribe
             this.BiomeIDExample.Name = "BiomeIDExample";
             this.BiomeIDExample.Size = new System.Drawing.Size(131, 20);
             this.BiomeIDExample.TabIndex = 3;
-            this.BiomeIDExample.Text = "-2020202020";
             this.BiomeIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CraftingRecipesTabPage
@@ -5034,7 +5023,6 @@ namespace Scribe
             this.CraftingIDExample.Name = "CraftingIDExample";
             this.CraftingIDExample.Size = new System.Drawing.Size(131, 20);
             this.CraftingIDExample.TabIndex = 3;
-            this.CraftingIDExample.Text = "-2020202020";
             this.CraftingIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CraftingConfigGroupBox
@@ -5562,7 +5550,6 @@ namespace Scribe
             this.RoomIDExample.Name = "RoomIDExample";
             this.RoomIDExample.Size = new System.Drawing.Size(131, 20);
             this.RoomIDExample.TabIndex = 3;
-            this.RoomIDExample.Text = "-2020202020";
             this.RoomIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MapsTabPage
