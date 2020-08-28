@@ -64,6 +64,12 @@ namespace Scribe
         /// A collection of all editable <see cref="Control"/>s in the <see cref="MainEditorForm"/>
         /// together with the game data they currently represent, organized by <see cref="Type"/>.
         /// </summary>
+        /// <remarks>
+        /// Whenever a <see cref="Form"/> reports a control's value as having been changed, the new value may
+        /// be compared against the value stored here to see if the change was substantive.  In other worse, WinForms
+        /// regards TextBox.Text='2' -> TextBox.Text='4' -> TextBox.Text='2' as a change; however, the initial and
+        /// end states are indistinquishable and the <see cref="ChangeManager"/> should not consider this a <see cref="Change"/>.
+        /// </remarks>
         private readonly Dictionary<Type, Dictionary<Control, object>> EditableControls;
 
         /// <summary>

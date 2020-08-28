@@ -12,8 +12,14 @@ namespace Scribe.ChangeHistory
         private string _oldValue = "";
 
         /// <summary>
-        /// Tracks whether or not the form's state has changed.
+        /// Tracks whether or not a <see cref="Control"/>'s state has changed.
         /// </summary>
+        /// <remarks>
+        /// Whenever a <see cref="Form"/> reports a control's value as having been changed, the new value may
+        /// be compared against this stored value to see if the change was substantive.  In other worse, WinForms
+        /// regards TextBox.Text='2' -> TextBox.Text='4' -> TextBox.Text='2' as a change; however, the initial and
+        /// end states are indistinquishable and the <see cref="ChangeManager"/> should not consider this a <see cref="Change"/>.
+        /// </remarks>
         public string OldValue
         {
             get => _oldValue;

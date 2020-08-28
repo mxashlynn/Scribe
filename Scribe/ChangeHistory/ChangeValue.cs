@@ -17,10 +17,11 @@ namespace Scribe.ChangeHistory
         /// <summary>The means to set the state in the backing store.</summary>
         protected readonly Action<object> SetDatabaseValue;
 
-        /// <summary>The means to set the state in the backing store.</summary>
+        /// <summary>The means to set the state in the UI.</summary>
         protected readonly Action<object> SetDisplayValue;
 
-        /// <summary>The means to set the state in the UI request-tracker.</summary>
+        /// <summary>The means to set the state in an external request-tracker.</summary>
+        /// <remarks>Calling code uses this to evaluate if a change is substantive or not.</remarks>
         protected readonly Action<object> SetOldValue;
 
         /// <summary>
@@ -30,7 +31,7 @@ namespace Scribe.ChangeHistory
         /// <param name="inNewState">State after change.</param>
         /// <param name="inControlName">Used in constructing a summary of the change.</param>
         /// <param name="inSetDatabaseValue">The means to set the state in the backing store.</param>
-        /// <param name="inSetDisplayValue">The means to set the state in the backing store.</param>
+        /// <param name="inSetDisplayValue">The means to set the state in the UI.</param>
         /// <param name="inSetOldValue">The means to set the state in the UI request-tracker.</param>
         internal ChangeValue(object inOldState, object inNewState, string inControlName,
                              Action<object> inSetDatabaseValue, Action<object> inSetDisplayValue, Action<object> inSetOldValue)
