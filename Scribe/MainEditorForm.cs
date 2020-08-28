@@ -16,6 +16,7 @@ using ParquetClassLibrary.Maps;
 using ParquetClassLibrary.Parquets;
 using ParquetClassLibrary.Rooms;
 using ParquetClassLibrary.Scripts;
+using Scribe.ChangeHistory;
 using Scribe.Properties;
 
 namespace Scribe
@@ -59,6 +60,7 @@ namespace Scribe
         /// A collection of all editable <see cref="Control"/>s in the <see cref="MainEditorForm"/>
         /// together with the game data they currently represent, organized by <see cref="Type"/>.
         /// </summary>
+        // TODO Should this be Dictionary<Type, Dictionary<Control, object>> so that we can use boxed value types for non-string items?
         private readonly Dictionary<Type, Dictionary<Control, string>> EditableControls;
 
         /// <summary>
@@ -404,37 +406,58 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void ContentAlteredEventHandler(object sender, EventArgs e)
         {
+            // TODO Remove this debug statement.
+            MainToolStripStatusLabel.Text = ChangeManager.Count.ToString();
+
             if (sender is TextBox textbox
                 && string.Compare(textbox.Text,
                                   EditableControls[typeof(TextBox)][textbox],
                                   comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
-                EditableControls[typeof(TextBox)][textbox] = textbox.Text;
-                HasUnsavedChanges = true;
+                ChangeManager.AddAndExecute(new Change(EditableControls[typeof(TextBox)][textbox], textbox.Text, textbox.Name,
+                                            (object databaseValue) => { _ = databaseValue.ToString(); HasUnsavedChanges = true; },
+                                            (object displayValue) => textbox.Text = displayValue.ToString(),
+                                            (object oldValue) => EditableControls[typeof(TextBox)][textbox] = oldValue.ToString()));
+                
             }
             else if (sender is CheckBox checkbox
                      && string.Compare(checkbox.Checked.ToString(),
                                        EditableControls[typeof(CheckBox)][checkbox],
                                        comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
-                EditableControls[typeof(CheckBox)][checkbox] = checkbox.Checked.ToString();
-                HasUnsavedChanges = true;
+                var parsedOldValue = bool.TryParse(EditableControls[typeof(CheckBox)][checkbox], out var result)
+                    ? result
+                    : false;
+                ChangeManager.AddAndExecute(new Change(parsedOldValue, (bool?)checkbox.Checked, checkbox.Name,
+                                            (object databaseValue) => { _ = databaseValue; HasUnsavedChanges = true; },
+                                            (object displayValue) => checkbox.Checked = (bool)displayValue,
+                                            (object oldValue) => EditableControls[typeof(CheckBox)][checkbox] = oldValue.ToString()));
             }
             else if (sender is ComboBox combobox
                      && string.Compare(combobox.SelectedIndex.ToString(),
                                        EditableControls[typeof(ComboBox)][combobox],
                                        comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
-                EditableControls[typeof(ComboBox)][combobox] = combobox.SelectedIndex.ToString();
-                HasUnsavedChanges = true;
+                var parsedOldValue = int.TryParse(EditableControls[typeof(ComboBox)][combobox], out var result)
+                    ? result
+                    : 0;
+                ChangeManager.AddAndExecute(new Change(parsedOldValue, (int?)combobox.SelectedIndex, combobox.Name,
+                                            (object databaseValue) => { _ = databaseValue; HasUnsavedChanges = true; },
+                                            (object displayValue) => combobox.SelectedIndex = (int)displayValue,
+                                            (object oldValue) => EditableControls[typeof(ComboBox)][combobox] = oldValue.ToString()));
             }
             else if (sender is ListBox listbox
                      && string.Compare(listbox.SelectedIndex.ToString(),
                                        EditableControls[typeof(ListBox)][listbox],
                                        comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
-                EditableControls[typeof(ListBox)][listbox] = listbox.SelectedIndex.ToString();
-                HasUnsavedChanges = true;
+                var parsedOldValue = int.TryParse(EditableControls[typeof(ListBox)][listbox], out var result)
+                    ? result
+                    : 0;
+                ChangeManager.AddAndExecute(new Change(parsedOldValue, (int?)listbox.SelectedIndex, listbox.Name,
+                                            (object databaseValue) => { _ = databaseValue; HasUnsavedChanges = true; },
+                                            (object displayValue) => listbox.SelectedIndex = (int)displayValue,
+                                            (object oldValue) => EditableControls[typeof(ListBox)][listbox] = oldValue.ToString()));
             }
         }
         #endregion
@@ -535,7 +558,7 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="e">Addional event data.</param>
         private void UndoToolStripMenuItem_Click(object sender, EventArgs e)
-            => throw new NotImplementedException();
+            => ChangeManager.Undo();
 
         /// <summary>
         /// Responds to a user selecting the "Redo" menu item.
@@ -543,7 +566,7 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="e">Addional event data.</param>
         private void RedoToolStripMenuItem_Click(object sender, EventArgs e)
-            => throw new NotImplementedException();
+            => ChangeManager.Redo();
 
         /// <summary>
         /// Responds to a user selecting the "Cut" menu item.
