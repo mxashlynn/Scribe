@@ -27,9 +27,6 @@ namespace Scribe
     /// </summary>
     public partial class MainEditorForm : Form
     {
-        /// <summary>Tag identifying controls whose changes are not managed via the ContentAlteredEventHandler.</summary>
-        public static string PrimaryListBox = "Primary List Box";
-
         #region Child Forms
         /// <summary>Dialogue displaying information about the application.</summary>
         private readonly AboutBox AboutDialogue = new AboutBox();
@@ -60,6 +57,9 @@ namespace Scribe
         #endregion
 
         #region Cached Controls
+        /// <summary>Tag identifying controls whose changes are not managed via <see cref="ContentAlteredEventHandler"/>.</summary>
+        public static string UntrackedControl = "Untracked Control";
+
         /// <summary>
         /// A collection of all editable <see cref="Control"/>s in the <see cref="MainEditorForm"/>
         /// together with the game data they currently represent, organized by <see cref="Type"/>.
@@ -1019,7 +1019,7 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void ContentAlteredEventHandler(object sender, EventArgs e)
         {
-            if (!(sender is Control alteredControl) || PrimaryListBox.Equals((string)alteredControl.Tag))
+            if (!(sender is Control alteredControl) || UntrackedControl.Equals((string)alteredControl.Tag))
             {
                 // Silently return if a primary list box is altered -- changes in these boxes are handled via buttons.
                 return;

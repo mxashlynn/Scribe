@@ -1542,7 +1542,7 @@ namespace Scribe
             this.GameListBox.Name = "GameListBox";
             this.GameListBox.Size = new System.Drawing.Size(279, 446);
             this.GameListBox.TabIndex = 1;
-            this.GameListBox.Tag = "Primary List Box";
+            this.GameListBox.Tag = "Untracked Control";
             this.GameListBox.SelectedValueChanged += new System.EventHandler(this.GameListBox_SelectedValueChanged);
             // 
             // FileFormatGroupBox
@@ -2120,7 +2120,7 @@ namespace Scribe
             this.BlockListBox.Name = "BlockListBox";
             this.BlockListBox.Size = new System.Drawing.Size(279, 446);
             this.BlockListBox.TabIndex = 1;
-            this.BlockListBox.Tag = "Primary List Box";
+            this.BlockListBox.Tag = "Untracked Control";
             this.BlockListBox.SelectedIndexChanged += new System.EventHandler(this.BlockListBox_SelectedIndexChanged);
             // 
             // BlockAddNewBlockButton
@@ -2456,7 +2456,7 @@ namespace Scribe
             this.FloorListBox.Name = "FloorListBox";
             this.FloorListBox.Size = new System.Drawing.Size(279, 446);
             this.FloorListBox.TabIndex = 1;
-            this.FloorListBox.Tag = "Primary List Box";
+            this.FloorListBox.Tag = "Untracked Control";
             // 
             // FloorIDLabel
             // 
@@ -2763,7 +2763,7 @@ namespace Scribe
             this.FurnishingListBox.Name = "FurnishingListBox";
             this.FurnishingListBox.Size = new System.Drawing.Size(279, 446);
             this.FurnishingListBox.TabIndex = 1;
-            this.FurnishingListBox.Tag = "Primary List Box";
+            this.FurnishingListBox.Tag = "Untracked Control";
             // 
             // FurnishingIDLabel
             // 
@@ -3009,7 +3009,7 @@ namespace Scribe
             this.CollectibleListBox.Name = "CollectibleListBox";
             this.CollectibleListBox.Size = new System.Drawing.Size(279, 446);
             this.CollectibleListBox.TabIndex = 1;
-            this.CollectibleListBox.Tag = "Primary List Box";
+            this.CollectibleListBox.Tag = "Untracked Control";
             // 
             // CollectibleIDLabel
             // 
@@ -3591,7 +3591,7 @@ namespace Scribe
             this.CharacterListBox.Name = "CharacterListBox";
             this.CharacterListBox.Size = new System.Drawing.Size(279, 446);
             this.CharacterListBox.TabIndex = 1;
-            this.CharacterListBox.Tag = "Primary List Box";
+            this.CharacterListBox.Tag = "Untracked Control";
             // 
             // CharacterIDLabel
             // 
@@ -3853,7 +3853,7 @@ namespace Scribe
             this.CritterListBox.Name = "CritterListBox";
             this.CritterListBox.Size = new System.Drawing.Size(279, 446);
             this.CritterListBox.TabIndex = 1;
-            this.CritterListBox.Tag = "Primary List Box";
+            this.CritterListBox.Tag = "Untracked Control";
             // 
             // CritterAddNewCritterButton
             // 
@@ -3956,7 +3956,7 @@ namespace Scribe
             this.ItemListBox.Name = "ItemListBox";
             this.ItemListBox.Size = new System.Drawing.Size(279, 446);
             this.ItemListBox.TabIndex = 1;
-            this.ItemListBox.Tag = "Primary List Box";
+            this.ItemListBox.Tag = "Untracked Control";
             // 
             // ItemInventoriesGroupBox
             // 
@@ -4343,7 +4343,7 @@ namespace Scribe
             this.BiomeListBox.Name = "BiomeListBox";
             this.BiomeListBox.Size = new System.Drawing.Size(279, 446);
             this.BiomeListBox.TabIndex = 1;
-            this.BiomeListBox.Tag = "Primary List Box";
+            this.BiomeListBox.Tag = "Untracked Control";
             // 
             // BiomeConfigGroupBox
             // 
@@ -4743,7 +4743,7 @@ namespace Scribe
             this.CraftingListBox.Name = "CraftingListBox";
             this.CraftingListBox.Size = new System.Drawing.Size(279, 446);
             this.CraftingListBox.TabIndex = 1;
-            this.CraftingListBox.Tag = "Primary List Box";
+            this.CraftingListBox.Tag = "Untracked Control";
             // 
             // CraftingPictureEditButton
             // 
@@ -5192,7 +5192,7 @@ namespace Scribe
             this.RoomListBox.Name = "RoomListBox";
             this.RoomListBox.Size = new System.Drawing.Size(279, 446);
             this.RoomListBox.TabIndex = 1;
-            this.RoomListBox.Tag = "Primary List Box";
+            this.RoomListBox.Tag = "Untracked Control";
             // 
             // RoomConfigGroupBox
             // 
