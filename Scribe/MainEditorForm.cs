@@ -1711,5 +1711,25 @@ namespace Scribe
             }
         }
         #endregion
+
+        private void BlockAddBiomeTagButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void BlockRemoveBiomeTagButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void BlockAddRoomTagButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void BlockRemoveRoomTagButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
