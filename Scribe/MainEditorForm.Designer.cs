@@ -1922,23 +1922,23 @@ namespace Scribe
             this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.BlockTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.BlockTableLayoutPanel.Size = new System.Drawing.Size(429, 475);
+            this.BlockTableLayoutPanel.Size = new System.Drawing.Size(429, 483);
             this.BlockTableLayoutPanel.TabIndex = 5;
             // 
             // BlockGatherToolComboBox
             // 
             this.BlockGatherToolComboBox.FormattingEnabled = true;
-            this.BlockGatherToolComboBox.Location = new System.Drawing.Point(131, 323);
+            this.BlockGatherToolComboBox.Location = new System.Drawing.Point(131, 343);
             this.BlockGatherToolComboBox.Name = "BlockGatherToolComboBox";
             this.BlockGatherToolComboBox.Size = new System.Drawing.Size(144, 21);
             this.BlockGatherToolComboBox.TabIndex = 29;
@@ -1946,7 +1946,7 @@ namespace Scribe
             // BlockDroppedCollectibleIDComboBox
             // 
             this.BlockDroppedCollectibleIDComboBox.FormattingEnabled = true;
-            this.BlockDroppedCollectibleIDComboBox.Location = new System.Drawing.Point(131, 373);
+            this.BlockDroppedCollectibleIDComboBox.Location = new System.Drawing.Point(131, 393);
             this.BlockDroppedCollectibleIDComboBox.Name = "BlockDroppedCollectibleIDComboBox";
             this.BlockDroppedCollectibleIDComboBox.Size = new System.Drawing.Size(144, 21);
             this.BlockDroppedCollectibleIDComboBox.TabIndex = 29;
@@ -1954,14 +1954,14 @@ namespace Scribe
             // BlockGatherEffectComboBox
             // 
             this.BlockGatherEffectComboBox.FormattingEnabled = true;
-            this.BlockGatherEffectComboBox.Location = new System.Drawing.Point(131, 348);
+            this.BlockGatherEffectComboBox.Location = new System.Drawing.Point(131, 368);
             this.BlockGatherEffectComboBox.Name = "BlockGatherEffectComboBox";
             this.BlockGatherEffectComboBox.Size = new System.Drawing.Size(144, 21);
             this.BlockGatherEffectComboBox.TabIndex = 29;
             // 
             // BlockMaxToughnessTextBox
             // 
-            this.BlockMaxToughnessTextBox.Location = new System.Drawing.Point(131, 448);
+            this.BlockMaxToughnessTextBox.Location = new System.Drawing.Point(131, 458);
             this.BlockMaxToughnessTextBox.Name = "BlockMaxToughnessTextBox";
             this.BlockMaxToughnessTextBox.Size = new System.Drawing.Size(144, 20);
             this.BlockMaxToughnessTextBox.TabIndex = 23;
@@ -2044,7 +2044,7 @@ namespace Scribe
             // BlockGatheringToolLabel
             // 
             this.BlockGatheringToolLabel.AutoSize = true;
-            this.BlockGatheringToolLabel.Location = new System.Drawing.Point(3, 320);
+            this.BlockGatheringToolLabel.Location = new System.Drawing.Point(3, 340);
             this.BlockGatheringToolLabel.Name = "BlockGatheringToolLabel";
             this.BlockGatheringToolLabel.Size = new System.Drawing.Size(77, 13);
             this.BlockGatheringToolLabel.TabIndex = 30;
@@ -2053,7 +2053,7 @@ namespace Scribe
             // BlockGatheringEffectLabel
             // 
             this.BlockGatheringEffectLabel.AutoSize = true;
-            this.BlockGatheringEffectLabel.Location = new System.Drawing.Point(3, 345);
+            this.BlockGatheringEffectLabel.Location = new System.Drawing.Point(3, 365);
             this.BlockGatheringEffectLabel.Name = "BlockGatheringEffectLabel";
             this.BlockGatheringEffectLabel.Size = new System.Drawing.Size(86, 13);
             this.BlockGatheringEffectLabel.TabIndex = 31;
@@ -2062,7 +2062,7 @@ namespace Scribe
             // BlockDroppedCollectibleLabel
             // 
             this.BlockDroppedCollectibleLabel.AutoSize = true;
-            this.BlockDroppedCollectibleLabel.Location = new System.Drawing.Point(3, 370);
+            this.BlockDroppedCollectibleLabel.Location = new System.Drawing.Point(3, 390);
             this.BlockDroppedCollectibleLabel.Name = "BlockDroppedCollectibleLabel";
             this.BlockDroppedCollectibleLabel.Size = new System.Drawing.Size(99, 13);
             this.BlockDroppedCollectibleLabel.TabIndex = 32;
@@ -2071,7 +2071,7 @@ namespace Scribe
             // BlockIsFlammableLabel
             // 
             this.BlockIsFlammableLabel.AutoSize = true;
-            this.BlockIsFlammableLabel.Location = new System.Drawing.Point(3, 395);
+            this.BlockIsFlammableLabel.Location = new System.Drawing.Point(3, 415);
             this.BlockIsFlammableLabel.Name = "BlockIsFlammableLabel";
             this.BlockIsFlammableLabel.Size = new System.Drawing.Size(69, 13);
             this.BlockIsFlammableLabel.TabIndex = 33;
@@ -2080,7 +2080,7 @@ namespace Scribe
             // BlockIsLiquidLabel
             // 
             this.BlockIsLiquidLabel.AutoSize = true;
-            this.BlockIsLiquidLabel.Location = new System.Drawing.Point(3, 420);
+            this.BlockIsLiquidLabel.Location = new System.Drawing.Point(3, 435);
             this.BlockIsLiquidLabel.Name = "BlockIsLiquidLabel";
             this.BlockIsLiquidLabel.Size = new System.Drawing.Size(46, 13);
             this.BlockIsLiquidLabel.TabIndex = 34;
@@ -2089,7 +2089,7 @@ namespace Scribe
             // BlockMaxToughnessLabel
             // 
             this.BlockMaxToughnessLabel.AutoSize = true;
-            this.BlockMaxToughnessLabel.Location = new System.Drawing.Point(3, 445);
+            this.BlockMaxToughnessLabel.Location = new System.Drawing.Point(3, 455);
             this.BlockMaxToughnessLabel.Name = "BlockMaxToughnessLabel";
             this.BlockMaxToughnessLabel.Size = new System.Drawing.Size(59, 13);
             this.BlockMaxToughnessLabel.TabIndex = 35;
@@ -2098,7 +2098,7 @@ namespace Scribe
             // BlockIsFlammableCheckBox
             // 
             this.BlockIsFlammableCheckBox.AutoSize = true;
-            this.BlockIsFlammableCheckBox.Location = new System.Drawing.Point(131, 398);
+            this.BlockIsFlammableCheckBox.Location = new System.Drawing.Point(131, 418);
             this.BlockIsFlammableCheckBox.Name = "BlockIsFlammableCheckBox";
             this.BlockIsFlammableCheckBox.Size = new System.Drawing.Size(15, 14);
             this.BlockIsFlammableCheckBox.TabIndex = 36;
@@ -2107,7 +2107,7 @@ namespace Scribe
             // BlockIsLiquidCheckBox
             // 
             this.BlockIsLiquidCheckBox.AutoSize = true;
-            this.BlockIsLiquidCheckBox.Location = new System.Drawing.Point(131, 423);
+            this.BlockIsLiquidCheckBox.Location = new System.Drawing.Point(131, 438);
             this.BlockIsLiquidCheckBox.Name = "BlockIsLiquidCheckBox";
             this.BlockIsLiquidCheckBox.Size = new System.Drawing.Size(15, 14);
             this.BlockIsLiquidCheckBox.TabIndex = 37;
@@ -2122,7 +2122,7 @@ namespace Scribe
             this.BlockAddsToBiomeListBox.FormattingEnabled = true;
             this.BlockAddsToBiomeListBox.Location = new System.Drawing.Point(131, 163);
             this.BlockAddsToBiomeListBox.Name = "BlockAddsToBiomeListBox";
-            this.BlockAddsToBiomeListBox.Size = new System.Drawing.Size(295, 43);
+            this.BlockAddsToBiomeListBox.Size = new System.Drawing.Size(295, 56);
             this.BlockAddsToBiomeListBox.TabIndex = 37;
             // 
             // BlockAddsToRoomListBox
@@ -2132,17 +2132,17 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BlockTableLayoutPanel.SetColumnSpan(this.BlockAddsToRoomListBox, 2);
             this.BlockAddsToRoomListBox.FormattingEnabled = true;
-            this.BlockAddsToRoomListBox.Location = new System.Drawing.Point(131, 243);
+            this.BlockAddsToRoomListBox.Location = new System.Drawing.Point(131, 253);
             this.BlockAddsToRoomListBox.Name = "BlockAddsToRoomListBox";
-            this.BlockAddsToRoomListBox.Size = new System.Drawing.Size(295, 43);
+            this.BlockAddsToRoomListBox.Size = new System.Drawing.Size(295, 56);
             this.BlockAddsToRoomListBox.TabIndex = 37;
             // 
             // BlockAddBiomeTagButton
             // 
             this.BlockAddBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlockAddBiomeTagButton.Location = new System.Drawing.Point(297, 213);
+            this.BlockAddBiomeTagButton.Location = new System.Drawing.Point(297, 225);
             this.BlockAddBiomeTagButton.Name = "BlockAddBiomeTagButton";
-            this.BlockAddBiomeTagButton.Size = new System.Drawing.Size(129, 23);
+            this.BlockAddBiomeTagButton.Size = new System.Drawing.Size(129, 22);
             this.BlockAddBiomeTagButton.TabIndex = 38;
             this.BlockAddBiomeTagButton.Text = "Add Biome Tag";
             this.BlockAddBiomeTagButton.UseVisualStyleBackColor = true;
@@ -2151,9 +2151,9 @@ namespace Scribe
             // BlockAddRoomTagButton
             // 
             this.BlockAddRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlockAddRoomTagButton.Location = new System.Drawing.Point(297, 293);
+            this.BlockAddRoomTagButton.Location = new System.Drawing.Point(297, 315);
             this.BlockAddRoomTagButton.Name = "BlockAddRoomTagButton";
-            this.BlockAddRoomTagButton.Size = new System.Drawing.Size(129, 23);
+            this.BlockAddRoomTagButton.Size = new System.Drawing.Size(129, 22);
             this.BlockAddRoomTagButton.TabIndex = 38;
             this.BlockAddRoomTagButton.Text = "Add Room Tag";
             this.BlockAddRoomTagButton.UseVisualStyleBackColor = true;
@@ -2162,9 +2162,9 @@ namespace Scribe
             // BlockRemoveBiomeTagButton
             // 
             this.BlockRemoveBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlockRemoveBiomeTagButton.Location = new System.Drawing.Point(146, 213);
+            this.BlockRemoveBiomeTagButton.Location = new System.Drawing.Point(146, 225);
             this.BlockRemoveBiomeTagButton.Name = "BlockRemoveBiomeTagButton";
-            this.BlockRemoveBiomeTagButton.Size = new System.Drawing.Size(129, 23);
+            this.BlockRemoveBiomeTagButton.Size = new System.Drawing.Size(129, 22);
             this.BlockRemoveBiomeTagButton.TabIndex = 38;
             this.BlockRemoveBiomeTagButton.Text = "Remove Biome Tag";
             this.BlockRemoveBiomeTagButton.UseVisualStyleBackColor = true;
@@ -2173,9 +2173,9 @@ namespace Scribe
             // BlockRemoveRoomTagButton
             // 
             this.BlockRemoveRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlockRemoveRoomTagButton.Location = new System.Drawing.Point(146, 293);
+            this.BlockRemoveRoomTagButton.Location = new System.Drawing.Point(146, 315);
             this.BlockRemoveRoomTagButton.Name = "BlockRemoveRoomTagButton";
-            this.BlockRemoveRoomTagButton.Size = new System.Drawing.Size(129, 23);
+            this.BlockRemoveRoomTagButton.Size = new System.Drawing.Size(129, 22);
             this.BlockRemoveRoomTagButton.TabIndex = 38;
             this.BlockRemoveRoomTagButton.Text = "Remove Room Tag";
             this.BlockRemoveRoomTagButton.UseVisualStyleBackColor = true;
@@ -2193,7 +2193,7 @@ namespace Scribe
             // BlockAddsToRoomLabel
             // 
             this.BlockAddsToRoomLabel.AutoSize = true;
-            this.BlockAddsToRoomLabel.Location = new System.Drawing.Point(3, 240);
+            this.BlockAddsToRoomLabel.Location = new System.Drawing.Point(3, 250);
             this.BlockAddsToRoomLabel.Name = "BlockAddsToRoomLabel";
             this.BlockAddsToRoomLabel.Size = new System.Drawing.Size(74, 13);
             this.BlockAddsToRoomLabel.TabIndex = 40;
