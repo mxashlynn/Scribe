@@ -874,7 +874,7 @@ namespace Scribe
         {
             if (GameListBox.SelectedIndex == -1)
             {
-                GameIDTextBox.Text = "";
+                GameIDExample.Text = "";
                 GameNameTextBox.Text = "";
                 GameDescriptionTextBox.Text = "";
                 GameCommentTextBox.Text = "";
@@ -888,7 +888,7 @@ namespace Scribe
             else if (GameListBox.SelectedItem is GameModel model
                     && null != model)
             {
-                GameIDTextBox.Text = model.ID.ToString();
+                GameIDExample.Text = model.ID.ToString();
                 GameNameTextBox.Text = model.Name;
                 GameDescriptionTextBox.Text = model.Description;
                 GameCommentTextBox.Text = model.Comment;
@@ -919,7 +919,7 @@ namespace Scribe
         {
             if (BlockListBox.SelectedIndex == -1)
             {
-                BlockIDTextBox.Text = "";
+                BlockIDExample.Text = "";
                 BlockNameTextBox.Text = "";
                 BlockDescriptionTextBox.Text = "";
                 BlockCommentTextBox.Text = "";
@@ -935,7 +935,7 @@ namespace Scribe
             else if (BlockListBox.SelectedItem is BlockModel model
                     && null != model)
             {
-                BlockIDTextBox.Text = model.ID.ToString();
+                BlockIDExample.Text = model.ID.ToString();
                 BlockNameTextBox.Text = model.Name;
                 BlockDescriptionTextBox.Text = model.Description;
                 BlockCommentTextBox.Text = model.Comment;
@@ -973,7 +973,7 @@ namespace Scribe
         {
             if (CritterListBox.SelectedIndex == -1)
             {
-                CritterIDTextBox.Text = "";
+                CritterIDExample.Text = "";
                 CritterNameTextBox.Text = "";
                 CritterDescriptionTextBox.Text = "";
                 CritterCommentTextBox.Text = "";
@@ -984,7 +984,7 @@ namespace Scribe
             else if (CritterListBox.SelectedItem is CritterModel model
                     && null != model)
             {
-                CritterIDTextBox.Text = model.ID.ToString();
+                CritterIDExample.Text = model.ID.ToString();
                 CritterNameTextBox.Text = model.Name;
                 CritterDescriptionTextBox.Text = model.Description;
                 CritterCommentTextBox.Text = model.Comment;
