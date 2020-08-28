@@ -515,9 +515,9 @@ namespace Scribe
                 (CharactersTabIndex, "CharacterCommentTextBox")
                     => (input) => (inModel as ICharacterModelEdit).Comment = (string)input,
                 (CharactersTabIndex, "CharacterNativeBiomeComboBox")
-                    => (input) => (inModel as ICharacterModelEdit).NativeBiome = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
+                    => (input) => (inModel as ICharacterModelEdit).NativeBiomeID = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
                 (CharactersTabIndex, "CharacterPrimaryBehaviorComboBox")
-                    => (input) => (inModel as ICharacterModelEdit).PrimaryBehavior = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
+                    => (input) => (inModel as ICharacterModelEdit).PrimaryBehaviorID = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
                 (CharactersTabIndex, "CharacterStoryIDTextBox")
                     => (input) => (inModel as ICharacterModelEdit).StoryCharacterID = (string)input,
                 (CharactersTabIndex, "CharacterPronounComboBox")
@@ -526,22 +526,22 @@ namespace Scribe
                     => (input) =>
                     {
                         var editModel = inModel as ICharacterModelEdit;
-                        editModel.StartingDialogue.Clear();
-                        editModel.StartingDialogue.ToList().AddRange((IList<ModelID>)input);
+                        editModel.StartingDialogueIDs.Clear();
+                        editModel.StartingDialogueIDs.ToList().AddRange((IList<ModelID>)input);
                     },
                 (CharactersTabIndex, "StartingInventoryComboBox")
                     => (input) =>
                     {
                         var editModel = inModel as ICharacterModelEdit;
-                        editModel.StartingInventory.Clear();
-                        editModel.StartingInventory.ToList().AddRange((IList<ModelID>)input);
+                        editModel.StartingInventoryIDs.Clear();
+                        editModel.StartingInventoryIDs.ToList().AddRange((IList<ModelID>)input);
                     },
                 (CharactersTabIndex, "CharacterStartingQuestsListBox")
                     => (input) =>
                     {
                         var editModel = inModel as ICharacterModelEdit;
-                        editModel.StartingQuests.Clear();
-                        editModel.StartingQuests.ToList().AddRange((IList<ModelID>)input);
+                        editModel.StartingQuestIDs.Clear();
+                        editModel.StartingQuestIDs.ToList().AddRange((IList<ModelID>)input);
                     },
                 #endregion
 
@@ -553,13 +553,13 @@ namespace Scribe
                 (CrittersTabIndex, "CritterCommentTextBox")
                     => (input) => (inModel as ICritterModelEdit).Comment = (string)input,
                 (CrittersTabIndex, "CritterNativeBiomeComboBox")
-                    => (input) => (inModel as ICritterModelEdit).NativeBiome =
+                    => (input) => (inModel as ICritterModelEdit).NativeBiomeID =
                     input as ModelID? ??
                     (input is int intInput
                         ? (ModelID)intInput
                         : (ModelID)int.Parse((string)input, NumberStyles.Integer)),
                 (CrittersTabIndex, "CritterPrimaryBehaviorComboBox")
-                    => (input) => (inModel as ICritterModelEdit).PrimaryBehavior =
+                    => (input) => (inModel as ICritterModelEdit).PrimaryBehaviorID =
                     input as ModelID? ??
                     (input is int intInput
                         ? (ModelID)intInput
@@ -589,9 +589,9 @@ namespace Scribe
                 (ItemsTabIndex, "ItemRarityTextBox")
                     => (input) => (inModel as IItemModelEdit).Rarity = input as int? ?? int.Parse((string)input, NumberStyles.Integer),
                 (ItemsTabIndex, "ItemEffectWhenUsedComboBox")
-                    => (input) => (inModel as IItemModelEdit).EffectWhenUsed = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
+                    => (input) => (inModel as IItemModelEdit).EffectWhenUsedID = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
                 (ItemsTabIndex, "ItemEffectWhileHeldComboBox")
-                    => (input) => (inModel as IItemModelEdit).EffectWhenUsed = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
+                    => (input) => (inModel as IItemModelEdit).EffectWhileHeldID = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
                 (ItemsTabIndex, "ItemEquivalentParquetComboBox")
                     => (input) => (inModel as IItemModelEdit).ParquetID = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
                 #endregion
@@ -988,8 +988,8 @@ namespace Scribe
                 CritterNameTextBox.Text = model.Name;
                 CritterDescriptionTextBox.Text = model.Description;
                 CritterCommentTextBox.Text = model.Comment;
-                CritterNativeBiomeComboBox.SelectedValue = model.NativeBiome;
-                CritterPrimaryBehaviorComboBox.SelectedValue = model.PrimaryBehavior;
+                CritterNativeBiomeComboBox.SelectedValue = model.NativeBiomeID;
+                CritterPrimaryBehaviorComboBox.SelectedValue = model.PrimaryBehaviorID;
 
                 var imagePath = Path.Combine(EditorCommands.GetGraphicsPathForModelID(model.ID), $"{model.ID}.png");
                 if (File.Exists(imagePath))
