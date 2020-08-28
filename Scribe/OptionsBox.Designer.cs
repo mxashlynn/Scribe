@@ -29,6 +29,7 @@ namespace Scribe
         {
             this.components = new System.ComponentModel.Container();
             this.TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.CancelButtonControl = new System.Windows.Forms.Button();
             this.PanelDefaultFolder = new System.Windows.Forms.Panel();
             this.RadioButtonDefaultToDesktop = new System.Windows.Forms.RadioButton();
             this.RadioButtonDefaultToDocuments = new System.Windows.Forms.RadioButton();
@@ -45,11 +46,17 @@ namespace Scribe
             this.OkayButton = new System.Windows.Forms.Button();
             this.LabelFlavorFilter = new System.Windows.Forms.Label();
             this.CheckBoxFlavorFilters = new System.Windows.Forms.CheckBox();
+            this.LabelEditImagesIn = new System.Windows.Forms.Label();
+            this.PanelEditImagesIn = new System.Windows.Forms.Panel();
+            this.RadioButtonEditInOSDefault = new System.Windows.Forms.RadioButton();
+            this.RadioButtonEditInCustomApp = new System.Windows.Forms.RadioButton();
+            this.TextBoxImageEditorPath = new System.Windows.Forms.TextBox();
+            this.LabelImageEditorPath = new System.Windows.Forms.Label();
             this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.CancelButtonControl = new System.Windows.Forms.Button();
             this.TableLayoutPanel.SuspendLayout();
             this.PanelDefaultFolder.SuspendLayout();
             this.PanelEditorTheme.SuspendLayout();
+            this.PanelEditImagesIn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +68,7 @@ namespace Scribe
             this.TableLayoutPanel.ColumnCount = 2;
             this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
             this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
-            this.TableLayoutPanel.Controls.Add(this.CancelButtonControl, 0, 7);
+            this.TableLayoutPanel.Controls.Add(this.CancelButtonControl, 0, 9);
             this.TableLayoutPanel.Controls.Add(this.PanelDefaultFolder, 1, 5);
             this.TableLayoutPanel.Controls.Add(this.LabelTheme, 0, 0);
             this.TableLayoutPanel.Controls.Add(this.PanelEditorTheme, 1, 0);
@@ -71,13 +78,19 @@ namespace Scribe
             this.TableLayoutPanel.Controls.Add(this.TextBoxAutoSaveInterval, 1, 3);
             this.TableLayoutPanel.Controls.Add(this.LabelAutoSaveExplanation, 1, 4);
             this.TableLayoutPanel.Controls.Add(this.LabelDefaultFolder, 0, 5);
-            this.TableLayoutPanel.Controls.Add(this.OkayButton, 1, 7);
+            this.TableLayoutPanel.Controls.Add(this.OkayButton, 1, 9);
             this.TableLayoutPanel.Controls.Add(this.LabelFlavorFilter, 0, 1);
             this.TableLayoutPanel.Controls.Add(this.CheckBoxFlavorFilters, 1, 1);
+            this.TableLayoutPanel.Controls.Add(this.LabelEditImagesIn, 0, 6);
+            this.TableLayoutPanel.Controls.Add(this.PanelEditImagesIn, 1, 6);
+            this.TableLayoutPanel.Controls.Add(this.TextBoxImageEditorPath, 1, 7);
+            this.TableLayoutPanel.Controls.Add(this.LabelImageEditorPath, 0, 7);
             this.TableLayoutPanel.Location = new System.Drawing.Point(10, 10);
             this.TableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TableLayoutPanel.Name = "TableLayoutPanel";
-            this.TableLayoutPanel.RowCount = 8;
+            this.TableLayoutPanel.RowCount = 10;
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
@@ -88,6 +101,16 @@ namespace Scribe
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.TableLayoutPanel.Size = new System.Drawing.Size(486, 306);
             this.TableLayoutPanel.TabIndex = 0;
+            // 
+            // CancelButtonControl
+            // 
+            this.CancelButtonControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.CancelButtonControl.Location = new System.Drawing.Point(3, 280);
+            this.CancelButtonControl.Name = "CancelButtonControl";
+            this.CancelButtonControl.Size = new System.Drawing.Size(74, 23);
+            this.CancelButtonControl.TabIndex = 8;
+            this.CancelButtonControl.Text = "Cancel";
+            this.CancelButtonControl.UseVisualStyleBackColor = true;
             // 
             // PanelDefaultFolder
             // 
@@ -257,19 +280,70 @@ namespace Scribe
             this.CheckBoxFlavorFilters.TabIndex = 36;
             this.CheckBoxFlavorFilters.UseVisualStyleBackColor = true;
             // 
+            // LabelEditImagesIn
+            // 
+            this.LabelEditImagesIn.AutoSize = true;
+            this.LabelEditImagesIn.Location = new System.Drawing.Point(3, 180);
+            this.LabelEditImagesIn.Name = "LabelEditImagesIn";
+            this.LabelEditImagesIn.Size = new System.Drawing.Size(81, 15);
+            this.LabelEditImagesIn.TabIndex = 37;
+            this.LabelEditImagesIn.Text = "Edit Images In";
+            // 
+            // PanelEditImagesIn
+            // 
+            this.PanelEditImagesIn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PanelEditImagesIn.Controls.Add(this.RadioButtonEditInOSDefault);
+            this.PanelEditImagesIn.Controls.Add(this.RadioButtonEditInCustomApp);
+            this.PanelEditImagesIn.Location = new System.Drawing.Point(163, 183);
+            this.PanelEditImagesIn.Name = "PanelEditImagesIn";
+            this.PanelEditImagesIn.Size = new System.Drawing.Size(320, 24);
+            this.PanelEditImagesIn.TabIndex = 38;
+            // 
+            // RadioButtonEditInOSDefault
+            // 
+            this.RadioButtonEditInOSDefault.AutoSize = true;
+            this.RadioButtonEditInOSDefault.Location = new System.Drawing.Point(100, 0);
+            this.RadioButtonEditInOSDefault.Name = "RadioButtonEditInOSDefault";
+            this.RadioButtonEditInOSDefault.Size = new System.Drawing.Size(81, 19);
+            this.RadioButtonEditInOSDefault.TabIndex = 1;
+            this.RadioButtonEditInOSDefault.Text = "OS Default";
+            this.RadioButtonEditInOSDefault.UseVisualStyleBackColor = true;
+            // 
+            // RadioButtonEditInCustomApp
+            // 
+            this.RadioButtonEditInCustomApp.AutoSize = true;
+            this.RadioButtonEditInCustomApp.Checked = true;
+            this.RadioButtonEditInCustomApp.Location = new System.Drawing.Point(0, 0);
+            this.RadioButtonEditInCustomApp.Name = "RadioButtonEditInCustomApp";
+            this.RadioButtonEditInCustomApp.Size = new System.Drawing.Size(101, 19);
+            this.RadioButtonEditInCustomApp.TabIndex = 0;
+            this.RadioButtonEditInCustomApp.TabStop = true;
+            this.RadioButtonEditInCustomApp.Text = "Custom Editor";
+            this.RadioButtonEditInCustomApp.UseVisualStyleBackColor = true;
+            // 
+            // TextBoxImageEditorPath
+            // 
+            this.TextBoxImageEditorPath.Location = new System.Drawing.Point(163, 213);
+            this.TextBoxImageEditorPath.Name = "TextBoxImageEditorPath";
+            this.TextBoxImageEditorPath.PlaceholderText = "Path to Custom Image Editor";
+            this.TextBoxImageEditorPath.Size = new System.Drawing.Size(293, 23);
+            this.TextBoxImageEditorPath.TabIndex = 40;
+            this.TextBoxImageEditorPath.Text = "C:\\Program Files\\Aseprite\\Aseprite.exe";
+            this.TextBoxImageEditorPath.Validating += new System.ComponentModel.CancelEventHandler(this.TextBoxImageEditorPath_Validating);
+            // 
+            // LabelImageEditorPath
+            // 
+            this.LabelImageEditorPath.AutoSize = true;
+            this.LabelImageEditorPath.Location = new System.Drawing.Point(3, 210);
+            this.LabelImageEditorPath.Name = "LabelImageEditorPath";
+            this.LabelImageEditorPath.Size = new System.Drawing.Size(0, 15);
+            this.LabelImageEditorPath.TabIndex = 41;
+            // 
             // ErrorProvider
             // 
             this.ErrorProvider.ContainerControl = this;
-            // 
-            // CancelButtonControl
-            // 
-            this.CancelButtonControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.CancelButtonControl.Location = new System.Drawing.Point(3, 280);
-            this.CancelButtonControl.Name = "CancelButtonControl";
-            this.CancelButtonControl.Size = new System.Drawing.Size(74, 23);
-            this.CancelButtonControl.TabIndex = 8;
-            this.CancelButtonControl.Text = "Cancel";
-            this.CancelButtonControl.UseVisualStyleBackColor = true;
             // 
             // OptionsBox
             // 
@@ -295,6 +369,8 @@ namespace Scribe
             this.PanelDefaultFolder.PerformLayout();
             this.PanelEditorTheme.ResumeLayout(false);
             this.PanelEditorTheme.PerformLayout();
+            this.PanelEditImagesIn.ResumeLayout(false);
+            this.PanelEditImagesIn.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
@@ -321,5 +397,11 @@ namespace Scribe
         private System.Windows.Forms.CheckBox CheckBoxFlavorFilters;
         private System.Windows.Forms.ErrorProvider ErrorProvider;
         private System.Windows.Forms.Button CancelButtonControl;
+        private System.Windows.Forms.Label LabelEditImagesIn;
+        private System.Windows.Forms.Panel PanelEditImagesIn;
+        private System.Windows.Forms.RadioButton RadioButtonEditInOSDefault;
+        private System.Windows.Forms.RadioButton RadioButtonEditInCustomApp;
+        private System.Windows.Forms.TextBox TextBoxImageEditorPath;
+        private System.Windows.Forms.Label LabelImageEditorPath;
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Windows.Forms;
 using ParquetClassLibrary;
 using ParquetClassLibrary.Beings;
@@ -40,7 +41,10 @@ namespace Scribe
             // This comparison forces the Parquet assembly to load.
             if (string.IsNullOrEmpty(ParquetClassLibrary.AssemblyInfo.LibraryVersion))
             {
-                MessageBox.Show(Resources.ErrorAccessingParquet, Resources.CaptionAccessingParquetError);
+                // TODO Ideally EditorCommands should not open message boxes or interact with the UI.
+                SystemSounds.Beep.Play();
+                _ = MessageBox.Show(Resources.ErrorAccessingParquet, Resources.CaptionAccessingParquetError,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -88,6 +92,8 @@ namespace Scribe
             while (Directory.GetFiles(All.ProjectDirectory).Length > 0)
             {
                 // Loop here to allow the user to empty the given directory if desired.
+                // TODO Ideally EditorCommands should not open message boxes or interact with the UI.
+                SystemSounds.Beep.Play();
                 if (MessageBox.Show(Resources.ErrorFolderNotEmpty,
                                     Resources.CaptionFolderNotEmptyError,
                                     MessageBoxButtons.RetryCancel,
@@ -104,7 +110,7 @@ namespace Scribe
                 var pathWithRoot = Path.Combine(All.ProjectDirectory, folderPath);
                 if (!Directory.Exists(pathWithRoot))
                 {
-                    Directory.CreateDirectory(pathWithRoot);
+                    _ = Directory.CreateDirectory(pathWithRoot);
                 }
             }
             #endregion
@@ -118,7 +124,7 @@ namespace Scribe
             ModelCollection<GameModel>.Default.PutRecordsForType<GameModel>();
             ModelCollection<BeingModel>.Default.PutRecordsForType<CritterModel>();
             ModelCollection<BeingModel>.Default.PutRecordsForType<CharacterModel>();
-            ModelCollection<BiomeModel>.Default.PutRecordsForType<BiomeModel>();
+            ModelCollection<BiomeRecipe>.Default.PutRecordsForType<BiomeRecipe>();
             ModelCollection<CraftingRecipe>.Default.PutRecordsForType<CraftingRecipe>();
             ModelCollection<InteractionModel>.Default.PutRecordsForType<InteractionModel>();
             ModelCollection<MapModel>.Default.PutRecordsForType<MapChunkModel>();
@@ -139,26 +145,25 @@ namespace Scribe
         /// <summary>
         /// Saves game data to files in the current directory.
         /// </summary>
-        internal static void SaveDataFiles()
-        {
+        /// <returns>
+        /// <c>true</c> if no exceptions were caught, <c>false</c> otherwise.
+        /// Note that a return value of <c>true</c> does not indicate the files were successfully saved!
+        /// </returns>
+        internal static bool SaveDataFiles()
             // NOTE That currently this is called from the GUI thread and could block on a slow disk or network.
             // I don't forsee this becoming an issue but it's something to keep in mind for possible optimizations.
-            if (All.CollectionsHaveBeenInitialized)
-            {
-                // TODO Let the user know if a the save fails.
-                All.SaveToCSVs();
-            }
-        }
+            => All.CollectionsHaveBeenInitialized
+                ? All.SaveToCSVs()
+                : true;
 
         /// <summary>
         /// Loads game data from files in the current directory.
         /// </summary>
-        internal static void LoadDataFiles()
+        /// <returns><c>true</c> if no exceptions were caught, <c>false</c> otherwise.</returns>
+        internal static bool LoadDataFiles()
         {
             All.Clear();
-
-            // TODO Let the user know if a file was missing or corrupt.
-            All.LoadFromCSVs();
+            return All.LoadFromCSVs();
         }
         #endregion
     }

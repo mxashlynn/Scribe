@@ -119,60 +119,84 @@
   </resheader>
   <data name="AboutDetails" xml:space="preserve">
     <value>A game built with this system offers many of the features of contemporary quest-driven building games but in a simple, top-down world and without combat.</value>
-    <comment>Gives more details about what the application does.</comment>
+    <comment>Instructions string.</comment>
   </data>
   <data name="AboutLinkPreamble" xml:space="preserve">
     <value>For more information visit:</value>
-    <comment>Introduces the project site.</comment>
+    <comment>Instructions string.</comment>
   </data>
   <data name="CaptionAbout" xml:space="preserve">
     <value>About</value>
-    <comment>Heading for the about box.</comment>
+    <comment>Heading string.</comment>
   </data>
   <data name="CaptionAccessingParquetError" xml:space="preserve">
     <value>Error Loading Parquet</value>
-    <comment>Heading for the library access error dialogue.</comment>
+    <comment>Heading string.</comment>
+  </data>
+  <data name="CaptionError" xml:space="preserve">
+    <value>Error</value>
+    <comment>Heading string.</comment>
   </data>
   <data name="CaptionExitWarning" xml:space="preserve">
     <value>Exit Scribe</value>
-    <comment>Heading for the exit warning dialogue.</comment>
+    <comment>Heading string.</comment>
   </data>
   <data name="CaptionFolderNotEmptyError" xml:space="preserve">
     <value>Cannot Create Templates</value>
-    <comment>Heading for non-empty project folder dialogue.</comment>
+    <comment>Heading string.</comment>
   </data>
   <data name="CaptionMainEditorFormClean" xml:space="preserve">
     <value>Scribe</value>
-    <comment>The title of the application, indicating no unsaved data.</comment>
+    <comment>Application title string, indicating no unsaved data.</comment>
   </data>
   <data name="CaptionMainEditorFormDirty" xml:space="preserve">
     <value>Scribe *</value>
-    <comment>The title of the application, indicated unsaved data.</comment>
+    <comment>Application title string, indicated unsaved data.</comment>
   </data>
   <data name="CaptionNewWarning" xml:space="preserve">
     <value>New Project</value>
-    <comment>Heading for the new project warning dialogue.</comment>
+    <comment>Heading string.</comment>
   </data>
   <data name="CaptionReloadWarning" xml:space="preserve">
     <value>Reload</value>
-    <comment>Heading for the reload warning dialogue.</comment>
+    <comment>Heading string.</comment>
   </data>
   <data name="CaptionVersion" xml:space="preserve">
     <value>Version</value>
-    <comment>Heading for the application version.</comment>
+    <comment>Heading string.</comment>
   </data>
   <data name="ErrorAccessingParquet" xml:space="preserve">
     <value>There was an error accessing the Parquet library.  Data might be in an inconsistent state.  :(</value>
-    <comment>A warning if the libaray assembly cannot be loaded.</comment>
+    <comment>Error string.</comment>
   </data>
   <data name="ErrorFolderNotEmpty" xml:space="preserve">
     <value>This folder is not empty!
 Folder: {1}</value>
-    <comment>An error message signalling a project directory was not empty.</comment>
+    <comment>Error string.</comment>
+  </data>
+  <data name="ErrorImageEditorNotFound" xml:space="preserve">
+    <value>The image editor could not be found at the specified path.</value>
+    <comment>Error string.</comment>
   </data>
   <data name="ErrorIntegersOnly" xml:space="preserve">
     <value>This value must be an integer.</value>
-    <comment>An error message signaling an integer could not be parsed.</comment>
+    <comment>Error string.</comment>
+  </data>
+  <data name="ErrorLoadFailed" xml:space="preserve">
+    <value>Scribe attempted to load a project but encountered an error.  Please check the log.</value>
+    <comment>Error string.</comment>
+  </data>
+  <data name="ErrorMaximumIDReached" xml:space="preserve">
+    <value>The maximum number of this type of model already exists.</value>
+    <comment>Error string.</comment>
+  </data>
+  <data name="ErrorNewFailed" xml:space="preserve">
+    <value>Scribe attempted to create a new project but encountered an error.  Please check the log.</value>
+    <comment>Error string.</comment>
+  </data>
+  <data name="ErrorSaveFailed" xml:space="preserve">
+    <value>Scribe attempted to save the project but encountered an error.  Please check the log.</value>
+    <comment>Error string.</comment>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ImageNotFoundGraphic" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -180,28 +204,28 @@ Folder: {1}</value>
   </data>
   <data name="InfoMessageLoad" xml:space="preserve">
     <value>Select the project folder to load.</value>
-    <comment>Instructions for loading an existing project.</comment>
+    <comment>Instructions string.</comment>
   </data>
   <data name="InfoMessageNew" xml:space="preserve">
     <value>Select the new project folder.</value>
-    <comment>Instructions for creating a new project.</comment>
+    <comment>Instructions string.</comment>
   </data>
   <data name="ParquetIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ParquetIcon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RepositoryURL" xml:space="preserve">
     <value>https://github.com/mxashlynn/Scribe</value>
-    <comment>Where to find the source code.</comment>
+    <comment>Instructions string.</comment>
   </data>
   <data name="StrikeRangeDiagram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\StrikeRangeDiagram.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="WarningMessageExit" xml:space="preserve">
     <value>Really quit?  Unsaved changes will be lost!</value>
-    <comment>A reminder to save before quitting.</comment>
+    <comment>Warning string.</comment>
   </data>
   <data name="WarningMessageReload" xml:space="preserve">
     <value>Abandon unsaved changes and reload data?</value>
-    <comment>A warning before discarding changes.</comment>
+    <comment>Warning string.</comment>
   </data>
 </root>

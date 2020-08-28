@@ -82,5 +82,29 @@ namespace Scribe.Properties {
                 this["UseFlavorFilters"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool EditInApp {
+            get {
+                return ((bool)(this["EditInApp"]));
+            }
+            set {
+                this["EditInApp"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Aseprite\\Aseprite.exe")]
+        public string ImageEditor {
+            get {
+                return ((string)(this["ImageEditor"]));
+            }
+            set {
+                this["ImageEditor"] = value;
+            }
+        }
     }
 }

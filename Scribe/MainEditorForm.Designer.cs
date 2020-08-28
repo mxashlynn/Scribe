@@ -1,5 +1,3 @@
-using System;
-
 namespace Scribe
 {
     partial class MainEditorForm
@@ -21,6 +19,8 @@ namespace Scribe
             }
             base.Dispose(disposing);
         }
+
+        // TODO Once debugging is done, replace all "-2020202020" with "".
 
         #region Windows Form Designer generated code
 
@@ -118,8 +118,8 @@ namespace Scribe
             this.GameCommentTextBox = new System.Windows.Forms.TextBox();
             this.GameEpisodeTitleTextBox = new System.Windows.Forms.TextBox();
             this.GameEpisodeNumberTextBox = new System.Windows.Forms.TextBox();
-            this.GamePlayerCharacterTextBox = new System.Windows.Forms.TextBox();
-            this.GameFirstScriptTextBox = new System.Windows.Forms.TextBox();
+            this.GamePlayerCharacterComboBox = new System.Windows.Forms.ComboBox();
+            this.GameFirstScriptComboBox = new System.Windows.Forms.ComboBox();
             this.GameIDLabel = new System.Windows.Forms.Label();
             this.GameIDTextBox = new System.Windows.Forms.TextBox();
             this.GameAddNewGameButton = new System.Windows.Forms.Button();
@@ -176,8 +176,8 @@ namespace Scribe
             this.BlockListBox = new System.Windows.Forms.ListBox();
             this.BlockAddNewBlockButton = new System.Windows.Forms.Button();
             this.BlockIDTextBox = new System.Windows.Forms.TextBox();
-            this.BlockConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.BlockRemoveBlockButton = new System.Windows.Forms.Button();
+            this.BlockConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.FloorsTabPage = new System.Windows.Forms.TabPage();
             this.FloorRemoveFloorButton = new System.Windows.Forms.Button();
             this.FloorLayoutTabelPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -201,13 +201,13 @@ namespace Scribe
             this.FloorAddsToBiomeListBox = new System.Windows.Forms.ListBox();
             this.FloorAddsToRoomListBox = new System.Windows.Forms.ListBox();
             this.FloorAddBiomeTagButton = new System.Windows.Forms.Button();
-            this.FloorConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.FloorIDTextBox = new System.Windows.Forms.TextBox();
             this.FloorAddNewFloorButton = new System.Windows.Forms.Button();
             this.FloorListBox = new System.Windows.Forms.ListBox();
             this.FloorIDLabel = new System.Windows.Forms.Label();
             this.FloorEditImageButton = new System.Windows.Forms.Button();
             this.FloorPictureBox = new System.Windows.Forms.PictureBox();
+            this.FloorConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.FurnishingsTabPage = new System.Windows.Forms.TabPage();
             this.FurnishingTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.FurnishingSwapWithFurnishingComboBox = new System.Windows.Forms.ComboBox();
@@ -229,13 +229,13 @@ namespace Scribe
             this.FurnishingIsEnclosingCheckBox = new System.Windows.Forms.CheckBox();
             this.FurnishingIsFlammableCheckBox = new System.Windows.Forms.CheckBox();
             this.FurnishingRemoveFurnishingButton = new System.Windows.Forms.Button();
-            this.FurnishingConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.FurnishingIDTextBox = new System.Windows.Forms.TextBox();
             this.FurnishingAddNewFurnishingButton = new System.Windows.Forms.Button();
             this.FurnishingListBox = new System.Windows.Forms.ListBox();
             this.FurnishingIDLabel = new System.Windows.Forms.Label();
             this.FurnishingEditImageButton = new System.Windows.Forms.Button();
             this.FurnishingPictureBox = new System.Windows.Forms.PictureBox();
+            this.FurnishingConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CollectiblesTabPage = new System.Windows.Forms.TabPage();
             this.CollectibleTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.CollectibleEffectAmountTextBox = new System.Windows.Forms.TextBox();
@@ -251,13 +251,13 @@ namespace Scribe
             this.CollectibleCollectionEffectLabel = new System.Windows.Forms.Label();
             this.CollectibleEffectAmountLabel = new System.Windows.Forms.Label();
             this.CollectibleRemoveCollectibleButton = new System.Windows.Forms.Button();
-            this.CollectibleConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CollectibleIDTextBox = new System.Windows.Forms.TextBox();
             this.CollectibleAddNewCollectibleButton = new System.Windows.Forms.Button();
             this.CollectibleListBox = new System.Windows.Forms.ListBox();
             this.CollectibleIDLabel = new System.Windows.Forms.Label();
             this.CollectibleEditImageButton = new System.Windows.Forms.Button();
             this.CollectiblePictureBox = new System.Windows.Forms.PictureBox();
+            this.CollectibleConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CharactersTabPage = new System.Windows.Forms.TabPage();
             this.CharacterPronounGroupBox = new System.Windows.Forms.GroupBox();
             this.CharacterPronounTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -282,7 +282,7 @@ namespace Scribe
             this.CharacterStartingQuestsListBox = new System.Windows.Forms.ListBox();
             this.CharacterStoryIDTextBox = new System.Windows.Forms.TextBox();
             this.CharacterOpenInventoryEditorButton = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CharacterPrimaryBehaviorComboBox = new System.Windows.Forms.ComboBox();
             this.CharacterNameLabel = new System.Windows.Forms.Label();
             this.CharacterDescriptionLabel = new System.Windows.Forms.Label();
             this.CharacterCommentLabel = new System.Windows.Forms.Label();
@@ -474,7 +474,7 @@ namespace Scribe
             this.RoomNameTextBox = new System.Windows.Forms.TextBox();
             this.RoomDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.RoomCommentTextBox = new System.Windows.Forms.TextBox();
-            this.RoomTierTextBox = new System.Windows.Forms.TextBox();
+            this.RoomMinimumWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
             this.RoomRequiredFurnishingsLabel = new System.Windows.Forms.Label();
             this.RoomRequiredFurnishingsListBox = new System.Windows.Forms.ListBox();
             this.RoomPictureBox = new System.Windows.Forms.PictureBox();
@@ -1296,6 +1296,7 @@ namespace Scribe
             this.GameRemoveGameButton.TabIndex = 2;
             this.GameRemoveGameButton.Text = "Remove Game";
             this.GameRemoveGameButton.UseVisualStyleBackColor = true;
+            this.GameRemoveGameButton.Click += new System.EventHandler(this.GameRemoveGameButton_Click);
             // 
             // GameIconEditButton
             // 
@@ -1312,6 +1313,7 @@ namespace Scribe
             this.GameIconPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.GameIconPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.GameIconPictureBox.ContextMenuStrip = this.ContextMenuStripEditorForm;
+            this.GameIconPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("GameIconPictureBox.Image")));
             this.GameIconPictureBox.Location = new System.Drawing.Point(767, 286);
             this.GameIconPictureBox.Name = "GameIconPictureBox";
             this.GameIconPictureBox.Size = new System.Drawing.Size(176, 176);
@@ -1341,8 +1343,8 @@ namespace Scribe
             this.GameTableLayoutPanel.Controls.Add(this.GameCommentTextBox, 1, 2);
             this.GameTableLayoutPanel.Controls.Add(this.GameEpisodeTitleTextBox, 1, 4);
             this.GameTableLayoutPanel.Controls.Add(this.GameEpisodeNumberTextBox, 1, 5);
-            this.GameTableLayoutPanel.Controls.Add(this.GamePlayerCharacterTextBox, 1, 6);
-            this.GameTableLayoutPanel.Controls.Add(this.GameFirstScriptTextBox, 1, 7);
+            this.GameTableLayoutPanel.Controls.Add(this.GamePlayerCharacterComboBox, 1, 6);
+            this.GameTableLayoutPanel.Controls.Add(this.GameFirstScriptComboBox, 1, 7);
             this.GameTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
             this.GameTableLayoutPanel.Name = "GameTableLayoutPanel";
             this.GameTableLayoutPanel.RowCount = 9;
@@ -1482,19 +1484,21 @@ namespace Scribe
             this.GameEpisodeNumberTextBox.Size = new System.Drawing.Size(147, 20);
             this.GameEpisodeNumberTextBox.TabIndex = 27;
             // 
-            // GamePlayerCharacterTextBox
+            // GamePlayerCharacterComboBox
             // 
-            this.GamePlayerCharacterTextBox.Location = new System.Drawing.Point(131, 213);
-            this.GamePlayerCharacterTextBox.Name = "GamePlayerCharacterTextBox";
-            this.GamePlayerCharacterTextBox.Size = new System.Drawing.Size(147, 20);
-            this.GamePlayerCharacterTextBox.TabIndex = 28;
+            this.GamePlayerCharacterComboBox.DisplayMember = "Name";
+            this.GamePlayerCharacterComboBox.Location = new System.Drawing.Point(131, 213);
+            this.GamePlayerCharacterComboBox.Name = "GamePlayerCharacterComboBox";
+            this.GamePlayerCharacterComboBox.Size = new System.Drawing.Size(147, 21);
+            this.GamePlayerCharacterComboBox.TabIndex = 28;
             // 
-            // GameFirstScriptTextBox
+            // GameFirstScriptComboBox
             // 
-            this.GameFirstScriptTextBox.Location = new System.Drawing.Point(131, 238);
-            this.GameFirstScriptTextBox.Name = "GameFirstScriptTextBox";
-            this.GameFirstScriptTextBox.Size = new System.Drawing.Size(147, 20);
-            this.GameFirstScriptTextBox.TabIndex = 29;
+            this.GameFirstScriptComboBox.DisplayMember = "Name";
+            this.GameFirstScriptComboBox.Location = new System.Drawing.Point(131, 238);
+            this.GameFirstScriptComboBox.Name = "GameFirstScriptComboBox";
+            this.GameFirstScriptComboBox.Size = new System.Drawing.Size(147, 21);
+            this.GameFirstScriptComboBox.TabIndex = 29;
             // 
             // GameIDLabel
             // 
@@ -1524,6 +1528,7 @@ namespace Scribe
             this.GameAddNewGameButton.TabIndex = 2;
             this.GameAddNewGameButton.Text = "Add New Game";
             this.GameAddNewGameButton.UseVisualStyleBackColor = true;
+            this.GameAddNewGameButton.Click += new System.EventHandler(this.GameAddNewGameButton_Click);
             // 
             // GameListBox
             // 
@@ -1535,6 +1540,8 @@ namespace Scribe
             this.GameListBox.Name = "GameListBox";
             this.GameListBox.Size = new System.Drawing.Size(279, 446);
             this.GameListBox.TabIndex = 1;
+            this.GameListBox.Tag = "Primary List Box";
+            this.GameListBox.SelectedValueChanged += new System.EventHandler(this.GameListBox_SelectedValueChanged);
             // 
             // FileFormatGroupBox
             // 
@@ -1838,8 +1845,8 @@ namespace Scribe
             this.BlocksTabPage.Controls.Add(this.BlockListBox);
             this.BlocksTabPage.Controls.Add(this.BlockAddNewBlockButton);
             this.BlocksTabPage.Controls.Add(this.BlockIDTextBox);
-            this.BlocksTabPage.Controls.Add(this.BlockConfigGroupBox);
             this.BlocksTabPage.Controls.Add(this.BlockRemoveBlockButton);
+            this.BlocksTabPage.Controls.Add(this.BlockConfigGroupBox);
             this.BlocksTabPage.Location = new System.Drawing.Point(4, 22);
             this.BlocksTabPage.Name = "BlocksTabPage";
             this.BlocksTabPage.Size = new System.Drawing.Size(953, 599);
@@ -2073,6 +2080,7 @@ namespace Scribe
             // 
             this.BlockPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BlockPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BlockPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("BlockPictureBox.Image")));
             this.BlockPictureBox.Location = new System.Drawing.Point(767, 286);
             this.BlockPictureBox.Name = "BlockPictureBox";
             this.BlockPictureBox.Size = new System.Drawing.Size(176, 176);
@@ -2110,6 +2118,8 @@ namespace Scribe
             this.BlockListBox.Name = "BlockListBox";
             this.BlockListBox.Size = new System.Drawing.Size(279, 446);
             this.BlockListBox.TabIndex = 1;
+            this.BlockListBox.Tag = "Primary List Box";
+            this.BlockListBox.SelectedIndexChanged += new System.EventHandler(this.BlockListBox_SelectedIndexChanged);
             // 
             // BlockAddNewBlockButton
             // 
@@ -2130,6 +2140,15 @@ namespace Scribe
             this.BlockIDTextBox.TabIndex = 3;
             this.BlockIDTextBox.Text = "-2020202020";
             // 
+            // BlockRemoveBlockButton
+            // 
+            this.BlockRemoveBlockButton.Location = new System.Drawing.Point(24, 468);
+            this.BlockRemoveBlockButton.Name = "BlockRemoveBlockButton";
+            this.BlockRemoveBlockButton.Size = new System.Drawing.Size(129, 23);
+            this.BlockRemoveBlockButton.TabIndex = 2;
+            this.BlockRemoveBlockButton.Text = "Remove Block";
+            this.BlockRemoveBlockButton.UseVisualStyleBackColor = true;
+            // 
             // BlockConfigGroupBox
             // 
             this.BlockConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -2140,27 +2159,18 @@ namespace Scribe
             this.BlockConfigGroupBox.TabIndex = 0;
             this.BlockConfigGroupBox.TabStop = false;
             // 
-            // BlockRemoveBlockButton
-            // 
-            this.BlockRemoveBlockButton.Location = new System.Drawing.Point(24, 468);
-            this.BlockRemoveBlockButton.Name = "BlockRemoveBlockButton";
-            this.BlockRemoveBlockButton.Size = new System.Drawing.Size(129, 23);
-            this.BlockRemoveBlockButton.TabIndex = 2;
-            this.BlockRemoveBlockButton.Text = "Remove Block";
-            this.BlockRemoveBlockButton.UseVisualStyleBackColor = true;
-            // 
             // FloorsTabPage
             // 
             this.FloorsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.FloorsTabPage.Controls.Add(this.FloorRemoveFloorButton);
             this.FloorsTabPage.Controls.Add(this.FloorLayoutTabelPanel);
-            this.FloorsTabPage.Controls.Add(this.FloorConfigGroupBox);
             this.FloorsTabPage.Controls.Add(this.FloorIDTextBox);
             this.FloorsTabPage.Controls.Add(this.FloorAddNewFloorButton);
             this.FloorsTabPage.Controls.Add(this.FloorListBox);
             this.FloorsTabPage.Controls.Add(this.FloorIDLabel);
             this.FloorsTabPage.Controls.Add(this.FloorEditImageButton);
             this.FloorsTabPage.Controls.Add(this.FloorPictureBox);
+            this.FloorsTabPage.Controls.Add(this.FloorConfigGroupBox);
             this.FloorsTabPage.Location = new System.Drawing.Point(4, 22);
             this.FloorsTabPage.Name = "FloorsTabPage";
             this.FloorsTabPage.Size = new System.Drawing.Size(953, 599);
@@ -2411,16 +2421,6 @@ namespace Scribe
             this.FloorAddBiomeTagButton.Text = "Add Biome Tag";
             this.FloorAddBiomeTagButton.UseVisualStyleBackColor = true;
             // 
-            // FloorConfigGroupBox
-            // 
-            this.FloorConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorConfigGroupBox.Location = new System.Drawing.Point(9, 497);
-            this.FloorConfigGroupBox.Name = "FloorConfigGroupBox";
-            this.FloorConfigGroupBox.Size = new System.Drawing.Size(938, 96);
-            this.FloorConfigGroupBox.TabIndex = 0;
-            this.FloorConfigGroupBox.TabStop = false;
-            // 
             // FloorIDTextBox
             // 
             this.FloorIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -2450,6 +2450,7 @@ namespace Scribe
             this.FloorListBox.Name = "FloorListBox";
             this.FloorListBox.Size = new System.Drawing.Size(279, 446);
             this.FloorListBox.TabIndex = 1;
+            this.FloorListBox.Tag = "Primary List Box";
             // 
             // FloorIDLabel
             // 
@@ -2475,6 +2476,7 @@ namespace Scribe
             // 
             this.FloorPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.FloorPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.FloorPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("FloorPictureBox.Image")));
             this.FloorPictureBox.Location = new System.Drawing.Point(767, 286);
             this.FloorPictureBox.Name = "FloorPictureBox";
             this.FloorPictureBox.Size = new System.Drawing.Size(176, 176);
@@ -2482,17 +2484,27 @@ namespace Scribe
             this.FloorPictureBox.TabIndex = 6;
             this.FloorPictureBox.TabStop = false;
             // 
+            // FloorConfigGroupBox
+            // 
+            this.FloorConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorConfigGroupBox.Location = new System.Drawing.Point(9, 497);
+            this.FloorConfigGroupBox.Name = "FloorConfigGroupBox";
+            this.FloorConfigGroupBox.Size = new System.Drawing.Size(938, 96);
+            this.FloorConfigGroupBox.TabIndex = 0;
+            this.FloorConfigGroupBox.TabStop = false;
+            // 
             // FurnishingsTabPage
             // 
             this.FurnishingsTabPage.Controls.Add(this.FurnishingTableLayoutPanel);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingRemoveFurnishingButton);
-            this.FurnishingsTabPage.Controls.Add(this.FurnishingConfigGroupBox);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingIDTextBox);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingAddNewFurnishingButton);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingListBox);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingIDLabel);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingEditImageButton);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingPictureBox);
+            this.FurnishingsTabPage.Controls.Add(this.FurnishingConfigGroupBox);
             this.FurnishingsTabPage.Location = new System.Drawing.Point(4, 22);
             this.FurnishingsTabPage.Name = "FurnishingsTabPage";
             this.FurnishingsTabPage.Size = new System.Drawing.Size(953, 599);
@@ -2714,16 +2726,6 @@ namespace Scribe
             this.FurnishingRemoveFurnishingButton.Text = "Remove Furnishing";
             this.FurnishingRemoveFurnishingButton.UseVisualStyleBackColor = true;
             // 
-            // FurnishingConfigGroupBox
-            // 
-            this.FurnishingConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FurnishingConfigGroupBox.Location = new System.Drawing.Point(9, 497);
-            this.FurnishingConfigGroupBox.Name = "FurnishingConfigGroupBox";
-            this.FurnishingConfigGroupBox.Size = new System.Drawing.Size(938, 96);
-            this.FurnishingConfigGroupBox.TabIndex = 0;
-            this.FurnishingConfigGroupBox.TabStop = false;
-            // 
             // FurnishingIDTextBox
             // 
             this.FurnishingIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -2753,6 +2755,7 @@ namespace Scribe
             this.FurnishingListBox.Name = "FurnishingListBox";
             this.FurnishingListBox.Size = new System.Drawing.Size(279, 446);
             this.FurnishingListBox.TabIndex = 1;
+            this.FurnishingListBox.Tag = "Primary List Box";
             // 
             // FurnishingIDLabel
             // 
@@ -2778,6 +2781,7 @@ namespace Scribe
             // 
             this.FurnishingPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.FurnishingPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.FurnishingPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("FurnishingPictureBox.Image")));
             this.FurnishingPictureBox.Location = new System.Drawing.Point(767, 286);
             this.FurnishingPictureBox.Name = "FurnishingPictureBox";
             this.FurnishingPictureBox.Size = new System.Drawing.Size(176, 176);
@@ -2785,17 +2789,27 @@ namespace Scribe
             this.FurnishingPictureBox.TabIndex = 6;
             this.FurnishingPictureBox.TabStop = false;
             // 
+            // FurnishingConfigGroupBox
+            // 
+            this.FurnishingConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingConfigGroupBox.Location = new System.Drawing.Point(9, 497);
+            this.FurnishingConfigGroupBox.Name = "FurnishingConfigGroupBox";
+            this.FurnishingConfigGroupBox.Size = new System.Drawing.Size(938, 96);
+            this.FurnishingConfigGroupBox.TabIndex = 0;
+            this.FurnishingConfigGroupBox.TabStop = false;
+            // 
             // CollectiblesTabPage
             // 
             this.CollectiblesTabPage.Controls.Add(this.CollectibleTableLayoutPanel);
             this.CollectiblesTabPage.Controls.Add(this.CollectibleRemoveCollectibleButton);
-            this.CollectiblesTabPage.Controls.Add(this.CollectibleConfigGroupBox);
             this.CollectiblesTabPage.Controls.Add(this.CollectibleIDTextBox);
             this.CollectiblesTabPage.Controls.Add(this.CollectibleAddNewCollectibleButton);
             this.CollectiblesTabPage.Controls.Add(this.CollectibleListBox);
             this.CollectiblesTabPage.Controls.Add(this.CollectibleIDLabel);
             this.CollectiblesTabPage.Controls.Add(this.CollectibleEditImageButton);
             this.CollectiblesTabPage.Controls.Add(this.CollectiblePictureBox);
+            this.CollectiblesTabPage.Controls.Add(this.CollectibleConfigGroupBox);
             this.CollectiblesTabPage.Location = new System.Drawing.Point(4, 22);
             this.CollectiblesTabPage.Name = "CollectiblesTabPage";
             this.CollectiblesTabPage.Size = new System.Drawing.Size(953, 599);
@@ -2956,16 +2970,6 @@ namespace Scribe
             this.CollectibleRemoveCollectibleButton.Text = "Remove Collectible";
             this.CollectibleRemoveCollectibleButton.UseVisualStyleBackColor = true;
             // 
-            // CollectibleConfigGroupBox
-            // 
-            this.CollectibleConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectibleConfigGroupBox.Location = new System.Drawing.Point(9, 497);
-            this.CollectibleConfigGroupBox.Name = "CollectibleConfigGroupBox";
-            this.CollectibleConfigGroupBox.Size = new System.Drawing.Size(938, 96);
-            this.CollectibleConfigGroupBox.TabIndex = 0;
-            this.CollectibleConfigGroupBox.TabStop = false;
-            // 
             // CollectibleIDTextBox
             // 
             this.CollectibleIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -2995,6 +2999,7 @@ namespace Scribe
             this.CollectibleListBox.Name = "CollectibleListBox";
             this.CollectibleListBox.Size = new System.Drawing.Size(279, 446);
             this.CollectibleListBox.TabIndex = 1;
+            this.CollectibleListBox.Tag = "Primary List Box";
             // 
             // CollectibleIDLabel
             // 
@@ -3020,12 +3025,23 @@ namespace Scribe
             // 
             this.CollectiblePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CollectiblePictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.CollectiblePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("CollectiblePictureBox.Image")));
             this.CollectiblePictureBox.Location = new System.Drawing.Point(767, 286);
             this.CollectiblePictureBox.Name = "CollectiblePictureBox";
             this.CollectiblePictureBox.Size = new System.Drawing.Size(176, 176);
             this.CollectiblePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.CollectiblePictureBox.TabIndex = 6;
             this.CollectiblePictureBox.TabStop = false;
+            // 
+            // CollectibleConfigGroupBox
+            // 
+            this.CollectibleConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleConfigGroupBox.Location = new System.Drawing.Point(9, 497);
+            this.CollectibleConfigGroupBox.Name = "CollectibleConfigGroupBox";
+            this.CollectibleConfigGroupBox.Size = new System.Drawing.Size(938, 96);
+            this.CollectibleConfigGroupBox.TabIndex = 0;
+            this.CollectibleConfigGroupBox.TabStop = false;
             // 
             // CharactersTabPage
             // 
@@ -3236,7 +3252,7 @@ namespace Scribe
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterStartingQuestsListBox, 1, 9);
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterStoryIDTextBox, 1, 8);
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterOpenInventoryEditorButton, 2, 12);
-            this.CharacterTableLayoutPanel.Controls.Add(this.comboBox1, 1, 4);
+            this.CharacterTableLayoutPanel.Controls.Add(this.CharacterPrimaryBehaviorComboBox, 1, 4);
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterNameLabel, 0, 0);
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterDescriptionLabel, 0, 1);
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterCommentLabel, 0, 2);
@@ -3326,13 +3342,13 @@ namespace Scribe
             this.CharacterOpenInventoryEditorButton.Text = "Open Inventory Editor";
             this.CharacterOpenInventoryEditorButton.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // CharacterPrimaryBehaviorComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(131, 163);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(144, 21);
-            this.comboBox1.TabIndex = 29;
+            this.CharacterPrimaryBehaviorComboBox.FormattingEnabled = true;
+            this.CharacterPrimaryBehaviorComboBox.Location = new System.Drawing.Point(131, 163);
+            this.CharacterPrimaryBehaviorComboBox.Name = "CharacterPrimaryBehaviorComboBox";
+            this.CharacterPrimaryBehaviorComboBox.Size = new System.Drawing.Size(144, 21);
+            this.CharacterPrimaryBehaviorComboBox.TabIndex = 29;
             // 
             // CharacterNameLabel
             // 
@@ -3563,6 +3579,7 @@ namespace Scribe
             this.CharacterListBox.Name = "CharacterListBox";
             this.CharacterListBox.Size = new System.Drawing.Size(279, 446);
             this.CharacterListBox.TabIndex = 1;
+            this.CharacterListBox.Tag = "Primary List Box";
             // 
             // CharacterIDLabel
             // 
@@ -3588,6 +3605,7 @@ namespace Scribe
             // 
             this.CharacterPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CharacterPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.CharacterPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("CharacterPictureBox.Image")));
             this.CharacterPictureBox.Location = new System.Drawing.Point(767, 286);
             this.CharacterPictureBox.Name = "CharacterPictureBox";
             this.CharacterPictureBox.Size = new System.Drawing.Size(176, 176);
@@ -3651,6 +3669,7 @@ namespace Scribe
             // 
             // CritterPrimaryBehaviorComboBox
             // 
+            this.CritterPrimaryBehaviorComboBox.DisplayMember = "Name";
             this.CritterPrimaryBehaviorComboBox.FormattingEnabled = true;
             this.CritterPrimaryBehaviorComboBox.Location = new System.Drawing.Point(131, 163);
             this.CritterPrimaryBehaviorComboBox.Name = "CritterPrimaryBehaviorComboBox";
@@ -3726,6 +3745,7 @@ namespace Scribe
             // 
             // CritterNativeBiomeComboBox
             // 
+            this.CritterNativeBiomeComboBox.DisplayMember = "Name";
             this.CritterNativeBiomeComboBox.FormattingEnabled = true;
             this.CritterNativeBiomeComboBox.Location = new System.Drawing.Point(131, 138);
             this.CritterNativeBiomeComboBox.Name = "CritterNativeBiomeComboBox";
@@ -3783,6 +3803,7 @@ namespace Scribe
             // 
             this.CritterPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CritterPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.CritterPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("CritterPictureBox.Image")));
             this.CritterPictureBox.Location = new System.Drawing.Point(767, 286);
             this.CritterPictureBox.Name = "CritterPictureBox";
             this.CritterPictureBox.Size = new System.Drawing.Size(176, 176);
@@ -3820,6 +3841,7 @@ namespace Scribe
             this.CritterListBox.Name = "CritterListBox";
             this.CritterListBox.Size = new System.Drawing.Size(279, 446);
             this.CritterListBox.TabIndex = 1;
+            this.CritterListBox.Tag = "Primary List Box";
             // 
             // CritterAddNewCritterButton
             // 
@@ -3829,6 +3851,7 @@ namespace Scribe
             this.CritterAddNewCritterButton.TabIndex = 2;
             this.CritterAddNewCritterButton.Text = "Add New Critter";
             this.CritterAddNewCritterButton.UseVisualStyleBackColor = true;
+            this.CritterAddNewCritterButton.Click += new System.EventHandler(this.CritterAddNewCritterButton_Click);
             // 
             // CritterIDTextBox
             // 
@@ -3858,6 +3881,7 @@ namespace Scribe
             this.CritterRemoveCritterButton.TabIndex = 2;
             this.CritterRemoveCritterButton.Text = "Remove Critter";
             this.CritterRemoveCritterButton.UseVisualStyleBackColor = true;
+            this.CritterRemoveCritterButton.Click += new System.EventHandler(this.CritterRemoveCritterButton_Click);
             // 
             // ItemsTabPage
             // 
@@ -3918,6 +3942,7 @@ namespace Scribe
             this.ItemListBox.Name = "ItemListBox";
             this.ItemListBox.Size = new System.Drawing.Size(279, 446);
             this.ItemListBox.TabIndex = 1;
+            this.ItemListBox.Tag = "Primary List Box";
             // 
             // ItemInventoriesGroupBox
             // 
@@ -4206,6 +4231,7 @@ namespace Scribe
             // 
             this.ItemPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ItemPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.ItemPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ItemPictureBox.Image")));
             this.ItemPictureBox.Location = new System.Drawing.Point(768, 286);
             this.ItemPictureBox.Name = "ItemPictureBox";
             this.ItemPictureBox.Size = new System.Drawing.Size(176, 176);
@@ -4301,6 +4327,7 @@ namespace Scribe
             this.BiomeListBox.Name = "BiomeListBox";
             this.BiomeListBox.Size = new System.Drawing.Size(279, 446);
             this.BiomeListBox.TabIndex = 1;
+            this.BiomeListBox.Tag = "Primary List Box";
             // 
             // BiomeConfigGroupBox
             // 
@@ -4624,6 +4651,7 @@ namespace Scribe
             // 
             this.BiomePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomePictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BiomePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("BiomePictureBox.Image")));
             this.BiomePictureBox.Location = new System.Drawing.Point(767, 281);
             this.BiomePictureBox.Name = "BiomePictureBox";
             this.BiomePictureBox.Size = new System.Drawing.Size(176, 176);
@@ -4697,6 +4725,7 @@ namespace Scribe
             this.CraftingListBox.Name = "CraftingListBox";
             this.CraftingListBox.Size = new System.Drawing.Size(279, 446);
             this.CraftingListBox.TabIndex = 1;
+            this.CraftingListBox.Tag = "Primary List Box";
             // 
             // CraftingPictureEditButton
             // 
@@ -4923,6 +4952,7 @@ namespace Scribe
             // 
             this.CraftingPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CraftingPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.CraftingPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("CraftingPictureBox.Image")));
             this.CraftingPictureBox.Location = new System.Drawing.Point(767, 283);
             this.CraftingPictureBox.Name = "CraftingPictureBox";
             this.CraftingPictureBox.Size = new System.Drawing.Size(176, 176);
@@ -5142,6 +5172,7 @@ namespace Scribe
             this.RoomListBox.Name = "RoomListBox";
             this.RoomListBox.Size = new System.Drawing.Size(279, 446);
             this.RoomListBox.TabIndex = 1;
+            this.RoomListBox.Tag = "Primary List Box";
             // 
             // RoomConfigGroupBox
             // 
@@ -5250,7 +5281,7 @@ namespace Scribe
             this.RoomTableLayoutPanel.Controls.Add(this.RoomNameTextBox, 1, 0);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomDescriptionTextBox, 1, 1);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomCommentTextBox, 1, 2);
-            this.RoomTableLayoutPanel.Controls.Add(this.RoomTierTextBox, 1, 3);
+            this.RoomTableLayoutPanel.Controls.Add(this.RoomMinimumWalkableSpacesTextBox, 1, 3);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomRequiredFurnishingsLabel, 0, 4);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomRequiredFurnishingsListBox, 1, 4);
             this.RoomTableLayoutPanel.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
@@ -5416,12 +5447,12 @@ namespace Scribe
             this.RoomCommentTextBox.Size = new System.Drawing.Size(280, 49);
             this.RoomCommentTextBox.TabIndex = 25;
             // 
-            // RoomTierTextBox
+            // RoomMinimumWalkableSpacesTextBox
             // 
-            this.RoomTierTextBox.Location = new System.Drawing.Point(146, 138);
-            this.RoomTierTextBox.Name = "RoomTierTextBox";
-            this.RoomTierTextBox.Size = new System.Drawing.Size(136, 20);
-            this.RoomTierTextBox.TabIndex = 26;
+            this.RoomMinimumWalkableSpacesTextBox.Location = new System.Drawing.Point(146, 138);
+            this.RoomMinimumWalkableSpacesTextBox.Name = "RoomMinimumWalkableSpacesTextBox";
+            this.RoomMinimumWalkableSpacesTextBox.Size = new System.Drawing.Size(136, 20);
+            this.RoomMinimumWalkableSpacesTextBox.TabIndex = 26;
             // 
             // RoomRequiredFurnishingsLabel
             // 
@@ -5446,6 +5477,7 @@ namespace Scribe
             // 
             this.RoomPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.RoomPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("RoomPictureBox.Image")));
             this.RoomPictureBox.Location = new System.Drawing.Point(767, 286);
             this.RoomPictureBox.Name = "RoomPictureBox";
             this.RoomPictureBox.Size = new System.Drawing.Size(176, 176);
@@ -5529,6 +5561,8 @@ namespace Scribe
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(984, 761);
             this.Controls.Add(this.FlavorFilterGroupBox);
             this.Controls.Add(this.FilterGroupBox);
@@ -5756,40 +5790,129 @@ namespace Scribe
         private System.Windows.Forms.TextBox GameCommentTextBox;
         private System.Windows.Forms.TextBox GameEpisodeTitleTextBox;
         private System.Windows.Forms.TextBox GameEpisodeNumberTextBox;
-        private System.Windows.Forms.TextBox GamePlayerCharacterTextBox;
-        private System.Windows.Forms.TextBox GameFirstScriptTextBox;
+        private System.Windows.Forms.ComboBox GamePlayerCharacterComboBox;
+        private System.Windows.Forms.ComboBox GameFirstScriptComboBox;
         private System.Windows.Forms.Button GameIconEditButton;
         private System.Windows.Forms.PictureBox GameIconPictureBox;
 
-        private System.Windows.Forms.TabPage CrittersTabPage;
-        private System.Windows.Forms.TableLayoutPanel CritterTableLayoutPanel;
-        private System.Windows.Forms.ComboBox CritterPrimaryBehaviorComboBox;
-        private System.Windows.Forms.Label CritterNameLabel;
-        private System.Windows.Forms.Label CritterDescriptionLabel;
-        private System.Windows.Forms.Label CritterCommentLabel;
-        private System.Windows.Forms.Label CritterNativeBiomeLabel;
-        private System.Windows.Forms.TextBox CritterNameTextBox;
-        private System.Windows.Forms.TextBox CritterDescriptionTextBox;
-        private System.Windows.Forms.TextBox CritterCommentTextBox;
-        private System.Windows.Forms.ComboBox CritterNativeBiomeComboBox;
-        private System.Windows.Forms.Label CritterPrimaryBehaviorLabel;
-        private System.Windows.Forms.Label CritterParquetAvoidsLabel;
-        private System.Windows.Forms.Label CritterComingSoonLabel1;
-        private System.Windows.Forms.Label CritterParquetsSoughtLabel;
-        private System.Windows.Forms.Label CritterComingSoonLabel2;
-        private System.Windows.Forms.PictureBox CritterPictureBox;
-        private System.Windows.Forms.Button CritterEditImageButton;
-        private System.Windows.Forms.Label CritterIDLabel;
-        private System.Windows.Forms.ListBox CritterListBox;
-        private System.Windows.Forms.Button CritterAddNewCritterButton;
-        private System.Windows.Forms.TextBox CritterIDTextBox;
-        private System.Windows.Forms.GroupBox CritterConfigGroupBox;
-        private System.Windows.Forms.Button CritterRemoveCritterButton;
+        private System.Windows.Forms.TabPage BlocksTabPage;
+        private System.Windows.Forms.TableLayoutPanel BlockTableLayoutPanel;
+        private System.Windows.Forms.Label BlockNameLabel;
+        private System.Windows.Forms.Label BlockDescriptionLabel;
+        private System.Windows.Forms.Label BlockCommentLabel;
+        private System.Windows.Forms.Label BlockEquivalentItemLabel;
+        private System.Windows.Forms.ComboBox BlockEquivalentItemComboBox;
+        private System.Windows.Forms.TextBox BlockNameTextBox;
+        private System.Windows.Forms.TextBox BlockDescriptionTextBox;
+        private System.Windows.Forms.TextBox BlockCommentTextBox;
+        private System.Windows.Forms.PictureBox BlockPictureBox;
+        private System.Windows.Forms.Button BlockEditImageButton;
+        private System.Windows.Forms.Label BlockIDLabel;
+        private System.Windows.Forms.ListBox BlockListBox;
+        private System.Windows.Forms.Button BlockAddNewBlockButton;
+        private System.Windows.Forms.TextBox BlockIDTextBox;
+        private System.Windows.Forms.Button BlockRemoveBlockButton;
+        private System.Windows.Forms.TextBox BlockMaxToughnessTextBox;
+        private System.Windows.Forms.Label BlockGatheringToolLabel;
+        private System.Windows.Forms.Label BlockGatheringEffectLabel;
+        private System.Windows.Forms.Label BlockDroppedCollectibleLabel;
+        private System.Windows.Forms.Label BlockIsFlammableLabel;
+        private System.Windows.Forms.Label BlockIsLiquidLabel;
+        private System.Windows.Forms.Label BlockMaxToughnessLabel;
+        private System.Windows.Forms.CheckBox BlockIsFlammableCheckBox;
+        private System.Windows.Forms.CheckBox BlockIsLiquidCheckBox;
+        private System.Windows.Forms.ComboBox BlockGatherToolComboBox;
+        private System.Windows.Forms.ComboBox BlockDroppedCollectibleIDComboBox;
+        private System.Windows.Forms.ComboBox BlockGatherEffectComboBox;
+        private System.Windows.Forms.GroupBox BlockConfigGroupBox;
+
+        private System.Windows.Forms.TabPage FloorsTabPage;
+        private System.Windows.Forms.Button FloorEditImageButton;
+        private System.Windows.Forms.TableLayoutPanel FloorLayoutTabelPanel;
+        private System.Windows.Forms.Label FloorNameLabel;
+        private System.Windows.Forms.Label FloorDescriptionLabel;
+        private System.Windows.Forms.Label FloorCommentLabel;
+        private System.Windows.Forms.Label FloorEquivalentItemIDLabel;
+        private System.Windows.Forms.Label FloorModificationToolLabel;
+        private System.Windows.Forms.TextBox FloorNameTextBox;
+        private System.Windows.Forms.TextBox FloorDescriptionTextBox;
+        private System.Windows.Forms.TextBox FloorCommentTextBox;
+        private System.Windows.Forms.PictureBox FloorPictureBox;
+        private System.Windows.Forms.Label FloorIDLabel;
+        private System.Windows.Forms.Button FloorAddNewFloorButton;
+        private System.Windows.Forms.Button FloorRemoveFloorButton;
+        private System.Windows.Forms.TextBox FloorIDTextBox;
+        private System.Windows.Forms.GroupBox FloorConfigGroupBox;
+        private System.Windows.Forms.Label FloorTrenchName;
+        private System.Windows.Forms.TextBox FloorTrenchNameTextBox;
+        private System.Windows.Forms.ListBox FloorListBox;
+        private System.Windows.Forms.ComboBox FloorlItemIDComboBox;
+        private System.Windows.Forms.ComboBox FloorModificationToolComboBox;
+        private System.Windows.Forms.Label FloorAddsToBiomeLabel;
+        private System.Windows.Forms.Label FloorAddsToRoomLabel;
+        private System.Windows.Forms.ListBox FloorAddsToBiomeListBox;
+        private System.Windows.Forms.ListBox FloorAddsToRoomListBox;
+        private System.Windows.Forms.Button FloorAddRoomTagButton;
+        private System.Windows.Forms.Button FloorAddBiomeTagButton;
+        private System.Windows.Forms.Button FloorRemoveBiomeTagButton;
+        private System.Windows.Forms.Button FloorRemoveRoomTagButton;
+
+        private System.Windows.Forms.TabPage FurnishingsTabPage;
+        private System.Windows.Forms.TableLayoutPanel FurnishingTableLayoutPanel;
+        private System.Windows.Forms.Label FurnishingNameLabel;
+        private System.Windows.Forms.Label FurnishingDescriptionLabel;
+        private System.Windows.Forms.Label FurnishingCommentLabel;
+        private System.Windows.Forms.Label FurnishingEquivalentItemLabel;
+        private System.Windows.Forms.TextBox FurnishingNameTextBox;
+        private System.Windows.Forms.TextBox FurnishingDescriptionTextBox;
+        private System.Windows.Forms.TextBox FurnishingCommentTextBox;
+        private System.Windows.Forms.ComboBox FurnishingEquivalentItemComboBox;
+        private System.Windows.Forms.Button FurnishingRemoveFurnishingButton;
+        private System.Windows.Forms.GroupBox FurnishingConfigGroupBox;
+        private System.Windows.Forms.TextBox FurnishingIDTextBox;
+        private System.Windows.Forms.Button FurnishingAddNewFurnishingButton;
+        private System.Windows.Forms.ListBox FurnishingListBox;
+        private System.Windows.Forms.Label FurnishingIDLabel;
+        private System.Windows.Forms.Button FurnishingEditImageButton;
+        private System.Windows.Forms.PictureBox FurnishingPictureBox;
+        private System.Windows.Forms.ComboBox FurnishingEntryTypeComboBox;
+        private System.Windows.Forms.Label FurnishingEntryTypeLabel;
+        private System.Windows.Forms.Label FurnishingIsWalkableLabel;
+        private System.Windows.Forms.Label FurnishingIsEnclosingLabel;
+        private System.Windows.Forms.Label FurnishingIsFlammableLabel;
+        private System.Windows.Forms.Label FurnishingSwapWithFurnishingLabel;
+        private System.Windows.Forms.ComboBox FurnishingSwapWithFurnishingComboBox;
+        private System.Windows.Forms.CheckBox FurnishingIsWalkableCheckBox;
+        private System.Windows.Forms.CheckBox FurnishingIsEnclosingCheckBox;
+        private System.Windows.Forms.CheckBox FurnishingIsFlammableCheckBox;
+
+        private System.Windows.Forms.TabPage CollectiblesTabPage;
+        private System.Windows.Forms.TableLayoutPanel CollectibleTableLayoutPanel;
+        private System.Windows.Forms.Label CollectibleNameLabel;
+        private System.Windows.Forms.Label CollectibleDescriptionLabel;
+        private System.Windows.Forms.Label CollectibleCommentLabel;
+        private System.Windows.Forms.Label CollectibleEquivalentItemLabel;
+        private System.Windows.Forms.TextBox CollectibleNameTextBox;
+        private System.Windows.Forms.TextBox CollectibleDescriptionTextBox;
+        private System.Windows.Forms.TextBox CollectibleCommentTextBox;
+        private System.Windows.Forms.TextBox CollectibleEffectAmountTextBox;
+        private System.Windows.Forms.ComboBox CollectibleCollectionEffectComboBox;
+        private System.Windows.Forms.Label CollectibleCollectionEffectLabel;
+        private System.Windows.Forms.Label CollectibleEffectAmountLabel;
+        private System.Windows.Forms.ComboBox CollectibleEquivalentItemComboBox;
+        private System.Windows.Forms.Button CollectibleRemoveCollectibleButton;
+        private System.Windows.Forms.GroupBox CollectibleConfigGroupBox;
+        private System.Windows.Forms.TextBox CollectibleIDTextBox;
+        private System.Windows.Forms.Button CollectibleAddNewCollectibleButton;
+        private System.Windows.Forms.ListBox CollectibleListBox;
+        private System.Windows.Forms.Label CollectibleIDLabel;
+        private System.Windows.Forms.Button CollectibleEditImageButton;
+        private System.Windows.Forms.PictureBox CollectiblePictureBox;
 
         private System.Windows.Forms.TabPage CharactersTabPage;
         private System.Windows.Forms.GroupBox CharacterPronounGroupBox;
         private System.Windows.Forms.TableLayoutPanel CharacterTableLayoutPanel;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CharacterPrimaryBehaviorComboBox;
         private System.Windows.Forms.Label CharacterNameLabel;
         private System.Windows.Forms.Label CharacterDescriptionLabel;
         private System.Windows.Forms.Label CharacterCommentLabel;
@@ -5839,6 +5962,68 @@ namespace Scribe
         private System.Windows.Forms.TextBox CharacterPronounPossessiveTextBox;
         private System.Windows.Forms.Label CharacterPronounKeyLabel;
         private System.Windows.Forms.Label CharacterPronounKeyExample;
+
+        private System.Windows.Forms.TabPage CrittersTabPage;
+        private System.Windows.Forms.TableLayoutPanel CritterTableLayoutPanel;
+        private System.Windows.Forms.ComboBox CritterPrimaryBehaviorComboBox;
+        private System.Windows.Forms.Label CritterNameLabel;
+        private System.Windows.Forms.Label CritterDescriptionLabel;
+        private System.Windows.Forms.Label CritterCommentLabel;
+        private System.Windows.Forms.Label CritterNativeBiomeLabel;
+        private System.Windows.Forms.TextBox CritterNameTextBox;
+        private System.Windows.Forms.TextBox CritterDescriptionTextBox;
+        private System.Windows.Forms.TextBox CritterCommentTextBox;
+        private System.Windows.Forms.ComboBox CritterNativeBiomeComboBox;
+        private System.Windows.Forms.Label CritterPrimaryBehaviorLabel;
+        private System.Windows.Forms.Label CritterParquetAvoidsLabel;
+        private System.Windows.Forms.Label CritterComingSoonLabel1;
+        private System.Windows.Forms.Label CritterParquetsSoughtLabel;
+        private System.Windows.Forms.Label CritterComingSoonLabel2;
+        private System.Windows.Forms.PictureBox CritterPictureBox;
+        private System.Windows.Forms.Button CritterEditImageButton;
+        private System.Windows.Forms.Label CritterIDLabel;
+        private System.Windows.Forms.ListBox CritterListBox;
+        private System.Windows.Forms.Button CritterAddNewCritterButton;
+        private System.Windows.Forms.TextBox CritterIDTextBox;
+        private System.Windows.Forms.GroupBox CritterConfigGroupBox;
+        private System.Windows.Forms.Button CritterRemoveCritterButton;
+
+        private System.Windows.Forms.TabPage ItemsTabPage;
+        private System.Windows.Forms.ListBox ItemListBox;
+        private System.Windows.Forms.GroupBox ItemInventoriesGroupBox;
+        private System.Windows.Forms.Button ItemPictureEditButton;
+        private System.Windows.Forms.TableLayoutPanel ItemTableLayoutPanel;
+        private System.Windows.Forms.Label ItemNameLabel;
+        private System.Windows.Forms.Label ItemDescriptionLabel;
+        private System.Windows.Forms.Label ItemCommentLabel;
+        private System.Windows.Forms.Label ItemSubtypeLabel;
+        private System.Windows.Forms.Label ItemPriceLabel;
+        private System.Windows.Forms.Label ItemRarityLabel;
+        private System.Windows.Forms.Label ItemStackMaxLabel;
+        private System.Windows.Forms.Label ItemTagsLabel;
+        private System.Windows.Forms.TextBox ItemNameTextBox;
+        private System.Windows.Forms.TextBox ItemDescriptionTextBox;
+        private System.Windows.Forms.TextBox ItemCommentTextBox;
+        private System.Windows.Forms.TextBox ItemPriceTextBox;
+        private System.Windows.Forms.PictureBox ItemPictureBox;
+        private System.Windows.Forms.Label ItemIDLabel;
+        private System.Windows.Forms.Button ItemAddNewItemButton;
+        private System.Windows.Forms.Button ItemRemoveItemButton;
+        private System.Windows.Forms.TextBox ItemIDTextBox;
+        private System.Windows.Forms.Button ItemAddTagButton;
+        private System.Windows.Forms.Button ItemRemoveTagButton;
+        private System.Windows.Forms.ListBox ItemTagListBox;
+        private System.Windows.Forms.Button ItemOpenInvetoryEditorButton;
+        private System.Windows.Forms.ListBox ItemInventoryListBox;
+        private System.Windows.Forms.TextBox ItemStackMaxTextBox;
+        private System.Windows.Forms.TextBox ItemRarityTextBox;
+        private System.Windows.Forms.ComboBox ItemEffectWhenUsedComboBox;
+        private System.Windows.Forms.ComboBox ItemSubtypeComboBox;
+        private System.Windows.Forms.Label ItemEffectWhileHeldLabel;
+        private System.Windows.Forms.Label ItemEffectWhenUsedLabel;
+        private System.Windows.Forms.Label ItemParquetLabel;
+        private System.Windows.Forms.ComboBox ItemEffectWhileHeldComboBox;
+        private System.Windows.Forms.ComboBox ItemEquivalentParquetComboBox;
 
         private System.Windows.Forms.TabPage BiomesTabPage;
         private System.Windows.Forms.ListBox BiomeListBox;
@@ -5917,160 +6102,6 @@ namespace Scribe
         private System.Windows.Forms.Label CraftingStrikePatternLabel;
         private System.Windows.Forms.Label CraftingStrikePatternComingSoonLabel;
 
-        private System.Windows.Forms.TabPage ItemsTabPage;
-        private System.Windows.Forms.ListBox ItemListBox;
-        private System.Windows.Forms.GroupBox ItemInventoriesGroupBox;
-        private System.Windows.Forms.Button ItemPictureEditButton;
-        private System.Windows.Forms.TableLayoutPanel ItemTableLayoutPanel;
-        private System.Windows.Forms.Label ItemNameLabel;
-        private System.Windows.Forms.Label ItemDescriptionLabel;
-        private System.Windows.Forms.Label ItemCommentLabel;
-        private System.Windows.Forms.Label ItemSubtypeLabel;
-        private System.Windows.Forms.Label ItemPriceLabel;
-        private System.Windows.Forms.Label ItemRarityLabel;
-        private System.Windows.Forms.Label ItemStackMaxLabel;
-        private System.Windows.Forms.Label ItemTagsLabel;
-        private System.Windows.Forms.TextBox ItemNameTextBox;
-        private System.Windows.Forms.TextBox ItemDescriptionTextBox;
-        private System.Windows.Forms.TextBox ItemCommentTextBox;
-        private System.Windows.Forms.TextBox ItemPriceTextBox;
-        private System.Windows.Forms.PictureBox ItemPictureBox;
-        private System.Windows.Forms.Label ItemIDLabel;
-        private System.Windows.Forms.Button ItemAddNewItemButton;
-        private System.Windows.Forms.Button ItemRemoveItemButton;
-        private System.Windows.Forms.TextBox ItemIDTextBox;
-        private System.Windows.Forms.Button ItemAddTagButton;
-        private System.Windows.Forms.Button ItemRemoveTagButton;
-        private System.Windows.Forms.ListBox ItemTagListBox;
-        private System.Windows.Forms.Button ItemOpenInvetoryEditorButton;
-        private System.Windows.Forms.ListBox ItemInventoryListBox;
-        private System.Windows.Forms.TextBox ItemStackMaxTextBox;
-        private System.Windows.Forms.TextBox ItemRarityTextBox;
-        private System.Windows.Forms.ComboBox ItemEffectWhenUsedComboBox;
-        private System.Windows.Forms.ComboBox ItemSubtypeComboBox;
-        private System.Windows.Forms.Label ItemEffectWhileHeldLabel;
-        private System.Windows.Forms.Label ItemEffectWhenUsedLabel;
-        private System.Windows.Forms.Label ItemParquetLabel;
-        private System.Windows.Forms.ComboBox ItemEffectWhileHeldComboBox;
-        private System.Windows.Forms.ComboBox ItemEquivalentParquetComboBox;
-
-        private System.Windows.Forms.TabPage MapsTabPage;
-        private System.Windows.Forms.Label MapComingSoonLabel;
-
-        private System.Windows.Forms.TabPage FloorsTabPage;
-        private System.Windows.Forms.Button FloorEditImageButton;
-        private System.Windows.Forms.TableLayoutPanel FloorLayoutTabelPanel;
-        private System.Windows.Forms.Label FloorNameLabel;
-        private System.Windows.Forms.Label FloorDescriptionLabel;
-        private System.Windows.Forms.Label FloorCommentLabel;
-        private System.Windows.Forms.Label FloorEquivalentItemIDLabel;
-        private System.Windows.Forms.Label FloorModificationToolLabel;
-        private System.Windows.Forms.TextBox FloorNameTextBox;
-        private System.Windows.Forms.TextBox FloorDescriptionTextBox;
-        private System.Windows.Forms.TextBox FloorCommentTextBox;
-        private System.Windows.Forms.PictureBox FloorPictureBox;
-        private System.Windows.Forms.Label FloorIDLabel;
-        private System.Windows.Forms.Button FloorAddNewFloorButton;
-        private System.Windows.Forms.Button FloorRemoveFloorButton;
-        private System.Windows.Forms.TextBox FloorIDTextBox;
-        private System.Windows.Forms.GroupBox FloorConfigGroupBox;
-        private System.Windows.Forms.Label FloorTrenchName;
-        private System.Windows.Forms.TextBox FloorTrenchNameTextBox;
-        private System.Windows.Forms.ListBox FloorListBox;
-        private System.Windows.Forms.ComboBox FloorlItemIDComboBox;
-        private System.Windows.Forms.ComboBox FloorModificationToolComboBox;
-        private System.Windows.Forms.Label FloorAddsToBiomeLabel;
-        private System.Windows.Forms.Label FloorAddsToRoomLabel;
-        private System.Windows.Forms.ListBox FloorAddsToBiomeListBox;
-        private System.Windows.Forms.ListBox FloorAddsToRoomListBox;
-        private System.Windows.Forms.Button FloorAddRoomTagButton;
-        private System.Windows.Forms.Button FloorAddBiomeTagButton;
-        private System.Windows.Forms.Button FloorRemoveBiomeTagButton;
-        private System.Windows.Forms.Button FloorRemoveRoomTagButton;
-
-        private System.Windows.Forms.TabPage BlocksTabPage;
-        private System.Windows.Forms.TableLayoutPanel BlockTableLayoutPanel;
-        private System.Windows.Forms.Label BlockNameLabel;
-        private System.Windows.Forms.Label BlockDescriptionLabel;
-        private System.Windows.Forms.Label BlockCommentLabel;
-        private System.Windows.Forms.Label BlockEquivalentItemLabel;
-        private System.Windows.Forms.ComboBox BlockEquivalentItemComboBox;
-        private System.Windows.Forms.TextBox BlockNameTextBox;
-        private System.Windows.Forms.TextBox BlockDescriptionTextBox;
-        private System.Windows.Forms.TextBox BlockCommentTextBox;
-        private System.Windows.Forms.PictureBox BlockPictureBox;
-        private System.Windows.Forms.Button BlockEditImageButton;
-        private System.Windows.Forms.Label BlockIDLabel;
-        private System.Windows.Forms.ListBox BlockListBox;
-        private System.Windows.Forms.Button BlockAddNewBlockButton;
-        private System.Windows.Forms.TextBox BlockIDTextBox;
-        private System.Windows.Forms.Button BlockRemoveBlockButton;
-        private System.Windows.Forms.TextBox BlockMaxToughnessTextBox;
-        private System.Windows.Forms.Label BlockGatheringToolLabel;
-        private System.Windows.Forms.Label BlockGatheringEffectLabel;
-        private System.Windows.Forms.Label BlockDroppedCollectibleLabel;
-        private System.Windows.Forms.Label BlockIsFlammableLabel;
-        private System.Windows.Forms.Label BlockIsLiquidLabel;
-        private System.Windows.Forms.Label BlockMaxToughnessLabel;
-        private System.Windows.Forms.CheckBox BlockIsFlammableCheckBox;
-        private System.Windows.Forms.CheckBox BlockIsLiquidCheckBox;
-        private System.Windows.Forms.ComboBox BlockGatherToolComboBox;
-        private System.Windows.Forms.ComboBox BlockDroppedCollectibleIDComboBox;
-        private System.Windows.Forms.ComboBox BlockGatherEffectComboBox;
-        private System.Windows.Forms.GroupBox BlockConfigGroupBox;
-
-        private System.Windows.Forms.TabPage FurnishingsTabPage;
-        private System.Windows.Forms.TableLayoutPanel FurnishingTableLayoutPanel;
-        private System.Windows.Forms.Label FurnishingNameLabel;
-        private System.Windows.Forms.Label FurnishingDescriptionLabel;
-        private System.Windows.Forms.Label FurnishingCommentLabel;
-        private System.Windows.Forms.Label FurnishingEquivalentItemLabel;
-        private System.Windows.Forms.TextBox FurnishingNameTextBox;
-        private System.Windows.Forms.TextBox FurnishingDescriptionTextBox;
-        private System.Windows.Forms.TextBox FurnishingCommentTextBox;
-        private System.Windows.Forms.ComboBox FurnishingEquivalentItemComboBox;
-        private System.Windows.Forms.Button FurnishingRemoveFurnishingButton;
-        private System.Windows.Forms.GroupBox FurnishingConfigGroupBox;
-        private System.Windows.Forms.TextBox FurnishingIDTextBox;
-        private System.Windows.Forms.Button FurnishingAddNewFurnishingButton;
-        private System.Windows.Forms.ListBox FurnishingListBox;
-        private System.Windows.Forms.Label FurnishingIDLabel;
-        private System.Windows.Forms.Button FurnishingEditImageButton;
-        private System.Windows.Forms.PictureBox FurnishingPictureBox;
-        private System.Windows.Forms.ComboBox FurnishingEntryTypeComboBox;
-        private System.Windows.Forms.Label FurnishingEntryTypeLabel;
-        private System.Windows.Forms.Label FurnishingIsWalkableLabel;
-        private System.Windows.Forms.Label FurnishingIsEnclosingLabel;
-        private System.Windows.Forms.Label FurnishingIsFlammableLabel;
-        private System.Windows.Forms.Label FurnishingSwapWithFurnishingLabel;
-        private System.Windows.Forms.ComboBox FurnishingSwapWithFurnishingComboBox;
-        private System.Windows.Forms.CheckBox FurnishingIsWalkableCheckBox;
-        private System.Windows.Forms.CheckBox FurnishingIsEnclosingCheckBox;
-        private System.Windows.Forms.CheckBox FurnishingIsFlammableCheckBox;
-
-        private System.Windows.Forms.TabPage CollectiblesTabPage;
-        private System.Windows.Forms.TableLayoutPanel CollectibleTableLayoutPanel;
-        private System.Windows.Forms.Label CollectibleNameLabel;
-        private System.Windows.Forms.Label CollectibleDescriptionLabel;
-        private System.Windows.Forms.Label CollectibleCommentLabel;
-        private System.Windows.Forms.Label CollectibleEquivalentItemLabel;
-        private System.Windows.Forms.TextBox CollectibleNameTextBox;
-        private System.Windows.Forms.TextBox CollectibleDescriptionTextBox;
-        private System.Windows.Forms.TextBox CollectibleCommentTextBox;
-        private System.Windows.Forms.TextBox CollectibleEffectAmountTextBox;
-        private System.Windows.Forms.ComboBox CollectibleCollectionEffectComboBox;
-        private System.Windows.Forms.Label CollectibleCollectionEffectLabel;
-        private System.Windows.Forms.Label CollectibleEffectAmountLabel;
-        private System.Windows.Forms.ComboBox CollectibleEquivalentItemComboBox;
-        private System.Windows.Forms.Button CollectibleRemoveCollectibleButton;
-        private System.Windows.Forms.GroupBox CollectibleConfigGroupBox;
-        private System.Windows.Forms.TextBox CollectibleIDTextBox;
-        private System.Windows.Forms.Button CollectibleAddNewCollectibleButton;
-        private System.Windows.Forms.ListBox CollectibleListBox;
-        private System.Windows.Forms.Label CollectibleIDLabel;
-        private System.Windows.Forms.Button CollectibleEditImageButton;
-        private System.Windows.Forms.PictureBox CollectiblePictureBox;
-
         private System.Windows.Forms.TabPage RoomRecipesTabPage;
         private System.Windows.Forms.ListBox RoomListBox;
         private System.Windows.Forms.GroupBox RoomConfigGroupBox;
@@ -6085,7 +6116,7 @@ namespace Scribe
         private System.Windows.Forms.TextBox RoomNameTextBox;
         private System.Windows.Forms.TextBox RoomDescriptionTextBox;
         private System.Windows.Forms.TextBox RoomCommentTextBox;
-        private System.Windows.Forms.TextBox RoomTierTextBox;
+        private System.Windows.Forms.TextBox RoomMinimumWalkableSpacesTextBox;
         private System.Windows.Forms.PictureBox RoomPictureBox;
         private System.Windows.Forms.Label RoomIDLabel;
         private System.Windows.Forms.Button RoomAddNewRoomButton;
@@ -6106,6 +6137,9 @@ namespace Scribe
         private System.Windows.Forms.Label RoomMaxWalkableSpacesLabel;
         private System.Windows.Forms.TextBox RoomMinWalkableSpacesTextBox;
         private System.Windows.Forms.TextBox RoomMaxWalkableSpacesTextBox;
+
+        private System.Windows.Forms.TabPage MapsTabPage;
+        private System.Windows.Forms.Label MapComingSoonLabel;
 
         private System.Windows.Forms.TabPage ScriptsTabPage;
         private System.Windows.Forms.Label ScriptingComingSoonLabel;

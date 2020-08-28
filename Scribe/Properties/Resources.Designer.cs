@@ -97,6 +97,15 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        internal static string CaptionError {
+            get {
+                return ResourceManager.GetString("CaptionError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exit Scribe.
         /// </summary>
         internal static string CaptionExitWarning {
@@ -179,11 +188,56 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The image editor could not be found at the specified path..
+        /// </summary>
+        internal static string ErrorImageEditorNotFound {
+            get {
+                return ResourceManager.GetString("ErrorImageEditorNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This value must be an integer..
         /// </summary>
         internal static string ErrorIntegersOnly {
             get {
                 return ResourceManager.GetString("ErrorIntegersOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scribe attempted to load a project but encountered an error.  Please check the log..
+        /// </summary>
+        internal static string ErrorLoadFailed {
+            get {
+                return ResourceManager.GetString("ErrorLoadFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The maximum number of this type of model already exists..
+        /// </summary>
+        internal static string ErrorMaximumIDReached {
+            get {
+                return ResourceManager.GetString("ErrorMaximumIDReached", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scribe attempted to create a new project but encountered an error.  Please check the log..
+        /// </summary>
+        internal static string ErrorNewFailed {
+            get {
+                return ResourceManager.GetString("ErrorNewFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scribe attempted to save the project but encountered an error.  Please check the log..
+        /// </summary>
+        internal static string ErrorSaveFailed {
+            get {
+                return ResourceManager.GetString("ErrorSaveFailed", resourceCulture);
             }
         }
         
