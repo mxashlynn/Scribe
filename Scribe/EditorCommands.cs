@@ -91,6 +91,7 @@ namespace Scribe
             {
                 All.ProjectDirectory = FolderBrowserDialogue.SelectedPath;
                 Settings.Default.MostRecentProject = FolderBrowserDialogue.SelectedPath;
+                Settings.Default.Save();
                 return true;
             }
             return false;
