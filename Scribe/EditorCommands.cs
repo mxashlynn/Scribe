@@ -32,6 +32,9 @@ namespace Scribe
         /// <summary>Name of the folder under which all graphics are stored.</summary>
         private const string GraphicsFolderName = "Graphics";
 
+        /// <summary>Dialogue for selecting the project folder to work in.</summary>
+        private static readonly FolderBrowserDialog FolderBrowserDialogue = new FolderBrowserDialog();
+
         #region Initialization
         /// <summary>
         /// Initializes <see cref="EditorCommands"/> asset collections.
@@ -62,6 +65,36 @@ namespace Scribe
             }
         }
 
+        #endregion
+
+        #region Setting Up FolderBrowserDialogue
+        /// <summary>
+        /// Opens a dialogue allowing the user to select the folder in which to data files are stored.
+        /// </summary>
+        /// <remarks>
+        /// Ideally this should have been handled via sub-classing, but since <see cref="FolderBrowserDialogue"/>
+        /// is <c>sealed</c> we take care of it here.
+        /// </remarks>
+        /// <param name="in_message">A prompt to the user, differentiating between loading existing files and creating new blank ones.</param>
+        /// <returns>True if the user selected a folder.</returns>
+        public static bool SelectProjectFolder(string in_message)
+        {
+            FolderBrowserDialogue.ShowNewFolderButton = true;
+            FolderBrowserDialogue.RootFolder = Settings.Default.DesktopIsDefaultDirectory
+                ? Environment.SpecialFolder.Desktop
+                : Environment.SpecialFolder.MyDocuments;
+            FolderBrowserDialogue.Description = in_message;
+            FolderBrowserDialogue.SelectedPath = All.ProjectDirectory;
+
+            var response = FolderBrowserDialogue.ShowDialog();
+            if (response == DialogResult.OK)
+            {
+                All.ProjectDirectory = FolderBrowserDialogue.SelectedPath;
+                Settings.Default.MostRecentProject = FolderBrowserDialogue.SelectedPath;
+                return true;
+            }
+            return false;
+        }
         #endregion
 
         #region Commands
