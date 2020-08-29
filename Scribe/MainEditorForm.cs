@@ -897,10 +897,10 @@ namespace Scribe
         }
 
         /// <summary>
-        /// Reloads the image associated with the given <see cref="ModelID"/> in the given <see cref="PictureBox"/>.
+        /// Loads the image associated with the given <see cref="ModelID"/> in the given <see cref="PictureBox"/>.
         /// </summary>
-        /// <param name="inPictureBox"></param>
-        /// <param name="inID"></param>
+        /// <param name="inPictureBox">The PictureBox to load the image into.</param>
+        /// <param name="inID">The ID of the model whose image will be loaded.</param>
         private void PictureBoxLoadFromStorage(PictureBox inPictureBox, ModelID inID)
         {
             var imagePathAndFilename = Path.Combine(EditorCommands.GetGraphicsPathForModelID(inID), $"{inID}.png");
@@ -1274,7 +1274,7 @@ namespace Scribe
             {
                 SystemSounds.Beep.Play();
                 _ = MessageBox.Show(Resources.ErrorNewFailed, Resources.CaptionError,
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1299,7 +1299,7 @@ namespace Scribe
             {
                 SystemSounds.Beep.Play();
                 _ = MessageBox.Show(Resources.ErrorLoadFailed, Resources.CaptionError,
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
