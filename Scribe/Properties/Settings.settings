@@ -23,5 +23,8 @@
     <Setting Name="ImageEditor" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Program Files\Aseprite\Aseprite.exe</Value>
     </Setting>
+    <Setting Name="MostRecentProject" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

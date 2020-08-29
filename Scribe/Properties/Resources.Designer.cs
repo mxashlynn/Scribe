@@ -299,6 +299,15 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No Recent Projects.
+        /// </summary>
+        internal static string WarngingNoRecentProject {
+            get {
+                return ResourceManager.GetString("WarngingNoRecentProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Really quit?  Unsaved changes will be lost!.
         /// </summary>
         internal static string WarningMessageExit {

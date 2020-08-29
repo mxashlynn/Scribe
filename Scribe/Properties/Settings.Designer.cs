@@ -106,5 +106,17 @@ namespace Scribe.Properties {
                 this["ImageEditor"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string MostRecentProject {
+            get {
+                return ((string)(this["MostRecentProject"]));
+            }
+            set {
+                this["MostRecentProject"] = value;
+            }
+        }
     }
 }
