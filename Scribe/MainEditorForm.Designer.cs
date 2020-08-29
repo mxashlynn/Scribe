@@ -1356,6 +1356,7 @@ namespace Scribe
             this.GameIconPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.GameIconPictureBox.TabIndex = 6;
             this.GameIconPictureBox.TabStop = false;
+            this.GameIconPictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
             // 
             // GameTableLayoutPanel
             // 
@@ -2222,6 +2223,7 @@ namespace Scribe
             this.BlockPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BlockPictureBox.TabIndex = 6;
             this.BlockPictureBox.TabStop = false;
+            this.BlockPictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
             // 
             // BlockEditImageButton
             // 
@@ -2626,6 +2628,7 @@ namespace Scribe
             this.FloorPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.FloorPictureBox.TabIndex = 6;
             this.FloorPictureBox.TabStop = false;
+            this.FloorPictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
             // 
             // FloorConfigGroupBox
             // 
@@ -3009,6 +3012,7 @@ namespace Scribe
             this.FurnishingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.FurnishingPictureBox.TabIndex = 6;
             this.FurnishingPictureBox.TabStop = false;
+            this.FurnishingPictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
             // 
             // FurnishingConfigGroupBox
             // 
@@ -3329,6 +3333,7 @@ namespace Scribe
             this.CollectiblePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.CollectiblePictureBox.TabIndex = 6;
             this.CollectiblePictureBox.TabStop = false;
+            this.CollectiblePictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
             // 
             // CollectibleConfigGroupBox
             // 
@@ -3911,6 +3916,7 @@ namespace Scribe
             this.CharacterPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.CharacterPictureBox.TabIndex = 6;
             this.CharacterPictureBox.TabStop = false;
+            this.CharacterPictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
             // 
             // CrittersTabPage
             // 
@@ -4109,6 +4115,7 @@ namespace Scribe
             this.CritterPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.CritterPictureBox.TabIndex = 6;
             this.CritterPictureBox.TabStop = false;
+            this.CritterPictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
             // 
             // CritterEditImageButton
             // 
@@ -4539,6 +4546,7 @@ namespace Scribe
             this.ItemPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ItemPictureBox.TabIndex = 6;
             this.ItemPictureBox.TabStop = false;
+            this.ItemPictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
             // 
             // ItemIDLabel
             // 
@@ -4961,6 +4969,7 @@ namespace Scribe
             this.BiomePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BiomePictureBox.TabIndex = 6;
             this.BiomePictureBox.TabStop = false;
+            this.BiomePictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
             // 
             // BiomeIDLabel
             // 
@@ -5264,6 +5273,7 @@ namespace Scribe
             this.CraftingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.CraftingPictureBox.TabIndex = 6;
             this.CraftingPictureBox.TabStop = false;
+            this.CraftingPictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
             // 
             // CraftingIDLabel
             // 
@@ -5791,6 +5801,7 @@ namespace Scribe
             this.RoomPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.RoomPictureBox.TabIndex = 6;
             this.RoomPictureBox.TabStop = false;
+            this.RoomPictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
             // 
             // RoomIDLabel
             // 

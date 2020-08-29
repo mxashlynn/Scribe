@@ -257,6 +257,30 @@ namespace Scribe
         #endregion
 
         /// <summary>
+        /// Given the index of an editor tab, return the <see cref="PictureBox"/> for the content it edits.
+        /// </summary>
+        /// <param name="inTabIndex">The index of the tab sought.</param>
+        /// <returns>The PictureBox instance.</returns>
+        private PictureBox GetPictureBoxForTab(int inTabIndex)
+            => inTabIndex switch
+            {
+                GamesTabIndex => GameIconPictureBox,
+                BlocksTabIndex => BlockPictureBox,
+                FloorsTabIndex => FloorPictureBox,
+                FurnishingsTabIndex => FurnishingPictureBox,
+                CollectiblesTabIndex => CollectiblePictureBox,
+                CharactersTabIndex => CharacterPictureBox,
+                CrittersTabIndex => CritterPictureBox,
+                ItemsTabIndex => ItemPictureBox,
+                BiomeRecipesTabIndex => BiomePictureBox,
+                CraftingRecipesTabIndex => CraftingPictureBox,
+                RoomRecipesTabIndex => RoomPictureBox,
+                MapsTabIndex => null,
+                ScriptsTabIndex => null,
+                _ => null,
+            };
+
+        /// <summary>
         /// Given the index of an editor tab, return the default <see cref="ModelID"/> for the content it edits.
         /// </summary>
         /// <param name="inTabIndex">The index of the tab sought.</param>
@@ -897,16 +921,25 @@ namespace Scribe
                 GameEpisodeNumberTextBox.Text = model.EpisodeNumber.ToString();
                 GamePlayerCharacterComboBox.SelectedValue = model.PlayerCharacterID;
                 GameFirstScriptComboBox.SelectedValue = model.FirstScriptID;
+                PictureBoxReloadFromStorage(GameIconPictureBox, model.ID);
+            }
+        }
 
-                var imagePath = Path.Combine(EditorCommands.GetGraphicsPathForModelID(model.ID), $"{model.ID}.png");
-                if (File.Exists(imagePath))
-                {
-                    GameIconPictureBox.Load(imagePath);
-                }
-                else
-                {
-                    GameIconPictureBox.Image = Resources.ImageNotFoundGraphic;
-                }
+        /// <summary>
+        /// Reloads the image associated with the given <see cref="ModelID"/> in the given <see cref="PictureBox"/>.
+        /// </summary>
+        /// <param name="inBox"></param>
+        /// <param name="inID"></param>
+        private void PictureBoxReloadFromStorage(PictureBox inBox, ModelID inID)
+        {
+            var imagePath = Path.Combine(EditorCommands.GetGraphicsPathForModelID(inID), $"{inID}.png");
+            if (File.Exists(imagePath))
+            {
+                inBox.Load(imagePath);
+            }
+            else
+            {
+                inBox.Image = Resources.ImageNotFoundGraphic;
             }
         }
 
@@ -946,16 +979,7 @@ namespace Scribe
                 BlockIsFlammableCheckBox.Checked = model.IsFlammable;
                 BlockIsLiquidCheckBox.Checked = model.IsLiquid;
                 BlockMaxToughnessTextBox.Text = model.MaxToughness.ToString();
-
-                var imagePath = Path.Combine(EditorCommands.GetGraphicsPathForModelID(model.ID), $"{model.ID}.png");
-                if (File.Exists(imagePath))
-                {
-                    BlockPictureBox.Load(imagePath);
-                }
-                else
-                {
-                    BlockPictureBox.Image = Resources.ImageNotFoundGraphic;
-                }
+                PictureBoxReloadFromStorage(BlockPictureBox, model.ID);
             }
         }
 
@@ -990,16 +1014,7 @@ namespace Scribe
                 CritterCommentTextBox.Text = model.Comment;
                 CritterNativeBiomeComboBox.SelectedValue = model.NativeBiomeID;
                 CritterPrimaryBehaviorComboBox.SelectedValue = model.PrimaryBehaviorID;
-
-                var imagePath = Path.Combine(EditorCommands.GetGraphicsPathForModelID(model.ID), $"{model.ID}.png");
-                if (File.Exists(imagePath))
-                {
-                    CritterPictureBox.Load(imagePath);
-                }
-                else
-                {
-                    CritterPictureBox.Image = Resources.ImageNotFoundGraphic;
-                }
+                PictureBoxReloadFromStorage(CritterPictureBox, model.ID);
             }
         }
 
@@ -1865,6 +1880,17 @@ namespace Scribe
         private void RoomPictureEditButton_Click(object sender, EventArgs e)
             => IconEditButtonClick(RoomPictureBox);
         #endregion
+        #endregion
+
+        #region Hybrid Events
+        /// <summary>
+        /// Responds to the player requesting a picture be reloaded.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void PictureBoxReload_Click(object sender, EventArgs e)
+            => PictureBoxReloadFromStorage(GetPictureBoxForTab(EditorTabs.SelectedIndex),
+                                           GetSelectedModelIDForTab(EditorTabs.SelectedIndex));
         #endregion
 
         #region Quit Editor Event
