@@ -12,16 +12,11 @@ namespace Scribe
     /// </summary>
     public partial class SplashScreen : Form
     {
-        /// <summary>The <see cref="Form"/> to show after the splash screen.</summary>
-        MainEditorForm MainEditor;
-
         /// <summary>
         /// Initializes the first form to load.
         /// </summary>
-        public SplashScreen(MainEditorForm inMainEditorForm)
+        public SplashScreen()
         {
-            MainEditor = inMainEditorForm;
-
             InitializeComponent();
 
             LinkLabelMostRecent.Text = string.IsNullOrEmpty(Settings.Default.MostRecentProject)
@@ -41,8 +36,8 @@ namespace Scribe
                 All.ProjectDirectory = Settings.Default.MostRecentProject;
                 if (EditorCommands.LoadDataFiles())
                 {
-                    MainEditor.Show();
-                    Hide();
+                    ScribeProgram.ShowEditor();
+                    Close();
                 }
                 else
                 {
@@ -68,8 +63,8 @@ namespace Scribe
             if (EditorCommands.CreateTemplatesInProjectFolder()
                 && EditorCommands.LoadDataFiles())
             {
-                MainEditor.Show();
-                Hide();
+                ScribeProgram.ShowEditor();
+                Close();
             }
             else
             {
@@ -93,8 +88,8 @@ namespace Scribe
 
             if (EditorCommands.LoadDataFiles())
             {
-                MainEditor.Show();
-                Hide();
+                ScribeProgram.ShowEditor();
+                Close();
             }
             else
             {
@@ -110,6 +105,6 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void ButtonExitScribe_Click(object sender, EventArgs e)
-            => Application.Exit();
+            => Close();
     }
 }
