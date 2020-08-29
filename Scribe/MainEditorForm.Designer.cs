@@ -5914,6 +5914,7 @@ namespace Scribe
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "MainEditorForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scribe";
             this.Activated += new System.EventHandler(this.MainEditorForm_Activated);
             this.EditorStatusStrip.ResumeLayout(false);
