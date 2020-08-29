@@ -181,24 +181,26 @@ namespace Scribe
         /// <returns>A dictionary containing lists of controls, organized by type.</returns>
         private Dictionary<Type, Dictionary<Control, object>> GetEditableControls()
         {
-            var editables = new Dictionary<Type, Dictionary<Control, object>>();
+            var editables = new Dictionary<Type, Dictionary<Control, object>>
+            {
+                [typeof(TextBox)] = new Dictionary<Control, object>(),
+                [typeof(CheckBox)] = new Dictionary<Control, object>(),
+                [typeof(ComboBox)] = new Dictionary<Control, object>(),
+                [typeof(ListBox)] = new Dictionary<Control, object>(),
+            };
 
-            editables[typeof(TextBox)] = new Dictionary<Control, object>();
             foreach (var textbox in EditorTabs.GetAllChildrenOfType<TextBox>())
             {
                 editables[typeof(TextBox)][textbox] = textbox.Text;
             }
-            editables[typeof(CheckBox)] = new Dictionary<Control, object>();
             foreach (var checkbox in EditorTabs.GetAllChildrenOfType<CheckBox>())
             {
                 editables[typeof(CheckBox)][checkbox] = (bool?)checkbox.Checked;
             }
-            editables[typeof(ComboBox)] = new Dictionary<Control, object>();
             foreach (var combobox in EditorTabs.GetAllChildrenOfType<ComboBox>())
             {
                 editables[typeof(ComboBox)][combobox] = (int?)combobox.SelectedIndex;
             }
-            editables[typeof(ListBox)] = new Dictionary<Control, object>();
             foreach (var listbox in EditorTabs.GetAllChildrenOfType<ListBox>())
             {
                 editables[typeof(ListBox)][listbox] = (int?)listbox.SelectedIndex;
