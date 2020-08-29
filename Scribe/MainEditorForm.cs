@@ -1578,6 +1578,7 @@ namespace Scribe
         /// <param name="e">Ignored</param>
         private void BlockAddBiomeTagButton_Click(object sender, EventArgs e)
         {
+            // TODO Implement this.
             throw new NotImplementedException();
         }
 
@@ -1588,6 +1589,7 @@ namespace Scribe
         /// <param name="e">Ignored</param>
         private void BlockRemoveBiomeTagButton_Click(object sender, EventArgs e)
         {
+            // TODO Implement this.
             throw new NotImplementedException();
         }
 
@@ -1598,6 +1600,7 @@ namespace Scribe
         /// <param name="e">Ignored</param>
         private void BlockAddRoomTagButton_Click(object sender, EventArgs e)
         {
+            // TODO Implement this.
             throw new NotImplementedException();
         }
 
@@ -1608,6 +1611,7 @@ namespace Scribe
         /// <param name="e">Ignored</param>
         private void BlockRemoveRoomTagButton_Click(object sender, EventArgs e)
         {
+            // TODO Implement this.
             throw new NotImplementedException();
         }
 
@@ -1618,6 +1622,7 @@ namespace Scribe
         /// <param name="e">Ignored</param>
         private void FloorAddBiomeTagButton_Click(object sender, EventArgs e)
         {
+            // TODO Implement this.
             throw new NotImplementedException();
         }
 
@@ -1628,6 +1633,7 @@ namespace Scribe
         /// <param name="e">Ignored</param>
         private void FloorRemoveBiomeTagButton_Click(object sender, EventArgs e)
         {
+            // TODO Implement this.
             throw new NotImplementedException();
         }
 
@@ -1638,6 +1644,7 @@ namespace Scribe
         /// <param name="e">Ignored</param>
         private void FloorAddRoomTagButton_Click(object sender, EventArgs e)
         {
+            // TODO Implement this.
             throw new NotImplementedException();
         }
 
@@ -1648,6 +1655,7 @@ namespace Scribe
         /// <param name="e">Ignored</param>
         private void FloorRemoveRoomTagButton_Click(object sender, EventArgs e)
         {
+            // TODO Implement this.
             throw new NotImplementedException();
         }
 
@@ -1658,6 +1666,7 @@ namespace Scribe
         /// <param name="e">Ignored</param>
         private void FurnishingAddBiomeTagButton_Click(object sender, EventArgs e)
         {
+            // TODO Implement this.
             throw new NotImplementedException();
         }
 
@@ -1668,6 +1677,7 @@ namespace Scribe
         /// <param name="e">Ignored</param>
         private void FurnishingsRemoveBiomeTagButton_Click(object sender, EventArgs e)
         {
+            // TODO Implement this.
             throw new NotImplementedException();
         }
 
@@ -1678,6 +1688,7 @@ namespace Scribe
         /// <param name="e">Ignored</param>
         private void FurnishingsAddRoomTagButton_Click(object sender, EventArgs e)
         {
+            // TODO Implement this.
             throw new NotImplementedException();
         }
 
@@ -1688,6 +1699,7 @@ namespace Scribe
         /// <param name="e">Ignored</param>
         private void FurnishingsRemoveRoomTagButton_Click(object sender, EventArgs e)
         {
+            // TODO Implement this.
             throw new NotImplementedException();
         }
 
@@ -1698,6 +1710,7 @@ namespace Scribe
         /// <param name="e">Ignored</param>
         private void CollectibleAddBiomeTagButton_Click(object sender, EventArgs e)
         {
+            // TODO Implement this.
             throw new NotImplementedException();
         }
 
@@ -1708,6 +1721,7 @@ namespace Scribe
         /// <param name="e">Ignored</param>
         private void CollectibleRemoveBiomeTagButton_Click(object sender, EventArgs e)
         {
+            // TODO Implement this.
             throw new NotImplementedException();
         }
 
@@ -1718,6 +1732,7 @@ namespace Scribe
         /// <param name="e">Ignored</param>
         private void CollectiblesAddRoomTagButton_Click(object sender, EventArgs e)
         {
+            // TODO Implement this.
             throw new NotImplementedException();
         }
 
@@ -1728,6 +1743,7 @@ namespace Scribe
         /// <param name="e">Ignored</param>
         private void CollectiblesRemoveRoomTagButton_Click(object sender, EventArgs e)
         {
+            // TODO Implement this.
             throw new NotImplementedException();
         }
         #endregion
