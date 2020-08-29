@@ -1569,6 +1569,169 @@ namespace Scribe
         }
         #endregion
 
+        #region Button Events
+        #region Add Remove Parquet Tags Button Events
+        /// <summary>
+        /// Registeres the user command to add a new biome tag to the current block.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void BlockAddBiomeTagButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Registeres the user command to remove the selected biome tag from the current block.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void BlockRemoveBiomeTagButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Registeres the user command to add a new room tag to the current block.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void BlockAddRoomTagButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Registeres the user command to remove the selected room tag from the current block.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void BlockRemoveRoomTagButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Registeres the user command to add a new biome tag to the current floor.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void FloorAddBiomeTagButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Registeres the user command to remove the selected biome tag from the current floor.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void FloorRemoveBiomeTagButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Registeres the user command to add a new room tag to the current floor.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void FloorAddRoomTagButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Registeres the user command to remove the selected room tag from the current floor.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void FloorRemoveRoomTagButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Registeres the user command to add a new biome tag to the current furnishing.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void FurnishingAddBiomeTagButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Registeres the user command to remove the selected biome tag from the current furnishing.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void FurnishingsRemoveBiomeTagButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Registeres the user command to add a new room tag to the current furnishing.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void FurnishingsAddRoomTagButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Registeres the user command to remove the selected room tag from the current furnishing.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void FurnishingsRemoveRoomTagButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Registeres the user command to add a new biome tag to the current collectible.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void CollectibleAddBiomeTagButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Registeres the user command to remove the selected biome tag from the current collectible.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void CollectibleRemoveBiomeTagButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Registeres the user command to add a new room tag to the current collectible.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void CollectiblesAddRoomTagButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Registeres the user command to remove the selected room tag from the current collectible.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void CollectiblesRemoveRoomTagButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
+
         #region Edit Image Button Events
         /// <summary>
         /// Given a <see cref="PictureBox"/>, spawns an external image editor with the image currently loaded in the box.
@@ -1686,6 +1849,7 @@ namespace Scribe
         private void RoomPictureEditButton_Click(object sender, EventArgs e)
             => IconEditButtonClick(RoomPictureBox);
         #endregion
+        #endregion
 
         #region Quit Editor Event
         /// <summary>
@@ -1711,65 +1875,5 @@ namespace Scribe
             }
         }
         #endregion
-
-        private void BlockAddBiomeTagButton_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void BlockRemoveBiomeTagButton_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void BlockAddRoomTagButton_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void BlockRemoveRoomTagButton_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void FurnishingAddBiomeTagButton_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void FurnishingsRemoveBiomeTagButton_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void FurnishingsAddRoomTagButton_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void FurnishingsRemoveRoomTagButton_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void CollectibleAddBiomeTagButton_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void CollectibleRemoveBiomeTagButton_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void CollectiblesAddRoomTagButton_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void CollectiblesRemoveRoomTagButton_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

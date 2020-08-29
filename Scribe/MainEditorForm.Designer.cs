@@ -2377,6 +2377,7 @@ namespace Scribe
             this.FloorRemoveRoomTagButton.TabIndex = 38;
             this.FloorRemoveRoomTagButton.Text = "Remove Room Tag";
             this.FloorRemoveRoomTagButton.UseVisualStyleBackColor = true;
+            this.FloorRemoveRoomTagButton.Click += new System.EventHandler(this.FloorRemoveRoomTagButton_Click);
             // 
             // FloorRemoveBiomeTagButton
             // 
@@ -2387,6 +2388,7 @@ namespace Scribe
             this.FloorRemoveBiomeTagButton.TabIndex = 38;
             this.FloorRemoveBiomeTagButton.Text = "Remove Biome Tag";
             this.FloorRemoveBiomeTagButton.UseVisualStyleBackColor = true;
+            this.FloorRemoveBiomeTagButton.Click += new System.EventHandler(this.FloorRemoveBiomeTagButton_Click);
             // 
             // FloorAddRoomTagButton
             // 
@@ -2397,6 +2399,7 @@ namespace Scribe
             this.FloorAddRoomTagButton.TabIndex = 38;
             this.FloorAddRoomTagButton.Text = "Add Room Tag";
             this.FloorAddRoomTagButton.UseVisualStyleBackColor = true;
+            this.FloorAddRoomTagButton.Click += new System.EventHandler(this.FloorAddRoomTagButton_Click);
             // 
             // FloorNameLabel
             // 
@@ -2557,6 +2560,7 @@ namespace Scribe
             this.FloorAddBiomeTagButton.TabIndex = 38;
             this.FloorAddBiomeTagButton.Text = "Add Biome Tag";
             this.FloorAddBiomeTagButton.UseVisualStyleBackColor = true;
+            this.FloorAddBiomeTagButton.Click += new System.EventHandler(this.FloorAddBiomeTagButton_Click);
             // 
             // FloorIDExample
             // 
