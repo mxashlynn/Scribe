@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
@@ -921,25 +922,26 @@ namespace Scribe
                 GameEpisodeNumberTextBox.Text = model.EpisodeNumber.ToString();
                 GamePlayerCharacterComboBox.SelectedValue = model.PlayerCharacterID;
                 GameFirstScriptComboBox.SelectedValue = model.FirstScriptID;
-                PictureBoxReloadFromStorage(GameIconPictureBox, model.ID);
+                PictureBoxLoadFromStorage(GameIconPictureBox, model.ID);
             }
         }
 
         /// <summary>
         /// Reloads the image associated with the given <see cref="ModelID"/> in the given <see cref="PictureBox"/>.
         /// </summary>
-        /// <param name="inBox"></param>
+        /// <param name="inPictureBox"></param>
         /// <param name="inID"></param>
-        private void PictureBoxReloadFromStorage(PictureBox inBox, ModelID inID)
+        private void PictureBoxLoadFromStorage(PictureBox inPictureBox, ModelID inID)
         {
-            var imagePath = Path.Combine(EditorCommands.GetGraphicsPathForModelID(inID), $"{inID}.png");
-            if (File.Exists(imagePath))
+            var imagePathAndFilename = Path.Combine(EditorCommands.GetGraphicsPathForModelID(inID), $"{inID}.png");
+            if (File.Exists(imagePathAndFilename))
             {
-                inBox.Load(imagePath);
+                using var imageStream = new MemoryStream(File.ReadAllBytes(imagePathAndFilename));
+                inPictureBox.Image = Image.FromStream(imageStream);
             }
             else
             {
-                inBox.Image = Resources.ImageNotFoundGraphic;
+                inPictureBox.Image = Resources.ImageNotFoundGraphic;
             }
         }
 
@@ -979,7 +981,7 @@ namespace Scribe
                 BlockIsFlammableCheckBox.Checked = model.IsFlammable;
                 BlockIsLiquidCheckBox.Checked = model.IsLiquid;
                 BlockMaxToughnessTextBox.Text = model.MaxToughness.ToString();
-                PictureBoxReloadFromStorage(BlockPictureBox, model.ID);
+                PictureBoxLoadFromStorage(BlockPictureBox, model.ID);
             }
         }
 
@@ -1014,7 +1016,7 @@ namespace Scribe
                 CritterCommentTextBox.Text = model.Comment;
                 CritterNativeBiomeComboBox.SelectedValue = model.NativeBiomeID;
                 CritterPrimaryBehaviorComboBox.SelectedValue = model.PrimaryBehaviorID;
-                PictureBoxReloadFromStorage(CritterPictureBox, model.ID);
+                PictureBoxLoadFromStorage(CritterPictureBox, model.ID);
             }
         }
 
@@ -1773,18 +1775,16 @@ namespace Scribe
             var id = GetSelectedModelIDForTab(EditorTabs.SelectedIndex);
             if (id != ModelID.None)
             {
-                var pathAndFileName = Path.Combine(EditorCommands.GetGraphicsPathForModelID(id), $"{id}.png");
-                if (!File.Exists(pathAndFileName))
+                var imagePathAndFilename = Path.Combine(EditorCommands.GetGraphicsPathForModelID(id), $"{id}.png");
+                if (!File.Exists(imagePathAndFilename))
                 {
-                    Resources.ImageNotFoundGraphic.Save(pathAndFileName, ImageFormat.Png);
+                    Resources.ImageNotFoundGraphic.Save(imagePathAndFilename, ImageFormat.Png);
                 }
 
                 // TODO Properly manage this resource:  See return here:  https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process.start?view=netcore-3.1
                 _ = Settings.Default.EditInApp
-                    ? Process.Start(Settings.Default.ImageEditor, $"\"{pathAndFileName}\"")
-                    : Process.Start("explorer", $"\"{pathAndFileName}\"");
-
-                inPictureBox.Load(pathAndFileName);
+                    ? Process.Start(Settings.Default.ImageEditor, $"\"{imagePathAndFilename}\"")
+                    : Process.Start("explorer", $"\"{imagePathAndFilename}\"");
             }
             else
             {
@@ -1889,7 +1889,7 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void PictureBoxReload_Click(object sender, EventArgs e)
-            => PictureBoxReloadFromStorage(GetPictureBoxForTab(EditorTabs.SelectedIndex),
+            => PictureBoxLoadFromStorage(GetPictureBoxForTab(EditorTabs.SelectedIndex),
                                            GetSelectedModelIDForTab(EditorTabs.SelectedIndex));
         #endregion
 
