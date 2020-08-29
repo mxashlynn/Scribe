@@ -17,7 +17,8 @@ namespace Scribe
             _ = Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainEditorForm());
+            Application.Run(new SplashScreen());
+            //Application.Run(new MainEditorForm());
         }
     }
 }
