@@ -218,8 +218,6 @@ namespace Scribe
             this.FloorConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.FurnishingsTabPage = new System.Windows.Forms.TabPage();
             this.FurnishingTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.FurnishingSwapWithFurnishingComboBox = new System.Windows.Forms.ComboBox();
-            this.FurnishingEntryTypeComboBox = new System.Windows.Forms.ComboBox();
             this.FurnishingNameLabel = new System.Windows.Forms.Label();
             this.FurnishingDescriptionLabel = new System.Windows.Forms.Label();
             this.FurnishingCommentLabel = new System.Windows.Forms.Label();
@@ -228,14 +226,22 @@ namespace Scribe
             this.FurnishingDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.FurnishingCommentTextBox = new System.Windows.Forms.TextBox();
             this.FurnishingEquivalentItemComboBox = new System.Windows.Forms.ComboBox();
-            this.FurnishingEntryTypeLabel = new System.Windows.Forms.Label();
-            this.FurnishingIsWalkableLabel = new System.Windows.Forms.Label();
-            this.FurnishingIsEnclosingLabel = new System.Windows.Forms.Label();
-            this.FurnishingIsFlammableLabel = new System.Windows.Forms.Label();
+            this.FurnishingSwapWithFurnishingComboBox = new System.Windows.Forms.ComboBox();
             this.FurnishingSwapWithFurnishingLabel = new System.Windows.Forms.Label();
-            this.FurnishingIsWalkableCheckBox = new System.Windows.Forms.CheckBox();
-            this.FurnishingIsEnclosingCheckBox = new System.Windows.Forms.CheckBox();
             this.FurnishingIsFlammableCheckBox = new System.Windows.Forms.CheckBox();
+            this.FurnishingIsEnclosingCheckBox = new System.Windows.Forms.CheckBox();
+            this.FurnishingIsWalkableCheckBox = new System.Windows.Forms.CheckBox();
+            this.FurnishingIsFlammableLabel = new System.Windows.Forms.Label();
+            this.FurnishingIsEnclosingLabel = new System.Windows.Forms.Label();
+            this.FurnishingIsWalkableLabel = new System.Windows.Forms.Label();
+            this.FurnishingEntryTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.FurnishingEntryTypeLabel = new System.Windows.Forms.Label();
+            this.FurnishingAddsToBiomeListBox = new System.Windows.Forms.ListBox();
+            this.FurnishingAddsToRoomListBox = new System.Windows.Forms.ListBox();
+            this.FurnishingAddBiomeTagButton = new System.Windows.Forms.Button();
+            this.FurnishingsAddRoomTagButton = new System.Windows.Forms.Button();
+            this.FurnishingsRemoveRoomTagButton = new System.Windows.Forms.Button();
+            this.FurnishingsRemoveBiomeTagButton = new System.Windows.Forms.Button();
             this.FurnishingRemoveFurnishingButton = new System.Windows.Forms.Button();
             this.FurnishingIDExample = new System.Windows.Forms.Label();
             this.FurnishingAddNewFurnishingButton = new System.Windows.Forms.Button();
@@ -258,6 +264,12 @@ namespace Scribe
             this.CollectibleEquivalentItemComboBox = new System.Windows.Forms.ComboBox();
             this.CollectibleCollectionEffectLabel = new System.Windows.Forms.Label();
             this.CollectibleEffectAmountLabel = new System.Windows.Forms.Label();
+            this.CollectiblesAddsToBiomeListBox = new System.Windows.Forms.ListBox();
+            this.CollectiblesAddsToRoomListBox = new System.Windows.Forms.ListBox();
+            this.CollectibleAddBiomeTagButton = new System.Windows.Forms.Button();
+            this.CollectibleRemoveBiomeTagButton = new System.Windows.Forms.Button();
+            this.CollectiblesAddRoomTagButton = new System.Windows.Forms.Button();
+            this.CollectiblesRemoveRoomTagButton = new System.Windows.Forms.Button();
             this.CollectibleRemoveCollectibleButton = new System.Windows.Forms.Button();
             this.CollectibleIDExample = new System.Windows.Forms.Label();
             this.CollectibleAddNewCollectibleButton = new System.Windows.Forms.Button();
@@ -2664,6 +2676,12 @@ namespace Scribe
             this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingIsWalkableLabel, 0, 9);
             this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingEntryTypeComboBox, 1, 8);
             this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingEntryTypeLabel, 0, 8);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingAddsToBiomeListBox, 1, 4);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingAddsToRoomListBox, 1, 6);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingAddBiomeTagButton, 2, 5);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingsAddRoomTagButton, 2, 7);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingsRemoveRoomTagButton, 1, 7);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingsRemoveBiomeTagButton, 1, 5);
             this.FurnishingTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
             this.FurnishingTableLayoutPanel.Name = "FurnishingTableLayoutPanel";
             this.FurnishingTableLayoutPanel.RowCount = 13;
@@ -2671,9 +2689,9 @@ namespace Scribe
             this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
             this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
             this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
@@ -2682,22 +2700,6 @@ namespace Scribe
             this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.FurnishingTableLayoutPanel.Size = new System.Drawing.Size(429, 475);
             this.FurnishingTableLayoutPanel.TabIndex = 5;
-            // 
-            // FurnishingSwapWithFurnishingComboBox
-            // 
-            this.FurnishingSwapWithFurnishingComboBox.FormattingEnabled = true;
-            this.FurnishingSwapWithFurnishingComboBox.Location = new System.Drawing.Point(131, 443);
-            this.FurnishingSwapWithFurnishingComboBox.Name = "FurnishingSwapWithFurnishingComboBox";
-            this.FurnishingSwapWithFurnishingComboBox.Size = new System.Drawing.Size(144, 21);
-            this.FurnishingSwapWithFurnishingComboBox.TabIndex = 29;
-            // 
-            // FurnishingEntryTypeComboBox
-            // 
-            this.FurnishingEntryTypeComboBox.FormattingEnabled = true;
-            this.FurnishingEntryTypeComboBox.Location = new System.Drawing.Point(131, 343);
-            this.FurnishingEntryTypeComboBox.Name = "FurnishingEntryTypeComboBox";
-            this.FurnishingEntryTypeComboBox.Size = new System.Drawing.Size(144, 21);
-            this.FurnishingEntryTypeComboBox.TabIndex = 29;
             // 
             // FurnishingNameLabel
             // 
@@ -2774,77 +2776,161 @@ namespace Scribe
             this.FurnishingEquivalentItemComboBox.Size = new System.Drawing.Size(144, 21);
             this.FurnishingEquivalentItemComboBox.TabIndex = 29;
             // 
-            // FurnishingEntryTypeLabel
+            // FurnishingSwapWithFurnishingComboBox
             // 
-            this.FurnishingEntryTypeLabel.AutoSize = true;
-            this.FurnishingEntryTypeLabel.Location = new System.Drawing.Point(3, 340);
-            this.FurnishingEntryTypeLabel.Name = "FurnishingEntryTypeLabel";
-            this.FurnishingEntryTypeLabel.Size = new System.Drawing.Size(60, 13);
-            this.FurnishingEntryTypeLabel.TabIndex = 30;
-            this.FurnishingEntryTypeLabel.Text = "Entry Type";
-            // 
-            // FurnishingIsWalkableLabel
-            // 
-            this.FurnishingIsWalkableLabel.AutoSize = true;
-            this.FurnishingIsWalkableLabel.Location = new System.Drawing.Point(3, 365);
-            this.FurnishingIsWalkableLabel.Name = "FurnishingIsWalkableLabel";
-            this.FurnishingIsWalkableLabel.Size = new System.Drawing.Size(62, 13);
-            this.FurnishingIsWalkableLabel.TabIndex = 31;
-            this.FurnishingIsWalkableLabel.Text = "Is Walkable";
-            // 
-            // FurnishingIsEnclosingLabel
-            // 
-            this.FurnishingIsEnclosingLabel.AutoSize = true;
-            this.FurnishingIsEnclosingLabel.Location = new System.Drawing.Point(3, 390);
-            this.FurnishingIsEnclosingLabel.Name = "FurnishingIsEnclosingLabel";
-            this.FurnishingIsEnclosingLabel.Size = new System.Drawing.Size(63, 13);
-            this.FurnishingIsEnclosingLabel.TabIndex = 32;
-            this.FurnishingIsEnclosingLabel.Text = "Is Enclosing";
-            // 
-            // FurnishingIsFlammableLabel
-            // 
-            this.FurnishingIsFlammableLabel.AutoSize = true;
-            this.FurnishingIsFlammableLabel.Location = new System.Drawing.Point(3, 415);
-            this.FurnishingIsFlammableLabel.Name = "FurnishingIsFlammableLabel";
-            this.FurnishingIsFlammableLabel.Size = new System.Drawing.Size(69, 13);
-            this.FurnishingIsFlammableLabel.TabIndex = 33;
-            this.FurnishingIsFlammableLabel.Text = "Is Flammable";
+            this.FurnishingSwapWithFurnishingComboBox.FormattingEnabled = true;
+            this.FurnishingSwapWithFurnishingComboBox.Location = new System.Drawing.Point(131, 447);
+            this.FurnishingSwapWithFurnishingComboBox.Name = "FurnishingSwapWithFurnishingComboBox";
+            this.FurnishingSwapWithFurnishingComboBox.Size = new System.Drawing.Size(144, 21);
+            this.FurnishingSwapWithFurnishingComboBox.TabIndex = 29;
             // 
             // FurnishingSwapWithFurnishingLabel
             // 
             this.FurnishingSwapWithFurnishingLabel.AutoSize = true;
-            this.FurnishingSwapWithFurnishingLabel.Location = new System.Drawing.Point(3, 440);
+            this.FurnishingSwapWithFurnishingLabel.Location = new System.Drawing.Point(3, 444);
             this.FurnishingSwapWithFurnishingLabel.Name = "FurnishingSwapWithFurnishingLabel";
             this.FurnishingSwapWithFurnishingLabel.Size = new System.Drawing.Size(110, 13);
             this.FurnishingSwapWithFurnishingLabel.TabIndex = 34;
             this.FurnishingSwapWithFurnishingLabel.Text = "Swap With Furnishing";
             // 
-            // FurnishingIsWalkableCheckBox
+            // FurnishingIsFlammableCheckBox
             // 
-            this.FurnishingIsWalkableCheckBox.AutoSize = true;
-            this.FurnishingIsWalkableCheckBox.Location = new System.Drawing.Point(131, 368);
-            this.FurnishingIsWalkableCheckBox.Name = "FurnishingIsWalkableCheckBox";
-            this.FurnishingIsWalkableCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.FurnishingIsWalkableCheckBox.TabIndex = 35;
-            this.FurnishingIsWalkableCheckBox.UseVisualStyleBackColor = true;
+            this.FurnishingIsFlammableCheckBox.AutoSize = true;
+            this.FurnishingIsFlammableCheckBox.Location = new System.Drawing.Point(131, 422);
+            this.FurnishingIsFlammableCheckBox.Name = "FurnishingIsFlammableCheckBox";
+            this.FurnishingIsFlammableCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.FurnishingIsFlammableCheckBox.TabIndex = 37;
+            this.FurnishingIsFlammableCheckBox.UseVisualStyleBackColor = true;
             // 
             // FurnishingIsEnclosingCheckBox
             // 
             this.FurnishingIsEnclosingCheckBox.AutoSize = true;
-            this.FurnishingIsEnclosingCheckBox.Location = new System.Drawing.Point(131, 393);
+            this.FurnishingIsEnclosingCheckBox.Location = new System.Drawing.Point(131, 397);
             this.FurnishingIsEnclosingCheckBox.Name = "FurnishingIsEnclosingCheckBox";
             this.FurnishingIsEnclosingCheckBox.Size = new System.Drawing.Size(15, 14);
             this.FurnishingIsEnclosingCheckBox.TabIndex = 36;
             this.FurnishingIsEnclosingCheckBox.UseVisualStyleBackColor = true;
             // 
-            // FurnishingIsFlammableCheckBox
+            // FurnishingIsWalkableCheckBox
             // 
-            this.FurnishingIsFlammableCheckBox.AutoSize = true;
-            this.FurnishingIsFlammableCheckBox.Location = new System.Drawing.Point(131, 418);
-            this.FurnishingIsFlammableCheckBox.Name = "FurnishingIsFlammableCheckBox";
-            this.FurnishingIsFlammableCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.FurnishingIsFlammableCheckBox.TabIndex = 37;
-            this.FurnishingIsFlammableCheckBox.UseVisualStyleBackColor = true;
+            this.FurnishingIsWalkableCheckBox.AutoSize = true;
+            this.FurnishingIsWalkableCheckBox.Location = new System.Drawing.Point(131, 372);
+            this.FurnishingIsWalkableCheckBox.Name = "FurnishingIsWalkableCheckBox";
+            this.FurnishingIsWalkableCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.FurnishingIsWalkableCheckBox.TabIndex = 35;
+            this.FurnishingIsWalkableCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // FurnishingIsFlammableLabel
+            // 
+            this.FurnishingIsFlammableLabel.AutoSize = true;
+            this.FurnishingIsFlammableLabel.Location = new System.Drawing.Point(3, 419);
+            this.FurnishingIsFlammableLabel.Name = "FurnishingIsFlammableLabel";
+            this.FurnishingIsFlammableLabel.Size = new System.Drawing.Size(69, 13);
+            this.FurnishingIsFlammableLabel.TabIndex = 33;
+            this.FurnishingIsFlammableLabel.Text = "Is Flammable";
+            // 
+            // FurnishingIsEnclosingLabel
+            // 
+            this.FurnishingIsEnclosingLabel.AutoSize = true;
+            this.FurnishingIsEnclosingLabel.Location = new System.Drawing.Point(3, 394);
+            this.FurnishingIsEnclosingLabel.Name = "FurnishingIsEnclosingLabel";
+            this.FurnishingIsEnclosingLabel.Size = new System.Drawing.Size(63, 13);
+            this.FurnishingIsEnclosingLabel.TabIndex = 32;
+            this.FurnishingIsEnclosingLabel.Text = "Is Enclosing";
+            // 
+            // FurnishingIsWalkableLabel
+            // 
+            this.FurnishingIsWalkableLabel.AutoSize = true;
+            this.FurnishingIsWalkableLabel.Location = new System.Drawing.Point(3, 369);
+            this.FurnishingIsWalkableLabel.Name = "FurnishingIsWalkableLabel";
+            this.FurnishingIsWalkableLabel.Size = new System.Drawing.Size(62, 13);
+            this.FurnishingIsWalkableLabel.TabIndex = 31;
+            this.FurnishingIsWalkableLabel.Text = "Is Walkable";
+            // 
+            // FurnishingEntryTypeComboBox
+            // 
+            this.FurnishingEntryTypeComboBox.FormattingEnabled = true;
+            this.FurnishingEntryTypeComboBox.Location = new System.Drawing.Point(131, 347);
+            this.FurnishingEntryTypeComboBox.Name = "FurnishingEntryTypeComboBox";
+            this.FurnishingEntryTypeComboBox.Size = new System.Drawing.Size(144, 21);
+            this.FurnishingEntryTypeComboBox.TabIndex = 29;
+            // 
+            // FurnishingEntryTypeLabel
+            // 
+            this.FurnishingEntryTypeLabel.AutoSize = true;
+            this.FurnishingEntryTypeLabel.Location = new System.Drawing.Point(3, 344);
+            this.FurnishingEntryTypeLabel.Name = "FurnishingEntryTypeLabel";
+            this.FurnishingEntryTypeLabel.Size = new System.Drawing.Size(60, 13);
+            this.FurnishingEntryTypeLabel.TabIndex = 30;
+            this.FurnishingEntryTypeLabel.Text = "Entry Type";
+            // 
+            // FurnishingAddsToBiomeListBox
+            // 
+            this.FurnishingAddsToBiomeListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingTableLayoutPanel.SetColumnSpan(this.FurnishingAddsToBiomeListBox, 2);
+            this.FurnishingAddsToBiomeListBox.FormattingEnabled = true;
+            this.FurnishingAddsToBiomeListBox.Location = new System.Drawing.Point(131, 163);
+            this.FurnishingAddsToBiomeListBox.Name = "FurnishingAddsToBiomeListBox";
+            this.FurnishingAddsToBiomeListBox.Size = new System.Drawing.Size(295, 56);
+            this.FurnishingAddsToBiomeListBox.TabIndex = 37;
+            // 
+            // FurnishingAddsToRoomListBox
+            // 
+            this.FurnishingAddsToRoomListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingTableLayoutPanel.SetColumnSpan(this.FurnishingAddsToRoomListBox, 2);
+            this.FurnishingAddsToRoomListBox.FormattingEnabled = true;
+            this.FurnishingAddsToRoomListBox.Location = new System.Drawing.Point(131, 255);
+            this.FurnishingAddsToRoomListBox.Name = "FurnishingAddsToRoomListBox";
+            this.FurnishingAddsToRoomListBox.Size = new System.Drawing.Size(295, 56);
+            this.FurnishingAddsToRoomListBox.TabIndex = 37;
+            // 
+            // FurnishingAddBiomeTagButton
+            // 
+            this.FurnishingAddBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingAddBiomeTagButton.Location = new System.Drawing.Point(297, 225);
+            this.FurnishingAddBiomeTagButton.Name = "FurnishingAddBiomeTagButton";
+            this.FurnishingAddBiomeTagButton.Size = new System.Drawing.Size(129, 23);
+            this.FurnishingAddBiomeTagButton.TabIndex = 38;
+            this.FurnishingAddBiomeTagButton.Text = "Add Biome Tag";
+            this.FurnishingAddBiomeTagButton.UseVisualStyleBackColor = true;
+            this.FurnishingAddBiomeTagButton.Click += new System.EventHandler(this.FurnishingAddBiomeTagButton_Click);
+            // 
+            // FurnishingsAddRoomTagButton
+            // 
+            this.FurnishingsAddRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingsAddRoomTagButton.Location = new System.Drawing.Point(297, 317);
+            this.FurnishingsAddRoomTagButton.Name = "FurnishingsAddRoomTagButton";
+            this.FurnishingsAddRoomTagButton.Size = new System.Drawing.Size(129, 23);
+            this.FurnishingsAddRoomTagButton.TabIndex = 38;
+            this.FurnishingsAddRoomTagButton.Text = "Add Room Tag";
+            this.FurnishingsAddRoomTagButton.UseVisualStyleBackColor = true;
+            this.FurnishingsAddRoomTagButton.Click += new System.EventHandler(this.FurnishingsAddRoomTagButton_Click);
+            // 
+            // FurnishingsRemoveRoomTagButton
+            // 
+            this.FurnishingsRemoveRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingsRemoveRoomTagButton.Location = new System.Drawing.Point(146, 317);
+            this.FurnishingsRemoveRoomTagButton.Name = "FurnishingsRemoveRoomTagButton";
+            this.FurnishingsRemoveRoomTagButton.Size = new System.Drawing.Size(129, 23);
+            this.FurnishingsRemoveRoomTagButton.TabIndex = 38;
+            this.FurnishingsRemoveRoomTagButton.Text = "Remove Room Tag";
+            this.FurnishingsRemoveRoomTagButton.UseVisualStyleBackColor = true;
+            this.FurnishingsRemoveRoomTagButton.Click += new System.EventHandler(this.FurnishingsRemoveRoomTagButton_Click);
+            // 
+            // FurnishingsRemoveBiomeTagButton
+            // 
+            this.FurnishingsRemoveBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingsRemoveBiomeTagButton.Location = new System.Drawing.Point(146, 225);
+            this.FurnishingsRemoveBiomeTagButton.Name = "FurnishingsRemoveBiomeTagButton";
+            this.FurnishingsRemoveBiomeTagButton.Size = new System.Drawing.Size(129, 23);
+            this.FurnishingsRemoveBiomeTagButton.TabIndex = 38;
+            this.FurnishingsRemoveBiomeTagButton.Text = "Remove Biome Tag";
+            this.FurnishingsRemoveBiomeTagButton.UseVisualStyleBackColor = true;
+            this.FurnishingsRemoveBiomeTagButton.Click += new System.EventHandler(this.FurnishingsRemoveBiomeTagButton_Click);
             // 
             // FurnishingRemoveFurnishingButton
             // 
@@ -2967,6 +3053,12 @@ namespace Scribe
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleEquivalentItemComboBox, 1, 3);
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleCollectionEffectLabel, 0, 8);
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleEffectAmountLabel, 0, 9);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectiblesAddsToBiomeListBox, 1, 4);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectiblesAddsToRoomListBox, 1, 6);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleAddBiomeTagButton, 2, 5);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleRemoveBiomeTagButton, 1, 5);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectiblesAddRoomTagButton, 2, 7);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectiblesRemoveRoomTagButton, 1, 7);
             this.CollectibleTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
             this.CollectibleTableLayoutPanel.Name = "CollectibleTableLayoutPanel";
             this.CollectibleTableLayoutPanel.RowCount = 11;
@@ -3091,6 +3183,74 @@ namespace Scribe
             this.CollectibleEffectAmountLabel.Size = new System.Drawing.Size(76, 13);
             this.CollectibleEffectAmountLabel.TabIndex = 31;
             this.CollectibleEffectAmountLabel.Text = "Effect Amount";
+            // 
+            // CollectiblesAddsToBiomeListBox
+            // 
+            this.CollectiblesAddsToBiomeListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleTableLayoutPanel.SetColumnSpan(this.CollectiblesAddsToBiomeListBox, 2);
+            this.CollectiblesAddsToBiomeListBox.FormattingEnabled = true;
+            this.CollectiblesAddsToBiomeListBox.Location = new System.Drawing.Point(131, 163);
+            this.CollectiblesAddsToBiomeListBox.Name = "CollectiblesAddsToBiomeListBox";
+            this.CollectiblesAddsToBiomeListBox.Size = new System.Drawing.Size(295, 69);
+            this.CollectiblesAddsToBiomeListBox.TabIndex = 37;
+            // 
+            // CollectiblesAddsToRoomListBox
+            // 
+            this.CollectiblesAddsToRoomListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleTableLayoutPanel.SetColumnSpan(this.CollectiblesAddsToRoomListBox, 2);
+            this.CollectiblesAddsToRoomListBox.FormattingEnabled = true;
+            this.CollectiblesAddsToRoomListBox.Location = new System.Drawing.Point(131, 268);
+            this.CollectiblesAddsToRoomListBox.Name = "CollectiblesAddsToRoomListBox";
+            this.CollectiblesAddsToRoomListBox.Size = new System.Drawing.Size(295, 69);
+            this.CollectiblesAddsToRoomListBox.TabIndex = 37;
+            // 
+            // CollectibleAddBiomeTagButton
+            // 
+            this.CollectibleAddBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleAddBiomeTagButton.Location = new System.Drawing.Point(297, 238);
+            this.CollectibleAddBiomeTagButton.Name = "CollectibleAddBiomeTagButton";
+            this.CollectibleAddBiomeTagButton.Size = new System.Drawing.Size(129, 23);
+            this.CollectibleAddBiomeTagButton.TabIndex = 38;
+            this.CollectibleAddBiomeTagButton.Text = "Add Biome Tag";
+            this.CollectibleAddBiomeTagButton.UseVisualStyleBackColor = true;
+            this.CollectibleAddBiomeTagButton.Click += new System.EventHandler(this.CollectibleAddBiomeTagButton_Click);
+            // 
+            // CollectibleRemoveBiomeTagButton
+            // 
+            this.CollectibleRemoveBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleRemoveBiomeTagButton.Location = new System.Drawing.Point(146, 238);
+            this.CollectibleRemoveBiomeTagButton.Name = "CollectibleRemoveBiomeTagButton";
+            this.CollectibleRemoveBiomeTagButton.Size = new System.Drawing.Size(129, 23);
+            this.CollectibleRemoveBiomeTagButton.TabIndex = 38;
+            this.CollectibleRemoveBiomeTagButton.Text = "Remove Biome Tag";
+            this.CollectibleRemoveBiomeTagButton.UseVisualStyleBackColor = true;
+            this.CollectibleRemoveBiomeTagButton.Click += new System.EventHandler(this.CollectibleRemoveBiomeTagButton_Click);
+            // 
+            // CollectiblesAddRoomTagButton
+            // 
+            this.CollectiblesAddRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectiblesAddRoomTagButton.Location = new System.Drawing.Point(297, 343);
+            this.CollectiblesAddRoomTagButton.Name = "CollectiblesAddRoomTagButton";
+            this.CollectiblesAddRoomTagButton.Size = new System.Drawing.Size(129, 23);
+            this.CollectiblesAddRoomTagButton.TabIndex = 38;
+            this.CollectiblesAddRoomTagButton.Text = "Add Room Tag";
+            this.CollectiblesAddRoomTagButton.UseVisualStyleBackColor = true;
+            this.CollectiblesAddRoomTagButton.Click += new System.EventHandler(this.CollectiblesAddRoomTagButton_Click);
+            // 
+            // CollectiblesRemoveRoomTagButton
+            // 
+            this.CollectiblesRemoveRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectiblesRemoveRoomTagButton.Location = new System.Drawing.Point(146, 343);
+            this.CollectiblesRemoveRoomTagButton.Name = "CollectiblesRemoveRoomTagButton";
+            this.CollectiblesRemoveRoomTagButton.Size = new System.Drawing.Size(129, 23);
+            this.CollectiblesRemoveRoomTagButton.TabIndex = 38;
+            this.CollectiblesRemoveRoomTagButton.Text = "Remove Room Tag";
+            this.CollectiblesRemoveRoomTagButton.UseVisualStyleBackColor = true;
+            this.CollectiblesRemoveRoomTagButton.Click += new System.EventHandler(this.CollectiblesRemoveRoomTagButton_Click);
             // 
             // CollectibleRemoveCollectibleButton
             // 
@@ -5860,9 +6020,10 @@ namespace Scribe
         private System.Windows.Forms.ToolStripSeparator ToolStripSeparator5;
 
         private System.Windows.Forms.ContextMenuStrip ContextMenuStripPictureBoxes;
-        private System.Windows.Forms.ContextMenuStrip ContextMenuStripIDExamples;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemOpenContainingFolder;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemEditExternal;
+        private System.Windows.Forms.ContextMenuStrip ContextMenuStripIDExamples;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemCopyID;
 
         private System.Windows.Forms.TableLayoutPanel FiltersTableLayoutPanel;
         private System.Windows.Forms.TextBox FilterTextBox;
@@ -6024,6 +6185,12 @@ namespace Scribe
         private System.Windows.Forms.TextBox FurnishingDescriptionTextBox;
         private System.Windows.Forms.TextBox FurnishingCommentTextBox;
         private System.Windows.Forms.ComboBox FurnishingEquivalentItemComboBox;
+        private System.Windows.Forms.ListBox FurnishingAddsToBiomeListBox;
+        private System.Windows.Forms.ListBox FurnishingAddsToRoomListBox;
+        private System.Windows.Forms.Button FurnishingAddBiomeTagButton;
+        private System.Windows.Forms.Button FurnishingsAddRoomTagButton;
+        private System.Windows.Forms.Button FurnishingsRemoveRoomTagButton;
+        private System.Windows.Forms.Button FurnishingsRemoveBiomeTagButton;
         private System.Windows.Forms.Button FurnishingRemoveFurnishingButton;
         private System.Windows.Forms.GroupBox FurnishingConfigGroupBox;
         private System.Windows.Forms.Button FurnishingAddNewFurnishingButton;
@@ -6053,6 +6220,12 @@ namespace Scribe
         private System.Windows.Forms.TextBox CollectibleDescriptionTextBox;
         private System.Windows.Forms.TextBox CollectibleCommentTextBox;
         private System.Windows.Forms.TextBox CollectibleEffectAmountTextBox;
+        private System.Windows.Forms.ListBox CollectiblesAddsToBiomeListBox;
+        private System.Windows.Forms.ListBox CollectiblesAddsToRoomListBox;
+        private System.Windows.Forms.Button CollectibleAddBiomeTagButton;
+        private System.Windows.Forms.Button CollectibleRemoveBiomeTagButton;
+        private System.Windows.Forms.Button CollectiblesAddRoomTagButton;
+        private System.Windows.Forms.Button CollectiblesRemoveRoomTagButton;
         private System.Windows.Forms.ComboBox CollectibleCollectionEffectComboBox;
         private System.Windows.Forms.Label CollectibleCollectionEffectLabel;
         private System.Windows.Forms.Label CollectibleEffectAmountLabel;
@@ -6298,6 +6471,5 @@ namespace Scribe
 
         private System.Windows.Forms.TabPage ScriptsTabPage;
         private System.Windows.Forms.Label ScriptingComingSoonLabel;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemCopyID;
     }
 }
