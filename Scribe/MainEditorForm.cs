@@ -1008,7 +1008,7 @@ namespace Scribe
                 CritterPictureBox.Image = Resources.ImageNotFoundGraphic;
             }
             else if (CritterListBox.SelectedItem is CritterModel model
-                    && null != model)
+                     && null != model)
             {
                 CritterIDExample.Text = model.ID.ToString();
                 CritterNameTextBox.Text = model.Name;

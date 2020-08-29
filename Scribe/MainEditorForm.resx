@@ -90,6 +90,13 @@
         SUVORK5CYII=
 </value>
   </data>
+  <data name="OpenProjectFolderToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAGNJREFUOE9j
+        GJTgPxaMHygpmKBo2LIxH46RxdEwCvgPMgRZIz4MUg/RhgC4FKFgNDkUgFXj/9/r4BhZHA2DAYoByBrx
+        YZBasG4goEgzCAwCA0AYm0JsGKoeBcAEScHDAzAwAACw20q+vUWDbQAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="ExitToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAFZJREFUOE9j
@@ -222,6 +229,28 @@
         1ZkQayAaP1z7Ckh991TYXRXqBwrrPsQfW6HL7cUhGEuJOVwnai7BFSztgJXsZKCqp6bkDcCfA67Pd2Tk
         gOwRvZ9D8JUp8/Mv4CvTHRvCzRpgQqKNKtjQdfetQYVaq1lho97TCmtiaaNmL0cpCxYGMWJ0IWqrAAAA
         AElFTkSuQmCC
+</value>
+  </data>
+  <data name="ToolStripMenuItemEditExternal.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAFlJREFUOE9j
+        GFLgPxSTBf6DwOnbf8gy5P//S5vB+H6h2n89pyySDEHRnOdqBMYgcYg0fjCUNYM0kqMZBMDRhWw7SAwi
+        RRwAa4J5AcSHCBMPYJrI0jwkAQMDAP64gN1TPWedAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ToolStripMenuItemOpenContainingFolder.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAGNJREFUOE9j
+        GJTgPxaMHygpmKBo2LIxH46RxdEwCvgPMgRZIz4MUg/RhgC4FKFgNDkUgFXj/9/r4BhZHA2DAYoByBrx
+        YZBasG4goEgzCAwCA0AYm0JsGKoeBcAEScHDAzAwAACw20q+vUWDbQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ToolStripMenuItemReloadImage.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAJBJREFUOE9j
+        wAH+QzFZ4P/L30/BGMSGCBEPwBp3/l8FxyAxiBRhgKGZFENwak4+7gvGIDUQpZjgv1qME0wBhmaYOJIa
+        ggDuGhD79O0/DDBMLEAxACIEB0S5ApcB+AxGATgNAIlRbAChGAEBuE1IhsANJWgANLRRDIFhYmxHjjK4
+        JhgGiYEkCAJkQ9AwtQEDAwAA+ABBhlSTSgAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="ToolStripMenuItemCopyID.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">

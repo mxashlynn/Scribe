@@ -71,6 +71,8 @@ namespace Scribe
             this.ContextMenuStripPictureBoxes = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToolStripMenuItemEditExternal = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemOpenContainingFolder = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripSeparatorPictureBoxes = new System.Windows.Forms.ToolStripSeparator();
+            this.ToolStripMenuItemReloadImage = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuStripIDExamples = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToolStripMenuItemCopyID = new System.Windows.Forms.ToolStripMenuItem();
             this.FiltersTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -667,6 +669,7 @@ namespace Scribe
             // 
             // OpenProjectFolderToolStripMenuItem
             // 
+            this.OpenProjectFolderToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("OpenProjectFolderToolStripMenuItem.Image")));
             this.OpenProjectFolderToolStripMenuItem.Name = "OpenProjectFolderToolStripMenuItem";
             this.OpenProjectFolderToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.OpenProjectFolderToolStripMenuItem.Text = "Open Project Folder";
@@ -893,24 +896,40 @@ namespace Scribe
             // 
             this.ContextMenuStripPictureBoxes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItemEditExternal,
-            this.ToolStripMenuItemOpenContainingFolder});
+            this.ToolStripMenuItemOpenContainingFolder,
+            this.ToolStripSeparatorPictureBoxes,
+            this.ToolStripMenuItemReloadImage});
             this.ContextMenuStripPictureBoxes.Name = "ContextMenuStripMainMenu";
-            this.ContextMenuStripPictureBoxes.ShowImageMargin = false;
-            this.ContextMenuStripPictureBoxes.Size = new System.Drawing.Size(177, 48);
+            this.ContextMenuStripPictureBoxes.Size = new System.Drawing.Size(202, 76);
             // 
             // ToolStripMenuItemEditExternal
             // 
+            this.ToolStripMenuItemEditExternal.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemEditExternal.Image")));
             this.ToolStripMenuItemEditExternal.Name = "ToolStripMenuItemEditExternal";
-            this.ToolStripMenuItemEditExternal.Size = new System.Drawing.Size(176, 22);
+            this.ToolStripMenuItemEditExternal.Size = new System.Drawing.Size(201, 22);
             this.ToolStripMenuItemEditExternal.Text = "Edit in External Program";
             this.ToolStripMenuItemEditExternal.Click += new System.EventHandler(this.ToolStripMenuItemEditExternal_Click);
             // 
             // ToolStripMenuItemOpenContainingFolder
             // 
+            this.ToolStripMenuItemOpenContainingFolder.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemOpenContainingFolder.Image")));
             this.ToolStripMenuItemOpenContainingFolder.Name = "ToolStripMenuItemOpenContainingFolder";
-            this.ToolStripMenuItemOpenContainingFolder.Size = new System.Drawing.Size(176, 22);
+            this.ToolStripMenuItemOpenContainingFolder.Size = new System.Drawing.Size(201, 22);
             this.ToolStripMenuItemOpenContainingFolder.Text = "Open Containing Folder";
             this.ToolStripMenuItemOpenContainingFolder.Click += new System.EventHandler(this.OpenContainingFolderMenuItem_Click);
+            // 
+            // ToolStripSeparatorPictureBoxes
+            // 
+            this.ToolStripSeparatorPictureBoxes.Name = "ToolStripSeparatorPictureBoxes";
+            this.ToolStripSeparatorPictureBoxes.Size = new System.Drawing.Size(198, 6);
+            // 
+            // ToolStripMenuItemReloadImage
+            // 
+            this.ToolStripMenuItemReloadImage.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemReloadImage.Image")));
+            this.ToolStripMenuItemReloadImage.Name = "ToolStripMenuItemReloadImage";
+            this.ToolStripMenuItemReloadImage.Size = new System.Drawing.Size(201, 22);
+            this.ToolStripMenuItemReloadImage.Text = "Reload from Disk";
+            this.ToolStripMenuItemReloadImage.Click += new System.EventHandler(this.PictureBoxReload_Click);
             // 
             // ContextMenuStripIDExamples
             // 
@@ -6037,6 +6056,8 @@ namespace Scribe
         private System.Windows.Forms.ContextMenuStrip ContextMenuStripPictureBoxes;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemOpenContainingFolder;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemEditExternal;
+        private System.Windows.Forms.ToolStripSeparator ToolStripSeparatorPictureBoxes;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemReloadImage;
         private System.Windows.Forms.ContextMenuStrip ContextMenuStripIDExamples;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemCopyID;
 
