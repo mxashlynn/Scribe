@@ -20,7 +20,8 @@ namespace Scribe
             _ = Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SplashScreen());
+            Context.MainForm = new SplashScreen();
+            Application.Run(Context);
         }
 
         /// <summary>
