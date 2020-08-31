@@ -256,6 +256,7 @@ namespace Scribe
         /// </summary>
         /// <param name="inTabIndex">The index of the tab sought.</param>
         /// <returns>The corresponding ID, or <see cref="ModelID.None"/> on out of range input.</returns>
+        // TODO If this is still not being used at 1.0, remove it.
         private ModelID GetDefaultIDForTab(int inTabIndex)
             => inTabIndex switch
             {
@@ -697,6 +698,7 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void MainEditorForm_Activated(object sender, EventArgs e)
         {
+            MessageBox.Show("Hello from MainEditorForm_Activated!");
             FlavorFilterGroupBox.Enabled = Settings.Default.UseFlavorFilters;
             FlavorFilterGroupBox.Visible = Settings.Default.UseFlavorFilters;
             // TODO UpdateEditorTheme(Settings.Default.UseColorfulEditorTheme);
@@ -709,7 +711,8 @@ namespace Scribe
         /// </summary>
         private void UpdateDisplay()
         {
-            UpdateLibraryDataDisplay();
+            // TODO Make sure this is called on first load.
+            MessageBox.Show("Hello from UpdateDisplay!");
 
             #region Clear Lists and Containers
             foreach (var textbox in EditableControls[typeof(TextBox)])

@@ -138,7 +138,7 @@ namespace Scribe
                 }
             }
 
-            #region Create the Asset Folders
+            #region Create the Graphical Asset Folders
             foreach(var folderPath in GraphicalAssetPaths.Values)
             {
                 var pathWithRoot = Path.Combine(All.ProjectDirectory, folderPath);
