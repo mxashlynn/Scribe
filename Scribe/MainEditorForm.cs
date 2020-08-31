@@ -162,6 +162,8 @@ namespace Scribe
                 }
             }
             FormClosing += FormClosingEventHandler;
+
+            UpdateDisplay();
         }
 
         /// <summary>
@@ -562,7 +564,7 @@ namespace Scribe
                         : (ModelID)int.Parse((string)input, NumberStyles.Integer)),
                     #endregion
 
-                    #region ItemModels
+                #region ItemModels
                 (ItemsTabIndex, "ItemNameTextBox")
                     => (input) => (inModel as IItemModelEdit).Name = (string)input,
                 (ItemsTabIndex, "ItemDescriptionTextBox")
@@ -698,7 +700,6 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void MainEditorForm_Activated(object sender, EventArgs e)
         {
-            MessageBox.Show("Hello from MainEditorForm_Activated!");
             FlavorFilterGroupBox.Enabled = Settings.Default.UseFlavorFilters;
             FlavorFilterGroupBox.Visible = Settings.Default.UseFlavorFilters;
             // TODO UpdateEditorTheme(Settings.Default.UseColorfulEditorTheme);
@@ -711,9 +712,6 @@ namespace Scribe
         /// </summary>
         private void UpdateDisplay()
         {
-            // TODO Make sure this is called on first load.
-            MessageBox.Show("Hello from UpdateDisplay!");
-
             #region Clear Lists and Containers
             foreach (var textbox in EditableControls[typeof(TextBox)])
             {
