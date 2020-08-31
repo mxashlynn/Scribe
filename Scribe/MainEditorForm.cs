@@ -254,6 +254,30 @@ namespace Scribe
             };
 
         /// <summary>
+        /// Given the index of an editor tab, return the corresponding primary <see cref="ListBox"/>.
+        /// </summary>
+        /// <param name="inTabIndex">The index of the tab of the ListBox sought.</param>
+        /// <returns>The ListBox used to select models to work with, or <c>null</c> if none exists for this tab.</returns>
+        private ListBox GetPrimaryListBoxForTab(int inTabIndex)
+            => inTabIndex switch
+            {
+                GamesTabIndex => GameListBox,
+                BlocksTabIndex => BlockListBox,
+                FloorsTabIndex => FloorListBox,
+                FurnishingsTabIndex => FurnishingListBox,
+                CollectiblesTabIndex => CollectibleListBox,
+                CharactersTabIndex => CharacterListBox,
+                CrittersTabIndex => CritterListBox,
+                ItemsTabIndex => ItemListBox,
+                BiomeRecipesTabIndex => BiomeListBox,
+                CraftingRecipesTabIndex => CraftingListBox,
+                RoomRecipesTabIndex => RoomListBox,
+                MapsTabIndex => null,
+                ScriptsTabIndex => null,
+                _ => null,
+            };
+
+        /// <summary>
         /// Given the index of an editor tab, return the default <see cref="ModelID"/> for the content it edits.
         /// </summary>
         /// <param name="inTabIndex">The index of the tab sought.</param>
@@ -704,9 +728,19 @@ namespace Scribe
         {
             FlavorFilterGroupBox.Enabled = Settings.Default.UseFlavorFilters;
             FlavorFilterGroupBox.Visible = Settings.Default.UseFlavorFilters;
-            // TODO UpdateEditorTheme(Settings.Default.UseColorfulEditorTheme);
+            // TODO UpdateEditorTheme(Settings.Default.UseColorfulEditorTheme);  <-- Only do this if the theme has actually changed!
 
+            // Select current tab.
             EditorTabs.TabPages[EditorTabs.SelectedIndex]?.Select();
+            // If possible, select default model in current tab.
+            if (null == GetSelectedModelForTab(EditorTabs.SelectedIndex))
+            {
+                var selectedListBox = GetPrimaryListBoxForTab(EditorTabs.SelectedIndex);
+                if ((selectedListBox?.Items.Count ?? -1) > 0)
+                {
+                    selectedListBox.SelectedIndex = 0;
+                }
+            }
         }
 
         /// <summary>
