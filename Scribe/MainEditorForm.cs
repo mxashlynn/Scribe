@@ -382,7 +382,9 @@ namespace Scribe
         /// <returns>A method for editing the property's value, or <c>null</c> if the input combination is not defined.</returns>
         /// <remarks>This method binds data in models to controls in the user interface.</remarks>
         private Action<object> GetPropertyAccessorForModelAndTabAndControl(Model inModel, int inTabIndex, Control inControl)
-            => (inTabIndex, inControl.Name) switch
+            => null == inModel
+            ? (Action<object>)null
+            : (inTabIndex, inControl.Name) switch
             {
                 #region GameModels
                 (GamesTabIndex, "GameNameTextBox")
@@ -1007,7 +1009,8 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void ContentAlteredEventHandler(object sender, EventArgs e)
         {
-            if (!(sender is Control alteredControl) || UntrackedControl.Equals((string)alteredControl.Tag))
+            if (!(sender is Control alteredControl)
+                || UntrackedControl.Equals((string)alteredControl.Tag))
             {
                 // Silently return if a primary list box is altered -- changes in these boxes are handled via buttons.
                 return;
