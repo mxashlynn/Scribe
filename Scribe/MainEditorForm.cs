@@ -1053,8 +1053,7 @@ namespace Scribe
             var PropertyAccessor = GetPropertyAccessorForTabAndControl(EditorTabs.SelectedIndex, alteredControl);
             if (null == PropertyAccessor)
             {
-                // TODO Replace this debug statement with a logging statement.
-                _ = MessageBox.Show($"Unsupported control {alteredControl.Name} on tab index {EditorTabs.SelectedIndex}.");
+                // Silently return if no model is selected or if a control is unsupported.
                 return;
             }
 
