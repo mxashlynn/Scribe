@@ -2285,6 +2285,7 @@ namespace Scribe
             this.BlockAddNewBlockButton.TabIndex = 2;
             this.BlockAddNewBlockButton.Text = "Add New Block";
             this.BlockAddNewBlockButton.UseVisualStyleBackColor = true;
+            this.BlockAddNewBlockButton.Click += new System.EventHandler(this.BlockAddNewBlockButton_Click);
             // 
             // BlockIDExample
             // 
@@ -2306,6 +2307,7 @@ namespace Scribe
             this.BlockRemoveBlockButton.TabIndex = 2;
             this.BlockRemoveBlockButton.Text = "Remove Block";
             this.BlockRemoveBlockButton.UseVisualStyleBackColor = true;
+            this.BlockRemoveBlockButton.Click += new System.EventHandler(this.BlockRemoveBlockButton_Click);
             // 
             // BlockConfigGroupBox
             // 

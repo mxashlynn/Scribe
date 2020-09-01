@@ -1176,6 +1176,126 @@ namespace Scribe
         #endregion
 
         #region Blocks Tab
+        /// <summary>
+        /// Responds to the user clicking "Add New Block" on the Blocks tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void BlockAddNewBlockButton_Click(object sender, EventArgs e)
+        {
+            if (!All.CollectionsHaveBeenInitialized)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            var nextBlockID = All.Parquets.Count > 0
+                ? (ModelID)(All.Parquets.Where(model => model is BlockModel).Max(block => block?.ID ?? All.BlockIDs.Minimum) + 1)
+                : All.BlockIDs.Minimum;
+            if (nextBlockID > All.BlockIDs.Maximum)
+            {
+                SystemSounds.Beep.Play();
+                _ = MessageBox.Show(Resources.ErrorMaximumIDReached, Resources.CaptionError,
+                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var modelToAdd = new BlockModel(nextBlockID, "New Block", "", "");
+            ChangeManager.AddAndExecute(new ChangeList(modelToAdd, "add new block definition",
+                                        (object databaseValue) =>
+                                        {
+                                            ((IModelCollectionEdit<ParquetModel>)All.Parquets).Add((BlockModel)databaseValue);
+                                            _ = BlockListBox.Items.Add(databaseValue);
+                                            HasUnsavedChanges = true;
+                                        },
+                                        (object databaseValue) =>
+                                        {
+                                            ((IModelCollectionEdit<ParquetModel>)All.Parquets).Remove((BlockModel)databaseValue);
+                                            BlockListBox.Items.Remove(databaseValue);
+                                            BlockListBox.ClearSelected();
+                                            HasUnsavedChanges = true;
+                                        }));
+        }
+
+        /// <summary>
+        /// Responds to the user clicking "Remove Block" on the Blocks tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void BlockRemoveBlockButton_Click(object sender, EventArgs e)
+        {
+            if (!All.CollectionsHaveBeenInitialized || BlockListBox.SelectedIndex == -1)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            var modelToRemove = (BlockModel)GetSelectedModelForTab(EditorTabs.SelectedIndex);
+            if (null == modelToRemove)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            ChangeManager.AddAndExecute(new ChangeList(modelToRemove, $"remove {modelToRemove.Name}",
+                                        (object databaseValue) =>
+                                        {
+                                            ((IModelCollectionEdit<ParquetModel>)All.Parquets).Remove((BlockModel)databaseValue);
+                                            BlockListBox.Items.Remove(databaseValue);
+                                            BlockListBox.ClearSelected();
+                                            HasUnsavedChanges = true;
+                                        },
+                                        (object databaseValue) =>
+                                        {
+                                            ((IModelCollectionEdit<ParquetModel>)All.Parquets).Add((BlockModel)databaseValue);
+                                            _ = BlockListBox.Items.Add(databaseValue);
+                                            HasUnsavedChanges = true;
+                                        }));
+        }
+
+        /// <summary>
+        /// Registeres the user command to add a new biome tag to the current block.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void BlockAddBiomeTagButton_Click(object sender, EventArgs e)
+        {
+            // TODO Implement this.
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Registeres the user command to remove the selected biome tag from the current block.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void BlockRemoveBiomeTagButton_Click(object sender, EventArgs e)
+        {
+            // TODO Implement this.
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Registeres the user command to add a new room tag to the current block.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void BlockAddRoomTagButton_Click(object sender, EventArgs e)
+        {
+            // TODO Implement this.
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Registeres the user command to remove the selected room tag from the current block.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void BlockRemoveRoomTagButton_Click(object sender, EventArgs e)
+        {
+            // TODO Implement this.
+            throw new NotImplementedException();
+        }
         #endregion
 
         #region Floors Tab
@@ -1594,51 +1714,7 @@ namespace Scribe
         #endregion
 
         #region Button Events
-        #region Add Remove Parquet Tags Button Events
-        /// <summary>
-        /// Registeres the user command to add a new biome tag to the current block.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void BlockAddBiomeTagButton_Click(object sender, EventArgs e)
-        {
-            // TODO Implement this.
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Registeres the user command to remove the selected biome tag from the current block.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void BlockRemoveBiomeTagButton_Click(object sender, EventArgs e)
-        {
-            // TODO Implement this.
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Registeres the user command to add a new room tag to the current block.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void BlockAddRoomTagButton_Click(object sender, EventArgs e)
-        {
-            // TODO Implement this.
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Registeres the user command to remove the selected room tag from the current block.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void BlockRemoveRoomTagButton_Click(object sender, EventArgs e)
-        {
-            // TODO Implement this.
-            throw new NotImplementedException();
-        }
-
+        // TODO Move these "Add Remove Parquet Tags Button Events" to Data Change region
         /// <summary>
         /// Registeres the user command to add a new biome tag to the current floor.
         /// </summary>
@@ -1770,7 +1846,7 @@ namespace Scribe
             // TODO Implement this.
             throw new NotImplementedException();
         }
-        #endregion
+        //endregion
 
         #region Edit Image Button Events
         /// <summary>
