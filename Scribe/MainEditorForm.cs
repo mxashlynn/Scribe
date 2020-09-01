@@ -1260,8 +1260,48 @@ namespace Scribe
         /// <param name="e">Ignored</param>
         private void BlockAddBiomeTagButton_Click(object sender, EventArgs e)
         {
-            // TODO Implement this.
-            throw new NotImplementedException();
+            if (!All.CollectionsHaveBeenInitialized)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            var blockModel = GetSelectedModelForTab(EditorTabs.SelectedIndex) as IBlockModelEdit;
+            if (null == blockModel)
+            {
+                return;
+            }
+
+            if (AddTagDialogue.ShowDialog() == DialogResult.OK
+                && !string.IsNullOrEmpty(AddTagDialogue.ReturnNewTag))
+            {
+                if (blockModel.AddsToBiome.ToString().Contains(AddTagDialogue.ReturnNewTag))
+                {
+                    // Do not add duplicate tags.
+                    // TODO Report this error in the status bar or something.
+                    MessageBox.Show("Not adding duplicate tag.");
+                    SystemSounds.Beep.Play();
+                    return;
+                }
+
+                var newValue = blockModel.AddsToBiome + AddTagDialogue.ReturnNewTag;
+                ChangeManager.AddAndExecute(new ChangeList(AddTagDialogue.ReturnNewTag, "add biome tag to block",
+                                            (object databaseValue) =>
+                                            {
+                                                blockModel.AddsToBiome += (ModelTag)databaseValue;
+                                                _ = BlockAddsToBiomeListBox.Items.Add(databaseValue);
+                                                HasUnsavedChanges = true;
+                                            },
+                                            (object databaseValue) =>
+                                            {
+                                                blockModel.AddsToBiome =
+                                                    ((string)blockModel.AddsToBiome)
+                                                    .Replace((ModelTag)databaseValue, "", StringComparison.OrdinalIgnoreCase);
+                                                BlockAddsToBiomeListBox.Items.Remove(databaseValue);
+                                                BlockAddsToBiomeListBox.ClearSelected();
+                                                HasUnsavedChanges = true;
+                                            }));
+            }
         }
 
         /// <summary>
