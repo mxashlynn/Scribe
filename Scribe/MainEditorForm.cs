@@ -1046,7 +1046,7 @@ namespace Scribe
             if (!(sender is Control alteredControl)
                 || UntrackedControl.Equals((string)alteredControl.Tag))
             {
-                // Silently return if a primary list box is altered -- changes in these boxes are handled via buttons.
+                // Silently return if an untracked control is altered; these changes are handled via button presses.
                 return;
             }
 
