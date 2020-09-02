@@ -61,7 +61,7 @@ namespace Scribe
             this.CancelButtonControl.Location = new System.Drawing.Point(3, 59);
             this.CancelButtonControl.Name = "CancelButtonControl";
             this.CancelButtonControl.Size = new System.Drawing.Size(74, 23);
-            this.CancelButtonControl.TabIndex = 9;
+            this.CancelButtonControl.TabIndex = 2;
             this.CancelButtonControl.Text = "Cancel";
             this.CancelButtonControl.UseVisualStyleBackColor = true;
             this.CancelButtonControl.Click += new System.EventHandler(this.CancelButtonControl_Click);
@@ -72,7 +72,7 @@ namespace Scribe
             this.OkayButton.Location = new System.Drawing.Point(180, 59);
             this.OkayButton.Name = "OkayButton";
             this.OkayButton.Size = new System.Drawing.Size(75, 23);
-            this.OkayButton.TabIndex = 0;
+            this.OkayButton.TabIndex = 1;
             this.OkayButton.Text = "&OK";
             this.OkayButton.UseVisualStyleBackColor = true;
             this.OkayButton.Click += new System.EventHandler(this.OkayButton_Click);
@@ -95,7 +95,7 @@ namespace Scribe
             this.NewTagTextBox.Multiline = true;
             this.NewTagTextBox.Name = "NewTagTextBox";
             this.NewTagTextBox.Size = new System.Drawing.Size(172, 49);
-            this.NewTagTextBox.TabIndex = 2;
+            this.NewTagTextBox.TabIndex = 0;
             this.NewTagTextBox.TextChanged += new System.EventHandler(this.NewTagTextBox_TextChanged);
             // 
             // AddTagBox
