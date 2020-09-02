@@ -1429,6 +1429,258 @@ namespace Scribe
         #endregion
 
         #region Floors Tab
+        /// <summary>
+        /// Responds to the user clicking "Add New Floor" on the Floors tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void FloorAddNewFloorButton_Click(object sender, EventArgs e)
+        {
+            if (!All.CollectionsHaveBeenInitialized)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            var nextFloorID = All.Parquets.Count > 0
+                ? (ModelID)(All.Parquets.Where(model => model is FloorModel).Max(floor => floor?.ID ?? All.FloorIDs.Minimum) + 1)
+                : All.FloorIDs.Minimum;
+            if (nextFloorID > All.FloorIDs.Maximum)
+            {
+                SystemSounds.Beep.Play();
+                _ = MessageBox.Show(Resources.ErrorMaximumIDReached, Resources.CaptionError,
+                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var modelToAdd = new FloorModel(nextFloorID, "New Floor", "", "");
+            ChangeManager.AddAndExecute(new ChangeList(modelToAdd, "add new floor definition",
+                                        (object databaseValue) =>
+                                        {
+                                            ((IModelCollectionEdit<ParquetModel>)All.Parquets).Add((FloorModel)databaseValue);
+                                            _ = FloorListBox.Items.Add(databaseValue);
+                                            FloorListBox.SelectedItem = databaseValue;
+                                            HasUnsavedChanges = true;
+                                        },
+                                        (object databaseValue) =>
+                                        {
+                                            ((IModelCollectionEdit<ParquetModel>)All.Parquets).Remove((FloorModel)databaseValue);
+                                            FloorListBox.Items.Remove(databaseValue);
+                                            FloorListBox.ClearSelected();
+                                            HasUnsavedChanges = true;
+                                        }));
+        }
+
+        /// <summary>
+        /// Responds to the user clicking "Remove Floor" on the Floors tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void FloorRemoveFloorButton_Click(object sender, EventArgs e)
+        {
+            if (!All.CollectionsHaveBeenInitialized || FloorListBox.SelectedIndex == -1)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            var modelToRemove = (FloorModel)GetSelectedModelForTab(EditorTabs.SelectedIndex);
+            if (null == modelToRemove)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            ChangeManager.AddAndExecute(new ChangeList(modelToRemove, $"remove {modelToRemove.Name}",
+                                        (object databaseValue) =>
+                                        {
+                                            ((IModelCollectionEdit<ParquetModel>)All.Parquets).Remove((FloorModel)databaseValue);
+                                            FloorListBox.Items.Remove(databaseValue);
+                                            FloorListBox.ClearSelected();
+                                            HasUnsavedChanges = true;
+                                        },
+                                        (object databaseValue) =>
+                                        {
+                                            ((IModelCollectionEdit<ParquetModel>)All.Parquets).Add((FloorModel)databaseValue);
+                                            _ = FloorListBox.Items.Add(databaseValue);
+                                            FloorListBox.SelectedItem = databaseValue;
+                                            HasUnsavedChanges = true;
+                                        }));
+        }
+
+        /// <summary>
+        /// Registeres the user command to add a new biome tag to the current floor.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void FloorAddBiomeTagButton_Click(object sender, EventArgs e)
+        {
+            if (!All.CollectionsHaveBeenInitialized)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            var floorModel = GetSelectedModelForTab(EditorTabs.SelectedIndex) as IFloorModelEdit;
+            if (null == floorModel)
+            {
+                return;
+            }
+
+            if (AddTagDialogue.ShowDialog() == DialogResult.OK
+                && !string.IsNullOrEmpty(AddTagDialogue.ReturnNewTag))
+            {
+                if (floorModel.AddsToBiome.Any(tag => ((string)AddTagDialogue.ReturnNewTag).Equals(tag)))
+                {
+                    // Do not add duplicate tags.
+                    // TODO Report this error in the status bar or something.
+                    MessageBox.Show("Not adding duplicate tag.");
+                    SystemSounds.Beep.Play();
+                    return;
+                }
+
+                ChangeManager.AddAndExecute(new ChangeList(AddTagDialogue.ReturnNewTag,
+                                            $"remove biome tag {AddTagDialogue.ReturnNewTag} from floor",
+                                            (object databaseValue) =>
+                                            {
+                                                floorModel.AddsToBiome.Add((ModelTag)databaseValue);
+                                                _ = FloorAddsToBiomeListBox.Items.Add(databaseValue);
+                                                FloorAddsToBiomeListBox.SelectedItem = databaseValue;
+                                                HasUnsavedChanges = true;
+                                            },
+                                            (object databaseValue) =>
+                                            {
+                                                floorModel.AddsToBiome.Remove((ModelTag)databaseValue);
+                                                FloorAddsToBiomeListBox.Items.Remove(databaseValue);
+                                                FloorAddsToBiomeListBox.ClearSelected();
+                                                HasUnsavedChanges = true;
+                                            }));
+            }
+        }
+
+        /// <summary>
+        /// Registeres the user command to remove the selected biome tag from the current floor.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void FloorRemoveBiomeTagButton_Click(object sender, EventArgs e)
+        {
+            if (!All.CollectionsHaveBeenInitialized || FloorAddsToBiomeListBox.SelectedIndex == -1)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            var floorModel = GetSelectedModelForTab(EditorTabs.SelectedIndex) as IFloorModelEdit;
+            if (null == floorModel)
+            {
+                return;
+            }
+
+            ChangeManager.AddAndExecute(new ChangeList((ModelTag)FloorAddsToBiomeListBox.SelectedItem,
+                                        $"remove biome tag {FloorAddsToBiomeListBox.SelectedItem} from floor",
+                                        (object databaseValue) =>
+                                        {
+                                            floorModel.AddsToBiome.Remove((ModelTag)databaseValue);
+                                            FloorAddsToBiomeListBox.Items.Remove(databaseValue);
+                                            FloorAddsToBiomeListBox.ClearSelected();
+                                            HasUnsavedChanges = true;
+                                        },
+                                        (object databaseValue) =>
+                                        {
+                                            floorModel.AddsToBiome.Add((ModelTag)databaseValue);
+                                            _ = FloorAddsToBiomeListBox.Items.Add(databaseValue);
+                                            FloorAddsToBiomeListBox.SelectedItem = databaseValue;
+                                            HasUnsavedChanges = true;
+                                        }));
+        }
+
+        /// <summary>
+        /// Registeres the user command to add a new room tag to the current floor.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void FloorAddRoomTagButton_Click(object sender, EventArgs e)
+        {
+            if (!All.CollectionsHaveBeenInitialized)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            var floorModel = GetSelectedModelForTab(EditorTabs.SelectedIndex) as IFloorModelEdit;
+            if (null == floorModel)
+            {
+                return;
+            }
+
+            if (AddTagDialogue.ShowDialog() == DialogResult.OK
+                && !string.IsNullOrEmpty(AddTagDialogue.ReturnNewTag))
+            {
+                if (floorModel.AddsToRoom.Any(tag => ((string)AddTagDialogue.ReturnNewTag).Equals(tag)))
+                {
+                    // Do not add duplicate tags.
+                    // TODO Report this error in the status bar or something.
+                    MessageBox.Show("Not adding duplicate tag.");
+                    SystemSounds.Beep.Play();
+                    return;
+                }
+
+                ChangeManager.AddAndExecute(new ChangeList(AddTagDialogue.ReturnNewTag,
+                                            $"remove room tag {AddTagDialogue.ReturnNewTag} from floor",
+                                            (object databaseValue) =>
+                                            {
+                                                floorModel.AddsToRoom.Add((ModelTag)databaseValue);
+                                                _ = FloorAddsToRoomListBox.Items.Add(databaseValue);
+                                                FloorAddsToRoomListBox.SelectedItem = databaseValue;
+                                                HasUnsavedChanges = true;
+                                            },
+                                            (object databaseValue) =>
+                                            {
+                                                floorModel.AddsToRoom.Remove((ModelTag)databaseValue);
+                                                FloorAddsToRoomListBox.Items.Remove(databaseValue);
+                                                FloorAddsToRoomListBox.ClearSelected();
+                                                HasUnsavedChanges = true;
+                                            }));
+            }
+        }
+
+        /// <summary>
+        /// Registeres the user command to remove the selected room tag from the current floor.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void FloorRemoveRoomTagButton_Click(object sender, EventArgs e)
+        {
+            if (!All.CollectionsHaveBeenInitialized || FloorAddsToRoomListBox.SelectedIndex == -1)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            var floorModel = GetSelectedModelForTab(EditorTabs.SelectedIndex) as IFloorModelEdit;
+            if (null == floorModel)
+            {
+                return;
+            }
+
+            ChangeManager.AddAndExecute(new ChangeList((ModelTag)FloorAddsToRoomListBox.SelectedItem,
+                                        $"remove room tag {FloorAddsToRoomListBox.SelectedItem} from floor",
+                                        (object databaseValue) =>
+                                        {
+                                            floorModel.AddsToRoom.Remove((ModelTag)databaseValue);
+                                            FloorAddsToRoomListBox.Items.Remove(databaseValue);
+                                            FloorAddsToRoomListBox.ClearSelected();
+                                            HasUnsavedChanges = true;
+                                        },
+                                        (object databaseValue) =>
+                                        {
+                                            floorModel.AddsToRoom.Add((ModelTag)databaseValue);
+                                            _ = FloorAddsToRoomListBox.Items.Add(databaseValue);
+                                            FloorAddsToRoomListBox.SelectedItem = databaseValue;
+                                            HasUnsavedChanges = true;
+                                        }));
+        }
         #endregion
 
         #region Furnishings Tab
@@ -1844,51 +2096,6 @@ namespace Scribe
         #endregion
 
         #region Button Events
-        // TODO Move these "Add Remove Parquet Tags Button Events" to Data Change region
-        /// <summary>
-        /// Registeres the user command to add a new biome tag to the current floor.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void FloorAddBiomeTagButton_Click(object sender, EventArgs e)
-        {
-            // TODO Implement this.
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Registeres the user command to remove the selected biome tag from the current floor.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void FloorRemoveBiomeTagButton_Click(object sender, EventArgs e)
-        {
-            // TODO Implement this.
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Registeres the user command to add a new room tag to the current floor.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void FloorAddRoomTagButton_Click(object sender, EventArgs e)
-        {
-            // TODO Implement this.
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Registeres the user command to remove the selected room tag from the current floor.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void FloorRemoveRoomTagButton_Click(object sender, EventArgs e)
-        {
-            // TODO Implement this.
-            throw new NotImplementedException();
-        }
-
         /// <summary>
         /// Registeres the user command to add a new biome tag to the current furnishing.
         /// </summary>
