@@ -24,7 +24,7 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void NewTagTextBox_TextChanged(object sender, EventArgs e)
-            => ReturnNewTag = NewTagTextBox.Text;
+            => ReturnNewTag = NewTagTextBox.Text = NewTagTextBox.Text.Replace('\r', ' ').Replace('\n', ' ').Replace('\t', ' ');
 
         private void AddTagBox_Load(object sender, EventArgs e)
         {
