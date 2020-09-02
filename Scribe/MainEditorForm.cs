@@ -923,8 +923,8 @@ namespace Scribe
                 GameIsEpisodeCheckBox.Checked = model.IsEpisode;
                 GameEpisodeTitleTextBox.Text = model.EpisodeTitle;
                 GameEpisodeNumberTextBox.Text = model.EpisodeNumber.ToString();
-                GamePlayerCharacterComboBox.SelectedValue = model.PlayerCharacterID;
-                GameFirstScriptComboBox.SelectedValue = model.FirstScriptID;
+                GamePlayerCharacterComboBox.SelectedItem = model.PlayerCharacterID;
+                GameFirstScriptComboBox.SelectedItem = model.FirstScriptID;
                 PictureBoxLoadFromStorage(GameIconPictureBox, model.ID);
             }
         }
@@ -977,10 +977,10 @@ namespace Scribe
                 BlockNameTextBox.Text = model.Name;
                 BlockDescriptionTextBox.Text = model.Description;
                 BlockCommentTextBox.Text = model.Comment;
-                BlockEquivalentItemComboBox.SelectedValue = model.ItemID;
+                BlockEquivalentItemComboBox.SelectedItem = model.ItemID;
                 BlockGatherToolComboBox.SelectedIndex = (int)model.GatherTool;
                 BlockGatherEffectComboBox.SelectedIndex = (int)model.GatherEffect;
-                BlockDroppedCollectibleIDComboBox.SelectedValue = model.CollectibleID;
+                BlockDroppedCollectibleIDComboBox.SelectedItem = model.CollectibleID;
                 BlockIsFlammableCheckBox.Checked = model.IsFlammable;
                 BlockIsLiquidCheckBox.Checked = model.IsLiquid;
                 BlockMaxToughnessTextBox.Text = model.MaxToughness.ToString();
@@ -1017,8 +1017,8 @@ namespace Scribe
                 CritterNameTextBox.Text = model.Name;
                 CritterDescriptionTextBox.Text = model.Description;
                 CritterCommentTextBox.Text = model.Comment;
-                CritterNativeBiomeComboBox.SelectedValue = model.NativeBiomeID;
-                CritterPrimaryBehaviorComboBox.SelectedValue = model.PrimaryBehaviorID;
+                CritterNativeBiomeComboBox.SelectedItem = model.NativeBiomeID;
+                CritterPrimaryBehaviorComboBox.SelectedItem = model.PrimaryBehaviorID;
                 PictureBoxLoadFromStorage(CritterPictureBox, model.ID);
             }
         }
@@ -1123,7 +1123,7 @@ namespace Scribe
                                         {
                                            ((IModelCollectionEdit<GameModel>)All.Games).Add((GameModel)databaseValue);
                                             _ = GameListBox.Items.Add(databaseValue);
-                                            GameListBox.SelectedValue = databaseValue;
+                                            GameListBox.SelectedItem = databaseValue;
                                             HasUnsavedChanges = true;
                                         },
                                         (object databaseValue) =>
@@ -1167,7 +1167,7 @@ namespace Scribe
                                         {
                                             ((IModelCollectionEdit<GameModel>)All.Games).Add((GameModel)databaseValue);
                                             _ = GameListBox.Items.Add(databaseValue);
-                                            GameListBox.SelectedValue = databaseValue;
+                                            GameListBox.SelectedItem = databaseValue;
                                             HasUnsavedChanges = true;
                                         }));
         }
@@ -1204,7 +1204,7 @@ namespace Scribe
                                         {
                                             ((IModelCollectionEdit<ParquetModel>)All.Parquets).Add((BlockModel)databaseValue);
                                             _ = BlockListBox.Items.Add(databaseValue);
-                                            BlockListBox.SelectedValue = databaseValue;
+                                            BlockListBox.SelectedItem = databaseValue;
                                             HasUnsavedChanges = true;
                                         },
                                         (object databaseValue) =>
@@ -1248,7 +1248,7 @@ namespace Scribe
                                         {
                                             ((IModelCollectionEdit<ParquetModel>)All.Parquets).Add((BlockModel)databaseValue);
                                             _ = BlockListBox.Items.Add(databaseValue);
-                                            BlockListBox.SelectedValue = databaseValue;
+                                            BlockListBox.SelectedItem = databaseValue;
                                             HasUnsavedChanges = true;
                                         }));
         }
@@ -1290,7 +1290,7 @@ namespace Scribe
                                             {
                                                blockModel.AddsToBiome.Add((ModelTag)databaseValue);
                                                 _ = BlockAddsToBiomeListBox.Items.Add(databaseValue);
-                                                BlockAddsToBiomeListBox.SelectedValue = databaseValue;
+                                                BlockAddsToBiomeListBox.SelectedItem = databaseValue;
                                                 HasUnsavedChanges = true;
                                             },
                                             (object databaseValue) =>
@@ -1322,8 +1322,8 @@ namespace Scribe
                 return;
             }
 
-            ChangeManager.AddAndExecute(new ChangeList(BlockAddsToBiomeListBox.SelectedValue,
-                                        $"remove biome tag {BlockAddsToBiomeListBox.SelectedValue} from block",
+            ChangeManager.AddAndExecute(new ChangeList((ModelTag)BlockAddsToBiomeListBox.SelectedItem,
+                                        $"remove biome tag {BlockAddsToBiomeListBox.SelectedItem} from block",
                                         (object databaseValue) =>
                                         {
                                             blockModel.AddsToBiome.Remove((ModelTag)databaseValue);
@@ -1335,7 +1335,7 @@ namespace Scribe
                                         {
                                             blockModel.AddsToBiome.Add((ModelTag)databaseValue);
                                             _ = BlockAddsToBiomeListBox.Items.Add(databaseValue);
-                                            BlockAddsToBiomeListBox.SelectedValue = databaseValue;
+                                            BlockAddsToBiomeListBox.SelectedItem = databaseValue;
                                             HasUnsavedChanges = true;
                                         }));
         }
