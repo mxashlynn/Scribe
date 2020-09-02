@@ -1123,6 +1123,7 @@ namespace Scribe
                                         {
                                            ((IModelCollectionEdit<GameModel>)All.Games).Add((GameModel)databaseValue);
                                             _ = GameListBox.Items.Add(databaseValue);
+                                            GameListBox.SelectedValue = databaseValue;
                                             HasUnsavedChanges = true;
                                         },
                                         (object databaseValue) =>
@@ -1166,6 +1167,7 @@ namespace Scribe
                                         {
                                             ((IModelCollectionEdit<GameModel>)All.Games).Add((GameModel)databaseValue);
                                             _ = GameListBox.Items.Add(databaseValue);
+                                            GameListBox.SelectedValue = databaseValue;
                                             HasUnsavedChanges = true;
                                         }));
         }
@@ -1202,6 +1204,7 @@ namespace Scribe
                                         {
                                             ((IModelCollectionEdit<ParquetModel>)All.Parquets).Add((BlockModel)databaseValue);
                                             _ = BlockListBox.Items.Add(databaseValue);
+                                            BlockListBox.SelectedValue = databaseValue;
                                             HasUnsavedChanges = true;
                                         },
                                         (object databaseValue) =>
@@ -1245,6 +1248,7 @@ namespace Scribe
                                         {
                                             ((IModelCollectionEdit<ParquetModel>)All.Parquets).Add((BlockModel)databaseValue);
                                             _ = BlockListBox.Items.Add(databaseValue);
+                                            BlockListBox.SelectedValue = databaseValue;
                                             HasUnsavedChanges = true;
                                         }));
         }
