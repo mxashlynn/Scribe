@@ -489,10 +489,6 @@ namespace Scribe
                     => (input) => (inModel as IFloorModelEdit).ItemID = input as ModelID? ?? int.Parse((string)input, NumberStyles.Integer),
                 (FloorsTabIndex, "FloorModificationToolComboBox")
                     => (input) => (inModel as IFloorModelEdit).ModTool = input as ModificationTool? ?? Enum.Parse<ModificationTool>((string)input, true),
-                (FloorsTabIndex, "FloorAddsToBiomeListBox")
-                    => (input) => (inModel as IFloorModelEdit).AddsToBiome = input as ModelTag ?? (string)input,
-                (FloorsTabIndex, "FloorAddsToRoomListBox")
-                    => (input) => (inModel as IFloorModelEdit).Comment = input as ModelTag ?? (string)input,
                 #endregion
 
                 #region FurnishingModels
