@@ -1173,6 +1173,95 @@ namespace Scribe
         }
         #endregion
 
+        #region Parquet Tag Adjustments
+        /// <summary>
+        /// Adds a new tag to the selected <see cref="ParquetModel"/>, updating the given <see cref="ListBox"/>.
+        /// </summary>
+        /// <param name="inAddsToListBox">The UI element reflectling the collection being changed.</param>
+        /// <param name="inGetTagListFromModel">The means, given a ParquetModel, to find the correct tag collection.</param>
+        private void ParquetAddTag(ListBox inAddsToListBox, Func<IParquetModelEdit, IList<ModelTag>> inGetTagListFromModel)
+        {
+            if (!All.CollectionsHaveBeenInitialized)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            var parquetModel = GetSelectedModelForTab(EditorTabs.SelectedIndex) as IParquetModelEdit;
+            if (null == parquetModel)
+            {
+                return;
+            }
+
+            if (AddTagDialogue.ShowDialog() == DialogResult.OK
+                && !string.IsNullOrEmpty(AddTagDialogue.ReturnNewTag))
+            {
+                if (inGetTagListFromModel(parquetModel).Any(tag => ((string)AddTagDialogue.ReturnNewTag).Equals(tag)))
+                {
+                    // Do not add duplicate tags.
+                    // TODO Report this error in the status bar or something.
+                    MessageBox.Show("Not adding duplicate tag.");
+                    SystemSounds.Beep.Play();
+                    return;
+                }
+
+                ChangeManager.AddAndExecute(new ChangeList(AddTagDialogue.ReturnNewTag,
+                                            $"add tag {AddTagDialogue.ReturnNewTag} to parquet {parquetModel.Name}",
+                                            (object databaseValue) =>
+                                            {
+                                                inGetTagListFromModel(parquetModel).Add((ModelTag)databaseValue);
+                                                _ = inAddsToListBox.Items.Add(databaseValue);
+                                                inAddsToListBox.SelectedItem = databaseValue;
+                                                HasUnsavedChanges = true;
+                                            },
+                                            (object databaseValue) =>
+                                            {
+                                                inGetTagListFromModel(parquetModel).Remove((ModelTag)databaseValue);
+                                                inAddsToListBox.Items.Remove(databaseValue);
+                                                inAddsToListBox.ClearSelected();
+                                                HasUnsavedChanges = true;
+                                            }));
+            }
+        }
+
+        /// <summary>
+        /// Removes the selected tag from the selected <see cref="ParquetModel"/>, updating the given <see cref="ListBox"/>.
+        /// </summary>
+        /// <param name="inAddsToListBox">The UI element reflectling the collection being changed.</param>
+        /// <param name="inGetTagListFromModel">The means, given a ParquetModel, to find the correct tag collection.</param>
+        private void ParquetRemoveTag(ListBox inAddsToListBox, Func<IParquetModelEdit, IList<ModelTag>> inGetTagListFromModel)
+        {
+            if (!All.CollectionsHaveBeenInitialized || inAddsToListBox.SelectedIndex == -1)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            var parquetModel = GetSelectedModelForTab(EditorTabs.SelectedIndex) as IParquetModelEdit;
+            if (null == parquetModel)
+            {
+                return;
+            }
+
+            ChangeManager.AddAndExecute(new ChangeList((ModelTag)inAddsToListBox.SelectedItem,
+                                        $"remove tag {inAddsToListBox.SelectedItem} from parquet {parquetModel.Name}",
+                                        (object databaseValue) =>
+                                        {
+                                            inGetTagListFromModel(parquetModel).Remove((ModelTag)databaseValue);
+                                            inAddsToListBox.Items.Remove(databaseValue);
+                                            inAddsToListBox.ClearSelected();
+                                            HasUnsavedChanges = true;
+                                        },
+                                        (object databaseValue) =>
+                                        {
+                                            inGetTagListFromModel(parquetModel).Add((ModelTag)databaseValue);
+                                            _ = inAddsToListBox.Items.Add(databaseValue);
+                                            inAddsToListBox.SelectedItem = databaseValue;
+                                            HasUnsavedChanges = true;
+                                        }));
+        }
+        #endregion
+
         #region Blocks Tab
         /// <summary>
         /// Responds to the user clicking "Add New Block" on the Blocks tab.
@@ -1259,49 +1348,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void BlockAddBiomeTagButton_Click(object sender, EventArgs e)
-        {
-            if (!All.CollectionsHaveBeenInitialized)
-            {
-                SystemSounds.Beep.Play();
-                return;
-            }
-
-            var blockModel = GetSelectedModelForTab(EditorTabs.SelectedIndex) as IBlockModelEdit;
-            if (null == blockModel)
-            {
-                return;
-            }
-
-            if (AddTagDialogue.ShowDialog() == DialogResult.OK
-                && !string.IsNullOrEmpty(AddTagDialogue.ReturnNewTag))
-            {
-                if (blockModel.AddsToBiome.Any(tag => ((string)AddTagDialogue.ReturnNewTag).Equals(tag)))
-                {
-                    // Do not add duplicate tags.
-                    // TODO Report this error in the status bar or something.
-                    MessageBox.Show("Not adding duplicate tag.");
-                    SystemSounds.Beep.Play();
-                    return;
-                }
-
-                ChangeManager.AddAndExecute(new ChangeList(AddTagDialogue.ReturnNewTag,
-                                            $"remove biome tag {AddTagDialogue.ReturnNewTag} from block",
-                                            (object databaseValue) =>
-                                            {
-                                               blockModel.AddsToBiome.Add((ModelTag)databaseValue);
-                                                _ = BlockAddsToBiomeListBox.Items.Add(databaseValue);
-                                                BlockAddsToBiomeListBox.SelectedItem = databaseValue;
-                                                HasUnsavedChanges = true;
-                                            },
-                                            (object databaseValue) =>
-                                            {
-                                            blockModel.AddsToBiome.Remove((ModelTag)databaseValue);
-                                                BlockAddsToBiomeListBox.Items.Remove(databaseValue);
-                                                BlockAddsToBiomeListBox.ClearSelected();
-                                                HasUnsavedChanges = true;
-                                            }));
-            }
-        }
+            => ParquetAddTag(BlockAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to remove the selected biome tag from the current block.
@@ -1309,36 +1356,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void BlockRemoveBiomeTagButton_Click(object sender, EventArgs e)
-        {
-            if (!All.CollectionsHaveBeenInitialized || BlockAddsToBiomeListBox.SelectedIndex == -1)
-            {
-                SystemSounds.Beep.Play();
-                return;
-            }
-
-            var blockModel = GetSelectedModelForTab(EditorTabs.SelectedIndex) as IBlockModelEdit;
-            if (null == blockModel)
-            {
-                return;
-            }
-
-            ChangeManager.AddAndExecute(new ChangeList((ModelTag)BlockAddsToBiomeListBox.SelectedItem,
-                                        $"remove biome tag {BlockAddsToBiomeListBox.SelectedItem} from block",
-                                        (object databaseValue) =>
-                                        {
-                                            blockModel.AddsToBiome.Remove((ModelTag)databaseValue);
-                                            BlockAddsToBiomeListBox.Items.Remove(databaseValue);
-                                            BlockAddsToBiomeListBox.ClearSelected();
-                                            HasUnsavedChanges = true;
-                                        },
-                                        (object databaseValue) =>
-                                        {
-                                            blockModel.AddsToBiome.Add((ModelTag)databaseValue);
-                                            _ = BlockAddsToBiomeListBox.Items.Add(databaseValue);
-                                            BlockAddsToBiomeListBox.SelectedItem = databaseValue;
-                                            HasUnsavedChanges = true;
-                                        }));
-        }
+            => ParquetRemoveTag(BlockAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to add a new room tag to the current block.
@@ -1346,49 +1364,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void BlockAddRoomTagButton_Click(object sender, EventArgs e)
-        {
-            if (!All.CollectionsHaveBeenInitialized)
-            {
-                SystemSounds.Beep.Play();
-                return;
-            }
-
-            var blockModel = GetSelectedModelForTab(EditorTabs.SelectedIndex) as IBlockModelEdit;
-            if (null == blockModel)
-            {
-                return;
-            }
-
-            if (AddTagDialogue.ShowDialog() == DialogResult.OK
-                && !string.IsNullOrEmpty(AddTagDialogue.ReturnNewTag))
-            {
-                if (blockModel.AddsToRoom.Any(tag => ((string)AddTagDialogue.ReturnNewTag).Equals(tag)))
-                {
-                    // Do not add duplicate tags.
-                    // TODO Report this error in the status bar or something.
-                    MessageBox.Show("Not adding duplicate tag.");
-                    SystemSounds.Beep.Play();
-                    return;
-                }
-
-                ChangeManager.AddAndExecute(new ChangeList(AddTagDialogue.ReturnNewTag,
-                                            $"remove room tag {AddTagDialogue.ReturnNewTag} from block",
-                                            (object databaseValue) =>
-                                            {
-                                                blockModel.AddsToRoom.Add((ModelTag)databaseValue);
-                                                _ = BlockAddsToRoomListBox.Items.Add(databaseValue);
-                                                BlockAddsToRoomListBox.SelectedItem = databaseValue;
-                                                HasUnsavedChanges = true;
-                                            },
-                                            (object databaseValue) =>
-                                            {
-                                                blockModel.AddsToRoom.Remove((ModelTag)databaseValue);
-                                                BlockAddsToRoomListBox.Items.Remove(databaseValue);
-                                                BlockAddsToRoomListBox.ClearSelected();
-                                                HasUnsavedChanges = true;
-                                            }));
-            }
-        }
+            => ParquetAddTag(BlockAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToRoom);
 
         /// <summary>
         /// Registeres the user command to remove the selected room tag from the current block.
@@ -1396,36 +1372,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void BlockRemoveRoomTagButton_Click(object sender, EventArgs e)
-        {
-            if (!All.CollectionsHaveBeenInitialized || BlockAddsToRoomListBox.SelectedIndex == -1)
-            {
-                SystemSounds.Beep.Play();
-                return;
-            }
-
-            var blockModel = GetSelectedModelForTab(EditorTabs.SelectedIndex) as IBlockModelEdit;
-            if (null == blockModel)
-            {
-                return;
-            }
-
-            ChangeManager.AddAndExecute(new ChangeList((ModelTag)BlockAddsToRoomListBox.SelectedItem,
-                                        $"remove room tag {BlockAddsToRoomListBox.SelectedItem} from block",
-                                        (object databaseValue) =>
-                                        {
-                                            blockModel.AddsToRoom.Remove((ModelTag)databaseValue);
-                                            BlockAddsToRoomListBox.Items.Remove(databaseValue);
-                                            BlockAddsToRoomListBox.ClearSelected();
-                                            HasUnsavedChanges = true;
-                                        },
-                                        (object databaseValue) =>
-                                        {
-                                            blockModel.AddsToRoom.Add((ModelTag)databaseValue);
-                                            _ = BlockAddsToRoomListBox.Items.Add(databaseValue);
-                                            BlockAddsToRoomListBox.SelectedItem = databaseValue;
-                                            HasUnsavedChanges = true;
-                                        }));
-        }
+            => ParquetRemoveTag(BlockAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToRoom);
         #endregion
 
         #region Floors Tab
@@ -1514,49 +1461,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FloorAddBiomeTagButton_Click(object sender, EventArgs e)
-        {
-            if (!All.CollectionsHaveBeenInitialized)
-            {
-                SystemSounds.Beep.Play();
-                return;
-            }
-
-            var floorModel = GetSelectedModelForTab(EditorTabs.SelectedIndex) as IFloorModelEdit;
-            if (null == floorModel)
-            {
-                return;
-            }
-
-            if (AddTagDialogue.ShowDialog() == DialogResult.OK
-                && !string.IsNullOrEmpty(AddTagDialogue.ReturnNewTag))
-            {
-                if (floorModel.AddsToBiome.Any(tag => ((string)AddTagDialogue.ReturnNewTag).Equals(tag)))
-                {
-                    // Do not add duplicate tags.
-                    // TODO Report this error in the status bar or something.
-                    MessageBox.Show("Not adding duplicate tag.");
-                    SystemSounds.Beep.Play();
-                    return;
-                }
-
-                ChangeManager.AddAndExecute(new ChangeList(AddTagDialogue.ReturnNewTag,
-                                            $"remove biome tag {AddTagDialogue.ReturnNewTag} from floor",
-                                            (object databaseValue) =>
-                                            {
-                                                floorModel.AddsToBiome.Add((ModelTag)databaseValue);
-                                                _ = FloorAddsToBiomeListBox.Items.Add(databaseValue);
-                                                FloorAddsToBiomeListBox.SelectedItem = databaseValue;
-                                                HasUnsavedChanges = true;
-                                            },
-                                            (object databaseValue) =>
-                                            {
-                                                floorModel.AddsToBiome.Remove((ModelTag)databaseValue);
-                                                FloorAddsToBiomeListBox.Items.Remove(databaseValue);
-                                                FloorAddsToBiomeListBox.ClearSelected();
-                                                HasUnsavedChanges = true;
-                                            }));
-            }
-        }
+            => ParquetRemoveTag(FloorAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to remove the selected biome tag from the current floor.
@@ -1564,36 +1469,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FloorRemoveBiomeTagButton_Click(object sender, EventArgs e)
-        {
-            if (!All.CollectionsHaveBeenInitialized || FloorAddsToBiomeListBox.SelectedIndex == -1)
-            {
-                SystemSounds.Beep.Play();
-                return;
-            }
-
-            var floorModel = GetSelectedModelForTab(EditorTabs.SelectedIndex) as IFloorModelEdit;
-            if (null == floorModel)
-            {
-                return;
-            }
-
-            ChangeManager.AddAndExecute(new ChangeList((ModelTag)FloorAddsToBiomeListBox.SelectedItem,
-                                        $"remove biome tag {FloorAddsToBiomeListBox.SelectedItem} from floor",
-                                        (object databaseValue) =>
-                                        {
-                                            floorModel.AddsToBiome.Remove((ModelTag)databaseValue);
-                                            FloorAddsToBiomeListBox.Items.Remove(databaseValue);
-                                            FloorAddsToBiomeListBox.ClearSelected();
-                                            HasUnsavedChanges = true;
-                                        },
-                                        (object databaseValue) =>
-                                        {
-                                            floorModel.AddsToBiome.Add((ModelTag)databaseValue);
-                                            _ = FloorAddsToBiomeListBox.Items.Add(databaseValue);
-                                            FloorAddsToBiomeListBox.SelectedItem = databaseValue;
-                                            HasUnsavedChanges = true;
-                                        }));
-        }
+            => ParquetAddTag(FloorAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to add a new room tag to the current floor.
@@ -1601,49 +1477,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FloorAddRoomTagButton_Click(object sender, EventArgs e)
-        {
-            if (!All.CollectionsHaveBeenInitialized)
-            {
-                SystemSounds.Beep.Play();
-                return;
-            }
-
-            var floorModel = GetSelectedModelForTab(EditorTabs.SelectedIndex) as IFloorModelEdit;
-            if (null == floorModel)
-            {
-                return;
-            }
-
-            if (AddTagDialogue.ShowDialog() == DialogResult.OK
-                && !string.IsNullOrEmpty(AddTagDialogue.ReturnNewTag))
-            {
-                if (floorModel.AddsToRoom.Any(tag => ((string)AddTagDialogue.ReturnNewTag).Equals(tag)))
-                {
-                    // Do not add duplicate tags.
-                    // TODO Report this error in the status bar or something.
-                    MessageBox.Show("Not adding duplicate tag.");
-                    SystemSounds.Beep.Play();
-                    return;
-                }
-
-                ChangeManager.AddAndExecute(new ChangeList(AddTagDialogue.ReturnNewTag,
-                                            $"remove room tag {AddTagDialogue.ReturnNewTag} from floor",
-                                            (object databaseValue) =>
-                                            {
-                                                floorModel.AddsToRoom.Add((ModelTag)databaseValue);
-                                                _ = FloorAddsToRoomListBox.Items.Add(databaseValue);
-                                                FloorAddsToRoomListBox.SelectedItem = databaseValue;
-                                                HasUnsavedChanges = true;
-                                            },
-                                            (object databaseValue) =>
-                                            {
-                                                floorModel.AddsToRoom.Remove((ModelTag)databaseValue);
-                                                FloorAddsToRoomListBox.Items.Remove(databaseValue);
-                                                FloorAddsToRoomListBox.ClearSelected();
-                                                HasUnsavedChanges = true;
-                                            }));
-            }
-        }
+            => ParquetAddTag(FloorAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToRoom);
 
         /// <summary>
         /// Registeres the user command to remove the selected room tag from the current floor.
@@ -1651,36 +1485,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FloorRemoveRoomTagButton_Click(object sender, EventArgs e)
-        {
-            if (!All.CollectionsHaveBeenInitialized || FloorAddsToRoomListBox.SelectedIndex == -1)
-            {
-                SystemSounds.Beep.Play();
-                return;
-            }
-
-            var floorModel = GetSelectedModelForTab(EditorTabs.SelectedIndex) as IFloorModelEdit;
-            if (null == floorModel)
-            {
-                return;
-            }
-
-            ChangeManager.AddAndExecute(new ChangeList((ModelTag)FloorAddsToRoomListBox.SelectedItem,
-                                        $"remove room tag {FloorAddsToRoomListBox.SelectedItem} from floor",
-                                        (object databaseValue) =>
-                                        {
-                                            floorModel.AddsToRoom.Remove((ModelTag)databaseValue);
-                                            FloorAddsToRoomListBox.Items.Remove(databaseValue);
-                                            FloorAddsToRoomListBox.ClearSelected();
-                                            HasUnsavedChanges = true;
-                                        },
-                                        (object databaseValue) =>
-                                        {
-                                            floorModel.AddsToRoom.Add((ModelTag)databaseValue);
-                                            _ = FloorAddsToRoomListBox.Items.Add(databaseValue);
-                                            FloorAddsToRoomListBox.SelectedItem = databaseValue;
-                                            HasUnsavedChanges = true;
-                                        }));
-        }
+            => ParquetAddTag(FloorAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToRoom);
         #endregion
 
         #region Furnishings Tab
