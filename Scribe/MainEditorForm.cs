@@ -1284,19 +1284,18 @@ namespace Scribe
                     return;
                 }
 
-                var newValue = blockModel.AddsToBiome + AddTagDialogue.ReturnNewTag;
-                ChangeManager.AddAndExecute(new ChangeList(AddTagDialogue.ReturnNewTag, "add biome tag to block",
+                ChangeManager.AddAndExecute(new ChangeList(AddTagDialogue.ReturnNewTag,
+                                            $"remove biome tag {AddTagDialogue.ReturnNewTag} from block",
                                             (object databaseValue) =>
                                             {
-                                                blockModel.AddsToBiome += (ModelTag)databaseValue;
+                                               blockModel.AddsToBiome.Add((ModelTag)databaseValue);
                                                 _ = BlockAddsToBiomeListBox.Items.Add(databaseValue);
+                                                BlockAddsToBiomeListBox.SelectedValue = databaseValue;
                                                 HasUnsavedChanges = true;
                                             },
                                             (object databaseValue) =>
                                             {
-                                                blockModel.AddsToBiome =
-                                                    ((string)blockModel.AddsToBiome)
-                                                    .Replace((ModelTag)databaseValue, "", StringComparison.OrdinalIgnoreCase);
+                                            blockModel.AddsToBiome.Remove((ModelTag)databaseValue);
                                                 BlockAddsToBiomeListBox.Items.Remove(databaseValue);
                                                 BlockAddsToBiomeListBox.ClearSelected();
                                                 HasUnsavedChanges = true;
@@ -1311,8 +1310,34 @@ namespace Scribe
         /// <param name="e">Ignored</param>
         private void BlockRemoveBiomeTagButton_Click(object sender, EventArgs e)
         {
-            // TODO Implement this.
-            throw new NotImplementedException();
+            if (!All.CollectionsHaveBeenInitialized || BlockAddsToBiomeListBox.SelectedIndex == -1)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            var blockModel = GetSelectedModelForTab(EditorTabs.SelectedIndex) as IBlockModelEdit;
+            if (null == blockModel)
+            {
+                return;
+            }
+
+            ChangeManager.AddAndExecute(new ChangeList(BlockAddsToBiomeListBox.SelectedValue,
+                                        $"remove biome tag {BlockAddsToBiomeListBox.SelectedValue} from block",
+                                        (object databaseValue) =>
+                                        {
+                                            blockModel.AddsToBiome.Remove((ModelTag)databaseValue);
+                                            BlockAddsToBiomeListBox.Items.Remove(databaseValue);
+                                            BlockAddsToBiomeListBox.ClearSelected();
+                                            HasUnsavedChanges = true;
+                                        },
+                                        (object databaseValue) =>
+                                        {
+                                            blockModel.AddsToBiome.Add((ModelTag)databaseValue);
+                                            _ = BlockAddsToBiomeListBox.Items.Add(databaseValue);
+                                            BlockAddsToBiomeListBox.SelectedValue = databaseValue;
+                                            HasUnsavedChanges = true;
+                                        }));
         }
 
         /// <summary>
