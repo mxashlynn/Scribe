@@ -28,9 +28,9 @@ namespace Scribe
 
         private void AddTagBox_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Hi!!");
             ReturnNewTag = "";
             NewTagTextBox.Text = "";
+            NewTagTextBox.Select();
         }
 
         /// <summary>
