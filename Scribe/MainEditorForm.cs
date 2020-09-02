@@ -1275,7 +1275,7 @@ namespace Scribe
             if (AddTagDialogue.ShowDialog() == DialogResult.OK
                 && !string.IsNullOrEmpty(AddTagDialogue.ReturnNewTag))
             {
-                if (blockModel.AddsToBiome.ToString().Contains(AddTagDialogue.ReturnNewTag))
+                if (blockModel.AddsToBiome.Any(tag => ((string)AddTagDialogue.ReturnNewTag).Equals(tag)))
                 {
                     // Do not add duplicate tags.
                     // TODO Report this error in the status bar or something.
