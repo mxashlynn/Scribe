@@ -1461,7 +1461,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FloorAddBiomeTagButton_Click(object sender, EventArgs e)
-            => ParquetRemoveTag(FloorAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
+            => ParquetAddTag(FloorAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to remove the selected biome tag from the current floor.
@@ -1469,7 +1469,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FloorRemoveBiomeTagButton_Click(object sender, EventArgs e)
-            => ParquetAddTag(FloorAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
+            => ParquetRemoveTag(FloorAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to add a new room tag to the current floor.
@@ -1477,7 +1477,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FloorAddRoomTagButton_Click(object sender, EventArgs e)
-            => ParquetAddTag(FloorAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToRoom);
+            => ParquetAddTag(FloorAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
 
         /// <summary>
         /// Registeres the user command to remove the selected room tag from the current floor.
@@ -1485,7 +1485,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FloorRemoveRoomTagButton_Click(object sender, EventArgs e)
-            => ParquetAddTag(FloorAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToRoom);
+            => ParquetRemoveTag(FloorAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
         #endregion
 
         #region Furnishings Tab
