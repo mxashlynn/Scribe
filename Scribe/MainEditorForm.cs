@@ -1347,8 +1347,47 @@ namespace Scribe
         /// <param name="e">Ignored</param>
         private void BlockAddRoomTagButton_Click(object sender, EventArgs e)
         {
-            // TODO Implement this.
-            throw new NotImplementedException();
+            if (!All.CollectionsHaveBeenInitialized)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            var blockModel = GetSelectedModelForTab(EditorTabs.SelectedIndex) as IBlockModelEdit;
+            if (null == blockModel)
+            {
+                return;
+            }
+
+            if (AddTagDialogue.ShowDialog() == DialogResult.OK
+                && !string.IsNullOrEmpty(AddTagDialogue.ReturnNewTag))
+            {
+                if (blockModel.AddsToRoom.Any(tag => ((string)AddTagDialogue.ReturnNewTag).Equals(tag)))
+                {
+                    // Do not add duplicate tags.
+                    // TODO Report this error in the status bar or something.
+                    MessageBox.Show("Not adding duplicate tag.");
+                    SystemSounds.Beep.Play();
+                    return;
+                }
+
+                ChangeManager.AddAndExecute(new ChangeList(AddTagDialogue.ReturnNewTag,
+                                            $"remove room tag {AddTagDialogue.ReturnNewTag} from block",
+                                            (object databaseValue) =>
+                                            {
+                                                blockModel.AddsToRoom.Add((ModelTag)databaseValue);
+                                                _ = BlockAddsToRoomListBox.Items.Add(databaseValue);
+                                                BlockAddsToRoomListBox.SelectedItem = databaseValue;
+                                                HasUnsavedChanges = true;
+                                            },
+                                            (object databaseValue) =>
+                                            {
+                                                blockModel.AddsToRoom.Remove((ModelTag)databaseValue);
+                                                BlockAddsToRoomListBox.Items.Remove(databaseValue);
+                                                BlockAddsToRoomListBox.ClearSelected();
+                                                HasUnsavedChanges = true;
+                                            }));
+            }
         }
 
         /// <summary>
@@ -1358,8 +1397,34 @@ namespace Scribe
         /// <param name="e">Ignored</param>
         private void BlockRemoveRoomTagButton_Click(object sender, EventArgs e)
         {
-            // TODO Implement this.
-            throw new NotImplementedException();
+            if (!All.CollectionsHaveBeenInitialized || BlockAddsToRoomListBox.SelectedIndex == -1)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            var blockModel = GetSelectedModelForTab(EditorTabs.SelectedIndex) as IBlockModelEdit;
+            if (null == blockModel)
+            {
+                return;
+            }
+
+            ChangeManager.AddAndExecute(new ChangeList((ModelTag)BlockAddsToRoomListBox.SelectedItem,
+                                        $"remove room tag {BlockAddsToRoomListBox.SelectedItem} from block",
+                                        (object databaseValue) =>
+                                        {
+                                            blockModel.AddsToRoom.Remove((ModelTag)databaseValue);
+                                            BlockAddsToRoomListBox.Items.Remove(databaseValue);
+                                            BlockAddsToRoomListBox.ClearSelected();
+                                            HasUnsavedChanges = true;
+                                        },
+                                        (object databaseValue) =>
+                                        {
+                                            blockModel.AddsToRoom.Add((ModelTag)databaseValue);
+                                            _ = BlockAddsToRoomListBox.Items.Add(databaseValue);
+                                            BlockAddsToRoomListBox.SelectedItem = databaseValue;
+                                            HasUnsavedChanges = true;
+                                        }));
         }
         #endregion
 
