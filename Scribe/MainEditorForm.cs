@@ -1098,16 +1098,15 @@ namespace Scribe
         /// Adds a new <see cref="Model"/> of the appropriate subtype to the given <see cref="ModelCollection"/> and <see cref="ListBox"/>.
         /// </summary>
         /// <typeparam name="TModel">The type of <see cref="Model"/> being added or removed.</typeparam>
-        /// <typeparam name="TModelEdit">The interface used to edit the <see cref="Model"/>.</typeparam>
         /// <typeparam name="TCollected">The type of <see cref="Model"/> being collected.</typeparam>
         /// <param name="inDatabaseCollection">The backing collection.</param>
+        /// <param name="inAllocateNewInstance">The means to produce a new <paramref="TModel"/>.</param>
         /// <param name="inIDRange">The range over which the <see cref="ModelID"/> is defined.</param>
         /// <param name="inListBox">The UI element representing the <see cref="ModelCollection{TCollected}"/>.</param>
-        private void AddNewModel<TModel, TModelEdit, TCollected>(IEnumerable<TCollected> inDatabaseCollection,
-                                                                 Func<TModel, TModelEdit> GetEditInterface,
-                                                                 Range<ModelID> inIDRange, ListBox inListBox)
-            where TModel : TCollected, new()
-            where TModelEdit : IModelEdit
+        private void AddNewModel<TModel, TCollected>(IEnumerable<TCollected> inDatabaseCollection,
+                                                     Func<ModelID, string, TModel> inAllocateNewInstance,
+                                                     Range<ModelID> inIDRange, ListBox inListBox)
+            where TModel : TCollected
             where TCollected : Model
         {
             if (!All.CollectionsHaveBeenInitialized)
@@ -1128,9 +1127,7 @@ namespace Scribe
             }
 
             var modelTypeName = nameof(TModel).Replace(nameof(Model), "");
-            var modelToAdd = GetEditInterface(new TModel());
-            modelToAdd.ID = nextID;
-            modelToAdd.Name = $"New {modelTypeName}";
+            var modelToAdd = inAllocateNewInstance(nextID, $"New {modelTypeName}");
             ChangeManager.AddAndExecute(new ChangeList(modelToAdd, $"add new {modelTypeName} definition",
                                         (object databaseValue) =>
                                         {
@@ -1195,8 +1192,7 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void GameAddNewGameButton_Click(object sender, EventArgs e)
-            => AddNewModel<GameModel, IGameModelEdit, GameModel>(All.Games, (GameModel game) => game as IGameModelEdit,
-                                                                 All.GameIDs, GameListBox);
+            => AddNewModel(All.Games, (ModelID id, string name) => new GameModel(id, name, "", ""), All.GameIDs, GameListBox);
 
         /// <summary>
         /// Responds to the user clicking "Remove Game" on the Games tab.
@@ -1295,9 +1291,9 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void BlockAddNewBlockButton_Click(object sender, EventArgs e)
-            => AddNewModel<BlockModel, IBlockModelEdit, ParquetModel>(All.Parquets.Where(parquet => parquet is BlockModel),
-                                                                      (BlockModel block) => block as IBlockModelEdit,
-                                                                      All.BlockIDs, BlockListBox);
+            => AddNewModel(All.Parquets.Where(parquet => parquet is BlockModel),
+                           (ModelID id, string name) => new BlockModel(id, name, "", ""),
+                           All.BlockIDs, BlockListBox);
 
         /// <summary>
         /// Responds to the user clicking "Remove Block" on the Blocks tab.
@@ -1347,9 +1343,9 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void FloorAddNewFloorButton_Click(object sender, EventArgs e)
-            => AddNewModel<FloorModel, IFloorModelEdit, ParquetModel>(All.Parquets.Where(parquet => parquet is FloorModel),
-                                                                      (FloorModel floor) => floor as IFloorModelEdit,
-                                                                      All.FloorIDs, FloorListBox);
+            => AddNewModel(All.Parquets.Where(parquet => parquet is FloorModel),
+                           (ModelID id, string name) => new FloorModel(id, name, "", ""),
+                           All.FloorIDs, FloorListBox);
 
         /// <summary>
         /// Responds to the user clicking "Remove Floor" on the Floors tab.
