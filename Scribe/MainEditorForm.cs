@@ -1221,13 +1221,8 @@ namespace Scribe
                 return;
             }
 
-            var parquetModel = GetSelectedModelForTab(EditorTabs.SelectedIndex) as IParquetModelEdit;
-            if (null == parquetModel)
-            {
-                return;
-            }
-
-            if (AddTagDialogue.ShowDialog() == DialogResult.OK
+            if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is IParquetModelEdit parquetModel
+                && AddTagDialogue.ShowDialog() == DialogResult.OK
                 && !string.IsNullOrEmpty(AddTagDialogue.ReturnNewTag))
             {
                 if (inGetTagListFromModel(parquetModel).Any(tag => ((string)AddTagDialogue.ReturnNewTag).Equals(tag)))
@@ -1271,28 +1266,25 @@ namespace Scribe
                 return;
             }
 
-            var parquetModel = GetSelectedModelForTab(EditorTabs.SelectedIndex) as IParquetModelEdit;
-            if (null == parquetModel)
+            if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is IParquetModelEdit parquetModel)
             {
-                return;
+                ChangeManager.AddAndExecute(new ChangeList((ModelTag)inAddsToListBox.SelectedItem,
+                                            $"remove tag {inAddsToListBox.SelectedItem} from parquet {parquetModel.Name}",
+                                            (object databaseValue) =>
+                                            {
+                                                inGetTagListFromModel(parquetModel).Remove((ModelTag)databaseValue);
+                                                inAddsToListBox.Items.Remove(databaseValue);
+                                                inAddsToListBox.ClearSelected();
+                                                HasUnsavedChanges = true;
+                                            },
+                                            (object databaseValue) =>
+                                            {
+                                                inGetTagListFromModel(parquetModel).Add((ModelTag)databaseValue);
+                                                _ = inAddsToListBox.Items.Add(databaseValue);
+                                                inAddsToListBox.SelectedItem = databaseValue;
+                                                HasUnsavedChanges = true;
+                                            }));
             }
-
-            ChangeManager.AddAndExecute(new ChangeList((ModelTag)inAddsToListBox.SelectedItem,
-                                        $"remove tag {inAddsToListBox.SelectedItem} from parquet {parquetModel.Name}",
-                                        (object databaseValue) =>
-                                        {
-                                            inGetTagListFromModel(parquetModel).Remove((ModelTag)databaseValue);
-                                            inAddsToListBox.Items.Remove(databaseValue);
-                                            inAddsToListBox.ClearSelected();
-                                            HasUnsavedChanges = true;
-                                        },
-                                        (object databaseValue) =>
-                                        {
-                                            inGetTagListFromModel(parquetModel).Add((ModelTag)databaseValue);
-                                            _ = inAddsToListBox.Items.Add(databaseValue);
-                                            inAddsToListBox.SelectedItem = databaseValue;
-                                            HasUnsavedChanges = true;
-                                        }));
         }
         #endregion
 
