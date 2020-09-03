@@ -1097,15 +1097,16 @@ namespace Scribe
         /// <summary>
         /// Adds a new <see cref="Model"/> of the appropriate subtype to the given <see cref="ModelCollection"/> and <see cref="ListBox"/>.
         /// </summary>
-        /// <typeparam name="TModel">The type of <see cref="Model"/> being added or removed.</typeparam>
+        /// <typeparam name="TModel">The type of <see cref="Model"/> being added.</typeparam>
         /// <typeparam name="TCollected">The type of <see cref="Model"/> being collected.</typeparam>
         /// <param name="inDatabaseCollection">The backing collection.</param>
         /// <param name="inAllocateNewInstance">The means to produce a new <paramref="TModel"/>.</param>
         /// <param name="inIDRange">The range over which the <see cref="ModelID"/> is defined.</param>
         /// <param name="inListBox">The UI element representing the <see cref="ModelCollection{TCollected}"/>.</param>
+        /// <param name="inModelTypeName">User-facing description of the type being added.</param>
         private void AddNewModel<TModel, TCollected>(IEnumerable<TCollected> inDatabaseCollection,
-                                                     Func<ModelID, string, TModel> inAllocateNewInstance,
-                                                     Range<ModelID> inIDRange, ListBox inListBox)
+                                                     Func<ModelID, TModel> inAllocateNewInstance,
+                                                     Range<ModelID> inIDRange, ListBox inListBox, string inModelTypeName)
             where TModel : TCollected
             where TCollected : Model
         {
@@ -1126,9 +1127,8 @@ namespace Scribe
                 return;
             }
 
-            var modelTypeName = nameof(TModel).Replace(nameof(Model), "");
-            var modelToAdd = inAllocateNewInstance(nextID, $"New {modelTypeName}");
-            ChangeManager.AddAndExecute(new ChangeList(modelToAdd, $"add new {modelTypeName} definition",
+            var modelToAdd = inAllocateNewInstance(nextID);
+            ChangeManager.AddAndExecute(new ChangeList(modelToAdd, $"add new {inModelTypeName} definition",
                                         (object databaseValue) =>
                                         {
                                             ((IModelCollectionEdit<TCollected>)inDatabaseCollection).Add((TModel)databaseValue);
@@ -1148,10 +1148,12 @@ namespace Scribe
         /// <summary>
         /// Removes a <see cref="Model"/> of the appropriate subtype from the given <see cref="ModelCollection"/> and <see cref="ListBox"/>.
         /// </summary>
-        /// <typeparam name="TModel">The type of <see cref="Model"/> being added or removed.</typeparam>
+        /// <typeparam name="TModel">The type of <see cref="Model"/> being removed.</typeparam>
         /// <param name="inDatabaseCollection">The backing collection.</param>
         /// <param name="inListBox">The UI element representing the <see cref="ModelCollection{TCollected}"/>.</param>
-        private void RemoveModel<TModel, TCollected>(IEnumerable<TCollected> inDatabaseCollection, ListBox inListBox)
+        /// <param name="inModelTypeName">User-facing description of the type being removed.</param>
+        private void RemoveModel<TModel, TCollected>(IEnumerable<TCollected> inDatabaseCollection, ListBox inListBox,
+                                                     string inModelTypeName)
             where TModel : TCollected
             where TCollected : Model
         {
@@ -1168,8 +1170,7 @@ namespace Scribe
                 return;
             }
 
-            var modelTypeName = nameof(TModel).Replace(nameof(Model), "");
-            ChangeManager.AddAndExecute(new ChangeList(modelToRemove, $"remove {modelTypeName} {modelToRemove.Name}",
+            ChangeManager.AddAndExecute(new ChangeList(modelToRemove, $"remove {inModelTypeName} {modelToRemove.Name}",
                                         (object databaseValue) =>
                                         {
                                             ((IModelCollectionEdit<TCollected>)inDatabaseCollection).Remove((TModel)databaseValue);
@@ -1192,7 +1193,7 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void GameAddNewGameButton_Click(object sender, EventArgs e)
-            => AddNewModel(All.Games, (ModelID id, string name) => new GameModel(id, name, "", ""), All.GameIDs, GameListBox);
+            => AddNewModel(All.Games, (ModelID id) => new GameModel(id, "New Game", "", ""), All.GameIDs, GameListBox, "Game");
 
         /// <summary>
         /// Responds to the user clicking "Remove Game" on the Games tab.
@@ -1200,7 +1201,7 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void GameRemoveGameButton_Click(object sender, EventArgs e)
-            => RemoveModel<GameModel, GameModel>(All.Games, GameListBox);
+            => RemoveModel<GameModel, GameModel>(All.Games, GameListBox, "Game");
         #endregion
 
         #region Parquet Tag Adjustments
@@ -1291,9 +1292,9 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void BlockAddNewBlockButton_Click(object sender, EventArgs e)
-            => AddNewModel(All.Parquets.Where(parquet => parquet is BlockModel),
-                           (ModelID id, string name) => new BlockModel(id, name, "", ""),
-                           All.BlockIDs, BlockListBox);
+            => AddNewModel(All.Parquets.Where(parquet => parquet is BlockModel).ToList(),
+                           (ModelID id) => new BlockModel(id, "New Block", "", ""),
+                           All.BlockIDs, BlockListBox, "Block");
 
         /// <summary>
         /// Responds to the user clicking "Remove Block" on the Blocks tab.
@@ -1301,7 +1302,7 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void BlockRemoveBlockButton_Click(object sender, EventArgs e)
-            => RemoveModel<BlockModel, ParquetModel>(All.Parquets.Where(parquet => parquet is BlockModel), BlockListBox);
+            => RemoveModel<BlockModel, ParquetModel>(All.Parquets.Where(parquet => parquet is BlockModel), BlockListBox, "Block");
 
         /// <summary>
         /// Registeres the user command to add a new biome tag to the current block.
@@ -1343,9 +1344,9 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void FloorAddNewFloorButton_Click(object sender, EventArgs e)
-            => AddNewModel(All.Parquets.Where(parquet => parquet is FloorModel),
-                           (ModelID id, string name) => new FloorModel(id, name, "", ""),
-                           All.FloorIDs, FloorListBox);
+            => AddNewModel(All.Parquets.Where(parquet => parquet is FloorModel).ToList(),
+                           (ModelID id) => new FloorModel(id, "New Floor", "", ""),
+                           All.FloorIDs, FloorListBox, "Floor");
 
         /// <summary>
         /// Responds to the user clicking "Remove Floor" on the Floors tab.
@@ -1353,7 +1354,7 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void FloorRemoveFloorButton_Click(object sender, EventArgs e)
-            => RemoveModel<FloorModel, ParquetModel>(All.Parquets.Where(parquet => parquet is FloorModel), FloorListBox);
+            => RemoveModel<FloorModel, ParquetModel>(All.Parquets.Where(parquet => parquet is FloorModel), FloorListBox, "Floor");
 
         /// <summary>
         /// Registeres the user command to add a new biome tag to the current floor.
