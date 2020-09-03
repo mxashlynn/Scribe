@@ -12,6 +12,7 @@ using ParquetClassLibrary;
 using ParquetClassLibrary.Beings;
 using ParquetClassLibrary.Biomes;
 using ParquetClassLibrary.Crafts;
+using ParquetClassLibrary.EditorSupport;
 using ParquetClassLibrary.Games;
 using ParquetClassLibrary.Items;
 using ParquetClassLibrary.Maps;
@@ -1092,13 +1093,22 @@ namespace Scribe
             }
         }
 
-        #region Game Tab
+        #region Add/Remove Models
         /// <summary>
-        /// Responds to the user clicking "Add New Game" on the Games tab.
+        /// Adds a new <see cref="Model"/> of the appropriate subtype to the given <see cref="ModelCollection"/> and <see cref="ListBox"/>.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void GameAddNewGameButton_Click(object sender, EventArgs e)
+        /// <typeparam name="TModel">The type of <see cref="Model"/> being added or removed.</typeparam>
+        /// <typeparam name="TModelEdit">The interface used to edit the <see cref="Model"/>.</typeparam>
+        /// <typeparam name="TCollected">The type of <see cref="Model"/> being collected.</typeparam>
+        /// <param name="inDatabaseCollection">The backing collection.</param>
+        /// <param name="inIDRange">The range over which the <see cref="ModelID"/> is defined.</param>
+        /// <param name="inListBox">The UI element representing the <see cref="ModelCollection{TCollected}"/>.</param>
+        private void AddNewModel<TModel, TModelEdit, TCollected>(IEnumerable<TCollected> inDatabaseCollection,
+                                                                 Func<TModel, TModelEdit> GetEditInterface,
+                                                                 Range<ModelID> inIDRange, ListBox inListBox)
+            where TModel : TCollected, new()
+            where TModelEdit : IModelEdit
+            where TCollected : Model
         {
             if (!All.CollectionsHaveBeenInitialized)
             {
@@ -1106,34 +1116,87 @@ namespace Scribe
                 return;
             }
 
-            var nextGameID = All.Games.Count > 0
-                ? (ModelID)(All.Games.Max(model => model?.ID ?? All.GameIDs.Minimum) + 1)
-                : All.GameIDs.Minimum;
-            if (nextGameID > All.GameIDs.Maximum)
+            var nextID = inDatabaseCollection.Count() > 0
+                ? (ModelID)(inDatabaseCollection.Max(model => model?.ID ?? inIDRange.Minimum) + 1)
+                : inIDRange.Minimum;
+            if (nextID > inIDRange.Maximum)
             {
                 SystemSounds.Beep.Play();
                 _ = MessageBox.Show(Resources.ErrorMaximumIDReached, Resources.CaptionError,
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            var modelToAdd = new GameModel(nextGameID, "New Game", "", "", false, "", 0, ModelID.None, ModelID.None);
-            ChangeManager.AddAndExecute(new ChangeList(modelToAdd, "add new game definition",
+            var modelTypeName = nameof(TModel).Replace(nameof(Model), "");
+            var modelToAdd = GetEditInterface(new TModel());
+            modelToAdd.ID = nextID;
+            modelToAdd.Name = $"New {modelTypeName}";
+            ChangeManager.AddAndExecute(new ChangeList(modelToAdd, $"add new {modelTypeName} definition",
                                         (object databaseValue) =>
                                         {
-                                           ((IModelCollectionEdit<GameModel>)All.Games).Add((GameModel)databaseValue);
-                                            _ = GameListBox.Items.Add(databaseValue);
-                                            GameListBox.SelectedItem = databaseValue;
+                                            ((IModelCollectionEdit<TCollected>)inDatabaseCollection).Add((TModel)databaseValue);
+                                            _ = inListBox.Items.Add(databaseValue);
+                                            inListBox.SelectedItem = databaseValue;
                                             HasUnsavedChanges = true;
                                         },
                                         (object databaseValue) =>
                                         {
-                                            ((IModelCollectionEdit<GameModel>)All.Games).Remove((GameModel)databaseValue);
-                                            GameListBox.Items.Remove(databaseValue);
-                                            GameListBox.ClearSelected();
+                                            ((IModelCollectionEdit<TCollected>)inDatabaseCollection).Remove((TModel)databaseValue);
+                                            inListBox.Items.Remove(databaseValue);
+                                            inListBox.ClearSelected();
                                             HasUnsavedChanges = true;
                                         }));
         }
+
+        /// <summary>
+        /// Removes a <see cref="Model"/> of the appropriate subtype from the given <see cref="ModelCollection"/> and <see cref="ListBox"/>.
+        /// </summary>
+        /// <typeparam name="TModel">The type of <see cref="Model"/> being added or removed.</typeparam>
+        /// <param name="inDatabaseCollection">The backing collection.</param>
+        /// <param name="inListBox">The UI element representing the <see cref="ModelCollection{TCollected}"/>.</param>
+        private void RemoveModel<TModel, TCollected>(IEnumerable<TCollected> inDatabaseCollection, ListBox inListBox)
+            where TModel : TCollected
+            where TCollected : Model
+        {
+            if (!All.CollectionsHaveBeenInitialized || inListBox.SelectedIndex == -1)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            var modelToRemove = (TModel)GetSelectedModelForTab(EditorTabs.SelectedIndex);
+            if (null == modelToRemove)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            var modelTypeName = nameof(TModel).Replace(nameof(Model), "");
+            ChangeManager.AddAndExecute(new ChangeList(modelToRemove, $"remove {modelTypeName} {modelToRemove.Name}",
+                                        (object databaseValue) =>
+                                        {
+                                            ((IModelCollectionEdit<TCollected>)inDatabaseCollection).Remove((TModel)databaseValue);
+                                            inListBox.Items.Remove(databaseValue);
+                                            inListBox.ClearSelected();
+                                            HasUnsavedChanges = true;
+                                        },
+                                        (object databaseValue) =>
+                                        {
+                                            ((IModelCollectionEdit<TCollected>)inDatabaseCollection).Add((TModel)databaseValue);
+                                            _ = inListBox.Items.Add(databaseValue);
+                                            inListBox.SelectedItem = databaseValue;
+                                            HasUnsavedChanges = true;
+                                        }));
+        }
+
+        /// <summary>
+        /// Responds to the user clicking "Add New Game" on the Games tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void GameAddNewGameButton_Click(object sender, EventArgs e)
+            => AddNewModel<GameModel, IGameModelEdit, GameModel>(All.Games, (GameModel game) => game as IGameModelEdit,
+                                                                 All.GameIDs, GameListBox);
 
         /// <summary>
         /// Responds to the user clicking "Remove Game" on the Games tab.
@@ -1141,36 +1204,7 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void GameRemoveGameButton_Click(object sender, EventArgs e)
-        {
-            if (!All.CollectionsHaveBeenInitialized || GameListBox.SelectedIndex == -1)
-            {
-                SystemSounds.Beep.Play();
-                return;
-            }
-
-            var modelToRemove = (GameModel)GetSelectedModelForTab(EditorTabs.SelectedIndex);
-            if (null == modelToRemove)
-            {
-                SystemSounds.Beep.Play();
-                return;
-            }
-
-            ChangeManager.AddAndExecute(new ChangeList(modelToRemove, $"remove {modelToRemove.Name}",
-                                        (object databaseValue) =>
-                                        {
-                                            ((IModelCollectionEdit<GameModel>)All.Games).Remove((GameModel)databaseValue);
-                                            GameListBox.Items.Remove(databaseValue);
-                                            GameListBox.ClearSelected();
-                                            HasUnsavedChanges = true;
-                                        },
-                                        (object databaseValue) =>
-                                        {
-                                            ((IModelCollectionEdit<GameModel>)All.Games).Add((GameModel)databaseValue);
-                                            _ = GameListBox.Items.Add(databaseValue);
-                                            GameListBox.SelectedItem = databaseValue;
-                                            HasUnsavedChanges = true;
-                                        }));
-        }
+            => RemoveModel<GameModel, GameModel>(All.Games, GameListBox);
         #endregion
 
         #region Parquet Tag Adjustments
@@ -1269,41 +1303,9 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void BlockAddNewBlockButton_Click(object sender, EventArgs e)
-        {
-            if (!All.CollectionsHaveBeenInitialized)
-            {
-                SystemSounds.Beep.Play();
-                return;
-            }
-
-            var nextBlockID = All.Parquets.Count > 0
-                ? (ModelID)(All.Parquets.Where(model => model is BlockModel).Max(block => block?.ID ?? All.BlockIDs.Minimum) + 1)
-                : All.BlockIDs.Minimum;
-            if (nextBlockID > All.BlockIDs.Maximum)
-            {
-                SystemSounds.Beep.Play();
-                _ = MessageBox.Show(Resources.ErrorMaximumIDReached, Resources.CaptionError,
-                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            var modelToAdd = new BlockModel(nextBlockID, "New Block", "", "");
-            ChangeManager.AddAndExecute(new ChangeList(modelToAdd, "add new block definition",
-                                        (object databaseValue) =>
-                                        {
-                                            ((IModelCollectionEdit<ParquetModel>)All.Parquets).Add((BlockModel)databaseValue);
-                                            _ = BlockListBox.Items.Add(databaseValue);
-                                            BlockListBox.SelectedItem = databaseValue;
-                                            HasUnsavedChanges = true;
-                                        },
-                                        (object databaseValue) =>
-                                        {
-                                            ((IModelCollectionEdit<ParquetModel>)All.Parquets).Remove((BlockModel)databaseValue);
-                                            BlockListBox.Items.Remove(databaseValue);
-                                            BlockListBox.ClearSelected();
-                                            HasUnsavedChanges = true;
-                                        }));
-        }
+            => AddNewModel<BlockModel, IBlockModelEdit, ParquetModel>(All.Parquets.Where(parquet => parquet is BlockModel),
+                                                                      (BlockModel block) => block as IBlockModelEdit,
+                                                                      All.BlockIDs, BlockListBox);
 
         /// <summary>
         /// Responds to the user clicking "Remove Block" on the Blocks tab.
@@ -1311,36 +1313,7 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void BlockRemoveBlockButton_Click(object sender, EventArgs e)
-        {
-            if (!All.CollectionsHaveBeenInitialized || BlockListBox.SelectedIndex == -1)
-            {
-                SystemSounds.Beep.Play();
-                return;
-            }
-
-            var modelToRemove = (BlockModel)GetSelectedModelForTab(EditorTabs.SelectedIndex);
-            if (null == modelToRemove)
-            {
-                SystemSounds.Beep.Play();
-                return;
-            }
-
-            ChangeManager.AddAndExecute(new ChangeList(modelToRemove, $"remove {modelToRemove.Name}",
-                                        (object databaseValue) =>
-                                        {
-                                            ((IModelCollectionEdit<ParquetModel>)All.Parquets).Remove((BlockModel)databaseValue);
-                                            BlockListBox.Items.Remove(databaseValue);
-                                            BlockListBox.ClearSelected();
-                                            HasUnsavedChanges = true;
-                                        },
-                                        (object databaseValue) =>
-                                        {
-                                            ((IModelCollectionEdit<ParquetModel>)All.Parquets).Add((BlockModel)databaseValue);
-                                            _ = BlockListBox.Items.Add(databaseValue);
-                                            BlockListBox.SelectedItem = databaseValue;
-                                            HasUnsavedChanges = true;
-                                        }));
-        }
+            => RemoveModel<BlockModel, ParquetModel>(All.Parquets.Where(parquet => parquet is BlockModel), BlockListBox);
 
         /// <summary>
         /// Registeres the user command to add a new biome tag to the current block.
@@ -1382,41 +1355,9 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void FloorAddNewFloorButton_Click(object sender, EventArgs e)
-        {
-            if (!All.CollectionsHaveBeenInitialized)
-            {
-                SystemSounds.Beep.Play();
-                return;
-            }
-
-            var nextFloorID = All.Parquets.Count > 0
-                ? (ModelID)(All.Parquets.Where(model => model is FloorModel).Max(floor => floor?.ID ?? All.FloorIDs.Minimum) + 1)
-                : All.FloorIDs.Minimum;
-            if (nextFloorID > All.FloorIDs.Maximum)
-            {
-                SystemSounds.Beep.Play();
-                _ = MessageBox.Show(Resources.ErrorMaximumIDReached, Resources.CaptionError,
-                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            var modelToAdd = new FloorModel(nextFloorID, "New Floor", "", "");
-            ChangeManager.AddAndExecute(new ChangeList(modelToAdd, "add new floor definition",
-                                        (object databaseValue) =>
-                                        {
-                                            ((IModelCollectionEdit<ParquetModel>)All.Parquets).Add((FloorModel)databaseValue);
-                                            _ = FloorListBox.Items.Add(databaseValue);
-                                            FloorListBox.SelectedItem = databaseValue;
-                                            HasUnsavedChanges = true;
-                                        },
-                                        (object databaseValue) =>
-                                        {
-                                            ((IModelCollectionEdit<ParquetModel>)All.Parquets).Remove((FloorModel)databaseValue);
-                                            FloorListBox.Items.Remove(databaseValue);
-                                            FloorListBox.ClearSelected();
-                                            HasUnsavedChanges = true;
-                                        }));
-        }
+            => AddNewModel<FloorModel, IFloorModelEdit, ParquetModel>(All.Parquets.Where(parquet => parquet is FloorModel),
+                                                                      (FloorModel floor) => floor as IFloorModelEdit,
+                                                                      All.FloorIDs, FloorListBox);
 
         /// <summary>
         /// Responds to the user clicking "Remove Floor" on the Floors tab.
@@ -1424,36 +1365,7 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void FloorRemoveFloorButton_Click(object sender, EventArgs e)
-        {
-            if (!All.CollectionsHaveBeenInitialized || FloorListBox.SelectedIndex == -1)
-            {
-                SystemSounds.Beep.Play();
-                return;
-            }
-
-            var modelToRemove = (FloorModel)GetSelectedModelForTab(EditorTabs.SelectedIndex);
-            if (null == modelToRemove)
-            {
-                SystemSounds.Beep.Play();
-                return;
-            }
-
-            ChangeManager.AddAndExecute(new ChangeList(modelToRemove, $"remove {modelToRemove.Name}",
-                                        (object databaseValue) =>
-                                        {
-                                            ((IModelCollectionEdit<ParquetModel>)All.Parquets).Remove((FloorModel)databaseValue);
-                                            FloorListBox.Items.Remove(databaseValue);
-                                            FloorListBox.ClearSelected();
-                                            HasUnsavedChanges = true;
-                                        },
-                                        (object databaseValue) =>
-                                        {
-                                            ((IModelCollectionEdit<ParquetModel>)All.Parquets).Add((FloorModel)databaseValue);
-                                            _ = FloorListBox.Items.Add(databaseValue);
-                                            FloorListBox.SelectedItem = databaseValue;
-                                            HasUnsavedChanges = true;
-                                        }));
-        }
+            => RemoveModel<FloorModel, ParquetModel>(All.Parquets.Where(parquet => parquet is FloorModel), FloorListBox);
 
         /// <summary>
         /// Registeres the user command to add a new biome tag to the current floor.
