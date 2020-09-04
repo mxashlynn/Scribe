@@ -1383,15 +1383,22 @@ namespace Scribe
         #endregion
 
         #region Furnishings Tab
+        /// <summary>
+        /// Responds to the user clicking "Add New Furnishing" on the Furnishings tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
         private void FurnishingAddNewFurnishingButton_Click(object sender, EventArgs e)
-        {
+            => AddNewModel(All.Furnishings, (ModelID id) => new FurnishingModel(id, "New Furnishing", "", ""),
+                           All.FurnishingIDs, FurnishingListBox, "Furnishing");
 
-        }
-
+        /// <summary>
+        /// Responds to the user clicking "Remove Furnishing" on the Furnishings tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
         private void FurnishingRemoveFurnishingButton_Click(object sender, EventArgs e)
-        {
-
-        }
+            => RemoveModel(All.Furnishings, FurnishingListBox, "Furnishing");
 
         /// <summary>
         /// Registeres the user command to add a new biome tag to the current furnishing.
@@ -1399,10 +1406,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FurnishingAddBiomeTagButton_Click(object sender, EventArgs e)
-        {
-            // TODO Implement this.
-            throw new NotImplementedException();
-        }
+            => ParquetAddTag(FurnishingAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to remove the selected biome tag from the current furnishing.
@@ -1410,10 +1414,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FurnishingsRemoveBiomeTagButton_Click(object sender, EventArgs e)
-        {
-            // TODO Implement this.
-            throw new NotImplementedException();
-        }
+            => ParquetRemoveTag(FurnishingAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to add a new room tag to the current furnishing.
@@ -1421,10 +1422,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FurnishingsAddRoomTagButton_Click(object sender, EventArgs e)
-        {
-            // TODO Implement this.
-            throw new NotImplementedException();
-        }
+            => ParquetAddTag(FurnishingAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
 
         /// <summary>
         /// Registeres the user command to remove the selected room tag from the current furnishing.
@@ -1432,22 +1430,26 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FurnishingsRemoveRoomTagButton_Click(object sender, EventArgs e)
-        {
-            // TODO Implement this.
-            throw new NotImplementedException();
-        }
+            => ParquetRemoveTag(FurnishingAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
         #endregion
 
         #region Collectibles Tab
+        /// <summary>
+        /// Responds to the user clicking "Add New Collectible" on the Collectibles tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
         private void CollectibleAddNewCollectibleButton_Click(object sender, EventArgs e)
-        {
+            => AddNewModel(All.Collectibles, (ModelID id) => new CollectibleModel(id, "New Collectible", "", ""),
+                           All.CollectibleIDs, CollectibleListBox, "Collectible");
 
-        }
-
+        /// <summary>
+        /// Responds to the user clicking "Remove Collectible" on the Collectibles tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
         private void CollectibleRemoveCollectibleButton_Click(object sender, EventArgs e)
-        {
-
-        }
+            => RemoveModel(All.Collectibles, CollectibleListBox, "Collectible");
 
         /// <summary>
         /// Registeres the user command to add a new biome tag to the current collectible.
@@ -1455,10 +1457,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void CollectibleAddBiomeTagButton_Click(object sender, EventArgs e)
-        {
-            // TODO Implement this.
-            throw new NotImplementedException();
-        }
+            => ParquetAddTag(CollectibleAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to remove the selected biome tag from the current collectible.
@@ -1466,10 +1465,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void CollectibleRemoveBiomeTagButton_Click(object sender, EventArgs e)
-        {
-            // TODO Implement this.
-            throw new NotImplementedException();
-        }
+            => ParquetRemoveTag(CollectibleAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to add a new room tag to the current collectible.
@@ -1477,10 +1473,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void CollectiblesAddRoomTagButton_Click(object sender, EventArgs e)
-        {
-            // TODO Implement this.
-            throw new NotImplementedException();
-        }
+            => ParquetAddTag(CollectibleAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
 
         /// <summary>
         /// Registeres the user command to remove the selected room tag from the current collectible.
@@ -1488,10 +1481,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void CollectiblesRemoveRoomTagButton_Click(object sender, EventArgs e)
-        {
-            // TODO Implement this.
-            throw new NotImplementedException();
-        }
+            => ParquetRemoveTag(CollectibleAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
         #endregion
 
         #region Characters Tab

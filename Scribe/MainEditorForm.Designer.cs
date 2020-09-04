@@ -266,8 +266,8 @@ namespace Scribe
             this.CollectibleEquivalentItemComboBox = new System.Windows.Forms.ComboBox();
             this.CollectibleCollectionEffectLabel = new System.Windows.Forms.Label();
             this.CollectibleEffectAmountLabel = new System.Windows.Forms.Label();
-            this.CollectiblesAddsToBiomeListBox = new System.Windows.Forms.ListBox();
-            this.CollectiblesAddsToRoomListBox = new System.Windows.Forms.ListBox();
+            this.CollectibleAddsToBiomeListBox = new System.Windows.Forms.ListBox();
+            this.CollectibleAddsToRoomListBox = new System.Windows.Forms.ListBox();
             this.CollectibleAddBiomeTagButton = new System.Windows.Forms.Button();
             this.CollectibleRemoveBiomeTagButton = new System.Windows.Forms.Button();
             this.CollectiblesAddRoomTagButton = new System.Windows.Forms.Button();
@@ -3086,8 +3086,8 @@ namespace Scribe
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleEquivalentItemComboBox, 1, 3);
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleCollectionEffectLabel, 0, 8);
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleEffectAmountLabel, 0, 9);
-            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectiblesAddsToBiomeListBox, 1, 4);
-            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectiblesAddsToRoomListBox, 1, 6);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleAddsToBiomeListBox, 1, 4);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleAddsToRoomListBox, 1, 6);
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleAddBiomeTagButton, 2, 5);
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleRemoveBiomeTagButton, 1, 5);
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectiblesAddRoomTagButton, 2, 7);
@@ -3217,29 +3217,29 @@ namespace Scribe
             this.CollectibleEffectAmountLabel.TabIndex = 31;
             this.CollectibleEffectAmountLabel.Text = "Effect Amount";
             // 
-            // CollectiblesAddsToBiomeListBox
+            // CollectibleAddsToBiomeListBox
             // 
-            this.CollectiblesAddsToBiomeListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.CollectibleAddsToBiomeListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectibleTableLayoutPanel.SetColumnSpan(this.CollectiblesAddsToBiomeListBox, 2);
-            this.CollectiblesAddsToBiomeListBox.FormattingEnabled = true;
-            this.CollectiblesAddsToBiomeListBox.Location = new System.Drawing.Point(131, 163);
-            this.CollectiblesAddsToBiomeListBox.Name = "CollectiblesAddsToBiomeListBox";
-            this.CollectiblesAddsToBiomeListBox.Size = new System.Drawing.Size(295, 69);
-            this.CollectiblesAddsToBiomeListBox.TabIndex = 37;
+            this.CollectibleTableLayoutPanel.SetColumnSpan(this.CollectibleAddsToBiomeListBox, 2);
+            this.CollectibleAddsToBiomeListBox.FormattingEnabled = true;
+            this.CollectibleAddsToBiomeListBox.Location = new System.Drawing.Point(131, 163);
+            this.CollectibleAddsToBiomeListBox.Name = "CollectibleAddsToBiomeListBox";
+            this.CollectibleAddsToBiomeListBox.Size = new System.Drawing.Size(295, 69);
+            this.CollectibleAddsToBiomeListBox.TabIndex = 37;
             // 
-            // CollectiblesAddsToRoomListBox
+            // CollectibleAddsToRoomListBox
             // 
-            this.CollectiblesAddsToRoomListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.CollectibleAddsToRoomListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectibleTableLayoutPanel.SetColumnSpan(this.CollectiblesAddsToRoomListBox, 2);
-            this.CollectiblesAddsToRoomListBox.FormattingEnabled = true;
-            this.CollectiblesAddsToRoomListBox.Location = new System.Drawing.Point(131, 268);
-            this.CollectiblesAddsToRoomListBox.Name = "CollectiblesAddsToRoomListBox";
-            this.CollectiblesAddsToRoomListBox.Size = new System.Drawing.Size(295, 69);
-            this.CollectiblesAddsToRoomListBox.TabIndex = 37;
+            this.CollectibleTableLayoutPanel.SetColumnSpan(this.CollectibleAddsToRoomListBox, 2);
+            this.CollectibleAddsToRoomListBox.FormattingEnabled = true;
+            this.CollectibleAddsToRoomListBox.Location = new System.Drawing.Point(131, 268);
+            this.CollectibleAddsToRoomListBox.Name = "CollectibleAddsToRoomListBox";
+            this.CollectibleAddsToRoomListBox.Size = new System.Drawing.Size(295, 69);
+            this.CollectibleAddsToRoomListBox.TabIndex = 37;
             // 
             // CollectibleAddBiomeTagButton
             // 
@@ -6265,8 +6265,8 @@ namespace Scribe
         private System.Windows.Forms.TextBox CollectibleDescriptionTextBox;
         private System.Windows.Forms.TextBox CollectibleCommentTextBox;
         private System.Windows.Forms.TextBox CollectibleEffectAmountTextBox;
-        private System.Windows.Forms.ListBox CollectiblesAddsToBiomeListBox;
-        private System.Windows.Forms.ListBox CollectiblesAddsToRoomListBox;
+        private System.Windows.Forms.ListBox CollectibleAddsToBiomeListBox;
+        private System.Windows.Forms.ListBox CollectibleAddsToRoomListBox;
         private System.Windows.Forms.Button CollectibleAddBiomeTagButton;
         private System.Windows.Forms.Button CollectibleRemoveBiomeTagButton;
         private System.Windows.Forms.Button CollectiblesAddRoomTagButton;
