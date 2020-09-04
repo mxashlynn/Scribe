@@ -1383,9 +1383,115 @@ namespace Scribe
         #endregion
 
         #region Furnishings Tab
+        private void FurnishingAddNewFurnishingButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FurnishingRemoveFurnishingButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Registeres the user command to add a new biome tag to the current furnishing.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void FurnishingAddBiomeTagButton_Click(object sender, EventArgs e)
+        {
+            // TODO Implement this.
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Registeres the user command to remove the selected biome tag from the current furnishing.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void FurnishingsRemoveBiomeTagButton_Click(object sender, EventArgs e)
+        {
+            // TODO Implement this.
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Registeres the user command to add a new room tag to the current furnishing.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void FurnishingsAddRoomTagButton_Click(object sender, EventArgs e)
+        {
+            // TODO Implement this.
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Registeres the user command to remove the selected room tag from the current furnishing.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void FurnishingsRemoveRoomTagButton_Click(object sender, EventArgs e)
+        {
+            // TODO Implement this.
+            throw new NotImplementedException();
+        }
         #endregion
 
         #region Collectibles Tab
+        private void CollectibleAddNewCollectibleButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CollectibleRemoveCollectibleButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Registeres the user command to add a new biome tag to the current collectible.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void CollectibleAddBiomeTagButton_Click(object sender, EventArgs e)
+        {
+            // TODO Implement this.
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Registeres the user command to remove the selected biome tag from the current collectible.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void CollectibleRemoveBiomeTagButton_Click(object sender, EventArgs e)
+        {
+            // TODO Implement this.
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Registeres the user command to add a new room tag to the current collectible.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void CollectiblesAddRoomTagButton_Click(object sender, EventArgs e)
+        {
+            // TODO Implement this.
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Registeres the user command to remove the selected room tag from the current collectible.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void CollectiblesRemoveRoomTagButton_Click(object sender, EventArgs e)
+        {
+            // TODO Implement this.
+            throw new NotImplementedException();
+        }
         #endregion
 
         #region Characters Tab
@@ -1733,96 +1839,6 @@ namespace Scribe
         }
         #endregion
 
-        #region Button Events
-        /// <summary>
-        /// Registeres the user command to add a new biome tag to the current furnishing.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void FurnishingAddBiomeTagButton_Click(object sender, EventArgs e)
-        {
-            // TODO Implement this.
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Registeres the user command to remove the selected biome tag from the current furnishing.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void FurnishingsRemoveBiomeTagButton_Click(object sender, EventArgs e)
-        {
-            // TODO Implement this.
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Registeres the user command to add a new room tag to the current furnishing.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void FurnishingsAddRoomTagButton_Click(object sender, EventArgs e)
-        {
-            // TODO Implement this.
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Registeres the user command to remove the selected room tag from the current furnishing.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void FurnishingsRemoveRoomTagButton_Click(object sender, EventArgs e)
-        {
-            // TODO Implement this.
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Registeres the user command to add a new biome tag to the current collectible.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void CollectibleAddBiomeTagButton_Click(object sender, EventArgs e)
-        {
-            // TODO Implement this.
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Registeres the user command to remove the selected biome tag from the current collectible.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void CollectibleRemoveBiomeTagButton_Click(object sender, EventArgs e)
-        {
-            // TODO Implement this.
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Registeres the user command to add a new room tag to the current collectible.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void CollectiblesAddRoomTagButton_Click(object sender, EventArgs e)
-        {
-            // TODO Implement this.
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Registeres the user command to remove the selected room tag from the current collectible.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void CollectiblesRemoveRoomTagButton_Click(object sender, EventArgs e)
-        {
-            // TODO Implement this.
-            throw new NotImplementedException();
-        }
-        //endregion
-
         #region Edit Image Button Events
         /// <summary>
         /// Given a <see cref="PictureBox"/>, spawns an external image editor with the image currently loaded in the box.
@@ -1937,7 +1953,6 @@ namespace Scribe
         /// <param name="e">Ignored</param>
         private void RoomPictureEditButton_Click(object sender, EventArgs e)
             => IconEditButtonClick(RoomPictureBox);
-        #endregion
         #endregion
 
         #region Hybrid Events

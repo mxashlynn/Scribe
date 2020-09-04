@@ -2345,6 +2345,7 @@ namespace Scribe
             this.FloorRemoveFloorButton.TabIndex = 2;
             this.FloorRemoveFloorButton.Text = "Remove Floor";
             this.FloorRemoveFloorButton.UseVisualStyleBackColor = true;
+            this.FloorRemoveFloorButton.Click += new System.EventHandler(this.FloorRemoveFloorButton_Click);
             // 
             // FloorLayoutTabelPanel
             // 
@@ -2605,6 +2606,7 @@ namespace Scribe
             this.FloorAddNewFloorButton.TabIndex = 2;
             this.FloorAddNewFloorButton.Text = "Add New Floor";
             this.FloorAddNewFloorButton.UseVisualStyleBackColor = true;
+            this.FloorAddNewFloorButton.Click += new System.EventHandler(this.FloorAddNewFloorButton_Click);
             // 
             // FloorListBox
             // 
@@ -2968,6 +2970,7 @@ namespace Scribe
             this.FurnishingRemoveFurnishingButton.TabIndex = 2;
             this.FurnishingRemoveFurnishingButton.Text = "Remove Furnishing";
             this.FurnishingRemoveFurnishingButton.UseVisualStyleBackColor = true;
+            this.FurnishingRemoveFurnishingButton.Click += new System.EventHandler(this.FurnishingRemoveFurnishingButton_Click);
             // 
             // FurnishingIDExample
             // 
@@ -2989,6 +2992,7 @@ namespace Scribe
             this.FurnishingAddNewFurnishingButton.TabIndex = 2;
             this.FurnishingAddNewFurnishingButton.Text = "Add New Furnishing";
             this.FurnishingAddNewFurnishingButton.UseVisualStyleBackColor = true;
+            this.FurnishingAddNewFurnishingButton.Click += new System.EventHandler(this.FurnishingAddNewFurnishingButton_Click);
             // 
             // FurnishingListBox
             // 
@@ -3289,6 +3293,7 @@ namespace Scribe
             this.CollectibleRemoveCollectibleButton.TabIndex = 2;
             this.CollectibleRemoveCollectibleButton.Text = "Remove Collectible";
             this.CollectibleRemoveCollectibleButton.UseVisualStyleBackColor = true;
+            this.CollectibleRemoveCollectibleButton.Click += new System.EventHandler(this.CollectibleRemoveCollectibleButton_Click);
             // 
             // CollectibleIDExample
             // 
@@ -3310,6 +3315,7 @@ namespace Scribe
             this.CollectibleAddNewCollectibleButton.TabIndex = 2;
             this.CollectibleAddNewCollectibleButton.Text = "Add New Collectible";
             this.CollectibleAddNewCollectibleButton.UseVisualStyleBackColor = true;
+            this.CollectibleAddNewCollectibleButton.Click += new System.EventHandler(this.CollectibleAddNewCollectibleButton_Click);
             // 
             // CollectibleListBox
             // 
