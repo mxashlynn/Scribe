@@ -363,6 +363,7 @@ namespace Scribe
             this.ItemRemoveTagButton = new System.Windows.Forms.Button();
             this.ItemListBox = new System.Windows.Forms.ListBox();
             this.ItemInventoriesGroupBox = new System.Windows.Forms.GroupBox();
+            this.ItemComingSoonLabel = new System.Windows.Forms.Label();
             this.ItemOpenInvetoryEditorButton = new System.Windows.Forms.Button();
             this.ItemInventoryListBox = new System.Windows.Forms.ListBox();
             this.ItemPictureEditButton = new System.Windows.Forms.Button();
@@ -4283,6 +4284,7 @@ namespace Scribe
             // 
             this.ItemInventoriesGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemInventoriesGroupBox.Controls.Add(this.ItemComingSoonLabel);
             this.ItemInventoriesGroupBox.Controls.Add(this.ItemOpenInvetoryEditorButton);
             this.ItemInventoriesGroupBox.Controls.Add(this.ItemInventoryListBox);
             this.ItemInventoriesGroupBox.Location = new System.Drawing.Point(9, 497);
@@ -4292,8 +4294,19 @@ namespace Scribe
             this.ItemInventoriesGroupBox.TabStop = false;
             this.ItemInventoriesGroupBox.Text = "Inventories";
             // 
+            // ItemComingSoonLabel
+            // 
+            this.ItemComingSoonLabel.AutoSize = true;
+            this.ItemComingSoonLabel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ItemComingSoonLabel.Location = new System.Drawing.Point(285, 55);
+            this.ItemComingSoonLabel.Name = "ItemComingSoonLabel";
+            this.ItemComingSoonLabel.Size = new System.Drawing.Size(89, 16);
+            this.ItemComingSoonLabel.TabIndex = 32;
+            this.ItemComingSoonLabel.Text = "Coming Soon";
+            // 
             // ItemOpenInvetoryEditorButton
             // 
+            this.ItemOpenInvetoryEditorButton.Enabled = false;
             this.ItemOpenInvetoryEditorButton.Location = new System.Drawing.Point(285, 74);
             this.ItemOpenInvetoryEditorButton.Name = "ItemOpenInvetoryEditorButton";
             this.ItemOpenInvetoryEditorButton.Size = new System.Drawing.Size(129, 23);
@@ -4305,6 +4318,7 @@ namespace Scribe
             // 
             this.ItemInventoryListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.ItemInventoryListBox.Enabled = false;
             this.ItemInventoryListBox.FormattingEnabled = true;
             this.ItemInventoryListBox.Location = new System.Drawing.Point(6, 15);
             this.ItemInventoryListBox.Name = "ItemInventoryListBox";
@@ -5985,6 +5999,7 @@ namespace Scribe
             this.ItemsTabPage.ResumeLayout(false);
             this.ItemsTabPage.PerformLayout();
             this.ItemInventoriesGroupBox.ResumeLayout(false);
+            this.ItemInventoriesGroupBox.PerformLayout();
             this.ItemTableLayoutPanel.ResumeLayout(false);
             this.ItemTableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ItemPictureBox)).EndInit();
@@ -6366,6 +6381,7 @@ namespace Scribe
         private System.Windows.Forms.Label ItemNameLabel;
         private System.Windows.Forms.Label ItemIDExample;
         private System.Windows.Forms.GroupBox ItemInventoriesGroupBox;
+        private System.Windows.Forms.Label ItemComingSoonLabel;
         private System.Windows.Forms.Button ItemPictureEditButton;
         private System.Windows.Forms.TableLayoutPanel ItemTableLayoutPanel;
         private System.Windows.Forms.Label ItemDescriptionLabel;
