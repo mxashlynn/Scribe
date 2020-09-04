@@ -792,25 +792,25 @@ namespace Scribe
 
             #region Repopulate Primary List Boxes
             RepopulateListBox(GameListBox, All.Games);
-            RepopulateListBox(CritterListBox, All.Beings.OfType<CritterModel>());
-            RepopulateListBox(CharacterListBox, All.Beings.OfType<CharacterModel>());
+            RepopulateListBox(CritterListBox, All.Critters);
+            RepopulateListBox(CharacterListBox, All.Characters);
             RepopulateListBox(BiomeListBox, All.Biomes);
             RepopulateListBox(CraftingListBox, All.CraftingRecipes);
             RepopulateListBox(ItemListBox, All.Items);
-            RepopulateListBox(FloorListBox, All.Parquets.OfType<FloorModel>());
-            RepopulateListBox(BlockListBox, All.Parquets.OfType<BlockModel>());
-            RepopulateListBox(FurnishingListBox, All.Parquets.OfType<FurnishingModel>());
-            RepopulateListBox(CollectibleListBox, All.Parquets.OfType<CollectibleModel>());
+            RepopulateListBox(FloorListBox, All.Floors);
+            RepopulateListBox(BlockListBox, All.Blocks);
+            RepopulateListBox(FurnishingListBox, All.Furnishings);
+            RepopulateListBox(CollectibleListBox, All.Collectibles);
             RepopulateListBox(RoomListBox, All.RoomRecipes);
             #endregion
 
             #region Repopulat Secondary List and Combo Boxes
-            RepopulateComboBox(GamePlayerCharacterComboBox, All.Beings.Where(being => being is CharacterModel));
+            RepopulateComboBox(GamePlayerCharacterComboBox, All.Characters);
             RepopulateComboBox(GameFirstScriptComboBox, All.Scripts);
             RepopulateComboBox(BlockEquivalentItemComboBox, All.Items);
             RepopulateComboBox(BlockGatherToolComboBox, Enum.GetNames(typeof(GatheringTool)));
             RepopulateComboBox(BlockGatherEffectComboBox, Enum.GetNames(typeof(GatheringEffect)));
-            RepopulateComboBox(BlockDroppedCollectibleIDComboBox, All.Parquets.Where(parquet => parquet is CollectibleModel));
+            RepopulateComboBox(BlockDroppedCollectibleIDComboBox, All.Collectibles);
             // TODO Floors
             // TODO Furnsihings
             // TODO Collectibles
@@ -1104,11 +1104,10 @@ namespace Scribe
         /// <param name="inIDRange">The range over which the <see cref="ModelID"/> is defined.</param>
         /// <param name="inListBox">The UI element representing the <see cref="ModelCollection{TCollected}"/>.</param>
         /// <param name="inModelTypeName">User-facing description of the type being added.</param>
-        private void AddNewModel<TModel, TCollected>(IEnumerable<TCollected> inDatabaseCollection,
-                                                     Func<ModelID, TModel> inAllocateNewInstance,
-                                                     Range<ModelID> inIDRange, ListBox inListBox, string inModelTypeName)
-            where TModel : TCollected
-            where TCollected : Model
+        private void AddNewModel<TModel>(IEnumerable<TModel> inDatabaseCollection,
+                                         Func<ModelID, TModel> inAllocateNewInstance,
+                                         Range<ModelID> inIDRange, ListBox inListBox, string inModelTypeName)
+            where TModel : Model
         {
             if (!All.CollectionsHaveBeenInitialized)
             {
@@ -1131,14 +1130,14 @@ namespace Scribe
             ChangeManager.AddAndExecute(new ChangeList(modelToAdd, $"add new {inModelTypeName} definition",
                                         (object databaseValue) =>
                                         {
-                                            ((IModelCollectionEdit<TCollected>)inDatabaseCollection).Add((TModel)databaseValue);
+                                            ((IModelCollectionEdit<TModel>)inDatabaseCollection).Add((TModel)databaseValue);
                                             _ = inListBox.Items.Add(databaseValue);
                                             inListBox.SelectedItem = databaseValue;
                                             HasUnsavedChanges = true;
                                         },
                                         (object databaseValue) =>
                                         {
-                                            ((IModelCollectionEdit<TCollected>)inDatabaseCollection).Remove((TModel)databaseValue);
+                                            ((IModelCollectionEdit<TModel>)inDatabaseCollection).Remove((TModel)databaseValue);
                                             inListBox.Items.Remove(databaseValue);
                                             inListBox.ClearSelected();
                                             HasUnsavedChanges = true;
@@ -1152,10 +1151,8 @@ namespace Scribe
         /// <param name="inDatabaseCollection">The backing collection.</param>
         /// <param name="inListBox">The UI element representing the <see cref="ModelCollection{TCollected}"/>.</param>
         /// <param name="inModelTypeName">User-facing description of the type being removed.</param>
-        private void RemoveModel<TModel, TCollected>(IEnumerable<TCollected> inDatabaseCollection, ListBox inListBox,
-                                                     string inModelTypeName)
-            where TModel : TCollected
-            where TCollected : Model
+        private void RemoveModel<TModel>(IEnumerable<TModel> inDatabaseCollection, ListBox inListBox, string inModelTypeName)
+            where TModel : Model
         {
             if (!All.CollectionsHaveBeenInitialized || inListBox.SelectedIndex == -1)
             {
@@ -1173,14 +1170,14 @@ namespace Scribe
             ChangeManager.AddAndExecute(new ChangeList(modelToRemove, $"remove {inModelTypeName} {modelToRemove.Name}",
                                         (object databaseValue) =>
                                         {
-                                            ((IModelCollectionEdit<TCollected>)inDatabaseCollection).Remove((TModel)databaseValue);
+                                            ((IModelCollectionEdit<TModel>)inDatabaseCollection).Remove((TModel)databaseValue);
                                             inListBox.Items.Remove(databaseValue);
                                             inListBox.ClearSelected();
                                             HasUnsavedChanges = true;
                                         },
                                         (object databaseValue) =>
                                         {
-                                            ((IModelCollectionEdit<TCollected>)inDatabaseCollection).Add((TModel)databaseValue);
+                                            ((IModelCollectionEdit<TModel>)inDatabaseCollection).Add((TModel)databaseValue);
                                             _ = inListBox.Items.Add(databaseValue);
                                             inListBox.SelectedItem = databaseValue;
                                             HasUnsavedChanges = true;
@@ -1201,7 +1198,7 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void GameRemoveGameButton_Click(object sender, EventArgs e)
-            => RemoveModel<GameModel, GameModel>(All.Games, GameListBox, "Game");
+            => RemoveModel(All.Games, GameListBox, "Game");
         #endregion
 
         #region Parquet Tag Adjustments
@@ -1292,9 +1289,7 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void BlockAddNewBlockButton_Click(object sender, EventArgs e)
-            => AddNewModel(All.Parquets.Where(parquet => parquet is BlockModel).ToList(),
-                           (ModelID id) => new BlockModel(id, "New Block", "", ""),
-                           All.BlockIDs, BlockListBox, "Block");
+            => AddNewModel(All.Blocks, (ModelID id) => new BlockModel(id, "New Block", "", ""), All.BlockIDs, BlockListBox, "Block");
 
         /// <summary>
         /// Responds to the user clicking "Remove Block" on the Blocks tab.
@@ -1302,7 +1297,7 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void BlockRemoveBlockButton_Click(object sender, EventArgs e)
-            => RemoveModel<BlockModel, ParquetModel>(All.Parquets.Where(parquet => parquet is BlockModel), BlockListBox, "Block");
+            => RemoveModel(All.Blocks, BlockListBox, "Block");
 
         /// <summary>
         /// Registeres the user command to add a new biome tag to the current block.
@@ -1344,9 +1339,7 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void FloorAddNewFloorButton_Click(object sender, EventArgs e)
-            => AddNewModel(All.Parquets.Where(parquet => parquet is FloorModel).ToList(),
-                           (ModelID id) => new FloorModel(id, "New Floor", "", ""),
-                           All.FloorIDs, FloorListBox, "Floor");
+            => AddNewModel(All.Floors, (ModelID id) => new FloorModel(id, "New Floor", "", ""), All.FloorIDs, FloorListBox, "Floor");
 
         /// <summary>
         /// Responds to the user clicking "Remove Floor" on the Floors tab.
@@ -1354,7 +1347,7 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void FloorRemoveFloorButton_Click(object sender, EventArgs e)
-            => RemoveModel<FloorModel, ParquetModel>(All.Parquets.Where(parquet => parquet is FloorModel), FloorListBox, "Floor");
+            => RemoveModel(All.Floors, FloorListBox, "Floor");
 
         /// <summary>
         /// Registeres the user command to add a new biome tag to the current floor.
@@ -1405,40 +1398,7 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void CritterAddNewCritterButton_Click(object sender, EventArgs e)
-        {
-            if (!All.CollectionsHaveBeenInitialized)
-            {
-                SystemSounds.Beep.Play();
-                return;
-            }
-
-            var nextCritterID = All.Beings.Count > 0
-                ? (ModelID)(All.Beings.Where(model => model is CritterModel).Max(model => model?.ID ?? All.CritterIDs.Minimum) + 1)
-                : All.CritterIDs.Minimum;
-            if (nextCritterID > All.CritterIDs.Maximum)
-            {
-                SystemSounds.Beep.Play();
-                _ = MessageBox.Show(Resources.ErrorMaximumIDReached, Resources.CaptionError,
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            var modelToAdd = new CritterModel(nextCritterID, "New Critter", "", "", ModelID.None, ModelID.None);
-            ChangeManager.AddAndExecute(new ChangeList(modelToAdd, "add new critter definition",
-                                        (object databaseValue) =>
-                                        {
-                                            ((IModelCollectionEdit<BeingModel>)All.Beings).Add((CritterModel)databaseValue);
-                                            _ = CritterListBox.Items.Add(databaseValue);
-                                            HasUnsavedChanges = true;
-                                        },
-                                        (object databaseValue) =>
-                                        {
-                                            ((IModelCollectionEdit<BeingModel>)All.Beings).Remove((CritterModel)databaseValue);
-                                            CritterListBox.Items.Remove(databaseValue);
-                                            CritterListBox.ClearSelected();
-                                            HasUnsavedChanges = true;
-                                        }));
-        }
+            => AddNewModel(All.Critters, (ModelID id) => new CritterModel(id, "New Critter", "", ""), All.CritterIDs, CritterListBox, "Critter");
 
         /// <summary>
         /// Responds to the user clicking "Remove Critter" on the Critters tab.
@@ -1446,35 +1406,7 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void CritterRemoveCritterButton_Click(object sender, EventArgs e)
-        {
-            if (!All.CollectionsHaveBeenInitialized || CritterListBox.SelectedIndex == -1)
-            {
-                SystemSounds.Beep.Play();
-                return;
-            }
-
-            var modelToRemove = (CritterModel)GetSelectedModelForTab(EditorTabs.SelectedIndex);
-            if (null == modelToRemove)
-            {
-                SystemSounds.Beep.Play();
-                return;
-            }
-
-            ChangeManager.AddAndExecute(new ChangeList(modelToRemove, $"remove {modelToRemove.Name}",
-                                        (object databaseValue) =>
-                                        {
-                                            ((IModelCollectionEdit<BeingModel>)All.Beings).Remove((CritterModel)databaseValue);
-                                            CritterListBox.Items.Remove(databaseValue);
-                                            CritterListBox.ClearSelected();
-                                            HasUnsavedChanges = true;
-                                        },
-                                        (object databaseValue) =>
-                                        {
-                                            ((IModelCollectionEdit<BeingModel>)All.Beings).Add((CritterModel)databaseValue);
-                                            _ = CritterListBox.Items.Add(databaseValue);
-                                            HasUnsavedChanges = true;
-                                        }));
-        }
+            => RemoveModel(All.Critters, CritterListBox, "Critter");
         #endregion
 
         #region Items Tab
