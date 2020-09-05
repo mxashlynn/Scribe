@@ -827,11 +827,16 @@ namespace Scribe
             RepopulateComboBox(GamePlayerCharacterComboBox, All.Characters);
             RepopulateComboBox(GameFirstScriptComboBox, All.Scripts);
             RepopulateComboBox(BlockEquivalentItemComboBox, All.Items);
+            // TODO Where are the Biome & Room AddsTo tag list boxes?
             RepopulateComboBox(BlockGatherToolComboBox, Enum.GetNames(typeof(GatheringTool)));
             RepopulateComboBox(BlockGatherEffectComboBox, Enum.GetNames(typeof(GatheringEffect)));
             RepopulateComboBox(BlockDroppedCollectibleIDComboBox, All.Collectibles);
-            // TODO Floors
-            // TODO Furnsihings
+            RepopulateComboBox(FloorEquivalentItemComboBox, All.Items);
+            RepopulateComboBox(FloorModificationToolComboBox, Enum.GetNames(typeof(ModificationTool)));
+            RepopulateComboBox(FurnishingEquivalentItemComboBox, All.Items);
+            RepopulateComboBox(FurnishingEntryTypeComboBox, Enum.GetNames(typeof(EntryType)));
+            RepopulateComboBox(FurnishingEntryTypeComboBox, Enum.GetNames(typeof(EntryType)));
+            RepopulateComboBox(FurnishingSwapWithFurnishingComboBox, All.Furnishings);
             // TODO Collectibles
             // TODO Characters
             RepopulateComboBox(CritterNativeBiomeComboBox, All.Biomes);
@@ -1008,9 +1013,114 @@ namespace Scribe
             }
         }
 
-        // TODO Floors
-        // TODO Furnsihings
-        // TODO Collectibles
+        /// <summary>
+        /// Populates the Floors tab when a <see cref="FloorModel"/> is selected in the FloorListBox.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void FloorListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (FloorListBox.SelectedIndex == -1)
+            {
+                FloorIDExample.Text = ModelID.None.ToString();
+                FloorNameTextBox.Text = "";
+                FloorDescriptionTextBox.Text = "";
+                FloorCommentTextBox.Text = "";
+                FloorEquivalentItemComboBox.SelectedIndex = -1;
+                FloorModificationToolComboBox.SelectedIndex = -1;
+                FloorTrenchNameTextBox.Text = "";
+                FloorPictureBox.Image = Resources.ImageNotFoundGraphic;
+            }
+            else if (FloorListBox.SelectedItem is FloorModel model
+                    && null != model)
+            {
+                FloorIDExample.Text = model.ID.ToString();
+                FloorNameTextBox.Text = model.Name;
+                FloorDescriptionTextBox.Text = model.Description;
+                FloorCommentTextBox.Text = model.Comment;
+                FloorEquivalentItemComboBox.SelectedItem = model.ItemID;
+                FloorModificationToolComboBox.SelectedIndex = (int)model.ModTool;
+                FloorTrenchNameTextBox.Text = model.TrenchName;
+                PictureBoxLoadFromStorage(FloorPictureBox, model.ID);
+            }
+        }
+
+        /// <summary>
+        /// Populates the Furnishings tab when a <see cref="FurnishingModel"/> is selected in the FurnishingListBox.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void FurnishingListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (FurnishingListBox.SelectedIndex == -1)
+            {
+                FurnishingIDExample.Text = ModelID.None.ToString();
+                FurnishingNameTextBox.Text = "";
+                FurnishingDescriptionTextBox.Text = "";
+                FurnishingCommentTextBox.Text = "";
+                FurnishingEquivalentItemComboBox.SelectedIndex = -1;
+                FurnishingEntryTypeComboBox.SelectedIndex = -1;
+                FurnishingIsWalkableCheckBox.Checked = false;
+                FurnishingIsEnclosingCheckBox.Checked = false;
+                FurnishingIsFlammableCheckBox.Checked = false;
+                FurnishingSwapWithFurnishingComboBox.SelectedIndex = -1;
+                FurnishingPictureBox.Image = Resources.ImageNotFoundGraphic;
+            }
+            else if (FurnishingListBox.SelectedItem is FurnishingModel model
+                    && null != model)
+            {
+                FurnishingIDExample.Text = model.ID.ToString();
+                FurnishingNameTextBox.Text = model.Name;
+                FurnishingDescriptionTextBox.Text = model.Description;
+                FurnishingCommentTextBox.Text = model.Comment;
+                FurnishingEquivalentItemComboBox.SelectedItem = model.ItemID;
+                FurnishingEntryTypeComboBox.SelectedIndex = (int)model.Entry;
+                FurnishingIsWalkableCheckBox.Checked = model.IsWalkable;
+                FurnishingIsEnclosingCheckBox.Checked = model.IsEnclosing;
+                FurnishingIsFlammableCheckBox.Checked = model.IsFlammable;
+                FurnishingSwapWithFurnishingComboBox.SelectedIndex = model.SwapID;
+                PictureBoxLoadFromStorage(FurnishingPictureBox, model.ID);
+            }
+        }
+
+        /// <summary>
+        /// Populates the Furnishings tab when a <see cref="FurnishingModel"/> is selected in the FurnishingListBox.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void CollectibleListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (FurnishingListBox.SelectedIndex == -1)
+            {
+                FurnishingIDExample.Text = ModelID.None.ToString();
+                FurnishingNameTextBox.Text = "";
+                FurnishingDescriptionTextBox.Text = "";
+                FurnishingCommentTextBox.Text = "";
+                FurnishingEquivalentItemComboBox.SelectedIndex = -1;
+                FurnishingEntryTypeComboBox.SelectedIndex = -1;
+                FurnishingIsWalkableCheckBox.Checked = false;
+                FurnishingIsEnclosingCheckBox.Checked = false;
+                FurnishingIsFlammableCheckBox.Checked = false;
+                FurnishingSwapWithFurnishingComboBox.SelectedIndex = -1;
+                FurnishingPictureBox.Image = Resources.ImageNotFoundGraphic;
+            }
+            else if (FurnishingListBox.SelectedItem is FurnishingModel model
+                    && null != model)
+            {
+                FurnishingIDExample.Text = model.ID.ToString();
+                FurnishingNameTextBox.Text = model.Name;
+                FurnishingDescriptionTextBox.Text = model.Description;
+                FurnishingCommentTextBox.Text = model.Comment;
+                FurnishingEquivalentItemComboBox.SelectedItem = model.ItemID;
+                FurnishingEntryTypeComboBox.SelectedIndex = (int)model.Entry;
+                FurnishingIsWalkableCheckBox.Checked = model.IsWalkable;
+                FurnishingIsEnclosingCheckBox.Checked = model.IsEnclosing;
+                FurnishingIsFlammableCheckBox.Checked = model.IsFlammable;
+                FurnishingSwapWithFurnishingComboBox.SelectedIndex = model.SwapID;
+                PictureBoxLoadFromStorage(FurnishingPictureBox, model.ID);
+            }
+        }
+
         // TODO Characters
 
         /// <summary>
@@ -1220,13 +1330,14 @@ namespace Scribe
             => RemoveModel(All.Games, GameListBox, "Game");
         #endregion
 
-        #region Parquet Tag Adjustments
+        #region Tag Adjustments
         /// <summary>
-        /// Adds a new tag to the selected <see cref="ParquetModel"/>, updating the given <see cref="ListBox"/>.
+        /// Adds a new tag to the selected <see cref="Model"/>, updating the given <see cref="ListBox"/>.
         /// </summary>
         /// <param name="inAddsToListBox">The UI element reflectling the collection being changed.</param>
-        /// <param name="inGetTagListFromModel">The means, given a ParquetModel, to find the correct tag collection.</param>
-        private void ParquetAddTag(ListBox inAddsToListBox, Func<IParquetModelEdit, IList<ModelTag>> inGetTagListFromModel)
+        /// <param name="inGetTagListFromModel">The means, given a model, to find the correct tag collection.</param>
+        private void ParquetAddTag<TInterface>(ListBox inAddsToListBox, Func<TInterface, IList<ModelTag>> inGetTagListFromModel)
+            where TInterface : IModelEdit
         {
             if (!All.CollectionsHaveBeenInitialized)
             {
@@ -1234,11 +1345,11 @@ namespace Scribe
                 return;
             }
 
-            if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is IParquetModelEdit parquetModel
+            if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is TInterface model
                 && AddTagDialogue.ShowDialog() == DialogResult.OK
                 && !string.IsNullOrEmpty(AddTagDialogue.ReturnNewTag))
             {
-                if (inGetTagListFromModel(parquetModel).Any(tag => ((string)AddTagDialogue.ReturnNewTag).Equals(tag)))
+                if (inGetTagListFromModel(model).Any(tag => ((string)AddTagDialogue.ReturnNewTag).Equals(tag)))
                 {
                     // Do not add duplicate tags.
                     // TODO Report this error in the status bar or something.
@@ -1248,17 +1359,17 @@ namespace Scribe
                 }
 
                 ChangeManager.AddAndExecute(new ChangeList(AddTagDialogue.ReturnNewTag,
-                                            $"add tag {AddTagDialogue.ReturnNewTag} to parquet {parquetModel.Name}",
+                                            $"add tag {AddTagDialogue.ReturnNewTag} to {model.Name}",
                                             (object databaseValue) =>
                                             {
-                                                inGetTagListFromModel(parquetModel).Add((ModelTag)databaseValue);
+                                                inGetTagListFromModel(model).Add((ModelTag)databaseValue);
                                                 _ = inAddsToListBox.Items.Add(databaseValue);
                                                 inAddsToListBox.SelectedItem = databaseValue;
                                                 HasUnsavedChanges = true;
                                             },
                                             (object databaseValue) =>
                                             {
-                                                inGetTagListFromModel(parquetModel).Remove((ModelTag)databaseValue);
+                                                inGetTagListFromModel(model).Remove((ModelTag)databaseValue);
                                                 inAddsToListBox.Items.Remove(databaseValue);
                                                 inAddsToListBox.ClearSelected();
                                                 HasUnsavedChanges = true;
@@ -1267,11 +1378,12 @@ namespace Scribe
         }
 
         /// <summary>
-        /// Removes the selected tag from the selected <see cref="ParquetModel"/>, updating the given <see cref="ListBox"/>.
+        /// Removes the selected tag from the selected <see cref="Model"/>, updating the given <see cref="ListBox"/>.
         /// </summary>
         /// <param name="inAddsToListBox">The UI element reflectling the collection being changed.</param>
-        /// <param name="inGetTagListFromModel">The means, given a ParquetModel, to find the correct tag collection.</param>
-        private void ParquetRemoveTag(ListBox inAddsToListBox, Func<IParquetModelEdit, IList<ModelTag>> inGetTagListFromModel)
+        /// <param name="inGetTagListFromModel">The means, given a Model, to find the correct tag collection.</param>
+        private void ParquetRemoveTag<TInterface>(ListBox inAddsToListBox, Func<TInterface, IList<ModelTag>> inGetTagListFromModel)
+            where TInterface : IModelEdit
         {
             if (!All.CollectionsHaveBeenInitialized || inAddsToListBox.SelectedIndex == -1)
             {
@@ -1279,20 +1391,20 @@ namespace Scribe
                 return;
             }
 
-            if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is IParquetModelEdit parquetModel)
+            if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is TInterface model)
             {
                 ChangeManager.AddAndExecute(new ChangeList((ModelTag)inAddsToListBox.SelectedItem,
-                                            $"remove tag {inAddsToListBox.SelectedItem} from parquet {parquetModel.Name}",
+                                            $"remove tag {inAddsToListBox.SelectedItem} from {model.Name}",
                                             (object databaseValue) =>
                                             {
-                                                inGetTagListFromModel(parquetModel).Remove((ModelTag)databaseValue);
+                                                inGetTagListFromModel(model).Remove((ModelTag)databaseValue);
                                                 inAddsToListBox.Items.Remove(databaseValue);
                                                 inAddsToListBox.ClearSelected();
                                                 HasUnsavedChanges = true;
                                             },
                                             (object databaseValue) =>
                                             {
-                                                inGetTagListFromModel(parquetModel).Add((ModelTag)databaseValue);
+                                                inGetTagListFromModel(model).Add((ModelTag)databaseValue);
                                                 _ = inAddsToListBox.Items.Add(databaseValue);
                                                 inAddsToListBox.SelectedItem = databaseValue;
                                                 HasUnsavedChanges = true;
@@ -1340,7 +1452,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void BlockAddRoomTagButton_Click(object sender, EventArgs e)
-            => ParquetAddTag(BlockAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToRoom);
+            => ParquetAddTag(BlockAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
 
         /// <summary>
         /// Registeres the user command to remove the selected room tag from the current block.
@@ -1348,7 +1460,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void BlockRemoveRoomTagButton_Click(object sender, EventArgs e)
-            => ParquetRemoveTag(BlockAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToRoom);
+            => ParquetRemoveTag(BlockAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
         #endregion
 
         #region Floors Tab
@@ -1525,6 +1637,37 @@ namespace Scribe
         #endregion
 
         #region Items Tab
+        /// <summary>
+        /// Responds to the user clicking "Add New Item" on the Items tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void ItemAddNewItemButton_Click(object sender, EventArgs e)
+            => AddNewModel(All.Items, (ModelID id) => new ItemModel(id, "New Item", "", ""), All.ItemIDs, ItemListBox, "Item");
+
+        /// <summary>
+        /// Responds to the user clicking "Remove Item" on the Items tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void ItemRemoveItemButton_Click(object sender, EventArgs e)
+            => RemoveModel(All.Items, ItemListBox, "Item");
+
+        /// <summary>
+        /// Registeres the user command to add a new tag to the current item.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void ItemAddTagButton_Click(object sender, EventArgs e)
+            => ParquetAddTag(ItemTagListBox, (IItemModelEdit model) => model.ItemTags);
+
+        /// <summary>
+        /// Registeres the user command to remove the selected tag from the current item.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void ItemRemoveTagButton_Click(object sender, EventArgs e)
+            => ParquetRemoveTag(ItemTagListBox, (IItemModelEdit model) => model.ItemTags);
         #endregion
 
         #region Biomes Tab

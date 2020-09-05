@@ -201,7 +201,7 @@ namespace Scribe
             this.FloorNameTextBox = new System.Windows.Forms.TextBox();
             this.FloorDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.FloorCommentTextBox = new System.Windows.Forms.TextBox();
-            this.FloorlItemIDComboBox = new System.Windows.Forms.ComboBox();
+            this.FloorEquivalentItemComboBox = new System.Windows.Forms.ComboBox();
             this.FloorModificationToolLabel = new System.Windows.Forms.Label();
             this.FloorModificationToolComboBox = new System.Windows.Forms.ComboBox();
             this.FloorTrenchName = new System.Windows.Forms.Label();
@@ -2366,7 +2366,7 @@ namespace Scribe
             this.FloorLayoutTabelPanel.Controls.Add(this.FloorNameTextBox, 1, 0);
             this.FloorLayoutTabelPanel.Controls.Add(this.FloorDescriptionTextBox, 1, 1);
             this.FloorLayoutTabelPanel.Controls.Add(this.FloorCommentTextBox, 1, 2);
-            this.FloorLayoutTabelPanel.Controls.Add(this.FloorlItemIDComboBox, 1, 3);
+            this.FloorLayoutTabelPanel.Controls.Add(this.FloorEquivalentItemComboBox, 1, 3);
             this.FloorLayoutTabelPanel.Controls.Add(this.FloorModificationToolLabel, 0, 8);
             this.FloorLayoutTabelPanel.Controls.Add(this.FloorModificationToolComboBox, 1, 8);
             this.FloorLayoutTabelPanel.Controls.Add(this.FloorTrenchName, 0, 9);
@@ -2493,13 +2493,13 @@ namespace Scribe
             this.FloorCommentTextBox.Size = new System.Drawing.Size(295, 49);
             this.FloorCommentTextBox.TabIndex = 25;
             // 
-            // FloorlItemIDComboBox
+            // FloorEquivalentItemComboBox
             // 
-            this.FloorlItemIDComboBox.FormattingEnabled = true;
-            this.FloorlItemIDComboBox.Location = new System.Drawing.Point(131, 138);
-            this.FloorlItemIDComboBox.Name = "FloorlItemIDComboBox";
-            this.FloorlItemIDComboBox.Size = new System.Drawing.Size(144, 21);
-            this.FloorlItemIDComboBox.TabIndex = 29;
+            this.FloorEquivalentItemComboBox.FormattingEnabled = true;
+            this.FloorEquivalentItemComboBox.Location = new System.Drawing.Point(131, 138);
+            this.FloorEquivalentItemComboBox.Name = "FloorEquivalentItemComboBox";
+            this.FloorEquivalentItemComboBox.Size = new System.Drawing.Size(144, 21);
+            this.FloorEquivalentItemComboBox.TabIndex = 29;
             // 
             // FloorModificationToolLabel
             // 
@@ -2620,6 +2620,7 @@ namespace Scribe
             this.FloorListBox.Size = new System.Drawing.Size(279, 446);
             this.FloorListBox.TabIndex = 1;
             this.FloorListBox.Tag = "Untracked Control";
+            this.FloorListBox.SelectedIndexChanged += new System.EventHandler(this.FloorListBox_SelectedIndexChanged);
             // 
             // FloorIDLabel
             // 
@@ -3005,6 +3006,7 @@ namespace Scribe
             this.FurnishingListBox.Name = "FurnishingListBox";
             this.FurnishingListBox.Size = new System.Drawing.Size(279, 446);
             this.FurnishingListBox.TabIndex = 1;
+            this.FurnishingListBox.SelectedIndexChanged += new System.EventHandler(this.FurnishingListBox_SelectedIndexChanged);
             this.FurnishingListBox.Tag = "Untracked Control";
             // 
             // FurnishingIDLabel
@@ -3328,6 +3330,7 @@ namespace Scribe
             this.CollectibleListBox.Name = "CollectibleListBox";
             this.CollectibleListBox.Size = new System.Drawing.Size(279, 446);
             this.CollectibleListBox.TabIndex = 1;
+            this.CollectibleListBox.SelectedIndexChanged += new System.EventHandler(this.CollectibleListBox_SelectedIndexChanged);
             this.CollectibleListBox.Tag = "Untracked Control";
             // 
             // CollectibleIDLabel
@@ -4247,6 +4250,7 @@ namespace Scribe
             this.ItemRemoveItemButton.TabIndex = 2;
             this.ItemRemoveItemButton.Text = "Remove Item";
             this.ItemRemoveItemButton.UseVisualStyleBackColor = true;
+            this.ItemRemoveItemButton.Click += new System.EventHandler(this.ItemRemoveItemButton_Click);
             // 
             // ItemAddTagButton
             // 
@@ -4257,6 +4261,7 @@ namespace Scribe
             this.ItemAddTagButton.TabIndex = 2;
             this.ItemAddTagButton.Text = "Add Tag";
             this.ItemAddTagButton.UseVisualStyleBackColor = true;
+            this.ItemAddTagButton.Click += new System.EventHandler(this.ItemAddTagButton_Click);
             // 
             // ItemRemoveTagButton
             // 
@@ -4267,6 +4272,7 @@ namespace Scribe
             this.ItemRemoveTagButton.TabIndex = 2;
             this.ItemRemoveTagButton.Text = "Remove Tag";
             this.ItemRemoveTagButton.UseVisualStyleBackColor = true;
+            this.ItemRemoveTagButton.Click += new System.EventHandler(this.ItemRemoveTagButton_Click);
             // 
             // ItemListBox
             // 
@@ -4607,6 +4613,7 @@ namespace Scribe
             this.ItemAddNewItemButton.TabIndex = 2;
             this.ItemAddNewItemButton.Text = "Add New Item";
             this.ItemAddNewItemButton.UseVisualStyleBackColor = true;
+            this.ItemAddNewItemButton.Click += new System.EventHandler(this.ItemAddNewItemButton_Click);
             // 
             // ItemIDExample
             // 
@@ -6222,7 +6229,7 @@ namespace Scribe
         private System.Windows.Forms.Label FloorTrenchName;
         private System.Windows.Forms.TextBox FloorTrenchNameTextBox;
         private System.Windows.Forms.ListBox FloorListBox;
-        private System.Windows.Forms.ComboBox FloorlItemIDComboBox;
+        private System.Windows.Forms.ComboBox FloorEquivalentItemComboBox;
         private System.Windows.Forms.ComboBox FloorModificationToolComboBox;
         private System.Windows.Forms.Label FloorAddsToBiomeLabel;
         private System.Windows.Forms.Label FloorAddsToRoomLabel;
