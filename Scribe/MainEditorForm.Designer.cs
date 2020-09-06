@@ -241,9 +241,9 @@ namespace Scribe
             this.FurnishingAddsToBiomeListBox = new System.Windows.Forms.ListBox();
             this.FurnishingAddsToRoomListBox = new System.Windows.Forms.ListBox();
             this.FurnishingAddBiomeTagButton = new System.Windows.Forms.Button();
-            this.FurnishingsAddRoomTagButton = new System.Windows.Forms.Button();
-            this.FurnishingsRemoveRoomTagButton = new System.Windows.Forms.Button();
-            this.FurnishingsRemoveBiomeTagButton = new System.Windows.Forms.Button();
+            this.FurnishingAddRoomTagButton = new System.Windows.Forms.Button();
+            this.FurnishingRemoveRoomTagButton = new System.Windows.Forms.Button();
+            this.FurnishingRemoveBiomeTagButton = new System.Windows.Forms.Button();
             this.FurnishingRemoveFurnishingButton = new System.Windows.Forms.Button();
             this.FurnishingIDExample = new System.Windows.Forms.Label();
             this.FurnishingAddNewFurnishingButton = new System.Windows.Forms.Button();
@@ -270,8 +270,8 @@ namespace Scribe
             this.CollectibleAddsToRoomListBox = new System.Windows.Forms.ListBox();
             this.CollectibleAddBiomeTagButton = new System.Windows.Forms.Button();
             this.CollectibleRemoveBiomeTagButton = new System.Windows.Forms.Button();
-            this.CollectiblesAddRoomTagButton = new System.Windows.Forms.Button();
-            this.CollectiblesRemoveRoomTagButton = new System.Windows.Forms.Button();
+            this.CollectibleAddRoomTagButton = new System.Windows.Forms.Button();
+            this.CollectibleRemoveRoomTagButton = new System.Windows.Forms.Button();
             this.CollectibleRemoveCollectibleButton = new System.Windows.Forms.Button();
             this.CollectibleIDExample = new System.Windows.Forms.Label();
             this.CollectibleAddNewCollectibleButton = new System.Windows.Forms.Button();
@@ -482,8 +482,8 @@ namespace Scribe
             this.RoomMaxWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
             this.RoomPictureEditButton = new System.Windows.Forms.Button();
             this.RoomTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.RoomAddFurnishingsButton = new System.Windows.Forms.Button();
-            this.RoomRemoveFurnishingsButton = new System.Windows.Forms.Button();
+            this.RoomAddFurnishingButton = new System.Windows.Forms.Button();
+            this.RoomRemoveFurnishingButton = new System.Windows.Forms.Button();
             this.RoomAddFloorButton = new System.Windows.Forms.Button();
             this.RoomRemoveFloorButton = new System.Windows.Forms.Button();
             this.RoomRequiredBlocksListBox = new System.Windows.Forms.ListBox();
@@ -2711,9 +2711,9 @@ namespace Scribe
             this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingAddsToBiomeListBox, 1, 4);
             this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingAddsToRoomListBox, 1, 6);
             this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingAddBiomeTagButton, 2, 5);
-            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingsAddRoomTagButton, 2, 7);
-            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingsRemoveRoomTagButton, 1, 7);
-            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingsRemoveBiomeTagButton, 1, 5);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingAddRoomTagButton, 2, 7);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingRemoveRoomTagButton, 1, 7);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingRemoveBiomeTagButton, 1, 5);
             this.FurnishingTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
             this.FurnishingTableLayoutPanel.Name = "FurnishingTableLayoutPanel";
             this.FurnishingTableLayoutPanel.RowCount = 13;
@@ -2931,38 +2931,38 @@ namespace Scribe
             this.FurnishingAddBiomeTagButton.UseVisualStyleBackColor = true;
             this.FurnishingAddBiomeTagButton.Click += new System.EventHandler(this.FurnishingAddBiomeTagButton_Click);
             // 
-            // FurnishingsAddRoomTagButton
+            // FurnishingAddRoomTagButton
             // 
-            this.FurnishingsAddRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FurnishingsAddRoomTagButton.Location = new System.Drawing.Point(297, 317);
-            this.FurnishingsAddRoomTagButton.Name = "FurnishingsAddRoomTagButton";
-            this.FurnishingsAddRoomTagButton.Size = new System.Drawing.Size(129, 23);
-            this.FurnishingsAddRoomTagButton.TabIndex = 38;
-            this.FurnishingsAddRoomTagButton.Text = "Add Room Tag";
-            this.FurnishingsAddRoomTagButton.UseVisualStyleBackColor = true;
-            this.FurnishingsAddRoomTagButton.Click += new System.EventHandler(this.FurnishingsAddRoomTagButton_Click);
+            this.FurnishingAddRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingAddRoomTagButton.Location = new System.Drawing.Point(297, 317);
+            this.FurnishingAddRoomTagButton.Name = "FurnishingAddRoomTagButton";
+            this.FurnishingAddRoomTagButton.Size = new System.Drawing.Size(129, 23);
+            this.FurnishingAddRoomTagButton.TabIndex = 38;
+            this.FurnishingAddRoomTagButton.Text = "Add Room Tag";
+            this.FurnishingAddRoomTagButton.UseVisualStyleBackColor = true;
+            this.FurnishingAddRoomTagButton.Click += new System.EventHandler(this.FurnishingAddRoomTagButton_Click);
             // 
-            // FurnishingsRemoveRoomTagButton
+            // FurnishingRemoveRoomTagButton
             // 
-            this.FurnishingsRemoveRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FurnishingsRemoveRoomTagButton.Location = new System.Drawing.Point(146, 317);
-            this.FurnishingsRemoveRoomTagButton.Name = "FurnishingsRemoveRoomTagButton";
-            this.FurnishingsRemoveRoomTagButton.Size = new System.Drawing.Size(129, 23);
-            this.FurnishingsRemoveRoomTagButton.TabIndex = 38;
-            this.FurnishingsRemoveRoomTagButton.Text = "Remove Room Tag";
-            this.FurnishingsRemoveRoomTagButton.UseVisualStyleBackColor = true;
-            this.FurnishingsRemoveRoomTagButton.Click += new System.EventHandler(this.FurnishingsRemoveRoomTagButton_Click);
+            this.FurnishingRemoveRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingRemoveRoomTagButton.Location = new System.Drawing.Point(146, 317);
+            this.FurnishingRemoveRoomTagButton.Name = "FurnishingRemoveRoomTagButton";
+            this.FurnishingRemoveRoomTagButton.Size = new System.Drawing.Size(129, 23);
+            this.FurnishingRemoveRoomTagButton.TabIndex = 38;
+            this.FurnishingRemoveRoomTagButton.Text = "Remove Room Tag";
+            this.FurnishingRemoveRoomTagButton.UseVisualStyleBackColor = true;
+            this.FurnishingRemoveRoomTagButton.Click += new System.EventHandler(this.FurnishingRemoveRoomTagButton_Click);
             // 
-            // FurnishingsRemoveBiomeTagButton
+            // FurnishingRemoveBiomeTagButton
             // 
-            this.FurnishingsRemoveBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FurnishingsRemoveBiomeTagButton.Location = new System.Drawing.Point(146, 225);
-            this.FurnishingsRemoveBiomeTagButton.Name = "FurnishingsRemoveBiomeTagButton";
-            this.FurnishingsRemoveBiomeTagButton.Size = new System.Drawing.Size(129, 23);
-            this.FurnishingsRemoveBiomeTagButton.TabIndex = 38;
-            this.FurnishingsRemoveBiomeTagButton.Text = "Remove Biome Tag";
-            this.FurnishingsRemoveBiomeTagButton.UseVisualStyleBackColor = true;
-            this.FurnishingsRemoveBiomeTagButton.Click += new System.EventHandler(this.FurnishingsRemoveBiomeTagButton_Click);
+            this.FurnishingRemoveBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingRemoveBiomeTagButton.Location = new System.Drawing.Point(146, 225);
+            this.FurnishingRemoveBiomeTagButton.Name = "FurnishingRemoveBiomeTagButton";
+            this.FurnishingRemoveBiomeTagButton.Size = new System.Drawing.Size(129, 23);
+            this.FurnishingRemoveBiomeTagButton.TabIndex = 38;
+            this.FurnishingRemoveBiomeTagButton.Text = "Remove Biome Tag";
+            this.FurnishingRemoveBiomeTagButton.UseVisualStyleBackColor = true;
+            this.FurnishingRemoveBiomeTagButton.Click += new System.EventHandler(this.FurnishingRemoveBiomeTagButton_Click);
             // 
             // FurnishingRemoveFurnishingButton
             // 
@@ -3006,8 +3006,8 @@ namespace Scribe
             this.FurnishingListBox.Name = "FurnishingListBox";
             this.FurnishingListBox.Size = new System.Drawing.Size(279, 446);
             this.FurnishingListBox.TabIndex = 1;
-            this.FurnishingListBox.SelectedIndexChanged += new System.EventHandler(this.FurnishingListBox_SelectedIndexChanged);
             this.FurnishingListBox.Tag = "Untracked Control";
+            this.FurnishingListBox.SelectedIndexChanged += new System.EventHandler(this.FurnishingListBox_SelectedIndexChanged);
             // 
             // FurnishingIDLabel
             // 
@@ -3093,8 +3093,8 @@ namespace Scribe
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleAddsToRoomListBox, 1, 6);
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleAddBiomeTagButton, 2, 5);
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleRemoveBiomeTagButton, 1, 5);
-            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectiblesAddRoomTagButton, 2, 7);
-            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectiblesRemoveRoomTagButton, 1, 7);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleAddRoomTagButton, 2, 7);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleRemoveRoomTagButton, 1, 7);
             this.CollectibleTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
             this.CollectibleTableLayoutPanel.Name = "CollectibleTableLayoutPanel";
             this.CollectibleTableLayoutPanel.RowCount = 11;
@@ -3266,27 +3266,27 @@ namespace Scribe
             this.CollectibleRemoveBiomeTagButton.UseVisualStyleBackColor = true;
             this.CollectibleRemoveBiomeTagButton.Click += new System.EventHandler(this.CollectibleRemoveBiomeTagButton_Click);
             // 
-            // CollectiblesAddRoomTagButton
+            // CollectibleAddRoomTagButton
             // 
-            this.CollectiblesAddRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectiblesAddRoomTagButton.Location = new System.Drawing.Point(297, 343);
-            this.CollectiblesAddRoomTagButton.Name = "CollectiblesAddRoomTagButton";
-            this.CollectiblesAddRoomTagButton.Size = new System.Drawing.Size(129, 23);
-            this.CollectiblesAddRoomTagButton.TabIndex = 38;
-            this.CollectiblesAddRoomTagButton.Text = "Add Room Tag";
-            this.CollectiblesAddRoomTagButton.UseVisualStyleBackColor = true;
-            this.CollectiblesAddRoomTagButton.Click += new System.EventHandler(this.CollectiblesAddRoomTagButton_Click);
+            this.CollectibleAddRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleAddRoomTagButton.Location = new System.Drawing.Point(297, 343);
+            this.CollectibleAddRoomTagButton.Name = "CollectibleAddRoomTagButton";
+            this.CollectibleAddRoomTagButton.Size = new System.Drawing.Size(129, 23);
+            this.CollectibleAddRoomTagButton.TabIndex = 38;
+            this.CollectibleAddRoomTagButton.Text = "Add Room Tag";
+            this.CollectibleAddRoomTagButton.UseVisualStyleBackColor = true;
+            this.CollectibleAddRoomTagButton.Click += new System.EventHandler(this.CollectibleAddRoomTagButton_Click);
             // 
-            // CollectiblesRemoveRoomTagButton
+            // CollectibleRemoveRoomTagButton
             // 
-            this.CollectiblesRemoveRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectiblesRemoveRoomTagButton.Location = new System.Drawing.Point(146, 343);
-            this.CollectiblesRemoveRoomTagButton.Name = "CollectiblesRemoveRoomTagButton";
-            this.CollectiblesRemoveRoomTagButton.Size = new System.Drawing.Size(129, 23);
-            this.CollectiblesRemoveRoomTagButton.TabIndex = 38;
-            this.CollectiblesRemoveRoomTagButton.Text = "Remove Room Tag";
-            this.CollectiblesRemoveRoomTagButton.UseVisualStyleBackColor = true;
-            this.CollectiblesRemoveRoomTagButton.Click += new System.EventHandler(this.CollectiblesRemoveRoomTagButton_Click);
+            this.CollectibleRemoveRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleRemoveRoomTagButton.Location = new System.Drawing.Point(146, 343);
+            this.CollectibleRemoveRoomTagButton.Name = "CollectibleRemoveRoomTagButton";
+            this.CollectibleRemoveRoomTagButton.Size = new System.Drawing.Size(129, 23);
+            this.CollectibleRemoveRoomTagButton.TabIndex = 38;
+            this.CollectibleRemoveRoomTagButton.Text = "Remove Room Tag";
+            this.CollectibleRemoveRoomTagButton.UseVisualStyleBackColor = true;
+            this.CollectibleRemoveRoomTagButton.Click += new System.EventHandler(this.CollectibleRemoveRoomTagButton_Click);
             // 
             // CollectibleRemoveCollectibleButton
             // 
@@ -3330,8 +3330,8 @@ namespace Scribe
             this.CollectibleListBox.Name = "CollectibleListBox";
             this.CollectibleListBox.Size = new System.Drawing.Size(279, 446);
             this.CollectibleListBox.TabIndex = 1;
-            this.CollectibleListBox.SelectedIndexChanged += new System.EventHandler(this.CollectibleListBox_SelectedIndexChanged);
             this.CollectibleListBox.Tag = "Untracked Control";
+            this.CollectibleListBox.SelectedIndexChanged += new System.EventHandler(this.CollectibleListBox_SelectedIndexChanged);
             // 
             // CollectibleIDLabel
             // 
@@ -5631,8 +5631,8 @@ namespace Scribe
             this.RoomTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.RoomTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.RoomTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.RoomTableLayoutPanel.Controls.Add(this.RoomAddFurnishingsButton, 2, 5);
-            this.RoomTableLayoutPanel.Controls.Add(this.RoomRemoveFurnishingsButton, 1, 5);
+            this.RoomTableLayoutPanel.Controls.Add(this.RoomAddFurnishingButton, 2, 5);
+            this.RoomTableLayoutPanel.Controls.Add(this.RoomRemoveFurnishingButton, 1, 5);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomAddFloorButton, 2, 7);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomRemoveFloorButton, 1, 7);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomRequiredBlocksListBox, 1, 8);
@@ -5665,25 +5665,25 @@ namespace Scribe
             this.RoomTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.RoomTableLayoutPanel.TabIndex = 5;
             // 
-            // RoomAddFurnishingsButton
+            // RoomAddFurnishingButton
             // 
-            this.RoomAddFurnishingsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomAddFurnishingsButton.Location = new System.Drawing.Point(297, 238);
-            this.RoomAddFurnishingsButton.Name = "RoomAddFurnishingsButton";
-            this.RoomAddFurnishingsButton.Size = new System.Drawing.Size(129, 23);
-            this.RoomAddFurnishingsButton.TabIndex = 30;
-            this.RoomAddFurnishingsButton.Text = "Add Furnishing Tag";
-            this.RoomAddFurnishingsButton.UseVisualStyleBackColor = true;
+            this.RoomAddFurnishingButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RoomAddFurnishingButton.Location = new System.Drawing.Point(297, 238);
+            this.RoomAddFurnishingButton.Name = "RoomAddFurnishingButton";
+            this.RoomAddFurnishingButton.Size = new System.Drawing.Size(129, 23);
+            this.RoomAddFurnishingButton.TabIndex = 30;
+            this.RoomAddFurnishingButton.Text = "Add Furnishing Tag";
+            this.RoomAddFurnishingButton.UseVisualStyleBackColor = true;
             // 
-            // RoomRemoveFurnishingsButton
+            // RoomRemoveFurnishingButton
             // 
-            this.RoomRemoveFurnishingsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomRemoveFurnishingsButton.Location = new System.Drawing.Point(154, 238);
-            this.RoomRemoveFurnishingsButton.Name = "RoomRemoveFurnishingsButton";
-            this.RoomRemoveFurnishingsButton.Size = new System.Drawing.Size(129, 23);
-            this.RoomRemoveFurnishingsButton.TabIndex = 29;
-            this.RoomRemoveFurnishingsButton.Text = "Remove Furnishing Tag";
-            this.RoomRemoveFurnishingsButton.UseVisualStyleBackColor = true;
+            this.RoomRemoveFurnishingButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RoomRemoveFurnishingButton.Location = new System.Drawing.Point(154, 238);
+            this.RoomRemoveFurnishingButton.Name = "RoomRemoveFurnishingButton";
+            this.RoomRemoveFurnishingButton.Size = new System.Drawing.Size(129, 23);
+            this.RoomRemoveFurnishingButton.TabIndex = 29;
+            this.RoomRemoveFurnishingButton.Text = "Remove Furnishing Tag";
+            this.RoomRemoveFurnishingButton.UseVisualStyleBackColor = true;
             // 
             // RoomAddFloorButton
             // 
@@ -6255,9 +6255,9 @@ namespace Scribe
         private System.Windows.Forms.ListBox FurnishingAddsToBiomeListBox;
         private System.Windows.Forms.ListBox FurnishingAddsToRoomListBox;
         private System.Windows.Forms.Button FurnishingAddBiomeTagButton;
-        private System.Windows.Forms.Button FurnishingsAddRoomTagButton;
-        private System.Windows.Forms.Button FurnishingsRemoveRoomTagButton;
-        private System.Windows.Forms.Button FurnishingsRemoveBiomeTagButton;
+        private System.Windows.Forms.Button FurnishingAddRoomTagButton;
+        private System.Windows.Forms.Button FurnishingRemoveRoomTagButton;
+        private System.Windows.Forms.Button FurnishingRemoveBiomeTagButton;
         private System.Windows.Forms.Button FurnishingRemoveFurnishingButton;
         private System.Windows.Forms.GroupBox FurnishingConfigGroupBox;
         private System.Windows.Forms.Button FurnishingAddNewFurnishingButton;
@@ -6291,8 +6291,8 @@ namespace Scribe
         private System.Windows.Forms.ListBox CollectibleAddsToRoomListBox;
         private System.Windows.Forms.Button CollectibleAddBiomeTagButton;
         private System.Windows.Forms.Button CollectibleRemoveBiomeTagButton;
-        private System.Windows.Forms.Button CollectiblesAddRoomTagButton;
-        private System.Windows.Forms.Button CollectiblesRemoveRoomTagButton;
+        private System.Windows.Forms.Button CollectibleAddRoomTagButton;
+        private System.Windows.Forms.Button CollectibleRemoveRoomTagButton;
         private System.Windows.Forms.ComboBox CollectibleCollectionEffectComboBox;
         private System.Windows.Forms.Label CollectibleCollectionEffectLabel;
         private System.Windows.Forms.Label CollectibleEffectAmountLabel;
@@ -6524,8 +6524,8 @@ namespace Scribe
         private System.Windows.Forms.Button RoomRemoveFloorButton;
         private System.Windows.Forms.ListBox RoomRequiredBlocksListBox;
         private System.Windows.Forms.ListBox RoomRequiredFloorsListBox;
-        private System.Windows.Forms.Button RoomAddFurnishingsButton;
-        private System.Windows.Forms.Button RoomRemoveFurnishingsButton;
+        private System.Windows.Forms.Button RoomAddFurnishingButton;
+        private System.Windows.Forms.Button RoomRemoveFurnishingButton;
         private System.Windows.Forms.Label RoomRequiredFurnishingsLabel;
         private System.Windows.Forms.ListBox RoomRequiredFurnishingsListBox;
         private System.Windows.Forms.TableLayoutPanel RoomConfigTableLayoutPanel;

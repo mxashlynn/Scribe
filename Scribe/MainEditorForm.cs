@@ -1544,7 +1544,7 @@ namespace Scribe
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
-        private void FurnishingsRemoveBiomeTagButton_Click(object sender, EventArgs e)
+        private void FurnishingRemoveBiomeTagButton_Click(object sender, EventArgs e)
             => ParquetRemoveTag(FurnishingAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
 
         /// <summary>
@@ -1552,7 +1552,7 @@ namespace Scribe
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
-        private void FurnishingsAddRoomTagButton_Click(object sender, EventArgs e)
+        private void FurnishingAddRoomTagButton_Click(object sender, EventArgs e)
             => ParquetAddTag(FurnishingAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
 
         /// <summary>
@@ -1560,7 +1560,7 @@ namespace Scribe
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
-        private void FurnishingsRemoveRoomTagButton_Click(object sender, EventArgs e)
+        private void FurnishingRemoveRoomTagButton_Click(object sender, EventArgs e)
             => ParquetRemoveTag(FurnishingAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
         #endregion
 
@@ -1603,7 +1603,7 @@ namespace Scribe
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
-        private void CollectiblesAddRoomTagButton_Click(object sender, EventArgs e)
+        private void CollectibleAddRoomTagButton_Click(object sender, EventArgs e)
             => ParquetAddTag(CollectibleAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
 
         /// <summary>
@@ -1611,7 +1611,7 @@ namespace Scribe
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
-        private void CollectiblesRemoveRoomTagButton_Click(object sender, EventArgs e)
+        private void CollectibleRemoveRoomTagButton_Click(object sender, EventArgs e)
             => ParquetRemoveTag(CollectibleAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
         #endregion
 
