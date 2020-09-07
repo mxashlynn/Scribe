@@ -947,8 +947,8 @@ namespace Scribe
                 GameIsEpisodeCheckBox.Checked = model.IsEpisode;
                 GameEpisodeTitleTextBox.Text = model.EpisodeTitle;
                 GameEpisodeNumberTextBox.Text = model.EpisodeNumber.ToString();
-                GamePlayerCharacterComboBox.SelectedItem = All.Characters.Get<CharacterModel>(model.PlayerCharacterID);
-                GameFirstScriptComboBox.SelectedItem = All.Scripts.Get<ScriptModel>(model.FirstScriptID);
+                GamePlayerCharacterComboBox.SelectedItem = All.Characters.GetOrNull(model.PlayerCharacterID);
+                GameFirstScriptComboBox.SelectedItem = All.Scripts.GetOrNull(model.FirstScriptID);
                 PictureBoxLoadFromStorage(GameIconPictureBox, model.ID);
             }
         }
@@ -1001,10 +1001,10 @@ namespace Scribe
                 BlockNameTextBox.Text = model.Name;
                 BlockDescriptionTextBox.Text = model.Description;
                 BlockCommentTextBox.Text = model.Comment;
-                BlockEquivalentItemComboBox.SelectedItem = All.Items.Get<ItemModel>(model.ItemID);
+                BlockEquivalentItemComboBox.SelectedItem = All.Items.GetOrNull(model.ItemID);
                 BlockGatherToolComboBox.SelectedItem = model.GatherTool;
                 BlockGatherEffectComboBox.SelectedItem = model.GatherEffect;
-                BlockDroppedCollectibleIDComboBox.SelectedItem = All.Collectibles.Get<CollectibleModel>(model.CollectibleID);
+                BlockDroppedCollectibleIDComboBox.SelectedItem = All.Collectibles.GetOrNull(model.CollectibleID);
                 BlockIsFlammableCheckBox.Checked = model.IsFlammable;
                 BlockIsLiquidCheckBox.Checked = model.IsLiquid;
                 BlockMaxToughnessTextBox.Text = model.MaxToughness.ToString();
@@ -1037,7 +1037,7 @@ namespace Scribe
                 FloorNameTextBox.Text = model.Name;
                 FloorDescriptionTextBox.Text = model.Description;
                 FloorCommentTextBox.Text = model.Comment;
-                FloorEquivalentItemComboBox.SelectedItem = All.Items.Get<ItemModel>(model.ItemID);
+                FloorEquivalentItemComboBox.SelectedItem = All.Items.GetOrNull(model.ItemID);
                 FloorModificationToolComboBox.SelectedItem = model.ModTool;
                 FloorTrenchNameTextBox.Text = model.TrenchName;
                 PictureBoxLoadFromStorage(FloorPictureBox, model.ID);
@@ -1072,12 +1072,12 @@ namespace Scribe
                 FurnishingNameTextBox.Text = model.Name;
                 FurnishingDescriptionTextBox.Text = model.Description;
                 FurnishingCommentTextBox.Text = model.Comment;
-                FurnishingEquivalentItemComboBox.SelectedItem = All.Items.Get<ItemModel>(model.ItemID);
+                FurnishingEquivalentItemComboBox.SelectedItem = All.Items.GetOrNull(model.ItemID);
                 FurnishingEntryTypeComboBox.SelectedItem = model.Entry;
                 FurnishingIsWalkableCheckBox.Checked = model.IsWalkable;
                 FurnishingIsEnclosingCheckBox.Checked = model.IsEnclosing;
                 FurnishingIsFlammableCheckBox.Checked = model.IsFlammable;
-                FurnishingSwapWithFurnishingComboBox.SelectedItem = All.Furnishings.Get<FurnishingModel>(model.SwapID);
+                FurnishingSwapWithFurnishingComboBox.SelectedItem = All.Furnishings.GetOrNull(model.SwapID);
                 PictureBoxLoadFromStorage(FurnishingPictureBox, model.ID);
             }
         }
@@ -1110,12 +1110,12 @@ namespace Scribe
                 FurnishingNameTextBox.Text = model.Name;
                 FurnishingDescriptionTextBox.Text = model.Description;
                 FurnishingCommentTextBox.Text = model.Comment;
-                FurnishingEquivalentItemComboBox.SelectedItem = All.Items.Get<ItemModel>(model.ItemID);
+                FurnishingEquivalentItemComboBox.SelectedItem = All.Items.GetOrNull(model.ItemID);
                 FurnishingEntryTypeComboBox.SelectedIndex = (int)model.Entry;
                 FurnishingIsWalkableCheckBox.Checked = model.IsWalkable;
                 FurnishingIsEnclosingCheckBox.Checked = model.IsEnclosing;
                 FurnishingIsFlammableCheckBox.Checked = model.IsFlammable;
-                FurnishingSwapWithFurnishingComboBox.SelectedIndex = All.Furnishings.Get<FurnishingModel>(model.SwapID);
+                FurnishingSwapWithFurnishingComboBox.SelectedItem = All.Furnishings.GetOrNull(model.SwapID);
                 PictureBoxLoadFromStorage(FurnishingPictureBox, model.ID);
             }
         }
@@ -1146,8 +1146,8 @@ namespace Scribe
                 CritterNameTextBox.Text = model.Name;
                 CritterDescriptionTextBox.Text = model.Description;
                 CritterCommentTextBox.Text = model.Comment;
-                CritterNativeBiomeComboBox.SelectedItem = All.Biomes.Get<BiomeRecipe>(model.NativeBiomeID);
-                CritterPrimaryBehaviorComboBox.SelectedItem = All.Scripts.Get<ScriptModel>(model.PrimaryBehaviorID);
+                CritterNativeBiomeComboBox.SelectedItem = All.Biomes.GetOrNull(model.NativeBiomeID);
+                CritterPrimaryBehaviorComboBox.SelectedItem = All.Scripts.GetOrNull(model.PrimaryBehaviorID);
                 PictureBoxLoadFromStorage(CritterPictureBox, model.ID);
             }
         }
