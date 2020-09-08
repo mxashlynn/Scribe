@@ -281,7 +281,7 @@ namespace Scribe
         /// <returns>The identifier given, or <see cref="ModelID.None"> if no ID could be parsed.</returns>
         private static ModelID ValueToID(object input)
             => (input as Model)?.ID
-            ?? input as ModelID ?
+            ?? input as ModelID?
             ?? input as int?
             ?? (int.TryParse(input.ToString(), NumberStyles.Integer, null, out var parsedInt)
                 ? (ModelID)parsedInt
@@ -850,14 +850,14 @@ namespace Scribe
             RepopulateComboBox(GameFirstScriptComboBox, All.Scripts);
             RepopulateComboBox(BlockEquivalentItemComboBox, All.Items);
             // TODO Where are the Biome & Room AddsTo tag list boxes?
-            RepopulateComboBox(BlockGatherToolComboBox, Enum.GetNames(typeof(GatheringTool)));
-            RepopulateComboBox(BlockGatherEffectComboBox, Enum.GetNames(typeof(GatheringEffect)));
+            RepopulateComboBox(BlockGatherToolComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(GatheringTool))));
+            RepopulateComboBox(BlockGatherEffectComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(GatheringEffect))));
             RepopulateComboBox(BlockDroppedCollectibleIDComboBox, All.Collectibles);
             RepopulateComboBox(FloorEquivalentItemComboBox, All.Items);
-            RepopulateComboBox(FloorModificationToolComboBox, Enum.GetNames(typeof(ModificationTool)));
+            RepopulateComboBox(FloorModificationToolComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(ModificationTool))));
             RepopulateComboBox(FurnishingEquivalentItemComboBox, All.Items);
-            RepopulateComboBox(FurnishingEntryTypeComboBox, Enum.GetNames(typeof(EntryType)));
-            RepopulateComboBox(FurnishingEntryTypeComboBox, Enum.GetNames(typeof(EntryType)));
+            RepopulateComboBox(FurnishingEntryTypeComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(EntryType))));
+            // TODO -- a combobox might be missing here
             RepopulateComboBox(FurnishingSwapWithFurnishingComboBox, All.Furnishings);
             // TODO Collectibles
             // TODO Characters
