@@ -282,7 +282,8 @@ namespace Scribe
         /// <param name="input">A boxed <see cref="ModelID.None"> or a <c>string</c> representing an <see cref="ModelID">.</param>
         /// <returns>The identifier given, or <see cref="ModelID.None"> if no ID could be parsed.</returns>
         private static ModelID ValueToID(object input)
-            => input as ModelID?
+            => (input as Model)?.ID
+            ?? input as ModelID ?
             ?? input as int?
             ?? (int.TryParse(input.ToString(), NumberStyles.Integer, null, out var parsedInt)
                 ? (ModelID)parsedInt
