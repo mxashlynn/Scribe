@@ -1165,7 +1165,7 @@ namespace Scribe
                                             (object oldValue) => EditableControls[typeof(TextBox)][textbox] = oldValue));
             }
             else if (alteredControl is CheckBox checkbox
-                     && checkbox.Checked == (EditableControls[typeof(CheckBox)][checkbox] as bool?))
+                     && checkbox.Checked != (EditableControls[typeof(CheckBox)][checkbox] as bool?))
             {
                 var oldValue = (bool?)EditableControls[typeof(CheckBox)][checkbox];
                 ChangeManager.AddAndExecute(new ChangeValue(oldValue, (bool?)checkbox.Checked, checkbox.Name,
@@ -1174,19 +1174,19 @@ namespace Scribe
                                             (object oldValue) => EditableControls[typeof(CheckBox)][checkbox] = oldValue));
             }
             else if (alteredControl is ComboBox combobox
-                     && combobox.SelectedIndex == (EditableControls[typeof(ComboBox)][combobox] as int?))
+                     && combobox.SelectedItem != EditableControls[typeof(ComboBox)][combobox])
             {
-                var oldValue = (int?)EditableControls[typeof(ComboBox)][combobox];
-                ChangeManager.AddAndExecute(new ChangeValue(oldValue, (int?)combobox.SelectedIndex, combobox.Name,
+                var oldValue = EditableControls[typeof(ComboBox)][combobox];
+                ChangeManager.AddAndExecute(new ChangeValue(oldValue, combobox.SelectedItem, combobox.Name,
                                             (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
                                             (object displayValue) => combobox.SelectedItem = displayValue,
                                             (object oldValue) => EditableControls[typeof(ComboBox)][combobox] = oldValue));
             }
             else if (alteredControl is ListBox listbox
-                     && listbox.SelectedIndex == (EditableControls[typeof(ListBox)][listbox] as int?))
+                     && listbox.SelectedItem != EditableControls[typeof(ListBox)][listbox])
             {
-                var oldValue = (int?)EditableControls[typeof(ListBox)][listbox];
-                ChangeManager.AddAndExecute(new ChangeValue(oldValue, (int?)listbox.SelectedIndex, listbox.Name,
+                var oldValue = EditableControls[typeof(ListBox)][listbox];
+                ChangeManager.AddAndExecute(new ChangeValue(oldValue, listbox.SelectedItem, listbox.Name,
                                             (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
                                             (object displayValue) => listbox.SelectedItem = displayValue,
                                             (object oldValue) => EditableControls[typeof(ListBox)][listbox] = oldValue));
