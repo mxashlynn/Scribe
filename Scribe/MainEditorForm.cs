@@ -261,9 +261,7 @@ namespace Scribe
         /// <returns>The Boolean value given, or <c>false</c> if no value could be parsed.</returns>
         private static bool ValueToBool(object input)
             => input as bool?
-            ?? (bool.TryParse(input.ToString(), out var parsedBool)
-                ? parsedBool
-                : false);
+            ?? bool.TryParse(input.ToString(), out var parsedBool) && parsedBool;
 
         /// <summary>
         /// Transforms an <c>object</c> into an <c>int</c>, parsing if needed.
