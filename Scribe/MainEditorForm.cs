@@ -986,8 +986,8 @@ namespace Scribe
                 BlockDescriptionTextBox.Text = "";
                 BlockCommentTextBox.Text = "";
                 BlockEquivalentItemComboBox.SelectedIndex = -1;
-                BlockGatherToolComboBox.SelectedIndex = -1;
-                BlockGatherEffectComboBox.SelectedIndex = -1;
+                BlockGatherToolComboBox.SelectedItem = GatheringTool.None;
+                BlockGatherEffectComboBox.SelectedItem = GatheringEffect.None;
                 BlockDroppedCollectibleIDComboBox.SelectedIndex = -1;
                 BlockIsFlammableCheckBox.Checked = false;
                 BlockIsLiquidCheckBox.Checked = false;
@@ -1026,7 +1026,7 @@ namespace Scribe
                 FloorDescriptionTextBox.Text = "";
                 FloorCommentTextBox.Text = "";
                 FloorEquivalentItemComboBox.SelectedIndex = -1;
-                FloorModificationToolComboBox.SelectedIndex = -1;
+                FloorModificationToolComboBox.SelectedItem = ModificationTool.None;
                 FloorTrenchNameTextBox.Text = "";
                 FloorPictureBox.Image = Resources.ImageNotFoundGraphic;
             }
@@ -1058,7 +1058,7 @@ namespace Scribe
                 FurnishingDescriptionTextBox.Text = "";
                 FurnishingCommentTextBox.Text = "";
                 FurnishingEquivalentItemComboBox.SelectedIndex = -1;
-                FurnishingEntryTypeComboBox.SelectedIndex = -1;
+                FurnishingEntryTypeComboBox.SelectedItem = EntryType.None;
                 FurnishingIsWalkableCheckBox.Checked = false;
                 FurnishingIsEnclosingCheckBox.Checked = false;
                 FurnishingIsFlammableCheckBox.Checked = false;
