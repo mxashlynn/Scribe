@@ -1089,35 +1089,7 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void CollectibleListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (FurnishingListBox.SelectedIndex == -1)
-            {
-                FurnishingIDExample.Text = ModelID.None.ToString();
-                FurnishingNameTextBox.Text = "";
-                FurnishingDescriptionTextBox.Text = "";
-                FurnishingCommentTextBox.Text = "";
-                FurnishingEquivalentItemComboBox.SelectedIndex = -1;
-                FurnishingEntryTypeComboBox.SelectedIndex = -1;
-                FurnishingIsWalkableCheckBox.Checked = false;
-                FurnishingIsEnclosingCheckBox.Checked = false;
-                FurnishingIsFlammableCheckBox.Checked = false;
-                FurnishingSwapWithFurnishingComboBox.SelectedIndex = -1;
-                FurnishingPictureBox.Image = Resources.ImageNotFoundGraphic;
-            }
-            else if (FurnishingListBox.SelectedItem is FurnishingModel model
-                    && null != model)
-            {
-                FurnishingIDExample.Text = model.ID.ToString();
-                FurnishingNameTextBox.Text = model.Name;
-                FurnishingDescriptionTextBox.Text = model.Description;
-                FurnishingCommentTextBox.Text = model.Comment;
-                FurnishingEquivalentItemComboBox.SelectedItem = All.Items.GetOrNull(model.ItemID);
-                FurnishingEntryTypeComboBox.SelectedIndex = (int)model.Entry;
-                FurnishingIsWalkableCheckBox.Checked = model.IsWalkable;
-                FurnishingIsEnclosingCheckBox.Checked = model.IsEnclosing;
-                FurnishingIsFlammableCheckBox.Checked = model.IsFlammable;
-                FurnishingSwapWithFurnishingComboBox.SelectedItem = All.Furnishings.GetOrNull(model.SwapID);
-                PictureBoxLoadFromStorage(FurnishingPictureBox, model.ID);
-            }
+            throw new NotImplementedException();
         }
 
         // TODO Characters
