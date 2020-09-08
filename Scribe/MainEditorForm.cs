@@ -225,11 +225,11 @@ namespace Scribe
             }
             foreach (var combobox in EditorTabs.GetAllChildrenOfType<ComboBox>())
             {
-                editables[typeof(ComboBox)][combobox] = (int?)combobox.SelectedIndex;
+                editables[typeof(ComboBox)][combobox] = combobox.SelectedItem;
             }
             foreach (var listbox in EditorTabs.GetAllChildrenOfType<ListBox>())
             {
-                editables[typeof(ListBox)][listbox] = (int?)listbox.SelectedIndex;
+                editables[typeof(ListBox)][listbox] = listbox.SelectedItem;
             }
 
             return editables;
@@ -770,14 +770,15 @@ namespace Scribe
             // TODO UpdateEditorTheme(Settings.Default.UseColorfulEditorTheme);  <-- Only do this if the theme has actually changed!
 
             // Select current tab.
-            EditorTabs.TabPages[EditorTabs.SelectedIndex]?.Select();
+            EditorTabs.SelectedTab?.Select();
             // If possible, select default model in current tab.
             if (null == GetSelectedModelForTab(EditorTabs.SelectedIndex))
             {
                 var selectedListBox = GetPrimaryListBoxForTab(EditorTabs.SelectedIndex);
-                selectedListBox.SelectedIndex = selectedListBox?.Items.Count > 0
-                    ? 0
-                    : -1;
+                if (null != selectedListBox)
+                {
+                    selectedListBox.SelectedItem = (selectedListBox.Items as IList<object>)?.ElementAtOrDefault(0);
+                }
             }
         }
 
@@ -923,7 +924,7 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void GameListBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (GameListBox.SelectedIndex == -1)
+            if (null == GameListBox.SelectedItem)
             {
                 GameIDExample.Text = ModelID.None.ToString();
                 GameNameTextBox.Text = "";
@@ -978,7 +979,7 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void BlockListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (BlockListBox.SelectedIndex == -1)
+            if (null == BlockListBox.SelectedItem)
             {
                 BlockIDExample.Text = ModelID.None.ToString();
                 BlockNameTextBox.Text = "";
@@ -1018,7 +1019,7 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void FloorListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (FloorListBox.SelectedIndex == -1)
+            if (null == FloorListBox.SelectedItem)
             {
                 FloorIDExample.Text = ModelID.None.ToString();
                 FloorNameTextBox.Text = "";
@@ -1050,7 +1051,7 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void FurnishingListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (FurnishingListBox.SelectedIndex == -1)
+            if (null == FurnishingListBox.SelectedItem)
             {
                 FurnishingIDExample.Text = ModelID.None.ToString();
                 FurnishingNameTextBox.Text = "";
@@ -1100,7 +1101,7 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void CritterListBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (CritterListBox.SelectedIndex == -1)
+            if (null == CritterListBox.SelectedItem)
             {
                 CritterIDExample.Text = ModelID.None.ToString();
                 CritterNameTextBox.Text = "";
@@ -1355,7 +1356,7 @@ namespace Scribe
         private void ParquetRemoveTag<TInterface>(ListBox inAddsToListBox, Func<TInterface, IList<ModelTag>> inGetTagListFromModel)
             where TInterface : IModelEdit
         {
-            if (!All.CollectionsHaveBeenInitialized || inAddsToListBox.SelectedIndex == -1)
+            if (!All.CollectionsHaveBeenInitialized || null == inAddsToListBox.SelectedItem)
             {
                 SystemSounds.Beep.Play();
                 return;
