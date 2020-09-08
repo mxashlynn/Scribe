@@ -163,8 +163,6 @@ namespace Scribe
                 }
             }
             FormClosing += FormClosingEventHandler;
-
-            UpdateDisplay();
         }
 
         /// <summary>
@@ -176,6 +174,31 @@ namespace Scribe
             base.OnLoad(EventData);
             UpdateLibraryDataDisplay();
             UpdateFileFormatDisplay();
+            UpdateDisplay();
+        }
+
+        /// <summary>
+        /// Sets the text used to describe the format of the saved data files the editor works with.
+        /// </summary>
+        private void UpdateFileFormatDisplay()
+        {
+            FileFormatPrimaryDelimiterExample.Text = Delimiters.PrimaryDelimiter;
+            FileFormatSecondaryDelimiterExample.Text = Delimiters.SecondaryDelimiter;
+            FileFormatInternalDelimiterExample.Text = Delimiters.InternalDelimiter;
+            FileFormatElementDelimiterExample.Text = Delimiters.ElementDelimiter;
+            FileFormatNameDelimiterExample.Text = Delimiters.NameDelimiter;
+            FileFormatPronounDelimiterExample.Text = Delimiters.PronounDelimiter;
+            FileFormatDimensionalDelimiterExample.Text = Delimiters.DimensionalDelimiter;
+            FileFormatDimensionalTerminatorExample.Text = Delimiters.DimensionalTerminator;
+        }
+
+        /// <summary>
+        /// Sets the text used to describe the library the editor supports.
+        /// </summary>
+        private void UpdateLibraryDataDisplay()
+        {
+            LibraryVersionExample.Text = ParquetClassLibrary.AssemblyInfo.LibraryVersion;
+            LibraryProjectPathExample.Text = All.ProjectDirectory;
         }
 
         /// <summary>
@@ -889,30 +912,6 @@ namespace Scribe
                 }
                 in_box.EndUpdate();
             }
-        }
-
-        /// <summary>
-        /// Sets the text used to describe the format of the saved data files the editor works with.
-        /// </summary>
-        private void UpdateFileFormatDisplay()
-        {
-            FileFormatPrimaryDelimiterExample.Text = Delimiters.PrimaryDelimiter;
-            FileFormatSecondaryDelimiterExample.Text = Delimiters.SecondaryDelimiter;
-            FileFormatInternalDelimiterExample.Text = Delimiters.InternalDelimiter;
-            FileFormatElementDelimiterExample.Text = Delimiters.ElementDelimiter;
-            FileFormatNameDelimiterExample.Text = Delimiters.NameDelimiter;
-            FileFormatPronounDelimiterExample.Text = Delimiters.PronounDelimiter;
-            FileFormatDimensionalDelimiterExample.Text = Delimiters.DimensionalDelimiter;
-            FileFormatDimensionalTerminatorExample.Text = Delimiters.DimensionalTerminator;
-        }
-
-        /// <summary>
-        /// Sets the text used to describe the library the editor supports.
-        /// </summary>
-        private void UpdateLibraryDataDisplay()
-        {
-            LibraryVersionExample.Text = ParquetClassLibrary.AssemblyInfo.LibraryVersion;
-            LibraryProjectPathExample.Text = All.ProjectDirectory;
         }
         #endregion
 
