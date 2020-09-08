@@ -880,7 +880,7 @@ namespace Scribe
         {
             if (null != in_source)
             {
-                in_box.SelectedIndex = -1;
+                in_box.SelectedItem = null;
                 in_box.BeginUpdate();
                 in_box.Items.Clear();
                 foreach (var value in in_source)
@@ -933,8 +933,8 @@ namespace Scribe
                 GameIsEpisodeCheckBox.Checked = false;
                 GameEpisodeTitleTextBox.Text = "";
                 GameEpisodeNumberTextBox.Text = "";
-                GamePlayerCharacterComboBox.SelectedIndex = -1;
-                GameFirstScriptComboBox.SelectedIndex = -1;
+                GamePlayerCharacterComboBox.SelectedItem = null;
+                GameFirstScriptComboBox.SelectedItem = null;
                 GameIconPictureBox.Image = Resources.ImageNotFoundGraphic;
             }
             else if (GameListBox.SelectedItem is GameModel model
@@ -985,10 +985,10 @@ namespace Scribe
                 BlockNameTextBox.Text = "";
                 BlockDescriptionTextBox.Text = "";
                 BlockCommentTextBox.Text = "";
-                BlockEquivalentItemComboBox.SelectedIndex = -1;
+                BlockEquivalentItemComboBox.SelectedItem = null;
                 BlockGatherToolComboBox.SelectedItem = GatheringTool.None;
                 BlockGatherEffectComboBox.SelectedItem = GatheringEffect.None;
-                BlockDroppedCollectibleIDComboBox.SelectedIndex = -1;
+                BlockDroppedCollectibleIDComboBox.SelectedItem = null;
                 BlockIsFlammableCheckBox.Checked = false;
                 BlockIsLiquidCheckBox.Checked = false;
                 BlockMaxToughnessTextBox.Text = "";
@@ -1025,7 +1025,7 @@ namespace Scribe
                 FloorNameTextBox.Text = "";
                 FloorDescriptionTextBox.Text = "";
                 FloorCommentTextBox.Text = "";
-                FloorEquivalentItemComboBox.SelectedIndex = -1;
+                FloorEquivalentItemComboBox.SelectedItem = null;
                 FloorModificationToolComboBox.SelectedItem = ModificationTool.None;
                 FloorTrenchNameTextBox.Text = "";
                 FloorPictureBox.Image = Resources.ImageNotFoundGraphic;
@@ -1057,12 +1057,12 @@ namespace Scribe
                 FurnishingNameTextBox.Text = "";
                 FurnishingDescriptionTextBox.Text = "";
                 FurnishingCommentTextBox.Text = "";
-                FurnishingEquivalentItemComboBox.SelectedIndex = -1;
+                FurnishingEquivalentItemComboBox.SelectedItem = null;
                 FurnishingEntryTypeComboBox.SelectedItem = EntryType.None;
                 FurnishingIsWalkableCheckBox.Checked = false;
                 FurnishingIsEnclosingCheckBox.Checked = false;
                 FurnishingIsFlammableCheckBox.Checked = false;
-                FurnishingSwapWithFurnishingComboBox.SelectedIndex = -1;
+                FurnishingSwapWithFurnishingComboBox.SelectedItem = null;
                 FurnishingPictureBox.Image = Resources.ImageNotFoundGraphic;
             }
             else if (FurnishingListBox.SelectedItem is FurnishingModel model
@@ -1107,8 +1107,8 @@ namespace Scribe
                 CritterNameTextBox.Text = "";
                 CritterDescriptionTextBox.Text = "";
                 CritterCommentTextBox.Text = "";
-                CritterNativeBiomeComboBox.SelectedIndex = -1;
-                CritterPrimaryBehaviorComboBox.SelectedIndex = -1;
+                CritterNativeBiomeComboBox.SelectedItem = null;
+                CritterPrimaryBehaviorComboBox.SelectedItem = null;
                 CritterPictureBox.Image = Resources.ImageNotFoundGraphic;
             }
             else if (CritterListBox.SelectedItem is CritterModel model
