@@ -261,7 +261,7 @@ namespace Scribe
         /// <returns>The Boolean value given, or <c>false</c> if no value could be parsed.</returns>
         private static bool ValueToBool(object input)
             => input as bool?
-            ?? bool.TryParse(input.ToString(), out var parsedBool) && parsedBool;
+            ?? (bool.TryParse(input?.ToString() ?? "", out var parsedBool) && parsedBool);
 
         /// <summary>
         /// Transforms an <c>object</c> into an <c>int</c>, parsing if needed.
@@ -270,7 +270,7 @@ namespace Scribe
         /// <returns>The integer value given, or 0 if no value could be parsed.</returns>
         private static int ValueToInt(object input)
             => input as int?
-            ?? (int.TryParse(input.ToString(), NumberStyles.Integer, null, out var parsedInt)
+            ?? (int.TryParse(input?.ToString() ?? "", NumberStyles.Integer, null, out var parsedInt)
                 ? parsedInt
                 : 0);
 
@@ -283,7 +283,7 @@ namespace Scribe
             => (input as Model)?.ID
             ?? input as ModelID?
             ?? input as int?
-            ?? (int.TryParse(input.ToString(), NumberStyles.Integer, null, out var parsedInt)
+            ?? (int.TryParse(input?.ToString() ?? "", NumberStyles.Integer, null, out var parsedInt)
                 ? (ModelID)parsedInt
                 : ModelID.None);
 
@@ -298,7 +298,7 @@ namespace Scribe
             => input as TEnum?
             ?? (input is TEnum enumerationValue
                 ? enumerationValue
-                : (Enum.TryParse<TEnum>(input.ToString(), true, out var parsedInt)
+                : (Enum.TryParse<TEnum>(input?.ToString() ?? "", true, out var parsedInt)
                     ? parsedInt
                     : default(TEnum)));
         #endregion
