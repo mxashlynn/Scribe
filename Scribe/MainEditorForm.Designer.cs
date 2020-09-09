@@ -4179,6 +4179,7 @@ namespace Scribe
             this.CritterListBox.Size = new System.Drawing.Size(279, 446);
             this.CritterListBox.TabIndex = 1;
             this.CritterListBox.Tag = "Untracked Control";
+            this.CritterListBox.SelectedIndexChanged += new System.EventHandler(this.CritterListBox_SelectedValueChanged);
             // 
             // CritterAddNewCritterButton
             // 
