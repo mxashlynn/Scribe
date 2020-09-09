@@ -644,7 +644,7 @@ namespace Scribe
                     {
                         var editModel = inModel as IItemModelEdit;
                         editModel.ItemTags.Clear();
-                        editModel.ItemTags.ToList().AddRange((IList<ModelTag>)input);
+                        editModel.ItemTags.ToList().Add((ModelTag)input);
                     },
                 (ItemsTabIndex, "ItemStackMaxTextBox")
                     => (input) => (inModel as IItemModelEdit).StackMax = ValueToInt(input),
@@ -676,14 +676,14 @@ namespace Scribe
                     {
                         var editModel = inModel as IBiomeRecipeEdit;
                         editModel.EntryRequirements.Clear();
-                        editModel.EntryRequirements.ToList().AddRange((IList<ModelTag>)input);
+                        editModel.EntryRequirements.ToList().Add((ModelTag)input);
                     },
                 (BiomeRecipesTabIndex, "BiomeParquetCriteriaListBox")
                     => (input) =>
                     {
                         var editModel = inModel as IBiomeRecipeEdit;
                         editModel.ParquetCriteria.Clear();
-                        editModel.ParquetCriteria.ToList().AddRange((IList<ModelTag>)input);
+                        editModel.ParquetCriteria.ToList().Add((ModelTag)input);
                     },
                 #endregion
 
@@ -862,7 +862,10 @@ namespace Scribe
             // TODO Characters
             RepopulateComboBox(CritterNativeBiomeComboBox, All.Biomes);
             RepopulateComboBox(CritterPrimaryBehaviorComboBox, All.Scripts);
-            // TODO Items
+            RepopulateComboBox(ItemSubtypeComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(ItemType))));
+            RepopulateComboBox(ItemEffectWhileHeldComboBox, All.Scripts);
+            RepopulateComboBox(ItemEffectWhenUsedComboBox, All.Scripts);
+            RepopulateComboBox(ItemEquivalentParquetComboBox, All.Parquets);
             // TODO Biomes
             // TODO Crafts
             // TODO Rooms
@@ -1172,7 +1175,50 @@ namespace Scribe
             }
         }
 
-        // TODO Items
+
+        /// <summary>
+        /// Populates the Items tab when a <see cref="ItemModel"/> is selected in the ItemListBox.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void ItemListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ItemTagListBox.SelectedItem = null;
+            if (null == ItemListBox.SelectedItem)
+            {
+                ItemIDExample.Text = ModelID.None.ToString();
+                ItemNameTextBox.Text = "";
+                ItemDescriptionTextBox.Text = "";
+                ItemCommentTextBox.Text = "";
+                ItemSubtypeComboBox.SelectedItem = ItemType.Other;
+                ItemPriceTextBox.Text = "";
+                ItemRarityTextBox.Text = "";
+                ItemStackMaxTextBox.Text = "";
+                ItemEffectWhileHeldComboBox.SelectedItem = null;
+                ItemEffectWhenUsedComboBox.SelectedItem = null;
+                ItemEquivalentParquetComboBox.SelectedItem = null;
+                ItemTagListBox.Items.Clear();
+                ItemPictureBox.Image = Resources.ImageNotFoundGraphic;
+            }
+            else if (ItemListBox.SelectedItem is ItemModel model
+                    && null != model)
+            {
+                ItemIDExample.Text = model.ID.ToString();
+                ItemNameTextBox.Text = model.Name;
+                ItemDescriptionTextBox.Text = model.Description;
+                ItemCommentTextBox.Text = model.Comment;
+                ItemSubtypeComboBox.SelectedItem = model.Subtype;
+                ItemPriceTextBox.Text = model.Price.ToString();
+                ItemRarityTextBox.Text = model.Rarity.ToString();
+                ItemStackMaxTextBox.Text = model.StackMax.ToString();
+                ItemEffectWhileHeldComboBox.SelectedItem = All.Scripts.GetOrNull(model.EffectWhileHeldID);
+                ItemEffectWhenUsedComboBox.SelectedItem = All.Scripts.GetOrNull(model.EffectWhenUsedID);
+                ItemEquivalentParquetComboBox.SelectedItem = All.Parquets.GetOrNull(model.ParquetID);
+                RepopulateListBox(ItemTagListBox, model.ItemTags);
+                PictureBoxLoadFromStorage(ItemPictureBox, model.ID);
+            }
+        }
+
         // TODO Biomes
         // TODO Crafts
         // TODO Rooms

@@ -4286,6 +4286,7 @@ namespace Scribe
             this.ItemListBox.Size = new System.Drawing.Size(279, 446);
             this.ItemListBox.TabIndex = 1;
             this.ItemListBox.Tag = "Untracked Control";
+            this.ItemListBox.SelectedIndexChanged += new System.EventHandler(this.ItemListBox_SelectedIndexChanged);
             // 
             // ItemInventoriesGroupBox
             // 
