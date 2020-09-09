@@ -857,9 +857,9 @@ namespace Scribe
             RepopulateComboBox(FloorModificationToolComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(ModificationTool))));
             RepopulateComboBox(FurnishingEquivalentItemComboBox, All.Items);
             RepopulateComboBox(FurnishingEntryTypeComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(EntryType))));
-            // TODO -- a combobox might be missing here
             RepopulateComboBox(FurnishingSwapWithFurnishingComboBox, All.Furnishings);
-            // TODO Collectibles
+            RepopulateComboBox(CollectibleEquivalentItemComboBox, All.Items);
+            RepopulateComboBox(CollectibleCollectionEffectComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(CollectingEffect))));
             // TODO Characters
             RepopulateComboBox(CritterNativeBiomeComboBox, All.Biomes);
             RepopulateComboBox(CritterPrimaryBehaviorComboBox, All.Scripts);
@@ -1088,7 +1088,29 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void CollectibleListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            if (null == CollectibleListBox.SelectedItem)
+            {
+                CollectibleIDExample.Text = ModelID.None.ToString();
+                CollectibleNameTextBox.Text = "";
+                CollectibleDescriptionTextBox.Text = "";
+                CollectibleCommentTextBox.Text = "";
+                CollectibleEquivalentItemComboBox.SelectedItem = null;
+                CollectibleCollectionEffectComboBox.SelectedItem = null;
+                CollectibleEffectAmountTextBox.Text = "";
+                CollectiblePictureBox.Image = Resources.ImageNotFoundGraphic;
+            }
+            else if (CollectibleListBox.SelectedItem is CollectibleModel model
+                    && null != model)
+            {
+                CollectibleIDExample.Text = model.ID.ToString();
+                CollectibleNameTextBox.Text = model.Name;
+                CollectibleDescriptionTextBox.Text = model.Description;
+                CollectibleCommentTextBox.Text = model.Comment;
+                CollectibleEquivalentItemComboBox.SelectedItem = All.Items.GetOrNull(model.ItemID);
+                CollectibleCollectionEffectComboBox.SelectedItem = model.CollectionEffect;
+                CollectibleEffectAmountTextBox.Text = model.EffectAmount.ToString();
+                PictureBoxLoadFromStorage(CollectiblePictureBox, model.ID);
+            }
         }
 
         // TODO Characters
