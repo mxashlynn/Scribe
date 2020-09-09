@@ -845,7 +845,7 @@ namespace Scribe
             RepopulateListBox(RoomListBox, All.RoomRecipes);
             #endregion
 
-            #region Repopulat Secondary List and Combo Boxes
+            #region Repopulat Secondary Combo Boxes
             RepopulateComboBox(GamePlayerCharacterComboBox, All.Characters);
             RepopulateComboBox(GameFirstScriptComboBox, All.Scripts);
             RepopulateComboBox(BlockEquivalentItemComboBox, All.Items);
@@ -866,10 +866,6 @@ namespace Scribe
             RepopulateComboBox(ItemEffectWhileHeldComboBox, All.Scripts);
             RepopulateComboBox(ItemEffectWhenUsedComboBox, All.Scripts);
             RepopulateComboBox(ItemEquivalentParquetComboBox, All.Parquets);
-            // TODO Biomes
-            // TODO Crafts
-            // TODO Rooms
-            // TODO Maps
             // TODO Scripts
             #endregion
         }
@@ -1175,7 +1171,6 @@ namespace Scribe
             }
         }
 
-
         /// <summary>
         /// Populates the Items tab when a <see cref="ItemModel"/> is selected in the ItemListBox.
         /// </summary>
@@ -1377,22 +1372,6 @@ namespace Scribe
                                             HasUnsavedChanges = true;
                                         }));
         }
-
-        /// <summary>
-        /// Responds to the user clicking "Add New Game" on the Games tab.
-        /// </summary>
-        /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void GameAddNewGameButton_Click(object sender, EventArgs e)
-            => AddNewModel(All.Games, (ModelID id) => new GameModel(id, "New Game", "", ""), All.GameIDs, GameListBox, "Game");
-
-        /// <summary>
-        /// Responds to the user clicking "Remove Game" on the Games tab.
-        /// </summary>
-        /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void GameRemoveGameButton_Click(object sender, EventArgs e)
-            => RemoveModel(All.Games, GameListBox, "Game");
         #endregion
 
         #region Tag Adjustments
@@ -1476,6 +1455,24 @@ namespace Scribe
                                             }));
             }
         }
+        #endregion
+
+        #region Games Tab
+        /// <summary>
+        /// Responds to the user clicking "Add New Game" on the Games tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void GameAddNewGameButton_Click(object sender, EventArgs e)
+            => AddNewModel(All.Games, (ModelID id) => new GameModel(id, "New Game", "", ""), All.GameIDs, GameListBox, "Game");
+
+        /// <summary>
+        /// Responds to the user clicking "Remove Game" on the Games tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void GameRemoveGameButton_Click(object sender, EventArgs e)
+            => RemoveModel(All.Games, GameListBox, "Game");
         #endregion
 
         #region Blocks Tab
