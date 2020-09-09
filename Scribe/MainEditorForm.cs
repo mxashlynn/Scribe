@@ -849,7 +849,6 @@ namespace Scribe
             RepopulateComboBox(GamePlayerCharacterComboBox, All.Characters);
             RepopulateComboBox(GameFirstScriptComboBox, All.Scripts);
             RepopulateComboBox(BlockEquivalentItemComboBox, All.Items);
-            // TODO Where are the Biome & Room AddsTo tag list boxes?
             RepopulateComboBox(BlockGatherToolComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(GatheringTool))));
             RepopulateComboBox(BlockGatherEffectComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(GatheringEffect))));
             RepopulateComboBox(BlockDroppedCollectibleIDComboBox, All.Collectibles);
@@ -887,7 +886,11 @@ namespace Scribe
                 in_listbox.Items.Clear();
                 foreach (var value in in_source)
                 {
-                    _ = in_listbox.Items.Add(value);
+                    // Ignore any input value that evaluates to "None".
+                    if (0 != string.Compare(value.ToString(), nameof(ModelID.None), comparisonType: StringComparison.OrdinalIgnoreCase))
+                    {
+                        _ = in_listbox.Items.Add(value);
+                    }
                 }
                 in_listbox.EndUpdate();
             }
@@ -978,6 +981,8 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void BlockListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            BlockAddsToBiomeListBox.SelectedItem = null;
+            BlockAddsToRoomListBox.SelectedItem = null;
             if (null == BlockListBox.SelectedItem)
             {
                 BlockIDExample.Text = ModelID.None.ToString();
@@ -985,6 +990,8 @@ namespace Scribe
                 BlockDescriptionTextBox.Text = "";
                 BlockCommentTextBox.Text = "";
                 BlockEquivalentItemComboBox.SelectedItem = null;
+                BlockAddsToBiomeListBox.Items.Clear();
+                BlockAddsToRoomListBox.Items.Clear();
                 BlockGatherToolComboBox.SelectedItem = GatheringTool.None;
                 BlockGatherEffectComboBox.SelectedItem = GatheringEffect.None;
                 BlockDroppedCollectibleIDComboBox.SelectedItem = null;
@@ -1001,6 +1008,8 @@ namespace Scribe
                 BlockDescriptionTextBox.Text = model.Description;
                 BlockCommentTextBox.Text = model.Comment;
                 BlockEquivalentItemComboBox.SelectedItem = All.Items.GetOrNull(model.ItemID);
+                RepopulateListBox(BlockAddsToBiomeListBox, model.AddsToBiome);
+                RepopulateListBox(BlockAddsToRoomListBox, model.AddsToRoom);
                 BlockGatherToolComboBox.SelectedItem = model.GatherTool;
                 BlockGatherEffectComboBox.SelectedItem = model.GatherEffect;
                 BlockDroppedCollectibleIDComboBox.SelectedItem = All.Collectibles.GetOrNull(model.CollectibleID);
@@ -1018,6 +1027,8 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void FloorListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            FloorAddsToBiomeListBox.SelectedItem = null;
+            FloorAddsToRoomListBox.SelectedItem = null;
             if (null == FloorListBox.SelectedItem)
             {
                 FloorIDExample.Text = ModelID.None.ToString();
@@ -1025,6 +1036,8 @@ namespace Scribe
                 FloorDescriptionTextBox.Text = "";
                 FloorCommentTextBox.Text = "";
                 FloorEquivalentItemComboBox.SelectedItem = null;
+                FloorAddsToBiomeListBox.Items.Clear();
+                FloorAddsToRoomListBox.Items.Clear();
                 FloorModificationToolComboBox.SelectedItem = ModificationTool.None;
                 FloorTrenchNameTextBox.Text = "";
                 FloorPictureBox.Image = Resources.ImageNotFoundGraphic;
@@ -1037,6 +1050,8 @@ namespace Scribe
                 FloorDescriptionTextBox.Text = model.Description;
                 FloorCommentTextBox.Text = model.Comment;
                 FloorEquivalentItemComboBox.SelectedItem = All.Items.GetOrNull(model.ItemID);
+                RepopulateListBox(FloorAddsToBiomeListBox, model.AddsToBiome);
+                RepopulateListBox(FloorAddsToRoomListBox, model.AddsToRoom);
                 FloorModificationToolComboBox.SelectedItem = model.ModTool;
                 FloorTrenchNameTextBox.Text = model.TrenchName;
                 PictureBoxLoadFromStorage(FloorPictureBox, model.ID);
@@ -1050,6 +1065,8 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void FurnishingListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            FurnishingAddsToBiomeListBox.SelectedItem = null;
+            FurnishingAddsToRoomListBox.SelectedItem = null;
             if (null == FurnishingListBox.SelectedItem)
             {
                 FurnishingIDExample.Text = ModelID.None.ToString();
@@ -1057,6 +1074,8 @@ namespace Scribe
                 FurnishingDescriptionTextBox.Text = "";
                 FurnishingCommentTextBox.Text = "";
                 FurnishingEquivalentItemComboBox.SelectedItem = null;
+                FurnishingAddsToBiomeListBox.Items.Clear();
+                FurnishingAddsToRoomListBox.Items.Clear();
                 FurnishingEntryTypeComboBox.SelectedItem = EntryType.None;
                 FurnishingIsWalkableCheckBox.Checked = false;
                 FurnishingIsEnclosingCheckBox.Checked = false;
@@ -1072,6 +1091,8 @@ namespace Scribe
                 FurnishingDescriptionTextBox.Text = model.Description;
                 FurnishingCommentTextBox.Text = model.Comment;
                 FurnishingEquivalentItemComboBox.SelectedItem = All.Items.GetOrNull(model.ItemID);
+                RepopulateListBox(FurnishingAddsToBiomeListBox, model.AddsToBiome);
+                RepopulateListBox(FurnishingAddsToRoomListBox, model.AddsToRoom);
                 FurnishingEntryTypeComboBox.SelectedItem = model.Entry;
                 FurnishingIsWalkableCheckBox.Checked = model.IsWalkable;
                 FurnishingIsEnclosingCheckBox.Checked = model.IsEnclosing;
@@ -1088,6 +1109,8 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void CollectibleListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            CollectibleAddsToBiomeListBox.SelectedItem = null;
+            CollectibleAddsToRoomListBox.SelectedItem = null;
             if (null == CollectibleListBox.SelectedItem)
             {
                 CollectibleIDExample.Text = ModelID.None.ToString();
@@ -1095,6 +1118,8 @@ namespace Scribe
                 CollectibleDescriptionTextBox.Text = "";
                 CollectibleCommentTextBox.Text = "";
                 CollectibleEquivalentItemComboBox.SelectedItem = null;
+                CollectibleAddsToBiomeListBox.Items.Clear();
+                CollectibleAddsToRoomListBox.Items.Clear();
                 CollectibleCollectionEffectComboBox.SelectedItem = null;
                 CollectibleEffectAmountTextBox.Text = "";
                 CollectiblePictureBox.Image = Resources.ImageNotFoundGraphic;
@@ -1107,6 +1132,8 @@ namespace Scribe
                 CollectibleDescriptionTextBox.Text = model.Description;
                 CollectibleCommentTextBox.Text = model.Comment;
                 CollectibleEquivalentItemComboBox.SelectedItem = All.Items.GetOrNull(model.ItemID);
+                RepopulateListBox(CollectibleAddsToBiomeListBox, model.AddsToBiome);
+                RepopulateListBox(CollectibleAddsToRoomListBox, model.AddsToRoom);
                 CollectibleCollectionEffectComboBox.SelectedItem = model.CollectionEffect;
                 CollectibleEffectAmountTextBox.Text = model.EffectAmount.ToString();
                 PictureBoxLoadFromStorage(CollectiblePictureBox, model.ID);
