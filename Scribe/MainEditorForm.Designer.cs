@@ -315,9 +315,9 @@ namespace Scribe
             this.CharacterNativeBiomeComboBox = new System.Windows.Forms.ComboBox();
             this.CharacterPrimaryBehaviorLabel = new System.Windows.Forms.Label();
             this.CharacterParquetsAvoidedLabel = new System.Windows.Forms.Label();
-            this.CharacterComingSoonLabel1 = new System.Windows.Forms.Label();
+            this.CharacterPendingDesignLabel1 = new System.Windows.Forms.Label();
             this.CharacterParquetsSoughtLabel = new System.Windows.Forms.Label();
-            this.CharacterComingSoonLabel = new System.Windows.Forms.Label();
+            this.CharacterPendingDesignLabel = new System.Windows.Forms.Label();
             this.CharacterPronounLabel = new System.Windows.Forms.Label();
             this.CharacterStoryIDLabel = new System.Windows.Forms.Label();
             this.CharacterStartingQuestsLabel = new System.Windows.Forms.Label();
@@ -346,9 +346,9 @@ namespace Scribe
             this.CritterNativeBiomeComboBox = new System.Windows.Forms.ComboBox();
             this.CritterPrimaryBehaviorLabel = new System.Windows.Forms.Label();
             this.CritterParquetAvoidsLabel = new System.Windows.Forms.Label();
-            this.CritterComingSoonLabel1 = new System.Windows.Forms.Label();
+            this.CritterPendingDesignLabel1 = new System.Windows.Forms.Label();
             this.CritterParquetsSoughtLabel = new System.Windows.Forms.Label();
-            this.CritterComingSoonLabel2 = new System.Windows.Forms.Label();
+            this.CritterPendingDesignLabel2 = new System.Windows.Forms.Label();
             this.CritterPictureBox = new System.Windows.Forms.PictureBox();
             this.CritterEditImageButton = new System.Windows.Forms.Button();
             this.CritterIDLabel = new System.Windows.Forms.Label();
@@ -363,7 +363,7 @@ namespace Scribe
             this.ItemRemoveTagButton = new System.Windows.Forms.Button();
             this.ItemListBox = new System.Windows.Forms.ListBox();
             this.ItemInventoriesGroupBox = new System.Windows.Forms.GroupBox();
-            this.ItemComingSoonLabel = new System.Windows.Forms.Label();
+            this.ItemPendingDesignLabel = new System.Windows.Forms.Label();
             this.ItemOpenInvetoryEditorButton = new System.Windows.Forms.Button();
             this.ItemInventoryListBox = new System.Windows.Forms.ListBox();
             this.ItemPictureEditButton = new System.Windows.Forms.Button();
@@ -452,7 +452,7 @@ namespace Scribe
             this.CraftingProductsLabel = new System.Windows.Forms.Label();
             this.CraftingProductsListBox = new System.Windows.Forms.ListBox();
             this.CraftingStrikePatternLabel = new System.Windows.Forms.Label();
-            this.CraftingStrikePatternComingSoonLabel = new System.Windows.Forms.Label();
+            this.CraftingStrikePatternPendingDesignLabel = new System.Windows.Forms.Label();
             this.CraftingPictureBox = new System.Windows.Forms.PictureBox();
             this.CraftingIDLabel = new System.Windows.Forms.Label();
             this.CraftingAddNewCraftingButton = new System.Windows.Forms.Button();
@@ -505,9 +505,9 @@ namespace Scribe
             this.RoomAddNewRoomButton = new System.Windows.Forms.Button();
             this.RoomIDExample = new System.Windows.Forms.Label();
             this.MapsTabPage = new System.Windows.Forms.TabPage();
-            this.MapComingSoonLabel = new System.Windows.Forms.Label();
+            this.MapPendingDesignLabel = new System.Windows.Forms.Label();
             this.ScriptsTabPage = new System.Windows.Forms.TabPage();
-            this.ScriptingComingSoonLabel = new System.Windows.Forms.Label();
+            this.ScriptingPendingDesignLabel = new System.Windows.Forms.Label();
             this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
             this.ContextMenuStripPictureBoxes.SuspendLayout();
@@ -3596,9 +3596,9 @@ namespace Scribe
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterNativeBiomeComboBox, 1, 3);
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterPrimaryBehaviorLabel, 0, 4);
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterParquetsAvoidedLabel, 0, 5);
-            this.CharacterTableLayoutPanel.Controls.Add(this.CharacterComingSoonLabel1, 1, 5);
+            this.CharacterTableLayoutPanel.Controls.Add(this.CharacterPendingDesignLabel1, 1, 5);
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterParquetsSoughtLabel, 0, 6);
-            this.CharacterTableLayoutPanel.Controls.Add(this.CharacterComingSoonLabel, 1, 6);
+            this.CharacterTableLayoutPanel.Controls.Add(this.CharacterPendingDesignLabel, 1, 6);
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterPronounLabel, 0, 7);
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterStoryIDLabel, 0, 8);
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterStartingQuestsLabel, 0, 9);
@@ -3776,15 +3776,15 @@ namespace Scribe
             this.CharacterParquetsAvoidedLabel.TabIndex = 31;
             this.CharacterParquetsAvoidedLabel.Text = "Parquets Avoided";
             // 
-            // CharacterComingSoonLabel1
+            // CharacterPendingDesignLabel1
             // 
-            this.CharacterComingSoonLabel1.AutoSize = true;
-            this.CharacterComingSoonLabel1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CharacterComingSoonLabel1.Location = new System.Drawing.Point(131, 185);
-            this.CharacterComingSoonLabel1.Name = "CharacterComingSoonLabel1";
-            this.CharacterComingSoonLabel1.Size = new System.Drawing.Size(89, 16);
-            this.CharacterComingSoonLabel1.TabIndex = 32;
-            this.CharacterComingSoonLabel1.Text = "Coming Soon";
+            this.CharacterPendingDesignLabel1.AutoSize = true;
+            this.CharacterPendingDesignLabel1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CharacterPendingDesignLabel1.Location = new System.Drawing.Point(131, 185);
+            this.CharacterPendingDesignLabel1.Name = "CharacterPendingDesignLabel1";
+            this.CharacterPendingDesignLabel1.Size = new System.Drawing.Size(105, 16);
+            this.CharacterPendingDesignLabel1.TabIndex = 32;
+            this.CharacterPendingDesignLabel1.Text = "Pending Design";
             // 
             // CharacterParquetsSoughtLabel
             // 
@@ -3795,15 +3795,15 @@ namespace Scribe
             this.CharacterParquetsSoughtLabel.TabIndex = 33;
             this.CharacterParquetsSoughtLabel.Text = "Parquets Sought";
             // 
-            // CharacterComingSoonLabel
+            // CharacterPendingDesignLabel
             // 
-            this.CharacterComingSoonLabel.AutoSize = true;
-            this.CharacterComingSoonLabel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CharacterComingSoonLabel.Location = new System.Drawing.Point(131, 210);
-            this.CharacterComingSoonLabel.Name = "CharacterComingSoonLabel";
-            this.CharacterComingSoonLabel.Size = new System.Drawing.Size(89, 16);
-            this.CharacterComingSoonLabel.TabIndex = 34;
-            this.CharacterComingSoonLabel.Text = "Coming Soon";
+            this.CharacterPendingDesignLabel.AutoSize = true;
+            this.CharacterPendingDesignLabel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CharacterPendingDesignLabel.Location = new System.Drawing.Point(131, 210);
+            this.CharacterPendingDesignLabel.Name = "CharacterPendingDesignLabel";
+            this.CharacterPendingDesignLabel.Size = new System.Drawing.Size(105, 16);
+            this.CharacterPendingDesignLabel.TabIndex = 34;
+            this.CharacterPendingDesignLabel.Text = "Pending Design";
             // 
             // CharacterPronounLabel
             // 
@@ -3986,9 +3986,9 @@ namespace Scribe
             this.CritterTableLayoutPanel.Controls.Add(this.CritterNativeBiomeComboBox, 1, 3);
             this.CritterTableLayoutPanel.Controls.Add(this.CritterPrimaryBehaviorLabel, 0, 4);
             this.CritterTableLayoutPanel.Controls.Add(this.CritterParquetAvoidsLabel, 0, 5);
-            this.CritterTableLayoutPanel.Controls.Add(this.CritterComingSoonLabel1, 1, 5);
+            this.CritterTableLayoutPanel.Controls.Add(this.CritterPendingDesignLabel1, 1, 5);
             this.CritterTableLayoutPanel.Controls.Add(this.CritterParquetsSoughtLabel, 0, 6);
-            this.CritterTableLayoutPanel.Controls.Add(this.CritterComingSoonLabel2, 1, 6);
+            this.CritterTableLayoutPanel.Controls.Add(this.CritterPendingDesignLabel2, 1, 6);
             this.CritterTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
             this.CritterTableLayoutPanel.Name = "CritterTableLayoutPanel";
             this.CritterTableLayoutPanel.RowCount = 8;
@@ -4106,15 +4106,15 @@ namespace Scribe
             this.CritterParquetAvoidsLabel.TabIndex = 31;
             this.CritterParquetAvoidsLabel.Text = "Parquets Avoided";
             // 
-            // CritterComingSoonLabel1
+            // CritterPendingDesignLabel1
             // 
-            this.CritterComingSoonLabel1.AutoSize = true;
-            this.CritterComingSoonLabel1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CritterComingSoonLabel1.Location = new System.Drawing.Point(131, 185);
-            this.CritterComingSoonLabel1.Name = "CritterComingSoonLabel1";
-            this.CritterComingSoonLabel1.Size = new System.Drawing.Size(89, 16);
-            this.CritterComingSoonLabel1.TabIndex = 32;
-            this.CritterComingSoonLabel1.Text = "Coming Soon";
+            this.CritterPendingDesignLabel1.AutoSize = true;
+            this.CritterPendingDesignLabel1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CritterPendingDesignLabel1.Location = new System.Drawing.Point(131, 185);
+            this.CritterPendingDesignLabel1.Name = "CritterPendingDesignLabel1";
+            this.CritterPendingDesignLabel1.Size = new System.Drawing.Size(105, 16);
+            this.CritterPendingDesignLabel1.TabIndex = 32;
+            this.CritterPendingDesignLabel1.Text = "Pending Design";
             // 
             // CritterParquetsSoughtLabel
             // 
@@ -4125,15 +4125,15 @@ namespace Scribe
             this.CritterParquetsSoughtLabel.TabIndex = 33;
             this.CritterParquetsSoughtLabel.Text = "Parquets Sought";
             // 
-            // CritterComingSoonLabel2
+            // CritterPendingDesignLabel2
             // 
-            this.CritterComingSoonLabel2.AutoSize = true;
-            this.CritterComingSoonLabel2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CritterComingSoonLabel2.Location = new System.Drawing.Point(131, 210);
-            this.CritterComingSoonLabel2.Name = "CritterComingSoonLabel2";
-            this.CritterComingSoonLabel2.Size = new System.Drawing.Size(89, 16);
-            this.CritterComingSoonLabel2.TabIndex = 34;
-            this.CritterComingSoonLabel2.Text = "Coming Soon";
+            this.CritterPendingDesignLabel2.AutoSize = true;
+            this.CritterPendingDesignLabel2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CritterPendingDesignLabel2.Location = new System.Drawing.Point(131, 210);
+            this.CritterPendingDesignLabel2.Name = "CritterPendingDesignLabel2";
+            this.CritterPendingDesignLabel2.Size = new System.Drawing.Size(105, 16);
+            this.CritterPendingDesignLabel2.TabIndex = 34;
+            this.CritterPendingDesignLabel2.Text = "Pending Design";
             // 
             // CritterPictureBox
             // 
@@ -4291,7 +4291,7 @@ namespace Scribe
             // 
             this.ItemInventoriesGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemInventoriesGroupBox.Controls.Add(this.ItemComingSoonLabel);
+            this.ItemInventoriesGroupBox.Controls.Add(this.ItemPendingDesignLabel);
             this.ItemInventoriesGroupBox.Controls.Add(this.ItemOpenInvetoryEditorButton);
             this.ItemInventoriesGroupBox.Controls.Add(this.ItemInventoryListBox);
             this.ItemInventoriesGroupBox.Location = new System.Drawing.Point(9, 497);
@@ -4301,15 +4301,15 @@ namespace Scribe
             this.ItemInventoriesGroupBox.TabStop = false;
             this.ItemInventoriesGroupBox.Text = "Inventories";
             // 
-            // ItemComingSoonLabel
+            // ItemPendingDesignLabel
             // 
-            this.ItemComingSoonLabel.AutoSize = true;
-            this.ItemComingSoonLabel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ItemComingSoonLabel.Location = new System.Drawing.Point(285, 55);
-            this.ItemComingSoonLabel.Name = "ItemComingSoonLabel";
-            this.ItemComingSoonLabel.Size = new System.Drawing.Size(89, 16);
-            this.ItemComingSoonLabel.TabIndex = 32;
-            this.ItemComingSoonLabel.Text = "Coming Soon";
+            this.ItemPendingDesignLabel.AutoSize = true;
+            this.ItemPendingDesignLabel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ItemPendingDesignLabel.Location = new System.Drawing.Point(285, 55);
+            this.ItemPendingDesignLabel.Name = "ItemPendingDesignLabel";
+            this.ItemPendingDesignLabel.Size = new System.Drawing.Size(105, 16);
+            this.ItemPendingDesignLabel.TabIndex = 32;
+            this.ItemPendingDesignLabel.Text = "Pending Design";
             // 
             // ItemOpenInvetoryEditorButton
             // 
@@ -5124,7 +5124,7 @@ namespace Scribe
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingProductsLabel, 0, 3);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingProductsListBox, 1, 3);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingStrikePatternLabel, 0, 7);
-            this.CraftingTableLayoutPanel.Controls.Add(this.CraftingStrikePatternComingSoonLabel, 1, 7);
+            this.CraftingTableLayoutPanel.Controls.Add(this.CraftingStrikePatternPendingDesignLabel, 1, 7);
             this.CraftingTableLayoutPanel.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.CraftingTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
             this.CraftingTableLayoutPanel.Name = "CraftingTableLayoutPanel";
@@ -5296,20 +5296,20 @@ namespace Scribe
             this.CraftingStrikePatternLabel.TabIndex = 31;
             this.CraftingStrikePatternLabel.Text = "Crafting Strike Pattern";
             // 
-            // CraftingStrikePatternComingSoonLabel
+            // CraftingStrikePatternPendingDesignLabel
             // 
-            this.CraftingStrikePatternComingSoonLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.CraftingStrikePatternPendingDesignLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingStrikePatternComingSoonLabel.AutoSize = true;
-            this.CraftingStrikePatternComingSoonLabel.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CraftingStrikePatternComingSoonLabel.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.CraftingStrikePatternComingSoonLabel.Location = new System.Drawing.Point(146, 305);
-            this.CraftingStrikePatternComingSoonLabel.Name = "CraftingStrikePatternComingSoonLabel";
-            this.CraftingStrikePatternComingSoonLabel.Size = new System.Drawing.Size(137, 141);
-            this.CraftingStrikePatternComingSoonLabel.TabIndex = 32;
-            this.CraftingStrikePatternComingSoonLabel.Text = "Maybe one day we will have a preview image here.";
-            this.CraftingStrikePatternComingSoonLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CraftingStrikePatternPendingDesignLabel.AutoSize = true;
+            this.CraftingStrikePatternPendingDesignLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CraftingStrikePatternPendingDesignLabel.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.CraftingStrikePatternPendingDesignLabel.Location = new System.Drawing.Point(146, 305);
+            this.CraftingStrikePatternPendingDesignLabel.Name = "CraftingStrikePatternPendingDesignLabel";
+            this.CraftingStrikePatternPendingDesignLabel.Size = new System.Drawing.Size(137, 141);
+            this.CraftingStrikePatternPendingDesignLabel.TabIndex = 32;
+            this.CraftingStrikePatternPendingDesignLabel.Text = "Maybe one day we will have a preview image here.";
+            this.CraftingStrikePatternPendingDesignLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CraftingPictureBox
             // 
@@ -5886,42 +5886,42 @@ namespace Scribe
             // MapsTabPage
             // 
             this.MapsTabPage.BackColor = System.Drawing.Color.Transparent;
-            this.MapsTabPage.Controls.Add(this.MapComingSoonLabel);
+            this.MapsTabPage.Controls.Add(this.MapPendingDesignLabel);
             this.MapsTabPage.Location = new System.Drawing.Point(4, 22);
             this.MapsTabPage.Name = "MapsTabPage";
             this.MapsTabPage.Size = new System.Drawing.Size(953, 599);
             this.MapsTabPage.TabIndex = 5;
             this.MapsTabPage.Text = "Maps";
             // 
-            // MapComingSoonLabel
+            // MapPendingDesignLabel
             // 
-            this.MapComingSoonLabel.AutoSize = true;
-            this.MapComingSoonLabel.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MapComingSoonLabel.Location = new System.Drawing.Point(420, 278);
-            this.MapComingSoonLabel.Name = "MapComingSoonLabel";
-            this.MapComingSoonLabel.Size = new System.Drawing.Size(136, 25);
-            this.MapComingSoonLabel.TabIndex = 0;
-            this.MapComingSoonLabel.Text = "Coming Soon";
+            this.MapPendingDesignLabel.AutoSize = true;
+            this.MapPendingDesignLabel.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MapPendingDesignLabel.Location = new System.Drawing.Point(420, 278);
+            this.MapPendingDesignLabel.Name = "MapPendingDesignLabel";
+            this.MapPendingDesignLabel.Size = new System.Drawing.Size(158, 25);
+            this.MapPendingDesignLabel.TabIndex = 0;
+            this.MapPendingDesignLabel.Text = "Pending Design";
             // 
             // ScriptsTabPage
             // 
             this.ScriptsTabPage.BackColor = System.Drawing.Color.Transparent;
-            this.ScriptsTabPage.Controls.Add(this.ScriptingComingSoonLabel);
+            this.ScriptsTabPage.Controls.Add(this.ScriptingPendingDesignLabel);
             this.ScriptsTabPage.Location = new System.Drawing.Point(4, 22);
             this.ScriptsTabPage.Name = "ScriptsTabPage";
             this.ScriptsTabPage.Size = new System.Drawing.Size(953, 599);
             this.ScriptsTabPage.TabIndex = 8;
             this.ScriptsTabPage.Text = "Scripting";
             // 
-            // ScriptingComingSoonLabel
+            // ScriptingPendingDesignLabel
             // 
-            this.ScriptingComingSoonLabel.AutoSize = true;
-            this.ScriptingComingSoonLabel.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ScriptingComingSoonLabel.Location = new System.Drawing.Point(420, 278);
-            this.ScriptingComingSoonLabel.Name = "ScriptingComingSoonLabel";
-            this.ScriptingComingSoonLabel.Size = new System.Drawing.Size(136, 25);
-            this.ScriptingComingSoonLabel.TabIndex = 0;
-            this.ScriptingComingSoonLabel.Text = "Coming Soon";
+            this.ScriptingPendingDesignLabel.AutoSize = true;
+            this.ScriptingPendingDesignLabel.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ScriptingPendingDesignLabel.Location = new System.Drawing.Point(420, 278);
+            this.ScriptingPendingDesignLabel.Name = "ScriptingPendingDesignLabel";
+            this.ScriptingPendingDesignLabel.Size = new System.Drawing.Size(158, 25);
+            this.ScriptingPendingDesignLabel.TabIndex = 0;
+            this.ScriptingPendingDesignLabel.Text = "Pending Design";
             // 
             // MainEditorForm
             // 
@@ -6321,9 +6321,9 @@ namespace Scribe
         private System.Windows.Forms.ComboBox CharacterNativeBiomeComboBox;
         private System.Windows.Forms.Label CharacterPrimaryBehaviorLabel;
         private System.Windows.Forms.Label CharacterParquetsAvoidedLabel;
-        private System.Windows.Forms.Label CharacterComingSoonLabel1;
+        private System.Windows.Forms.Label CharacterPendingDesignLabel1;
         private System.Windows.Forms.Label CharacterParquetsSoughtLabel;
-        private System.Windows.Forms.Label CharacterComingSoonLabel;
+        private System.Windows.Forms.Label CharacterPendingDesignLabel;
         private System.Windows.Forms.Button CharacterRemoveCharacterButton;
         private System.Windows.Forms.Button CharacterAddNewCharacterButton;
         private System.Windows.Forms.ListBox CharacterListBox;
@@ -6375,9 +6375,9 @@ namespace Scribe
         private System.Windows.Forms.ComboBox CritterNativeBiomeComboBox;
         private System.Windows.Forms.Label CritterPrimaryBehaviorLabel;
         private System.Windows.Forms.Label CritterParquetAvoidsLabel;
-        private System.Windows.Forms.Label CritterComingSoonLabel1;
+        private System.Windows.Forms.Label CritterPendingDesignLabel1;
         private System.Windows.Forms.Label CritterParquetsSoughtLabel;
-        private System.Windows.Forms.Label CritterComingSoonLabel2;
+        private System.Windows.Forms.Label CritterPendingDesignLabel2;
         private System.Windows.Forms.PictureBox CritterPictureBox;
         private System.Windows.Forms.Button CritterEditImageButton;
         private System.Windows.Forms.Button CritterAddNewCritterButton;
@@ -6389,7 +6389,7 @@ namespace Scribe
         private System.Windows.Forms.Label ItemNameLabel;
         private System.Windows.Forms.Label ItemIDExample;
         private System.Windows.Forms.GroupBox ItemInventoriesGroupBox;
-        private System.Windows.Forms.Label ItemComingSoonLabel;
+        private System.Windows.Forms.Label ItemPendingDesignLabel;
         private System.Windows.Forms.Button ItemPictureEditButton;
         private System.Windows.Forms.TableLayoutPanel ItemTableLayoutPanel;
         private System.Windows.Forms.Label ItemDescriptionLabel;
@@ -6497,7 +6497,7 @@ namespace Scribe
         private System.Windows.Forms.Label CraftingStrikePatternDimensionLabelLabel;
         private System.Windows.Forms.Label CraftingStrikePatternDimensionLabelExample;
         private System.Windows.Forms.Label CraftingStrikePatternLabel;
-        private System.Windows.Forms.Label CraftingStrikePatternComingSoonLabel;
+        private System.Windows.Forms.Label CraftingStrikePatternPendingDesignLabel;
 
         private System.Windows.Forms.TabPage RoomRecipesTabPage;
         private System.Windows.Forms.ListBox RoomListBox;
@@ -6536,9 +6536,9 @@ namespace Scribe
         private System.Windows.Forms.TextBox RoomMaxWalkableSpacesTextBox;
 
         private System.Windows.Forms.TabPage MapsTabPage;
-        private System.Windows.Forms.Label MapComingSoonLabel;
+        private System.Windows.Forms.Label MapPendingDesignLabel;
 
         private System.Windows.Forms.TabPage ScriptsTabPage;
-        private System.Windows.Forms.Label ScriptingComingSoonLabel;
+        private System.Windows.Forms.Label ScriptingPendingDesignLabel;
     }
 }
