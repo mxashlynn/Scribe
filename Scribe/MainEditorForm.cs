@@ -920,6 +920,25 @@ namespace Scribe
 
         #region Tab Display Update Methods
         /// <summary>
+        /// Loads the image associated with the given <see cref="ModelID"/> in the given <see cref="PictureBox"/>.
+        /// </summary>
+        /// <param name="inPictureBox">The PictureBox to load the image into.</param>
+        /// <param name="inID">The ID of the model whose image will be loaded.</param>
+        private void PictureBoxLoadFromStorage(PictureBox inPictureBox, ModelID inID)
+        {
+            var imagePathAndFilename = Path.Combine(EditorCommands.GetGraphicsPathForModelID(inID), $"{inID}.png");
+            if (File.Exists(imagePathAndFilename))
+            {
+                using var imageStream = new MemoryStream(File.ReadAllBytes(imagePathAndFilename));
+                inPictureBox.Image = Image.FromStream(imageStream);
+            }
+            else
+            {
+                inPictureBox.Image = Resources.ImageNotFoundGraphic;
+            }
+        }
+
+        /// <summary>
         /// Populates the Games tab when a <see cref="GameModel"/> is selected in the GameListBox.
         /// </summary>
         /// <param name="sender">Ignored.</param>
@@ -952,25 +971,6 @@ namespace Scribe
                 GamePlayerCharacterComboBox.SelectedItem = All.Characters.GetOrNull(model.PlayerCharacterID);
                 GameFirstScriptComboBox.SelectedItem = All.Scripts.GetOrNull(model.FirstScriptID);
                 PictureBoxLoadFromStorage(GameIconPictureBox, model.ID);
-            }
-        }
-
-        /// <summary>
-        /// Loads the image associated with the given <see cref="ModelID"/> in the given <see cref="PictureBox"/>.
-        /// </summary>
-        /// <param name="inPictureBox">The PictureBox to load the image into.</param>
-        /// <param name="inID">The ID of the model whose image will be loaded.</param>
-        private void PictureBoxLoadFromStorage(PictureBox inPictureBox, ModelID inID)
-        {
-            var imagePathAndFilename = Path.Combine(EditorCommands.GetGraphicsPathForModelID(inID), $"{inID}.png");
-            if (File.Exists(imagePathAndFilename))
-            {
-                using var imageStream = new MemoryStream(File.ReadAllBytes(imagePathAndFilename));
-                inPictureBox.Image = Image.FromStream(imageStream);
-            }
-            else
-            {
-                inPictureBox.Image = Resources.ImageNotFoundGraphic;
             }
         }
 
@@ -1103,7 +1103,7 @@ namespace Scribe
         }
 
         /// <summary>
-        /// Populates the Furnishings tab when a <see cref="FurnishingModel"/> is selected in the FurnishingListBox.
+        /// Populates the Collectibles tab when a <see cref="CollectibleModel"/> is selected in the CollectibleListBox.
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
