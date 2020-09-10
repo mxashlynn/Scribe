@@ -643,7 +643,6 @@ namespace Scribe
                     => (input) =>
                     {
                         var editModel = inModel as IItemModelEdit;
-                        editModel.ItemTags.Clear();
                         editModel.ItemTags.ToList().Add((ModelTag)input);
                     },
                 (ItemsTabIndex, "ItemStackMaxTextBox")
@@ -674,16 +673,14 @@ namespace Scribe
                 (BiomeRecipesTabIndex, "BiomeEntryRequirementsListBox")
                     => (input) =>
                     {
-                        var editModel = inModel as IBiomeRecipeEdit;
-                        editModel.EntryRequirements.Clear();
-                        editModel.EntryRequirements.ToList().Add((ModelTag)input);
+                        var editRecipe = inModel as IBiomeRecipeEdit;
+                        editRecipe.EntryRequirements.ToList().Add((ModelTag)input);
                     },
                 (BiomeRecipesTabIndex, "BiomeParquetCriteriaListBox")
                     => (input) =>
                     {
-                        var editModel = inModel as IBiomeRecipeEdit;
-                        editModel.ParquetCriteria.Clear();
-                        editModel.ParquetCriteria.ToList().Add((ModelTag)input);
+                        var editRecipe = inModel as IBiomeRecipeEdit;
+                        editRecipe.ParquetCriteria.ToList().Add((ModelTag)input);
                     },
                 #endregion
 
@@ -697,16 +694,16 @@ namespace Scribe
                 (CraftingRecipesTabIndex, "CraftingIngredientsBox")
                     => (input) =>
                     {
-                        var editModel = inModel as ICraftingRecipeEdit;
-                        editModel.Ingredients.Clear();
-                        editModel.Ingredients.ToList().AddRange((IList<RecipeElement>)input);
+                        var editRecipe = inModel as ICraftingRecipeEdit;
+                        editRecipe.Ingredients.Clear();
+                        editRecipe.Ingredients.ToList().AddRange((IList<RecipeElement>)input);
                     },
                 (CraftingRecipesTabIndex, "CraftingProductsListBox")
                     => (input) =>
                     {
-                        var editModel = inModel as ICraftingRecipeEdit;
-                        editModel.Products.Clear();
-                        editModel.Products.ToList().AddRange((IList<RecipeElement>)input);
+                        var editRecipe = inModel as ICraftingRecipeEdit;
+                        editRecipe.Products.Clear();
+                        editRecipe.Products.ToList().AddRange((IList<RecipeElement>)input);
                     },
                 #endregion
                 
@@ -722,23 +719,23 @@ namespace Scribe
                 (RoomRecipesTabIndex, "RoomRequiredFurnishingsListBox")
                     => (input) =>
                     {
-                        var editModel = inModel as IRoomRecipeEdit;
-                        editModel.OptionallyRequiredFurnishings.Clear();
-                        editModel.OptionallyRequiredFurnishings.ToList().AddRange((IList<RecipeElement>)input);
+                        var editRecipe = inModel as IRoomRecipeEdit;
+                        editRecipe.OptionallyRequiredFurnishings.Clear();
+                        editRecipe.OptionallyRequiredFurnishings.ToList().AddRange((IList<RecipeElement>)input);
                     },
                 (RoomRecipesTabIndex, "RoomRequiredBlocksListBox")
                     => (input) =>
                     {
-                        var editModel = inModel as IRoomRecipeEdit;
-                        editModel.OptionallyRequiredPerimeterBlocks.Clear();
-                        editModel.OptionallyRequiredPerimeterBlocks.ToList().AddRange((IList<RecipeElement>)input);
+                        var editRecipe = inModel as IRoomRecipeEdit;
+                        editRecipe.OptionallyRequiredPerimeterBlocks.Clear();
+                        editRecipe.OptionallyRequiredPerimeterBlocks.ToList().AddRange((IList<RecipeElement>)input);
                     },
                 (RoomRecipesTabIndex, "RoomRequiredFloorsListBox")
                     => (input) =>
                     {
-                        var editModel = inModel as IRoomRecipeEdit;
-                        editModel.OptionallyRequiredWalkableFloors.Clear();
-                        editModel.OptionallyRequiredWalkableFloors.ToList().AddRange((IList<RecipeElement>)input);
+                        var editRecipe = inModel as IRoomRecipeEdit;
+                        editRecipe.OptionallyRequiredWalkableFloors.Clear();
+                        editRecipe.OptionallyRequiredWalkableFloors.ToList().AddRange((IList<RecipeElement>)input);
                     },
                 #endregion
 
