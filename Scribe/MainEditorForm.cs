@@ -1214,7 +1214,44 @@ namespace Scribe
             }
         }
 
-        // TODO Biomes
+        /// <summary>
+        /// Populates the Biome Recipes tab when a <see cref="BiomeRecipe"/> is selected in the BiomeListBox.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void BiomeListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BiomeParquetCriteriaListBox.SelectedItem = null;
+            BiomeEntryRequirementsListBox.SelectedItem = null;
+            if (null == BiomeListBox.SelectedItem)
+            {
+                BiomeIDExample.Text = ModelID.None.ToString();
+                BiomeNameTextBox.Text = "";
+                BiomeDescriptionTextBox.Text = "";
+                BiomeCommentTextBox.Text = "";
+                BiomeTierTextBox.Text = "";
+                BiomeIsRoomBasedCheckBox.Checked = false;
+                BiomeIsLiquidBasedCheckBox.Checked = false;
+                BiomeParquetCriteriaListBox.Items.Clear();
+                BiomeEntryRequirementsListBox.Items.Clear();
+                BiomePictureBox.Image = Resources.ImageNotFoundGraphic;
+            }
+            else if (BiomeListBox.SelectedItem is BiomeRecipe recipe
+                    && null != recipe)
+            {
+                BiomeIDExample.Text = recipe.ID.ToString();
+                BiomeNameTextBox.Text = recipe.Name;
+                BiomeDescriptionTextBox.Text = recipe.Description;
+                BiomeCommentTextBox.Text = recipe.Comment;
+                BiomeTierTextBox.Text = recipe.Tier.ToString();
+                BiomeIsRoomBasedCheckBox.Checked = recipe.IsRoomBased;
+                BiomeIsLiquidBasedCheckBox.Checked = recipe.IsLiquidBased;
+                RepopulateListBox(BiomeParquetCriteriaListBox, recipe.ParquetCriteria);
+                RepopulateListBox(BiomeEntryRequirementsListBox, recipe.EntryRequirements);
+                PictureBoxLoadFromStorage(BiomePictureBox, recipe.ID);
+            }
+        }
+
         // TODO Crafts
         // TODO Rooms
         // TODO Maps
@@ -1733,6 +1770,53 @@ namespace Scribe
         #endregion
 
         #region Biomes Tab
+        /// <summary>
+        /// Responds to the user clicking "Add New Biome" on the Biomes tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void BiomeAddNewBiomeButton_Click(object sender, EventArgs e)
+            => AddNewModel(All.Biomes, (ModelID id) => new BiomeRecipe(id, "New Biome Recipe", "", ""), All.BiomeIDs, BiomeListBox, "Biome");
+
+        /// <summary>
+        /// Responds to the user clicking "Remove Biome" on the Biomes tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void BiomeRemoveBiomeButton_Click(object sender, EventArgs e)
+            => RemoveModel(All.Biomes, BiomeListBox, "Biome");
+
+        /// <summary>
+        /// Registeres the user command to add a new parquet criterion tag to the current biome.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void BiomeAddParquetCriterionButton_Click(object sender, EventArgs e)
+            => ParquetAddTag(BiomeParquetCriteriaListBox, (IBiomeRecipeEdit recipe) => recipe.ParquetCriteria);
+
+        /// <summary>
+        /// Registeres the user command to remove the selected parquet criterion tag from the current biome.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void BiomeRemoveParquetCriterionButton_Click(object sender, EventArgs e)
+            => ParquetRemoveTag(BiomeParquetCriteriaListBox, (IBiomeRecipeEdit recipe) => recipe.ParquetCriteria);
+
+        /// <summary>
+        /// Registeres the user command to add a new entry requirement tag to the current biome.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void BiomeAddEntryRequirementButton_Click(object sender, EventArgs e)
+            => ParquetAddTag(BiomeEntryRequirementsListBox, (IBiomeRecipeEdit recipe) => recipe.EntryRequirements);
+
+        /// <summary>
+        /// Registeres the user command to remove the selected entry requirement tag from the current biome.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void BiomeRemoveEntryRequirementButton_Click(object sender, EventArgs e)
+            => ParquetRemoveTag(BiomeEntryRequirementsListBox, (IBiomeRecipeEdit recipe) => recipe.EntryRequirements);
         #endregion
 
         #region Crafting Tab

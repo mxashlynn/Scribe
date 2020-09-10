@@ -4657,6 +4657,7 @@ namespace Scribe
             this.BiomeRemoveBiomeButton.TabIndex = 2;
             this.BiomeRemoveBiomeButton.Text = "Remove Biome";
             this.BiomeRemoveBiomeButton.UseVisualStyleBackColor = true;
+            this.BiomeRemoveBiomeButton.Click += new System.EventHandler(this.BiomeRemoveBiomeButton_Click);
             // 
             // BiomeAddEntryRequirementButton
             // 
@@ -4665,8 +4666,9 @@ namespace Scribe
             this.BiomeAddEntryRequirementButton.Name = "BiomeAddEntryRequirementButton";
             this.BiomeAddEntryRequirementButton.Size = new System.Drawing.Size(129, 23);
             this.BiomeAddEntryRequirementButton.TabIndex = 2;
-            this.BiomeAddEntryRequirementButton.Text = "Add Requirement";
+            this.BiomeAddEntryRequirementButton.Text = "Add Requirement Tag";
             this.BiomeAddEntryRequirementButton.UseVisualStyleBackColor = true;
+            this.BiomeAddEntryRequirementButton.Click += new System.EventHandler(this.BiomeAddEntryRequirementButton_Click);
             // 
             // BiomeRemoveEntryRequirementButton
             // 
@@ -4675,8 +4677,9 @@ namespace Scribe
             this.BiomeRemoveEntryRequirementButton.Name = "BiomeRemoveEntryRequirementButton";
             this.BiomeRemoveEntryRequirementButton.Size = new System.Drawing.Size(129, 23);
             this.BiomeRemoveEntryRequirementButton.TabIndex = 2;
-            this.BiomeRemoveEntryRequirementButton.Text = "Remove Requirement";
+            this.BiomeRemoveEntryRequirementButton.Text = "Remove Req. Tag";
             this.BiomeRemoveEntryRequirementButton.UseVisualStyleBackColor = true;
+            this.BiomeRemoveEntryRequirementButton.Click += new System.EventHandler(this.BiomeRemoveEntryRequirementButton_Click);
             // 
             // BiomeListBox
             // 
@@ -4689,6 +4692,7 @@ namespace Scribe
             this.BiomeListBox.Size = new System.Drawing.Size(279, 446);
             this.BiomeListBox.TabIndex = 1;
             this.BiomeListBox.Tag = "Untracked Control";
+            this.BiomeListBox.SelectedIndexChanged += new System.EventHandler(this.BiomeListBox_SelectedIndexChanged);
             // 
             // BiomeConfigGroupBox
             // 
@@ -4845,8 +4849,9 @@ namespace Scribe
             this.BiomeAddParquetCriterionButton.Name = "BiomeAddParquetCriterionButton";
             this.BiomeAddParquetCriterionButton.Size = new System.Drawing.Size(129, 23);
             this.BiomeAddParquetCriterionButton.TabIndex = 2;
-            this.BiomeAddParquetCriterionButton.Text = "Add Criterion";
+            this.BiomeAddParquetCriterionButton.Text = "Add Criterion Tag";
             this.BiomeAddParquetCriterionButton.UseVisualStyleBackColor = true;
+            this.BiomeAddParquetCriterionButton.Click += new System.EventHandler(this.BiomeAddParquetCriterionButton_Click);
             // 
             // BiomeRemoveParquetCriterionButton
             // 
@@ -4855,8 +4860,9 @@ namespace Scribe
             this.BiomeRemoveParquetCriterionButton.Name = "BiomeRemoveParquetCriterionButton";
             this.BiomeRemoveParquetCriterionButton.Size = new System.Drawing.Size(129, 23);
             this.BiomeRemoveParquetCriterionButton.TabIndex = 2;
-            this.BiomeRemoveParquetCriterionButton.Text = "Remove Criterion";
+            this.BiomeRemoveParquetCriterionButton.Text = "Remove Criterion Tag";
             this.BiomeRemoveParquetCriterionButton.UseVisualStyleBackColor = true;
+            this.BiomeRemoveParquetCriterionButton.Click += new System.EventHandler(this.BiomeRemoveParquetCriterionButton_Click);
             // 
             // BiomeEntryRequirementsListBox
             // 
@@ -5039,6 +5045,7 @@ namespace Scribe
             this.BiomeAddNewBiomeButton.TabIndex = 2;
             this.BiomeAddNewBiomeButton.Text = "Add New Biome";
             this.BiomeAddNewBiomeButton.UseVisualStyleBackColor = true;
+            this.BiomeAddNewBiomeButton.Click += new System.EventHandler(this.BiomeAddNewBiomeButton_Click);
             // 
             // BiomeIDExample
             // 
