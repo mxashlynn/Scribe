@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Media;
@@ -35,6 +36,20 @@ namespace Scribe
         /// <summary>Dialogue for selecting the project folder to work in.</summary>
         private static readonly FolderBrowserDialog FolderBrowserDialogue = new FolderBrowserDialog();
 
+        /// <summary>Texts that cannot be used as <see cref="ModelTag"/>s.</summary>
+        private static readonly List<string> ReservedWorldList = new List<string>
+        {
+            "Empty",
+            "None",
+            "Other",
+            "Unstarted",
+            "Unused",
+        };
+
+        /// <summary>Indicates to the user that the text entered cannot be used as a <see cref="ModelTag"/>.</summary>
+        internal static readonly string ReservedWordMessage = string.Format(CultureInfo.CurrentCulture, Resources.ErrorReservedWord,
+                                                                            string.Join(", ", ReservedWorldList));
+
         #region Initialization
         /// <summary>
         /// Initializes <see cref="EditorCommands"/> asset collections.
@@ -64,6 +79,17 @@ namespace Scribe
                                                                                                          .Replace("Recipe", "Recipes")));
             }
         }
+        #endregion
+
+        #region Validation Routines
+        /// <summary>
+        /// Validates that text is not one of the words reserved by Parquet's serialization routines.
+        /// </summary>
+        /// <param name="newText">The text to validate.</param>
+        /// <returns><c>True</c> if the text is a reserved word, <c>false</c> otherwise.</returns>
+        internal static bool TextIsReserved(string newText)
+            => ReservedWorldList
+               .Any(reservedWord => 0 == string.Compare(newText, reservedWord, comparisonType: StringComparison.OrdinalIgnoreCase));
 
         #endregion
 

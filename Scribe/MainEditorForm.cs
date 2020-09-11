@@ -116,7 +116,7 @@ namespace Scribe
                         {
                             SystemSounds.Beep.Play();
                             _ = MessageBox.Show(Resources.ErrorSaveFailed, Resources.CaptionError,
-                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                MessageBoxButtons.OK, MessageBoxIcon.Error);
                             _hasUnsavedChanges = true;
                         }
                     }
@@ -1424,8 +1424,7 @@ namespace Scribe
             }
 
             if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is TInterface model
-                && AddTagDialogue.ShowDialog() == DialogResult.OK
-                && !string.IsNullOrEmpty(AddTagDialogue.ReturnNewTag))
+                && AddTagDialogue.ShowDialog() == DialogResult.OK)
             {
                 if (inGetTagListFromModel(model).Any(tag => ((string)AddTagDialogue.ReturnNewTag).Equals(tag)))
                 {

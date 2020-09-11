@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Forms;
 using ParquetClassLibrary;
+using Scribe.Properties;
 
 namespace Scribe
 {
@@ -24,7 +25,20 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void NewTagTextBox_TextChanged(object sender, EventArgs e)
-            => ReturnNewTag = NewTagTextBox.Text = NewTagTextBox.Text.Replace('\r', ' ').Replace('\n', ' ').Replace('\t', ' ');
+        {
+            var newText = NewTagTextBox.Text.Replace('\r', ' ').Replace('\n', ' ').Replace('\t', ' ').Trim();
+
+            if (EditorCommands.TextIsReserved(newText))
+            {
+                ReturnNewTag = NewTagTextBox.Text = "";
+                _ = MessageBox.Show(EditorCommands.ReservedWordMessage, Resources.CaptionError,
+                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                ReturnNewTag = NewTagTextBox.Text = newText;
+            }
+        }
 
         private void AddTagBox_Load(object sender, EventArgs e)
         {
@@ -40,7 +54,9 @@ namespace Scribe
         /// <param name="e">Additional event data.</param>
         private void OkayButton_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+            DialogResult = string.IsNullOrEmpty(ReturnNewTag)
+                ? DialogResult.Cancel
+                : DialogResult.OK;
             Close();
         }
 

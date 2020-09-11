@@ -233,6 +233,15 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The text entered cannot be used.  Parquet reserves the following words: {0}.
+        /// </summary>
+        internal static string ErrorReservedWord {
+            get {
+                return ResourceManager.GetString("ErrorReservedWord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Scribe attempted to save the project but encountered an error.  Please check the log..
         /// </summary>
         internal static string ErrorSaveFailed {
