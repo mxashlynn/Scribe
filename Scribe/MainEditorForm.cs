@@ -1914,6 +1914,7 @@ namespace Scribe
         /// <param name="e">Addional event data.</param>
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Validate();
             if (EditorCommands.SaveDataFiles())
             {
                 HasUnsavedChanges = false;
