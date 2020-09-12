@@ -13,6 +13,7 @@ namespace Scribe
         /// <summary>The <see cref="ModelTag"/> that the user added, if any.</summary>
         public ModelTag ReturnNewTag { get; set; }
 
+        #region Initialization
         /// <summary>
         /// Initialize a new <see cref="AddTagBox"/>.
         /// </summary>
@@ -20,14 +21,26 @@ namespace Scribe
             => InitializeComponent();
 
         /// <summary>
-        /// Returns the <see cref="ParquetClassLibrary.ModelTag"/> that the user added to the <see cref="MainEditorForm"/>. 
+        /// Resets the UI each time the dialogue box is loaded.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void AddTagBox_Load(object sender, EventArgs e)
+        {
+            ReturnNewTag = "";
+            NewTagTextBox.Text = "";
+            NewTagTextBox.Select();
+        }
+        #endregion
+
+        /// <summary>
+        /// Validates the <see cref="ModelTag"/> that the user added. 
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void NewTagTextBox_TextChanged(object sender, EventArgs e)
         {
-            var newText = NewTagTextBox.Text.Replace('\r', ' ').Replace('\n', ' ').Replace('\t', ' ').Trim();
-
+            var newText = EditorCommands.NormalizeWhitespace(NewTagTextBox.Text);
             if (EditorCommands.TextIsReserved(newText))
             {
                 ReturnNewTag = NewTagTextBox.Text = "";
@@ -38,13 +51,6 @@ namespace Scribe
             {
                 ReturnNewTag = NewTagTextBox.Text = newText;
             }
-        }
-
-        private void AddTagBox_Load(object sender, EventArgs e)
-        {
-            ReturnNewTag = "";
-            NewTagTextBox.Text = "";
-            NewTagTextBox.Select();
         }
 
         /// <summary>

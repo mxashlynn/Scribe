@@ -4,6 +4,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Media;
+using System.Text;
 using System.Windows.Forms;
 using ParquetClassLibrary;
 using ParquetClassLibrary.Beings;
@@ -91,6 +92,32 @@ namespace Scribe
             => ReservedWorldList
                .Any(reservedWord => 0 == string.Compare(newText, reservedWord, comparisonType: StringComparison.OrdinalIgnoreCase));
 
+        /// <summary>
+        /// Replaces all whitespace in the given text with the ASCII space character.
+        /// This will remove unicode whitespace as well as tabs and ends-of-line.
+        /// </summary>
+        /// <param name="inText">The <see cref="string"/> to normalize.</param>
+        /// <returns>The normalized <see cref="string"/>.</returns>
+        internal static string NormalizeWhitespace(string inText)
+        {
+            if (string.IsNullOrEmpty(inText))
+            {
+                return "";
+            }
+            else
+            {
+                var newTextBuilder = new StringBuilder(inText.Length);
+                inText.All(c =>
+                {
+                    var normalC = char.IsWhiteSpace(c)
+                        ? ' '
+                        : c;
+                    newTextBuilder.Append(normalC);
+                    return true;
+                });
+                return newTextBuilder.ToString().Trim();
+            }
+        }
         #endregion
 
         #region Setting Up FolderBrowserDialogue
