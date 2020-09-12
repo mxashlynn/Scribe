@@ -5550,6 +5550,7 @@ namespace Scribe
             this.RoomListBox.Size = new System.Drawing.Size(279, 446);
             this.RoomListBox.TabIndex = 1;
             this.RoomListBox.Tag = "Untracked Control";
+            this.RoomListBox.SelectedValueChanged += new System.EventHandler(this.RoomListBox_SelectedValueChanged);
             // 
             // RoomConfigGroupBox
             // 

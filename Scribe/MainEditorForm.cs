@@ -709,11 +709,11 @@ namespace Scribe
                 
                 #region RoomRecipes
                 (RoomRecipesTabIndex, "RoomNameTextBox")
-                    => (input) => (inModel as ICraftingRecipeEdit).Name = input.ToString(),
+                    => (input) => (inModel as IRoomRecipeEdit).Name = input.ToString(),
                 (RoomRecipesTabIndex, "RoomDescriptionTextBox")
-                    => (input) => (inModel as ICraftingRecipeEdit).Description = input.ToString(),
+                    => (input) => (inModel as IRoomRecipeEdit).Description = input.ToString(),
                 (RoomRecipesTabIndex, "RoomCommentTextBox")
-                    => (input) => (inModel as ICraftingRecipeEdit).Comment = input.ToString(),
+                    => (input) => (inModel as IRoomRecipeEdit).Comment = input.ToString(),
                 (RoomRecipesTabIndex, "RoomMinimumWalkableSpacesTextBox")
                     => (input) => (inModel as IRoomRecipeEdit).MinimumWalkableSpaces = ValueToInt(input),
                 (RoomRecipesTabIndex, "RoomRequiredFurnishingsListBox")
@@ -1280,7 +1280,7 @@ namespace Scribe
                 RoomNameTextBox.Text = recipe.Name;
                 RoomDescriptionTextBox.Text = recipe.Description;
                 RoomCommentTextBox.Text = recipe.Comment;
-                RoomMinimumWalkableSpacesTextBox.Text = "";
+                RoomMinimumWalkableSpacesTextBox.Text = recipe.MinimumWalkableSpaces.ToString();
                 RepopulateListBox(RoomRequiredFurnishingsListBox, recipe.OptionallyRequiredFurnishings);
                 RepopulateListBox(RoomRequiredFloorsListBox, recipe.OptionallyRequiredWalkableFloors);
                 RepopulateListBox(RoomRequiredBlocksListBox, recipe.OptionallyRequiredPerimeterBlocks);
