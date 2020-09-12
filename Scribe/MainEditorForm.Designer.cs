@@ -491,7 +491,7 @@ namespace Scribe
             this.RoomNameLabel = new System.Windows.Forms.Label();
             this.RoomDescriptionLabel = new System.Windows.Forms.Label();
             this.RoomCommentLabel = new System.Windows.Forms.Label();
-            this.RoomTierLabel = new System.Windows.Forms.Label();
+            this.RoomMinimumWalkableSpaces = new System.Windows.Forms.Label();
             this.RoomRequiredFloorsLabel = new System.Windows.Forms.Label();
             this.RoomRequiredBlocksLabel = new System.Windows.Forms.Label();
             this.RoomNameTextBox = new System.Windows.Forms.TextBox();
@@ -5515,6 +5515,7 @@ namespace Scribe
             this.RoomRemoveRoomButton.TabIndex = 2;
             this.RoomRemoveRoomButton.Text = "Remove Room";
             this.RoomRemoveRoomButton.UseVisualStyleBackColor = true;
+            this.RoomRemoveRoomButton.Click += new System.EventHandler(this.RoomRemoveRoomButton_Click);
             // 
             // RoomAddBlockButton
             // 
@@ -5523,8 +5524,9 @@ namespace Scribe
             this.RoomAddBlockButton.Name = "RoomAddBlockButton";
             this.RoomAddBlockButton.Size = new System.Drawing.Size(129, 23);
             this.RoomAddBlockButton.TabIndex = 2;
-            this.RoomAddBlockButton.Text = "Add Block Tag";
+            this.RoomAddBlockButton.Text = "Add Block";
             this.RoomAddBlockButton.UseVisualStyleBackColor = true;
+            this.RoomAddBlockButton.Click += new System.EventHandler(this.RoomAddBlockButton_Click);
             // 
             // RoomRemoveBlockButton
             // 
@@ -5533,8 +5535,9 @@ namespace Scribe
             this.RoomRemoveBlockButton.Name = "RoomRemoveBlockButton";
             this.RoomRemoveBlockButton.Size = new System.Drawing.Size(129, 23);
             this.RoomRemoveBlockButton.TabIndex = 2;
-            this.RoomRemoveBlockButton.Text = "Remove Block Tag";
+            this.RoomRemoveBlockButton.Text = "Remove Block";
             this.RoomRemoveBlockButton.UseVisualStyleBackColor = true;
+            this.RoomRemoveBlockButton.Click += new System.EventHandler(this.RoomRemoveBlockButton_Click);
             // 
             // RoomListBox
             // 
@@ -5649,7 +5652,7 @@ namespace Scribe
             this.RoomTableLayoutPanel.Controls.Add(this.RoomNameLabel, 0, 0);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomDescriptionLabel, 0, 1);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomCommentLabel, 0, 2);
-            this.RoomTableLayoutPanel.Controls.Add(this.RoomTierLabel, 0, 3);
+            this.RoomTableLayoutPanel.Controls.Add(this.RoomMinimumWalkableSpaces, 0, 3);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomRequiredFloorsLabel, 0, 6);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomRequiredBlocksLabel, 0, 8);
             this.RoomTableLayoutPanel.Controls.Add(this.RoomNameTextBox, 1, 0);
@@ -5681,8 +5684,9 @@ namespace Scribe
             this.RoomAddFurnishingButton.Name = "RoomAddFurnishingButton";
             this.RoomAddFurnishingButton.Size = new System.Drawing.Size(129, 23);
             this.RoomAddFurnishingButton.TabIndex = 30;
-            this.RoomAddFurnishingButton.Text = "Add Furnishing Tag";
+            this.RoomAddFurnishingButton.Text = "Add Furnishing";
             this.RoomAddFurnishingButton.UseVisualStyleBackColor = true;
+            this.RoomAddFurnishingButton.Click += new System.EventHandler(this.RoomAddFurnishingButton_Click);
             // 
             // RoomRemoveFurnishingButton
             // 
@@ -5691,8 +5695,9 @@ namespace Scribe
             this.RoomRemoveFurnishingButton.Name = "RoomRemoveFurnishingButton";
             this.RoomRemoveFurnishingButton.Size = new System.Drawing.Size(129, 23);
             this.RoomRemoveFurnishingButton.TabIndex = 29;
-            this.RoomRemoveFurnishingButton.Text = "Remove Furnishing Tag";
+            this.RoomRemoveFurnishingButton.Text = "Remove Furnishing";
             this.RoomRemoveFurnishingButton.UseVisualStyleBackColor = true;
+            this.RoomRemoveFurnishingButton.Click += new System.EventHandler(this.RoomRemoveFurnishingButton_Click);
             // 
             // RoomAddFloorButton
             // 
@@ -5701,8 +5706,9 @@ namespace Scribe
             this.RoomAddFloorButton.Name = "RoomAddFloorButton";
             this.RoomAddFloorButton.Size = new System.Drawing.Size(129, 23);
             this.RoomAddFloorButton.TabIndex = 2;
-            this.RoomAddFloorButton.Text = "Add Floor Tag";
+            this.RoomAddFloorButton.Text = "Add Floor";
             this.RoomAddFloorButton.UseVisualStyleBackColor = true;
+            this.RoomAddFloorButton.Click += new System.EventHandler(this.RoomAddFloorButton_Click);
             // 
             // RoomRemoveFloorButton
             // 
@@ -5711,8 +5717,9 @@ namespace Scribe
             this.RoomRemoveFloorButton.Name = "RoomRemoveFloorButton";
             this.RoomRemoveFloorButton.Size = new System.Drawing.Size(129, 23);
             this.RoomRemoveFloorButton.TabIndex = 2;
-            this.RoomRemoveFloorButton.Text = "Remove Floor Tag";
+            this.RoomRemoveFloorButton.Text = "Remove Floor";
             this.RoomRemoveFloorButton.UseVisualStyleBackColor = true;
+            this.RoomRemoveFloorButton.Click += new System.EventHandler(this.RoomRemoveFloorButton_Click);
             // 
             // RoomRequiredBlocksListBox
             // 
@@ -5763,14 +5770,14 @@ namespace Scribe
             this.RoomCommentLabel.TabIndex = 6;
             this.RoomCommentLabel.Text = "Comment";
             // 
-            // RoomTierLabel
+            // RoomMinimumWalkableSpaces
             // 
-            this.RoomTierLabel.AutoSize = true;
-            this.RoomTierLabel.Location = new System.Drawing.Point(3, 135);
-            this.RoomTierLabel.Name = "RoomTierLabel";
-            this.RoomTierLabel.Size = new System.Drawing.Size(125, 13);
-            this.RoomTierLabel.TabIndex = 9;
-            this.RoomTierLabel.Text = "Minimum Walkable Floors";
+            this.RoomMinimumWalkableSpaces.AutoSize = true;
+            this.RoomMinimumWalkableSpaces.Location = new System.Drawing.Point(3, 135);
+            this.RoomMinimumWalkableSpaces.Name = "RoomMinimumWalkableSpaces";
+            this.RoomMinimumWalkableSpaces.Size = new System.Drawing.Size(130, 13);
+            this.RoomMinimumWalkableSpaces.TabIndex = 9;
+            this.RoomMinimumWalkableSpaces.Text = "Minimum Walkable Spaces";
             // 
             // RoomRequiredFloorsLabel
             // 
@@ -5878,6 +5885,7 @@ namespace Scribe
             this.RoomAddNewRoomButton.TabIndex = 2;
             this.RoomAddNewRoomButton.Text = "Add New Room";
             this.RoomAddNewRoomButton.UseVisualStyleBackColor = true;
+            this.RoomAddNewRoomButton.Click += new System.EventHandler(this.RoomAddNewRoomButton_Click);
             // 
             // RoomIDExample
             // 
@@ -6517,7 +6525,7 @@ namespace Scribe
         private System.Windows.Forms.Label RoomNameLabel;
         private System.Windows.Forms.Label RoomDescriptionLabel;
         private System.Windows.Forms.Label RoomCommentLabel;
-        private System.Windows.Forms.Label RoomTierLabel;
+        private System.Windows.Forms.Label RoomMinimumWalkableSpaces;
         private System.Windows.Forms.Label RoomRequiredFloorsLabel;
         private System.Windows.Forms.Label RoomRequiredBlocksLabel;
         private System.Windows.Forms.TextBox RoomNameTextBox;

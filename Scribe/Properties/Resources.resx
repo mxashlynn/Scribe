@@ -194,6 +194,10 @@ Folder: {1}</value>
     <value>Scribe attempted to create a new project but encountered an error.  Please check the log.</value>
     <comment>Error string.</comment>
   </data>
+  <data name="ErrorPositiveIntegersOnly" xml:space="preserve">
+    <value>This value must be an integer greater than 0.</value>
+    <comment>Error string.</comment>
+  </data>
   <data name="ErrorReservedWord" xml:space="preserve">
     <value>The text entered cannot be used.  Parquet reserves the following words: {0}</value>
     <comment>Error string.</comment>

@@ -233,6 +233,15 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This value must be an integer greater than 0..
+        /// </summary>
+        internal static string ErrorPositiveIntegersOnly {
+            get {
+                return ResourceManager.GetString("ErrorPositiveIntegersOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The text entered cannot be used.  Parquet reserves the following words: {0}.
         /// </summary>
         internal static string ErrorReservedWord {

@@ -877,7 +877,7 @@ namespace Scribe
         {
             if (null != in_source)
             {
-                in_listbox.ClearSelected();
+                in_listbox.SelectedItem = null;
                 in_listbox.BeginUpdate();
                 in_listbox.Items.Clear();
                 foreach (var value in in_source)
@@ -1250,7 +1250,44 @@ namespace Scribe
         }
 
         // TODO Crafts
-        // TODO Rooms
+
+        /// <summary>
+        /// Populates the Room Recipes tab when a <see cref="RoomRecipe"/> is selected in the RoomListBox.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void RoomListBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            RoomRequiredFurnishingsListBox.SelectedItem = null;
+            RoomRequiredFloorsListBox.SelectedItem = null;
+            RoomRequiredBlocksListBox.SelectedItem = null;
+            if (null == RoomListBox.SelectedItem)
+            {
+                RoomIDExample.Text = ModelID.None.ToString();
+                RoomNameTextBox.Text = "";
+                RoomDescriptionTextBox.Text = "";
+                RoomCommentTextBox.Text = "";
+                RoomMinimumWalkableSpacesTextBox.Text = "";
+                RoomRequiredFurnishingsListBox.Items.Clear();
+                RoomRequiredFloorsListBox.Items.Clear();
+                RoomRequiredBlocksListBox.Items.Clear();
+                RoomPictureBox.Image = Resources.ImageNotFoundGraphic;
+            }
+            else if (RoomListBox.SelectedItem is RoomRecipe recipe
+                    && null != recipe)
+            {
+                RoomIDExample.Text = recipe.ID.ToString();
+                RoomNameTextBox.Text = recipe.Name;
+                RoomDescriptionTextBox.Text = recipe.Description;
+                RoomCommentTextBox.Text = recipe.Comment;
+                RoomMinimumWalkableSpacesTextBox.Text = "";
+                RepopulateListBox(RoomRequiredFurnishingsListBox, recipe.OptionallyRequiredFurnishings);
+                RepopulateListBox(RoomRequiredFloorsListBox, recipe.OptionallyRequiredWalkableFloors);
+                RepopulateListBox(RoomRequiredBlocksListBox, recipe.OptionallyRequiredPerimeterBlocks);
+                PictureBoxLoadFromStorage(RoomPictureBox, recipe.ID);
+            }
+        }
+
         // TODO Maps
         // TODO Scripts
         #endregion
@@ -1362,7 +1399,7 @@ namespace Scribe
                                         {
                                             ((IModelCollectionEdit<TModel>)inDatabaseCollection).Remove((TModel)databaseValue);
                                             inListBox.Items.Remove(databaseValue);
-                                            inListBox.ClearSelected();
+                                            inListBox.SelectedItem = null;
                                             HasUnsavedChanges = true;
                                         }));
         }
@@ -1395,7 +1432,7 @@ namespace Scribe
                                         {
                                             ((IModelCollectionEdit<TModel>)inDatabaseCollection).Remove((TModel)databaseValue);
                                             inListBox.Items.Remove(databaseValue);
-                                            inListBox.ClearSelected();
+                                            inListBox.SelectedItem = null;
                                             HasUnsavedChanges = true;
                                         },
                                         (object databaseValue) =>
@@ -1410,11 +1447,11 @@ namespace Scribe
 
         #region Tag Adjustments
         /// <summary>
-        /// Adds a new tag to the selected <see cref="Model"/>, updating the given <see cref="ListBox"/>.
+        /// Adds a new <see cref="ModelTag"/> to the selected <see cref="Model"/>, updating the given <see cref="ListBox"/>.
         /// </summary>
         /// <param name="inAddsToListBox">The UI element reflectling the collection being changed.</param>
         /// <param name="inGetTagListFromModel">The means, given a model, to find the correct tag collection.</param>
-        private void ParquetAddTag<TInterface>(ListBox inAddsToListBox, Func<TInterface, IList<ModelTag>> inGetTagListFromModel)
+        private void AddTag<TInterface>(ListBox inAddsToListBox, Func<TInterface, IList<ModelTag>> inGetTagListFromModel)
             where TInterface : IModelEdit
         {
             if (!All.CollectionsHaveBeenInitialized)
@@ -1448,18 +1485,18 @@ namespace Scribe
                                             {
                                                 inGetTagListFromModel(model).Remove((ModelTag)databaseValue);
                                                 inAddsToListBox.Items.Remove(databaseValue);
-                                                inAddsToListBox.ClearSelected();
+                                                inAddsToListBox.SelectedItem = null;
                                                 HasUnsavedChanges = true;
                                             }));
             }
         }
 
         /// <summary>
-        /// Removes the selected tag from the selected <see cref="Model"/>, updating the given <see cref="ListBox"/>.
+        /// Removes the selected <see cref="ModelTag"/> from the selected <see cref="Model"/>, updating the given <see cref="ListBox"/>.
         /// </summary>
         /// <param name="inAddsToListBox">The UI element reflectling the collection being changed.</param>
         /// <param name="inGetTagListFromModel">The means, given a Model, to find the correct tag collection.</param>
-        private void ParquetRemoveTag<TInterface>(ListBox inAddsToListBox, Func<TInterface, IList<ModelTag>> inGetTagListFromModel)
+        private void RemoveTag<TInterface>(ListBox inAddsToListBox, Func<TInterface, IList<ModelTag>> inGetTagListFromModel)
             where TInterface : IModelEdit
         {
             if (!All.CollectionsHaveBeenInitialized || null == inAddsToListBox.SelectedItem)
@@ -1476,12 +1513,97 @@ namespace Scribe
                                             {
                                                 inGetTagListFromModel(model).Remove((ModelTag)databaseValue);
                                                 inAddsToListBox.Items.Remove(databaseValue);
-                                                inAddsToListBox.ClearSelected();
+                                                inAddsToListBox.SelectedItem = null;
                                                 HasUnsavedChanges = true;
                                             },
                                             (object databaseValue) =>
                                             {
                                                 inGetTagListFromModel(model).Add((ModelTag)databaseValue);
+                                                _ = inAddsToListBox.Items.Add(databaseValue);
+                                                inAddsToListBox.SelectedItem = databaseValue;
+                                                HasUnsavedChanges = true;
+                                            }));
+            }
+        }
+        #endregion
+
+        #region Recipe Element Adjustments
+        /// <summary>
+        /// Adds a new <see cref="RecipeElement"/> to the selected <see cref="Model"/>, updating the given <see cref="ListBox"/>.
+        /// </summary>
+        /// <param name="inAddsToListBox">The UI element reflectling the collection being changed.</param>
+        /// <param name="inGetElementListFromModel">The means, given a model, to find the correct Recipe Element collection.</param>
+        private void AddRecipeElement<TInterface>(ListBox inAddsToListBox, Func<TInterface,
+                                                  IList<RecipeElement>> inGetElementListFromModel)
+            where TInterface : IModelEdit
+        {
+            if (!All.CollectionsHaveBeenInitialized)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is TInterface model
+                && AddRecipeElementDialogue.ShowDialog() == DialogResult.OK)
+            {
+                if (inGetElementListFromModel(model).Any(element => AddRecipeElementDialogue.ReturnNewRecipeElement == element))
+                {
+                    // Do not add duplicate elements.
+                    // TODO Report this error in the status bar or something.
+                    MessageBox.Show("Not adding duplicate recipe element.");
+                    SystemSounds.Beep.Play();
+                    return;
+                }
+
+                ChangeManager.AddAndExecute(new ChangeList(AddRecipeElementDialogue.ReturnNewRecipeElement,
+                                            $"add recipe element {AddRecipeElementDialogue.ReturnNewRecipeElement} to {model.Name}",
+                                            (object databaseValue) =>
+                                            {
+                                                inGetElementListFromModel(model).Add((RecipeElement)databaseValue);
+                                                _ = inAddsToListBox.Items.Add(databaseValue);
+                                                inAddsToListBox.SelectedItem = databaseValue;
+                                                HasUnsavedChanges = true;
+                                            },
+                                            (object databaseValue) =>
+                                            {
+                                                inGetElementListFromModel(model).Remove((RecipeElement)databaseValue);
+                                                inAddsToListBox.Items.Remove(databaseValue);
+                                                inAddsToListBox.SelectedItem = null;
+                                                HasUnsavedChanges = true;
+                                            }));
+            }
+        }
+
+        /// <summary>
+        /// Removes the selected <see cref="RecipeElement"/> from the selected <see cref="Model"/>,
+        /// updating the given <see cref="ListBox"/>.
+        /// </summary>
+        /// <param name="inAddsToListBox">The UI element reflectling the collection being changed.</param>
+        /// <param name="inGetElementListFromModel">The means, given a Model, to find the correct Recipe Element collection.</param>
+        private void RemoveRecipeElement<TInterface>(ListBox inAddsToListBox, Func<TInterface,
+                                                     IList<RecipeElement>> inGetElementListFromModel)
+            where TInterface : IModelEdit
+        {
+            if (!All.CollectionsHaveBeenInitialized || null == inAddsToListBox.SelectedItem)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is TInterface model)
+            {
+                ChangeManager.AddAndExecute(new ChangeList((RecipeElement)inAddsToListBox.SelectedItem,
+                                            $"remove recipe element {inAddsToListBox.SelectedItem} from {model.Name}",
+                                            (object databaseValue) =>
+                                            {
+                                                inGetElementListFromModel(model).Remove((RecipeElement)databaseValue);
+                                                inAddsToListBox.Items.Remove(databaseValue);
+                                                inAddsToListBox.SelectedItem = null;
+                                                HasUnsavedChanges = true;
+                                            },
+                                            (object databaseValue) =>
+                                            {
+                                                inGetElementListFromModel(model).Add((RecipeElement)databaseValue);
                                                 _ = inAddsToListBox.Items.Add(databaseValue);
                                                 inAddsToListBox.SelectedItem = databaseValue;
                                                 HasUnsavedChanges = true;
@@ -1531,7 +1653,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void BlockAddBiomeTagButton_Click(object sender, EventArgs e)
-            => ParquetAddTag(BlockAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
+            => AddTag(BlockAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to remove the selected biome tag from the current block.
@@ -1539,7 +1661,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void BlockRemoveBiomeTagButton_Click(object sender, EventArgs e)
-            => ParquetRemoveTag(BlockAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
+            => RemoveTag(BlockAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to add a new room tag to the current block.
@@ -1547,7 +1669,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void BlockAddRoomTagButton_Click(object sender, EventArgs e)
-            => ParquetAddTag(BlockAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
+            => AddTag(BlockAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
 
         /// <summary>
         /// Registeres the user command to remove the selected room tag from the current block.
@@ -1555,7 +1677,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void BlockRemoveRoomTagButton_Click(object sender, EventArgs e)
-            => ParquetRemoveTag(BlockAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
+            => RemoveTag(BlockAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
         #endregion
 
         #region Floors Tab
@@ -1581,7 +1703,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FloorAddBiomeTagButton_Click(object sender, EventArgs e)
-            => ParquetAddTag(FloorAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
+            => AddTag(FloorAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to remove the selected biome tag from the current floor.
@@ -1589,7 +1711,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FloorRemoveBiomeTagButton_Click(object sender, EventArgs e)
-            => ParquetRemoveTag(FloorAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
+            => RemoveTag(FloorAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to add a new room tag to the current floor.
@@ -1597,7 +1719,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FloorAddRoomTagButton_Click(object sender, EventArgs e)
-            => ParquetAddTag(FloorAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
+            => AddTag(FloorAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
 
         /// <summary>
         /// Registeres the user command to remove the selected room tag from the current floor.
@@ -1605,7 +1727,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FloorRemoveRoomTagButton_Click(object sender, EventArgs e)
-            => ParquetRemoveTag(FloorAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
+            => RemoveTag(FloorAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
         #endregion
 
         #region Furnishings Tab
@@ -1632,7 +1754,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FurnishingAddBiomeTagButton_Click(object sender, EventArgs e)
-            => ParquetAddTag(FurnishingAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
+            => AddTag(FurnishingAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to remove the selected biome tag from the current furnishing.
@@ -1640,7 +1762,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FurnishingRemoveBiomeTagButton_Click(object sender, EventArgs e)
-            => ParquetRemoveTag(FurnishingAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
+            => RemoveTag(FurnishingAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to add a new room tag to the current furnishing.
@@ -1648,7 +1770,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FurnishingAddRoomTagButton_Click(object sender, EventArgs e)
-            => ParquetAddTag(FurnishingAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
+            => AddTag(FurnishingAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
 
         /// <summary>
         /// Registeres the user command to remove the selected room tag from the current furnishing.
@@ -1656,7 +1778,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FurnishingRemoveRoomTagButton_Click(object sender, EventArgs e)
-            => ParquetRemoveTag(FurnishingAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
+            => RemoveTag(FurnishingAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
         #endregion
 
         #region Collectibles Tab
@@ -1683,7 +1805,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void CollectibleAddBiomeTagButton_Click(object sender, EventArgs e)
-            => ParquetAddTag(CollectibleAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
+            => AddTag(CollectibleAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to remove the selected biome tag from the current collectible.
@@ -1691,7 +1813,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void CollectibleRemoveBiomeTagButton_Click(object sender, EventArgs e)
-            => ParquetRemoveTag(CollectibleAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
+            => RemoveTag(CollectibleAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to add a new room tag to the current collectible.
@@ -1699,7 +1821,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void CollectibleAddRoomTagButton_Click(object sender, EventArgs e)
-            => ParquetAddTag(CollectibleAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
+            => AddTag(CollectibleAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
 
         /// <summary>
         /// Registeres the user command to remove the selected room tag from the current collectible.
@@ -1707,10 +1829,11 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void CollectibleRemoveRoomTagButton_Click(object sender, EventArgs e)
-            => ParquetRemoveTag(CollectibleAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
+            => RemoveTag(CollectibleAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
         #endregion
 
         #region Characters Tab
+        // TODO Characters
         #endregion
 
         #region Critters Tab
@@ -1754,7 +1877,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void ItemAddTagButton_Click(object sender, EventArgs e)
-            => ParquetAddTag(ItemTagListBox, (IItemModelEdit model) => model.ItemTags);
+            => AddTag(ItemTagListBox, (IItemModelEdit model) => model.ItemTags);
 
         /// <summary>
         /// Registeres the user command to remove the selected tag from the current item.
@@ -1762,7 +1885,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void ItemRemoveTagButton_Click(object sender, EventArgs e)
-            => ParquetRemoveTag(ItemTagListBox, (IItemModelEdit model) => model.ItemTags);
+            => RemoveTag(ItemTagListBox, (IItemModelEdit model) => model.ItemTags);
         #endregion
 
         #region Biomes Tab
@@ -1772,7 +1895,7 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void BiomeAddNewBiomeButton_Click(object sender, EventArgs e)
-            => AddNewModel(All.Biomes, (ModelID id) => new BiomeRecipe(id, "New Biome Recipe", "", ""), All.BiomeIDs, BiomeListBox, "Biome");
+            => AddNewModel(All.Biomes, (ModelID id) => new BiomeRecipe(id, "New Biome Recipe", "", ""), All.BiomeIDs, BiomeListBox, "Biome Recipe");
 
         /// <summary>
         /// Responds to the user clicking "Remove Biome" on the Biomes tab.
@@ -1780,7 +1903,7 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void BiomeRemoveBiomeButton_Click(object sender, EventArgs e)
-            => RemoveModel(All.Biomes, BiomeListBox, "Biome");
+            => RemoveModel(All.Biomes, BiomeListBox, "Room Recipe");
 
         /// <summary>
         /// Registeres the user command to add a new parquet criterion tag to the current biome.
@@ -1788,7 +1911,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void BiomeAddParquetCriterionButton_Click(object sender, EventArgs e)
-            => ParquetAddTag(BiomeParquetCriteriaListBox, (IBiomeRecipeEdit recipe) => recipe.ParquetCriteria);
+            => AddTag(BiomeParquetCriteriaListBox, (IBiomeRecipeEdit recipe) => recipe.ParquetCriteria);
 
         /// <summary>
         /// Registeres the user command to remove the selected parquet criterion tag from the current biome.
@@ -1796,7 +1919,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void BiomeRemoveParquetCriterionButton_Click(object sender, EventArgs e)
-            => ParquetRemoveTag(BiomeParquetCriteriaListBox, (IBiomeRecipeEdit recipe) => recipe.ParquetCriteria);
+            => RemoveTag(BiomeParquetCriteriaListBox, (IBiomeRecipeEdit recipe) => recipe.ParquetCriteria);
 
         /// <summary>
         /// Registeres the user command to add a new entry requirement tag to the current biome.
@@ -1804,7 +1927,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void BiomeAddEntryRequirementButton_Click(object sender, EventArgs e)
-            => ParquetAddTag(BiomeEntryRequirementsListBox, (IBiomeRecipeEdit recipe) => recipe.EntryRequirements);
+            => AddTag(BiomeEntryRequirementsListBox, (IBiomeRecipeEdit recipe) => recipe.EntryRequirements);
 
         /// <summary>
         /// Registeres the user command to remove the selected entry requirement tag from the current biome.
@@ -1812,19 +1935,85 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void BiomeRemoveEntryRequirementButton_Click(object sender, EventArgs e)
-            => ParquetRemoveTag(BiomeEntryRequirementsListBox, (IBiomeRecipeEdit recipe) => recipe.EntryRequirements);
+            => RemoveTag(BiomeEntryRequirementsListBox, (IBiomeRecipeEdit recipe) => recipe.EntryRequirements);
         #endregion
 
         #region Crafting Tab
+        // TODO Crafts
         #endregion
 
         #region Rooms Tab
+        /// <summary>
+        /// Responds to the user clicking "Add New Room" on the Rooms tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void RoomAddNewRoomButton_Click(object sender, EventArgs e)
+            => AddNewModel(All.RoomRecipes, (ModelID id) => new RoomRecipe(id, "New Room Recipe", "", ""), All.RoomRecipeIDs, RoomListBox, "Room Recipe");
+
+        /// <summary>
+        /// Responds to the user clicking "Remove Room" on the Rooms tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void RoomRemoveRoomButton_Click(object sender, EventArgs e)
+            => RemoveModel(All.RoomRecipes, RoomListBox, "Room Recipe");
+
+        /// <summary>
+        /// Registeres the user command to add a new Furnishing requirement to the current Room Recipe.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void RoomAddFurnishingButton_Click(object sender, EventArgs e)
+            => AddRecipeElement(RoomRequiredFurnishingsListBox, (IRoomRecipeEdit recipe) => recipe.OptionallyRequiredFurnishings);
+
+        /// <summary>
+        /// Registeres the user command to remove the selected Furnishing requirement from the current Room Recipe.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void RoomRemoveFurnishingButton_Click(object sender, EventArgs e)
+            => RemoveRecipeElement(BiomeParquetCriteriaListBox, (IRoomRecipeEdit recipe) => recipe.OptionallyRequiredFurnishings);
+
+        /// <summary>
+        /// Registeres the user command to add a new Floor requirement to the current Room Recipe.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void RoomAddFloorButton_Click(object sender, EventArgs e)
+            => AddRecipeElement(RoomRequiredFurnishingsListBox, (IRoomRecipeEdit recipe) => recipe.OptionallyRequiredWalkableFloors);
+
+        /// <summary>
+        /// Registeres the user command to remove the selected Floor requirement from the current Room Recipe.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void RoomRemoveFloorButton_Click(object sender, EventArgs e)
+            => RemoveRecipeElement(BiomeParquetCriteriaListBox, (IRoomRecipeEdit recipe) => recipe.OptionallyRequiredWalkableFloors);
+
+        /// <summary>
+        /// Registeres the user command to add a new Block requirement to the current Room Recipe.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void RoomAddBlockButton_Click(object sender, EventArgs e)
+            => AddRecipeElement(RoomRequiredFurnishingsListBox, (IRoomRecipeEdit recipe) => recipe.OptionallyRequiredPerimeterBlocks);
+
+        /// <summary>
+        /// Registeres the user command to remove the selected Block requirement from the current Room Recipe.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void RoomRemoveBlockButton_Click(object sender, EventArgs e)
+            => RemoveRecipeElement(BiomeParquetCriteriaListBox, (IRoomRecipeEdit recipe) => recipe.OptionallyRequiredPerimeterBlocks);
         #endregion
 
         #region Maps Tab
+        // TODO Maps
         #endregion
 
         #region Scripting Tab
+        // TODO Scripts
         #endregion
         #endregion
 

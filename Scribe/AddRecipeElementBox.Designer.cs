@@ -69,6 +69,7 @@ namespace Scribe
             this.CancelButtonControl.TabIndex = 8;
             this.CancelButtonControl.Text = "Cancel";
             this.CancelButtonControl.UseVisualStyleBackColor = true;
+            this.CancelButtonControl.Click += new System.EventHandler(this.CancelButtonControl_Click);
             // 
             // OkayButton
             // 
@@ -79,6 +80,7 @@ namespace Scribe
             this.OkayButton.TabIndex = 3;
             this.OkayButton.Text = "&OK";
             this.OkayButton.UseVisualStyleBackColor = true;
+            this.OkayButton.Click += new System.EventHandler(this.OkayButton_Click);
             // 
             // ElementTagLabel
             // 
@@ -99,6 +101,7 @@ namespace Scribe
             this.ElementTagTextBox.Name = "ElementTagTextBox";
             this.ElementTagTextBox.Size = new System.Drawing.Size(172, 49);
             this.ElementTagTextBox.TabIndex = 5;
+            this.ElementTagTextBox.TextChanged += new System.EventHandler(this.ElementTagTextBox_TextChanged);
             // 
             // ElementAmountLabel
             // 
@@ -115,6 +118,7 @@ namespace Scribe
             this.ElementAmountTextBox.Name = "ElementAmountTextBox";
             this.ElementAmountTextBox.Size = new System.Drawing.Size(100, 23);
             this.ElementAmountTextBox.TabIndex = 7;
+            this.ElementAmountTextBox.TextChanged += new System.EventHandler(this.ElementAmountTextBox_TextChanged);
             // 
             // AddRecipeElementBox
             // 
