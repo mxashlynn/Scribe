@@ -975,7 +975,7 @@ namespace Scribe
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
-        private void BlockListBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void BlockListBox_SelectedValueChanged(object sender, EventArgs e)
         {
             BlockAddsToBiomeListBox.SelectedItem = null;
             BlockAddsToRoomListBox.SelectedItem = null;
@@ -1021,7 +1021,7 @@ namespace Scribe
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
-        private void FloorListBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void FloorListBox_SelectedValueChanged(object sender, EventArgs e)
         {
             FloorAddsToBiomeListBox.SelectedItem = null;
             FloorAddsToRoomListBox.SelectedItem = null;
@@ -1059,7 +1059,7 @@ namespace Scribe
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
-        private void FurnishingListBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void FurnishingListBox_SelectedValueChanged(object sender, EventArgs e)
         {
             FurnishingAddsToBiomeListBox.SelectedItem = null;
             FurnishingAddsToRoomListBox.SelectedItem = null;
@@ -1103,7 +1103,7 @@ namespace Scribe
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
-        private void CollectibleListBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void CollectibleListBox_SelectedValueChanged(object sender, EventArgs e)
         {
             CollectibleAddsToBiomeListBox.SelectedItem = null;
             CollectibleAddsToRoomListBox.SelectedItem = null;
@@ -1136,7 +1136,11 @@ namespace Scribe
             }
         }
 
-        // TODO Characters
+        private void CharacterListBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            // TODO Characters
+            throw new NotImplementedException();
+        }
 
         /// <summary>
         /// Populates the Critters tab when a <see cref="CritterModel"/> is selected in the CritterListBox.
@@ -1173,7 +1177,7 @@ namespace Scribe
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
-        private void ItemListBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void ItemListBox_SelectedValueChanged(object sender, EventArgs e)
         {
             ItemTagListBox.SelectedItem = null;
             if (null == ItemListBox.SelectedItem)
@@ -1216,7 +1220,7 @@ namespace Scribe
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
-        private void BiomeListBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void BiomeListBox_SelectedValueChanged(object sender, EventArgs e)
         {
             BiomeParquetCriteriaListBox.SelectedItem = null;
             BiomeEntryRequirementsListBox.SelectedItem = null;
@@ -1249,14 +1253,18 @@ namespace Scribe
             }
         }
 
-        // TODO Crafts
+        private void CraftingListBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            // TODO Crafts
+            throw new NotImplementedException();
+        }
 
         /// <summary>
         /// Populates the Room Recipes tab when a <see cref="RoomRecipe"/> is selected in the RoomListBox.
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
-        private void RoomListBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void RoomListBox_SelectedValueChanged(object sender, EventArgs e)
         {
             RoomRequiredFurnishingsListBox.SelectedItem = null;
             RoomRequiredFloorsListBox.SelectedItem = null;

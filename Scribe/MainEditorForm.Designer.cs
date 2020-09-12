@@ -2276,7 +2276,7 @@ namespace Scribe
             this.BlockListBox.Size = new System.Drawing.Size(279, 446);
             this.BlockListBox.TabIndex = 1;
             this.BlockListBox.Tag = "Untracked Control";
-            this.BlockListBox.SelectedIndexChanged += new System.EventHandler(this.BlockListBox_SelectedIndexChanged);
+            this.BlockListBox.SelectedValueChanged += new System.EventHandler(this.BlockListBox_SelectedValueChanged);
             // 
             // BlockAddNewBlockButton
             // 
@@ -2620,7 +2620,7 @@ namespace Scribe
             this.FloorListBox.Size = new System.Drawing.Size(279, 446);
             this.FloorListBox.TabIndex = 1;
             this.FloorListBox.Tag = "Untracked Control";
-            this.FloorListBox.SelectedIndexChanged += new System.EventHandler(this.FloorListBox_SelectedIndexChanged);
+            this.FloorListBox.SelectedValueChanged += new System.EventHandler(this.FloorListBox_SelectedValueChanged);
             // 
             // FloorIDLabel
             // 
@@ -3007,7 +3007,7 @@ namespace Scribe
             this.FurnishingListBox.Size = new System.Drawing.Size(279, 446);
             this.FurnishingListBox.TabIndex = 1;
             this.FurnishingListBox.Tag = "Untracked Control";
-            this.FurnishingListBox.SelectedIndexChanged += new System.EventHandler(this.FurnishingListBox_SelectedIndexChanged);
+            this.FurnishingListBox.SelectedValueChanged += new System.EventHandler(this.FurnishingListBox_SelectedValueChanged);
             // 
             // FurnishingIDLabel
             // 
@@ -3331,7 +3331,7 @@ namespace Scribe
             this.CollectibleListBox.Size = new System.Drawing.Size(279, 446);
             this.CollectibleListBox.TabIndex = 1;
             this.CollectibleListBox.Tag = "Untracked Control";
-            this.CollectibleListBox.SelectedIndexChanged += new System.EventHandler(this.CollectibleListBox_SelectedIndexChanged);
+            this.CollectibleListBox.SelectedValueChanged += new System.EventHandler(this.CollectibleListBox_SelectedValueChanged);
             // 
             // CollectibleIDLabel
             // 
@@ -3915,6 +3915,7 @@ namespace Scribe
             this.CharacterListBox.Size = new System.Drawing.Size(279, 446);
             this.CharacterListBox.TabIndex = 1;
             this.CharacterListBox.Tag = "Untracked Control";
+            this.CharacterListBox.SelectedValueChanged += new System.EventHandler(this.CharacterListBox_SelectedValueChanged);
             // 
             // CharacterIDLabel
             // 
@@ -4179,7 +4180,7 @@ namespace Scribe
             this.CritterListBox.Size = new System.Drawing.Size(279, 446);
             this.CritterListBox.TabIndex = 1;
             this.CritterListBox.Tag = "Untracked Control";
-            this.CritterListBox.SelectedIndexChanged += new System.EventHandler(this.CritterListBox_SelectedValueChanged);
+            this.CritterListBox.SelectedValueChanged += new System.EventHandler(this.CritterListBox_SelectedValueChanged);
             // 
             // CritterAddNewCritterButton
             // 
@@ -4286,7 +4287,7 @@ namespace Scribe
             this.ItemListBox.Size = new System.Drawing.Size(279, 446);
             this.ItemListBox.TabIndex = 1;
             this.ItemListBox.Tag = "Untracked Control";
-            this.ItemListBox.SelectedIndexChanged += new System.EventHandler(this.ItemListBox_SelectedIndexChanged);
+            this.ItemListBox.SelectedValueChanged += new System.EventHandler(this.ItemListBox_SelectedValueChanged);
             // 
             // ItemInventoriesGroupBox
             // 
@@ -4692,7 +4693,7 @@ namespace Scribe
             this.BiomeListBox.Size = new System.Drawing.Size(279, 446);
             this.BiomeListBox.TabIndex = 1;
             this.BiomeListBox.Tag = "Untracked Control";
-            this.BiomeListBox.SelectedIndexChanged += new System.EventHandler(this.BiomeListBox_SelectedIndexChanged);
+            this.BiomeListBox.SelectedValueChanged += new System.EventHandler(this.BiomeListBox_SelectedValueChanged);
             // 
             // BiomeConfigGroupBox
             // 
@@ -5097,6 +5098,7 @@ namespace Scribe
             this.CraftingListBox.Size = new System.Drawing.Size(279, 446);
             this.CraftingListBox.TabIndex = 1;
             this.CraftingListBox.Tag = "Untracked Control";
+            this.CraftingListBox.SelectedValueChanged += new System.EventHandler(this.CraftingListBox_SelectedValueChanged);
             // 
             // CraftingPictureEditButton
             // 
