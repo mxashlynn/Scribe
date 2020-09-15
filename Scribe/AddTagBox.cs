@@ -43,17 +43,19 @@ namespace Scribe
         /// Validates the <see cref="ModelTag"/> that the user added. 
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void NewTagTextBox_TextChanged(object sender, EventArgs e)
+        /// <param name="eventArguments">Whether or not to discard the input.</param>
+        private void NewTagTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs eventArguments)
         {
             var newText = EditorCommands.NormalizeWhitespace(NewTagTextBox.Text);
+            NewTagTextBox.Text = newText;
             if (EditorCommands.TextIsReserved(newText))
             {
                 newText = "";
                 _ = MessageBox.Show(EditorCommands.ReservedWordMessage, Resources.CaptionError,
                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                eventArguments.Cancel = true;
             }
-            newTag = NewTagTextBox.Text = newText;
+            newTag = newText;
         }
 
         /// <summary>

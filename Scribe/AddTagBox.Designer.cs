@@ -96,7 +96,7 @@ namespace Scribe
             this.NewTagTextBox.Name = "NewTagTextBox";
             this.NewTagTextBox.Size = new System.Drawing.Size(172, 49);
             this.NewTagTextBox.TabIndex = 0;
-            this.NewTagTextBox.TextChanged += new System.EventHandler(this.NewTagTextBox_TextChanged);
+            this.NewTagTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.NewTagTextBox_Validating);
             // 
             // AddTagBox
             // 

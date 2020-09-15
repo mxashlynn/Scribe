@@ -54,8 +54,8 @@ namespace Scribe
         /// Stores valid values for later updating the settings, otherwise signals an input error.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Whether or not to discard the given text.</param>
-        private void TextBoxAutoSaveInterval_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        /// <param name="eventArguments">Whether or not to discard the text.</param>
+        private void TextBoxAutoSaveInterval_Validating(object sender, System.ComponentModel.CancelEventArgs eventArguments)
         {
             if (int.TryParse(TextBoxAutoSaveInterval.Text, out var newInterval))
             {
@@ -65,7 +65,7 @@ namespace Scribe
             }
             else
             {
-                e.Cancel = true;
+                eventArguments.Cancel = true;
                 TextBoxAutoSaveInterval.Select();
                 ErrorProvider.SetError(TextBoxAutoSaveInterval, Resources.ErrorIntegersOnly);
             }

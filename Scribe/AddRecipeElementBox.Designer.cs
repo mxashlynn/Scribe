@@ -101,7 +101,7 @@ namespace Scribe
             this.ElementTagTextBox.Name = "ElementTagTextBox";
             this.ElementTagTextBox.Size = new System.Drawing.Size(172, 49);
             this.ElementTagTextBox.TabIndex = 5;
-            this.ElementTagTextBox.TextChanged += new System.EventHandler(this.ElementTagTextBox_TextChanged);
+            this.ElementTagTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ElementTagTextBox_Validating);
             // 
             // ElementAmountLabel
             // 
@@ -118,7 +118,7 @@ namespace Scribe
             this.ElementAmountTextBox.Name = "ElementAmountTextBox";
             this.ElementAmountTextBox.Size = new System.Drawing.Size(100, 23);
             this.ElementAmountTextBox.TabIndex = 7;
-            this.ElementAmountTextBox.TextChanged += new System.EventHandler(this.ElementAmountTextBox_TextChanged);
+            this.ElementAmountTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ElementAmountTextBox_Validating);
             // 
             // AddRecipeElementBox
             // 

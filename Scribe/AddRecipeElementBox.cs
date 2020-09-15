@@ -50,33 +50,30 @@ namespace Scribe
         /// Validates the <see cref="ParquetClassLibrary.ModelTag"/> that the user added to the <see cref="RecipeElement"/>. 
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void ElementTagTextBox_TextChanged(object sender, EventArgs e)
+        /// <param name="eventArguments">Whether or not to discard the input.</param>
+        private void ElementTagTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs eventArguments)
         {
             var newText = EditorCommands.NormalizeWhitespace(ElementTagTextBox.Text);
-
+            ElementTagTextBox.Text = newText;
             if (EditorCommands.TextIsReserved(newText))
             {
                 newText = "";
                 _ = MessageBox.Show(EditorCommands.ReservedWordMessage, Resources.CaptionError,
                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                eventArguments.Cancel = true;
             }
-            else
-            {
-                BackColor = System.Drawing.Color.Aquamarine;
-            }
-            newTag = ElementTagTextBox.Text = newText;
+            newTag = newText;
         }
 
         /// <summary>
         /// Validates the integer that the user added to the <see cref="RecipeElement"/>. 
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void ElementAmountTextBox_TextChanged(object sender, EventArgs e)
+        /// <param name="eventArguments">Whether or not to discard the input.</param>
+        private void ElementAmountTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs eventArguments)
         {
             var newText = EditorCommands.NormalizeWhitespace(ElementAmountTextBox.Text);
-
+            ElementAmountTextBox.Text = newText;
             if (!int.TryParse(newText, out var parsedAmount)
                 || parsedAmount < 1)
             {
@@ -84,10 +81,7 @@ namespace Scribe
                 ElementAmountTextBox.Text = "";
                 _ = MessageBox.Show(Resources.ErrorPositiveIntegersOnly, Resources.CaptionError,
                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                BackColor = System.Drawing.Color.RoyalBlue;
+                eventArguments.Cancel = true;
             }
             newAmount = parsedAmount;
         }
