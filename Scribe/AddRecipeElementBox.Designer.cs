@@ -138,6 +138,7 @@ namespace Scribe
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Recipe Element";
+            this.Load += new System.EventHandler(this.AddRecipeElementBox_Load);
             this.TableLayoutPanel.ResumeLayout(false);
             this.TableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);

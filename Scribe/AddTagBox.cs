@@ -10,6 +10,9 @@ namespace Scribe
     /// </summary>
     internal partial class AddTagBox : Form
     {
+        /// <summary>The <see cref="ModelTag"/> that the user might add.</summary>
+        private ModelTag newTag { get; set; }
+
         /// <summary>The <see cref="ModelTag"/> that the user added, if any.</summary>
         public ModelTag ReturnNewTag { get; set; }
 
@@ -27,8 +30,11 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void AddTagBox_Load(object sender, EventArgs e)
         {
-            ReturnNewTag = "";
-            NewTagTextBox.Text = "";
+            if (!string.IsNullOrEmpty(ReturnNewTag))
+            {
+                ReturnNewTag = "";
+                NewTagTextBox.Text = "";
+            }
             NewTagTextBox.Select();
         }
         #endregion
@@ -43,14 +49,11 @@ namespace Scribe
             var newText = EditorCommands.NormalizeWhitespace(NewTagTextBox.Text);
             if (EditorCommands.TextIsReserved(newText))
             {
-                ReturnNewTag = NewTagTextBox.Text = "";
+                newText = "";
                 _ = MessageBox.Show(EditorCommands.ReservedWordMessage, Resources.CaptionError,
                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else
-            {
-                ReturnNewTag = NewTagTextBox.Text = newText;
-            }
+            newTag = NewTagTextBox.Text = newText;
         }
 
         /// <summary>
@@ -60,9 +63,9 @@ namespace Scribe
         /// <param name="e">Additional event data.</param>
         private void OkayButton_Click(object sender, EventArgs e)
         {
-            DialogResult = string.IsNullOrEmpty(ReturnNewTag)
-                ? DialogResult.Cancel
-                : DialogResult.OK;
+            (ReturnNewTag, DialogResult) = string.IsNullOrEmpty(newTag)
+                ? ((ModelTag)"", DialogResult.Cancel)
+                : (newTag, DialogResult.OK);
             Close();
         }
 
@@ -73,6 +76,7 @@ namespace Scribe
         /// <param name="e">Additional event data.</param>
         private void CancelButtonControl_Click(object sender, EventArgs e)
         {
+            ReturnNewTag = "";
             DialogResult = DialogResult.Cancel;
             Close();
         }

@@ -11,14 +11,14 @@ namespace Scribe
     /// </summary>
     internal partial class AddRecipeElementBox : Form
     {
-        /// <summary>The <see cref="RecipeElement"/> that the user added, if any.</summary>
-        public RecipeElement ReturnNewRecipeElement { get; set; }
-
         /// <summary>The <see cref="ModelTag"/> that will help make up the new <see cref="RecipeElement"/>.</summary>
         private ModelTag newTag;
 
         /// <summary>The <see cref="int"/> that will help make up the new <see cref="RecipeElement"/>.</summary>
         private int newAmount;
+
+        /// <summary>The <see cref="RecipeElement"/> that the user added, if any.</summary>
+        public RecipeElement ReturnNewRecipeElement { get; set; }
 
         #region Initialization
         /// <summary>
@@ -32,13 +32,16 @@ namespace Scribe
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
-        private void AddTagBox_Load(object sender, EventArgs e)
+        private void AddRecipeElementBox_Load(object sender, EventArgs e)
         {
-            ReturnNewRecipeElement = null;
-            newTag = "";
-            newAmount = 0;
-            ElementAmountTextBox.Text = "";
-            ElementTagTextBox.Text = "";
+            if (null != ReturnNewRecipeElement)
+            {
+                ReturnNewRecipeElement = null;
+                newTag = "";
+                newAmount = 0;
+                ElementAmountTextBox.Text = "";
+                ElementTagTextBox.Text = "";
+            }
             ElementTagTextBox.Select();
         }
         #endregion
@@ -54,14 +57,15 @@ namespace Scribe
 
             if (EditorCommands.TextIsReserved(newText))
             {
-                newTag = ElementTagTextBox.Text = "";
+                newText = "";
                 _ = MessageBox.Show(EditorCommands.ReservedWordMessage, Resources.CaptionError,
                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                newTag = ElementTagTextBox.Text = newText;
+                BackColor = System.Drawing.Color.Aquamarine;
             }
+            newTag = ElementTagTextBox.Text = newText;
         }
 
         /// <summary>
@@ -73,17 +77,19 @@ namespace Scribe
         {
             var newText = EditorCommands.NormalizeWhitespace(ElementAmountTextBox.Text);
 
-            if (int.TryParse(newText, out var parsedAmount)
-                && parsedAmount > 0)
+            if (!int.TryParse(newText, out var parsedAmount)
+                || parsedAmount < 1)
             {
-                newAmount = parsedAmount;
-            }
-            else
-            {
-                newTag = ElementAmountTextBox.Text = "";
+                parsedAmount = 0;
+                ElementAmountTextBox.Text = "";
                 _ = MessageBox.Show(Resources.ErrorPositiveIntegersOnly, Resources.CaptionError,
                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else
+            {
+                BackColor = System.Drawing.Color.RoyalBlue;
+            }
+            newAmount = parsedAmount;
         }
 
         /// <summary>
@@ -93,12 +99,9 @@ namespace Scribe
         /// <param name="e">Additional event data.</param>
         private void OkayButton_Click(object sender, EventArgs e)
         {
-            ReturnNewRecipeElement = newAmount < 1 || string.IsNullOrEmpty(newTag)
-                ? null
-                : new RecipeElement(newAmount, newTag);
-            DialogResult = null != ReturnNewRecipeElement
-                ? DialogResult.Cancel
-                : DialogResult.OK;
+            (ReturnNewRecipeElement, DialogResult) = newAmount < 1 || string.IsNullOrEmpty(newTag)
+                ? (null, DialogResult.Cancel)
+                : (new RecipeElement(newAmount, newTag), DialogResult.OK);
             Close();
         }
 
@@ -109,6 +112,7 @@ namespace Scribe
         /// <param name="e">Additional event data.</param>
         private void CancelButtonControl_Click(object sender, EventArgs e)
         {
+            ReturnNewRecipeElement = null;
             DialogResult = DialogResult.Cancel;
             Close();
         }

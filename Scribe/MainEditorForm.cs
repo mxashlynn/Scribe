@@ -139,10 +139,6 @@ namespace Scribe
         }
         #endregion
 
-        // TODO Use this when setting up Character tab:  Settings.Default.SuggestStoryIDs;
-
-        // TODO Update Games Tab to replace ID text boxes with combo boxes.
-
         #region Initialization
         /// <summary>
         /// Constructs a new instance of the main editor UI.
@@ -691,7 +687,7 @@ namespace Scribe
                     => (input) => (inModel as ICraftingRecipeEdit).Description = input.ToString(),
                 (CraftingRecipesTabIndex, "CraftingCommentTextBox")
                     => (input) => (inModel as ICraftingRecipeEdit).Comment = input.ToString(),
-                (CraftingRecipesTabIndex, "CraftingIngredientsBox")
+                (CraftingRecipesTabIndex, "CraftingIngredientsListBox")
                     => (input) =>
                     {
                         var editRecipe = inModel as ICraftingRecipeEdit;
@@ -1139,6 +1135,7 @@ namespace Scribe
         private void CharacterListBox_SelectedValueChanged(object sender, EventArgs e)
         {
             // TODO Characters
+            // TODO Use this when setting up Character tab:  Settings.Default.SuggestStoryIDs;
             throw new NotImplementedException();
         }
 
@@ -1253,10 +1250,36 @@ namespace Scribe
             }
         }
 
+        /// <summary>
+        /// Populates the Crafting Recipes tab when a <see cref="CraftingRecipe"/> is selected in the CraftingListBox.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
         private void CraftingListBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            // TODO Crafts
-            throw new NotImplementedException();
+            CraftingProductsListBox.SelectedItem = null;
+            CraftingIngredientsListBox.SelectedItem = null;
+            if (null == CraftingListBox.SelectedItem)
+            {
+                CraftingIDExample.Text = ModelID.None.ToString();
+                CraftingNameTextBox.Text = "";
+                CraftingDescriptionTextBox.Text = "";
+                CraftingCommentTextBox.Text = "";
+                CraftingProductsListBox.Items.Clear();
+                CraftingIngredientsListBox.Items.Clear();
+                CraftingPictureBox.Image = Resources.ImageNotFoundGraphic;
+            }
+            else if (CraftingListBox.SelectedItem is CraftingRecipe recipe
+                    && null != recipe)
+            {
+                CraftingIDExample.Text = recipe.ID.ToString();
+                CraftingNameTextBox.Text = recipe.Name;
+                CraftingDescriptionTextBox.Text = recipe.Description;
+                CraftingCommentTextBox.Text = recipe.Comment;
+                RepopulateListBox(CraftingProductsListBox, recipe.Products);
+                RepopulateListBox(CraftingIngredientsListBox, recipe.Ingredients);
+                PictureBoxLoadFromStorage(CraftingPictureBox, recipe.ID);
+            }
         }
 
         /// <summary>
@@ -1540,9 +1563,9 @@ namespace Scribe
         /// Adds a new <see cref="RecipeElement"/> to the selected <see cref="Model"/>, updating the given <see cref="ListBox"/>.
         /// </summary>
         /// <param name="inAddsToListBox">The UI element reflectling the collection being changed.</param>
-        /// <param name="inGetElementListFromModel">The means, given a model, to find the correct Recipe Element collection.</param>
-        private void AddRecipeElement<TInterface>(ListBox inAddsToListBox, Func<TInterface,
-                                                  IList<RecipeElement>> inGetElementListFromModel)
+        /// <param name="inGetElementListFromRecipe">The means, given a model, to find the correct Recipe Element collection.</param>
+        private void AddRecipeElement<TInterface>(ListBox inAddsToListBox,
+                                                  Func<TInterface, IList<RecipeElement>> inGetElementListFromRecipe)
             where TInterface : IModelEdit
         {
             if (!All.CollectionsHaveBeenInitialized)
@@ -1551,10 +1574,10 @@ namespace Scribe
                 return;
             }
 
-            if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is TInterface model
+            if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is TInterface recipe
                 && AddRecipeElementDialogue.ShowDialog() == DialogResult.OK)
             {
-                if (inGetElementListFromModel(model).Any(element => AddRecipeElementDialogue.ReturnNewRecipeElement == element))
+                if (inGetElementListFromRecipe(recipe).Any(element => AddRecipeElementDialogue.ReturnNewRecipeElement == element))
                 {
                     // Do not add duplicate elements.
                     // TODO Report this error in the status bar or something.
@@ -1564,17 +1587,17 @@ namespace Scribe
                 }
 
                 ChangeManager.AddAndExecute(new ChangeList(AddRecipeElementDialogue.ReturnNewRecipeElement,
-                                            $"add recipe element {AddRecipeElementDialogue.ReturnNewRecipeElement} to {model.Name}",
+                                            $"add recipe element {AddRecipeElementDialogue.ReturnNewRecipeElement} to {recipe.Name}",
                                             (object databaseValue) =>
                                             {
-                                                inGetElementListFromModel(model).Add((RecipeElement)databaseValue);
+                                                inGetElementListFromRecipe(recipe).Add((RecipeElement)databaseValue);
                                                 _ = inAddsToListBox.Items.Add(databaseValue);
                                                 inAddsToListBox.SelectedItem = databaseValue;
                                                 HasUnsavedChanges = true;
                                             },
                                             (object databaseValue) =>
                                             {
-                                                inGetElementListFromModel(model).Remove((RecipeElement)databaseValue);
+                                                inGetElementListFromRecipe(recipe).Remove((RecipeElement)databaseValue);
                                                 inAddsToListBox.Items.Remove(databaseValue);
                                                 inAddsToListBox.SelectedItem = null;
                                                 HasUnsavedChanges = true;
@@ -1587,9 +1610,9 @@ namespace Scribe
         /// updating the given <see cref="ListBox"/>.
         /// </summary>
         /// <param name="inAddsToListBox">The UI element reflectling the collection being changed.</param>
-        /// <param name="inGetElementListFromModel">The means, given a Model, to find the correct Recipe Element collection.</param>
-        private void RemoveRecipeElement<TInterface>(ListBox inAddsToListBox, Func<TInterface,
-                                                     IList<RecipeElement>> inGetElementListFromModel)
+        /// <param name="inGetElementListFromRecipe">The means, given a Model, to find the correct Recipe Element collection.</param>
+        private void RemoveRecipeElement<TInterface>(ListBox inAddsToListBox,
+                                                     Func<TInterface, IList<RecipeElement>> inGetElementListFromRecipe)
             where TInterface : IModelEdit
         {
             if (!All.CollectionsHaveBeenInitialized || null == inAddsToListBox.SelectedItem)
@@ -1598,20 +1621,20 @@ namespace Scribe
                 return;
             }
 
-            if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is TInterface model)
+            if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is TInterface recipe)
             {
                 ChangeManager.AddAndExecute(new ChangeList((RecipeElement)inAddsToListBox.SelectedItem,
-                                            $"remove recipe element {inAddsToListBox.SelectedItem} from {model.Name}",
+                                            $"remove recipe element {inAddsToListBox.SelectedItem} from {recipe.Name}",
                                             (object databaseValue) =>
                                             {
-                                                inGetElementListFromModel(model).Remove((RecipeElement)databaseValue);
+                                                inGetElementListFromRecipe(recipe).Remove((RecipeElement)databaseValue);
                                                 inAddsToListBox.Items.Remove(databaseValue);
                                                 inAddsToListBox.SelectedItem = null;
                                                 HasUnsavedChanges = true;
                                             },
                                             (object databaseValue) =>
                                             {
-                                                inGetElementListFromModel(model).Add((RecipeElement)databaseValue);
+                                                inGetElementListFromRecipe(recipe).Add((RecipeElement)databaseValue);
                                                 _ = inAddsToListBox.Items.Add(databaseValue);
                                                 inAddsToListBox.SelectedItem = databaseValue;
                                                 HasUnsavedChanges = true;
@@ -1947,7 +1970,53 @@ namespace Scribe
         #endregion
 
         #region Crafting Tab
-        // TODO Crafts
+        /// <summary>
+        /// Responds to the user clicking "Add New Crafting Recipe" on the Crafts tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void CraftingAddNewCraftingButton_Click(object sender, EventArgs e)
+            => AddNewModel(All.CraftingRecipes, (ModelID id) => new CraftingRecipe(id, "New Crafting Recipe", "", ""), All.CraftingRecipeIDs, CraftingListBox, "Crafting Recipe");
+
+        /// <summary>
+        /// Responds to the user clicking "Remove Crafting Recipe" on the Rooms tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void CraftingRemoveCraftingButton_Click(object sender, EventArgs e)
+            => RemoveModel(All.CraftingRecipes, CraftingListBox, "Crafting Recipe");
+
+        /// <summary>
+        /// Registeres the user command to add a new product to the current Crafting Recipe.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void CraftingAddProductButton_Click(object sender, EventArgs e)
+            => AddRecipeElement(CraftingProductsListBox, (ICraftingRecipeEdit recipe) => recipe.Products);
+
+        /// <summary>
+        /// Registeres the user command to remove the selected product from the current Crafting Recipe.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void CraftingRemoveProductButton_Click(object sender, EventArgs e)
+            => RemoveRecipeElement(CraftingProductsListBox, (ICraftingRecipeEdit recipe) => recipe.Products);
+
+        /// <summary>
+        /// Registeres the user command to add a new ingredient to the current Crafting Recipe.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void CraftingAddIngredientButton_Click(object sender, EventArgs e)
+            => AddRecipeElement(CraftingIngredientsListBox, (ICraftingRecipeEdit recipe) => recipe.Ingredients);
+
+        /// <summary>
+        /// Registeres the user command to remove the selected ingredient from the current Crafting Recipe.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void CraftingRemoveIngredientButton_Click(object sender, EventArgs e)
+            => RemoveRecipeElement(CraftingIngredientsListBox, (ICraftingRecipeEdit recipe) => recipe.Ingredients);
         #endregion
 
         #region Rooms Tab
@@ -2114,7 +2183,6 @@ namespace Scribe
             if (EditorCommands.SaveDataFiles())
             {
                 HasUnsavedChanges = false;
-                UpdateDisplay();
             }
             else
             {
