@@ -1,5 +1,6 @@
 using System;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Scribe.Properties;
 
@@ -22,6 +23,7 @@ namespace Scribe
             LabelVersion.Text = $"{Resources.CaptionVersion} {AssemblyInfo.ScribeVersion}";
             LabelCopyright.Text = AssemblyCopyright;
             LabelCompanyName.Text = AssemblyCompany;
+            LabelFrameworkVersions.Text = $"{nameof(ParquetClassLibrary)}: {ParquetClassLibrary.AssemblyInfo.LibraryVersion}  {Environment.NewLine}{nameof(CsvHelper)}: {Assembly.GetAssembly(typeof(CsvHelper.CsvParser)).GetName().Version}  {Environment.NewLine}{RuntimeInformation.FrameworkDescription}";
             TextBoxDescription.Text = $"{AssemblyDescription}{Environment.NewLine}  {Environment.NewLine}{Resources.AboutDetails}{Environment.NewLine}  {Environment.NewLine}{Resources.AboutLinkPreamble} {Resources.RepositoryURL}";
         }
 

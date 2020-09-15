@@ -30,6 +30,7 @@ namespace Scribe
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox));
             this.AboutTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.LabelFrameworkVersions = new System.Windows.Forms.Label();
             this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.LabelProductName = new System.Windows.Forms.Label();
             this.LabelVersion = new System.Windows.Forms.Label();
@@ -47,6 +48,7 @@ namespace Scribe
             this.AboutTableLayoutPanel.ColumnCount = 2;
             this.AboutTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.25F));
             this.AboutTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.75F));
+            this.AboutTableLayoutPanel.Controls.Add(this.LabelFrameworkVersions, 0, 5);
             this.AboutTableLayoutPanel.Controls.Add(this.LogoPictureBox, 0, 0);
             this.AboutTableLayoutPanel.Controls.Add(this.LabelProductName, 1, 0);
             this.AboutTableLayoutPanel.Controls.Add(this.LabelVersion, 1, 1);
@@ -68,6 +70,18 @@ namespace Scribe
             this.AboutTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.AboutTableLayoutPanel.Size = new System.Drawing.Size(487, 307);
             this.AboutTableLayoutPanel.TabIndex = 0;
+            // 
+            // LabelFrameworkVersions
+            // 
+            this.LabelFrameworkVersions.AutoSize = true;
+            this.LabelFrameworkVersions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelFrameworkVersions.Location = new System.Drawing.Point(7, 196);
+            this.LabelFrameworkVersions.Margin = new System.Windows.Forms.Padding(7, 0, 4, 0);
+            this.LabelFrameworkVersions.Name = "LabelFrameworkVersions";
+            this.LabelFrameworkVersions.Size = new System.Drawing.Size(189, 76);
+            this.LabelFrameworkVersions.TabIndex = 0;
+            this.LabelFrameworkVersions.Text = "Framework Versions";
+            this.LabelFrameworkVersions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // LogoPictureBox
             // 
@@ -194,5 +208,6 @@ namespace Scribe
         private System.Windows.Forms.TextBox TextBoxDescription;
         private System.Windows.Forms.Button OkayButton;
         private System.Windows.Forms.ToolTip AboutToolTip;
+        private System.Windows.Forms.Label LabelFrameworkVersions;
     }
 }
