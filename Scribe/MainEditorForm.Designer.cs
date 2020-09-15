@@ -909,7 +909,7 @@ namespace Scribe
             this.ToolStripMenuItemEditExternal.Name = "ToolStripMenuItemEditExternal";
             this.ToolStripMenuItemEditExternal.Size = new System.Drawing.Size(201, 22);
             this.ToolStripMenuItemEditExternal.Text = "Edit in External Program";
-            this.ToolStripMenuItemEditExternal.Click += new System.EventHandler(this.ToolStripMenuItemEditExternal_Click);
+            this.ToolStripMenuItemEditExternal.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // ToolStripMenuItemOpenContainingFolder
             // 
@@ -1362,7 +1362,7 @@ namespace Scribe
             this.GameIconEditButton.TabIndex = 7;
             this.GameIconEditButton.Text = "Edit Image";
             this.GameIconEditButton.UseVisualStyleBackColor = true;
-            this.GameIconEditButton.Click += new System.EventHandler(this.GameIconEditButton_Click);
+            this.GameIconEditButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // GameIconPictureBox
             // 
@@ -2253,7 +2253,7 @@ namespace Scribe
             this.BlockEditImageButton.TabIndex = 7;
             this.BlockEditImageButton.Text = "Edit Image";
             this.BlockEditImageButton.UseVisualStyleBackColor = true;
-            this.BlockEditImageButton.Click += new System.EventHandler(this.BlockEditImageButton_Click);
+            this.BlockEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // BlockIDLabel
             // 
@@ -2640,7 +2640,7 @@ namespace Scribe
             this.FloorEditImageButton.TabIndex = 7;
             this.FloorEditImageButton.Text = "Edit Image";
             this.FloorEditImageButton.UseVisualStyleBackColor = true;
-            this.FloorEditImageButton.Click += new System.EventHandler(this.FloorEditImageButton_Click);
+            this.FloorEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // FloorPictureBox
             // 
@@ -3027,7 +3027,7 @@ namespace Scribe
             this.FurnishingEditImageButton.TabIndex = 7;
             this.FurnishingEditImageButton.Text = "Edit Image";
             this.FurnishingEditImageButton.UseVisualStyleBackColor = true;
-            this.FurnishingEditImageButton.Click += new System.EventHandler(this.FurnishingEditImageButton_Click);
+            this.FurnishingEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // FurnishingPictureBox
             // 
@@ -3351,7 +3351,7 @@ namespace Scribe
             this.CollectibleEditImageButton.TabIndex = 7;
             this.CollectibleEditImageButton.Text = "Edit Image";
             this.CollectibleEditImageButton.UseVisualStyleBackColor = true;
-            this.CollectibleEditImageButton.Click += new System.EventHandler(this.CollectibleEditImageButton_Click);
+            this.CollectibleEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // CollectiblePictureBox
             // 
@@ -3935,7 +3935,7 @@ namespace Scribe
             this.CharacterEditImageButton.TabIndex = 7;
             this.CharacterEditImageButton.Text = "Edit Image";
             this.CharacterEditImageButton.UseVisualStyleBackColor = true;
-            this.CharacterEditImageButton.Click += new System.EventHandler(this.CharacterEditImageButton_Click);
+            this.CharacterEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // CharacterPictureBox
             // 
@@ -4157,7 +4157,7 @@ namespace Scribe
             this.CritterEditImageButton.TabIndex = 7;
             this.CritterEditImageButton.Text = "Edit Image";
             this.CritterEditImageButton.UseVisualStyleBackColor = true;
-            this.CritterEditImageButton.Click += new System.EventHandler(this.CritterEditImageButton_Click);
+            this.CritterEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // CritterIDLabel
             // 
@@ -4342,7 +4342,7 @@ namespace Scribe
             this.ItemPictureEditButton.TabIndex = 7;
             this.ItemPictureEditButton.Text = "Edit Image";
             this.ItemPictureEditButton.UseVisualStyleBackColor = true;
-            this.ItemPictureEditButton.Click += new System.EventHandler(this.ItemPictureEditButton_Click);
+            this.ItemPictureEditButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // ItemTableLayoutPanel
             // 
@@ -4799,7 +4799,7 @@ namespace Scribe
             this.BiomePictureEditButton.TabIndex = 7;
             this.BiomePictureEditButton.Text = "Edit Image";
             this.BiomePictureEditButton.UseVisualStyleBackColor = true;
-            this.BiomePictureEditButton.Click += new System.EventHandler(this.BiomePictureEditButton_Click);
+            this.BiomePictureEditButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // BiomeTableLayoutPanel
             // 
@@ -5109,7 +5109,7 @@ namespace Scribe
             this.CraftingPictureEditButton.TabIndex = 7;
             this.CraftingPictureEditButton.Text = "Edit Image";
             this.CraftingPictureEditButton.UseVisualStyleBackColor = true;
-            this.CraftingPictureEditButton.Click += new System.EventHandler(this.CraftingPictureEditButton_Click);
+            this.CraftingPictureEditButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // CraftingTableLayoutPanel
             // 
@@ -5642,7 +5642,7 @@ namespace Scribe
             this.RoomPictureEditButton.TabIndex = 7;
             this.RoomPictureEditButton.Text = "Edit Image";
             this.RoomPictureEditButton.UseVisualStyleBackColor = true;
-            this.RoomPictureEditButton.Click += new System.EventHandler(this.RoomPictureEditButton_Click);
+            this.RoomPictureEditButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // RoomTableLayoutPanel
             // 

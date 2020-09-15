@@ -2377,34 +2377,15 @@ namespace Scribe
                 SystemSounds.Beep.Play();
             }
         }
+        #endregion
 
+        #region Hybrid Events
         /// <summary>
-        /// Responds to a user selecting "Edit in External Program" context menu item from a picture box.
+        /// Spawns an external image editor with the image of the currently selected model.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
         /// <param name="e">Addional event data.</param>
-        private void ToolStripMenuItemEditExternal_Click(object sender, EventArgs e)
-        {
-            var picturebox = (PictureBox)((ContextMenuStrip)((ToolStripItem)sender)?.Owner)?.SourceControl;
-            if (picturebox.Image != Resources.ImageNotFoundGraphic &&
-                !string.IsNullOrEmpty(picturebox.ImageLocation))
-            {
-                // Make this application specifiable via options, maybe?
-                _ = Process.Start("explorer", $"\"{picturebox.ImageLocation}\"");
-            }
-            else
-            {
-                SystemSounds.Beep.Play();
-            }
-        }
-        #endregion
-
-        #region Edit Image Button Events
-        /// <summary>
-        /// Given a <see cref="PictureBox"/>, spawns an external image editor with the image currently loaded in the box.
-        /// </summary>
-        /// <param name="inPictureBox">The picture box whose contents should be edited.</param>
-        private void IconEditButtonClick(PictureBox inPictureBox)
+        private void EditImageExternally(object sender, EventArgs e)
         {
             var id = GetSelectedModelIDForTab(EditorTabs.SelectedIndex);
             if (id != ModelID.None)
@@ -2415,7 +2396,8 @@ namespace Scribe
                     Resources.ImageNotFoundGraphic.Save(imagePathAndFilename, ImageFormat.Png);
                 }
 
-                // TODO Properly manage this resource:  See return here:  https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.process.start?view=netcore-3.1
+                // TODO I am not sure how to handle this -- do we need to dispose of the Process returned here if
+                // the image editor launched may outlive Scribe?
                 _ = Settings.Default.EditInApp
                     ? Process.Start(Settings.Default.ImageEditor, $"\"{imagePathAndFilename}\"")
                     : Process.Start("explorer", $"\"{imagePathAndFilename}\"");
@@ -2426,96 +2408,6 @@ namespace Scribe
             }
         }
 
-        /// <summary>
-        /// Registers the user command for editing the loaded game icon.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void GameIconEditButton_Click(object sender, EventArgs e)
-            => IconEditButtonClick(GameIconPictureBox);
-
-        /// <summary>
-        /// Registers the user command for editing the loaded block image.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void BlockEditImageButton_Click(object sender, EventArgs e)
-            => IconEditButtonClick(BlockPictureBox);
-
-        /// <summary>
-        /// Registers the user command for editing the loaded floor image.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void FloorEditImageButton_Click(object sender, EventArgs e)
-            => IconEditButtonClick(FloorPictureBox);
-
-        /// <summary>
-        /// Registers the user command for editing the loaded furnishing image.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void FurnishingEditImageButton_Click(object sender, EventArgs e)
-            => IconEditButtonClick(FurnishingPictureBox);
-
-        /// <summary>
-        /// Registers the user command for editing the loaded collectible image.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void CollectibleEditImageButton_Click(object sender, EventArgs e)
-            => IconEditButtonClick(CollectiblePictureBox);
-
-        /// <summary>
-        /// Registers the user command for editing the loaded character image.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void CharacterEditImageButton_Click(object sender, EventArgs e)
-            => IconEditButtonClick(CharacterPictureBox);
-
-        /// <summary>
-        /// Registers the user command for editing the loaded critter image.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void CritterEditImageButton_Click(object sender, EventArgs e)
-            => IconEditButtonClick(CritterPictureBox);
-
-        /// <summary>
-        /// Registers the user command for editing the loaded item image.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void ItemPictureEditButton_Click(object sender, EventArgs e)
-            => IconEditButtonClick(ItemPictureBox);
-
-        /// <summary>
-        /// Registers the user command for editing the loaded biome icon.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void BiomePictureEditButton_Click(object sender, EventArgs e)
-            => IconEditButtonClick(BiomePictureBox);
-
-        /// <summary>
-        /// Registers the user command for editing the loaded crating recipe image.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void CraftingPictureEditButton_Click(object sender, EventArgs e)
-            => IconEditButtonClick(CraftingPictureBox);
-
-        /// <summary>
-        /// Registers the user command for editing the loaded room image.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void RoomPictureEditButton_Click(object sender, EventArgs e)
-            => IconEditButtonClick(RoomPictureBox);
-        #endregion
-
-        #region Hybrid Events
         /// <summary>
         /// Responds to the player requesting a picture be reloaded.
         /// </summary>
