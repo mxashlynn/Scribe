@@ -2318,6 +2318,14 @@ namespace Scribe
         }
 
         /// <summary>
+        /// Responds to a user selecting the "Refresh Display" menu item.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="e">Addional event data.</param>
+        private void RefreshStripMenuItem_Click(object sender, EventArgs e)
+            => UpdateDisplay();
+
+        /// <summary>
         /// Responds to a user selecting the "Scribe Help" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>

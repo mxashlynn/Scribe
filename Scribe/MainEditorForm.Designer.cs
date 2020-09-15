@@ -61,8 +61,9 @@ namespace Scribe
             this.ListIDRangesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ListMaxIDsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ListTagsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.OptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.RefreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ScribeHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DocumentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -775,8 +776,9 @@ namespace Scribe
             // 
             this.ToolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.RollerToolStripMenuItem,
+            this.OptionsToolStripMenuItem,
             this.ToolStripSeparator5,
-            this.OptionsToolStripMenuItem});
+            this.RefreshToolStripMenuItem});
             this.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem";
             this.ToolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.ToolsToolStripMenuItem.Text = "&Tools";
@@ -792,7 +794,7 @@ namespace Scribe
             this.ListTagsToolStripMenuItem});
             this.RollerToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("RollerToolStripMenuItem.Image")));
             this.RollerToolStripMenuItem.Name = "RollerToolStripMenuItem";
-            this.RollerToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.RollerToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.RollerToolStripMenuItem.Text = "&Roller";
             // 
             // CheckMapStripMenuItem
@@ -840,18 +842,26 @@ namespace Scribe
             this.ListTagsToolStripMenuItem.Text = "List &Tags";
             this.ListTagsToolStripMenuItem.Click += new System.EventHandler(this.ListTagsToolStripMenuItem_Click);
             // 
-            // ToolStripSeparator5
-            // 
-            this.ToolStripSeparator5.Name = "ToolStripSeparator5";
-            this.ToolStripSeparator5.Size = new System.Drawing.Size(113, 6);
-            // 
             // OptionsToolStripMenuItem
             // 
             this.OptionsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("OptionsToolStripMenuItem.Image")));
             this.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem";
-            this.OptionsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.OptionsToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.OptionsToolStripMenuItem.Text = "&Options";
             this.OptionsToolStripMenuItem.Click += new System.EventHandler(this.OptionsToolStripMenuItem_Click);
+            // 
+            // ToolStripSeparator5
+            // 
+            this.ToolStripSeparator5.Name = "ToolStripSeparator5";
+            this.ToolStripSeparator5.Size = new System.Drawing.Size(197, 6);
+            // 
+            // RefreshToolStripMenuItem
+            // 
+            this.RefreshToolStripMenuItem.Name = "RefreshToolStripMenuItem";
+            this.RefreshToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F5)));
+            this.RefreshToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.RefreshToolStripMenuItem.Text = "Refresh Display";
+            this.RefreshToolStripMenuItem.Click += new System.EventHandler(this.RefreshStripMenuItem_Click);
             // 
             // HelpToolStripMenuItem
             // 
@@ -6097,6 +6107,7 @@ namespace Scribe
         private System.Windows.Forms.ToolStripMenuItem ToolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem RollerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem OptionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem RefreshToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem HelpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ScribeHelpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem DocumentationToolStripMenuItem;
