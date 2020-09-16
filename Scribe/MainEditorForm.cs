@@ -857,7 +857,6 @@ namespace Scribe
             RepopulateComboBox(CharacterPronounComboBox, All.PronounGroups);
             RepopulateComboBox(CharacterStartingDialogueComboBox, All.Scripts);
             RepopulateComboBox(CharacterStartingInventoryComboBox, All.Scripts);
-            // TODO CharacterStartingInventoryComboBox, CharacterStartingQuestsListBox
             RepopulateComboBox(CritterNativeBiomeComboBox, All.Biomes);
             RepopulateComboBox(CritterPrimaryBehaviorComboBox, All.Scripts);
             RepopulateComboBox(ItemSubtypeComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(ItemType))));
@@ -869,48 +868,63 @@ namespace Scribe
         }
 
         /// <summary>
-        /// Repopulates the given list box with the given collection.
+        /// Repopulates the given list box with the given collection of <see cref="object"/>s.
         /// </summary>
-        /// <param name="in_listbox">The UI to repopulate.</param>
-        /// <param name="in_source">The objects to populate the UI with.</param>
+        /// <param name="inListBox">The UI to repopulate.</param>
+        /// <param name="inSource">The objects to populate the UI with.</param>
         /// <remarks>This should only be called if <see cref="All"/> has actually changed.</remarks>
-        private void RepopulateListBox(ListBox in_listbox, IEnumerable<object> in_source)
+        private void RepopulateListBox(ListBox inListBox, IEnumerable<Model> inSource)
         {
-            if (null != in_source)
+            if (null != inSource)
             {
-                in_listbox.SelectedItem = null;
-                in_listbox.BeginUpdate();
-                in_listbox.Items.Clear();
-                foreach (var value in in_source)
-                {
-                    // Ignore any input value that evaluates to "None".
-                    if (0 != string.Compare(value.ToString(), nameof(ModelID.None), comparisonType: StringComparison.OrdinalIgnoreCase))
-                    {
-                        _ = in_listbox.Items.Add(value);
-                    }
-                }
-                in_listbox.EndUpdate();
+                inListBox.SelectedItem = null;
+                inListBox.BeginUpdate();
+                inListBox.Items.Clear();
+                inListBox.Items.AddRange(inSource.Where(model => model.ID != ModelID.None).ToArray<object>());
+                inListBox.EndUpdate();
+            }
+        }
+
+        /// <summary>
+        /// Repopulates the given list box with the given collection of <see cref="object"/>s.
+        /// </summary>
+        /// <param name="inListBox">The UI to repopulate.</param>
+        /// <param name="inSource">The objects to populate the UI with.</param>
+        /// <remarks>This should only be called if <see cref="All"/> has actually changed.</remarks>
+        private void RepopulateListBox(ListBox inListBox, IEnumerable<object> inSource)
+        {
+            if (null != inSource)
+            {
+                inListBox.SelectedItem = null;
+                inListBox.BeginUpdate();
+                inListBox.Items.Clear();
+                // Ignore any input value that evaluates to "None".
+                inListBox.Items.AddRange(inSource.Where(value => 0 != string.Compare(value.ToString(),
+                                                                                     nameof(ModelID.None),
+                                                                                     comparisonType: StringComparison.OrdinalIgnoreCase))
+                                                 .ToArray());
+                inListBox.EndUpdate();
             }
         }
 
         /// <summary>
         /// Repopulates the given combo box with the given collection.
         /// </summary>
-        /// <param name="in_box">The UI to repopulate.</param>
-        /// <param name="in_source">The objects to populate the UI with.</param>
+        /// <param name="inComboBox">The UI to repopulate.</param>
+        /// <param name="inSource">The objects to populate the UI with.</param>
         /// <remarks>This should only be called if <see cref="All"/> has actually changed.</remarks>
-        private void RepopulateComboBox(ComboBox in_box, IEnumerable<object> in_source)
+        private void RepopulateComboBox(ComboBox inComboBox, IEnumerable<object> inSource)
         {
-            if (null != in_source)
+            if (null != inSource)
             {
-                in_box.SelectedItem = null;
-                in_box.BeginUpdate();
-                in_box.Items.Clear();
-                foreach (var value in in_source)
+                inComboBox.SelectedItem = null;
+                inComboBox.BeginUpdate();
+                inComboBox.Items.Clear();
+                foreach (var value in inSource)
                 {
-                    _ = in_box.Items.Add(value);
+                    _ = inComboBox.Items.Add(value);
                 }
-                in_box.EndUpdate();
+                inComboBox.EndUpdate();
             }
         }
         #endregion
@@ -1137,11 +1151,49 @@ namespace Scribe
             }
         }
 
+        /// <summary>
+        /// Populates the Characters tab when a <see cref="CharacterModel"/> is selected in the CharacterListBox.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
         private void CharacterListBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            // TODO Characters
-            // TODO Use this when setting up Character tab:  Settings.Default.SuggestStoryIDs;
-            throw new NotImplementedException();
+            CharacterStartingQuestsListBox.SelectedItem = null;
+            if (null == CharacterListBox.SelectedItem)
+            {
+                CharacterIDExample.Text = ModelID.None.ToString();
+                CharacterPersonalNameTextBox.Text = "";
+                CharacterFamilyNameTextBox.Text = "";
+                CharacterDescriptionTextBox.Text = "";
+                CharacterCommentTextBox.Text = "";
+                CharacterNativeBiomeComboBox.SelectedItem = null;
+                CharacterPrimaryBehaviorComboBox.SelectedItem = null;
+                CharacterPronounComboBox.SelectedItem = null;
+                CharacterStoryIDTextBox.Text = "";
+                CharacterStartingQuestsListBox.Items.Clear();
+                CharacterStartingDialogueComboBox.SelectedItem = null;
+                CharacterStartingInventoryComboBox.SelectedItem = null;
+                CharacterPictureBox.Image = Resources.ImageNotFoundGraphic;
+            }
+            else if (CharacterListBox.SelectedItem is CharacterModel model
+                     && null != model)
+            {
+                CharacterIDExample.Text = model.ID.ToString();
+                CharacterPersonalNameTextBox.Text = model.PersonalName;
+                CharacterFamilyNameTextBox.Text = model.FamilyName;
+                CharacterDescriptionTextBox.Text = model.Description;
+                CharacterCommentTextBox.Text = model.Comment;
+                CharacterNativeBiomeComboBox.SelectedItem = All.Biomes.GetOrNull(model.NativeBiomeID);
+                CharacterPrimaryBehaviorComboBox.SelectedItem = All.Scripts.GetOrNull(model.PrimaryBehaviorID);
+                CharacterStoryIDTextBox.Text = string.IsNullOrEmpty(model.StoryCharacterID) && Settings.Default.SuggestStoryIDs
+                    ? $"{model.PersonalName.ToUpperInvariant()}_{model.FamilyName.ToUpperInvariant()}"
+                    : model.StoryCharacterID;
+                RepopulateListBox(CharacterStartingQuestsListBox, model.StartingQuestIDs
+                                                                       .Select(id => All.Interactions.Get<InteractionModel>(id)));
+                CharacterStartingDialogueComboBox.SelectedItem = model.StartingDialogueIDs;
+                CharacterStartingInventoryComboBox.SelectedItem = model.StartingInventoryIDs;
+                PictureBoxLoadFromStorage(CharacterPictureBox, model.ID);
+            }
         }
 
         /// <summary>

@@ -128,15 +128,15 @@ namespace Scribe
         /// Ideally this should have been handled via sub-classing, but since <see cref="FolderBrowserDialogue"/>
         /// is <c>sealed</c> we take care of it here.
         /// </remarks>
-        /// <param name="in_message">A prompt to the user, differentiating between loading existing files and creating new blank ones.</param>
+        /// <param name="inMessage">A prompt to the user, differentiating between loading existing files and creating new blank ones.</param>
         /// <returns>True if the user selected a folder.</returns>
-        public static bool SelectProjectFolder(string in_message)
+        public static bool SelectProjectFolder(string inMessage)
         {
             FolderBrowserDialogue.ShowNewFolderButton = true;
             FolderBrowserDialogue.RootFolder = Settings.Default.DesktopIsDefaultDirectory
                 ? Environment.SpecialFolder.Desktop
                 : Environment.SpecialFolder.MyDocuments;
-            FolderBrowserDialogue.Description = in_message;
+            FolderBrowserDialogue.Description = inMessage;
             FolderBrowserDialogue.SelectedPath = All.ProjectDirectory;
 
             var response = FolderBrowserDialogue.ShowDialog();

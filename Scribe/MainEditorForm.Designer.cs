@@ -310,7 +310,8 @@ namespace Scribe
             this.CharacterDescriptionLabel = new System.Windows.Forms.Label();
             this.CharacterCommentLabel = new System.Windows.Forms.Label();
             this.CharacterNativeBiomeLabel = new System.Windows.Forms.Label();
-            this.CharacterNameTextBox = new System.Windows.Forms.TextBox();
+            this.CharacterPersonalNameTextBox = new System.Windows.Forms.TextBox();
+            this.CharacterFamilyNameTextBox = new System.Windows.Forms.TextBox();
             this.CharacterDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.CharacterCommentTextBox = new System.Windows.Forms.TextBox();
             this.CharacterNativeBiomeComboBox = new System.Windows.Forms.ComboBox();
@@ -3600,7 +3601,8 @@ namespace Scribe
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterDescriptionLabel, 0, 1);
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterCommentLabel, 0, 2);
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterNativeBiomeLabel, 0, 3);
-            this.CharacterTableLayoutPanel.Controls.Add(this.CharacterNameTextBox, 1, 0);
+            this.CharacterTableLayoutPanel.Controls.Add(this.CharacterPersonalNameTextBox, 1, 0);
+            this.CharacterTableLayoutPanel.Controls.Add(this.CharacterFamilyNameTextBox, 2, 0);
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterDescriptionTextBox, 1, 1);
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterCommentTextBox, 1, 2);
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterNativeBiomeComboBox, 1, 3);
@@ -3729,12 +3731,19 @@ namespace Scribe
             this.CharacterNativeBiomeLabel.TabIndex = 9;
             this.CharacterNativeBiomeLabel.Text = "Native Biome";
             // 
-            // CharacterNameTextBox
+            // CharacterPersonalNameTextBox
             // 
-            this.CharacterNameTextBox.Location = new System.Drawing.Point(131, 3);
-            this.CharacterNameTextBox.Name = "CharacterNameTextBox";
-            this.CharacterNameTextBox.Size = new System.Drawing.Size(144, 20);
-            this.CharacterNameTextBox.TabIndex = 23;
+            this.CharacterPersonalNameTextBox.Location = new System.Drawing.Point(131, 3);
+            this.CharacterPersonalNameTextBox.Name = "CharacterPersonalNameTextBox";
+            this.CharacterPersonalNameTextBox.Size = new System.Drawing.Size(144, 20);
+            this.CharacterPersonalNameTextBox.TabIndex = 23;
+            // 
+            // CharacterFamilyNameTextBox
+            // 
+            this.CharacterFamilyNameTextBox.Location = new System.Drawing.Point(281, 3);
+            this.CharacterFamilyNameTextBox.Name = "CharacterFamilyNameTextBox";
+            this.CharacterFamilyNameTextBox.Size = new System.Drawing.Size(144, 20);
+            this.CharacterFamilyNameTextBox.TabIndex = 23;
             // 
             // CharacterDescriptionTextBox
             // 
@@ -6351,7 +6360,8 @@ namespace Scribe
         private System.Windows.Forms.Label CharacterDescriptionLabel;
         private System.Windows.Forms.Label CharacterCommentLabel;
         private System.Windows.Forms.Label CharacterNativeBiomeLabel;
-        private System.Windows.Forms.TextBox CharacterNameTextBox;
+        private System.Windows.Forms.TextBox CharacterPersonalNameTextBox;
+        private System.Windows.Forms.TextBox CharacterFamilyNameTextBox;
         private System.Windows.Forms.TextBox CharacterDescriptionTextBox;
         private System.Windows.Forms.TextBox CharacterCommentTextBox;
         private System.Windows.Forms.ComboBox CharacterNativeBiomeComboBox;
