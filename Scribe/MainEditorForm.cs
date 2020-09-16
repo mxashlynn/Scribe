@@ -595,7 +595,7 @@ namespace Scribe
                         editModel.StartingDialogueIDs.Clear();
                         editModel.StartingDialogueIDs.ToList().AddRange((IList<ModelID>)input);
                     },
-                (CharactersTabIndex, "StartingInventoryComboBox")
+                (CharactersTabIndex, "CharacterStartingInventoryComboBox")
                     => (input) =>
                     {
                         var editModel = inModel as ICharacterModelEdit;
@@ -852,7 +852,12 @@ namespace Scribe
             RepopulateComboBox(FurnishingSwapWithFurnishingComboBox, All.Furnishings);
             RepopulateComboBox(CollectibleEquivalentItemComboBox, All.Items);
             RepopulateComboBox(CollectibleCollectionEffectComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(CollectingEffect))));
-            // TODO Characters
+            RepopulateComboBox(CharacterNativeBiomeComboBox, All.Biomes);
+            RepopulateComboBox(CharacterPrimaryBehaviorComboBox, All.Scripts);
+            RepopulateComboBox(CharacterPronounComboBox, All.PronounGroups);
+            RepopulateComboBox(CharacterStartingDialogueComboBox, All.Scripts);
+            RepopulateComboBox(CharacterStartingInventoryComboBox, All.Scripts);
+            // TODO CharacterStartingInventoryComboBox, CharacterStartingQuestsListBox
             RepopulateComboBox(CritterNativeBiomeComboBox, All.Biomes);
             RepopulateComboBox(CritterPrimaryBehaviorComboBox, All.Scripts);
             RepopulateComboBox(ItemSubtypeComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(ItemType))));
