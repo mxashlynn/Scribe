@@ -589,19 +589,22 @@ namespace Scribe
                 (CharactersTabIndex, "CharacterPronounComboBox")
                     => (input) => (inModel as ICharacterModelEdit).Pronouns = input.ToString(),
                 (CharactersTabIndex, "CharacterStartingDialogueComboBox")
-                    => (input) =>
-                    {
-                        var editModel = inModel as ICharacterModelEdit;
-                        editModel.StartingDialogueIDs.Clear();
-                        editModel.StartingDialogueIDs.ToList().AddRange((IList<ModelID>)input);
-                    },
+                    => (input) => (inModel as ICharacterModelEdit).StartingDialogueID = ValueToID(input),
                 (CharactersTabIndex, "CharacterStartingInventoryComboBox")
                     => (input) =>
                     {
-                        var editModel = inModel as ICharacterModelEdit;
-                        editModel.StartingInventoryIDs.Clear();
-                        editModel.StartingInventoryIDs.ToList().AddRange((IList<ModelID>)input);
-                    },
+                        var editModel = inModel as CharacterModel;
+                        var slots = (IList<InventorySlot>)input;
+                        foreach (var slot in editModel.StartingInventory)
+                        {
+                            editModel.StartingInventory.Take(slot);
+                        }
+                        foreach (var slot in slots)
+                        {
+                            editModel.StartingInventory.Give(slot);
+                        }
+                    }
+                ,
                 (CharactersTabIndex, "CharacterStartingQuestsListBox")
                     => (input) =>
                     {
@@ -1190,8 +1193,8 @@ namespace Scribe
                     : model.StoryCharacterID;
                 RepopulateListBox(CharacterStartingQuestsListBox, model.StartingQuestIDs
                                                                        .Select(id => All.Interactions.Get<InteractionModel>(id)));
-                CharacterStartingDialogueComboBox.SelectedItem = model.StartingDialogueIDs;
-                CharacterStartingInventoryComboBox.SelectedItem = model.StartingInventoryIDs;
+                CharacterStartingDialogueComboBox.SelectedItem = model.StartingDialogueID;
+                CharacterStartingInventoryComboBox.SelectedItem = model.StartingInventory;
                 PictureBoxLoadFromStorage(CharacterPictureBox, model.ID);
             }
         }
