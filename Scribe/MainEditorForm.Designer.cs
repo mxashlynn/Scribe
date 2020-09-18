@@ -580,6 +580,7 @@ namespace Scribe
             this.ToolStripProgressBar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.ToolStripProgressBar.Name = "ToolStripProgressBar";
             this.ToolStripProgressBar.Size = new System.Drawing.Size(100, 16);
+            this.ToolStripProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
             // EditorStatusStrip
             // 
@@ -998,7 +999,7 @@ namespace Scribe
             this.FilterByNameCheckBox.Size = new System.Drawing.Size(53, 17);
             this.FilterByNameCheckBox.TabIndex = 3;
             this.FilterByNameCheckBox.Text = "Name";
-            this.FilterByNameCheckBox.UseVisualStyleBackColor = true;
+            this.FilterByNameCheckBox.UseVisualStyleBackColor = false;
             // 
             // FilterByStoryIDCheckBox
             // 
@@ -1008,7 +1009,7 @@ namespace Scribe
             this.FilterByStoryIDCheckBox.Size = new System.Drawing.Size(66, 17);
             this.FilterByStoryIDCheckBox.TabIndex = 6;
             this.FilterByStoryIDCheckBox.Text = "Story ID";
-            this.FilterByStoryIDCheckBox.UseVisualStyleBackColor = true;
+            this.FilterByStoryIDCheckBox.UseVisualStyleBackColor = false;
             // 
             // FilterByDescriptionCheckBox
             // 
@@ -1018,7 +1019,7 @@ namespace Scribe
             this.FilterByDescriptionCheckBox.Size = new System.Drawing.Size(79, 17);
             this.FilterByDescriptionCheckBox.TabIndex = 4;
             this.FilterByDescriptionCheckBox.Text = "Description";
-            this.FilterByDescriptionCheckBox.UseVisualStyleBackColor = true;
+            this.FilterByDescriptionCheckBox.UseVisualStyleBackColor = false;
             // 
             // FilterByTagsCheckBox
             // 
@@ -1028,7 +1029,7 @@ namespace Scribe
             this.FilterByTagsCheckBox.Size = new System.Drawing.Size(49, 17);
             this.FilterByTagsCheckBox.TabIndex = 7;
             this.FilterByTagsCheckBox.Text = "Tags";
-            this.FilterByTagsCheckBox.UseVisualStyleBackColor = true;
+            this.FilterByTagsCheckBox.UseVisualStyleBackColor = false;
             // 
             // FilterByCommentCheckBox
             // 
@@ -1038,7 +1039,7 @@ namespace Scribe
             this.FilterByCommentCheckBox.Size = new System.Drawing.Size(71, 17);
             this.FilterByCommentCheckBox.TabIndex = 5;
             this.FilterByCommentCheckBox.Text = "Comment";
-            this.FilterByCommentCheckBox.UseVisualStyleBackColor = true;
+            this.FilterByCommentCheckBox.UseVisualStyleBackColor = false;
             // 
             // FilterByMoreCheckBox
             // 
@@ -1168,7 +1169,7 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FlavorNoFlavorsSelector.AutoSize = true;
-            this.FlavorNoFlavorsSelector.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.FlavorNoFlavorsSelector.BackColor = System.Drawing.Color.DimGray;
             this.FlavorNoFlavorsSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FlavorNoFlavorsSelector.Location = new System.Drawing.Point(413, 26);
             this.FlavorNoFlavorsSelector.Name = "FlavorNoFlavorsSelector";
@@ -1213,7 +1214,7 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FlavorSweetSelector.AutoSize = true;
-            this.FlavorSweetSelector.BackColor = System.Drawing.Color.MistyRose;
+            this.FlavorSweetSelector.BackColor = System.Drawing.Color.LavenderBlush;
             this.FlavorSweetSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FlavorSweetSelector.Location = new System.Drawing.Point(71, 0);
             this.FlavorSweetSelector.Name = "FlavorSweetSelector";
@@ -1303,7 +1304,7 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FlavorAllFlavorsSelector.AutoSize = true;
-            this.FlavorAllFlavorsSelector.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FlavorAllFlavorsSelector.BackColor = System.Drawing.Color.LightGray;
             this.FlavorAllFlavorsSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FlavorAllFlavorsSelector.Location = new System.Drawing.Point(413, 0);
             this.FlavorAllFlavorsSelector.Name = "FlavorAllFlavorsSelector";
@@ -1362,7 +1363,7 @@ namespace Scribe
             this.GameRemoveGameButton.Size = new System.Drawing.Size(129, 23);
             this.GameRemoveGameButton.TabIndex = 2;
             this.GameRemoveGameButton.Text = "Remove Game";
-            this.GameRemoveGameButton.UseVisualStyleBackColor = true;
+            this.GameRemoveGameButton.UseVisualStyleBackColor = false;
             this.GameRemoveGameButton.Click += new System.EventHandler(this.GameRemoveGameButton_Click);
             // 
             // GameIconEditButton
@@ -1372,13 +1373,13 @@ namespace Scribe
             this.GameIconEditButton.Size = new System.Drawing.Size(128, 23);
             this.GameIconEditButton.TabIndex = 7;
             this.GameIconEditButton.Text = "Edit Image";
-            this.GameIconEditButton.UseVisualStyleBackColor = true;
+            this.GameIconEditButton.UseVisualStyleBackColor = false;
             this.GameIconEditButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // GameIconPictureBox
             // 
             this.GameIconPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.GameIconPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.GameIconPictureBox.BackColor = System.Drawing.Color.DimGray;
             this.GameIconPictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
             this.GameIconPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("GameIconPictureBox.Image")));
             this.GameIconPictureBox.Location = new System.Drawing.Point(767, 286);
@@ -1507,7 +1508,7 @@ namespace Scribe
             this.GameIsEpisodeCheckBox.Name = "GameIsEpisodeCheckBox";
             this.GameIsEpisodeCheckBox.Size = new System.Drawing.Size(15, 14);
             this.GameIsEpisodeCheckBox.TabIndex = 22;
-            this.GameIsEpisodeCheckBox.UseVisualStyleBackColor = true;
+            this.GameIsEpisodeCheckBox.UseVisualStyleBackColor = false;
             // 
             // GameNameTextBox
             // 
@@ -1581,8 +1582,7 @@ namespace Scribe
             // GameIDExample
             // 
             this.GameIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.GameIDExample.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.GameIDExample.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.GameIDExample.BackColor = System.Drawing.Color.DimGray;
             this.GameIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.GameIDExample.Location = new System.Drawing.Point(813, 16);
             this.GameIDExample.Name = "GameIDExample";
@@ -1597,7 +1597,7 @@ namespace Scribe
             this.GameAddNewGameButton.Size = new System.Drawing.Size(129, 23);
             this.GameAddNewGameButton.TabIndex = 2;
             this.GameAddNewGameButton.Text = "Add New Game";
-            this.GameAddNewGameButton.UseVisualStyleBackColor = true;
+            this.GameAddNewGameButton.UseVisualStyleBackColor = false;
             this.GameAddNewGameButton.Click += new System.EventHandler(this.GameAddNewGameButton_Click);
             // 
             // GameListBox
@@ -2146,7 +2146,7 @@ namespace Scribe
             this.BlockIsFlammableCheckBox.Name = "BlockIsFlammableCheckBox";
             this.BlockIsFlammableCheckBox.Size = new System.Drawing.Size(15, 14);
             this.BlockIsFlammableCheckBox.TabIndex = 36;
-            this.BlockIsFlammableCheckBox.UseVisualStyleBackColor = true;
+            this.BlockIsFlammableCheckBox.UseVisualStyleBackColor = false;
             // 
             // BlockIsLiquidCheckBox
             // 
@@ -2155,7 +2155,7 @@ namespace Scribe
             this.BlockIsLiquidCheckBox.Name = "BlockIsLiquidCheckBox";
             this.BlockIsLiquidCheckBox.Size = new System.Drawing.Size(15, 14);
             this.BlockIsLiquidCheckBox.TabIndex = 37;
-            this.BlockIsLiquidCheckBox.UseVisualStyleBackColor = true;
+            this.BlockIsLiquidCheckBox.UseVisualStyleBackColor = false;
             // 
             // BlockAddsToBiomeListBox
             // 
@@ -2189,7 +2189,7 @@ namespace Scribe
             this.BlockAddBiomeTagButton.Size = new System.Drawing.Size(129, 22);
             this.BlockAddBiomeTagButton.TabIndex = 38;
             this.BlockAddBiomeTagButton.Text = "Add Biome Tag";
-            this.BlockAddBiomeTagButton.UseVisualStyleBackColor = true;
+            this.BlockAddBiomeTagButton.UseVisualStyleBackColor = false;
             this.BlockAddBiomeTagButton.Click += new System.EventHandler(this.BlockAddBiomeTagButton_Click);
             // 
             // BlockAddRoomTagButton
@@ -2200,7 +2200,7 @@ namespace Scribe
             this.BlockAddRoomTagButton.Size = new System.Drawing.Size(129, 22);
             this.BlockAddRoomTagButton.TabIndex = 38;
             this.BlockAddRoomTagButton.Text = "Add Room Tag";
-            this.BlockAddRoomTagButton.UseVisualStyleBackColor = true;
+            this.BlockAddRoomTagButton.UseVisualStyleBackColor = false;
             this.BlockAddRoomTagButton.Click += new System.EventHandler(this.BlockAddRoomTagButton_Click);
             // 
             // BlockRemoveBiomeTagButton
@@ -2211,7 +2211,7 @@ namespace Scribe
             this.BlockRemoveBiomeTagButton.Size = new System.Drawing.Size(129, 22);
             this.BlockRemoveBiomeTagButton.TabIndex = 38;
             this.BlockRemoveBiomeTagButton.Text = "Remove Biome Tag";
-            this.BlockRemoveBiomeTagButton.UseVisualStyleBackColor = true;
+            this.BlockRemoveBiomeTagButton.UseVisualStyleBackColor = false;
             this.BlockRemoveBiomeTagButton.Click += new System.EventHandler(this.BlockRemoveBiomeTagButton_Click);
             // 
             // BlockRemoveRoomTagButton
@@ -2222,7 +2222,7 @@ namespace Scribe
             this.BlockRemoveRoomTagButton.Size = new System.Drawing.Size(129, 22);
             this.BlockRemoveRoomTagButton.TabIndex = 38;
             this.BlockRemoveRoomTagButton.Text = "Remove Room Tag";
-            this.BlockRemoveRoomTagButton.UseVisualStyleBackColor = true;
+            this.BlockRemoveRoomTagButton.UseVisualStyleBackColor = false;
             this.BlockRemoveRoomTagButton.Click += new System.EventHandler(this.BlockRemoveRoomTagButton_Click);
             // 
             // BlockAddsToBiomeLabel
@@ -2246,7 +2246,7 @@ namespace Scribe
             // BlockPictureBox
             // 
             this.BlockPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlockPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BlockPictureBox.BackColor = System.Drawing.Color.DimGray;
             this.BlockPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("BlockPictureBox.Image")));
             this.BlockPictureBox.Location = new System.Drawing.Point(767, 286);
             this.BlockPictureBox.Name = "BlockPictureBox";
@@ -2263,7 +2263,7 @@ namespace Scribe
             this.BlockEditImageButton.Size = new System.Drawing.Size(128, 23);
             this.BlockEditImageButton.TabIndex = 7;
             this.BlockEditImageButton.Text = "Edit Image";
-            this.BlockEditImageButton.UseVisualStyleBackColor = true;
+            this.BlockEditImageButton.UseVisualStyleBackColor = false;
             this.BlockEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // BlockIDLabel
@@ -2296,14 +2296,13 @@ namespace Scribe
             this.BlockAddNewBlockButton.Size = new System.Drawing.Size(129, 23);
             this.BlockAddNewBlockButton.TabIndex = 2;
             this.BlockAddNewBlockButton.Text = "Add New Block";
-            this.BlockAddNewBlockButton.UseVisualStyleBackColor = true;
+            this.BlockAddNewBlockButton.UseVisualStyleBackColor = false;
             this.BlockAddNewBlockButton.Click += new System.EventHandler(this.BlockAddNewBlockButton_Click);
             // 
             // BlockIDExample
             // 
             this.BlockIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlockIDExample.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.BlockIDExample.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BlockIDExample.BackColor = System.Drawing.Color.DimGray;
             this.BlockIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.BlockIDExample.Location = new System.Drawing.Point(812, 16);
             this.BlockIDExample.Name = "BlockIDExample";
@@ -2318,7 +2317,7 @@ namespace Scribe
             this.BlockRemoveBlockButton.Size = new System.Drawing.Size(129, 23);
             this.BlockRemoveBlockButton.TabIndex = 2;
             this.BlockRemoveBlockButton.Text = "Remove Block";
-            this.BlockRemoveBlockButton.UseVisualStyleBackColor = true;
+            this.BlockRemoveBlockButton.UseVisualStyleBackColor = false;
             this.BlockRemoveBlockButton.Click += new System.EventHandler(this.BlockRemoveBlockButton_Click);
             // 
             // BlockConfigGroupBox
@@ -2333,7 +2332,6 @@ namespace Scribe
             // 
             // FloorsTabPage
             // 
-            this.FloorsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.FloorsTabPage.Controls.Add(this.FloorRemoveFloorButton);
             this.FloorsTabPage.Controls.Add(this.FloorLayoutTabelPanel);
             this.FloorsTabPage.Controls.Add(this.FloorIDExample);
@@ -2356,7 +2354,7 @@ namespace Scribe
             this.FloorRemoveFloorButton.Size = new System.Drawing.Size(129, 23);
             this.FloorRemoveFloorButton.TabIndex = 2;
             this.FloorRemoveFloorButton.Text = "Remove Floor";
-            this.FloorRemoveFloorButton.UseVisualStyleBackColor = true;
+            this.FloorRemoveFloorButton.UseVisualStyleBackColor = false;
             this.FloorRemoveFloorButton.Click += new System.EventHandler(this.FloorRemoveFloorButton_Click);
             // 
             // FloorLayoutTabelPanel
@@ -2412,7 +2410,7 @@ namespace Scribe
             this.FloorRemoveRoomTagButton.Size = new System.Drawing.Size(129, 23);
             this.FloorRemoveRoomTagButton.TabIndex = 38;
             this.FloorRemoveRoomTagButton.Text = "Remove Room Tag";
-            this.FloorRemoveRoomTagButton.UseVisualStyleBackColor = true;
+            this.FloorRemoveRoomTagButton.UseVisualStyleBackColor = false;
             this.FloorRemoveRoomTagButton.Click += new System.EventHandler(this.FloorRemoveRoomTagButton_Click);
             // 
             // FloorRemoveBiomeTagButton
@@ -2423,7 +2421,7 @@ namespace Scribe
             this.FloorRemoveBiomeTagButton.Size = new System.Drawing.Size(129, 23);
             this.FloorRemoveBiomeTagButton.TabIndex = 38;
             this.FloorRemoveBiomeTagButton.Text = "Remove Biome Tag";
-            this.FloorRemoveBiomeTagButton.UseVisualStyleBackColor = true;
+            this.FloorRemoveBiomeTagButton.UseVisualStyleBackColor = false;
             this.FloorRemoveBiomeTagButton.Click += new System.EventHandler(this.FloorRemoveBiomeTagButton_Click);
             // 
             // FloorAddRoomTagButton
@@ -2434,7 +2432,7 @@ namespace Scribe
             this.FloorAddRoomTagButton.Size = new System.Drawing.Size(129, 23);
             this.FloorAddRoomTagButton.TabIndex = 38;
             this.FloorAddRoomTagButton.Text = "Add Room Tag";
-            this.FloorAddRoomTagButton.UseVisualStyleBackColor = true;
+            this.FloorAddRoomTagButton.UseVisualStyleBackColor = false;
             this.FloorAddRoomTagButton.Click += new System.EventHandler(this.FloorAddRoomTagButton_Click);
             // 
             // FloorNameLabel
@@ -2595,14 +2593,13 @@ namespace Scribe
             this.FloorAddBiomeTagButton.Size = new System.Drawing.Size(129, 23);
             this.FloorAddBiomeTagButton.TabIndex = 38;
             this.FloorAddBiomeTagButton.Text = "Add Biome Tag";
-            this.FloorAddBiomeTagButton.UseVisualStyleBackColor = true;
+            this.FloorAddBiomeTagButton.UseVisualStyleBackColor = false;
             this.FloorAddBiomeTagButton.Click += new System.EventHandler(this.FloorAddBiomeTagButton_Click);
             // 
             // FloorIDExample
             // 
             this.FloorIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorIDExample.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.FloorIDExample.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FloorIDExample.BackColor = System.Drawing.Color.DimGray;
             this.FloorIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.FloorIDExample.Location = new System.Drawing.Point(812, 16);
             this.FloorIDExample.Name = "FloorIDExample";
@@ -2617,7 +2614,7 @@ namespace Scribe
             this.FloorAddNewFloorButton.Size = new System.Drawing.Size(129, 23);
             this.FloorAddNewFloorButton.TabIndex = 2;
             this.FloorAddNewFloorButton.Text = "Add New Floor";
-            this.FloorAddNewFloorButton.UseVisualStyleBackColor = true;
+            this.FloorAddNewFloorButton.UseVisualStyleBackColor = false;
             this.FloorAddNewFloorButton.Click += new System.EventHandler(this.FloorAddNewFloorButton_Click);
             // 
             // FloorListBox
@@ -2650,13 +2647,13 @@ namespace Scribe
             this.FloorEditImageButton.Size = new System.Drawing.Size(128, 23);
             this.FloorEditImageButton.TabIndex = 7;
             this.FloorEditImageButton.Text = "Edit Image";
-            this.FloorEditImageButton.UseVisualStyleBackColor = true;
+            this.FloorEditImageButton.UseVisualStyleBackColor = false;
             this.FloorEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // FloorPictureBox
             // 
             this.FloorPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.FloorPictureBox.BackColor = System.Drawing.Color.DimGray;
             this.FloorPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("FloorPictureBox.Image")));
             this.FloorPictureBox.Location = new System.Drawing.Point(767, 286);
             this.FloorPictureBox.Name = "FloorPictureBox";
@@ -2843,7 +2840,7 @@ namespace Scribe
             this.FurnishingIsFlammableCheckBox.Name = "FurnishingIsFlammableCheckBox";
             this.FurnishingIsFlammableCheckBox.Size = new System.Drawing.Size(15, 14);
             this.FurnishingIsFlammableCheckBox.TabIndex = 37;
-            this.FurnishingIsFlammableCheckBox.UseVisualStyleBackColor = true;
+            this.FurnishingIsFlammableCheckBox.UseVisualStyleBackColor = false;
             // 
             // FurnishingIsEnclosingCheckBox
             // 
@@ -2852,7 +2849,7 @@ namespace Scribe
             this.FurnishingIsEnclosingCheckBox.Name = "FurnishingIsEnclosingCheckBox";
             this.FurnishingIsEnclosingCheckBox.Size = new System.Drawing.Size(15, 14);
             this.FurnishingIsEnclosingCheckBox.TabIndex = 36;
-            this.FurnishingIsEnclosingCheckBox.UseVisualStyleBackColor = true;
+            this.FurnishingIsEnclosingCheckBox.UseVisualStyleBackColor = false;
             // 
             // FurnishingIsWalkableCheckBox
             // 
@@ -2861,7 +2858,7 @@ namespace Scribe
             this.FurnishingIsWalkableCheckBox.Name = "FurnishingIsWalkableCheckBox";
             this.FurnishingIsWalkableCheckBox.Size = new System.Drawing.Size(15, 14);
             this.FurnishingIsWalkableCheckBox.TabIndex = 35;
-            this.FurnishingIsWalkableCheckBox.UseVisualStyleBackColor = true;
+            this.FurnishingIsWalkableCheckBox.UseVisualStyleBackColor = false;
             // 
             // FurnishingIsFlammableLabel
             // 
@@ -2939,7 +2936,7 @@ namespace Scribe
             this.FurnishingAddBiomeTagButton.Size = new System.Drawing.Size(129, 23);
             this.FurnishingAddBiomeTagButton.TabIndex = 38;
             this.FurnishingAddBiomeTagButton.Text = "Add Biome Tag";
-            this.FurnishingAddBiomeTagButton.UseVisualStyleBackColor = true;
+            this.FurnishingAddBiomeTagButton.UseVisualStyleBackColor = false;
             this.FurnishingAddBiomeTagButton.Click += new System.EventHandler(this.FurnishingAddBiomeTagButton_Click);
             // 
             // FurnishingAddRoomTagButton
@@ -2950,7 +2947,7 @@ namespace Scribe
             this.FurnishingAddRoomTagButton.Size = new System.Drawing.Size(129, 23);
             this.FurnishingAddRoomTagButton.TabIndex = 38;
             this.FurnishingAddRoomTagButton.Text = "Add Room Tag";
-            this.FurnishingAddRoomTagButton.UseVisualStyleBackColor = true;
+            this.FurnishingAddRoomTagButton.UseVisualStyleBackColor = false;
             this.FurnishingAddRoomTagButton.Click += new System.EventHandler(this.FurnishingAddRoomTagButton_Click);
             // 
             // FurnishingRemoveRoomTagButton
@@ -2961,7 +2958,7 @@ namespace Scribe
             this.FurnishingRemoveRoomTagButton.Size = new System.Drawing.Size(129, 23);
             this.FurnishingRemoveRoomTagButton.TabIndex = 38;
             this.FurnishingRemoveRoomTagButton.Text = "Remove Room Tag";
-            this.FurnishingRemoveRoomTagButton.UseVisualStyleBackColor = true;
+            this.FurnishingRemoveRoomTagButton.UseVisualStyleBackColor = false;
             this.FurnishingRemoveRoomTagButton.Click += new System.EventHandler(this.FurnishingRemoveRoomTagButton_Click);
             // 
             // FurnishingRemoveBiomeTagButton
@@ -2972,7 +2969,7 @@ namespace Scribe
             this.FurnishingRemoveBiomeTagButton.Size = new System.Drawing.Size(129, 23);
             this.FurnishingRemoveBiomeTagButton.TabIndex = 38;
             this.FurnishingRemoveBiomeTagButton.Text = "Remove Biome Tag";
-            this.FurnishingRemoveBiomeTagButton.UseVisualStyleBackColor = true;
+            this.FurnishingRemoveBiomeTagButton.UseVisualStyleBackColor = false;
             this.FurnishingRemoveBiomeTagButton.Click += new System.EventHandler(this.FurnishingRemoveBiomeTagButton_Click);
             // 
             // FurnishingRemoveFurnishingButton
@@ -2982,14 +2979,13 @@ namespace Scribe
             this.FurnishingRemoveFurnishingButton.Size = new System.Drawing.Size(129, 23);
             this.FurnishingRemoveFurnishingButton.TabIndex = 2;
             this.FurnishingRemoveFurnishingButton.Text = "Remove Furnishing";
-            this.FurnishingRemoveFurnishingButton.UseVisualStyleBackColor = true;
+            this.FurnishingRemoveFurnishingButton.UseVisualStyleBackColor = false;
             this.FurnishingRemoveFurnishingButton.Click += new System.EventHandler(this.FurnishingRemoveFurnishingButton_Click);
             // 
             // FurnishingIDExample
             // 
             this.FurnishingIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FurnishingIDExample.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.FurnishingIDExample.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FurnishingIDExample.BackColor = System.Drawing.Color.DimGray;
             this.FurnishingIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.FurnishingIDExample.Location = new System.Drawing.Point(812, 16);
             this.FurnishingIDExample.Name = "FurnishingIDExample";
@@ -3004,7 +3000,7 @@ namespace Scribe
             this.FurnishingAddNewFurnishingButton.Size = new System.Drawing.Size(129, 23);
             this.FurnishingAddNewFurnishingButton.TabIndex = 2;
             this.FurnishingAddNewFurnishingButton.Text = "Add New Furnishing";
-            this.FurnishingAddNewFurnishingButton.UseVisualStyleBackColor = true;
+            this.FurnishingAddNewFurnishingButton.UseVisualStyleBackColor = false;
             this.FurnishingAddNewFurnishingButton.Click += new System.EventHandler(this.FurnishingAddNewFurnishingButton_Click);
             // 
             // FurnishingListBox
@@ -3037,13 +3033,13 @@ namespace Scribe
             this.FurnishingEditImageButton.Size = new System.Drawing.Size(128, 23);
             this.FurnishingEditImageButton.TabIndex = 7;
             this.FurnishingEditImageButton.Text = "Edit Image";
-            this.FurnishingEditImageButton.UseVisualStyleBackColor = true;
+            this.FurnishingEditImageButton.UseVisualStyleBackColor = false;
             this.FurnishingEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // FurnishingPictureBox
             // 
             this.FurnishingPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.FurnishingPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.FurnishingPictureBox.BackColor = System.Drawing.Color.DimGray;
             this.FurnishingPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("FurnishingPictureBox.Image")));
             this.FurnishingPictureBox.Location = new System.Drawing.Point(767, 286);
             this.FurnishingPictureBox.Name = "FurnishingPictureBox";
@@ -3263,7 +3259,7 @@ namespace Scribe
             this.CollectibleAddBiomeTagButton.Size = new System.Drawing.Size(129, 23);
             this.CollectibleAddBiomeTagButton.TabIndex = 38;
             this.CollectibleAddBiomeTagButton.Text = "Add Biome Tag";
-            this.CollectibleAddBiomeTagButton.UseVisualStyleBackColor = true;
+            this.CollectibleAddBiomeTagButton.UseVisualStyleBackColor = false;
             this.CollectibleAddBiomeTagButton.Click += new System.EventHandler(this.CollectibleAddBiomeTagButton_Click);
             // 
             // CollectibleRemoveBiomeTagButton
@@ -3274,7 +3270,7 @@ namespace Scribe
             this.CollectibleRemoveBiomeTagButton.Size = new System.Drawing.Size(129, 23);
             this.CollectibleRemoveBiomeTagButton.TabIndex = 38;
             this.CollectibleRemoveBiomeTagButton.Text = "Remove Biome Tag";
-            this.CollectibleRemoveBiomeTagButton.UseVisualStyleBackColor = true;
+            this.CollectibleRemoveBiomeTagButton.UseVisualStyleBackColor = false;
             this.CollectibleRemoveBiomeTagButton.Click += new System.EventHandler(this.CollectibleRemoveBiomeTagButton_Click);
             // 
             // CollectibleAddRoomTagButton
@@ -3285,7 +3281,7 @@ namespace Scribe
             this.CollectibleAddRoomTagButton.Size = new System.Drawing.Size(129, 23);
             this.CollectibleAddRoomTagButton.TabIndex = 38;
             this.CollectibleAddRoomTagButton.Text = "Add Room Tag";
-            this.CollectibleAddRoomTagButton.UseVisualStyleBackColor = true;
+            this.CollectibleAddRoomTagButton.UseVisualStyleBackColor = false;
             this.CollectibleAddRoomTagButton.Click += new System.EventHandler(this.CollectibleAddRoomTagButton_Click);
             // 
             // CollectibleRemoveRoomTagButton
@@ -3296,7 +3292,7 @@ namespace Scribe
             this.CollectibleRemoveRoomTagButton.Size = new System.Drawing.Size(129, 23);
             this.CollectibleRemoveRoomTagButton.TabIndex = 38;
             this.CollectibleRemoveRoomTagButton.Text = "Remove Room Tag";
-            this.CollectibleRemoveRoomTagButton.UseVisualStyleBackColor = true;
+            this.CollectibleRemoveRoomTagButton.UseVisualStyleBackColor = false;
             this.CollectibleRemoveRoomTagButton.Click += new System.EventHandler(this.CollectibleRemoveRoomTagButton_Click);
             // 
             // CollectibleRemoveCollectibleButton
@@ -3306,14 +3302,13 @@ namespace Scribe
             this.CollectibleRemoveCollectibleButton.Size = new System.Drawing.Size(129, 23);
             this.CollectibleRemoveCollectibleButton.TabIndex = 2;
             this.CollectibleRemoveCollectibleButton.Text = "Remove Collectible";
-            this.CollectibleRemoveCollectibleButton.UseVisualStyleBackColor = true;
+            this.CollectibleRemoveCollectibleButton.UseVisualStyleBackColor = false;
             this.CollectibleRemoveCollectibleButton.Click += new System.EventHandler(this.CollectibleRemoveCollectibleButton_Click);
             // 
             // CollectibleIDExample
             // 
             this.CollectibleIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectibleIDExample.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.CollectibleIDExample.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CollectibleIDExample.BackColor = System.Drawing.Color.DimGray;
             this.CollectibleIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.CollectibleIDExample.Location = new System.Drawing.Point(812, 16);
             this.CollectibleIDExample.Name = "CollectibleIDExample";
@@ -3328,7 +3323,7 @@ namespace Scribe
             this.CollectibleAddNewCollectibleButton.Size = new System.Drawing.Size(129, 23);
             this.CollectibleAddNewCollectibleButton.TabIndex = 2;
             this.CollectibleAddNewCollectibleButton.Text = "Add New Collectible";
-            this.CollectibleAddNewCollectibleButton.UseVisualStyleBackColor = true;
+            this.CollectibleAddNewCollectibleButton.UseVisualStyleBackColor = false;
             this.CollectibleAddNewCollectibleButton.Click += new System.EventHandler(this.CollectibleAddNewCollectibleButton_Click);
             // 
             // CollectibleListBox
@@ -3361,13 +3356,13 @@ namespace Scribe
             this.CollectibleEditImageButton.Size = new System.Drawing.Size(128, 23);
             this.CollectibleEditImageButton.TabIndex = 7;
             this.CollectibleEditImageButton.Text = "Edit Image";
-            this.CollectibleEditImageButton.UseVisualStyleBackColor = true;
+            this.CollectibleEditImageButton.UseVisualStyleBackColor = false;
             this.CollectibleEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // CollectiblePictureBox
             // 
             this.CollectiblePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectiblePictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.CollectiblePictureBox.BackColor = System.Drawing.Color.DimGray;
             this.CollectiblePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("CollectiblePictureBox.Image")));
             this.CollectiblePictureBox.Location = new System.Drawing.Point(767, 286);
             this.CollectiblePictureBox.Name = "CollectiblePictureBox";
@@ -3459,7 +3454,7 @@ namespace Scribe
             this.CharacterPronounAddNewPronoungGroupButton.Size = new System.Drawing.Size(124, 23);
             this.CharacterPronounAddNewPronoungGroupButton.TabIndex = 2;
             this.CharacterPronounAddNewPronoungGroupButton.Text = "Add New Group";
-            this.CharacterPronounAddNewPronoungGroupButton.UseVisualStyleBackColor = true;
+            this.CharacterPronounAddNewPronoungGroupButton.UseVisualStyleBackColor = false;
             // 
             // CharacterPronounRemovePronoungGroupButton
             // 
@@ -3468,7 +3463,7 @@ namespace Scribe
             this.CharacterPronounRemovePronoungGroupButton.Size = new System.Drawing.Size(124, 23);
             this.CharacterPronounRemovePronoungGroupButton.TabIndex = 2;
             this.CharacterPronounRemovePronoungGroupButton.Text = "Remove Group";
-            this.CharacterPronounRemovePronoungGroupButton.UseVisualStyleBackColor = true;
+            this.CharacterPronounRemovePronoungGroupButton.UseVisualStyleBackColor = false;
             // 
             // CharacterPronounReflexiveTextBox
             // 
@@ -3647,7 +3642,7 @@ namespace Scribe
             this.CharacterAddQuestButton.Size = new System.Drawing.Size(129, 23);
             this.CharacterAddQuestButton.TabIndex = 29;
             this.CharacterAddQuestButton.Text = "Add Quest";
-            this.CharacterAddQuestButton.UseVisualStyleBackColor = true;
+            this.CharacterAddQuestButton.UseVisualStyleBackColor = false;
             // 
             // CharacterRemoveQuestButton
             // 
@@ -3657,7 +3652,7 @@ namespace Scribe
             this.CharacterRemoveQuestButton.Size = new System.Drawing.Size(129, 23);
             this.CharacterRemoveQuestButton.TabIndex = 29;
             this.CharacterRemoveQuestButton.Text = "Remove Quest";
-            this.CharacterRemoveQuestButton.UseVisualStyleBackColor = true;
+            this.CharacterRemoveQuestButton.UseVisualStyleBackColor = false;
             // 
             // CharacterStartingQuestsListBox
             // 
@@ -3685,7 +3680,7 @@ namespace Scribe
             this.CharacterOpenInventoryEditorButton.Size = new System.Drawing.Size(129, 23);
             this.CharacterOpenInventoryEditorButton.TabIndex = 3;
             this.CharacterOpenInventoryEditorButton.Text = "Open Inventory Editor";
-            this.CharacterOpenInventoryEditorButton.UseVisualStyleBackColor = true;
+            this.CharacterOpenInventoryEditorButton.UseVisualStyleBackColor = false;
             // 
             // CharacterPrimaryBehaviorComboBox
             // 
@@ -3900,13 +3895,12 @@ namespace Scribe
             this.CharacterRemoveCharacterButton.Size = new System.Drawing.Size(129, 23);
             this.CharacterRemoveCharacterButton.TabIndex = 2;
             this.CharacterRemoveCharacterButton.Text = "Remove Character";
-            this.CharacterRemoveCharacterButton.UseVisualStyleBackColor = true;
+            this.CharacterRemoveCharacterButton.UseVisualStyleBackColor = false;
             // 
             // CharacterIDExample
             // 
             this.CharacterIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CharacterIDExample.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.CharacterIDExample.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CharacterIDExample.BackColor = System.Drawing.Color.DimGray;
             this.CharacterIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.CharacterIDExample.Location = new System.Drawing.Point(812, 16);
             this.CharacterIDExample.Name = "CharacterIDExample";
@@ -3921,7 +3915,7 @@ namespace Scribe
             this.CharacterAddNewCharacterButton.Size = new System.Drawing.Size(129, 23);
             this.CharacterAddNewCharacterButton.TabIndex = 2;
             this.CharacterAddNewCharacterButton.Text = "Add New Character";
-            this.CharacterAddNewCharacterButton.UseVisualStyleBackColor = true;
+            this.CharacterAddNewCharacterButton.UseVisualStyleBackColor = false;
             // 
             // CharacterListBox
             // 
@@ -3953,13 +3947,13 @@ namespace Scribe
             this.CharacterEditImageButton.Size = new System.Drawing.Size(128, 23);
             this.CharacterEditImageButton.TabIndex = 7;
             this.CharacterEditImageButton.Text = "Edit Image";
-            this.CharacterEditImageButton.UseVisualStyleBackColor = true;
+            this.CharacterEditImageButton.UseVisualStyleBackColor = false;
             this.CharacterEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // CharacterPictureBox
             // 
             this.CharacterPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CharacterPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.CharacterPictureBox.BackColor = System.Drawing.Color.DimGray;
             this.CharacterPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("CharacterPictureBox.Image")));
             this.CharacterPictureBox.Location = new System.Drawing.Point(767, 286);
             this.CharacterPictureBox.Name = "CharacterPictureBox";
@@ -4158,7 +4152,7 @@ namespace Scribe
             // CritterPictureBox
             // 
             this.CritterPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CritterPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.CritterPictureBox.BackColor = System.Drawing.Color.DimGray;
             this.CritterPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("CritterPictureBox.Image")));
             this.CritterPictureBox.Location = new System.Drawing.Point(767, 286);
             this.CritterPictureBox.Name = "CritterPictureBox";
@@ -4208,14 +4202,13 @@ namespace Scribe
             this.CritterAddNewCritterButton.Size = new System.Drawing.Size(129, 23);
             this.CritterAddNewCritterButton.TabIndex = 2;
             this.CritterAddNewCritterButton.Text = "Add New Critter";
-            this.CritterAddNewCritterButton.UseVisualStyleBackColor = true;
+            this.CritterAddNewCritterButton.UseVisualStyleBackColor = false;
             this.CritterAddNewCritterButton.Click += new System.EventHandler(this.CritterAddNewCritterButton_Click);
             // 
             // CritterIDExample
             // 
             this.CritterIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CritterIDExample.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.CritterIDExample.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CritterIDExample.BackColor = System.Drawing.Color.DimGray;
             this.CritterIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.CritterIDExample.Location = new System.Drawing.Point(812, 16);
             this.CritterIDExample.Name = "CritterIDExample";
@@ -4240,12 +4233,11 @@ namespace Scribe
             this.CritterRemoveCritterButton.Size = new System.Drawing.Size(129, 23);
             this.CritterRemoveCritterButton.TabIndex = 2;
             this.CritterRemoveCritterButton.Text = "Remove Critter";
-            this.CritterRemoveCritterButton.UseVisualStyleBackColor = true;
+            this.CritterRemoveCritterButton.UseVisualStyleBackColor = false;
             this.CritterRemoveCritterButton.Click += new System.EventHandler(this.CritterRemoveCritterButton_Click);
             // 
             // ItemsTabPage
             // 
-            this.ItemsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.ItemsTabPage.Controls.Add(this.ItemRemoveItemButton);
             this.ItemsTabPage.Controls.Add(this.ItemAddTagButton);
             this.ItemsTabPage.Controls.Add(this.ItemRemoveTagButton);
@@ -4270,7 +4262,7 @@ namespace Scribe
             this.ItemRemoveItemButton.Size = new System.Drawing.Size(129, 23);
             this.ItemRemoveItemButton.TabIndex = 2;
             this.ItemRemoveItemButton.Text = "Remove Item";
-            this.ItemRemoveItemButton.UseVisualStyleBackColor = true;
+            this.ItemRemoveItemButton.UseVisualStyleBackColor = false;
             this.ItemRemoveItemButton.Click += new System.EventHandler(this.ItemRemoveItemButton_Click);
             // 
             // ItemAddTagButton
@@ -4281,7 +4273,7 @@ namespace Scribe
             this.ItemAddTagButton.Size = new System.Drawing.Size(129, 23);
             this.ItemAddTagButton.TabIndex = 2;
             this.ItemAddTagButton.Text = "Add Tag";
-            this.ItemAddTagButton.UseVisualStyleBackColor = true;
+            this.ItemAddTagButton.UseVisualStyleBackColor = false;
             this.ItemAddTagButton.Click += new System.EventHandler(this.ItemAddTagButton_Click);
             // 
             // ItemRemoveTagButton
@@ -4292,7 +4284,7 @@ namespace Scribe
             this.ItemRemoveTagButton.Size = new System.Drawing.Size(129, 23);
             this.ItemRemoveTagButton.TabIndex = 2;
             this.ItemRemoveTagButton.Text = "Remove Tag";
-            this.ItemRemoveTagButton.UseVisualStyleBackColor = true;
+            this.ItemRemoveTagButton.UseVisualStyleBackColor = false;
             this.ItemRemoveTagButton.Click += new System.EventHandler(this.ItemRemoveTagButton_Click);
             // 
             // ItemListBox
@@ -4340,7 +4332,7 @@ namespace Scribe
             this.ItemOpenInvetoryEditorButton.Size = new System.Drawing.Size(129, 23);
             this.ItemOpenInvetoryEditorButton.TabIndex = 3;
             this.ItemOpenInvetoryEditorButton.Text = "Open Inventory Editor";
-            this.ItemOpenInvetoryEditorButton.UseVisualStyleBackColor = true;
+            this.ItemOpenInvetoryEditorButton.UseVisualStyleBackColor = false;
             // 
             // ItemInventoryListBox
             // 
@@ -4360,7 +4352,7 @@ namespace Scribe
             this.ItemPictureEditButton.Size = new System.Drawing.Size(128, 23);
             this.ItemPictureEditButton.TabIndex = 7;
             this.ItemPictureEditButton.Text = "Edit Image";
-            this.ItemPictureEditButton.UseVisualStyleBackColor = true;
+            this.ItemPictureEditButton.UseVisualStyleBackColor = false;
             this.ItemPictureEditButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // ItemTableLayoutPanel
@@ -4607,7 +4599,7 @@ namespace Scribe
             // ItemPictureBox
             // 
             this.ItemPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.ItemPictureBox.BackColor = System.Drawing.Color.DimGray;
             this.ItemPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ItemPictureBox.Image")));
             this.ItemPictureBox.Location = new System.Drawing.Point(768, 286);
             this.ItemPictureBox.Name = "ItemPictureBox";
@@ -4634,14 +4626,13 @@ namespace Scribe
             this.ItemAddNewItemButton.Size = new System.Drawing.Size(129, 23);
             this.ItemAddNewItemButton.TabIndex = 2;
             this.ItemAddNewItemButton.Text = "Add New Item";
-            this.ItemAddNewItemButton.UseVisualStyleBackColor = true;
+            this.ItemAddNewItemButton.UseVisualStyleBackColor = false;
             this.ItemAddNewItemButton.Click += new System.EventHandler(this.ItemAddNewItemButton_Click);
             // 
             // ItemIDExample
             // 
             this.ItemIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemIDExample.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ItemIDExample.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ItemIDExample.BackColor = System.Drawing.Color.DimGray;
             this.ItemIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.ItemIDExample.Location = new System.Drawing.Point(813, 16);
             this.ItemIDExample.Name = "ItemIDExample";
@@ -4651,7 +4642,6 @@ namespace Scribe
             // 
             // BiomesTabPage
             // 
-            this.BiomesTabPage.BackColor = System.Drawing.Color.Transparent;
             this.BiomesTabPage.Controls.Add(this.BiomeRemoveBiomeButton);
             this.BiomesTabPage.Controls.Add(this.BiomeAddEntryRequirementButton);
             this.BiomesTabPage.Controls.Add(this.BiomeRemoveEntryRequirementButton);
@@ -4676,7 +4666,7 @@ namespace Scribe
             this.BiomeRemoveBiomeButton.Size = new System.Drawing.Size(129, 23);
             this.BiomeRemoveBiomeButton.TabIndex = 2;
             this.BiomeRemoveBiomeButton.Text = "Remove Biome";
-            this.BiomeRemoveBiomeButton.UseVisualStyleBackColor = true;
+            this.BiomeRemoveBiomeButton.UseVisualStyleBackColor = false;
             this.BiomeRemoveBiomeButton.Click += new System.EventHandler(this.BiomeRemoveBiomeButton_Click);
             // 
             // BiomeAddEntryRequirementButton
@@ -4687,7 +4677,7 @@ namespace Scribe
             this.BiomeAddEntryRequirementButton.Size = new System.Drawing.Size(129, 23);
             this.BiomeAddEntryRequirementButton.TabIndex = 2;
             this.BiomeAddEntryRequirementButton.Text = "Add Requirement Tag";
-            this.BiomeAddEntryRequirementButton.UseVisualStyleBackColor = true;
+            this.BiomeAddEntryRequirementButton.UseVisualStyleBackColor = false;
             this.BiomeAddEntryRequirementButton.Click += new System.EventHandler(this.BiomeAddEntryRequirementButton_Click);
             // 
             // BiomeRemoveEntryRequirementButton
@@ -4698,7 +4688,7 @@ namespace Scribe
             this.BiomeRemoveEntryRequirementButton.Size = new System.Drawing.Size(129, 23);
             this.BiomeRemoveEntryRequirementButton.TabIndex = 2;
             this.BiomeRemoveEntryRequirementButton.Text = "Remove Req. Tag";
-            this.BiomeRemoveEntryRequirementButton.UseVisualStyleBackColor = true;
+            this.BiomeRemoveEntryRequirementButton.UseVisualStyleBackColor = false;
             this.BiomeRemoveEntryRequirementButton.Click += new System.EventHandler(this.BiomeRemoveEntryRequirementButton_Click);
             // 
             // BiomeListBox
@@ -4817,7 +4807,7 @@ namespace Scribe
             this.BiomePictureEditButton.Size = new System.Drawing.Size(128, 23);
             this.BiomePictureEditButton.TabIndex = 7;
             this.BiomePictureEditButton.Text = "Edit Image";
-            this.BiomePictureEditButton.UseVisualStyleBackColor = true;
+            this.BiomePictureEditButton.UseVisualStyleBackColor = false;
             this.BiomePictureEditButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // BiomeTableLayoutPanel
@@ -4870,7 +4860,7 @@ namespace Scribe
             this.BiomeAddParquetCriterionButton.Size = new System.Drawing.Size(129, 23);
             this.BiomeAddParquetCriterionButton.TabIndex = 2;
             this.BiomeAddParquetCriterionButton.Text = "Add Criterion Tag";
-            this.BiomeAddParquetCriterionButton.UseVisualStyleBackColor = true;
+            this.BiomeAddParquetCriterionButton.UseVisualStyleBackColor = false;
             this.BiomeAddParquetCriterionButton.Click += new System.EventHandler(this.BiomeAddParquetCriterionButton_Click);
             // 
             // BiomeRemoveParquetCriterionButton
@@ -4881,7 +4871,7 @@ namespace Scribe
             this.BiomeRemoveParquetCriterionButton.Size = new System.Drawing.Size(129, 23);
             this.BiomeRemoveParquetCriterionButton.TabIndex = 2;
             this.BiomeRemoveParquetCriterionButton.Text = "Remove Criterion Tag";
-            this.BiomeRemoveParquetCriterionButton.UseVisualStyleBackColor = true;
+            this.BiomeRemoveParquetCriterionButton.UseVisualStyleBackColor = false;
             this.BiomeRemoveParquetCriterionButton.Click += new System.EventHandler(this.BiomeRemoveParquetCriterionButton_Click);
             // 
             // BiomeEntryRequirementsListBox
@@ -4913,7 +4903,7 @@ namespace Scribe
             this.BiomeIsLiquidBasedCheckBox.Name = "BiomeIsLiquidBasedCheckBox";
             this.BiomeIsLiquidBasedCheckBox.Size = new System.Drawing.Size(15, 14);
             this.BiomeIsLiquidBasedCheckBox.TabIndex = 22;
-            this.BiomeIsLiquidBasedCheckBox.UseVisualStyleBackColor = true;
+            this.BiomeIsLiquidBasedCheckBox.UseVisualStyleBackColor = false;
             // 
             // BiomeIsRoomBasedCheckBox
             // 
@@ -4922,7 +4912,7 @@ namespace Scribe
             this.BiomeIsRoomBasedCheckBox.Name = "BiomeIsRoomBasedCheckBox";
             this.BiomeIsRoomBasedCheckBox.Size = new System.Drawing.Size(15, 14);
             this.BiomeIsRoomBasedCheckBox.TabIndex = 22;
-            this.BiomeIsRoomBasedCheckBox.UseVisualStyleBackColor = true;
+            this.BiomeIsRoomBasedCheckBox.UseVisualStyleBackColor = false;
             // 
             // BiomeNameLabel
             // 
@@ -5037,7 +5027,7 @@ namespace Scribe
             // BiomePictureBox
             // 
             this.BiomePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BiomePictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BiomePictureBox.BackColor = System.Drawing.Color.DimGray;
             this.BiomePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("BiomePictureBox.Image")));
             this.BiomePictureBox.Location = new System.Drawing.Point(767, 286);
             this.BiomePictureBox.Name = "BiomePictureBox";
@@ -5064,14 +5054,13 @@ namespace Scribe
             this.BiomeAddNewBiomeButton.Size = new System.Drawing.Size(129, 23);
             this.BiomeAddNewBiomeButton.TabIndex = 2;
             this.BiomeAddNewBiomeButton.Text = "Add New Biome";
-            this.BiomeAddNewBiomeButton.UseVisualStyleBackColor = true;
+            this.BiomeAddNewBiomeButton.UseVisualStyleBackColor = false;
             this.BiomeAddNewBiomeButton.Click += new System.EventHandler(this.BiomeAddNewBiomeButton_Click);
             // 
             // BiomeIDExample
             // 
             this.BiomeIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BiomeIDExample.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.BiomeIDExample.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BiomeIDExample.BackColor = System.Drawing.Color.DimGray;
             this.BiomeIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.BiomeIDExample.Location = new System.Drawing.Point(812, 16);
             this.BiomeIDExample.Name = "BiomeIDExample";
@@ -5081,7 +5070,6 @@ namespace Scribe
             // 
             // CraftingRecipesTabPage
             // 
-            this.CraftingRecipesTabPage.BackColor = System.Drawing.Color.Transparent;
             this.CraftingRecipesTabPage.Controls.Add(this.CraftingRemoveCraftingButton);
             this.CraftingRecipesTabPage.Controls.Add(this.CraftingListBox);
             this.CraftingRecipesTabPage.Controls.Add(this.CraftingPictureEditButton);
@@ -5104,7 +5092,7 @@ namespace Scribe
             this.CraftingRemoveCraftingButton.Size = new System.Drawing.Size(127, 23);
             this.CraftingRemoveCraftingButton.TabIndex = 2;
             this.CraftingRemoveCraftingButton.Text = "Remove Crafting Recipe";
-            this.CraftingRemoveCraftingButton.UseVisualStyleBackColor = true;
+            this.CraftingRemoveCraftingButton.UseVisualStyleBackColor = false;
             this.CraftingRemoveCraftingButton.Click += new System.EventHandler(this.CraftingRemoveCraftingButton_Click);
             // 
             // CraftingListBox
@@ -5127,7 +5115,7 @@ namespace Scribe
             this.CraftingPictureEditButton.Size = new System.Drawing.Size(128, 23);
             this.CraftingPictureEditButton.TabIndex = 7;
             this.CraftingPictureEditButton.Text = "Edit Image";
-            this.CraftingPictureEditButton.UseVisualStyleBackColor = true;
+            this.CraftingPictureEditButton.UseVisualStyleBackColor = false;
             this.CraftingPictureEditButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // CraftingTableLayoutPanel
@@ -5178,7 +5166,7 @@ namespace Scribe
             this.CraftingOpenPatternEditorButton.Size = new System.Drawing.Size(129, 23);
             this.CraftingOpenPatternEditorButton.TabIndex = 2;
             this.CraftingOpenPatternEditorButton.Text = "Open Pattern Editor";
-            this.CraftingOpenPatternEditorButton.UseVisualStyleBackColor = true;
+            this.CraftingOpenPatternEditorButton.UseVisualStyleBackColor = false;
             // 
             // CraftingAddProductButton
             // 
@@ -5188,7 +5176,7 @@ namespace Scribe
             this.CraftingAddProductButton.Size = new System.Drawing.Size(129, 23);
             this.CraftingAddProductButton.TabIndex = 30;
             this.CraftingAddProductButton.Text = "Add Product";
-            this.CraftingAddProductButton.UseVisualStyleBackColor = true;
+            this.CraftingAddProductButton.UseVisualStyleBackColor = false;
             this.CraftingAddProductButton.Click += new System.EventHandler(this.CraftingAddProductButton_Click);
             // 
             // CraftingRemoveProductButton
@@ -5199,7 +5187,7 @@ namespace Scribe
             this.CraftingRemoveProductButton.Size = new System.Drawing.Size(129, 23);
             this.CraftingRemoveProductButton.TabIndex = 29;
             this.CraftingRemoveProductButton.Text = "Remove Product";
-            this.CraftingRemoveProductButton.UseVisualStyleBackColor = true;
+            this.CraftingRemoveProductButton.UseVisualStyleBackColor = false;
             this.CraftingRemoveProductButton.Click += new System.EventHandler(this.CraftingRemoveProductButton_Click);
             // 
             // CraftingAddIngredientButton
@@ -5210,7 +5198,7 @@ namespace Scribe
             this.CraftingAddIngredientButton.Size = new System.Drawing.Size(129, 23);
             this.CraftingAddIngredientButton.TabIndex = 2;
             this.CraftingAddIngredientButton.Text = "Add Ingredient";
-            this.CraftingAddIngredientButton.UseVisualStyleBackColor = true;
+            this.CraftingAddIngredientButton.UseVisualStyleBackColor = false;
             this.CraftingAddIngredientButton.Click += new System.EventHandler(this.CraftingAddIngredientButton_Click);
             // 
             // CraftingRemoveIngredientButton
@@ -5221,7 +5209,7 @@ namespace Scribe
             this.CraftingRemoveIngredientButton.Size = new System.Drawing.Size(129, 23);
             this.CraftingRemoveIngredientButton.TabIndex = 2;
             this.CraftingRemoveIngredientButton.Text = "Remove Ingredient";
-            this.CraftingRemoveIngredientButton.UseVisualStyleBackColor = true;
+            this.CraftingRemoveIngredientButton.UseVisualStyleBackColor = false;
             this.CraftingRemoveIngredientButton.Click += new System.EventHandler(this.CraftingRemoveIngredientButton_Click);
             // 
             // CraftingIngredientsListBox
@@ -5336,8 +5324,8 @@ namespace Scribe
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CraftingStrikePatternPendingDesignLabel.AutoSize = true;
-            this.CraftingStrikePatternPendingDesignLabel.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CraftingStrikePatternPendingDesignLabel.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.CraftingStrikePatternPendingDesignLabel.BackColor = System.Drawing.Color.LightGray;
+            this.CraftingStrikePatternPendingDesignLabel.ForeColor = System.Drawing.Color.DimGray;
             this.CraftingStrikePatternPendingDesignLabel.Location = new System.Drawing.Point(146, 405);
             this.CraftingStrikePatternPendingDesignLabel.Name = "CraftingStrikePatternPendingDesignLabel";
             this.CraftingStrikePatternPendingDesignLabel.Size = new System.Drawing.Size(137, 41);
@@ -5348,7 +5336,7 @@ namespace Scribe
             // CraftingPictureBox
             // 
             this.CraftingPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.CraftingPictureBox.BackColor = System.Drawing.Color.DimGray;
             this.CraftingPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("CraftingPictureBox.Image")));
             this.CraftingPictureBox.Location = new System.Drawing.Point(767, 286);
             this.CraftingPictureBox.Name = "CraftingPictureBox";
@@ -5375,14 +5363,13 @@ namespace Scribe
             this.CraftingAddNewCraftingButton.Size = new System.Drawing.Size(146, 23);
             this.CraftingAddNewCraftingButton.TabIndex = 2;
             this.CraftingAddNewCraftingButton.Text = "Add New Crafting Recipe";
-            this.CraftingAddNewCraftingButton.UseVisualStyleBackColor = true;
+            this.CraftingAddNewCraftingButton.UseVisualStyleBackColor = false;
             this.CraftingAddNewCraftingButton.Click += new System.EventHandler(this.CraftingAddNewCraftingButton_Click);
             // 
             // CraftingIDExample
             // 
             this.CraftingIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingIDExample.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.CraftingIDExample.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CraftingIDExample.BackColor = System.Drawing.Color.DimGray;
             this.CraftingIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.CraftingIDExample.Location = new System.Drawing.Point(813, 16);
             this.CraftingIDExample.Name = "CraftingIDExample";
@@ -5516,7 +5503,6 @@ namespace Scribe
             // 
             // RoomRecipesTabPage
             // 
-            this.RoomRecipesTabPage.BackColor = System.Drawing.Color.Transparent;
             this.RoomRecipesTabPage.Controls.Add(this.RoomRemoveRoomButton);
             this.RoomRecipesTabPage.Controls.Add(this.RoomAddBlockButton);
             this.RoomRecipesTabPage.Controls.Add(this.RoomRemoveBlockButton);
@@ -5541,7 +5527,7 @@ namespace Scribe
             this.RoomRemoveRoomButton.Size = new System.Drawing.Size(129, 23);
             this.RoomRemoveRoomButton.TabIndex = 2;
             this.RoomRemoveRoomButton.Text = "Remove Room";
-            this.RoomRemoveRoomButton.UseVisualStyleBackColor = true;
+            this.RoomRemoveRoomButton.UseVisualStyleBackColor = false;
             this.RoomRemoveRoomButton.Click += new System.EventHandler(this.RoomRemoveRoomButton_Click);
             // 
             // RoomAddBlockButton
@@ -5552,7 +5538,7 @@ namespace Scribe
             this.RoomAddBlockButton.Size = new System.Drawing.Size(129, 23);
             this.RoomAddBlockButton.TabIndex = 2;
             this.RoomAddBlockButton.Text = "Add Block";
-            this.RoomAddBlockButton.UseVisualStyleBackColor = true;
+            this.RoomAddBlockButton.UseVisualStyleBackColor = false;
             this.RoomAddBlockButton.Click += new System.EventHandler(this.RoomAddBlockButton_Click);
             // 
             // RoomRemoveBlockButton
@@ -5563,7 +5549,7 @@ namespace Scribe
             this.RoomRemoveBlockButton.Size = new System.Drawing.Size(129, 23);
             this.RoomRemoveBlockButton.TabIndex = 2;
             this.RoomRemoveBlockButton.Text = "Remove Block";
-            this.RoomRemoveBlockButton.UseVisualStyleBackColor = true;
+            this.RoomRemoveBlockButton.UseVisualStyleBackColor = false;
             this.RoomRemoveBlockButton.Click += new System.EventHandler(this.RoomRemoveBlockButton_Click);
             // 
             // RoomListBox
@@ -5660,7 +5646,7 @@ namespace Scribe
             this.RoomPictureEditButton.Size = new System.Drawing.Size(128, 23);
             this.RoomPictureEditButton.TabIndex = 7;
             this.RoomPictureEditButton.Text = "Edit Image";
-            this.RoomPictureEditButton.UseVisualStyleBackColor = true;
+            this.RoomPictureEditButton.UseVisualStyleBackColor = false;
             this.RoomPictureEditButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // RoomTableLayoutPanel
@@ -5713,7 +5699,7 @@ namespace Scribe
             this.RoomAddFurnishingButton.Size = new System.Drawing.Size(129, 23);
             this.RoomAddFurnishingButton.TabIndex = 30;
             this.RoomAddFurnishingButton.Text = "Add Furnishing";
-            this.RoomAddFurnishingButton.UseVisualStyleBackColor = true;
+            this.RoomAddFurnishingButton.UseVisualStyleBackColor = false;
             this.RoomAddFurnishingButton.Click += new System.EventHandler(this.RoomAddFurnishingButton_Click);
             // 
             // RoomRemoveFurnishingButton
@@ -5724,7 +5710,7 @@ namespace Scribe
             this.RoomRemoveFurnishingButton.Size = new System.Drawing.Size(129, 23);
             this.RoomRemoveFurnishingButton.TabIndex = 29;
             this.RoomRemoveFurnishingButton.Text = "Remove Furnishing";
-            this.RoomRemoveFurnishingButton.UseVisualStyleBackColor = true;
+            this.RoomRemoveFurnishingButton.UseVisualStyleBackColor = false;
             this.RoomRemoveFurnishingButton.Click += new System.EventHandler(this.RoomRemoveFurnishingButton_Click);
             // 
             // RoomAddFloorButton
@@ -5735,7 +5721,7 @@ namespace Scribe
             this.RoomAddFloorButton.Size = new System.Drawing.Size(129, 23);
             this.RoomAddFloorButton.TabIndex = 2;
             this.RoomAddFloorButton.Text = "Add Floor";
-            this.RoomAddFloorButton.UseVisualStyleBackColor = true;
+            this.RoomAddFloorButton.UseVisualStyleBackColor = false;
             this.RoomAddFloorButton.Click += new System.EventHandler(this.RoomAddFloorButton_Click);
             // 
             // RoomRemoveFloorButton
@@ -5746,7 +5732,7 @@ namespace Scribe
             this.RoomRemoveFloorButton.Size = new System.Drawing.Size(129, 23);
             this.RoomRemoveFloorButton.TabIndex = 2;
             this.RoomRemoveFloorButton.Text = "Remove Floor";
-            this.RoomRemoveFloorButton.UseVisualStyleBackColor = true;
+            this.RoomRemoveFloorButton.UseVisualStyleBackColor = false;
             this.RoomRemoveFloorButton.Click += new System.EventHandler(this.RoomRemoveFloorButton_Click);
             // 
             // RoomRequiredBlocksListBox
@@ -5885,7 +5871,7 @@ namespace Scribe
             // RoomPictureBox
             // 
             this.RoomPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomPictureBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.RoomPictureBox.BackColor = System.Drawing.Color.DimGray;
             this.RoomPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("RoomPictureBox.Image")));
             this.RoomPictureBox.Location = new System.Drawing.Point(767, 286);
             this.RoomPictureBox.Name = "RoomPictureBox";
@@ -5912,14 +5898,13 @@ namespace Scribe
             this.RoomAddNewRoomButton.Size = new System.Drawing.Size(129, 23);
             this.RoomAddNewRoomButton.TabIndex = 2;
             this.RoomAddNewRoomButton.Text = "Add New Room";
-            this.RoomAddNewRoomButton.UseVisualStyleBackColor = true;
+            this.RoomAddNewRoomButton.UseVisualStyleBackColor = false;
             this.RoomAddNewRoomButton.Click += new System.EventHandler(this.RoomAddNewRoomButton_Click);
             // 
             // RoomIDExample
             // 
             this.RoomIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomIDExample.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.RoomIDExample.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RoomIDExample.BackColor = System.Drawing.Color.DimGray;
             this.RoomIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.RoomIDExample.Location = new System.Drawing.Point(813, 16);
             this.RoomIDExample.Name = "RoomIDExample";
@@ -5929,7 +5914,6 @@ namespace Scribe
             // 
             // MapsTabPage
             // 
-            this.MapsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.MapsTabPage.Controls.Add(this.MapPendingDesignLabel);
             this.MapsTabPage.Location = new System.Drawing.Point(4, 22);
             this.MapsTabPage.Name = "MapsTabPage";
@@ -5949,7 +5933,6 @@ namespace Scribe
             // 
             // ScriptsTabPage
             // 
-            this.ScriptsTabPage.BackColor = System.Drawing.Color.Transparent;
             this.ScriptsTabPage.Controls.Add(this.ScriptingPendingDesignLabel);
             this.ScriptsTabPage.Location = new System.Drawing.Point(4, 22);
             this.ScriptsTabPage.Name = "ScriptsTabPage";
