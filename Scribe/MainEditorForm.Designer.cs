@@ -1358,6 +1358,8 @@ namespace Scribe
             // 
             // GameRemoveGameButton
             // 
+            this.GameRemoveGameButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.GameRemoveGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GameRemoveGameButton.Location = new System.Drawing.Point(24, 468);
             this.GameRemoveGameButton.Name = "GameRemoveGameButton";
             this.GameRemoveGameButton.Size = new System.Drawing.Size(129, 23);
@@ -1368,6 +1370,8 @@ namespace Scribe
             // 
             // GameIconEditButton
             // 
+            this.GameIconEditButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.GameIconEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GameIconEditButton.Location = new System.Drawing.Point(815, 468);
             this.GameIconEditButton.Name = "GameIconEditButton";
             this.GameIconEditButton.Size = new System.Drawing.Size(128, 23);
@@ -1592,6 +1596,8 @@ namespace Scribe
             // 
             // GameAddNewGameButton
             // 
+            this.GameAddNewGameButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.GameAddNewGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GameAddNewGameButton.Location = new System.Drawing.Point(159, 468);
             this.GameAddNewGameButton.Name = "GameAddNewGameButton";
             this.GameAddNewGameButton.Size = new System.Drawing.Size(129, 23);
@@ -2183,6 +2189,8 @@ namespace Scribe
             // 
             // BlockAddBiomeTagButton
             // 
+            this.BlockAddBiomeTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BlockAddBiomeTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BlockAddBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BlockAddBiomeTagButton.Location = new System.Drawing.Point(297, 225);
             this.BlockAddBiomeTagButton.Name = "BlockAddBiomeTagButton";
@@ -2194,6 +2202,8 @@ namespace Scribe
             // 
             // BlockAddRoomTagButton
             // 
+            this.BlockAddRoomTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BlockAddRoomTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BlockAddRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BlockAddRoomTagButton.Location = new System.Drawing.Point(297, 315);
             this.BlockAddRoomTagButton.Name = "BlockAddRoomTagButton";
@@ -2205,6 +2215,8 @@ namespace Scribe
             // 
             // BlockRemoveBiomeTagButton
             // 
+            this.BlockRemoveBiomeTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BlockRemoveBiomeTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BlockRemoveBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BlockRemoveBiomeTagButton.Location = new System.Drawing.Point(146, 225);
             this.BlockRemoveBiomeTagButton.Name = "BlockRemoveBiomeTagButton";
@@ -2216,6 +2228,8 @@ namespace Scribe
             // 
             // BlockRemoveRoomTagButton
             // 
+            this.BlockRemoveRoomTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BlockRemoveRoomTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BlockRemoveRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BlockRemoveRoomTagButton.Location = new System.Drawing.Point(146, 315);
             this.BlockRemoveRoomTagButton.Name = "BlockRemoveRoomTagButton";
@@ -2258,6 +2272,8 @@ namespace Scribe
             // 
             // BlockEditImageButton
             // 
+            this.BlockEditImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BlockEditImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BlockEditImageButton.Location = new System.Drawing.Point(815, 468);
             this.BlockEditImageButton.Name = "BlockEditImageButton";
             this.BlockEditImageButton.Size = new System.Drawing.Size(128, 23);
@@ -2291,6 +2307,8 @@ namespace Scribe
             // 
             // BlockAddNewBlockButton
             // 
+            this.BlockAddNewBlockButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BlockAddNewBlockButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BlockAddNewBlockButton.Location = new System.Drawing.Point(159, 468);
             this.BlockAddNewBlockButton.Name = "BlockAddNewBlockButton";
             this.BlockAddNewBlockButton.Size = new System.Drawing.Size(129, 23);
@@ -2312,6 +2330,8 @@ namespace Scribe
             // 
             // BlockRemoveBlockButton
             // 
+            this.BlockRemoveBlockButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BlockRemoveBlockButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BlockRemoveBlockButton.Location = new System.Drawing.Point(24, 468);
             this.BlockRemoveBlockButton.Name = "BlockRemoveBlockButton";
             this.BlockRemoveBlockButton.Size = new System.Drawing.Size(129, 23);
@@ -2349,6 +2369,8 @@ namespace Scribe
             // 
             // FloorRemoveFloorButton
             // 
+            this.FloorRemoveFloorButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorRemoveFloorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FloorRemoveFloorButton.Location = new System.Drawing.Point(24, 468);
             this.FloorRemoveFloorButton.Name = "FloorRemoveFloorButton";
             this.FloorRemoveFloorButton.Size = new System.Drawing.Size(129, 23);
@@ -2404,6 +2426,8 @@ namespace Scribe
             // 
             // FloorRemoveRoomTagButton
             // 
+            this.FloorRemoveRoomTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorRemoveRoomTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FloorRemoveRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FloorRemoveRoomTagButton.Location = new System.Drawing.Point(146, 343);
             this.FloorRemoveRoomTagButton.Name = "FloorRemoveRoomTagButton";
@@ -2415,6 +2439,8 @@ namespace Scribe
             // 
             // FloorRemoveBiomeTagButton
             // 
+            this.FloorRemoveBiomeTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorRemoveBiomeTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FloorRemoveBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FloorRemoveBiomeTagButton.Location = new System.Drawing.Point(146, 238);
             this.FloorRemoveBiomeTagButton.Name = "FloorRemoveBiomeTagButton";
@@ -2426,6 +2452,8 @@ namespace Scribe
             // 
             // FloorAddRoomTagButton
             // 
+            this.FloorAddRoomTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorAddRoomTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FloorAddRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FloorAddRoomTagButton.Location = new System.Drawing.Point(297, 343);
             this.FloorAddRoomTagButton.Name = "FloorAddRoomTagButton";
@@ -2587,6 +2615,8 @@ namespace Scribe
             // 
             // FloorAddBiomeTagButton
             // 
+            this.FloorAddBiomeTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorAddBiomeTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FloorAddBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FloorAddBiomeTagButton.Location = new System.Drawing.Point(297, 238);
             this.FloorAddBiomeTagButton.Name = "FloorAddBiomeTagButton";
@@ -2609,6 +2639,8 @@ namespace Scribe
             // 
             // FloorAddNewFloorButton
             // 
+            this.FloorAddNewFloorButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorAddNewFloorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FloorAddNewFloorButton.Location = new System.Drawing.Point(159, 468);
             this.FloorAddNewFloorButton.Name = "FloorAddNewFloorButton";
             this.FloorAddNewFloorButton.Size = new System.Drawing.Size(129, 23);
@@ -2642,6 +2674,8 @@ namespace Scribe
             // 
             // FloorEditImageButton
             // 
+            this.FloorEditImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorEditImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FloorEditImageButton.Location = new System.Drawing.Point(815, 468);
             this.FloorEditImageButton.Name = "FloorEditImageButton";
             this.FloorEditImageButton.Size = new System.Drawing.Size(128, 23);
@@ -2930,6 +2964,8 @@ namespace Scribe
             // 
             // FurnishingAddBiomeTagButton
             // 
+            this.FurnishingAddBiomeTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingAddBiomeTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FurnishingAddBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FurnishingAddBiomeTagButton.Location = new System.Drawing.Point(297, 225);
             this.FurnishingAddBiomeTagButton.Name = "FurnishingAddBiomeTagButton";
@@ -2941,6 +2977,8 @@ namespace Scribe
             // 
             // FurnishingAddRoomTagButton
             // 
+            this.FurnishingAddRoomTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingAddRoomTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FurnishingAddRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FurnishingAddRoomTagButton.Location = new System.Drawing.Point(297, 317);
             this.FurnishingAddRoomTagButton.Name = "FurnishingAddRoomTagButton";
@@ -2952,6 +2990,8 @@ namespace Scribe
             // 
             // FurnishingRemoveRoomTagButton
             // 
+            this.FurnishingRemoveRoomTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingRemoveRoomTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FurnishingRemoveRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FurnishingRemoveRoomTagButton.Location = new System.Drawing.Point(146, 317);
             this.FurnishingRemoveRoomTagButton.Name = "FurnishingRemoveRoomTagButton";
@@ -2963,6 +3003,8 @@ namespace Scribe
             // 
             // FurnishingRemoveBiomeTagButton
             // 
+            this.FurnishingRemoveBiomeTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingRemoveBiomeTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FurnishingRemoveBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FurnishingRemoveBiomeTagButton.Location = new System.Drawing.Point(146, 225);
             this.FurnishingRemoveBiomeTagButton.Name = "FurnishingRemoveBiomeTagButton";
@@ -2974,6 +3016,8 @@ namespace Scribe
             // 
             // FurnishingRemoveFurnishingButton
             // 
+            this.FurnishingRemoveFurnishingButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingRemoveFurnishingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FurnishingRemoveFurnishingButton.Location = new System.Drawing.Point(24, 468);
             this.FurnishingRemoveFurnishingButton.Name = "FurnishingRemoveFurnishingButton";
             this.FurnishingRemoveFurnishingButton.Size = new System.Drawing.Size(129, 23);
@@ -2984,6 +3028,8 @@ namespace Scribe
             // 
             // FurnishingIDExample
             // 
+            this.FurnishingIDExample.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingIDExample.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FurnishingIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FurnishingIDExample.BackColor = System.Drawing.Color.Silver;
             this.FurnishingIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
@@ -2995,6 +3041,8 @@ namespace Scribe
             // 
             // FurnishingAddNewFurnishingButton
             // 
+            this.FurnishingAddNewFurnishingButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingAddNewFurnishingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FurnishingAddNewFurnishingButton.Location = new System.Drawing.Point(159, 468);
             this.FurnishingAddNewFurnishingButton.Name = "FurnishingAddNewFurnishingButton";
             this.FurnishingAddNewFurnishingButton.Size = new System.Drawing.Size(129, 23);
@@ -3028,6 +3076,8 @@ namespace Scribe
             // 
             // FurnishingEditImageButton
             // 
+            this.FurnishingEditImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingEditImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FurnishingEditImageButton.Location = new System.Drawing.Point(815, 468);
             this.FurnishingEditImageButton.Name = "FurnishingEditImageButton";
             this.FurnishingEditImageButton.Size = new System.Drawing.Size(128, 23);
@@ -3253,6 +3303,8 @@ namespace Scribe
             // 
             // CollectibleAddBiomeTagButton
             // 
+            this.CollectibleAddBiomeTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CollectibleAddBiomeTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CollectibleAddBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CollectibleAddBiomeTagButton.Location = new System.Drawing.Point(297, 238);
             this.CollectibleAddBiomeTagButton.Name = "CollectibleAddBiomeTagButton";
@@ -3264,6 +3316,8 @@ namespace Scribe
             // 
             // CollectibleRemoveBiomeTagButton
             // 
+            this.CollectibleRemoveBiomeTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CollectibleRemoveBiomeTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CollectibleRemoveBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CollectibleRemoveBiomeTagButton.Location = new System.Drawing.Point(146, 238);
             this.CollectibleRemoveBiomeTagButton.Name = "CollectibleRemoveBiomeTagButton";
@@ -3275,6 +3329,8 @@ namespace Scribe
             // 
             // CollectibleAddRoomTagButton
             // 
+            this.CollectibleAddRoomTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CollectibleAddRoomTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CollectibleAddRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CollectibleAddRoomTagButton.Location = new System.Drawing.Point(297, 343);
             this.CollectibleAddRoomTagButton.Name = "CollectibleAddRoomTagButton";
@@ -3286,6 +3342,8 @@ namespace Scribe
             // 
             // CollectibleRemoveRoomTagButton
             // 
+            this.CollectibleRemoveRoomTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CollectibleRemoveRoomTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CollectibleRemoveRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CollectibleRemoveRoomTagButton.Location = new System.Drawing.Point(146, 343);
             this.CollectibleRemoveRoomTagButton.Name = "CollectibleRemoveRoomTagButton";
@@ -3297,6 +3355,8 @@ namespace Scribe
             // 
             // CollectibleRemoveCollectibleButton
             // 
+            this.CollectibleRemoveCollectibleButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CollectibleRemoveCollectibleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CollectibleRemoveCollectibleButton.Location = new System.Drawing.Point(24, 468);
             this.CollectibleRemoveCollectibleButton.Name = "CollectibleRemoveCollectibleButton";
             this.CollectibleRemoveCollectibleButton.Size = new System.Drawing.Size(129, 23);
@@ -3318,6 +3378,8 @@ namespace Scribe
             // 
             // CollectibleAddNewCollectibleButton
             // 
+            this.CollectibleAddNewCollectibleButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CollectibleAddNewCollectibleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CollectibleAddNewCollectibleButton.Location = new System.Drawing.Point(159, 468);
             this.CollectibleAddNewCollectibleButton.Name = "CollectibleAddNewCollectibleButton";
             this.CollectibleAddNewCollectibleButton.Size = new System.Drawing.Size(129, 23);
@@ -3351,6 +3413,8 @@ namespace Scribe
             // 
             // CollectibleEditImageButton
             // 
+            this.CollectibleEditImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CollectibleEditImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CollectibleEditImageButton.Location = new System.Drawing.Point(815, 468);
             this.CollectibleEditImageButton.Name = "CollectibleEditImageButton";
             this.CollectibleEditImageButton.Size = new System.Drawing.Size(128, 23);
@@ -3449,6 +3513,8 @@ namespace Scribe
             // 
             // CharacterPronounAddNewPronoungGroupButton
             // 
+            this.CharacterPronounAddNewPronoungGroupButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CharacterPronounAddNewPronoungGroupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CharacterPronounAddNewPronoungGroupButton.Location = new System.Drawing.Point(409, 44);
             this.CharacterPronounAddNewPronoungGroupButton.Name = "CharacterPronounAddNewPronoungGroupButton";
             this.CharacterPronounAddNewPronoungGroupButton.Size = new System.Drawing.Size(124, 23);
@@ -3458,6 +3524,8 @@ namespace Scribe
             // 
             // CharacterPronounRemovePronoungGroupButton
             // 
+            this.CharacterPronounRemovePronoungGroupButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CharacterPronounRemovePronoungGroupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CharacterPronounRemovePronoungGroupButton.Location = new System.Drawing.Point(279, 44);
             this.CharacterPronounRemovePronoungGroupButton.Name = "CharacterPronounRemovePronoungGroupButton";
             this.CharacterPronounRemovePronoungGroupButton.Size = new System.Drawing.Size(124, 23);
@@ -3636,6 +3704,8 @@ namespace Scribe
             // 
             // CharacterAddQuestButton
             // 
+            this.CharacterAddQuestButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CharacterAddQuestButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CharacterAddQuestButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CharacterAddQuestButton.Location = new System.Drawing.Point(297, 364);
             this.CharacterAddQuestButton.Name = "CharacterAddQuestButton";
@@ -3646,6 +3716,8 @@ namespace Scribe
             // 
             // CharacterRemoveQuestButton
             // 
+            this.CharacterRemoveQuestButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CharacterRemoveQuestButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CharacterRemoveQuestButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CharacterRemoveQuestButton.Location = new System.Drawing.Point(146, 364);
             this.CharacterRemoveQuestButton.Name = "CharacterRemoveQuestButton";
@@ -3890,6 +3962,8 @@ namespace Scribe
             // 
             // CharacterRemoveCharacterButton
             // 
+            this.CharacterRemoveCharacterButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CharacterRemoveCharacterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CharacterRemoveCharacterButton.Location = new System.Drawing.Point(24, 468);
             this.CharacterRemoveCharacterButton.Name = "CharacterRemoveCharacterButton";
             this.CharacterRemoveCharacterButton.Size = new System.Drawing.Size(129, 23);
@@ -3910,6 +3984,8 @@ namespace Scribe
             // 
             // CharacterAddNewCharacterButton
             // 
+            this.CharacterAddNewCharacterButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CharacterAddNewCharacterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CharacterAddNewCharacterButton.Location = new System.Drawing.Point(159, 468);
             this.CharacterAddNewCharacterButton.Name = "CharacterAddNewCharacterButton";
             this.CharacterAddNewCharacterButton.Size = new System.Drawing.Size(129, 23);
@@ -3942,6 +4018,8 @@ namespace Scribe
             // 
             // CharacterEditImageButton
             // 
+            this.CharacterEditImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CharacterEditImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CharacterEditImageButton.Location = new System.Drawing.Point(815, 468);
             this.CharacterEditImageButton.Name = "CharacterEditImageButton";
             this.CharacterEditImageButton.Size = new System.Drawing.Size(128, 23);
@@ -4164,6 +4242,8 @@ namespace Scribe
             // 
             // CritterEditImageButton
             // 
+            this.CritterEditImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CritterEditImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CritterEditImageButton.Location = new System.Drawing.Point(815, 468);
             this.CritterEditImageButton.Name = "CritterEditImageButton";
             this.CritterEditImageButton.Size = new System.Drawing.Size(128, 23);
@@ -4197,6 +4277,8 @@ namespace Scribe
             // 
             // CritterAddNewCritterButton
             // 
+            this.CritterAddNewCritterButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CritterAddNewCritterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CritterAddNewCritterButton.Location = new System.Drawing.Point(159, 468);
             this.CritterAddNewCritterButton.Name = "CritterAddNewCritterButton";
             this.CritterAddNewCritterButton.Size = new System.Drawing.Size(129, 23);
@@ -4228,6 +4310,8 @@ namespace Scribe
             // 
             // CritterRemoveCritterButton
             // 
+            this.CritterRemoveCritterButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CritterRemoveCritterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CritterRemoveCritterButton.Location = new System.Drawing.Point(24, 468);
             this.CritterRemoveCritterButton.Name = "CritterRemoveCritterButton";
             this.CritterRemoveCritterButton.Size = new System.Drawing.Size(129, 23);
@@ -4257,6 +4341,8 @@ namespace Scribe
             // 
             // ItemRemoveItemButton
             // 
+            this.ItemRemoveItemButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ItemRemoveItemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ItemRemoveItemButton.Location = new System.Drawing.Point(24, 468);
             this.ItemRemoveItemButton.Name = "ItemRemoveItemButton";
             this.ItemRemoveItemButton.Size = new System.Drawing.Size(129, 23);
@@ -4267,6 +4353,8 @@ namespace Scribe
             // 
             // ItemAddTagButton
             // 
+            this.ItemAddTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ItemAddTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ItemAddTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ItemAddTagButton.Location = new System.Drawing.Point(605, 468);
             this.ItemAddTagButton.Name = "ItemAddTagButton";
@@ -4278,6 +4366,8 @@ namespace Scribe
             // 
             // ItemRemoveTagButton
             // 
+            this.ItemRemoveTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ItemRemoveTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ItemRemoveTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ItemRemoveTagButton.Location = new System.Drawing.Point(454, 468);
             this.ItemRemoveTagButton.Name = "ItemRemoveTagButton";
@@ -4326,6 +4416,8 @@ namespace Scribe
             // 
             // ItemOpenInvetoryEditorButton
             // 
+            this.ItemOpenInvetoryEditorButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ItemOpenInvetoryEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ItemOpenInvetoryEditorButton.Enabled = false;
             this.ItemOpenInvetoryEditorButton.Location = new System.Drawing.Point(285, 74);
             this.ItemOpenInvetoryEditorButton.Name = "ItemOpenInvetoryEditorButton";
@@ -4347,6 +4439,8 @@ namespace Scribe
             // 
             // ItemPictureEditButton
             // 
+            this.ItemPictureEditButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ItemPictureEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ItemPictureEditButton.Location = new System.Drawing.Point(816, 468);
             this.ItemPictureEditButton.Name = "ItemPictureEditButton";
             this.ItemPictureEditButton.Size = new System.Drawing.Size(128, 23);
@@ -4621,6 +4715,8 @@ namespace Scribe
             // 
             // ItemAddNewItemButton
             // 
+            this.ItemAddNewItemButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ItemAddNewItemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ItemAddNewItemButton.Location = new System.Drawing.Point(159, 468);
             this.ItemAddNewItemButton.Name = "ItemAddNewItemButton";
             this.ItemAddNewItemButton.Size = new System.Drawing.Size(129, 23);
@@ -4661,6 +4757,8 @@ namespace Scribe
             // 
             // BiomeRemoveBiomeButton
             // 
+            this.BiomeRemoveBiomeButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BiomeRemoveBiomeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BiomeRemoveBiomeButton.Location = new System.Drawing.Point(24, 468);
             this.BiomeRemoveBiomeButton.Name = "BiomeRemoveBiomeButton";
             this.BiomeRemoveBiomeButton.Size = new System.Drawing.Size(129, 23);
@@ -4671,6 +4769,8 @@ namespace Scribe
             // 
             // BiomeAddEntryRequirementButton
             // 
+            this.BiomeAddEntryRequirementButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BiomeAddEntryRequirementButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BiomeAddEntryRequirementButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomeAddEntryRequirementButton.Location = new System.Drawing.Point(604, 468);
             this.BiomeAddEntryRequirementButton.Name = "BiomeAddEntryRequirementButton";
@@ -4682,6 +4782,8 @@ namespace Scribe
             // 
             // BiomeRemoveEntryRequirementButton
             // 
+            this.BiomeRemoveEntryRequirementButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BiomeRemoveEntryRequirementButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BiomeRemoveEntryRequirementButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomeRemoveEntryRequirementButton.Location = new System.Drawing.Point(453, 468);
             this.BiomeRemoveEntryRequirementButton.Name = "BiomeRemoveEntryRequirementButton";
@@ -4802,6 +4904,8 @@ namespace Scribe
             // 
             // BiomePictureEditButton
             // 
+            this.BiomePictureEditButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BiomePictureEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BiomePictureEditButton.Location = new System.Drawing.Point(815, 468);
             this.BiomePictureEditButton.Name = "BiomePictureEditButton";
             this.BiomePictureEditButton.Size = new System.Drawing.Size(128, 23);
@@ -4854,6 +4958,8 @@ namespace Scribe
             // 
             // BiomeAddParquetCriterionButton
             // 
+            this.BiomeAddParquetCriterionButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BiomeAddParquetCriterionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BiomeAddParquetCriterionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomeAddParquetCriterionButton.Location = new System.Drawing.Point(297, 316);
             this.BiomeAddParquetCriterionButton.Name = "BiomeAddParquetCriterionButton";
@@ -4865,6 +4971,8 @@ namespace Scribe
             // 
             // BiomeRemoveParquetCriterionButton
             // 
+            this.BiomeRemoveParquetCriterionButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BiomeRemoveParquetCriterionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BiomeRemoveParquetCriterionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BiomeRemoveParquetCriterionButton.Location = new System.Drawing.Point(146, 316);
             this.BiomeRemoveParquetCriterionButton.Name = "BiomeRemoveParquetCriterionButton";
@@ -5049,6 +5157,8 @@ namespace Scribe
             // 
             // BiomeAddNewBiomeButton
             // 
+            this.BiomeAddNewBiomeButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BiomeAddNewBiomeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BiomeAddNewBiomeButton.Location = new System.Drawing.Point(159, 468);
             this.BiomeAddNewBiomeButton.Name = "BiomeAddNewBiomeButton";
             this.BiomeAddNewBiomeButton.Size = new System.Drawing.Size(129, 23);
@@ -5087,6 +5197,8 @@ namespace Scribe
             // 
             // CraftingRemoveCraftingButton
             // 
+            this.CraftingRemoveCraftingButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CraftingRemoveCraftingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CraftingRemoveCraftingButton.Location = new System.Drawing.Point(9, 468);
             this.CraftingRemoveCraftingButton.Name = "CraftingRemoveCraftingButton";
             this.CraftingRemoveCraftingButton.Size = new System.Drawing.Size(127, 23);
@@ -5110,6 +5222,8 @@ namespace Scribe
             // 
             // CraftingPictureEditButton
             // 
+            this.CraftingPictureEditButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CraftingPictureEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CraftingPictureEditButton.Location = new System.Drawing.Point(816, 465);
             this.CraftingPictureEditButton.Name = "CraftingPictureEditButton";
             this.CraftingPictureEditButton.Size = new System.Drawing.Size(128, 23);
@@ -5160,6 +5274,8 @@ namespace Scribe
             // 
             // CraftingOpenPatternEditorButton
             // 
+            this.CraftingOpenPatternEditorButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CraftingOpenPatternEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CraftingOpenPatternEditorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CraftingOpenPatternEditorButton.Location = new System.Drawing.Point(297, 420);
             this.CraftingOpenPatternEditorButton.Name = "CraftingOpenPatternEditorButton";
@@ -5170,6 +5286,8 @@ namespace Scribe
             // 
             // CraftingAddProductButton
             // 
+            this.CraftingAddProductButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CraftingAddProductButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CraftingAddProductButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CraftingAddProductButton.Location = new System.Drawing.Point(297, 243);
             this.CraftingAddProductButton.Name = "CraftingAddProductButton";
@@ -5181,6 +5299,8 @@ namespace Scribe
             // 
             // CraftingRemoveProductButton
             // 
+            this.CraftingRemoveProductButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CraftingRemoveProductButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CraftingRemoveProductButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CraftingRemoveProductButton.Location = new System.Drawing.Point(154, 243);
             this.CraftingRemoveProductButton.Name = "CraftingRemoveProductButton";
@@ -5192,6 +5312,8 @@ namespace Scribe
             // 
             // CraftingAddIngredientButton
             // 
+            this.CraftingAddIngredientButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CraftingAddIngredientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CraftingAddIngredientButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CraftingAddIngredientButton.Location = new System.Drawing.Point(297, 378);
             this.CraftingAddIngredientButton.Name = "CraftingAddIngredientButton";
@@ -5203,6 +5325,8 @@ namespace Scribe
             // 
             // CraftingRemoveIngredientButton
             // 
+            this.CraftingRemoveIngredientButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CraftingRemoveIngredientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CraftingRemoveIngredientButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CraftingRemoveIngredientButton.Location = new System.Drawing.Point(154, 378);
             this.CraftingRemoveIngredientButton.Name = "CraftingRemoveIngredientButton";
@@ -5358,6 +5482,8 @@ namespace Scribe
             // 
             // CraftingAddNewCraftingButton
             // 
+            this.CraftingAddNewCraftingButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CraftingAddNewCraftingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CraftingAddNewCraftingButton.Location = new System.Drawing.Point(142, 468);
             this.CraftingAddNewCraftingButton.Name = "CraftingAddNewCraftingButton";
             this.CraftingAddNewCraftingButton.Size = new System.Drawing.Size(146, 23);
@@ -5522,6 +5648,8 @@ namespace Scribe
             // 
             // RoomRemoveRoomButton
             // 
+            this.RoomRemoveRoomButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RoomRemoveRoomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RoomRemoveRoomButton.Location = new System.Drawing.Point(24, 468);
             this.RoomRemoveRoomButton.Name = "RoomRemoveRoomButton";
             this.RoomRemoveRoomButton.Size = new System.Drawing.Size(129, 23);
@@ -5532,6 +5660,8 @@ namespace Scribe
             // 
             // RoomAddBlockButton
             // 
+            this.RoomAddBlockButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RoomAddBlockButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RoomAddBlockButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomAddBlockButton.Location = new System.Drawing.Point(605, 468);
             this.RoomAddBlockButton.Name = "RoomAddBlockButton";
@@ -5543,6 +5673,8 @@ namespace Scribe
             // 
             // RoomRemoveBlockButton
             // 
+            this.RoomRemoveBlockButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RoomRemoveBlockButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RoomRemoveBlockButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomRemoveBlockButton.Location = new System.Drawing.Point(460, 468);
             this.RoomRemoveBlockButton.Name = "RoomRemoveBlockButton";
@@ -5641,6 +5773,8 @@ namespace Scribe
             // 
             // RoomPictureEditButton
             // 
+            this.RoomPictureEditButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RoomPictureEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RoomPictureEditButton.Location = new System.Drawing.Point(815, 468);
             this.RoomPictureEditButton.Name = "RoomPictureEditButton";
             this.RoomPictureEditButton.Size = new System.Drawing.Size(128, 23);
@@ -5693,6 +5827,8 @@ namespace Scribe
             // 
             // RoomAddFurnishingButton
             // 
+            this.RoomAddFurnishingButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RoomAddFurnishingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RoomAddFurnishingButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomAddFurnishingButton.Location = new System.Drawing.Point(297, 238);
             this.RoomAddFurnishingButton.Name = "RoomAddFurnishingButton";
@@ -5704,6 +5840,8 @@ namespace Scribe
             // 
             // RoomRemoveFurnishingButton
             // 
+            this.RoomRemoveFurnishingButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RoomRemoveFurnishingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RoomRemoveFurnishingButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomRemoveFurnishingButton.Location = new System.Drawing.Point(154, 238);
             this.RoomRemoveFurnishingButton.Name = "RoomRemoveFurnishingButton";
@@ -5715,6 +5853,8 @@ namespace Scribe
             // 
             // RoomAddFloorButton
             // 
+            this.RoomAddFloorButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RoomAddFloorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RoomAddFloorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomAddFloorButton.Location = new System.Drawing.Point(297, 343);
             this.RoomAddFloorButton.Name = "RoomAddFloorButton";
@@ -5726,6 +5866,8 @@ namespace Scribe
             // 
             // RoomRemoveFloorButton
             // 
+            this.RoomRemoveFloorButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RoomRemoveFloorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RoomRemoveFloorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RoomRemoveFloorButton.Location = new System.Drawing.Point(154, 343);
             this.RoomRemoveFloorButton.Name = "RoomRemoveFloorButton";
@@ -5893,6 +6035,8 @@ namespace Scribe
             // 
             // RoomAddNewRoomButton
             // 
+            this.RoomAddNewRoomButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RoomAddNewRoomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RoomAddNewRoomButton.Location = new System.Drawing.Point(159, 468);
             this.RoomAddNewRoomButton.Name = "RoomAddNewRoomButton";
             this.RoomAddNewRoomButton.Size = new System.Drawing.Size(129, 23);
