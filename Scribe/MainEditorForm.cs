@@ -163,7 +163,7 @@ namespace Scribe
 
             HasUnsavedChanges = false;
 
-            PictureBoxes = EditorTabs.GetAllChildrenOfType<PictureBox>().ToList<PictureBox>();
+            PictureBoxes = EditorTabs.GetAllChildrenOfType<PictureBox>().ToList();
             ThemedControls = GetThemedControls();
             EditableControls = GetEditableControls();
             foreach (var kvp in EditableControls)
