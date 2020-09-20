@@ -1006,10 +1006,10 @@ namespace Scribe
             }
             foreach (var textBox in ThemedControls[typeof(TextBox)])
             {
-                textBox.ForeColor = ControlForegroundColor;
-                textBox.BackColor = (textBox.Tag as string).Contains(UneditableTextBox)
+                textBox.BackColor = (textBox.Tag as string)?.Contains(UneditableTextBox) ?? false
                     ? UneditableBackgroundColor
                     : ControlBackgroundColor;
+                textBox.ForeColor = ControlForegroundColor;
             }
             foreach (var checkBox in ThemedControls[typeof(CheckBox)])
             {
@@ -1640,7 +1640,7 @@ namespace Scribe
         private void ContentAlteredEventHandler(object sender, EventArgs e)
         {
             if (!(sender is Control alteredControl)
-                || ((string)alteredControl.Tag).Contains(UntrackedControl))
+                || ((alteredControl.Tag as string)?.Contains(UntrackedControl) ?? false))
             {
                 // Silently return if an untracked control is altered; these changes are handled via button presses.
                 return;
