@@ -229,56 +229,24 @@ namespace Scribe
                 [typeof(CheckBox)] = new List<Control>(),
                 [typeof(Button)] = new List<Control>(),
             };
-
-            foreach (var groupBox in this.GetAllChildrenExactlyOfType<GroupBox>())
-            {
-                if (null == groupBox.Tag
-                    || !groupBox.Tag.ToString().Contains(UnthemedControl))
-                {
-                    themed[typeof(GroupBox)].Add(groupBox);
-                }
-            }
-            foreach (var listbox in this.GetAllChildrenExactlyOfType<ListBox>())
-            {
-                if (null == listbox.Tag
-                    || !listbox.Tag.ToString().Contains(UnthemedControl))
-                {
-                    themed[typeof(ListBox)].Add(listbox);
-                }
-            }
-            foreach (var combobox in this.GetAllChildrenExactlyOfType<ComboBox>())
-            {
-                if (null == combobox.Tag
-                    || !combobox.Tag.ToString().Contains(UnthemedControl))
-                {
-                    themed[typeof(ComboBox)].Add(combobox);
-                }
-            }
-            foreach (var textbox in this.GetAllChildrenExactlyOfType<TextBox>())
-            {
-                if (null == textbox.Tag
-                    || !textbox.Tag.ToString().Contains(UnthemedControl))
-                {
-                    themed[typeof(TextBox)].Add(textbox);
-                }
-            }
-            foreach (var checkbox in this.GetAllChildrenExactlyOfType<CheckBox>())
-            {
-                if (null == checkbox.Tag
-                    || !checkbox.Tag.ToString().Contains(UnthemedControl))
-                {
-                    themed[typeof(CheckBox)].Add(checkbox);
-                }
-            }
-            foreach (var button in this.GetAllChildrenExactlyOfType<Button>())
-            {
-                if (null == button.Tag
-                    || !button.Tag.ToString().Contains(UnthemedControl))
-                {
-                    themed[typeof(Button)].Add(button);
-                }
-            }
-
+            themed[typeof(GroupBox)].AddRange(this.GetAllChildrenExactlyOfType<GroupBox>()
+                                    .Where(groupBox => null == groupBox.Tag || !groupBox.Tag.ToString().Contains(UnthemedControl))
+                                    .Cast<Control>());
+            themed[typeof(ListBox)].AddRange(this.GetAllChildrenExactlyOfType<ListBox>()
+                                    .Where(listbox => null == listbox.Tag || !listbox.Tag.ToString().Contains(UnthemedControl))
+                                    .Cast<Control>());
+            themed[typeof(ComboBox)].AddRange(this.GetAllChildrenExactlyOfType<ComboBox>()
+                                    .Where(combobox => null == combobox.Tag || !combobox.Tag.ToString().Contains(UnthemedControl))
+                                    .Cast<Control>());
+            themed[typeof(TextBox)].AddRange(this.GetAllChildrenExactlyOfType<TextBox>()
+                                    .Where(textbox => null == textbox.Tag || !textbox.Tag.ToString().Contains(UnthemedControl))
+                                    .Cast<Control>());
+            themed[typeof(CheckBox)].AddRange(this.GetAllChildrenExactlyOfType<CheckBox>()
+                                    .Where(checkbox => null == checkbox.Tag || !checkbox.Tag.ToString().Contains(UnthemedControl))
+                                    .Cast<Control>());
+            themed[typeof(Button)].AddRange(this.GetAllChildrenExactlyOfType<Button>()
+                                    .Where(button => null == button.Tag || !button.Tag.ToString().Contains(UnthemedControl))
+                                    .Cast<Control>());
             return themed;
         }
 
@@ -290,45 +258,24 @@ namespace Scribe
         {
             var editables = new Dictionary<Type, Dictionary<Control, object>>
             {
+                [typeof(ListBox)] = new Dictionary<Control, object>(),
+                [typeof(ComboBox)] = new Dictionary<Control, object>(),
                 [typeof(TextBox)] = new Dictionary<Control, object>(),
                 [typeof(CheckBox)] = new Dictionary<Control, object>(),
-                [typeof(ComboBox)] = new Dictionary<Control, object>(),
-                [typeof(ListBox)] = new Dictionary<Control, object>(),
             };
 
-            foreach (var textbox in EditorTabs.GetAllChildrenExactlyOfType<TextBox>())
-            {
-                if (null == textbox.Tag
-                    || !textbox.Tag.ToString().Contains(UnthemedControl))
-                {
-                    editables[typeof(TextBox)][textbox] = textbox.Text;
-                }
-            }
-            foreach (var checkbox in EditorTabs.GetAllChildrenExactlyOfType<CheckBox>())
-            {
-                if (null == checkbox.Tag
-                    || !checkbox.Tag.ToString().Contains(UnthemedControl))
-                {
-                    editables[typeof(CheckBox)][checkbox] = (bool?)checkbox.Checked;
-                }
-            }
-            foreach (var combobox in EditorTabs.GetAllChildrenExactlyOfType<ComboBox>())
-            {
-                if (null == combobox.Tag
-                    || !combobox.Tag.ToString().Contains(UnthemedControl))
-                {
-                    editables[typeof(ComboBox)][combobox] = combobox.SelectedItem;
-                }
-            }
-            foreach (var listbox in EditorTabs.GetAllChildrenExactlyOfType<ListBox>())
-            {
-                if (null == listbox.Tag
-                    || !listbox.Tag.ToString().Contains(UnthemedControl))
-                {
-                    editables[typeof(ListBox)][listbox] = listbox.SelectedItem;
-                }
-            }
-
+            editables[typeof(ListBox)].CacheControls(EditorTabs.GetAllChildrenExactlyOfType<ListBox>()
+                                      .Where(listbox => null == listbox.Tag || !listbox.Tag.ToString().Contains(UnthemedControl))
+                                      .Cast<Control>());
+            editables[typeof(ComboBox)].CacheControls(EditorTabs.GetAllChildrenExactlyOfType<ComboBox>()
+                                       .Where(combobox => null == combobox.Tag || !combobox.Tag.ToString().Contains(UnthemedControl))
+                                       .Cast<Control>());
+            editables[typeof(TextBox)].CacheControls(EditorTabs.GetAllChildrenExactlyOfType<TextBox>()
+                                      .Where(textbox => null == textbox.Tag || !textbox.Tag.ToString().Contains(UnthemedControl))
+                                      .Cast<Control>());
+            editables[typeof(CheckBox)].CacheControls(EditorTabs.GetAllChildrenExactlyOfType<CheckBox>()
+                                       .Where(checkbox => null == checkbox.Tag || !checkbox.Tag.ToString().Contains(UnthemedControl))
+                                       .Cast<Control>());
             return editables;
         }
         #endregion
