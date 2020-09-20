@@ -1116,6 +1116,7 @@ namespace Scribe
             this.FlavorSavourySelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.FlavorSavourySelector.Size = new System.Drawing.Size(62, 26);
             this.FlavorSavourySelector.TabIndex = 0;
+            this.FlavorSavourySelector.Tag = "Unthemed Control";
             this.FlavorSavourySelector.Text = "Savoury";
             // 
             // FlavorMetallicSelector
@@ -1131,6 +1132,7 @@ namespace Scribe
             this.FlavorMetallicSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.FlavorMetallicSelector.Size = new System.Drawing.Size(62, 26);
             this.FlavorMetallicSelector.TabIndex = 0;
+            this.FlavorMetallicSelector.Tag = "Unthemed Control";
             this.FlavorMetallicSelector.Text = "Metallic";
             // 
             // FlavorFreshSelector
@@ -1146,6 +1148,7 @@ namespace Scribe
             this.FlavorFreshSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.FlavorFreshSelector.Size = new System.Drawing.Size(62, 26);
             this.FlavorFreshSelector.TabIndex = 0;
+            this.FlavorFreshSelector.Tag = "Unthemed Control";
             this.FlavorFreshSelector.Text = "Fresh";
             // 
             // FlavorPungentSelector
@@ -1161,6 +1164,7 @@ namespace Scribe
             this.FlavorPungentSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.FlavorPungentSelector.Size = new System.Drawing.Size(62, 26);
             this.FlavorPungentSelector.TabIndex = 0;
+            this.FlavorPungentSelector.Tag = "Unthemed Control";
             this.FlavorPungentSelector.Text = "Pungent";
             // 
             // FlavorNoFlavorsSelector
@@ -1176,6 +1180,7 @@ namespace Scribe
             this.FlavorNoFlavorsSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.FlavorNoFlavorsSelector.Size = new System.Drawing.Size(63, 26);
             this.FlavorNoFlavorsSelector.TabIndex = 0;
+            this.FlavorNoFlavorsSelector.Tag = "Unthemed Control";
             this.FlavorNoFlavorsSelector.Text = "(None)";
             // 
             // FlavorChemicalSelector
@@ -1191,6 +1196,7 @@ namespace Scribe
             this.FlavorChemicalSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.FlavorChemicalSelector.Size = new System.Drawing.Size(62, 26);
             this.FlavorChemicalSelector.TabIndex = 0;
+            this.FlavorChemicalSelector.Tag = "Unthemed Control";
             this.FlavorChemicalSelector.Text = "Chemical";
             // 
             // FlavorAstringentSelector
@@ -1206,6 +1212,7 @@ namespace Scribe
             this.FlavorAstringentSelector.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
             this.FlavorAstringentSelector.Size = new System.Drawing.Size(64, 26);
             this.FlavorAstringentSelector.TabIndex = 0;
+            this.FlavorAstringentSelector.Tag = "Unthemed Control";
             this.FlavorAstringentSelector.Text = "Astringent";
             // 
             // FlavorSweetSelector
@@ -1221,6 +1228,7 @@ namespace Scribe
             this.FlavorSweetSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.FlavorSweetSelector.Size = new System.Drawing.Size(62, 26);
             this.FlavorSweetSelector.TabIndex = 0;
+            this.FlavorSweetSelector.Tag = "Unthemed Control";
             this.FlavorSweetSelector.Text = "Sweet";
             // 
             // FlavorBlandSelector
@@ -1236,6 +1244,7 @@ namespace Scribe
             this.FlavorBlandSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.FlavorBlandSelector.Size = new System.Drawing.Size(62, 26);
             this.FlavorBlandSelector.TabIndex = 0;
+            this.FlavorBlandSelector.Tag = "Unthemed Control";
             this.FlavorBlandSelector.Text = "Bland";
             // 
             // FlavorBitterSelector
@@ -1251,6 +1260,7 @@ namespace Scribe
             this.FlavorBitterSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.FlavorBitterSelector.Size = new System.Drawing.Size(64, 26);
             this.FlavorBitterSelector.TabIndex = 0;
+            this.FlavorBitterSelector.Tag = "Unthemed Control";
             this.FlavorBitterSelector.Text = "Bitter";
             // 
             // FlavorSourSelector
@@ -1266,6 +1276,7 @@ namespace Scribe
             this.FlavorSourSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.FlavorSourSelector.Size = new System.Drawing.Size(62, 26);
             this.FlavorSourSelector.TabIndex = 0;
+            this.FlavorSourSelector.Tag = "Unthemed Control";
             this.FlavorSourSelector.Text = "Sour";
             // 
             // FlavorSaltySelector
@@ -1281,6 +1292,7 @@ namespace Scribe
             this.FlavorSaltySelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.FlavorSaltySelector.Size = new System.Drawing.Size(62, 26);
             this.FlavorSaltySelector.TabIndex = 0;
+            this.FlavorSaltySelector.Tag = "Unthemed Control";
             this.FlavorSaltySelector.Text = "Salty";
             // 
             // FlavorNumbingSelector
@@ -1296,6 +1308,7 @@ namespace Scribe
             this.FlavorNumbingSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.FlavorNumbingSelector.Size = new System.Drawing.Size(62, 26);
             this.FlavorNumbingSelector.TabIndex = 0;
+            this.FlavorNumbingSelector.Tag = "Unthemed Control";
             this.FlavorNumbingSelector.Text = "Numbing";
             // 
             // FlavorAllFlavorsSelector
@@ -1311,6 +1324,7 @@ namespace Scribe
             this.FlavorAllFlavorsSelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.FlavorAllFlavorsSelector.Size = new System.Drawing.Size(63, 26);
             this.FlavorAllFlavorsSelector.TabIndex = 0;
+            this.FlavorAllFlavorsSelector.Tag = "Unthemed Control";
             this.FlavorAllFlavorsSelector.Text = "(All)";
             // 
             // EditorTabs

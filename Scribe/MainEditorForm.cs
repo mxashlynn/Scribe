@@ -56,6 +56,9 @@ namespace Scribe
         #endregion
 
         #region Cached Controls
+        /// <summary>Tag identifying controls whose color is not managed via <see cref="Settings.Default.EditorTheme"/>.</summary>
+        public static string UnthemedControl = "Unthemed Control";
+
         /// <summary>Tag identifying controls whose changes are not managed via <see cref="ContentAlteredEventHandler"/>.</summary>
         public static string UntrackedControl = "Untracked Control";
 
