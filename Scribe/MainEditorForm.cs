@@ -222,7 +222,6 @@ namespace Scribe
         {
             var themed = new Dictionary<Type, List<Control>>
             {
-                [typeof(Panel)] = new List<Control>(),
                 [typeof(GroupBox)] = new List<Control>(),
                 [typeof(ListBox)] = new List<Control>(),
                 [typeof(ComboBox)] = new List<Control>(),
@@ -231,15 +230,8 @@ namespace Scribe
                 [typeof(Button)] = new List<Control>(),
             };
 
-            var panels = this.GetAllChildrenExactlyOfType<Panel>();
-            foreach (var panel in panels)
-            {
-                if (!panel.Tag?.ToString().Contains(UnthemedControl) ?? false)
-                {
-                    themed[typeof(Panel)].Add(panel);
-                }
-            }
-            foreach (var groupBox in this.GetAllChildrenExactlyOfType<GroupBox>())
+            var groupBoxes = this.GetAllChildrenExactlyOfType<GroupBox>().ToList();
+            foreach (var groupBox in groupBoxes)
             {
                 if (!groupBox.Tag?.ToString().Contains(UnthemedControl) ?? false)
                 {
@@ -989,11 +981,6 @@ namespace Scribe
             #endregion
 
             #region Apply Theme to Controls
-            foreach (var panel in ThemedControls[typeof(Panel)])
-            {
-                panel.BackColor = ControlBackgroundColor;
-                panel.ForeColor = ControlForegroundColor;
-            }
             foreach (var groupBox in ThemedControls[typeof(GroupBox)])
             {
                 groupBox.BackColor = ControlBackgroundColor;
