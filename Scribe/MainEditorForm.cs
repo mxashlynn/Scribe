@@ -59,8 +59,24 @@ namespace Scribe
         /// <summary>Tag identifying controls whose color is not managed via <see cref="Settings.Default.EditorTheme"/>.</summary>
         public static string UnthemedControl = "Unthemed Control";
 
+        /// <summary>Tag identifying controls whose color indicates that their text cannot be edited.</summary>
+        public static string UneditableTextBox = "Uneditable TextBox";
+
         /// <summary>Tag identifying controls whose changes are not managed via <see cref="ContentAlteredEventHandler"/>.</summary>
         public static string UntrackedControl = "Untracked Control";
+
+        /// <summary>
+        /// A collection of all editable <see cref="PictureBox"/>es in the <see cref="MainEditorForm"/>.
+        /// </summary>
+        private readonly List<PictureBox> PictureBoxes;
+
+        /// <summary>
+        /// A collection of all themed <see cref="Control"/>s in the <see cref="MainEditorForm"/>.
+        /// </summary>
+        private readonly Dictionary<Type, List<Control>> ThemedControls;
+
+        /// <summary>Used to determine if the <see cref="Settings.Default.CurrentEditorTheme"/> has changed.</summary>
+        private static string oldTheme = Settings.Default.CurrentEditorTheme;
 
         /// <summary>
         /// A collection of all editable <see cref="Control"/>s in the <see cref="MainEditorForm"/>
@@ -73,11 +89,6 @@ namespace Scribe
         /// end states are indistinquishable and the <see cref="ChangeManager"/> should not consider this a <see cref="Change"/>.
         /// </remarks>
         private readonly Dictionary<Type, Dictionary<Control, object>> EditableControls;
-
-        /// <summary>
-        /// A collection of all editable <see cref="PictureBox"/>es in the <see cref="MainEditorForm"/>.
-        /// </summary>
-        private readonly List<PictureBox> PictureBoxes;
         #endregion
 
         #region Autosave and Save Tracking
@@ -153,6 +164,7 @@ namespace Scribe
             HasUnsavedChanges = false;
 
             PictureBoxes = EditorTabs.GetAllChildrenOfType<PictureBox>().ToList<PictureBox>();
+            ThemedControls = GetThemedControls();
             EditableControls = GetEditableControls();
             foreach (var kvp in EditableControls)
             {
@@ -198,6 +210,78 @@ namespace Scribe
         {
             LibraryVersionExample.Text = ParquetClassLibrary.AssemblyInfo.LibraryVersion;
             LibraryProjectPathExample.Text = All.ProjectDirectory;
+        }
+        #endregion
+
+        #region Cache Controls
+        /// <summary>
+        /// Finds all themed <see cref="Control"/>s in the <see cref="MainEditorForm"/>.
+        /// </summary>
+        /// <returns>A dictionary containing lists of controls, organized by type.</returns>
+        private Dictionary<Type, List<Control>> GetThemedControls()
+        {
+            var themed = new Dictionary<Type, List<Control>>
+            {
+                [typeof(Panel)] = new List<Control>(),
+                [typeof(GroupBox)] = new List<Control>(),
+                [typeof(ListBox)] = new List<Control>(),
+                [typeof(ComboBox)] = new List<Control>(),
+                [typeof(TextBox)] = new List<Control>(),
+                [typeof(CheckBox)] = new List<Control>(),
+                [typeof(Button)] = new List<Control>(),
+            };
+
+            foreach (var panel in EditorTabs.GetAllChildrenOfType<Panel>())
+            {
+                if (!((string)panel.Tag).Contains(UnthemedControl))
+                {
+                    themed[typeof(Panel)].Add(panel);
+                }
+            }
+            foreach (var groupBox in EditorTabs.GetAllChildrenOfType<GroupBox>())
+            {
+                if (!((string)groupBox.Tag).Contains(UnthemedControl))
+                {
+                    themed[typeof(GroupBox)].Add(groupBox);
+                }
+            }
+            foreach (var listbox in EditorTabs.GetAllChildrenOfType<ListBox>())
+            {
+                if (!((string)listbox.Tag).Contains(UnthemedControl))
+                {
+                    themed[typeof(ListBox)].Add(listbox);
+                }
+            }
+            foreach (var combobox in EditorTabs.GetAllChildrenOfType<ComboBox>())
+            {
+                if (!((string)combobox.Tag).Contains(UnthemedControl))
+                {
+                    themed[typeof(ComboBox)].Add(combobox);
+                }
+            }
+            foreach (var textbox in EditorTabs.GetAllChildrenOfType<TextBox>())
+            {
+                if (!((string)textbox.Tag).Contains(UnthemedControl))
+                {
+                    themed[typeof(TextBox)].Add(textbox);
+                }
+            }
+            foreach (var checkbox in EditorTabs.GetAllChildrenOfType<CheckBox>())
+            {
+                if (!((string)checkbox.Tag).Contains(UnthemedControl))
+                {
+                    themed[typeof(TextBox)].Add(checkbox);
+                }
+            }
+            foreach (var button in EditorTabs.GetAllChildrenOfType<Button>())
+            {
+                if (!((string)button.Tag).Contains(UnthemedControl))
+                {
+                        themed[typeof(Button)].Add(button);
+                }
+            }
+
+            return themed;
         }
 
         /// <summary>
@@ -765,7 +849,10 @@ namespace Scribe
         {
             FlavorFilterGroupBox.Enabled = Settings.Default.UseFlavorFilters;
             FlavorFilterGroupBox.Visible = Settings.Default.UseFlavorFilters;
-            // TODO UpdateEditorTheme(Settings.Default.UseColorfulEditorTheme);  <-- Only do this if the theme has actually changed!
+            if (oldTheme != Settings.Default.CurrentEditorTheme)
+            {
+                UpdateEditorTheme();
+            }
 
             // Select current tab.
             EditorTabs.SelectedTab?.Select();
@@ -778,6 +865,160 @@ namespace Scribe
                     selectedListBox.SelectedItem = (selectedListBox.Items as IList<object>)?.ElementAtOrDefault(0);
                 }
             }
+        }
+
+        /// <summary>
+        /// Applies the current <see cref="EditorTheme"/> to <see cref="MainEditorForm"/> and its <see cref="Control"/>s.
+        /// </summary>
+        private void UpdateEditorTheme()
+        {
+            Color ControlBackgroundColor;
+            Color UneditableBackgroundColor;
+            Color ControlForegroundColor;
+            Color BorderColor;
+            Color MouseDownColor;
+            Color MouseOverColor;
+
+            #region Apply Theme to Primary Form
+            switch (Settings.Default.CurrentEditorTheme)
+            {
+                case nameof(EditorTheme.Femme):
+                    ControlBackgroundColor = Color.Snow;
+                    UneditableBackgroundColor = Color.Pink;
+                    ControlForegroundColor = Color.Indigo;
+                    BorderColor = Color.PaleVioletRed;
+                    MouseDownColor = Color.PaleVioletRed;
+                    MouseOverColor = Color.LightPink;
+                    BackColor = Color.MistyRose;
+                    ForeColor = Color.Indigo;
+                    ToolStripProgressBar.BackColor = Color.Pink;
+                    ToolStripProgressBar.ForeColor = Color.HotPink;
+                    EditorStatusStrip.BackColor = Color.MistyRose;
+                    MainMenuBar.BackColor = Color.MistyRose;
+                    MainMenuBar.ForeColor = Color.Indigo;
+
+                    #region Apply Theme to Tabs
+                    GamesTabPage.BackColor =
+                    BlocksTabPage.BackColor =
+                    FloorsTabPage.BackColor =
+                    FurnishingsTabPage.BackColor =
+                    CollectiblesTabPage.BackColor =
+                    CharactersTabPage.BackColor =
+                    CrittersTabPage.BackColor =
+                    ItemsTabPage.BackColor =
+                    BiomesTabPage.BackColor =
+                    CraftingRecipesTabPage.BackColor =
+                    RoomRecipesTabPage.BackColor =
+                    MapsTabPage.BackColor =
+                    ScriptsTabPage.BackColor = Color.MistyRose;
+                    #endregion
+                    break;
+                case nameof(EditorTheme.Colorful):
+                    ControlBackgroundColor = SystemColors.Control;
+                    UneditableBackgroundColor = SystemColors.ControlLight;
+                    ControlForegroundColor = SystemColors.ControlText;
+                    BorderColor = Color.Empty;
+                    MouseDownColor = Color.Empty;
+                    MouseOverColor = Color.Empty;
+                    BackColor = SystemColors.Control;
+                    ForeColor = SystemColors.ControlText;
+                    ToolStripProgressBar.BackColor = SystemColors.Control;
+                    ToolStripProgressBar.ForeColor = SystemColors.Highlight;
+                    EditorStatusStrip.BackColor = SystemColors.Control;
+                    MainMenuBar.BackColor = SystemColors.Control;
+                    MainMenuBar.ForeColor = SystemColors.ControlText;
+
+                    #region Apply Theme to Tabs
+                    GamesTabPage.BackColor = SystemColors.Control;
+                    BlocksTabPage.BackColor =
+                    FloorsTabPage.BackColor =
+                    FurnishingsTabPage.BackColor =
+                    CollectiblesTabPage.BackColor = SystemColors.Control;
+                    CharactersTabPage.BackColor =
+                    CrittersTabPage.BackColor = SystemColors.Control;
+                    ItemsTabPage.BackColor = SystemColors.Control;
+                    BiomesTabPage.BackColor =
+                    CraftingRecipesTabPage.BackColor =
+                    RoomRecipesTabPage.BackColor = SystemColors.Control;
+                    MapsTabPage.BackColor = SystemColors.Control;
+                    ScriptsTabPage.BackColor = SystemColors.Control;
+                    #endregion
+                    break;
+                // EditorTheme.OSDefault:
+                default:
+                    ControlBackgroundColor = SystemColors.Control;
+                    UneditableBackgroundColor = SystemColors.ControlLight;
+                    ControlForegroundColor = SystemColors.ControlText;
+                    BorderColor = Color.Empty;
+                    MouseDownColor = Color.Empty;
+                    MouseOverColor = Color.Empty;
+                    BackColor = SystemColors.Control;
+                    ForeColor = SystemColors.ControlText;
+                    ToolStripProgressBar.BackColor = SystemColors.Control;
+                    ToolStripProgressBar.ForeColor = SystemColors.Highlight;
+                    EditorStatusStrip.BackColor = SystemColors.Control;
+                    MainMenuBar.BackColor = SystemColors.Control;
+                    MainMenuBar.ForeColor = SystemColors.ControlText;
+
+                    #region Apply Theme to Tabs
+                    GamesTabPage.BackColor = SystemColors.Control;
+                    BlocksTabPage.BackColor =
+                    FloorsTabPage.BackColor =
+                    FurnishingsTabPage.BackColor =
+                    CollectiblesTabPage.BackColor = SystemColors.Control;
+                    CharactersTabPage.BackColor =
+                    CrittersTabPage.BackColor = SystemColors.Control;
+                    ItemsTabPage.BackColor = SystemColors.Control;
+                    BiomesTabPage.BackColor =
+                    CraftingRecipesTabPage.BackColor =
+                    RoomRecipesTabPage.BackColor = SystemColors.Control;
+                    MapsTabPage.BackColor = SystemColors.Control;
+                    ScriptsTabPage.BackColor = SystemColors.Control;
+                    #endregion
+                    break;
+            }
+            #endregion
+
+            #region Apply Theme to Controls
+            foreach (var panel in ThemedControls[typeof(Panel)])
+            {
+                panel.BackColor = ControlBackgroundColor;
+                panel.ForeColor = ControlForegroundColor;
+            }
+            foreach (var groupBox in ThemedControls[typeof(GroupBox)])
+            {
+                groupBox.BackColor = ControlBackgroundColor;
+                groupBox.ForeColor = ControlForegroundColor;
+            }
+            foreach (var listBox in ThemedControls[typeof(ListBox)])
+            {
+                listBox.BackColor = ControlBackgroundColor;
+                listBox.ForeColor = ControlForegroundColor;
+            }
+            foreach (var comboBox in ThemedControls[typeof(ComboBox)])
+            {
+                comboBox.BackColor = ControlBackgroundColor;
+                comboBox.ForeColor = ControlForegroundColor;
+            }
+            foreach (var textBox in ThemedControls[typeof(TextBox)])
+            {
+                textBox.ForeColor = ControlForegroundColor;
+                textBox.BackColor = (textBox.Tag as string).Contains(UneditableTextBox)
+                    ? UneditableBackgroundColor
+                    : ControlBackgroundColor;
+            }
+            foreach (var checkBox in ThemedControls[typeof(CheckBox)])
+            {
+                checkBox.BackColor = ControlBackgroundColor;
+                checkBox.ForeColor = ControlForegroundColor;
+            }
+            foreach (var button in ThemedControls[typeof(Button)])
+            {
+                ((Button)button).FlatAppearance.BorderColor = BorderColor;
+                ((Button)button).FlatAppearance.MouseDownBackColor = MouseDownColor;
+                ((Button)button).FlatAppearance.MouseOverBackColor = MouseOverColor;
+            }
+            #endregion
         }
 
         /// <summary>
@@ -1395,7 +1636,7 @@ namespace Scribe
         private void ContentAlteredEventHandler(object sender, EventArgs e)
         {
             if (!(sender is Control alteredControl)
-                || UntrackedControl.Equals((string)alteredControl.Tag))
+                || ((string)alteredControl.Tag).Contains(UntrackedControl))
             {
                 // Silently return if an untracked control is altered; these changes are handled via button presses.
                 return;
@@ -2374,10 +2615,8 @@ namespace Scribe
         /// <param name="e">Addional event data.</param>
         private void OptionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (OptionsDialogue.ShowDialog() == DialogResult.OK)
-            {
-                UpdateDisplay();
-            }
+            oldTheme = Settings.Default.CurrentEditorTheme;
+            OptionsDialogue.ShowDialog();
         }
 
         /// <summary>
