@@ -59,7 +59,7 @@ namespace Scribe
         /// <summary>Tag identifying controls whose color is not managed via <see cref="Settings.Default.EditorTheme"/>.</summary>
         public static string UnthemedControl = "Unthemed Control";
 
-        /// <summary>Tag identifying controls whose color indicates that their text cannot be edited.</summary>
+        /// <summary>Tag identifying controls whose color indicates that its text cannot be edited.</summary>
         public static string UneditableTextBox = "Uneditable TextBox";
 
         /// <summary>Tag identifying controls whose changes are not managed via <see cref="ContentAlteredEventHandler"/>.</summary>
