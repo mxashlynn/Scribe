@@ -60,7 +60,7 @@ namespace Scribe
         public static string UnthemedControl = "Unthemed Control";
 
         /// <summary>Tag identifying controls whose color indicates that its text cannot be edited.</summary>
-        public static string UneditableTextBox = "Uneditable TextBox";
+        public static string ThemedLabel = "Themed";
 
         /// <summary>Tag identifying controls whose changes are not managed via <see cref="ContentAlteredEventHandler"/>.</summary>
         public static string UntrackedControl = "Untracked Control";
@@ -226,6 +226,7 @@ namespace Scribe
                 [typeof(ListBox)] = new List<Control>(),
                 [typeof(ComboBox)] = new List<Control>(),
                 [typeof(TextBox)] = new List<Control>(),
+                [typeof(Label)] = new List<Control>(),
                 [typeof(Button)] = new List<Control>(),
             };
             themed[typeof(GroupBox)].AddRange(this.GetAllChildrenExactlyOfType<GroupBox>()
@@ -239,6 +240,9 @@ namespace Scribe
                                     .Cast<Control>());
             themed[typeof(TextBox)].AddRange(this.GetAllChildrenExactlyOfType<TextBox>()
                                     .Where(textbox => null == textbox.Tag || !textbox.Tag.ToString().Contains(UnthemedControl))
+                                    .Cast<Control>());
+            themed[typeof(Label)].AddRange(this.GetAllChildrenExactlyOfType<Label>()
+                                    .Where(label => null != label.Tag && label.Tag.ToString().Contains(ThemedLabel))
                                     .Cast<Control>());
             themed[typeof(Button)].AddRange(this.GetAllChildrenExactlyOfType<Button>()
                                     .Where(button => null == button.Tag || !button.Tag.ToString().Contains(UnthemedControl))
@@ -831,7 +835,6 @@ namespace Scribe
         /// </summary>
         private void UpdateEditorTheme()
         {
-            Text = "UpdateEditorTheme";
             Color ControlBackgroundWhite;
             Color ControlBackgroundColor;
             Color UneditableBackgroundColor;
@@ -954,10 +957,13 @@ namespace Scribe
             }
             foreach (var textBox in ThemedControls[typeof(TextBox)])
             {
-                textBox.BackColor = null == textBox.Tag || !textBox.Tag.ToString().Contains(UneditableTextBox)
-                    ? ControlBackgroundWhite
-                    : UneditableBackgroundColor;
+                textBox.BackColor = ControlBackgroundWhite;
                 textBox.ForeColor = ControlForegroundColor;
+            }
+            foreach (var label in ThemedControls[typeof(Label)])
+            {
+                label.BackColor = UneditableBackgroundColor;
+                label.ForeColor = ControlForegroundColor;
             }
             foreach (var button in ThemedControls[typeof(Button)])
             {

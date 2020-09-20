@@ -1606,7 +1606,7 @@ namespace Scribe
             this.GameIDExample.Name = "GameIDExample";
             this.GameIDExample.Size = new System.Drawing.Size(131, 20);
             this.GameIDExample.TabIndex = 3;
-            this.GameIDExample.Tag = "Uneditable TextBox";
+            this.GameIDExample.Tag = "Themed";
             this.GameIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // GameAddNewGameButton
@@ -2341,7 +2341,7 @@ namespace Scribe
             this.BlockIDExample.Name = "BlockIDExample";
             this.BlockIDExample.Size = new System.Drawing.Size(131, 20);
             this.BlockIDExample.TabIndex = 3;
-            this.BlockIDExample.Tag = "Uneditable TextBox";
+            this.BlockIDExample.Tag = "Themed";
             this.BlockIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BlockRemoveBlockButton
@@ -2651,7 +2651,7 @@ namespace Scribe
             this.FloorIDExample.Name = "FloorIDExample";
             this.FloorIDExample.Size = new System.Drawing.Size(131, 20);
             this.FloorIDExample.TabIndex = 3;
-            this.FloorIDExample.Tag = "Uneditable TextBox";
+            this.FloorIDExample.Tag = "Themed";
             this.FloorIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FloorAddNewFloorButton
@@ -3053,7 +3053,7 @@ namespace Scribe
             this.FurnishingIDExample.Name = "FurnishingIDExample";
             this.FurnishingIDExample.Size = new System.Drawing.Size(131, 20);
             this.FurnishingIDExample.TabIndex = 3;
-            this.FurnishingIDExample.Tag = "Uneditable TextBox";
+            this.FurnishingIDExample.Tag = "Themed";
             this.FurnishingIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FurnishingAddNewFurnishingButton
@@ -3391,7 +3391,7 @@ namespace Scribe
             this.CollectibleIDExample.Name = "CollectibleIDExample";
             this.CollectibleIDExample.Size = new System.Drawing.Size(131, 20);
             this.CollectibleIDExample.TabIndex = 3;
-            this.CollectibleIDExample.Tag = "Uneditable TextBox";
+            this.CollectibleIDExample.Tag = "Themed";
             this.CollectibleIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CollectibleAddNewCollectibleButton
@@ -3998,7 +3998,7 @@ namespace Scribe
             this.CharacterIDExample.Name = "CharacterIDExample";
             this.CharacterIDExample.Size = new System.Drawing.Size(131, 20);
             this.CharacterIDExample.TabIndex = 3;
-            this.CharacterIDExample.Tag = "Uneditable TextBox";
+            this.CharacterIDExample.Tag = "Themed";
             this.CharacterIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CharacterAddNewCharacterButton
@@ -4315,7 +4315,7 @@ namespace Scribe
             this.CritterIDExample.Name = "CritterIDExample";
             this.CritterIDExample.Size = new System.Drawing.Size(131, 20);
             this.CritterIDExample.TabIndex = 3;
-            this.CritterIDExample.Tag = "Uneditable TextBox";
+            this.CritterIDExample.Tag = "Themed";
             this.CritterIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CritterConfigGroupBox
@@ -4754,7 +4754,7 @@ namespace Scribe
             this.ItemIDExample.Name = "ItemIDExample";
             this.ItemIDExample.Size = new System.Drawing.Size(131, 20);
             this.ItemIDExample.TabIndex = 3;
-            this.ItemIDExample.Tag = "Uneditable TextBox";
+            this.ItemIDExample.Tag = "Themed";
             this.ItemIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BiomesTabPage
@@ -5197,7 +5197,7 @@ namespace Scribe
             this.BiomeIDExample.Name = "BiomeIDExample";
             this.BiomeIDExample.Size = new System.Drawing.Size(131, 20);
             this.BiomeIDExample.TabIndex = 3;
-            this.BiomeIDExample.Tag = "Uneditable TextBox";
+            this.BiomeIDExample.Tag = "Themed";
             this.BiomeIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CraftingRecipesTabPage
@@ -5523,7 +5523,7 @@ namespace Scribe
             this.CraftingIDExample.Name = "CraftingIDExample";
             this.CraftingIDExample.Size = new System.Drawing.Size(131, 20);
             this.CraftingIDExample.TabIndex = 3;
-            this.CraftingIDExample.Tag = "Uneditable TextBox";
+            this.CraftingIDExample.Tag = "Themed";
             this.CraftingIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CraftingConfigGroupBox
@@ -6077,7 +6077,7 @@ namespace Scribe
             this.RoomIDExample.Name = "RoomIDExample";
             this.RoomIDExample.Size = new System.Drawing.Size(131, 20);
             this.RoomIDExample.TabIndex = 3;
-            this.RoomIDExample.Tag = "Uneditable TextBox";
+            this.RoomIDExample.Tag = "Themed";
             this.RoomIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MapsTabPage
