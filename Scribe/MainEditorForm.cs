@@ -230,45 +230,44 @@ namespace Scribe
                 [typeof(Button)] = new List<Control>(),
             };
 
-            var groupBoxes = this.GetAllChildrenExactlyOfType<GroupBox>().ToList();
-            foreach (var groupBox in groupBoxes)
+            foreach (var groupBox in this.GetAllChildrenExactlyOfType<GroupBox>())
             {
-                if (!groupBox.Tag?.ToString().Contains(UnthemedControl) ?? false)
+                if (!groupBox.Tag.ToString().Contains(UnthemedControl))
                 {
                     themed[typeof(GroupBox)].Add(groupBox);
                 }
             }
             foreach (var listbox in this.GetAllChildrenExactlyOfType<ListBox>())
             {
-                if (!listbox.Tag?.ToString().Contains(UnthemedControl) ?? false)
+                if (!listbox.Tag.ToString().Contains(UnthemedControl))
                 {
                     themed[typeof(ListBox)].Add(listbox);
                 }
             }
             foreach (var combobox in this.GetAllChildrenExactlyOfType<ComboBox>())
             {
-                if (!combobox.Tag?.ToString().Contains(UnthemedControl) ?? false)
+                if (!combobox.Tag.ToString().Contains(UnthemedControl))
                 {
                     themed[typeof(ComboBox)].Add(combobox);
                 }
             }
             foreach (var textbox in this.GetAllChildrenExactlyOfType<TextBox>())
             {
-                if (!textbox.Tag?.ToString().Contains(UnthemedControl) ?? false)
+                if (!textbox.Tag.ToString().Contains(UnthemedControl))
                 {
                     themed[typeof(TextBox)].Add(textbox);
                 }
             }
             foreach (var checkbox in this.GetAllChildrenExactlyOfType<CheckBox>())
             {
-                if (!checkbox.Tag?.ToString().Contains(UnthemedControl) ?? false)
+                if (!checkbox.Tag.ToString().Contains(UnthemedControl))
                 {
-                    themed[typeof(TextBox)].Add(checkbox);
+                    themed[typeof(CheckBox)].Add(checkbox);
                 }
             }
             foreach (var button in this.GetAllChildrenExactlyOfType<Button>())
             {
-                if (!button.Tag?.ToString().Contains(UnthemedControl) ?? false)
+                if (!button.Tag.ToString().Contains(UnthemedControl))
                 {
                         themed[typeof(Button)].Add(button);
                 }
