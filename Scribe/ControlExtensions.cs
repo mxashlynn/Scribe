@@ -10,14 +10,17 @@ namespace Scribe
     internal static class ControlExtensions
     {
         /// <summary>
-        /// Finds all child controls of the given type.
+        /// Finds all child controls of the given type and not of a subclass of that type.
         /// </summary>
         /// <typeparam name="T">The type of child control sought.</typeparam>
         /// <param name="inControl">The control whose children should be examined.</param>
         /// <returns>A list of matching controls, if any.</returns>
-        public static IEnumerable<T> GetAllChildrenOfType<T>(this Control inControl)
+        public static IEnumerable<T> GetAllChildrenExactlyOfType<T>(this Control inControl)
             where T : Control
-            => inControl.GetAllChildren().OfType<T>();
+            => inControl.GetAllChildren()
+                        .OfType<T>()
+                        .Where(control => !control.GetType()
+                                                  .IsSubclassOf(typeof(T)));
 
         /// <summary>
         /// Finds all child controls.

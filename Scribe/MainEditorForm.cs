@@ -163,7 +163,7 @@ namespace Scribe
 
             HasUnsavedChanges = false;
 
-            PictureBoxes = EditorTabs.GetAllChildrenOfType<PictureBox>().ToList();
+            PictureBoxes = EditorTabs.GetAllChildrenExactlyOfType<PictureBox>().ToList();
             ThemedControls = GetThemedControls();
             EditableControls = GetEditableControls();
             foreach (var kvp in EditableControls)
@@ -231,49 +231,50 @@ namespace Scribe
                 [typeof(Button)] = new List<Control>(),
             };
 
-            foreach (var panel in this.GetAllChildrenOfType<Panel>())
+            var panels = this.GetAllChildrenExactlyOfType<Panel>();
+            foreach (var panel in panels)
             {
                 if (!panel.Tag?.ToString().Contains(UnthemedControl) ?? false)
                 {
                     themed[typeof(Panel)].Add(panel);
                 }
             }
-            foreach (var groupBox in this.GetAllChildrenOfType<GroupBox>())
+            foreach (var groupBox in this.GetAllChildrenExactlyOfType<GroupBox>())
             {
                 if (!groupBox.Tag?.ToString().Contains(UnthemedControl) ?? false)
                 {
                     themed[typeof(GroupBox)].Add(groupBox);
                 }
             }
-            foreach (var listbox in this.GetAllChildrenOfType<ListBox>())
+            foreach (var listbox in this.GetAllChildrenExactlyOfType<ListBox>())
             {
                 if (!listbox.Tag?.ToString().Contains(UnthemedControl) ?? false)
                 {
                     themed[typeof(ListBox)].Add(listbox);
                 }
             }
-            foreach (var combobox in this.GetAllChildrenOfType<ComboBox>())
+            foreach (var combobox in this.GetAllChildrenExactlyOfType<ComboBox>())
             {
                 if (!combobox.Tag?.ToString().Contains(UnthemedControl) ?? false)
                 {
                     themed[typeof(ComboBox)].Add(combobox);
                 }
             }
-            foreach (var textbox in this.GetAllChildrenOfType<TextBox>())
+            foreach (var textbox in this.GetAllChildrenExactlyOfType<TextBox>())
             {
                 if (!textbox.Tag?.ToString().Contains(UnthemedControl) ?? false)
                 {
                     themed[typeof(TextBox)].Add(textbox);
                 }
             }
-            foreach (var checkbox in this.GetAllChildrenOfType<CheckBox>())
+            foreach (var checkbox in this.GetAllChildrenExactlyOfType<CheckBox>())
             {
                 if (!checkbox.Tag?.ToString().Contains(UnthemedControl) ?? false)
                 {
                     themed[typeof(TextBox)].Add(checkbox);
                 }
             }
-            foreach (var button in this.GetAllChildrenOfType<Button>())
+            foreach (var button in this.GetAllChildrenExactlyOfType<Button>())
             {
                 if (!button.Tag?.ToString().Contains(UnthemedControl) ?? false)
                 {
@@ -298,28 +299,28 @@ namespace Scribe
                 [typeof(ListBox)] = new Dictionary<Control, object>(),
             };
 
-            foreach (var textbox in EditorTabs.GetAllChildrenOfType<TextBox>())
+            foreach (var textbox in EditorTabs.GetAllChildrenExactlyOfType<TextBox>())
             {
                 if (!textbox.Tag.ToString().Contains(UntrackedControl))
                 {
                     editables[typeof(TextBox)][textbox] = textbox.Text;
                 }
             }
-            foreach (var checkbox in EditorTabs.GetAllChildrenOfType<CheckBox>())
+            foreach (var checkbox in EditorTabs.GetAllChildrenExactlyOfType<CheckBox>())
             {
                 if (!checkbox.Tag.ToString().Contains(UntrackedControl))
                 {
                     editables[typeof(CheckBox)][checkbox] = (bool?)checkbox.Checked;
                 }
             }
-            foreach (var combobox in EditorTabs.GetAllChildrenOfType<ComboBox>())
+            foreach (var combobox in EditorTabs.GetAllChildrenExactlyOfType<ComboBox>())
             {
                 if (!combobox.Tag.ToString().Contains(UntrackedControl))
                 {
                     editables[typeof(ComboBox)][combobox] = combobox.SelectedItem;
                 }
             }
-            foreach (var listbox in EditorTabs.GetAllChildrenOfType<ListBox>())
+            foreach (var listbox in EditorTabs.GetAllChildrenExactlyOfType<ListBox>())
             {
                 if (!listbox.Tag.ToString().Contains(UntrackedControl))
                 {
@@ -886,6 +887,7 @@ namespace Scribe
         /// </summary>
         private void UpdateEditorTheme()
         {
+            Text = "UpdateEditorTheme";
             Color ControlBackgroundWhite;
             Color ControlBackgroundColor;
             Color UneditableBackgroundColor;
