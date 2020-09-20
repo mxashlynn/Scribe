@@ -1001,7 +1001,7 @@ namespace Scribe
             }
             foreach (var textBox in ThemedControls[typeof(TextBox)])
             {
-                textBox.BackColor = textBox.Tag?.ToString().Contains(UneditableTextBox) ?? false
+                textBox.BackColor = textBox.Tag?.ToString().Contains(UneditableTextBox) ?? true
                     ? UneditableBackgroundColor
                     : ControlBackgroundWhite;
                 textBox.ForeColor = ControlForegroundColor;
@@ -1013,6 +1013,7 @@ namespace Scribe
             }
             foreach (var button in ThemedControls[typeof(Button)])
             {
+                button.BackColor = ControlBackgroundColor;
                 ((Button)button).FlatAppearance.BorderColor = BorderColor;
                 ((Button)button).FlatAppearance.MouseDownBackColor = MouseDownColor;
                 ((Button)button).FlatAppearance.MouseOverBackColor = MouseOverColor;
