@@ -854,7 +854,7 @@ namespace Scribe
             };
         #endregion
 
-        #region Editor Display Update Methods
+        #region Update Main Display
         /// <summary>
         /// Updates the form when it receives focus, for example after closing the options dialogue box.
         /// </summary>
@@ -1189,7 +1189,7 @@ namespace Scribe
         }
         #endregion
 
-        #region Tab Display Update Methods
+        #region Update Tab Display
         /// <summary>
         /// Loads the image associated with the given <see cref="ModelID"/> in the given <see cref="PictureBox"/>.
         /// </summary>
