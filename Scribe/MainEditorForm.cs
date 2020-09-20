@@ -300,19 +300,31 @@ namespace Scribe
 
             foreach (var textbox in EditorTabs.GetAllChildrenOfType<TextBox>())
             {
-                editables[typeof(TextBox)][textbox] = textbox.Text;
+                if (!textbox.Tag.ToString().Contains(UntrackedControl))
+                {
+                    editables[typeof(TextBox)][textbox] = textbox.Text;
+                }
             }
             foreach (var checkbox in EditorTabs.GetAllChildrenOfType<CheckBox>())
             {
-                editables[typeof(CheckBox)][checkbox] = (bool?)checkbox.Checked;
+                if (!checkbox.Tag.ToString().Contains(UntrackedControl))
+                {
+                    editables[typeof(CheckBox)][checkbox] = (bool?)checkbox.Checked;
+                }
             }
             foreach (var combobox in EditorTabs.GetAllChildrenOfType<ComboBox>())
             {
-                editables[typeof(ComboBox)][combobox] = combobox.SelectedItem;
+                if (!combobox.Tag.ToString().Contains(UntrackedControl))
+                {
+                    editables[typeof(ComboBox)][combobox] = combobox.SelectedItem;
+                }
             }
             foreach (var listbox in EditorTabs.GetAllChildrenOfType<ListBox>())
             {
-                editables[typeof(ListBox)][listbox] = listbox.SelectedItem;
+                if (!listbox.Tag.ToString().Contains(UntrackedControl))
+                {
+                    editables[typeof(ListBox)][listbox] = listbox.SelectedItem;
+                }
             }
 
             return editables;
@@ -1634,13 +1646,7 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void ContentAlteredEventHandler(object sender, EventArgs e)
         {
-            if (!(sender is Control alteredControl)
-                || ((alteredControl.Tag as string)?.Contains(UntrackedControl) ?? false))
-            {
-                // Silently return if an untracked control is altered; these changes are handled via button presses.
-                return;
-            }
-
+            var alteredControl = sender as Control;
             var PropertyAccessor = GetPropertyAccessorForTabAndControl(EditorTabs.SelectedIndex, alteredControl);
             if (null == PropertyAccessor)
             {
