@@ -226,7 +226,6 @@ namespace Scribe
                 [typeof(ListBox)] = new List<Control>(),
                 [typeof(ComboBox)] = new List<Control>(),
                 [typeof(TextBox)] = new List<Control>(),
-                [typeof(CheckBox)] = new List<Control>(),
                 [typeof(Button)] = new List<Control>(),
             };
             themed[typeof(GroupBox)].AddRange(this.GetAllChildrenExactlyOfType<GroupBox>()
@@ -240,9 +239,6 @@ namespace Scribe
                                     .Cast<Control>());
             themed[typeof(TextBox)].AddRange(this.GetAllChildrenExactlyOfType<TextBox>()
                                     .Where(textbox => null == textbox.Tag || !textbox.Tag.ToString().Contains(UnthemedControl))
-                                    .Cast<Control>());
-            themed[typeof(CheckBox)].AddRange(this.GetAllChildrenExactlyOfType<CheckBox>()
-                                    .Where(checkbox => null == checkbox.Tag || !checkbox.Tag.ToString().Contains(UnthemedControl))
                                     .Cast<Control>());
             themed[typeof(Button)].AddRange(this.GetAllChildrenExactlyOfType<Button>()
                                     .Where(button => null == button.Tag || !button.Tag.ToString().Contains(UnthemedControl))
@@ -962,11 +958,6 @@ namespace Scribe
                     ? ControlBackgroundWhite
                     : UneditableBackgroundColor;
                 textBox.ForeColor = ControlForegroundColor;
-            }
-            foreach (var checkBox in ThemedControls[typeof(CheckBox)])
-            {
-                checkBox.BackColor = ControlBackgroundWhite;
-                checkBox.ForeColor = ControlForegroundColor;
             }
             foreach (var button in ThemedControls[typeof(Button)])
             {
