@@ -1383,7 +1383,7 @@ namespace Scribe
             // GameIconPictureBox
             // 
             this.GameIconPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.GameIconPictureBox.BackColor = System.Drawing.Color.Silver;
+            this.GameIconPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.GameIconPictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
             this.GameIconPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("GameIconPictureBox.Image")));
             this.GameIconPictureBox.Location = new System.Drawing.Point(767, 286);
@@ -1586,7 +1586,7 @@ namespace Scribe
             // GameIDExample
             // 
             this.GameIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.GameIDExample.BackColor = System.Drawing.Color.Silver;
+            this.GameIDExample.BackColor = System.Drawing.SystemColors.ControlLight;
             this.GameIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.GameIDExample.Location = new System.Drawing.Point(813, 16);
             this.GameIDExample.Name = "GameIDExample";
@@ -2260,7 +2260,7 @@ namespace Scribe
             // BlockPictureBox
             // 
             this.BlockPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlockPictureBox.BackColor = System.Drawing.Color.Silver;
+            this.BlockPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BlockPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("BlockPictureBox.Image")));
             this.BlockPictureBox.Location = new System.Drawing.Point(767, 286);
             this.BlockPictureBox.Name = "BlockPictureBox";
@@ -2320,7 +2320,7 @@ namespace Scribe
             // BlockIDExample
             // 
             this.BlockIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlockIDExample.BackColor = System.Drawing.Color.Silver;
+            this.BlockIDExample.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BlockIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.BlockIDExample.Location = new System.Drawing.Point(812, 16);
             this.BlockIDExample.Name = "BlockIDExample";
@@ -2629,7 +2629,7 @@ namespace Scribe
             // FloorIDExample
             // 
             this.FloorIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorIDExample.BackColor = System.Drawing.Color.Silver;
+            this.FloorIDExample.BackColor = System.Drawing.SystemColors.ControlLight;
             this.FloorIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.FloorIDExample.Location = new System.Drawing.Point(812, 16);
             this.FloorIDExample.Name = "FloorIDExample";
@@ -2687,7 +2687,7 @@ namespace Scribe
             // FloorPictureBox
             // 
             this.FloorPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorPictureBox.BackColor = System.Drawing.Color.Silver;
+            this.FloorPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.FloorPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("FloorPictureBox.Image")));
             this.FloorPictureBox.Location = new System.Drawing.Point(767, 286);
             this.FloorPictureBox.Name = "FloorPictureBox";
@@ -3029,7 +3029,7 @@ namespace Scribe
             // FurnishingIDExample
             // 
             this.FurnishingIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FurnishingIDExample.BackColor = System.Drawing.Color.Silver;
+            this.FurnishingIDExample.BackColor = System.Drawing.SystemColors.ControlLight;
             this.FurnishingIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.FurnishingIDExample.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FurnishingIDExample.Location = new System.Drawing.Point(812, 16);
@@ -3088,7 +3088,7 @@ namespace Scribe
             // FurnishingPictureBox
             // 
             this.FurnishingPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.FurnishingPictureBox.BackColor = System.Drawing.Color.Silver;
+            this.FurnishingPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.FurnishingPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("FurnishingPictureBox.Image")));
             this.FurnishingPictureBox.Location = new System.Drawing.Point(767, 286);
             this.FurnishingPictureBox.Name = "FurnishingPictureBox";
@@ -3367,7 +3367,7 @@ namespace Scribe
             // CollectibleIDExample
             // 
             this.CollectibleIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectibleIDExample.BackColor = System.Drawing.Color.Silver;
+            this.CollectibleIDExample.BackColor = System.Drawing.SystemColors.ControlLight;
             this.CollectibleIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.CollectibleIDExample.Location = new System.Drawing.Point(812, 16);
             this.CollectibleIDExample.Name = "CollectibleIDExample";
@@ -3425,7 +3425,7 @@ namespace Scribe
             // CollectiblePictureBox
             // 
             this.CollectiblePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectiblePictureBox.BackColor = System.Drawing.Color.Silver;
+            this.CollectiblePictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.CollectiblePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("CollectiblePictureBox.Image")));
             this.CollectiblePictureBox.Location = new System.Drawing.Point(767, 286);
             this.CollectiblePictureBox.Name = "CollectiblePictureBox";
@@ -3973,7 +3973,7 @@ namespace Scribe
             // CharacterIDExample
             // 
             this.CharacterIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CharacterIDExample.BackColor = System.Drawing.Color.Silver;
+            this.CharacterIDExample.BackColor = System.Drawing.SystemColors.ControlLight;
             this.CharacterIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.CharacterIDExample.Location = new System.Drawing.Point(812, 16);
             this.CharacterIDExample.Name = "CharacterIDExample";
@@ -4030,7 +4030,7 @@ namespace Scribe
             // CharacterPictureBox
             // 
             this.CharacterPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CharacterPictureBox.BackColor = System.Drawing.Color.Silver;
+            this.CharacterPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.CharacterPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("CharacterPictureBox.Image")));
             this.CharacterPictureBox.Location = new System.Drawing.Point(767, 286);
             this.CharacterPictureBox.Name = "CharacterPictureBox";
@@ -4229,7 +4229,7 @@ namespace Scribe
             // CritterPictureBox
             // 
             this.CritterPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CritterPictureBox.BackColor = System.Drawing.Color.Silver;
+            this.CritterPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.CritterPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("CritterPictureBox.Image")));
             this.CritterPictureBox.Location = new System.Drawing.Point(767, 286);
             this.CritterPictureBox.Name = "CritterPictureBox";
@@ -4289,7 +4289,7 @@ namespace Scribe
             // CritterIDExample
             // 
             this.CritterIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CritterIDExample.BackColor = System.Drawing.Color.Silver;
+            this.CritterIDExample.BackColor = System.Drawing.SystemColors.ControlLight;
             this.CritterIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.CritterIDExample.Location = new System.Drawing.Point(812, 16);
             this.CritterIDExample.Name = "CritterIDExample";
@@ -4692,7 +4692,7 @@ namespace Scribe
             // ItemPictureBox
             // 
             this.ItemPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemPictureBox.BackColor = System.Drawing.Color.Silver;
+            this.ItemPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ItemPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ItemPictureBox.Image")));
             this.ItemPictureBox.Location = new System.Drawing.Point(768, 286);
             this.ItemPictureBox.Name = "ItemPictureBox";
@@ -4727,7 +4727,7 @@ namespace Scribe
             // ItemIDExample
             // 
             this.ItemIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemIDExample.BackColor = System.Drawing.Color.Silver;
+            this.ItemIDExample.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ItemIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.ItemIDExample.Location = new System.Drawing.Point(813, 16);
             this.ItemIDExample.Name = "ItemIDExample";
@@ -5134,7 +5134,7 @@ namespace Scribe
             // BiomePictureBox
             // 
             this.BiomePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BiomePictureBox.BackColor = System.Drawing.Color.Silver;
+            this.BiomePictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BiomePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("BiomePictureBox.Image")));
             this.BiomePictureBox.Location = new System.Drawing.Point(767, 286);
             this.BiomePictureBox.Name = "BiomePictureBox";
@@ -5169,7 +5169,7 @@ namespace Scribe
             // BiomeIDExample
             // 
             this.BiomeIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BiomeIDExample.BackColor = System.Drawing.Color.Silver;
+            this.BiomeIDExample.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BiomeIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.BiomeIDExample.Location = new System.Drawing.Point(812, 16);
             this.BiomeIDExample.Name = "BiomeIDExample";
@@ -5459,7 +5459,7 @@ namespace Scribe
             // CraftingPictureBox
             // 
             this.CraftingPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingPictureBox.BackColor = System.Drawing.Color.Silver;
+            this.CraftingPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.CraftingPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("CraftingPictureBox.Image")));
             this.CraftingPictureBox.Location = new System.Drawing.Point(767, 286);
             this.CraftingPictureBox.Name = "CraftingPictureBox";
@@ -5494,7 +5494,7 @@ namespace Scribe
             // CraftingIDExample
             // 
             this.CraftingIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingIDExample.BackColor = System.Drawing.Color.Silver;
+            this.CraftingIDExample.BackColor = System.Drawing.SystemColors.ControlLight;
             this.CraftingIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.CraftingIDExample.Location = new System.Drawing.Point(813, 16);
             this.CraftingIDExample.Name = "CraftingIDExample";
@@ -6012,7 +6012,7 @@ namespace Scribe
             // RoomPictureBox
             // 
             this.RoomPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomPictureBox.BackColor = System.Drawing.Color.Silver;
+            this.RoomPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.RoomPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("RoomPictureBox.Image")));
             this.RoomPictureBox.Location = new System.Drawing.Point(767, 286);
             this.RoomPictureBox.Name = "RoomPictureBox";
@@ -6047,7 +6047,7 @@ namespace Scribe
             // RoomIDExample
             // 
             this.RoomIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomIDExample.BackColor = System.Drawing.Color.Silver;
+            this.RoomIDExample.BackColor = System.Drawing.SystemColors.ControlLight;
             this.RoomIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
             this.RoomIDExample.Location = new System.Drawing.Point(813, 16);
             this.RoomIDExample.Name = "RoomIDExample";
