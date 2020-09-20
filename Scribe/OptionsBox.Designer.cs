@@ -35,8 +35,9 @@ namespace Scribe
             this.RadioButtonDefaultToDocuments = new System.Windows.Forms.RadioButton();
             this.LabelTheme = new System.Windows.Forms.Label();
             this.PanelEditorTheme = new System.Windows.Forms.Panel();
+            this.RadioButtonOSDefaultTheme = new System.Windows.Forms.RadioButton();
+            this.RadioButtonFemmeTheme = new System.Windows.Forms.RadioButton();
             this.RadioButtonColorfulTheme = new System.Windows.Forms.RadioButton();
-            this.RadioButtonOSTheme = new System.Windows.Forms.RadioButton();
             this.LabelSuggestStoryIDs = new System.Windows.Forms.Label();
             this.CheckBoxSuggestStoryIDs = new System.Windows.Forms.CheckBox();
             this.LabelAutoSaveInterval = new System.Windows.Forms.Label();
@@ -163,34 +164,45 @@ namespace Scribe
             this.PanelEditorTheme.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.PanelEditorTheme.Controls.Add(this.RadioButtonOSDefaultTheme);
+            this.PanelEditorTheme.Controls.Add(this.RadioButtonFemmeTheme);
             this.PanelEditorTheme.Controls.Add(this.RadioButtonColorfulTheme);
-            this.PanelEditorTheme.Controls.Add(this.RadioButtonOSTheme);
             this.PanelEditorTheme.Location = new System.Drawing.Point(163, 3);
             this.PanelEditorTheme.Name = "PanelEditorTheme";
             this.PanelEditorTheme.Size = new System.Drawing.Size(320, 24);
             this.PanelEditorTheme.TabIndex = 28;
             // 
+            // RadioButtonOSDefaultTheme
+            // 
+            this.RadioButtonOSDefaultTheme.AutoSize = true;
+            this.RadioButtonOSDefaultTheme.Location = new System.Drawing.Point(212, 5);
+            this.RadioButtonOSDefaultTheme.Name = "RadioButtonOSDefaultTheme";
+            this.RadioButtonOSDefaultTheme.Size = new System.Drawing.Size(81, 19);
+            this.RadioButtonOSDefaultTheme.TabIndex = 2;
+            this.RadioButtonOSDefaultTheme.Text = "OS Default";
+            this.RadioButtonOSDefaultTheme.UseVisualStyleBackColor = true;
+            // 
+            // RadioButtonFemmeTheme
+            // 
+            this.RadioButtonFemmeTheme.AutoSize = true;
+            this.RadioButtonFemmeTheme.Checked = true;
+            this.RadioButtonFemmeTheme.Location = new System.Drawing.Point(0, 5);
+            this.RadioButtonFemmeTheme.Name = "RadioButtonFemmeTheme";
+            this.RadioButtonFemmeTheme.Size = new System.Drawing.Size(65, 19);
+            this.RadioButtonFemmeTheme.TabIndex = 1;
+            this.RadioButtonFemmeTheme.TabStop = true;
+            this.RadioButtonFemmeTheme.Text = "Femme";
+            this.RadioButtonFemmeTheme.UseVisualStyleBackColor = true;
+            // 
             // RadioButtonColorfulTheme
             // 
             this.RadioButtonColorfulTheme.AutoSize = true;
-            this.RadioButtonColorfulTheme.Checked = true;
-            this.RadioButtonColorfulTheme.Location = new System.Drawing.Point(0, 5);
+            this.RadioButtonColorfulTheme.Location = new System.Drawing.Point(100, 5);
             this.RadioButtonColorfulTheme.Name = "RadioButtonColorfulTheme";
             this.RadioButtonColorfulTheme.Size = new System.Drawing.Size(68, 19);
-            this.RadioButtonColorfulTheme.TabIndex = 1;
-            this.RadioButtonColorfulTheme.TabStop = true;
+            this.RadioButtonColorfulTheme.TabIndex = 2;
             this.RadioButtonColorfulTheme.Text = "Colorful";
             this.RadioButtonColorfulTheme.UseVisualStyleBackColor = true;
-            // 
-            // RadioButtonOSTheme
-            // 
-            this.RadioButtonOSTheme.AutoSize = true;
-            this.RadioButtonOSTheme.Location = new System.Drawing.Point(100, 5);
-            this.RadioButtonOSTheme.Name = "RadioButtonOSTheme";
-            this.RadioButtonOSTheme.Size = new System.Drawing.Size(81, 19);
-            this.RadioButtonOSTheme.TabIndex = 2;
-            this.RadioButtonOSTheme.Text = "OS Default";
-            this.RadioButtonOSTheme.UseVisualStyleBackColor = true;
             // 
             // LabelSuggestStoryIDs
             // 
@@ -382,8 +394,9 @@ namespace Scribe
         private System.Windows.Forms.Button OkayButton;
         private System.Windows.Forms.Label LabelTheme;
         private System.Windows.Forms.Panel PanelEditorTheme;
+        private System.Windows.Forms.RadioButton RadioButtonFemmeTheme;
         private System.Windows.Forms.RadioButton RadioButtonColorfulTheme;
-        private System.Windows.Forms.RadioButton RadioButtonOSTheme;
+        private System.Windows.Forms.RadioButton RadioButtonOSDefaultTheme;
         private System.Windows.Forms.Panel PanelDefaultFolder;
         private System.Windows.Forms.RadioButton RadioButtonDefaultToDesktop;
         private System.Windows.Forms.RadioButton RadioButtonDefaultToDocuments;

@@ -25,13 +25,13 @@ namespace Scribe.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool UseColorfulEditorTheme {
+        [global::System.Configuration.DefaultSettingValueAttribute("Colorful")]
+        public string CurrentEditorTheme {
             get {
-                return ((bool)(this["UseColorfulEditorTheme"]));
+                return ((string)(this["CurrentEditorTheme"]));
             }
             set {
-                this["UseColorfulEditorTheme"] = value;
+                this["CurrentEditorTheme"] = value;
             }
         }
         

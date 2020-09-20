@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using Scribe.Properties;
 
@@ -19,12 +21,23 @@ namespace Scribe
         /// <summary>User-set autosave interval.  Guaranteed to be valid when <see cref="OptionsBox.FormClosingEventHandler"/> runs.</summary>
         private int NewAutoSaveInterval;
 
+        /// <summary>The UI elements used to represent the current <see cref="EditorTheme"/>.</summary>
+        private readonly Dictionary<string, RadioButton> ThemeRadioButtons;
+
         #region Initialization
         /// <summary>
         /// Initialize a new <see cref="OptionsBox"/>.
         /// </summary>
         public OptionsBox()
-            => InitializeComponent();
+        {
+            ThemeRadioButtons = new Dictionary<string, RadioButton>
+            {
+                { EditorTheme.Femme.ToString(), RadioButtonFemmeTheme },
+                { EditorTheme.Colorful.ToString(), RadioButtonColorfulTheme },
+                { EditorTheme.OSDefault.ToString(), RadioButtonOSDefaultTheme },
+            };
+            InitializeComponent();
+        }
 
         /// <summary>
         /// Sets up the <see cref="OptionsBox"/> UI.
@@ -34,8 +47,9 @@ namespace Scribe
         {
             base.OnLoad(EventData);
 
-            RadioButtonColorfulTheme.Checked = Settings.Default.UseColorfulEditorTheme;
-            RadioButtonOSTheme.Checked = !Settings.Default.UseColorfulEditorTheme;
+            ThemeRadioButtons.Values.Select(radioButton => radioButton.Checked = false);
+            ThemeRadioButtons[Settings.Default.CurrentEditorTheme].Checked = true;
+
             CheckBoxFlavorFilters.Checked = Settings.Default.UseFlavorFilters;
             CheckBoxSuggestStoryIDs.Checked = Settings.Default.SuggestStoryIDs;
             NewAutoSaveInterval = Settings.Default.AutoSaveInterval;
@@ -100,7 +114,11 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void OkayButton_Click(object sender, EventArgs e)
         {
-            Settings.Default.UseColorfulEditorTheme = RadioButtonColorfulTheme.Checked;
+            Settings.Default.CurrentEditorTheme = RadioButtonFemmeTheme.Checked
+                ? EditorTheme.Femme.ToString()
+                : RadioButtonColorfulTheme.Checked
+                    ? EditorTheme.Colorful.ToString()
+                    : EditorTheme.OSDefault.ToString();
             Settings.Default.UseFlavorFilters = CheckBoxFlavorFilters.Checked;
             Settings.Default.SuggestStoryIDs = CheckBoxSuggestStoryIDs.Checked;
             Settings.Default.AutoSaveInterval = NewAutoSaveInterval;
