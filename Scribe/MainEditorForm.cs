@@ -233,49 +233,49 @@ namespace Scribe
 
             foreach (var panel in EditorTabs.GetAllChildrenOfType<Panel>())
             {
-                if (!((string)panel.Tag).Contains(UnthemedControl))
+                if (!(panel.Tag as string)?.Contains(UnthemedControl) ?? false)
                 {
                     themed[typeof(Panel)].Add(panel);
                 }
             }
             foreach (var groupBox in EditorTabs.GetAllChildrenOfType<GroupBox>())
             {
-                if (!((string)groupBox.Tag).Contains(UnthemedControl))
+                if (!(groupBox.Tag as string)?.Contains(UnthemedControl) ?? false)
                 {
                     themed[typeof(GroupBox)].Add(groupBox);
                 }
             }
             foreach (var listbox in EditorTabs.GetAllChildrenOfType<ListBox>())
             {
-                if (!((string)listbox.Tag).Contains(UnthemedControl))
+                if (!(listbox.Tag as string)?.Contains(UnthemedControl) ?? false)
                 {
                     themed[typeof(ListBox)].Add(listbox);
                 }
             }
             foreach (var combobox in EditorTabs.GetAllChildrenOfType<ComboBox>())
             {
-                if (!((string)combobox.Tag).Contains(UnthemedControl))
+                if (!(combobox.Tag as string)?.Contains(UnthemedControl) ?? false)
                 {
                     themed[typeof(ComboBox)].Add(combobox);
                 }
             }
             foreach (var textbox in EditorTabs.GetAllChildrenOfType<TextBox>())
             {
-                if (!((string)textbox.Tag).Contains(UnthemedControl))
+                if (!(textbox.Tag as string)?.Contains(UnthemedControl) ?? false)
                 {
                     themed[typeof(TextBox)].Add(textbox);
                 }
             }
             foreach (var checkbox in EditorTabs.GetAllChildrenOfType<CheckBox>())
             {
-                if (!((string)checkbox.Tag).Contains(UnthemedControl))
+                if (!(checkbox.Tag as string)?.Contains(UnthemedControl) ?? false)
                 {
                     themed[typeof(TextBox)].Add(checkbox);
                 }
             }
             foreach (var button in EditorTabs.GetAllChildrenOfType<Button>())
             {
-                if (!((string)button.Tag).Contains(UnthemedControl))
+                if (!(button.Tag as string)?.Contains(UnthemedControl) ?? false)
                 {
                         themed[typeof(Button)].Add(button);
                 }
