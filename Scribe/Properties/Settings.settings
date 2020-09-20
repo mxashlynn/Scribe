@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="CurrentEditorTheme" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Colorful</Value>
+      <Value Profile="(Default)">OSDefault</Value>
     </Setting>
     <Setting Name="AutoSaveInterval" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">5</Value>

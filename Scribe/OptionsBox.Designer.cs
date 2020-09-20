@@ -175,22 +175,22 @@ namespace Scribe
             // RadioButtonOSDefaultTheme
             // 
             this.RadioButtonOSDefaultTheme.AutoSize = true;
+            this.RadioButtonOSDefaultTheme.Checked = true;
             this.RadioButtonOSDefaultTheme.Location = new System.Drawing.Point(212, 5);
             this.RadioButtonOSDefaultTheme.Name = "RadioButtonOSDefaultTheme";
             this.RadioButtonOSDefaultTheme.Size = new System.Drawing.Size(81, 19);
             this.RadioButtonOSDefaultTheme.TabIndex = 2;
+            this.RadioButtonOSDefaultTheme.TabStop = true;
             this.RadioButtonOSDefaultTheme.Text = "OS Default";
             this.RadioButtonOSDefaultTheme.UseVisualStyleBackColor = true;
             // 
             // RadioButtonFemmeTheme
             // 
             this.RadioButtonFemmeTheme.AutoSize = true;
-            this.RadioButtonFemmeTheme.Checked = true;
             this.RadioButtonFemmeTheme.Location = new System.Drawing.Point(0, 5);
             this.RadioButtonFemmeTheme.Name = "RadioButtonFemmeTheme";
             this.RadioButtonFemmeTheme.Size = new System.Drawing.Size(65, 19);
             this.RadioButtonFemmeTheme.TabIndex = 1;
-            this.RadioButtonFemmeTheme.TabStop = true;
             this.RadioButtonFemmeTheme.Text = "Femme";
             this.RadioButtonFemmeTheme.UseVisualStyleBackColor = true;
             // 
