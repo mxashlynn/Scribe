@@ -231,51 +231,51 @@ namespace Scribe
                 [typeof(Button)] = new List<Control>(),
             };
 
-            foreach (var panel in EditorTabs.GetAllChildrenOfType<Panel>())
+            foreach (var panel in this.GetAllChildrenOfType<Panel>())
             {
-                if (!(panel.Tag as string)?.Contains(UnthemedControl) ?? false)
+                if (!panel.Tag?.ToString().Contains(UnthemedControl) ?? false)
                 {
                     themed[typeof(Panel)].Add(panel);
                 }
             }
-            foreach (var groupBox in EditorTabs.GetAllChildrenOfType<GroupBox>())
+            foreach (var groupBox in this.GetAllChildrenOfType<GroupBox>())
             {
-                if (!(groupBox.Tag as string)?.Contains(UnthemedControl) ?? false)
+                if (!groupBox.Tag?.ToString().Contains(UnthemedControl) ?? false)
                 {
                     themed[typeof(GroupBox)].Add(groupBox);
                 }
             }
-            foreach (var listbox in EditorTabs.GetAllChildrenOfType<ListBox>())
+            foreach (var listbox in this.GetAllChildrenOfType<ListBox>())
             {
-                if (!(listbox.Tag as string)?.Contains(UnthemedControl) ?? false)
+                if (!listbox.Tag?.ToString().Contains(UnthemedControl) ?? false)
                 {
                     themed[typeof(ListBox)].Add(listbox);
                 }
             }
-            foreach (var combobox in EditorTabs.GetAllChildrenOfType<ComboBox>())
+            foreach (var combobox in this.GetAllChildrenOfType<ComboBox>())
             {
-                if (!(combobox.Tag as string)?.Contains(UnthemedControl) ?? false)
+                if (!combobox.Tag?.ToString().Contains(UnthemedControl) ?? false)
                 {
                     themed[typeof(ComboBox)].Add(combobox);
                 }
             }
-            foreach (var textbox in EditorTabs.GetAllChildrenOfType<TextBox>())
+            foreach (var textbox in this.GetAllChildrenOfType<TextBox>())
             {
-                if (!(textbox.Tag as string)?.Contains(UnthemedControl) ?? false)
+                if (!textbox.Tag?.ToString().Contains(UnthemedControl) ?? false)
                 {
                     themed[typeof(TextBox)].Add(textbox);
                 }
             }
-            foreach (var checkbox in EditorTabs.GetAllChildrenOfType<CheckBox>())
+            foreach (var checkbox in this.GetAllChildrenOfType<CheckBox>())
             {
-                if (!(checkbox.Tag as string)?.Contains(UnthemedControl) ?? false)
+                if (!checkbox.Tag?.ToString().Contains(UnthemedControl) ?? false)
                 {
                     themed[typeof(TextBox)].Add(checkbox);
                 }
             }
-            foreach (var button in EditorTabs.GetAllChildrenOfType<Button>())
+            foreach (var button in this.GetAllChildrenOfType<Button>())
             {
-                if (!(button.Tag as string)?.Contains(UnthemedControl) ?? false)
+                if (!button.Tag?.ToString().Contains(UnthemedControl) ?? false)
                 {
                         themed[typeof(Button)].Add(button);
                 }
@@ -999,7 +999,7 @@ namespace Scribe
             }
             foreach (var textBox in ThemedControls[typeof(TextBox)])
             {
-                textBox.BackColor = (textBox.Tag as string)?.Contains(UneditableTextBox) ?? false
+                textBox.BackColor = textBox.Tag?.ToString().Contains(UneditableTextBox) ?? false
                     ? UneditableBackgroundColor
                     : ControlBackgroundWhite;
                 textBox.ForeColor = ControlForegroundColor;
