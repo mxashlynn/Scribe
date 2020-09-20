@@ -990,6 +990,10 @@ namespace Scribe
                 groupBox.BackColor = ControlBackgroundColor;
                 groupBox.ForeColor = ControlForegroundColor;
             }
+            foreach (var pictureBox in PictureBoxes)
+            {
+                pictureBox.BackColor = UneditableBackgroundColor;
+            }
             foreach (var listBox in ThemedControls[typeof(ListBox)])
             {
                 listBox.BackColor = ControlBackgroundColor;
