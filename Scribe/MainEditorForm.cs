@@ -513,7 +513,9 @@ namespace Scribe
         /// <param name="inControl">The <see cref="Control"/> corresponding to the property sought.</param>
         /// <returns>A method for editing the property's value, or <c>null</c> if the input combination is not defined.</returns>
         private Action<object> GetPropertyAccessorForTabAndControl(int inTabIndex, Control inControl)
-            => (inTabIndex, inControl.Name) switch
+            => null == inControl
+            ? null
+            : (inTabIndex, inControl.Name) switch
             {
                 #region Pronouns
                 (CharactersTabIndex, "CharacterPronounSubjectiveTextBox")
