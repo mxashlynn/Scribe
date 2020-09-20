@@ -232,42 +232,42 @@ namespace Scribe
 
             foreach (var groupBox in this.GetAllChildrenExactlyOfType<GroupBox>())
             {
-                if (!groupBox.Tag.ToString().Contains(UnthemedControl))
+                if (!groupBox.Tag?.ToString().Contains(UnthemedControl) ?? true)
                 {
                     themed[typeof(GroupBox)].Add(groupBox);
                 }
             }
             foreach (var listbox in this.GetAllChildrenExactlyOfType<ListBox>())
             {
-                if (!listbox.Tag.ToString().Contains(UnthemedControl))
+                if (!listbox.Tag?.ToString().Contains(UnthemedControl) ?? true)
                 {
                     themed[typeof(ListBox)].Add(listbox);
                 }
             }
             foreach (var combobox in this.GetAllChildrenExactlyOfType<ComboBox>())
             {
-                if (!combobox.Tag.ToString().Contains(UnthemedControl))
+                if (!combobox.Tag?.ToString().Contains(UnthemedControl) ?? true)
                 {
                     themed[typeof(ComboBox)].Add(combobox);
                 }
             }
             foreach (var textbox in this.GetAllChildrenExactlyOfType<TextBox>())
             {
-                if (!textbox.Tag.ToString().Contains(UnthemedControl))
+                if (!textbox.Tag?.ToString().Contains(UnthemedControl) ?? true)
                 {
                     themed[typeof(TextBox)].Add(textbox);
                 }
             }
             foreach (var checkbox in this.GetAllChildrenExactlyOfType<CheckBox>())
             {
-                if (!checkbox.Tag.ToString().Contains(UnthemedControl))
+                if (!checkbox.Tag?.ToString().Contains(UnthemedControl) ?? true)
                 {
                     themed[typeof(CheckBox)].Add(checkbox);
                 }
             }
             foreach (var button in this.GetAllChildrenExactlyOfType<Button>())
             {
-                if (!button.Tag.ToString().Contains(UnthemedControl))
+                if (!button.Tag?.ToString().Contains(UnthemedControl) ?? true)
                 {
                         themed[typeof(Button)].Add(button);
                 }
@@ -292,28 +292,28 @@ namespace Scribe
 
             foreach (var textbox in EditorTabs.GetAllChildrenExactlyOfType<TextBox>())
             {
-                if (!textbox.Tag.ToString().Contains(UntrackedControl))
+                if (!textbox.Tag?.ToString().Contains(UntrackedControl) ?? true)
                 {
                     editables[typeof(TextBox)][textbox] = textbox.Text;
                 }
             }
             foreach (var checkbox in EditorTabs.GetAllChildrenExactlyOfType<CheckBox>())
             {
-                if (!checkbox.Tag.ToString().Contains(UntrackedControl))
+                if (!checkbox.Tag?.ToString().Contains(UntrackedControl) ?? true)
                 {
                     editables[typeof(CheckBox)][checkbox] = (bool?)checkbox.Checked;
                 }
             }
             foreach (var combobox in EditorTabs.GetAllChildrenExactlyOfType<ComboBox>())
             {
-                if (!combobox.Tag.ToString().Contains(UntrackedControl))
+                if (!combobox.Tag?.ToString().Contains(UntrackedControl) ?? true)
                 {
                     editables[typeof(ComboBox)][combobox] = combobox.SelectedItem;
                 }
             }
             foreach (var listbox in EditorTabs.GetAllChildrenExactlyOfType<ListBox>())
             {
-                if (!listbox.Tag.ToString().Contains(UntrackedControl))
+                if (!listbox.Tag?.ToString().Contains(UntrackedControl) ?? true)
                 {
                     editables[typeof(ListBox)][listbox] = listbox.SelectedItem;
                 }
