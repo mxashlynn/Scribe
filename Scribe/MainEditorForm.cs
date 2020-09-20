@@ -872,111 +872,104 @@ namespace Scribe
         /// </summary>
         private void UpdateEditorTheme()
         {
+            Color ControlBackgroundWhite;
             Color ControlBackgroundColor;
             Color UneditableBackgroundColor;
+            Color HighlightColor;
             Color ControlForegroundColor;
             Color BorderColor;
             Color MouseDownColor;
             Color MouseOverColor;
+            Color GamesTabColor;
+            Color ParquetsTabColor;
+            Color BeingsTabColor;
+            Color ItemsTabColor;
+            Color RecipesTabColor;
+            Color MapsTabColor;
+            Color ScriptsTabColor;
 
-            #region Apply Theme to Primary Form
+            #region Set Up Theme
             switch (Settings.Default.CurrentEditorTheme)
             {
                 case nameof(EditorTheme.Femme):
-                    ControlBackgroundColor = Color.Snow;
+                    ControlBackgroundWhite = Color.Snow;
+                    ControlBackgroundColor = Color.MistyRose;
                     UneditableBackgroundColor = Color.Pink;
+                    HighlightColor = Color.HotPink;
                     ControlForegroundColor = Color.Indigo;
                     BorderColor = Color.PaleVioletRed;
                     MouseDownColor = Color.PaleVioletRed;
                     MouseOverColor = Color.LightPink;
-                    BackColor = Color.MistyRose;
-                    ForeColor = Color.Indigo;
-                    ToolStripProgressBar.BackColor = Color.Pink;
-                    ToolStripProgressBar.ForeColor = Color.HotPink;
-                    EditorStatusStrip.BackColor = Color.MistyRose;
-                    MainMenuBar.BackColor = Color.MistyRose;
-                    MainMenuBar.ForeColor = Color.Indigo;
-
-                    #region Apply Theme to Tabs
-                    GamesTabPage.BackColor =
-                    BlocksTabPage.BackColor =
-                    FloorsTabPage.BackColor =
-                    FurnishingsTabPage.BackColor =
-                    CollectiblesTabPage.BackColor =
-                    CharactersTabPage.BackColor =
-                    CrittersTabPage.BackColor =
-                    ItemsTabPage.BackColor =
-                    BiomesTabPage.BackColor =
-                    CraftingRecipesTabPage.BackColor =
-                    RoomRecipesTabPage.BackColor =
-                    MapsTabPage.BackColor =
-                    ScriptsTabPage.BackColor = Color.MistyRose;
-                    #endregion
+                    GamesTabColor = Color.MistyRose;
+                    ParquetsTabColor = Color.MistyRose;
+                    BeingsTabColor = Color.MistyRose;
+                    ItemsTabColor = Color.MistyRose;
+                    RecipesTabColor = Color.MistyRose;
+                    MapsTabColor = Color.MistyRose;
+                    ScriptsTabColor = Color.MistyRose;
                     break;
                 case nameof(EditorTheme.Colorful):
+                    ControlBackgroundWhite = SystemColors.Window;
                     ControlBackgroundColor = SystemColors.Control;
                     UneditableBackgroundColor = SystemColors.ControlLight;
+                    HighlightColor = SystemColors.Highlight;
                     ControlForegroundColor = SystemColors.ControlText;
                     BorderColor = Color.Empty;
                     MouseDownColor = Color.Empty;
                     MouseOverColor = Color.Empty;
-                    BackColor = SystemColors.Control;
-                    ForeColor = SystemColors.ControlText;
-                    ToolStripProgressBar.BackColor = SystemColors.Control;
-                    ToolStripProgressBar.ForeColor = SystemColors.Highlight;
-                    EditorStatusStrip.BackColor = SystemColors.Control;
-                    MainMenuBar.BackColor = SystemColors.Control;
-                    MainMenuBar.ForeColor = SystemColors.ControlText;
-
-                    #region Apply Theme to Tabs
-                    GamesTabPage.BackColor = SystemColors.Control;
-                    BlocksTabPage.BackColor =
-                    FloorsTabPage.BackColor =
-                    FurnishingsTabPage.BackColor =
-                    CollectiblesTabPage.BackColor = SystemColors.Control;
-                    CharactersTabPage.BackColor =
-                    CrittersTabPage.BackColor = SystemColors.Control;
-                    ItemsTabPage.BackColor = SystemColors.Control;
-                    BiomesTabPage.BackColor =
-                    CraftingRecipesTabPage.BackColor =
-                    RoomRecipesTabPage.BackColor = SystemColors.Control;
-                    MapsTabPage.BackColor = SystemColors.Control;
-                    ScriptsTabPage.BackColor = SystemColors.Control;
-                    #endregion
+                    GamesTabColor = SystemColors.Control;
+                    ParquetsTabColor = SystemColors.Control;
+                    BeingsTabColor = SystemColors.Control;
+                    ItemsTabColor = SystemColors.Control;
+                    RecipesTabColor = SystemColors.Control;
+                    MapsTabColor = SystemColors.Control;
+                    ScriptsTabColor = SystemColors.Control;
                     break;
                 // EditorTheme.OSDefault:
                 default:
+                    ControlBackgroundWhite = SystemColors.Window;
                     ControlBackgroundColor = SystemColors.Control;
                     UneditableBackgroundColor = SystemColors.ControlLight;
+                    HighlightColor = SystemColors.Highlight;
                     ControlForegroundColor = SystemColors.ControlText;
                     BorderColor = Color.Empty;
                     MouseDownColor = Color.Empty;
                     MouseOverColor = Color.Empty;
-                    BackColor = SystemColors.Control;
-                    ForeColor = SystemColors.ControlText;
-                    ToolStripProgressBar.BackColor = SystemColors.Control;
-                    ToolStripProgressBar.ForeColor = SystemColors.Highlight;
-                    EditorStatusStrip.BackColor = SystemColors.Control;
-                    MainMenuBar.BackColor = SystemColors.Control;
-                    MainMenuBar.ForeColor = SystemColors.ControlText;
-
-                    #region Apply Theme to Tabs
-                    GamesTabPage.BackColor = SystemColors.Control;
-                    BlocksTabPage.BackColor =
-                    FloorsTabPage.BackColor =
-                    FurnishingsTabPage.BackColor =
-                    CollectiblesTabPage.BackColor = SystemColors.Control;
-                    CharactersTabPage.BackColor =
-                    CrittersTabPage.BackColor = SystemColors.Control;
-                    ItemsTabPage.BackColor = SystemColors.Control;
-                    BiomesTabPage.BackColor =
-                    CraftingRecipesTabPage.BackColor =
-                    RoomRecipesTabPage.BackColor = SystemColors.Control;
-                    MapsTabPage.BackColor = SystemColors.Control;
-                    ScriptsTabPage.BackColor = SystemColors.Control;
-                    #endregion
+                    GamesTabColor = SystemColors.Control;
+                    ParquetsTabColor = SystemColors.Control;
+                    BeingsTabColor = SystemColors.Control;
+                    ItemsTabColor = SystemColors.Control;
+                    RecipesTabColor = SystemColors.Control;
+                    MapsTabColor = SystemColors.Control;
+                    ScriptsTabColor = SystemColors.Control;
                     break;
             }
+            #endregion
+
+            #region Apply Theme to Primary Form
+            BackColor = ControlBackgroundColor;
+            ForeColor = ControlForegroundColor;
+            ToolStripProgressBar.BackColor = UneditableBackgroundColor;
+            ToolStripProgressBar.ForeColor = HighlightColor;
+            EditorStatusStrip.BackColor = ControlBackgroundColor;
+            MainMenuBar.BackColor = ControlBackgroundColor;
+            MainMenuBar.ForeColor = ControlForegroundColor;
+            #endregion
+
+            #region Apply Theme to Tabs
+            GamesTabPage.BackColor = GamesTabColor;
+            BlocksTabPage.BackColor =
+                FloorsTabPage.BackColor =
+                FurnishingsTabPage.BackColor =
+                CollectiblesTabPage.BackColor = ParquetsTabColor;
+            CharactersTabPage.BackColor =
+                CrittersTabPage.BackColor = BeingsTabColor;
+            ItemsTabPage.BackColor = ItemsTabColor;
+            BiomesTabPage.BackColor =
+                CraftingRecipesTabPage.BackColor =
+                RoomRecipesTabPage.BackColor = RecipesTabColor;
+            MapsTabPage.BackColor = MapsTabColor;
+            ScriptsTabPage.BackColor = ScriptsTabColor;
             #endregion
 
             #region Apply Theme to Controls
@@ -996,24 +989,24 @@ namespace Scribe
             }
             foreach (var listBox in ThemedControls[typeof(ListBox)])
             {
-                listBox.BackColor = ControlBackgroundColor;
+                listBox.BackColor = ControlBackgroundWhite;
                 listBox.ForeColor = ControlForegroundColor;
             }
             foreach (var comboBox in ThemedControls[typeof(ComboBox)])
             {
-                comboBox.BackColor = ControlBackgroundColor;
+                comboBox.BackColor = ControlBackgroundWhite;
                 comboBox.ForeColor = ControlForegroundColor;
             }
             foreach (var textBox in ThemedControls[typeof(TextBox)])
             {
                 textBox.BackColor = (textBox.Tag as string)?.Contains(UneditableTextBox) ?? false
                     ? UneditableBackgroundColor
-                    : ControlBackgroundColor;
+                    : ControlBackgroundWhite;
                 textBox.ForeColor = ControlForegroundColor;
             }
             foreach (var checkBox in ThemedControls[typeof(CheckBox)])
             {
-                checkBox.BackColor = ControlBackgroundColor;
+                checkBox.BackColor = ControlBackgroundWhite;
                 checkBox.ForeColor = ControlForegroundColor;
             }
             foreach (var button in ThemedControls[typeof(Button)])
