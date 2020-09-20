@@ -30,13 +30,13 @@ namespace Scribe
         /// </summary>
         public OptionsBox()
         {
+            InitializeComponent();
             ThemeRadioButtons = new Dictionary<string, RadioButton>
             {
                 { EditorTheme.Femme.ToString(), RadioButtonFemmeTheme },
                 { EditorTheme.Colorful.ToString(), RadioButtonColorfulTheme },
                 { EditorTheme.OSDefault.ToString(), RadioButtonOSDefaultTheme },
             };
-            InitializeComponent();
         }
 
         /// <summary>
