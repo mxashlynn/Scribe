@@ -17,10 +17,18 @@ namespace Scribe
         /// <returns>A list of matching controls, if any.</returns>
         public static IEnumerable<T> GetAllChildrenOfType<T>(this Control inControl)
             where T : Control
+            => inControl.GetAllChildren().OfType<T>();
+
+        /// <summary>
+        /// Finds all child controls.
+        /// </summary>
+        /// <param name="inControl">The control whose children should be examined.</param>
+        /// <returns>A list of controls.</returns>
+        public static IEnumerable<Control> GetAllChildren(this Control inControl)
         {
             var children = inControl.Controls.Cast<Control>();
-            return children.OfType<T>()
-                           .Concat(children.SelectMany(child => child.GetAllChildrenOfType<T>()));
+            return children.SelectMany(child => child.GetAllChildren())
+                           .Concat(children);
         }
     }
 }
