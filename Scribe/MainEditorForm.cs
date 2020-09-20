@@ -269,7 +269,7 @@ namespace Scribe
             {
                 if (!button.Tag?.ToString().Contains(UnthemedControl) ?? true)
                 {
-                        themed[typeof(Button)].Add(button);
+                    themed[typeof(Button)].Add(button);
                 }
             }
 
