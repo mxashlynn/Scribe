@@ -872,21 +872,21 @@ namespace Scribe
                     ScriptsTabColor = Color.MistyRose;
                     break;
                 case nameof(EditorTheme.Colorful):
-                    ControlBackgroundWhite = SystemColors.Window;
-                    ControlBackgroundColor = SystemColors.Control;
-                    UneditableBackgroundColor = SystemColors.ControlLight;
-                    HighlightColor = SystemColors.Highlight;
-                    ControlForegroundColor = SystemColors.ControlText;
-                    BorderColor = Color.Empty;
-                    MouseDownColor = Color.Empty;
-                    MouseOverColor = Color.Empty;
-                    GamesTabColor = SystemColors.Control;
-                    ParquetsTabColor = SystemColors.Control;
-                    BeingsTabColor = SystemColors.Control;
-                    ItemsTabColor = SystemColors.Control;
-                    RecipesTabColor = SystemColors.Control;
-                    MapsTabColor = SystemColors.Control;
-                    ScriptsTabColor = SystemColors.Control;
+                    ControlBackgroundWhite = Color.FloralWhite;
+                    ControlBackgroundColor = Color.AntiqueWhite;
+                    UneditableBackgroundColor = Color.Silver;
+                    HighlightColor = Color.MediumOrchid;
+                    ControlForegroundColor = Color.FromArgb(51, 0, 0);
+                    BorderColor = Color.RosyBrown;
+                    MouseDownColor = Color.RosyBrown;
+                    MouseOverColor = Color.Wheat;
+                    GamesTabColor = Color.MediumAquamarine;
+                    ParquetsTabColor = Color.BurlyWood;
+                    BeingsTabColor = Color.MistyRose;
+                    ItemsTabColor = Color.Cornsilk;
+                    RecipesTabColor = Color.Plum;
+                    MapsTabColor = Color.LightCoral;
+                    ScriptsTabColor = Color.LightSkyBlue;
                     break;
                 // EditorTheme.OSDefault:
                 default:
