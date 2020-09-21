@@ -874,19 +874,19 @@ namespace Scribe
                 case nameof(EditorTheme.Colorful):
                     ControlBackgroundWhite = Color.FloralWhite;
                     ControlBackgroundColor = Color.AntiqueWhite;
-                    UneditableBackgroundColor = Color.Silver;
+                    UneditableBackgroundColor = Color.Linen;
                     HighlightColor = Color.MediumOrchid;
                     ControlForegroundColor = Color.FromArgb(51, 0, 0);
                     BorderColor = Color.RosyBrown;
                     MouseDownColor = Color.RosyBrown;
                     MouseOverColor = Color.Wheat;
-                    GamesTabColor = Color.MediumAquamarine;
+                    GamesTabColor = Color.NavajoWhite;
                     ParquetsTabColor = Color.BurlyWood;
-                    BeingsTabColor = Color.MistyRose;
-                    ItemsTabColor = Color.Cornsilk;
+                    BeingsTabColor = Color.LightPink;
+                    ItemsTabColor = Color.PaleGoldenrod;
                     RecipesTabColor = Color.Plum;
-                    MapsTabColor = Color.LightCoral;
-                    ScriptsTabColor = Color.LightSkyBlue;
+                    MapsTabColor = Color.DarkSalmon;
+                    ScriptsTabColor = Color.LightSteelBlue;
                     break;
                 // EditorTheme.OSDefault:
                 default:
