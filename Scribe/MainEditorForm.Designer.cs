@@ -1345,10 +1345,12 @@ namespace Scribe
             this.EditorTabs.Controls.Add(this.RoomRecipesTabPage);
             this.EditorTabs.Controls.Add(this.MapsTabPage);
             this.EditorTabs.Controls.Add(this.ScriptsTabPage);
+            this.EditorTabs.ItemSize = new System.Drawing.Size(73, 18);
             this.EditorTabs.Location = new System.Drawing.Point(12, 111);
             this.EditorTabs.Name = "EditorTabs";
             this.EditorTabs.SelectedIndex = 0;
             this.EditorTabs.Size = new System.Drawing.Size(961, 625);
+            this.EditorTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.EditorTabs.TabIndex = 1;
             // 
             // GamesTabPage
@@ -1368,7 +1370,7 @@ namespace Scribe
             this.GamesTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.GamesTabPage.Size = new System.Drawing.Size(953, 599);
             this.GamesTabPage.TabIndex = 0;
-            this.GamesTabPage.Text = "Games & Episodes";
+            this.GamesTabPage.Text = "Games";
             // 
             // GameRemoveGameButton
             // 
@@ -4776,7 +4778,7 @@ namespace Scribe
             this.BiomesTabPage.Name = "BiomesTabPage";
             this.BiomesTabPage.Size = new System.Drawing.Size(953, 599);
             this.BiomesTabPage.TabIndex = 2;
-            this.BiomesTabPage.Text = "Biome Recipes";
+            this.BiomesTabPage.Text = "Biomes";
             // 
             // BiomeRemoveBiomeButton
             // 
@@ -4786,7 +4788,7 @@ namespace Scribe
             this.BiomeRemoveBiomeButton.Name = "BiomeRemoveBiomeButton";
             this.BiomeRemoveBiomeButton.Size = new System.Drawing.Size(129, 23);
             this.BiomeRemoveBiomeButton.TabIndex = 2;
-            this.BiomeRemoveBiomeButton.Text = "Remove Biome";
+            this.BiomeRemoveBiomeButton.Text = "Remove Biome Recipe";
             this.BiomeRemoveBiomeButton.UseVisualStyleBackColor = false;
             this.BiomeRemoveBiomeButton.Click += new System.EventHandler(this.BiomeRemoveBiomeButton_Click);
             // 
@@ -5186,7 +5188,7 @@ namespace Scribe
             this.BiomeAddNewBiomeButton.Name = "BiomeAddNewBiomeButton";
             this.BiomeAddNewBiomeButton.Size = new System.Drawing.Size(129, 23);
             this.BiomeAddNewBiomeButton.TabIndex = 2;
-            this.BiomeAddNewBiomeButton.Text = "Add New Biome";
+            this.BiomeAddNewBiomeButton.Text = "Add New Biome Recipe";
             this.BiomeAddNewBiomeButton.UseVisualStyleBackColor = false;
             this.BiomeAddNewBiomeButton.Click += new System.EventHandler(this.BiomeAddNewBiomeButton_Click);
             // 
@@ -5217,7 +5219,7 @@ namespace Scribe
             this.CraftingRecipesTabPage.Name = "CraftingRecipesTabPage";
             this.CraftingRecipesTabPage.Size = new System.Drawing.Size(953, 599);
             this.CraftingRecipesTabPage.TabIndex = 3;
-            this.CraftingRecipesTabPage.Text = "Crafting Recipes";
+            this.CraftingRecipesTabPage.Text = "Crafts";
             // 
             // CraftingRemoveCraftingButton
             // 
@@ -5227,7 +5229,7 @@ namespace Scribe
             this.CraftingRemoveCraftingButton.Name = "CraftingRemoveCraftingButton";
             this.CraftingRemoveCraftingButton.Size = new System.Drawing.Size(127, 23);
             this.CraftingRemoveCraftingButton.TabIndex = 2;
-            this.CraftingRemoveCraftingButton.Text = "Remove Crafting Recipe";
+            this.CraftingRemoveCraftingButton.Text = "Remove Crafting Rec.";
             this.CraftingRemoveCraftingButton.UseVisualStyleBackColor = false;
             this.CraftingRemoveCraftingButton.Click += new System.EventHandler(this.CraftingRemoveCraftingButton_Click);
             // 
@@ -5669,7 +5671,7 @@ namespace Scribe
             this.RoomRecipesTabPage.Name = "RoomRecipesTabPage";
             this.RoomRecipesTabPage.Size = new System.Drawing.Size(953, 599);
             this.RoomRecipesTabPage.TabIndex = 7;
-            this.RoomRecipesTabPage.Text = "Room Recipes";
+            this.RoomRecipesTabPage.Text = "Rooms";
             // 
             // RoomRemoveRoomButton
             // 
@@ -5679,7 +5681,7 @@ namespace Scribe
             this.RoomRemoveRoomButton.Name = "RoomRemoveRoomButton";
             this.RoomRemoveRoomButton.Size = new System.Drawing.Size(129, 23);
             this.RoomRemoveRoomButton.TabIndex = 2;
-            this.RoomRemoveRoomButton.Text = "Remove Room";
+            this.RoomRemoveRoomButton.Text = "Remove Room Recipe";
             this.RoomRemoveRoomButton.UseVisualStyleBackColor = false;
             this.RoomRemoveRoomButton.Click += new System.EventHandler(this.RoomRemoveRoomButton_Click);
             // 
@@ -6066,7 +6068,7 @@ namespace Scribe
             this.RoomAddNewRoomButton.Name = "RoomAddNewRoomButton";
             this.RoomAddNewRoomButton.Size = new System.Drawing.Size(129, 23);
             this.RoomAddNewRoomButton.TabIndex = 2;
-            this.RoomAddNewRoomButton.Text = "Add New Room";
+            this.RoomAddNewRoomButton.Text = "Add New Room Recipe";
             this.RoomAddNewRoomButton.UseVisualStyleBackColor = false;
             this.RoomAddNewRoomButton.Click += new System.EventHandler(this.RoomAddNewRoomButton_Click);
             // 
