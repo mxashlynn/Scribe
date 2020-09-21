@@ -919,22 +919,6 @@ namespace Scribe
             MainMenuBar.ForeColor = ControlForegroundColor;
             #endregion
 
-            #region Apply Theme to Tabs
-            GamesTabPage.BackColor = GamesTabColor;
-            BlocksTabPage.BackColor =
-                FloorsTabPage.BackColor =
-                FurnishingsTabPage.BackColor =
-                CollectiblesTabPage.BackColor = ParquetsTabColor;
-            CharactersTabPage.BackColor =
-                CrittersTabPage.BackColor = BeingsTabColor;
-            ItemsTabPage.BackColor = ItemsTabColor;
-            BiomesTabPage.BackColor =
-                CraftingRecipesTabPage.BackColor =
-                RoomRecipesTabPage.BackColor = RecipesTabColor;
-            MapsTabPage.BackColor = MapsTabColor;
-            ScriptsTabPage.BackColor = ScriptsTabColor;
-            #endregion
-
             #region Apply Theme to Controls
             foreach (var groupBox in ThemedControls[typeof(GroupBox)])
             {
@@ -972,6 +956,34 @@ namespace Scribe
                 ((Button)button).FlatAppearance.MouseDownBackColor = MouseDownColor;
                 ((Button)button).FlatAppearance.MouseOverBackColor = MouseOverColor;
             }
+            #endregion
+
+            #region Apply Theme to Tabs
+            GamesTabPage.BackColor =
+                FileFormatGroupBox.BackColor =
+                LibraryInfoGroupBox.BackColor = GamesTabColor;
+            BlocksTabPage.BackColor =
+                BlockConfigGroupBox.BackColor =
+                FloorsTabPage.BackColor =
+                FloorConfigGroupBox.BackColor =
+                FurnishingsTabPage.BackColor =
+                FurnishingConfigGroupBox.BackColor =
+                CollectiblesTabPage.BackColor =
+                CollectibleConfigGroupBox.BackColor = ParquetsTabColor;
+            CharactersTabPage.BackColor =
+                CharacterPronounGroupBox.BackColor =
+                CrittersTabPage.BackColor =
+                CritterConfigGroupBox.BackColor = BeingsTabColor;
+            ItemsTabPage.BackColor =
+                ItemInventoriesGroupBox.BackColor = ItemsTabColor;
+            BiomesTabPage.BackColor =
+                BiomeConfigGroupBox.BackColor =
+                CraftingRecipesTabPage.BackColor =
+                CraftingConfigGroupBox.BackColor =
+                RoomRecipesTabPage.BackColor =
+                RoomConfigGroupBox.BackColor = RecipesTabColor;
+            MapsTabPage.BackColor = MapsTabColor;
+            ScriptsTabPage.BackColor = ScriptsTabColor;
             #endregion
         }
 
