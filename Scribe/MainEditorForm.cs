@@ -675,7 +675,7 @@ namespace Scribe
                     => (input) => (inModel as ICritterModelEdit).NativeBiomeID = ValueToID(input),
                 (CrittersTabIndex, "CritterPrimaryBehaviorComboBox")
                     => (input) => (inModel as ICritterModelEdit).PrimaryBehaviorID = ValueToID(input),
-                    #endregion
+                #endregion
 
                 #region ItemModels
                 (ItemsTabIndex, "ItemNameTextBox")
@@ -2116,7 +2116,51 @@ namespace Scribe
         #endregion
 
         #region Characters Tab
-        // TODO Characters
+        // TODO Finish Characters Tab
+
+        /// <summary>
+        /// Provides a suggested <see cref="CharacterModel.StoryCharacterID"/> if needed.
+        /// </summary>
+        /// <param name="sender">The <see cref="this.PersonalNameTextBox"/>.</param>
+        /// <param name="e">Ignored.</param>
+        private void CharacterPersonalNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (Settings.Default.SuggestStoryIDs)
+            {
+                var model = GetSelectedModelForTab(EditorTabs.SelectedIndex) as CharacterModel;
+                if (sender is TextBox alteredControl
+                    && null != model
+                    && string.IsNullOrEmpty(model.StoryCharacterID)
+                    && !string.IsNullOrEmpty(model.FamilyName)
+                    && !string.IsNullOrEmpty(alteredControl.Text))
+                {
+                    CharacterStoryIDTextBox.Text = ((ICharacterModelEdit)model).StoryCharacterID =
+                        $"{alteredControl.Text.ToUpperInvariant()}_{model.FamilyName.ToUpperInvariant()}";
+                }
+            }
+        }
+
+        /// <summary>
+        /// Provides a suggested <see cref="CharacterModel.StoryCharacterID"/> if needed.
+        /// </summary>
+        /// <param name="sender">The <see cref="this.FamilyNameTextBox"/>.</param>
+        /// <param name="e">Ignored.</param>
+        private void CharacterFamilyNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (Settings.Default.SuggestStoryIDs)
+            {
+                var model = GetSelectedModelForTab(EditorTabs.SelectedIndex) as CharacterModel;
+                if (sender is TextBox alteredControl
+                    && null != model
+                    && string.IsNullOrEmpty(model.StoryCharacterID)
+                    && !string.IsNullOrEmpty(model.PersonalName)
+                    && !string.IsNullOrEmpty(alteredControl.Text))
+                {
+                    CharacterStoryIDTextBox.Text = ((ICharacterModelEdit)model).StoryCharacterID =
+                        $"{model.PersonalName.ToUpperInvariant()}_{alteredControl.Text.ToUpperInvariant()}";
+                }
+            }
+        }
         #endregion
 
         #region Critters Tab
