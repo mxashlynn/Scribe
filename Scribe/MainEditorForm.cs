@@ -76,7 +76,7 @@ namespace Scribe
         private readonly Dictionary<Type, List<Control>> ThemedControls;
 
         /// <summary>Used to determine if the <see cref="Settings.Default.CurrentEditorTheme"/> has changed.</summary>
-        private static string oldTheme = Settings.Default.CurrentEditorTheme;
+        private static string oldTheme = "";
 
         /// <summary>
         /// A collection of all editable <see cref="Control"/>s in the <see cref="MainEditorForm"/>
@@ -186,31 +186,16 @@ namespace Scribe
             UpdateLibraryDataDisplay();
             UpdateFileFormatDisplay();
             UpdateDisplay();
+            UpdateFromSettings();
         }
 
         /// <summary>
-        /// Sets the text used to describe the format of the saved data files the editor works with.
+        /// Updates the form when it receives focus, for example after closing the options dialogue box.
         /// </summary>
-        private void UpdateFileFormatDisplay()
-        {
-            FileFormatPrimaryDelimiterExample.Text = Delimiters.PrimaryDelimiter;
-            FileFormatSecondaryDelimiterExample.Text = Delimiters.SecondaryDelimiter;
-            FileFormatInternalDelimiterExample.Text = Delimiters.InternalDelimiter;
-            FileFormatElementDelimiterExample.Text = Delimiters.ElementDelimiter;
-            FileFormatNameDelimiterExample.Text = Delimiters.NameDelimiter;
-            FileFormatPronounDelimiterExample.Text = Delimiters.PronounDelimiter;
-            FileFormatDimensionalDelimiterExample.Text = Delimiters.DimensionalDelimiter;
-            FileFormatDimensionalTerminatorExample.Text = Delimiters.DimensionalTerminator;
-        }
-
-        /// <summary>
-        /// Sets the text used to describe the library the editor supports.
-        /// </summary>
-        private void UpdateLibraryDataDisplay()
-        {
-            LibraryVersionExample.Text = ParquetClassLibrary.AssemblyInfo.LibraryVersion;
-            LibraryProjectPathExample.Text = All.ProjectDirectory;
-        }
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void MainEditorForm_Activated(object sender, EventArgs e)
+            => UpdateFromSettings();
         #endregion
 
         #region Cache Controls
@@ -804,21 +789,20 @@ namespace Scribe
 
         #region Update Main Display
         /// <summary>
-        /// Updates the form when it receives focus, for example after closing the options dialogue box.
+        /// Brings the <see cref="MainEditorForm"/> in line with the <see cref="Settings.Default"/> profile.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void MainEditorForm_Activated(object sender, EventArgs e)
+        private void UpdateFromSettings()
         {
-            FlavorFilterGroupBox.Enabled = Settings.Default.UseFlavorFilters;
-            FlavorFilterGroupBox.Visible = Settings.Default.UseFlavorFilters;
+            #region Update Filter Display
+            FlavorFilterGroupBox.Enabled =
+                FlavorFilterGroupBox.Visible = Settings.Default.UseFlavorFilters;
+            #endregion
+
             if (oldTheme != Settings.Default.CurrentEditorTheme)
             {
                 UpdateEditorTheme();
             }
 
-            // Select current tab.
-            EditorTabs.SelectedTab?.Select();
             // If possible, select default model in current tab.
             if (null == GetSelectedModelForTab(EditorTabs.SelectedIndex))
             {
@@ -835,6 +819,7 @@ namespace Scribe
         /// </summary>
         private void UpdateEditorTheme()
         {
+            #region Variable Definitions
             Color ControlBackgroundWhite;
             Color ControlBackgroundColor;
             Color UneditableBackgroundColor;
@@ -850,6 +835,7 @@ namespace Scribe
             Color RecipesTabColor;
             Color MapsTabColor;
             Color ScriptsTabColor;
+            #endregion
 
             #region Set Up Theme
             switch (Settings.Default.CurrentEditorTheme)
@@ -988,6 +974,30 @@ namespace Scribe
         }
 
         /// <summary>
+        /// Sets the text used to describe the format of the saved data files the editor works with.
+        /// </summary>
+        private void UpdateFileFormatDisplay()
+        {
+            FileFormatPrimaryDelimiterExample.Text = Delimiters.PrimaryDelimiter;
+            FileFormatSecondaryDelimiterExample.Text = Delimiters.SecondaryDelimiter;
+            FileFormatInternalDelimiterExample.Text = Delimiters.InternalDelimiter;
+            FileFormatElementDelimiterExample.Text = Delimiters.ElementDelimiter;
+            FileFormatNameDelimiterExample.Text = Delimiters.NameDelimiter;
+            FileFormatPronounDelimiterExample.Text = Delimiters.PronounDelimiter;
+            FileFormatDimensionalDelimiterExample.Text = Delimiters.DimensionalDelimiter;
+            FileFormatDimensionalTerminatorExample.Text = Delimiters.DimensionalTerminator;
+        }
+
+        /// <summary>
+        /// Sets the text used to describe the library the editor supports.
+        /// </summary>
+        private void UpdateLibraryDataDisplay()
+        {
+            LibraryVersionExample.Text = ParquetClassLibrary.AssemblyInfo.LibraryVersion;
+            LibraryProjectPathExample.Text = All.ProjectDirectory;
+        }
+
+        /// <summary>
         /// Clears and repopulates the primary and secondary lists after an update.
         /// </summary>
         private void UpdateDisplay()
@@ -1035,7 +1045,7 @@ namespace Scribe
             }
             #endregion
 
-            // TODO Remember to incrementally update Primary and Secondary lists after Add New and Remove button presses.
+            // TODO Incrementally update Primary and Secondary lists after Add New and Remove button presses.
 
             #region Repopulate Primary List Boxes
             RepopulateListBox(GameListBox, All.Games);
@@ -2629,7 +2639,10 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="e">Addional event data.</param>
         private void RefreshStripMenuItem_Click(object sender, EventArgs e)
-            => UpdateDisplay();
+        {
+            UpdateDisplay();
+            UpdateEditorTheme();
+        }
 
         /// <summary>
         /// Responds to a user selecting the "Scribe Help" menu item.
