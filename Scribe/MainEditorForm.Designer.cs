@@ -357,8 +357,8 @@ namespace Scribe
             this.CritterListBox = new System.Windows.Forms.ListBox();
             this.CritterAddNewCritterButton = new System.Windows.Forms.Button();
             this.CritterIDExample = new System.Windows.Forms.Label();
-            this.CritterConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CritterRemoveCritterButton = new System.Windows.Forms.Button();
+            this.CritterConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.ItemsTabPage = new System.Windows.Forms.TabPage();
             this.ItemRemoveItemButton = new System.Windows.Forms.Button();
             this.ItemAddTagButton = new System.Windows.Forms.Button();
@@ -4075,8 +4075,8 @@ namespace Scribe
             this.CrittersTabPage.Controls.Add(this.CritterListBox);
             this.CrittersTabPage.Controls.Add(this.CritterAddNewCritterButton);
             this.CrittersTabPage.Controls.Add(this.CritterIDExample);
-            this.CrittersTabPage.Controls.Add(this.CritterConfigGroupBox);
             this.CrittersTabPage.Controls.Add(this.CritterRemoveCritterButton);
+            this.CrittersTabPage.Controls.Add(this.CritterConfigGroupBox);
             this.CrittersTabPage.Location = new System.Drawing.Point(4, 22);
             this.CrittersTabPage.Name = "CrittersTabPage";
             this.CrittersTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -4324,16 +4324,6 @@ namespace Scribe
             this.CritterIDExample.Tag = "Themed";
             this.CritterIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // CritterConfigGroupBox
-            // 
-            this.CritterConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CritterConfigGroupBox.Location = new System.Drawing.Point(9, 497);
-            this.CritterConfigGroupBox.Name = "CritterConfigGroupBox";
-            this.CritterConfigGroupBox.Size = new System.Drawing.Size(938, 96);
-            this.CritterConfigGroupBox.TabIndex = 0;
-            this.CritterConfigGroupBox.TabStop = false;
-            // 
             // CritterRemoveCritterButton
             // 
             this.CritterRemoveCritterButton.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -4345,6 +4335,16 @@ namespace Scribe
             this.CritterRemoveCritterButton.Text = "Remove Critter";
             this.CritterRemoveCritterButton.UseVisualStyleBackColor = false;
             this.CritterRemoveCritterButton.Click += new System.EventHandler(this.CritterRemoveCritterButton_Click);
+            // 
+            // CritterConfigGroupBox
+            // 
+            this.CritterConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CritterConfigGroupBox.Location = new System.Drawing.Point(9, 497);
+            this.CritterConfigGroupBox.Name = "CritterConfigGroupBox";
+            this.CritterConfigGroupBox.Size = new System.Drawing.Size(938, 96);
+            this.CritterConfigGroupBox.TabIndex = 0;
+            this.CritterConfigGroupBox.TabStop = false;
             // 
             // ItemsTabPage
             // 
