@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -71,9 +72,9 @@ namespace Scribe
         private readonly List<PictureBox> PictureBoxes;
 
         /// <summary>
-        /// A collection of all themed <see cref="Control"/>s in the <see cref="MainEditorForm"/>.
+        /// A collection of all themed <see cref="Component"/>s in the <see cref="MainEditorForm"/>.
         /// </summary>
-        private readonly Dictionary<Type, List<Control>> ThemedControls;
+        private readonly Dictionary<Type, List<Component>> ThemedComponents;
 
         /// <summary>Used to determine if the <see cref="Settings.Default.CurrentEditorTheme"/> has changed.</summary>
         private static string oldTheme = "";
@@ -164,7 +165,7 @@ namespace Scribe
             HasUnsavedChanges = false;
 
             PictureBoxes = EditorTabs.GetAllChildrenExactlyOfType<PictureBox>().ToList();
-            ThemedControls = GetThemedControls();
+            ThemedComponents = GetThemedComponents();
             EditableControls = GetEditableControls();
             foreach (var kvp in EditableControls)
             {
@@ -200,20 +201,24 @@ namespace Scribe
 
         #region Cache Controls
         /// <summary>
-        /// Finds all themed <see cref="Control"/>s in the <see cref="MainEditorForm"/>.
+        /// Finds all themed <see cref="Component"/>s in the <see cref="MainEditorForm"/>.
         /// </summary>
-        /// <returns>A dictionary containing lists of controls, organized by type.</returns>
-        private Dictionary<Type, List<Control>> GetThemedControls()
+        /// <returns>A dictionary containing lists of components, organized by type.</returns>
+        private Dictionary<Type, List<Component>> GetThemedComponents()
         {
-            var themed = new Dictionary<Type, List<Control>>
+            var themed = new Dictionary<Type, List<Component>>
             {
-                [typeof(GroupBox)] = new List<Control>(),
-                [typeof(ListBox)] = new List<Control>(),
-                [typeof(ComboBox)] = new List<Control>(),
-                [typeof(TextBox)] = new List<Control>(),
-                [typeof(Label)] = new List<Control>(),
-                [typeof(Button)] = new List<Control>(),
+                [typeof(ToolStripItem)] = new List<Component>(),
+                [typeof(GroupBox)] = new List<Component>(),
+                [typeof(ListBox)] = new List<Component>(),
+                [typeof(ComboBox)] = new List<Component>(),
+                [typeof(TextBox)] = new List<Component>(),
+                [typeof(Label)] = new List<Component>(),
+                [typeof(Button)] = new List<Component>(),
             };
+            themed[typeof(ToolStripItem)].AddRange(MainMenuBar.Items.GetAllChildren());
+            themed[typeof(ToolStripItem)].AddRange(ContextMenuStripPictureBoxes.Items.GetAllChildren());
+            themed[typeof(ToolStripItem)].AddRange(ContextMenuStripIDExamples.Items.GetAllChildren());
             themed[typeof(GroupBox)].AddRange(this.GetAllChildrenExactlyOfType<GroupBox>()
                                     .Where(groupBox => null == groupBox.Tag || !groupBox.Tag.ToString().Contains(UnthemedControl))
                                     .Cast<Control>());
@@ -906,38 +911,45 @@ namespace Scribe
             #endregion
 
             #region Apply Theme to Controls
-            foreach (var groupBox in ThemedControls[typeof(GroupBox)])
-            {
-                groupBox.BackColor = ControlBackgroundColor;
-                groupBox.ForeColor = ControlForegroundColor;
-            }
             foreach (var pictureBox in PictureBoxes)
             {
                 pictureBox.BackColor = UneditableBackgroundColor;
             }
-            foreach (var listBox in ThemedControls[typeof(ListBox)])
+            foreach (var toolStripItem in ThemedComponents[typeof(ToolStripItem)])
             {
-                listBox.BackColor = ControlBackgroundWhite;
-                listBox.ForeColor = ControlForegroundColor;
+                // TODO REMOVE THIS ((ToolStripMenuItem)menuItem).Text = "HELLO";
+                ((ToolStripItem)toolStripItem).BackColor = ControlBackgroundColor;
+                ((ToolStripItem)toolStripItem).ForeColor = ControlForegroundColor;
             }
-            foreach (var comboBox in ThemedControls[typeof(ComboBox)])
+
+            foreach (var groupBox in ThemedComponents[typeof(GroupBox)])
             {
-                comboBox.BackColor = ControlBackgroundWhite;
-                comboBox.ForeColor = ControlForegroundColor;
+                ((GroupBox)groupBox).BackColor = ControlBackgroundColor;
+                ((GroupBox)groupBox).ForeColor = ControlForegroundColor;
             }
-            foreach (var textBox in ThemedControls[typeof(TextBox)])
+            foreach (var listBox in ThemedComponents[typeof(ListBox)])
             {
-                textBox.BackColor = ControlBackgroundWhite;
-                textBox.ForeColor = ControlForegroundColor;
+                ((ListBox)listBox).BackColor = ControlBackgroundWhite;
+                ((ListBox)listBox).ForeColor = ControlForegroundColor;
             }
-            foreach (var label in ThemedControls[typeof(Label)])
+            foreach (var comboBox in ThemedComponents[typeof(ComboBox)])
             {
-                label.BackColor = UneditableBackgroundColor;
-                label.ForeColor = ControlForegroundColor;
+                ((ComboBox)comboBox).BackColor = ControlBackgroundWhite;
+                ((ComboBox)comboBox).ForeColor = ControlForegroundColor;
             }
-            foreach (var button in ThemedControls[typeof(Button)])
+            foreach (var textBox in ThemedComponents[typeof(TextBox)])
             {
-                button.BackColor = ControlBackgroundColor;
+                ((TextBox)textBox).BackColor = ControlBackgroundWhite;
+                ((TextBox)textBox).ForeColor = ControlForegroundColor;
+            }
+            foreach (var label in ThemedComponents[typeof(Label)])
+            {
+                ((Label)label).BackColor = UneditableBackgroundColor;
+                ((Label)label).ForeColor = ControlForegroundColor;
+            }
+            foreach (var button in ThemedComponents[typeof(Button)])
+            {
+                ((Button)button).BackColor = ControlBackgroundColor;
                 ((Button)button).FlatAppearance.BorderColor = BorderColor;
                 ((Button)button).FlatAppearance.MouseDownBackColor = MouseDownColor;
                 ((Button)button).FlatAppearance.MouseOverBackColor = MouseOverColor;

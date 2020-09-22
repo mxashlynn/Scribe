@@ -5,7 +5,7 @@ using System.Windows.Forms;
 namespace Scribe
 {
     /// <summary>
-    /// Extension methods for <see cref="Windows.Forms.Control"/>.
+    /// Extension methods for <see cref="Control"/>.
     /// </summary>
     internal static class ControlExtensions
     {
@@ -19,8 +19,7 @@ namespace Scribe
             where T : Control
             => inControl.GetAllChildren()
                         .OfType<T>()
-                        .Where(control => !control.GetType()
-                                                  .IsSubclassOf(typeof(T)));
+                        .Where(control => !control.GetType().IsSubclassOf(typeof(T)));
 
         /// <summary>
         /// Finds all child controls.
