@@ -220,23 +220,17 @@ namespace Scribe
             themed[typeof(ToolStripItem)].AddRange(ContextMenuStripPictureBoxes.Items.GetAllChildren());
             themed[typeof(ToolStripItem)].AddRange(ContextMenuStripIDExamples.Items.GetAllChildren());
             themed[typeof(GroupBox)].AddRange(this.GetAllChildrenExactlyOfType<GroupBox>()
-                                    .Where(groupBox => null == groupBox.Tag || !groupBox.Tag.ToString().Contains(UnthemedControl))
-                                    .Cast<Control>());
+                                    .Where(groupBox => null == groupBox.Tag || !groupBox.Tag.ToString().Contains(UnthemedControl)));
             themed[typeof(ListBox)].AddRange(this.GetAllChildrenExactlyOfType<ListBox>()
-                                    .Where(listbox => null == listbox.Tag || !listbox.Tag.ToString().Contains(UnthemedControl))
-                                    .Cast<Control>());
+                                    .Where(listbox => null == listbox.Tag || !listbox.Tag.ToString().Contains(UnthemedControl)));
             themed[typeof(ComboBox)].AddRange(this.GetAllChildrenExactlyOfType<ComboBox>()
-                                    .Where(combobox => null == combobox.Tag || !combobox.Tag.ToString().Contains(UnthemedControl))
-                                    .Cast<Control>());
+                                    .Where(combobox => null == combobox.Tag || !combobox.Tag.ToString().Contains(UnthemedControl)));
             themed[typeof(TextBox)].AddRange(this.GetAllChildrenExactlyOfType<TextBox>()
-                                    .Where(textbox => null == textbox.Tag || !textbox.Tag.ToString().Contains(UnthemedControl))
-                                    .Cast<Control>());
+                                    .Where(textbox => null == textbox.Tag || !textbox.Tag.ToString().Contains(UnthemedControl)));
             themed[typeof(Label)].AddRange(this.GetAllChildrenExactlyOfType<Label>()
-                                    .Where(label => null != label.Tag && label.Tag.ToString().Contains(ThemedLabel))
-                                    .Cast<Control>());
+                                    .Where(label => null != label.Tag && label.Tag.ToString().Contains(ThemedLabel)));
             themed[typeof(Button)].AddRange(this.GetAllChildrenExactlyOfType<Button>()
-                                    .Where(button => null == button.Tag || !button.Tag.ToString().Contains(UnthemedControl))
-                                    .Cast<Control>());
+                                    .Where(button => null == button.Tag || !button.Tag.ToString().Contains(UnthemedControl)));
             return themed;
         }
 
