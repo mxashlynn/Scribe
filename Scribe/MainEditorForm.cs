@@ -1154,6 +1154,24 @@ namespace Scribe
 
         #region Update Tab Display
         /// <summary>
+        /// Occurs whenever a particular tab and tab-page needs to be painted.
+        /// Paints each manually so that the tab itself has the same color as its page.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="eventArguments">Used to draw the tab and content.</param>
+        private void EditorTabs_DrawItem(object sender, DrawItemEventArgs eventArguments)
+        {
+            var tab = EditorTabs.TabPages[eventArguments.Index];
+            var textBounds = eventArguments.Bounds;
+            var textOffsetY = (eventArguments.State == DrawItemState.Selected)
+                ? -2
+                : 1;
+            eventArguments.Graphics.FillRectangle(new SolidBrush(tab.BackColor), eventArguments.Bounds);
+            textBounds.Offset(1, textOffsetY);
+            TextRenderer.DrawText(eventArguments.Graphics, tab.Text, eventArguments.Font, textBounds, tab.ForeColor);
+        }
+
+        /// <summary>
         /// Loads the image associated with the given <see cref="ModelID"/> in the given <see cref="PictureBox"/>.
         /// </summary>
         /// <param name="inPictureBox">The PictureBox to load the image into.</param>

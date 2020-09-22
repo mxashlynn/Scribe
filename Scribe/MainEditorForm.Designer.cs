@@ -1345,6 +1345,7 @@ namespace Scribe
             this.EditorTabs.Controls.Add(this.RoomRecipesTabPage);
             this.EditorTabs.Controls.Add(this.MapsTabPage);
             this.EditorTabs.Controls.Add(this.ScriptsTabPage);
+            this.EditorTabs.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.EditorTabs.ItemSize = new System.Drawing.Size(73, 18);
             this.EditorTabs.Location = new System.Drawing.Point(12, 111);
             this.EditorTabs.Name = "EditorTabs";
@@ -1352,6 +1353,7 @@ namespace Scribe
             this.EditorTabs.Size = new System.Drawing.Size(961, 625);
             this.EditorTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.EditorTabs.TabIndex = 1;
+            this.EditorTabs.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.EditorTabs_DrawItem);
             // 
             // GamesTabPage
             // 
