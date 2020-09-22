@@ -92,6 +92,24 @@ namespace Scribe
         private readonly Dictionary<Type, Dictionary<Control, object>> EditableControls;
         #endregion
 
+        #region Theme Colors
+        Color ControlBackgroundWhite = SystemColors.Window;
+        Color ControlBackgroundColor = SystemColors.Control;
+        Color UneditableBackgroundColor = SystemColors.ControlLight;
+        Color HighlightColor = SystemColors.Highlight;
+        Color ControlForegroundColor = SystemColors.ControlText;
+        Color BorderColor = Color.Empty;
+        Color MouseDownColor = Color.Empty;
+        Color MouseOverColor = Color.Empty;
+        Color GamesTabColor = SystemColors.Control;
+        Color ParquetsTabColor = SystemColors.Control;
+        Color BeingsTabColor = SystemColors.Control;
+        Color ItemsTabColor = SystemColors.Control;
+        Color RecipesTabColor = SystemColors.Control;
+        Color MapsTabColor = SystemColors.Control;
+        Color ScriptsTabColor = SystemColors.Control;
+        #endregion
+
         #region Autosave and Save Tracking
         /// <summary>
         /// The moment at which the game content was most recently saved.
@@ -166,6 +184,13 @@ namespace Scribe
 
             PictureBoxes = EditorTabs.GetAllChildrenExactlyOfType<PictureBox>().ToList();
             ThemedComponents = GetThemedComponents();
+            foreach (var component in ThemedComponents[typeof(ToolStripItem)])
+            {
+                if (component is ToolStripSeparator separator)
+                {
+                    separator.Paint += ToolStripSeparator_Paint;
+                }
+            }
             EditableControls = GetEditableControls();
             foreach (var kvp in EditableControls)
             {
@@ -818,24 +843,6 @@ namespace Scribe
         /// </summary>
         private void UpdateEditorTheme()
         {
-            #region Variable Definitions
-            Color ControlBackgroundWhite;
-            Color ControlBackgroundColor;
-            Color UneditableBackgroundColor;
-            Color HighlightColor;
-            Color ControlForegroundColor;
-            Color BorderColor;
-            Color MouseDownColor;
-            Color MouseOverColor;
-            Color GamesTabColor;
-            Color ParquetsTabColor;
-            Color BeingsTabColor;
-            Color ItemsTabColor;
-            Color RecipesTabColor;
-            Color MapsTabColor;
-            Color ScriptsTabColor;
-            #endregion
-
             #region Set Up Theme
             switch (Settings.Default.CurrentEditorTheme)
             {
@@ -977,6 +984,21 @@ namespace Scribe
             MapsTabPage.BackColor = MapsTabColor;
             ScriptsTabPage.BackColor = ScriptsTabColor;
             #endregion
+        }
+
+        /// <summary>
+        /// Occurs whenever a <see cref="ToolStripSeparator"/> needs to be painted.
+        /// Paints each manually so that the separator has the same color as its menu.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="eventArguments">Used to draw the separator.</param>
+        private void ToolStripSeparator_Paint(object sender, PaintEventArgs eventArguments)
+        {
+            var separator = (ToolStripSeparator)sender;
+            var backgroundBrush = new SolidBrush(ControlBackgroundColor);
+            var foregroundPen = new Pen(ControlForegroundColor);
+            eventArguments.Graphics.FillRectangle(backgroundBrush, 0, 0, separator.Width, separator.Height);
+            eventArguments.Graphics.DrawLine(foregroundPen, 30, separator.Height / 2, separator.Width - 4, separator.Height / 2);
         }
 
         /// <summary>
