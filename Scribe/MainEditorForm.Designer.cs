@@ -327,7 +327,7 @@ namespace Scribe
             this.CharacterStartingInventoryLabel = new System.Windows.Forms.Label();
             this.CharacterPronounComboBox = new System.Windows.Forms.ComboBox();
             this.CharacterStartingDialogueComboBox = new System.Windows.Forms.ComboBox();
-            this.CharacterStartingInventoryComboBox = new System.Windows.Forms.ComboBox();
+            this.CharacterStartingInventoryExample = new System.Windows.Forms.Label();
             this.CharacterRemoveCharacterButton = new System.Windows.Forms.Button();
             this.CharacterIDExample = new System.Windows.Forms.Label();
             this.CharacterAddNewCharacterButton = new System.Windows.Forms.Button();
@@ -3704,7 +3704,7 @@ namespace Scribe
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterStartingInventoryLabel, 0, 12);
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterPronounComboBox, 1, 7);
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterStartingDialogueComboBox, 1, 11);
-            this.CharacterTableLayoutPanel.Controls.Add(this.CharacterStartingInventoryComboBox, 1, 12);
+            this.CharacterTableLayoutPanel.Controls.Add(this.CharacterStartingInventoryExample, 1, 12);
             this.CharacterTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
             this.CharacterTableLayoutPanel.Name = "CharacterTableLayoutPanel";
             this.CharacterTableLayoutPanel.RowCount = 13;
@@ -3977,13 +3977,17 @@ namespace Scribe
             this.CharacterStartingDialogueComboBox.Size = new System.Drawing.Size(144, 21);
             this.CharacterStartingDialogueComboBox.TabIndex = 42;
             // 
-            // CharacterStartingInventoryComboBox
+            // CharacterStartingInventoryExample
             // 
-            this.CharacterStartingInventoryComboBox.FormattingEnabled = true;
-            this.CharacterStartingInventoryComboBox.Location = new System.Drawing.Point(131, 419);
-            this.CharacterStartingInventoryComboBox.Name = "CharacterStartingInventoryComboBox";
-            this.CharacterStartingInventoryComboBox.Size = new System.Drawing.Size(144, 21);
-            this.CharacterStartingInventoryComboBox.TabIndex = 43;
+            this.CharacterStartingInventoryExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CharacterStartingInventoryExample.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CharacterStartingInventoryExample.Location = new System.Drawing.Point(131, 421);
+            this.CharacterStartingInventoryExample.Name = "CharacterStartingInventoryExample";
+            this.CharacterStartingInventoryExample.Size = new System.Drawing.Size(144, 20);
+            this.CharacterStartingInventoryExample.TabIndex = 43;
+            this.CharacterStartingInventoryExample.Tag = "Themed";
+            this.CharacterStartingInventoryExample.Text = "0 Items";
+            this.CharacterStartingInventoryExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CharacterRemoveCharacterButton
             // 
@@ -6542,7 +6546,7 @@ namespace Scribe
         private System.Windows.Forms.Label CharacterStartingInventoryLabel;
         private System.Windows.Forms.ComboBox CharacterPronounComboBox;
         private System.Windows.Forms.ComboBox CharacterStartingDialogueComboBox;
-        private System.Windows.Forms.ComboBox CharacterStartingInventoryComboBox;
+        private System.Windows.Forms.Label CharacterStartingInventoryExample;
         private System.Windows.Forms.ListBox CharacterStartingQuestsListBox;
         private System.Windows.Forms.Button CharacterAddQuestButton;
         private System.Windows.Forms.Button CharacterRemoveQuestButton;

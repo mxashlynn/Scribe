@@ -628,7 +628,7 @@ namespace Scribe
                     => (input) => (inModel as ICharacterModelEdit).Pronouns = input.ToString(),
                 (CharactersTabIndex, "CharacterStartingDialogueComboBox")
                     => (input) => (inModel as ICharacterModelEdit).StartingDialogueID = ValueToID(input),
-                (CharactersTabIndex, "CharacterStartingInventoryComboBox")
+                (CharactersTabIndex, "CharacterStartingInventoryExample")
                     => (input) =>
                     {
                         var editModel = inModel as CharacterModel;
@@ -1112,7 +1112,7 @@ namespace Scribe
             RepopulateComboBox(CharacterPrimaryBehaviorComboBox, All.Scripts);
             RepopulateComboBox(CharacterPronounComboBox, All.PronounGroups);
             RepopulateComboBox(CharacterStartingDialogueComboBox, All.Scripts);
-            // TODO HERE NEXT RepopulateComboBox(CharacterStartingInventoryComboBox, All.);
+            // TODO HERE NEXT RepopulateComboBox(CharacterStartingInventoryExample, All.);
             RepopulateComboBox(CritterNativeBiomeComboBox, All.Biomes);
             RepopulateComboBox(CritterPrimaryBehaviorComboBox, All.Scripts);
             RepopulateComboBox(ItemSubtypeComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(ItemType))));
@@ -1450,7 +1450,7 @@ namespace Scribe
                 CharacterStoryIDTextBox.Text = "";
                 CharacterStartingQuestsListBox.Items.Clear();
                 CharacterStartingDialogueComboBox.SelectedItem = null;
-                CharacterStartingInventoryComboBox.SelectedItem = null;
+                CharacterStartingInventoryExample.SelectedItem = null;
                 CharacterPictureBox.Image = Resources.ImageNotFoundGraphic;
             }
             else if (CharacterListBox.SelectedItem is CharacterModel model
@@ -1471,7 +1471,7 @@ namespace Scribe
                 CharacterStartingDialogueComboBox.SelectedItem = ModelID.None == model.StartingDialogueID
                     ? null
                     : All.Scripts.Get<ScriptModel>(model.StartingDialogueID);
-                CharacterStartingInventoryComboBox.SelectedItem = model.StartingInventory;
+                CharacterStartingInventoryExample.SelectedItem = model.StartingInventory;
                 PictureBoxLoadFromStorage(CharacterPictureBox, model.ID);
             }
         }
