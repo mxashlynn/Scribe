@@ -1103,7 +1103,7 @@ namespace Scribe
             RepopulateComboBox(CharacterPrimaryBehaviorComboBox, All.Scripts);
             RepopulateComboBox(CharacterPronounComboBox, All.PronounGroups);
             RepopulateComboBox(CharacterStartingDialogueComboBox, All.Scripts);
-            RepopulateComboBox(CharacterStartingInventoryComboBox, All.Scripts);
+            // TODO HERE NEXT RepopulateComboBox(CharacterStartingInventoryComboBox, All.);
             RepopulateComboBox(CritterNativeBiomeComboBox, All.Biomes);
             RepopulateComboBox(CritterPrimaryBehaviorComboBox, All.Scripts);
             RepopulateComboBox(ItemSubtypeComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(ItemType))));
