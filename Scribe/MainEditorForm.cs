@@ -1112,7 +1112,6 @@ namespace Scribe
             RepopulateComboBox(CharacterPrimaryBehaviorComboBox, All.Scripts);
             RepopulateComboBox(CharacterPronounComboBox, All.PronounGroups);
             RepopulateComboBox(CharacterStartingDialogueComboBox, All.Scripts);
-            // TODO HERE NEXT RepopulateComboBox(CharacterStartingInventoryExample, All.);
             RepopulateComboBox(CritterNativeBiomeComboBox, All.Biomes);
             RepopulateComboBox(CritterPrimaryBehaviorComboBox, All.Scripts);
             RepopulateComboBox(ItemSubtypeComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(ItemType))));
@@ -1450,7 +1449,7 @@ namespace Scribe
                 CharacterStoryIDTextBox.Text = "";
                 CharacterStartingQuestsListBox.Items.Clear();
                 CharacterStartingDialogueComboBox.SelectedItem = null;
-                CharacterStartingInventoryExample.SelectedItem = null;
+                CharacterStartingInventoryExample.Text = "0 Items";
                 CharacterPictureBox.Image = Resources.ImageNotFoundGraphic;
             }
             else if (CharacterListBox.SelectedItem is CharacterModel model
@@ -1471,7 +1470,7 @@ namespace Scribe
                 CharacterStartingDialogueComboBox.SelectedItem = ModelID.None == model.StartingDialogueID
                     ? null
                     : All.Scripts.Get<ScriptModel>(model.StartingDialogueID);
-                CharacterStartingInventoryExample.SelectedItem = model.StartingInventory;
+                CharacterStartingInventoryExample.Text = $"{model.StartingInventory?.Count ?? 0} Items";
                 PictureBoxLoadFromStorage(CharacterPictureBox, model.ID);
             }
         }

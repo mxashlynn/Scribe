@@ -3770,6 +3770,7 @@ namespace Scribe
             // CharacterOpenInventoryEditorButton
             // 
             this.CharacterOpenInventoryEditorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CharacterOpenInventoryEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CharacterOpenInventoryEditorButton.Location = new System.Drawing.Point(297, 419);
             this.CharacterOpenInventoryEditorButton.Name = "CharacterOpenInventoryEditorButton";
             this.CharacterOpenInventoryEditorButton.Size = new System.Drawing.Size(129, 23);
@@ -4448,7 +4449,6 @@ namespace Scribe
             // ItemOpenInvetoryEditorButton
             // 
             this.ItemOpenInvetoryEditorButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ItemOpenInvetoryEditorButton.Enabled = false;
             this.ItemOpenInvetoryEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ItemOpenInvetoryEditorButton.Location = new System.Drawing.Point(285, 74);
             this.ItemOpenInvetoryEditorButton.Name = "ItemOpenInvetoryEditorButton";
