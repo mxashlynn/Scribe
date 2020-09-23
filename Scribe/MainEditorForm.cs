@@ -1455,7 +1455,9 @@ namespace Scribe
                     : model.StoryCharacterID;
                 RepopulateListBox(CharacterStartingQuestsListBox, model.StartingQuestIDs
                                                                        .Select(id => All.Interactions.Get<InteractionModel>(id)));
-                CharacterStartingDialogueComboBox.SelectedItem = model.StartingDialogueID;
+                CharacterStartingDialogueComboBox.SelectedItem = ModelID.None == model.StartingDialogueID
+                    ? null
+                    : All.Scripts.Get<ScriptModel>(model.StartingDialogueID);
                 CharacterStartingInventoryComboBox.SelectedItem = model.StartingInventory;
                 PictureBoxLoadFromStorage(CharacterPictureBox, model.ID);
             }
