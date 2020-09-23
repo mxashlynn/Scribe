@@ -191,6 +191,10 @@ namespace Scribe
                     separator.Paint += ToolStripSeparator_Paint;
                 }
             }
+            typeof(Control).GetMethod("SetStyle", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
+                           .Invoke(ToolStripProgressBar.ProgressBar,
+                                   new object[] { ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer, true });
+            ToolStripProgressBar.ProgressBar.Paint += ProgressBar_Paint;
             EditableControls = GetEditableControls();
             foreach (var kvp in EditableControls)
             {
@@ -918,11 +922,9 @@ namespace Scribe
             }
             foreach (var toolStripItem in ThemedComponents[typeof(ToolStripItem)])
             {
-                // TODO REMOVE THIS ((ToolStripMenuItem)menuItem).Text = "HELLO";
                 ((ToolStripItem)toolStripItem).BackColor = ControlBackgroundColor;
                 ((ToolStripItem)toolStripItem).ForeColor = ControlForegroundColor;
             }
-
             foreach (var groupBox in ThemedComponents[typeof(GroupBox)])
             {
                 ((GroupBox)groupBox).BackColor = ControlBackgroundColor;
@@ -999,6 +1001,26 @@ namespace Scribe
             var foregroundPen = new Pen(ControlForegroundColor);
             eventArguments.Graphics.FillRectangle(backgroundBrush, 0, 0, separator.Width, separator.Height);
             eventArguments.Graphics.DrawLine(foregroundPen, 30, separator.Height / 2, separator.Width - 4, separator.Height / 2);
+        }
+
+        /// <summary>
+        /// Occurs whenever a <see cref="ProgressBar"/> needs to be painted.
+        /// Paints each manually so that the bar has the correct colors.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="eventArguments">Used to draw the bar.</param>
+        private void ProgressBar_Paint(object sender, PaintEventArgs eventArguments)
+        {
+            var highlightBrush = new SolidBrush(HighlightColor);
+            var uneditableBackgroundBrush = new SolidBrush(UneditableBackgroundColor);
+
+            var bar = (ProgressBar)sender;
+            var percent = (float)bar.Value / bar.Maximum;
+            var widthOfFilledPortion = percent * bar.Width;
+            var filledRectangle = new RectangleF(2.0f, 2.0f, widthOfFilledPortion, bar.Height - 4);
+            eventArguments.Graphics.FillRectangle(uneditableBackgroundBrush, 0, 0, bar.Width, bar.Height);
+            eventArguments.Graphics.FillRectangle(highlightBrush, filledRectangle);
+            ControlPaint.DrawBorder3D(eventArguments.Graphics, bar.ClientRectangle, Border3DStyle.SunkenOuter);
         }
 
         /// <summary>
