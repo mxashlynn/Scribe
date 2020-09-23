@@ -93,21 +93,21 @@ namespace Scribe
         #endregion
 
         #region Theme Colors
-        Color ControlBackgroundWhite = SystemColors.Window;
-        Color ControlBackgroundColor = SystemColors.Control;
-        Color UneditableBackgroundColor = SystemColors.ControlLight;
-        Color HighlightColor = SystemColors.Highlight;
-        Color ControlForegroundColor = SystemColors.ControlText;
-        Color BorderColor = Color.Empty;
-        Color MouseDownColor = Color.Empty;
-        Color MouseOverColor = Color.Empty;
-        Color GamesTabColor = SystemColors.Control;
-        Color ParquetsTabColor = SystemColors.Control;
-        Color BeingsTabColor = SystemColors.Control;
-        Color ItemsTabColor = SystemColors.Control;
-        Color RecipesTabColor = SystemColors.Control;
-        Color MapsTabColor = SystemColors.Control;
-        Color ScriptsTabColor = SystemColors.Control;
+        private Color ControlBackgroundWhite = SystemColors.Window;
+        private Color ControlBackgroundColor = SystemColors.Control;
+        private Color UneditableBackgroundColor = SystemColors.ControlLight;
+        private Color HighlightColor = SystemColors.Highlight;
+        private Color ControlForegroundColor = SystemColors.ControlText;
+        private Color BorderColor = Color.Empty;
+        private Color MouseDownColor = Color.Empty;
+        private Color MouseOverColor = Color.Empty;
+        private Color GamesTabColor = SystemColors.Control;
+        private Color ParquetsTabColor = SystemColors.Control;
+        private Color BeingsTabColor = SystemColors.Control;
+        private Color ItemsTabColor = SystemColors.Control;
+        private Color RecipesTabColor = SystemColors.Control;
+        private Color MapsTabColor = SystemColors.Control;
+        private Color ScriptsTabColor = SystemColors.Control;
         #endregion
 
         #region Autosave and Save Tracking
@@ -406,31 +406,6 @@ namespace Scribe
                 MapsTabIndex => null,
                 ScriptsTabIndex => null,
                 _ => null,
-            };
-
-        /// <summary>
-        /// Given the index of an editor tab, return the default <see cref="ModelID"/> for the content it edits.
-        /// </summary>
-        /// <param name="inTabIndex">The index of the tab sought.</param>
-        /// <returns>The corresponding ID, or <see cref="ModelID.None"/> on out of range input.</returns>
-        // TODO If this is still not being used at 1.0, remove it.
-        private ModelID GetDefaultIDForTab(int inTabIndex)
-            => inTabIndex switch
-            {
-                GamesTabIndex => All.GameIDs.Minimum,
-                BlocksTabIndex => All.BlockIDs.Minimum,
-                FloorsTabIndex => All.FloorIDs.Minimum,
-                FurnishingsTabIndex => All.FurnishingIDs.Minimum,
-                CollectiblesTabIndex => All.CollectibleIDs.Minimum,
-                CharactersTabIndex => All.CharacterIDs.Minimum,
-                CrittersTabIndex => All.CritterIDs.Minimum,
-                ItemsTabIndex => All.ItemIDs.Minimum,
-                BiomeRecipesTabIndex => All.BiomeIDs.Minimum,
-                CraftingRecipesTabIndex => All.CraftingRecipeIDs.Minimum,
-                RoomRecipesTabIndex => All.RoomRecipeIDs.Minimum,
-                MapsTabIndex => All.MapRegionIDs.Minimum,
-                ScriptsTabIndex => All.ScriptIDs.Minimum,
-                _ => ModelID.None,
             };
 
         /// <summary>
@@ -1013,7 +988,6 @@ namespace Scribe
         {
             var highlightBrush = new SolidBrush(HighlightColor);
             var uneditableBackgroundBrush = new SolidBrush(UneditableBackgroundColor);
-
             var bar = (ProgressBar)sender;
             var percent = (float)bar.Value / bar.Maximum;
             var widthOfFilledPortion = percent * bar.Width;
@@ -2790,9 +2764,6 @@ namespace Scribe
                 {
                     Resources.ImageNotFoundGraphic.Save(imagePathAndFilename, ImageFormat.Png);
                 }
-
-                // TODO I am not sure how to handle this -- do we need to dispose of the Process returned here if
-                // the image editor launched may outlive Scribe?
                 _ = Settings.Default.EditInApp
                     ? Process.Start(Settings.Default.ImageEditor, $"\"{imagePathAndFilename}\"")
                     : Process.Start("explorer", $"\"{imagePathAndFilename}\"");
