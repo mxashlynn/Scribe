@@ -580,6 +580,7 @@ namespace Scribe
             this.ToolStripProgressBar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.ToolStripProgressBar.Name = "ToolStripProgressBar";
             this.ToolStripProgressBar.Size = new System.Drawing.Size(100, 16);
+            this.ToolStripProgressBar.Step = 5;
             this.ToolStripProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
             // EditorStatusStrip

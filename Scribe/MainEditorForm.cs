@@ -818,6 +818,15 @@ namespace Scribe
         }
 
         /// <summary>
+        /// Occurs whenever a <see cref="ToolStripSeparator"/> needs to be painted.
+        /// Paints each manually so that the separator has the same color as its menu.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="eventArguments">Used to draw the separator.</param>
+        private void MainToolStripStatusLabel_TextChanged(object sender, EventArgs eventArguments)
+            => EditorStatusStrip.Update();
+
+        /// <summary>
         /// Applies the current <see cref="EditorTheme"/> to <see cref="MainEditorForm"/> and its <see cref="Control"/>s.
         /// </summary>
         private void UpdateEditorTheme()
@@ -1112,6 +1121,10 @@ namespace Scribe
             RepopulateComboBox(ItemEquivalentParquetComboBox, All.Parquets);
             // TODO Scripts
             #endregion
+
+            // TODO Remove this and set up real progress bar animation (e.g. file i/o).
+            ToolStripProgressBar.Value = 35;
+            EditorStatusStrip.Update();
         }
 
         /// <summary>
@@ -1729,8 +1742,8 @@ namespace Scribe
                 : inIDRange.Minimum;
             if (nextID > inIDRange.Maximum)
             {
-                SystemSounds.Beep.Play();
                 MainToolStripStatusLabel.Text = Resources.ErrorMaximumIDReached;
+                SystemSounds.Beep.Play();
                 return;
             }
 
