@@ -342,5 +342,14 @@ namespace Scribe.Properties {
                 return ResourceManager.GetString("WarningMessageReload", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not adding duplicate {0}..
+        /// </summary>
+        internal static string WarningNotAddingDuplicate {
+            get {
+                return ResourceManager.GetString("WarningNotAddingDuplicate", resourceCulture);
+            }
+        }
     }
 }

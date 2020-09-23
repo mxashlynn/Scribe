@@ -240,4 +240,8 @@ Folder: {1}</value>
     <value>Abandon unsaved changes and reload data?</value>
     <comment>Warning string.</comment>
   </data>
+  <data name="WarningNotAddingDuplicate" xml:space="preserve">
+    <value>Not adding duplicate {0}.</value>
+    <comment>Warning string.</comment>
+  </data>
 </root>

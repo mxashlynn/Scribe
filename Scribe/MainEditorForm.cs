@@ -1728,8 +1728,7 @@ namespace Scribe
             if (nextID > inIDRange.Maximum)
             {
                 SystemSounds.Beep.Play();
-                _ = MessageBox.Show(Resources.ErrorMaximumIDReached, Resources.CaptionError,
-                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MainToolStripStatusLabel.Text = Resources.ErrorMaximumIDReached;
                 return;
             }
 
@@ -1812,9 +1811,8 @@ namespace Scribe
             {
                 if (inGetTagListFromModel(model).Any(tag => ((string)AddTagDialogue.ReturnNewTag).Equals(tag)))
                 {
-                    // Do not add duplicate tags.
-                    // TODO Report this error in the status bar or something.
-                    MessageBox.Show("Not adding duplicate tag.");
+                    MainToolStripStatusLabel.Text = string.Format(CultureInfo.CurrentCulture, Resources.WarningNotAddingDuplicate,
+                                                                  nameof(ModelTag));
                     SystemSounds.Beep.Play();
                     return;
                 }
@@ -1895,9 +1893,8 @@ namespace Scribe
             {
                 if (inGetElementListFromRecipe(recipe).Any(element => AddRecipeElementDialogue.ReturnNewRecipeElement == element))
                 {
-                    // Do not add duplicate elements.
-                    // TODO Report this error in the status bar or something.
-                    MessageBox.Show("Not adding duplicate recipe element.");
+                    MainToolStripStatusLabel.Text = string.Format(CultureInfo.CurrentCulture, Resources.WarningNotAddingDuplicate,
+                                                                  nameof(RecipeElement));
                     SystemSounds.Beep.Play();
                     return;
                 }
