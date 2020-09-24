@@ -3736,6 +3736,7 @@ namespace Scribe
             this.CharacterAddQuestButton.TabIndex = 29;
             this.CharacterAddQuestButton.Text = "Add Quest";
             this.CharacterAddQuestButton.UseVisualStyleBackColor = false;
+            this.CharacterAddQuestButton.Click += new System.EventHandler(this.CharacterAddQuestButton_Click);
             // 
             // CharacterRemoveQuestButton
             // 
@@ -3748,6 +3749,7 @@ namespace Scribe
             this.CharacterRemoveQuestButton.TabIndex = 29;
             this.CharacterRemoveQuestButton.Text = "Remove Quest";
             this.CharacterRemoveQuestButton.UseVisualStyleBackColor = false;
+            this.CharacterRemoveQuestButton.Click += new System.EventHandler(this.CharacterRemoveQuestButton_Click);
             // 
             // CharacterStartingQuestsListBox
             // 
@@ -3777,6 +3779,7 @@ namespace Scribe
             this.CharacterOpenInventoryEditorButton.TabIndex = 3;
             this.CharacterOpenInventoryEditorButton.Text = "Open Inventory Editor";
             this.CharacterOpenInventoryEditorButton.UseVisualStyleBackColor = false;
+            this.CharacterOpenInventoryEditorButton.Click += new System.EventHandler(this.CharacterOpenInventoryEditorButton_Click);
             // 
             // CharacterPrimaryBehaviorComboBox
             // 
@@ -4000,6 +4003,7 @@ namespace Scribe
             this.CharacterRemoveCharacterButton.TabIndex = 2;
             this.CharacterRemoveCharacterButton.Text = "Remove Character";
             this.CharacterRemoveCharacterButton.UseVisualStyleBackColor = false;
+            this.CharacterRemoveCharacterButton.Click += new System.EventHandler(this.CharacterRemoveCharacterButton_Click);
             // 
             // CharacterIDExample
             // 
@@ -4023,6 +4027,7 @@ namespace Scribe
             this.CharacterAddNewCharacterButton.TabIndex = 2;
             this.CharacterAddNewCharacterButton.Text = "Add New Character";
             this.CharacterAddNewCharacterButton.UseVisualStyleBackColor = false;
+            this.CharacterAddNewCharacterButton.Click += new System.EventHandler(this.CharacterAddNewCharacterButton_Click);
             // 
             // CharacterListBox
             // 

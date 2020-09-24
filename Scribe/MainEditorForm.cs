@@ -1715,7 +1715,7 @@ namespace Scribe
             }
         }
 
-        #region Add/Remove Models
+        #region Model Collection Adjustments
         /// <summary>
         /// Adds a new <see cref="Model"/> of the appropriate subtype to the given <see cref="ModelCollection"/> and <see cref="ListBox"/>.
         /// </summary>
@@ -1971,6 +1971,86 @@ namespace Scribe
         }
         #endregion
 
+        #region Quest Adjustments
+        /// <summary>
+        /// Adds a new <see cref="ModelID"/> to the selected <see cref="CharacterModel"/>, updating the given <see cref="ListBox"/>.
+        /// </summary>
+        /// <param name="inAddsToListBox">The UI element reflectling the collection being changed.</param>
+        /// <param name="inGetQuestListFromModel">The means, given a model, to find the correct ID collection.</param>
+        private void AddQuest(ListBox inAddsToListBox, Func<ICharacterModelEdit, IList<ModelID>> inGetQuestListFromModel)
+        {
+            if (!All.CollectionsHaveBeenInitialized)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is ICharacterModelEdit character
+                && AddQuestDialogue.ShowDialog() == DialogResult.OK)
+            {
+                if (inGetQuestListFromModel(character).Contains(AddQuestDialogue.ReturnNewQuest))
+                {
+                    MainToolStripStatusLabel.Text = string.Format(CultureInfo.CurrentCulture, Resources.WarningNotAddingDuplicate,
+                                                                  nameof(InteractionModel));
+                    SystemSounds.Beep.Play();
+                    return;
+                }
+
+                ChangeManager.AddAndExecute(new ChangeList(AddQuestDialogue.ReturnNewQuest,
+                                            $"add tag {AddQuestDialogue.ReturnNewQuest} to {character.Name}",
+                                            (object databaseValue) =>
+                                            {
+                                                inGetQuestListFromModel(character).Add((ModelID)databaseValue);
+                                                _ = inAddsToListBox.Items.Add(databaseValue);
+                                                inAddsToListBox.SelectedItem = databaseValue;
+                                                HasUnsavedChanges = true;
+                                            },
+                                            (object databaseValue) =>
+                                            {
+                                                inGetQuestListFromModel(character).Remove((ModelID)databaseValue);
+                                                inAddsToListBox.Items.Remove(databaseValue);
+                                                inAddsToListBox.SelectedItem = null;
+                                                HasUnsavedChanges = true;
+                                            }));
+            }
+        }
+
+        /// <summary>
+        /// Removes the selected <see cref="ModelID"/> from the selected <see cref="CharacterModel"/>,
+        /// updating the given <see cref="ListBox"/>.
+        /// </summary>
+        /// <param name="inAddsToListBox">The UI element reflectling the collection being changed.</param>
+        /// <param name="inGetTagListFromModel">The means, given a Model, to find the correct ID collection.</param>
+        private void RemoveQuest(ListBox inAddsToListBox, Func<ICharacterModelEdit, IList<ModelID>> inGetTagListFromModel)
+        {
+            if (!All.CollectionsHaveBeenInitialized || null == inAddsToListBox.SelectedItem)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is ICharacterModelEdit character)
+            {
+                ChangeManager.AddAndExecute(new ChangeList((ModelTag)inAddsToListBox.SelectedItem,
+                                            $"remove tag {inAddsToListBox.SelectedItem} from {character.Name}",
+                                            (object databaseValue) =>
+                                            {
+                                                inGetTagListFromModel(character).Remove((ModelID)databaseValue);
+                                                inAddsToListBox.Items.Remove(databaseValue);
+                                                inAddsToListBox.SelectedItem = null;
+                                                HasUnsavedChanges = true;
+                                            },
+                                            (object databaseValue) =>
+                                            {
+                                                inGetTagListFromModel(character).Add((ModelID)databaseValue);
+                                                _ = inAddsToListBox.Items.Add(databaseValue);
+                                                inAddsToListBox.SelectedItem = databaseValue;
+                                                HasUnsavedChanges = true;
+                                            }));
+            }
+        }
+        #endregion
+
         #region Games Tab
         /// <summary>
         /// Responds to the user clicking "Add New Game" on the Games tab.
@@ -2192,7 +2272,48 @@ namespace Scribe
         #endregion
 
         #region Characters Tab
-        // TODO Finish Characters Tab
+        /// <summary>
+        /// Responds to the user clicking "Add New Character" on the Characters tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void CharacterAddNewCharacterButton_Click(object sender, EventArgs e)
+            => AddNewModel(All.Characters, (ModelID id) => new CharacterModel(id, "New Character", "", ""), All.CharacterIDs, CharacterListBox, "Character");
+
+        /// <summary>
+        /// Responds to the user clicking "Remove Character" on the Characters tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void CharacterRemoveCharacterButton_Click(object sender, EventArgs e)
+            => RemoveModel(All.Characters, CharacterListBox, "Character");
+
+        /// <summary>
+        /// Registeres the user command to add a new quest to the current character.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void CharacterAddQuestButton_Click(object sender, EventArgs e)
+            => AddQuest(CharacterStartingQuestsListBox, (ICharacterModelEdit model) => model.StartingQuestIDs);
+
+        /// <summary>
+        /// Registeres the user command to remove the selected quest from the current character.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void CharacterRemoveQuestButton_Click(object sender, EventArgs e)
+            => RemoveQuest(CollectibleAddsToBiomeListBox, (ICharacterModelEdit model) => model.StartingQuestIDs);
+
+        /// <summary>
+        /// Invokes the <see cref="InventoryEditorForm"/> for the currently selected <see cref="CharacterModel"/>.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void CharacterOpenInventoryEditorButton_Click(object sender, EventArgs e)
+        {
+            InventoryEditorWindow.CurrentModel = (ICharacterModelEdit)GetSelectedModelForTab(EditorTabs.SelectedIndex);
+            _ = InventoryEditorWindow.ShowDialog();
+        }
 
         /// <summary>
         /// Provides a suggested <see cref="CharacterModel.StoryCharacterID"/> if needed.
