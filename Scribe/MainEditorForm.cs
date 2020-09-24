@@ -92,24 +92,6 @@ namespace Scribe
         private readonly Dictionary<Type, Dictionary<Control, object>> EditableControls;
         #endregion
 
-        #region Theme Colors
-        private Color ControlBackgroundWhite = SystemColors.Window;
-        private Color ControlBackgroundColor = SystemColors.Control;
-        private Color UneditableBackgroundColor = SystemColors.ControlLight;
-        private Color HighlightColor = SystemColors.Highlight;
-        private Color ControlForegroundColor = SystemColors.ControlText;
-        private Color BorderColor = Color.Empty;
-        private Color MouseDownColor = Color.Empty;
-        private Color MouseOverColor = Color.Empty;
-        private Color GamesTabColor = SystemColors.Control;
-        private Color ParquetsTabColor = SystemColors.Control;
-        private Color BeingsTabColor = SystemColors.Control;
-        private Color ItemsTabColor = SystemColors.Control;
-        private Color RecipesTabColor = SystemColors.Control;
-        private Color MapsTabColor = SystemColors.Control;
-        private Color ScriptsTabColor = SystemColors.Control;
-        #endregion
-
         #region Autosave and Save Tracking
         /// <summary>
         /// The moment at which the game content was most recently saved.
@@ -803,7 +785,7 @@ namespace Scribe
 
             if (oldTheme != Settings.Default.CurrentEditorTheme)
             {
-                UpdateEditorTheme();
+                ApplyCurrentTheme();
             }
 
             // If possible, select default model in current tab.
@@ -827,126 +809,68 @@ namespace Scribe
             => EditorStatusStrip.Update();
 
         /// <summary>
-        /// Applies the current <see cref="EditorTheme"/> to <see cref="MainEditorForm"/> and its <see cref="Control"/>s.
+        /// Applies the <see cref="CurrentTheme"/> to the <see cref="MainEditorForm"/> and its <see cref="Control"/>s.
         /// </summary>
-        private void UpdateEditorTheme()
+        private void ApplyCurrentTheme()
         {
-            #region Set Up Theme
-            switch (Settings.Default.CurrentEditorTheme)
-            {
-                case nameof(EditorTheme.Femme):
-                    ControlBackgroundWhite = Color.Snow;
-                    ControlBackgroundColor = Color.MistyRose;
-                    UneditableBackgroundColor = Color.Pink;
-                    HighlightColor = Color.HotPink;
-                    ControlForegroundColor = Color.Indigo;
-                    BorderColor = Color.PaleVioletRed;
-                    MouseDownColor = Color.PaleVioletRed;
-                    MouseOverColor = Color.LightPink;
-                    GamesTabColor = Color.MistyRose;
-                    ParquetsTabColor = Color.MistyRose;
-                    BeingsTabColor = Color.MistyRose;
-                    ItemsTabColor = Color.MistyRose;
-                    RecipesTabColor = Color.MistyRose;
-                    MapsTabColor = Color.MistyRose;
-                    ScriptsTabColor = Color.MistyRose;
-                    break;
-                case nameof(EditorTheme.Colorful):
-                    ControlBackgroundWhite = Color.FloralWhite;
-                    ControlBackgroundColor = Color.AntiqueWhite;
-                    UneditableBackgroundColor = Color.Linen;
-                    HighlightColor = Color.MediumOrchid;
-                    ControlForegroundColor = Color.FromArgb(51, 0, 0);
-                    BorderColor = Color.RosyBrown;
-                    MouseDownColor = Color.RosyBrown;
-                    MouseOverColor = Color.Wheat;
-                    GamesTabColor = Color.NavajoWhite;
-                    ParquetsTabColor = Color.BurlyWood;
-                    BeingsTabColor = Color.LightPink;
-                    ItemsTabColor = Color.PaleGoldenrod;
-                    RecipesTabColor = Color.Plum;
-                    MapsTabColor = Color.DarkSalmon;
-                    ScriptsTabColor = Color.LightSteelBlue;
-                    break;
-                // EditorTheme.OSDefault:
-                default:
-                    ControlBackgroundWhite = SystemColors.Window;
-                    ControlBackgroundColor = SystemColors.Control;
-                    UneditableBackgroundColor = SystemColors.ControlLight;
-                    HighlightColor = SystemColors.Highlight;
-                    ControlForegroundColor = SystemColors.ControlText;
-                    BorderColor = Color.Empty;
-                    MouseDownColor = Color.Empty;
-                    MouseOverColor = Color.Empty;
-                    GamesTabColor = SystemColors.Control;
-                    ParquetsTabColor = SystemColors.Control;
-                    BeingsTabColor = SystemColors.Control;
-                    ItemsTabColor = SystemColors.Control;
-                    RecipesTabColor = SystemColors.Control;
-                    MapsTabColor = SystemColors.Control;
-                    ScriptsTabColor = SystemColors.Control;
-                    break;
-            }
-            #endregion
-
             #region Apply Theme to Primary Form
-            BackColor = ControlBackgroundColor;
-            ForeColor = ControlForegroundColor;
-            ToolStripProgressBar.BackColor = UneditableBackgroundColor;
-            ToolStripProgressBar.ForeColor = HighlightColor;
-            EditorStatusStrip.BackColor = ControlBackgroundColor;
-            MainMenuBar.BackColor = ControlBackgroundColor;
-            MainMenuBar.ForeColor = ControlForegroundColor;
+            BackColor = CurrentTheme.ControlBackgroundColor;
+            ForeColor = CurrentTheme.ControlForegroundColor;
+            ToolStripProgressBar.BackColor = CurrentTheme.UneditableBackgroundColor;
+            ToolStripProgressBar.ForeColor = CurrentTheme.HighlightColor;
+            EditorStatusStrip.BackColor = CurrentTheme.ControlBackgroundColor;
+            MainMenuBar.BackColor = CurrentTheme.ControlBackgroundColor;
+            MainMenuBar.ForeColor = CurrentTheme.ControlForegroundColor;
             #endregion
 
             #region Apply Theme to Controls
             foreach (var pictureBox in PictureBoxes)
             {
-                pictureBox.BackColor = UneditableBackgroundColor;
+                pictureBox.BackColor = CurrentTheme.UneditableBackgroundColor;
             }
             foreach (var toolStripItem in ThemedComponents[typeof(ToolStripItem)])
             {
-                ((ToolStripItem)toolStripItem).BackColor = ControlBackgroundColor;
-                ((ToolStripItem)toolStripItem).ForeColor = ControlForegroundColor;
+                ((ToolStripItem)toolStripItem).BackColor = CurrentTheme.ControlBackgroundColor;
+                ((ToolStripItem)toolStripItem).ForeColor = CurrentTheme.ControlForegroundColor;
             }
             foreach (var groupBox in ThemedComponents[typeof(GroupBox)])
             {
-                ((GroupBox)groupBox).BackColor = ControlBackgroundColor;
-                ((GroupBox)groupBox).ForeColor = ControlForegroundColor;
+                ((GroupBox)groupBox).BackColor = CurrentTheme.ControlBackgroundColor;
+                ((GroupBox)groupBox).ForeColor = CurrentTheme.ControlForegroundColor;
             }
             foreach (var listBox in ThemedComponents[typeof(ListBox)])
             {
-                ((ListBox)listBox).BackColor = ControlBackgroundWhite;
-                ((ListBox)listBox).ForeColor = ControlForegroundColor;
+                ((ListBox)listBox).BackColor = CurrentTheme.ControlBackgroundWhite;
+                ((ListBox)listBox).ForeColor = CurrentTheme.ControlForegroundColor;
             }
             foreach (var comboBox in ThemedComponents[typeof(ComboBox)])
             {
-                ((ComboBox)comboBox).BackColor = ControlBackgroundWhite;
-                ((ComboBox)comboBox).ForeColor = ControlForegroundColor;
+                ((ComboBox)comboBox).BackColor = CurrentTheme.ControlBackgroundWhite;
+                ((ComboBox)comboBox).ForeColor = CurrentTheme.ControlForegroundColor;
             }
             foreach (var textBox in ThemedComponents[typeof(TextBox)])
             {
-                ((TextBox)textBox).BackColor = ControlBackgroundWhite;
-                ((TextBox)textBox).ForeColor = ControlForegroundColor;
+                ((TextBox)textBox).BackColor = CurrentTheme.ControlBackgroundWhite;
+                ((TextBox)textBox).ForeColor = CurrentTheme.ControlForegroundColor;
             }
             foreach (var label in ThemedComponents[typeof(Label)])
             {
-                ((Label)label).BackColor = UneditableBackgroundColor;
-                ((Label)label).ForeColor = ControlForegroundColor;
+                ((Label)label).BackColor = CurrentTheme.UneditableBackgroundColor;
+                ((Label)label).ForeColor = CurrentTheme.ControlForegroundColor;
             }
             foreach (var button in ThemedComponents[typeof(Button)])
             {
-                ((Button)button).BackColor = ControlBackgroundColor;
-                ((Button)button).FlatAppearance.BorderColor = BorderColor;
-                ((Button)button).FlatAppearance.MouseDownBackColor = MouseDownColor;
-                ((Button)button).FlatAppearance.MouseOverBackColor = MouseOverColor;
+                ((Button)button).BackColor = CurrentTheme.ControlBackgroundColor;
+                ((Button)button).FlatAppearance.BorderColor = CurrentTheme.BorderColor;
+                ((Button)button).FlatAppearance.MouseDownBackColor = CurrentTheme.MouseDownColor;
+                ((Button)button).FlatAppearance.MouseOverBackColor = CurrentTheme.MouseOverColor;
             }
             #endregion
 
             #region Apply Theme to Tabs
             GamesTabPage.BackColor =
                 FileFormatGroupBox.BackColor =
-                LibraryInfoGroupBox.BackColor = GamesTabColor;
+                LibraryInfoGroupBox.BackColor = CurrentTheme.GamesTabColor;
             BlocksTabPage.BackColor =
                 BlockConfigGroupBox.BackColor =
                 FloorsTabPage.BackColor =
@@ -954,21 +878,21 @@ namespace Scribe
                 FurnishingsTabPage.BackColor =
                 FurnishingConfigGroupBox.BackColor =
                 CollectiblesTabPage.BackColor =
-                CollectibleConfigGroupBox.BackColor = ParquetsTabColor;
+                CollectibleConfigGroupBox.BackColor = CurrentTheme.ParquetsTabColor;
             CharactersTabPage.BackColor =
                 CharacterPronounGroupBox.BackColor =
                 CrittersTabPage.BackColor =
-                CritterConfigGroupBox.BackColor = BeingsTabColor;
+                CritterConfigGroupBox.BackColor = CurrentTheme.BeingsTabColor;
             ItemsTabPage.BackColor =
-                ItemInventoriesGroupBox.BackColor = ItemsTabColor;
+                ItemInventoriesGroupBox.BackColor = CurrentTheme.ItemsTabColor;
             BiomesTabPage.BackColor =
                 BiomeConfigGroupBox.BackColor =
                 CraftingRecipesTabPage.BackColor =
                 CraftingConfigGroupBox.BackColor =
                 RoomRecipesTabPage.BackColor =
-                RoomConfigGroupBox.BackColor = RecipesTabColor;
-            MapsTabPage.BackColor = MapsTabColor;
-            ScriptsTabPage.BackColor = ScriptsTabColor;
+                RoomConfigGroupBox.BackColor = CurrentTheme.RecipesTabColor;
+            MapsTabPage.BackColor = CurrentTheme.MapsTabColor;
+            ScriptsTabPage.BackColor = CurrentTheme.ScriptsTabColor;
             #endregion
         }
 
@@ -981,8 +905,8 @@ namespace Scribe
         private void ToolStripSeparator_Paint(object sender, PaintEventArgs eventArguments)
         {
             var separator = (ToolStripSeparator)sender;
-            var backgroundBrush = new SolidBrush(ControlBackgroundColor);
-            var foregroundPen = new Pen(ControlForegroundColor);
+            var backgroundBrush = new SolidBrush(CurrentTheme.ControlBackgroundColor);
+            var foregroundPen = new Pen(CurrentTheme.ControlForegroundColor);
             eventArguments.Graphics.FillRectangle(backgroundBrush, 0, 0, separator.Width, separator.Height);
             eventArguments.Graphics.DrawLine(foregroundPen, 30, separator.Height / 2, separator.Width - 4, separator.Height / 2);
         }
@@ -995,8 +919,8 @@ namespace Scribe
         /// <param name="eventArguments">Used to draw the bar.</param>
         private void ProgressBar_Paint(object sender, PaintEventArgs eventArguments)
         {
-            var highlightBrush = new SolidBrush(HighlightColor);
-            var uneditableBackgroundBrush = new SolidBrush(UneditableBackgroundColor);
+            var highlightBrush = new SolidBrush(CurrentTheme.HighlightColor);
+            var uneditableBackgroundBrush = new SolidBrush(CurrentTheme.UneditableBackgroundColor);
             var bar = (ProgressBar)sender;
             var percent = (float)bar.Value / bar.Maximum;
             var widthOfFilledPortion = percent * bar.Width;
@@ -2816,7 +2740,7 @@ namespace Scribe
         private void RefreshStripMenuItem_Click(object sender, EventArgs e)
         {
             UpdateDisplay();
-            UpdateEditorTheme();
+            ApplyCurrentTheme();
         }
 
         /// <summary>

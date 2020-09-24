@@ -106,12 +106,14 @@ namespace Scribe
             // CancelButtonControl
             // 
             this.CancelButtonControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.CancelButtonControl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelButtonControl.Location = new System.Drawing.Point(3, 280);
             this.CancelButtonControl.Name = "CancelButtonControl";
             this.CancelButtonControl.Size = new System.Drawing.Size(74, 23);
             this.CancelButtonControl.TabIndex = 8;
             this.CancelButtonControl.Text = "Cancel";
             this.CancelButtonControl.UseVisualStyleBackColor = true;
+            this.CancelButtonControl.Click += new System.EventHandler(this.CancelButtonControl_Click);
             // 
             // PanelDefaultFolder
             // 
@@ -183,6 +185,7 @@ namespace Scribe
             this.RadioButtonOSDefaultTheme.TabStop = true;
             this.RadioButtonOSDefaultTheme.Text = "OS Default";
             this.RadioButtonOSDefaultTheme.UseVisualStyleBackColor = true;
+            this.RadioButtonOSDefaultTheme.Validated += new System.EventHandler(this.RadioButtonOSDefaultTheme_Validated);
             // 
             // RadioButtonFemmeTheme
             // 
@@ -193,6 +196,7 @@ namespace Scribe
             this.RadioButtonFemmeTheme.TabIndex = 1;
             this.RadioButtonFemmeTheme.Text = "Femme";
             this.RadioButtonFemmeTheme.UseVisualStyleBackColor = true;
+            this.RadioButtonFemmeTheme.Validated += new System.EventHandler(this.RadioButtonFemmeTheme_Validated);
             // 
             // RadioButtonColorfulTheme
             // 
@@ -203,6 +207,7 @@ namespace Scribe
             this.RadioButtonColorfulTheme.TabIndex = 2;
             this.RadioButtonColorfulTheme.Text = "Colorful";
             this.RadioButtonColorfulTheme.UseVisualStyleBackColor = true;
+            this.RadioButtonColorfulTheme.Validated += new System.EventHandler(this.RadioButtonColorfulTheme_Validated);
             // 
             // LabelSuggestStoryIDs
             // 
@@ -264,6 +269,7 @@ namespace Scribe
             // 
             this.OkayButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.OkayButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.OkayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OkayButton.Location = new System.Drawing.Point(394, 281);
             this.OkayButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.OkayButton.Name = "OkayButton";

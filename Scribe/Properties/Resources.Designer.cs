@@ -233,6 +233,15 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Could not parse saved settings value {0}..
+        /// </summary>
+        internal static string ErrorParseFailed {
+            get {
+                return ResourceManager.GetString("ErrorParseFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This value must be an integer greater than 0..
         /// </summary>
         internal static string ErrorPositiveIntegersOnly {
