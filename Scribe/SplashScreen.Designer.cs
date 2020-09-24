@@ -47,6 +47,7 @@ namespace Scribe
             this.TableLayoutPanelSplashScreen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TableLayoutPanelSplashScreen.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.TableLayoutPanelSplashScreen.ColumnCount = 4;
             this.TableLayoutPanelSplashScreen.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33221F));
             this.TableLayoutPanelSplashScreen.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66945F));
@@ -95,6 +96,7 @@ namespace Scribe
             // 
             // PictureBoxLogo
             // 
+            this.PictureBoxLogo.BackColor = System.Drawing.Color.Transparent;
             this.TableLayoutPanelSplashScreen.SetColumnSpan(this.PictureBoxLogo, 2);
             this.PictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("PictureBoxLogo.Image")));
             this.PictureBoxLogo.Location = new System.Drawing.Point(3, 3);
@@ -165,7 +167,7 @@ namespace Scribe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(523, 366);
             this.ControlBox = false;
             this.Controls.Add(this.TableLayoutPanelSplashScreen);
