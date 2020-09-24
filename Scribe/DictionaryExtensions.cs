@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace Scribe
@@ -15,6 +14,11 @@ namespace Scribe
         /// <param name="inDictionary">The cache dictionary.</param>
         /// <param name="inControls">The control being cached.</param>
         public static void CacheControls(this Dictionary<Control, object> inDictionary, IEnumerable<Control> inControls)
-            => inControls.Select(control => inDictionary[control] = control.Text);
+        {
+            foreach (var control in inControls)
+            {
+                inDictionary[control] = control.Text;
+            }
+        }
     }
 }

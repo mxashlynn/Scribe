@@ -1110,7 +1110,7 @@ namespace Scribe
             RepopulateComboBox(CollectibleCollectionEffectComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(CollectingEffect))));
             RepopulateComboBox(CharacterNativeBiomeComboBox, All.Biomes);
             RepopulateComboBox(CharacterPrimaryBehaviorComboBox, All.Scripts);
-            RepopulateComboBox(CharacterPronounComboBox, All.PronounGroups);
+            RepopulateComboBox(CharacterPronounComboBox, All.PronounGroups.Select(pronounGroup => pronounGroup.GetKey()));
             RepopulateComboBox(CharacterStartingDialogueComboBox, All.Scripts);
             RepopulateComboBox(CritterNativeBiomeComboBox, All.Biomes);
             RepopulateComboBox(CritterPrimaryBehaviorComboBox, All.Scripts);
@@ -1462,6 +1462,7 @@ namespace Scribe
                 CharacterCommentTextBox.Text = model.Comment;
                 CharacterNativeBiomeComboBox.SelectedItem = All.Biomes.GetOrNull(model.NativeBiomeID);
                 CharacterPrimaryBehaviorComboBox.SelectedItem = All.Scripts.GetOrNull(model.PrimaryBehaviorID);
+                CharacterPronounComboBox.SelectedItem = model.Pronouns;
                 CharacterStoryIDTextBox.Text = string.IsNullOrEmpty(model.StoryCharacterID) && Settings.Default.SuggestStoryIDs
                     ? $"{model.PersonalName.ToUpperInvariant()}_{model.FamilyName.ToUpperInvariant()}"
                     : model.StoryCharacterID;
