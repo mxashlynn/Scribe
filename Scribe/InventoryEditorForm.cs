@@ -11,7 +11,7 @@ namespace Scribe
     internal partial class InventoryEditorForm : Form
     {
         /// <summary>The <see cref="CharacterModel"/> whose <see cref="Inventory"/> is being edited.</summary>
-        public ICharacterModelEdit CurrentCharacter { get; set; }
+        public IMutableCharacterModel CurrentCharacter { get; set; }
 
         #region Initialization
         /// <summary>

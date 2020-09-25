@@ -164,6 +164,7 @@ namespace Scribe
 
             HasUnsavedChanges = false;
 
+            #region Cache Controls and Set Up Callbacks
             PictureBoxes = EditorTabs.GetAllChildrenExactlyOfType<PictureBox>().ToList();
             ThemedComponents = GetThemedComponents();
             foreach (var component in ThemedComponents[typeof(ToolStripItem)])
@@ -186,6 +187,21 @@ namespace Scribe
                 }
             }
             FormClosing += FormClosingEventHandler;
+            #endregion
+
+            #region Set Up Current Theme
+            if (Enum.TryParse<EditorTheme>(Settings.Default.CurrentEditorTheme, out var theme))
+            {
+                CurrentTheme.SetUpTheme(theme);
+            }
+            else
+            {
+                SystemSounds.Beep.Play();
+                var message = string.Format(CultureInfo.CurrentCulture, Resources.ErrorParseFailed,
+                                            nameof(Settings.Default.CurrentEditorTheme));
+                _ = MessageBox.Show(message, Resources.CaptionError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            #endregion
         }
 
         /// <summary>
@@ -450,15 +466,15 @@ namespace Scribe
             {
                 #region Pronouns
                 (CharactersTabIndex, "CharacterPronounSubjectiveTextBox")
-                    => (input) => (CharacterPronounListBox.SelectedItem as IPronounGroupEdit).Subjective = input.ToString(),
+                    => (input) => (CharacterPronounListBox.SelectedItem as IMutablePronounGroup).Subjective = input.ToString(),
                 (CharactersTabIndex, "CharacterPronounObjectiveTextBox")
-                    => (input) => (CharacterPronounListBox.SelectedItem as IPronounGroupEdit).Objective = input.ToString(),
+                    => (input) => (CharacterPronounListBox.SelectedItem as IMutablePronounGroup).Objective = input.ToString(),
                 (CharactersTabIndex, "CharacterPronounDeterminerTextBox")
-                    => (input) => (CharacterPronounListBox.SelectedItem as IPronounGroupEdit).Determiner = input.ToString(),
+                    => (input) => (CharacterPronounListBox.SelectedItem as IMutablePronounGroup).Determiner = input.ToString(),
                 (CharactersTabIndex, "CharacterPronounPossessiveTextBox")
-                    => (input) => (CharacterPronounListBox.SelectedItem as IPronounGroupEdit).Possessive = input.ToString(),
+                    => (input) => (CharacterPronounListBox.SelectedItem as IMutablePronounGroup).Possessive = input.ToString(),
                 (CharactersTabIndex, "CharacterPronounReflexiveTextBox")
-                    => (input) => (CharacterPronounListBox.SelectedItem as IPronounGroupEdit).Reflexive = input.ToString(),
+                    => (input) => (CharacterPronounListBox.SelectedItem as IMutablePronounGroup).Reflexive = input.ToString(),
                 #endregion
 
                 #region Configuration
@@ -502,114 +518,114 @@ namespace Scribe
             {
                 #region GameModels
                 (GamesTabIndex, "GameNameTextBox")
-                    => (input) => (inModel as IGameModelEdit).Name = input.ToString(),
+                    => (input) => (inModel as IMutableGameModel).Name = input.ToString(),
                 (GamesTabIndex, "GameDescriptionTextBox")
-                    => (input) => (inModel as IGameModelEdit).Description = input.ToString(),
+                    => (input) => (inModel as IMutableGameModel).Description = input.ToString(),
                 (GamesTabIndex, "GameCommentTextBox")
-                    => (input) => (inModel as IGameModelEdit).Comment = input.ToString(),
+                    => (input) => (inModel as IMutableGameModel).Comment = input.ToString(),
                 (GamesTabIndex, "GameIsEpisodeCheckBox")
-                    => (input) => (inModel as IGameModelEdit).IsEpisode = ValueToBool(input),
+                    => (input) => (inModel as IMutableGameModel).IsEpisode = ValueToBool(input),
                 (GamesTabIndex, "GameEpisodeTitleTextBox")
-                    => (input) => (inModel as IGameModelEdit).EpisodeTitle = input.ToString(),
+                    => (input) => (inModel as IMutableGameModel).EpisodeTitle = input.ToString(),
                 (GamesTabIndex, "GameEpisodeNumberTextBox")
-                    => (input) => (inModel as IGameModelEdit).EpisodeNumber = ValueToInt(input),
+                    => (input) => (inModel as IMutableGameModel).EpisodeNumber = ValueToInt(input),
                 (GamesTabIndex, "GamePlayerCharacterComboBox")
-                    => (input) => (inModel as IGameModelEdit).PlayerCharacterID = ValueToID(input),
+                    => (input) => (inModel as IMutableGameModel).PlayerCharacterID = ValueToID(input),
                 (GamesTabIndex, "GameFirstScriptComboBox")
-                    => (input) => (inModel as IGameModelEdit).FirstScriptID = ValueToID(input),
+                    => (input) => (inModel as IMutableGameModel).FirstScriptID = ValueToID(input),
                 #endregion
 
                 #region BlockModels
                 (BlocksTabIndex, "BlockNameTextBox")
-                    => (input) => (inModel as IBlockModelEdit).Name = input.ToString(),
+                    => (input) => (inModel as IMutableBlockModel).Name = input.ToString(),
                 (BlocksTabIndex, "BlockDescriptionTextBox")
-                    => (input) => (inModel as IBlockModelEdit).Description = input.ToString(),
+                    => (input) => (inModel as IMutableBlockModel).Description = input.ToString(),
                 (BlocksTabIndex, "BlockCommentTextBox")
-                    => (input) => (inModel as IBlockModelEdit).Comment = input.ToString(),
+                    => (input) => (inModel as IMutableBlockModel).Comment = input.ToString(),
                 (BlocksTabIndex, "BlockMaxToughnessTextBox")
-                    => (input) => (inModel as IBlockModelEdit).MaxToughness = ValueToInt(input),
+                    => (input) => (inModel as IMutableBlockModel).MaxToughness = ValueToInt(input),
                 (BlocksTabIndex, "BlockIsFlammableCheckBox")
-                    => (input) => (inModel as IBlockModelEdit).IsFlammable = ValueToBool(input),
+                    => (input) => (inModel as IMutableBlockModel).IsFlammable = ValueToBool(input),
                 (BlocksTabIndex, "BlockIsLiquidCheckBox")
-                    => (input) => (inModel as IBlockModelEdit).IsLiquid = ValueToBool(input),
+                    => (input) => (inModel as IMutableBlockModel).IsLiquid = ValueToBool(input),
                 (BlocksTabIndex, "BlockGatherToolComboBox")
-                    => (input) => (inModel as IBlockModelEdit).GatherTool = ValueToEnum<GatheringTool>(input),
+                    => (input) => (inModel as IMutableBlockModel).GatherTool = ValueToEnum<GatheringTool>(input),
                 (BlocksTabIndex, "BlockGatherEffectComboBox")
-                    => (input) => (inModel as IBlockModelEdit).GatherEffect = ValueToEnum<GatheringEffect>(input),
+                    => (input) => (inModel as IMutableBlockModel).GatherEffect = ValueToEnum<GatheringEffect>(input),
                 (BlocksTabIndex, "BlockDroppedCollectibleIDComboBox")
-                    => (input) => (inModel as IBlockModelEdit).CollectibleID = ValueToID(input),
+                    => (input) => (inModel as IMutableBlockModel).CollectibleID = ValueToID(input),
                 (BlocksTabIndex, "BlockEquivalentItemComboBox")
-                    => (input) => (inModel as IBlockModelEdit).ItemID = ValueToID(input),
+                    => (input) => (inModel as IMutableBlockModel).ItemID = ValueToID(input),
                 #endregion
 
                 #region FloorModels
                 (FloorsTabIndex, "FloorNameTextBox")
-                    => (input) => (inModel as IFloorModelEdit).Name = input.ToString(),
+                    => (input) => (inModel as IMutableFloorModel).Name = input.ToString(),
                 (FloorsTabIndex, "FloorDescriptionTextBox")
-                    => (input) => (inModel as IFloorModelEdit).Description = input.ToString(),
+                    => (input) => (inModel as IMutableFloorModel).Description = input.ToString(),
                 (FloorsTabIndex, "FloorCommentTextBox")
-                    => (input) => (inModel as IFloorModelEdit).Comment = input.ToString(),
+                    => (input) => (inModel as IMutableFloorModel).Comment = input.ToString(),
                 (FloorsTabIndex, "FloorTrenchNameTextBox")
-                    => (input) => (inModel as IFloorModelEdit).TrenchName = input.ToString(),
+                    => (input) => (inModel as IMutableFloorModel).TrenchName = input.ToString(),
                 (FloorsTabIndex, "FloorlItemIDComboBox")
-                    => (input) => (inModel as IFloorModelEdit).ItemID = ValueToID(input),
+                    => (input) => (inModel as IMutableFloorModel).ItemID = ValueToID(input),
                 (FloorsTabIndex, "FloorModificationToolComboBox")
-                    => (input) => (inModel as IFloorModelEdit).ModTool = ValueToEnum<ModificationTool>(input),
+                    => (input) => (inModel as IMutableFloorModel).ModTool = ValueToEnum<ModificationTool>(input),
                 #endregion
 
                 #region FurnishingModels
                 (FurnishingsTabIndex, "FurnishingNameTextBox")
-                    => (input) => (inModel as IFurnishingModelEdit).Name = input.ToString(),
+                    => (input) => (inModel as IMutableFurnishingModel).Name = input.ToString(),
                 (FurnishingsTabIndex, "FurnishingDescriptionTextBox")
-                    => (input) => (inModel as IFurnishingModelEdit).Description = input.ToString(),
+                    => (input) => (inModel as IMutableFurnishingModel).Description = input.ToString(),
                 (FurnishingsTabIndex, "FurnishingCommentTextBox")
-                    => (input) => (inModel as IFurnishingModelEdit).Comment = input.ToString(),
+                    => (input) => (inModel as IMutableFurnishingModel).Comment = input.ToString(),
                 (FurnishingsTabIndex, "FurnishingEquivalentItemComboBox")
-                    => (input) => (inModel as IFurnishingModelEdit).ItemID = ValueToID(input),
+                    => (input) => (inModel as IMutableFurnishingModel).ItemID = ValueToID(input),
                 (FurnishingsTabIndex, "FurnishingEntryTypeComboBox")
-                    => (input) => (inModel as IFurnishingModelEdit).Entry = ValueToEnum<EntryType>(input),
+                    => (input) => (inModel as IMutableFurnishingModel).Entry = ValueToEnum<EntryType>(input),
                 (FurnishingsTabIndex, "FurnishingSwapWithFurnishingComboBox")
-                    => (input) => (inModel as IFurnishingModelEdit).SwapID = ValueToID(input),
+                    => (input) => (inModel as IMutableFurnishingModel).SwapID = ValueToID(input),
                 (FurnishingsTabIndex, "FurnishingIsEnclosingCheckBox")
-                    => (input) => (inModel as IFurnishingModelEdit).IsEnclosing = ValueToBool(input),
+                    => (input) => (inModel as IMutableFurnishingModel).IsEnclosing = ValueToBool(input),
                 (FurnishingsTabIndex, "FurnishingIsFlammableCheckBox")
-                    => (input) => (inModel as IFurnishingModelEdit).IsFlammable = ValueToBool(input),
+                    => (input) => (inModel as IMutableFurnishingModel).IsFlammable = ValueToBool(input),
                 (FurnishingsTabIndex, "FurnishingIsWalkableCheckBox")
-                    => (input) => (inModel as IFurnishingModelEdit).IsWalkable = ValueToBool(input),
+                    => (input) => (inModel as IMutableFurnishingModel).IsWalkable = ValueToBool(input),
                 #endregion
 
                 #region CollectibleModels
                 (CollectiblesTabIndex, "CollectibleNameTextBox")
-                    => (input) => (inModel as ICollectibleModelEdit).Name = input.ToString(),
+                    => (input) => (inModel as IMutableCollectibleModel).Name = input.ToString(),
                 (CollectiblesTabIndex, "CollectibleDescriptionTextBox")
-                    => (input) => (inModel as ICollectibleModelEdit).Description = input.ToString(),
+                    => (input) => (inModel as IMutableCollectibleModel).Description = input.ToString(),
                 (CollectiblesTabIndex, "CollectibleCommentTextBox")
-                    => (input) => (inModel as ICollectibleModelEdit).Comment = input.ToString(),
+                    => (input) => (inModel as IMutableCollectibleModel).Comment = input.ToString(),
                 (CollectiblesTabIndex, "CollectibleEffectAmountTextBox")
-                    => (input) => (inModel as ICollectibleModelEdit).EffectAmount = ValueToInt(input),
+                    => (input) => (inModel as IMutableCollectibleModel).EffectAmount = ValueToInt(input),
                 (CollectiblesTabIndex, "CollectibleCollectionEffectComboBox")
-                    => (input) => (inModel as ICollectibleModelEdit).CollectionEffect = ValueToEnum<CollectingEffect>(input),
+                    => (input) => (inModel as IMutableCollectibleModel).CollectionEffect = ValueToEnum<CollectingEffect>(input),
                 (CollectiblesTabIndex, "CollectibleEquivalentItemComboBox")
-                    => (input) => (inModel as ICollectibleModelEdit).ItemID = ValueToID(input),
+                    => (input) => (inModel as IMutableCollectibleModel).ItemID = ValueToID(input),
                 #endregion
 
                 #region CharacterModels
                 (CharactersTabIndex, "CharacterNameTextBox")
-                    => (input) => (inModel as ICharacterModelEdit).Name = input.ToString(),
+                    => (input) => (inModel as IMutableCharacterModel).Name = input.ToString(),
                 (CharactersTabIndex, "CharacterDescriptionTextBox")
-                    => (input) => (inModel as ICharacterModelEdit).Description = input.ToString(),
+                    => (input) => (inModel as IMutableCharacterModel).Description = input.ToString(),
                 (CharactersTabIndex, "CharacterCommentTextBox")
-                    => (input) => (inModel as ICharacterModelEdit).Comment = input.ToString(),
+                    => (input) => (inModel as IMutableCharacterModel).Comment = input.ToString(),
                 (CharactersTabIndex, "CharacterNativeBiomeComboBox")
-                    => (input) => (inModel as ICharacterModelEdit).NativeBiomeID = ValueToID(input),
+                    => (input) => (inModel as IMutableCharacterModel).NativeBiomeID = ValueToID(input),
                 (CharactersTabIndex, "CharacterPrimaryBehaviorComboBox")
-                    => (input) => (inModel as ICharacterModelEdit).PrimaryBehaviorID = ValueToID(input),
+                    => (input) => (inModel as IMutableCharacterModel).PrimaryBehaviorID = ValueToID(input),
                 (CharactersTabIndex, "CharacterStoryIDTextBox")
-                    => (input) => (inModel as ICharacterModelEdit).StoryCharacterID = input.ToString(),
+                    => (input) => (inModel as IMutableCharacterModel).StoryCharacterID = input.ToString(),
                 (CharactersTabIndex, "CharacterPronounComboBox")
-                    => (input) => (inModel as ICharacterModelEdit).Pronouns = input.ToString(),
+                    => (input) => (inModel as IMutableCharacterModel).PronounKey = input.ToString(),
                 (CharactersTabIndex, "CharacterStartingDialogueComboBox")
-                    => (input) => (inModel as ICharacterModelEdit).StartingDialogueID = ValueToID(input),
+                    => (input) => (inModel as IMutableCharacterModel).StartingDialogueID = ValueToID(input),
                 (CharactersTabIndex, "CharacterStartingInventoryExample")
                     => (input) =>
                     {
@@ -628,7 +644,7 @@ namespace Scribe
                 (CharactersTabIndex, "CharacterStartingQuestsListBox")
                     => (input) =>
                     {
-                        var editModel = inModel as ICharacterModelEdit;
+                        var editModel = inModel as IMutableCharacterModel;
                         editModel.StartingQuestIDs.Clear();
                         editModel.StartingQuestIDs.ToList().AddRange((IList<ModelID>)input);
                     },
@@ -636,123 +652,119 @@ namespace Scribe
 
                 #region CritterModels
                 (CrittersTabIndex, "CritterNameTextBox")
-                    => (input) => (inModel as ICritterModelEdit).Name = input.ToString(),
+                    => (input) => (inModel as IMutableCritterModel).Name = input.ToString(),
                 (CrittersTabIndex, "CritterDescriptionTextBox")
-                    => (input) => (inModel as ICritterModelEdit).Description = input.ToString(),
+                    => (input) => (inModel as IMutableCritterModel).Description = input.ToString(),
                 (CrittersTabIndex, "CritterCommentTextBox")
-                    => (input) => (inModel as ICritterModelEdit).Comment = input.ToString(),
+                    => (input) => (inModel as IMutableCritterModel).Comment = input.ToString(),
                 (CrittersTabIndex, "CritterNativeBiomeComboBox")
-                    => (input) => (inModel as ICritterModelEdit).NativeBiomeID = ValueToID(input),
+                    => (input) => (inModel as IMutableCritterModel).NativeBiomeID = ValueToID(input),
                 (CrittersTabIndex, "CritterPrimaryBehaviorComboBox")
-                    => (input) => (inModel as ICritterModelEdit).PrimaryBehaviorID = ValueToID(input),
+                    => (input) => (inModel as IMutableCritterModel).PrimaryBehaviorID = ValueToID(input),
                 #endregion
 
                 #region ItemModels
                 (ItemsTabIndex, "ItemNameTextBox")
-                    => (input) => (inModel as IItemModelEdit).Name = input.ToString(),
+                    => (input) => (inModel as IMutableItemModel).Name = input.ToString(),
                 (ItemsTabIndex, "ItemDescriptionTextBox")
-                    => (input) => (inModel as IItemModelEdit).Description = input.ToString(),
+                    => (input) => (inModel as IMutableItemModel).Description = input.ToString(),
                 (ItemsTabIndex, "ItemCommentTextBox")
-                    => (input) => (inModel as IItemModelEdit).Comment = input.ToString(),
+                    => (input) => (inModel as IMutableItemModel).Comment = input.ToString(),
                 (ItemsTabIndex, "ItemSubtypeComboBox")
-                    => (input) => (inModel as IItemModelEdit).Subtype = ValueToEnum<ItemType>(input),
+                    => (input) => (inModel as IMutableItemModel).Subtype = ValueToEnum<ItemType>(input),
                 (ItemsTabIndex, "ItemPriceTextBox")
-                    => (input) => (inModel as IItemModelEdit).Price = ValueToInt(input),
+                    => (input) => (inModel as IMutableItemModel).Price = ValueToInt(input),
                 (ItemsTabIndex, "ItemTagListBox")
-                    => (input) =>
-                    {
-                        var editModel = inModel as IItemModelEdit;
-                        editModel.ItemTags.ToList().Add((ModelTag)input);
-                    },
+                    => (input) => (inModel as IMutableItemModel).ItemTags.ToList().Add((ModelTag)input),
                 (ItemsTabIndex, "ItemStackMaxTextBox")
-                    => (input) => (inModel as IItemModelEdit).StackMax = ValueToInt(input),
+                    => (input) => (inModel as IMutableItemModel).StackMax = ValueToInt(input),
                 (ItemsTabIndex, "ItemRarityTextBox")
-                    => (input) => (inModel as IItemModelEdit).Rarity = ValueToInt(input),
+                    => (input) => (inModel as IMutableItemModel).Rarity = ValueToInt(input),
                 (ItemsTabIndex, "ItemEffectWhenUsedComboBox")
-                    => (input) => (inModel as IItemModelEdit).EffectWhenUsedID = ValueToID(input),
+                    => (input) => (inModel as IMutableItemModel).EffectWhenUsedID = ValueToID(input),
                 (ItemsTabIndex, "ItemEffectWhileHeldComboBox")
-                    => (input) => (inModel as IItemModelEdit).EffectWhileHeldID = ValueToID(input),
+                    => (input) => (inModel as IMutableItemModel).EffectWhileHeldID = ValueToID(input),
                 (ItemsTabIndex, "ItemEquivalentParquetComboBox")
-                    => (input) => (inModel as IItemModelEdit).ParquetID = ValueToID(input),
+                    => (input) => (inModel as IMutableItemModel).ParquetID = ValueToID(input),
                 #endregion
 
                 #region BiomeRecipes
                 (BiomeRecipesTabIndex, "BiomeNameTextBox")
-                    => (input) => (inModel as IBiomeRecipeEdit).Name = input.ToString(),
+                    => (input) => (inModel as IMutableBiomeRecipe).Name = input.ToString(),
                 (BiomeRecipesTabIndex, "BiomeDescriptionTextBox")
-                    => (input) => (inModel as IBiomeRecipeEdit).Description = input.ToString(),
+                    => (input) => (inModel as IMutableBiomeRecipe).Description = input.ToString(),
                 (BiomeRecipesTabIndex, "BiomeCommentTextBox")
-                    => (input) => (inModel as IBiomeRecipeEdit).Comment = input.ToString(),
+                    => (input) => (inModel as IMutableBiomeRecipe).Comment = input.ToString(),
                 (BiomeRecipesTabIndex, "BiomeTierTextBox")
-                    => (input) => (inModel as IBiomeRecipeEdit).Tier = ValueToInt(input),
+                    => (input) => (inModel as IMutableBiomeRecipe).Tier = ValueToInt(input),
                 (BiomeRecipesTabIndex, "BiomeIsLiquidBasedCheckBox")
-                    => (input) => (inModel as IBiomeRecipeEdit).IsLiquidBased = ValueToBool(input),
+                    => (input) => (inModel as IMutableBiomeRecipe).IsLiquidBased = ValueToBool(input),
                 (BiomeRecipesTabIndex, "BiomeIsRoomBasedCheckBox")
-                    => (input) => (inModel as IBiomeRecipeEdit).IsRoomBased = ValueToBool(input),
+                    => (input) => (inModel as IMutableBiomeRecipe).IsRoomBased = ValueToBool(input),
                 (BiomeRecipesTabIndex, "BiomeEntryRequirementsListBox")
                     => (input) =>
                     {
-                        var editRecipe = inModel as IBiomeRecipeEdit;
+                        var editRecipe = inModel as IMutableBiomeRecipe;
                         editRecipe.EntryRequirements.ToList().Add((ModelTag)input);
                     },
                 (BiomeRecipesTabIndex, "BiomeParquetCriteriaListBox")
                     => (input) =>
                     {
-                        var editRecipe = inModel as IBiomeRecipeEdit;
+                        var editRecipe = inModel as IMutableBiomeRecipe;
                         editRecipe.ParquetCriteria.ToList().Add((ModelTag)input);
                     },
                 #endregion
 
                 #region CraftingRecipes
                 (CraftingRecipesTabIndex, "CraftingNameTextBox")
-                    => (input) => (inModel as ICraftingRecipeEdit).Name = input.ToString(),
+                    => (input) => (inModel as IMutableCraftingRecipe).Name = input.ToString(),
                 (CraftingRecipesTabIndex, "CraftingDescriptionTextBox")
-                    => (input) => (inModel as ICraftingRecipeEdit).Description = input.ToString(),
+                    => (input) => (inModel as IMutableCraftingRecipe).Description = input.ToString(),
                 (CraftingRecipesTabIndex, "CraftingCommentTextBox")
-                    => (input) => (inModel as ICraftingRecipeEdit).Comment = input.ToString(),
+                    => (input) => (inModel as IMutableCraftingRecipe).Comment = input.ToString(),
                 (CraftingRecipesTabIndex, "CraftingIngredientsListBox")
                     => (input) =>
                     {
-                        var editRecipe = inModel as ICraftingRecipeEdit;
+                        var editRecipe = inModel as IMutableCraftingRecipe;
                         editRecipe.Ingredients.Clear();
                         editRecipe.Ingredients.ToList().AddRange((IList<RecipeElement>)input);
                     },
                 (CraftingRecipesTabIndex, "CraftingProductsListBox")
                     => (input) =>
                     {
-                        var editRecipe = inModel as ICraftingRecipeEdit;
+                        var editRecipe = inModel as IMutableCraftingRecipe;
                         editRecipe.Products.Clear();
                         editRecipe.Products.ToList().AddRange((IList<RecipeElement>)input);
                     },
                 #endregion
-                
+
                 #region RoomRecipes
                 (RoomRecipesTabIndex, "RoomNameTextBox")
-                    => (input) => (inModel as IRoomRecipeEdit).Name = input.ToString(),
+                    => (input) => (inModel as IMutableRoomRecipe).Name = input.ToString(),
                 (RoomRecipesTabIndex, "RoomDescriptionTextBox")
-                    => (input) => (inModel as IRoomRecipeEdit).Description = input.ToString(),
+                    => (input) => (inModel as IMutableRoomRecipe).Description = input.ToString(),
                 (RoomRecipesTabIndex, "RoomCommentTextBox")
-                    => (input) => (inModel as IRoomRecipeEdit).Comment = input.ToString(),
+                    => (input) => (inModel as IMutableRoomRecipe).Comment = input.ToString(),
                 (RoomRecipesTabIndex, "RoomMinimumWalkableSpacesTextBox")
-                    => (input) => (inModel as IRoomRecipeEdit).MinimumWalkableSpaces = ValueToInt(input),
+                    => (input) => (inModel as IMutableRoomRecipe).MinimumWalkableSpaces = ValueToInt(input),
                 (RoomRecipesTabIndex, "RoomRequiredFurnishingsListBox")
                     => (input) =>
                     {
-                        var editRecipe = inModel as IRoomRecipeEdit;
+                        var editRecipe = inModel as IMutableRoomRecipe;
                         editRecipe.OptionallyRequiredFurnishings.Clear();
                         editRecipe.OptionallyRequiredFurnishings.ToList().AddRange((IList<RecipeElement>)input);
                     },
                 (RoomRecipesTabIndex, "RoomRequiredBlocksListBox")
                     => (input) =>
                     {
-                        var editRecipe = inModel as IRoomRecipeEdit;
+                        var editRecipe = inModel as IMutableRoomRecipe;
                         editRecipe.OptionallyRequiredPerimeterBlocks.Clear();
                         editRecipe.OptionallyRequiredPerimeterBlocks.ToList().AddRange((IList<RecipeElement>)input);
                     },
                 (RoomRecipesTabIndex, "RoomRequiredFloorsListBox")
                     => (input) =>
                     {
-                        var editRecipe = inModel as IRoomRecipeEdit;
+                        var editRecipe = inModel as IMutableRoomRecipe;
                         editRecipe.OptionallyRequiredWalkableFloors.Clear();
                         editRecipe.OptionallyRequiredWalkableFloors.ToList().AddRange((IList<RecipeElement>)input);
                     },
@@ -768,7 +780,7 @@ namespace Scribe
                 (ScriptsTabIndex, _) => throw new NotImplementedException(),
                 #endregion
 
-                _ => null,
+                _ => (Action<object>)null,
             };
         #endregion
 
@@ -1386,7 +1398,7 @@ namespace Scribe
                 CharacterCommentTextBox.Text = model.Comment;
                 CharacterNativeBiomeComboBox.SelectedItem = All.Biomes.GetOrNull(model.NativeBiomeID);
                 CharacterPrimaryBehaviorComboBox.SelectedItem = All.Scripts.GetOrNull(model.PrimaryBehaviorID);
-                CharacterPronounComboBox.SelectedItem = model.Pronouns;
+                CharacterPronounComboBox.SelectedItem = model.PronounKey;
                 CharacterStoryIDTextBox.Text = string.IsNullOrEmpty(model.StoryCharacterID) && Settings.Default.SuggestStoryIDs
                     ? $"{model.PersonalName.ToUpperInvariant()}_{model.FamilyName.ToUpperInvariant()}"
                     : model.StoryCharacterID;
@@ -1675,14 +1687,14 @@ namespace Scribe
             ChangeManager.AddAndExecute(new ChangeList(modelToAdd, $"add new {inModelTypeName} definition",
                                         (object databaseValue) =>
                                         {
-                                            ((IModelCollectionEdit<TModel>)inDatabaseCollection).Add((TModel)databaseValue);
+                                            ((IMutableModelCollection<TModel>)inDatabaseCollection).Add((TModel)databaseValue);
                                             _ = inListBox.Items.Add(databaseValue);
                                             inListBox.SelectedItem = databaseValue;
                                             HasUnsavedChanges = true;
                                         },
                                         (object databaseValue) =>
                                         {
-                                            ((IModelCollectionEdit<TModel>)inDatabaseCollection).Remove((TModel)databaseValue);
+                                            ((IMutableModelCollection<TModel>)inDatabaseCollection).Remove((TModel)databaseValue);
                                             inListBox.Items.Remove(databaseValue);
                                             inListBox.SelectedItem = null;
                                             HasUnsavedChanges = true;
@@ -1715,14 +1727,14 @@ namespace Scribe
             ChangeManager.AddAndExecute(new ChangeList(modelToRemove, $"remove {inModelTypeName} {modelToRemove.Name}",
                                         (object databaseValue) =>
                                         {
-                                            ((IModelCollectionEdit<TModel>)inDatabaseCollection).Remove((TModel)databaseValue);
+                                            ((IMutableModelCollection<TModel>)inDatabaseCollection).Remove((TModel)databaseValue);
                                             inListBox.Items.Remove(databaseValue);
                                             inListBox.SelectedItem = null;
                                             HasUnsavedChanges = true;
                                         },
                                         (object databaseValue) =>
                                         {
-                                            ((IModelCollectionEdit<TModel>)inDatabaseCollection).Add((TModel)databaseValue);
+                                            ((IMutableModelCollection<TModel>)inDatabaseCollection).Add((TModel)databaseValue);
                                             _ = inListBox.Items.Add(databaseValue);
                                             inListBox.SelectedItem = databaseValue;
                                             HasUnsavedChanges = true;
@@ -1737,7 +1749,7 @@ namespace Scribe
         /// <param name="inAddsToListBox">The UI element reflectling the collection being changed.</param>
         /// <param name="inGetTagListFromModel">The means, given a model, to find the correct tag collection.</param>
         private void AddTag<TInterface>(ListBox inAddsToListBox, Func<TInterface, IList<ModelTag>> inGetTagListFromModel)
-            where TInterface : IModelEdit
+            where TInterface : IMutableModel
         {
             if (!All.CollectionsHaveBeenInitialized)
             {
@@ -1781,7 +1793,7 @@ namespace Scribe
         /// <param name="inAddsToListBox">The UI element reflectling the collection being changed.</param>
         /// <param name="inGetTagListFromModel">The means, given a Model, to find the correct tag collection.</param>
         private void RemoveTag<TInterface>(ListBox inAddsToListBox, Func<TInterface, IList<ModelTag>> inGetTagListFromModel)
-            where TInterface : IModelEdit
+            where TInterface : IMutableModel
         {
             if (!All.CollectionsHaveBeenInitialized || null == inAddsToListBox.SelectedItem)
             {
@@ -1819,7 +1831,7 @@ namespace Scribe
         /// <param name="inGetElementListFromRecipe">The means, given a model, to find the correct Recipe Element collection.</param>
         private void AddRecipeElement<TInterface>(ListBox inAddsToListBox,
                                                   Func<TInterface, IList<RecipeElement>> inGetElementListFromRecipe)
-            where TInterface : IModelEdit
+            where TInterface : IMutableModel
         {
             if (!All.CollectionsHaveBeenInitialized)
             {
@@ -1865,7 +1877,7 @@ namespace Scribe
         /// <param name="inGetElementListFromRecipe">The means, given a Model, to find the correct Recipe Element collection.</param>
         private void RemoveRecipeElement<TInterface>(ListBox inAddsToListBox,
                                                      Func<TInterface, IList<RecipeElement>> inGetElementListFromRecipe)
-            where TInterface : IModelEdit
+            where TInterface : IMutableModel
         {
             if (!All.CollectionsHaveBeenInitialized || null == inAddsToListBox.SelectedItem)
             {
@@ -1901,7 +1913,7 @@ namespace Scribe
         /// </summary>
         /// <param name="inAddsToListBox">The UI element reflectling the collection being changed.</param>
         /// <param name="inGetQuestListFromModel">The means, given a model, to find the correct ID collection.</param>
-        private void AddQuest(ListBox inAddsToListBox, Func<ICharacterModelEdit, IList<ModelID>> inGetQuestListFromModel)
+        private void AddQuest(ListBox inAddsToListBox, Func<IMutableCharacterModel, IList<ModelID>> inGetQuestListFromModel)
         {
             if (!All.CollectionsHaveBeenInitialized)
             {
@@ -1909,7 +1921,7 @@ namespace Scribe
                 return;
             }
 
-            if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is ICharacterModelEdit character
+            if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is IMutableCharacterModel character
                 && AddQuestDialogue.ShowDialog() == DialogResult.OK)
             {
                 if (inGetQuestListFromModel(character).Contains(AddQuestDialogue.ReturnNewQuestID))
@@ -1945,7 +1957,7 @@ namespace Scribe
         /// </summary>
         /// <param name="inAddsToListBox">The UI element reflectling the collection being changed.</param>
         /// <param name="inGetTagListFromModel">The means, given a Model, to find the correct ID collection.</param>
-        private void RemoveQuest(ListBox inAddsToListBox, Func<ICharacterModelEdit, IList<ModelID>> inGetTagListFromModel)
+        private void RemoveQuest(ListBox inAddsToListBox, Func<IMutableCharacterModel, IList<ModelID>> inGetTagListFromModel)
         {
             if (!All.CollectionsHaveBeenInitialized || null == inAddsToListBox.SelectedItem)
             {
@@ -1953,7 +1965,7 @@ namespace Scribe
                 return;
             }
 
-            if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is ICharacterModelEdit character)
+            if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is IMutableCharacterModel character)
             {
                 ChangeManager.AddAndExecute(new ChangeList((ModelTag)inAddsToListBox.SelectedItem,
                                             $"remove tag {inAddsToListBox.SelectedItem} from {character.Name}",
@@ -2016,7 +2028,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void BlockAddBiomeTagButton_Click(object sender, EventArgs e)
-            => AddTag(BlockAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
+            => AddTag(BlockAddsToBiomeListBox, (IMutableParquetModel model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to remove the selected biome tag from the current block.
@@ -2024,7 +2036,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void BlockRemoveBiomeTagButton_Click(object sender, EventArgs e)
-            => RemoveTag(BlockAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
+            => RemoveTag(BlockAddsToBiomeListBox, (IMutableParquetModel model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to add a new room tag to the current block.
@@ -2032,7 +2044,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void BlockAddRoomTagButton_Click(object sender, EventArgs e)
-            => AddTag(BlockAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
+            => AddTag(BlockAddsToRoomListBox, (IMutableParquetModel model) => model.AddsToRoom);
 
         /// <summary>
         /// Registeres the user command to remove the selected room tag from the current block.
@@ -2040,7 +2052,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void BlockRemoveRoomTagButton_Click(object sender, EventArgs e)
-            => RemoveTag(BlockAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
+            => RemoveTag(BlockAddsToRoomListBox, (IMutableParquetModel model) => model.AddsToRoom);
         #endregion
 
         #region Floors Tab
@@ -2066,7 +2078,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FloorAddBiomeTagButton_Click(object sender, EventArgs e)
-            => AddTag(FloorAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
+            => AddTag(FloorAddsToBiomeListBox, (IMutableParquetModel model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to remove the selected biome tag from the current floor.
@@ -2074,7 +2086,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FloorRemoveBiomeTagButton_Click(object sender, EventArgs e)
-            => RemoveTag(FloorAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
+            => RemoveTag(FloorAddsToBiomeListBox, (IMutableParquetModel model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to add a new room tag to the current floor.
@@ -2082,7 +2094,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FloorAddRoomTagButton_Click(object sender, EventArgs e)
-            => AddTag(FloorAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
+            => AddTag(FloorAddsToRoomListBox, (IMutableParquetModel model) => model.AddsToRoom);
 
         /// <summary>
         /// Registeres the user command to remove the selected room tag from the current floor.
@@ -2090,7 +2102,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FloorRemoveRoomTagButton_Click(object sender, EventArgs e)
-            => RemoveTag(FloorAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
+            => RemoveTag(FloorAddsToRoomListBox, (IMutableParquetModel model) => model.AddsToRoom);
         #endregion
 
         #region Furnishings Tab
@@ -2117,7 +2129,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FurnishingAddBiomeTagButton_Click(object sender, EventArgs e)
-            => AddTag(FurnishingAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
+            => AddTag(FurnishingAddsToBiomeListBox, (IMutableParquetModel model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to remove the selected biome tag from the current furnishing.
@@ -2125,7 +2137,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FurnishingRemoveBiomeTagButton_Click(object sender, EventArgs e)
-            => RemoveTag(FurnishingAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
+            => RemoveTag(FurnishingAddsToBiomeListBox, (IMutableParquetModel model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to add a new room tag to the current furnishing.
@@ -2133,7 +2145,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FurnishingAddRoomTagButton_Click(object sender, EventArgs e)
-            => AddTag(FurnishingAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
+            => AddTag(FurnishingAddsToRoomListBox, (IMutableParquetModel model) => model.AddsToRoom);
 
         /// <summary>
         /// Registeres the user command to remove the selected room tag from the current furnishing.
@@ -2141,7 +2153,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void FurnishingRemoveRoomTagButton_Click(object sender, EventArgs e)
-            => RemoveTag(FurnishingAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
+            => RemoveTag(FurnishingAddsToRoomListBox, (IMutableParquetModel model) => model.AddsToRoom);
         #endregion
 
         #region Collectibles Tab
@@ -2168,7 +2180,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void CollectibleAddBiomeTagButton_Click(object sender, EventArgs e)
-            => AddTag(CollectibleAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
+            => AddTag(CollectibleAddsToBiomeListBox, (IMutableParquetModel model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to remove the selected biome tag from the current collectible.
@@ -2176,7 +2188,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void CollectibleRemoveBiomeTagButton_Click(object sender, EventArgs e)
-            => RemoveTag(CollectibleAddsToBiomeListBox, (IParquetModelEdit model) => model.AddsToBiome);
+            => RemoveTag(CollectibleAddsToBiomeListBox, (IMutableParquetModel model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to add a new room tag to the current collectible.
@@ -2184,7 +2196,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void CollectibleAddRoomTagButton_Click(object sender, EventArgs e)
-            => AddTag(CollectibleAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
+            => AddTag(CollectibleAddsToRoomListBox, (IMutableParquetModel model) => model.AddsToRoom);
 
         /// <summary>
         /// Registeres the user command to remove the selected room tag from the current collectible.
@@ -2192,7 +2204,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void CollectibleRemoveRoomTagButton_Click(object sender, EventArgs e)
-            => RemoveTag(CollectibleAddsToRoomListBox, (IParquetModelEdit model) => model.AddsToRoom);
+            => RemoveTag(CollectibleAddsToRoomListBox, (IMutableParquetModel model) => model.AddsToRoom);
         #endregion
 
         #region Characters Tab
@@ -2218,7 +2230,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void CharacterAddQuestButton_Click(object sender, EventArgs e)
-            => AddQuest(CharacterStartingQuestsListBox, (ICharacterModelEdit model) => model.StartingQuestIDs);
+            => AddQuest(CharacterStartingQuestsListBox, (IMutableCharacterModel model) => model.StartingQuestIDs);
 
         /// <summary>
         /// Registeres the user command to remove the selected quest from the current character.
@@ -2226,7 +2238,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void CharacterRemoveQuestButton_Click(object sender, EventArgs e)
-            => RemoveQuest(CollectibleAddsToBiomeListBox, (ICharacterModelEdit model) => model.StartingQuestIDs);
+            => RemoveQuest(CollectibleAddsToBiomeListBox, (IMutableCharacterModel model) => model.StartingQuestIDs);
 
         /// <summary>
         /// Invokes the <see cref="InventoryEditorForm"/> for the currently selected <see cref="CharacterModel"/>.
@@ -2235,7 +2247,7 @@ namespace Scribe
         /// <param name="e">Ignored</param>
         private void CharacterOpenInventoryEditorButton_Click(object sender, EventArgs e)
         {
-            InventoryEditorWindow.CurrentModel = (ICharacterModelEdit)GetSelectedModelForTab(EditorTabs.SelectedIndex);
+            InventoryEditorWindow.CurrentCharacter = (IMutableCharacterModel)GetSelectedModelForTab(EditorTabs.SelectedIndex);
             _ = InventoryEditorWindow.ShowDialog();
         }
 
@@ -2255,7 +2267,7 @@ namespace Scribe
                     && !string.IsNullOrEmpty(model.FamilyName)
                     && !string.IsNullOrEmpty(alteredControl.Text))
                 {
-                    CharacterStoryIDTextBox.Text = ((ICharacterModelEdit)model).StoryCharacterID =
+                    CharacterStoryIDTextBox.Text = ((IMutableCharacterModel)model).StoryCharacterID =
                         $"{alteredControl.Text.ToUpperInvariant()}_{model.FamilyName.ToUpperInvariant()}";
                 }
             }
@@ -2277,7 +2289,7 @@ namespace Scribe
                     && !string.IsNullOrEmpty(model.PersonalName)
                     && !string.IsNullOrEmpty(alteredControl.Text))
                 {
-                    CharacterStoryIDTextBox.Text = ((ICharacterModelEdit)model).StoryCharacterID =
+                    CharacterStoryIDTextBox.Text = ((IMutableCharacterModel)model).StoryCharacterID =
                         $"{model.PersonalName.ToUpperInvariant()}_{alteredControl.Text.ToUpperInvariant()}";
                 }
             }
@@ -2325,7 +2337,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void ItemAddTagButton_Click(object sender, EventArgs e)
-            => AddTag(ItemTagListBox, (IItemModelEdit model) => model.ItemTags);
+            => AddTag(ItemTagListBox, (IMutableItemModel model) => model.ItemTags);
 
         /// <summary>
         /// Registeres the user command to remove the selected tag from the current item.
@@ -2333,7 +2345,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void ItemRemoveTagButton_Click(object sender, EventArgs e)
-            => RemoveTag(ItemTagListBox, (IItemModelEdit model) => model.ItemTags);
+            => RemoveTag(ItemTagListBox, (IMutableItemModel model) => model.ItemTags);
         #endregion
 
         #region Biomes Tab
@@ -2359,7 +2371,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void BiomeAddParquetCriterionButton_Click(object sender, EventArgs e)
-            => AddTag(BiomeParquetCriteriaListBox, (IBiomeRecipeEdit recipe) => recipe.ParquetCriteria);
+            => AddTag(BiomeParquetCriteriaListBox, (IMutableBiomeRecipe recipe) => recipe.ParquetCriteria);
 
         /// <summary>
         /// Registeres the user command to remove the selected parquet criterion tag from the current biome.
@@ -2367,7 +2379,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void BiomeRemoveParquetCriterionButton_Click(object sender, EventArgs e)
-            => RemoveTag(BiomeParquetCriteriaListBox, (IBiomeRecipeEdit recipe) => recipe.ParquetCriteria);
+            => RemoveTag(BiomeParquetCriteriaListBox, (IMutableBiomeRecipe recipe) => recipe.ParquetCriteria);
 
         /// <summary>
         /// Registeres the user command to add a new entry requirement tag to the current biome.
@@ -2375,7 +2387,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void BiomeAddEntryRequirementButton_Click(object sender, EventArgs e)
-            => AddTag(BiomeEntryRequirementsListBox, (IBiomeRecipeEdit recipe) => recipe.EntryRequirements);
+            => AddTag(BiomeEntryRequirementsListBox, (IMutableBiomeRecipe recipe) => recipe.EntryRequirements);
 
         /// <summary>
         /// Registeres the user command to remove the selected entry requirement tag from the current biome.
@@ -2383,7 +2395,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void BiomeRemoveEntryRequirementButton_Click(object sender, EventArgs e)
-            => RemoveTag(BiomeEntryRequirementsListBox, (IBiomeRecipeEdit recipe) => recipe.EntryRequirements);
+            => RemoveTag(BiomeEntryRequirementsListBox, (IMutableBiomeRecipe recipe) => recipe.EntryRequirements);
         #endregion
 
         #region Crafting Tab
@@ -2409,7 +2421,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void CraftingAddProductButton_Click(object sender, EventArgs e)
-            => AddRecipeElement(CraftingProductsListBox, (ICraftingRecipeEdit recipe) => recipe.Products);
+            => AddRecipeElement(CraftingProductsListBox, (IMutableCraftingRecipe recipe) => recipe.Products);
 
         /// <summary>
         /// Registeres the user command to remove the selected product from the current Crafting Recipe.
@@ -2417,7 +2429,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void CraftingRemoveProductButton_Click(object sender, EventArgs e)
-            => RemoveRecipeElement(CraftingProductsListBox, (ICraftingRecipeEdit recipe) => recipe.Products);
+            => RemoveRecipeElement(CraftingProductsListBox, (IMutableCraftingRecipe recipe) => recipe.Products);
 
         /// <summary>
         /// Registeres the user command to add a new ingredient to the current Crafting Recipe.
@@ -2425,7 +2437,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void CraftingAddIngredientButton_Click(object sender, EventArgs e)
-            => AddRecipeElement(CraftingIngredientsListBox, (ICraftingRecipeEdit recipe) => recipe.Ingredients);
+            => AddRecipeElement(CraftingIngredientsListBox, (IMutableCraftingRecipe recipe) => recipe.Ingredients);
 
         /// <summary>
         /// Registeres the user command to remove the selected ingredient from the current Crafting Recipe.
@@ -2433,7 +2445,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void CraftingRemoveIngredientButton_Click(object sender, EventArgs e)
-            => RemoveRecipeElement(CraftingIngredientsListBox, (ICraftingRecipeEdit recipe) => recipe.Ingredients);
+            => RemoveRecipeElement(CraftingIngredientsListBox, (IMutableCraftingRecipe recipe) => recipe.Ingredients);
         #endregion
 
         #region Rooms Tab
@@ -2459,7 +2471,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void RoomAddFurnishingButton_Click(object sender, EventArgs e)
-            => AddRecipeElement(RoomRequiredFurnishingsListBox, (IRoomRecipeEdit recipe) => recipe.OptionallyRequiredFurnishings);
+            => AddRecipeElement(RoomRequiredFurnishingsListBox, (IMutableRoomRecipe recipe) => recipe.OptionallyRequiredFurnishings);
 
         /// <summary>
         /// Registeres the user command to remove the selected Furnishing requirement from the current Room Recipe.
@@ -2467,7 +2479,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void RoomRemoveFurnishingButton_Click(object sender, EventArgs e)
-            => RemoveRecipeElement(BiomeParquetCriteriaListBox, (IRoomRecipeEdit recipe) => recipe.OptionallyRequiredFurnishings);
+            => RemoveRecipeElement(BiomeParquetCriteriaListBox, (IMutableRoomRecipe recipe) => recipe.OptionallyRequiredFurnishings);
 
         /// <summary>
         /// Registeres the user command to add a new Floor requirement to the current Room Recipe.
@@ -2475,7 +2487,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void RoomAddFloorButton_Click(object sender, EventArgs e)
-            => AddRecipeElement(RoomRequiredFurnishingsListBox, (IRoomRecipeEdit recipe) => recipe.OptionallyRequiredWalkableFloors);
+            => AddRecipeElement(RoomRequiredFurnishingsListBox, (IMutableRoomRecipe recipe) => recipe.OptionallyRequiredWalkableFloors);
 
         /// <summary>
         /// Registeres the user command to remove the selected Floor requirement from the current Room Recipe.
@@ -2483,7 +2495,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void RoomRemoveFloorButton_Click(object sender, EventArgs e)
-            => RemoveRecipeElement(BiomeParquetCriteriaListBox, (IRoomRecipeEdit recipe) => recipe.OptionallyRequiredWalkableFloors);
+            => RemoveRecipeElement(BiomeParquetCriteriaListBox, (IMutableRoomRecipe recipe) => recipe.OptionallyRequiredWalkableFloors);
 
         /// <summary>
         /// Registeres the user command to add a new Block requirement to the current Room Recipe.
@@ -2491,7 +2503,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void RoomAddBlockButton_Click(object sender, EventArgs e)
-            => AddRecipeElement(RoomRequiredFurnishingsListBox, (IRoomRecipeEdit recipe) => recipe.OptionallyRequiredPerimeterBlocks);
+            => AddRecipeElement(RoomRequiredFurnishingsListBox, (IMutableRoomRecipe recipe) => recipe.OptionallyRequiredPerimeterBlocks);
 
         /// <summary>
         /// Registeres the user command to remove the selected Block requirement from the current Room Recipe.
@@ -2499,7 +2511,7 @@ namespace Scribe
         /// <param name="sender">Ignored</param>
         /// <param name="e">Ignored</param>
         private void RoomRemoveBlockButton_Click(object sender, EventArgs e)
-            => RemoveRecipeElement(BiomeParquetCriteriaListBox, (IRoomRecipeEdit recipe) => recipe.OptionallyRequiredPerimeterBlocks);
+            => RemoveRecipeElement(BiomeParquetCriteriaListBox, (IMutableRoomRecipe recipe) => recipe.OptionallyRequiredPerimeterBlocks);
         #endregion
 
         #region Maps Tab
