@@ -1912,7 +1912,7 @@ namespace Scribe
             if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is ICharacterModelEdit character
                 && AddQuestDialogue.ShowDialog() == DialogResult.OK)
             {
-                if (inGetQuestListFromModel(character).Contains(AddQuestDialogue.ReturnNewQuest))
+                if (inGetQuestListFromModel(character).Contains(AddQuestDialogue.ReturnNewQuestID))
                 {
                     MainToolStripStatusLabel.Text = string.Format(CultureInfo.CurrentCulture, Resources.WarningNotAddingDuplicate,
                                                                   nameof(InteractionModel));
@@ -1920,8 +1920,8 @@ namespace Scribe
                     return;
                 }
 
-                ChangeManager.AddAndExecute(new ChangeList(AddQuestDialogue.ReturnNewQuest,
-                                            $"add tag {AddQuestDialogue.ReturnNewQuest} to {character.Name}",
+                ChangeManager.AddAndExecute(new ChangeList(AddQuestDialogue.ReturnNewQuestID,
+                                            $"add tag quest to {character.Name}",
                                             (object databaseValue) =>
                                             {
                                                 inGetQuestListFromModel(character).Add((ModelID)databaseValue);

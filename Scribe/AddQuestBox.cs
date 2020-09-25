@@ -1,5 +1,8 @@
 using System;
+using System.Linq;
 using System.Windows.Forms;
+using ParquetClassLibrary;
+using ParquetClassLibrary.Scripts;
 
 namespace Scribe
 {
@@ -8,6 +11,9 @@ namespace Scribe
     /// </summary>
     internal partial class AddQuestBox : Form
     {
+        /// <summary>The <see cref="ModelID"/> that the user added, if any.</summary>
+        public ModelID ReturnNewQuestID { get; set; }
+
         #region Initialization
         /// <summary>
         /// Initialize a new <see cref="AddQuestBox"/>.
@@ -21,7 +27,18 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void AddQuestBox_Load(object sender, EventArgs e)
-            => ApplyCurrentTheme();
+        {
+            if (ModelID.None == ReturnNewQuestID)
+            {
+                AddQuestComboBox.SelectedItem = null;
+                AddQuestComboBox.BeginUpdate();
+                AddQuestComboBox.Items.Clear();
+                AddQuestComboBox.Items.AddRange(All.Interactions.Where(model => model.ID != ModelID.None).ToArray<object>());
+                AddQuestComboBox.EndUpdate();
+            }
+            ApplyCurrentTheme();
+            AddQuestComboBox.Select();
+        }
         #endregion
 
         #region Color Theming
@@ -44,6 +61,33 @@ namespace Scribe
             CancelButtonControl.FlatAppearance.BorderColor = CurrentTheme.BorderColor;
             CancelButtonControl.FlatAppearance.MouseDownBackColor = CurrentTheme.MouseDownColor;
             CancelButtonControl.FlatAppearance.MouseOverBackColor = CurrentTheme.MouseOverColor;
+        }
+        #endregion
+
+        #region Closing Form
+        /// <summary>
+        /// Closes the <see cref="AddQuestBox"/>, signalling that the entered quest was accepted.
+        /// </summary>
+        /// <param name="sender">The originator of the event.</param>
+        /// <param name="e">Additional event data.</param>
+        private void OkayButton_Click(object sender, EventArgs e)
+        {
+            (ReturnNewQuestID, DialogResult) = null == AddQuestComboBox.SelectedItem
+                ? (ModelID.None, DialogResult.Cancel)
+                : (((InteractionModel)AddQuestComboBox.SelectedItem).ID, DialogResult.OK);
+            Close();
+        }
+
+        /// <summary>
+        /// Closes the <see cref="AddQuestBox"/>, signalling to abandon any entered quest.
+        /// </summary>
+        /// <param name="sender">The originator of the event.</param>
+        /// <param name="e">Additional event data.</param>
+        private void CancelButtonControl_Click(object sender, EventArgs e)
+        {
+            ReturnNewQuestID = ModelID.None;
+            DialogResult = DialogResult.Cancel;
+            Close();
         }
         #endregion
     }
