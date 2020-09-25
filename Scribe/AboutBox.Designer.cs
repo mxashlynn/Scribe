@@ -164,6 +164,7 @@ namespace Scribe
             // 
             this.OkayButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.OkayButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.OkayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OkayButton.Location = new System.Drawing.Point(395, 277);
             this.OkayButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.OkayButton.Name = "OkayButton";
@@ -190,6 +191,7 @@ namespace Scribe
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AboutBox";
+            this.Load += new System.EventHandler(this.AboutBox_Load);
             this.AboutTableLayoutPanel.ResumeLayout(false);
             this.AboutTableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();

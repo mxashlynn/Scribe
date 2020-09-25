@@ -176,21 +176,21 @@ namespace Scribe
             TextBoxImageEditorPath.BackColor = CurrentTheme.ControlBackgroundWhite;
             TextBoxImageEditorPath.ForeColor = CurrentTheme.ControlForegroundColor;
 
-            LabelTheme.BackColor = CurrentTheme.UneditableBackgroundColor;
+            LabelTheme.BackColor = CurrentTheme.ControlBackgroundColor;
             LabelTheme.ForeColor = CurrentTheme.ControlForegroundColor;
-            LabelSuggestStoryIDs.BackColor = CurrentTheme.UneditableBackgroundColor;
+            LabelSuggestStoryIDs.BackColor = CurrentTheme.ControlBackgroundColor;
             LabelSuggestStoryIDs.ForeColor = CurrentTheme.ControlForegroundColor;
-            LabelAutoSaveInterval.BackColor = CurrentTheme.UneditableBackgroundColor;
+            LabelAutoSaveInterval.BackColor = CurrentTheme.ControlBackgroundColor;
             LabelAutoSaveInterval.ForeColor = CurrentTheme.ControlForegroundColor;
-            LabelAutoSaveExplanation.BackColor = CurrentTheme.UneditableBackgroundColor;
+            LabelAutoSaveExplanation.BackColor = CurrentTheme.ControlBackgroundColor;
             LabelAutoSaveExplanation.ForeColor = CurrentTheme.ControlForegroundColor;
-            LabelDefaultFolder.BackColor = CurrentTheme.UneditableBackgroundColor;
+            LabelDefaultFolder.BackColor = CurrentTheme.ControlBackgroundColor;
             LabelDefaultFolder.ForeColor = CurrentTheme.ControlForegroundColor;
-            LabelFlavorFilter.BackColor = CurrentTheme.UneditableBackgroundColor;
+            LabelFlavorFilter.BackColor = CurrentTheme.ControlBackgroundColor;
             LabelFlavorFilter.ForeColor = CurrentTheme.ControlForegroundColor;
-            LabelEditImagesIn.BackColor = CurrentTheme.UneditableBackgroundColor;
+            LabelEditImagesIn.BackColor = CurrentTheme.ControlBackgroundColor;
             LabelEditImagesIn.ForeColor = CurrentTheme.ControlForegroundColor;
-            LabelImageEditorPath.BackColor = CurrentTheme.UneditableBackgroundColor;
+            LabelImageEditorPath.BackColor = CurrentTheme.ControlBackgroundColor;
             LabelImageEditorPath.ForeColor = CurrentTheme.ControlForegroundColor;
 
             OkayButton.BackColor = CurrentTheme.ControlBackgroundColor;

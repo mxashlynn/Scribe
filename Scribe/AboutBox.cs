@@ -11,6 +11,7 @@ namespace Scribe
     /// </summary>
     internal partial class AboutBox : Form
     {
+        #region Initialization
         /// <summary>
         /// A modal dialogue that present descriptive information about the application and library.
         /// </summary>
@@ -26,6 +27,42 @@ namespace Scribe
             LabelFrameworkVersions.Text = $"{nameof(ParquetClassLibrary)}: {ParquetClassLibrary.AssemblyInfo.LibraryVersion}  {Environment.NewLine}{nameof(CsvHelper)}: {Assembly.GetAssembly(typeof(CsvHelper.CsvParser)).GetName().Version}  {Environment.NewLine}{RuntimeInformation.FrameworkDescription}";
             TextBoxDescription.Text = $"{AssemblyDescription}{Environment.NewLine}  {Environment.NewLine}{Resources.AboutDetails}{Environment.NewLine}  {Environment.NewLine}{Resources.AboutLinkPreamble} {Resources.RepositoryURL}";
         }
+
+        /// <summary>
+        /// Resets the UI each time the dialogue box is loaded.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void AboutBox_Load(object sender, EventArgs e)
+            => ApplyCurrentTheme();
+        #endregion
+
+        #region Color Theming
+        /// <summary>
+        /// Applies the <see cref="CurrentTheme"/> to the <see cref="AboutBox"/> and its <see cref="Control"/>s.
+        /// </summary>
+        private void ApplyCurrentTheme()
+        {
+            BackColor = CurrentTheme.ControlBackgroundColor;
+            ForeColor = CurrentTheme.ControlForegroundColor;
+            TextBoxDescription.BackColor = CurrentTheme.ControlBackgroundWhite;
+            TextBoxDescription.ForeColor = CurrentTheme.ControlForegroundColor;
+            LabelProductName.BackColor = CurrentTheme.ControlBackgroundColor;
+            LabelProductName.ForeColor = CurrentTheme.ControlForegroundColor;
+            LabelVersion.BackColor = CurrentTheme.ControlBackgroundColor;
+            LabelVersion.ForeColor = CurrentTheme.ControlForegroundColor;
+            LabelCopyright.BackColor = CurrentTheme.ControlBackgroundColor;
+            LabelCopyright.ForeColor = CurrentTheme.ControlForegroundColor;
+            LabelCompanyName.BackColor = CurrentTheme.ControlBackgroundColor;
+            LabelCompanyName.ForeColor = CurrentTheme.ControlForegroundColor;
+            LabelFrameworkVersions.BackColor = CurrentTheme.ControlBackgroundColor;
+            LabelFrameworkVersions.ForeColor = CurrentTheme.ControlForegroundColor;
+            OkayButton.BackColor = CurrentTheme.ControlBackgroundColor;
+            OkayButton.FlatAppearance.BorderColor = CurrentTheme.BorderColor;
+            OkayButton.FlatAppearance.MouseDownBackColor = CurrentTheme.MouseDownColor;
+            OkayButton.FlatAppearance.MouseOverBackColor = CurrentTheme.MouseOverColor;
+        }
+        #endregion
 
         #region Assembly Attribute Accessors
         /// <summary>
@@ -105,6 +142,7 @@ namespace Scribe
         }
         #endregion
 
+        #region Closing the Form
         /// <summary>
         /// Closes the <see cref="AboutBox"/>.
         /// </summary>
@@ -112,5 +150,6 @@ namespace Scribe
         /// <param name="e">Additional event data.</param>
         private void OKButton_Click(object sender, EventArgs e)
             => Close();
+        #endregion
     }
 }

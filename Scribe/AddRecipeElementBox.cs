@@ -42,10 +42,39 @@ namespace Scribe
                 ElementAmountTextBox.Text = "";
                 ElementTagTextBox.Text = "";
             }
+            ApplyCurrentTheme();
             ElementTagTextBox.Select();
         }
         #endregion
 
+        #region Color Theming
+        /// <summary>
+        /// Applies the <see cref="CurrentTheme"/> to the <see cref="AddRecipeElementBox"/> and its <see cref="Control"/>s.
+        /// </summary>
+        private void ApplyCurrentTheme()
+        {
+            BackColor = CurrentTheme.ControlBackgroundColor;
+            ForeColor = CurrentTheme.ControlForegroundColor;
+            ElementTagTextBox.BackColor = CurrentTheme.ControlBackgroundWhite;
+            ElementTagTextBox.ForeColor = CurrentTheme.ControlForegroundColor;
+            ElementAmountTextBox.BackColor = CurrentTheme.ControlBackgroundWhite;
+            ElementAmountTextBox.ForeColor = CurrentTheme.ControlForegroundColor;
+            ElementTagLabel.BackColor = CurrentTheme.ControlBackgroundColor;
+            ElementTagLabel.ForeColor = CurrentTheme.ControlForegroundColor;
+            ElementAmountLabel.BackColor = CurrentTheme.ControlBackgroundColor;
+            ElementAmountLabel.ForeColor = CurrentTheme.ControlForegroundColor;
+            OkayButton.BackColor = CurrentTheme.ControlBackgroundColor;
+            OkayButton.FlatAppearance.BorderColor = CurrentTheme.BorderColor;
+            OkayButton.FlatAppearance.MouseDownBackColor = CurrentTheme.MouseDownColor;
+            OkayButton.FlatAppearance.MouseOverBackColor = CurrentTheme.MouseOverColor;
+            CancelButtonControl.BackColor = CurrentTheme.ControlBackgroundColor;
+            CancelButtonControl.FlatAppearance.BorderColor = CurrentTheme.BorderColor;
+            CancelButtonControl.FlatAppearance.MouseDownBackColor = CurrentTheme.MouseDownColor;
+            CancelButtonControl.FlatAppearance.MouseOverBackColor = CurrentTheme.MouseOverColor;
+        }
+        #endregion
+
+        #region Validation
         /// <summary>
         /// Validates the <see cref="ParquetClassLibrary.ModelTag"/> that the user added to the <see cref="RecipeElement"/>. 
         /// </summary>
@@ -85,7 +114,9 @@ namespace Scribe
             }
             newAmount = parsedAmount;
         }
+        #endregion
 
+        #region Closing Form
         /// <summary>
         /// Closes the <see cref="AddTagBox"/>, signalling that the entered tag text was accepted.
         /// </summary>
@@ -110,5 +141,6 @@ namespace Scribe
             DialogResult = DialogResult.Cancel;
             Close();
         }
+        #endregion
     }
 }

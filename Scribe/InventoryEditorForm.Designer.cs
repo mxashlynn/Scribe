@@ -161,6 +161,7 @@ namespace Scribe
             this.MinimumSize = new System.Drawing.Size(600, 300);
             this.Name = "InventoryEditorForm";
             this.Text = "Inventories Editor";
+            this.Load += new System.EventHandler(this.InventoryEditorForm_Load);
             this.TableLayoutPanel.ResumeLayout(false);
             this.TableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -168,6 +169,7 @@ namespace Scribe
         }
 
         #endregion
+
         private System.Windows.Forms.Label CapacityLabel;
         private System.Windows.Forms.Label InventorySlotsLabel;
         private System.Windows.Forms.Button RemoveSlotButton;

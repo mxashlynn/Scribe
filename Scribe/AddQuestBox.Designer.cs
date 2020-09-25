@@ -66,6 +66,7 @@ namespace Scribe
             // CancelButtonControl
             // 
             this.CancelButtonControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CancelButtonControl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelButtonControl.Location = new System.Drawing.Point(3, 37);
             this.CancelButtonControl.Name = "CancelButtonControl";
             this.CancelButtonControl.Size = new System.Drawing.Size(74, 23);
@@ -77,6 +78,7 @@ namespace Scribe
             // 
             this.OkayButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.OkayButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.OkayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OkayButton.Location = new System.Drawing.Point(185, 37);
             this.OkayButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.OkayButton.Name = "OkayButton";
@@ -111,6 +113,7 @@ namespace Scribe
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Quest";
+            this.Load += new System.EventHandler(this.AddQuestBox_Load);
             this.AddQuestTableLayoutPanel.ResumeLayout(false);
             this.AddQuestTableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);

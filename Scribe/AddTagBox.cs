@@ -11,7 +11,7 @@ namespace Scribe
     internal partial class AddTagBox : Form
     {
         /// <summary>The <see cref="ModelTag"/> that the user might add.</summary>
-        private ModelTag newTag { get; set; }
+        private ModelTag NewTag { get; set; }
 
         /// <summary>The <see cref="ModelTag"/> that the user added, if any.</summary>
         public ModelTag ReturnNewTag { get; set; }
@@ -35,10 +35,35 @@ namespace Scribe
                 ReturnNewTag = "";
                 NewTagTextBox.Text = "";
             }
+            ApplyCurrentTheme();
             NewTagTextBox.Select();
         }
         #endregion
 
+        #region Color Theming
+        /// <summary>
+        /// Applies the <see cref="CurrentTheme"/> to the <see cref="AddTagBox"/> and its <see cref="Control"/>s.
+        /// </summary>
+        private void ApplyCurrentTheme()
+        {
+            BackColor = CurrentTheme.ControlBackgroundColor;
+            ForeColor = CurrentTheme.ControlForegroundColor;
+            NewTagTextBox.BackColor = CurrentTheme.ControlBackgroundWhite;
+            NewTagTextBox.ForeColor = CurrentTheme.ControlForegroundColor;
+            NewTagLabel.BackColor = CurrentTheme.ControlBackgroundColor;
+            NewTagLabel.ForeColor = CurrentTheme.ControlForegroundColor;
+            OkayButton.BackColor = CurrentTheme.ControlBackgroundColor;
+            OkayButton.FlatAppearance.BorderColor = CurrentTheme.BorderColor;
+            OkayButton.FlatAppearance.MouseDownBackColor = CurrentTheme.MouseDownColor;
+            OkayButton.FlatAppearance.MouseOverBackColor = CurrentTheme.MouseOverColor;
+            CancelButtonControl.BackColor = CurrentTheme.ControlBackgroundColor;
+            CancelButtonControl.FlatAppearance.BorderColor = CurrentTheme.BorderColor;
+            CancelButtonControl.FlatAppearance.MouseDownBackColor = CurrentTheme.MouseDownColor;
+            CancelButtonControl.FlatAppearance.MouseOverBackColor = CurrentTheme.MouseOverColor;
+        }
+        #endregion
+
+        #region Validation
         /// <summary>
         /// Validates the <see cref="ModelTag"/> that the user added. 
         /// </summary>
@@ -55,9 +80,11 @@ namespace Scribe
                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 eventArguments.Cancel = true;
             }
-            newTag = newText;
+            NewTag = newText;
         }
+        #endregion
 
+        #region Closing Form
         /// <summary>
         /// Closes the <see cref="AddTagBox"/>, signalling that the entered tag text was accepted.
         /// </summary>
@@ -65,9 +92,9 @@ namespace Scribe
         /// <param name="e">Additional event data.</param>
         private void OkayButton_Click(object sender, EventArgs e)
         {
-            (ReturnNewTag, DialogResult) = string.IsNullOrEmpty(newTag)
+            (ReturnNewTag, DialogResult) = string.IsNullOrEmpty(NewTag)
                 ? ((ModelTag)"", DialogResult.Cancel)
-                : (newTag, DialogResult.OK);
+                : (NewTag, DialogResult.OK);
             Close();
         }
 
@@ -82,5 +109,6 @@ namespace Scribe
             DialogResult = DialogResult.Cancel;
             Close();
         }
+        #endregion
     }
 }
