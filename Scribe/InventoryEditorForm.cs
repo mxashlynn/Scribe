@@ -1,5 +1,7 @@
 using System;
 using System.Windows.Forms;
+using ParquetClassLibrary.Beings;
+using ParquetClassLibrary.EditorSupport;
 
 namespace Scribe
 {
@@ -8,6 +10,9 @@ namespace Scribe
     /// </summary>
     internal partial class InventoryEditorForm : Form
     {
+        /// <summary>The <see cref="CharacterModel"/> whose <see cref="Inventory"/> is being edited.</summary>
+        public ICharacterModelEdit CurrentCharacter { get; set; }
+
         #region Initialization
         /// <summary>
         /// Initialize a new <see cref="InventoryEditorForm"/>.
