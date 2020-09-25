@@ -185,7 +185,7 @@ namespace Scribe
             this.RadioButtonOSDefaultTheme.TabStop = true;
             this.RadioButtonOSDefaultTheme.Text = "OS Default";
             this.RadioButtonOSDefaultTheme.UseVisualStyleBackColor = true;
-            this.RadioButtonOSDefaultTheme.Validated += new System.EventHandler(this.RadioButtonOSDefaultTheme_Validated);
+            this.RadioButtonOSDefaultTheme.CheckedChanged += new System.EventHandler(this.RadioButtonOSDefaultTheme_CheckedChanged);
             // 
             // RadioButtonFemmeTheme
             // 
@@ -196,7 +196,7 @@ namespace Scribe
             this.RadioButtonFemmeTheme.TabIndex = 1;
             this.RadioButtonFemmeTheme.Text = "Femme";
             this.RadioButtonFemmeTheme.UseVisualStyleBackColor = true;
-            this.RadioButtonFemmeTheme.Validated += new System.EventHandler(this.RadioButtonFemmeTheme_Validated);
+            this.RadioButtonFemmeTheme.CheckedChanged += new System.EventHandler(this.RadioButtonFemmeTheme_CheckedChanged);
             // 
             // RadioButtonColorfulTheme
             // 
@@ -207,7 +207,7 @@ namespace Scribe
             this.RadioButtonColorfulTheme.TabIndex = 2;
             this.RadioButtonColorfulTheme.Text = "Colorful";
             this.RadioButtonColorfulTheme.UseVisualStyleBackColor = true;
-            this.RadioButtonColorfulTheme.Validated += new System.EventHandler(this.RadioButtonColorfulTheme_Validated);
+            this.RadioButtonColorfulTheme.CheckedChanged += new System.EventHandler(this.RadioButtonColorfulTheme_CheckedChanged);
             // 
             // LabelSuggestStoryIDs
             // 

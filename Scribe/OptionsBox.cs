@@ -126,34 +126,46 @@ namespace Scribe
         /// <summary>
         /// Updates <see cref="CurrentTheme"/> setting to <see cref="EditorTheme.Femme"/>.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
+        /// <param name="sender">Determines if the theme is being set or unset.</param>
         /// <param name="e">Ignored.</param>
-        private void RadioButtonFemmeTheme_Validated(object sender, EventArgs e)
+        private void RadioButtonFemmeTheme_CheckedChanged(object sender, EventArgs e)
         {
-            CurrentTheme.SetUpTheme(EditorTheme.Femme);
-            ApplyCurrentTheme();
+            if (sender is RadioButton radioButton
+                && radioButton.Checked)
+            {
+                CurrentTheme.SetUpTheme(EditorTheme.Femme);
+                ApplyCurrentTheme();
+            }
         }
 
         /// <summary>
         /// Updates <see cref="CurrentTheme"/> setting to <see cref="EditorTheme.Colorful"/>.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
+        /// <param name="sender">Determines if the theme is being set or unset.</param>
         /// <param name="e">Ignored.</param>
-        private void RadioButtonColorfulTheme_Validated(object sender, EventArgs e)
+        private void RadioButtonColorfulTheme_CheckedChanged(object sender, EventArgs e)
         {
-            CurrentTheme.SetUpTheme(EditorTheme.Colorful);
-            ApplyCurrentTheme();
+            if (sender is RadioButton radioButton
+                && radioButton.Checked)
+            {
+                CurrentTheme.SetUpTheme(EditorTheme.Colorful);
+                ApplyCurrentTheme();
+            }
         }
 
         /// <summary>
         /// Updates <see cref="CurrentTheme"/> setting to <see cref="EditorTheme.OSDefault"/>.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
+        /// <param name="sender">Determines if the theme is being set or unset.</param>
         /// <param name="e">Ignored.</param>
-        private void RadioButtonOSDefaultTheme_Validated(object sender, EventArgs e)
+        private void RadioButtonOSDefaultTheme_CheckedChanged(object sender, EventArgs e)
         {
-            CurrentTheme.SetUpTheme(EditorTheme.OSDefault);
-            ApplyCurrentTheme();
+            if (sender is RadioButton radioButton
+                && radioButton.Checked)
+            {
+                CurrentTheme.SetUpTheme(EditorTheme.OSDefault);
+                ApplyCurrentTheme();
+            }
         }
 
         /// <summary>
