@@ -46,8 +46,12 @@ namespace Scribe.ChangeHistory
             SetDisplayValue = inSetDisplayValue;
             SetOldValue = inSetOldValue;
 
-            var displayOldState = (string.IsNullOrEmpty(inOldState as string) ? "null" : inOldState.ToString());
-            var displayNewState = (string.IsNullOrEmpty(inNewState as string) ? "null" : inNewState.ToString());
+            var displayOldState = string.IsNullOrEmpty(inOldState as string)
+                ? "null"
+                : inOldState.ToString();
+            var displayNewState = string.IsNullOrEmpty(inNewState as string)
+                ? "null"
+                : inNewState.ToString();
             Description = $"alter value of {inControlName} from {displayOldState} to {displayNewState}";
         }
 
