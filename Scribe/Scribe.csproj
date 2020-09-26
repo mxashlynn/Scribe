@@ -69,7 +69,7 @@
 
   <ItemGroup>
     <PackageReference Include="CsvHelper" Version="15.0.5" />
-    <PackageReference Include="ParquetClassLibrary_MagicalGirlfriends" Version="0.3.27" />
+    <PackageReference Include="ParquetClassLibrary_MagicalGirlfriends" Version="0.3.28" />
   </ItemGroup>
 
   <ItemGroup>

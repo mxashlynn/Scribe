@@ -66,15 +66,15 @@ namespace Scribe
             {
                 TypeNamesWithoutGraphics = new List<string> { "Interaction", "Map", "Script" };
                 GraphicalAssetPaths = AppDomain.CurrentDomain.GetAssemblies()
-                                                 .Where(myassembly => string.Equals(myassembly.GetName().Name, "Parquet"))
-                                                 .SelectMany(myassembly => myassembly.GetExportedTypes())
-                                                 .Where(type => typeof(Model).IsAssignableFrom(type)
-                                                             && !type.IsInterface
-                                                             && !type.IsAbstract
-                                                             && !TypeNamesWithoutGraphics.Any(name => type.Name.Contains(name)))
-                                                 .ToDictionary(type => All.GetIDRangeForType(type),
-                                                               type => Path.Combine(GraphicsFolderName, type.Name.Replace("Model", "s")
-                                                                                                         .Replace("Recipe", "Recipes")));
+                                               .Where(myassembly => string.Equals(myassembly.GetName().Name, "Parquet"))
+                                               .SelectMany(myassembly => myassembly.GetExportedTypes())
+                                               .Where(type => typeof(Model).IsAssignableFrom(type)
+                                                           && !type.IsInterface
+                                                           && !type.IsAbstract
+                                                           && !TypeNamesWithoutGraphics.Any(name => type.Name.Contains(name)))
+                                               .ToDictionary(type => All.GetIDRangeForType(type),
+                                                             type => Path.Combine(GraphicsFolderName,
+                                                                                  type.Name.Replace("Model", "s").Replace("Recipe", "Recipes")));
             }
         }
         #endregion
