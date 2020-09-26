@@ -76,6 +76,13 @@ namespace Scribe
             this.ToolStripMenuItemReloadImage = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuStripIDExamples = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToolStripMenuItemCopyID = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextMenuStripForTextEntries = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ToolStripMenuItemContextCut = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemContextCopy = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemContextPaste = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemContextClear = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.ToolStripMenuItemContextSelectAll = new System.Windows.Forms.ToolStripMenuItem();
             this.FiltersTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.FilterTextBox = new System.Windows.Forms.TextBox();
             this.FilterByNameCheckBox = new System.Windows.Forms.CheckBox();
@@ -514,6 +521,7 @@ namespace Scribe
             this.MainMenuBar.SuspendLayout();
             this.ContextMenuStripPictureBoxes.SuspendLayout();
             this.ContextMenuStripIDExamples.SuspendLayout();
+            this.ContextMenuStripForTextEntries.SuspendLayout();
             this.FiltersTableLayoutPanel.SuspendLayout();
             this.FilterGroupBox.SuspendLayout();
             this.FlavorFilterGroupBox.SuspendLayout();
@@ -960,6 +968,58 @@ namespace Scribe
             this.ToolStripMenuItemCopyID.Text = "Copy ID";
             this.ToolStripMenuItemCopyID.Click += new System.EventHandler(this.CopyID_Click);
             // 
+            // ContextMenuStripForTextEntries
+            // 
+            this.ContextMenuStripForTextEntries.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemContextCut,
+            this.ToolStripMenuItemContextCopy,
+            this.ToolStripMenuItemContextPaste,
+            this.ToolStripMenuItemContextClear,
+            this.toolStripSeparator7,
+            this.ToolStripMenuItemContextSelectAll});
+            this.ContextMenuStripForTextEntries.Name = "ContextMenuStripForTextEntries";
+            this.ContextMenuStripForTextEntries.Size = new System.Drawing.Size(123, 120);
+            // 
+            // ToolStripMenuItemContextCut
+            // 
+            this.ToolStripMenuItemContextCut.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemContextCut.Image")));
+            this.ToolStripMenuItemContextCut.Name = "ToolStripMenuItemContextCut";
+            this.ToolStripMenuItemContextCut.Size = new System.Drawing.Size(122, 22);
+            this.ToolStripMenuItemContextCut.Text = "Cut";
+            // 
+            // ToolStripMenuItemContextCopy
+            // 
+            this.ToolStripMenuItemContextCopy.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemContextCopy.Image")));
+            this.ToolStripMenuItemContextCopy.Name = "ToolStripMenuItemContextCopy";
+            this.ToolStripMenuItemContextCopy.Size = new System.Drawing.Size(122, 22);
+            this.ToolStripMenuItemContextCopy.Text = "Copy";
+            // 
+            // ToolStripMenuItemContextPaste
+            // 
+            this.ToolStripMenuItemContextPaste.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemContextPaste.Image")));
+            this.ToolStripMenuItemContextPaste.Name = "ToolStripMenuItemContextPaste";
+            this.ToolStripMenuItemContextPaste.Size = new System.Drawing.Size(122, 22);
+            this.ToolStripMenuItemContextPaste.Text = "Paste";
+            // 
+            // ToolStripMenuItemContextClear
+            // 
+            this.ToolStripMenuItemContextClear.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemContextClear.Image")));
+            this.ToolStripMenuItemContextClear.Name = "ToolStripMenuItemContextClear";
+            this.ToolStripMenuItemContextClear.Size = new System.Drawing.Size(122, 22);
+            this.ToolStripMenuItemContextClear.Text = "Clear";
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(119, 6);
+            // 
+            // ToolStripMenuItemContextSelectAll
+            // 
+            this.ToolStripMenuItemContextSelectAll.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemContextSelectAll.Image")));
+            this.ToolStripMenuItemContextSelectAll.Name = "ToolStripMenuItemContextSelectAll";
+            this.ToolStripMenuItemContextSelectAll.Size = new System.Drawing.Size(122, 22);
+            this.ToolStripMenuItemContextSelectAll.Text = "Select All";
+            // 
             // FiltersTableLayoutPanel
             // 
             this.FiltersTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -987,6 +1047,7 @@ namespace Scribe
             // 
             // FilterTextBox
             // 
+            this.FilterTextBox.ContextMenuStrip = this.ContextMenuStripForTextEntries;
             this.FilterTextBox.Location = new System.Drawing.Point(3, 3);
             this.FilterTextBox.Name = "FilterTextBox";
             this.FilterTextBox.Size = new System.Drawing.Size(144, 20);
@@ -6174,6 +6235,7 @@ namespace Scribe
             this.MainMenuBar.PerformLayout();
             this.ContextMenuStripPictureBoxes.ResumeLayout(false);
             this.ContextMenuStripIDExamples.ResumeLayout(false);
+            this.ContextMenuStripForTextEntries.ResumeLayout(false);
             this.FiltersTableLayoutPanel.ResumeLayout(false);
             this.FiltersTableLayoutPanel.PerformLayout();
             this.FilterGroupBox.ResumeLayout(false);
@@ -6314,6 +6376,13 @@ namespace Scribe
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemReloadImage;
         private System.Windows.Forms.ContextMenuStrip ContextMenuStripIDExamples;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemCopyID;
+        private System.Windows.Forms.ContextMenuStrip ContextMenuStripForTextEntries;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemContextCut;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemContextCopy;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemContextPaste;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemContextClear;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemContextSelectAll;
 
         private System.Windows.Forms.TableLayoutPanel FiltersTableLayoutPanel;
         private System.Windows.Forms.TextBox FilterTextBox;
