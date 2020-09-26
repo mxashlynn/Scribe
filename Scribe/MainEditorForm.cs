@@ -1047,7 +1047,7 @@ namespace Scribe
             RepopulateComboBox(CharacterNativeBiomeComboBox, All.BiomeRecipes);
             RepopulateComboBox(CharacterPrimaryBehaviorComboBox, All.Scripts);
             RepopulateComboBox(CharacterPronounComboBox, All.PronounGroups.Select(pronounGroup => pronounGroup.GetKey()));
-            RepopulateComboBox(CharacterStartingDialogueComboBox, All.Scripts);
+            RepopulateComboBox(CharacterStartingDialogueComboBox, All.Interactions);
             RepopulateComboBox(CritterNativeBiomeComboBox, All.BiomeRecipes);
             RepopulateComboBox(CritterPrimaryBehaviorComboBox, All.Scripts);
             RepopulateComboBox(ItemSubtypeComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(ItemType))));
@@ -1406,7 +1406,7 @@ namespace Scribe
                                                                        .Select(id => All.Interactions.Get<InteractionModel>(id)));
                 CharacterStartingDialogueComboBox.SelectedItem = ModelID.None == model.StartingDialogueID
                     ? null
-                    : All.Scripts.Get<ScriptModel>(model.StartingDialogueID);
+                    : All.Interactions.Get<InteractionModel>(model.StartingDialogueID);
                 CharacterStartingInventoryExample.Text = $"{model.StartingInventory?.Count ?? 0} Items";
                 PictureBoxLoadFromStorage(CharacterPictureBox, model.ID);
             }
