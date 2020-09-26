@@ -179,12 +179,16 @@ namespace Scribe
                                    new object[] { ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer, true });
             ToolStripProgressBar.ProgressBar.Paint += ProgressBar_Paint;
             EditableControls = GetEditableControls();
-            foreach (var kvp in EditableControls)
+            var flatListOfEditableControls = EditableControls.Values.SelectMany(dictionary => dictionary.Keys);
+            foreach (var editableControl in flatListOfEditableControls)
             {
-                foreach (var childControl in kvp.Value)
-                {
-                    childControl.Key.Validated += ContentAlteredEventHandler;
-                }
+                editableControl.Validated += ContentAlteredEventHandler;
+            }
+            var listOfControlsWithTextEntry = EditableControls[typeof(TextBox)].Keys
+                                     .Concat(EditableControls[typeof(ComboBox)].Keys);
+            foreach (var textEntryControl in listOfControlsWithTextEntry)
+            {
+                textEntryControl.ContextMenuStrip = ContextMenuStripForTextEntries;
             }
             FormClosing += FormClosingEventHandler;
             #endregion
