@@ -645,8 +645,11 @@ namespace Scribe
                     => (input) =>
                     {
                         var editModel = inModel as IMutableCharacterModel;
+                        var collection = null == input
+                            ? (IList<ModelID>)Enumerable.Empty<ModelID>()
+                            : (IList<ModelID>)input;
                         editModel.StartingQuestIDs.Clear();
-                        editModel.StartingQuestIDs.ToList().AddRange((IList<ModelID>)input);
+                        editModel.StartingQuestIDs.ToList().AddRange(collection);
                     },
                 #endregion
 
@@ -726,15 +729,21 @@ namespace Scribe
                     => (input) =>
                     {
                         var editRecipe = inModel as IMutableCraftingRecipe;
+                        var collection = null == input
+                            ? (IList<RecipeElement>)Enumerable.Empty<RecipeElement>()
+                            : (IList<RecipeElement>)input;
                         editRecipe.Ingredients.Clear();
-                        editRecipe.Ingredients.ToList().AddRange((IList<RecipeElement>)input);
+                        editRecipe.Ingredients.ToList().AddRange(collection);
                     },
                 (CraftingRecipesTabIndex, "CraftingProductsListBox")
                     => (input) =>
                     {
                         var editRecipe = inModel as IMutableCraftingRecipe;
+                        var collection = null == input
+                            ? (IList<RecipeElement>)Enumerable.Empty<RecipeElement>()
+                            : (IList<RecipeElement>)input;
                         editRecipe.Products.Clear();
-                        editRecipe.Products.ToList().AddRange((IList<RecipeElement>)input);
+                        editRecipe.Products.ToList().AddRange(collection);
                     },
                 #endregion
 
@@ -751,22 +760,31 @@ namespace Scribe
                     => (input) =>
                     {
                         var editRecipe = inModel as IMutableRoomRecipe;
+                        var collection = null == input
+                            ? (IList<RecipeElement>)Enumerable.Empty<RecipeElement>()
+                            : (IList<RecipeElement>)input;
                         editRecipe.OptionallyRequiredFurnishings.Clear();
-                        editRecipe.OptionallyRequiredFurnishings.ToList().AddRange((IList<RecipeElement>)input);
+                        editRecipe.OptionallyRequiredFurnishings.ToList().AddRange(collection);
                     },
                 (RoomRecipesTabIndex, "RoomRequiredBlocksListBox")
                     => (input) =>
                     {
                         var editRecipe = inModel as IMutableRoomRecipe;
+                        var collection = null == input
+                            ? (IList<RecipeElement>)Enumerable.Empty<RecipeElement>()
+                            : (IList<RecipeElement>)input;
                         editRecipe.OptionallyRequiredPerimeterBlocks.Clear();
-                        editRecipe.OptionallyRequiredPerimeterBlocks.ToList().AddRange((IList<RecipeElement>)input);
+                        editRecipe.OptionallyRequiredPerimeterBlocks.ToList().AddRange(collection);
                     },
                 (RoomRecipesTabIndex, "RoomRequiredFloorsListBox")
                     => (input) =>
                     {
                         var editRecipe = inModel as IMutableRoomRecipe;
+                        var collection = null == input
+                            ? (IList<RecipeElement>)Enumerable.Empty<RecipeElement>()
+                            : (IList<RecipeElement>)input;
                         editRecipe.OptionallyRequiredWalkableFloors.Clear();
-                        editRecipe.OptionallyRequiredWalkableFloors.ToList().AddRange((IList<RecipeElement>)input);
+                        editRecipe.OptionallyRequiredWalkableFloors.ToList().AddRange(collection);
                     },
                 #endregion
 
