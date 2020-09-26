@@ -294,12 +294,12 @@ namespace Scribe
         #region Tab Management
         #region Tab Indices
         private const int GamesTabIndex = 0;
-        private const int BlocksTabIndex = 1;
-        private const int FloorsTabIndex = 2;
+        private const int FloorsTabIndex = 1;
+        private const int BlocksTabIndex = 2;
         private const int FurnishingsTabIndex = 3;
         private const int CollectiblesTabIndex = 4;
-        private const int CharactersTabIndex = 5;
-        private const int CrittersTabIndex = 6;
+        private const int CrittersTabIndex = 5;
+        private const int CharactersTabIndex = 6;
         private const int ItemsTabIndex = 7;
         private const int BiomeRecipesTabIndex = 8;
         private const int CraftingRecipesTabIndex = 9;
