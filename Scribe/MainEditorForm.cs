@@ -1020,7 +1020,7 @@ namespace Scribe
             RepopulateListBox(GameListBox, All.Games);
             RepopulateListBox(CritterListBox, All.Critters);
             RepopulateListBox(CharacterListBox, All.Characters);
-            RepopulateListBox(BiomeListBox, All.Biomes);
+            RepopulateListBox(BiomeListBox, All.BiomeRecipes);
             RepopulateListBox(CraftingListBox, All.CraftingRecipes);
             RepopulateListBox(ItemListBox, All.Items);
             RepopulateListBox(FloorListBox, All.Floors);
@@ -1044,11 +1044,11 @@ namespace Scribe
             RepopulateComboBox(FurnishingSwapWithFurnishingComboBox, All.Furnishings);
             RepopulateComboBox(CollectibleEquivalentItemComboBox, All.Items);
             RepopulateComboBox(CollectibleCollectionEffectComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(CollectingEffect))));
-            RepopulateComboBox(CharacterNativeBiomeComboBox, All.Biomes);
+            RepopulateComboBox(CharacterNativeBiomeComboBox, All.BiomeRecipes);
             RepopulateComboBox(CharacterPrimaryBehaviorComboBox, All.Scripts);
             RepopulateComboBox(CharacterPronounComboBox, All.PronounGroups.Select(pronounGroup => pronounGroup.GetKey()));
             RepopulateComboBox(CharacterStartingDialogueComboBox, All.Scripts);
-            RepopulateComboBox(CritterNativeBiomeComboBox, All.Biomes);
+            RepopulateComboBox(CritterNativeBiomeComboBox, All.BiomeRecipes);
             RepopulateComboBox(CritterPrimaryBehaviorComboBox, All.Scripts);
             RepopulateComboBox(ItemSubtypeComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(ItemType))));
             RepopulateComboBox(ItemEffectWhileHeldComboBox, All.Scripts);
@@ -1396,7 +1396,7 @@ namespace Scribe
                 CharacterFamilyNameTextBox.Text = model.FamilyName;
                 CharacterDescriptionTextBox.Text = model.Description;
                 CharacterCommentTextBox.Text = model.Comment;
-                CharacterNativeBiomeComboBox.SelectedItem = All.Biomes.GetOrNull(model.NativeBiomeID);
+                CharacterNativeBiomeComboBox.SelectedItem = All.BiomeRecipes.GetOrNull(model.NativeBiomeID);
                 CharacterPrimaryBehaviorComboBox.SelectedItem = All.Scripts.GetOrNull(model.PrimaryBehaviorID);
                 CharacterPronounComboBox.SelectedItem = model.PronounKey;
                 CharacterStoryIDTextBox.Text = string.IsNullOrEmpty(model.StoryCharacterID) && Settings.Default.SuggestStoryIDs
@@ -1436,7 +1436,7 @@ namespace Scribe
                 CritterNameTextBox.Text = model.Name;
                 CritterDescriptionTextBox.Text = model.Description;
                 CritterCommentTextBox.Text = model.Comment;
-                CritterNativeBiomeComboBox.SelectedItem = All.Biomes.GetOrNull(model.NativeBiomeID);
+                CritterNativeBiomeComboBox.SelectedItem = All.BiomeRecipes.GetOrNull(model.NativeBiomeID);
                 CritterPrimaryBehaviorComboBox.SelectedItem = All.Scripts.GetOrNull(model.PrimaryBehaviorID);
                 PictureBoxLoadFromStorage(CritterPictureBox, model.ID);
             }
@@ -2355,7 +2355,7 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void BiomeAddNewBiomeButton_Click(object sender, EventArgs e)
-            => AddNewModel(All.Biomes, (ModelID id) => new BiomeRecipe(id, "New Biome Recipe", "", ""), All.BiomeIDs, BiomeListBox, "Biome Recipe");
+            => AddNewModel(All.BiomeRecipes, (ModelID id) => new BiomeRecipe(id, "New Biome Recipe", "", ""), All.BiomeRecipeIDs, BiomeListBox, "Biome Recipe");
 
         /// <summary>
         /// Responds to the user clicking "Remove Biome" on the Biomes tab.
@@ -2363,7 +2363,7 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void BiomeRemoveBiomeButton_Click(object sender, EventArgs e)
-            => RemoveModel(All.Biomes, BiomeListBox, "Room Recipe");
+            => RemoveModel(All.BiomeRecipes, BiomeListBox, "Room Recipe");
 
         /// <summary>
         /// Registeres the user command to add a new parquet criterion tag to the current biome.

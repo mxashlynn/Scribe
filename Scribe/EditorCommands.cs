@@ -35,21 +35,13 @@ namespace Scribe
         private const string GraphicsFolderName = "Graphics";
 
         /// <summary>Dialogue for selecting the project folder to work in.</summary>
-        private static readonly FolderBrowserDialog FolderBrowserDialogue = new FolderBrowserDialog();
+        private static readonly FolderBrowserDialog FolderBrowserDialogue;
 
         /// <summary>Texts that cannot be used as <see cref="ModelTag"/>s.</summary>
-        private static readonly List<string> ReservedWorldList = new List<string>
-        {
-            "Empty",
-            "None",
-            "Other",
-            "Unstarted",
-            "Unused",
-        };
+        private static readonly List<string> ReservedWorldList;
 
         /// <summary>Indicates to the user that the text entered cannot be used as a <see cref="ModelTag"/>.</summary>
-        internal static readonly string ReservedWordMessage = string.Format(CultureInfo.CurrentCulture, Resources.ErrorReservedWord,
-                                                                            string.Join(", ", ReservedWorldList));
+        internal static readonly string ReservedWordMessage;
 
         #region Initialization
         /// <summary>
@@ -57,13 +49,18 @@ namespace Scribe
         /// </summary>
         static EditorCommands()
         {
+            FolderBrowserDialogue = new FolderBrowserDialog();
+            ReservedWorldList = new List<string> { "Empty", "None", "Other", "Unstarted", "Unused", };
+            ReservedWordMessage = string.Format(CultureInfo.CurrentCulture, Resources.ErrorReservedWord,
+                                                string.Join(", ", ReservedWorldList));
+
             // This comparison forces the Parquet assembly to load.
             if (string.IsNullOrEmpty(ParquetClassLibrary.AssemblyInfo.LibraryVersion))
             {
                 // TODO Ideally EditorCommands should not open message boxes or interact with the UI.
                 SystemSounds.Beep.Play();
                 _ = MessageBox.Show(Resources.ErrorAccessingParquet, Resources.CaptionAccessingParquetError,
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
