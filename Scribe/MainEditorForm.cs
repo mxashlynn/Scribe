@@ -646,7 +646,7 @@ namespace Scribe
                     {
                         var editModel = inModel as IMutableCharacterModel;
                         var collection = null == input
-                            ? (IList<ModelID>)Enumerable.Empty<ModelID>()
+                            ? Array.Empty<ModelID>()
                             : (IList<ModelID>)input;
                         editModel.StartingQuestIDs.Clear();
                         editModel.StartingQuestIDs.ToList().AddRange(collection);
@@ -730,7 +730,7 @@ namespace Scribe
                     {
                         var editRecipe = inModel as IMutableCraftingRecipe;
                         var collection = null == input
-                            ? (IList<RecipeElement>)Enumerable.Empty<RecipeElement>()
+                            ? Array.Empty<RecipeElement>()
                             : (IList<RecipeElement>)input;
                         editRecipe.Ingredients.Clear();
                         editRecipe.Ingredients.ToList().AddRange(collection);
@@ -740,7 +740,7 @@ namespace Scribe
                     {
                         var editRecipe = inModel as IMutableCraftingRecipe;
                         var collection = null == input
-                            ? (IList<RecipeElement>)Enumerable.Empty<RecipeElement>()
+                            ? Array.Empty<RecipeElement>()
                             : (IList<RecipeElement>)input;
                         editRecipe.Products.Clear();
                         editRecipe.Products.ToList().AddRange(collection);
@@ -761,7 +761,7 @@ namespace Scribe
                     {
                         var editRecipe = inModel as IMutableRoomRecipe;
                         var collection = null == input
-                            ? (IList<RecipeElement>)Enumerable.Empty<RecipeElement>()
+                            ? Array.Empty<RecipeElement>()
                             : (IList<RecipeElement>)input;
                         editRecipe.OptionallyRequiredFurnishings.Clear();
                         editRecipe.OptionallyRequiredFurnishings.ToList().AddRange(collection);
@@ -771,7 +771,7 @@ namespace Scribe
                     {
                         var editRecipe = inModel as IMutableRoomRecipe;
                         var collection = null == input
-                            ? (IList<RecipeElement>)Enumerable.Empty<RecipeElement>()
+                            ? Array.Empty<RecipeElement>()
                             : (IList<RecipeElement>)input;
                         editRecipe.OptionallyRequiredPerimeterBlocks.Clear();
                         editRecipe.OptionallyRequiredPerimeterBlocks.ToList().AddRange(collection);
@@ -781,7 +781,7 @@ namespace Scribe
                     {
                         var editRecipe = inModel as IMutableRoomRecipe;
                         var collection = null == input
-                            ? (IList<RecipeElement>)Enumerable.Empty<RecipeElement>()
+                            ? Array.Empty<RecipeElement>()
                             : (IList<RecipeElement>)input;
                         editRecipe.OptionallyRequiredWalkableFloors.Clear();
                         editRecipe.OptionallyRequiredWalkableFloors.ToList().AddRange(collection);
