@@ -2845,27 +2845,18 @@ namespace Scribe
         /// <param name="eventArguments">Addional event data.</param>
         private void ContextMenuStripForTextEntries_Opening(object sender, CancelEventArgs eventArguments)
         {
-            var menu = sender as ContextMenuStrip;
-            var editableTextBox = menu?.SourceControl as TextBox;
-            var editableComboBox = menu?.SourceControl as ComboBox;
-            if (null == editableTextBox
-                && null == editableComboBox)
+            var sourceBox = new EditableBox(sender as ContextMenuStrip);
+            if (sourceBox.IsEditable)
             {
-                eventArguments.Cancel = true;
+                ToolStripMenuItemContextPaste.Enabled = Clipboard.ContainsText();
+                ToolStripMenuItemContextSelectAll.Enabled = sourceBox.Text.Length > 0;
+                ToolStripMenuItemContextCut.Enabled =
+                ToolStripMenuItemContextCopy.Enabled =
+                ToolStripMenuItemContextClear.Enabled = sourceBox.SelectedText.Length > 0;
             }
             else
             {
-                ToolStripMenuItemContextPaste.Enabled = Clipboard.ContainsText();
-
-                var thereIsText = editableTextBox?.Text.Length > 0
-                                  || editableComboBox?.Text.Length > 0;
-                ToolStripMenuItemContextSelectAll.Enabled = thereIsText;
-
-                var thereIsSelectedText = editableTextBox?.SelectedText.Length > 0
-                                          || editableComboBox?.SelectedText.Length > 0;
-                ToolStripMenuItemContextCut.Enabled = thereIsSelectedText;
-                ToolStripMenuItemContextCopy.Enabled = thereIsSelectedText;
-                ToolStripMenuItemContextClear.Enabled = thereIsSelectedText;
+                eventArguments.Cancel = true;
             }
         }
         #endregion
