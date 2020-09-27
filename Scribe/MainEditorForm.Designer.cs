@@ -979,6 +979,7 @@ namespace Scribe
             this.ToolStripMenuItemContextSelectAll});
             this.ContextMenuStripForTextEntries.Name = "ContextMenuStripForTextEntries";
             this.ContextMenuStripForTextEntries.Size = new System.Drawing.Size(123, 120);
+            this.ContextMenuStripForTextEntries.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuStripForTextEntries_Opening);
             // 
             // ToolStripMenuItemContextCut
             // 

@@ -2837,6 +2837,37 @@ namespace Scribe
                 SystemSounds.Beep.Play();
             }
         }
+
+        /// <summary>
+        /// Sets the state of menu items as the menu opens.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="eventArguments">Addional event data.</param>
+        private void ContextMenuStripForTextEntries_Opening(object sender, CancelEventArgs eventArguments)
+        {
+            var menu = sender as ContextMenuStrip;
+            var editableTextBox = menu?.SourceControl as TextBox;
+            var editableComboBox = menu?.SourceControl as ComboBox;
+            if (null == editableTextBox
+                && null == editableComboBox)
+            {
+                eventArguments.Cancel = true;
+            }
+            else
+            {
+                ToolStripMenuItemContextPaste.Enabled = Clipboard.ContainsText();
+
+                var thereIsText = editableTextBox?.Text.Length > 0
+                                  || editableComboBox?.Text.Length > 0;
+                ToolStripMenuItemContextSelectAll.Enabled = thereIsText;
+
+                var thereIsSelectedText = editableTextBox?.SelectedText.Length > 0
+                                          || editableComboBox?.SelectedText.Length > 0;
+                ToolStripMenuItemContextCut.Enabled = thereIsSelectedText;
+                ToolStripMenuItemContextCopy.Enabled = thereIsSelectedText;
+                ToolStripMenuItemContextClear.Enabled = thereIsSelectedText;
+            }
+        }
         #endregion
 
         #region Hybrid Events
