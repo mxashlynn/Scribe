@@ -1,3 +1,5 @@
+using System;
+
 namespace Scribe
 {
     partial class MainEditorForm
@@ -987,6 +989,7 @@ namespace Scribe
             this.ToolStripMenuItemContextCut.Name = "ToolStripMenuItemContextCut";
             this.ToolStripMenuItemContextCut.Size = new System.Drawing.Size(122, 22);
             this.ToolStripMenuItemContextCut.Text = "Cut";
+            this.ToolStripMenuItemContextCut.Click += new System.EventHandler(this.ToolStripMenuItemContextCut_OnClick);
             // 
             // ToolStripMenuItemContextCopy
             // 
@@ -994,6 +997,7 @@ namespace Scribe
             this.ToolStripMenuItemContextCopy.Name = "ToolStripMenuItemContextCopy";
             this.ToolStripMenuItemContextCopy.Size = new System.Drawing.Size(122, 22);
             this.ToolStripMenuItemContextCopy.Text = "Copy";
+            this.ToolStripMenuItemContextCopy.Click += new System.EventHandler(this.ToolStripMenuItemContextCopy_OnClick);
             // 
             // ToolStripMenuItemContextPaste
             // 
@@ -1001,6 +1005,7 @@ namespace Scribe
             this.ToolStripMenuItemContextPaste.Name = "ToolStripMenuItemContextPaste";
             this.ToolStripMenuItemContextPaste.Size = new System.Drawing.Size(122, 22);
             this.ToolStripMenuItemContextPaste.Text = "Paste";
+            this.ToolStripMenuItemContextPaste.Click += new System.EventHandler(this.ToolStripMenuItemContextPaste_OnClick);
             // 
             // ToolStripMenuItemContextClear
             // 
@@ -1008,6 +1013,7 @@ namespace Scribe
             this.ToolStripMenuItemContextClear.Name = "ToolStripMenuItemContextClear";
             this.ToolStripMenuItemContextClear.Size = new System.Drawing.Size(122, 22);
             this.ToolStripMenuItemContextClear.Text = "Clear";
+            this.ToolStripMenuItemContextClear.Click += new System.EventHandler(this.ToolStripMenuItemContextClear_OnClick);
             // 
             // toolStripSeparator7
             // 
@@ -1020,6 +1026,7 @@ namespace Scribe
             this.ToolStripMenuItemContextSelectAll.Name = "ToolStripMenuItemContextSelectAll";
             this.ToolStripMenuItemContextSelectAll.Size = new System.Drawing.Size(122, 22);
             this.ToolStripMenuItemContextSelectAll.Text = "Select All";
+            this.ToolStripMenuItemContextSelectAll.Click += new System.EventHandler(this.ToolStripMenuItemContextSelectAll_OnClick);
             // 
             // FiltersTableLayoutPanel
             // 
