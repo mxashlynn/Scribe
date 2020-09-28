@@ -66,6 +66,9 @@ namespace Scribe
         /// <summary>Tag identifying controls whose changes are not managed via <see cref="ContentAlteredEventHandler"/>.</summary>
         public static string UntrackedControl = "Untracked Control";
 
+        /// <summary>The currently active <see cref="TextBox"/> or <see cref="ComboBox"/>, if any.</summary>
+        private EditableBox SourceBox;
+
         /// <summary>
         /// A collection of all editable <see cref="PictureBox"/>es in the <see cref="MainEditorForm"/>.
         /// </summary>
@@ -2845,20 +2848,60 @@ namespace Scribe
         /// <param name="eventArguments">Addional event data.</param>
         private void ContextMenuStripForTextEntries_Opening(object sender, CancelEventArgs eventArguments)
         {
-            var sourceBox = new EditableBox(sender as ContextMenuStrip);
-            if (sourceBox.IsEditable)
+            SourceBox = new EditableBox(sender as ContextMenuStrip);
+            if (SourceBox.IsEditable)
             {
                 ToolStripMenuItemContextPaste.Enabled = Clipboard.ContainsText();
-                ToolStripMenuItemContextSelectAll.Enabled = sourceBox.Text.Length > 0;
+                ToolStripMenuItemContextSelectAll.Enabled = SourceBox.Text.Length > 0;
                 ToolStripMenuItemContextCut.Enabled =
                 ToolStripMenuItemContextCopy.Enabled =
-                ToolStripMenuItemContextClear.Enabled = sourceBox.SelectedText.Length > 0;
+                ToolStripMenuItemContextClear.Enabled = SourceBox.SelectedText.Length > 0;
             }
             else
             {
                 eventArguments.Cancel = true;
             }
         }
+
+        /// <summary>
+        /// Cuts the selected text from the currently active <see cref="TextBox"/> or <see cref="ComboBox"/>.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="eventArguments">Addional event data.</param>
+        private void ToolStripMenuItemContextCut_OnClick(object sender, EventArgs eventArguments)
+            => SourceBox?.Cut();
+
+        /// <summary>
+        /// Copies the selected text from the currently active <see cref="TextBox"/> or <see cref="ComboBox"/>.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="eventArguments">Addional event data.</param>
+        private void ToolStripMenuItemContextCopy_OnClick(object sender, EventArgs eventArguments)
+            => SourceBox?.Copy();
+
+        /// <summary>
+        /// Pastes text to the currently active <see cref="TextBox"/> or <see cref="ComboBox"/>.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="eventArguments">Addional event data.</param>
+        private void ToolStripMenuItemContextPaste_OnClick(object sender, EventArgs eventArguments)
+            => SourceBox?.Paste();
+
+        /// <summary>
+        /// Clears all text from the currently active <see cref="TextBox"/> or <see cref="ComboBox"/>.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="eventArguments">Addional event data.</param>
+        private void ToolStripMenuItemContextClear_OnClick(object sender, EventArgs eventArguments)
+            => SourceBox?.ClearAll();
+
+        /// <summary>
+        /// Selects all text in the currently active <see cref="TextBox"/> or <see cref="ComboBox"/>.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="eventArguments">Addional event data.</param>
+        private void ToolStripMenuItemContextSelectAll_OnClick(object sender, EventArgs eventArguments)
+            => SourceBox?.SelectAll();
         #endregion
 
         #region Hybrid Events
