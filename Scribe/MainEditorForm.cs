@@ -2852,10 +2852,10 @@ namespace Scribe
             if (SourceBox.IsEditable)
             {
                 ToolStripMenuItemContextPaste.Enabled = Clipboard.ContainsText();
+                ToolStripMenuItemContextClear.Enabled =
                 ToolStripMenuItemContextSelectAll.Enabled = SourceBox.Text.Length > 0;
                 ToolStripMenuItemContextCut.Enabled =
-                ToolStripMenuItemContextCopy.Enabled =
-                ToolStripMenuItemContextClear.Enabled = SourceBox.SelectedText.Length > 0;
+                ToolStripMenuItemContextCopy.Enabled = SourceBox.SelectedText.Length > 0;
             }
             else
             {
