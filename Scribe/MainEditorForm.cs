@@ -1629,6 +1629,11 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void ContentAlteredEventHandler(object sender, EventArgs e)
         {
+            if (null == sender)
+            {
+                // Silently return if nothing was modified.
+                return;
+            }
             var alteredControl = sender as Control;
             var PropertyAccessor = GetPropertyAccessorForTabAndControl(EditorTabs.SelectedIndex, alteredControl);
             if (null == PropertyAccessor)
@@ -2869,7 +2874,7 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="eventArguments">Addional event data.</param>
         private void ToolStripMenuItemContextCut_OnClick(object sender, EventArgs eventArguments)
-            => SourceBox?.Cut();
+            => ContentAlteredEventHandler(SourceBox?.Cut(), eventArguments);
 
         /// <summary>
         /// Copies the selected text from the currently active <see cref="TextBox"/> or <see cref="ComboBox"/>.
@@ -2885,7 +2890,7 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="eventArguments">Addional event data.</param>
         private void ToolStripMenuItemContextPaste_OnClick(object sender, EventArgs eventArguments)
-            => SourceBox?.Paste();
+            => ContentAlteredEventHandler(SourceBox?.Paste(), eventArguments);
 
         /// <summary>
         /// Clears all text from the currently active <see cref="TextBox"/> or <see cref="ComboBox"/>.
@@ -2893,7 +2898,7 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="eventArguments">Addional event data.</param>
         private void ToolStripMenuItemContextClear_OnClick(object sender, EventArgs eventArguments)
-            => SourceBox?.ClearAll();
+            => ContentAlteredEventHandler(SourceBox?.ClearAll(), eventArguments);
 
         /// <summary>
         /// Selects all text in the currently active <see cref="TextBox"/> or <see cref="ComboBox"/>.
