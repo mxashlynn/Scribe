@@ -58,13 +58,13 @@ namespace Scribe
 
         #region Cached Controls
         /// <summary>Tag identifying controls whose color is not managed via <see cref="Settings.Default.EditorTheme"/>.</summary>
-        public static string UnthemedControl = "Unthemed Control";
+        public const string UnthemedControl = "Unthemed Control";
 
         /// <summary>Tag identifying controls whose color indicates that its text cannot be edited.</summary>
-        public static string ThemedLabel = "Themed";
+        public const string ThemedLabel = "Themed";
 
         /// <summary>Tag identifying controls whose changes are not managed via <see cref="ContentAlteredEventHandler"/>.</summary>
-        public static string UntrackedControl = "Untracked Control";
+        public const string UntrackedControl = "Untracked Control";
 
         /// <summary>The currently active <see cref="TextBox"/> or <see cref="ComboBox"/>, if any.</summary>
         private EditableBox SourceBox;
