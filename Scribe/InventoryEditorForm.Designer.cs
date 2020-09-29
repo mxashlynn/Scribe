@@ -36,9 +36,9 @@ namespace Scribe
             this.SlotsListBox = new System.Windows.Forms.ListBox();
             this.CapacityTextBox = new System.Windows.Forms.TextBox();
             this.TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.EditorToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.CancelButtonControl = new System.Windows.Forms.Button();
             this.OkayButton = new System.Windows.Forms.Button();
+            this.CancelButtonControl = new System.Windows.Forms.Button();
+            this.EditorToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.TableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +63,7 @@ namespace Scribe
             // RemoveSlotButton
             // 
             this.RemoveSlotButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RemoveSlotButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RemoveSlotButton.Location = new System.Drawing.Point(143, 180);
             this.RemoveSlotButton.Name = "RemoveSlotButton";
             this.RemoveSlotButton.Size = new System.Drawing.Size(124, 23);
@@ -73,6 +74,7 @@ namespace Scribe
             // AddSlotButton
             // 
             this.AddSlotButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddSlotButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddSlotButton.Location = new System.Drawing.Point(273, 180);
             this.AddSlotButton.Name = "AddSlotButton";
             this.AddSlotButton.Size = new System.Drawing.Size(124, 23);
@@ -127,25 +129,27 @@ namespace Scribe
             this.TableLayoutPanel.Size = new System.Drawing.Size(530, 237);
             this.TableLayoutPanel.TabIndex = 51;
             // 
-            // CancelButtonControl
-            // 
-            this.CancelButtonControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CancelButtonControl.Location = new System.Drawing.Point(273, 210);
-            this.CancelButtonControl.Name = "CancelButtonControl";
-            this.CancelButtonControl.Size = new System.Drawing.Size(124, 23);
-            this.CancelButtonControl.TabIndex = 52;
-            this.CancelButtonControl.Text = "Cancel";
-            this.CancelButtonControl.UseVisualStyleBackColor = true;
-            // 
             // OkayButton
             // 
             this.OkayButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.OkayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OkayButton.Location = new System.Drawing.Point(403, 210);
             this.OkayButton.Name = "OkayButton";
             this.OkayButton.Size = new System.Drawing.Size(124, 23);
             this.OkayButton.TabIndex = 52;
             this.OkayButton.Text = "&OK";
             this.OkayButton.UseVisualStyleBackColor = true;
+            // 
+            // CancelButtonControl
+            // 
+            this.CancelButtonControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CancelButtonControl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CancelButtonControl.Location = new System.Drawing.Point(273, 210);
+            this.CancelButtonControl.Name = "CancelButtonControl";
+            this.CancelButtonControl.Size = new System.Drawing.Size(124, 23);
+            this.CancelButtonControl.TabIndex = 52;
+            this.CancelButtonControl.Text = "Cancel";
+            this.CancelButtonControl.UseVisualStyleBackColor = true;
             // 
             // InventoryEditorForm
             // 
