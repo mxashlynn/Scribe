@@ -248,4 +248,8 @@ Folder: {1}</value>
     <value>Not adding duplicate {0}.</value>
     <comment>Warning string.</comment>
   </data>
+  <data name="WarningNothingSelected" xml:space="preserve">
+    <value>Nothing selected to edit.</value>
+    <comment>Warning string.</comment>
+  </data>
 </root>

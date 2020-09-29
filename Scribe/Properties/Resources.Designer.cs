@@ -360,5 +360,14 @@ namespace Scribe.Properties {
                 return ResourceManager.GetString("WarningNotAddingDuplicate", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nothing selected to edit..
+        /// </summary>
+        internal static string WarningNothingSelected {
+            get {
+                return ResourceManager.GetString("WarningNothingSelected", resourceCulture);
+            }
+        }
     }
 }

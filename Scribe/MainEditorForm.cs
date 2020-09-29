@@ -2277,8 +2277,18 @@ namespace Scribe
         /// <param name="e">Ignored</param>
         private void CharacterOpenInventoryEditorButton_Click(object sender, EventArgs e)
         {
-            InventoryEditorWindow.CurrentCharacter = (IMutableCharacterModel)GetSelectedModelForTab(EditorTabs.SelectedIndex);
-            _ = InventoryEditorWindow.ShowDialog();
+            var currentCharacter = (CharacterModel)GetSelectedModelForTab(EditorTabs.SelectedIndex);
+            InventoryEditorWindow.CurrentCharacter = currentCharacter;
+            var result = InventoryEditorWindow.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                CharacterStartingInventoryExample.Text = $"{currentCharacter.StartingInventory?.Count ?? 0} Items";
+            }
+            else if (result == DialogResult.Abort)
+            {
+                MainToolStripStatusLabel.Text = Resources.WarningNothingSelected;
+                SystemSounds.Beep.Play();
+            }
         }
 
         /// <summary>

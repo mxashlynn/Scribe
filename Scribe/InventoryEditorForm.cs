@@ -2,6 +2,7 @@ using System;
 using System.Windows.Forms;
 using ParquetClassLibrary.Beings;
 using ParquetClassLibrary.EditorSupport;
+using ParquetClassLibrary.Items;
 
 namespace Scribe
 {
@@ -12,6 +13,9 @@ namespace Scribe
     {
         /// <summary>The <see cref="CharacterModel"/> whose <see cref="Inventory"/> is being edited.</summary>
         public IMutableCharacterModel CurrentCharacter { get; set; }
+
+        /// <summary>A copy of the <see cref="Inventory"/> that has not been altered, for use if the user cancels.</summary>
+        private Inventory UnchangedInventoryCopy { get; set; }
 
         #region Initialization
         /// <summary>
@@ -26,7 +30,17 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void InventoryEditorForm_Load(object sender, EventArgs e)
-            => ApplyCurrentTheme();
+        {
+            if (null == CurrentCharacter)
+            {
+                DialogResult = DialogResult.Abort;
+                Close();
+            }
+            ApplyCurrentTheme();
+            // TODO Add the ability to get StartingInventory from IMutableCharacterModel
+            // TODO Implement Clone method on Inventory.
+            UnchangedInventoryCopy = CurrentCharacter.StartingInventory.Clone();
+        }
         #endregion
 
         #region Color Theming
@@ -61,6 +75,36 @@ namespace Scribe
             CancelButtonControl.FlatAppearance.BorderColor = CurrentTheme.BorderColor;
             CancelButtonControl.FlatAppearance.MouseDownBackColor = CurrentTheme.MouseDownColor;
             CancelButtonControl.FlatAppearance.MouseOverBackColor = CurrentTheme.MouseOverColor;
+        }
+        #endregion
+
+        #region Validation
+            // TODO Implement this.
+        #endregion
+
+        #region Closing Form
+        /// <summary>
+        /// Closes the <see cref="InventoryEditorForm"/>, signalling that the entered tag text was accepted.
+        /// </summary>
+        /// <param name="sender">The originator of the event.</param>
+        /// <param name="e">Additional event data.</param>
+        private void OkayButton_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+
+        /// <summary>
+        /// Closes the <see cref="AdInventoryEditorFormdTagBox"/>, signalling to abandon any entered tag text.
+        /// </summary>
+        /// <param name="sender">The originator of the event.</param>
+        /// <param name="e">Additional event data.</param>
+        private void CancelButtonControl_Click(object sender, EventArgs e)
+        {
+            // TODO Add the ability to set StartingInventory to IMutableCharacterModel
+            CurrentCharacter.StartingInventory = UnchangedInventoryCopy;
+            DialogResult = DialogResult.Cancel;
+            Close();
         }
         #endregion
     }
