@@ -11,11 +11,14 @@ namespace Scribe
     /// </summary>
     internal partial class InventoryEditorForm : Form
     {
-        /// <summary>The <see cref="CharacterModel"/> whose <see cref="Inventory"/> is being edited.</summary>
+        /// <summary>The <see cref="CharacterModel"/> whose <see cref="Inventory"/> might be edited.</summary>
         public IMutableCharacterModel CurrentCharacter { get; set; }
 
-        /// <summary>A copy of the <see cref="Inventory"/> that has not been altered, for use if the user cancels.</summary>
-        private Inventory UnchangedInventoryCopy { get; set; }
+        /// <summary>
+        /// An <see cref="Inventory"/> that the user cancels interacts with in this form.
+        /// It is only given to the <see cref="CharacterModel"/> if the user selects the <see cref="OkayButton"/>.
+        /// </summary>
+        private Inventory WorkingInventory { get; set; }
 
         #region Initialization
         /// <summary>
@@ -37,7 +40,7 @@ namespace Scribe
                 Close();
             }
             ApplyCurrentTheme();
-            UnchangedInventoryCopy = CurrentCharacter.StartingInventory.Clone();
+            WorkingInventory = CurrentCharacter.StartingInventory.Clone();
         }
         #endregion
 
@@ -82,30 +85,30 @@ namespace Scribe
 
         #region Closing Form
         /// <summary>
-        /// Closes the <see cref="InventoryEditorForm"/>, signalling that the entered tag text was accepted.
+        /// Closes the <see cref="InventoryEditorForm"/>, signalling that the edited <see cref="Inventory"/> was accepted.
         /// </summary>
         /// <param name="sender">The originator of the event.</param>
         /// <param name="e">Additional event data.</param>
         private void OkayButton_Click(object sender, EventArgs e)
         {
-            UnchangedInventoryCopy = Inventory.Empty;
+            CurrentCharacter.StartingInventory.Clear();
+            foreach (var inventorySlot in WorkingInventory)
+            {
+                CurrentCharacter.StartingInventory.Give(inventorySlot);
+            }
+            WorkingInventory = Inventory.Empty;
             DialogResult = DialogResult.OK;
             Close();
         }
 
         /// <summary>
-        /// Closes the <see cref="AdInventoryEditorFormdTagBox"/>, signalling to abandon any entered tag text.
+        /// Closes the <see cref="AdInventoryEditorFormdTagBox"/>, signalling to abandon the edited <see cref="Inventory"/>.
         /// </summary>
         /// <param name="sender">The originator of the event.</param>
         /// <param name="e">Additional event data.</param>
         private void CancelButtonControl_Click(object sender, EventArgs e)
         {
-            CurrentCharacter.StartingInventory.Clear();
-            foreach (var inventorySlot in UnchangedInventoryCopy)
-            {
-                CurrentCharacter.StartingInventory.Give(inventorySlot);
-            }
-            UnchangedInventoryCopy = Inventory.Empty;
+            WorkingInventory = Inventory.Empty;
             DialogResult = DialogResult.Cancel;
             Close();
         }
