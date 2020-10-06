@@ -37,8 +37,6 @@ namespace Scribe
                 Close();
             }
             ApplyCurrentTheme();
-            // TODO Add the ability to get StartingInventory from IMutableCharacterModel
-            // TODO Implement Clone method on Inventory.
             UnchangedInventoryCopy = CurrentCharacter.StartingInventory.Clone();
         }
         #endregion
@@ -79,7 +77,7 @@ namespace Scribe
         #endregion
 
         #region Validation
-            // TODO Implement this.
+            // TODO Implement Inventory Editor validation routines.
         #endregion
 
         #region Closing Form
@@ -90,6 +88,7 @@ namespace Scribe
         /// <param name="e">Additional event data.</param>
         private void OkayButton_Click(object sender, EventArgs e)
         {
+            UnchangedInventoryCopy = Inventory.Empty;
             DialogResult = DialogResult.OK;
             Close();
         }
@@ -101,8 +100,12 @@ namespace Scribe
         /// <param name="e">Additional event data.</param>
         private void CancelButtonControl_Click(object sender, EventArgs e)
         {
-            // TODO Add the ability to set StartingInventory to IMutableCharacterModel
-            CurrentCharacter.StartingInventory = UnchangedInventoryCopy;
+            CurrentCharacter.StartingInventory.Clear();
+            foreach (var inventorySlot in UnchangedInventoryCopy)
+            {
+                CurrentCharacter.StartingInventory.Give(inventorySlot);
+            }
+            UnchangedInventoryCopy = Inventory.Empty;
             DialogResult = DialogResult.Cancel;
             Close();
         }
