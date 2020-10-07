@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using ParquetClassLibrary;
 using ParquetClassLibrary.Beings;
 using ParquetClassLibrary.EditorSupport;
 using ParquetClassLibrary.Items;
@@ -8,7 +9,7 @@ using ParquetClassLibrary.Items;
 namespace Scribe
 {
     /// <summary>
-    /// A modal form that enables the user to edit a given <see cref="ParquetClassLibrary.Items.Inventory"/>.
+    /// A modal form that enables the user to edit a given <see cref="Inventory"/>.
     /// </summary>
     internal partial class InventoryEditorForm : Form
     {
@@ -104,6 +105,23 @@ namespace Scribe
                 SlotsListBox.Items.AddRange(WorkingInventory.ToArray());
                 SlotsListBox.EndUpdate();
             }
+        }
+
+        /// <summary>
+        /// Updates the SlotsListBox needs to render its content, to display <see cref="InventorySlot"/>s in a custom fashion.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="eventArguments">Used to render the selected item.</param>
+        private void SlotsListBox_DrawItem(object sender, DrawItemEventArgs eventArguments)
+        {
+            eventArguments.DrawBackground();
+            // Determine text to represent this InventorySlot.
+            var thisSlot = (InventorySlot)SlotsListBox.Items[eventArguments.Index];
+            var thisSlotName = All.Items.Get<ItemModel>(thisSlot.ItemID).Name;
+            var thisSlotText = $"{thisSlot.Count} {thisSlotName}";
+            TextRenderer.DrawText(eventArguments.Graphics, thisSlotText, eventArguments.Font, eventArguments.Bounds,
+                                  SlotsListBox.ForeColor);
+            eventArguments.DrawFocusRectangle();
         }
         #endregion
 

@@ -89,12 +89,14 @@ namespace Scribe
             this.SlotsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.TableLayoutPanel.SetColumnSpan(this.SlotsListBox, 2);
+            this.SlotsListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.SlotsListBox.FormattingEnabled = true;
             this.SlotsListBox.ItemHeight = 15;
             this.SlotsListBox.Location = new System.Drawing.Point(133, 33);
             this.SlotsListBox.Name = "SlotsListBox";
             this.SlotsListBox.Size = new System.Drawing.Size(264, 139);
             this.SlotsListBox.TabIndex = 37;
+            this.SlotsListBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(SlotsListBox_DrawItem);
             // 
             // CapacityTextBox
             // 
