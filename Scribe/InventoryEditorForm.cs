@@ -154,6 +154,10 @@ namespace Scribe
 
                 WorkingInventory = new Inventory(WorkingInventory, parsedCapacity);
             }
+            else
+            {
+                CapacityTextBox.Text = "";
+            }
         }
 
         /// <summary>
