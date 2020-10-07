@@ -1,5 +1,7 @@
 using System;
+using System.Linq;
 using System.Windows.Forms;
+using ParquetClassLibrary;
 using ParquetClassLibrary.Items;
 
 namespace Scribe
@@ -9,12 +11,14 @@ namespace Scribe
     /// </summary>
     internal partial class AddSlotBox : Form
     {
-        /// <summary>The <see cref="InventorySlot"/> that the user might add.</summary>
-        private InventorySlot NewSlot { get; set; }
+        /// <summary>The <see cref="ModelID"/> for the <see cref="ItemModel"/> that the user might add.</summary>
+        private ModelID ItemID { get; set; }
+
+        /// <summary>The amount of the <see cref="ItemModel"/> that the user might add.</summary>
+        private int ItemAmount { get; set; }
 
         /// <summary>The <see cref="InventorySlot"/> that the user added, if any.</summary>
-        public InventorySlot ReturnNewSlot { get; set; }
-
+        public InventorySlot ReturnNewSlot { get; private set; }
 
         #region Initialization
         /// <summary>
@@ -30,14 +34,19 @@ namespace Scribe
         /// <param name="e">Ignored.</param>
         private void AddSlotBox_Load(object sender, EventArgs e)
         {
-            if (ReturnNewSlot == InventorySlot.Empty)
-            {
-                AmountTextBox.Text = "";
-                ItemListBox.SelectedItem = null;
-                ItemListBox.Items.Clear();
-            }
+            ReturnNewSlot = InventorySlot.Empty;
+            ItemID = ModelID.None;
+            ItemAmount = 0;
+
+            AmountTextBox.Text = "";
+            ItemListBox.SelectedItem = null;
+            ItemListBox.BeginUpdate();
+            ItemListBox.Items.Clear();
+            ItemListBox.Items.AddRange(All.Items.Where(model => model.ID != ModelID.None).ToArray<object>());
+            ItemListBox.EndUpdate();
+
             ApplyCurrentTheme();
-            AmountTextBox.Select();
+            ItemListBox.Select();
         }
         #endregion
 
@@ -65,6 +74,65 @@ namespace Scribe
             CancelButtonControl.FlatAppearance.BorderColor = CurrentTheme.BorderColor;
             CancelButtonControl.FlatAppearance.MouseDownBackColor = CurrentTheme.MouseDownColor;
             CancelButtonControl.FlatAppearance.MouseOverBackColor = CurrentTheme.MouseOverColor;
+        }
+        #endregion
+
+        #region Validation
+        /// <summary>
+        /// Updates the <see cref="ItemAmount"/> according to user input.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void AmountTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (int.TryParse(AmountTextBox.Text, out var parsedAmount)
+                && parsedAmount > 0)
+            {
+                ItemAmount = parsedAmount;
+            }
+            else
+            {
+                AmountTextBox.Text = "";
+            }
+        }
+
+        /// <summary>
+        /// Updates the <see cref="ItemID"/> according to user input.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void ItemListBox_SelectedIndexChanged(object sender, EventArgs e)
+            => ItemID = ((ItemModel)ItemListBox.SelectedItem).ID;
+        #endregion
+
+        #region Closing Form
+        /// <summary>
+        /// Closes the <see cref="AddSlotBox"/>, signalling that the <see cref="InventorySlot"/> was accepted.
+        /// </summary>
+        /// <param name="sender">The originator of the event.</param>
+        /// <param name="e">Additional event data.</param>
+        private void OkayButton_Click(object sender, EventArgs e)
+        {
+            if (ModelID.None != ItemID
+                && ItemID.IsValidForRange(All.ItemIDs)
+                && ItemAmount > 0)
+            {
+                ReturnNewSlot = new InventorySlot(ItemID, ItemAmount);
+            }
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+
+        /// <summary>
+        /// Closes the <see cref="AddSlotBox"/>.
+        /// </summary>
+        /// <param name="sender">The originator of the event.</param>
+        /// <param name="e">Additional event data.</param>
+        private void CancelButtonControl_Click(object sender, EventArgs e)
+        {
+            ReturnNewSlot = InventorySlot.Empty;
+            DialogResult = DialogResult.Cancel;
+            Close();
         }
         #endregion
     }

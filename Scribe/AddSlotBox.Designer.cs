@@ -70,6 +70,7 @@ namespace Scribe
             this.CancelButtonControl.TabIndex = 14;
             this.CancelButtonControl.Text = "Cancel";
             this.CancelButtonControl.UseVisualStyleBackColor = true;
+            this.CancelButtonControl.Click += new System.EventHandler(this.CancelButtonControl_Click);
             // 
             // OkayButton
             // 
@@ -81,6 +82,7 @@ namespace Scribe
             this.OkayButton.TabIndex = 9;
             this.OkayButton.Text = "&OK";
             this.OkayButton.UseVisualStyleBackColor = true;
+            this.OkayButton.Click += new System.EventHandler(this.OkayButton_Click);
             // 
             // ItemLabel
             // 
@@ -100,6 +102,7 @@ namespace Scribe
             this.AmountTextBox.Name = "AmountTextBox";
             this.AmountTextBox.Size = new System.Drawing.Size(172, 23);
             this.AmountTextBox.TabIndex = 11;
+            this.AmountTextBox.TextChanged += new System.EventHandler(this.AmountTextBox_TextChanged);
             // 
             // AmountLabel
             // 
@@ -121,6 +124,7 @@ namespace Scribe
             this.ItemListBox.Name = "ItemListBox";
             this.ItemListBox.Size = new System.Drawing.Size(172, 49);
             this.ItemListBox.TabIndex = 15;
+            this.ItemListBox.SelectedIndexChanged += new System.EventHandler(this.ItemListBox_SelectedIndexChanged);
             // 
             // AddSlotBox
             // 
