@@ -70,6 +70,7 @@ namespace Scribe
             this.RemoveSlotButton.TabIndex = 36;
             this.RemoveSlotButton.Text = "&Remove Slot";
             this.RemoveSlotButton.UseVisualStyleBackColor = true;
+            this.RemoveSlotButton.Click += new System.EventHandler(this.RemoveSlotButton_Click);
             // 
             // AddSlotButton
             // 
@@ -81,6 +82,7 @@ namespace Scribe
             this.AddSlotButton.TabIndex = 35;
             this.AddSlotButton.Text = "&Add Slot";
             this.AddSlotButton.UseVisualStyleBackColor = true;
+            this.AddSlotButton.Click += new System.EventHandler(this.AddSlotButton_Click);
             // 
             // SlotsListBox
             // 
@@ -100,6 +102,7 @@ namespace Scribe
             this.CapacityTextBox.Name = "CapacityTextBox";
             this.CapacityTextBox.Size = new System.Drawing.Size(124, 23);
             this.CapacityTextBox.TabIndex = 50;
+            this.CapacityTextBox.TextChanged += new System.EventHandler(this.CapacityTextBox_TextChanged);
             // 
             // TableLayoutPanel
             // 
@@ -164,6 +167,7 @@ namespace Scribe
             this.Name = "InventoryEditorForm";
             this.Text = "Inventories Editor";
             this.Load += new System.EventHandler(this.InventoryEditorForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InventoryEditorForm_KeyDown);
             this.TableLayoutPanel.ResumeLayout(false);
             this.TableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);

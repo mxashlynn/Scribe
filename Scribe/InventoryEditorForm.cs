@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Windows.Forms;
 using ParquetClassLibrary.Beings;
 using ParquetClassLibrary.EditorSupport;
@@ -11,6 +12,12 @@ namespace Scribe
     /// </summary>
     internal partial class InventoryEditorForm : Form
     {
+        #region Child Forms
+        /// <summary>Dialogue for adding an <see cref="InventorySlot"/> to an <see cref="Inventory"/>.</summary>
+        private readonly AddSlotBox AddSlotDialogue = new AddSlotBox();
+        #endregion
+
+        #region Content Being Edited
         /// <summary>The <see cref="CharacterModel"/> whose <see cref="Inventory"/> might be edited.</summary>
         public IMutableCharacterModel CurrentCharacter { get; set; }
 
@@ -19,6 +26,7 @@ namespace Scribe
         /// It is only given to the <see cref="CharacterModel"/> if the user selects the <see cref="OkayButton"/>.
         /// </summary>
         private Inventory WorkingInventory { get; set; }
+        #endregion
 
         #region Initialization
         /// <summary>
@@ -41,6 +49,7 @@ namespace Scribe
             }
             ApplyCurrentTheme();
             WorkingInventory = CurrentCharacter.StartingInventory.Clone();
+            UpdateControls();
         }
         #endregion
 
@@ -79,8 +88,83 @@ namespace Scribe
         }
         #endregion
 
+        #region Update Display
+        /// <summary>
+        /// Repopulates the <see cref="SlotsListBox"/> and <see cref="CapacityTextBox"/> with the <see cref="WorkingInventory"/>.
+        /// </summary>
+        /// <remarks>This should only be called if the WorkingInventory has actually changed.</remarks>
+        private void UpdateControls()
+        {
+            CapacityTextBox.Text = WorkingInventory?.Capacity.ToString() ?? "";
+            if (WorkingInventory?.Count > 0)
+            {
+                SlotsListBox.SelectedItem = null;
+                SlotsListBox.BeginUpdate();
+                SlotsListBox.Items.Clear();
+                SlotsListBox.Items.AddRange(WorkingInventory.ToArray());
+                SlotsListBox.EndUpdate();
+            }
+        }
+        #endregion
+
         #region Validation
-            // TODO Implement Inventory Editor validation routines.
+        /// <summary>
+        /// Intercepts keydown events to register user requests to refresh the display.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="inKeyEvents">The key that was held down.</param>
+        private void InventoryEditorForm_KeyDown(object sender, KeyEventArgs inKeyEvents)
+        {
+            if (inKeyEvents.KeyCode == Keys.F5)
+            {
+                UpdateControls();
+            }
+        }
+
+        /// <summary>
+        /// Adjusts the capacity of the <see cref="WorkingInventory"/> according to user input.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void CapacityTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (int.TryParse(CapacityTextBox.Text, out var parsedCapacity)
+                && parsedCapacity > 0)
+            {
+                // TODO Introduce editor support for Inventory so that we can simply write:
+                // WorkingInventory.Capacity = parsedCapacity;
+
+                WorkingInventory = new Inventory(WorkingInventory, parsedCapacity);
+            }
+        }
+
+        /// <summary>
+        /// Registeres the user command to add a new <see cref="InventorySlot"/> to the <see cref="WorkingInventory"/>.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void AddSlotButton_Click(object sender, EventArgs e)
+        {
+            if (AddSlotDialogue.ShowDialog() == DialogResult.OK)
+            {
+                WorkingInventory.Give(AddSlotDialogue.ReturnNewSlot);
+                SlotsListBox.Items.Add(AddSlotDialogue.ReturnNewSlot);
+            }
+        }
+
+        /// <summary>
+        /// Registeres the user command to remove the selected <see cref="InventorySlot"/> tag from the <see cref="WorkingInventory"/>.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="e">Ignored</param>
+        private void RemoveSlotButton_Click(object sender, EventArgs e)
+        {
+            if (SlotsListBox.SelectedItem is InventorySlot slot)
+            {
+                WorkingInventory.Take(slot);
+                SlotsListBox.Items.RemoveAt(SlotsListBox.SelectedIndex);
+            }
+        }
         #endregion
 
         #region Closing Form

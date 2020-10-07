@@ -40,9 +40,6 @@ namespace Scribe
         /// <summary>Dialogue for adding a <see cref="RecipeElement"/> to a collection.</summary>
         private readonly AddRecipeElementBox AddRecipeElementDialogue = new AddRecipeElementBox();
 
-        /// <summary>Dialogue for adding a <see cref="InventorySlot"/> to an <see cref="Inventory"/>.</summary>
-        private readonly AddSlotBox AddSlotDialogue = new AddSlotBox();
-
         /// <summary>Dialogue for adding a <see cref="ModelTag"/> to a collection.</summary>
         private readonly AddTagBox AddTagDialogue = new AddTagBox();
 
