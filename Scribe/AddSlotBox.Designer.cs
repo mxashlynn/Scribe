@@ -141,6 +141,7 @@ namespace Scribe
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddSlotBox";
+            this.Load += new System.EventHandler(this.AddSlotBox_Load);
             this.SlotTableLayoutPanel.ResumeLayout(false);
             this.SlotTableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);

@@ -28,7 +28,7 @@ namespace Scribe
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
-        private void AddSlotBox_Load1(object sender, EventArgs e)
+        private void AddSlotBox_Load(object sender, EventArgs e)
         {
             if (ReturnNewSlot == InventorySlot.Empty)
             {
