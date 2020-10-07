@@ -114,11 +114,12 @@ namespace Scribe
         /// <param name="eventArguments">Used to render the selected item.</param>
         private void SlotsListBox_DrawItem(object sender, DrawItemEventArgs eventArguments)
         {
-            eventArguments.DrawBackground();
             // Determine text to represent this InventorySlot.
             var thisSlot = (InventorySlot)SlotsListBox.Items[eventArguments.Index];
             var thisSlotName = All.Items.Get<ItemModel>(thisSlot.ItemID).Name;
             var thisSlotText = $"{thisSlot.Count} {thisSlotName}";
+            // Render that text.
+            eventArguments.DrawBackground();
             TextRenderer.DrawText(eventArguments.Graphics, thisSlotText, eventArguments.Font, eventArguments.Bounds,
                                   SlotsListBox.ForeColor);
             eventArguments.DrawFocusRectangle();
