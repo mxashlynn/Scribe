@@ -822,7 +822,7 @@ namespace Scribe
                 ApplyCurrentTheme();
             }
 
-            // If possible, select default model in current tab.
+            // If necessary, attempt to select default model in current tab.
             if (null == GetSelectedModelForTab(EditorTabs.SelectedIndex))
             {
                 var selectedListBox = GetPrimaryListBoxForTab(EditorTabs.SelectedIndex);
