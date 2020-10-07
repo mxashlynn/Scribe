@@ -102,7 +102,7 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void ItemListBox_SelectedIndexChanged(object sender, EventArgs e)
-            => ItemID = ((ItemModel)ItemListBox.SelectedItem).ID;
+            => ItemID = ((ItemModel)ItemListBox.SelectedItem)?.ID ?? ModelID.None;
         #endregion
 
         #region Closing Form
