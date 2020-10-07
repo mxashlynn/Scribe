@@ -163,6 +163,8 @@ namespace Scribe
         /// <param name="e">Ignored</param>
         private void AddSlotButton_Click(object sender, EventArgs e)
         {
+            // TODO Check that any ItemModels exist; if they don't, suggest the user use the Items tab.
+
             if (AddSlotDialogue.ShowDialog() == DialogResult.OK)
             {
                 WorkingInventory.Give(AddSlotDialogue.ReturnNewSlot);
@@ -204,7 +206,7 @@ namespace Scribe
         }
 
         /// <summary>
-        /// Closes the <see cref="AdInventoryEditorFormdTagBox"/>, signalling to abandon the edited <see cref="Inventory"/>.
+        /// Closes the <see cref="InventoryEditorForm"/>, signalling to abandon the edited <see cref="Inventory"/>.
         /// </summary>
         /// <param name="sender">The originator of the event.</param>
         /// <param name="e">Additional event data.</param>
