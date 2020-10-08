@@ -1429,7 +1429,7 @@ namespace Scribe
                 CharacterStartingDialogueComboBox.SelectedItem = ModelID.None == model.StartingDialogueID
                     ? null
                     : All.Interactions.Get<InteractionModel>(model.StartingDialogueID);
-                CharacterStartingInventoryExample.Text = $"{model.StartingInventory?.Count ?? 0} Items";
+                CharacterStartingInventoryExample.Text = $"{model.StartingInventory?.ItemCount ?? 0} Items";
                 PictureBoxLoadFromStorage(CharacterPictureBox, model.ID);
             }
         }
