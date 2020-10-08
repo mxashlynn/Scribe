@@ -2279,7 +2279,7 @@ namespace Scribe
             var result = InventoryEditorWindow.ShowDialog();
             if (result == DialogResult.OK)
             {
-                CharacterStartingInventoryExample.Text = $"{currentCharacter.StartingInventory?.Count ?? 0} Items";
+                CharacterStartingInventoryExample.Text = $"{currentCharacter.StartingInventory?.ItemCount ?? 0} Items";
             }
             else if (result == DialogResult.Abort)
             {
