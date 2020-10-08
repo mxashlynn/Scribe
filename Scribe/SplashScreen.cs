@@ -28,8 +28,8 @@ namespace Scribe
         /// Attempts to load the most recently-edited project.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void LinkLabelMostRecent_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void LinkLabelMostRecent_LinkClicked(object sender, LinkLabelLinkClickedEventArgs eventArguments)
         {
             if (!string.IsNullOrEmpty(Settings.Default.MostRecentProject))
             {
@@ -52,8 +52,8 @@ namespace Scribe
         /// Attempts to load the most recently-edited project.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void ButtonNewProject_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void ButtonNewProject_Click(object sender, EventArgs eventArguments)
         {
             if (!EditorCommands.SelectProjectFolder(Resources.InfoMessageNew))
             {
@@ -78,8 +78,8 @@ namespace Scribe
         /// Attempts to load the most recently-edited project.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void ButtonLoadProject_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void ButtonLoadProject_Click(object sender, EventArgs eventArguments)
         {
             if (!EditorCommands.SelectProjectFolder(Resources.InfoMessageLoad))
             {
@@ -103,8 +103,8 @@ namespace Scribe
         /// Attempts to load the most recently-edited project.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void ButtonExitScribe_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void ButtonExitScribe_Click(object sender, EventArgs eventArguments)
             => Close();
     }
 }

@@ -105,8 +105,8 @@ namespace Scribe
         /// Stores valid values for later updating the settings, otherwise signals an input error.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Whether or not to discard the given text.</param>
-        private void TextBoxImageEditorPath_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        /// <param name="eventAruments">Whether or not to discard the given text.</param>
+        private void TextBoxImageEditorPath_Validating(object sender, System.ComponentModel.CancelEventArgs eventAruments)
         {
             TextBoxImageEditorPath.Text = Path.GetFullPath(TextBoxImageEditorPath.Text);
             if (File.Exists(TextBoxImageEditorPath.Text))
@@ -115,7 +115,7 @@ namespace Scribe
             }
             else
             {
-                e.Cancel = true;
+                eventAruments.Cancel = true;
                 TextBoxImageEditorPath.Select();
                 ErrorProvider.SetError(LabelImageEditorPath, Resources.ErrorImageEditorNotFound);
             }
@@ -127,8 +127,8 @@ namespace Scribe
         /// Updates <see cref="CurrentTheme"/> setting to <see cref="EditorTheme.Femme"/>.
         /// </summary>
         /// <param name="sender">Determines if the theme is being set or unset.</param>
-        /// <param name="e">Ignored.</param>
-        private void RadioButtonFemmeTheme_CheckedChanged(object sender, EventArgs e)
+        /// <param name="eventAruments">Ignored.</param>
+        private void RadioButtonFemmeTheme_CheckedChanged(object sender, EventArgs eventAruments)
         {
             if (sender is RadioButton radioButton
                 && radioButton.Checked)
@@ -142,8 +142,8 @@ namespace Scribe
         /// Updates <see cref="CurrentTheme"/> setting to <see cref="EditorTheme.Colorful"/>.
         /// </summary>
         /// <param name="sender">Determines if the theme is being set or unset.</param>
-        /// <param name="e">Ignored.</param>
-        private void RadioButtonColorfulTheme_CheckedChanged(object sender, EventArgs e)
+        /// <param name="eventAruments">Ignored.</param>
+        private void RadioButtonColorfulTheme_CheckedChanged(object sender, EventArgs eventAruments)
         {
             if (sender is RadioButton radioButton
                 && radioButton.Checked)
@@ -157,8 +157,8 @@ namespace Scribe
         /// Updates <see cref="CurrentTheme"/> setting to <see cref="EditorTheme.OSDefault"/>.
         /// </summary>
         /// <param name="sender">Determines if the theme is being set or unset.</param>
-        /// <param name="e">Ignored.</param>
-        private void RadioButtonOSDefaultTheme_CheckedChanged(object sender, EventArgs e)
+        /// <param name="eventAruments">Ignored.</param>
+        private void RadioButtonOSDefaultTheme_CheckedChanged(object sender, EventArgs eventAruments)
         {
             if (sender is RadioButton radioButton
                 && radioButton.Checked)
@@ -221,8 +221,8 @@ namespace Scribe
         /// Responds to the Okay Button to ensure that settings are saved.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void OkayButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void OkayButton_Click(object sender, EventArgs eventArguments)
         {
             Settings.Default.CurrentEditorTheme = RadioButtonFemmeTheme.Checked
                 ? EditorTheme.Femme.ToString()
@@ -244,8 +244,8 @@ namespace Scribe
         /// Restores old settings on cancel.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void CancelButtonControl_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void CancelButtonControl_Click(object sender, EventArgs eventArguments)
             => CurrentTheme.SetUpTheme(OldTheme);
         #endregion
     }

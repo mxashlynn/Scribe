@@ -29,8 +29,8 @@ namespace Scribe
         /// Resets the UI each time the <see cref="Form"/> is loaded.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void StrikePatternEditorForm_Load(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void StrikePatternEditorForm_Load(object sender, EventArgs eventArguments)
             => ApplyCurrentTheme();
         #endregion
 
