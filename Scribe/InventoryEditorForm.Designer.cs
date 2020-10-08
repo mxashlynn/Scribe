@@ -96,7 +96,7 @@ namespace Scribe
             this.SlotsListBox.Name = "SlotsListBox";
             this.SlotsListBox.Size = new System.Drawing.Size(264, 139);
             this.SlotsListBox.TabIndex = 37;
-            this.SlotsListBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(SlotsListBox_DrawItem);
+            this.SlotsListBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.SlotsListBox_DrawItem);
             // 
             // CapacityTextBox
             // 

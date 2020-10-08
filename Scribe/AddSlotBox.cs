@@ -113,13 +113,11 @@ namespace Scribe
         /// <param name="e">Additional event data.</param>
         private void OkayButton_Click(object sender, EventArgs e)
         {
-            if (ModelID.None != ItemID
-                && ItemID.IsValidForRange(All.ItemIDs)
-                && ItemAmount > 0)
-            {
-                ReturnNewSlot = new InventorySlot(ItemID, ItemAmount);
-            }
-            DialogResult = DialogResult.OK;
+            (ReturnNewSlot, DialogResult) = ModelID.None != ItemID
+                            && ItemID.IsValidForRange(All.ItemIDs)
+                            && ItemAmount > 0
+                ? (new InventorySlot(ItemID, ItemAmount), DialogResult.OK)
+                : (InventorySlot.Empty, DialogResult.Cancel);
             Close();
         }
 
