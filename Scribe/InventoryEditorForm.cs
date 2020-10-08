@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel;
 using System.Linq;
+using System.Media;
 using System.Windows.Forms;
 using ParquetClassLibrary;
 using ParquetClassLibrary.Beings;
@@ -172,9 +173,13 @@ namespace Scribe
         /// <param name="eventArguments">Ignored</param>
         private void AddSlotButton_Click(object sender, EventArgs eventArguments)
         {
-            // TODO Check that any ItemModels exist; if they don't, suggest the user use the Items tab.
-
-            if (AddSlotDialogue.ShowDialog() == DialogResult.OK)
+            if (!All.Items.Any(itemModel => ModelID.None != itemModel.ID))
+            {
+                SystemSounds.Beep.Play();
+                _ = MessageBox.Show(Resources.WarngingNoItemsExist, Resources.CaptionWorkflow,
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (AddSlotDialogue.ShowDialog() == DialogResult.OK)
             {
                 WorkingInventory.Give(AddSlotDialogue.ReturnNewSlot);
                 SlotsListBox.Items.Add(AddSlotDialogue.ReturnNewSlot);

@@ -165,6 +165,10 @@
     <value>Version</value>
     <comment>Heading string.</comment>
   </data>
+  <data name="CaptionWorkflow" xml:space="preserve">
+    <value>Workflow</value>
+    <comment>Heading string.</comment>
+  </data>
   <data name="ErrorAccessingParquet" xml:space="preserve">
     <value>There was an error accessing the Parquet library.  Data might be in an inconsistent state.  :(</value>
     <comment>Error string.</comment>
@@ -231,6 +235,10 @@ Folder: {1}</value>
   </data>
   <data name="StrikeRangeDiagram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\StrikeRangeDiagram.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WarngingNoItemsExist" xml:space="preserve">
+    <value>No item definitions exist in this project.  Create some using the Items tab!  ^_^</value>
+    <comment>Warning string.</comment>
   </data>
   <data name="WarngingNoRecentProject" xml:space="preserve">
     <value>No Recent Projects</value>

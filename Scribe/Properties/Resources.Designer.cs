@@ -169,6 +169,15 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Workflow.
+        /// </summary>
+        internal static string CaptionWorkflow {
+            get {
+                return ResourceManager.GetString("CaptionWorkflow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to There was an error accessing the Parquet library.  Data might be in an inconsistent state.  :(.
         /// </summary>
         internal static string ErrorAccessingParquet {
@@ -322,6 +331,15 @@ namespace Scribe.Properties {
             get {
                 object obj = ResourceManager.GetObject("StrikeRangeDiagram", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No item definitions exist in this project.  Create some using the Items tab!  ^_^.
+        /// </summary>
+        internal static string WarngingNoItemsExist {
+            get {
+                return ResourceManager.GetString("WarngingNoItemsExist", resourceCulture);
             }
         }
         
