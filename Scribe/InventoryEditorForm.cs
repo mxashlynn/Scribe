@@ -226,6 +226,7 @@ namespace Scribe
         /// <param name="eventArguments">Additional event data.</param>
         private void OkayButton_Click(object sender, EventArgs eventArguments)
         {
+            // TODO We need to be able to update the capacity of the StartingInventory!
             CurrentCharacter.StartingInventory.Clear();
             foreach (var inventorySlot in WorkingInventory)
             {
