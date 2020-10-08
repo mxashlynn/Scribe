@@ -173,6 +173,10 @@
     <value>There was an error accessing the Parquet library.  Data might be in an inconsistent state.  :(</value>
     <comment>Error string.</comment>
   </data>
+  <data name="ErrorAddingSlot" xml:space="preserve">
+    <value>An error occured while trying to add an inventory slot.  This likely is a logic error in Scribe or Parquet.  You might want to reload before continuing to work with this inventory.  Sorry about this!</value>
+    <comment>Error string.</comment>
+  </data>
   <data name="ErrorFolderNotEmpty" xml:space="preserve">
     <value>This folder is not empty!
 Folder: {1}</value>

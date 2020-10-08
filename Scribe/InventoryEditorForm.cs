@@ -181,8 +181,25 @@ namespace Scribe
             }
             else if (AddSlotDialogue.ShowDialog() == DialogResult.OK)
             {
-                WorkingInventory.Give(AddSlotDialogue.ReturnNewSlot);
-                SlotsListBox.Items.Add(AddSlotDialogue.ReturnNewSlot);
+                // Increment the capacity as needed to support additional slots.
+                // TODO Introduce editor support for Inventory so that we can simply write:
+                // WorkingInventory.Capacity++;
+                if (WorkingInventory.Count + 1 > WorkingInventory.Capacity)
+                {
+                    WorkingInventory = new Inventory(WorkingInventory, WorkingInventory.Capacity + 1);
+                    CapacityTextBox.Text = WorkingInventory.Capacity.ToString();
+                }
+
+                if (0 == WorkingInventory.Give(AddSlotDialogue.ReturnNewSlot))
+                {
+                    SlotsListBox.Items.Add(AddSlotDialogue.ReturnNewSlot);
+                }
+                else
+                {
+                    SystemSounds.Beep.Play();
+                    _ = MessageBox.Show(Resources.ErrorAddingSlot, Resources.CaptionError,
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

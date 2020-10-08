@@ -187,6 +187,15 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to An error occured while trying to add an inventory slot.  This likely is a logic error in Scribe or Parquet.  You might want to reload before continuing to work with this inventory.  Sorry about this!.
+        /// </summary>
+        internal static string ErrorAddingSlot {
+            get {
+                return ResourceManager.GetString("ErrorAddingSlot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This folder is not empty!
         ///Folder: {1}.
         /// </summary>
