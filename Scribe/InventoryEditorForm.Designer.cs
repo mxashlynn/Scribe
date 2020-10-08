@@ -146,6 +146,7 @@ namespace Scribe
             this.OkayButton.TabIndex = 52;
             this.OkayButton.Text = "&OK";
             this.OkayButton.UseVisualStyleBackColor = true;
+            this.OkayButton.Click += new System.EventHandler(this.OkayButton_Click);
             // 
             // CancelButtonControl
             // 
@@ -157,6 +158,7 @@ namespace Scribe
             this.CancelButtonControl.TabIndex = 52;
             this.CancelButtonControl.Text = "Cancel";
             this.CancelButtonControl.UseVisualStyleBackColor = true;
+            this.CancelButtonControl.Click += new System.EventHandler(this.CancelButtonControl_Click);
             // 
             // CapacityErrorProvider
             // 
