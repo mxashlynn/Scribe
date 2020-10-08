@@ -225,8 +225,8 @@ namespace Scribe
         /// Updates the form when it receives focus, for example after closing the options dialogue box.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void MainEditorForm_Activated(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void MainEditorForm_Activated(object sender, EventArgs eventArguments)
             => UpdateFromSettings();
         #endregion
 
@@ -1188,8 +1188,8 @@ namespace Scribe
         /// Populates the Games tab when a <see cref="GameModel"/> is selected in the GameListBox.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void GameListBox_SelectedValueChanged(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void GameListBox_SelectedValueChanged(object sender, EventArgs eventArguments)
         {
             if (null == GameListBox.SelectedItem)
             {
@@ -1224,8 +1224,8 @@ namespace Scribe
         /// Populates the Blocks tab when a <see cref="BlockModel"/> is selected in the BlockListBox.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void BlockListBox_SelectedValueChanged(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void BlockListBox_SelectedValueChanged(object sender, EventArgs eventArguments)
         {
             BlockAddsToBiomeListBox.SelectedItem = null;
             BlockAddsToRoomListBox.SelectedItem = null;
@@ -1270,8 +1270,8 @@ namespace Scribe
         /// Populates the Floors tab when a <see cref="FloorModel"/> is selected in the FloorListBox.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void FloorListBox_SelectedValueChanged(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void FloorListBox_SelectedValueChanged(object sender, EventArgs eventArguments)
         {
             FloorAddsToBiomeListBox.SelectedItem = null;
             FloorAddsToRoomListBox.SelectedItem = null;
@@ -1308,8 +1308,8 @@ namespace Scribe
         /// Populates the Furnishings tab when a <see cref="FurnishingModel"/> is selected in the FurnishingListBox.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void FurnishingListBox_SelectedValueChanged(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void FurnishingListBox_SelectedValueChanged(object sender, EventArgs eventArguments)
         {
             FurnishingAddsToBiomeListBox.SelectedItem = null;
             FurnishingAddsToRoomListBox.SelectedItem = null;
@@ -1352,8 +1352,8 @@ namespace Scribe
         /// Populates the Collectibles tab when a <see cref="CollectibleModel"/> is selected in the CollectibleListBox.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void CollectibleListBox_SelectedValueChanged(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void CollectibleListBox_SelectedValueChanged(object sender, EventArgs eventArguments)
         {
             CollectibleAddsToBiomeListBox.SelectedItem = null;
             CollectibleAddsToRoomListBox.SelectedItem = null;
@@ -1390,8 +1390,8 @@ namespace Scribe
         /// Populates the Characters tab when a <see cref="CharacterModel"/> is selected in the CharacterListBox.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void CharacterListBox_SelectedValueChanged(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void CharacterListBox_SelectedValueChanged(object sender, EventArgs eventArguments)
         {
             CharacterStartingQuestsListBox.SelectedItem = null;
             if (null == CharacterListBox.SelectedItem)
@@ -1438,8 +1438,8 @@ namespace Scribe
         /// Populates the Critters tab when a <see cref="CritterModel"/> is selected in the CritterListBox.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void CritterListBox_SelectedValueChanged(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void CritterListBox_SelectedValueChanged(object sender, EventArgs eventArguments)
         {
             if (null == CritterListBox.SelectedItem)
             {
@@ -1468,8 +1468,8 @@ namespace Scribe
         /// Populates the Items tab when a <see cref="ItemModel"/> is selected in the ItemListBox.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void ItemListBox_SelectedValueChanged(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void ItemListBox_SelectedValueChanged(object sender, EventArgs eventArguments)
         {
             ItemTagListBox.SelectedItem = null;
             if (null == ItemListBox.SelectedItem)
@@ -1511,8 +1511,8 @@ namespace Scribe
         /// Populates the Biome Recipes tab when a <see cref="BiomeRecipe"/> is selected in the BiomeListBox.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void BiomeListBox_SelectedValueChanged(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void BiomeListBox_SelectedValueChanged(object sender, EventArgs eventArguments)
         {
             BiomeParquetCriteriaListBox.SelectedItem = null;
             BiomeEntryRequirementsListBox.SelectedItem = null;
@@ -1549,8 +1549,8 @@ namespace Scribe
         /// Populates the Crafting Recipes tab when a <see cref="CraftingRecipe"/> is selected in the CraftingListBox.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void CraftingListBox_SelectedValueChanged(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void CraftingListBox_SelectedValueChanged(object sender, EventArgs eventArguments)
         {
             CraftingProductsListBox.SelectedItem = null;
             CraftingIngredientsListBox.SelectedItem = null;
@@ -1581,8 +1581,8 @@ namespace Scribe
         /// Populates the Room Recipes tab when a <see cref="RoomRecipe"/> is selected in the RoomListBox.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void RoomListBox_SelectedValueChanged(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void RoomListBox_SelectedValueChanged(object sender, EventArgs eventArguments)
         {
             RoomRequiredFurnishingsListBox.SelectedItem = null;
             RoomRequiredFloorsListBox.SelectedItem = null;
@@ -1623,8 +1623,8 @@ namespace Scribe
         /// Autosaves and/or marks the form dirty after an update.
         /// </summary>
         /// <param name="sender">The control whose content was changed.</param>
-        /// <param name="e">Ignored.</param>
-        private void ContentAlteredEventHandler(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void ContentAlteredEventHandler(object sender, EventArgs eventArguments)
         {
             if (null == sender)
             {
@@ -2019,16 +2019,16 @@ namespace Scribe
         /// Responds to the user clicking "Add New Game" on the Games tab.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void GameAddNewGameButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void GameAddNewGameButton_Click(object sender, EventArgs eventArguments)
             => AddNewModel(All.Games, (ModelID id) => new GameModel(id, "New Game", "", ""), All.GameIDs, GameListBox, "Game");
 
         /// <summary>
         /// Responds to the user clicking "Remove Game" on the Games tab.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void GameRemoveGameButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void GameRemoveGameButton_Click(object sender, EventArgs eventArguments)
             => RemoveModel(All.Games, GameListBox, "Game");
         #endregion
 
@@ -2037,48 +2037,48 @@ namespace Scribe
         /// Responds to the user clicking "Add New Block" on the Blocks tab.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void BlockAddNewBlockButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void BlockAddNewBlockButton_Click(object sender, EventArgs eventArguments)
             => AddNewModel(All.Blocks, (ModelID id) => new BlockModel(id, "New Block", "", ""), All.BlockIDs, BlockListBox, "Block");
 
         /// <summary>
         /// Responds to the user clicking "Remove Block" on the Blocks tab.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void BlockRemoveBlockButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void BlockRemoveBlockButton_Click(object sender, EventArgs eventArguments)
             => RemoveModel(All.Blocks, BlockListBox, "Block");
 
         /// <summary>
         /// Registeres the user command to add a new biome tag to the current block.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void BlockAddBiomeTagButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void BlockAddBiomeTagButton_Click(object sender, EventArgs eventArguments)
             => AddTag(BlockAddsToBiomeListBox, (IMutableParquetModel model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to remove the selected biome tag from the current block.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void BlockRemoveBiomeTagButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void BlockRemoveBiomeTagButton_Click(object sender, EventArgs eventArguments)
             => RemoveTag(BlockAddsToBiomeListBox, (IMutableParquetModel model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to add a new room tag to the current block.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void BlockAddRoomTagButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void BlockAddRoomTagButton_Click(object sender, EventArgs eventArguments)
             => AddTag(BlockAddsToRoomListBox, (IMutableParquetModel model) => model.AddsToRoom);
 
         /// <summary>
         /// Registeres the user command to remove the selected room tag from the current block.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void BlockRemoveRoomTagButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void BlockRemoveRoomTagButton_Click(object sender, EventArgs eventArguments)
             => RemoveTag(BlockAddsToRoomListBox, (IMutableParquetModel model) => model.AddsToRoom);
         #endregion
 
@@ -2087,48 +2087,48 @@ namespace Scribe
         /// Responds to the user clicking "Add New Floor" on the Floors tab.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void FloorAddNewFloorButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void FloorAddNewFloorButton_Click(object sender, EventArgs eventArguments)
             => AddNewModel(All.Floors, (ModelID id) => new FloorModel(id, "New Floor", "", ""), All.FloorIDs, FloorListBox, "Floor");
 
         /// <summary>
         /// Responds to the user clicking "Remove Floor" on the Floors tab.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void FloorRemoveFloorButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void FloorRemoveFloorButton_Click(object sender, EventArgs eventArguments)
             => RemoveModel(All.Floors, FloorListBox, "Floor");
 
         /// <summary>
         /// Registeres the user command to add a new biome tag to the current floor.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void FloorAddBiomeTagButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void FloorAddBiomeTagButton_Click(object sender, EventArgs eventArguments)
             => AddTag(FloorAddsToBiomeListBox, (IMutableParquetModel model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to remove the selected biome tag from the current floor.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void FloorRemoveBiomeTagButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void FloorRemoveBiomeTagButton_Click(object sender, EventArgs eventArguments)
             => RemoveTag(FloorAddsToBiomeListBox, (IMutableParquetModel model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to add a new room tag to the current floor.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void FloorAddRoomTagButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void FloorAddRoomTagButton_Click(object sender, EventArgs eventArguments)
             => AddTag(FloorAddsToRoomListBox, (IMutableParquetModel model) => model.AddsToRoom);
 
         /// <summary>
         /// Registeres the user command to remove the selected room tag from the current floor.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void FloorRemoveRoomTagButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void FloorRemoveRoomTagButton_Click(object sender, EventArgs eventArguments)
             => RemoveTag(FloorAddsToRoomListBox, (IMutableParquetModel model) => model.AddsToRoom);
         #endregion
 
@@ -2137,8 +2137,8 @@ namespace Scribe
         /// Responds to the user clicking "Add New Furnishing" on the Furnishings tab.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void FurnishingAddNewFurnishingButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void FurnishingAddNewFurnishingButton_Click(object sender, EventArgs eventArguments)
             => AddNewModel(All.Furnishings, (ModelID id) => new FurnishingModel(id, "New Furnishing", "", ""),
                            All.FurnishingIDs, FurnishingListBox, "Furnishing");
 
@@ -2146,40 +2146,40 @@ namespace Scribe
         /// Responds to the user clicking "Remove Furnishing" on the Furnishings tab.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void FurnishingRemoveFurnishingButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void FurnishingRemoveFurnishingButton_Click(object sender, EventArgs eventArguments)
             => RemoveModel(All.Furnishings, FurnishingListBox, "Furnishing");
 
         /// <summary>
         /// Registeres the user command to add a new biome tag to the current furnishing.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void FurnishingAddBiomeTagButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void FurnishingAddBiomeTagButton_Click(object sender, EventArgs eventArguments)
             => AddTag(FurnishingAddsToBiomeListBox, (IMutableParquetModel model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to remove the selected biome tag from the current furnishing.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void FurnishingRemoveBiomeTagButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void FurnishingRemoveBiomeTagButton_Click(object sender, EventArgs eventArguments)
             => RemoveTag(FurnishingAddsToBiomeListBox, (IMutableParquetModel model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to add a new room tag to the current furnishing.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void FurnishingAddRoomTagButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void FurnishingAddRoomTagButton_Click(object sender, EventArgs eventArguments)
             => AddTag(FurnishingAddsToRoomListBox, (IMutableParquetModel model) => model.AddsToRoom);
 
         /// <summary>
         /// Registeres the user command to remove the selected room tag from the current furnishing.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void FurnishingRemoveRoomTagButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void FurnishingRemoveRoomTagButton_Click(object sender, EventArgs eventArguments)
             => RemoveTag(FurnishingAddsToRoomListBox, (IMutableParquetModel model) => model.AddsToRoom);
         #endregion
 
@@ -2188,8 +2188,8 @@ namespace Scribe
         /// Responds to the user clicking "Add New Collectible" on the Collectibles tab.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void CollectibleAddNewCollectibleButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void CollectibleAddNewCollectibleButton_Click(object sender, EventArgs eventArguments)
             => AddNewModel(All.Collectibles, (ModelID id) => new CollectibleModel(id, "New Collectible", "", ""),
                            All.CollectibleIDs, CollectibleListBox, "Collectible");
 
@@ -2197,40 +2197,40 @@ namespace Scribe
         /// Responds to the user clicking "Remove Collectible" on the Collectibles tab.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void CollectibleRemoveCollectibleButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void CollectibleRemoveCollectibleButton_Click(object sender, EventArgs eventArguments)
             => RemoveModel(All.Collectibles, CollectibleListBox, "Collectible");
 
         /// <summary>
         /// Registeres the user command to add a new biome tag to the current collectible.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void CollectibleAddBiomeTagButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void CollectibleAddBiomeTagButton_Click(object sender, EventArgs eventArguments)
             => AddTag(CollectibleAddsToBiomeListBox, (IMutableParquetModel model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to remove the selected biome tag from the current collectible.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void CollectibleRemoveBiomeTagButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void CollectibleRemoveBiomeTagButton_Click(object sender, EventArgs eventArguments)
             => RemoveTag(CollectibleAddsToBiomeListBox, (IMutableParquetModel model) => model.AddsToBiome);
 
         /// <summary>
         /// Registeres the user command to add a new room tag to the current collectible.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void CollectibleAddRoomTagButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void CollectibleAddRoomTagButton_Click(object sender, EventArgs eventArguments)
             => AddTag(CollectibleAddsToRoomListBox, (IMutableParquetModel model) => model.AddsToRoom);
 
         /// <summary>
         /// Registeres the user command to remove the selected room tag from the current collectible.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void CollectibleRemoveRoomTagButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void CollectibleRemoveRoomTagButton_Click(object sender, EventArgs eventArguments)
             => RemoveTag(CollectibleAddsToRoomListBox, (IMutableParquetModel model) => model.AddsToRoom);
         #endregion
 
@@ -2239,40 +2239,40 @@ namespace Scribe
         /// Responds to the user clicking "Add New Character" on the Characters tab.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void CharacterAddNewCharacterButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void CharacterAddNewCharacterButton_Click(object sender, EventArgs eventArguments)
             => AddNewModel(All.Characters, (ModelID id) => new CharacterModel(id, "New Character", "", ""), All.CharacterIDs, CharacterListBox, "Character");
 
         /// <summary>
         /// Responds to the user clicking "Remove Character" on the Characters tab.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void CharacterRemoveCharacterButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void CharacterRemoveCharacterButton_Click(object sender, EventArgs eventArguments)
             => RemoveModel(All.Characters, CharacterListBox, "Character");
 
         /// <summary>
         /// Registeres the user command to add a new quest to the current character.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void CharacterAddQuestButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void CharacterAddQuestButton_Click(object sender, EventArgs eventArguments)
             => AddQuest(CharacterStartingQuestsListBox, (IMutableCharacterModel model) => model.StartingQuestIDs);
 
         /// <summary>
         /// Registeres the user command to remove the selected quest from the current character.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void CharacterRemoveQuestButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void CharacterRemoveQuestButton_Click(object sender, EventArgs eventArguments)
             => RemoveQuest(CollectibleAddsToBiomeListBox, (IMutableCharacterModel model) => model.StartingQuestIDs);
 
         /// <summary>
         /// Invokes the <see cref="InventoryEditorForm"/> for the currently selected <see cref="CharacterModel"/>.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void CharacterOpenInventoryEditorButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void CharacterOpenInventoryEditorButton_Click(object sender, EventArgs eventArguments)
         {
             var currentCharacter = (CharacterModel)GetSelectedModelForTab(EditorTabs.SelectedIndex);
             InventoryEditorWindow.CurrentCharacter = currentCharacter;
@@ -2292,8 +2292,8 @@ namespace Scribe
         /// Provides a suggested <see cref="CharacterModel.StoryCharacterID"/> if needed.
         /// </summary>
         /// <param name="sender">The <see cref="this.PersonalNameTextBox"/>.</param>
-        /// <param name="e">Ignored.</param>
-        private void CharacterPersonalNameTextBox_TextChanged(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void CharacterPersonalNameTextBox_TextChanged(object sender, EventArgs eventArguments)
         {
             if (Settings.Default.SuggestStoryIDs)
             {
@@ -2314,8 +2314,8 @@ namespace Scribe
         /// Provides a suggested <see cref="CharacterModel.StoryCharacterID"/> if needed.
         /// </summary>
         /// <param name="sender">The <see cref="this.FamilyNameTextBox"/>.</param>
-        /// <param name="e">Ignored.</param>
-        private void CharacterFamilyNameTextBox_TextChanged(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void CharacterFamilyNameTextBox_TextChanged(object sender, EventArgs eventArguments)
         {
             if (Settings.Default.SuggestStoryIDs)
             {
@@ -2338,16 +2338,16 @@ namespace Scribe
         /// Responds to the user clicking "Add New Critter" on the Critters tab.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void CritterAddNewCritterButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void CritterAddNewCritterButton_Click(object sender, EventArgs eventArguments)
             => AddNewModel(All.Critters, (ModelID id) => new CritterModel(id, "New Critter", "", ""), All.CritterIDs, CritterListBox, "Critter");
 
         /// <summary>
         /// Responds to the user clicking "Remove Critter" on the Critters tab.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void CritterRemoveCritterButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void CritterRemoveCritterButton_Click(object sender, EventArgs eventArguments)
             => RemoveModel(All.Critters, CritterListBox, "Critter");
         #endregion
 
@@ -2356,32 +2356,32 @@ namespace Scribe
         /// Responds to the user clicking "Add New Item" on the Items tab.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void ItemAddNewItemButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void ItemAddNewItemButton_Click(object sender, EventArgs eventArguments)
             => AddNewModel(All.Items, (ModelID id) => new ItemModel(id, "New Item", "", ""), All.ItemIDs, ItemListBox, "Item");
 
         /// <summary>
         /// Responds to the user clicking "Remove Item" on the Items tab.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void ItemRemoveItemButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void ItemRemoveItemButton_Click(object sender, EventArgs eventArguments)
             => RemoveModel(All.Items, ItemListBox, "Item");
 
         /// <summary>
         /// Registeres the user command to add a new tag to the current item.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void ItemAddTagButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void ItemAddTagButton_Click(object sender, EventArgs eventArguments)
             => AddTag(ItemTagListBox, (IMutableItemModel model) => model.ItemTags);
 
         /// <summary>
         /// Registeres the user command to remove the selected tag from the current item.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void ItemRemoveTagButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void ItemRemoveTagButton_Click(object sender, EventArgs eventArguments)
             => RemoveTag(ItemTagListBox, (IMutableItemModel model) => model.ItemTags);
         #endregion
 
@@ -2390,48 +2390,48 @@ namespace Scribe
         /// Responds to the user clicking "Add New Biome" on the Biomes tab.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void BiomeAddNewBiomeButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void BiomeAddNewBiomeButton_Click(object sender, EventArgs eventArguments)
             => AddNewModel(All.BiomeRecipes, (ModelID id) => new BiomeRecipe(id, "New Biome Recipe", "", ""), All.BiomeRecipeIDs, BiomeListBox, "Biome Recipe");
 
         /// <summary>
         /// Responds to the user clicking "Remove Biome" on the Biomes tab.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void BiomeRemoveBiomeButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void BiomeRemoveBiomeButton_Click(object sender, EventArgs eventArguments)
             => RemoveModel(All.BiomeRecipes, BiomeListBox, "Room Recipe");
 
         /// <summary>
         /// Registeres the user command to add a new parquet criterion tag to the current biome.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void BiomeAddParquetCriterionButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void BiomeAddParquetCriterionButton_Click(object sender, EventArgs eventArguments)
             => AddTag(BiomeParquetCriteriaListBox, (IMutableBiomeRecipe recipe) => recipe.ParquetCriteria);
 
         /// <summary>
         /// Registeres the user command to remove the selected parquet criterion tag from the current biome.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void BiomeRemoveParquetCriterionButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void BiomeRemoveParquetCriterionButton_Click(object sender, EventArgs eventArguments)
             => RemoveTag(BiomeParquetCriteriaListBox, (IMutableBiomeRecipe recipe) => recipe.ParquetCriteria);
 
         /// <summary>
         /// Registeres the user command to add a new entry requirement tag to the current biome.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void BiomeAddEntryRequirementButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void BiomeAddEntryRequirementButton_Click(object sender, EventArgs eventArguments)
             => AddTag(BiomeEntryRequirementsListBox, (IMutableBiomeRecipe recipe) => recipe.EntryRequirements);
 
         /// <summary>
         /// Registeres the user command to remove the selected entry requirement tag from the current biome.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void BiomeRemoveEntryRequirementButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void BiomeRemoveEntryRequirementButton_Click(object sender, EventArgs eventArguments)
             => RemoveTag(BiomeEntryRequirementsListBox, (IMutableBiomeRecipe recipe) => recipe.EntryRequirements);
         #endregion
 
@@ -2440,48 +2440,48 @@ namespace Scribe
         /// Responds to the user clicking "Add New Crafting Recipe" on the Crafts tab.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void CraftingAddNewCraftingButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void CraftingAddNewCraftingButton_Click(object sender, EventArgs eventArguments)
             => AddNewModel(All.CraftingRecipes, (ModelID id) => new CraftingRecipe(id, "New Crafting Recipe", "", ""), All.CraftingRecipeIDs, CraftingListBox, "Crafting Recipe");
 
         /// <summary>
         /// Responds to the user clicking "Remove Crafting Recipe" on the Rooms tab.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void CraftingRemoveCraftingButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void CraftingRemoveCraftingButton_Click(object sender, EventArgs eventArguments)
             => RemoveModel(All.CraftingRecipes, CraftingListBox, "Crafting Recipe");
 
         /// <summary>
         /// Registeres the user command to add a new product to the current Crafting Recipe.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void CraftingAddProductButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void CraftingAddProductButton_Click(object sender, EventArgs eventArguments)
             => AddRecipeElement(CraftingProductsListBox, (IMutableCraftingRecipe recipe) => recipe.Products);
 
         /// <summary>
         /// Registeres the user command to remove the selected product from the current Crafting Recipe.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void CraftingRemoveProductButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void CraftingRemoveProductButton_Click(object sender, EventArgs eventArguments)
             => RemoveRecipeElement(CraftingProductsListBox, (IMutableCraftingRecipe recipe) => recipe.Products);
 
         /// <summary>
         /// Registeres the user command to add a new ingredient to the current Crafting Recipe.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void CraftingAddIngredientButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void CraftingAddIngredientButton_Click(object sender, EventArgs eventArguments)
             => AddRecipeElement(CraftingIngredientsListBox, (IMutableCraftingRecipe recipe) => recipe.Ingredients);
 
         /// <summary>
         /// Registeres the user command to remove the selected ingredient from the current Crafting Recipe.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void CraftingRemoveIngredientButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void CraftingRemoveIngredientButton_Click(object sender, EventArgs eventArguments)
             => RemoveRecipeElement(CraftingIngredientsListBox, (IMutableCraftingRecipe recipe) => recipe.Ingredients);
         #endregion
 
@@ -2490,64 +2490,64 @@ namespace Scribe
         /// Responds to the user clicking "Add New Room" on the Rooms tab.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void RoomAddNewRoomButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void RoomAddNewRoomButton_Click(object sender, EventArgs eventArguments)
             => AddNewModel(All.RoomRecipes, (ModelID id) => new RoomRecipe(id, "New Room Recipe", "", ""), All.RoomRecipeIDs, RoomListBox, "Room Recipe");
 
         /// <summary>
         /// Responds to the user clicking "Remove Room" on the Rooms tab.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void RoomRemoveRoomButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void RoomRemoveRoomButton_Click(object sender, EventArgs eventArguments)
             => RemoveModel(All.RoomRecipes, RoomListBox, "Room Recipe");
 
         /// <summary>
         /// Registeres the user command to add a new Furnishing requirement to the current Room Recipe.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void RoomAddFurnishingButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void RoomAddFurnishingButton_Click(object sender, EventArgs eventArguments)
             => AddRecipeElement(RoomRequiredFurnishingsListBox, (IMutableRoomRecipe recipe) => recipe.OptionallyRequiredFurnishings);
 
         /// <summary>
         /// Registeres the user command to remove the selected Furnishing requirement from the current Room Recipe.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void RoomRemoveFurnishingButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void RoomRemoveFurnishingButton_Click(object sender, EventArgs eventArguments)
             => RemoveRecipeElement(BiomeParquetCriteriaListBox, (IMutableRoomRecipe recipe) => recipe.OptionallyRequiredFurnishings);
 
         /// <summary>
         /// Registeres the user command to add a new Floor requirement to the current Room Recipe.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void RoomAddFloorButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void RoomAddFloorButton_Click(object sender, EventArgs eventArguments)
             => AddRecipeElement(RoomRequiredFurnishingsListBox, (IMutableRoomRecipe recipe) => recipe.OptionallyRequiredWalkableFloors);
 
         /// <summary>
         /// Registeres the user command to remove the selected Floor requirement from the current Room Recipe.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void RoomRemoveFloorButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void RoomRemoveFloorButton_Click(object sender, EventArgs eventArguments)
             => RemoveRecipeElement(BiomeParquetCriteriaListBox, (IMutableRoomRecipe recipe) => recipe.OptionallyRequiredWalkableFloors);
 
         /// <summary>
         /// Registeres the user command to add a new Block requirement to the current Room Recipe.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void RoomAddBlockButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void RoomAddBlockButton_Click(object sender, EventArgs eventArguments)
             => AddRecipeElement(RoomRequiredFurnishingsListBox, (IMutableRoomRecipe recipe) => recipe.OptionallyRequiredPerimeterBlocks);
 
         /// <summary>
         /// Registeres the user command to remove the selected Block requirement from the current Room Recipe.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void RoomRemoveBlockButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void RoomRemoveBlockButton_Click(object sender, EventArgs eventArguments)
             => RemoveRecipeElement(BiomeParquetCriteriaListBox, (IMutableRoomRecipe recipe) => recipe.OptionallyRequiredPerimeterBlocks);
         #endregion
 
@@ -2565,8 +2565,8 @@ namespace Scribe
         /// Responds to a user selecting the "New" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="e">Addional event data.</param>
-        private void NewToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Addional event data.</param>
+        private void NewToolStripMenuItem_Click(object sender, EventArgs eventArguments)
         {
             if (!EditorCommands.SelectProjectFolder(Resources.InfoMessageNew))
             {
@@ -2591,8 +2591,8 @@ namespace Scribe
         /// Responds to a user selecting the "Load" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="e">Addional event data.</param>
-        private void LoadToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Addional event data.</param>
+        private void LoadToolStripMenuItem_Click(object sender, EventArgs eventArguments)
         {
             if (!EditorCommands.SelectProjectFolder(Resources.InfoMessageLoad))
             {
@@ -2616,8 +2616,8 @@ namespace Scribe
         /// Responds to a user selecting the "Reload" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="e">Addional event data.</param>
-        private void ReloadToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Addional event data.</param>
+        private void ReloadToolStripMenuItem_Click(object sender, EventArgs eventArguments)
         {
             if (MessageBox.Show(Resources.WarningMessageReload,
                                 Resources.CaptionReloadWarning,
@@ -2642,8 +2642,8 @@ namespace Scribe
         /// Responds to a user selecting the "Save" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="e">Addional event data.</param>
-        private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Addional event data.</param>
+        private void SaveToolStripMenuItem_Click(object sender, EventArgs eventArguments)
         {
             Validate();
             if (EditorCommands.SaveDataFiles())
@@ -2661,8 +2661,8 @@ namespace Scribe
         /// Responds to a user selecting "Open Project Folder" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="e">Addional event data.</param>
-        private void OpenProjectFolderToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Addional event data.</param>
+        private void OpenProjectFolderToolStripMenuItem_Click(object sender, EventArgs eventArguments)
         {
             if (!string.IsNullOrEmpty(All.ProjectDirectory))
             {
@@ -2678,104 +2678,104 @@ namespace Scribe
         /// Responds to a user selecting the "Exit" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="e">Addional event data.</param>
-        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Addional event data.</param>
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs eventArguments)
             => Close();
 
         /// <summary>
         /// Responds to a user selecting the "Undo" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="e">Addional event data.</param>
-        private void UndoToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Addional event data.</param>
+        private void UndoToolStripMenuItem_Click(object sender, EventArgs eventArguments)
             => ChangeManager.Undo();
 
         /// <summary>
         /// Responds to a user selecting the "Redo" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="e">Addional event data.</param>
-        private void RedoToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Addional event data.</param>
+        private void RedoToolStripMenuItem_Click(object sender, EventArgs eventArguments)
             => ChangeManager.Redo();
 
         /// <summary>
         /// Responds to a user selecting the "Cut" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="e">Addional event data.</param>
-        private void CutToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Addional event data.</param>
+        private void CutToolStripMenuItem_Click(object sender, EventArgs eventArguments)
             => throw new NotImplementedException();
 
         /// <summary>
         /// Responds to a user selecting the "Copy" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="e">Addional event data.</param>
-        private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Addional event data.</param>
+        private void CopyToolStripMenuItem_Click(object sender, EventArgs eventArguments)
             => throw new NotImplementedException();
 
         /// <summary>
         /// Responds to a user selecting the "Paste" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="e">Addional event data.</param>
-        private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Addional event data.</param>
+        private void PasteToolStripMenuItem_Click(object sender, EventArgs eventArguments)
             => throw new NotImplementedException();
 
         /// <summary>
         /// Responds to a user selecting the "Select All" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="e">Addional event data.</param>
-        private void SelectAllToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Addional event data.</param>
+        private void SelectAllToolStripMenuItem_Click(object sender, EventArgs eventArguments)
             => throw new NotImplementedException();
 
         /// <summary>
         /// Responds to a user selecting the "Check Map" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="e">Addional event data.</param>
-        private void CheckMapStripMenuItem_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Addional event data.</param>
+        private void CheckMapStripMenuItem_Click(object sender, EventArgs eventArguments)
             => throw new NotImplementedException();
 
         /// <summary>
         /// Responds to a user selecting the "List Naming Collisions" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="e">Addional event data.</param>
-        private void ListNameCollisionsStripMenuItem_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Addional event data.</param>
+        private void ListNameCollisionsStripMenuItem_Click(object sender, EventArgs eventArguments)
             => throw new NotImplementedException();
 
         /// <summary>
         /// Responds to a user selecting the "List ID Ranges" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="e">Addional event data.</param>
-        private void ListIDRangesToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Addional event data.</param>
+        private void ListIDRangesToolStripMenuItem_Click(object sender, EventArgs eventArguments)
             => throw new NotImplementedException();
 
         /// <summary>
         /// Responds to a user selecting the "List Max IDs" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="e">Addional event data.</param>
-        private void ListMaxIDsToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Addional event data.</param>
+        private void ListMaxIDsToolStripMenuItem_Click(object sender, EventArgs eventArguments)
             => throw new NotImplementedException();
 
         /// <summary>
         /// Responds to a user selecting the "List Tags" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="e">Addional event data.</param>
-        private void ListTagsToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Addional event data.</param>
+        private void ListTagsToolStripMenuItem_Click(object sender, EventArgs eventArguments)
             => throw new NotImplementedException();
 
         /// <summary>
         /// Responds to a user selecting the "Options" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="e">Addional event data.</param>
-        private void OptionsToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Addional event data.</param>
+        private void OptionsToolStripMenuItem_Click(object sender, EventArgs eventArguments)
         {
             oldTheme = Settings.Default.CurrentEditorTheme;
             OptionsDialogue.ShowDialog();
@@ -2785,8 +2785,8 @@ namespace Scribe
         /// Responds to a user selecting the "Refresh Display" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="e">Addional event data.</param>
-        private void RefreshStripMenuItem_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Addional event data.</param>
+        private void RefreshStripMenuItem_Click(object sender, EventArgs eventArguments)
         {
             UpdateDisplay();
             ApplyCurrentTheme();
@@ -2796,32 +2796,32 @@ namespace Scribe
         /// Responds to a user selecting the "Scribe Help" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="e">Addional event data.</param>
-        private void ScribeHelpToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Addional event data.</param>
+        private void ScribeHelpToolStripMenuItem_Click(object sender, EventArgs eventArguments)
             => throw new NotImplementedException();
 
         /// <summary>
         /// Responds to a user selecting the "Documentation" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="e">Addional event data.</param>
-        private void DocumentationToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Addional event data.</param>
+        private void DocumentationToolStripMenuItem_Click(object sender, EventArgs eventArguments)
             => throw new NotImplementedException();
 
         /// <summary>
         /// Responds to a user selecting the "About" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="e">Addional event data.</param>
-        private void AboutMenuItem_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Addional event data.</param>
+        private void AboutMenuItem_Click(object sender, EventArgs eventArguments)
             => AboutDialogue.ShowDialog();
 
         /// <summary>
         /// Responds to a user selecting "Open Containing Folder" context menu item from a picture box.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="e">Addional event data.</param>
-        private void OpenContainingFolderMenuItem_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Addional event data.</param>
+        private void OpenContainingFolderMenuItem_Click(object sender, EventArgs eventArguments)
         {
             var path = ((PictureBox)((ContextMenuStrip)((ToolStripItem)sender)?.Owner)?.SourceControl)?.ImageLocation;
             path = Path.GetDirectoryName(path);
@@ -2839,8 +2839,8 @@ namespace Scribe
         /// Responds to a user selecting "Copy ID" context menu item from am ID example label.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="e">Addional event data.</param>
-        private void CopyID_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Addional event data.</param>
+        private void CopyID_Click(object sender, EventArgs eventArguments)
         {
             var id = GetSelectedModelIDForTab(EditorTabs.SelectedIndex).ToString();
             if (!string.IsNullOrEmpty(id))
@@ -2921,8 +2921,8 @@ namespace Scribe
         /// Spawns an external image editor with the image of the currently selected model.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="e">Addional event data.</param>
-        private void EditImageExternally(object sender, EventArgs e)
+        /// <param name="eventArguments">Addional event data.</param>
+        private void EditImageExternally(object sender, EventArgs eventArguments)
         {
             var id = GetSelectedModelIDForTab(EditorTabs.SelectedIndex);
             if (id != ModelID.None)
@@ -2946,8 +2946,8 @@ namespace Scribe
         /// Responds to the player requesting a picture be reloaded.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void PictureBoxReload_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void PictureBoxReload_Click(object sender, EventArgs eventArguments)
             => PictureBoxLoadFromStorage(GetPictureBoxForTab(EditorTabs.SelectedIndex),
                                            GetSelectedModelIDForTab(EditorTabs.SelectedIndex));
         #endregion
@@ -2957,8 +2957,8 @@ namespace Scribe
         /// Intercepts events that would close the editor to double-check that this is desired.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Used to cancel the close event if it was not desired.</param>
-        private void FormClosingEventHandler(object sender, FormClosingEventArgs e)
+        /// <param name="eventArguments">Used to cancel the close event if it was not desired.</param>
+        private void FormClosingEventHandler(object sender, FormClosingEventArgs eventArguments)
         {
             if (HasUnsavedChanges)
             {
@@ -2967,7 +2967,7 @@ namespace Scribe
                                     MessageBoxButtons.YesNo,
                                     MessageBoxIcon.Warning) == DialogResult.No)
                 {
-                    e.Cancel = true;
+                    eventArguments.Cancel = true;
                 }
                 else
                 {

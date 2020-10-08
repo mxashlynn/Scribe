@@ -32,8 +32,8 @@ namespace Scribe
         /// Resets the UI each time the dialogue box is loaded.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void AboutBox_Load(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void AboutBox_Load(object sender, EventArgs eventArguments)
             => ApplyCurrentTheme();
         #endregion
 
@@ -147,8 +147,8 @@ namespace Scribe
         /// Closes the <see cref="AboutBox"/>.
         /// </summary>
         /// <param name="sender">The originator of the event.</param>
-        /// <param name="e">Additional event data.</param>
-        private void OKButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Additional event data.</param>
+        private void OKButton_Click(object sender, EventArgs eventArguments)
             => Close();
         #endregion
     }

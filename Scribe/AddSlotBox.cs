@@ -31,8 +31,8 @@ namespace Scribe
         /// Resets the UI each time the dialogue box is loaded.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void AddSlotBox_Load(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void AddSlotBox_Load(object sender, EventArgs eventArguments)
         {
             ReturnNewSlot = InventorySlot.Empty;
             ItemID = ModelID.None;
@@ -82,8 +82,8 @@ namespace Scribe
         /// Updates the <see cref="ItemAmount"/> according to user input.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void AmountTextBox_TextChanged(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void AmountTextBox_TextChanged(object sender, EventArgs eventArguments)
         {
             if (int.TryParse(AmountTextBox.Text, out var parsedAmount)
                 && parsedAmount > 0)
@@ -100,8 +100,8 @@ namespace Scribe
         /// Updates the <see cref="ItemID"/> according to user input.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void ItemListBox_SelectedIndexChanged(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void ItemListBox_SelectedIndexChanged(object sender, EventArgs eventArguments)
             => ItemID = ((ItemModel)ItemListBox.SelectedItem)?.ID ?? ModelID.None;
         #endregion
 
@@ -110,8 +110,8 @@ namespace Scribe
         /// Closes the <see cref="AddSlotBox"/>, signalling that the <see cref="InventorySlot"/> was accepted.
         /// </summary>
         /// <param name="sender">The originator of the event.</param>
-        /// <param name="e">Additional event data.</param>
-        private void OkayButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Additional event data.</param>
+        private void OkayButton_Click(object sender, EventArgs eventArguments)
         {
             (ReturnNewSlot, DialogResult) = ModelID.None != ItemID
                             && ItemID.IsValidForRange(All.ItemIDs)
@@ -125,8 +125,8 @@ namespace Scribe
         /// Closes the <see cref="AddSlotBox"/>.
         /// </summary>
         /// <param name="sender">The originator of the event.</param>
-        /// <param name="e">Additional event data.</param>
-        private void CancelButtonControl_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Additional event data.</param>
+        private void CancelButtonControl_Click(object sender, EventArgs eventArguments)
         {
             ReturnNewSlot = InventorySlot.Empty;
             DialogResult = DialogResult.Cancel;

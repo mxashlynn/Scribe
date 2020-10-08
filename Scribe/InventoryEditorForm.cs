@@ -40,8 +40,8 @@ namespace Scribe
         /// Resets the UI each time the <see cref="Form"/> is loaded.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void InventoryEditorForm_Load(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void InventoryEditorForm_Load(object sender, EventArgs eventArguments)
         {
             if (null == CurrentCharacter)
             {
@@ -144,8 +144,8 @@ namespace Scribe
         /// Adjusts the capacity of the <see cref="WorkingInventory"/> according to user input.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void CapacityTextBox_TextChanged(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void CapacityTextBox_TextChanged(object sender, EventArgs eventArguments)
         {
             if (int.TryParse(CapacityTextBox.Text, out var parsedCapacity)
                 && parsedCapacity > 0)
@@ -165,8 +165,8 @@ namespace Scribe
         /// Registeres the user command to add a new <see cref="InventorySlot"/> to the <see cref="WorkingInventory"/>.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void AddSlotButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void AddSlotButton_Click(object sender, EventArgs eventArguments)
         {
             // TODO Check that any ItemModels exist; if they don't, suggest the user use the Items tab.
 
@@ -181,8 +181,8 @@ namespace Scribe
         /// Registeres the user command to remove the selected <see cref="InventorySlot"/> tag from the <see cref="WorkingInventory"/>.
         /// </summary>
         /// <param name="sender">Ignored</param>
-        /// <param name="e">Ignored</param>
-        private void RemoveSlotButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored</param>
+        private void RemoveSlotButton_Click(object sender, EventArgs eventArguments)
         {
             if (SlotsListBox.SelectedItem is InventorySlot slot)
             {
@@ -197,8 +197,8 @@ namespace Scribe
         /// Closes the <see cref="InventoryEditorForm"/>, signalling that the edited <see cref="Inventory"/> was accepted.
         /// </summary>
         /// <param name="sender">The originator of the event.</param>
-        /// <param name="e">Additional event data.</param>
-        private void OkayButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Additional event data.</param>
+        private void OkayButton_Click(object sender, EventArgs eventArguments)
         {
             CurrentCharacter.StartingInventory.Clear();
             foreach (var inventorySlot in WorkingInventory)
@@ -214,8 +214,8 @@ namespace Scribe
         /// Closes the <see cref="InventoryEditorForm"/>, signalling to abandon the edited <see cref="Inventory"/>.
         /// </summary>
         /// <param name="sender">The originator of the event.</param>
-        /// <param name="e">Additional event data.</param>
-        private void CancelButtonControl_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Additional event data.</param>
+        private void CancelButtonControl_Click(object sender, EventArgs eventArguments)
         {
             WorkingInventory = Inventory.Empty;
             DialogResult = DialogResult.Cancel;

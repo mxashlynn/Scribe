@@ -31,8 +31,8 @@ namespace Scribe
         /// Resets the UI each time the dialogue box is loaded.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void AddRecipeElementBox_Load(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void AddRecipeElementBox_Load(object sender, EventArgs eventArguments)
         {
             if (null != ReturnNewRecipeElement)
             {
@@ -121,8 +121,8 @@ namespace Scribe
         /// Closes the <see cref="AddTagBox"/>, signalling that the entered tag text was accepted.
         /// </summary>
         /// <param name="sender">The originator of the event.</param>
-        /// <param name="e">Additional event data.</param>
-        private void OkayButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Additional event data.</param>
+        private void OkayButton_Click(object sender, EventArgs eventArguments)
         {
             (ReturnNewRecipeElement, DialogResult) = newAmount < 1 || string.IsNullOrEmpty(newTag)
                 ? (null, DialogResult.Cancel)
@@ -134,8 +134,8 @@ namespace Scribe
         /// Closes the <see cref="AddTagBox"/>, signalling to abandon any entered tag text.
         /// </summary>
         /// <param name="sender">The originator of the event.</param>
-        /// <param name="e">Additional event data.</param>
-        private void CancelButtonControl_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Additional event data.</param>
+        private void CancelButtonControl_Click(object sender, EventArgs eventArguments)
         {
             ReturnNewRecipeElement = null;
             DialogResult = DialogResult.Cancel;
