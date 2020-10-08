@@ -27,6 +27,7 @@ namespace Scribe
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.SlotTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.CancelButtonControl = new System.Windows.Forms.Button();
             this.OkayButton = new System.Windows.Forms.Button();
@@ -34,7 +35,9 @@ namespace Scribe
             this.AmountTextBox = new System.Windows.Forms.TextBox();
             this.AmountLabel = new System.Windows.Forms.Label();
             this.ItemListBox = new System.Windows.Forms.ListBox();
+            this.AmountErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.SlotTableLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AmountErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // SlotTableLayoutPanel
@@ -102,7 +105,7 @@ namespace Scribe
             this.AmountTextBox.Name = "AmountTextBox";
             this.AmountTextBox.Size = new System.Drawing.Size(172, 23);
             this.AmountTextBox.TabIndex = 11;
-            this.AmountTextBox.TextChanged += new System.EventHandler(this.AmountTextBox_TextChanged);
+            this.AmountTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.AmountTextBox_Validating);
             // 
             // AmountLabel
             // 
@@ -126,6 +129,10 @@ namespace Scribe
             this.ItemListBox.TabIndex = 15;
             this.ItemListBox.SelectedIndexChanged += new System.EventHandler(this.ItemListBox_SelectedIndexChanged);
             // 
+            // AmountErrorProvider
+            // 
+            this.AmountErrorProvider.ContainerControl = this;
+            // 
             // AddSlotBox
             // 
             this.AcceptButton = this.OkayButton;
@@ -148,6 +155,7 @@ namespace Scribe
             this.Load += new System.EventHandler(this.AddSlotBox_Load);
             this.SlotTableLayoutPanel.ResumeLayout(false);
             this.SlotTableLayoutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AmountErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -161,5 +169,6 @@ namespace Scribe
         private System.Windows.Forms.TextBox AmountTextBox;
         private System.Windows.Forms.Label AmountLabel;
         private System.Windows.Forms.ListBox ItemListBox;
+        private System.Windows.Forms.ErrorProvider AmountErrorProvider;
     }
 }

@@ -1,8 +1,10 @@
 using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 using ParquetClassLibrary;
 using ParquetClassLibrary.Items;
+using Scribe.Properties;
 
 namespace Scribe
 {
@@ -78,21 +80,25 @@ namespace Scribe
         #endregion
 
         #region Validation
+
         /// <summary>
-        /// Updates the <see cref="ItemAmount"/> according to user input.
+        /// Determines if the value entered is valid.
+        /// Updates the <see cref="ItemAmount"/> according to valid values, otherwise signals an input error.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="eventArguments">Ignored.</param>
-        private void AmountTextBox_TextChanged(object sender, EventArgs eventArguments)
+        /// <param name="eventAruments">Whether or not to discard the given text.</param>
+        private void AmountTextBox_Validating(object sender, CancelEventArgs eventAruments)
         {
             if (int.TryParse(AmountTextBox.Text, out var parsedAmount)
                 && parsedAmount > 0)
             {
                 ItemAmount = parsedAmount;
+                AmountErrorProvider.SetError(AmountLabel, "");
             }
             else
             {
-                AmountTextBox.Text = "";
+                eventAruments.Cancel = true;
+                AmountErrorProvider.SetError(AmountLabel, Resources.ErrorPositiveIntegersOnly);
             }
         }
 

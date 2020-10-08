@@ -1,10 +1,12 @@
 using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 using ParquetClassLibrary;
 using ParquetClassLibrary.Beings;
 using ParquetClassLibrary.EditorSupport;
 using ParquetClassLibrary.Items;
+using Scribe.Properties;
 
 namespace Scribe
 {
@@ -141,23 +143,25 @@ namespace Scribe
         }
 
         /// <summary>
-        /// Adjusts the capacity of the <see cref="WorkingInventory"/> according to user input.
+        /// Determines if the value entered is valid.
+        /// Adjusts the capacity of the <see cref="WorkingInventory"/> according to valid values, otherwise signals an input error.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="eventArguments">Ignored.</param>
-        private void CapacityTextBox_TextChanged(object sender, EventArgs eventArguments)
+        /// <param name="eventAruments">Whether or not to discard the given text.</param>
+        private void CapacityTextBox_Validating(object sender, CancelEventArgs eventAruments)
         {
             if (int.TryParse(CapacityTextBox.Text, out var parsedCapacity)
                 && parsedCapacity > 0)
             {
                 // TODO Introduce editor support for Inventory so that we can simply write:
                 // WorkingInventory.Capacity = parsedCapacity;
-
                 WorkingInventory = new Inventory(WorkingInventory, parsedCapacity);
+                CapacityErrorProvider.SetError(CapacityTextBox, "");
             }
             else
             {
-                CapacityTextBox.Text = "";
+                eventAruments.Cancel = true;
+                CapacityErrorProvider.SetError(CapacityTextBox, Resources.ErrorPositiveIntegersOnly);
             }
         }
 

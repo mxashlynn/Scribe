@@ -39,7 +39,9 @@ namespace Scribe
             this.OkayButton = new System.Windows.Forms.Button();
             this.CancelButtonControl = new System.Windows.Forms.Button();
             this.EditorToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.CapacityErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.TableLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CapacityErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // CapacityLabel
@@ -102,9 +104,9 @@ namespace Scribe
             // 
             this.CapacityTextBox.Location = new System.Drawing.Point(133, 3);
             this.CapacityTextBox.Name = "CapacityTextBox";
-            this.CapacityTextBox.Size = new System.Drawing.Size(124, 23);
+            this.CapacityTextBox.Size = new System.Drawing.Size(100, 23);
             this.CapacityTextBox.TabIndex = 50;
-            this.CapacityTextBox.TextChanged += new System.EventHandler(this.CapacityTextBox_TextChanged);
+            this.CapacityTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.CapacityTextBox_Validating);
             // 
             // TableLayoutPanel
             // 
@@ -156,6 +158,10 @@ namespace Scribe
             this.CancelButtonControl.Text = "Cancel";
             this.CancelButtonControl.UseVisualStyleBackColor = true;
             // 
+            // CapacityErrorProvider
+            // 
+            this.CapacityErrorProvider.ContainerControl = this;
+            // 
             // InventoryEditorForm
             // 
             this.AcceptButton = this.OkayButton;
@@ -172,6 +178,7 @@ namespace Scribe
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InventoryEditorForm_KeyDown);
             this.TableLayoutPanel.ResumeLayout(false);
             this.TableLayoutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CapacityErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -188,5 +195,6 @@ namespace Scribe
         private System.Windows.Forms.ToolTip EditorToolTip;
         private System.Windows.Forms.Button OkayButton;
         private System.Windows.Forms.Button CancelButtonControl;
+        private System.Windows.Forms.ErrorProvider CapacityErrorProvider;
     }
 }
