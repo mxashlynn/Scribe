@@ -630,21 +630,6 @@ namespace Scribe
                     => (input) => (inModel as IMutableCharacterModel).PronounKey = input.ToString(),
                 (CharactersTabIndex, "CharacterStartingDialogueComboBox")
                     => (input) => (inModel as IMutableCharacterModel).StartingDialogueID = ValueToID(input),
-                (CharactersTabIndex, "CharacterStartingInventoryExample")
-                    => (input) =>
-                    {
-                        var editModel = inModel as CharacterModel;
-                        var slots = (IList<InventorySlot>)input;
-                        foreach (var slot in editModel.StartingInventory)
-                        {
-                            editModel.StartingInventory.Take(slot);
-                        }
-                        foreach (var slot in slots)
-                        {
-                            editModel.StartingInventory.Give(slot);
-                        }
-                    }
-                ,
                 (CharactersTabIndex, "CharacterStartingQuestsListBox")
                     => (input) =>
                     {

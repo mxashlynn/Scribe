@@ -29,7 +29,7 @@ namespace Scribe
         /// An <see cref="Inventory"/> that the user cancels interacts with in this form.
         /// It is only given to the <see cref="CharacterModel"/> if the user selects the <see cref="OkayButton"/>.
         /// </summary>
-        private Inventory WorkingInventory { get; set; }
+        private IMutableInventory WorkingInventory { get; set; }
         #endregion
 
         #region Initialization
@@ -51,9 +51,12 @@ namespace Scribe
                 DialogResult = DialogResult.Abort;
                 Close();
             }
-            ApplyCurrentTheme();
-            WorkingInventory = CurrentCharacter.StartingInventory.Clone();
-            UpdateControls();
+            else
+            {
+                ApplyCurrentTheme();
+                WorkingInventory = ((Inventory)CurrentCharacter.StartingInventory).Clone();
+                UpdateControls();
+            }
         }
         #endregion
 
@@ -154,9 +157,7 @@ namespace Scribe
             if (int.TryParse(CapacityTextBox.Text, out var parsedCapacity)
                 && parsedCapacity > 0)
             {
-                // TODO Introduce editor support for Inventory so that we can simply write:
-                // WorkingInventory.Capacity = parsedCapacity;
-                WorkingInventory = new Inventory(WorkingInventory, parsedCapacity);
+                WorkingInventory.Capacity = parsedCapacity;
                 CapacityErrorProvider.SetError(CapacityTextBox, "");
             }
             else
@@ -182,11 +183,9 @@ namespace Scribe
             else if (AddSlotDialogue.ShowDialog() == DialogResult.OK)
             {
                 // Increment the capacity as needed to support additional slots.
-                // TODO Introduce editor support for Inventory so that we can simply write:
-                // WorkingInventory.Capacity++;
                 if (WorkingInventory.Count + 1 > WorkingInventory.Capacity)
                 {
-                    WorkingInventory = new Inventory(WorkingInventory, WorkingInventory.Capacity + 1);
+                    WorkingInventory.Capacity++;
                     CapacityTextBox.Text = WorkingInventory.Capacity.ToString();
                 }
 
@@ -226,8 +225,8 @@ namespace Scribe
         /// <param name="eventArguments">Additional event data.</param>
         private void OkayButton_Click(object sender, EventArgs eventArguments)
         {
-            // TODO We need to be able to update the capacity of the StartingInventory!
             CurrentCharacter.StartingInventory.Clear();
+            CurrentCharacter.StartingInventory.Capacity = WorkingInventory.Capacity;
             foreach (var inventorySlot in WorkingInventory)
             {
                 CurrentCharacter.StartingInventory.Give(inventorySlot);
