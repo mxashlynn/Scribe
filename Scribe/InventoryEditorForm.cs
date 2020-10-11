@@ -26,8 +26,8 @@ namespace Scribe
         public IMutableCharacterModel CurrentCharacter { get; set; }
 
         /// <summary>
-        /// An <see cref="Inventory"/> that the user cancels interacts with in this form.
-        /// It is only given to the <see cref="CharacterModel"/> if the user selects the <see cref="OkayButton"/>.
+        /// An <see cref="Inventory"/> that the user interacts with in this form.
+        /// It is only attached to the <see cref="CharacterModel"/> if the user selects the <see cref="OkayButton"/>.
         /// </summary>
         private IMutableInventory WorkingInventory { get; set; }
         #endregion
