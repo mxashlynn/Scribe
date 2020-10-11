@@ -2035,7 +2035,7 @@ namespace Scribe
             => RemoveModel(All.Blocks, BlockListBox, "Block");
 
         /// <summary>
-        /// Registeres the user command to add a new biome tag to the current block.
+        /// Registers the user command to add a new biome tag to the current block.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2043,7 +2043,7 @@ namespace Scribe
             => AddTag(BlockAddsToBiomeListBox, (IMutableParquetModel model) => model.AddsToBiome);
 
         /// <summary>
-        /// Registeres the user command to remove the selected biome tag from the current block.
+        /// Registers the user command to remove the selected biome tag from the current block.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2051,7 +2051,7 @@ namespace Scribe
             => RemoveTag(BlockAddsToBiomeListBox, (IMutableParquetModel model) => model.AddsToBiome);
 
         /// <summary>
-        /// Registeres the user command to add a new room tag to the current block.
+        /// Registers the user command to add a new room tag to the current block.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2059,7 +2059,7 @@ namespace Scribe
             => AddTag(BlockAddsToRoomListBox, (IMutableParquetModel model) => model.AddsToRoom);
 
         /// <summary>
-        /// Registeres the user command to remove the selected room tag from the current block.
+        /// Registers the user command to remove the selected room tag from the current block.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2085,7 +2085,7 @@ namespace Scribe
             => RemoveModel(All.Floors, FloorListBox, "Floor");
 
         /// <summary>
-        /// Registeres the user command to add a new biome tag to the current floor.
+        /// Registers the user command to add a new biome tag to the current floor.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2093,7 +2093,7 @@ namespace Scribe
             => AddTag(FloorAddsToBiomeListBox, (IMutableParquetModel model) => model.AddsToBiome);
 
         /// <summary>
-        /// Registeres the user command to remove the selected biome tag from the current floor.
+        /// Registers the user command to remove the selected biome tag from the current floor.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2101,7 +2101,7 @@ namespace Scribe
             => RemoveTag(FloorAddsToBiomeListBox, (IMutableParquetModel model) => model.AddsToBiome);
 
         /// <summary>
-        /// Registeres the user command to add a new room tag to the current floor.
+        /// Registers the user command to add a new room tag to the current floor.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2109,7 +2109,7 @@ namespace Scribe
             => AddTag(FloorAddsToRoomListBox, (IMutableParquetModel model) => model.AddsToRoom);
 
         /// <summary>
-        /// Registeres the user command to remove the selected room tag from the current floor.
+        /// Registers the user command to remove the selected room tag from the current floor.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2136,7 +2136,7 @@ namespace Scribe
             => RemoveModel(All.Furnishings, FurnishingListBox, "Furnishing");
 
         /// <summary>
-        /// Registeres the user command to add a new biome tag to the current furnishing.
+        /// Registers the user command to add a new biome tag to the current furnishing.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2144,7 +2144,7 @@ namespace Scribe
             => AddTag(FurnishingAddsToBiomeListBox, (IMutableParquetModel model) => model.AddsToBiome);
 
         /// <summary>
-        /// Registeres the user command to remove the selected biome tag from the current furnishing.
+        /// Registers the user command to remove the selected biome tag from the current furnishing.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2152,7 +2152,7 @@ namespace Scribe
             => RemoveTag(FurnishingAddsToBiomeListBox, (IMutableParquetModel model) => model.AddsToBiome);
 
         /// <summary>
-        /// Registeres the user command to add a new room tag to the current furnishing.
+        /// Registers the user command to add a new room tag to the current furnishing.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2160,7 +2160,7 @@ namespace Scribe
             => AddTag(FurnishingAddsToRoomListBox, (IMutableParquetModel model) => model.AddsToRoom);
 
         /// <summary>
-        /// Registeres the user command to remove the selected room tag from the current furnishing.
+        /// Registers the user command to remove the selected room tag from the current furnishing.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2187,7 +2187,7 @@ namespace Scribe
             => RemoveModel(All.Collectibles, CollectibleListBox, "Collectible");
 
         /// <summary>
-        /// Registeres the user command to add a new biome tag to the current collectible.
+        /// Registers the user command to add a new biome tag to the current collectible.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2195,7 +2195,7 @@ namespace Scribe
             => AddTag(CollectibleAddsToBiomeListBox, (IMutableParquetModel model) => model.AddsToBiome);
 
         /// <summary>
-        /// Registeres the user command to remove the selected biome tag from the current collectible.
+        /// Registers the user command to remove the selected biome tag from the current collectible.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2203,7 +2203,7 @@ namespace Scribe
             => RemoveTag(CollectibleAddsToBiomeListBox, (IMutableParquetModel model) => model.AddsToBiome);
 
         /// <summary>
-        /// Registeres the user command to add a new room tag to the current collectible.
+        /// Registers the user command to add a new room tag to the current collectible.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2211,7 +2211,7 @@ namespace Scribe
             => AddTag(CollectibleAddsToRoomListBox, (IMutableParquetModel model) => model.AddsToRoom);
 
         /// <summary>
-        /// Registeres the user command to remove the selected room tag from the current collectible.
+        /// Registers the user command to remove the selected room tag from the current collectible.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2237,7 +2237,7 @@ namespace Scribe
             => RemoveModel(All.Characters, CharacterListBox, "Character");
 
         /// <summary>
-        /// Registeres the user command to add a new quest to the current character.
+        /// Registers the user command to add a new quest to the current character.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2245,7 +2245,7 @@ namespace Scribe
             => AddQuest(CharacterStartingQuestsListBox, (IMutableCharacterModel model) => model.StartingQuestIDs);
 
         /// <summary>
-        /// Registeres the user command to remove the selected quest from the current character.
+        /// Registers the user command to remove the selected quest from the current character.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2354,7 +2354,7 @@ namespace Scribe
             => RemoveModel(All.Items, ItemListBox, "Item");
 
         /// <summary>
-        /// Registeres the user command to add a new tag to the current item.
+        /// Registers the user command to add a new tag to the current item.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2362,7 +2362,7 @@ namespace Scribe
             => AddTag(ItemTagListBox, (IMutableItemModel model) => model.ItemTags);
 
         /// <summary>
-        /// Registeres the user command to remove the selected tag from the current item.
+        /// Registers the user command to remove the selected tag from the current item.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2388,7 +2388,7 @@ namespace Scribe
             => RemoveModel(All.BiomeRecipes, BiomeListBox, "Room Recipe");
 
         /// <summary>
-        /// Registeres the user command to add a new parquet criterion tag to the current biome.
+        /// Registers the user command to add a new parquet criterion tag to the current biome.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2396,7 +2396,7 @@ namespace Scribe
             => AddTag(BiomeParquetCriteriaListBox, (IMutableBiomeRecipe recipe) => recipe.ParquetCriteria);
 
         /// <summary>
-        /// Registeres the user command to remove the selected parquet criterion tag from the current biome.
+        /// Registers the user command to remove the selected parquet criterion tag from the current biome.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2404,7 +2404,7 @@ namespace Scribe
             => RemoveTag(BiomeParquetCriteriaListBox, (IMutableBiomeRecipe recipe) => recipe.ParquetCriteria);
 
         /// <summary>
-        /// Registeres the user command to add a new entry requirement tag to the current biome.
+        /// Registers the user command to add a new entry requirement tag to the current biome.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2412,7 +2412,7 @@ namespace Scribe
             => AddTag(BiomeEntryRequirementsListBox, (IMutableBiomeRecipe recipe) => recipe.EntryRequirements);
 
         /// <summary>
-        /// Registeres the user command to remove the selected entry requirement tag from the current biome.
+        /// Registers the user command to remove the selected entry requirement tag from the current biome.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2438,7 +2438,7 @@ namespace Scribe
             => RemoveModel(All.CraftingRecipes, CraftingListBox, "Crafting Recipe");
 
         /// <summary>
-        /// Registeres the user command to add a new product to the current Crafting Recipe.
+        /// Registers the user command to add a new product to the current Crafting Recipe.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2446,7 +2446,7 @@ namespace Scribe
             => AddRecipeElement(CraftingProductsListBox, (IMutableCraftingRecipe recipe) => recipe.Products);
 
         /// <summary>
-        /// Registeres the user command to remove the selected product from the current Crafting Recipe.
+        /// Registers the user command to remove the selected product from the current Crafting Recipe.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2454,7 +2454,7 @@ namespace Scribe
             => RemoveRecipeElement(CraftingProductsListBox, (IMutableCraftingRecipe recipe) => recipe.Products);
 
         /// <summary>
-        /// Registeres the user command to add a new ingredient to the current Crafting Recipe.
+        /// Registers the user command to add a new ingredient to the current Crafting Recipe.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2462,7 +2462,7 @@ namespace Scribe
             => AddRecipeElement(CraftingIngredientsListBox, (IMutableCraftingRecipe recipe) => recipe.Ingredients);
 
         /// <summary>
-        /// Registeres the user command to remove the selected ingredient from the current Crafting Recipe.
+        /// Registers the user command to remove the selected ingredient from the current Crafting Recipe.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2488,7 +2488,7 @@ namespace Scribe
             => RemoveModel(All.RoomRecipes, RoomListBox, "Room Recipe");
 
         /// <summary>
-        /// Registeres the user command to add a new Furnishing requirement to the current Room Recipe.
+        /// Registers the user command to add a new Furnishing requirement to the current Room Recipe.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2496,7 +2496,7 @@ namespace Scribe
             => AddRecipeElement(RoomRequiredFurnishingsListBox, (IMutableRoomRecipe recipe) => recipe.OptionallyRequiredFurnishings);
 
         /// <summary>
-        /// Registeres the user command to remove the selected Furnishing requirement from the current Room Recipe.
+        /// Registers the user command to remove the selected Furnishing requirement from the current Room Recipe.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2504,7 +2504,7 @@ namespace Scribe
             => RemoveRecipeElement(BiomeParquetCriteriaListBox, (IMutableRoomRecipe recipe) => recipe.OptionallyRequiredFurnishings);
 
         /// <summary>
-        /// Registeres the user command to add a new Floor requirement to the current Room Recipe.
+        /// Registers the user command to add a new Floor requirement to the current Room Recipe.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2512,7 +2512,7 @@ namespace Scribe
             => AddRecipeElement(RoomRequiredFurnishingsListBox, (IMutableRoomRecipe recipe) => recipe.OptionallyRequiredWalkableFloors);
 
         /// <summary>
-        /// Registeres the user command to remove the selected Floor requirement from the current Room Recipe.
+        /// Registers the user command to remove the selected Floor requirement from the current Room Recipe.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2520,7 +2520,7 @@ namespace Scribe
             => RemoveRecipeElement(BiomeParquetCriteriaListBox, (IMutableRoomRecipe recipe) => recipe.OptionallyRequiredWalkableFloors);
 
         /// <summary>
-        /// Registeres the user command to add a new Block requirement to the current Room Recipe.
+        /// Registers the user command to add a new Block requirement to the current Room Recipe.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -2528,7 +2528,7 @@ namespace Scribe
             => AddRecipeElement(RoomRequiredFurnishingsListBox, (IMutableRoomRecipe recipe) => recipe.OptionallyRequiredPerimeterBlocks);
 
         /// <summary>
-        /// Registeres the user command to remove the selected Block requirement from the current Room Recipe.
+        /// Registers the user command to remove the selected Block requirement from the current Room Recipe.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
