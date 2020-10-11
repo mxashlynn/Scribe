@@ -168,7 +168,7 @@ namespace Scribe
         }
 
         /// <summary>
-        /// Registeres the user command to add a new <see cref="InventorySlot"/> to the <see cref="WorkingInventory"/>.
+        /// Registers the user command to add a new <see cref="InventorySlot"/> to the <see cref="WorkingInventory"/>.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
@@ -203,7 +203,7 @@ namespace Scribe
         }
 
         /// <summary>
-        /// Registeres the user command to remove the selected <see cref="InventorySlot"/> tag from the <see cref="WorkingInventory"/>.
+        /// Registers the user command to remove the selected <see cref="InventorySlot"/> tag from the <see cref="WorkingInventory"/>.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
