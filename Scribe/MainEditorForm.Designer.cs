@@ -5398,6 +5398,7 @@ namespace Scribe
             this.CraftingOpenPatternEditorButton.TabIndex = 2;
             this.CraftingOpenPatternEditorButton.Text = "Open Pattern Editor";
             this.CraftingOpenPatternEditorButton.UseVisualStyleBackColor = false;
+            this.CraftingOpenPatternEditorButton.Click += new System.EventHandler(this.CraftingOpenPatternEditorButton_Click);
             // 
             // CraftingAddProductButton
             // 

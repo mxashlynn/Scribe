@@ -2468,6 +2468,22 @@ namespace Scribe
         /// <param name="eventArguments">Ignored</param>
         private void CraftingRemoveIngredientButton_Click(object sender, EventArgs eventArguments)
             => RemoveRecipeElement(CraftingIngredientsListBox, (IMutableCraftingRecipe recipe) => recipe.Ingredients);
+
+        /// <summary>
+        /// Invokes the <see cref="StrikePatternEditorForm"/> for the currently selected <see cref="CraftingRecipe"/>.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="eventArguments">Ignored</param>
+        private void CraftingOpenPatternEditorButton_Click(object sender, EventArgs eventArguments)
+        {
+            StrikePatternEditorWindow.CurrentCraft = (CraftingRecipe)GetSelectedModelForTab(EditorTabs.SelectedIndex);
+            if (StrikePatternEditorWindow.ShowDialog() == DialogResult.Abort)
+            {
+                MainToolStripStatusLabel.Text = Resources.WarningNothingSelected;
+                SystemSounds.Beep.Play();
+            }
+        }
+
         #endregion
 
         #region Rooms Tab
