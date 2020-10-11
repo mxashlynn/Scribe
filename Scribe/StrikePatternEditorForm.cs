@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
+using ParquetClassLibrary.Crafts;
+using ParquetClassLibrary.EditorSupport;
 
 namespace Scribe
 {
@@ -10,10 +12,23 @@ namespace Scribe
     /// </summary>
     internal partial class StrikePatternEditorForm : Form
     {
+        #region Cached Controls
         /// <summary>
         /// A collection of all themed <see cref="Component"/>s in the <see cref="StrikePatternEditorForm"/>.
         /// </summary>
         private readonly Dictionary<Type, List<Component>> ThemedComponents;
+        #endregion
+
+        #region Content Being Edited
+        /// <summary>The <see cref="CraftingRecipe"/> whose <see cref="StrikePanelGrid"/> might be edited.</summary>
+        public IMutableCraftingRecipe CurrentCraft { get; set; }
+
+        /// <summary>
+        /// A <see cref="StrikePanelGrid"/> that the user interacts with in this form.
+        /// It is only attached to the <see cref="CraftingRecipe"/> if the user selects the <see cref="OkayButton"/>.
+        /// </summary>
+        private StrikePanelGrid WorkingStrikePanel { get; set; }
+        #endregion
 
         #region Initialization
         /// <summary>
@@ -90,6 +105,92 @@ namespace Scribe
                 ((Label)label).ForeColor = CurrentTheme.ControlForegroundColor;
             }
             #endregion
+        }
+        #endregion
+
+        #region Update Display
+        /// <summary>
+        /// Repopulates all <see cref="Control"/>s with the <see cref="WorkingStrikePanel"/>.
+        /// </summary>
+        private void UpdateControls()
+        {
+            CapacityTextBox.Text = WorkingStrikePanel?.Capacity.ToString() ?? "";
+            if (WorkingStrikePanel?.Count > 0)
+            {
+                SlotsListBox.SelectedItem = null;
+                SlotsListBox.BeginUpdate();
+                SlotsListBox.Items.Clear();
+                SlotsListBox.Items.AddRange(WorkingStrikePanel.ToArray());
+                SlotsListBox.EndUpdate();
+            }
+        }
+        #endregion
+
+        #region Validation
+        /// <summary>
+        /// Intercepts keydown events to register user requests to refresh the display.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="inKeyEvents">The key that was held down.</param>
+        private void InventoryEditorForm_KeyDown(object sender, KeyEventArgs inKeyEvents)
+        {
+            if (inKeyEvents.KeyCode == Keys.F5)
+            {
+                UpdateControls();
+            }
+        }
+
+        /// <summary>
+        /// Determines if the value entered is valid.
+        /// Adjusts the capacity of the <see cref="WorkingStrikePanel"/> according to valid values, otherwise signals an input error.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="eventAruments">Whether or not to discard the given text.</param>
+        private void CapacityTextBox_Validating(object sender, CancelEventArgs eventAruments)
+        {
+            if (int.TryParse(CapacityTextBox.Text, out var parsedCapacity)
+                && parsedCapacity > 0)
+            {
+                WorkingStrikePanel.Capacity = parsedCapacity;
+                CapacityErrorProvider.SetError(CapacityTextBox, "");
+            }
+            else
+            {
+                eventAruments.Cancel = true;
+                CapacityErrorProvider.SetError(CapacityTextBox, Resources.ErrorPositiveIntegersOnly);
+            }
+        }
+        #endregion
+
+        #region Closing Form
+        /// <summary>
+        /// Closes the <see cref="StrikePatternEditorForm"/>, accepting the edited <see cref="StrikePanelGrid"/>.
+        /// </summary>
+        /// <param name="sender">The originator of the event.</param>
+        /// <param name="eventArguments">Additional event data.</param>
+        private void OkayButton_Click(object sender, EventArgs eventArguments)
+        {
+            CurrentCharacter.StartingInventory.Clear();
+            CurrentCharacter.StartingInventory.Capacity = WorkingStrikePanel.Capacity;
+            foreach (var inventorySlot in WorkingStrikePanel)
+            {
+                CurrentCharacter.StartingInventory.Give(inventorySlot);
+            }
+            WorkingStrikePanel = Inventory.Empty;
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+
+        /// <summary>
+        /// Closes the <see cref="StrikePatternEditorForm"/>, abandoning the edited <see cref="StrikePatternGrid"/>.
+        /// </summary>
+        /// <param name="sender">The originator of the event.</param>
+        /// <param name="eventArguments">Additional event data.</param>
+        private void CancelButtonControl_Click(object sender, EventArgs eventArguments)
+        {
+            WorkingStrikePanel = Inventory.Empty;
+            DialogResult = DialogResult.Cancel;
+            Close();
         }
         #endregion
     }
