@@ -443,17 +443,17 @@ namespace Scribe
         private Model GetSelectedModelForTab(int inTabIndex)
             => inTabIndex switch
             {
-                GamesTabIndex => GameListBox.SelectedItem as GameModel,
-                BlocksTabIndex => BlockListBox.SelectedItem as BlockModel,
-                FloorsTabIndex => FloorListBox.SelectedItem as FloorModel,
-                FurnishingsTabIndex => FurnishingListBox.SelectedItem as FurnishingModel,
-                CollectiblesTabIndex => CollectibleListBox.SelectedItem as CollectibleModel,
-                CharactersTabIndex => CharacterListBox.SelectedItem as CharacterModel,
-                CrittersTabIndex => CritterListBox.SelectedItem as CritterModel,
-                ItemsTabIndex => ItemListBox.SelectedItem as ItemModel,
-                BiomeRecipesTabIndex => BiomeListBox.SelectedItem as BiomeRecipe,
-                CraftingRecipesTabIndex => CraftingListBox.SelectedItem as CraftingRecipe,
-                RoomRecipesTabIndex => RoomListBox.SelectedItem as RoomRecipe,
+                GamesTabIndex => (GameModel)GameListBox.SelectedItem,
+                BlocksTabIndex => (BlockModel)BlockListBox.SelectedItem,
+                FloorsTabIndex => (FloorModel)FloorListBox.SelectedItem,
+                FurnishingsTabIndex => (FurnishingModel)FurnishingListBox.SelectedItem,
+                CollectiblesTabIndex => (CollectibleModel)CollectibleListBox.SelectedItem,
+                CharactersTabIndex => (CharacterModel)CharacterListBox.SelectedItem,
+                CrittersTabIndex => (CritterModel)CritterListBox.SelectedItem,
+                ItemsTabIndex => (ItemModel)ItemListBox.SelectedItem,
+                BiomeRecipesTabIndex => (BiomeRecipe)BiomeListBox.SelectedItem,
+                CraftingRecipesTabIndex => (CraftingRecipe)CraftingListBox.SelectedItem,
+                RoomRecipesTabIndex => (RoomRecipe)RoomListBox.SelectedItem,
                 MapsTabIndex => throw new NotImplementedException(),
                 ScriptsTabIndex => throw new NotImplementedException(),
                 _ => null,
@@ -470,15 +470,15 @@ namespace Scribe
             {
                 #region Pronouns
                 (CharactersTabIndex, "CharacterPronounSubjectiveTextBox")
-                    => (input) => (CharacterPronounListBox.SelectedItem as IMutablePronounGroup).Subjective = input.ToString(),
+                    => (input) => ((IMutablePronounGroup)CharacterPronounListBox.SelectedItem).Subjective = input.ToString(),
                 (CharactersTabIndex, "CharacterPronounObjectiveTextBox")
-                    => (input) => (CharacterPronounListBox.SelectedItem as IMutablePronounGroup).Objective = input.ToString(),
+                    => (input) => ((IMutablePronounGroup)CharacterPronounListBox.SelectedItem).Objective = input.ToString(),
                 (CharactersTabIndex, "CharacterPronounDeterminerTextBox")
-                    => (input) => (CharacterPronounListBox.SelectedItem as IMutablePronounGroup).Determiner = input.ToString(),
+                    => (input) => ((IMutablePronounGroup)CharacterPronounListBox.SelectedItem).Determiner = input.ToString(),
                 (CharactersTabIndex, "CharacterPronounPossessiveTextBox")
-                    => (input) => (CharacterPronounListBox.SelectedItem as IMutablePronounGroup).Possessive = input.ToString(),
+                    => (input) => ((IMutablePronounGroup)CharacterPronounListBox.SelectedItem).Possessive = input.ToString(),
                 (CharactersTabIndex, "CharacterPronounReflexiveTextBox")
-                    => (input) => (CharacterPronounListBox.SelectedItem as IMutablePronounGroup).Reflexive = input.ToString(),
+                    => (input) => ((IMutablePronounGroup)CharacterPronounListBox.SelectedItem).Reflexive = input.ToString(),
                 #endregion
 
                 #region Configuration
@@ -522,118 +522,118 @@ namespace Scribe
             {
                 #region GameModels
                 (GamesTabIndex, "GameNameTextBox")
-                    => (input) => (inModel as IMutableGameModel).Name = input.ToString(),
+                    => (input) => ((IMutableGameModel)inModel).Name = input.ToString(),
                 (GamesTabIndex, "GameDescriptionTextBox")
-                    => (input) => (inModel as IMutableGameModel).Description = input.ToString(),
+                    => (input) => ((IMutableGameModel)inModel).Description = input.ToString(),
                 (GamesTabIndex, "GameCommentTextBox")
-                    => (input) => (inModel as IMutableGameModel).Comment = input.ToString(),
+                    => (input) => ((IMutableGameModel)inModel).Comment = input.ToString(),
                 (GamesTabIndex, "GameIsEpisodeCheckBox")
-                    => (input) => (inModel as IMutableGameModel).IsEpisode = ValueToBool(input),
+                    => (input) => ((IMutableGameModel)inModel).IsEpisode = ValueToBool(input),
                 (GamesTabIndex, "GameEpisodeTitleTextBox")
-                    => (input) => (inModel as IMutableGameModel).EpisodeTitle = input.ToString(),
+                    => (input) => ((IMutableGameModel)inModel).EpisodeTitle = input.ToString(),
                 (GamesTabIndex, "GameEpisodeNumberTextBox")
-                    => (input) => (inModel as IMutableGameModel).EpisodeNumber = ValueToInt(input),
+                    => (input) => ((IMutableGameModel)inModel).EpisodeNumber = ValueToInt(input),
                 (GamesTabIndex, "GamePlayerCharacterComboBox")
-                    => (input) => (inModel as IMutableGameModel).PlayerCharacterID = ValueToID(input),
+                    => (input) => ((IMutableGameModel)inModel).PlayerCharacterID = ValueToID(input),
                 (GamesTabIndex, "GameFirstScriptComboBox")
-                    => (input) => (inModel as IMutableGameModel).FirstScriptID = ValueToID(input),
+                    => (input) => ((IMutableGameModel)inModel).FirstScriptID = ValueToID(input),
                 #endregion
 
                 #region BlockModels
                 (BlocksTabIndex, "BlockNameTextBox")
-                    => (input) => (inModel as IMutableBlockModel).Name = input.ToString(),
+                    => (input) => ((IMutableBlockModel)inModel).Name = input.ToString(),
                 (BlocksTabIndex, "BlockDescriptionTextBox")
-                    => (input) => (inModel as IMutableBlockModel).Description = input.ToString(),
+                    => (input) => ((IMutableBlockModel)inModel).Description = input.ToString(),
                 (BlocksTabIndex, "BlockCommentTextBox")
-                    => (input) => (inModel as IMutableBlockModel).Comment = input.ToString(),
+                    => (input) => ((IMutableBlockModel)inModel).Comment = input.ToString(),
                 (BlocksTabIndex, "BlockMaxToughnessTextBox")
-                    => (input) => (inModel as IMutableBlockModel).MaxToughness = ValueToInt(input),
+                    => (input) => ((IMutableBlockModel)inModel).MaxToughness = ValueToInt(input),
                 (BlocksTabIndex, "BlockIsFlammableCheckBox")
-                    => (input) => (inModel as IMutableBlockModel).IsFlammable = ValueToBool(input),
+                    => (input) => ((IMutableBlockModel)inModel).IsFlammable = ValueToBool(input),
                 (BlocksTabIndex, "BlockIsLiquidCheckBox")
-                    => (input) => (inModel as IMutableBlockModel).IsLiquid = ValueToBool(input),
+                    => (input) => ((IMutableBlockModel)inModel).IsLiquid = ValueToBool(input),
                 (BlocksTabIndex, "BlockGatherToolComboBox")
-                    => (input) => (inModel as IMutableBlockModel).GatherTool = ValueToEnum<GatheringTool>(input),
+                    => (input) => ((IMutableBlockModel)inModel).GatherTool = ValueToEnum<GatheringTool>(input),
                 (BlocksTabIndex, "BlockGatherEffectComboBox")
-                    => (input) => (inModel as IMutableBlockModel).GatherEffect = ValueToEnum<GatheringEffect>(input),
+                    => (input) => ((IMutableBlockModel)inModel).GatherEffect = ValueToEnum<GatheringEffect>(input),
                 (BlocksTabIndex, "BlockDroppedCollectibleIDComboBox")
-                    => (input) => (inModel as IMutableBlockModel).CollectibleID = ValueToID(input),
+                    => (input) => ((IMutableBlockModel)inModel).CollectibleID = ValueToID(input),
                 (BlocksTabIndex, "BlockEquivalentItemComboBox")
-                    => (input) => (inModel as IMutableBlockModel).ItemID = ValueToID(input),
+                    => (input) => ((IMutableBlockModel)inModel).ItemID = ValueToID(input),
                 #endregion
 
                 #region FloorModels
                 (FloorsTabIndex, "FloorNameTextBox")
-                    => (input) => (inModel as IMutableFloorModel).Name = input.ToString(),
+                    => (input) => ((IMutableFloorModel)inModel).Name = input.ToString(),
                 (FloorsTabIndex, "FloorDescriptionTextBox")
-                    => (input) => (inModel as IMutableFloorModel).Description = input.ToString(),
+                    => (input) => ((IMutableFloorModel)inModel).Description = input.ToString(),
                 (FloorsTabIndex, "FloorCommentTextBox")
-                    => (input) => (inModel as IMutableFloorModel).Comment = input.ToString(),
+                    => (input) => ((IMutableFloorModel)inModel).Comment = input.ToString(),
                 (FloorsTabIndex, "FloorTrenchNameTextBox")
-                    => (input) => (inModel as IMutableFloorModel).TrenchName = input.ToString(),
+                    => (input) => ((IMutableFloorModel)inModel).TrenchName = input.ToString(),
                 (FloorsTabIndex, "FloorlItemIDComboBox")
-                    => (input) => (inModel as IMutableFloorModel).ItemID = ValueToID(input),
+                    => (input) => ((IMutableFloorModel)inModel).ItemID = ValueToID(input),
                 (FloorsTabIndex, "FloorModificationToolComboBox")
-                    => (input) => (inModel as IMutableFloorModel).ModTool = ValueToEnum<ModificationTool>(input),
+                    => (input) => ((IMutableFloorModel)inModel).ModTool = ValueToEnum<ModificationTool>(input),
                 #endregion
 
                 #region FurnishingModels
                 (FurnishingsTabIndex, "FurnishingNameTextBox")
-                    => (input) => (inModel as IMutableFurnishingModel).Name = input.ToString(),
+                    => (input) => ((IMutableFurnishingModel)inModel).Name = input.ToString(),
                 (FurnishingsTabIndex, "FurnishingDescriptionTextBox")
-                    => (input) => (inModel as IMutableFurnishingModel).Description = input.ToString(),
+                    => (input) => ((IMutableFurnishingModel)inModel).Description = input.ToString(),
                 (FurnishingsTabIndex, "FurnishingCommentTextBox")
-                    => (input) => (inModel as IMutableFurnishingModel).Comment = input.ToString(),
+                    => (input) => ((IMutableFurnishingModel)inModel).Comment = input.ToString(),
                 (FurnishingsTabIndex, "FurnishingEquivalentItemComboBox")
-                    => (input) => (inModel as IMutableFurnishingModel).ItemID = ValueToID(input),
+                    => (input) => ((IMutableFurnishingModel)inModel).ItemID = ValueToID(input),
                 (FurnishingsTabIndex, "FurnishingEntryTypeComboBox")
-                    => (input) => (inModel as IMutableFurnishingModel).Entry = ValueToEnum<EntryType>(input),
+                    => (input) => ((IMutableFurnishingModel)inModel).Entry = ValueToEnum<EntryType>(input),
                 (FurnishingsTabIndex, "FurnishingSwapWithFurnishingComboBox")
-                    => (input) => (inModel as IMutableFurnishingModel).SwapID = ValueToID(input),
+                    => (input) => ((IMutableFurnishingModel)inModel).SwapID = ValueToID(input),
                 (FurnishingsTabIndex, "FurnishingIsEnclosingCheckBox")
-                    => (input) => (inModel as IMutableFurnishingModel).IsEnclosing = ValueToBool(input),
+                    => (input) => ((IMutableFurnishingModel)inModel).IsEnclosing = ValueToBool(input),
                 (FurnishingsTabIndex, "FurnishingIsFlammableCheckBox")
-                    => (input) => (inModel as IMutableFurnishingModel).IsFlammable = ValueToBool(input),
+                    => (input) => ((IMutableFurnishingModel)inModel).IsFlammable = ValueToBool(input),
                 (FurnishingsTabIndex, "FurnishingIsWalkableCheckBox")
-                    => (input) => (inModel as IMutableFurnishingModel).IsWalkable = ValueToBool(input),
+                    => (input) => ((IMutableFurnishingModel)inModel).IsWalkable = ValueToBool(input),
                 #endregion
 
                 #region CollectibleModels
                 (CollectiblesTabIndex, "CollectibleNameTextBox")
-                    => (input) => (inModel as IMutableCollectibleModel).Name = input.ToString(),
+                    => (input) => ((IMutableCollectibleModel)inModel).Name = input.ToString(),
                 (CollectiblesTabIndex, "CollectibleDescriptionTextBox")
-                    => (input) => (inModel as IMutableCollectibleModel).Description = input.ToString(),
+                    => (input) => ((IMutableCollectibleModel)inModel).Description = input.ToString(),
                 (CollectiblesTabIndex, "CollectibleCommentTextBox")
-                    => (input) => (inModel as IMutableCollectibleModel).Comment = input.ToString(),
+                    => (input) => ((IMutableCollectibleModel)inModel).Comment = input.ToString(),
                 (CollectiblesTabIndex, "CollectibleEffectAmountTextBox")
-                    => (input) => (inModel as IMutableCollectibleModel).EffectAmount = ValueToInt(input),
+                    => (input) => ((IMutableCollectibleModel)inModel).EffectAmount = ValueToInt(input),
                 (CollectiblesTabIndex, "CollectibleCollectionEffectComboBox")
-                    => (input) => (inModel as IMutableCollectibleModel).CollectionEffect = ValueToEnum<CollectingEffect>(input),
+                    => (input) => ((IMutableCollectibleModel)inModel).CollectionEffect = ValueToEnum<CollectingEffect>(input),
                 (CollectiblesTabIndex, "CollectibleEquivalentItemComboBox")
-                    => (input) => (inModel as IMutableCollectibleModel).ItemID = ValueToID(input),
+                    => (input) => ((IMutableCollectibleModel)inModel).ItemID = ValueToID(input),
                 #endregion
 
                 #region CharacterModels
                 (CharactersTabIndex, "CharacterNameTextBox")
-                    => (input) => (inModel as IMutableCharacterModel).Name = input.ToString(),
+                    => (input) => ((IMutableCharacterModel)inModel).Name = input.ToString(),
                 (CharactersTabIndex, "CharacterDescriptionTextBox")
-                    => (input) => (inModel as IMutableCharacterModel).Description = input.ToString(),
+                    => (input) => ((IMutableCharacterModel)inModel).Description = input.ToString(),
                 (CharactersTabIndex, "CharacterCommentTextBox")
-                    => (input) => (inModel as IMutableCharacterModel).Comment = input.ToString(),
+                    => (input) => ((IMutableCharacterModel)inModel).Comment = input.ToString(),
                 (CharactersTabIndex, "CharacterNativeBiomeComboBox")
-                    => (input) => (inModel as IMutableCharacterModel).NativeBiomeID = ValueToID(input),
+                    => (input) => ((IMutableCharacterModel)inModel).NativeBiomeID = ValueToID(input),
                 (CharactersTabIndex, "CharacterPrimaryBehaviorComboBox")
-                    => (input) => (inModel as IMutableCharacterModel).PrimaryBehaviorID = ValueToID(input),
+                    => (input) => ((IMutableCharacterModel)inModel).PrimaryBehaviorID = ValueToID(input),
                 (CharactersTabIndex, "CharacterStoryIDTextBox")
-                    => (input) => (inModel as IMutableCharacterModel).StoryCharacterID = input.ToString(),
+                    => (input) => ((IMutableCharacterModel)inModel).StoryCharacterID = input.ToString(),
                 (CharactersTabIndex, "CharacterPronounComboBox")
-                    => (input) => (inModel as IMutableCharacterModel).PronounKey = input.ToString(),
+                    => (input) => ((IMutableCharacterModel)inModel).PronounKey = input.ToString(),
                 (CharactersTabIndex, "CharacterStartingDialogueComboBox")
-                    => (input) => (inModel as IMutableCharacterModel).StartingDialogueID = ValueToID(input),
+                    => (input) => ((IMutableCharacterModel)inModel).StartingDialogueID = ValueToID(input),
                 (CharactersTabIndex, "CharacterStartingQuestsListBox")
                     => (input) =>
                     {
-                        var editModel = inModel as IMutableCharacterModel;
+                        var editModel = (IMutableCharacterModel)inModel;
                         var collection = null == input
                             ? Array.Empty<ModelID>()
                             : (IList<ModelID>)input;
@@ -644,80 +644,80 @@ namespace Scribe
 
                 #region CritterModels
                 (CrittersTabIndex, "CritterNameTextBox")
-                    => (input) => (inModel as IMutableCritterModel).Name = input.ToString(),
+                    => (input) => ((IMutableCritterModel)inModel).Name = input.ToString(),
                 (CrittersTabIndex, "CritterDescriptionTextBox")
-                    => (input) => (inModel as IMutableCritterModel).Description = input.ToString(),
+                    => (input) => ((IMutableCritterModel)inModel).Description = input.ToString(),
                 (CrittersTabIndex, "CritterCommentTextBox")
-                    => (input) => (inModel as IMutableCritterModel).Comment = input.ToString(),
+                    => (input) => ((IMutableCritterModel)inModel).Comment = input.ToString(),
                 (CrittersTabIndex, "CritterNativeBiomeComboBox")
-                    => (input) => (inModel as IMutableCritterModel).NativeBiomeID = ValueToID(input),
+                    => (input) => ((IMutableCritterModel)inModel).NativeBiomeID = ValueToID(input),
                 (CrittersTabIndex, "CritterPrimaryBehaviorComboBox")
-                    => (input) => (inModel as IMutableCritterModel).PrimaryBehaviorID = ValueToID(input),
+                    => (input) => ((IMutableCritterModel)inModel).PrimaryBehaviorID = ValueToID(input),
                 #endregion
 
                 #region ItemModels
                 (ItemsTabIndex, "ItemNameTextBox")
-                    => (input) => (inModel as IMutableItemModel).Name = input.ToString(),
+                    => (input) => ((IMutableItemModel)inModel).Name = input.ToString(),
                 (ItemsTabIndex, "ItemDescriptionTextBox")
-                    => (input) => (inModel as IMutableItemModel).Description = input.ToString(),
+                    => (input) => ((IMutableItemModel)inModel).Description = input.ToString(),
                 (ItemsTabIndex, "ItemCommentTextBox")
-                    => (input) => (inModel as IMutableItemModel).Comment = input.ToString(),
+                    => (input) => ((IMutableItemModel)inModel).Comment = input.ToString(),
                 (ItemsTabIndex, "ItemSubtypeComboBox")
-                    => (input) => (inModel as IMutableItemModel).Subtype = ValueToEnum<ItemType>(input),
+                    => (input) => ((IMutableItemModel)inModel).Subtype = ValueToEnum<ItemType>(input),
                 (ItemsTabIndex, "ItemPriceTextBox")
-                    => (input) => (inModel as IMutableItemModel).Price = ValueToInt(input),
+                    => (input) => ((IMutableItemModel)inModel).Price = ValueToInt(input),
                 (ItemsTabIndex, "ItemTagListBox")
-                    => (input) => (inModel as IMutableItemModel).ItemTags.ToList().Add((ModelTag)input),
+                    => (input) => ((IMutableItemModel)inModel).ItemTags.ToList().Add((ModelTag)input),
                 (ItemsTabIndex, "ItemStackMaxTextBox")
-                    => (input) => (inModel as IMutableItemModel).StackMax = ValueToInt(input),
+                    => (input) => ((IMutableItemModel)inModel).StackMax = ValueToInt(input),
                 (ItemsTabIndex, "ItemRarityTextBox")
-                    => (input) => (inModel as IMutableItemModel).Rarity = ValueToInt(input),
+                    => (input) => ((IMutableItemModel)inModel).Rarity = ValueToInt(input),
                 (ItemsTabIndex, "ItemEffectWhenUsedComboBox")
-                    => (input) => (inModel as IMutableItemModel).EffectWhenUsedID = ValueToID(input),
+                    => (input) => ((IMutableItemModel)inModel).EffectWhenUsedID = ValueToID(input),
                 (ItemsTabIndex, "ItemEffectWhileHeldComboBox")
-                    => (input) => (inModel as IMutableItemModel).EffectWhileHeldID = ValueToID(input),
+                    => (input) => ((IMutableItemModel)inModel).EffectWhileHeldID = ValueToID(input),
                 (ItemsTabIndex, "ItemEquivalentParquetComboBox")
-                    => (input) => (inModel as IMutableItemModel).ParquetID = ValueToID(input),
+                    => (input) => ((IMutableItemModel)inModel).ParquetID = ValueToID(input),
                 #endregion
 
                 #region BiomeRecipes
                 (BiomeRecipesTabIndex, "BiomeNameTextBox")
-                    => (input) => (inModel as IMutableBiomeRecipe).Name = input.ToString(),
+                    => (input) => ((IMutableBiomeRecipe)inModel).Name = input.ToString(),
                 (BiomeRecipesTabIndex, "BiomeDescriptionTextBox")
-                    => (input) => (inModel as IMutableBiomeRecipe).Description = input.ToString(),
+                    => (input) => ((IMutableBiomeRecipe)inModel).Description = input.ToString(),
                 (BiomeRecipesTabIndex, "BiomeCommentTextBox")
-                    => (input) => (inModel as IMutableBiomeRecipe).Comment = input.ToString(),
+                    => (input) => ((IMutableBiomeRecipe)inModel).Comment = input.ToString(),
                 (BiomeRecipesTabIndex, "BiomeTierTextBox")
-                    => (input) => (inModel as IMutableBiomeRecipe).Tier = ValueToInt(input),
+                    => (input) => ((IMutableBiomeRecipe)inModel).Tier = ValueToInt(input),
                 (BiomeRecipesTabIndex, "BiomeIsLiquidBasedCheckBox")
-                    => (input) => (inModel as IMutableBiomeRecipe).IsLiquidBased = ValueToBool(input),
+                    => (input) => ((IMutableBiomeRecipe)inModel).IsLiquidBased = ValueToBool(input),
                 (BiomeRecipesTabIndex, "BiomeIsRoomBasedCheckBox")
-                    => (input) => (inModel as IMutableBiomeRecipe).IsRoomBased = ValueToBool(input),
+                    => (input) => ((IMutableBiomeRecipe)inModel).IsRoomBased = ValueToBool(input),
                 (BiomeRecipesTabIndex, "BiomeEntryRequirementsListBox")
                     => (input) =>
                     {
-                        var editRecipe = inModel as IMutableBiomeRecipe;
+                        var editRecipe = (IMutableBiomeRecipe)inModel;
                         editRecipe.EntryRequirements.ToList().Add((ModelTag)input);
                     },
                 (BiomeRecipesTabIndex, "BiomeParquetCriteriaListBox")
                     => (input) =>
                     {
-                        var editRecipe = inModel as IMutableBiomeRecipe;
+                        var editRecipe = (IMutableBiomeRecipe)inModel;
                         editRecipe.ParquetCriteria.ToList().Add((ModelTag)input);
                     },
                 #endregion
 
                 #region CraftingRecipes
                 (CraftingRecipesTabIndex, "CraftingNameTextBox")
-                    => (input) => (inModel as IMutableCraftingRecipe).Name = input.ToString(),
+                    => (input) => ((IMutableCraftingRecipe)inModel).Name = input.ToString(),
                 (CraftingRecipesTabIndex, "CraftingDescriptionTextBox")
-                    => (input) => (inModel as IMutableCraftingRecipe).Description = input.ToString(),
+                    => (input) => ((IMutableCraftingRecipe)inModel).Description = input.ToString(),
                 (CraftingRecipesTabIndex, "CraftingCommentTextBox")
-                    => (input) => (inModel as IMutableCraftingRecipe).Comment = input.ToString(),
+                    => (input) => ((IMutableCraftingRecipe)inModel).Comment = input.ToString(),
                 (CraftingRecipesTabIndex, "CraftingIngredientsListBox")
                     => (input) =>
                     {
-                        var editRecipe = inModel as IMutableCraftingRecipe;
+                        var editRecipe = (IMutableCraftingRecipe)inModel;
                         var collection = null == input
                             ? Array.Empty<RecipeElement>()
                             : (IList<RecipeElement>)input;
@@ -727,7 +727,7 @@ namespace Scribe
                 (CraftingRecipesTabIndex, "CraftingProductsListBox")
                     => (input) =>
                     {
-                        var editRecipe = inModel as IMutableCraftingRecipe;
+                        var editRecipe = (IMutableCraftingRecipe)inModel;
                         var collection = null == input
                             ? Array.Empty<RecipeElement>()
                             : (IList<RecipeElement>)input;
@@ -738,17 +738,17 @@ namespace Scribe
 
                 #region RoomRecipes
                 (RoomRecipesTabIndex, "RoomNameTextBox")
-                    => (input) => (inModel as IMutableRoomRecipe).Name = input.ToString(),
+                    => (input) => ((IMutableRoomRecipe)inModel).Name = input.ToString(),
                 (RoomRecipesTabIndex, "RoomDescriptionTextBox")
-                    => (input) => (inModel as IMutableRoomRecipe).Description = input.ToString(),
+                    => (input) => ((IMutableRoomRecipe)inModel).Description = input.ToString(),
                 (RoomRecipesTabIndex, "RoomCommentTextBox")
-                    => (input) => (inModel as IMutableRoomRecipe).Comment = input.ToString(),
+                    => (input) => ((IMutableRoomRecipe)inModel).Comment = input.ToString(),
                 (RoomRecipesTabIndex, "RoomMinimumWalkableSpacesTextBox")
-                    => (input) => (inModel as IMutableRoomRecipe).MinimumWalkableSpaces = ValueToInt(input),
+                    => (input) => ((IMutableRoomRecipe)inModel).MinimumWalkableSpaces = ValueToInt(input),
                 (RoomRecipesTabIndex, "RoomRequiredFurnishingsListBox")
                     => (input) =>
                     {
-                        var editRecipe = inModel as IMutableRoomRecipe;
+                        var editRecipe = (IMutableRoomRecipe)inModel;
                         var collection = null == input
                             ? Array.Empty<RecipeElement>()
                             : (IList<RecipeElement>)input;
@@ -758,7 +758,7 @@ namespace Scribe
                 (RoomRecipesTabIndex, "RoomRequiredBlocksListBox")
                     => (input) =>
                     {
-                        var editRecipe = inModel as IMutableRoomRecipe;
+                        var editRecipe = (IMutableRoomRecipe)inModel;
                         var collection = null == input
                             ? Array.Empty<RecipeElement>()
                             : (IList<RecipeElement>)input;
@@ -768,7 +768,7 @@ namespace Scribe
                 (RoomRecipesTabIndex, "RoomRequiredFloorsListBox")
                     => (input) =>
                     {
-                        var editRecipe = inModel as IMutableRoomRecipe;
+                        var editRecipe = (IMutableRoomRecipe)inModel;
                         var collection = null == input
                             ? Array.Empty<RecipeElement>()
                             : (IList<RecipeElement>)input;
@@ -813,7 +813,7 @@ namespace Scribe
                 var selectedListBox = GetPrimaryListBoxForTab(EditorTabs.SelectedIndex);
                 if (null != selectedListBox)
                 {
-                    selectedListBox.SelectedItem = (selectedListBox.Items as IList<object>)?.ElementAtOrDefault(0);
+                    selectedListBox.SelectedItem = ((IList<object>)selectedListBox.Items).ElementAtOrDefault(0);
                 }
             }
         }
@@ -1611,22 +1611,21 @@ namespace Scribe
         /// <param name="eventArguments">Ignored.</param>
         private void ContentAlteredEventHandler(object sender, EventArgs eventArguments)
         {
-            if (null == sender)
+            if (!(sender is Control alteredControl))
             {
-                // Silently return if nothing was modified.
+                // Silently return if nothing was modified or if sender was not a Control.
                 return;
             }
-            var alteredControl = sender as Control;
             var PropertyAccessor = GetPropertyAccessorForTabAndControl(EditorTabs.SelectedIndex, alteredControl);
             if (null == PropertyAccessor)
             {
-                // Silently return if no model is selected or if a control is unsupported.
+                // Silently return if no model is selected or if the Control is unsupported.
                 return;
             }
 
             if (alteredControl is TextBox textbox
                 && string.Compare(textbox.Text,
-                                  EditableControls[typeof(TextBox)][textbox] as string,
+                                  (string)EditableControls[typeof(TextBox)][textbox],
                                   comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
                 ChangeManager.AddAndExecute(new ChangeValue(EditableControls[typeof(TextBox)][textbox], textbox.Text, textbox.Name,
@@ -1635,7 +1634,7 @@ namespace Scribe
                                             (object oldValue) => EditableControls[typeof(TextBox)][textbox] = oldValue));
             }
             else if (alteredControl is CheckBox checkbox
-                     && checkbox.Checked != (EditableControls[typeof(CheckBox)][checkbox] as bool?))
+                     && checkbox.Checked != (bool?)EditableControls[typeof(CheckBox)][checkbox])
             {
                 var oldValue = (bool?)EditableControls[typeof(CheckBox)][checkbox];
                 ChangeManager.AddAndExecute(new ChangeValue(oldValue, (bool?)checkbox.Checked, checkbox.Name,
@@ -2282,7 +2281,7 @@ namespace Scribe
         {
             if (Settings.Default.SuggestStoryIDs)
             {
-                var model = GetSelectedModelForTab(EditorTabs.SelectedIndex) as CharacterModel;
+                var model = (CharacterModel)GetSelectedModelForTab(EditorTabs.SelectedIndex);
                 if (sender is TextBox alteredControl
                     && null != model
                     && string.IsNullOrEmpty(model.StoryCharacterID)
@@ -2304,7 +2303,7 @@ namespace Scribe
         {
             if (Settings.Default.SuggestStoryIDs)
             {
-                var model = GetSelectedModelForTab(EditorTabs.SelectedIndex) as CharacterModel;
+                var model = (CharacterModel)GetSelectedModelForTab(EditorTabs.SelectedIndex);
                 if (sender is TextBox alteredControl
                     && null != model
                     && string.IsNullOrEmpty(model.StoryCharacterID)
@@ -2861,8 +2860,8 @@ namespace Scribe
         /// <param name="eventArguments">Addional event data.</param>
         private void ContextMenuStripForTextEntries_Opening(object sender, CancelEventArgs eventArguments)
         {
-            SourceBox = new EditableBox(sender as ContextMenuStrip);
-            if (SourceBox.IsEditable)
+            if (sender is ContextMenuStrip stripWithControl
+                && (SourceBox = new EditableBox(stripWithControl)).IsEditable)
             {
                 ToolStripMenuItemContextPaste.Enabled = Clipboard.ContainsText();
                 ToolStripMenuItemContextClear.Enabled =
