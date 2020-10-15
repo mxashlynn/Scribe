@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
+using System.Linq;
 using System.Windows.Forms;
 using ParquetClassLibrary.Crafts;
 using ParquetClassLibrary.EditorSupport;
@@ -33,7 +34,7 @@ namespace Scribe
         /// A <see cref="StrikePanelGrid"/> that the user interacts with in this form.
         /// It is only attached to the <see cref="CraftingRecipe"/> if the user selects the <see cref="OkayButton"/>.
         /// </summary>
-        private StrikePanelGrid WorkingStrikePanel { get; set; }
+        private StrikePanelGrid WorkingGrid { get; set; }
         #endregion
 
         #region Initialization
@@ -53,7 +54,10 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="eventArguments">Ignored.</param>
         private void StrikePatternEditorForm_Load(object sender, EventArgs eventArguments)
-            => ApplyCurrentTheme();
+        {
+            ApplyCurrentTheme();
+            WorkingGrid = CurrentCraft.PanelPattern.Clone();
+        }
         #endregion
 
         #region Cache Controls
@@ -135,18 +139,19 @@ namespace Scribe
 
         #region Update Display
         /// <summary>
-        /// Repopulates all <see cref="Control"/>s with the <see cref="WorkingStrikePanel"/>.
+        /// Repopulates all <see cref="Control"/>s with the <see cref="WorkingGrid"/>.
         /// </summary>
-        private void UpdateControls()
+        private void UpdateControlsBasedOnModel()
         {
-            CapacityTextBox.Text = WorkingStrikePanel?.Capacity.ToString() ?? "";
-            if (WorkingStrikePanel?.Count > 0)
+            for (var x = 0; x < WorkingGrid.Columns; x++)
             {
-                SlotsListBox.SelectedItem = null;
-                SlotsListBox.BeginUpdate();
-                SlotsListBox.Items.Clear();
-                SlotsListBox.Items.AddRange(WorkingStrikePanel.ToArray());
-                SlotsListBox.EndUpdate();
+                for (var y = 0; y < WorkingGrid.Rows; y++)
+                {
+                    EditableGroupBoxes[(y, x)].GetAllChildrenExactlyOfType<CheckBox>().First().Checked =
+                        EditableGroupBoxes[(y, x)].Enabled =
+                        StrikePanel.Unused != WorkingGrid[y, x];
+                    // TODO Update other elements.
+                }
             }
         }
         #endregion
@@ -161,22 +166,23 @@ namespace Scribe
         {
             if (inKeyEvents.KeyCode == Keys.F5)
             {
-                UpdateControls();
+                UpdateControlsBasedOnModel();
             }
         }
 
         /// <summary>
         /// Determines if the value entered is valid.
-        /// Adjusts the capacity of the <see cref="WorkingStrikePanel"/> according to valid values, otherwise signals an input error.
+        /// Adjusts the capacity of the <see cref="WorkingGrid"/> according to valid values, otherwise signals an input error.
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="eventAruments">Whether or not to discard the given text.</param>
         private void CapacityTextBox_Validating(object sender, CancelEventArgs eventAruments)
         {
+            /* TODO implement this
             if (int.TryParse(CapacityTextBox.Text, out var parsedCapacity)
                 && parsedCapacity > 0)
             {
-                WorkingStrikePanel.Capacity = parsedCapacity;
+                WorkingGrid.Capacity = parsedCapacity;
                 CapacityErrorProvider.SetError(CapacityTextBox, "");
             }
             else
@@ -184,6 +190,7 @@ namespace Scribe
                 eventAruments.Cancel = true;
                 CapacityErrorProvider.SetError(CapacityTextBox, Resources.ErrorPositiveIntegersOnly);
             }
+            */
         }
         #endregion
 
@@ -195,15 +202,17 @@ namespace Scribe
         /// <param name="eventArguments">Additional event data.</param>
         private void OkayButton_Click(object sender, EventArgs eventArguments)
         {
+            /* TODO implement this
             CurrentCharacter.StartingInventory.Clear();
-            CurrentCharacter.StartingInventory.Capacity = WorkingStrikePanel.Capacity;
-            foreach (var inventorySlot in WorkingStrikePanel)
+            CurrentCharacter.StartingInventory.Capacity = WorkingGrid.Capacity;
+            foreach (var inventorySlot in WorkingGrid)
             {
                 CurrentCharacter.StartingInventory.Give(inventorySlot);
             }
-            WorkingStrikePanel = Inventory.Empty;
+            WorkingGrid = Inventory.Empty;
             DialogResult = DialogResult.OK;
             Close();
+            */
         }
 
         /// <summary>
@@ -213,7 +222,7 @@ namespace Scribe
         /// <param name="eventArguments">Additional event data.</param>
         private void CancelButtonControl_Click(object sender, EventArgs eventArguments)
         {
-            WorkingStrikePanel = Inventory.Empty;
+            WorkingGrid = StrikePanelGrid.Empty;
             DialogResult = DialogResult.Cancel;
             Close();
         }
