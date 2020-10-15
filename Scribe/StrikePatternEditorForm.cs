@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.Windows.Forms;
 using ParquetClassLibrary.Crafts;
 using ParquetClassLibrary.EditorSupport;
@@ -17,6 +18,11 @@ namespace Scribe
         /// A collection of all themed <see cref="Component"/>s in the <see cref="StrikePatternEditorForm"/>.
         /// </summary>
         private readonly Dictionary<Type, List<Component>> ThemedComponents;
+
+        /// <summary>
+        /// A collection of all editable <see cref="GroupBox"/>es in the <see cref="StrikePatternEditorForm"/>.
+        /// </summary>
+        private readonly Dictionary<(int, int), GroupBox> EditableGroupBoxes;
         #endregion
 
         #region Content Being Edited
@@ -38,6 +44,7 @@ namespace Scribe
         {
             InitializeComponent();
             ThemedComponents = GetThemedComponents();
+            EditableGroupBoxes = GetGroupBoxes();
         }
 
         /// <summary>
@@ -66,6 +73,24 @@ namespace Scribe
             themed[typeof(TextBox)].AddRange(this.GetAllChildrenExactlyOfType<TextBox>());
             themed[typeof(Label)].AddRange(this.GetAllChildrenExactlyOfType<Label>());
             return themed;
+        }
+
+        /// <summary>
+        /// Finds all editable <see cref="GroupBox"/>es in the <see cref="StrikePatternEditorForm"/>
+        /// organized according to their coordinates.
+        /// </summary>
+        /// <returns>A dictionary containing lists of boxes.</returns>
+        private Dictionary<(int, int), GroupBox> GetGroupBoxes()
+        {
+            var editable = new Dictionary<(int, int), GroupBox>();
+            var allGroupBoxes = this.GetAllChildrenExactlyOfType<GroupBox>();
+            foreach(var groupBox in allGroupBoxes)
+            {
+                var x = CharUnicodeInfo.GetDecimalDigitValue(groupBox.Name[^1]);
+                var y = CharUnicodeInfo.GetDecimalDigitValue(groupBox.Name[^2]);
+                editable[(y, x)] = groupBox;
+            }
+            return editable;
         }
         #endregion
 
