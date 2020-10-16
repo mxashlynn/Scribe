@@ -56,7 +56,7 @@ namespace Scribe
         private void StrikePatternEditorForm_Load(object sender, EventArgs eventArguments)
         {
             ApplyCurrentTheme();
-            WorkingGrid = CurrentCraft.PanelPattern.Clone();
+            WorkingGrid = (StrikePanelGrid)CurrentCraft.PanelPattern.Clone();
         }
         #endregion
 
