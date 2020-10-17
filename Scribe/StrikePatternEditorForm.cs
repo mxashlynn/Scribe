@@ -198,6 +198,19 @@ namespace Scribe
         }
         #endregion
 
+        #region Handle Changes to Data
+        /// <summary>
+        /// Updates an editable <see cref="GroupBox"/> when its Panel Active <see cref="CheckBox"/>'s state changes.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="eventArguments"></param>
+        private void PanelActiveCheckBox_CheckedChanged(object sender, EventArgs eventArguments)
+        {
+            var checkBox = (CheckBox)sender;
+            checkBox.Parent.Enabled = checkBox.Checked;
+        }
+        #endregion
+
         #region Validation
         /// <summary>
         /// Intercepts keydown events to register user requests to refresh the display.

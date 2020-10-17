@@ -341,6 +341,7 @@ namespace Scribe
             this.PanelActiveCheckBox1.TabIndex = 4;
             this.PanelActiveCheckBox1.Text = "Panel Active";
             this.PanelActiveCheckBox1.UseVisualStyleBackColor = true;
+            this.PanelActiveCheckBox1.CheckedChanged += new System.EventHandler(this.PanelActiveCheckBox_CheckedChanged);
             // 
             // StrikePanelTableLayoutPanel1
             // 
@@ -489,6 +490,7 @@ namespace Scribe
             this.PanelActiveCheckBox2.TabIndex = 4;
             this.PanelActiveCheckBox2.Text = "Panel Active";
             this.PanelActiveCheckBox2.UseVisualStyleBackColor = true;
+            this.PanelActiveCheckBox2.CheckedChanged += new System.EventHandler(this.PanelActiveCheckBox_CheckedChanged);
             // 
             // StrikePanelTableLayoutPanel2
             // 
@@ -637,6 +639,7 @@ namespace Scribe
             this.PanelActiveCheckBox3.TabIndex = 4;
             this.PanelActiveCheckBox3.Text = "Panel Active";
             this.PanelActiveCheckBox3.UseVisualStyleBackColor = true;
+            this.PanelActiveCheckBox3.CheckedChanged += new System.EventHandler(this.PanelActiveCheckBox_CheckedChanged);
             // 
             // StrikePanelTableLayoutPanel3
             // 
@@ -785,6 +788,7 @@ namespace Scribe
             this.PanelActiveCheckBox4.TabIndex = 4;
             this.PanelActiveCheckBox4.Text = "Panel Active";
             this.PanelActiveCheckBox4.UseVisualStyleBackColor = true;
+            this.PanelActiveCheckBox4.CheckedChanged += new System.EventHandler(this.PanelActiveCheckBox_CheckedChanged);
             // 
             // StrikePanelTableLayoutPanel4
             // 
@@ -933,6 +937,7 @@ namespace Scribe
             this.PanelActiveCheckBox5.TabIndex = 4;
             this.PanelActiveCheckBox5.Text = "Panel Active";
             this.PanelActiveCheckBox5.UseVisualStyleBackColor = true;
+            this.PanelActiveCheckBox5.CheckedChanged += new System.EventHandler(this.PanelActiveCheckBox_CheckedChanged);
             // 
             // StrikePanelTableLayoutPanel5
             // 
@@ -1081,6 +1086,7 @@ namespace Scribe
             this.PanelActiveCheckBox6.TabIndex = 4;
             this.PanelActiveCheckBox6.Text = "Panel Active";
             this.PanelActiveCheckBox6.UseVisualStyleBackColor = true;
+            this.PanelActiveCheckBox6.CheckedChanged += new System.EventHandler(this.PanelActiveCheckBox_CheckedChanged);
             // 
             // StrikePanelTableLayoutPanel6
             // 
@@ -1229,6 +1235,7 @@ namespace Scribe
             this.PanelActiveCheckBox7.TabIndex = 4;
             this.PanelActiveCheckBox7.Text = "Panel Active";
             this.PanelActiveCheckBox7.UseVisualStyleBackColor = true;
+            this.PanelActiveCheckBox7.CheckedChanged += new System.EventHandler(this.PanelActiveCheckBox_CheckedChanged);
             // 
             // StrikePanelTableLayoutPanel7
             // 
@@ -1377,6 +1384,7 @@ namespace Scribe
             this.PanelActiveCheckBox8.TabIndex = 4;
             this.PanelActiveCheckBox8.Text = "Panel Active";
             this.PanelActiveCheckBox8.UseVisualStyleBackColor = true;
+            this.PanelActiveCheckBox8.CheckedChanged += new System.EventHandler(this.PanelActiveCheckBox_CheckedChanged);
             // 
             // StrikePanelTableLayoutPanel8
             // 
@@ -1525,6 +1533,7 @@ namespace Scribe
             this.PanelActiveCheckBox9.TabIndex = 4;
             this.PanelActiveCheckBox9.Text = "Panel Active";
             this.PanelActiveCheckBox9.UseVisualStyleBackColor = true;
+            this.PanelActiveCheckBox9.CheckedChanged += new System.EventHandler(this.PanelActiveCheckBox_CheckedChanged);
             // 
             // StrikePanelTableLayoutPanel9
             // 
@@ -1673,6 +1682,7 @@ namespace Scribe
             this.PanelActiveCheckBox10.TabIndex = 4;
             this.PanelActiveCheckBox10.Text = "Panel Active";
             this.PanelActiveCheckBox10.UseVisualStyleBackColor = true;
+            this.PanelActiveCheckBox10.CheckedChanged += new System.EventHandler(this.PanelActiveCheckBox_CheckedChanged);
             // 
             // StrikePanelTableLayoutPanel10
             // 
@@ -1821,6 +1831,7 @@ namespace Scribe
             this.PanelActiveCheckBox11.TabIndex = 4;
             this.PanelActiveCheckBox11.Text = "Panel Active";
             this.PanelActiveCheckBox11.UseVisualStyleBackColor = true;
+            this.PanelActiveCheckBox11.CheckedChanged += new System.EventHandler(this.PanelActiveCheckBox_CheckedChanged);
             // 
             // StrikePanelTableLayoutPanel11
             // 
@@ -1969,6 +1980,7 @@ namespace Scribe
             this.PanelActiveCheckBox12.TabIndex = 4;
             this.PanelActiveCheckBox12.Text = "Panel Active";
             this.PanelActiveCheckBox12.UseVisualStyleBackColor = true;
+            this.PanelActiveCheckBox12.CheckedChanged += new System.EventHandler(this.PanelActiveCheckBox_CheckedChanged);
             // 
             // StrikePanelTableLayoutPanel12
             // 
@@ -2117,6 +2129,7 @@ namespace Scribe
             this.PanelActiveCheckBox13.TabIndex = 4;
             this.PanelActiveCheckBox13.Text = "Panel Active";
             this.PanelActiveCheckBox13.UseVisualStyleBackColor = true;
+            this.PanelActiveCheckBox13.CheckedChanged += new System.EventHandler(this.PanelActiveCheckBox_CheckedChanged);
             // 
             // StrikePanelTableLayoutPanel13
             // 
@@ -2265,6 +2278,7 @@ namespace Scribe
             this.PanelActiveCheckBox14.TabIndex = 4;
             this.PanelActiveCheckBox14.Text = "Panel Active";
             this.PanelActiveCheckBox14.UseVisualStyleBackColor = true;
+            this.PanelActiveCheckBox14.CheckedChanged += new System.EventHandler(this.PanelActiveCheckBox_CheckedChanged);
             // 
             // StrikePanelTableLayoutPanel14
             // 
@@ -2413,6 +2427,7 @@ namespace Scribe
             this.PanelActiveCheckBox15.TabIndex = 4;
             this.PanelActiveCheckBox15.Text = "Panel Active";
             this.PanelActiveCheckBox15.UseVisualStyleBackColor = true;
+            this.PanelActiveCheckBox15.CheckedChanged += new System.EventHandler(this.PanelActiveCheckBox_CheckedChanged);
             // 
             // StrikePanelTableLayoutPanel15
             // 
@@ -2561,6 +2576,7 @@ namespace Scribe
             this.PanelActiveCheckBox16.TabIndex = 4;
             this.PanelActiveCheckBox16.Text = "Panel Active";
             this.PanelActiveCheckBox16.UseVisualStyleBackColor = true;
+            this.PanelActiveCheckBox16.CheckedChanged += new System.EventHandler(this.PanelActiveCheckBox_CheckedChanged);
             // 
             // StrikePanelTableLayoutPanel16
             // 
