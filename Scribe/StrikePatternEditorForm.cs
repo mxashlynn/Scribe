@@ -16,10 +16,10 @@ namespace Scribe
     {
         #region Dimensions
         /// <summary>How many <see cref="GroupBox"/>es are arranged horizontally across the <see cref="Form"/>.</summary>
-        private int MaxRows = 0;
+        private int FormMaxRows = 0;
 
         /// <summary>How many <see cref="GroupBox"/>es are arranged vertically down the <see cref="Form"/>.</summary>
-        private int MaxColumns = 0;
+        private int FormMaxColumns = 0;
         #endregion
 
         #region Cached Controls
@@ -110,8 +110,8 @@ namespace Scribe
                 var x = CharUnicodeInfo.GetDecimalDigitValue(groupBox.Name[^1]);
                 var y = CharUnicodeInfo.GetDecimalDigitValue(groupBox.Name[^2]);
                 editable[(y, x)] = groupBox;
-                if (x > MaxColumns) { MaxColumns = x; }
-                if (y > MaxRows) { MaxRows = y; }
+                if (x > FormMaxColumns) { FormMaxColumns = x; }
+                if (y > FormMaxRows) { FormMaxRows = y; }
             }
             return editable;
         }
@@ -162,9 +162,9 @@ namespace Scribe
         /// </summary>
         private void UpdateControlsBasedOnModel()
         {
-            for (var x = 0; x <= MaxColumns; x++)
+            for (var x = 0; x <= FormMaxColumns; x++)
             {
-                for (var y = 0; y <= MaxRows; y++)
+                for (var y = 0; y <= FormMaxRows; y++)
                 {
                     var panelIsActive = x < WorkingGrid.Columns
                                         && y < WorkingGrid.Rows
@@ -209,6 +209,11 @@ namespace Scribe
             var checkBox = (CheckBox)sender;
             checkBox.Parent.Enabled = checkBox.Checked;
         }
+
+        /*
+            var x = CharUnicodeInfo.GetDecimalDigitValue(checkBox.Parent.Name[^1]);
+            var y = CharUnicodeInfo.GetDecimalDigitValue(checkBox.Parent.Name[^2]);
+         */
         #endregion
 
         #region Validation
@@ -257,17 +262,23 @@ namespace Scribe
         /// <param name="eventArguments">Additional event data.</param>
         private void OkayButton_Click(object sender, EventArgs eventArguments)
         {
-            /* TODO implement this
-            CurrentCharacter.StartingInventory.Clear();
-            CurrentCharacter.StartingInventory.Capacity = WorkingGrid.Capacity;
-            foreach (var inventorySlot in WorkingGrid)
+            for (var x = 0; x <= FormMaxColumns; x++)
             {
-                CurrentCharacter.StartingInventory.Give(inventorySlot);
+                for (var y = 0; y <= FormMaxRows; y++)
+                {
+                    if (x < WorkingGrid.Columns
+                        && y < WorkingGrid.Rows)
+                    {
+                        CurrentCraft.PanelPattern[y, x] =
+                            EditableGroupBoxes[(y, x)].GetAllChildrenExactlyOfType<CheckBox>().First().Checked
+                            ? WorkingGrid[y, x]
+                            : StrikePanel.Unused;
+                    }
+                }
             }
-            WorkingGrid = Inventory.Empty;
+            WorkingGrid = StrikePanelGrid.Empty;
             DialogResult = DialogResult.OK;
             Close();
-            */
         }
 
         /// <summary>
