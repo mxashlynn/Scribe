@@ -64,13 +64,7 @@ namespace Scribe
             {
                 ApplyCurrentTheme();
                 WorkingGrid = (StrikePanelGrid)CurrentCraft.PanelPattern.Clone();
-                //UpdateControlsBasedOnModel();
-
-                var names = EditableGroupBoxes[(0, 0)].GetAllChildren()
-                                                      .Select(control => control.Name)
-                                                      .ToArray();
-                var namesCombined = string.Join(Environment.NewLine, names);
-                MessageBox.Show($"The children of EditableGroupBoxes[(0,0)] are: {namesCombined}");
+                UpdateControlsBasedOnModel();
             }
         }
         #endregion
