@@ -813,7 +813,7 @@ namespace Scribe
                 var selectedListBox = GetPrimaryListBoxForTab(EditorTabs.SelectedIndex);
                 if (null != selectedListBox)
                 {
-                    selectedListBox.SelectedItem = ((IList<object>)selectedListBox.Items).ElementAtOrDefault(0);
+                    selectedListBox.SelectedItem = selectedListBox.Items.Cast<Model>().ElementAtOrDefault(0);
                 }
             }
         }
