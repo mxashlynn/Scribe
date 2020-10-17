@@ -55,8 +55,23 @@ namespace Scribe
         /// <param name="eventArguments">Ignored.</param>
         private void StrikePatternEditorForm_Load(object sender, EventArgs eventArguments)
         {
-            ApplyCurrentTheme();
-            WorkingGrid = (StrikePanelGrid)CurrentCraft.PanelPattern.Clone();
+            if (null == CurrentCraft)
+            {
+                DialogResult = DialogResult.Abort;
+                Close();
+            }
+            else
+            {
+                ApplyCurrentTheme();
+                WorkingGrid = (StrikePanelGrid)CurrentCraft.PanelPattern.Clone();
+                //UpdateControlsBasedOnModel();
+
+                var names = EditableGroupBoxes[(0, 0)].GetAllChildren()
+                                                      .Select(control => control.Name)
+                                                      .ToArray();
+                var namesCombined = string.Join(Environment.NewLine, names);
+                MessageBox.Show($"The children of EditableGroupBoxes[(0,0)] are: {namesCombined}");
+            }
         }
         #endregion
 
