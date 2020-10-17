@@ -14,6 +14,14 @@ namespace Scribe
     /// </summary>
     internal partial class StrikePatternEditorForm : Form
     {
+        #region Dimensions
+        /// <summary>How many <see cref="GroupBox"/>es are arranged horizontally across the <see cref="Form"/>.</summary>
+        private int MaxRows = 0;
+
+        /// <summary>How many <see cref="GroupBox"/>es are arranged vertically down the <see cref="Form"/>.</summary>
+        private int MaxColumns = 0;
+        #endregion
+
         #region Cached Controls
         /// <summary>
         /// A collection of all themed <see cref="Component"/>s in the <see cref="StrikePatternEditorForm"/>.
@@ -102,6 +110,8 @@ namespace Scribe
                 var x = CharUnicodeInfo.GetDecimalDigitValue(groupBox.Name[^1]);
                 var y = CharUnicodeInfo.GetDecimalDigitValue(groupBox.Name[^2]);
                 editable[(y, x)] = groupBox;
+                if (x > MaxColumns) { MaxColumns = x; }
+                if (y > MaxRows) { MaxRows = y; }
             }
             return editable;
         }
@@ -152,14 +162,37 @@ namespace Scribe
         /// </summary>
         private void UpdateControlsBasedOnModel()
         {
-            for (var x = 0; x < WorkingGrid.Columns; x++)
+            for (var x = 0; x <= MaxColumns; x++)
             {
-                for (var y = 0; y < WorkingGrid.Rows; y++)
+                for (var y = 0; y <= MaxRows; y++)
                 {
+                    var panelIsActive = x < WorkingGrid.Columns
+                                        && y < WorkingGrid.Rows
+                                        && !StrikePanel.Unused.Equals(WorkingGrid[y, x]);
                     EditableGroupBoxes[(y, x)].GetAllChildrenExactlyOfType<CheckBox>().First().Checked =
                         EditableGroupBoxes[(y, x)].Enabled =
-                        StrikePanel.Unused != WorkingGrid[y, x];
-                    // TODO Update other elements.
+                        panelIsActive;
+                    var textBoxes = EditableGroupBoxes[(y, x)].GetAllChildrenExactlyOfType<TextBox>();
+                    textBoxes.Where(control => control.Name.StartsWith("RangeStart"))
+                                .First()
+                                .Text = panelIsActive
+                                ? WorkingGrid[y, x].WorkingRange.Minimum.ToString()
+                                : "";
+                    textBoxes.Where(control => control.Name.StartsWith("RangeEnd"))
+                                .First()
+                                .Text = panelIsActive
+                                ? WorkingGrid[y, x].WorkingRange.Maximum.ToString()
+                                : "";
+                    textBoxes.Where(control => control.Name.StartsWith("GoalStart"))
+                                .First()
+                                .Text = panelIsActive
+                                ? WorkingGrid[y, x].IdealRange.Minimum.ToString()
+                                : "";
+                    textBoxes.Where(control => control.Name.StartsWith("GoalEnd"))
+                                .First()
+                                .Text = panelIsActive
+                                ? WorkingGrid[y, x].IdealRange.Maximum.ToString()
+                                : "";
                 }
             }
         }
