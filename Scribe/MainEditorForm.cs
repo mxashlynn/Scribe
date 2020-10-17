@@ -802,12 +802,14 @@ namespace Scribe
                 FlavorFilterGroupBox.Visible = Settings.Default.UseFlavorFilters;
             #endregion
 
+            #region Update Theming
             if (oldTheme != Settings.Default.CurrentEditorTheme)
             {
                 ApplyCurrentTheme();
             }
+            #endregion
 
-            // If necessary, attempt to select default model in current tab.
+            #region Select Default Model
             if (null == GetSelectedModelForTab(EditorTabs.SelectedIndex))
             {
                 var selectedListBox = GetPrimaryListBoxForTab(EditorTabs.SelectedIndex);
@@ -816,6 +818,7 @@ namespace Scribe
                     selectedListBox.SelectedItem = selectedListBox.Items.Cast<Model>().ElementAtOrDefault(0);
                 }
             }
+            #endregion
         }
 
         /// <summary>
