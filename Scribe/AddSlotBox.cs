@@ -80,7 +80,6 @@ namespace Scribe
         #endregion
 
         #region Validation
-
         /// <summary>
         /// Determines if the value entered is valid.
         /// Updates the <see cref="ItemAmount"/> according to valid values, otherwise signals an input error.
