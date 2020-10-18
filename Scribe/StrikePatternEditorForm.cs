@@ -224,6 +224,12 @@ namespace Scribe
                 var x = CharUnicodeInfo.GetDecimalDigitValue(textBox.Parent.Name[^1]);
                 var y = CharUnicodeInfo.GetDecimalDigitValue(textBox.Parent.Name[^2]);
 
+                if(x >= WorkingGrid.Columns
+                   || y >= WorkingGrid.Rows)
+                {
+                    return;
+                }
+
                 if (textBox.Name.StartsWith("RangeStart"))
                 {
                     WorkingGrid[y, x].WorkingRange =
