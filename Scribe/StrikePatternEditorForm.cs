@@ -276,7 +276,7 @@ namespace Scribe
         private void TextBox_Validating(object sender, CancelEventArgs eventAruments)
         {
             var textBox = (TextBox)sender;
-            if (int.TryParse(textBox.Text, out var parsedCapacity))
+            if (int.TryParse(textBox.Text, out _))
             {
                 RangeErrorProvider.SetError(textBox, "");
             }
