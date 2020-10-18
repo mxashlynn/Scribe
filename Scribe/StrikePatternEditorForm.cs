@@ -15,12 +15,15 @@ namespace Scribe
     /// </summary>
     internal partial class StrikePatternEditorForm : Form
     {
-        #region Dimensions
+        #region Form Details
         /// <summary>How many <see cref="GroupBox"/>es are arranged horizontally across the <see cref="Form"/>.</summary>
         private int FormMaxRows = 0;
 
         /// <summary>How many <see cref="GroupBox"/>es are arranged vertically down the <see cref="Form"/>.</summary>
         private int FormMaxColumns = 0;
+
+        /// <summary>When <c>true</c> it is not necessary to validate input.</summary>
+        private bool IsUpdating = false;
         #endregion
 
         #region Cached Controls
@@ -163,6 +166,7 @@ namespace Scribe
         /// </summary>
         private void UpdateControlsBasedOnModel()
         {
+            IsUpdating = true;
             for (var x = 0; x <= FormMaxColumns; x++)
             {
                 for (var y = 0; y <= FormMaxRows; y++)
@@ -170,9 +174,11 @@ namespace Scribe
                     var panelIsActive = x < WorkingGrid.Columns
                                         && y < WorkingGrid.Rows
                                         && !StrikePanel.Unused.Equals(WorkingGrid[y, x]);
-                    EditableGroupBoxes[(y, x)].GetAllChildrenExactlyOfType<CheckBox>().First().Checked =
-                        EditableGroupBoxes[(y, x)].Enabled =
-                        panelIsActive;
+                    EditableGroupBoxes[(y, x)].GetAllChildrenExactlyOfType<CheckBox>()
+                                              .First()
+                                              .Checked = panelIsActive;
+                    EditableGroupBoxes[(y, x)].GetAllChildrenExactlyOfType<TextBox>()
+                                              .Select(textBox => textBox.Enabled = panelIsActive);
                     var textBoxes = EditableGroupBoxes[(y, x)].GetAllChildrenExactlyOfType<TextBox>();
                     textBoxes.Where(control => control.Name.StartsWith("RangeStart"))
                                 .First()
@@ -196,6 +202,7 @@ namespace Scribe
                                 : "";
                 }
             }
+            IsUpdating = false;
         }
         #endregion
 
@@ -207,8 +214,12 @@ namespace Scribe
         /// <param name="eventArguments">Ignored.</param>
         private void PanelActiveCheckBox_CheckedChanged(object sender, EventArgs eventArguments)
         {
-            var checkBox = (CheckBox)sender;
-            checkBox.Parent.Enabled = checkBox.Checked;
+            if (!IsUpdating)
+            {
+                var checkBox = (CheckBox)sender;
+                var textBoxes = checkBox.Parent.GetAllChildrenExactlyOfType<TextBox>().ToList();
+                textBoxes.Select(textBox => textBox.Enabled = checkBox.Checked);
+            }
         }
 
         /// <summary>
