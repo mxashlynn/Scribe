@@ -101,6 +101,7 @@ namespace Scribe
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CancelButtonControl;
             this.ClientSize = new System.Drawing.Size(284, 83);
+            this.ControlBox = false;
             this.Controls.Add(this.AddQuestTableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);

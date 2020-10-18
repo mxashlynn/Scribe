@@ -2887,6 +2887,7 @@ namespace Scribe
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CancelButtonControl;
             this.ClientSize = new System.Drawing.Size(964, 701);
+            this.ControlBox = false;
             this.Controls.Add(this.StrikePatternTableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "StrikePatternEditorForm";

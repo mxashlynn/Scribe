@@ -337,7 +337,6 @@ namespace Scribe
         /// <param name="eventArguments">Additional event data.</param>
         private void CancelButtonControl_Click(object sender, EventArgs eventArguments)
         {
-            // TODO The [X] button in top right does not call this.
             WorkingGrid = StrikePanelGrid.Empty;
             DialogResult = DialogResult.Cancel;
             Close();
