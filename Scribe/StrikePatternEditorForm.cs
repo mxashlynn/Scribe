@@ -276,7 +276,8 @@ namespace Scribe
         private void TextBox_Validating(object sender, CancelEventArgs eventAruments)
         {
             var textBox = (TextBox)sender;
-            if (int.TryParse(textBox.Text, out _))
+            if (string.IsNullOrEmpty(textBox.Text)
+                || int.TryParse(textBox.Text, out _))
             {
                 RangeErrorProvider.SetError(textBox, "");
             }
