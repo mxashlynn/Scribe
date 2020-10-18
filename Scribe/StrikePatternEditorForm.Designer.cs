@@ -28,6 +28,7 @@ namespace Scribe
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StrikePatternEditorForm));
             this.StrikePatternTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.StrikePanelGroupBox00 = new System.Windows.Forms.GroupBox();
@@ -225,6 +226,7 @@ namespace Scribe
             this.ButtonTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.CancelButtonControl = new System.Windows.Forms.Button();
             this.OkayButton = new System.Windows.Forms.Button();
+            this.RangeErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.StrikePatternTableLayoutPanel.SuspendLayout();
             this.StrikePanelGroupBox00.SuspendLayout();
             this.StrikePanelTableLayoutPanel1.SuspendLayout();
@@ -275,6 +277,7 @@ namespace Scribe
             this.StrikePanelTableLayoutPanel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StrikeRangeDiagramPictureBox16)).BeginInit();
             this.ButtonTableLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RangeErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // StrikePatternTableLayoutPanel
@@ -403,6 +406,8 @@ namespace Scribe
             this.RangeStartTextBox1.Size = new System.Drawing.Size(40, 23);
             this.RangeStartTextBox1.TabIndex = 6;
             this.RangeStartTextBox1.Text = "0";
+            this.RangeStartTextBox1.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeStartTextBox1.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // RangeEndTextBox1
             // 
@@ -412,6 +417,8 @@ namespace Scribe
             this.RangeEndTextBox1.Size = new System.Drawing.Size(40, 23);
             this.RangeEndTextBox1.TabIndex = 6;
             this.RangeEndTextBox1.Text = "100";
+            this.RangeEndTextBox1.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeEndTextBox1.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikeRangeDiagramPictureBox1
             // 
@@ -455,6 +462,8 @@ namespace Scribe
             this.GoalStartTextBox1.Size = new System.Drawing.Size(40, 23);
             this.GoalStartTextBox1.TabIndex = 6;
             this.GoalStartTextBox1.Text = "45";
+            this.GoalStartTextBox1.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalStartTextBox1.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // GoalEndTextBox1
             // 
@@ -463,6 +472,8 @@ namespace Scribe
             this.GoalEndTextBox1.Size = new System.Drawing.Size(40, 23);
             this.GoalEndTextBox1.TabIndex = 6;
             this.GoalEndTextBox1.Text = "80";
+            this.GoalEndTextBox1.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalEndTextBox1.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikePanelGroupBox01
             // 
@@ -552,6 +563,8 @@ namespace Scribe
             this.RangeStartTextBox2.Size = new System.Drawing.Size(40, 23);
             this.RangeStartTextBox2.TabIndex = 6;
             this.RangeStartTextBox2.Text = "0";
+            this.RangeStartTextBox2.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeStartTextBox2.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // RangeEndTextBox2
             // 
@@ -561,6 +574,8 @@ namespace Scribe
             this.RangeEndTextBox2.Size = new System.Drawing.Size(40, 23);
             this.RangeEndTextBox2.TabIndex = 6;
             this.RangeEndTextBox2.Text = "100";
+            this.RangeEndTextBox2.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeEndTextBox2.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikeRangeDiagramPictureBox2
             // 
@@ -604,6 +619,8 @@ namespace Scribe
             this.GoalStartTextBox2.Size = new System.Drawing.Size(40, 23);
             this.GoalStartTextBox2.TabIndex = 6;
             this.GoalStartTextBox2.Text = "45";
+            this.GoalStartTextBox2.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalStartTextBox2.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // GoalEndTextBox2
             // 
@@ -612,6 +629,8 @@ namespace Scribe
             this.GoalEndTextBox2.Size = new System.Drawing.Size(40, 23);
             this.GoalEndTextBox2.TabIndex = 6;
             this.GoalEndTextBox2.Text = "80";
+            this.GoalEndTextBox2.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalEndTextBox2.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikePanelGroupBox02
             // 
@@ -701,6 +720,8 @@ namespace Scribe
             this.RangeStartTextBox3.Size = new System.Drawing.Size(40, 23);
             this.RangeStartTextBox3.TabIndex = 6;
             this.RangeStartTextBox3.Text = "0";
+            this.RangeStartTextBox3.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeStartTextBox3.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // RangeEndTextBox3
             // 
@@ -710,6 +731,8 @@ namespace Scribe
             this.RangeEndTextBox3.Size = new System.Drawing.Size(40, 23);
             this.RangeEndTextBox3.TabIndex = 6;
             this.RangeEndTextBox3.Text = "100";
+            this.RangeEndTextBox3.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeEndTextBox3.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikeRangeDiagramPictureBox3
             // 
@@ -753,6 +776,8 @@ namespace Scribe
             this.GoalStartTextBox3.Size = new System.Drawing.Size(40, 23);
             this.GoalStartTextBox3.TabIndex = 6;
             this.GoalStartTextBox3.Text = "45";
+            this.GoalStartTextBox3.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalStartTextBox3.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // GoalEndTextBox3
             // 
@@ -761,6 +786,8 @@ namespace Scribe
             this.GoalEndTextBox3.Size = new System.Drawing.Size(40, 23);
             this.GoalEndTextBox3.TabIndex = 6;
             this.GoalEndTextBox3.Text = "80";
+            this.GoalEndTextBox3.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalEndTextBox3.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikePanelGroupBox03
             // 
@@ -850,6 +877,8 @@ namespace Scribe
             this.RangeStartTextBox4.Size = new System.Drawing.Size(40, 23);
             this.RangeStartTextBox4.TabIndex = 6;
             this.RangeStartTextBox4.Text = "0";
+            this.RangeStartTextBox4.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeStartTextBox4.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // RangeEndTextBox4
             // 
@@ -859,6 +888,8 @@ namespace Scribe
             this.RangeEndTextBox4.Size = new System.Drawing.Size(40, 23);
             this.RangeEndTextBox4.TabIndex = 6;
             this.RangeEndTextBox4.Text = "100";
+            this.RangeEndTextBox4.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeEndTextBox4.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikeRangeDiagramPictureBox4
             // 
@@ -902,6 +933,8 @@ namespace Scribe
             this.GoalStartTextBox4.Size = new System.Drawing.Size(40, 23);
             this.GoalStartTextBox4.TabIndex = 6;
             this.GoalStartTextBox4.Text = "45";
+            this.GoalStartTextBox4.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalStartTextBox4.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // GoalEndTextBox4
             // 
@@ -910,6 +943,8 @@ namespace Scribe
             this.GoalEndTextBox4.Size = new System.Drawing.Size(40, 23);
             this.GoalEndTextBox4.TabIndex = 6;
             this.GoalEndTextBox4.Text = "80";
+            this.GoalEndTextBox4.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalEndTextBox4.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikePanelGroupBox10
             // 
@@ -999,6 +1034,8 @@ namespace Scribe
             this.RangeStartTextBox5.Size = new System.Drawing.Size(40, 23);
             this.RangeStartTextBox5.TabIndex = 6;
             this.RangeStartTextBox5.Text = "0";
+            this.RangeStartTextBox5.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeStartTextBox5.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // RangeEndTextBox5
             // 
@@ -1008,6 +1045,8 @@ namespace Scribe
             this.RangeEndTextBox5.Size = new System.Drawing.Size(40, 23);
             this.RangeEndTextBox5.TabIndex = 6;
             this.RangeEndTextBox5.Text = "100";
+            this.RangeEndTextBox5.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeEndTextBox5.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikeRangeDiagramPictureBox5
             // 
@@ -1051,6 +1090,8 @@ namespace Scribe
             this.GoalStartTextBox5.Size = new System.Drawing.Size(40, 23);
             this.GoalStartTextBox5.TabIndex = 6;
             this.GoalStartTextBox5.Text = "45";
+            this.GoalStartTextBox5.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalStartTextBox5.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // GoalEndTextBox5
             // 
@@ -1059,6 +1100,8 @@ namespace Scribe
             this.GoalEndTextBox5.Size = new System.Drawing.Size(40, 23);
             this.GoalEndTextBox5.TabIndex = 6;
             this.GoalEndTextBox5.Text = "80";
+            this.GoalEndTextBox5.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalEndTextBox5.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikePanelGroupBox11
             // 
@@ -1148,6 +1191,8 @@ namespace Scribe
             this.RangeStartTextBox6.Size = new System.Drawing.Size(40, 23);
             this.RangeStartTextBox6.TabIndex = 6;
             this.RangeStartTextBox6.Text = "0";
+            this.RangeStartTextBox6.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeStartTextBox6.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // RangeEndTextBox6
             // 
@@ -1157,6 +1202,8 @@ namespace Scribe
             this.RangeEndTextBox6.Size = new System.Drawing.Size(40, 23);
             this.RangeEndTextBox6.TabIndex = 6;
             this.RangeEndTextBox6.Text = "100";
+            this.RangeEndTextBox6.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeEndTextBox6.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikeRangeDiagramPictureBox6
             // 
@@ -1200,6 +1247,8 @@ namespace Scribe
             this.GoalStartTextBox6.Size = new System.Drawing.Size(40, 23);
             this.GoalStartTextBox6.TabIndex = 6;
             this.GoalStartTextBox6.Text = "45";
+            this.GoalStartTextBox6.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalStartTextBox6.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // GoalEndTextBox6
             // 
@@ -1208,6 +1257,8 @@ namespace Scribe
             this.GoalEndTextBox6.Size = new System.Drawing.Size(40, 23);
             this.GoalEndTextBox6.TabIndex = 6;
             this.GoalEndTextBox6.Text = "80";
+            this.GoalEndTextBox6.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalEndTextBox6.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikePanelGroupBox12
             // 
@@ -1297,6 +1348,8 @@ namespace Scribe
             this.RangeStartTextBox7.Size = new System.Drawing.Size(40, 23);
             this.RangeStartTextBox7.TabIndex = 6;
             this.RangeStartTextBox7.Text = "0";
+            this.RangeStartTextBox7.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeStartTextBox7.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // RangeEndTextBox7
             // 
@@ -1306,6 +1359,8 @@ namespace Scribe
             this.RangeEndTextBox7.Size = new System.Drawing.Size(40, 23);
             this.RangeEndTextBox7.TabIndex = 6;
             this.RangeEndTextBox7.Text = "100";
+            this.RangeEndTextBox7.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeEndTextBox7.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikeRangeDiagramPictureBox7
             // 
@@ -1349,6 +1404,8 @@ namespace Scribe
             this.GoalStartTextBox7.Size = new System.Drawing.Size(40, 23);
             this.GoalStartTextBox7.TabIndex = 6;
             this.GoalStartTextBox7.Text = "45";
+            this.GoalStartTextBox7.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalStartTextBox7.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // GoalEndTextBox7
             // 
@@ -1357,6 +1414,8 @@ namespace Scribe
             this.GoalEndTextBox7.Size = new System.Drawing.Size(40, 23);
             this.GoalEndTextBox7.TabIndex = 6;
             this.GoalEndTextBox7.Text = "80";
+            this.GoalEndTextBox7.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalEndTextBox7.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikePanelGroupBox13
             // 
@@ -1446,6 +1505,8 @@ namespace Scribe
             this.RangeStartTextBox8.Size = new System.Drawing.Size(40, 23);
             this.RangeStartTextBox8.TabIndex = 6;
             this.RangeStartTextBox8.Text = "0";
+            this.RangeStartTextBox8.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeStartTextBox8.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // RangeEndTextBox8
             // 
@@ -1455,6 +1516,8 @@ namespace Scribe
             this.RangeEndTextBox8.Size = new System.Drawing.Size(40, 23);
             this.RangeEndTextBox8.TabIndex = 6;
             this.RangeEndTextBox8.Text = "100";
+            this.RangeEndTextBox8.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeEndTextBox8.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikeRangeDiagramPictureBox8
             // 
@@ -1498,6 +1561,8 @@ namespace Scribe
             this.GoalStartTextBox8.Size = new System.Drawing.Size(40, 23);
             this.GoalStartTextBox8.TabIndex = 6;
             this.GoalStartTextBox8.Text = "45";
+            this.GoalStartTextBox8.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalStartTextBox8.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // GoalEndTextBox8
             // 
@@ -1506,6 +1571,8 @@ namespace Scribe
             this.GoalEndTextBox8.Size = new System.Drawing.Size(40, 23);
             this.GoalEndTextBox8.TabIndex = 6;
             this.GoalEndTextBox8.Text = "80";
+            this.GoalEndTextBox8.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalEndTextBox8.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikePanelGroupBox20
             // 
@@ -1595,6 +1662,8 @@ namespace Scribe
             this.RangeStartTextBox9.Size = new System.Drawing.Size(40, 23);
             this.RangeStartTextBox9.TabIndex = 6;
             this.RangeStartTextBox9.Text = "0";
+            this.RangeStartTextBox9.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeStartTextBox9.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // RangeEndTextBox9
             // 
@@ -1604,6 +1673,8 @@ namespace Scribe
             this.RangeEndTextBox9.Size = new System.Drawing.Size(40, 23);
             this.RangeEndTextBox9.TabIndex = 6;
             this.RangeEndTextBox9.Text = "100";
+            this.RangeEndTextBox9.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeEndTextBox9.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikeRangeDiagramPictureBox9
             // 
@@ -1647,6 +1718,8 @@ namespace Scribe
             this.GoalStartTextBox9.Size = new System.Drawing.Size(40, 23);
             this.GoalStartTextBox9.TabIndex = 6;
             this.GoalStartTextBox9.Text = "45";
+            this.GoalStartTextBox9.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalStartTextBox9.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // GoalEndTextBox9
             // 
@@ -1655,6 +1728,8 @@ namespace Scribe
             this.GoalEndTextBox9.Size = new System.Drawing.Size(40, 23);
             this.GoalEndTextBox9.TabIndex = 6;
             this.GoalEndTextBox9.Text = "80";
+            this.GoalEndTextBox9.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalEndTextBox9.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikePanelGroupBox21
             // 
@@ -1744,6 +1819,8 @@ namespace Scribe
             this.RangeStartTextBox10.Size = new System.Drawing.Size(40, 23);
             this.RangeStartTextBox10.TabIndex = 6;
             this.RangeStartTextBox10.Text = "0";
+            this.RangeStartTextBox10.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeStartTextBox10.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // RangeEndTextBox10
             // 
@@ -1753,6 +1830,8 @@ namespace Scribe
             this.RangeEndTextBox10.Size = new System.Drawing.Size(40, 23);
             this.RangeEndTextBox10.TabIndex = 6;
             this.RangeEndTextBox10.Text = "100";
+            this.RangeEndTextBox10.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeEndTextBox10.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikeRangeDiagramPictureBox10
             // 
@@ -1796,6 +1875,8 @@ namespace Scribe
             this.GoalStartTextBox10.Size = new System.Drawing.Size(40, 23);
             this.GoalStartTextBox10.TabIndex = 6;
             this.GoalStartTextBox10.Text = "45";
+            this.GoalStartTextBox10.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalStartTextBox10.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // GoalEndTextBox10
             // 
@@ -1804,6 +1885,8 @@ namespace Scribe
             this.GoalEndTextBox10.Size = new System.Drawing.Size(40, 23);
             this.GoalEndTextBox10.TabIndex = 6;
             this.GoalEndTextBox10.Text = "80";
+            this.GoalEndTextBox10.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalEndTextBox10.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikePanelGroupBox22
             // 
@@ -1893,6 +1976,8 @@ namespace Scribe
             this.RangeStartTextBox11.Size = new System.Drawing.Size(40, 23);
             this.RangeStartTextBox11.TabIndex = 6;
             this.RangeStartTextBox11.Text = "0";
+            this.RangeStartTextBox11.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeStartTextBox11.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // RangeEndTextBox11
             // 
@@ -1902,6 +1987,8 @@ namespace Scribe
             this.RangeEndTextBox11.Size = new System.Drawing.Size(40, 23);
             this.RangeEndTextBox11.TabIndex = 6;
             this.RangeEndTextBox11.Text = "100";
+            this.RangeEndTextBox11.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeEndTextBox11.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikeRangeDiagramPictureBox11
             // 
@@ -1945,6 +2032,8 @@ namespace Scribe
             this.GoalStartTextBox11.Size = new System.Drawing.Size(40, 23);
             this.GoalStartTextBox11.TabIndex = 6;
             this.GoalStartTextBox11.Text = "45";
+            this.GoalStartTextBox11.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalStartTextBox11.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // GoalEndTextBox11
             // 
@@ -1953,6 +2042,8 @@ namespace Scribe
             this.GoalEndTextBox11.Size = new System.Drawing.Size(40, 23);
             this.GoalEndTextBox11.TabIndex = 6;
             this.GoalEndTextBox11.Text = "80";
+            this.GoalEndTextBox11.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalEndTextBox11.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikePanelGroupBox23
             // 
@@ -2042,6 +2133,8 @@ namespace Scribe
             this.RangeStartTextBox12.Size = new System.Drawing.Size(40, 23);
             this.RangeStartTextBox12.TabIndex = 6;
             this.RangeStartTextBox12.Text = "0";
+            this.RangeStartTextBox12.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeStartTextBox12.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // RangeEndTextBox12
             // 
@@ -2051,6 +2144,8 @@ namespace Scribe
             this.RangeEndTextBox12.Size = new System.Drawing.Size(40, 23);
             this.RangeEndTextBox12.TabIndex = 6;
             this.RangeEndTextBox12.Text = "100";
+            this.RangeEndTextBox12.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeEndTextBox12.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikeRangeDiagramPictureBox12
             // 
@@ -2094,6 +2189,8 @@ namespace Scribe
             this.GoalStartTextBox12.Size = new System.Drawing.Size(40, 23);
             this.GoalStartTextBox12.TabIndex = 6;
             this.GoalStartTextBox12.Text = "45";
+            this.GoalStartTextBox12.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalStartTextBox12.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // GoalEndTextBox12
             // 
@@ -2102,6 +2199,8 @@ namespace Scribe
             this.GoalEndTextBox12.Size = new System.Drawing.Size(40, 23);
             this.GoalEndTextBox12.TabIndex = 6;
             this.GoalEndTextBox12.Text = "80";
+            this.GoalEndTextBox12.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalEndTextBox12.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikePanelGroupBox30
             // 
@@ -2191,6 +2290,8 @@ namespace Scribe
             this.RangeStartTextBox13.Size = new System.Drawing.Size(40, 23);
             this.RangeStartTextBox13.TabIndex = 6;
             this.RangeStartTextBox13.Text = "0";
+            this.RangeStartTextBox13.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeStartTextBox13.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // RangeEndTextBox13
             // 
@@ -2200,6 +2301,8 @@ namespace Scribe
             this.RangeEndTextBox13.Size = new System.Drawing.Size(40, 23);
             this.RangeEndTextBox13.TabIndex = 6;
             this.RangeEndTextBox13.Text = "100";
+            this.RangeEndTextBox13.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeEndTextBox13.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikeRangeDiagramPictureBox13
             // 
@@ -2243,6 +2346,8 @@ namespace Scribe
             this.GoalStartTextBox13.Size = new System.Drawing.Size(40, 23);
             this.GoalStartTextBox13.TabIndex = 6;
             this.GoalStartTextBox13.Text = "45";
+            this.GoalStartTextBox13.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalStartTextBox13.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // GoalEndTextBox13
             // 
@@ -2251,6 +2356,8 @@ namespace Scribe
             this.GoalEndTextBox13.Size = new System.Drawing.Size(40, 23);
             this.GoalEndTextBox13.TabIndex = 6;
             this.GoalEndTextBox13.Text = "80";
+            this.GoalEndTextBox13.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalEndTextBox13.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikePanelGroupBox31
             // 
@@ -2340,6 +2447,8 @@ namespace Scribe
             this.RangeStartTextBox14.Size = new System.Drawing.Size(40, 23);
             this.RangeStartTextBox14.TabIndex = 6;
             this.RangeStartTextBox14.Text = "0";
+            this.RangeStartTextBox14.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeStartTextBox14.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // RangeEndTextBox14
             // 
@@ -2349,6 +2458,8 @@ namespace Scribe
             this.RangeEndTextBox14.Size = new System.Drawing.Size(40, 23);
             this.RangeEndTextBox14.TabIndex = 6;
             this.RangeEndTextBox14.Text = "100";
+            this.RangeEndTextBox14.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeEndTextBox14.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikeRangeDiagramPictureBox14
             // 
@@ -2392,6 +2503,8 @@ namespace Scribe
             this.GoalStartTextBox14.Size = new System.Drawing.Size(40, 23);
             this.GoalStartTextBox14.TabIndex = 6;
             this.GoalStartTextBox14.Text = "45";
+            this.GoalStartTextBox14.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalStartTextBox14.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // GoalEndTextBox14
             // 
@@ -2400,6 +2513,8 @@ namespace Scribe
             this.GoalEndTextBox14.Size = new System.Drawing.Size(40, 23);
             this.GoalEndTextBox14.TabIndex = 6;
             this.GoalEndTextBox14.Text = "80";
+            this.GoalEndTextBox14.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalEndTextBox14.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikePanelGroupBox32
             // 
@@ -2489,6 +2604,8 @@ namespace Scribe
             this.RangeStartTextBox15.Size = new System.Drawing.Size(40, 23);
             this.RangeStartTextBox15.TabIndex = 6;
             this.RangeStartTextBox15.Text = "0";
+            this.RangeStartTextBox15.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeStartTextBox15.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // RangeEndTextBox15
             // 
@@ -2498,6 +2615,8 @@ namespace Scribe
             this.RangeEndTextBox15.Size = new System.Drawing.Size(40, 23);
             this.RangeEndTextBox15.TabIndex = 6;
             this.RangeEndTextBox15.Text = "100";
+            this.RangeEndTextBox15.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeEndTextBox15.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikeRangeDiagramPictureBox15
             // 
@@ -2541,6 +2660,8 @@ namespace Scribe
             this.GoalStartTextBox15.Size = new System.Drawing.Size(40, 23);
             this.GoalStartTextBox15.TabIndex = 6;
             this.GoalStartTextBox15.Text = "45";
+            this.GoalStartTextBox15.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalStartTextBox15.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // GoalEndTextBox15
             // 
@@ -2549,6 +2670,8 @@ namespace Scribe
             this.GoalEndTextBox15.Size = new System.Drawing.Size(40, 23);
             this.GoalEndTextBox15.TabIndex = 6;
             this.GoalEndTextBox15.Text = "80";
+            this.GoalEndTextBox15.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalEndTextBox15.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikePanelGroupBox33
             // 
@@ -2638,6 +2761,8 @@ namespace Scribe
             this.RangeStartTextBox16.Size = new System.Drawing.Size(40, 23);
             this.RangeStartTextBox16.TabIndex = 6;
             this.RangeStartTextBox16.Text = "0";
+            this.RangeStartTextBox16.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeStartTextBox16.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // RangeEndTextBox16
             // 
@@ -2647,6 +2772,8 @@ namespace Scribe
             this.RangeEndTextBox16.Size = new System.Drawing.Size(40, 23);
             this.RangeEndTextBox16.TabIndex = 6;
             this.RangeEndTextBox16.Text = "100";
+            this.RangeEndTextBox16.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.RangeEndTextBox16.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // StrikeRangeDiagramPictureBox16
             // 
@@ -2690,6 +2817,8 @@ namespace Scribe
             this.GoalStartTextBox16.Size = new System.Drawing.Size(40, 23);
             this.GoalStartTextBox16.TabIndex = 6;
             this.GoalStartTextBox16.Text = "45";
+            this.GoalStartTextBox16.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalStartTextBox16.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // GoalEndTextBox16
             // 
@@ -2698,6 +2827,8 @@ namespace Scribe
             this.GoalEndTextBox16.Size = new System.Drawing.Size(40, 23);
             this.GoalEndTextBox16.TabIndex = 6;
             this.GoalEndTextBox16.Text = "80";
+            this.GoalEndTextBox16.TextChanged += new System.EventHandler(this.RangeStartTextBox_TextChanged);
+            this.GoalEndTextBox16.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // ButtonTableLayoutPanel
             // 
@@ -2729,6 +2860,7 @@ namespace Scribe
             this.CancelButtonControl.TabIndex = 1;
             this.CancelButtonControl.Text = "Cancel";
             this.CancelButtonControl.UseVisualStyleBackColor = true;
+            this.CancelButtonControl.Click += new System.EventHandler(this.CancelButtonControl_Click);
             // 
             // OkayButton
             // 
@@ -2742,6 +2874,11 @@ namespace Scribe
             this.OkayButton.TabIndex = 0;
             this.OkayButton.Text = "&OK";
             this.OkayButton.UseVisualStyleBackColor = true;
+            this.OkayButton.Click += new System.EventHandler(this.OkayButton_Click);
+            // 
+            // RangeErrorProvider
+            // 
+            this.RangeErrorProvider.ContainerControl = this;
             // 
             // StrikePatternEditorForm
             // 
@@ -2755,6 +2892,7 @@ namespace Scribe
             this.Name = "StrikePatternEditorForm";
             this.Text = "Strike Pattern Editor";
             this.Load += new System.EventHandler(this.StrikePatternEditorForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StrikePatternEditorForm_KeyDown);
             this.StrikePatternTableLayoutPanel.ResumeLayout(false);
             this.StrikePanelGroupBox00.ResumeLayout(false);
             this.StrikePanelGroupBox00.PerformLayout();
@@ -2837,6 +2975,7 @@ namespace Scribe
             this.StrikePanelTableLayoutPanel16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StrikeRangeDiagramPictureBox16)).EndInit();
             this.ButtonTableLayoutPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.RangeErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3046,5 +3185,6 @@ namespace Scribe
         private System.Windows.Forms.GroupBox StrikePanelGroupBox21;
         private System.Windows.Forms.Label RangeEndLabel21;
         private System.Windows.Forms.GroupBox StrikePanelGroupBox22;
+        private System.Windows.Forms.ErrorProvider RangeErrorProvider;
     }
 }

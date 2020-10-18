@@ -6,6 +6,7 @@ using System.Linq;
 using System.Windows.Forms;
 using ParquetClassLibrary.Crafts;
 using ParquetClassLibrary.EditorSupport;
+using Scribe.Properties;
 
 namespace Scribe
 {
@@ -202,18 +203,49 @@ namespace Scribe
         /// <summary>
         /// Updates an editable <see cref="GroupBox"/> when its Panel Active <see cref="CheckBox"/>'s state changes.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="eventArguments"></param>
+        /// <param name="sender">The check box that raised the event.</param>
+        /// <param name="eventArguments">Ignored.</param>
         private void PanelActiveCheckBox_CheckedChanged(object sender, EventArgs eventArguments)
         {
             var checkBox = (CheckBox)sender;
             checkBox.Parent.Enabled = checkBox.Checked;
         }
 
-        /*
-            var x = CharUnicodeInfo.GetDecimalDigitValue(checkBox.Parent.Name[^1]);
-            var y = CharUnicodeInfo.GetDecimalDigitValue(checkBox.Parent.Name[^2]);
-         */
+        /// <summary>
+        /// Updates the <see cref="WorkingGrid"/> when a <see cref="TextBox"/>'s contents is changed.
+        /// </summary>
+        /// <param name="sender">The text box that raised the event.</param>
+        /// <param name="eventArguments">Ignored.</param>
+        private void RangeStartTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var textBox = (TextBox)sender;
+            if (int.TryParse(textBox.Text?.ToString() ?? "", NumberStyles.Integer, null, out var parsedInt))
+            {
+                var x = CharUnicodeInfo.GetDecimalDigitValue(textBox.Parent.Name[^1]);
+                var y = CharUnicodeInfo.GetDecimalDigitValue(textBox.Parent.Name[^2]);
+
+                if (textBox.Name.StartsWith("RangeStart"))
+                {
+                    WorkingGrid[y, x].WorkingRange =
+                        new ParquetClassLibrary.Range<int>(parsedInt, WorkingGrid[y, x].WorkingRange.Maximum);
+                }
+                else if (textBox.Name.StartsWith("RangeEnd"))
+                {
+                    WorkingGrid[y, x].WorkingRange =
+                        new ParquetClassLibrary.Range<int>(WorkingGrid[y, x].WorkingRange.Minimum, parsedInt);
+                }
+                else if (textBox.Name.StartsWith("GoalStart"))
+                {
+                    WorkingGrid[y, x].IdealRange =
+                        new ParquetClassLibrary.Range<int>(parsedInt, WorkingGrid[y, x].IdealRange.Maximum);
+                }
+                else if (textBox.Name.StartsWith("GoalEnd"))
+                {
+                    WorkingGrid[y, x].IdealRange =
+                        new ParquetClassLibrary.Range<int>(WorkingGrid[y, x].IdealRange.Minimum, parsedInt);
+                }
+            }
+        }
         #endregion
 
         #region Validation
@@ -222,7 +254,7 @@ namespace Scribe
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="inKeyEvents">The key that was held down.</param>
-        private void InventoryEditorForm_KeyDown(object sender, KeyEventArgs inKeyEvents)
+        private void StrikePatternEditorForm_KeyDown(object sender, KeyEventArgs inKeyEvents)
         {
             if (inKeyEvents.KeyCode == Keys.F5)
             {
@@ -232,25 +264,21 @@ namespace Scribe
 
         /// <summary>
         /// Determines if the value entered is valid.
-        /// Adjusts the capacity of the <see cref="WorkingGrid"/> according to valid values, otherwise signals an input error.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
+        /// <param name="sender">The text box that raised the event.</param>
         /// <param name="eventAruments">Whether or not to discard the given text.</param>
-        private void CapacityTextBox_Validating(object sender, CancelEventArgs eventAruments)
+        private void TextBox_Validating(object sender, CancelEventArgs eventAruments)
         {
-            /* TODO implement this
-            if (int.TryParse(CapacityTextBox.Text, out var parsedCapacity)
-                && parsedCapacity > 0)
+            var textBox = (TextBox)sender;
+            if (int.TryParse(textBox.Text, out var parsedCapacity))
             {
-                WorkingGrid.Capacity = parsedCapacity;
-                CapacityErrorProvider.SetError(CapacityTextBox, "");
+                RangeErrorProvider.SetError(textBox, "");
             }
             else
             {
                 eventAruments.Cancel = true;
-                CapacityErrorProvider.SetError(CapacityTextBox, Resources.ErrorPositiveIntegersOnly);
+                RangeErrorProvider.SetError(textBox, Resources.ErrorIntegersOnly);
             }
-            */
         }
         #endregion
 
