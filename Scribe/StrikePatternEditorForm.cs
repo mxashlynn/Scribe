@@ -238,9 +238,14 @@ namespace Scribe
                 var x = CharUnicodeInfo.GetDecimalDigitValue(textBox.Parent.Parent.Name[^1]);
                 var y = CharUnicodeInfo.GetDecimalDigitValue(textBox.Parent.Parent.Name[^2]);
 
-                if(x >= WorkingGrid.Columns
-                   || y >= WorkingGrid.Rows)
+                if(x >= WorkingGrid.Columns)
                 {
+                    // TODO Add a new column.
+                    return;
+                }
+                if (y >= WorkingGrid.Rows)
+                {
+                    // TODO Add a new row.
                     return;
                 }
 
