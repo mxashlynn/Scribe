@@ -177,8 +177,9 @@ namespace Scribe
                     EditableGroupBoxes[(y, x)].GetAllChildrenExactlyOfType<CheckBox>()
                                               .First()
                                               .Checked = panelIsActive;
-                    EditableGroupBoxes[(y, x)].GetAllChildrenExactlyOfType<TextBox>()
-                                              .Select(textBox => textBox.Enabled = panelIsActive);
+                    EditableGroupBoxes[(y, x)].GetAllChildrenExactlyOfType<TableLayoutPanel>()
+                                              .First()
+                                              .Enabled = panelIsActive;
                     var textBoxes = EditableGroupBoxes[(y, x)].GetAllChildrenExactlyOfType<TextBox>();
                     textBoxes.Where(control => control.Name.StartsWith("RangeStart"))
                                 .First()
@@ -217,8 +218,10 @@ namespace Scribe
             if (!IsUpdating)
             {
                 var checkBox = (CheckBox)sender;
-                var textBoxes = checkBox.Parent.GetAllChildrenExactlyOfType<TextBox>().ToList();
-                textBoxes.Select(textBox => textBox.Enabled = checkBox.Checked);
+                checkBox.Parent
+                        .GetAllChildrenExactlyOfType<TableLayoutPanel>()
+                        .First()
+                        .Enabled = checkBox.Checked;
             }
         }
 
