@@ -221,8 +221,8 @@ namespace Scribe
             var textBox = (TextBox)sender;
             if (int.TryParse(textBox.Text?.ToString() ?? "", NumberStyles.Integer, null, out var parsedInt))
             {
-                var x = CharUnicodeInfo.GetDecimalDigitValue(textBox.Parent.Name[^1]);
-                var y = CharUnicodeInfo.GetDecimalDigitValue(textBox.Parent.Name[^2]);
+                var x = CharUnicodeInfo.GetDecimalDigitValue(textBox.Parent.Parent.Name[^1]);
+                var y = CharUnicodeInfo.GetDecimalDigitValue(textBox.Parent.Parent.Name[^2]);
 
                 if(x >= WorkingGrid.Columns
                    || y >= WorkingGrid.Rows)
