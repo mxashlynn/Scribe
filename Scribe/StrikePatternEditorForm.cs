@@ -150,7 +150,7 @@ namespace Scribe
             }
             foreach (var label in ThemedComponents[typeof(Label)])
             {
-                ((Label)label).BackColor = CurrentTheme.UneditableBackgroundColor;
+                ((Label)label).BackColor = CurrentTheme.ControlBackgroundColor;
                 ((Label)label).ForeColor = CurrentTheme.ControlForegroundColor;
             }
             #endregion
