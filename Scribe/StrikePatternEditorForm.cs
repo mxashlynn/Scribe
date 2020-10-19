@@ -240,34 +240,44 @@ namespace Scribe
 
                 if(x >= WorkingGrid.Columns)
                 {
-                    // TODO Add a new column.
-                    return;
+                    WorkingGrid = new StrikePanelGrid(WorkingGrid, WorkingGrid.Rows, x + 1);
                 }
                 if (y >= WorkingGrid.Rows)
                 {
-                    // TODO Add a new row.
-                    return;
+                    WorkingGrid = new StrikePanelGrid(WorkingGrid, y + 1, WorkingGrid.Columns);
                 }
 
                 if (textBox.Name.StartsWith("RangeStart"))
                 {
+                    var newMax = parsedInt < WorkingGrid[y, x].WorkingRange.Maximum
+                        ? WorkingGrid[y, x].WorkingRange.Maximum
+                        : parsedInt - 1;
                     WorkingGrid[y, x].WorkingRange =
-                        new ParquetClassLibrary.Range<int>(parsedInt, WorkingGrid[y, x].WorkingRange.Maximum);
+                        new ParquetClassLibrary.Range<int>(parsedInt, newMax);
                 }
                 else if (textBox.Name.StartsWith("RangeEnd"))
                 {
+                    var newMin = WorkingGrid[y, x].WorkingRange.Minimum < parsedInt
+                        ? WorkingGrid[y, x].WorkingRange.Minimum
+                        : parsedInt - 1;
                     WorkingGrid[y, x].WorkingRange =
-                        new ParquetClassLibrary.Range<int>(WorkingGrid[y, x].WorkingRange.Minimum, parsedInt);
+                        new ParquetClassLibrary.Range<int>(newMin, parsedInt);
                 }
                 else if (textBox.Name.StartsWith("GoalStart"))
                 {
+                    var newMax = parsedInt < WorkingGrid[y, x].IdealRange.Maximum
+                        ? WorkingGrid[y, x].IdealRange.Maximum
+                        : parsedInt + 1;
                     WorkingGrid[y, x].IdealRange =
-                        new ParquetClassLibrary.Range<int>(parsedInt, WorkingGrid[y, x].IdealRange.Maximum);
+                        new ParquetClassLibrary.Range<int>(parsedInt, newMax);
                 }
                 else if (textBox.Name.StartsWith("GoalEnd"))
                 {
+                    var newMin = WorkingGrid[y, x].IdealRange.Minimum < parsedInt
+                        ? WorkingGrid[y, x].IdealRange.Minimum
+                        : parsedInt - 1;
                     WorkingGrid[y, x].IdealRange =
-                        new ParquetClassLibrary.Range<int>(WorkingGrid[y, x].IdealRange.Minimum, parsedInt);
+                        new ParquetClassLibrary.Range<int>(newMin, parsedInt);
                 }
             }
         }
