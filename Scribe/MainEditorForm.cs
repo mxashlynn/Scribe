@@ -634,11 +634,8 @@ namespace Scribe
                     => (input) =>
                     {
                         var editModel = (IMutableCharacterModel)inModel;
-                        var collection = null == input
-                            ? Array.Empty<ModelID>()
-                            : (IList<ModelID>)input;
                         editModel.StartingQuestIDs.Clear();
-                        editModel.StartingQuestIDs.ToList().AddRange(collection);
+                        editModel.StartingQuestIDs.ToList().AddRange(input.ToEnumerable<ModelID>());
                     },
                 #endregion
 
@@ -718,21 +715,15 @@ namespace Scribe
                     => (input) =>
                     {
                         var editRecipe = (IMutableCraftingRecipe)inModel;
-                        var collection = null == input
-                            ? Array.Empty<RecipeElement>()
-                            : (IList<RecipeElement>)input;
                         editRecipe.Ingredients.Clear();
-                        editRecipe.Ingredients.ToList().AddRange(collection);
+                        editRecipe.Ingredients.ToList().AddRange(input.ToEnumerable<RecipeElement>());
                     },
                 (CraftingRecipesTabIndex, "CraftingProductsListBox")
                     => (input) =>
                     {
                         var editRecipe = (IMutableCraftingRecipe)inModel;
-                        var collection = null == input
-                            ? Array.Empty<RecipeElement>()
-                            : (IList<RecipeElement>)input;
                         editRecipe.Products.Clear();
-                        editRecipe.Products.ToList().AddRange(collection);
+                        editRecipe.Products.ToList().AddRange(input.ToEnumerable<RecipeElement>());
                     },
                 #endregion
 
@@ -749,31 +740,22 @@ namespace Scribe
                     => (input) =>
                     {
                         var editRecipe = (IMutableRoomRecipe)inModel;
-                        var collection = null == input
-                            ? Array.Empty<RecipeElement>()
-                            : (IList<RecipeElement>)input;
                         editRecipe.OptionallyRequiredFurnishings.Clear();
-                        editRecipe.OptionallyRequiredFurnishings.ToList().AddRange(collection);
+                        editRecipe.OptionallyRequiredFurnishings.ToList().AddRange(input.ToEnumerable<RecipeElement>());
                     },
                 (RoomRecipesTabIndex, "RoomRequiredBlocksListBox")
                     => (input) =>
                     {
                         var editRecipe = (IMutableRoomRecipe)inModel;
-                        var collection = null == input
-                            ? Array.Empty<RecipeElement>()
-                            : (IList<RecipeElement>)input;
                         editRecipe.OptionallyRequiredPerimeterBlocks.Clear();
-                        editRecipe.OptionallyRequiredPerimeterBlocks.ToList().AddRange(collection);
+                        editRecipe.OptionallyRequiredPerimeterBlocks.ToList().AddRange(input.ToEnumerable<RecipeElement>());
                     },
                 (RoomRecipesTabIndex, "RoomRequiredFloorsListBox")
                     => (input) =>
                     {
                         var editRecipe = (IMutableRoomRecipe)inModel;
-                        var collection = null == input
-                            ? Array.Empty<RecipeElement>()
-                            : (IList<RecipeElement>)input;
                         editRecipe.OptionallyRequiredWalkableFloors.Clear();
-                        editRecipe.OptionallyRequiredWalkableFloors.ToList().AddRange(collection);
+                        editRecipe.OptionallyRequiredWalkableFloors.ToList().AddRange(input.ToEnumerable<RecipeElement>());
                     },
                 #endregion
 
