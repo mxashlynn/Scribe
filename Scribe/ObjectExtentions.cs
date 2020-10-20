@@ -4,7 +4,7 @@ using System.Linq;
 namespace Scribe
 {
     /// <summary>
-    /// Extension methods for <see cref="Dictionary"/>.
+    /// Extension methods for <see cref="object"/>.
     /// </summary>
     public static class ObjectExtentions
     {
