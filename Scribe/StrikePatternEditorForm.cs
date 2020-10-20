@@ -326,20 +326,7 @@ namespace Scribe
         /// <param name="eventArguments">Additional event data.</param>
         private void OkayButton_Click(object sender, EventArgs eventArguments)
         {
-            for (var x = 0; x <= FormMaxColumns; x++)
-            {
-                for (var y = 0; y <= FormMaxRows; y++)
-                {
-                    if (x < WorkingGrid.Columns
-                        && y < WorkingGrid.Rows)
-                    {
-                        CurrentCraft.PanelPattern[y, x] =
-                            EditableGroupBoxes[(y, x)].GetAllChildrenExactlyOfType<CheckBox>().First().Checked
-                            ? WorkingGrid[y, x]
-                            : StrikePanel.Unused;
-                    }
-                }
-            }
+            CurrentCraft.PanelPatternReplace(WorkingGrid);
             WorkingGrid = StrikePanelGrid.Empty;
             DialogResult = DialogResult.OK;
             Close();
