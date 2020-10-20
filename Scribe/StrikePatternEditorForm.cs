@@ -251,7 +251,7 @@ namespace Scribe
                 {
                     var newMax = parsedInt < WorkingGrid[y, x].WorkingRange.Maximum
                         ? WorkingGrid[y, x].WorkingRange.Maximum
-                        : parsedInt - 1;
+                        : parsedInt + 1;
                     WorkingGrid[y, x].WorkingRange =
                         new ParquetClassLibrary.Range<int>(parsedInt, newMax);
                 }
