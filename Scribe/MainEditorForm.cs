@@ -1188,7 +1188,6 @@ namespace Scribe
                     // TODO Scripts
                     break;
             }
-            // TODO Incrementally update Primary and Secondary lists after Add New and Remove button presses.
         }
 
         /// <summary>
