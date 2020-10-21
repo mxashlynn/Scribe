@@ -463,7 +463,6 @@ namespace Scribe
             this.CraftingProductsLabel = new System.Windows.Forms.Label();
             this.CraftingProductsListBox = new System.Windows.Forms.ListBox();
             this.CraftingStrikePatternLabel = new System.Windows.Forms.Label();
-            this.CraftingStrikePatternPendingDesignLabel = new System.Windows.Forms.Label();
             this.CraftingPictureBox = new System.Windows.Forms.PictureBox();
             this.CraftingIDLabel = new System.Windows.Forms.Label();
             this.CraftingAddNewCraftingButton = new System.Windows.Forms.Button();
@@ -519,6 +518,7 @@ namespace Scribe
             this.MapPendingDesignLabel = new System.Windows.Forms.Label();
             this.ScriptsTabPage = new System.Windows.Forms.TabPage();
             this.ScriptingPendingDesignLabel = new System.Windows.Forms.Label();
+            this.CraftingPanelsCountExample = new System.Windows.Forms.Label();
             this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
             this.ContextMenuStripPictureBoxes.SuspendLayout();
@@ -5355,6 +5355,7 @@ namespace Scribe
             this.CraftingTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.CraftingTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.CraftingTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.CraftingTableLayoutPanel.Controls.Add(this.CraftingPanelsCountExample, 1, 7);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingOpenPatternEditorButton, 2, 7);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingAddProductButton, 2, 4);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingRemoveProductButton, 1, 4);
@@ -5371,7 +5372,6 @@ namespace Scribe
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingProductsLabel, 0, 3);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingProductsListBox, 1, 3);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingStrikePatternLabel, 0, 7);
-            this.CraftingTableLayoutPanel.Controls.Add(this.CraftingStrikePatternPendingDesignLabel, 1, 7);
             this.CraftingTableLayoutPanel.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.CraftingTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
             this.CraftingTableLayoutPanel.Name = "CraftingTableLayoutPanel";
@@ -5557,21 +5557,6 @@ namespace Scribe
             this.CraftingStrikePatternLabel.Size = new System.Drawing.Size(115, 13);
             this.CraftingStrikePatternLabel.TabIndex = 31;
             this.CraftingStrikePatternLabel.Text = "Crafting Strike Pattern";
-            // 
-            // CraftingStrikePatternPendingDesignLabel
-            // 
-            this.CraftingStrikePatternPendingDesignLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingStrikePatternPendingDesignLabel.AutoSize = true;
-            this.CraftingStrikePatternPendingDesignLabel.BackColor = System.Drawing.Color.LightGray;
-            this.CraftingStrikePatternPendingDesignLabel.ForeColor = System.Drawing.Color.DimGray;
-            this.CraftingStrikePatternPendingDesignLabel.Location = new System.Drawing.Point(146, 405);
-            this.CraftingStrikePatternPendingDesignLabel.Name = "CraftingStrikePatternPendingDesignLabel";
-            this.CraftingStrikePatternPendingDesignLabel.Size = new System.Drawing.Size(137, 41);
-            this.CraftingStrikePatternPendingDesignLabel.TabIndex = 32;
-            this.CraftingStrikePatternPendingDesignLabel.Text = "Maybe one day we will have a preview image here.";
-            this.CraftingStrikePatternPendingDesignLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CraftingPictureBox
             // 
@@ -6214,6 +6199,18 @@ namespace Scribe
             this.ScriptingPendingDesignLabel.TabIndex = 0;
             this.ScriptingPendingDesignLabel.Text = "Pending Design";
             // 
+            // CraftingPanelsCountExample
+            // 
+            this.CraftingPanelsCountExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CraftingPanelsCountExample.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CraftingPanelsCountExample.Location = new System.Drawing.Point(146, 415);
+            this.CraftingPanelsCountExample.Name = "CraftingPanelsCountExample";
+            this.CraftingPanelsCountExample.Size = new System.Drawing.Size(137, 20);
+            this.CraftingPanelsCountExample.TabIndex = 43;
+            this.CraftingPanelsCountExample.Tag = "Themed";
+            this.CraftingPanelsCountExample.Text = "0 Panels";
+            this.CraftingPanelsCountExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainEditorForm
             // 
             this.AccessibleDescription = "The primary interactive editor window.";
@@ -6795,10 +6792,10 @@ namespace Scribe
         private System.Windows.Forms.TextBox CraftingMaxIngredientCountTextBox;
         private System.Windows.Forms.TextBox CraftingMaxProductCountTextBox;
         private System.Windows.Forms.ListBox CraftingProductsListBox;
+        private System.Windows.Forms.Label CraftingPanelsCountExample;
         private System.Windows.Forms.Label CraftingStrikePatternDimensionLabelLabel;
         private System.Windows.Forms.Label CraftingStrikePatternDimensionLabelExample;
         private System.Windows.Forms.Label CraftingStrikePatternLabel;
-        private System.Windows.Forms.Label CraftingStrikePatternPendingDesignLabel;
 
         private System.Windows.Forms.TabPage RoomRecipesTabPage;
         private System.Windows.Forms.ListBox RoomListBox;

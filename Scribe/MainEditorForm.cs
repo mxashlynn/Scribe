@@ -1532,6 +1532,7 @@ namespace Scribe
                 CraftingCommentTextBox.Text = "";
                 CraftingProductsListBox.Items.Clear();
                 CraftingIngredientsListBox.Items.Clear();
+                CraftingPanelsCountExample.Text = $"0 Panels";
                 CraftingPictureBox.Image = Resources.ImageNotFoundGraphic;
             }
             else if (CraftingListBox.SelectedItem is CraftingRecipe recipe
@@ -1543,6 +1544,7 @@ namespace Scribe
                 CraftingCommentTextBox.Text = recipe.Comment;
                 RepopulateListBox(CraftingProductsListBox, recipe.Products);
                 RepopulateListBox(CraftingIngredientsListBox, recipe.Ingredients);
+                CraftingPanelsCountExample.Text = $"{recipe.PanelPattern?.Count ?? 0} Panels";
                 PictureBoxLoadFromStorage(CraftingPictureBox, recipe.ID);
             }
         }
