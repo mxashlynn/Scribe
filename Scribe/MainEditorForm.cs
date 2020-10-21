@@ -1006,49 +1006,7 @@ namespace Scribe
             }
             #endregion
 
-            // TODO Incrementally update Primary and Secondary lists after Add New and Remove button presses.
-
-            #region Repopulate Primary List Boxes
-            RepopulateListBox(GameListBox, All.Games);
-            RepopulateListBox(CritterListBox, All.Critters);
-            RepopulateListBox(CharacterListBox, All.Characters);
-            RepopulateListBox(BiomeListBox, All.BiomeRecipes);
-            RepopulateListBox(CraftingListBox, All.CraftingRecipes);
-            RepopulateListBox(ItemListBox, All.Items);
-            RepopulateListBox(ItemInventoryListBox, All.Characters);
-            RepopulateListBox(FloorListBox, All.Floors);
-            RepopulateListBox(BlockListBox, All.Blocks);
-            RepopulateListBox(FurnishingListBox, All.Furnishings);
-            RepopulateListBox(CollectibleListBox, All.Collectibles);
-            RepopulateListBox(RoomListBox, All.RoomRecipes);
-            #endregion
-
-            #region Repopulat Secondary Combo Boxes
-            RepopulateComboBox(GamePlayerCharacterComboBox, All.Characters);
-            RepopulateComboBox(GameFirstScriptComboBox, All.Scripts);
-            RepopulateComboBox(BlockEquivalentItemComboBox, All.Items);
-            RepopulateComboBox(BlockGatherToolComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(GatheringTool))));
-            RepopulateComboBox(BlockGatherEffectComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(GatheringEffect))));
-            RepopulateComboBox(BlockDroppedCollectibleIDComboBox, All.Collectibles);
-            RepopulateComboBox(FloorEquivalentItemComboBox, All.Items);
-            RepopulateComboBox(FloorModificationToolComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(ModificationTool))));
-            RepopulateComboBox(FurnishingEquivalentItemComboBox, All.Items);
-            RepopulateComboBox(FurnishingEntryTypeComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(EntryType))));
-            RepopulateComboBox(FurnishingSwapWithFurnishingComboBox, All.Furnishings);
-            RepopulateComboBox(CollectibleEquivalentItemComboBox, All.Items);
-            RepopulateComboBox(CollectibleCollectionEffectComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(CollectingEffect))));
-            RepopulateComboBox(CharacterNativeBiomeComboBox, All.BiomeRecipes);
-            RepopulateComboBox(CharacterPrimaryBehaviorComboBox, All.Scripts);
-            RepopulateComboBox(CharacterPronounComboBox, All.PronounGroups.Select(pronounGroup => pronounGroup.GetKey()));
-            RepopulateComboBox(CharacterStartingDialogueComboBox, All.Interactions);
-            RepopulateComboBox(CritterNativeBiomeComboBox, All.BiomeRecipes);
-            RepopulateComboBox(CritterPrimaryBehaviorComboBox, All.Scripts);
-            RepopulateComboBox(ItemSubtypeComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(ItemType))));
-            RepopulateComboBox(ItemEffectWhileHeldComboBox, All.Scripts);
-            RepopulateComboBox(ItemEffectWhenUsedComboBox, All.Scripts);
-            RepopulateComboBox(ItemEquivalentParquetComboBox, All.Parquets);
-            // TODO Scripts
-            #endregion
+            RepopulateVisibleControls();
 
             // TODO Remove this and set up real progress bar animation (e.g. file i/o).
             ToolStripProgressBar.Value = 35;
@@ -1156,20 +1114,90 @@ namespace Scribe
         }
 
         /// <summary>
+        /// Updates only those <see cref="Control"/>s that are on the currently selected <see cref="TabPage"/>.
+        /// </summary>
+        private void RepopulateVisibleControls()
+        {
+            switch (EditorTabs.SelectedIndex)
+            {
+                // TODO Add secondary container controls that may be out of date for each tab.
+                case GamesTabIndex:
+                    RepopulateListBox(GameListBox, All.Games);
+                    RepopulateComboBox(GamePlayerCharacterComboBox, All.Characters);
+                    RepopulateComboBox(GameFirstScriptComboBox, All.Scripts);
+                    break;
+                case BlocksTabIndex:
+                    RepopulateListBox(BlockListBox, All.Blocks);
+                    RepopulateComboBox(BlockEquivalentItemComboBox, All.Items);
+                    RepopulateComboBox(BlockGatherToolComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(GatheringTool))));
+                    RepopulateComboBox(BlockGatherEffectComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(GatheringEffect))));
+                    RepopulateComboBox(BlockDroppedCollectibleIDComboBox, All.Collectibles);
+                    break;
+                case FloorsTabIndex:
+                    RepopulateListBox(FloorListBox, All.Floors);
+                    RepopulateComboBox(FloorEquivalentItemComboBox, All.Items);
+                    RepopulateComboBox(FloorModificationToolComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(ModificationTool))));
+                    break;
+                case FurnishingsTabIndex:
+                    RepopulateListBox(FurnishingListBox, All.Furnishings);
+                    RepopulateComboBox(FurnishingEquivalentItemComboBox, All.Items);
+                    RepopulateComboBox(FurnishingEntryTypeComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(EntryType))));
+                    RepopulateComboBox(FurnishingSwapWithFurnishingComboBox, All.Furnishings);
+                    break;
+                case CollectiblesTabIndex:
+                    RepopulateListBox(CollectibleListBox, All.Collectibles);
+                    RepopulateComboBox(CollectibleEquivalentItemComboBox, All.Items);
+                    RepopulateComboBox(CollectibleCollectionEffectComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(CollectingEffect))));
+                    break;
+                case CrittersTabIndex:
+                    RepopulateListBox(CritterListBox, All.Critters);
+                    RepopulateComboBox(CritterNativeBiomeComboBox, All.BiomeRecipes);
+                    RepopulateComboBox(CritterPrimaryBehaviorComboBox, All.Scripts);
+                    break;
+                case CharactersTabIndex:
+                    RepopulateListBox(CharacterListBox, All.Characters);
+                    RepopulateComboBox(CharacterNativeBiomeComboBox, All.BiomeRecipes);
+                    RepopulateComboBox(CharacterPrimaryBehaviorComboBox, All.Scripts);
+                    RepopulateComboBox(CharacterPronounComboBox, All.PronounGroups.Select(pronounGroup => pronounGroup.GetKey()));
+                    RepopulateComboBox(CharacterStartingDialogueComboBox, All.Interactions);
+                    break;
+                case ItemsTabIndex:
+                    RepopulateListBox(ItemListBox, All.Items);
+                    RepopulateComboBox(ItemSubtypeComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(ItemType))));
+                    RepopulateComboBox(ItemEffectWhileHeldComboBox, All.Scripts);
+                    RepopulateComboBox(ItemEffectWhenUsedComboBox, All.Scripts);
+                    RepopulateComboBox(ItemEquivalentParquetComboBox, All.Parquets);
+                    RepopulateListBox(ItemInventoryListBox, All.Characters);
+                    break;
+                case BiomeRecipesTabIndex:
+                    RepopulateListBox(BiomeListBox, All.BiomeRecipes);
+                    // TODO Biomes
+                    break;
+                case CraftingRecipesTabIndex:
+                    RepopulateListBox(CraftingListBox, All.CraftingRecipes);
+                    // TODO Crafting
+                    break;
+                case RoomRecipesTabIndex:
+                    RepopulateListBox(RoomListBox, All.RoomRecipes);
+                    // TODO Recipes
+                    break;
+                case MapsTabIndex:
+                    // TODO Maps
+                    break;
+                case ScriptsTabIndex:
+                    // TODO Scripts
+                    break;
+            }
+            // TODO Incrementally update Primary and Secondary lists after Add New and Remove button presses.
+        }
+
+        /// <summary>
         /// Updates per-tab <see cref="Control"/>s when the <see cref="TabPage"/>s become visible.
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="e">Ignored.</param>
         private void EditorTabs_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch (EditorTabs.SelectedIndex)
-            {
-                // TODO Add secondary container controls that may be out of date for each tab.
-                case ItemsTabIndex:
-                    RepopulateListBox(ItemInventoryListBox, All.Characters);
-                    break;
-            }
-        }
+            => RepopulateVisibleControls();
 
         /// <summary>
         /// Populates the Games tab when a <see cref="GameModel"/> is selected in the GameListBox.
