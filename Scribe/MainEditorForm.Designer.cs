@@ -447,6 +447,7 @@ namespace Scribe
             this.CraftingListBox = new System.Windows.Forms.ListBox();
             this.CraftingPictureEditButton = new System.Windows.Forms.Button();
             this.CraftingTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.CraftingPanelsCountExample = new System.Windows.Forms.Label();
             this.CraftingOpenPatternEditorButton = new System.Windows.Forms.Button();
             this.CraftingAddProductButton = new System.Windows.Forms.Button();
             this.CraftingRemoveProductButton = new System.Windows.Forms.Button();
@@ -518,7 +519,6 @@ namespace Scribe
             this.MapPendingDesignLabel = new System.Windows.Forms.Label();
             this.ScriptsTabPage = new System.Windows.Forms.TabPage();
             this.ScriptingPendingDesignLabel = new System.Windows.Forms.Label();
-            this.CraftingPanelsCountExample = new System.Windows.Forms.Label();
             this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
             this.ContextMenuStripPictureBoxes.SuspendLayout();
@@ -5387,6 +5387,18 @@ namespace Scribe
             this.CraftingTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.CraftingTableLayoutPanel.TabIndex = 5;
             // 
+            // CraftingPanelsCountExample
+            // 
+            this.CraftingPanelsCountExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CraftingPanelsCountExample.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CraftingPanelsCountExample.Location = new System.Drawing.Point(146, 415);
+            this.CraftingPanelsCountExample.Name = "CraftingPanelsCountExample";
+            this.CraftingPanelsCountExample.Size = new System.Drawing.Size(137, 20);
+            this.CraftingPanelsCountExample.TabIndex = 43;
+            this.CraftingPanelsCountExample.Tag = "Themed";
+            this.CraftingPanelsCountExample.Text = "0 Panels";
+            this.CraftingPanelsCountExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // CraftingOpenPatternEditorButton
             // 
             this.CraftingOpenPatternEditorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -6198,18 +6210,6 @@ namespace Scribe
             this.ScriptingPendingDesignLabel.Size = new System.Drawing.Size(158, 25);
             this.ScriptingPendingDesignLabel.TabIndex = 0;
             this.ScriptingPendingDesignLabel.Text = "Pending Design";
-            // 
-            // CraftingPanelsCountExample
-            // 
-            this.CraftingPanelsCountExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingPanelsCountExample.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CraftingPanelsCountExample.Location = new System.Drawing.Point(146, 415);
-            this.CraftingPanelsCountExample.Name = "CraftingPanelsCountExample";
-            this.CraftingPanelsCountExample.Size = new System.Drawing.Size(137, 20);
-            this.CraftingPanelsCountExample.TabIndex = 43;
-            this.CraftingPanelsCountExample.Tag = "Themed";
-            this.CraftingPanelsCountExample.Text = "0 Panels";
-            this.CraftingPanelsCountExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainEditorForm
             // 
