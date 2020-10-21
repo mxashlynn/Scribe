@@ -1015,6 +1015,7 @@ namespace Scribe
             RepopulateListBox(BiomeListBox, All.BiomeRecipes);
             RepopulateListBox(CraftingListBox, All.CraftingRecipes);
             RepopulateListBox(ItemListBox, All.Items);
+            RepopulateListBox(ItemInventoryListBox, All.Characters);
             RepopulateListBox(FloorListBox, All.Floors);
             RepopulateListBox(BlockListBox, All.Blocks);
             RepopulateListBox(FurnishingListBox, All.Furnishings);
@@ -1151,6 +1152,22 @@ namespace Scribe
             else
             {
                 inPictureBox.Image = Resources.ImageNotFoundGraphic;
+            }
+        }
+
+        /// <summary>
+        /// Updates per-tab <see cref="Control"/>s when the <see cref="TabPage"/>s become visible.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void EditorTabs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (EditorTabs.SelectedIndex)
+            {
+                // TODO Add secondary container controls that may be out of date for each tab.
+                case ItemsTabIndex:
+                    RepopulateListBox(ItemInventoryListBox, All.Characters);
+                    break;
             }
         }
 
@@ -2354,6 +2371,23 @@ namespace Scribe
         /// <param name="eventArguments">Ignored</param>
         private void ItemRemoveTagButton_Click(object sender, EventArgs eventArguments)
             => RemoveTag(ItemTagListBox, (IMutableItemModel model) => model.ItemTags);
+
+        /// <summary>
+        /// Invokes the <see cref="InventoryEditorForm"/> for the currently selected <see cref="CharacterModel"/>.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="eventArguments">Ignored</param>
+        private void ItemOpenInvetoryEditorButton_Click(object sender, EventArgs eventArguments)
+        {
+            var currentCharacter = (CharacterModel)ItemInventoryListBox.SelectedItem;
+            InventoryEditorWindow.CurrentCharacter = currentCharacter;
+            if (null == currentCharacter ||
+                InventoryEditorWindow.ShowDialog() == DialogResult.Abort)
+            {
+                MainToolStripStatusLabel.Text = Resources.WarningNothingSelected;
+                SystemSounds.Beep.Play();
+            }
+        }
         #endregion
 
         #region Biomes Tab
@@ -2936,7 +2970,7 @@ namespace Scribe
         /// <param name="eventArguments">Ignored.</param>
         private void PictureBoxReload_Click(object sender, EventArgs eventArguments)
             => PictureBoxLoadFromStorage(GetPictureBoxForTab(EditorTabs.SelectedIndex),
-                                           GetSelectedModelIDForTab(EditorTabs.SelectedIndex));
+                                         GetSelectedModelIDForTab(EditorTabs.SelectedIndex));
         #endregion
 
         #region Quit Editor Event

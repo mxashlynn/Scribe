@@ -374,7 +374,6 @@ namespace Scribe
             this.ItemRemoveTagButton = new System.Windows.Forms.Button();
             this.ItemListBox = new System.Windows.Forms.ListBox();
             this.ItemInventoriesGroupBox = new System.Windows.Forms.GroupBox();
-            this.ItemPendingDesignLabel = new System.Windows.Forms.Label();
             this.ItemOpenInvetoryEditorButton = new System.Windows.Forms.Button();
             this.ItemInventoryListBox = new System.Windows.Forms.ListBox();
             this.ItemPictureEditButton = new System.Windows.Forms.Button();
@@ -1424,6 +1423,7 @@ namespace Scribe
             this.EditorTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.EditorTabs.TabIndex = 1;
             this.EditorTabs.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.EditorTabs_DrawItem);
+            this.EditorTabs.SelectedIndexChanged += new System.EventHandler(this.EditorTabs_SelectedIndexChanged);
             // 
             // GamesTabPage
             // 
@@ -4506,7 +4506,6 @@ namespace Scribe
             // 
             this.ItemInventoriesGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemInventoriesGroupBox.Controls.Add(this.ItemPendingDesignLabel);
             this.ItemInventoriesGroupBox.Controls.Add(this.ItemOpenInvetoryEditorButton);
             this.ItemInventoriesGroupBox.Controls.Add(this.ItemInventoryListBox);
             this.ItemInventoriesGroupBox.Location = new System.Drawing.Point(9, 497);
@@ -4514,17 +4513,7 @@ namespace Scribe
             this.ItemInventoriesGroupBox.Size = new System.Drawing.Size(938, 99);
             this.ItemInventoriesGroupBox.TabIndex = 0;
             this.ItemInventoriesGroupBox.TabStop = false;
-            this.ItemInventoriesGroupBox.Text = "Inventories";
-            // 
-            // ItemPendingDesignLabel
-            // 
-            this.ItemPendingDesignLabel.AutoSize = true;
-            this.ItemPendingDesignLabel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ItemPendingDesignLabel.Location = new System.Drawing.Point(285, 55);
-            this.ItemPendingDesignLabel.Name = "ItemPendingDesignLabel";
-            this.ItemPendingDesignLabel.Size = new System.Drawing.Size(105, 16);
-            this.ItemPendingDesignLabel.TabIndex = 32;
-            this.ItemPendingDesignLabel.Text = "Pending Design";
+            this.ItemInventoriesGroupBox.Text = "Starting Inventories";
             // 
             // ItemOpenInvetoryEditorButton
             // 
@@ -4536,12 +4525,12 @@ namespace Scribe
             this.ItemOpenInvetoryEditorButton.TabIndex = 3;
             this.ItemOpenInvetoryEditorButton.Text = "Open Inventory Editor";
             this.ItemOpenInvetoryEditorButton.UseVisualStyleBackColor = false;
+            this.ItemOpenInvetoryEditorButton.Click += new System.EventHandler(this.ItemOpenInvetoryEditorButton_Click);
             // 
             // ItemInventoryListBox
             // 
             this.ItemInventoryListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.ItemInventoryListBox.Enabled = false;
             this.ItemInventoryListBox.FormattingEnabled = true;
             this.ItemInventoryListBox.Location = new System.Drawing.Point(6, 15);
             this.ItemInventoryListBox.Name = "ItemInventoryListBox";
@@ -6296,7 +6285,6 @@ namespace Scribe
             this.ItemsTabPage.ResumeLayout(false);
             this.ItemsTabPage.PerformLayout();
             this.ItemInventoriesGroupBox.ResumeLayout(false);
-            this.ItemInventoriesGroupBox.PerformLayout();
             this.ItemTableLayoutPanel.ResumeLayout(false);
             this.ItemTableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ItemPictureBox)).EndInit();
@@ -6687,7 +6675,6 @@ namespace Scribe
         private System.Windows.Forms.Label ItemNameLabel;
         private System.Windows.Forms.Label ItemIDExample;
         private System.Windows.Forms.GroupBox ItemInventoriesGroupBox;
-        private System.Windows.Forms.Label ItemPendingDesignLabel;
         private System.Windows.Forms.Button ItemPictureEditButton;
         private System.Windows.Forms.TableLayoutPanel ItemTableLayoutPanel;
         private System.Windows.Forms.Label ItemDescriptionLabel;
