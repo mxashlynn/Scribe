@@ -320,11 +320,11 @@ namespace Scribe
             this.CharacterPronounAddNewPronoungGroupButton = new System.Windows.Forms.Button();
             this.CharacterPronounRemovePronoungGroupButton = new System.Windows.Forms.Button();
             this.CharacterPronounReflexiveTextBox = new System.Windows.Forms.TextBox();
+            this.CharacterPronounListBox = new System.Windows.Forms.ListBox();
             this.CharacterPronounPossessiveTextBox = new System.Windows.Forms.TextBox();
             this.CharacterPronounDeterminerTextBox = new System.Windows.Forms.TextBox();
             this.CharacterPronounObjectiveTextBox = new System.Windows.Forms.TextBox();
             this.CharacterPronounSubjectiveTextBox = new System.Windows.Forms.TextBox();
-            this.CharacterPronounListBox = new System.Windows.Forms.ListBox();
             this.CharacterPronounSubjectiveLabel = new System.Windows.Forms.Label();
             this.CharacterPronounObjectiveLabel = new System.Windows.Forms.Label();
             this.CharacterPronounDeterminerLabel = new System.Windows.Forms.Label();
@@ -344,6 +344,7 @@ namespace Scribe
             this.CharacterCommentLabel = new System.Windows.Forms.Label();
             this.CharacterNativeBiomeLabel = new System.Windows.Forms.Label();
             this.CharacterPersonalNameTextBox = new System.Windows.Forms.TextBox();
+            this.CharacterListBox = new System.Windows.Forms.ListBox();
             this.CharacterFamilyNameTextBox = new System.Windows.Forms.TextBox();
             this.CharacterDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.CharacterCommentTextBox = new System.Windows.Forms.TextBox();
@@ -364,7 +365,6 @@ namespace Scribe
             this.CharacterRemoveCharacterButton = new System.Windows.Forms.Button();
             this.CharacterIDExample = new System.Windows.Forms.Label();
             this.CharacterAddNewCharacterButton = new System.Windows.Forms.Button();
-            this.CharacterListBox = new System.Windows.Forms.ListBox();
             this.CharacterIDLabel = new System.Windows.Forms.Label();
             this.CharacterEditImageButton = new System.Windows.Forms.Button();
             this.CharacterPictureBox = new System.Windows.Forms.PictureBox();
@@ -3898,6 +3898,7 @@ namespace Scribe
             this.CharacterPronounAddNewPronoungGroupButton.TabIndex = 2;
             this.CharacterPronounAddNewPronoungGroupButton.Text = "Add New Group";
             this.CharacterPronounAddNewPronoungGroupButton.UseVisualStyleBackColor = false;
+            this.CharacterPronounAddNewPronoungGroupButton.Click += new System.EventHandler(this.CharacterPronounAddNewPronoungGroupButton_Click);
             // 
             // CharacterPronounRemovePronoungGroupButton
             // 
@@ -3909,6 +3910,7 @@ namespace Scribe
             this.CharacterPronounRemovePronoungGroupButton.TabIndex = 2;
             this.CharacterPronounRemovePronoungGroupButton.Text = "Remove Group";
             this.CharacterPronounRemovePronoungGroupButton.UseVisualStyleBackColor = false;
+            this.CharacterPronounRemovePronoungGroupButton.Click += new System.EventHandler(this.CharacterPronounRemovePronoungGroupButton_Click);
             // 
             // CharacterPronounReflexiveTextBox
             // 
@@ -3916,6 +3918,20 @@ namespace Scribe
             this.CharacterPronounReflexiveTextBox.Name = "CharacterPronounReflexiveTextBox";
             this.CharacterPronounReflexiveTextBox.Size = new System.Drawing.Size(124, 20);
             this.CharacterPronounReflexiveTextBox.TabIndex = 23;
+            // 
+            // CharacterPronounListBox
+            // 
+            this.CharacterPronounListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CharacterPronounListBox.FormattingEnabled = true;
+            this.CharacterPronounListBox.Location = new System.Drawing.Point(0, 0);
+            this.CharacterPronounListBox.Margin = new System.Windows.Forms.Padding(0);
+            this.CharacterPronounListBox.Name = "CharacterPronounListBox";
+            this.CharacterPronounTableLayoutPanel.SetRowSpan(this.CharacterPronounListBox, 3);
+            this.CharacterPronounListBox.Size = new System.Drawing.Size(276, 69);
+            this.CharacterPronounListBox.TabIndex = 0;
+            this.CharacterPronounListBox.SelectedIndexChanged += new System.EventHandler(this.CharacterPronounListBox_SelectedIndexChanged);
             // 
             // CharacterPronounPossessiveTextBox
             // 
@@ -3945,18 +3961,6 @@ namespace Scribe
             this.CharacterPronounSubjectiveTextBox.Size = new System.Drawing.Size(124, 20);
             this.CharacterPronounSubjectiveTextBox.TabIndex = 23;
             // 
-            // CharacterPronounListBox
-            // 
-            this.CharacterPronounListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CharacterPronounListBox.FormattingEnabled = true;
-            this.CharacterPronounListBox.Location = new System.Drawing.Point(0, 0);
-            this.CharacterPronounListBox.Margin = new System.Windows.Forms.Padding(0);
-            this.CharacterPronounListBox.Name = "CharacterPronounListBox";
-            this.CharacterPronounTableLayoutPanel.SetRowSpan(this.CharacterPronounListBox, 3);
-            this.CharacterPronounListBox.Size = new System.Drawing.Size(276, 69);
-            this.CharacterPronounListBox.TabIndex = 0;
             // 
             // CharacterPronounSubjectiveLabel
             // 
@@ -4187,6 +4191,19 @@ namespace Scribe
             this.CharacterPersonalNameTextBox.TabIndex = 23;
             this.CharacterPersonalNameTextBox.TextChanged += new System.EventHandler(this.CharacterPersonalNameTextBox_TextChanged);
             // 
+            // CharacterListBox
+            // 
+            this.CharacterListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.CharacterListBox.DisplayMember = "Name";
+            this.CharacterListBox.FormattingEnabled = true;
+            this.CharacterListBox.Location = new System.Drawing.Point(9, 16);
+            this.CharacterListBox.Name = "CharacterListBox";
+            this.CharacterListBox.Size = new System.Drawing.Size(279, 446);
+            this.CharacterListBox.TabIndex = 1;
+            this.CharacterListBox.Tag = "Untracked Control";
+            this.CharacterListBox.SelectedValueChanged += new System.EventHandler(this.CharacterListBox_SelectedValueChanged);
+            // 
             // CharacterFamilyNameTextBox
             // 
             this.CharacterFamilyNameTextBox.Location = new System.Drawing.Point(281, 3);
@@ -4382,19 +4399,6 @@ namespace Scribe
             this.CharacterAddNewCharacterButton.Text = "Add New Character";
             this.CharacterAddNewCharacterButton.UseVisualStyleBackColor = false;
             this.CharacterAddNewCharacterButton.Click += new System.EventHandler(this.CharacterAddNewCharacterButton_Click);
-            // 
-            // CharacterListBox
-            // 
-            this.CharacterListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.CharacterListBox.DisplayMember = "Name";
-            this.CharacterListBox.FormattingEnabled = true;
-            this.CharacterListBox.Location = new System.Drawing.Point(9, 16);
-            this.CharacterListBox.Name = "CharacterListBox";
-            this.CharacterListBox.Size = new System.Drawing.Size(279, 446);
-            this.CharacterListBox.TabIndex = 1;
-            this.CharacterListBox.Tag = "Untracked Control";
-            this.CharacterListBox.SelectedValueChanged += new System.EventHandler(this.CharacterListBox_SelectedValueChanged);
             // 
             // CharacterIDLabel
             // 

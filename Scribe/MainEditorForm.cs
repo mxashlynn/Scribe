@@ -1160,6 +1160,7 @@ namespace Scribe
                     RepopulateComboBox(CharacterPrimaryBehaviorComboBox, All.Scripts);
                     RepopulateComboBox(CharacterPronounComboBox, All.PronounGroups.Select(pronounGroup => pronounGroup.GetKey()));
                     RepopulateComboBox(CharacterStartingDialogueComboBox, All.Interactions);
+                    RepopulateListBox(CharacterPronounListBox, All.PronounGroups);
                     break;
                 case ItemsTabIndex:
                     RepopulateListBox(ItemListBox, All.Items);
@@ -1445,6 +1446,34 @@ namespace Scribe
                     : All.Interactions.Get<InteractionModel>(model.StartingDialogueID);
                 CharacterStartingInventoryExample.Text = $"{model.StartingInventory?.ItemCount ?? 0} Items";
                 PictureBoxLoadFromStorage(CharacterPictureBox, model.ID);
+            }
+        }
+
+        /// <summary>
+        /// Populates the Pronouns panel when a <see cref="PronounGroup"/> is selected in the CharacterPronounListBox.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="eventArguments">Ignored.</param>
+        private void CharacterPronounListBox_SelectedIndexChanged(object sender, EventArgs eventArguments)
+        {
+            if (null == CharacterPronounListBox.SelectedItem)
+            {
+                CharacterPronounKeyExample.Text = PronounGroup.DefaultKey;
+                CharacterPronounSubjectiveTextBox.Text = "";
+                CharacterPronounObjectiveTextBox.Text = "";
+                CharacterPronounDeterminerTextBox.Text = "";
+                CharacterPronounPossessiveTextBox.Text = "";
+                CharacterPronounReflexiveTextBox.Text = "";
+            }
+            else if (CharacterPronounListBox.SelectedItem is PronounGroup group
+                     && null != group)
+            {
+                CharacterPronounKeyExample.Text = group.GetKey();
+                CharacterPronounSubjectiveTextBox.Text = group.Subjective;
+                CharacterPronounObjectiveTextBox.Text = group.Objective;
+                CharacterPronounDeterminerTextBox.Text = group.Determiner;
+                CharacterPronounPossessiveTextBox.Text = group.Possessive;
+                CharacterPronounReflexiveTextBox.Text = group.Reflexive;
             }
         }
 
@@ -2345,6 +2374,73 @@ namespace Scribe
                         $"{model.PersonalName.ToUpperInvariant()}_{alteredControl.Text.ToUpperInvariant()}";
                 }
             }
+        }
+
+        /// <summary>
+        /// Responds to the user clicking "Add New Pronoun Group" on the Characters tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="eventArguments">Ignored.</param>
+        private void CharacterPronounAddNewPronoungGroupButton_Click(object sender, EventArgs eventArguments)
+        {
+            if (!All.CollectionsHaveBeenInitialized)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            var groupToAdd = new PronounGroup("-", "-", "-", "-", "-");
+            ChangeManager.AddAndExecute(new ChangeList(groupToAdd, $"add new Pronoun Group definition",
+                                        (object databaseValue) =>
+                                        {
+                                            ((ICollection<PronounGroup>)All.PronounGroups).Add((PronounGroup)databaseValue);
+                                            _ = CharacterPronounListBox.Items.Add(databaseValue);
+                                            CharacterPronounListBox.SelectedItem = databaseValue;
+                                            HasUnsavedChanges = true;
+                                        },
+                                        (object databaseValue) =>
+                                        {
+                                            ((ICollection<PronounGroup>)All.PronounGroups).Remove((PronounGroup)databaseValue);
+                                            CharacterPronounListBox.Items.Remove(databaseValue);
+                                            CharacterPronounListBox.SelectedItem = null;
+                                            HasUnsavedChanges = true;
+                                        }));
+        }
+
+        /// <summary>
+        /// Responds to the user clicking "Remove Pronoun Group" on the Characters tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="eventArguments">Ignored.</param>
+        private void CharacterPronounRemovePronoungGroupButton_Click(object sender, EventArgs eventArguments)
+        {
+            if (!All.CollectionsHaveBeenInitialized || CharacterPronounListBox.SelectedIndex == -1)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            if (!(CharacterPronounListBox.SelectedItem is PronounGroup groupToRemove))
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            ChangeManager.AddAndExecute(new ChangeList(groupToRemove, $"remove Pronoun Group {groupToRemove.GetKey()}",
+                                        (object databaseValue) =>
+                                        {
+                                            ((ICollection<PronounGroup>)All.PronounGroups).Remove((PronounGroup)databaseValue);
+                                            CharacterPronounListBox.Items.Remove(databaseValue);
+                                            CharacterPronounListBox.SelectedItem = null;
+                                            HasUnsavedChanges = true;
+                                        },
+                                        (object databaseValue) =>
+                                        {
+                                            ((ICollection<PronounGroup>)All.Characters).Add((PronounGroup)databaseValue);
+                                            _ = CharacterPronounListBox.Items.Add(databaseValue);
+                                            CharacterPronounListBox.SelectedItem = databaseValue;
+                                            HasUnsavedChanges = true;
+                                        }));
         }
         #endregion
 
