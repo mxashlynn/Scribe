@@ -76,6 +76,13 @@ namespace Scribe
         /// </summary>
         private readonly Dictionary<Type, List<Component>> ThemedComponents;
 
+        /// <summary>
+        /// A collection of all <see cref="Control"/>s whose content is displayed in a <see cref="ListBox"/>
+        /// that is visible at the same time the control itself is visible, so that the ListBox can be updated
+        /// on changes to the control's content.
+        /// </summary>
+        private readonly Dictionary<Control, ListBox> ControlsWhoseContentIsListed;
+
         /// <summary>Used to determine if the <see cref="Settings.Default.CurrentEditorTheme"/> has changed.</summary>
         private static string oldTheme = "";
 
@@ -164,7 +171,7 @@ namespace Scribe
 
             HasUnsavedChanges = false;
 
-            #region Cache Controls and Set Up Callbacks
+            #region Cache Controls
             PictureBoxes = EditorTabs.GetAllChildrenExactlyOfType<PictureBox>().ToList();
             ThemedComponents = GetThemedComponents();
             foreach (var component in ThemedComponents[typeof(ToolStripItem)])
@@ -178,20 +185,36 @@ namespace Scribe
                            .Invoke(ToolStripProgressBar.ProgressBar,
                                    new object[] { ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer, true });
             ToolStripProgressBar.ProgressBar.Paint += ProgressBar_Paint;
+
             EditableControls = GetEditableControls();
             var flatListOfEditableControls = EditableControls.Values.SelectMany(dictionary => dictionary.Keys);
             foreach (var editableControl in flatListOfEditableControls)
             {
                 editableControl.Validated += ContentAlteredEventHandler;
             }
-            var listOfControlsWithTextEntry = EditableControls[typeof(TextBox)].Keys
-                                     .Concat(EditableControls[typeof(ComboBox)].Keys);
+
+            var listOfControlsWithTextEntry =
+                EditableControls[typeof(TextBox)].Keys
+                                                 .Concat(EditableControls[typeof(ComboBox)].Keys);
             foreach (var textEntryControl in listOfControlsWithTextEntry)
             {
                 textEntryControl.ContextMenuStrip = ContextMenuStripForTextEntries;
             }
-            FormClosing += FormClosingEventHandler;
+
+            // NOTE that this section must be updated by hand whenever listed controls are adjusted.
+            ControlsWhoseContentIsListed = new Dictionary<Control, ListBox>
+            {
+                //[CharacterPersonalNameTextBox] = CharacterListBox;
+                //[CharacterFamilyNameTextBox] = CharacterListBox;
+                [CharacterPronounSubjectiveTextBox] = CharacterPronounListBox,
+                [CharacterPronounObjectiveTextBox] = CharacterPronounListBox,
+                [CharacterPronounDeterminerTextBox] = CharacterPronounListBox,
+                [CharacterPronounPossessiveTextBox] = CharacterPronounListBox,
+                [CharacterPronounReflexiveTextBox] = CharacterPronounListBox
+            };
             #endregion
+
+            FormClosing += FormClosingEventHandler;
 
             #region Set Up Current Theme
             if (Enum.TryParse<EditorTheme>(Settings.Default.CurrentEditorTheme, out var theme))
@@ -228,9 +251,7 @@ namespace Scribe
         /// <param name="eventArguments">Ignored.</param>
         private void MainEditorForm_Activated(object sender, EventArgs eventArguments)
             => UpdateFromSettings();
-        #endregion
 
-        #region Cache Controls
         /// <summary>
         /// Finds all themed <see cref="Component"/>s in the <see cref="MainEditorForm"/>.
         /// </summary>
@@ -1719,6 +1740,13 @@ namespace Scribe
                                             (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
                                             (object displayValue) => listbox.SelectedItem = displayValue,
                                             (object oldValue) => EditableControls[typeof(ListBox)][listbox] = oldValue));
+            }
+
+            // Update the model name representing the alteredControl if needed.
+            if (ControlsWhoseContentIsListed.ContainsKey(alteredControl))
+            {
+                var listToUpdate = ControlsWhoseContentIsListed[alteredControl];
+                listToUpdate.Items[listToUpdate.SelectedIndex] = listToUpdate.SelectedItem;
             }
         }
 
