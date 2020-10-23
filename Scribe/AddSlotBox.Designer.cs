@@ -27,6 +27,7 @@ namespace Scribe
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.SlotTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.CancelButtonControl = new System.Windows.Forms.Button();
             this.OkayButton = new System.Windows.Forms.Button();
@@ -34,7 +35,9 @@ namespace Scribe
             this.AmountTextBox = new System.Windows.Forms.TextBox();
             this.AmountLabel = new System.Windows.Forms.Label();
             this.ItemListBox = new System.Windows.Forms.ListBox();
+            this.AmountErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.SlotTableLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AmountErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // SlotTableLayoutPanel
@@ -63,22 +66,26 @@ namespace Scribe
             // CancelButtonControl
             // 
             this.CancelButtonControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CancelButtonControl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelButtonControl.Location = new System.Drawing.Point(3, 89);
             this.CancelButtonControl.Name = "CancelButtonControl";
             this.CancelButtonControl.Size = new System.Drawing.Size(74, 23);
             this.CancelButtonControl.TabIndex = 14;
             this.CancelButtonControl.Text = "Cancel";
             this.CancelButtonControl.UseVisualStyleBackColor = true;
+            this.CancelButtonControl.Click += new System.EventHandler(this.CancelButtonControl_Click);
             // 
             // OkayButton
             // 
             this.OkayButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.OkayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OkayButton.Location = new System.Drawing.Point(180, 89);
             this.OkayButton.Name = "OkayButton";
             this.OkayButton.Size = new System.Drawing.Size(75, 23);
             this.OkayButton.TabIndex = 9;
             this.OkayButton.Text = "&OK";
             this.OkayButton.UseVisualStyleBackColor = true;
+            this.OkayButton.Click += new System.EventHandler(this.OkayButton_Click);
             // 
             // ItemLabel
             // 
@@ -98,6 +105,7 @@ namespace Scribe
             this.AmountTextBox.Name = "AmountTextBox";
             this.AmountTextBox.Size = new System.Drawing.Size(172, 23);
             this.AmountTextBox.TabIndex = 11;
+            this.AmountTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.AmountTextBox_Validating);
             // 
             // AmountLabel
             // 
@@ -119,6 +127,11 @@ namespace Scribe
             this.ItemListBox.Name = "ItemListBox";
             this.ItemListBox.Size = new System.Drawing.Size(172, 49);
             this.ItemListBox.TabIndex = 15;
+            this.ItemListBox.SelectedIndexChanged += new System.EventHandler(this.ItemListBox_SelectedIndexChanged);
+            // 
+            // AmountErrorProvider
+            // 
+            this.AmountErrorProvider.ContainerControl = this;
             // 
             // AddSlotBox
             // 
@@ -127,6 +140,7 @@ namespace Scribe
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CancelButtonControl;
             this.ClientSize = new System.Drawing.Size(284, 141);
+            this.ControlBox = false;
             this.Controls.Add(this.SlotTableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -139,8 +153,10 @@ namespace Scribe
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddSlotBox";
+            this.Load += new System.EventHandler(this.AddSlotBox_Load);
             this.SlotTableLayoutPanel.ResumeLayout(false);
             this.SlotTableLayoutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AmountErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -154,5 +170,6 @@ namespace Scribe
         private System.Windows.Forms.TextBox AmountTextBox;
         private System.Windows.Forms.Label AmountLabel;
         private System.Windows.Forms.ListBox ItemListBox;
+        private System.Windows.Forms.ErrorProvider AmountErrorProvider;
     }
 }

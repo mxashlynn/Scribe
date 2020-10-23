@@ -1,5 +1,9 @@
 using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using System.Linq;
+using System.Media;
 using System.Windows.Forms;
 using Scribe.Properties;
 
@@ -16,15 +20,29 @@ namespace Scribe
         /// <summary>The largest interval allowed for AutoSaveInterval.</summary>
         private const int MaximumInterval = 60;
 
+        /// <summary>The <see cref="EditorTheme"/> that was set when the form was shown.</summary>
+        private EditorTheme OldTheme;
+
         /// <summary>User-set autosave interval.  Guaranteed to be valid when <see cref="OptionsBox.FormClosingEventHandler"/> runs.</summary>
         private int NewAutoSaveInterval;
+
+        /// <summary>The UI elements used to represent the current <see cref="EditorTheme"/>.</summary>
+        private readonly Dictionary<string, RadioButton> ThemeRadioButtons;
 
         #region Initialization
         /// <summary>
         /// Initialize a new <see cref="OptionsBox"/>.
         /// </summary>
         public OptionsBox()
-            => InitializeComponent();
+        {
+            InitializeComponent();
+            ThemeRadioButtons = new Dictionary<string, RadioButton>
+            {
+                { EditorTheme.Femme.ToString(), RadioButtonFemmeTheme },
+                { EditorTheme.Colorful.ToString(), RadioButtonColorfulTheme },
+                { EditorTheme.OSDefault.ToString(), RadioButtonOSDefaultTheme },
+            };
+        }
 
         /// <summary>
         /// Sets up the <see cref="OptionsBox"/> UI.
@@ -34,8 +52,17 @@ namespace Scribe
         {
             base.OnLoad(EventData);
 
-            RadioButtonColorfulTheme.Checked = Settings.Default.UseColorfulEditorTheme;
-            RadioButtonOSTheme.Checked = !Settings.Default.UseColorfulEditorTheme;
+            if (!Enum.TryParse(Settings.Default.CurrentEditorTheme, out OldTheme))
+            {
+                OldTheme = EditorTheme.OSDefault;
+                SystemSounds.Beep.Play();
+                var message = string.Format(CultureInfo.CurrentCulture, Resources.ErrorParseFailed,
+                                            nameof(Settings.Default.CurrentEditorTheme));
+                _ = MessageBox.Show(message, Resources.CaptionError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            ThemeRadioButtons.Values.Select(radioButton => radioButton.Checked = false);
+            ThemeRadioButtons[Settings.Default.CurrentEditorTheme].Checked = true;
+
             CheckBoxFlavorFilters.Checked = Settings.Default.UseFlavorFilters;
             CheckBoxSuggestStoryIDs.Checked = Settings.Default.SuggestStoryIDs;
             NewAutoSaveInterval = Settings.Default.AutoSaveInterval;
@@ -45,6 +72,8 @@ namespace Scribe
             RadioButtonEditInCustomApp.Checked = Settings.Default.EditInApp;
             RadioButtonEditInOSDefault.Checked = !Settings.Default.EditInApp;
             TextBoxImageEditorPath.Text = Settings.Default.ImageEditor;
+
+            ApplyCurrentTheme();
         }
         #endregion
 
@@ -54,8 +83,8 @@ namespace Scribe
         /// Stores valid values for later updating the settings, otherwise signals an input error.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Whether or not to discard the given text.</param>
-        private void TextBoxAutoSaveInterval_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        /// <param name="eventArguments">Whether or not to discard the text.</param>
+        private void TextBoxAutoSaveInterval_Validating(object sender, System.ComponentModel.CancelEventArgs eventArguments)
         {
             if (int.TryParse(TextBoxAutoSaveInterval.Text, out var newInterval))
             {
@@ -65,7 +94,7 @@ namespace Scribe
             }
             else
             {
-                e.Cancel = true;
+                eventArguments.Cancel = true;
                 TextBoxAutoSaveInterval.Select();
                 ErrorProvider.SetError(TextBoxAutoSaveInterval, Resources.ErrorIntegersOnly);
             }
@@ -76,8 +105,8 @@ namespace Scribe
         /// Stores valid values for later updating the settings, otherwise signals an input error.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Whether or not to discard the given text.</param>
-        private void TextBoxImageEditorPath_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        /// <param name="eventAruments">Whether or not to discard the given text.</param>
+        private void TextBoxImageEditorPath_Validating(object sender, System.ComponentModel.CancelEventArgs eventAruments)
         {
             TextBoxImageEditorPath.Text = Path.GetFullPath(TextBoxImageEditorPath.Text);
             if (File.Exists(TextBoxImageEditorPath.Text))
@@ -86,21 +115,120 @@ namespace Scribe
             }
             else
             {
-                e.Cancel = true;
+                eventAruments.Cancel = true;
                 TextBoxImageEditorPath.Select();
                 ErrorProvider.SetError(LabelImageEditorPath, Resources.ErrorImageEditorNotFound);
             }
         }
         #endregion
 
+        #region Color Theming
+        /// <summary>
+        /// Updates <see cref="CurrentTheme"/> setting to <see cref="EditorTheme.Femme"/>.
+        /// </summary>
+        /// <param name="sender">Determines if the theme is being set or unset.</param>
+        /// <param name="eventAruments">Ignored.</param>
+        private void RadioButtonFemmeTheme_CheckedChanged(object sender, EventArgs eventAruments)
+        {
+            if (sender is RadioButton radioButton
+                && radioButton.Checked)
+            {
+                CurrentTheme.SetUpTheme(EditorTheme.Femme);
+                ApplyCurrentTheme();
+            }
+        }
+
+        /// <summary>
+        /// Updates <see cref="CurrentTheme"/> setting to <see cref="EditorTheme.Colorful"/>.
+        /// </summary>
+        /// <param name="sender">Determines if the theme is being set or unset.</param>
+        /// <param name="eventAruments">Ignored.</param>
+        private void RadioButtonColorfulTheme_CheckedChanged(object sender, EventArgs eventAruments)
+        {
+            if (sender is RadioButton radioButton
+                && radioButton.Checked)
+            {
+                CurrentTheme.SetUpTheme(EditorTheme.Colorful);
+                ApplyCurrentTheme();
+            }
+        }
+
+        /// <summary>
+        /// Updates <see cref="CurrentTheme"/> setting to <see cref="EditorTheme.OSDefault"/>.
+        /// </summary>
+        /// <param name="sender">Determines if the theme is being set or unset.</param>
+        /// <param name="eventAruments">Ignored.</param>
+        private void RadioButtonOSDefaultTheme_CheckedChanged(object sender, EventArgs eventAruments)
+        {
+            if (sender is RadioButton radioButton
+                && radioButton.Checked)
+            {
+                CurrentTheme.SetUpTheme(EditorTheme.OSDefault);
+                ApplyCurrentTheme();
+            }
+        }
+
+        /// <summary>
+        /// Applies the <see cref="CurrentTheme"/> to the <see cref="OptionsBox"/> and its <see cref="Control"/>s.
+        /// </summary>
+        private void ApplyCurrentTheme()
+        {
+            BackColor = CurrentTheme.ControlBackgroundColor;
+            ForeColor = CurrentTheme.ControlForegroundColor;
+
+            PanelEditorTheme.BackColor = CurrentTheme.ControlBackgroundColor;
+            PanelEditorTheme.ForeColor = CurrentTheme.ControlForegroundColor;
+            PanelDefaultFolder.BackColor = CurrentTheme.ControlBackgroundColor;
+            PanelDefaultFolder.ForeColor = CurrentTheme.ControlForegroundColor;
+            PanelEditImagesIn.BackColor = CurrentTheme.ControlBackgroundColor;
+            PanelEditImagesIn.ForeColor = CurrentTheme.ControlForegroundColor;
+
+            TextBoxAutoSaveInterval.BackColor = CurrentTheme.ControlBackgroundWhite;
+            TextBoxAutoSaveInterval.ForeColor = CurrentTheme.ControlForegroundColor;
+            TextBoxImageEditorPath.BackColor = CurrentTheme.ControlBackgroundWhite;
+            TextBoxImageEditorPath.ForeColor = CurrentTheme.ControlForegroundColor;
+
+            LabelTheme.BackColor = CurrentTheme.ControlBackgroundColor;
+            LabelTheme.ForeColor = CurrentTheme.ControlForegroundColor;
+            LabelSuggestStoryIDs.BackColor = CurrentTheme.ControlBackgroundColor;
+            LabelSuggestStoryIDs.ForeColor = CurrentTheme.ControlForegroundColor;
+            LabelAutoSaveInterval.BackColor = CurrentTheme.ControlBackgroundColor;
+            LabelAutoSaveInterval.ForeColor = CurrentTheme.ControlForegroundColor;
+            LabelAutoSaveExplanation.BackColor = CurrentTheme.ControlBackgroundColor;
+            LabelAutoSaveExplanation.ForeColor = CurrentTheme.ControlForegroundColor;
+            LabelDefaultFolder.BackColor = CurrentTheme.ControlBackgroundColor;
+            LabelDefaultFolder.ForeColor = CurrentTheme.ControlForegroundColor;
+            LabelFlavorFilter.BackColor = CurrentTheme.ControlBackgroundColor;
+            LabelFlavorFilter.ForeColor = CurrentTheme.ControlForegroundColor;
+            LabelEditImagesIn.BackColor = CurrentTheme.ControlBackgroundColor;
+            LabelEditImagesIn.ForeColor = CurrentTheme.ControlForegroundColor;
+            LabelImageEditorPath.BackColor = CurrentTheme.ControlBackgroundColor;
+            LabelImageEditorPath.ForeColor = CurrentTheme.ControlForegroundColor;
+
+            OkayButton.BackColor = CurrentTheme.ControlBackgroundColor;
+            OkayButton.FlatAppearance.BorderColor = CurrentTheme.BorderColor;
+            OkayButton.FlatAppearance.MouseDownBackColor = CurrentTheme.MouseDownColor;
+            OkayButton.FlatAppearance.MouseOverBackColor = CurrentTheme.MouseOverColor;
+            CancelButtonControl.BackColor = CurrentTheme.ControlBackgroundColor;
+            CancelButtonControl.FlatAppearance.BorderColor = CurrentTheme.BorderColor;
+            CancelButtonControl.FlatAppearance.MouseDownBackColor = CurrentTheme.MouseDownColor;
+            CancelButtonControl.FlatAppearance.MouseOverBackColor = CurrentTheme.MouseOverColor;
+        }
+        #endregion
+
+        #region Closing the Form
         /// <summary>
         /// Responds to the Okay Button to ensure that settings are saved.
         /// </summary>
         /// <param name="sender">Ignored.</param>
-        /// <param name="e">Ignored.</param>
-        private void OkayButton_Click(object sender, EventArgs e)
+        /// <param name="eventArguments">Ignored.</param>
+        private void OkayButton_Click(object sender, EventArgs eventArguments)
         {
-            Settings.Default.UseColorfulEditorTheme = RadioButtonColorfulTheme.Checked;
+            Settings.Default.CurrentEditorTheme = RadioButtonFemmeTheme.Checked
+                ? EditorTheme.Femme.ToString()
+                : RadioButtonColorfulTheme.Checked
+                    ? EditorTheme.Colorful.ToString()
+                    : EditorTheme.OSDefault.ToString();
             Settings.Default.UseFlavorFilters = CheckBoxFlavorFilters.Checked;
             Settings.Default.SuggestStoryIDs = CheckBoxSuggestStoryIDs.Checked;
             Settings.Default.AutoSaveInterval = NewAutoSaveInterval;
@@ -112,5 +240,13 @@ namespace Scribe
             DialogResult = DialogResult.OK;
         }
 
+        /// <summary>
+        /// Restores old settings on cancel.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="eventArguments">Ignored.</param>
+        private void CancelButtonControl_Click(object sender, EventArgs eventArguments)
+            => CurrentTheme.SetUpTheme(OldTheme);
+        #endregion
     }
 }

@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Media;
+using System.Text;
 using System.Windows.Forms;
 using ParquetClassLibrary;
 using ParquetClassLibrary.Beings;
@@ -32,36 +34,118 @@ namespace Scribe
         /// <summary>Name of the folder under which all graphics are stored.</summary>
         private const string GraphicsFolderName = "Graphics";
 
+        /// <summary>Dialogue for selecting the project folder to work in.</summary>
+        private static readonly FolderBrowserDialog FolderBrowserDialogue;
+
+        /// <summary>Texts that cannot be used as <see cref="ModelTag"/>s.</summary>
+        private static readonly List<string> ReservedWorldList;
+
+        /// <summary>Indicates to the user that the text entered cannot be used as a <see cref="ModelTag"/>.</summary>
+        internal static readonly string ReservedWordMessage;
+
         #region Initialization
         /// <summary>
         /// Initializes <see cref="EditorCommands"/> asset collections.
         /// </summary>
         static EditorCommands()
         {
+            FolderBrowserDialogue = new FolderBrowserDialog();
+            ReservedWorldList = new List<string> { "Empty", "None", "Other", "Unstarted", "Unused", };
+            ReservedWordMessage = string.Format(CultureInfo.CurrentCulture, Resources.ErrorReservedWord,
+                                                string.Join(", ", ReservedWorldList));
+
             // This comparison forces the Parquet assembly to load.
             if (string.IsNullOrEmpty(ParquetClassLibrary.AssemblyInfo.LibraryVersion))
             {
                 // TODO Ideally EditorCommands should not open message boxes or interact with the UI.
                 SystemSounds.Beep.Play();
                 _ = MessageBox.Show(Resources.ErrorAccessingParquet, Resources.CaptionAccessingParquetError,
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 TypeNamesWithoutGraphics = new List<string> { "Interaction", "Map", "Script" };
                 GraphicalAssetPaths = AppDomain.CurrentDomain.GetAssemblies()
-                                                 .Where(myassembly => string.Equals(myassembly.GetName().Name, "Parquet"))
-                                                 .SelectMany(myassembly => myassembly.GetExportedTypes())
-                                                 .Where(type => typeof(Model).IsAssignableFrom(type)
-                                                             && !type.IsInterface
-                                                             && !type.IsAbstract
-                                                             && !TypeNamesWithoutGraphics.Any(name => type.Name.Contains(name)))
-                                                 .ToDictionary(type => All.GetIDRangeForType(type),
-                                                               type => Path.Combine(GraphicsFolderName, type.Name.Replace("Model", "s")
-                                                                                                         .Replace("Recipe", "Recipes")));
+                                               .Where(myassembly => string.Equals(myassembly.GetName().Name, "Parquet"))
+                                               .SelectMany(myassembly => myassembly.GetExportedTypes())
+                                               .Where(type => typeof(Model).IsAssignableFrom(type)
+                                                           && !type.IsInterface
+                                                           && !type.IsAbstract
+                                                           && !TypeNamesWithoutGraphics.Any(name => type.Name.Contains(name)))
+                                               .ToDictionary(type => All.GetIDRangeForType(type),
+                                                             type => Path.Combine(GraphicsFolderName,
+                                                                                  type.Name.Replace("Model", "s").Replace("Recipe", "Recipes")));
             }
         }
+        #endregion
 
+        #region Validation Routines
+        /// <summary>
+        /// Validates that text is not one of the words reserved by Parquet's serialization routines.
+        /// </summary>
+        /// <param name="newText">The text to validate.</param>
+        /// <returns><c>True</c> if the text is a reserved word, <c>false</c> otherwise.</returns>
+        internal static bool TextIsReserved(string newText)
+            => ReservedWorldList
+               .Any(reservedWord => 0 == string.Compare(newText, reservedWord, comparisonType: StringComparison.OrdinalIgnoreCase));
+
+        /// <summary>
+        /// Replaces all whitespace in the given text with the ASCII space character.
+        /// This will remove unicode whitespace as well as tabs and ends-of-line.
+        /// </summary>
+        /// <param name="inText">The <see cref="string"/> to normalize.</param>
+        /// <returns>The normalized <see cref="string"/>.</returns>
+        internal static string NormalizeWhitespace(string inText)
+        {
+            if (string.IsNullOrEmpty(inText))
+            {
+                return "";
+            }
+            else
+            {
+                var newTextBuilder = new StringBuilder(inText.Length);
+                inText.All(c =>
+                {
+                    var normalC = char.IsWhiteSpace(c)
+                        ? ' '
+                        : c;
+                    newTextBuilder.Append(normalC);
+                    return true;
+                });
+                return newTextBuilder.ToString().Trim();
+            }
+        }
+        #endregion
+
+        #region Setting Up FolderBrowserDialogue
+        /// <summary>
+        /// Opens a dialogue allowing the user to select the folder in which to data files are stored.
+        /// </summary>
+        /// <remarks>
+        /// Ideally this should have been handled via sub-classing, but since <see cref="FolderBrowserDialogue"/>
+        /// is <c>sealed</c> we take care of it here.
+        /// </remarks>
+        /// <param name="inMessage">A prompt to the user, differentiating between loading existing files and creating new blank ones.</param>
+        /// <returns>True if the user selected a folder.</returns>
+        public static bool SelectProjectFolder(string inMessage)
+        {
+            FolderBrowserDialogue.ShowNewFolderButton = true;
+            FolderBrowserDialogue.RootFolder = Settings.Default.DesktopIsDefaultDirectory
+                ? Environment.SpecialFolder.Desktop
+                : Environment.SpecialFolder.MyDocuments;
+            FolderBrowserDialogue.Description = inMessage;
+            FolderBrowserDialogue.SelectedPath = All.ProjectDirectory;
+
+            var response = FolderBrowserDialogue.ShowDialog();
+            if (response == DialogResult.OK)
+            {
+                All.ProjectDirectory = FolderBrowserDialogue.SelectedPath;
+                Settings.Default.MostRecentProject = FolderBrowserDialogue.SelectedPath;
+                Settings.Default.Save();
+                return true;
+            }
+            return false;
+        }
         #endregion
 
         #region Commands
@@ -104,7 +188,7 @@ namespace Scribe
                 }
             }
 
-            #region Create the Asset Folders
+            #region Create the Graphical Asset Folders
             foreach(var folderPath in GraphicalAssetPaths.Values)
             {
                 var pathWithRoot = Path.Combine(All.ProjectDirectory, folderPath);
@@ -153,8 +237,7 @@ namespace Scribe
             // NOTE That currently this is called from the GUI thread and could block on a slow disk or network.
             // I don't forsee this becoming an issue but it's something to keep in mind for possible optimizations.
             => All.CollectionsHaveBeenInitialized
-                ? All.SaveToCSVs()
-                : true;
+            && All.SaveToCSVs();
 
         /// <summary>
         /// Loads game data from files in the current directory.

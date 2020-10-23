@@ -169,11 +169,29 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Workflow.
+        /// </summary>
+        internal static string CaptionWorkflow {
+            get {
+                return ResourceManager.GetString("CaptionWorkflow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to There was an error accessing the Parquet library.  Data might be in an inconsistent state.  :(.
         /// </summary>
         internal static string ErrorAccessingParquet {
             get {
                 return ResourceManager.GetString("ErrorAccessingParquet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An error occured while trying to add an inventory slot.  This likely is a logic error in Scribe or Parquet.  You might want to reload before continuing to work with this inventory.  Sorry about this!.
+        /// </summary>
+        internal static string ErrorAddingSlot {
+            get {
+                return ResourceManager.GetString("ErrorAddingSlot", resourceCulture);
             }
         }
         
@@ -229,6 +247,33 @@ namespace Scribe.Properties {
         internal static string ErrorNewFailed {
             get {
                 return ResourceManager.GetString("ErrorNewFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not parse saved settings value {0}..
+        /// </summary>
+        internal static string ErrorParseFailed {
+            get {
+                return ResourceManager.GetString("ErrorParseFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This value must be an integer greater than 0..
+        /// </summary>
+        internal static string ErrorPositiveIntegersOnly {
+            get {
+                return ResourceManager.GetString("ErrorPositiveIntegersOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The text entered cannot be used.  Parquet reserves the following words: {0}.
+        /// </summary>
+        internal static string ErrorReservedWord {
+            get {
+                return ResourceManager.GetString("ErrorReservedWord", resourceCulture);
             }
         }
         
@@ -299,6 +344,24 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No item definitions exist in this project.  Create some using the Items tab!  ^_^.
+        /// </summary>
+        internal static string WarngingNoItemsExist {
+            get {
+                return ResourceManager.GetString("WarngingNoItemsExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Recent Projects.
+        /// </summary>
+        internal static string WarngingNoRecentProject {
+            get {
+                return ResourceManager.GetString("WarngingNoRecentProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Really quit?  Unsaved changes will be lost!.
         /// </summary>
         internal static string WarningMessageExit {
@@ -313,6 +376,24 @@ namespace Scribe.Properties {
         internal static string WarningMessageReload {
             get {
                 return ResourceManager.GetString("WarningMessageReload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not adding duplicate {0}..
+        /// </summary>
+        internal static string WarningNotAddingDuplicate {
+            get {
+                return ResourceManager.GetString("WarningNotAddingDuplicate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nothing selected to edit..
+        /// </summary>
+        internal static string WarningNothingSelected {
+            get {
+                return ResourceManager.GetString("WarningNothingSelected", resourceCulture);
             }
         }
     }

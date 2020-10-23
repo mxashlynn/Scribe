@@ -58,22 +58,26 @@ namespace Scribe
             // CancelButtonControl
             // 
             this.CancelButtonControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CancelButtonControl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelButtonControl.Location = new System.Drawing.Point(3, 59);
             this.CancelButtonControl.Name = "CancelButtonControl";
             this.CancelButtonControl.Size = new System.Drawing.Size(74, 23);
-            this.CancelButtonControl.TabIndex = 9;
+            this.CancelButtonControl.TabIndex = 2;
             this.CancelButtonControl.Text = "Cancel";
             this.CancelButtonControl.UseVisualStyleBackColor = true;
+            this.CancelButtonControl.Click += new System.EventHandler(this.CancelButtonControl_Click);
             // 
             // OkayButton
             // 
             this.OkayButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.OkayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OkayButton.Location = new System.Drawing.Point(180, 59);
             this.OkayButton.Name = "OkayButton";
             this.OkayButton.Size = new System.Drawing.Size(75, 23);
-            this.OkayButton.TabIndex = 0;
+            this.OkayButton.TabIndex = 1;
             this.OkayButton.Text = "&OK";
             this.OkayButton.UseVisualStyleBackColor = true;
+            this.OkayButton.Click += new System.EventHandler(this.OkayButton_Click);
             // 
             // NewTagLabel
             // 
@@ -93,7 +97,8 @@ namespace Scribe
             this.NewTagTextBox.Multiline = true;
             this.NewTagTextBox.Name = "NewTagTextBox";
             this.NewTagTextBox.Size = new System.Drawing.Size(172, 49);
-            this.NewTagTextBox.TabIndex = 2;
+            this.NewTagTextBox.TabIndex = 0;
+            this.NewTagTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.NewTagTextBox_Validating);
             // 
             // AddTagBox
             // 
@@ -102,6 +107,7 @@ namespace Scribe
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CancelButtonControl;
             this.ClientSize = new System.Drawing.Size(284, 111);
+            this.ControlBox = false;
             this.Controls.Add(this.TableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -114,6 +120,7 @@ namespace Scribe
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Tag";
+            this.Load += new System.EventHandler(this.AddTagBox_Load);
             this.TableLayoutPanel.ResumeLayout(false);
             this.TableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);

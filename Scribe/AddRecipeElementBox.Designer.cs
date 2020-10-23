@@ -63,22 +63,26 @@ namespace Scribe
             // CancelButtonControl
             // 
             this.CancelButtonControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CancelButtonControl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelButtonControl.Location = new System.Drawing.Point(3, 89);
             this.CancelButtonControl.Name = "CancelButtonControl";
             this.CancelButtonControl.Size = new System.Drawing.Size(74, 23);
             this.CancelButtonControl.TabIndex = 8;
             this.CancelButtonControl.Text = "Cancel";
             this.CancelButtonControl.UseVisualStyleBackColor = true;
+            this.CancelButtonControl.Click += new System.EventHandler(this.CancelButtonControl_Click);
             // 
             // OkayButton
             // 
             this.OkayButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.OkayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OkayButton.Location = new System.Drawing.Point(180, 89);
             this.OkayButton.Name = "OkayButton";
             this.OkayButton.Size = new System.Drawing.Size(75, 23);
             this.OkayButton.TabIndex = 3;
             this.OkayButton.Text = "&OK";
             this.OkayButton.UseVisualStyleBackColor = true;
+            this.OkayButton.Click += new System.EventHandler(this.OkayButton_Click);
             // 
             // ElementTagLabel
             // 
@@ -99,6 +103,7 @@ namespace Scribe
             this.ElementTagTextBox.Name = "ElementTagTextBox";
             this.ElementTagTextBox.Size = new System.Drawing.Size(172, 49);
             this.ElementTagTextBox.TabIndex = 5;
+            this.ElementTagTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ElementTagTextBox_Validating);
             // 
             // ElementAmountLabel
             // 
@@ -115,6 +120,7 @@ namespace Scribe
             this.ElementAmountTextBox.Name = "ElementAmountTextBox";
             this.ElementAmountTextBox.Size = new System.Drawing.Size(100, 23);
             this.ElementAmountTextBox.TabIndex = 7;
+            this.ElementAmountTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ElementAmountTextBox_Validating);
             // 
             // AddRecipeElementBox
             // 
@@ -122,6 +128,7 @@ namespace Scribe
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CancelButtonControl;
             this.ClientSize = new System.Drawing.Size(284, 141);
+            this.ControlBox = false;
             this.Controls.Add(this.TableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -134,6 +141,7 @@ namespace Scribe
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Recipe Element";
+            this.Load += new System.EventHandler(this.AddRecipeElementBox_Load);
             this.TableLayoutPanel.ResumeLayout(false);
             this.TableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);

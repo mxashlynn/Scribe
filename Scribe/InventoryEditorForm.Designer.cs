@@ -39,7 +39,9 @@ namespace Scribe
             this.OkayButton = new System.Windows.Forms.Button();
             this.CancelButtonControl = new System.Windows.Forms.Button();
             this.EditorToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.CapacityErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.TableLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CapacityErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // CapacityLabel
@@ -63,53 +65,59 @@ namespace Scribe
             // RemoveSlotButton
             // 
             this.RemoveSlotButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RemoveSlotButton.Location = new System.Drawing.Point(143, 165);
+            this.RemoveSlotButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RemoveSlotButton.Location = new System.Drawing.Point(143, 180);
             this.RemoveSlotButton.Name = "RemoveSlotButton";
             this.RemoveSlotButton.Size = new System.Drawing.Size(124, 23);
             this.RemoveSlotButton.TabIndex = 36;
             this.RemoveSlotButton.Text = "&Remove Slot";
             this.RemoveSlotButton.UseVisualStyleBackColor = true;
+            this.RemoveSlotButton.Click += new System.EventHandler(this.RemoveSlotButton_Click);
             // 
             // AddSlotButton
             // 
             this.AddSlotButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddSlotButton.Location = new System.Drawing.Point(273, 165);
+            this.AddSlotButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddSlotButton.Location = new System.Drawing.Point(273, 180);
             this.AddSlotButton.Name = "AddSlotButton";
             this.AddSlotButton.Size = new System.Drawing.Size(124, 23);
             this.AddSlotButton.TabIndex = 35;
             this.AddSlotButton.Text = "&Add Slot";
             this.AddSlotButton.UseVisualStyleBackColor = true;
+            this.AddSlotButton.Click += new System.EventHandler(this.AddSlotButton_Click);
             // 
             // SlotsListBox
             // 
             this.SlotsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.TableLayoutPanel.SetColumnSpan(this.SlotsListBox, 2);
+            this.SlotsListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.SlotsListBox.FormattingEnabled = true;
             this.SlotsListBox.ItemHeight = 15;
             this.SlotsListBox.Location = new System.Drawing.Point(133, 33);
             this.SlotsListBox.Name = "SlotsListBox";
-            this.SlotsListBox.Size = new System.Drawing.Size(264, 124);
+            this.SlotsListBox.Size = new System.Drawing.Size(264, 139);
             this.SlotsListBox.TabIndex = 37;
+            this.SlotsListBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.SlotsListBox_DrawItem);
             // 
             // CapacityTextBox
             // 
             this.CapacityTextBox.Location = new System.Drawing.Point(133, 3);
             this.CapacityTextBox.Name = "CapacityTextBox";
-            this.CapacityTextBox.Size = new System.Drawing.Size(124, 23);
+            this.CapacityTextBox.Size = new System.Drawing.Size(100, 23);
             this.CapacityTextBox.TabIndex = 50;
+            this.CapacityTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.CapacityTextBox_Validating);
             // 
             // TableLayoutPanel
             // 
             this.TableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TableLayoutPanel.ColumnCount = 5;
+            this.TableLayoutPanel.ColumnCount = 4;
             this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.TableLayoutPanel.Controls.Add(this.OkayButton, 3, 3);
             this.TableLayoutPanel.Controls.Add(this.CancelButtonControl, 2, 3);
             this.TableLayoutPanel.Controls.Add(this.CapacityLabel, 0, 0);
@@ -120,34 +128,41 @@ namespace Scribe
             this.TableLayoutPanel.Controls.Add(this.RemoveSlotButton, 1, 2);
             this.TableLayoutPanel.Location = new System.Drawing.Point(12, 12);
             this.TableLayoutPanel.Name = "TableLayoutPanel";
-            this.TableLayoutPanel.RowCount = 5;
+            this.TableLayoutPanel.RowCount = 4;
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.TableLayoutPanel.Size = new System.Drawing.Size(560, 237);
+            this.TableLayoutPanel.Size = new System.Drawing.Size(530, 237);
             this.TableLayoutPanel.TabIndex = 51;
             // 
             // OkayButton
             // 
             this.OkayButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.OkayButton.Location = new System.Drawing.Point(403, 195);
+            this.OkayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OkayButton.Location = new System.Drawing.Point(403, 210);
             this.OkayButton.Name = "OkayButton";
             this.OkayButton.Size = new System.Drawing.Size(124, 23);
             this.OkayButton.TabIndex = 52;
             this.OkayButton.Text = "&OK";
             this.OkayButton.UseVisualStyleBackColor = true;
+            this.OkayButton.Click += new System.EventHandler(this.OkayButton_Click);
             // 
             // CancelButtonControl
             // 
             this.CancelButtonControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CancelButtonControl.Location = new System.Drawing.Point(273, 195);
+            this.CancelButtonControl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CancelButtonControl.Location = new System.Drawing.Point(273, 210);
             this.CancelButtonControl.Name = "CancelButtonControl";
             this.CancelButtonControl.Size = new System.Drawing.Size(124, 23);
             this.CancelButtonControl.TabIndex = 52;
             this.CancelButtonControl.Text = "Cancel";
             this.CancelButtonControl.UseVisualStyleBackColor = true;
+            this.CancelButtonControl.Click += new System.EventHandler(this.CancelButtonControl_Click);
+            // 
+            // CapacityErrorProvider
+            // 
+            this.CapacityErrorProvider.ContainerControl = this;
             // 
             // InventoryEditorForm
             // 
@@ -155,19 +170,23 @@ namespace Scribe
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CancelButtonControl;
-            this.ClientSize = new System.Drawing.Size(584, 261);
+            this.ClientSize = new System.Drawing.Size(554, 261);
             this.Controls.Add(this.TableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.MinimumSize = new System.Drawing.Size(600, 300);
+            this.MinimumSize = new System.Drawing.Size(570, 300);
             this.Name = "InventoryEditorForm";
             this.Text = "Inventories Editor";
+            this.Load += new System.EventHandler(this.InventoryEditorForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InventoryEditorForm_KeyDown);
             this.TableLayoutPanel.ResumeLayout(false);
             this.TableLayoutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CapacityErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
         private System.Windows.Forms.Label CapacityLabel;
         private System.Windows.Forms.Label InventorySlotsLabel;
         private System.Windows.Forms.Button RemoveSlotButton;
@@ -175,8 +194,9 @@ namespace Scribe
         private System.Windows.Forms.TextBox CapacityTextBox;
         private System.Windows.Forms.ListBox SlotsListBox;
         private System.Windows.Forms.TableLayoutPanel TableLayoutPanel;
+        private System.Windows.Forms.ToolTip EditorToolTip;
         private System.Windows.Forms.Button OkayButton;
         private System.Windows.Forms.Button CancelButtonControl;
-        private System.Windows.Forms.ToolTip EditorToolTip;
+        private System.Windows.Forms.ErrorProvider CapacityErrorProvider;
     }
 }
