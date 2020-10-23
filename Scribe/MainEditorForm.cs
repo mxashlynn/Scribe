@@ -313,16 +313,16 @@ namespace Scribe
             };
 
             editables[typeof(ListBox)].CacheControls(EditorTabs.GetAllChildrenExactlyOfType<ListBox>()
-                                      .Where(listbox => null == listbox.Tag || !listbox.Tag.ToString().Contains(UnthemedControl))
+                                      .Where(listbox => null == listbox.Tag || !listbox.Tag.ToString().Contains(UntrackedControl))
                                       .Cast<Control>());
             editables[typeof(ComboBox)].CacheControls(EditorTabs.GetAllChildrenExactlyOfType<ComboBox>()
-                                       .Where(combobox => null == combobox.Tag || !combobox.Tag.ToString().Contains(UnthemedControl))
+                                       .Where(combobox => null == combobox.Tag || !combobox.Tag.ToString().Contains(UntrackedControl))
                                        .Cast<Control>());
             editables[typeof(TextBox)].CacheControls(EditorTabs.GetAllChildrenExactlyOfType<TextBox>()
-                                      .Where(textbox => null == textbox.Tag || !textbox.Tag.ToString().Contains(UnthemedControl))
+                                      .Where(textbox => null == textbox.Tag || !textbox.Tag.ToString().Contains(UntrackedControl))
                                       .Cast<Control>());
             editables[typeof(CheckBox)].CacheControls(EditorTabs.GetAllChildrenExactlyOfType<CheckBox>()
-                                       .Where(checkbox => null == checkbox.Tag || !checkbox.Tag.ToString().Contains(UnthemedControl))
+                                       .Where(checkbox => null == checkbox.Tag || !checkbox.Tag.ToString().Contains(UntrackedControl))
                                        .Cast<Control>());
             return editables;
         }
