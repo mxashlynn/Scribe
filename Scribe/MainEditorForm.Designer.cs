@@ -3959,6 +3959,7 @@ namespace Scribe
             this.CharacterPronounTableLayoutPanel.SetRowSpan(this.CharacterPronounListBox, 3);
             this.CharacterPronounListBox.Size = new System.Drawing.Size(276, 69);
             this.CharacterPronounListBox.TabIndex = 0;
+            this.CharacterPronounListBox.Tag = "Untracked Control";
             this.CharacterPronounListBox.SelectedIndexChanged += new System.EventHandler(this.CharacterPronounListBox_SelectedIndexChanged);
             // 
             // CharacterPronounSubjectiveLabel
@@ -4539,6 +4540,7 @@ namespace Scribe
             this.ItemInventoryListBox.Name = "ItemInventoryListBox";
             this.ItemInventoryListBox.Size = new System.Drawing.Size(273, 82);
             this.ItemInventoryListBox.TabIndex = 2;
+            this.ItemInventoryListBox.Tag = "Untracked Control";
             // 
             // ItemPictureEditButton
             // 
