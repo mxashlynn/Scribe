@@ -647,8 +647,10 @@ namespace Scribe
                 #endregion
 
                 #region CharacterModels
-                (CharactersTabIndex, "CharacterNameTextBox")
-                    => (input) => ((IMutableCharacterModel)inModel).Name = input.ToString(),
+                (CharactersTabIndex, "CharacterPersonalNameTextBox")
+                    => (input) => ((IMutableCharacterModel)inModel).PersonalName = input.ToString(),
+                (CharactersTabIndex, "CharacterFamilyNameTextBox")
+                    => (input) => ((IMutableCharacterModel)inModel).FamilyName = input.ToString(),
                 (CharactersTabIndex, "CharacterDescriptionTextBox")
                     => (input) => ((IMutableCharacterModel)inModel).Description = input.ToString(),
                 (CharactersTabIndex, "CharacterCommentTextBox")
