@@ -367,6 +367,17 @@ namespace Scribe
                 : 0);
 
         /// <summary>
+        /// Transforms an <c>object</c> into a <c>double</c>, parsing if needed.
+        /// </summary>
+        /// <param name="input">A boxed <c>double</c> or a <c>string</c> representing a <c>double</c>.</param>
+        /// <returns>The integer value given, or 0.0 if no value could be parsed.</returns>
+        private static double ValueToDouble(object input)
+            => input as double?
+            ?? (double.TryParse(input?.ToString() ?? "", NumberStyles.Number, null, out var parsedDouble)
+                ? parsedDouble
+                : 0.0);
+
+        /// <summary>
         /// Transforms an <c>object</c> into an <see cref="ModelID">, parsing if needed.
         /// </summary>
         /// <param name="input">A boxed <see cref="ModelID.None"> or a <c>string</c> representing an <see cref="ModelID">.</param>
@@ -516,25 +527,25 @@ namespace Scribe
 
                 #region Configuration
                 (BiomeRecipesTabIndex, "BiomeLandThresholdTextBox")
-                    => (input) => BiomeConfiguration.LandThresholdFactor = (double)input,
+                    => (input) => BiomeConfiguration.LandThresholdFactor = ValueToDouble(input),
                 (BiomeRecipesTabIndex, "BiomeLiquidThresholdFactorTextBox")
-                    => (input) => BiomeConfiguration.LiquidThresholdFactor = (double)input,
+                    => (input) => BiomeConfiguration.LiquidThresholdFactor = ValueToDouble(input),
                 (BiomeRecipesTabIndex, "BiomeRoomThresholdFactorTextBox")
-                    => (input) => BiomeConfiguration.RoomThresholdFactor = (double)input,
+                    => (input) => BiomeConfiguration.RoomThresholdFactor = ValueToDouble(input),
 
                 (CraftingRecipesTabIndex, "CraftingMinIngredientCountTextBox")
-                    => (input) => CraftConfiguration.IngredientCount = new Range<int>((int)input, CraftConfiguration.IngredientCount.Maximum),
+                    => (input) => CraftConfiguration.IngredientCount = new Range<int>(ValueToInt(input), CraftConfiguration.IngredientCount.Maximum),
                 (CraftingRecipesTabIndex, "CraftingMaxIngredientCountTextBox")
-                    => (input) => CraftConfiguration.IngredientCount = new Range<int>(CraftConfiguration.ProductCount.Minimum, (int)input),
+                    => (input) => CraftConfiguration.IngredientCount = new Range<int>(CraftConfiguration.ProductCount.Minimum, ValueToInt(input)),
                 (CraftingRecipesTabIndex, "CraftingMinProductCountTextBox")
-                    => (input) => CraftConfiguration.ProductCount = new Range<int>((int)input, CraftConfiguration.ProductCount.Maximum),
+                    => (input) => CraftConfiguration.ProductCount = new Range<int>(ValueToInt(input), CraftConfiguration.ProductCount.Maximum),
                 (CraftingRecipesTabIndex, "CraftingMaxProductCountTextBox")
-                    => (input) => CraftConfiguration.ProductCount = new Range<int>(CraftConfiguration.ProductCount.Minimum, (int)input),
+                    => (input) => CraftConfiguration.ProductCount = new Range<int>(CraftConfiguration.ProductCount.Minimum, ValueToInt(input)),
 
                 (RoomRecipesTabIndex, "RoomMinWalkableSpacesTextBox")
-                    => (input) => RoomConfiguration.MinWalkableSpaces = (int)input,
+                    => (input) => RoomConfiguration.MinWalkableSpaces = ValueToInt(input),
                 (RoomRecipesTabIndex, "RoomMaxWalkableSpacesTextBox")
-                    => (input) => RoomConfiguration.MaxWalkableSpaces = (int)input,
+                    => (input) => RoomConfiguration.MaxWalkableSpaces = ValueToInt(input),
                 #endregion
 
                 _ => GetPropertyAccessorForModelAndTabAndControl(GetSelectedModelForTab(inTabIndex), inTabIndex, inControl),
@@ -1207,15 +1218,21 @@ namespace Scribe
                     break;
                 case BiomeRecipesTabIndex:
                     RepopulateListBox(BiomeListBox, All.BiomeRecipes);
-                    // TODO Biomes
+                    BiomeLandThresholdTextBox.Text = BiomeConfiguration.LandThresholdFactor.ToString();
+                    BiomeLiquidThresholdFactorTextBox.Text = BiomeConfiguration.LiquidThresholdFactor.ToString();
+                    BiomeRoomThresholdFactorTextBox.Text = BiomeConfiguration.RoomThresholdFactor.ToString();
                     break;
                 case CraftingRecipesTabIndex:
                     RepopulateListBox(CraftingListBox, All.CraftingRecipes);
-                    // TODO Crafting
+                    CraftingMinIngredientCountTextBox.Text = CraftConfiguration.IngredientCount.Minimum.ToString();
+                    CraftingMaxIngredientCountTextBox.Text = CraftConfiguration.IngredientCount.Maximum.ToString();
+                    CraftingMinProductCountTextBox.Text = CraftConfiguration.ProductCount.Minimum.ToString();
+                    CraftingMaxProductCountTextBox.Text = CraftConfiguration.ProductCount.Maximum.ToString();
                     break;
                 case RoomRecipesTabIndex:
                     RepopulateListBox(RoomListBox, All.RoomRecipes);
-                    // TODO Recipes
+                    RoomMinWalkableSpacesTextBox.Text = RoomConfiguration.MinWalkableSpaces.ToString();
+                    RoomMaxWalkableSpacesTextBox.Text = RoomConfiguration.MaxWalkableSpaces.ToString();
                     break;
                 case MapsTabIndex:
                     // TODO Maps
