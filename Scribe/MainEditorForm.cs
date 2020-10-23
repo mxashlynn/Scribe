@@ -210,8 +210,8 @@ namespace Scribe
                 [FurnishingNameTextBox] = FurnishingListBox,
                 [CollectibleNameTextBox] = CollectibleListBox,
                 [CritterNameTextBox] = CritterListBox,
-                //[CharacterPersonalNameTextBox] = CharacterListBox;
-                //[CharacterFamilyNameTextBox] = CharacterListBox;
+                [CharacterPersonalNameTextBox] = CharacterListBox,
+                [CharacterFamilyNameTextBox] = CharacterListBox,
                 [CharacterPronounSubjectiveTextBox] = CharacterPronounListBox,
                 [CharacterPronounObjectiveTextBox] = CharacterPronounListBox,
                 [CharacterPronounDeterminerTextBox] = CharacterPronounListBox,
