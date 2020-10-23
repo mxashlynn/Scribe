@@ -204,13 +204,25 @@ namespace Scribe
             // NOTE that this section must be updated by hand whenever listed controls are adjusted.
             ControlsWhoseContentIsListed = new Dictionary<Control, ListBox>
             {
+                [GameNameTextBox] = GameListBox,
+                [FloorNameTextBox] = FloorListBox,
+                [BlockNameTextBox] = BlockListBox,
+                [FurnishingNameTextBox] = FurnishingListBox,
+                [CollectibleNameTextBox] = CollectibleListBox,
+                [CritterNameTextBox] = CritterListBox,
                 //[CharacterPersonalNameTextBox] = CharacterListBox;
                 //[CharacterFamilyNameTextBox] = CharacterListBox;
                 [CharacterPronounSubjectiveTextBox] = CharacterPronounListBox,
                 [CharacterPronounObjectiveTextBox] = CharacterPronounListBox,
                 [CharacterPronounDeterminerTextBox] = CharacterPronounListBox,
                 [CharacterPronounPossessiveTextBox] = CharacterPronounListBox,
-                [CharacterPronounReflexiveTextBox] = CharacterPronounListBox
+                [CharacterPronounReflexiveTextBox] = CharacterPronounListBox,
+                [ItemNameTextBox] = ItemListBox,
+                [BiomeNameTextBox] = BiomeListBox,
+                [CraftingNameTextBox] = CraftingListBox,
+                [RoomNameTextBox] = RoomListBox,
+                // TODO Maps?
+                // TODO Scripts?
             };
             #endregion
 
