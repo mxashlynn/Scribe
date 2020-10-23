@@ -4189,7 +4189,6 @@ namespace Scribe
             this.CharacterPersonalNameTextBox.Name = "CharacterPersonalNameTextBox";
             this.CharacterPersonalNameTextBox.Size = new System.Drawing.Size(144, 20);
             this.CharacterPersonalNameTextBox.TabIndex = 23;
-            this.CharacterPersonalNameTextBox.TextChanged += new System.EventHandler(this.CharacterPersonalNameTextBox_TextChanged);
             // 
             // CharacterFamilyNameTextBox
             // 
@@ -4197,7 +4196,6 @@ namespace Scribe
             this.CharacterFamilyNameTextBox.Name = "CharacterFamilyNameTextBox";
             this.CharacterFamilyNameTextBox.Size = new System.Drawing.Size(144, 20);
             this.CharacterFamilyNameTextBox.TabIndex = 23;
-            this.CharacterFamilyNameTextBox.TextChanged += new System.EventHandler(this.CharacterFamilyNameTextBox_TextChanged);
             // 
             // CharacterDescriptionTextBox
             // 

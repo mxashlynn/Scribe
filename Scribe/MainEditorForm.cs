@@ -1756,7 +1756,22 @@ namespace Scribe
                                             (object oldValue) => EditableControls[typeof(ListBox)][listbox] = oldValue));
             }
 
-            // Update the model name representing the alteredControl if needed.
+
+            // Suggest a StoryCharacterID if needed and requested.
+            // For timing reasons, this must happen before updating the model's ListBox.
+            if ((alteredControl.Name.Equals(CharacterPersonalNameTextBox.Name)
+                || alteredControl.Name.Equals(CharacterFamilyNameTextBox.Name))
+                && Settings.Default.SuggestStoryIDs
+                && string.IsNullOrEmpty(CharacterStoryIDTextBox.Text))
+            {
+                var suggestedID =
+                    $"{CharacterPersonalNameTextBox.Text.ToUpperInvariant()}_{CharacterFamilyNameTextBox.Text.ToUpperInvariant()}";
+                var StoryIDPropertyAccessor = GetPropertyAccessorForTabAndControl(EditorTabs.SelectedIndex, CharacterStoryIDTextBox);
+                CharacterStoryIDTextBox.Text = suggestedID;
+                StoryIDPropertyAccessor(suggestedID);
+            }
+
+            // Update the model name representing the alteredControl in the associated ListBox if needed.
             if (ControlsWhoseContentIsListed.ContainsKey(alteredControl))
             {
                 var listToUpdate = ControlsWhoseContentIsListed[alteredControl];
@@ -2371,50 +2386,6 @@ namespace Scribe
             {
                 MainToolStripStatusLabel.Text = Resources.WarningNothingSelected;
                 SystemSounds.Beep.Play();
-            }
-        }
-
-        /// <summary>
-        /// Provides a suggested <see cref="CharacterModel.StoryCharacterID"/> if needed.
-        /// </summary>
-        /// <param name="sender">The <see cref="this.PersonalNameTextBox"/>.</param>
-        /// <param name="eventArguments">Ignored.</param>
-        private void CharacterPersonalNameTextBox_TextChanged(object sender, EventArgs eventArguments)
-        {
-            if (Settings.Default.SuggestStoryIDs)
-            {
-                var model = (CharacterModel)GetSelectedModelForTab(EditorTabs.SelectedIndex);
-                if (sender is TextBox alteredControl
-                    && null != model
-                    && string.IsNullOrEmpty(model.StoryCharacterID)
-                    && !string.IsNullOrEmpty(model.FamilyName)
-                    && !string.IsNullOrEmpty(alteredControl.Text))
-                {
-                    CharacterStoryIDTextBox.Text = ((IMutableCharacterModel)model).StoryCharacterID =
-                        $"{alteredControl.Text.ToUpperInvariant()}_{model.FamilyName.ToUpperInvariant()}";
-                }
-            }
-        }
-
-        /// <summary>
-        /// Provides a suggested <see cref="CharacterModel.StoryCharacterID"/> if needed.
-        /// </summary>
-        /// <param name="sender">The <see cref="this.FamilyNameTextBox"/>.</param>
-        /// <param name="eventArguments">Ignored.</param>
-        private void CharacterFamilyNameTextBox_TextChanged(object sender, EventArgs eventArguments)
-        {
-            if (Settings.Default.SuggestStoryIDs)
-            {
-                var model = (CharacterModel)GetSelectedModelForTab(EditorTabs.SelectedIndex);
-                if (sender is TextBox alteredControl
-                    && null != model
-                    && string.IsNullOrEmpty(model.StoryCharacterID)
-                    && !string.IsNullOrEmpty(model.PersonalName)
-                    && !string.IsNullOrEmpty(alteredControl.Text))
-                {
-                    CharacterStoryIDTextBox.Text = ((IMutableCharacterModel)model).StoryCharacterID =
-                        $"{model.PersonalName.ToUpperInvariant()}_{alteredControl.Text.ToUpperInvariant()}";
-                }
             }
         }
 
