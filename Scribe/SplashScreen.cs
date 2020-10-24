@@ -60,7 +60,7 @@ namespace Scribe
                 return;
             }
 
-            if (EditorCommands.CreateTemplatesInProjectFolder()
+            if (TemplatesMessageBox.CreateTemplatesInProjectFolder()
                 && EditorCommands.LoadDataFiles())
             {
                 ScribeProgram.ShowEditor();

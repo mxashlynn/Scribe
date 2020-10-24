@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Media;
 using System.Text;
 using System.Windows.Forms;
 using ParquetClassLibrary;
@@ -57,10 +56,7 @@ namespace Scribe
             // This comparison forces the Parquet assembly to load.
             if (string.IsNullOrEmpty(ParquetClassLibrary.AssemblyInfo.LibraryVersion))
             {
-                // TODO Ideally EditorCommands should not open message boxes or interact with the UI.
-                SystemSounds.Beep.Play();
-                _ = MessageBox.Show(Resources.ErrorAccessingParquet, Resources.CaptionAccessingParquetError,
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw new InvalidOperationException(Resources.ErrorAccessingParquet);
             }
             else
             {
@@ -168,28 +164,11 @@ namespace Scribe
                 : Path.Combine(All.ProjectDirectory, GraphicsFolderName);
 
         /// <summary>
-        /// Attempts to create new, blank game data files in the current folder.
+        /// Requests that the system create the folder structure for a new project.
         /// </summary>
-        /// <returns><c>true</c> if the files were successfully created; otherwise, <c>false</c>.</returns>
-        internal static bool CreateTemplatesInProjectFolder()
+        internal static void CreateGraphicalAssetFolders()
         {
-            while (Directory.GetFiles(All.ProjectDirectory).Length > 0)
-            {
-                // Loop here to allow the user to empty the given directory if desired.
-                // TODO Ideally EditorCommands should not open message boxes or interact with the UI.
-                SystemSounds.Beep.Play();
-                if (MessageBox.Show(Resources.ErrorFolderNotEmpty,
-                                    Resources.CaptionFolderNotEmptyError,
-                                    MessageBoxButtons.RetryCancel,
-                                    MessageBoxIcon.Error) == DialogResult.Cancel)
-                {
-                    // If they cancel, simply abort.
-                    return false;
-                }
-            }
-
-            #region Create the Graphical Asset Folders
-            foreach(var folderPath in GraphicalAssetPaths.Values)
+            foreach (var folderPath in GraphicalAssetPaths.Values)
             {
                 var pathWithRoot = Path.Combine(All.ProjectDirectory, folderPath);
                 if (!Directory.Exists(pathWithRoot))
@@ -197,9 +176,13 @@ namespace Scribe
                     _ = Directory.CreateDirectory(pathWithRoot);
                 }
             }
-            #endregion
+        }
 
-            #region Create the Templates
+        /// <summary>
+        /// Requests that the system create blank files for a new project.
+        /// </summary>
+        internal static void CreateTemplateFiles()
+        {
             PronounGroup.PutRecords(Enumerable.Empty<PronounGroup>());
             BiomeConfiguration.PutRecord();
             CraftConfiguration.PutRecord();
@@ -221,9 +204,6 @@ namespace Scribe
             ModelCollection<RoomRecipe>.Default.PutRecordsForType<RoomRecipe>();
             ModelCollection<ScriptModel>.Default.PutRecordsForType<ScriptModel>();
             ModelCollection<ItemModel>.Default.PutRecordsForType<ItemModel>();
-            #endregion
-
-            return true;
         }
 
         /// <summary>
