@@ -1,5 +1,4 @@
 using System.Drawing;
-using Scribe.Properties;
 
 namespace Scribe
 {
