@@ -2742,7 +2742,7 @@ namespace Scribe
         /// <param name="eventArguments">Addional event data.</param>
         private void NewToolStripMenuItem_Click(object sender, EventArgs eventArguments)
         {
-            if (!EditorCommands.SelectProjectFolder(Resources.InfoMessageNew))
+            if (!EditorCommands.SelectProjectFolder(Resources.InfoMessageNew, Resources.FolderNameNewProject))
             {
                 return;
             }
@@ -2768,7 +2768,7 @@ namespace Scribe
         /// <param name="eventArguments">Addional event data.</param>
         private void LoadToolStripMenuItem_Click(object sender, EventArgs eventArguments)
         {
-            if (!EditorCommands.SelectProjectFolder(Resources.InfoMessageLoad))
+            if (!EditorCommands.SelectProjectFolder(Resources.InfoMessageLoad, Resources.FolderNameOldProject))
             {
                 return;
             }

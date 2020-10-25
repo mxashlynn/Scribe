@@ -49,13 +49,13 @@ namespace Scribe
         }
 
         /// <summary>
-        /// Attempts to load the most recently-edited project.
+        /// Attempts to create a new project.
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="eventArguments">Ignored.</param>
         private void ButtonNewProject_Click(object sender, EventArgs eventArguments)
         {
-            if (!EditorCommands.SelectProjectFolder(Resources.InfoMessageNew))
+            if (!EditorCommands.SelectProjectFolder(Resources.InfoMessageNew, Resources.FolderNameNewProject))
             {
                 return;
             }
@@ -75,13 +75,13 @@ namespace Scribe
         }
 
         /// <summary>
-        /// Attempts to load the most recently-edited project.
+        /// Attempts to load a saved project.
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="eventArguments">Ignored.</param>
         private void ButtonLoadProject_Click(object sender, EventArgs eventArguments)
         {
-            if (!EditorCommands.SelectProjectFolder(Resources.InfoMessageLoad))
+            if (!EditorCommands.SelectProjectFolder(Resources.InfoMessageLoad, Resources.FolderNameOldProject))
             {
                 return;
             }

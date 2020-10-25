@@ -123,17 +123,20 @@ namespace Scribe
         /// </remarks>
         /// <param name="inMessage">A prompt to the user, differentiating between loading existing files and creating new blank ones.</param>
         /// <returns>True if the user selected a folder.</returns>
-        public static bool SelectProjectFolder(string inMessage)
+        public static bool SelectProjectFolder(string inMessage, string inDefaultFolderName)
         {
             FolderBrowserDialogue.ShowNewFolderButton = true;
-            FolderBrowserDialogue.RootFolder = Settings.Default.DefaultDirectory
-                ? Environment.SpecialFolder.Desktop
-                : Environment.SpecialFolder.MyDocuments;
             FolderBrowserDialogue.Description = inMessage;
-            FolderBrowserDialogue.SelectedPath = All.ProjectDirectory;
+            FolderBrowserDialogue.RootFolder = Environment.SpecialFolder.MyComputer;
+            var parentFolder = Settings.Default.DefaultDirectory switch
+            {
+                nameof(DefaultDirectory.Desktop) => Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
+                nameof(DefaultDirectory.Documents) => Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+                _ => All.ProjectDirectory,
+            };
+            FolderBrowserDialogue.SelectedPath = Path.Combine(parentFolder, inDefaultFolderName);
 
-            var response = FolderBrowserDialogue.ShowDialog();
-            if (response == DialogResult.OK)
+            if (FolderBrowserDialogue.ShowDialog() == DialogResult.OK)
             {
                 All.ProjectDirectory = FolderBrowserDialogue.SelectedPath;
                 Settings.Default.MostRecentProject = FolderBrowserDialogue.SelectedPath;

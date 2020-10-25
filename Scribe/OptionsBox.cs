@@ -48,7 +48,7 @@ namespace Scribe
                 { EditorTheme.Colorful.ToString(), RadioButtonColorfulTheme },
                 { EditorTheme.OSDefault.ToString(), RadioButtonOSDefaultTheme },
             };
-            ThemeRadioButtons = new Dictionary<string, RadioButton>
+            DirectoryRadioButtons = new Dictionary<string, RadioButton>
             {
                 { DefaultDirectory.Desktop.ToString(), RadioButtonDefaultToDesktop },
                 { DefaultDirectory.Documents.ToString(), RadioButtonDefaultToDocuments },

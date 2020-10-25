@@ -287,6 +287,24 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New Game.
+        /// </summary>
+        internal static string FolderNameNewProject {
+            get {
+                return ResourceManager.GetString("FolderNameNewProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to *.
+        /// </summary>
+        internal static string FolderNameOldProject {
+            get {
+                return ResourceManager.GetString("FolderNameOldProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap ImageNotFoundGraphic {
@@ -306,7 +324,7 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select New Project Folder.
+        ///   Looks up a localized string similar to New Project Folder.
         /// </summary>
         internal static string InfoMessageNew {
             get {
