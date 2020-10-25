@@ -1166,11 +1166,15 @@ namespace Scribe
         {
             switch (EditorTabs.SelectedIndex)
             {
-                // TODO Add secondary container controls that may be out of date for each tab.
                 case GamesTabIndex:
                     RepopulateListBox(GameListBox, All.Games);
                     RepopulateComboBox(GamePlayerCharacterComboBox, All.Characters);
                     RepopulateComboBox(GameFirstScriptComboBox, All.Scripts);
+                    break;
+                case FloorsTabIndex:
+                    RepopulateListBox(FloorListBox, All.Floors);
+                    RepopulateComboBox(FloorEquivalentItemComboBox, All.Items);
+                    RepopulateComboBox(FloorModificationToolComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(ModificationTool))));
                     break;
                 case BlocksTabIndex:
                     RepopulateListBox(BlockListBox, All.Blocks);
@@ -1178,11 +1182,6 @@ namespace Scribe
                     RepopulateComboBox(BlockGatherToolComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(GatheringTool))));
                     RepopulateComboBox(BlockGatherEffectComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(GatheringEffect))));
                     RepopulateComboBox(BlockDroppedCollectibleIDComboBox, All.Collectibles);
-                    break;
-                case FloorsTabIndex:
-                    RepopulateListBox(FloorListBox, All.Floors);
-                    RepopulateComboBox(FloorEquivalentItemComboBox, All.Items);
-                    RepopulateComboBox(FloorModificationToolComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(ModificationTool))));
                     break;
                 case FurnishingsTabIndex:
                     RepopulateListBox(FurnishingListBox, All.Furnishings);
@@ -1204,6 +1203,7 @@ namespace Scribe
                     RepopulateListBox(CharacterListBox, All.Characters);
                     RepopulateComboBox(CharacterNativeBiomeComboBox, All.BiomeRecipes);
                     RepopulateComboBox(CharacterPrimaryBehaviorComboBox, All.Scripts);
+                    // This CharacterPronounComboBox needs to be updated when pronouns are added or removed, too!
                     RepopulateComboBox(CharacterPronounComboBox, All.PronounGroups.Select(pronounGroup => pronounGroup.GetKey()));
                     RepopulateComboBox(CharacterStartingDialogueComboBox, All.Interactions);
                     RepopulateListBox(CharacterPronounListBox, All.PronounGroups);
