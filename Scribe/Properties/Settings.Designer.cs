@@ -61,13 +61,13 @@ namespace Scribe.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool DesktopIsDefaultDirectory {
+        [global::System.Configuration.DefaultSettingValueAttribute("Desktop")]
+        public string DefaultDirectory {
             get {
-                return ((bool)(this["DesktopIsDefaultDirectory"]));
+                return ((string)(this["DefaultDirectory"]));
             }
             set {
-                this["DesktopIsDefaultDirectory"] = value;
+                this["DefaultDirectory"] = value;
             }
         }
         

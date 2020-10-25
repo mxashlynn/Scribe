@@ -126,7 +126,7 @@ namespace Scribe
         public static bool SelectProjectFolder(string inMessage)
         {
             FolderBrowserDialogue.ShowNewFolderButton = true;
-            FolderBrowserDialogue.RootFolder = Settings.Default.DesktopIsDefaultDirectory
+            FolderBrowserDialogue.RootFolder = Settings.Default.DefaultDirectory
                 ? Environment.SpecialFolder.Desktop
                 : Environment.SpecialFolder.MyDocuments;
             FolderBrowserDialogue.Description = inMessage;
