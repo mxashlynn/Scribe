@@ -1054,7 +1054,7 @@ namespace Scribe
 
             RepopulateVisibleControls();
 
-            // TODO Remove this and set up real progress bar animation (e.g. file i/o).
+            // TODO Implement progress bar animation (e.g. file i/o) and remove this test.
             ToolStripProgressBar.Value = 35;
             EditorStatusStrip.Update();
         }
