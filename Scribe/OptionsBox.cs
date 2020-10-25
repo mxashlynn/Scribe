@@ -23,12 +23,18 @@ namespace Scribe
         /// <summary>The <see cref="EditorTheme"/> that was set when the form was shown.</summary>
         private EditorTheme OldTheme;
 
+        /// <summary>The <see cref="DefaultDirectory"/> that was set when the form was shown.</summary>
+        private DefaultDirectory OldDirectory;
+        
         /// <summary>User-set autosave interval.  Guaranteed to be valid when <see cref="OptionsBox.FormClosingEventHandler"/> runs.</summary>
         private int NewAutoSaveInterval;
 
         /// <summary>The UI elements used to represent the current <see cref="EditorTheme"/>.</summary>
         private readonly Dictionary<string, RadioButton> ThemeRadioButtons;
 
+        /// <summary>The UI elements used to represent the current <see cref="DefaultDirectory"/>.</summary>
+        private readonly Dictionary<string, RadioButton> DirectoryRadioButtons;
+                
         #region Initialization
         /// <summary>
         /// Initialize a new <see cref="OptionsBox"/>.
@@ -41,6 +47,12 @@ namespace Scribe
                 { EditorTheme.Femme.ToString(), RadioButtonFemmeTheme },
                 { EditorTheme.Colorful.ToString(), RadioButtonColorfulTheme },
                 { EditorTheme.OSDefault.ToString(), RadioButtonOSDefaultTheme },
+            };
+            ThemeRadioButtons = new Dictionary<string, RadioButton>
+            {
+                { DefaultDirectory.Desktop.ToString(), RadioButtonDefaultToDesktop },
+                { DefaultDirectory.Documents.ToString(), RadioButtonDefaultToDocuments },
+                { DefaultDirectory.Working.ToString(), RadioButtonDefaultToWorking },
             };
         }
 
@@ -63,12 +75,21 @@ namespace Scribe
             ThemeRadioButtons.Values.Select(radioButton => radioButton.Checked = false);
             ThemeRadioButtons[Settings.Default.CurrentEditorTheme].Checked = true;
 
+            if (!Enum.TryParse(Settings.Default.DefaultDirectory, out OldDirectory))
+            {
+                OldDirectory = DefaultDirectory.Desktop;
+                SystemSounds.Beep.Play();
+                var message = string.Format(CultureInfo.CurrentCulture, Resources.ErrorParseFailed,
+                                            nameof(Settings.Default.DefaultDirectory));
+                _ = MessageBox.Show(message, Resources.CaptionError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            DirectoryRadioButtons.Values.Select(radioButton => radioButton.Checked = false);
+            DirectoryRadioButtons[Settings.Default.DefaultDirectory].Checked = true;
+
             CheckBoxFlavorFilters.Checked = Settings.Default.UseFlavorFilters;
             CheckBoxSuggestStoryIDs.Checked = Settings.Default.SuggestStoryIDs;
             NewAutoSaveInterval = Settings.Default.AutoSaveInterval;
             TextBoxAutoSaveInterval.Text = NewAutoSaveInterval.ToString();
-            RadioButtonDefaultToDesktop.Checked = Settings.Default.DesktopIsDefaultDirectory;
-            RadioButtonDefaultToDocuments.Checked = !Settings.Default.DesktopIsDefaultDirectory;
             RadioButtonEditInCustomApp.Checked = Settings.Default.EditInApp;
             RadioButtonEditInOSDefault.Checked = !Settings.Default.EditInApp;
             TextBoxImageEditorPath.Text = Settings.Default.ImageEditor;
@@ -229,10 +250,14 @@ namespace Scribe
                 : RadioButtonColorfulTheme.Checked
                     ? EditorTheme.Colorful.ToString()
                     : EditorTheme.OSDefault.ToString();
+            Settings.Default.DefaultDirectory = RadioButtonDefaultToDesktop.Checked
+                ? DefaultDirectory.Desktop.ToString()
+                : RadioButtonDefaultToDocuments.Checked
+                    ? DefaultDirectory.Documents.ToString()
+                    : DefaultDirectory.Working.ToString();
             Settings.Default.UseFlavorFilters = CheckBoxFlavorFilters.Checked;
             Settings.Default.SuggestStoryIDs = CheckBoxSuggestStoryIDs.Checked;
             Settings.Default.AutoSaveInterval = NewAutoSaveInterval;
-            Settings.Default.DesktopIsDefaultDirectory = RadioButtonDefaultToDesktop.Checked;
             Settings.Default.EditInApp = RadioButtonEditInCustomApp.Checked;
             Settings.Default.ImageEditor = TextBoxImageEditorPath.Text;
             Settings.Default.Save();

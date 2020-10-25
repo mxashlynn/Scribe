@@ -31,6 +31,7 @@ namespace Scribe
             this.TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.CancelButtonControl = new System.Windows.Forms.Button();
             this.PanelDefaultFolder = new System.Windows.Forms.Panel();
+            this.RadioButtonDefaultToWorking = new System.Windows.Forms.RadioButton();
             this.RadioButtonDefaultToDesktop = new System.Windows.Forms.RadioButton();
             this.RadioButtonDefaultToDocuments = new System.Windows.Forms.RadioButton();
             this.LabelTheme = new System.Windows.Forms.Label();
@@ -120,12 +121,23 @@ namespace Scribe
             this.PanelDefaultFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.PanelDefaultFolder.Controls.Add(this.RadioButtonDefaultToWorking);
             this.PanelDefaultFolder.Controls.Add(this.RadioButtonDefaultToDesktop);
             this.PanelDefaultFolder.Controls.Add(this.RadioButtonDefaultToDocuments);
             this.PanelDefaultFolder.Location = new System.Drawing.Point(163, 153);
             this.PanelDefaultFolder.Name = "PanelDefaultFolder";
             this.PanelDefaultFolder.Size = new System.Drawing.Size(320, 24);
             this.PanelDefaultFolder.TabIndex = 28;
+            // 
+            // RadioButtonDefaultToWorking
+            // 
+            this.RadioButtonDefaultToWorking.AutoSize = true;
+            this.RadioButtonDefaultToWorking.Location = new System.Drawing.Point(212, 5);
+            this.RadioButtonDefaultToWorking.Name = "RadioButtonDefaultToWorking";
+            this.RadioButtonDefaultToWorking.Size = new System.Drawing.Size(91, 19);
+            this.RadioButtonDefaultToWorking.TabIndex = 2;
+            this.RadioButtonDefaultToWorking.Text = "Working Dir.";
+            this.RadioButtonDefaultToWorking.UseVisualStyleBackColor = true;
             // 
             // RadioButtonDefaultToDesktop
             // 
@@ -423,5 +435,6 @@ namespace Scribe
         private System.Windows.Forms.RadioButton RadioButtonEditInCustomApp;
         private System.Windows.Forms.TextBox TextBoxImageEditorPath;
         private System.Windows.Forms.Label LabelImageEditorPath;
+        private System.Windows.Forms.RadioButton RadioButtonDefaultToWorking;
     }
 }
