@@ -1203,7 +1203,6 @@ namespace Scribe
                     RepopulateListBox(CharacterListBox, All.Characters);
                     RepopulateComboBox(CharacterNativeBiomeComboBox, All.BiomeRecipes);
                     RepopulateComboBox(CharacterPrimaryBehaviorComboBox, All.Scripts);
-                    // This CharacterPronounComboBox needs to be updated when pronouns are added or removed, too!
                     RepopulateComboBox(CharacterPronounComboBox, All.PronounGroups.Select(pronounGroup => pronounGroup.GetKey()));
                     RepopulateComboBox(CharacterStartingDialogueComboBox, All.Interactions);
                     RepopulateListBox(CharacterPronounListBox, All.PronounGroups);
@@ -1793,6 +1792,15 @@ namespace Scribe
             {
                 var listToUpdate = ControlsWhoseContentIsListed[alteredControl];
                 listToUpdate.Items[listToUpdate.SelectedIndex] = listToUpdate.SelectedItem;
+
+                // In the case of PronounGroups, a secondar model name needs to be updated.
+                if (listToUpdate == CharacterPronounListBox)
+                {
+                    var oldIndex = CharacterPronounComboBox.SelectedIndex;
+                    RepopulateComboBox(CharacterPronounComboBox,
+                                       All.PronounGroups.Select(pronounGroup => pronounGroup.GetKey()));
+                    CharacterPronounComboBox.SelectedIndex = oldIndex;
+                }
             }
         }
 
@@ -2423,15 +2431,19 @@ namespace Scribe
             ChangeManager.AddAndExecute(new ChangeList(groupToAdd, $"add new Pronoun Group definition",
                                         (object databaseValue) =>
                                         {
-                                            ((ICollection<PronounGroup>)All.PronounGroups).Add((PronounGroup)databaseValue);
-                                            _ = CharacterPronounListBox.Items.Add(databaseValue);
-                                            CharacterPronounListBox.SelectedItem = databaseValue;
+                                            var pronounGroup = (PronounGroup)databaseValue;
+                                            ((ICollection<PronounGroup>)All.PronounGroups).Add(pronounGroup);
+                                            _ = CharacterPronounListBox.Items.Add(pronounGroup);
+                                            _ = CharacterPronounComboBox.Items.Add(pronounGroup.GetKey());
+                                            CharacterPronounListBox.SelectedItem = pronounGroup;
                                             HasUnsavedChanges = true;
                                         },
                                         (object databaseValue) =>
                                         {
-                                            ((ICollection<PronounGroup>)All.PronounGroups).Remove((PronounGroup)databaseValue);
-                                            CharacterPronounListBox.Items.Remove(databaseValue);
+                                            var pronounGroup = (PronounGroup)databaseValue;
+                                            ((ICollection<PronounGroup>)All.PronounGroups).Remove(pronounGroup);
+                                            CharacterPronounListBox.Items.Remove(pronounGroup);
+                                            CharacterPronounComboBox.Items.Remove(pronounGroup.GetKey());
                                             CharacterPronounListBox.SelectedItem = null;
                                             HasUnsavedChanges = true;
                                         }));
@@ -2459,16 +2471,20 @@ namespace Scribe
             ChangeManager.AddAndExecute(new ChangeList(groupToRemove, $"remove Pronoun Group {groupToRemove.GetKey()}",
                                         (object databaseValue) =>
                                         {
-                                            ((ICollection<PronounGroup>)All.PronounGroups).Remove((PronounGroup)databaseValue);
-                                            CharacterPronounListBox.Items.Remove(databaseValue);
+                                            var pronounGroup = (PronounGroup)databaseValue;
+                                            ((ICollection<PronounGroup>)All.PronounGroups).Remove(pronounGroup);
+                                            CharacterPronounListBox.Items.Remove(pronounGroup);
+                                            CharacterPronounComboBox.Items.Remove(pronounGroup.GetKey());
                                             CharacterPronounListBox.SelectedItem = null;
                                             HasUnsavedChanges = true;
                                         },
                                         (object databaseValue) =>
                                         {
-                                            ((ICollection<PronounGroup>)All.Characters).Add((PronounGroup)databaseValue);
-                                            _ = CharacterPronounListBox.Items.Add(databaseValue);
-                                            CharacterPronounListBox.SelectedItem = databaseValue;
+                                            var pronounGroup = (PronounGroup)databaseValue;
+                                            ((ICollection<PronounGroup>)All.PronounGroups).Add(pronounGroup);
+                                            _ = CharacterPronounListBox.Items.Add(pronounGroup);
+                                            _ = CharacterPronounComboBox.Items.Add(pronounGroup.GetKey());
+                                            CharacterPronounListBox.SelectedItem = pronounGroup;
                                             HasUnsavedChanges = true;
                                         }));
         }
