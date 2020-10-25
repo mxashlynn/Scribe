@@ -223,11 +223,11 @@ Folder: {1}</value>
     <value>..\Resources\NotFound.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="InfoMessageLoad" xml:space="preserve">
-    <value>Select the project folder to load.</value>
+    <value>Select Project Folder</value>
     <comment>Instructions string.</comment>
   </data>
   <data name="InfoMessageNew" xml:space="preserve">
-    <value>Select the new project folder.</value>
+    <value>Select New Project Folder</value>
     <comment>Instructions string.</comment>
   </data>
   <data name="ParquetIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
