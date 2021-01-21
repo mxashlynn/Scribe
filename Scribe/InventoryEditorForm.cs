@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Media;
@@ -29,7 +30,7 @@ namespace Scribe
         /// An <see cref="Inventory"/> that the user interacts with in this form.
         /// It is only attached to the <see cref="CharacterModel"/> if the user selects the <see cref="OkayButton"/>.
         /// </summary>
-        private IMutableInventory WorkingInventory { get; set; }
+        private Inventory WorkingInventory { get; set; }
         #endregion
 
         #region Initialization
@@ -225,7 +226,7 @@ namespace Scribe
         /// <param name="eventArguments">Additional event data.</param>
         private void OkayButton_Click(object sender, EventArgs eventArguments)
         {
-            CurrentCharacter.StartingInventory.Clear();
+            ((ICollection<InventorySlot>)CurrentCharacter.StartingInventory).Clear();
             CurrentCharacter.StartingInventory.Capacity = WorkingInventory.Capacity;
             foreach (var inventorySlot in WorkingInventory)
             {
