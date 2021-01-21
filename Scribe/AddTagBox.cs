@@ -86,7 +86,7 @@ namespace Scribe
 
         #region Closing Form
         /// <summary>
-        /// Closes the <see cref="AddTagBox"/>, signalling that the entered tag text was accepted.
+        /// Closes the <see cref="AddTagBox"/>, signaling that the entered tag text was accepted.
         /// </summary>
         /// <param name="sender">The originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>
@@ -99,7 +99,7 @@ namespace Scribe
         }
 
         /// <summary>
-        /// Closes the <see cref="AddTagBox"/>, signalling to abandon any entered tag text.
+        /// Closes the <see cref="AddTagBox"/>, signaling to abandon any entered tag text.
         /// </summary>
         /// <param name="sender">The originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>

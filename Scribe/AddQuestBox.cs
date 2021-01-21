@@ -66,7 +66,7 @@ namespace Scribe
 
         #region Closing Form
         /// <summary>
-        /// Closes the <see cref="AddQuestBox"/>, signalling that the entered quest was accepted.
+        /// Closes the <see cref="AddQuestBox"/>, signaling that the entered quest was accepted.
         /// </summary>
         /// <param name="sender">The originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>
@@ -79,7 +79,7 @@ namespace Scribe
         }
 
         /// <summary>
-        /// Closes the <see cref="AddQuestBox"/>, signalling to abandon any entered quest.
+        /// Closes the <see cref="AddQuestBox"/>, signaling to abandon any entered quest.
         /// </summary>
         /// <param name="sender">The originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>

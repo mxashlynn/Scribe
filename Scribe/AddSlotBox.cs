@@ -112,7 +112,7 @@ namespace Scribe
 
         #region Closing Form
         /// <summary>
-        /// Closes the <see cref="AddSlotBox"/>, signalling that the <see cref="InventorySlot"/> was accepted.
+        /// Closes the <see cref="AddSlotBox"/>, signaling that the <see cref="InventorySlot"/> was accepted.
         /// </summary>
         /// <param name="sender">The originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>

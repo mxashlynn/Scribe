@@ -135,7 +135,7 @@ namespace Scribe
 
         #region Validation
         /// <summary>
-        /// Intercepts keydown events to register user requests to refresh the display.
+        /// Intercepts key-down events to register user requests to refresh the display.
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="inKeyEvents">The key that was held down.</param>
@@ -220,7 +220,7 @@ namespace Scribe
 
         #region Closing Form
         /// <summary>
-        /// Closes the <see cref="InventoryEditorForm"/>, signalling that the edited <see cref="Inventory"/> was accepted.
+        /// Closes the <see cref="InventoryEditorForm"/>, signaling that the edited <see cref="Inventory"/> was accepted.
         /// </summary>
         /// <param name="sender">The originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>
@@ -238,7 +238,7 @@ namespace Scribe
         }
 
         /// <summary>
-        /// Closes the <see cref="InventoryEditorForm"/>, signalling to abandon the edited <see cref="Inventory"/>.
+        /// Closes the <see cref="InventoryEditorForm"/>, signaling to abandon the edited <see cref="Inventory"/>.
         /// </summary>
         /// <param name="sender">The originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>
