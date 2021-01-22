@@ -8,7 +8,7 @@
     <AssemblyVersion>0.3.10.0</AssemblyVersion>
     <FileVersion>0.3.10.0</FileVersion>
     <Company>Girl Potion</Company>
-    <Authors>Paige Ashlynn and contibutors</Authors>
+    <Authors>Paige Ashlynn and contributors</Authors>
     <Copyright>2018-2020 Paige Ashlynn</Copyright>
     <Description>An editor for Parquet-based games.</Description>
     <RepositoryUrl>https://github.com/mxashlynn/Scribe</RepositoryUrl>

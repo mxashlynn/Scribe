@@ -58,7 +58,7 @@ namespace Scribe.ChangeHistory
             CurrentChangeIndex++;
             if (0 < Count && CurrentChangeIndex < Count)
             {
-                // If the new change supercedes any stored changes, dispose of them.
+                // If the new change supersedes any stored changes, dispose of them.
                 Changes = Changes.GetRange(0, CurrentChangeIndex);
             }
             Changes.Add(inChange);

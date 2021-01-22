@@ -94,7 +94,7 @@ namespace Scribe
         /// Whenever a <see cref="Form"/> reports a control's value as having been changed, the new value may
         /// be compared against the value stored here to see if the change was substantive.  In other worse, WinForms
         /// regards TextBox.Text='2' -> TextBox.Text='4' -> TextBox.Text='2' as a change; however, the initial and
-        /// end states are indistinquishable and the <see cref="ChangeManager"/> should not consider this a <see cref="Change"/>.
+        /// end states are indistinguishable and the <see cref="ChangeManager"/> should not consider this a <see cref="Change"/>.
         /// </remarks>
         private readonly Dictionary<Type, Dictionary<Control, object>> EditableControls;
         #endregion
@@ -1795,7 +1795,7 @@ namespace Scribe
                 var listToUpdate = ControlsWhoseContentIsListed[alteredControl];
                 listToUpdate.Items[listToUpdate.SelectedIndex] = listToUpdate.SelectedItem;
 
-                // In the case of PronounGroups, a secondar model name needs to be updated.
+                // In the case of PronounGroups, a second model name needs to be updated.
                 if (listToUpdate == CharacterPronounListBox)
                 {
                     var oldIndex = CharacterPronounComboBox.SelectedIndex;
@@ -1901,7 +1901,7 @@ namespace Scribe
         /// <summary>
         /// Adds a new <see cref="ModelTag"/> to the selected <see cref="Model"/>, updating the given <see cref="ListBox"/>.
         /// </summary>
-        /// <param name="inAddsToListBox">The UI element reflectling the collection being changed.</param>
+        /// <param name="inAddsToListBox">The UI element reflecting the collection being changed.</param>
         /// <param name="inGetTagListFromModel">The means, given a model, to find the correct tag collection.</param>
         private void AddTag<TInterface>(ListBox inAddsToListBox, Func<TInterface, IList<ModelTag>> inGetTagListFromModel)
             where TInterface : IMutableModel
@@ -1945,7 +1945,7 @@ namespace Scribe
         /// <summary>
         /// Removes the selected <see cref="ModelTag"/> from the selected <see cref="Model"/>, updating the given <see cref="ListBox"/>.
         /// </summary>
-        /// <param name="inAddsToListBox">The UI element reflectling the collection being changed.</param>
+        /// <param name="inAddsToListBox">The UI element reflecting the collection being changed.</param>
         /// <param name="inGetTagListFromModel">The means, given a Model, to find the correct tag collection.</param>
         private void RemoveTag<TInterface>(ListBox inAddsToListBox, Func<TInterface, IList<ModelTag>> inGetTagListFromModel)
             where TInterface : IMutableModel
@@ -1982,7 +1982,7 @@ namespace Scribe
         /// <summary>
         /// Adds a new <see cref="RecipeElement"/> to the selected <see cref="Model"/>, updating the given <see cref="ListBox"/>.
         /// </summary>
-        /// <param name="inAddsToListBox">The UI element reflectling the collection being changed.</param>
+        /// <param name="inAddsToListBox">The UI element reflecting the collection being changed.</param>
         /// <param name="inGetElementListFromRecipe">The means, given a model, to find the correct Recipe Element collection.</param>
         private void AddRecipeElement<TInterface>(ListBox inAddsToListBox,
                                                   Func<TInterface, IList<RecipeElement>> inGetElementListFromRecipe)
@@ -2028,7 +2028,7 @@ namespace Scribe
         /// Removes the selected <see cref="RecipeElement"/> from the selected <see cref="Model"/>,
         /// updating the given <see cref="ListBox"/>.
         /// </summary>
-        /// <param name="inAddsToListBox">The UI element reflectling the collection being changed.</param>
+        /// <param name="inAddsToListBox">The UI element reflecting the collection being changed.</param>
         /// <param name="inGetElementListFromRecipe">The means, given a Model, to find the correct Recipe Element collection.</param>
         private void RemoveRecipeElement<TInterface>(ListBox inAddsToListBox,
                                                      Func<TInterface, IList<RecipeElement>> inGetElementListFromRecipe)
@@ -2066,7 +2066,7 @@ namespace Scribe
         /// <summary>
         /// Adds a new <see cref="ModelID"/> to the selected <see cref="CharacterModel"/>, updating the given <see cref="ListBox"/>.
         /// </summary>
-        /// <param name="inAddsToListBox">The UI element reflectling the collection being changed.</param>
+        /// <param name="inAddsToListBox">The UI element reflecting the collection being changed.</param>
         /// <param name="inGetQuestListFromModel">The means, given a model, to find the correct ID collection.</param>
         private void AddQuest(ListBox inAddsToListBox, Func<IMutableCharacterModel, IList<ModelID>> inGetQuestListFromModel)
         {
@@ -2110,7 +2110,7 @@ namespace Scribe
         /// Removes the selected <see cref="ModelID"/> from the selected <see cref="CharacterModel"/>,
         /// updating the given <see cref="ListBox"/>.
         /// </summary>
-        /// <param name="inAddsToListBox">The UI element reflectling the collection being changed.</param>
+        /// <param name="inAddsToListBox">The UI element reflecting the collection being changed.</param>
         /// <param name="inGetTagListFromModel">The means, given a Model, to find the correct ID collection.</param>
         private void RemoveQuest(ListBox inAddsToListBox, Func<IMutableCharacterModel, IList<ModelID>> inGetTagListFromModel)
         {
@@ -2757,7 +2757,7 @@ namespace Scribe
         /// Responds to a user selecting the "New" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void NewToolStripMenuItem_Click(object sender, EventArgs eventArguments)
         {
             if (!EditorCommands.SelectProjectFolder(Resources.InfoMessageNew, Resources.FolderNameNewProject))
@@ -2783,7 +2783,7 @@ namespace Scribe
         /// Responds to a user selecting the "Load" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void LoadToolStripMenuItem_Click(object sender, EventArgs eventArguments)
         {
             if (!EditorCommands.SelectProjectFolder(Resources.InfoMessageLoad, Resources.FolderNameOldProject))
@@ -2808,7 +2808,7 @@ namespace Scribe
         /// Responds to a user selecting the "Reload" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void ReloadToolStripMenuItem_Click(object sender, EventArgs eventArguments)
         {
             if (MessageBox.Show(Resources.WarningMessageReload,
@@ -2834,7 +2834,7 @@ namespace Scribe
         /// Responds to a user selecting the "Save" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void SaveToolStripMenuItem_Click(object sender, EventArgs eventArguments)
         {
             Validate();
@@ -2853,7 +2853,7 @@ namespace Scribe
         /// Responds to a user selecting "Open Project Folder" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void OpenProjectFolderToolStripMenuItem_Click(object sender, EventArgs eventArguments)
         {
             if (!string.IsNullOrEmpty(All.ProjectDirectory))
@@ -2870,7 +2870,7 @@ namespace Scribe
         /// Responds to a user selecting the "Exit" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void ExitToolStripMenuItem_Click(object sender, EventArgs eventArguments)
             => Close();
 
@@ -2878,7 +2878,7 @@ namespace Scribe
         /// Responds to a user selecting the "Undo" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void UndoToolStripMenuItem_Click(object sender, EventArgs eventArguments)
             => ChangeManager.Undo();
 
@@ -2886,7 +2886,7 @@ namespace Scribe
         /// Responds to a user selecting the "Redo" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void RedoToolStripMenuItem_Click(object sender, EventArgs eventArguments)
             => ChangeManager.Redo();
 
@@ -2894,7 +2894,7 @@ namespace Scribe
         /// Responds to a user selecting the "Cut" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void CutToolStripMenuItem_Click(object sender, EventArgs eventArguments)
             => throw new NotImplementedException();
 
@@ -2902,7 +2902,7 @@ namespace Scribe
         /// Responds to a user selecting the "Copy" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void CopyToolStripMenuItem_Click(object sender, EventArgs eventArguments)
             => throw new NotImplementedException();
 
@@ -2910,7 +2910,7 @@ namespace Scribe
         /// Responds to a user selecting the "Paste" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void PasteToolStripMenuItem_Click(object sender, EventArgs eventArguments)
             => throw new NotImplementedException();
 
@@ -2918,7 +2918,7 @@ namespace Scribe
         /// Responds to a user selecting the "Select All" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void SelectAllToolStripMenuItem_Click(object sender, EventArgs eventArguments)
             => throw new NotImplementedException();
 
@@ -2926,7 +2926,7 @@ namespace Scribe
         /// Responds to a user selecting the "Check Map" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void CheckMapStripMenuItem_Click(object sender, EventArgs eventArguments)
             => throw new NotImplementedException();
 
@@ -2934,7 +2934,7 @@ namespace Scribe
         /// Responds to a user selecting the "List Naming Collisions" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void ListNameCollisionsStripMenuItem_Click(object sender, EventArgs eventArguments)
             => throw new NotImplementedException();
 
@@ -2942,7 +2942,7 @@ namespace Scribe
         /// Responds to a user selecting the "List ID Ranges" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void ListIDRangesToolStripMenuItem_Click(object sender, EventArgs eventArguments)
             => throw new NotImplementedException();
 
@@ -2950,7 +2950,7 @@ namespace Scribe
         /// Responds to a user selecting the "List Max IDs" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void ListMaxIDsToolStripMenuItem_Click(object sender, EventArgs eventArguments)
             => throw new NotImplementedException();
 
@@ -2958,7 +2958,7 @@ namespace Scribe
         /// Responds to a user selecting the "List Tags" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void ListTagsToolStripMenuItem_Click(object sender, EventArgs eventArguments)
             => throw new NotImplementedException();
 
@@ -2966,7 +2966,7 @@ namespace Scribe
         /// Responds to a user selecting the "Options" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void OptionsToolStripMenuItem_Click(object sender, EventArgs eventArguments)
         {
             oldTheme = Settings.Default.CurrentEditorTheme;
@@ -2977,7 +2977,7 @@ namespace Scribe
         /// Responds to a user selecting the "Refresh Display" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void RefreshStripMenuItem_Click(object sender, EventArgs eventArguments)
         {
             UpdateDisplay();
@@ -2988,7 +2988,7 @@ namespace Scribe
         /// Responds to a user selecting the "Scribe Help" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void ScribeHelpToolStripMenuItem_Click(object sender, EventArgs eventArguments)
             => throw new NotImplementedException();
 
@@ -2996,7 +2996,7 @@ namespace Scribe
         /// Responds to a user selecting the "Documentation" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void DocumentationToolStripMenuItem_Click(object sender, EventArgs eventArguments)
             => throw new NotImplementedException();
 
@@ -3004,7 +3004,7 @@ namespace Scribe
         /// Responds to a user selecting the "About" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void AboutMenuItem_Click(object sender, EventArgs eventArguments)
             => AboutDialogue.ShowDialog();
 
@@ -3012,7 +3012,7 @@ namespace Scribe
         /// Responds to a user selecting "Open Containing Folder" context menu item from a picture box.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void OpenContainingFolderMenuItem_Click(object sender, EventArgs eventArguments)
         {
             var path = ((PictureBox)((ContextMenuStrip)((ToolStripItem)sender)?.Owner)?.SourceControl)?.ImageLocation;
@@ -3031,7 +3031,7 @@ namespace Scribe
         /// Responds to a user selecting "Copy ID" context menu item from am ID example label.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void CopyID_Click(object sender, EventArgs eventArguments)
         {
             var id = GetSelectedModelIDForTab(EditorTabs.SelectedIndex).ToString();
@@ -3049,7 +3049,7 @@ namespace Scribe
         /// Sets the state of menu items as the menu opens.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void ContextMenuStripForTextEntries_Opening(object sender, CancelEventArgs eventArguments)
         {
             if (sender is ContextMenuStrip stripWithControl
@@ -3071,7 +3071,7 @@ namespace Scribe
         /// Cuts the selected text from the currently active <see cref="TextBox"/> or <see cref="ComboBox"/>.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void ToolStripMenuItemContextCut_OnClick(object sender, EventArgs eventArguments)
             => ContentAlteredEventHandler(SourceBox?.Cut(), eventArguments);
 
@@ -3079,7 +3079,7 @@ namespace Scribe
         /// Copies the selected text from the currently active <see cref="TextBox"/> or <see cref="ComboBox"/>.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void ToolStripMenuItemContextCopy_OnClick(object sender, EventArgs eventArguments)
             => SourceBox?.Copy();
 
@@ -3087,7 +3087,7 @@ namespace Scribe
         /// Pastes text to the currently active <see cref="TextBox"/> or <see cref="ComboBox"/>.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void ToolStripMenuItemContextPaste_OnClick(object sender, EventArgs eventArguments)
             => ContentAlteredEventHandler(SourceBox?.Paste(), eventArguments);
 
@@ -3095,7 +3095,7 @@ namespace Scribe
         /// Clears all text from the currently active <see cref="TextBox"/> or <see cref="ComboBox"/>.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void ToolStripMenuItemContextClear_OnClick(object sender, EventArgs eventArguments)
             => ContentAlteredEventHandler(SourceBox?.ClearAll(), eventArguments);
 
@@ -3103,7 +3103,7 @@ namespace Scribe
         /// Selects all text in the currently active <see cref="TextBox"/> or <see cref="ComboBox"/>.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void ToolStripMenuItemContextSelectAll_OnClick(object sender, EventArgs eventArguments)
             => SourceBox?.SelectAll();
         #endregion
@@ -3113,7 +3113,7 @@ namespace Scribe
         /// Spawns an external image editor with the image of the currently selected model.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
-        /// <param name="eventArguments">Addional event data.</param>
+        /// <param name="eventArguments">Additional event data.</param>
         private void EditImageExternally(object sender, EventArgs eventArguments)
         {
             var id = GetSelectedModelIDForTab(EditorTabs.SelectedIndex);

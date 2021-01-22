@@ -4,7 +4,7 @@ using System.Windows.Forms;
 namespace Scribe.ChangeHistory
 {
     /// <summary>
-    /// A simple form used to test the undo feature before databinding is finished.
+    /// A simple form used to test the undo feature before data-binding is finished.
     /// </summary>
     public partial class ChangeTestForm : Form
     {
@@ -18,7 +18,7 @@ namespace Scribe.ChangeHistory
         /// Whenever a <see cref="Form"/> reports a control's value as having been changed, the new value may
         /// be compared against this stored value to see if the change was substantive.  In other worse, WinForms
         /// regards TextBox.Text='2' -> TextBox.Text='4' -> TextBox.Text='2' as a change; however, the initial and
-        /// end states are indistinquishable and the <see cref="ChangeManager"/> should not consider this a <see cref="Change"/>.
+        /// end states are indistinguishable and the <see cref="ChangeManager"/> should not consider this a <see cref="Change"/>.
         /// </remarks>
         public string OldValue
         {

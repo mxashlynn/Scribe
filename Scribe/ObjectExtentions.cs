@@ -11,7 +11,7 @@ namespace Scribe
         /// <summary>
         /// Given an <c>object</c>:
         /// 1, if that object is a collection, return that same collection;
-        /// 2, if that object is a single collectable object, return a new collection containing it;
+        /// 2, if that object is a single collectible object, return a new collection containing it;
         /// 3, if that object is <c>null</c>, return an empty collection.
         /// </summary>
         /// <param name="input">The object in question.</param>

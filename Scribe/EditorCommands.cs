@@ -157,7 +157,7 @@ namespace Scribe
             => GraphicalAssetPaths.ContainsKey(All.GetIDRangeForType(inModelID));
 
         /// <summary>
-        /// Given a <see cref="ModelID"/> for a model that has a graphical representation, returns the path to that representaion's assets.
+        /// Given a <see cref="ModelID"/> for a model that has a graphical representation, returns the path to that representation's assets.
         /// </summary>
         /// <param name="inModelID">The <see cref="ModelID"/> for the <see cref="Model"/> whose graphical asset is sought.</param>
         /// <returns>The path to that asset, if any.</returns>
@@ -218,7 +218,7 @@ namespace Scribe
         /// </returns>
         internal static bool SaveDataFiles()
             // NOTE That currently this is called from the GUI thread and could block on a slow disk or network.
-            // I don't forsee this becoming an issue but it's something to keep in mind for possible optimizations.
+            // I don't foresee this becoming an issue but it's something to keep in mind for possible optimizations.
             => All.CollectionsHaveBeenInitialized
             && All.SaveToCSVs();
 
