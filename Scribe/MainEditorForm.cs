@@ -613,6 +613,8 @@ namespace Scribe
                     => (input) => ((IMutableFloorModel)inModel).Description = input.ToString(),
                 (FloorsTabIndex, "FloorCommentTextBox")
                     => (input) => ((IMutableFloorModel)inModel).Comment = input.ToString(),
+                (FloorsTabIndex, "FloorEquivalentItemComboBox")
+                    => (input) => ((IMutableFloorModel)inModel).ItemID = ValueToID(input),
                 (FloorsTabIndex, "FloorTrenchNameTextBox")
                     => (input) => ((IMutableFloorModel)inModel).TrenchName = input.ToString(),
                 (FloorsTabIndex, "FloorlItemIDComboBox")
