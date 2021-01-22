@@ -71,10 +71,14 @@ namespace Scribe
             ForeColor = CurrentTheme.ControlForegroundColor;
             CapacityTextBox.BackColor = CurrentTheme.ControlBackgroundWhite;
             CapacityTextBox.ForeColor = CurrentTheme.ControlForegroundColor;
-            SlotsListBox.BackColor = CurrentTheme.ControlBackgroundWhite;
-            SlotsListBox.ForeColor = CurrentTheme.ControlForegroundColor;
             CapacityLabel.BackColor = CurrentTheme.ControlBackgroundColor;
             CapacityLabel.ForeColor = CurrentTheme.ControlForegroundColor;
+            DefaultCapacityTextBox.BackColor = CurrentTheme.ControlBackgroundWhite;
+            DefaultCapacityTextBox.ForeColor = CurrentTheme.ControlForegroundColor;
+            DefaultCapacityLabel.BackColor = CurrentTheme.ControlBackgroundColor;
+            DefaultCapacityLabel.ForeColor = CurrentTheme.ControlForegroundColor;
+            SlotsListBox.BackColor = CurrentTheme.ControlBackgroundWhite;
+            SlotsListBox.ForeColor = CurrentTheme.ControlForegroundColor;
             InventorySlotsLabel.BackColor = CurrentTheme.ControlBackgroundColor;
             InventorySlotsLabel.ForeColor = CurrentTheme.ControlForegroundColor;
             RemoveSlotButton.BackColor = CurrentTheme.ControlBackgroundColor;
@@ -99,10 +103,12 @@ namespace Scribe
         #region Update Display
         /// <summary>
         /// Repopulates the <see cref="SlotsListBox"/> and <see cref="CapacityTextBox"/> with the <see cref="WorkingInventory"/>.
+        /// Repopulates the <see cref="DefaultCapacityTextBox"/> with the <see cref="InventoryConfiguration"/>.
         /// </summary>
         /// <remarks>This should only be called if the WorkingInventory has actually changed.</remarks>
         private void UpdateControls()
         {
+            DefaultCapacityTextBox.Text = InventoryConfiguration.DefaultCapacity.ToString();
             CapacityTextBox.Text = WorkingInventory?.Capacity.ToString() ?? "";
             if (WorkingInventory?.Count > 0)
             {
@@ -165,6 +171,27 @@ namespace Scribe
             {
                 eventAruments.Cancel = true;
                 CapacityErrorProvider.SetError(CapacityTextBox, Resources.ErrorPositiveIntegersOnly);
+            }
+        }
+
+        /// <summary>
+        /// Determines if the value entered is valid.
+        /// Adjusts the <see cref="InventoryConfiguration"/> according to valid values, otherwise signals an input error.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="eventAruments">Whether or not to discard the given text.</param>
+        private void DefaultCapacityTextBox_Validating(object sender, CancelEventArgs eventAruments)
+        {
+            if (int.TryParse(DefaultCapacityTextBox.Text, out var parsedCapacity)
+                && parsedCapacity > 0)
+            {
+                InventoryConfiguration.DefaultCapacity = parsedCapacity;
+                CapacityErrorProvider.SetError(DefaultCapacityTextBox, "");
+            }
+            else
+            {
+                eventAruments.Cancel = true;
+                CapacityErrorProvider.SetError(DefaultCapacityTextBox, Resources.ErrorPositiveIntegersOnly);
             }
         }
 

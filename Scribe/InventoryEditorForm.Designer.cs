@@ -38,6 +38,8 @@ namespace Scribe
             this.TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.OkayButton = new System.Windows.Forms.Button();
             this.CancelButtonControl = new System.Windows.Forms.Button();
+            this.DefaultCapacityLabel = new System.Windows.Forms.Label();
+            this.DefaultCapacityTextBox = new System.Windows.Forms.TextBox();
             this.EditorToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.CapacityErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.TableLayoutPanel.SuspendLayout();
@@ -126,6 +128,8 @@ namespace Scribe
             this.TableLayoutPanel.Controls.Add(this.SlotsListBox, 1, 1);
             this.TableLayoutPanel.Controls.Add(this.AddSlotButton, 2, 2);
             this.TableLayoutPanel.Controls.Add(this.RemoveSlotButton, 1, 2);
+            this.TableLayoutPanel.Controls.Add(this.DefaultCapacityLabel, 2, 0);
+            this.TableLayoutPanel.Controls.Add(this.DefaultCapacityTextBox, 3, 0);
             this.TableLayoutPanel.Location = new System.Drawing.Point(12, 12);
             this.TableLayoutPanel.Name = "TableLayoutPanel";
             this.TableLayoutPanel.RowCount = 4;
@@ -160,6 +164,23 @@ namespace Scribe
             this.CancelButtonControl.UseVisualStyleBackColor = true;
             this.CancelButtonControl.Click += new System.EventHandler(this.CancelButtonControl_Click);
             // 
+            // DefaultCapacityLabel
+            // 
+            this.DefaultCapacityLabel.AutoSize = true;
+            this.DefaultCapacityLabel.Location = new System.Drawing.Point(273, 0);
+            this.DefaultCapacityLabel.Name = "DefaultCapacityLabel";
+            this.DefaultCapacityLabel.Size = new System.Drawing.Size(94, 15);
+            this.DefaultCapacityLabel.TabIndex = 53;
+            this.DefaultCapacityLabel.Text = "Default Capacity";
+            // 
+            // DefaultCapacityTextBox
+            // 
+            this.DefaultCapacityTextBox.Location = new System.Drawing.Point(403, 3);
+            this.DefaultCapacityTextBox.Name = "DefaultCapacityTextBox";
+            this.DefaultCapacityTextBox.Size = new System.Drawing.Size(100, 23);
+            this.DefaultCapacityTextBox.TabIndex = 54;
+            this.DefaultCapacityTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.DefaultCapacityTextBox_Validating);
+            // 
             // CapacityErrorProvider
             // 
             this.CapacityErrorProvider.ContainerControl = this;
@@ -188,13 +209,15 @@ namespace Scribe
         #endregion
 
         private System.Windows.Forms.Label CapacityLabel;
-        private System.Windows.Forms.Label InventorySlotsLabel;
-        private System.Windows.Forms.Button RemoveSlotButton;
-        private System.Windows.Forms.Button AddSlotButton;
         private System.Windows.Forms.TextBox CapacityTextBox;
+        private System.Windows.Forms.Label DefaultCapacityLabel;
+        private System.Windows.Forms.TextBox DefaultCapacityTextBox;
+        private System.Windows.Forms.Label InventorySlotsLabel;
         private System.Windows.Forms.ListBox SlotsListBox;
         private System.Windows.Forms.TableLayoutPanel TableLayoutPanel;
         private System.Windows.Forms.ToolTip EditorToolTip;
+        private System.Windows.Forms.Button RemoveSlotButton;
+        private System.Windows.Forms.Button AddSlotButton;
         private System.Windows.Forms.Button OkayButton;
         private System.Windows.Forms.Button CancelButtonControl;
         private System.Windows.Forms.ErrorProvider CapacityErrorProvider;
