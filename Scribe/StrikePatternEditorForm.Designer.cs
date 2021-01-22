@@ -3034,7 +3034,6 @@ namespace Scribe
         private System.Windows.Forms.Label GoalEndLabel4;
         private System.Windows.Forms.TextBox GoalEndTextBox4;
         private System.Windows.Forms.TextBox GoalStartTextBox4;
-        private System.Windows.Forms.GroupBox StrikePanelGroupBox_10;
         private System.Windows.Forms.CheckBox PanelActiveCheckBox5;
         private System.Windows.Forms.TableLayoutPanel StrikePanelTableLayoutPanel5;
         private System.Windows.Forms.Label RangeStartLabel5;
@@ -3046,7 +3045,6 @@ namespace Scribe
         private System.Windows.Forms.Label GoalEndLabel5;
         private System.Windows.Forms.TextBox GoalEndTextBox5;
         private System.Windows.Forms.TextBox GoalStartTextBox5;
-        private System.Windows.Forms.GroupBox StrikePanelGroupBox6;
         private System.Windows.Forms.CheckBox PanelActiveCheckBox6;
         private System.Windows.Forms.TableLayoutPanel StrikePanelTableLayoutPanel6;
         private System.Windows.Forms.Label RangeStartLabel6;
@@ -3082,7 +3080,6 @@ namespace Scribe
         private System.Windows.Forms.Label GoalEndLabel8;
         private System.Windows.Forms.TextBox GoalEndTextBox8;
         private System.Windows.Forms.TextBox GoalStartTextBox8;
-        private System.Windows.Forms.GroupBox StrikePanelGroupBox_21;
         private System.Windows.Forms.CheckBox PanelActiveCheckBox9;
         private System.Windows.Forms.TableLayoutPanel StrikePanelTableLayoutPanel9;
         private System.Windows.Forms.Label RangeStartLabel9;
@@ -3098,7 +3095,6 @@ namespace Scribe
         private System.Windows.Forms.CheckBox PanelActiveCheckBox10;
         private System.Windows.Forms.TableLayoutPanel StrikePanelTableLayoutPanel10;
         private System.Windows.Forms.Label RangeStartLabel10;
-        private System.Windows.Forms.Label RangeEndLabel10;
         private System.Windows.Forms.TextBox RangeStartTextBox10;
         private System.Windows.Forms.TextBox RangeEndTextBox10;
         private System.Windows.Forms.PictureBox StrikeRangeDiagramPictureBox10;
@@ -3178,10 +3174,6 @@ namespace Scribe
         private System.Windows.Forms.Label GoalEndLabel16;
         private System.Windows.Forms.TextBox GoalEndTextBox16;
         private System.Windows.Forms.TextBox GoalStartTextBox16;
-        private System.Windows.Forms.GroupBox StrikePanelGroupBox_11;
-        private System.Windows.Forms.GroupBox StrikePanelGroupBox_12;
-        private System.Windows.Forms.GroupBox StrikePanelGroupBox_13;
-        private System.Windows.Forms.GroupBox StrikePanelGroupBox_;
         private System.Windows.Forms.GroupBox StrikePanelGroupBox20;
         private System.Windows.Forms.GroupBox StrikePanelGroupBox21;
         private System.Windows.Forms.Label RangeEndLabel21;
