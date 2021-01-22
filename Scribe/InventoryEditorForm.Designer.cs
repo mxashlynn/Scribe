@@ -42,6 +42,7 @@ namespace Scribe
             this.DefaultCapacityTextBox = new System.Windows.Forms.TextBox();
             this.EditorToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.CapacityErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.CapacityWarningLabel = new System.Windows.Forms.Label();
             this.TableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CapacityErrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +69,7 @@ namespace Scribe
             // 
             this.RemoveSlotButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RemoveSlotButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RemoveSlotButton.Location = new System.Drawing.Point(143, 180);
+            this.RemoveSlotButton.Location = new System.Drawing.Point(143, 178);
             this.RemoveSlotButton.Name = "RemoveSlotButton";
             this.RemoveSlotButton.Size = new System.Drawing.Size(124, 23);
             this.RemoveSlotButton.TabIndex = 36;
@@ -80,7 +81,7 @@ namespace Scribe
             // 
             this.AddSlotButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.AddSlotButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddSlotButton.Location = new System.Drawing.Point(273, 180);
+            this.AddSlotButton.Location = new System.Drawing.Point(273, 178);
             this.AddSlotButton.Name = "AddSlotButton";
             this.AddSlotButton.Size = new System.Drawing.Size(124, 23);
             this.AddSlotButton.TabIndex = 35;
@@ -130,21 +131,23 @@ namespace Scribe
             this.TableLayoutPanel.Controls.Add(this.RemoveSlotButton, 1, 2);
             this.TableLayoutPanel.Controls.Add(this.DefaultCapacityLabel, 2, 0);
             this.TableLayoutPanel.Controls.Add(this.DefaultCapacityTextBox, 3, 0);
+            this.TableLayoutPanel.Controls.Add(this.CapacityWarningLabel, 0, 4);
             this.TableLayoutPanel.Location = new System.Drawing.Point(12, 12);
             this.TableLayoutPanel.Name = "TableLayoutPanel";
-            this.TableLayoutPanel.RowCount = 4;
+            this.TableLayoutPanel.RowCount = 5;
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.TableLayoutPanel.Size = new System.Drawing.Size(530, 237);
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.TableLayoutPanel.Size = new System.Drawing.Size(530, 255);
             this.TableLayoutPanel.TabIndex = 51;
             // 
             // OkayButton
             // 
             this.OkayButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.OkayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OkayButton.Location = new System.Drawing.Point(403, 210);
+            this.OkayButton.Location = new System.Drawing.Point(403, 208);
             this.OkayButton.Name = "OkayButton";
             this.OkayButton.Size = new System.Drawing.Size(124, 23);
             this.OkayButton.TabIndex = 52;
@@ -156,7 +159,7 @@ namespace Scribe
             // 
             this.CancelButtonControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CancelButtonControl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CancelButtonControl.Location = new System.Drawing.Point(273, 210);
+            this.CancelButtonControl.Location = new System.Drawing.Point(273, 208);
             this.CancelButtonControl.Name = "CancelButtonControl";
             this.CancelButtonControl.Size = new System.Drawing.Size(124, 23);
             this.CancelButtonControl.TabIndex = 52;
@@ -185,13 +188,24 @@ namespace Scribe
             // 
             this.CapacityErrorProvider.ContainerControl = this;
             // 
+            // CapacityWarningLabel
+            // 
+            this.CapacityWarningLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CapacityWarningLabel.AutoSize = true;
+            this.TableLayoutPanel.SetColumnSpan(this.CapacityWarningLabel, 4);
+            this.CapacityWarningLabel.Location = new System.Drawing.Point(169, 240);
+            this.CapacityWarningLabel.Name = "CapacityWarningLabel";
+            this.CapacityWarningLabel.Size = new System.Drawing.Size(358, 15);
+            this.CapacityWarningLabel.TabIndex = 55;
+            this.CapacityWarningLabel.Text = "Note: A Character\'s Starting Inventory always has Default Capacity.";
+            // 
             // InventoryEditorForm
             // 
             this.AcceptButton = this.OkayButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CancelButtonControl;
-            this.ClientSize = new System.Drawing.Size(554, 261);
+            this.ClientSize = new System.Drawing.Size(554, 279);
             this.Controls.Add(this.TableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MinimumSize = new System.Drawing.Size(570, 300);
@@ -221,5 +235,6 @@ namespace Scribe
         private System.Windows.Forms.Button OkayButton;
         private System.Windows.Forms.Button CancelButtonControl;
         private System.Windows.Forms.ErrorProvider CapacityErrorProvider;
+        private System.Windows.Forms.Label CapacityWarningLabel;
     }
 }
