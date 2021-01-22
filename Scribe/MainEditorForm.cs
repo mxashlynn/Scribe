@@ -559,7 +559,7 @@ namespace Scribe
         /// <param name="inControl">The <see cref="Control"/> corresponding to the property sought.</param>
         /// <returns>A method for editing the property's value, or <c>null</c> if the input combination is not defined.</returns>
         /// <remarks>This method binds data in models to controls in the user interface.</remarks>
-        private Action<object> GetPropertyAccessorForModelAndTabAndControl(Model inModel, int inTabIndex, Control inControl)
+        private static Action<object> GetPropertyAccessorForModelAndTabAndControl(Model inModel, int inTabIndex, Control inControl)
             => null == inModel
             ? (Action<object>)null
             : (inTabIndex, inControl.Name) switch
@@ -1067,7 +1067,7 @@ namespace Scribe
         /// <param name="inListBox">The UI to repopulate.</param>
         /// <param name="inSource">The objects to populate the UI with.</param>
         /// <remarks>This should only be called if <see cref="All"/> has actually changed.</remarks>
-        private void RepopulateListBox(ListBox inListBox, IEnumerable<Model> inSource)
+        private static void RepopulateListBox(ListBox inListBox, IEnumerable<Model> inSource)
         {
             if (null != inSource)
             {
@@ -1085,7 +1085,7 @@ namespace Scribe
         /// <param name="inListBox">The UI to repopulate.</param>
         /// <param name="inSource">The objects to populate the UI with.</param>
         /// <remarks>This should only be called if <see cref="All"/> has actually changed.</remarks>
-        private void RepopulateListBox(ListBox inListBox, IEnumerable<object> inSource)
+        private static void RepopulateListBox(ListBox inListBox, IEnumerable<object> inSource)
         {
             if (null != inSource)
             {
@@ -1107,7 +1107,7 @@ namespace Scribe
         /// <param name="inComboBox">The UI to repopulate.</param>
         /// <param name="inSource">The objects to populate the UI with.</param>
         /// <remarks>This should only be called if <see cref="All"/> has actually changed.</remarks>
-        private void RepopulateComboBox(ComboBox inComboBox, IEnumerable<object> inSource)
+        private static void RepopulateComboBox(ComboBox inComboBox, IEnumerable<object> inSource)
         {
             if (null != inSource)
             {
@@ -1147,7 +1147,7 @@ namespace Scribe
         /// </summary>
         /// <param name="inPictureBox">The PictureBox to load the image into.</param>
         /// <param name="inID">The ID of the model whose image will be loaded.</param>
-        private void PictureBoxLoadFromStorage(PictureBox inPictureBox, ModelID inID)
+        private static void PictureBoxLoadFromStorage(PictureBox inPictureBox, ModelID inID)
         {
             var imagePathAndFilename = Path.Combine(EditorCommands.GetGraphicsPathForModelID(inID), $"{inID}.png");
             if (File.Exists(imagePathAndFilename))
@@ -1205,7 +1205,7 @@ namespace Scribe
                     RepopulateListBox(CharacterListBox, All.Characters);
                     RepopulateComboBox(CharacterNativeBiomeComboBox, All.BiomeRecipes);
                     RepopulateComboBox(CharacterPrimaryBehaviorComboBox, All.Scripts);
-                    RepopulateComboBox(CharacterPronounComboBox, All.PronounGroups.Select(pronounGroup => pronounGroup.GetKey()));
+                    RepopulateComboBox(CharacterPronounComboBox, All.PronounGroups.Select(pronounGroup => pronounGroup.Key));
                     RepopulateComboBox(CharacterStartingDialogueComboBox, All.Interactions);
                     RepopulateListBox(CharacterPronounListBox, All.PronounGroups);
                     break;
@@ -1521,7 +1521,7 @@ namespace Scribe
             else if (CharacterPronounListBox.SelectedItem is PronounGroup group
                      && null != group)
             {
-                CharacterPronounKeyExample.Text = group.GetKey();
+                CharacterPronounKeyExample.Text = group.Key;
                 CharacterPronounSubjectiveTextBox.Text = group.Subjective;
                 CharacterPronounObjectiveTextBox.Text = group.Objective;
                 CharacterPronounDeterminerTextBox.Text = group.Determiner;
@@ -1724,7 +1724,7 @@ namespace Scribe
         /// <param name="eventArguments">Ignored.</param>
         private void ContentAlteredEventHandler(object sender, EventArgs eventArguments)
         {
-            if (!(sender is Control alteredControl))
+            if (sender is not Control alteredControl)
             {
                 // Silently return if nothing was modified or if sender was not a Control.
                 return;
@@ -1800,7 +1800,7 @@ namespace Scribe
                 {
                     var oldIndex = CharacterPronounComboBox.SelectedIndex;
                     RepopulateComboBox(CharacterPronounComboBox,
-                                       All.PronounGroups.Select(pronounGroup => pronounGroup.GetKey()));
+                                       All.PronounGroups.Select(pronounGroup => pronounGroup.Key));
                     CharacterPronounComboBox.SelectedIndex = oldIndex;
                 }
             }
@@ -1828,7 +1828,7 @@ namespace Scribe
                 return;
             }
 
-            var nextID = inDatabaseCollection.Count() > 0
+            var nextID = inDatabaseCollection.Any()
                 ? (ModelID)(inDatabaseCollection.Max(model => model?.ID ?? inIDRange.Minimum) + 1)
                 : inIDRange.Minimum;
             if (nextID > inIDRange.Maximum)
@@ -1903,7 +1903,7 @@ namespace Scribe
         /// </summary>
         /// <param name="inAddsToListBox">The UI element reflecting the collection being changed.</param>
         /// <param name="inGetTagListFromModel">The means, given a model, to find the correct tag collection.</param>
-        private void AddTag<TInterface>(ListBox inAddsToListBox, Func<TInterface, IList<ModelTag>> inGetTagListFromModel)
+        private void AddTag<TInterface>(ListBox inAddsToListBox, Func<TInterface, ICollection<ModelTag>> inGetTagListFromModel)
             where TInterface : IMutableModel
         {
             if (!All.CollectionsHaveBeenInitialized)
@@ -1947,7 +1947,7 @@ namespace Scribe
         /// </summary>
         /// <param name="inAddsToListBox">The UI element reflecting the collection being changed.</param>
         /// <param name="inGetTagListFromModel">The means, given a Model, to find the correct tag collection.</param>
-        private void RemoveTag<TInterface>(ListBox inAddsToListBox, Func<TInterface, IList<ModelTag>> inGetTagListFromModel)
+        private void RemoveTag<TInterface>(ListBox inAddsToListBox, Func<TInterface, ICollection<ModelTag>> inGetTagListFromModel)
             where TInterface : IMutableModel
         {
             if (!All.CollectionsHaveBeenInitialized || null == inAddsToListBox.SelectedItem)
@@ -1985,7 +1985,7 @@ namespace Scribe
         /// <param name="inAddsToListBox">The UI element reflecting the collection being changed.</param>
         /// <param name="inGetElementListFromRecipe">The means, given a model, to find the correct Recipe Element collection.</param>
         private void AddRecipeElement<TInterface>(ListBox inAddsToListBox,
-                                                  Func<TInterface, IList<RecipeElement>> inGetElementListFromRecipe)
+                                                  Func<TInterface, ICollection<RecipeElement>> inGetElementListFromRecipe)
             where TInterface : IMutableModel
         {
             if (!All.CollectionsHaveBeenInitialized)
@@ -2031,7 +2031,7 @@ namespace Scribe
         /// <param name="inAddsToListBox">The UI element reflecting the collection being changed.</param>
         /// <param name="inGetElementListFromRecipe">The means, given a Model, to find the correct Recipe Element collection.</param>
         private void RemoveRecipeElement<TInterface>(ListBox inAddsToListBox,
-                                                     Func<TInterface, IList<RecipeElement>> inGetElementListFromRecipe)
+                                                     Func<TInterface, ICollection<RecipeElement>> inGetElementListFromRecipe)
             where TInterface : IMutableModel
         {
             if (!All.CollectionsHaveBeenInitialized || null == inAddsToListBox.SelectedItem)
@@ -2068,7 +2068,7 @@ namespace Scribe
         /// </summary>
         /// <param name="inAddsToListBox">The UI element reflecting the collection being changed.</param>
         /// <param name="inGetQuestListFromModel">The means, given a model, to find the correct ID collection.</param>
-        private void AddQuest(ListBox inAddsToListBox, Func<IMutableCharacterModel, IList<ModelID>> inGetQuestListFromModel)
+        private void AddQuest(ListBox inAddsToListBox, Func<IMutableCharacterModel, ICollection<ModelID>> inGetQuestListFromModel)
         {
             if (!All.CollectionsHaveBeenInitialized)
             {
@@ -2112,7 +2112,7 @@ namespace Scribe
         /// </summary>
         /// <param name="inAddsToListBox">The UI element reflecting the collection being changed.</param>
         /// <param name="inGetTagListFromModel">The means, given a Model, to find the correct ID collection.</param>
-        private void RemoveQuest(ListBox inAddsToListBox, Func<IMutableCharacterModel, IList<ModelID>> inGetTagListFromModel)
+        private void RemoveQuest(ListBox inAddsToListBox, Func<IMutableCharacterModel, ICollection<ModelID>> inGetTagListFromModel)
         {
             if (!All.CollectionsHaveBeenInitialized || null == inAddsToListBox.SelectedItem)
             {
@@ -2436,7 +2436,7 @@ namespace Scribe
                                             var pronounGroup = (PronounGroup)databaseValue;
                                             ((ICollection<PronounGroup>)All.PronounGroups).Add(pronounGroup);
                                             _ = CharacterPronounListBox.Items.Add(pronounGroup);
-                                            _ = CharacterPronounComboBox.Items.Add(pronounGroup.GetKey());
+                                            _ = CharacterPronounComboBox.Items.Add(pronounGroup.Key);
                                             CharacterPronounListBox.SelectedItem = pronounGroup;
                                             HasUnsavedChanges = true;
                                         },
@@ -2445,7 +2445,7 @@ namespace Scribe
                                             var pronounGroup = (PronounGroup)databaseValue;
                                             ((ICollection<PronounGroup>)All.PronounGroups).Remove(pronounGroup);
                                             CharacterPronounListBox.Items.Remove(pronounGroup);
-                                            CharacterPronounComboBox.Items.Remove(pronounGroup.GetKey());
+                                            CharacterPronounComboBox.Items.Remove(pronounGroup.Key);
                                             CharacterPronounListBox.SelectedItem = null;
                                             HasUnsavedChanges = true;
                                         }));
@@ -2464,19 +2464,19 @@ namespace Scribe
                 return;
             }
 
-            if (!(CharacterPronounListBox.SelectedItem is PronounGroup groupToRemove))
+            if (CharacterPronounListBox.SelectedItem is not PronounGroup groupToRemove)
             {
                 SystemSounds.Beep.Play();
                 return;
             }
 
-            ChangeManager.AddAndExecute(new ChangeList(groupToRemove, $"remove Pronoun Group {groupToRemove.GetKey()}",
+            ChangeManager.AddAndExecute(new ChangeList(groupToRemove, $"remove Pronoun Group {groupToRemove.Key}",
                                         (object databaseValue) =>
                                         {
                                             var pronounGroup = (PronounGroup)databaseValue;
                                             ((ICollection<PronounGroup>)All.PronounGroups).Remove(pronounGroup);
                                             CharacterPronounListBox.Items.Remove(pronounGroup);
-                                            CharacterPronounComboBox.Items.Remove(pronounGroup.GetKey());
+                                            CharacterPronounComboBox.Items.Remove(pronounGroup.Key);
                                             CharacterPronounListBox.SelectedItem = null;
                                             HasUnsavedChanges = true;
                                         },
@@ -2485,7 +2485,7 @@ namespace Scribe
                                             var pronounGroup = (PronounGroup)databaseValue;
                                             ((ICollection<PronounGroup>)All.PronounGroups).Add(pronounGroup);
                                             _ = CharacterPronounListBox.Items.Add(pronounGroup);
-                                            _ = CharacterPronounComboBox.Items.Add(pronounGroup.GetKey());
+                                            _ = CharacterPronounComboBox.Items.Add(pronounGroup.Key);
                                             CharacterPronounListBox.SelectedItem = pronounGroup;
                                             HasUnsavedChanges = true;
                                         }));

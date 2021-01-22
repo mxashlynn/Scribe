@@ -68,7 +68,7 @@ namespace Scribe
         /// <summary>
         /// The name of the assembly.
         /// </summary>
-        public string AssemblyTitle
+        public static string AssemblyTitle
         {
             get
             {
@@ -81,14 +81,14 @@ namespace Scribe
                         return titleAttribute.Title;
                     }
                 }
-                return System.IO.Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
+                return System.IO.Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().Location);
             }
         }
 
         /// <summary>
         /// What the purpose of the assembly.
         /// </summary>
-        public string AssemblyDescription
+        public static string AssemblyDescription
         {
             get
             {
@@ -102,7 +102,7 @@ namespace Scribe
         /// <summary>
         /// The name of the product.
         /// </summary>
-        public string AssemblyProduct
+        public static string AssemblyProduct
         {
             get
             {
@@ -116,7 +116,7 @@ namespace Scribe
         /// <summary>
         /// Copyright information.
         /// </summary>
-        public string AssemblyCopyright
+        public static string AssemblyCopyright
         {
             get
             {
@@ -130,7 +130,7 @@ namespace Scribe
         /// <summary>
         /// The name of the group that created the product.
         /// </summary>
-        public string AssemblyCompany
+        public static string AssemblyCompany
         {
             get
             {
