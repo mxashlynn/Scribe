@@ -4,10 +4,10 @@ using System.ComponentModel;
 using System.Linq;
 using System.Media;
 using System.Windows.Forms;
-using ParquetClassLibrary;
-using ParquetClassLibrary.Beings;
-using ParquetClassLibrary.EditorSupport;
-using ParquetClassLibrary.Items;
+using Parquet;
+using Parquet.Beings;
+using Parquet.EditorSupport;
+using Parquet.Items;
 using Scribe.Properties;
 
 namespace Scribe

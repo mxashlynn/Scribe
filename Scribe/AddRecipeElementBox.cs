@@ -1,12 +1,12 @@
 using System;
 using System.Windows.Forms;
-using ParquetClassLibrary;
+using Parquet;
 using Scribe.Properties;
 
 namespace Scribe
 {
     /// <summary>
-    /// A modal dialogue that enables the user to add a new <see cref="ParquetClassLibrary.RecipeElement"/>
+    /// A modal dialogue that enables the user to add a new <see cref="Parquet.RecipeElement"/>
     /// to a collection of recipe elements.
     /// </summary>
     internal partial class AddRecipeElementBox : Form
@@ -76,7 +76,7 @@ namespace Scribe
 
         #region Validation
         /// <summary>
-        /// Validates the <see cref="ParquetClassLibrary.ModelTag"/> that the user added to the <see cref="RecipeElement"/>. 
+        /// Validates the <see cref="Parquet.ModelTag"/> that the user added to the <see cref="RecipeElement"/>. 
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="eventArguments">Whether or not to discard the input.</param>

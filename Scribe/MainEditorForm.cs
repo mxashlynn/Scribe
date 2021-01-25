@@ -9,17 +9,17 @@ using System.IO;
 using System.Linq;
 using System.Media;
 using System.Windows.Forms;
-using ParquetClassLibrary;
-using ParquetClassLibrary.Beings;
-using ParquetClassLibrary.Biomes;
-using ParquetClassLibrary.Crafts;
-using ParquetClassLibrary.EditorSupport;
-using ParquetClassLibrary.Games;
-using ParquetClassLibrary.Items;
-using ParquetClassLibrary.Maps;
-using ParquetClassLibrary.Parquets;
-using ParquetClassLibrary.Rooms;
-using ParquetClassLibrary.Scripts;
+using Parquet;
+using Parquet.Beings;
+using Parquet.Biomes;
+using Parquet.Crafts;
+using Parquet.EditorSupport;
+using Parquet.Games;
+using Parquet.Items;
+using Parquet.Maps;
+using Parquet.Parquets;
+using Parquet.Rooms;
+using Parquet.Scripts;
 using Scribe.ChangeHistory;
 using Scribe.Properties;
 
@@ -1002,7 +1002,7 @@ namespace Scribe
         /// </summary>
         private void UpdateLibraryDataDisplay()
         {
-            LibraryVersionExample.Text = ParquetClassLibrary.AssemblyInfo.LibraryVersion;
+            LibraryVersionExample.Text = Parquet.AssemblyInfo.LibraryVersion;
             LibraryProjectPathExample.Text = All.ProjectDirectory;
         }
 
@@ -1635,6 +1635,7 @@ namespace Scribe
                 BiomeTierTextBox.Text = recipe.Tier.ToString();
                 BiomeIsRoomBasedCheckBox.Checked = recipe.IsRoomBased;
                 BiomeIsLiquidBasedCheckBox.Checked = recipe.IsLiquidBased;
+                // TODO This needs to be changed from a ListBox to a TextBox.
                 RepopulateListBox(BiomeParquetCriteriaListBox, recipe.ParquetCriteria);
                 RepopulateListBox(BiomeEntryRequirementsListBox, recipe.EntryRequirements);
                 PictureBoxLoadFromStorage(BiomePictureBox, recipe.ID);

@@ -187,10 +187,10 @@ dotnet_code_quality.api_surface = all
 dotnet_code_quality.CA1710.additional_required_suffixes = T:System.Collections.Generic.IEnumerable<T>->Collection|Grid|Inventory
 dotnet_code_quality.CA1710.additional_required_suffixes = T:System.Collections.Generic.ICollection<T>->Collection|Grid|Inventory
 dotnet_code_quality.CA1710.additional_required_suffixes = T:System.Collections.Generic.IReadOnlyCollection<T>->Collection|Grid|Inventory
-dotnet_code_quality.CA1710.additional_required_suffixes = T:ParquetClassLibrary.IGrid<T>->Grid
-dotnet_code_quality.CA1710.additional_required_suffixes = T:ParquetClassLibrary.Model->Model|Recipe
-dotnet_code_quality.CA1710.additional_required_suffixes = T:ParquetClassLibrary.ModelCollection->Collection
-dotnet_code_quality.CA1710.additional_required_suffixes = T:ParquetClassLibrary.ModelID->ID
+dotnet_code_quality.CA1710.additional_required_suffixes = T:Parquet.IGrid<T>->Grid
+dotnet_code_quality.CA1710.additional_required_suffixes = T:Parquet.Model->Model|Recipe
+dotnet_code_quality.CA1710.additional_required_suffixes = T:Parquet.ModelCollection->Collection
+dotnet_code_quality.CA1710.additional_required_suffixes = T:Parquet.ModelID->ID
 
 # Symbols
 dotnet_naming_symbols.interface.applicable_kinds = interface

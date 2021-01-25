@@ -34,7 +34,7 @@ namespace Scribe.ChangeHistory
         private string _databaseValue = "";
 
         /// <summary>
-        /// Stands in for ParquetClassLibrary.All.
+        /// Stands in for Parquet.All.
         /// </summary>
         public object DatabaseValue
         {

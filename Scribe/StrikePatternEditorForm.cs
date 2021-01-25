@@ -4,14 +4,14 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
-using ParquetClassLibrary.Crafts;
-using ParquetClassLibrary.EditorSupport;
+using Parquet.Crafts;
+using Parquet.EditorSupport;
 using Scribe.Properties;
 
 namespace Scribe
 {
     /// <summary>
-    /// A form that enables the user to edit a given <see cref="ParquetClassLibrary.Crafts.StrikePanelGrid"/>.
+    /// A form that enables the user to edit a given <see cref="Parquet.Crafts.StrikePanelGrid"/>.
     /// </summary>
     internal partial class StrikePatternEditorForm : Form
     {
@@ -253,7 +253,7 @@ namespace Scribe
                         ? WorkingGrid[y, x].WorkingRange.Maximum
                         : parsedInt + 1;
                     WorkingGrid[y, x].WorkingRange =
-                        new ParquetClassLibrary.Range<int>(parsedInt, newMax);
+                        new Parquet.Range<int>(parsedInt, newMax);
                 }
                 else if (textBox.Name.StartsWith("RangeEnd"))
                 {
@@ -261,7 +261,7 @@ namespace Scribe
                         ? WorkingGrid[y, x].WorkingRange.Minimum
                         : parsedInt - 1;
                     WorkingGrid[y, x].WorkingRange =
-                        new ParquetClassLibrary.Range<int>(newMin, parsedInt);
+                        new Parquet.Range<int>(newMin, parsedInt);
                 }
                 else if (textBox.Name.StartsWith("GoalStart"))
                 {
@@ -269,7 +269,7 @@ namespace Scribe
                         ? WorkingGrid[y, x].IdealRange.Maximum
                         : parsedInt + 1;
                     WorkingGrid[y, x].IdealRange =
-                        new ParquetClassLibrary.Range<int>(parsedInt, newMax);
+                        new Parquet.Range<int>(parsedInt, newMax);
                 }
                 else if (textBox.Name.StartsWith("GoalEnd"))
                 {
@@ -277,7 +277,7 @@ namespace Scribe
                         ? WorkingGrid[y, x].IdealRange.Minimum
                         : parsedInt - 1;
                     WorkingGrid[y, x].IdealRange =
-                        new ParquetClassLibrary.Range<int>(newMin, parsedInt);
+                        new Parquet.Range<int>(newMin, parsedInt);
                 }
             }
         }

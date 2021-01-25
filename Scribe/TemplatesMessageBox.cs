@@ -1,7 +1,7 @@
 using System.IO;
 using System.Media;
 using System.Windows.Forms;
-using ParquetClassLibrary;
+using Parquet;
 using Scribe.Properties;
 
 namespace Scribe

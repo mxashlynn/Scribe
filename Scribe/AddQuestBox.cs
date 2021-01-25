@@ -1,13 +1,13 @@
 using System;
 using System.Linq;
 using System.Windows.Forms;
-using ParquetClassLibrary;
-using ParquetClassLibrary.Scripts;
+using Parquet;
+using Parquet.Scripts;
 
 namespace Scribe
 {
     /// <summary>
-    /// A modal dialogue that enables the user to add a new <see cref="ParquetClassLibrary.Scripts.ScriptModel"/> representing a quest.
+    /// A modal dialogue that enables the user to add a new <see cref="ScriptModel"/> representing a quest.
     /// </summary>
     internal partial class AddQuestBox : Form
     {

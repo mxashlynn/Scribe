@@ -1,5 +1,5 @@
 using System;
-using ParquetClassLibrary;
+using Parquet;
 
 namespace Scribe.ChangeHistory
 {

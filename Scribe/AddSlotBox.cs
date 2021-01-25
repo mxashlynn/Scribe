@@ -2,14 +2,14 @@ using System;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
-using ParquetClassLibrary;
-using ParquetClassLibrary.Items;
+using Parquet;
+using Parquet.Items;
 using Scribe.Properties;
 
 namespace Scribe
 {
     /// <summary>
-    /// A modal dialogue enabling users to add new <see cref="ParquetClassLibrary.Items.InventorySlot"/>s.
+    /// A modal dialogue enabling users to add new <see cref="Parquet.Items.InventorySlot"/>s.
     /// </summary>
     internal partial class AddSlotBox : Form
     {
