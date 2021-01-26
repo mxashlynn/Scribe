@@ -177,6 +177,10 @@
     <value>An error occurred while trying to add an inventory slot.  This likely is a logic error in Scribe or Parquet.  You might want to reload before continuing to work with this inventory.  Sorry about this!</value>
     <comment>Error string.</comment>
   </data>
+  <data name="ErrorFatal" xml:space="preserve">
+    <value>Scribe cannot recover and needs to close.  Please save your work and exit.</value>
+    <comment>Error string.</comment>
+  </data>
   <data name="ErrorFolderNotEmpty" xml:space="preserve">
     <value>This folder is not empty!
 Folder: {1}</value>
@@ -200,6 +204,10 @@ Folder: {1}</value>
   </data>
   <data name="ErrorNewFailed" xml:space="preserve">
     <value>Scribe attempted to create a new project but encountered an error.  Please check the log.</value>
+    <comment>Error string.</comment>
+  </data>
+  <data name="ErrorNullLogger" xml:space="preserve">
+    <value>The logger was passed null during initialization.</value>
     <comment>Error string.</comment>
   </data>
   <data name="ErrorParseFailed" xml:space="preserve">

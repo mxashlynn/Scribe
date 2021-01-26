@@ -196,6 +196,15 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Scribe cannot recover and needs to close.  Please save your work and exit..
+        /// </summary>
+        internal static string ErrorFatal {
+            get {
+                return ResourceManager.GetString("ErrorFatal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This folder is not empty!
         ///Folder: {1}.
         /// </summary>
@@ -247,6 +256,15 @@ namespace Scribe.Properties {
         internal static string ErrorNewFailed {
             get {
                 return ResourceManager.GetString("ErrorNewFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The logger was passed null during initialization..
+        /// </summary>
+        internal static string ErrorNullLogger {
+            get {
+                return ResourceManager.GetString("ErrorNullLogger", resourceCulture);
             }
         }
         

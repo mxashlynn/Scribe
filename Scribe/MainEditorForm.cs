@@ -8,6 +8,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Media;
+using System.Text;
 using System.Windows.Forms;
 using Parquet;
 using Parquet.Beings;
@@ -51,6 +52,9 @@ namespace Scribe
 
         /// <summary>Window for editing <see cref="StrikePanelGrid"/>s.</summary>
         private readonly StrikePatternEditorForm StrikePatternEditorWindow = new StrikePatternEditorForm();
+
+        /// <summary>Logs messages to file and presents them to the user when neccessary.</summary>
+        private LoggerUI UILogger { get; init; }
         #endregion
 
         #region Cached Controls
@@ -168,6 +172,11 @@ namespace Scribe
         public MainEditorForm()
         {
             InitializeComponent();
+
+            // TODO: Replace existing error boxes with UILogger.Log(...);
+            UILogger = new LoggerUI(new StreamWriter("scribe.log", false, new UTF8Encoding(true, true)),
+                                    MainToolStripStatusLabel);
+            Parquet.SetLogger(UILogger);
 
             HasUnsavedChanges = false;
 
@@ -3164,6 +3173,7 @@ namespace Scribe
                 }
                 else
                 {
+                    UILogger.Dispose();
                     FormClosing -= FormClosingEventHandler;
                 }
             }
