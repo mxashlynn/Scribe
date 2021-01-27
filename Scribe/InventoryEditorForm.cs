@@ -129,7 +129,7 @@ namespace Scribe
         {
             // Determine text to represent this InventorySlot.
             var thisSlot = (InventorySlot)SlotsListBox.Items[eventArguments.Index];
-            var thisSlotName = All.Items.Get<ItemModel>(thisSlot.ItemID).Name;
+            var thisSlotName = All.Items.GetOrNull<ItemModel>(thisSlot.ItemID).Name ?? nameof(InventorySlot);
             var thisSlotText = $"{thisSlot.Count} {thisSlotName}";
             // Render that text.
             eventArguments.DrawBackground();

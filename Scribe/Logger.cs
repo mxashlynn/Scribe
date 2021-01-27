@@ -43,21 +43,21 @@ namespace Scribe
                     ? inException.Message
                     : $"Scribe Trace at {DateTime.Now}.";
 
-            LogWritter.WriteLine($"{nameof(Scribe)} {inLogLevel.ToString()} {message}");
+            LogWriter.WriteLine($"{nameof(Scribe)} {inLogLevel.ToString()} {message}");
 
             switch (inLogLevel)
             {
-                case Debug:
+                case LogLevel.Debug:
                     break;
-                case Info:
-                case Warning:
+                case LogLevel.Info:
+                case LogLevel.Warning:
                     InfoStrip.Text = message;
                     break;
-                case Error:
+                case LogLevel.Error:
                     _ = MessageBox.Show(message,
                                         Resources.CaptionError, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
-                case Fatal:
+                case LogLevel.Fatal:
                     _ = MessageBox.Show($"{message}\n{Resources.ErrorFatal}",
                                         Resources.CaptionError, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;

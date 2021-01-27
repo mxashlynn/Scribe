@@ -176,7 +176,7 @@ namespace Scribe
             // TODO: Replace existing error boxes with UILogger.Log(...);
             UILogger = new LoggerUI(new StreamWriter("scribe.log", false, new UTF8Encoding(true, true)),
                                     MainToolStripStatusLabel);
-            Parquet.SetLogger(UILogger);
+            Logger.SetLogger(UILogger);
 
             HasUnsavedChanges = false;
 
@@ -1287,8 +1287,8 @@ namespace Scribe
                 GameIsEpisodeCheckBox.Checked = model.IsEpisode;
                 GameEpisodeTitleTextBox.Text = model.EpisodeTitle;
                 GameEpisodeNumberTextBox.Text = model.EpisodeNumber.ToString();
-                GamePlayerCharacterComboBox.SelectedItem = All.Characters.GetOrNull(model.PlayerCharacterID);
-                GameFirstScriptComboBox.SelectedItem = All.Scripts.GetOrNull(model.FirstScriptID);
+                GamePlayerCharacterComboBox.SelectedItem = All.Characters.GetOrNull<CharacterModel>(model.PlayerCharacterID);
+                GameFirstScriptComboBox.SelectedItem = All.Scripts.GetOrNull<ScriptModel>(model.FirstScriptID);
                 PictureBoxLoadFromStorage(GameIconPictureBox, model.ID);
             }
         }
@@ -1326,12 +1326,13 @@ namespace Scribe
                 BlockNameTextBox.Text = model.Name;
                 BlockDescriptionTextBox.Text = model.Description;
                 BlockCommentTextBox.Text = model.Comment;
-                BlockEquivalentItemComboBox.SelectedItem = All.Items.GetOrNull(model.ItemID);
+                BlockEquivalentItemComboBox.SelectedItem = All.Items.GetOrNull<ItemModel>(model.ItemID);
                 RepopulateListBox(BlockAddsToBiomeListBox, model.AddsToBiome);
                 RepopulateListBox(BlockAddsToRoomListBox, model.AddsToRoom);
                 BlockGatherToolComboBox.SelectedItem = model.GatherTool;
                 BlockGatherEffectComboBox.SelectedItem = model.GatherEffect;
-                BlockDroppedCollectibleIDComboBox.SelectedItem = All.Collectibles.GetOrNull(model.CollectibleID);
+                BlockDroppedCollectibleIDComboBox.SelectedItem =
+                    All.Collectibles.GetOrNull<CollectibleModel>(model.CollectibleID);
                 BlockIsFlammableCheckBox.Checked = model.IsFlammable;
                 BlockIsLiquidCheckBox.Checked = model.IsLiquid;
                 BlockMaxToughnessTextBox.Text = model.MaxToughness.ToString();
@@ -1368,7 +1369,7 @@ namespace Scribe
                 FloorNameTextBox.Text = model.Name;
                 FloorDescriptionTextBox.Text = model.Description;
                 FloorCommentTextBox.Text = model.Comment;
-                FloorEquivalentItemComboBox.SelectedItem = All.Items.GetOrNull(model.ItemID);
+                FloorEquivalentItemComboBox.SelectedItem = All.Items.GetOrNull<ItemModel>(model.ItemID);
                 RepopulateListBox(FloorAddsToBiomeListBox, model.AddsToBiome);
                 RepopulateListBox(FloorAddsToRoomListBox, model.AddsToRoom);
                 FloorModificationToolComboBox.SelectedItem = model.ModTool;
@@ -1409,14 +1410,14 @@ namespace Scribe
                 FurnishingNameTextBox.Text = model.Name;
                 FurnishingDescriptionTextBox.Text = model.Description;
                 FurnishingCommentTextBox.Text = model.Comment;
-                FurnishingEquivalentItemComboBox.SelectedItem = All.Items.GetOrNull(model.ItemID);
+                FurnishingEquivalentItemComboBox.SelectedItem = All.Items.GetOrNull<ItemModel>(model.ItemID);
                 RepopulateListBox(FurnishingAddsToBiomeListBox, model.AddsToBiome);
                 RepopulateListBox(FurnishingAddsToRoomListBox, model.AddsToRoom);
                 FurnishingEntryTypeComboBox.SelectedItem = model.Entry;
                 FurnishingIsWalkableCheckBox.Checked = model.IsWalkable;
                 FurnishingIsEnclosingCheckBox.Checked = model.IsEnclosing;
                 FurnishingIsFlammableCheckBox.Checked = model.IsFlammable;
-                FurnishingSwapWithFurnishingComboBox.SelectedItem = All.Furnishings.GetOrNull(model.SwapID);
+                FurnishingSwapWithFurnishingComboBox.SelectedItem = All.Furnishings.GetOrNull<FurnishingModel>(model.SwapID);
                 PictureBoxLoadFromStorage(FurnishingPictureBox, model.ID);
             }
         }
@@ -1450,7 +1451,7 @@ namespace Scribe
                 CollectibleNameTextBox.Text = model.Name;
                 CollectibleDescriptionTextBox.Text = model.Description;
                 CollectibleCommentTextBox.Text = model.Comment;
-                CollectibleEquivalentItemComboBox.SelectedItem = All.Items.GetOrNull(model.ItemID);
+                CollectibleEquivalentItemComboBox.SelectedItem = All.Items.GetOrNull<ItemModel>(model.ItemID);
                 RepopulateListBox(CollectibleAddsToBiomeListBox, model.AddsToBiome);
                 RepopulateListBox(CollectibleAddsToRoomListBox, model.AddsToRoom);
                 CollectibleCollectionEffectComboBox.SelectedItem = model.CollectionEffect;
@@ -1491,17 +1492,21 @@ namespace Scribe
                 CharacterFamilyNameTextBox.Text = model.FamilyName;
                 CharacterDescriptionTextBox.Text = model.Description;
                 CharacterCommentTextBox.Text = model.Comment;
-                CharacterNativeBiomeComboBox.SelectedItem = All.BiomeRecipes.GetOrNull(model.NativeBiomeID);
-                CharacterPrimaryBehaviorComboBox.SelectedItem = All.Scripts.GetOrNull(model.PrimaryBehaviorID);
+                CharacterNativeBiomeComboBox.SelectedItem = All.BiomeRecipes.GetOrNull<BiomeRecipe>(model.NativeBiomeID);
+                CharacterPrimaryBehaviorComboBox.SelectedItem = All.Scripts.GetOrNull<ScriptModel>(model.PrimaryBehaviorID);
                 CharacterPronounComboBox.SelectedItem = model.PronounKey;
-                CharacterStoryIDTextBox.Text = string.IsNullOrEmpty(model.StoryCharacterID) && Settings.Default.SuggestStoryIDs
-                    ? $"{model.PersonalName.ToUpperInvariant()}_{model.FamilyName.ToUpperInvariant()}"
-                    : model.StoryCharacterID;
+                CharacterStoryIDTextBox.Text =
+                    string.IsNullOrEmpty(model.StoryCharacterID) && Settings.Default.SuggestStoryIDs
+                        ? $"{model.PersonalName.ToUpperInvariant()}_{model.FamilyName.ToUpperInvariant()}"
+                        : model.StoryCharacterID;
                 RepopulateListBox(CharacterStartingQuestsListBox, model.StartingQuestIDs
-                                                                       .Select(id => All.Interactions.Get<InteractionModel>(id)));
-                CharacterStartingDialogueComboBox.SelectedItem = ModelID.None == model.StartingDialogueID
-                    ? null
-                    : All.Interactions.Get<InteractionModel>(model.StartingDialogueID);
+                                                                       // Note: I am not 100% certain what happens if GetOrNull returns null here.
+                                                                       // In any case, that would be an error state.
+                                                                       .Select(id => All.Interactions.GetOrNull<InteractionModel>(id)));
+                CharacterStartingDialogueComboBox.SelectedItem =
+                    ModelID.None == model.StartingDialogueID
+                        ? null
+                        : All.Interactions.GetOrNull<InteractionModel>(model.StartingDialogueID);
                 CharacterStartingInventoryExample.Text = $"{model.StartingInventory?.ItemCount ?? 0} Items";
                 PictureBoxLoadFromStorage(CharacterPictureBox, model.ID);
             }
@@ -1559,8 +1564,8 @@ namespace Scribe
                 CritterNameTextBox.Text = model.Name;
                 CritterDescriptionTextBox.Text = model.Description;
                 CritterCommentTextBox.Text = model.Comment;
-                CritterNativeBiomeComboBox.SelectedItem = All.BiomeRecipes.GetOrNull(model.NativeBiomeID);
-                CritterPrimaryBehaviorComboBox.SelectedItem = All.Scripts.GetOrNull(model.PrimaryBehaviorID);
+                CritterNativeBiomeComboBox.SelectedItem = All.BiomeRecipes.GetOrNull<BiomeRecipe>(model.NativeBiomeID);
+                CritterPrimaryBehaviorComboBox.SelectedItem = All.Scripts.GetOrNull<ScriptModel>(model.PrimaryBehaviorID);
                 PictureBoxLoadFromStorage(CritterPictureBox, model.ID);
             }
         }
@@ -1600,9 +1605,9 @@ namespace Scribe
                 ItemPriceTextBox.Text = model.Price.ToString();
                 ItemRarityTextBox.Text = model.Rarity.ToString();
                 ItemStackMaxTextBox.Text = model.StackMax.ToString();
-                ItemEffectWhileHeldComboBox.SelectedItem = All.Scripts.GetOrNull(model.EffectWhileHeldID);
-                ItemEffectWhenUsedComboBox.SelectedItem = All.Scripts.GetOrNull(model.EffectWhenUsedID);
-                ItemEquivalentParquetComboBox.SelectedItem = All.Parquets.GetOrNull(model.ParquetID);
+                ItemEffectWhileHeldComboBox.SelectedItem = All.Scripts.GetOrNull<ScriptModel>(model.EffectWhileHeldID);
+                ItemEffectWhenUsedComboBox.SelectedItem = All.Scripts.GetOrNull<ScriptModel>(model.EffectWhenUsedID);
+                ItemEquivalentParquetComboBox.SelectedItem = All.Parquets.GetOrNull<ParquetModel>(model.ParquetID);
                 RepopulateListBox(ItemTagListBox, model.ItemTags);
                 PictureBoxLoadFromStorage(ItemPictureBox, model.ID);
             }
