@@ -419,10 +419,8 @@ namespace Scribe
             this.BiomeRoomThresholdFactorLabel = new System.Windows.Forms.Label();
             this.BiomePictureEditButton = new System.Windows.Forms.Button();
             this.BiomeTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.BiomeAddParquetCriterionButton = new System.Windows.Forms.Button();
-            this.BiomeRemoveParquetCriterionButton = new System.Windows.Forms.Button();
             this.BiomeEntryRequirementsListBox = new System.Windows.Forms.ListBox();
-            this.BiomeParquetCriteriaListBox = new System.Windows.Forms.ListBox();
+            this.BiomeParquetCriteriaTextBox = new System.Windows.Forms.TextBox();
             this.BiomeIsLiquidBasedCheckBox = new System.Windows.Forms.CheckBox();
             this.BiomeIsRoomBasedCheckBox = new System.Windows.Forms.CheckBox();
             this.BiomeNameLabel = new System.Windows.Forms.Label();
@@ -5027,10 +5025,8 @@ namespace Scribe
             this.BiomeTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.BiomeTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.BiomeTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.BiomeTableLayoutPanel.Controls.Add(this.BiomeAddParquetCriterionButton, 2, 7);
-            this.BiomeTableLayoutPanel.Controls.Add(this.BiomeRemoveParquetCriterionButton, 1, 7);
             this.BiomeTableLayoutPanel.Controls.Add(this.BiomeEntryRequirementsListBox, 1, 8);
-            this.BiomeTableLayoutPanel.Controls.Add(this.BiomeParquetCriteriaListBox, 1, 6);
+            this.BiomeTableLayoutPanel.Controls.Add(this.BiomeParquetCriteriaTextBox, 1, 6);
             this.BiomeTableLayoutPanel.Controls.Add(this.BiomeIsLiquidBasedCheckBox, 1, 5);
             this.BiomeTableLayoutPanel.Controls.Add(this.BiomeIsRoomBasedCheckBox, 1, 4);
             this.BiomeTableLayoutPanel.Controls.Add(this.BiomeNameLabel, 0, 0);
@@ -5061,32 +5057,6 @@ namespace Scribe
             this.BiomeTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.BiomeTableLayoutPanel.TabIndex = 5;
             // 
-            // BiomeAddParquetCriterionButton
-            // 
-            this.BiomeAddParquetCriterionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BiomeAddParquetCriterionButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BiomeAddParquetCriterionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BiomeAddParquetCriterionButton.Location = new System.Drawing.Point(297, 316);
-            this.BiomeAddParquetCriterionButton.Name = "BiomeAddParquetCriterionButton";
-            this.BiomeAddParquetCriterionButton.Size = new System.Drawing.Size(129, 23);
-            this.BiomeAddParquetCriterionButton.TabIndex = 2;
-            this.BiomeAddParquetCriterionButton.Text = "Add Criterion Tag";
-            this.BiomeAddParquetCriterionButton.UseVisualStyleBackColor = false;
-            this.BiomeAddParquetCriterionButton.Click += new System.EventHandler(this.BiomeAddParquetCriterionButton_Click);
-            // 
-            // BiomeRemoveParquetCriterionButton
-            // 
-            this.BiomeRemoveParquetCriterionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BiomeRemoveParquetCriterionButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BiomeRemoveParquetCriterionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BiomeRemoveParquetCriterionButton.Location = new System.Drawing.Point(146, 316);
-            this.BiomeRemoveParquetCriterionButton.Name = "BiomeRemoveParquetCriterionButton";
-            this.BiomeRemoveParquetCriterionButton.Size = new System.Drawing.Size(129, 23);
-            this.BiomeRemoveParquetCriterionButton.TabIndex = 2;
-            this.BiomeRemoveParquetCriterionButton.Text = "Remove Criterion Tag";
-            this.BiomeRemoveParquetCriterionButton.UseVisualStyleBackColor = false;
-            this.BiomeRemoveParquetCriterionButton.Click += new System.EventHandler(this.BiomeRemoveParquetCriterionButton_Click);
-            // 
             // BiomeEntryRequirementsListBox
             // 
             this.BiomeEntryRequirementsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -5098,16 +5068,15 @@ namespace Scribe
             this.BiomeEntryRequirementsListBox.Size = new System.Drawing.Size(295, 95);
             this.BiomeEntryRequirementsListBox.TabIndex = 1;
             // 
-            // BiomeParquetCriteriaListBox
+            // BiomeParquetCriteriaTextBox
             // 
-            this.BiomeParquetCriteriaListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.BiomeParquetCriteriaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.BiomeTableLayoutPanel.SetColumnSpan(this.BiomeParquetCriteriaListBox, 2);
-            this.BiomeParquetCriteriaListBox.FormattingEnabled = true;
-            this.BiomeParquetCriteriaListBox.Location = new System.Drawing.Point(131, 213);
-            this.BiomeParquetCriteriaListBox.Name = "BiomeParquetCriteriaListBox";
-            this.BiomeParquetCriteriaListBox.Size = new System.Drawing.Size(295, 95);
-            this.BiomeParquetCriteriaListBox.TabIndex = 1;
+            this.BiomeTableLayoutPanel.SetColumnSpan(this.BiomeParquetCriteriaTextBox, 2);
+            this.BiomeParquetCriteriaTextBox.Location = new System.Drawing.Point(131, 213);
+            this.BiomeParquetCriteriaTextBox.Name = "BiomeParquetCriteriaTextBox";
+            this.BiomeParquetCriteriaTextBox.Size = new System.Drawing.Size(295, 20);
+            this.BiomeParquetCriteriaTextBox.TabIndex = 1;
             // 
             // BiomeIsLiquidBasedCheckBox
             // 
@@ -5789,7 +5758,6 @@ namespace Scribe
             this.RoomRemoveBlockButton.TabIndex = 2;
             this.RoomRemoveBlockButton.Text = "Remove Block";
             this.RoomRemoveBlockButton.UseVisualStyleBackColor = false;
-            this.RoomRemoveBlockButton.Click += new System.EventHandler(this.RoomRemoveBlockButton_Click);
             // 
             // RoomListBox
             // 
@@ -5956,7 +5924,6 @@ namespace Scribe
             this.RoomRemoveFurnishingButton.TabIndex = 29;
             this.RoomRemoveFurnishingButton.Text = "Remove Furnishing";
             this.RoomRemoveFurnishingButton.UseVisualStyleBackColor = false;
-            this.RoomRemoveFurnishingButton.Click += new System.EventHandler(this.RoomRemoveFurnishingButton_Click);
             // 
             // RoomAddFloorButton
             // 
@@ -5982,7 +5949,6 @@ namespace Scribe
             this.RoomRemoveFloorButton.TabIndex = 2;
             this.RoomRemoveFloorButton.Text = "Remove Floor";
             this.RoomRemoveFloorButton.UseVisualStyleBackColor = false;
-            this.RoomRemoveFloorButton.Click += new System.EventHandler(this.RoomRemoveFloorButton_Click);
             // 
             // RoomRequiredBlocksListBox
             // 
@@ -6736,10 +6702,8 @@ namespace Scribe
         private System.Windows.Forms.CheckBox BiomeIsRoomBasedCheckBox;
         private System.Windows.Forms.Button BiomeAddEntryRequirementButton;
         private System.Windows.Forms.Button BiomeRemoveEntryRequirementButton;
-        private System.Windows.Forms.Button BiomeAddParquetCriterionButton;
-        private System.Windows.Forms.Button BiomeRemoveParquetCriterionButton;
         private System.Windows.Forms.ListBox BiomeEntryRequirementsListBox;
-        private System.Windows.Forms.ListBox BiomeParquetCriteriaListBox;
+        private System.Windows.Forms.TextBox BiomeParquetCriteriaTextBox;
         private System.Windows.Forms.TableLayoutPanel BiomeConfigTableLayoutPanel;
         private System.Windows.Forms.Label BiomeLandThresholdFactorLabel;
         private System.Windows.Forms.Label BiomeLiquidThresholdFactorLabel;

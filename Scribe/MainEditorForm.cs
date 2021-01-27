@@ -753,12 +753,8 @@ namespace Scribe
                         var editRecipe = (IMutableBiomeRecipe)inModel;
                         editRecipe.EntryRequirements.ToList().Add((ModelTag)input);
                     },
-                (BiomeRecipesTabIndex, "BiomeParquetCriteriaListBox")
-                    => (input) =>
-                    {
-                        var editRecipe = (IMutableBiomeRecipe)inModel;
-                        editRecipe.ParquetCriteria.ToList().Add((ModelTag)input);
-                    },
+                (BiomeRecipesTabIndex, "BiomeParquetCriteriaTextBox")
+                    => (input) => ((IMutableBiomeRecipe)inModel).ParquetCriteria = input.ToString(),
                 #endregion
 
                 #region CraftingRecipes
@@ -1619,7 +1615,6 @@ namespace Scribe
         /// <param name="eventArguments">Ignored.</param>
         private void BiomeListBox_SelectedValueChanged(object sender, EventArgs eventArguments)
         {
-            BiomeParquetCriteriaListBox.SelectedItem = null;
             BiomeEntryRequirementsListBox.SelectedItem = null;
             if (null == BiomeListBox.SelectedItem)
             {
@@ -1630,7 +1625,7 @@ namespace Scribe
                 BiomeTierTextBox.Text = "";
                 BiomeIsRoomBasedCheckBox.Checked = false;
                 BiomeIsLiquidBasedCheckBox.Checked = false;
-                BiomeParquetCriteriaListBox.Items.Clear();
+                BiomeParquetCriteriaTextBox.Text = "";
                 BiomeEntryRequirementsListBox.Items.Clear();
                 BiomePictureBox.Image = Resources.ImageNotFoundGraphic;
             }
@@ -1644,8 +1639,7 @@ namespace Scribe
                 BiomeTierTextBox.Text = recipe.Tier.ToString();
                 BiomeIsRoomBasedCheckBox.Checked = recipe.IsRoomBased;
                 BiomeIsLiquidBasedCheckBox.Checked = recipe.IsLiquidBased;
-                // TODO This needs to be changed from a ListBox to a TextBox.
-                RepopulateListBox(BiomeParquetCriteriaListBox, recipe.ParquetCriteria);
+                BiomeParquetCriteriaTextBox.Text = recipe.ParquetCriteria;
                 RepopulateListBox(BiomeEntryRequirementsListBox, recipe.EntryRequirements);
                 PictureBoxLoadFromStorage(BiomePictureBox, recipe.ID);
             }
@@ -2589,22 +2583,6 @@ namespace Scribe
             => RemoveModel(All.BiomeRecipes, BiomeListBox, "Room Recipe");
 
         /// <summary>
-        /// Registers the user command to add a new parquet criterion tag to the current biome.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="eventArguments">Ignored</param>
-        private void BiomeAddParquetCriterionButton_Click(object sender, EventArgs eventArguments)
-            => AddTag(BiomeParquetCriteriaListBox, (IMutableBiomeRecipe recipe) => recipe.ParquetCriteria);
-
-        /// <summary>
-        /// Registers the user command to remove the selected parquet criterion tag from the current biome.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="eventArguments">Ignored</param>
-        private void BiomeRemoveParquetCriterionButton_Click(object sender, EventArgs eventArguments)
-            => RemoveTag(BiomeParquetCriteriaListBox, (IMutableBiomeRecipe recipe) => recipe.ParquetCriteria);
-
-        /// <summary>
         /// Registers the user command to add a new entry requirement tag to the current biome.
         /// </summary>
         /// <param name="sender">Ignored</param>
@@ -2713,14 +2691,6 @@ namespace Scribe
             => AddRecipeElement(RoomRequiredFurnishingsListBox, (IMutableRoomRecipe recipe) => recipe.OptionallyRequiredFurnishings);
 
         /// <summary>
-        /// Registers the user command to remove the selected Furnishing requirement from the current Room Recipe.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="eventArguments">Ignored</param>
-        private void RoomRemoveFurnishingButton_Click(object sender, EventArgs eventArguments)
-            => RemoveRecipeElement(BiomeParquetCriteriaListBox, (IMutableRoomRecipe recipe) => recipe.OptionallyRequiredFurnishings);
-
-        /// <summary>
         /// Registers the user command to add a new Floor requirement to the current Room Recipe.
         /// </summary>
         /// <param name="sender">Ignored</param>
@@ -2729,28 +2699,12 @@ namespace Scribe
             => AddRecipeElement(RoomRequiredFurnishingsListBox, (IMutableRoomRecipe recipe) => recipe.OptionallyRequiredWalkableFloors);
 
         /// <summary>
-        /// Registers the user command to remove the selected Floor requirement from the current Room Recipe.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="eventArguments">Ignored</param>
-        private void RoomRemoveFloorButton_Click(object sender, EventArgs eventArguments)
-            => RemoveRecipeElement(BiomeParquetCriteriaListBox, (IMutableRoomRecipe recipe) => recipe.OptionallyRequiredWalkableFloors);
-
-        /// <summary>
         /// Registers the user command to add a new Block requirement to the current Room Recipe.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
         private void RoomAddBlockButton_Click(object sender, EventArgs eventArguments)
             => AddRecipeElement(RoomRequiredFurnishingsListBox, (IMutableRoomRecipe recipe) => recipe.OptionallyRequiredPerimeterBlocks);
-
-        /// <summary>
-        /// Registers the user command to remove the selected Block requirement from the current Room Recipe.
-        /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="eventArguments">Ignored</param>
-        private void RoomRemoveBlockButton_Click(object sender, EventArgs eventArguments)
-            => RemoveRecipeElement(BiomeParquetCriteriaListBox, (IMutableRoomRecipe recipe) => recipe.OptionallyRequiredPerimeterBlocks);
         #endregion
 
         #region Maps Tab
