@@ -9,8 +9,6 @@ namespace Scribe
     /// <summary>
     /// Provides assembly-wide information.
     /// </summary>
-    [SuppressMessage("Performance", "CA1815:Override equals and operator equals on value types",
-                     Justification = "Comparing two AssemblyInfos is nonsensical.")]
     public readonly struct AssemblyInfo
     {
         /// <summary>Describes the version of the editor.</summary>
