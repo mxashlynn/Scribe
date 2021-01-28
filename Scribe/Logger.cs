@@ -12,10 +12,10 @@ namespace Scribe
     public sealed class LoggerUI : ILogger, IDisposable
     {
         /// <summary>Used to display low priority messages.</summary>
-        private ToolStripStatusLabel InfoStrip;
+        private readonly ToolStripStatusLabel InfoStrip;
 
         /// <summary>Used to log all messages.</summary>
-        private StreamWriter LogWriter;
+        private readonly StreamWriter LogWriter;
 
         public LoggerUI(StreamWriter inFileWriter, ToolStripStatusLabel inInfoStrip)
         {
