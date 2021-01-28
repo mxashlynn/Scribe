@@ -53,7 +53,7 @@ namespace Scribe
         /// <summary>Window for editing <see cref="StrikePanelGrid"/>s.</summary>
         private readonly StrikePatternEditorForm StrikePatternEditorWindow = new StrikePatternEditorForm();
 
-        /// <summary>Logs messages to file and presents them to the user when neccessary.</summary>
+        /// <summary>Logs messages to file and presents them to the user when necessary.</summary>
         private LoggerUI UILogger { get; init; }
         #endregion
 

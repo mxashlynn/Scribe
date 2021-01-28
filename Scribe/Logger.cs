@@ -7,7 +7,7 @@ using Scribe.Properties;
 namespace Scribe
 {
     /// <summary>
-    /// Logs messages to file and presents them to the user when neccessary.
+    /// Logs messages to file and presents them to the user when necessary.
     /// </summary>
     public sealed class LoggerUI : ILogger, IDisposable
     {
