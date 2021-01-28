@@ -73,7 +73,10 @@ namespace Scribe
                 Logger.Log(LogLevel.Error, string.Format(CultureInfo.CurrentCulture, Resources.ErrorParseFailed,
                                                          nameof(Settings.Default.CurrentEditorTheme)));
             }
-            ThemeRadioButtons.Values.Select(radioButton => radioButton.Checked = false);
+            foreach (var radioButton in ThemeRadioButtons.Values)
+            {
+                radioButton.Checked = false;
+            }
             ThemeRadioButtons[Settings.Default.CurrentEditorTheme].Checked = true;
 
             if (!Enum.TryParse(Settings.Default.DefaultDirectory, out OldDirectory))
@@ -83,7 +86,10 @@ namespace Scribe
                 Logger.Log(LogLevel.Error, string.Format(CultureInfo.CurrentCulture, Resources.ErrorParseFailed,
                                                          nameof(Settings.Default.DefaultDirectory)));
             }
-            DirectoryRadioButtons.Values.Select(radioButton => radioButton.Checked = false);
+            foreach (var radioButton in DirectoryRadioButtons.Values)
+            {
+                radioButton.Checked = false;
+            }
             DirectoryRadioButtons[Settings.Default.DefaultDirectory].Checked = true;
 
             CheckBoxFlavorFilters.Checked = Settings.Default.UseFlavorFilters;

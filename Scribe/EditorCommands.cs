@@ -101,14 +101,13 @@ namespace Scribe
             else
             {
                 var newTextBuilder = new StringBuilder(inText.Length);
-                inText.All(c =>
+                foreach(var c in inText)
                 {
                     var normalC = char.IsWhiteSpace(c)
                         ? ' '
                         : c;
                     newTextBuilder.Append(normalC);
-                    return true;
-                });
+                }
                 return newTextBuilder.ToString().Trim();
             }
         }
