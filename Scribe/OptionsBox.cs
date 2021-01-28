@@ -25,6 +25,7 @@ namespace Scribe
         private EditorTheme OldTheme;
 
         /// <summary>The <see cref="DefaultDirectory"/> that was set when the form was shown.</summary>
+        // TODO We are not currently using this -- should we be?
         private DefaultDirectory OldDirectory;
         
         /// <summary>User-set autosave interval.  Guaranteed to be valid when <see cref="OptionsBox.FormClosingEventHandler"/> runs.</summary>
