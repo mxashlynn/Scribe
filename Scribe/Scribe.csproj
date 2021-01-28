@@ -71,7 +71,7 @@
   <ItemGroup>
     <!--- NOTE: Updating to CSVHelper Version 20 requires major research and adjustment of CSVHelper code. -->
     <PackageReference Include="CsvHelper" Version="19.0.0" />
-    <PackageReference Include="Parquet" Version="0.3.52" />
+    <PackageReference Include="Parquet" Version="0.3.53" />
   </ItemGroup>
 
   <ItemGroup>
