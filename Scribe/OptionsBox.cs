@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Media;
 using System.Windows.Forms;
+using Parquet;
 using Scribe.Properties;
 
 namespace Scribe
@@ -68,9 +69,8 @@ namespace Scribe
             {
                 OldTheme = EditorTheme.OSDefault;
                 SystemSounds.Beep.Play();
-                var message = string.Format(CultureInfo.CurrentCulture, Resources.ErrorParseFailed,
-                                            nameof(Settings.Default.CurrentEditorTheme));
-                _ = MessageBox.Show(message, Resources.CaptionError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Log(LogLevel.Error, string.Format(CultureInfo.CurrentCulture, Resources.ErrorParseFailed,
+                                                         nameof(Settings.Default.CurrentEditorTheme)));
             }
             ThemeRadioButtons.Values.Select(radioButton => radioButton.Checked = false);
             ThemeRadioButtons[Settings.Default.CurrentEditorTheme].Checked = true;
@@ -79,9 +79,8 @@ namespace Scribe
             {
                 OldDirectory = DefaultDirectory.Desktop;
                 SystemSounds.Beep.Play();
-                var message = string.Format(CultureInfo.CurrentCulture, Resources.ErrorParseFailed,
-                                            nameof(Settings.Default.DefaultDirectory));
-                _ = MessageBox.Show(message, Resources.CaptionError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Log(LogLevel.Error, string.Format(CultureInfo.CurrentCulture, Resources.ErrorParseFailed,
+                                                         nameof(Settings.Default.DefaultDirectory)));
             }
             DirectoryRadioButtons.Values.Select(radioButton => radioButton.Checked = false);
             DirectoryRadioButtons[Settings.Default.DefaultDirectory].Checked = true;

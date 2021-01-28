@@ -580,7 +580,7 @@ namespace Scribe
             // 
             this.MainToolStripStatusLabel.Name = "MainToolStripStatusLabel";
             this.MainToolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
-            this.MainToolStripStatusLabel.Text = "Ready";
+            this.MainToolStripStatusLabel.Text = "Loading";
             // 
             // ToolStripProgressBar
             // 

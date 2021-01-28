@@ -56,7 +56,8 @@ namespace Scribe
             // This comparison forces the Parquet assembly to load.
             if (string.IsNullOrEmpty(Parquet.AssemblyInfo.LibraryVersion))
             {
-                throw new InvalidOperationException(Resources.ErrorAccessingParquet);
+                Logger.Log(LogLevel.Fatal, Resources.ErrorAccessingParquet,
+                           new InvalidOperationException(Resources.ErrorAccessingParquet));
             }
             else
             {
@@ -213,7 +214,7 @@ namespace Scribe
         /// Saves game data to files in the current directory.
         /// </summary>
         /// <returns>
-        /// <c>true</c> if no exceptions were caught, <c>false</c> otherwise.
+        /// <c>true</c> if no exceptions were caught; <c>false</c> otherwise.
         /// Note that a return value of <c>true</c> does not indicate the files were successfully saved!
         /// </returns>
         internal static bool SaveDataFiles()
@@ -225,7 +226,9 @@ namespace Scribe
         /// <summary>
         /// Loads game data from files in the current directory.
         /// </summary>
-        /// <returns><c>true</c> if no exceptions were caught, <c>false</c> otherwise.</returns>
+        /// <returns>
+        /// <c>true</c> if no exceptions were caught; <c>false</c> otherwise.
+        /// </returns>
         internal static bool LoadDataFiles()
         {
             All.Clear();

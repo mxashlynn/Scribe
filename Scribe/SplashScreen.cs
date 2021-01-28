@@ -42,8 +42,7 @@ namespace Scribe
                 else
                 {
                     SystemSounds.Beep.Play();
-                    _ = MessageBox.Show(Resources.ErrorLoadFailed, Resources.CaptionError,
-                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Logger.Log(LogLevel.Error, Resources.ErrorLoadFailed);
                 }
             }
         }
@@ -69,8 +68,7 @@ namespace Scribe
             else
             {
                 SystemSounds.Beep.Play();
-                _ = MessageBox.Show(Resources.ErrorNewFailed, Resources.CaptionError,
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Log(LogLevel.Error, Resources.ErrorNewFailed);
             }
         }
 
@@ -94,8 +92,7 @@ namespace Scribe
             else
             {
                 SystemSounds.Beep.Play();
-                _ = MessageBox.Show(Resources.ErrorLoadFailed, Resources.CaptionError,
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Log(LogLevel.Error, Resources.ErrorLoadFailed);
             }
         }
 

@@ -224,8 +224,7 @@ namespace Scribe
                 else
                 {
                     SystemSounds.Beep.Play();
-                    _ = MessageBox.Show(Resources.ErrorAddingSlot, Resources.CaptionError,
-                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Logger.Log(LogLevel.Error, Resources.ErrorAddingSlot);
                 }
             }
         }

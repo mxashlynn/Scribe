@@ -141,8 +141,7 @@ namespace Scribe
                         else
                         {
                             SystemSounds.Beep.Play();
-                            _ = MessageBox.Show(Resources.ErrorSaveFailed, Resources.CaptionError,
-                                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Logger.Log(LogLevel.Warning, Resources.ErrorSaveFailed);
                             _hasUnsavedChanges = true;
                         }
                     }
@@ -173,7 +172,6 @@ namespace Scribe
         {
             InitializeComponent();
 
-            // TODO: Replace existing error boxes with UILogger.Log(...);
             UILogger = new LoggerUI(new StreamWriter("scribe.log", false, new UTF8Encoding(true, true)),
                                     MainToolStripStatusLabel);
             Logger.SetLogger(UILogger);
@@ -245,9 +243,8 @@ namespace Scribe
             else
             {
                 SystemSounds.Beep.Play();
-                var message = string.Format(CultureInfo.CurrentCulture, Resources.ErrorParseFailed,
-                                            nameof(Settings.Default.CurrentEditorTheme));
-                _ = MessageBox.Show(message, Resources.CaptionError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Log(LogLevel.Error, string.Format(CultureInfo.CurrentCulture, Resources.ErrorParseFailed,
+                                                           nameof(Settings.Default.CurrentEditorTheme)));
             }
             #endregion
         }
@@ -1842,8 +1839,8 @@ namespace Scribe
                 : inIDRange.Minimum;
             if (nextID > inIDRange.Maximum)
             {
-                MainToolStripStatusLabel.Text = Resources.ErrorMaximumIDReached;
                 SystemSounds.Beep.Play();
+                Logger.Log(LogLevel.Warning, Resources.ErrorMaximumIDReached);
                 return;
             }
 
@@ -1926,9 +1923,9 @@ namespace Scribe
             {
                 if (inGetTagListFromModel(model).Any(tag => ((string)AddTagDialogue.ReturnNewTag).Equals(tag)))
                 {
-                    MainToolStripStatusLabel.Text = string.Format(CultureInfo.CurrentCulture, Resources.WarningNotAddingDuplicate,
-                                                                  nameof(ModelTag));
                     SystemSounds.Beep.Play();
+                    Logger.Log(LogLevel.Warning, string.Format(CultureInfo.CurrentCulture, Resources.WarningNotAddingDuplicate,
+                                                               nameof(ModelTag)));
                     return;
                 }
 
@@ -2008,9 +2005,9 @@ namespace Scribe
             {
                 if (inGetElementListFromRecipe(recipe).Any(element => AddRecipeElementDialogue.ReturnNewRecipeElement == element))
                 {
-                    MainToolStripStatusLabel.Text = string.Format(CultureInfo.CurrentCulture, Resources.WarningNotAddingDuplicate,
-                                                                  nameof(RecipeElement));
                     SystemSounds.Beep.Play();
+                    Logger.Log(LogLevel.Warning, string.Format(CultureInfo.CurrentCulture, Resources.WarningNotAddingDuplicate,
+                                                               nameof(ModelTag)));
                     return;
                 }
 
@@ -2090,9 +2087,9 @@ namespace Scribe
             {
                 if (inGetQuestListFromModel(character).Contains(AddQuestDialogue.ReturnNewQuestID))
                 {
-                    MainToolStripStatusLabel.Text = string.Format(CultureInfo.CurrentCulture, Resources.WarningNotAddingDuplicate,
-                                                                  nameof(InteractionModel));
                     SystemSounds.Beep.Play();
+                    Logger.Log(LogLevel.Warning, string.Format(CultureInfo.CurrentCulture, Resources.WarningNotAddingDuplicate,
+                                                               nameof(ModelTag)));
                     return;
                 }
 
@@ -2420,8 +2417,8 @@ namespace Scribe
             }
             else if (result == DialogResult.Abort)
             {
-                MainToolStripStatusLabel.Text = Resources.WarningNothingSelected;
                 SystemSounds.Beep.Play();
+                Logger.Log(LogLevel.Warning, Resources.WarningNothingSelected);
             }
         }
 
@@ -2564,8 +2561,8 @@ namespace Scribe
             if (null == currentCharacter ||
                 InventoryEditorWindow.ShowDialog() == DialogResult.Abort)
             {
-                MainToolStripStatusLabel.Text = Resources.WarningNothingSelected;
                 SystemSounds.Beep.Play();
+                Logger.Log(LogLevel.Warning, Resources.WarningNothingSelected);
             }
         }
         #endregion
@@ -2663,8 +2660,8 @@ namespace Scribe
             StrikePatternEditorWindow.CurrentCraft = (CraftingRecipe)GetSelectedModelForTab(EditorTabs.SelectedIndex);
             if (StrikePatternEditorWindow.ShowDialog() == DialogResult.Abort)
             {
-                MainToolStripStatusLabel.Text = Resources.WarningNothingSelected;
                 SystemSounds.Beep.Play();
+                Logger.Log(LogLevel.Warning, Resources.WarningNothingSelected);
             }
         }
 
@@ -2743,8 +2740,7 @@ namespace Scribe
             else
             {
                 SystemSounds.Beep.Play();
-                _ = MessageBox.Show(Resources.ErrorNewFailed, Resources.CaptionError,
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Log(LogLevel.Error, Resources.ErrorNewFailed);
             }
         }
 
@@ -2768,8 +2764,7 @@ namespace Scribe
             else
             {
                 SystemSounds.Beep.Play();
-                _ = MessageBox.Show(Resources.ErrorLoadFailed, Resources.CaptionError,
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Log(LogLevel.Error, Resources.ErrorLoadFailed);
             }
         }
 
@@ -2793,8 +2788,7 @@ namespace Scribe
                 else
                 {
                     SystemSounds.Beep.Play();
-                    _ = MessageBox.Show(Resources.ErrorLoadFailed, Resources.CaptionError,
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Logger.Log(LogLevel.Error, Resources.ErrorLoadFailed);
                 }
             }
         }
@@ -2814,7 +2808,7 @@ namespace Scribe
             else
             {
                 SystemSounds.Beep.Play();
-                _ = MessageBox.Show(Resources.ErrorSaveFailed, Resources.CaptionError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.Log(LogLevel.Error, Resources.ErrorSaveFailed);
             }
         }
 

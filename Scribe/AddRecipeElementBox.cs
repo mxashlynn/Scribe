@@ -87,7 +87,7 @@ namespace Scribe
             if (EditorCommands.TextIsReserved(newText))
             {
                 newText = "";
-                _ = MessageBox.Show(EditorCommands.ReservedWordMessage, Resources.CaptionError,
+                _ = MessageBox.Show(EditorCommands.ReservedWordMessage, Resources.CaptionWorkflow,
                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 eventArguments.Cancel = true;
             }
@@ -108,7 +108,7 @@ namespace Scribe
             {
                 parsedAmount = 0;
                 ElementAmountTextBox.Text = "";
-                _ = MessageBox.Show(Resources.ErrorPositiveIntegersOnly, Resources.CaptionError,
+                _ = MessageBox.Show(Resources.ErrorPositiveIntegersOnly, Resources.CaptionWorkflow,
                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 eventArguments.Cancel = true;
             }

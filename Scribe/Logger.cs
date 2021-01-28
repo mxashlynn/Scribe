@@ -43,7 +43,7 @@ namespace Scribe
                     ? inException.Message
                     : $"Scribe Trace at {DateTime.Now}.";
 
-            LogWriter.WriteLine($"{nameof(Scribe)} {inLogLevel.ToString()} {message}");
+            LogWriter.WriteLine($"{nameof(Scribe)} {inLogLevel} {message}");
 
             switch (inLogLevel)
             {
@@ -60,6 +60,10 @@ namespace Scribe
                 case LogLevel.Fatal:
                     _ = MessageBox.Show($"{message}\n{Resources.ErrorFatal}",
                                         Resources.CaptionError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (inException is not null)
+                    {
+                        throw inException;
+                    }
                     break;
             }
         }
