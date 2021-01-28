@@ -24,10 +24,6 @@ namespace Scribe
         /// <summary>The <see cref="EditorTheme"/> that was set when the form was shown.</summary>
         private EditorTheme OldTheme;
 
-        /// <summary>The <see cref="DefaultDirectory"/> that was set when the form was shown.</summary>
-        // TODO We are not currently using this -- should we be?
-        private DefaultDirectory OldDirectory;
-        
         /// <summary>User-set autosave interval.  Guaranteed to be valid when <see cref="OptionsBox.FormClosingEventHandler"/> runs.</summary>
         private int NewAutoSaveInterval;
 
@@ -79,13 +75,6 @@ namespace Scribe
             }
             ThemeRadioButtons[Settings.Default.CurrentEditorTheme].Checked = true;
 
-            if (!Enum.TryParse(Settings.Default.DefaultDirectory, out OldDirectory))
-            {
-                OldDirectory = DefaultDirectory.Desktop;
-                SystemSounds.Beep.Play();
-                Logger.Log(LogLevel.Error, string.Format(CultureInfo.CurrentCulture, Resources.ErrorParseFailed,
-                                                         nameof(Settings.Default.DefaultDirectory)));
-            }
             foreach (var radioButton in DirectoryRadioButtons.Values)
             {
                 radioButton.Checked = false;
@@ -277,7 +266,11 @@ namespace Scribe
         /// <param name="sender">Ignored.</param>
         /// <param name="eventArguments">Ignored.</param>
         private void CancelButtonControl_Click(object sender, EventArgs eventArguments)
-            => CurrentTheme.SetUpTheme(OldTheme);
+        {
+            CurrentTheme.SetUpTheme(OldTheme);
+            Settings.Default.Reload();
+            DialogResult = DialogResult.Cancel;
+        }
         #endregion
     }
 }
