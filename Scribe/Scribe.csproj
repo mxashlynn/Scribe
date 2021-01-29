@@ -18,7 +18,7 @@
     <PackageId>Scribe_GirlPotion</PackageId>
     <PackageTags>C# .net5 net5 game editor</PackageTags>
     <PackageReleaseNotes>Code and documentation are incomplete and under rapid development. Expect frequent breaking changes.</PackageReleaseNotes>
-    <ApplicationIcon>Resources\ParquetIcon.ico</ApplicationIcon>
+    <ApplicationIcon>ParquetIcon.ico</ApplicationIcon>
 
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
@@ -65,10 +65,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <!--- NOTE: Updating to CSVHelper Version 20 requires major research and adjustment of CSVHelper code. -->
     <PackageReference Include="CsvHelper" Version="19.0.0" />
     <PackageReference Include="Parquet" Version="0.3.54" />
@@ -80,10 +76,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="..\LICENSE.txt">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-    <None Include="Resources\ParquetIcon.ico">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
