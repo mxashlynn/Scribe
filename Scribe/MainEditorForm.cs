@@ -52,9 +52,14 @@ namespace Scribe
 
         /// <summary>Window for editing <see cref="StrikePanelGrid"/>s.</summary>
         private readonly StrikePatternEditorForm StrikePatternEditorWindow = new StrikePatternEditorForm();
+        #endregion
 
+        #region UI Miscellany
         /// <summary>Logs messages to file and presents them to the user when necessary.</summary>
         private LoggerUI UILogger { get; init; }
+
+        /// <summary>Clears the status text as needed from the <see cref="ToolStrip"/>.</summary>
+        private readonly Timer ClearStatusTimer = new Timer();
         #endregion
 
         #region Cached Controls
@@ -172,9 +177,16 @@ namespace Scribe
         {
             InitializeComponent();
 
+            #region UI Miscellany
             UILogger = new LoggerUI(new StreamWriter("scribe.log", false, new UTF8Encoding(true, true)),
                                     MainToolStripStatusLabel);
             Logger.SetLogger(UILogger);
+
+            ClearStatusTimer.Interval = 30000;
+            ClearStatusTimer.Tick += ClearStatusTimer_Tick;
+            ClearStatusTimer.Stop();
+            MainToolStripStatusLabel.TextChanged += MainToolStripStatusLabel_TextChanged;
+            #endregion
 
             HasUnsavedChanges = false;
 
@@ -854,13 +866,25 @@ namespace Scribe
         }
 
         /// <summary>
-        /// Occurs whenever a <see cref="ToolStripSeparator"/> needs to be painted.
-        /// Paints each manually so that the separator has the same color as its menu.
+        /// Occurs whenever a <see cref="MainToolStripStatusLabel"/> needs to be painted.
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="eventArguments">Used to draw the separator.</param>
         private void MainToolStripStatusLabel_TextChanged(object sender, EventArgs eventArguments)
-            => EditorStatusStrip.Update();
+        {
+            // Paints manually so that the label has the correct theme color.
+            // TODO Do we need this?
+            // EditorStatusStrip.Update();
+
+            // Also restarts the text-clearing timer.
+            if (sender is ToolStripStatusLabel statusLabel
+                && !string.IsNullOrEmpty(statusLabel.Text)
+                && statusLabel.Text.CompareTo(Resources.InfoMessageReady) != 0)
+            {
+                ClearStatusTimer.Stop();
+                ClearStatusTimer.Start();
+            }
+        }
 
         /// <summary>
         /// Applies the <see cref="CurrentTheme"/> to the <see cref="MainEditorForm"/> and its <see cref="Control"/>s.
@@ -1058,9 +1082,11 @@ namespace Scribe
 
             RepopulateVisibleControls();
 
+            MainToolStripStatusLabel.Text = Resources.InfoMessageReady;
             // TODO Implement progress bar animation (e.g. file i/o) and remove this test.
             ToolStripProgressBar.Value = 35;
             EditorStatusStrip.Update();
+            MainToolStripStatusLabel.Text = "TEST!";
         }
 
         /// <summary>
@@ -3075,7 +3101,7 @@ namespace Scribe
             => SourceBox?.SelectAll();
         #endregion
 
-        #region Hybrid Events
+        #region Other Events
         /// <summary>
         /// Spawns an external image editor with the image of the currently selected model.
         /// </summary>
@@ -3109,6 +3135,14 @@ namespace Scribe
         private void PictureBoxReload_Click(object sender, EventArgs eventArguments)
             => PictureBoxLoadFromStorage(GetPictureBoxForTab(EditorTabs.SelectedIndex),
                                          GetSelectedModelIDForTab(EditorTabs.SelectedIndex));
+
+        /// <summary>
+        /// Clears the status text from the bottom of the window.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="eventArguments">Ignored.</param>
+        private void ClearStatusTimer_Tick(object sender, EventArgs eventArguments)
+            => MainToolStripStatusLabel.Text = "";
         #endregion
 
         #region Quit Editor Event

@@ -579,8 +579,8 @@ namespace Scribe
             // MainToolStripStatusLabel
             // 
             this.MainToolStripStatusLabel.Name = "MainToolStripStatusLabel";
-            this.MainToolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
-            this.MainToolStripStatusLabel.Text = "Loading";
+            this.MainToolStripStatusLabel.Size = new System.Drawing.Size(0, 17);
+            this.MainToolStripStatusLabel.TextChanged += MainToolStripStatusLabel_TextChanged;
             // 
             // ToolStripProgressBar
             // 
