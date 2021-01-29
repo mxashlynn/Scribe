@@ -1121,7 +1121,8 @@ namespace Scribe
                 inListBox.BeginUpdate();
                 inListBox.Items.Clear();
                 // Ignore any input value that evaluates to "None".
-                inListBox.Items.AddRange(inSource.Where(value => 0 != string.Compare(value.ToString(),
+                inListBox.Items.AddRange(inSource.Where(value => value is not null
+                                                               && 0 != string.Compare(value.ToString(),
                                                                                      nameof(ModelID.None),
                                                                                      comparisonType: StringComparison.OrdinalIgnoreCase))
                                                  .ToArray());
@@ -1142,10 +1143,12 @@ namespace Scribe
                 inComboBox.SelectedItem = null;
                 inComboBox.BeginUpdate();
                 inComboBox.Items.Clear();
-                foreach (var value in inSource)
-                {
-                    _ = inComboBox.Items.Add(value);
-                }
+                // Ignore any input value that evaluates to "None".
+                inComboBox.Items.AddRange(inSource.Where(value => value is not null
+                                                               && 0 != string.Compare(value.ToString(),
+                                                                                     nameof(ModelID.None),
+                                                                                     comparisonType: StringComparison.OrdinalIgnoreCase))
+                                                 .ToArray());
                 inComboBox.EndUpdate();
             }
         }
