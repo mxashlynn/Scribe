@@ -29,13 +29,13 @@ While most Parquet data is easily edited in any spreadsheet program, data with n
 
 The solution contains two related projects, each of which is structured so that every folder corresponds to a namespace.  In addition, there are non-project directories with additional files.
 
-- **TestProject**
-    - A minimal example of a parquet dataset.  This is not a full game, just some samples used in developing Scribe and Roller.
-- **Scribe**
-    - A GUI Editor for working with Parquet CSV files containing game definitions. Most things are here.
-    - **ChangeHistory**, an undo/redo implementation.
 - **Roller**
-    - A command line tool for working with Parquet CSV files containing game definitions.
+    - A command line tool for working with Parquet CSV files.
+- **Scribe**
+    - A GUI Editor for working with Parquet game definitions.
+    - **ChangeHistory**, an undo/redo implementation.
+- **TestProject**
+    - A minimal example of a Parquet dataset.  This is not a full game, just some samples used in developing Scribe and Roller.
 
 # Requirements
 
