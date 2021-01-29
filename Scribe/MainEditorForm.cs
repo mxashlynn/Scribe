@@ -1313,8 +1313,12 @@ namespace Scribe
                 GameIsEpisodeCheckBox.Checked = model.IsEpisode;
                 GameEpisodeTitleTextBox.Text = model.EpisodeTitle;
                 GameEpisodeNumberTextBox.Text = model.EpisodeNumber.ToString();
-                GamePlayerCharacterComboBox.SelectedItem = All.Characters.GetOrNull<CharacterModel>(model.PlayerCharacterID);
-                GameFirstScriptComboBox.SelectedItem = All.Scripts.GetOrNull<ScriptModel>(model.FirstScriptID);
+                GamePlayerCharacterComboBox.SelectedItem = model.PlayerCharacterID == ModelID.None
+                    ? null
+                    : All.Characters.GetOrNull<CharacterModel>(model.PlayerCharacterID);
+                GameFirstScriptComboBox.SelectedItem = model.FirstScriptID == ModelID.None
+                    ? null
+                    : All.Scripts.GetOrNull<ScriptModel>(model.FirstScriptID);
                 PictureBoxLoadFromStorage(GameIconPictureBox, model.ID);
             }
         }
@@ -1352,7 +1356,9 @@ namespace Scribe
                 BlockNameTextBox.Text = model.Name;
                 BlockDescriptionTextBox.Text = model.Description;
                 BlockCommentTextBox.Text = model.Comment;
-                BlockEquivalentItemComboBox.SelectedItem = All.Items.GetOrNull<ItemModel>(model.ItemID);
+                BlockEquivalentItemComboBox.SelectedItem = model.ItemID == ModelID.None
+                    ? null
+                    : All.Items.GetOrNull<ItemModel>(model.ItemID);
                 RepopulateListBox(BlockAddsToBiomeListBox, model.AddsToBiome);
                 RepopulateListBox(BlockAddsToRoomListBox, model.AddsToRoom);
                 BlockGatherToolComboBox.SelectedItem = model.GatherTool;
@@ -1395,7 +1401,9 @@ namespace Scribe
                 FloorNameTextBox.Text = model.Name;
                 FloorDescriptionTextBox.Text = model.Description;
                 FloorCommentTextBox.Text = model.Comment;
-                FloorEquivalentItemComboBox.SelectedItem = All.Items.GetOrNull<ItemModel>(model.ItemID);
+                FloorEquivalentItemComboBox.SelectedItem = model.ItemID == ModelID.None
+                    ? null
+                    : All.Items.GetOrNull<ItemModel>(model.ItemID);
                 RepopulateListBox(FloorAddsToBiomeListBox, model.AddsToBiome);
                 RepopulateListBox(FloorAddsToRoomListBox, model.AddsToRoom);
                 FloorModificationToolComboBox.SelectedItem = model.ModTool;
@@ -1436,14 +1444,18 @@ namespace Scribe
                 FurnishingNameTextBox.Text = model.Name;
                 FurnishingDescriptionTextBox.Text = model.Description;
                 FurnishingCommentTextBox.Text = model.Comment;
-                FurnishingEquivalentItemComboBox.SelectedItem = All.Items.GetOrNull<ItemModel>(model.ItemID);
+                FurnishingEquivalentItemComboBox.SelectedItem = model.ItemID == ModelID.None
+                    ? null
+                    : All.Items.GetOrNull<ItemModel>(model.ItemID);
                 RepopulateListBox(FurnishingAddsToBiomeListBox, model.AddsToBiome);
                 RepopulateListBox(FurnishingAddsToRoomListBox, model.AddsToRoom);
                 FurnishingEntryTypeComboBox.SelectedItem = model.Entry;
                 FurnishingIsWalkableCheckBox.Checked = model.IsWalkable;
                 FurnishingIsEnclosingCheckBox.Checked = model.IsEnclosing;
                 FurnishingIsFlammableCheckBox.Checked = model.IsFlammable;
-                FurnishingSwapWithFurnishingComboBox.SelectedItem = All.Furnishings.GetOrNull<FurnishingModel>(model.SwapID);
+                FurnishingSwapWithFurnishingComboBox.SelectedItem = model.SwapID == ModelID.None
+                    ? null
+                    : All.Furnishings.GetOrNull<FurnishingModel>(model.SwapID);
                 PictureBoxLoadFromStorage(FurnishingPictureBox, model.ID);
             }
         }
@@ -1477,7 +1489,9 @@ namespace Scribe
                 CollectibleNameTextBox.Text = model.Name;
                 CollectibleDescriptionTextBox.Text = model.Description;
                 CollectibleCommentTextBox.Text = model.Comment;
-                CollectibleEquivalentItemComboBox.SelectedItem = All.Items.GetOrNull<ItemModel>(model.ItemID);
+                CollectibleEquivalentItemComboBox.SelectedItem = model.ItemID == ModelID.None
+                    ? null
+                    : All.Items.GetOrNull<ItemModel>(model.ItemID);
                 RepopulateListBox(CollectibleAddsToBiomeListBox, model.AddsToBiome);
                 RepopulateListBox(CollectibleAddsToRoomListBox, model.AddsToRoom);
                 CollectibleCollectionEffectComboBox.SelectedItem = model.CollectionEffect;
@@ -1518,8 +1532,12 @@ namespace Scribe
                 CharacterFamilyNameTextBox.Text = model.FamilyName;
                 CharacterDescriptionTextBox.Text = model.Description;
                 CharacterCommentTextBox.Text = model.Comment;
-                CharacterNativeBiomeComboBox.SelectedItem = All.BiomeRecipes.GetOrNull<BiomeRecipe>(model.NativeBiomeID);
-                CharacterPrimaryBehaviorComboBox.SelectedItem = All.Scripts.GetOrNull<ScriptModel>(model.PrimaryBehaviorID);
+                CharacterNativeBiomeComboBox.SelectedItem = model.NativeBiomeID == ModelID.None
+                    ? null
+                    : All.BiomeRecipes.GetOrNull<BiomeRecipe>(model.NativeBiomeID);
+                CharacterPrimaryBehaviorComboBox.SelectedItem = model.PrimaryBehaviorID == ModelID.None
+                    ? null
+                    : All.Scripts.GetOrNull<ScriptModel>(model.PrimaryBehaviorID);
                 CharacterPronounComboBox.SelectedItem = model.PronounKey;
                 CharacterStoryIDTextBox.Text =
                     string.IsNullOrEmpty(model.StoryCharacterID) && Settings.Default.SuggestStoryIDs
@@ -1590,8 +1608,12 @@ namespace Scribe
                 CritterNameTextBox.Text = model.Name;
                 CritterDescriptionTextBox.Text = model.Description;
                 CritterCommentTextBox.Text = model.Comment;
-                CritterNativeBiomeComboBox.SelectedItem = All.BiomeRecipes.GetOrNull<BiomeRecipe>(model.NativeBiomeID);
-                CritterPrimaryBehaviorComboBox.SelectedItem = All.Scripts.GetOrNull<ScriptModel>(model.PrimaryBehaviorID);
+                CritterNativeBiomeComboBox.SelectedItem = model.NativeBiomeID == ModelID.None
+                    ? null
+                    : All.BiomeRecipes.GetOrNull<BiomeRecipe>(model.NativeBiomeID);
+                CritterPrimaryBehaviorComboBox.SelectedItem = model.PrimaryBehaviorID == ModelID.None
+                    ? null
+                    : All.Scripts.GetOrNull<ScriptModel>(model.PrimaryBehaviorID);
                 PictureBoxLoadFromStorage(CritterPictureBox, model.ID);
             }
         }
@@ -1631,9 +1653,15 @@ namespace Scribe
                 ItemPriceTextBox.Text = model.Price.ToString();
                 ItemRarityTextBox.Text = model.Rarity.ToString();
                 ItemStackMaxTextBox.Text = model.StackMax.ToString();
-                ItemEffectWhileHeldComboBox.SelectedItem = All.Scripts.GetOrNull<ScriptModel>(model.EffectWhileHeldID);
-                ItemEffectWhenUsedComboBox.SelectedItem = All.Scripts.GetOrNull<ScriptModel>(model.EffectWhenUsedID);
-                ItemEquivalentParquetComboBox.SelectedItem = All.Parquets.GetOrNull<ParquetModel>(model.ParquetID);
+                ItemEffectWhileHeldComboBox.SelectedItem = model.EffectWhileHeldID == ModelID.None
+                    ? null
+                    : All.Scripts.GetOrNull<ScriptModel>(model.EffectWhileHeldID);
+                ItemEffectWhenUsedComboBox.SelectedItem = model.EffectWhenUsedID == ModelID.None
+                    ? null
+                    : All.Scripts.GetOrNull<ScriptModel>(model.EffectWhenUsedID);
+                ItemEquivalentParquetComboBox.SelectedItem = model.ParquetID == ModelID.None
+                    ? null
+                    : All.Parquets.GetOrNull<ParquetModel>(model.ParquetID);
                 RepopulateListBox(ItemTagListBox, model.ItemTags);
                 PictureBoxLoadFromStorage(ItemPictureBox, model.ID);
             }
