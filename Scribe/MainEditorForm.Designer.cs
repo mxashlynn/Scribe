@@ -821,7 +821,7 @@ namespace Scribe
             this.ListNameCollisionsStripMenuItem.Name = "ListNameCollisionsStripMenuItem";
             this.ListNameCollisionsStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.ListNameCollisionsStripMenuItem.Text = "List &Name Collisions";
-            this.ListNameCollisionsStripMenuItem.ToolTipText = "Lists any duplicate model names in the current category.";
+            this.ListNameCollisionsStripMenuItem.ToolTipText = "Lists any duplicate model names.";
             this.ListNameCollisionsStripMenuItem.Click += new System.EventHandler(this.ListNameCollisionsStripMenuItem_Click);
             // 
             // ToolStripSeparator4
