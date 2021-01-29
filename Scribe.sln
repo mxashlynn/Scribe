@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scribe", "Scribe\Scribe.csproj", "{29532611-4CE6-40CF-BB51-9D7FFFCDDA30}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F69A4FC5-F4DC-4A45-AEAD-46372C5F4B64} = {F69A4FC5-F4DC-4A45-AEAD-46372C5F4B64}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{642D49CA-9192-4CE8-A4B8-077B85E2E480}"
 	ProjectSection(SolutionItems) = preProject
@@ -14,16 +17,32 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParquetRoller", "ParquetRoller\ParquetRoller.csproj", "{F69A4FC5-F4DC-4A45-AEAD-46372C5F4B64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Editor Release|Any CPU = Editor Release|Any CPU
+		Game Release|Any CPU = Game Release|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{29532611-4CE6-40CF-BB51-9D7FFFCDDA30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{29532611-4CE6-40CF-BB51-9D7FFFCDDA30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29532611-4CE6-40CF-BB51-9D7FFFCDDA30}.Editor Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29532611-4CE6-40CF-BB51-9D7FFFCDDA30}.Editor Release|Any CPU.Build.0 = Release|Any CPU
+		{29532611-4CE6-40CF-BB51-9D7FFFCDDA30}.Game Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29532611-4CE6-40CF-BB51-9D7FFFCDDA30}.Game Release|Any CPU.Build.0 = Release|Any CPU
 		{29532611-4CE6-40CF-BB51-9D7FFFCDDA30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29532611-4CE6-40CF-BB51-9D7FFFCDDA30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F69A4FC5-F4DC-4A45-AEAD-46372C5F4B64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F69A4FC5-F4DC-4A45-AEAD-46372C5F4B64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F69A4FC5-F4DC-4A45-AEAD-46372C5F4B64}.Editor Release|Any CPU.ActiveCfg = Editor Release|Any CPU
+		{F69A4FC5-F4DC-4A45-AEAD-46372C5F4B64}.Editor Release|Any CPU.Build.0 = Editor Release|Any CPU
+		{F69A4FC5-F4DC-4A45-AEAD-46372C5F4B64}.Game Release|Any CPU.ActiveCfg = Game Release|Any CPU
+		{F69A4FC5-F4DC-4A45-AEAD-46372C5F4B64}.Game Release|Any CPU.Build.0 = Game Release|Any CPU
+		{F69A4FC5-F4DC-4A45-AEAD-46372C5F4B64}.Release|Any CPU.ActiveCfg = Game Release|Any CPU
+		{F69A4FC5-F4DC-4A45-AEAD-46372C5F4B64}.Release|Any CPU.Build.0 = Game Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

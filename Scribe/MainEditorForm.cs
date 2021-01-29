@@ -2952,7 +2952,10 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>
         private void CheckMapStripMenuItem_Click(object sender, EventArgs eventArguments)
-            => throw new NotImplementedException();
+        {
+            // HERE!!!! ***************************************************************************************
+            _ = Process.Start("roller --version");
+        }
 
         /// <summary>
         /// Responds to a user selecting the "List Naming Collisions" menu item.
