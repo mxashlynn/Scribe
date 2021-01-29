@@ -42,7 +42,7 @@ The solution contains two related projects, each of which is structured so that 
 To work with this repository you will need:
 
 - [.NET 5](https://dotnet.microsoft.com/download/dotnet/5.0)
-- [CSVHelper 19.0.0](https://joshclose.github.io/CsvHelper/)
+- [CSVHelper 19](https://joshclose.github.io/CsvHelper/)
 - the latest version of [Parquet](https://github.com/xunit/xunit)
 
 # Contributors
