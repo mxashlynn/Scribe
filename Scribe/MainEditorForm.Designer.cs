@@ -812,6 +812,7 @@ namespace Scribe
             this.CheckMapStripMenuItem.Name = "CheckMapStripMenuItem";
             this.CheckMapStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.CheckMapStripMenuItem.Text = "Check &Map Adjacency";
+            this.CheckMapStripMenuItem.ToolTipText = "Checks for inconsistent map adjacency.";
             this.CheckMapStripMenuItem.Click += new System.EventHandler(this.CheckMapStripMenuItem_Click);
             // 
             // ListNameCollisionsStripMenuItem
@@ -820,6 +821,7 @@ namespace Scribe
             this.ListNameCollisionsStripMenuItem.Name = "ListNameCollisionsStripMenuItem";
             this.ListNameCollisionsStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.ListNameCollisionsStripMenuItem.Text = "List &Name Collisions";
+            this.ListNameCollisionsStripMenuItem.ToolTipText = "Lists any duplicate model names in the current category.";
             this.ListNameCollisionsStripMenuItem.Click += new System.EventHandler(this.ListNameCollisionsStripMenuItem_Click);
             // 
             // ToolStripSeparator4
@@ -833,6 +835,7 @@ namespace Scribe
             this.ListIDRangesToolStripMenuItem.Name = "ListIDRangesToolStripMenuItem";
             this.ListIDRangesToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.ListIDRangesToolStripMenuItem.Text = "List ID &Ranges";
+            this.ListIDRangesToolStripMenuItem.ToolTipText = "Lists model ID ranges valid for the current category.";
             this.ListIDRangesToolStripMenuItem.Click += new System.EventHandler(this.ListIDRangesToolStripMenuItem_Click);
             // 
             // ListMaxIDsToolStripMenuItem
@@ -841,6 +844,7 @@ namespace Scribe
             this.ListMaxIDsToolStripMenuItem.Name = "ListMaxIDsToolStripMenuItem";
             this.ListMaxIDsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.ListMaxIDsToolStripMenuItem.Text = "List Maximum &IDs";
+            this.ListMaxIDsToolStripMenuItem.ToolTipText = "Lists the highest ID currently defined in the current category.";
             this.ListMaxIDsToolStripMenuItem.Click += new System.EventHandler(this.ListMaxIDsToolStripMenuItem_Click);
             // 
             // ListTagsToolStripMenuItem
@@ -849,6 +853,7 @@ namespace Scribe
             this.ListTagsToolStripMenuItem.Name = "ListTagsToolStripMenuItem";
             this.ListTagsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.ListTagsToolStripMenuItem.Text = "List &Tags";
+            this.ListTagsToolStripMenuItem.ToolTipText = "Lists all entity tags referenced in the current category.";
             this.ListTagsToolStripMenuItem.Click += new System.EventHandler(this.ListTagsToolStripMenuItem_Click);
             // 
             // OptionsToolStripMenuItem
