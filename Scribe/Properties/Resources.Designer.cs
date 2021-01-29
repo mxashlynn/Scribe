@@ -432,5 +432,14 @@ namespace Scribe.Properties {
                 return ResourceManager.GetString("WarningNothingSelected", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This feature is not yet finished.  Paige will get to it!  ^_^.
+        /// </summary>
+        internal static string WarningNotImplemented {
+            get {
+                return ResourceManager.GetString("WarningNotImplemented", resourceCulture);
+            }
+        }
     }
 }

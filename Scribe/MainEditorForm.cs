@@ -2657,12 +2657,16 @@ namespace Scribe
         /// <param name="eventArguments">Ignored</param>
         private void CraftingOpenPatternEditorButton_Click(object sender, EventArgs eventArguments)
         {
+            _ = MessageBox.Show(Resources.WarningNotImplemented, Resources.CaptionWorkflow, MessageBoxButtons.OK);
+            // TODO: Reenable this once we fully implement StrikePanel-based crafting.
+            /*
             StrikePatternEditorWindow.CurrentCraft = (CraftingRecipe)GetSelectedModelForTab(EditorTabs.SelectedIndex);
             if (StrikePatternEditorWindow.ShowDialog() == DialogResult.Abort)
             {
                 SystemSounds.Beep.Play();
                 Logger.Log(LogLevel.Warning, Resources.WarningNothingSelected);
             }
+            */
         }
 
         #endregion

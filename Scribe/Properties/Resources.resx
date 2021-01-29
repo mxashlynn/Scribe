@@ -280,4 +280,8 @@ Folder: {1}</value>
     <value>Nothing selected to edit.</value>
     <comment>Warning string.</comment>
   </data>
+  <data name="WarningNotImplemented" xml:space="preserve">
+    <value>This feature is not yet finished.  Paige will get to it!  ^_^</value>
+    <comment>Warning string.</comment>
+  </data>
 </root>
