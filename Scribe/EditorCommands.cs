@@ -200,27 +200,32 @@ namespace Scribe
         /// </summary>
         internal static void CreateTemplateFiles()
         {
+            #region Write Configuration
             PronounGroup.PutRecords(Enumerable.Empty<PronounGroup>());
             BiomeConfiguration.PutRecord();
             CraftConfiguration.PutRecord();
+            InventoryConfiguration.PutRecord();
             RoomConfiguration.PutRecord();
+            #endregion
 
+            #region Write Models
             ModelCollection<GameModel>.Default.PutRecordsForType<GameModel>();
-            ModelCollection<BeingModel>.Default.PutRecordsForType<CritterModel>();
-            ModelCollection<BeingModel>.Default.PutRecordsForType<CharacterModel>();
-            ModelCollection<BiomeRecipe>.Default.PutRecordsForType<BiomeRecipe>();
-            ModelCollection<CraftingRecipe>.Default.PutRecordsForType<CraftingRecipe>();
-            ModelCollection<InteractionModel>.Default.PutRecordsForType<InteractionModel>();
-            ModelCollection<MapModel>.Default.PutRecordsForType<MapChunkModel>();
-            ModelCollection<MapModel>.Default.PutRecordsForType<MapRegionSketch>();
-            ModelCollection<MapModel>.Default.PutRecordsForType<MapRegionModel>();
             ModelCollection<ParquetModel>.Default.PutRecordsForType<FloorModel>();
             ModelCollection<ParquetModel>.Default.PutRecordsForType<BlockModel>();
             ModelCollection<ParquetModel>.Default.PutRecordsForType<FurnishingModel>();
             ModelCollection<ParquetModel>.Default.PutRecordsForType<CollectibleModel>();
+            ModelCollection<BeingModel>.Default.PutRecordsForType<CritterModel>();
+            ModelCollection<BeingModel>.Default.PutRecordsForType<CharacterModel>();
+            ModelCollection<BiomeRecipe>.Default.PutRecordsForType<BiomeRecipe>();
+            ModelCollection<CraftingRecipe>.Default.PutRecordsForType<CraftingRecipe>();
             ModelCollection<RoomRecipe>.Default.PutRecordsForType<RoomRecipe>();
+            ModelCollection<MapModel>.Default.PutRecordsForType<MapChunkModel>();
+            ModelCollection<MapModel>.Default.PutRecordsForType<MapRegionSketch>();
+            ModelCollection<MapModel>.Default.PutRecordsForType<MapRegionModel>();
             ModelCollection<ScriptModel>.Default.PutRecordsForType<ScriptModel>();
+            ModelCollection<InteractionModel>.Default.PutRecordsForType<InteractionModel>();
             ModelCollection<ItemModel>.Default.PutRecordsForType<ItemModel>();
+            #endregion
         }
 
         /// <summary>
