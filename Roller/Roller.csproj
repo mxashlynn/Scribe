@@ -26,7 +26,7 @@
 
     <StartupObject>ParquetRoller.Roller</StartupObject>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Configurations>Debug;Game Release;Editor Release</Configurations>
+    <Configurations>Debug;Release</Configurations>
     <PackageProjectUrl>http://parquet.gay/</PackageProjectUrl>
     <ApplicationIcon>ParquetIcon.ico</ApplicationIcon>
   </PropertyGroup>
@@ -35,12 +35,8 @@
     <DefineConstants>DEBUG</DefineConstants>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Game Release|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DefineConstants>TRACE</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Editor Release|AnyCPU'">
-    <DefineConstants>TRACE;DESIGN</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
