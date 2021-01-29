@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Globalization;
@@ -31,6 +32,51 @@ namespace Scribe
     /// </summary>
     public partial class MainEditorForm : Form
     {
+        #region Roller Dependency
+        /// <summary>The location of Roller.</summary>
+        internal static string RollerFolder { get; set; } = GetRollerFullPath();
+
+        /// <summary>
+        /// Finds the location of the roller command line app on the user's system.
+        /// If roller can be found by Windows, it uses the path Windows supplied.
+        /// If roller cannot be found, it will use the current directory.
+        /// If Scribe is compile in debug mode, it will use the bin directory from within the roller project.
+        /// </summary>
+        /// <returns></returns>
+        [SuppressMessage("Style", "IDE0022:Use expression body for methods",
+            Justification = "Block body needed for debug mode.")]
+        private static string GetRollerFullPath()
+        {
+#if DEBUG
+            // Return the binary executable directory from the compiled roller project.
+            return Path.GetFullPath($"{Directory.GetCurrentDirectory()}/../../../../Roller/bin/Debug/net5.0");
+#else
+            try
+            {
+                // Ask Windows to find roller using the 'where' command.
+                using var whereCommand = new Process();
+                whereCommand.StartInfo.UseShellExecute = false;
+                whereCommand.StartInfo.FileName = "where";
+                whereCommand.StartInfo.Arguments = "roller";
+                whereCommand.StartInfo.RedirectStandardOutput = true;
+                whereCommand.Start();
+
+                var output = whereCommand.StandardOutput.ReadToEnd();
+                whereCommand.WaitForExit();
+
+                return whereCommand.ExitCode == 0
+                    ? output.Substring(0, output.IndexOf(Environment.NewLine))
+                    : Path.GetFullPath(Directory.GetCurrentDirectory());
+            }
+            catch (Win32Exception)
+            {
+                // Fall back to the current directory.
+                return Path.GetFullPath(Directory.GetCurrentDirectory());
+            }
+#endif
+        }
+        #endregion
+
         #region Child Forms
         /// <summary>Dialogue displaying information about the application.</summary>
         private readonly AboutBox AboutDialogue = new AboutBox();
