@@ -57,7 +57,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing.Common" name="System.Drawing.Common, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
+  <assembly alias="System.Drawing.Common" name="System.Drawing.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
   <data name="LogoPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAArwAAAK8CAYAAAANumxDAAABcWlDQ1BpY2MAACjPlZG9S8NAGMaftopf
@@ -67,7 +67,7 @@
         auhV1jqPuElQNRdzVCO0RmEjizRSkKCgijXocJCgalJmv/uSTd8CKuRh9LVQAydHCWXyxkmtUleVqka6
         SlNHTeT+M09bm5zwugdTQPeT677FgJ4doFF33a8j120cA4FH4MJs+yuU0/QH6fW2Fj0AQpvA2WVbU3aB
         8y0g/GDJXG5KAVp+TQNeT4HBAjB0A/SveFm19nFyD+Q36Imugb19YIz+D61+AyJ4aBome+5DAAAACXBI
-        WXMAAA7BAAAOwQG4kWvtAAA8+UlEQVR4Xu3YQaul151e8c6XzSCDNAaTsd3fwE07nrS/RM8Csq+knogS
+        WXMAAA7AAAAOwAFq1okJAAA8+UlEQVR4Xu3YQaul151e8c6XzSCDNAaTsd3fwE07nrS/RM8Csq+knogS
         kUFy44lBVY3BlBost6eB3LAvZ/BCNpfrgdbZf5/fgjV5R4+2zt61qv4OAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIC/Of7z
