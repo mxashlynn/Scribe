@@ -49,7 +49,21 @@ namespace Scribe
         static EditorCommands()
         {
             FolderBrowserDialogue = new FolderBrowserDialog();
-            ReservedWorldList = new List<string> { "Empty", "None", "Other", "Unstarted", "Unused", };
+            ReservedWorldList = new List<string>
+            {
+                "Empty",
+                "None",
+                "Other",
+                "Unstarted",
+                "Unused",
+                Delimiters.SecondaryDelimiter,
+                Delimiters.InternalDelimiter,
+                Delimiters.ElementDelimiter,
+                Delimiters.NameDelimiter,
+                Delimiters.PronounDelimiter,
+                Delimiters.DimensionalDelimiter,
+                Delimiters.DimensionalTerminator,
+            };
             ReservedWordMessage = string.Format(CultureInfo.CurrentCulture, Resources.ErrorReservedWord,
                                                 string.Join(", ", ReservedWorldList));
 
