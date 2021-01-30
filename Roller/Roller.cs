@@ -86,21 +86,27 @@ namespace Roller
                 "help" => DisplayHelp,
 
                 "-v" or
+                "--version" or
                 "version" => DisplayVersion,
 
                 "-t" or
+                "--template" or
+                "--templates" or
                 "template" or
                 "templates" => CreateTemplates,
 
                 "-r" or
+                "--roll" or
                 "roll" => RollCSVs,
 
                 "-c" or
+                "--check" or
                 "check" => CheckAdjacency,
 
                 "-p" => ListPronouns,
 
                 "-l" or
+                "--list" or
                 "list" => ListPropertyForCategory,
 
                 _ => DisplayDefault,
