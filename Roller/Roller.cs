@@ -16,9 +16,9 @@ using Parquet.Scripts;
 #if DESIGN
 using Parquet.EditorSupport;
 #endif
-using ParquetRoller.Properties;
+using Roller.Properties;
 
-namespace ParquetRoller
+namespace Roller
 {
     /// <summary>
     /// A command line tool that reads in game definitions from CSV files, verifies, modifies, and writes them out.

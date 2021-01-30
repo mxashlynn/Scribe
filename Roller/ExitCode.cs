@@ -1,4 +1,4 @@
-namespace ParquetRoller
+namespace Roller
 {
     /// <summary>A value indicating success or the nature of the failure.</summary>
     /// <remarks>Returned when the application terminates to indicate results of the process.</remarks>

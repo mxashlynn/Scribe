@@ -12,7 +12,7 @@
     <RepositoryUrl>https://github.com/mxashlynn/Parquet</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-    <PackageId>ParquetRoller</PackageId>
+    <PackageId>Roller</PackageId>
     <PackageTags>C# .net5 net5 command game</PackageTags>
     <PackageReleaseNotes>Code and documentation are incomplete and under rapid development. Expect frequent breaking changes.</PackageReleaseNotes>
 
@@ -24,7 +24,7 @@
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <WarningsAsErrors>NU1605;CS1591</WarningsAsErrors>
 
-    <StartupObject>ParquetRoller.Roller</StartupObject>
+    <StartupObject>Roller.Roller</StartupObject>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Configurations>Debug;Release</Configurations>
     <PackageProjectUrl>http://parquet.gay/</PackageProjectUrl>
