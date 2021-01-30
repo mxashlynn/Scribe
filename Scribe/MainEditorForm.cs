@@ -1132,7 +1132,6 @@ namespace Scribe
             // TODO Implement progress bar animation (e.g. file i/o) and remove this test.
             ToolStripProgressBar.Value = 35;
             EditorStatusStrip.Update();
-            MainToolStripStatusLabel.Text = "TEST!";
         }
 
         /// <summary>
