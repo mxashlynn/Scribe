@@ -3000,7 +3000,8 @@ namespace Scribe
         private void CheckMapStripMenuItem_Click(object sender, EventArgs eventArguments)
         {
             // HERE!!!! ***************************************************************************************
-            _ = Process.Start("roller --version");
+            var command = Path.Combine(RollerFolder, "roller.exe");
+            _ = Process.Start(command, "--version");
         }
 
         /// <summary>
