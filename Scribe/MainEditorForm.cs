@@ -51,27 +51,30 @@ namespace Scribe
                 // Return the binary executable directory from the compiled Roller project.
                 return Path.GetFullPath($"{Directory.GetCurrentDirectory()}/../../../../Roller/bin/Debug/net5.0");
             }
-            else try
+            else
             {
-                // Ask Windows to find roller using the 'where' command.
-                using var whereCommand = new Process();
-                whereCommand.StartInfo.UseShellExecute = false;
-                whereCommand.StartInfo.FileName = "where";
-                whereCommand.StartInfo.Arguments = "roller";
-                whereCommand.StartInfo.RedirectStandardOutput = true;
-                whereCommand.Start();
+                try
+                {
+                    // Ask Windows to find roller using the 'where' command.
+                    using var whereCommand = new Process();
+                    whereCommand.StartInfo.UseShellExecute = false;
+                    whereCommand.StartInfo.FileName = "where";
+                    whereCommand.StartInfo.Arguments = "roller";
+                    whereCommand.StartInfo.RedirectStandardOutput = true;
+                    whereCommand.Start();
 
-                var output = whereCommand.StandardOutput.ReadToEnd();
-                whereCommand.WaitForExit();
+                    var output = whereCommand.StandardOutput.ReadToEnd();
+                    whereCommand.WaitForExit();
 
-                return whereCommand.ExitCode == 0
-                    ? output.Substring(0, output.IndexOf(Environment.NewLine))
-                    : Path.GetFullPath(Directory.GetCurrentDirectory());
-            }
-            catch (Win32Exception)
-            {
-                // Fall back to the current directory.
-                return Path.GetFullPath(Directory.GetCurrentDirectory());
+                    return whereCommand.ExitCode == 0
+                        ? output.Substring(0, output.IndexOf(Environment.NewLine))
+                        : Path.GetFullPath(Directory.GetCurrentDirectory());
+                }
+                catch (Win32Exception)
+                {
+                    // Fall back to the current directory.
+                    return Path.GetFullPath(Directory.GetCurrentDirectory());
+                }
             }
         }
         #endregion
