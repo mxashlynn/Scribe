@@ -470,6 +470,30 @@ namespace Scribe
         #endregion
 
         /// <summary>
+        /// Given the index of an editor tab, return the Roller argument corresponding to the content it edits.
+        /// </summary>
+        /// <param name="inTabIndex">The index of the tab sought.</param>
+        /// <returns>The argument corresponding to the tab.</returns>
+        private static string GetRollerArgumentForTab(int inTabIndex)
+            => inTabIndex switch
+            {
+                GamesTabIndex => "", // TODO, add GAMES to Roller!!
+                BlocksTabIndex => "blocks",
+                FloorsTabIndex => "floors",
+                FurnishingsTabIndex => "furnishings",
+                CollectiblesTabIndex => "collectibles",
+                CharactersTabIndex => "characters",
+                CrittersTabIndex => "critters",
+                ItemsTabIndex => "items",
+                BiomeRecipesTabIndex => "biomes",
+                CraftingRecipesTabIndex => "crafts",
+                RoomRecipesTabIndex => "rooms",
+                MapsTabIndex => "maps",
+                ScriptsTabIndex => "", // TODO: add SCRIPTS to Roller!!
+                _ => "",
+            };
+
+        /// <summary>
         /// Given the index of an editor tab, return the <see cref="PictureBox"/> for the content it edits.
         /// </summary>
         /// <param name="inTabIndex">The index of the tab sought.</param>
@@ -2997,9 +3021,8 @@ namespace Scribe
         /// <param name="eventArguments">Additional event data.</param>
         private void CheckMapStripMenuItem_Click(object sender, EventArgs eventArguments)
         {
-            // HERE!!!! ***************************************************************************************
-            var command = Path.Combine(RollerFolder, "roller.exe");
-            _ = Process.Start(command, "--version");
+            _ = Process.Start(RollerCommand, "check");
+            // TODO: Capture and display output.
         }
 
         /// <summary>
@@ -3008,7 +3031,10 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>
         private void ListNameCollisionsStripMenuItem_Click(object sender, EventArgs eventArguments)
-            => throw new NotImplementedException();
+        {
+            _ = Process.Start(RollerCommand, $"list collisions {GetRollerArgumentForTab(EditorTabs.SelectedIndex)}");
+            // TODO: Capture and display output.
+        }
 
         /// <summary>
         /// Responds to a user selecting the "List ID Ranges" menu item.
@@ -3016,7 +3042,10 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>
         private void ListIDRangesToolStripMenuItem_Click(object sender, EventArgs eventArguments)
-            => throw new NotImplementedException();
+        {
+            _ = Process.Start(RollerCommand, $"list ranges {GetRollerArgumentForTab(EditorTabs.SelectedIndex)}");
+            // TODO: Capture and display output.
+        }
 
         /// <summary>
         /// Responds to a user selecting the "List Max IDs" menu item.
@@ -3024,7 +3053,10 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>
         private void ListMaxIDsToolStripMenuItem_Click(object sender, EventArgs eventArguments)
-            => throw new NotImplementedException();
+        {
+            _ = Process.Start(RollerCommand, $"list maxids {GetRollerArgumentForTab(EditorTabs.SelectedIndex)}");
+            // TODO: Capture and display output.
+        }
 
         /// <summary>
         /// Responds to a user selecting the "List Tags" menu item.
@@ -3032,7 +3064,10 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>
         private void ListTagsToolStripMenuItem_Click(object sender, EventArgs eventArguments)
-            => throw new NotImplementedException();
+        {
+            _ = Process.Start(RollerCommand, $"list tags {GetRollerArgumentForTab(EditorTabs.SelectedIndex)}");
+            // TODO: Capture and display output.
+        }
 
         /// <summary>
         /// Responds to a user selecting the "Options" menu item.
