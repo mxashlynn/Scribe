@@ -33,25 +33,25 @@ namespace Scribe
     public partial class MainEditorForm : Form
     {
         #region Roller Dependency
-        /// <summary>The location of Roller.</summary>
-        internal static string RollerFolder { get; set; } = GetRollerFullPath();
+        /// <summary>Full command to invoke Roller.</summary>
+        // TODO It would be nice to make this adjustable from the options menu.
+        internal static string RollerCommand { get; } = Path.Combine(GetRollerFullPath(), "roller.exe");
 
         /// <summary>
         /// Finds the location of the roller command line app on the user's system.
-        /// If roller can be found by Windows, it uses the path Windows supplied.
-        /// If roller cannot be found, it will use the current directory.
-        /// If Scribe is compile in debug mode, it will use the bin directory from within the roller project.
+        /// - If Scribe is compiled in debug mode, the bin directory from within the roller project is used.
+        /// - If roller can be found by Windows, the path Windows supplied is used.
+        /// - If roller cannot be found, the current directory is used.
         /// </summary>
-        /// <returns></returns>
-        [SuppressMessage("Style", "IDE0022:Use expression body for methods",
-            Justification = "Block body needed for debug mode.")]
+        /// <returns>The location of the Roller command line tool.</returns>
         private static string GetRollerFullPath()
         {
-#if DEBUG
-            // Return the binary executable directory from the compiled roller project.
-            return Path.GetFullPath($"{Directory.GetCurrentDirectory()}/../../../../Roller/bin/Debug/net5.0");
-#else
-            try
+            if (ScribeProgram.IsDebugMode)
+            {
+                // Return the binary executable directory from the compiled roller project.
+                return Path.GetFullPath($"{Directory.GetCurrentDirectory()}/../../../../Roller/bin/Debug/net5.0");
+            }
+            else try
             {
                 // Ask Windows to find roller using the 'where' command.
                 using var whereCommand = new Process();
@@ -73,7 +73,6 @@ namespace Scribe
                 // Fall back to the current directory.
                 return Path.GetFullPath(Directory.GetCurrentDirectory());
             }
-#endif
         }
         #endregion
 

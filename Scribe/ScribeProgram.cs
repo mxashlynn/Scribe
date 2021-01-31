@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace Scribe
@@ -8,8 +9,32 @@ namespace Scribe
     /// </summary>
     static class ScribeProgram
     {
+        #region Characteristics
         /// <summary>Used to handle switching between <see cref="SplashScreen"/> and <see cref="MainEditorForm"/>.</summary>
-        private static readonly ApplicationContext Context = new ApplicationContext();
+        private static readonly ApplicationContext Context;
+
+        /// <summary><c>true</c> if Scribe was compiled with the DEBUG symbol defined; <c>false</c> otherwise.</summary>
+        public static readonly bool IsDebugMode;
+        #endregion
+
+        #region Initialization
+        /// <summary>
+        /// Initializes the program.
+        /// </summary>
+        static ScribeProgram()
+        {
+            Context = new ApplicationContext();
+            GetDebugMode(ref IsDebugMode);
+        }
+
+        /// <summary>
+        /// This routine only runs if the program was compiled in debug mode.
+        /// </summary>
+        /// <param name="refIsDebugMode">Set to <c>true</c>.</param>
+        [Conditional("DEBUG")]
+        private static void GetDebugMode(ref bool refIsDebugMode)
+            => refIsDebugMode = true;
+        #endregion
 
         /// <summary>
         /// Entry point to a GUI application used to edit game definitions consumed by the Parquet Class Library.
