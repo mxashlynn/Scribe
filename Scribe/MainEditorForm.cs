@@ -38,17 +38,17 @@ namespace Scribe
         internal static string RollerCommand { get; } = Path.Combine(GetRollerFullPath(), "roller.exe");
 
         /// <summary>
-        /// Finds the location of the roller command line app on the user's system.
-        /// - If Scribe is compiled in debug mode, the bin directory from within the roller project is used.
-        /// - If roller can be found by Windows, the path Windows supplied is used.
-        /// - If roller cannot be found, the current directory is used.
+        /// Finds the location of the Roller command line app on the user's system.
+        /// - If Scribe is compiled in debug mode, the bin directory from within the Roller project is used.
+        /// - If Roller can be found by Windows, the path Windows supplied is used.
+        /// - If Roller cannot be found, the current directory is used.
         /// </summary>
         /// <returns>The location of the Roller command line tool.</returns>
         private static string GetRollerFullPath()
         {
             if (ScribeProgram.IsDebugMode)
             {
-                // Return the binary executable directory from the compiled roller project.
+                // Return the binary executable directory from the compiled Roller project.
                 return Path.GetFullPath($"{Directory.GetCurrentDirectory()}/../../../../Roller/bin/Debug/net5.0");
             }
             else try
