@@ -83,7 +83,7 @@ namespace Scribe
         /// Executes the Roller companion command line app, and displays its output.
         /// </summary>
         /// <param name="inRollerArguments">The arguments to supply to Roller.</param>
-        private static void RunRoller(string inRollerArguments)
+        private void RunRoller(string inRollerArguments)
         {
             try
             {
@@ -98,10 +98,11 @@ namespace Scribe
                 rollerProcess.WaitForExit();
 
                 var exitCode = (ExitCode)rollerProcess.ExitCode;
-                // TODO Change Log to an actual output window!
-                Logger.Log(LogLevel.Info, exitCode == ExitCode.Success
+
+                RollerResultsBox.TextOnDisplay = exitCode == ExitCode.Success
                     ? output
-                    : exitCode.ToStatusMessage());
+                    : exitCode.ToStatusMessage();
+                RollerResultsBox.ShowDialog();
             }
             catch (Win32Exception winException)
             {
@@ -132,6 +133,9 @@ namespace Scribe
 
         /// <summary>Window for editing <see cref="StrikePanelGrid"/>s.</summary>
         private readonly StrikePatternEditorForm StrikePatternEditorWindow = new StrikePatternEditorForm();
+
+        /// <summary>Dialogue displaying the results of a roller command.</summary>
+        private readonly RollerOutputBox RollerResultsBox = new RollerOutputBox();
         #endregion
 
         #region UI Miscellany
