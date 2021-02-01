@@ -89,16 +89,17 @@ namespace Scribe
             {
                 using var rollerProcess = new Process();
                 rollerProcess.StartInfo.UseShellExecute = false;
+                rollerProcess.StartInfo.CreateNoWindow = true;
+                rollerProcess.StartInfo.RedirectStandardOutput = true;
                 rollerProcess.StartInfo.FileName = RollerCommand;
                 rollerProcess.StartInfo.Arguments = inRollerArguments;
-                rollerProcess.StartInfo.RedirectStandardOutput = true;
+                rollerProcess.StartInfo.WorkingDirectory = All.ProjectDirectory;
                 rollerProcess.Start();
 
                 var output = rollerProcess.StandardOutput.ReadToEnd();
                 rollerProcess.WaitForExit();
 
                 var exitCode = (ExitCode)rollerProcess.ExitCode;
-
                 RollerResultsBox.TextOnDisplay = exitCode == ExitCode.Success
                     ? output
                     : exitCode.ToStatusMessage();
