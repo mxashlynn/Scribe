@@ -24,7 +24,7 @@ namespace Roller
     }
 
     /// <summary>
-    /// Extensions to the ExitCode enumeration.
+    /// Extensions to the <see cref="ExitCode"/> enumeration.
     /// </summary>
     public static class ExitCodeExtensions
     {
