@@ -81,4 +81,8 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Roller\Roller.csproj" />
+  </ItemGroup>
+
 </Project>

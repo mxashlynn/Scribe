@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Globalization;
@@ -22,6 +21,7 @@ using Parquet.Maps;
 using Parquet.Parquets;
 using Parquet.Rooms;
 using Parquet.Scripts;
+using Roller;
 using Scribe.ChangeHistory;
 using Scribe.Properties;
 
@@ -56,17 +56,17 @@ namespace Scribe
                 try
                 {
                     // Ask Windows to find roller using the 'where' command.
-                    using var whereCommand = new Process();
-                    whereCommand.StartInfo.UseShellExecute = false;
-                    whereCommand.StartInfo.FileName = "where";
-                    whereCommand.StartInfo.Arguments = "roller";
-                    whereCommand.StartInfo.RedirectStandardOutput = true;
-                    whereCommand.Start();
+                    using var whereProcess = new Process();
+                    whereProcess.StartInfo.UseShellExecute = false;
+                    whereProcess.StartInfo.FileName = "where";
+                    whereProcess.StartInfo.Arguments = "roller";
+                    whereProcess.StartInfo.RedirectStandardOutput = true;
+                    whereProcess.Start();
 
-                    var output = whereCommand.StandardOutput.ReadToEnd();
-                    whereCommand.WaitForExit();
+                    var output = whereProcess.StandardOutput.ReadToEnd();
+                    whereProcess.WaitForExit();
 
-                    return whereCommand.ExitCode == 0
+                    return whereProcess.ExitCode == 0
                         ? output.Substring(0, output.IndexOf(Environment.NewLine))
                         : Path.GetFullPath(Directory.GetCurrentDirectory());
                 }
