@@ -7,7 +7,7 @@ namespace Roller
     {
         /// <summary>The operation completed successfully.</summary>
         Success = 0,
-        /// <summary>An invalid function was specified.</summary>
+        /// <summary>The specified file could not be found.</summary>
         FileNotFound = 1,
         /// <summary>Access or permission was denied.</summary>
         AccessDenied = 5,
@@ -21,5 +21,30 @@ namespace Roller
         NotSupported = 50,
         /// <summary>One or more arguments were incorrect.</summary>
         BadArguments = 160,
+    }
+
+    /// <summary>
+    /// Extensions to the ExitCode enumeration.
+    /// </summary>
+    public static class ExitCodeExtensions
+    {
+        /// <summary>
+        /// Translates an <see cref="ExitCode"/> into a message suitable for the end user.
+        /// </summary>
+        /// <param name="inExitCode">The code to translate.</param>
+        /// <returns>The user-facing message.</returns>
+        public static string ToStatusMessage(this ExitCode inExitCode)
+            => inExitCode switch
+            {
+                ExitCode.Success => "The operation completed successfully.",
+                ExitCode.FileNotFound => "The specified file could not be found.",
+                ExitCode.AccessDenied => "Access or permission was denied.",
+                ExitCode.InvalidData => "Invalid data was given.",
+                ExitCode.WriteFault => "An error occurred while attempting to write data.",
+                ExitCode.ReadFault => "An error occurred while attempting to read data.",
+                ExitCode.NotSupported => "An unsupported request was made.",
+                ExitCode.BadArguments => "One or more arguments were incorrect.",
+                _ => $"Unknown command result: {inExitCode}",
+            };
     }
 }
