@@ -379,6 +379,16 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Prompt {
+            get {
+                object obj = ResourceManager.GetObject("Prompt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to https://github.com/mxashlynn/Scribe.
         /// </summary>
         internal static string RepositoryURL {

@@ -44,6 +44,7 @@ namespace Scribe
             this.SaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripSeparator0 = new System.Windows.Forms.ToolStripSeparator();
             this.OpenProjectFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OpenCommandPromptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -631,6 +632,7 @@ namespace Scribe
             this.SaveToolStripMenuItem,
             this.ToolStripSeparator0,
             this.OpenProjectFolderToolStripMenuItem,
+            this.OpenCommandPromptToolStripMenuItem,
             this.ToolStripSeparator1,
             this.ExitToolStripMenuItem});
             this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
@@ -642,7 +644,7 @@ namespace Scribe
             this.NewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("NewToolStripMenuItem.Image")));
             this.NewToolStripMenuItem.Name = "NewToolStripMenuItem";
             this.NewToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.NewToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.NewToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
             this.NewToolStripMenuItem.Text = "&New";
             this.NewToolStripMenuItem.Click += new System.EventHandler(this.NewToolStripMenuItem_Click);
             // 
@@ -651,7 +653,7 @@ namespace Scribe
             this.LoadToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("LoadToolStripMenuItem.Image")));
             this.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem";
             this.LoadToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.LoadToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.LoadToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
             this.LoadToolStripMenuItem.Text = "&Load";
             this.LoadToolStripMenuItem.Click += new System.EventHandler(this.LoadToolStripMenuItem_Click);
             // 
@@ -660,7 +662,7 @@ namespace Scribe
             this.ReloadToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ReloadToolStripMenuItem.Image")));
             this.ReloadToolStripMenuItem.Name = "ReloadToolStripMenuItem";
             this.ReloadToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.ReloadToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.ReloadToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
             this.ReloadToolStripMenuItem.Text = "&Reload";
             this.ReloadToolStripMenuItem.Click += new System.EventHandler(this.ReloadToolStripMenuItem_Click);
             // 
@@ -669,33 +671,41 @@ namespace Scribe
             this.SaveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("SaveToolStripMenuItem.Image")));
             this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
             this.SaveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
             this.SaveToolStripMenuItem.Text = "&Save";
             this.SaveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // ToolStripSeparator0
             // 
             this.ToolStripSeparator0.Name = "ToolStripSeparator0";
-            this.ToolStripSeparator0.Size = new System.Drawing.Size(176, 6);
+            this.ToolStripSeparator0.Size = new System.Drawing.Size(243, 6);
             // 
             // OpenProjectFolderToolStripMenuItem
             // 
             this.OpenProjectFolderToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("OpenProjectFolderToolStripMenuItem.Image")));
             this.OpenProjectFolderToolStripMenuItem.Name = "OpenProjectFolderToolStripMenuItem";
-            this.OpenProjectFolderToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.OpenProjectFolderToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
             this.OpenProjectFolderToolStripMenuItem.Text = "Open Project Folder";
             this.OpenProjectFolderToolStripMenuItem.Click += new System.EventHandler(this.OpenProjectFolderToolStripMenuItem_Click);
+            // 
+            // OpenCommandPromptToolStripMenuItem
+            // 
+            this.OpenCommandPromptToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("OpenCommandPromptToolStripMenuItem.Image")));
+            this.OpenCommandPromptToolStripMenuItem.Name = "OpenCommandPromptToolStripMenuItem";
+            this.OpenCommandPromptToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.OpenCommandPromptToolStripMenuItem.Text = "Open Project Command Prompt";
+            this.OpenCommandPromptToolStripMenuItem.Click += new System.EventHandler(this.OpenCommandPromptToolStripMenuItem_Click);
             // 
             // ToolStripSeparator1
             // 
             this.ToolStripSeparator1.Name = "ToolStripSeparator1";
-            this.ToolStripSeparator1.Size = new System.Drawing.Size(176, 6);
+            this.ToolStripSeparator1.Size = new System.Drawing.Size(243, 6);
             // 
             // ExitToolStripMenuItem
             // 
             this.ExitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ExitToolStripMenuItem.Image")));
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
             this.ExitToolStripMenuItem.Text = "E&xit";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
@@ -6307,6 +6317,7 @@ namespace Scribe
         private System.Windows.Forms.ToolStripMenuItem ReloadToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator ToolStripSeparator0;
         private System.Windows.Forms.ToolStripMenuItem OpenProjectFolderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem OpenCommandPromptToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator ToolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem SaveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ExitToolStripMenuItem;

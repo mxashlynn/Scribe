@@ -2994,6 +2994,40 @@ namespace Scribe
         }
 
         /// <summary>
+        /// Responds to a user selecting "Open Project Command Prompt" menu item.
+        /// </summary>
+        /// <param name="sender">Originator of the event.</param>
+        /// <param name="eventArguments">Additional event data.</param>
+        private void OpenCommandPromptToolStripMenuItem_Click(object sender, EventArgs eventArguments)
+        {
+            if (!string.IsNullOrEmpty(All.ProjectDirectory))
+            {
+                try
+                {
+                    using var shellProcess = new Process();
+                    shellProcess.StartInfo.FileName = "powershell.exe";
+                    shellProcess.StartInfo.Arguments = $"-noexit -command \"cd {All.ProjectDirectory}\"";
+                    shellProcess.Start();
+                    shellProcess.WaitForExit();
+
+                    var exitCode = (ExitCode)shellProcess.ExitCode;
+                    if (exitCode != ExitCode.Success)
+                    {
+                        Logger.Log(LogLevel.Warning, exitCode.ToStatusMessage());
+                    }
+                }
+                catch (Win32Exception winException)
+                {
+                    Logger.Log(LogLevel.Warning, winException.Message, winException);
+                }
+            }
+            else
+            {
+                SystemSounds.Beep.Play();
+            }
+        }
+
+        /// <summary>
         /// Responds to a user selecting the "Exit" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
