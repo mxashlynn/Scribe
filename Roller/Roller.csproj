@@ -62,7 +62,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Parquet" Version="0.3.54" />
+    <PackageReference Include="Parquet" Version="0.3.55" />
   </ItemGroup>
 
 </Project>

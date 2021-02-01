@@ -13,9 +13,7 @@ using Parquet.Maps;
 using Parquet.Parquets;
 using Parquet.Rooms;
 using Parquet.Scripts;
-#if DESIGN
 using Parquet.EditorSupport;
-#endif
 using Roller.Properties;
 
 namespace Roller
@@ -447,7 +445,6 @@ namespace Roller
         /// <returns>A value indicating success or the nature of the failure.</returns>
         private static ExitCode CheckAdjacency(ModelCollection<Model> inWorkload)
         {
-#if DESIGN
             if (!All.LoadFromCSVs())
             {
                 Console.WriteLine(Resources.ErrorLoading);
@@ -481,10 +478,9 @@ namespace Roller
             }
 
             return ExitCode.Success;
-#else
-                Console.WriteLine(Resources.ErrorEditorSupport);
-                return ExitCode.NotSupported;
-#endif
+
+            Console.WriteLine(Resources.ErrorEditorSupport);
+            return ExitCode.NotSupported;
         }
 
         /// <summary>

@@ -27,7 +27,8 @@ While most Parquet data is easily edited in any spreadsheet program, data with n
 
 # Repository Structure
 
-The solution contains two related projects, each of which is structured so that every folder corresponds to a namespace.  In addition, there are non-project directories with additional files.
+The solution two related projects.
+The C# employs the convention whereby every namespace gets its own folder.
 
 - **Roller**
     - A command line tool for working with Parquet CSV files.
