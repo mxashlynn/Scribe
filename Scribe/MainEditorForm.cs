@@ -66,7 +66,8 @@ namespace Scribe
                     var output = whereProcess.StandardOutput.ReadToEnd();
                     whereProcess.WaitForExit();
 
-                    return whereProcess.ExitCode == 0
+                    var exitCode = (ExitCode)whereProcess.ExitCode;
+                    return exitCode == ExitCode.Success
                         ? output.Substring(0, output.IndexOf(Environment.NewLine))
                         : Path.GetFullPath(Directory.GetCurrentDirectory());
                 }
@@ -75,6 +76,37 @@ namespace Scribe
                     // Fall back to the current directory.
                     return Path.GetFullPath(Directory.GetCurrentDirectory());
                 }
+            }
+        }
+
+        /// <summary>
+        /// Executes the Roller companion command line app, and displays its output.
+        /// </summary>
+        /// <param name="inRollerArguments">The arguments to supply to Roller.</param>
+        private static void RunRoller(string inRollerArguments)
+        {
+            try
+            {
+                using var rollerProcess = new Process();
+                rollerProcess.StartInfo.UseShellExecute = false;
+                rollerProcess.StartInfo.FileName = RollerCommand;
+                rollerProcess.StartInfo.Arguments = inRollerArguments;
+                rollerProcess.StartInfo.RedirectStandardOutput = true;
+                rollerProcess.Start();
+
+                var output = rollerProcess.StandardOutput.ReadToEnd();
+                rollerProcess.WaitForExit();
+
+                var exitCode = (ExitCode)rollerProcess.ExitCode;
+                // TODO Change Log to an actual output window!
+                Logger.Log(LogLevel.Info, exitCode == ExitCode.Success
+                    ? output
+                    : exitCode.ToStatusMessage());
+            }
+            catch (Win32Exception winException)
+            {
+                Logger.Log(LogLevel.Error, string.Format(CultureInfo.CurrentCulture, Resources.ErrorAccessingRoller,
+                                                         winException.Message), winException);
             }
         }
         #endregion
@@ -3016,37 +3048,6 @@ namespace Scribe
         /// <param name="eventArguments">Additional event data.</param>
         private void SelectAllToolStripMenuItem_Click(object sender, EventArgs eventArguments)
             => throw new NotImplementedException();
-
-        /// <summary>
-        /// Executes the Roller companion command line app, and displays its output.
-        /// </summary>
-        /// <param name="inRollerArguments">The arguments to supply to Roller.</param>
-        private static void RunRoller(string inRollerArguments)
-        {
-            try
-            {
-                using var rollerCommand = new Process();
-                rollerCommand.StartInfo.UseShellExecute = false;
-                rollerCommand.StartInfo.FileName = RollerCommand;
-                rollerCommand.StartInfo.Arguments = inRollerArguments;
-                rollerCommand.StartInfo.RedirectStandardOutput = true;
-                rollerCommand.Start();
-
-                var output = rollerCommand.StandardOutput.ReadToEnd();
-                rollerCommand.WaitForExit();
-
-                var exitCode = (ExitCode)rollerCommand.ExitCode;
-                // TODO Change Log to an actual output window!
-                Logger.Log(LogLevel.Info, exitCode == ExitCode.Success
-                    ? output
-                    : exitCode.ToString());
-            }
-            catch (Win32Exception winException)
-            {
-                Logger.Log(LogLevel.Error, string.Format(CultureInfo.CurrentCulture, Resources.ErrorAccessingRoller,
-                                                         winException.Message), winException);
-            }
-        }
 
         /// <summary>
         /// Responds to a user selecting the "Check Map" menu item.
