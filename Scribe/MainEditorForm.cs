@@ -58,6 +58,7 @@ namespace Scribe
                     // Ask Windows to find roller using the 'where' command.
                     using var whereProcess = new Process();
                     whereProcess.StartInfo.UseShellExecute = false;
+                    whereProcess.StartInfo.CreateNoWindow = true;
                     whereProcess.StartInfo.FileName = "where";
                     whereProcess.StartInfo.Arguments = "roller";
                     whereProcess.StartInfo.RedirectStandardOutput = true;
