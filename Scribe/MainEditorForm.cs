@@ -3018,15 +3018,43 @@ namespace Scribe
             => throw new NotImplementedException();
 
         /// <summary>
+        /// Executes the Roller companion command line app, and displays its output.
+        /// </summary>
+        /// <param name="inRollerArguments">The arguments to supply to Roller.</param>
+        private static void RunRoller(string inRollerArguments)
+        {
+            try
+            {
+                using var rollerCommand = new Process();
+                rollerCommand.StartInfo.UseShellExecute = false;
+                rollerCommand.StartInfo.FileName = RollerCommand;
+                rollerCommand.StartInfo.Arguments = inRollerArguments;
+                rollerCommand.StartInfo.RedirectStandardOutput = true;
+                rollerCommand.Start();
+
+                var output = rollerCommand.StandardOutput.ReadToEnd();
+                rollerCommand.WaitForExit();
+
+                var exitCode = (ExitCode)rollerCommand.ExitCode;
+                // TODO Change Log to an actual output window!
+                Logger.Log(LogLevel.Info, exitCode == ExitCode.Success
+                    ? output
+                    : exitCode.ToString());
+            }
+            catch (Win32Exception winException)
+            {
+                Logger.Log(LogLevel.Error, string.Format(CultureInfo.CurrentCulture, Resources.ErrorAccessingRoller,
+                                                         winException.Message), winException);
+            }
+        }
+
+        /// <summary>
         /// Responds to a user selecting the "Check Map" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>
         private void CheckMapStripMenuItem_Click(object sender, EventArgs eventArguments)
-        {
-            _ = Process.Start(RollerCommand, "check");
-            // TODO: Capture and display output.
-        }
+            => RunRoller("check");
 
         /// <summary>
         /// Responds to a user selecting the "List Naming Collisions" menu item.
@@ -3034,10 +3062,7 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>
         private void ListNameCollisionsStripMenuItem_Click(object sender, EventArgs eventArguments)
-        {
-            _ = Process.Start(RollerCommand, $"list collisions {GetRollerArgumentForTab(EditorTabs.SelectedIndex)}");
-            // TODO: Capture and display output.
-        }
+            => RunRoller($"list collisions {GetRollerArgumentForTab(EditorTabs.SelectedIndex)}");
 
         /// <summary>
         /// Responds to a user selecting the "List ID Ranges" menu item.
@@ -3045,10 +3070,7 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>
         private void ListIDRangesToolStripMenuItem_Click(object sender, EventArgs eventArguments)
-        {
-            _ = Process.Start(RollerCommand, $"list ranges {GetRollerArgumentForTab(EditorTabs.SelectedIndex)}");
-            // TODO: Capture and display output.
-        }
+            => RunRoller($"list ranges {GetRollerArgumentForTab(EditorTabs.SelectedIndex)}");
 
         /// <summary>
         /// Responds to a user selecting the "List Max IDs" menu item.
@@ -3056,10 +3078,7 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>
         private void ListMaxIDsToolStripMenuItem_Click(object sender, EventArgs eventArguments)
-        {
-            _ = Process.Start(RollerCommand, $"list maxids {GetRollerArgumentForTab(EditorTabs.SelectedIndex)}");
-            // TODO: Capture and display output.
-        }
+            => RunRoller($"list maxids {GetRollerArgumentForTab(EditorTabs.SelectedIndex)}");
 
         /// <summary>
         /// Responds to a user selecting the "List Tags" menu item.
@@ -3067,10 +3086,7 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>
         private void ListTagsToolStripMenuItem_Click(object sender, EventArgs eventArguments)
-        {
-            _ = Process.Start(RollerCommand, $"list tags {GetRollerArgumentForTab(EditorTabs.SelectedIndex)}");
-            // TODO: Capture and display output.
-        }
+            => RunRoller($"list tags {GetRollerArgumentForTab(EditorTabs.SelectedIndex)}");
 
         /// <summary>
         /// Responds to a user selecting the "Options" menu item.
