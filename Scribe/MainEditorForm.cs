@@ -3334,13 +3334,14 @@ namespace Scribe
                                     MessageBoxIcon.Warning) == DialogResult.No)
                 {
                     eventArguments.Cancel = true;
-                }
-                else
-                {
-                    UILogger.Dispose();
-                    FormClosing -= FormClosingEventHandler;
+                    return;
                 }
             }
+
+            // This code should only run if the user does not cancel the close event.
+            Logger.Log(LogLevel.Info, "Quitting");
+            UILogger.Dispose();
+            FormClosing -= FormClosingEventHandler;
         }
         #endregion
     }
