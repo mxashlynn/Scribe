@@ -359,6 +359,9 @@ namespace Scribe
             UpdateFileFormatDisplay();
             UpdateDisplay();
             UpdateFromSettings();
+            // NOTE: Currently the progress bar doesn't do anything.
+            // If any task ever becomes slow or blocks the GUI thread, it should be implemented.
+            MainToolStripStatusLabel.Text = Resources.InfoMessageReady;
         }
 
         /// <summary>
@@ -1192,11 +1195,6 @@ namespace Scribe
             #endregion
 
             RepopulateVisibleControls();
-
-            MainToolStripStatusLabel.Text = Resources.InfoMessageReady;
-            // TODO Implement progress bar animation (e.g. file i/o) and remove this test.
-            ToolStripProgressBar.Value = 35;
-            EditorStatusStrip.Update();
         }
 
         /// <summary>
