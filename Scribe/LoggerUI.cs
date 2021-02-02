@@ -40,7 +40,8 @@ namespace Scribe
         /// <param name="inLogLevel">The severity of the event being logged.</param>
         /// <param name="inMessage">A message summarizing the event being logged.</param>
         /// <param name="inException">The exception related to this event, if any.</param>
-        public void Log(LogLevel inLogLevel, string inMessage = null, Exception inException = null)
+        /// <param name="inThrow">If <c>true</c> the given exception will be thrown after logging.</param>
+        public void Log(LogLevel inLogLevel, string inMessage = null, Exception inException = null, bool inThrow = false)
         {
             var message = !string.IsNullOrEmpty(inMessage)
                 ? inMessage
@@ -65,7 +66,8 @@ namespace Scribe
                 case LogLevel.Fatal:
                     _ = MessageBox.Show($"{message}\n{Resources.ErrorFatal}",
                                         Resources.CaptionError, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    if (inException is not null)
+                    if (inThrow
+                        && inException is not null)
                     {
                         throw inException;
                     }
