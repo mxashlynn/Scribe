@@ -41,7 +41,17 @@ namespace Scribe
         /// <param name="inMessage">A message summarizing the event being logged.</param>
         /// <param name="inException">The exception related to this event, if any.</param>
         /// <param name="inThrow">If <c>true</c> the given exception will be thrown after logging.</param>
-        public void Log(LogLevel inLogLevel, string inMessage = null, Exception inException = null, bool inThrow = false)
+        public void Log(LogLevel inLogLevel, string inMessage = null, Exception inException = null)
+            => Log(inLogLevel, inMessage, inException, false);
+
+        /// <summary>
+        /// Writes a log entry.
+        /// </summary>
+        /// <param name="inLogLevel">The severity of the event being logged.</param>
+        /// <param name="inMessage">A message summarizing the event being logged.</param>
+        /// <param name="inException">The exception related to this event, if any.</param>
+        /// <param name="inThrow">If <c>true</c> the given exception will be thrown after logging.</param>
+        public void Log(LogLevel inLogLevel, string inMessage, Exception inException, bool inThrow)
         {
             var message = !string.IsNullOrEmpty(inMessage)
                 ? inMessage
