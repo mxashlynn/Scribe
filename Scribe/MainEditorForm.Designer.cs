@@ -162,6 +162,10 @@ namespace Scribe
             this.LibraryProjectPathLabel = new System.Windows.Forms.Label();
             this.LibraryProjectPathExample = new System.Windows.Forms.Label();
             this.FloorsTabPage = new System.Windows.Forms.TabPage();
+            this.FloorEditFilledInImageButton = new System.Windows.Forms.Button();
+            this.FloorFilledInLabel = new System.Windows.Forms.Label();
+            this.FloorDugOutLabel = new System.Windows.Forms.Label();
+            this.FloorFilledInPictureBox = new System.Windows.Forms.PictureBox();
             this.FloorRemoveFloorButton = new System.Windows.Forms.Button();
             this.FloorLayoutTabelPanel = new System.Windows.Forms.TableLayoutPanel();
             this.FloorRemoveRoomTagButton = new System.Windows.Forms.Button();
@@ -188,8 +192,8 @@ namespace Scribe
             this.FloorAddNewFloorButton = new System.Windows.Forms.Button();
             this.FloorListBox = new System.Windows.Forms.ListBox();
             this.FloorIDLabel = new System.Windows.Forms.Label();
-            this.FloorEditImageButton = new System.Windows.Forms.Button();
-            this.FloorPictureBox = new System.Windows.Forms.PictureBox();
+            this.FloorEditDugOutImageButton = new System.Windows.Forms.Button();
+            this.FloorDugOutPictureBox = new System.Windows.Forms.PictureBox();
             this.FloorConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.BlocksTabPage = new System.Windows.Forms.TabPage();
             this.BlockTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -535,8 +539,9 @@ namespace Scribe
             this.LibraryInfoGroupBox.SuspendLayout();
             this.LibraryInfoTableLayoutPanel.SuspendLayout();
             this.FloorsTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FloorFilledInPictureBox)).BeginInit();
             this.FloorLayoutTabelPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FloorPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FloorDugOutPictureBox)).BeginInit();
             this.BlocksTabPage.SuspendLayout();
             this.BlockTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BlockPictureBox)).BeginInit();
@@ -2015,20 +2020,68 @@ namespace Scribe
             // 
             // FloorsTabPage
             // 
+            this.FloorsTabPage.Controls.Add(this.FloorEditFilledInImageButton);
+            this.FloorsTabPage.Controls.Add(this.FloorFilledInLabel);
+            this.FloorsTabPage.Controls.Add(this.FloorDugOutLabel);
+            this.FloorsTabPage.Controls.Add(this.FloorFilledInPictureBox);
             this.FloorsTabPage.Controls.Add(this.FloorRemoveFloorButton);
             this.FloorsTabPage.Controls.Add(this.FloorLayoutTabelPanel);
             this.FloorsTabPage.Controls.Add(this.FloorIDExample);
             this.FloorsTabPage.Controls.Add(this.FloorAddNewFloorButton);
             this.FloorsTabPage.Controls.Add(this.FloorListBox);
             this.FloorsTabPage.Controls.Add(this.FloorIDLabel);
-            this.FloorsTabPage.Controls.Add(this.FloorEditImageButton);
-            this.FloorsTabPage.Controls.Add(this.FloorPictureBox);
+            this.FloorsTabPage.Controls.Add(this.FloorEditDugOutImageButton);
+            this.FloorsTabPage.Controls.Add(this.FloorDugOutPictureBox);
             this.FloorsTabPage.Controls.Add(this.FloorConfigGroupBox);
             this.FloorsTabPage.Location = new System.Drawing.Point(4, 22);
             this.FloorsTabPage.Name = "FloorsTabPage";
             this.FloorsTabPage.Size = new System.Drawing.Size(953, 599);
             this.FloorsTabPage.TabIndex = 6;
             this.FloorsTabPage.Text = "Floors";
+            // 
+            // FloorEditFilledInImageButton
+            // 
+            this.FloorEditFilledInImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorEditFilledInImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FloorEditFilledInImageButton.Location = new System.Drawing.Point(815, 241);
+            this.FloorEditFilledInImageButton.Name = "FloorEditFilledInImageButton";
+            this.FloorEditFilledInImageButton.Size = new System.Drawing.Size(128, 23);
+            this.FloorEditFilledInImageButton.TabIndex = 11;
+            this.FloorEditFilledInImageButton.Text = "Edit Filled In Image";
+            this.FloorEditFilledInImageButton.UseVisualStyleBackColor = false;
+            this.FloorEditFilledInImageButton.Click += new System.EventHandler(this.EditImageExternally);
+            // 
+            // FloorFilledInLabel
+            // 
+            this.FloorFilledInLabel.AutoSize = true;
+            this.FloorFilledInLabel.Location = new System.Drawing.Point(767, 43);
+            this.FloorFilledInLabel.Name = "FloorFilledInLabel";
+            this.FloorFilledInLabel.Size = new System.Drawing.Size(44, 13);
+            this.FloorFilledInLabel.TabIndex = 10;
+            this.FloorFilledInLabel.Text = "Filled In";
+            // 
+            // FloorDugOutLabel
+            // 
+            this.FloorDugOutLabel.AutoSize = true;
+            this.FloorDugOutLabel.Location = new System.Drawing.Point(767, 270);
+            this.FloorDugOutLabel.Name = "FloorDugOutLabel";
+            this.FloorDugOutLabel.Size = new System.Drawing.Size(47, 13);
+            this.FloorDugOutLabel.TabIndex = 9;
+            this.FloorDugOutLabel.Text = "Dug Out";
+            // 
+            // FloorFilledInPictureBox
+            // 
+            this.FloorFilledInPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorFilledInPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorFilledInPictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
+            this.FloorFilledInPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("FloorFilledInPictureBox.Image")));
+            this.FloorFilledInPictureBox.Location = new System.Drawing.Point(767, 59);
+            this.FloorFilledInPictureBox.Name = "FloorFilledInPictureBox";
+            this.FloorFilledInPictureBox.Size = new System.Drawing.Size(176, 176);
+            this.FloorFilledInPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.FloorFilledInPictureBox.TabIndex = 8;
+            this.FloorFilledInPictureBox.TabStop = false;
+            this.FloorFilledInPictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
             // 
             // FloorRemoveFloorButton
             // 
@@ -2336,31 +2389,31 @@ namespace Scribe
             this.FloorIDLabel.TabIndex = 4;
             this.FloorIDLabel.Text = "Floor ID";
             // 
-            // FloorEditImageButton
+            // FloorEditDugOutImageButton
             // 
-            this.FloorEditImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FloorEditImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FloorEditImageButton.Location = new System.Drawing.Point(815, 468);
-            this.FloorEditImageButton.Name = "FloorEditImageButton";
-            this.FloorEditImageButton.Size = new System.Drawing.Size(128, 23);
-            this.FloorEditImageButton.TabIndex = 7;
-            this.FloorEditImageButton.Text = "Edit Image";
-            this.FloorEditImageButton.UseVisualStyleBackColor = false;
-            this.FloorEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
+            this.FloorEditDugOutImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorEditDugOutImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FloorEditDugOutImageButton.Location = new System.Drawing.Point(815, 468);
+            this.FloorEditDugOutImageButton.Name = "FloorEditDugOutImageButton";
+            this.FloorEditDugOutImageButton.Size = new System.Drawing.Size(128, 23);
+            this.FloorEditDugOutImageButton.TabIndex = 7;
+            this.FloorEditDugOutImageButton.Text = "Edit Dug Out Image";
+            this.FloorEditDugOutImageButton.UseVisualStyleBackColor = false;
+            this.FloorEditDugOutImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
-            // FloorPictureBox
+            // FloorDugOutPictureBox
             // 
-            this.FloorPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FloorPictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
-            this.FloorPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("FloorPictureBox.Image")));
-            this.FloorPictureBox.Location = new System.Drawing.Point(767, 286);
-            this.FloorPictureBox.Name = "FloorPictureBox";
-            this.FloorPictureBox.Size = new System.Drawing.Size(176, 176);
-            this.FloorPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.FloorPictureBox.TabIndex = 6;
-            this.FloorPictureBox.TabStop = false;
-            this.FloorPictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
+            this.FloorDugOutPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorDugOutPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorDugOutPictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
+            this.FloorDugOutPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("FloorDugOutPictureBox.Image")));
+            this.FloorDugOutPictureBox.Location = new System.Drawing.Point(767, 286);
+            this.FloorDugOutPictureBox.Name = "FloorDugOutPictureBox";
+            this.FloorDugOutPictureBox.Size = new System.Drawing.Size(176, 176);
+            this.FloorDugOutPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.FloorDugOutPictureBox.TabIndex = 6;
+            this.FloorDugOutPictureBox.TabStop = false;
+            this.FloorDugOutPictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
             // 
             // FloorConfigGroupBox
             // 
@@ -6234,9 +6287,10 @@ namespace Scribe
             this.LibraryInfoTableLayoutPanel.PerformLayout();
             this.FloorsTabPage.ResumeLayout(false);
             this.FloorsTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FloorFilledInPictureBox)).EndInit();
             this.FloorLayoutTabelPanel.ResumeLayout(false);
             this.FloorLayoutTabelPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FloorPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FloorDugOutPictureBox)).EndInit();
             this.BlocksTabPage.ResumeLayout(false);
             this.BlocksTabPage.PerformLayout();
             this.BlockTableLayoutPanel.ResumeLayout(false);
@@ -6483,7 +6537,7 @@ namespace Scribe
         private System.Windows.Forms.TableLayoutPanel FloorLayoutTabelPanel;
         private System.Windows.Forms.Label FloorIDLabel;
         private System.Windows.Forms.Label FloorIDExample;
-        private System.Windows.Forms.Button FloorEditImageButton;
+        private System.Windows.Forms.Button FloorEditDugOutImageButton;
         private System.Windows.Forms.Label FloorNameLabel;
         private System.Windows.Forms.Label FloorDescriptionLabel;
         private System.Windows.Forms.Label FloorCommentLabel;
@@ -6492,7 +6546,11 @@ namespace Scribe
         private System.Windows.Forms.TextBox FloorNameTextBox;
         private System.Windows.Forms.TextBox FloorDescriptionTextBox;
         private System.Windows.Forms.TextBox FloorCommentTextBox;
-        private System.Windows.Forms.PictureBox FloorPictureBox;
+        private System.Windows.Forms.PictureBox FloorDugOutPictureBox;
+        private System.Windows.Forms.Label FilledInLabel;
+        private System.Windows.Forms.Label DugOutLabel;
+        private System.Windows.Forms.PictureBox FloorFilledInPictureBox;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button FloorAddNewFloorButton;
         private System.Windows.Forms.Button FloorRemoveFloorButton;
         private System.Windows.Forms.GroupBox FloorConfigGroupBox;
@@ -6807,5 +6865,8 @@ namespace Scribe
 
         private System.Windows.Forms.TabPage ScriptsTabPage;
         private System.Windows.Forms.Label ScriptingPendingDesignLabel;
+        private System.Windows.Forms.Button FloorEditFilledInImageButton;
+        private System.Windows.Forms.Label FloorFilledInLabel;
+        private System.Windows.Forms.Label FloorDugOutLabel;
     }
 }

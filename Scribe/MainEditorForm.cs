@@ -544,7 +544,7 @@ namespace Scribe
             {
                 GamesTabIndex => GameIconPictureBox,
                 BlocksTabIndex => BlockPictureBox,
-                FloorsTabIndex => FloorPictureBox,
+                FloorsTabIndex => FloorDugOutPictureBox,
                 FurnishingsTabIndex => FurnishingPictureBox,
                 CollectiblesTabIndex => CollectiblePictureBox,
                 CharactersTabIndex => CharacterPictureBox,
@@ -1501,7 +1501,7 @@ namespace Scribe
                 FloorAddsToRoomListBox.Items.Clear();
                 FloorModificationToolComboBox.SelectedItem = ModificationTool.None;
                 FloorTrenchNameTextBox.Text = "";
-                FloorPictureBox.Image = Resources.ImageNotFoundGraphic;
+                FloorDugOutPictureBox.Image = Resources.ImageNotFoundGraphic;
             }
             else if (FloorListBox.SelectedItem is FloorModel model
                     && null != model)
@@ -1517,7 +1517,7 @@ namespace Scribe
                 RepopulateListBox(FloorAddsToRoomListBox, model.AddsToRoom);
                 FloorModificationToolComboBox.SelectedItem = model.ModTool;
                 FloorTrenchNameTextBox.Text = model.TrenchName;
-                PictureBoxLoadFromStorage(FloorPictureBox, model.ID);
+                PictureBoxLoadFromStorage(FloorDugOutPictureBox, model.ID);
             }
         }
 
