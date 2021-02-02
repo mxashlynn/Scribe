@@ -342,6 +342,15 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ID Copied.
+        /// </summary>
+        internal static string InfoIDCopied {
+            get {
+                return ResourceManager.GetString("InfoIDCopied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select Project Folder.
         /// </summary>
         internal static string InfoMessageLoad {
@@ -360,11 +369,110 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Automatically saving current project..
+        /// </summary>
+        internal static string LogAutoSaving {
+            get {
+                return ResourceManager.GetString("LogAutoSaving", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Getting the debug build directory..
+        /// </summary>
+        internal static string LogGetDebugBuild {
+            get {
+                return ResourceManager.GetString("LogGetDebugBuild", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Launching external image editor..
+        /// </summary>
+        internal static string LogLaunchExternalImageEditor {
+            get {
+                return ResourceManager.GetString("LogLaunchExternalImageEditor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading current project..
+        /// </summary>
+        internal static string LogLoadingProject {
+            get {
+                return ResourceManager.GetString("LogLoadingProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Creating a new project..
+        /// </summary>
+        internal static string LogNewProject {
+            get {
+                return ResourceManager.GetString("LogNewProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Launching command prompt in current project folder..
+        /// </summary>
+        internal static string LogOpenCommandPrompt {
+            get {
+                return ResourceManager.GetString("LogOpenCommandPrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opening the folder containing a model&apos;s image..
+        /// </summary>
+        internal static string LogOpenImageFolder {
+            get {
+                return ResourceManager.GetString("LogOpenImageFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opening the current project folder in Explorer..
+        /// </summary>
+        internal static string LogOpenProjectFolder {
+            get {
+                return ResourceManager.GetString("LogOpenProjectFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ready.
         /// </summary>
-        internal static string InfoMessageReady {
+        internal static string LogReady {
             get {
-                return ResourceManager.GetString("InfoMessageReady", resourceCulture);
+                return ResourceManager.GetString("LogReady", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saving current project..
+        /// </summary>
+        internal static string LogSavingProject {
+            get {
+                return ResourceManager.GetString("LogSavingProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scribe is closing..
+        /// </summary>
+        internal static string LogScribeClosing {
+            get {
+                return ResourceManager.GetString("LogScribeClosing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scribe initializing..
+        /// </summary>
+        internal static string LogScribeOpening {
+            get {
+                return ResourceManager.GetString("LogScribeOpening", resourceCulture);
             }
         }
         

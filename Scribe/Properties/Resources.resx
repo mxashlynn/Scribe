@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CaptionMainEditorFormClean" xml:space="preserve">
     <value>Scribe</value>
@@ -165,7 +165,7 @@
     <value>This value must be an integer.</value>
     <comment>Error string.</comment>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ParquetIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ParquetIcon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -226,9 +226,9 @@
 Folder: {1}</value>
     <comment>Error string.</comment>
   </data>
-  <data name="InfoMessageReady" xml:space="preserve">
+  <data name="LogReady" xml:space="preserve">
     <value>Ready</value>
-    <comment>Instructions string.</comment>
+    <comment>Log message string.</comment>
   </data>
   <data name="ErrorPositiveIntegersOnly" xml:space="preserve">
     <value>This value must be an integer greater than 0.</value>
@@ -294,5 +294,53 @@ Folder: {1}</value>
   </data>
   <data name="Prompt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Menu Icons\Prompt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InfoIDCopied" xml:space="preserve">
+    <value>ID Copied</value>
+    <comment>Instructions string.</comment>
+  </data>
+  <data name="LogAutoSaving" xml:space="preserve">
+    <value>Automatically saving current project.</value>
+    <comment>Log message string.</comment>
+  </data>
+  <data name="LogGetDebugBuild" xml:space="preserve">
+    <value>Getting the debug build directory.</value>
+    <comment>Log message string.</comment>
+  </data>
+  <data name="LogLaunchExternalImageEditor" xml:space="preserve">
+    <value>Launching external image editor.</value>
+    <comment>Log message string.</comment>
+  </data>
+  <data name="LogLoadingProject" xml:space="preserve">
+    <value>Loading current project.</value>
+    <comment>Log message string.</comment>
+  </data>
+  <data name="LogNewProject" xml:space="preserve">
+    <value>Creating a new project.</value>
+    <comment>Log message string.</comment>
+  </data>
+  <data name="LogOpenCommandPrompt" xml:space="preserve">
+    <value>Launching command prompt in current project folder.</value>
+    <comment>Log message string.</comment>
+  </data>
+  <data name="LogOpenImageFolder" xml:space="preserve">
+    <value>Opening the folder containing a model's image.</value>
+    <comment>Log message string.</comment>
+  </data>
+  <data name="LogOpenProjectFolder" xml:space="preserve">
+    <value>Opening the current project folder in Explorer.</value>
+    <comment>Log message string.</comment>
+  </data>
+  <data name="LogSavingProject" xml:space="preserve">
+    <value>Saving current project.</value>
+    <comment>Log message string.</comment>
+  </data>
+  <data name="LogScribeClosing" xml:space="preserve">
+    <value>Scribe is closing.</value>
+    <comment>Log message string.</comment>
+  </data>
+  <data name="LogScribeOpening" xml:space="preserve">
+    <value>Scribe initializing.</value>
+    <comment>Log message string.</comment>
   </data>
 </root>

@@ -49,6 +49,7 @@ namespace Scribe
             if (ScribeProgram.IsDebugMode)
             {
                 // Return the binary executable directory from the compiled Roller project.
+                Logger.Log(LogLevel.Debug, Resources.LogGetDebugBuild);
                 return Path.GetFullPath($"{Directory.GetCurrentDirectory()}/../../../../Roller/bin/Debug/net5.0");
             }
             else
@@ -56,6 +57,7 @@ namespace Scribe
                 try
                 {
                     // Ask Windows to find roller using the 'where' command.
+                    Logger.Log(LogLevel.Debug, nameof(GetRollerFullPath));
                     using var whereProcess = new Process();
                     whereProcess.StartInfo.UseShellExecute = false;
                     whereProcess.StartInfo.CreateNoWindow = true;
@@ -75,6 +77,7 @@ namespace Scribe
                 catch (Win32Exception)
                 {
                     // Fall back to the current directory.
+                    Logger.Log(LogLevel.Debug, nameof(Directory.GetCurrentDirectory));
                     return Path.GetFullPath(Directory.GetCurrentDirectory());
                 }
             }
@@ -88,6 +91,9 @@ namespace Scribe
         {
             try
             {
+                var inputText = $"roller {inRollerArguments}";
+                Logger.Log(LogLevel.Info, inputText);
+
                 using var rollerProcess = new Process();
                 rollerProcess.StartInfo.UseShellExecute = false;
                 rollerProcess.StartInfo.CreateNoWindow = true;
@@ -104,7 +110,7 @@ namespace Scribe
                 var resultsText = exitCode == ExitCode.Success
                     ? output
                     : exitCode.ToStatusMessage();
-                RollerResultsBox.TextOnDisplay = $"roller {inRollerArguments}{Environment.NewLine}{resultsText}";
+                RollerResultsBox.TextOnDisplay = $"{inputText}{Environment.NewLine}{resultsText}";
                 RollerResultsBox.ShowDialog();
             }
             catch (Win32Exception winException)
@@ -225,6 +231,7 @@ namespace Scribe
                     // All is about to go out of sync with storage, check if it's time to autosave.
                     if (IsTimeToAutoSave())
                     {
+                        Logger.Log(LogLevel.Info, Resources.LogAutoSaving);
                         if (EditorCommands.SaveDataFiles())
                         {
                             _hasUnsavedChanges = false;
@@ -268,6 +275,7 @@ namespace Scribe
             UILogger = new LoggerUI(new StreamWriter("scribe.log", false, new UTF8Encoding(true, true)),
                                     MainToolStripStatusLabel);
             Logger.SetLogger(UILogger);
+            Logger.Log(LogLevel.Info, Resources.LogScribeOpening);
 
             ClearStatusTimer.Interval = 30000;
             ClearStatusTimer.Tick += ClearStatusTimer_Tick;
@@ -361,7 +369,7 @@ namespace Scribe
             UpdateFromSettings();
             // NOTE: Currently the progress bar doesn't do anything.
             // If any task ever becomes slow or blocks the GUI thread, it should be implemented.
-            MainToolStripStatusLabel.Text = Resources.InfoMessageReady;
+            Logger.Log(LogLevel.Info, Resources.LogReady);
         }
 
         /// <summary>
@@ -993,7 +1001,7 @@ namespace Scribe
             // Also restarts the text-clearing timer.
             if (sender is ToolStripStatusLabel statusLabel
                 && !string.IsNullOrEmpty(statusLabel.Text)
-                && statusLabel.Text.CompareTo(Resources.InfoMessageReady) != 0)
+                && statusLabel.Text.CompareTo(Resources.LogReady) != 0)
             {
                 ClearStatusTimer.Stop();
                 ClearStatusTimer.Start();
@@ -2900,6 +2908,7 @@ namespace Scribe
                 return;
             }
 
+            Logger.Log(LogLevel.Info, Resources.LogNewProject);
             if (TemplatesMessageBox.CreateTemplatesInProjectFolder()
                 && EditorCommands.LoadDataFiles())
             {
@@ -2925,6 +2934,7 @@ namespace Scribe
                 return;
             }
 
+            Logger.Log(LogLevel.Info, Resources.LogLoadingProject);
             if (EditorCommands.LoadDataFiles())
             {
                 HasUnsavedChanges = false;
@@ -2949,6 +2959,7 @@ namespace Scribe
                                 MessageBoxButtons.YesNo,
                                 MessageBoxIcon.Warning) == DialogResult.Yes)
             {
+                Logger.Log(LogLevel.Info, Resources.LogLoadingProject);
                 if (EditorCommands.LoadDataFiles())
                 {
                     HasUnsavedChanges = false;
@@ -2969,6 +2980,7 @@ namespace Scribe
         /// <param name="eventArguments">Additional event data.</param>
         private void SaveToolStripMenuItem_Click(object sender, EventArgs eventArguments)
         {
+            Logger.Log(LogLevel.Info, Resources.LogSavingProject);
             Validate();
             if (EditorCommands.SaveDataFiles())
             {
@@ -2990,6 +3002,7 @@ namespace Scribe
         {
             if (!string.IsNullOrEmpty(All.ProjectDirectory))
             {
+                Logger.Log(LogLevel.Info, Resources.LogOpenProjectFolder);
                 _ = Process.Start("explorer", $"\"{All.ProjectDirectory}\"");
             }
             else
@@ -3009,6 +3022,8 @@ namespace Scribe
             {
                 try
                 {
+                    Logger.Log(LogLevel.Info, Resources.LogOpenCommandPrompt);
+
                     using var shellProcess = new Process();
                     shellProcess.StartInfo.FileName = "powershell.exe";
                     shellProcess.StartInfo.Arguments = $"-noexit -command \"cd {All.ProjectDirectory}\"";
@@ -3185,6 +3200,7 @@ namespace Scribe
             path = Path.GetDirectoryName(path);
             if (!string.IsNullOrEmpty(path))
             {
+                Logger.Log(LogLevel.Info, nameof(Resources.LogOpenImageFolder));
                 _ = Process.Start("explorer", $"\"{path}\"");
             }
             else
@@ -3204,6 +3220,7 @@ namespace Scribe
             if (!string.IsNullOrEmpty(id))
             {
                 Clipboard.SetText(id);
+                MainToolStripStatusLabel.Text = Resources.InfoIDCopied;
             }
             else
             {
@@ -3285,6 +3302,7 @@ namespace Scribe
             var id = GetSelectedModelIDForTab(EditorTabs.SelectedIndex);
             if (id != ModelID.None)
             {
+                Logger.Log(LogLevel.Info, Resources.LogLaunchExternalImageEditor);
                 var imagePathAndFilename = Path.Combine(EditorCommands.GetGraphicsPathForModelID(id), $"{id}.png");
                 if (!File.Exists(imagePathAndFilename))
                 {
@@ -3339,7 +3357,7 @@ namespace Scribe
             }
 
             // This code should only run if the user does not cancel the close event.
-            Logger.Log(LogLevel.Info, "Quitting");
+            Logger.Log(LogLevel.Info, Resources.LogScribeClosing);
             UILogger.Dispose();
             FormClosing -= FormClosingEventHandler;
         }

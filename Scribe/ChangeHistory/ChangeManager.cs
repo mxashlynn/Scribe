@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Parquet;
 
 namespace Scribe.ChangeHistory
 {
@@ -45,6 +46,8 @@ namespace Scribe.ChangeHistory
         /// </summary>
         internal static void Clear()
         {
+            // TODO: Ideally this log dependency would be injected.
+            Logger.Log(LogLevel.Info, $"{nameof(Clear)} {nameof(ChangeHistory)}");
             Changes.Clear();
             CurrentChangeIndex = -1;
         }
@@ -55,6 +58,9 @@ namespace Scribe.ChangeHistory
         /// <param name="inChange">The change to add and act on.</param>
         internal static void AddAndExecute(Change inChange)
         {
+            // TODO: Ideally this log dependency would be injected.
+            Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {inChange.Description}");
+
             CurrentChangeIndex++;
             if (0 < Count && CurrentChangeIndex < Count)
             {
@@ -78,6 +84,8 @@ namespace Scribe.ChangeHistory
         {
             if (CurrentChangeIndex > -1)
             {
+                // TODO: Ideally this log dependency would be injected.
+                Logger.Log(LogLevel.Info, $"{nameof(Undo)} {Changes[CurrentChangeIndex].Description}");
                 Changes[CurrentChangeIndex].Reverse();
                 CurrentChangeIndex--;
             }
@@ -91,6 +99,8 @@ namespace Scribe.ChangeHistory
             if (CurrentChangeIndex < Count - 1)
             {
                 CurrentChangeIndex++;
+                // TODO: Ideally this log dependency would be injected.
+                Logger.Log(LogLevel.Info, $"{nameof(Redo)} {Changes[CurrentChangeIndex].Description}");
                 Changes[CurrentChangeIndex].Execute();
             }
         }
