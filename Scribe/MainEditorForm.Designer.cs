@@ -754,7 +754,6 @@ namespace Scribe
             // 
             // CutToolStripMenuItem
             // 
-            this.CutToolStripMenuItem.Enabled = false;
             this.CutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("CutToolStripMenuItem.Image")));
             this.CutToolStripMenuItem.Name = "CutToolStripMenuItem";
             this.CutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
@@ -764,7 +763,6 @@ namespace Scribe
             // 
             // CopyToolStripMenuItem
             // 
-            this.CopyToolStripMenuItem.Enabled = false;
             this.CopyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("CopyToolStripMenuItem.Image")));
             this.CopyToolStripMenuItem.Name = "CopyToolStripMenuItem";
             this.CopyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
@@ -774,7 +772,6 @@ namespace Scribe
             // 
             // PasteToolStripMenuItem
             // 
-            this.PasteToolStripMenuItem.Enabled = false;
             this.PasteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("PasteToolStripMenuItem.Image")));
             this.PasteToolStripMenuItem.Name = "PasteToolStripMenuItem";
             this.PasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
@@ -789,7 +786,6 @@ namespace Scribe
             // 
             // SelectAllToolStripMenuItem
             // 
-            this.SelectAllToolStripMenuItem.Enabled = false;
             this.SelectAllToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("SelectAllToolStripMenuItem.Image")));
             this.SelectAllToolStripMenuItem.Name = "SelectAllToolStripMenuItem";
             this.SelectAllToolStripMenuItem.Size = new System.Drawing.Size(144, 22);

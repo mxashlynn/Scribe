@@ -3077,7 +3077,11 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>
         private void CutToolStripMenuItem_Click(object sender, EventArgs eventArguments)
-            => throw new NotImplementedException();
+        {
+            Clipboard.SetText(ActiveControl.Text);
+            ActiveControl.Text = "";
+            ActiveControl.Focus();
+        }
 
         /// <summary>
         /// Responds to a user selecting the "Copy" menu item.
@@ -3085,7 +3089,7 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>
         private void CopyToolStripMenuItem_Click(object sender, EventArgs eventArguments)
-            => throw new NotImplementedException();
+            => Clipboard.SetText(ActiveControl.Text);
 
         /// <summary>
         /// Responds to a user selecting the "Paste" menu item.
@@ -3093,7 +3097,7 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>
         private void PasteToolStripMenuItem_Click(object sender, EventArgs eventArguments)
-            => throw new NotImplementedException();
+            => ActiveControl.Text = Clipboard.GetText();
 
         /// <summary>
         /// Responds to a user selecting the "Select All" menu item.
@@ -3101,7 +3105,17 @@ namespace Scribe
         /// <param name="sender">Originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>
         private void SelectAllToolStripMenuItem_Click(object sender, EventArgs eventArguments)
-            => throw new NotImplementedException();
+        {
+            if (ActiveControl is TextBox activeTextBox)
+            {
+                activeTextBox.SelectAll();
+                activeTextBox.Focus();
+            }
+            else
+            {
+                SystemSounds.Beep.Play();
+            }
+        }
 
         /// <summary>
         /// Responds to a user selecting the "Check Map" menu item.
