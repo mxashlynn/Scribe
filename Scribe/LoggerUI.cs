@@ -49,7 +49,8 @@ namespace Scribe
                     ? inException.Message
                     : $"Scribe Trace at {DateTime.Now}.";
 
-            LogWriter.WriteLine($"{nameof(Scribe)} {inLogLevel} {message}");
+            LogWriter.WriteLine($"{nameof(Scribe)} [{inLogLevel}]: {message}");
+            LogWriter.Flush();
 
             switch (inLogLevel)
             {
