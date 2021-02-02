@@ -101,9 +101,10 @@ namespace Scribe
                 rollerProcess.WaitForExit();
 
                 var exitCode = (ExitCode)rollerProcess.ExitCode;
-                RollerResultsBox.TextOnDisplay = exitCode == ExitCode.Success
+                var resultsText = exitCode == ExitCode.Success
                     ? output
                     : exitCode.ToStatusMessage();
+                RollerResultsBox.TextOnDisplay = $"roller {inRollerArguments}{Environment.NewLine}{resultsText}";
                 RollerResultsBox.ShowDialog();
             }
             catch (Win32Exception winException)
