@@ -17,6 +17,11 @@ namespace Scribe
         /// <summary>Used to log all messages.</summary>
         private readonly StreamWriter LogWriter;
 
+        /// <summary>
+        /// Instantiates a new <see cref="LoggerUI"/>.
+        /// </summary>
+        /// <param name="inFileWriter">Used to write logs to permanent storage.</param>
+        /// <param name="inInfoStrip">Used to display logs to the user.</param>
         public LoggerUI(StreamWriter inFileWriter, ToolStripStatusLabel inInfoStrip)
         {
             if (inFileWriter is null
