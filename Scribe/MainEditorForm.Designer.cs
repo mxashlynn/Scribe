@@ -6543,10 +6543,10 @@ namespace Scribe
         private System.Windows.Forms.TextBox FloorDescriptionTextBox;
         private System.Windows.Forms.TextBox FloorCommentTextBox;
         private System.Windows.Forms.PictureBox FloorDugOutPictureBox;
-        private System.Windows.Forms.Label FilledInLabel;
-        private System.Windows.Forms.Label DugOutLabel;
+        private System.Windows.Forms.Button FloorEditFilledInImageButton;
+        private System.Windows.Forms.Label FloorFilledInLabel;
+        private System.Windows.Forms.Label FloorDugOutLabel;
         private System.Windows.Forms.PictureBox FloorFilledInPictureBox;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button FloorAddNewFloorButton;
         private System.Windows.Forms.Button FloorRemoveFloorButton;
         private System.Windows.Forms.GroupBox FloorConfigGroupBox;
@@ -6861,8 +6861,5 @@ namespace Scribe
 
         private System.Windows.Forms.TabPage ScriptsTabPage;
         private System.Windows.Forms.Label ScriptingPendingDesignLabel;
-        private System.Windows.Forms.Button FloorEditFilledInImageButton;
-        private System.Windows.Forms.Label FloorFilledInLabel;
-        private System.Windows.Forms.Label FloorDugOutLabel;
     }
 }
