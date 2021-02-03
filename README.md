@@ -42,7 +42,7 @@ To work with this repository you will need:
 
 - [.NET 5](https://dotnet.microsoft.com/download/dotnet/5.0)
 - [CSVHelper 19](https://joshclose.github.io/CsvHelper/)
-- the latest version of [Parquet](https://github.com/xunit/xunit)
+- the latest version of [Parquet](https://github.com/mxashlynn/Parquet/)
 
 # Contributors
 - Design and code by [Paige Ashlynn](https://github.com/mxashlynn/).
