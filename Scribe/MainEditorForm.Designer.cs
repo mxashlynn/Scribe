@@ -1487,9 +1487,9 @@ namespace Scribe
             this.GameIconPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.GameIconPictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
             this.GameIconPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("GameIconPictureBox.Image")));
-            this.GameIconPictureBox.Location = new System.Drawing.Point(767, 286);
+            this.GameIconPictureBox.Location = new System.Drawing.Point(824, 342);
             this.GameIconPictureBox.Name = "GameIconPictureBox";
-            this.GameIconPictureBox.Size = new System.Drawing.Size(176, 176);
+            this.GameIconPictureBox.Size = new System.Drawing.Size(120, 120);
             this.GameIconPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.GameIconPictureBox.TabIndex = 6;
             this.GameIconPictureBox.TabStop = false;
@@ -2039,7 +2039,7 @@ namespace Scribe
             // 
             this.FloorEditFilledInImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.FloorEditFilledInImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FloorEditFilledInImageButton.Location = new System.Drawing.Point(815, 241);
+            this.FloorEditFilledInImageButton.Location = new System.Drawing.Point(815, 254);
             this.FloorEditFilledInImageButton.Name = "FloorEditFilledInImageButton";
             this.FloorEditFilledInImageButton.Size = new System.Drawing.Size(128, 23);
             this.FloorEditFilledInImageButton.TabIndex = 11;
@@ -2050,7 +2050,7 @@ namespace Scribe
             // FloorFilledInLabel
             // 
             this.FloorFilledInLabel.AutoSize = true;
-            this.FloorFilledInLabel.Location = new System.Drawing.Point(767, 43);
+            this.FloorFilledInLabel.Location = new System.Drawing.Point(823, 112);
             this.FloorFilledInLabel.Name = "FloorFilledInLabel";
             this.FloorFilledInLabel.Size = new System.Drawing.Size(44, 13);
             this.FloorFilledInLabel.TabIndex = 10;
@@ -2059,7 +2059,7 @@ namespace Scribe
             // FloorDugOutLabel
             // 
             this.FloorDugOutLabel.AutoSize = true;
-            this.FloorDugOutLabel.Location = new System.Drawing.Point(767, 270);
+            this.FloorDugOutLabel.Location = new System.Drawing.Point(823, 326);
             this.FloorDugOutLabel.Name = "FloorDugOutLabel";
             this.FloorDugOutLabel.Size = new System.Drawing.Size(47, 13);
             this.FloorDugOutLabel.TabIndex = 9;
@@ -2071,9 +2071,9 @@ namespace Scribe
             this.FloorFilledInPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.FloorFilledInPictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
             this.FloorFilledInPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("FloorFilledInPictureBox.Image")));
-            this.FloorFilledInPictureBox.Location = new System.Drawing.Point(767, 59);
+            this.FloorFilledInPictureBox.Location = new System.Drawing.Point(823, 128);
             this.FloorFilledInPictureBox.Name = "FloorFilledInPictureBox";
-            this.FloorFilledInPictureBox.Size = new System.Drawing.Size(176, 176);
+            this.FloorFilledInPictureBox.Size = new System.Drawing.Size(120, 120);
             this.FloorFilledInPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.FloorFilledInPictureBox.TabIndex = 8;
             this.FloorFilledInPictureBox.TabStop = false;
@@ -2403,9 +2403,9 @@ namespace Scribe
             this.FloorDugOutPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.FloorDugOutPictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
             this.FloorDugOutPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("FloorDugOutPictureBox.Image")));
-            this.FloorDugOutPictureBox.Location = new System.Drawing.Point(767, 286);
+            this.FloorDugOutPictureBox.Location = new System.Drawing.Point(823, 342);
             this.FloorDugOutPictureBox.Name = "FloorDugOutPictureBox";
-            this.FloorDugOutPictureBox.Size = new System.Drawing.Size(176, 176);
+            this.FloorDugOutPictureBox.Size = new System.Drawing.Size(120, 120);
             this.FloorDugOutPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.FloorDugOutPictureBox.TabIndex = 6;
             this.FloorDugOutPictureBox.TabStop = false;
@@ -2772,9 +2772,9 @@ namespace Scribe
             this.BlockPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BlockPictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
             this.BlockPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("BlockPictureBox.Image")));
-            this.BlockPictureBox.Location = new System.Drawing.Point(767, 286);
+            this.BlockPictureBox.Location = new System.Drawing.Point(823, 342);
             this.BlockPictureBox.Name = "BlockPictureBox";
-            this.BlockPictureBox.Size = new System.Drawing.Size(176, 176);
+            this.BlockPictureBox.Size = new System.Drawing.Size(120, 120);
             this.BlockPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BlockPictureBox.TabIndex = 6;
             this.BlockPictureBox.TabStop = false;
@@ -3246,9 +3246,9 @@ namespace Scribe
             this.FurnishingPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.FurnishingPictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
             this.FurnishingPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("FurnishingPictureBox.Image")));
-            this.FurnishingPictureBox.Location = new System.Drawing.Point(767, 286);
+            this.FurnishingPictureBox.Location = new System.Drawing.Point(823, 342);
             this.FurnishingPictureBox.Name = "FurnishingPictureBox";
-            this.FurnishingPictureBox.Size = new System.Drawing.Size(176, 176);
+            this.FurnishingPictureBox.Size = new System.Drawing.Size(120, 120);
             this.FurnishingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.FurnishingPictureBox.TabIndex = 6;
             this.FurnishingPictureBox.TabStop = false;
@@ -3585,9 +3585,9 @@ namespace Scribe
             this.CollectiblePictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.CollectiblePictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
             this.CollectiblePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("CollectiblePictureBox.Image")));
-            this.CollectiblePictureBox.Location = new System.Drawing.Point(767, 286);
+            this.CollectiblePictureBox.Location = new System.Drawing.Point(823, 342);
             this.CollectiblePictureBox.Name = "CollectiblePictureBox";
-            this.CollectiblePictureBox.Size = new System.Drawing.Size(176, 176);
+            this.CollectiblePictureBox.Size = new System.Drawing.Size(120, 120);
             this.CollectiblePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.CollectiblePictureBox.TabIndex = 6;
             this.CollectiblePictureBox.TabStop = false;
@@ -3795,9 +3795,9 @@ namespace Scribe
             this.CritterPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.CritterPictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
             this.CritterPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("CritterPictureBox.Image")));
-            this.CritterPictureBox.Location = new System.Drawing.Point(767, 286);
+            this.CritterPictureBox.Location = new System.Drawing.Point(823, 342);
             this.CritterPictureBox.Name = "CritterPictureBox";
-            this.CritterPictureBox.Size = new System.Drawing.Size(176, 176);
+            this.CritterPictureBox.Size = new System.Drawing.Size(120, 120);
             this.CritterPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.CritterPictureBox.TabIndex = 6;
             this.CritterPictureBox.TabStop = false;
@@ -4487,9 +4487,9 @@ namespace Scribe
             this.CharacterPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.CharacterPictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
             this.CharacterPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("CharacterPictureBox.Image")));
-            this.CharacterPictureBox.Location = new System.Drawing.Point(767, 286);
+            this.CharacterPictureBox.Location = new System.Drawing.Point(823, 342);
             this.CharacterPictureBox.Name = "CharacterPictureBox";
-            this.CharacterPictureBox.Size = new System.Drawing.Size(176, 176);
+            this.CharacterPictureBox.Size = new System.Drawing.Size(120, 120);
             this.CharacterPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.CharacterPictureBox.TabIndex = 6;
             this.CharacterPictureBox.TabStop = false;
@@ -4860,9 +4860,9 @@ namespace Scribe
             this.ItemPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ItemPictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
             this.ItemPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ItemPictureBox.Image")));
-            this.ItemPictureBox.Location = new System.Drawing.Point(768, 286);
+            this.ItemPictureBox.Location = new System.Drawing.Point(823, 342);
             this.ItemPictureBox.Name = "ItemPictureBox";
-            this.ItemPictureBox.Size = new System.Drawing.Size(176, 176);
+            this.ItemPictureBox.Size = new System.Drawing.Size(120, 120);
             this.ItemPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ItemPictureBox.TabIndex = 6;
             this.ItemPictureBox.TabStop = false;
@@ -5275,9 +5275,9 @@ namespace Scribe
             this.BiomePictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BiomePictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
             this.BiomePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("BiomePictureBox.Image")));
-            this.BiomePictureBox.Location = new System.Drawing.Point(767, 286);
+            this.BiomePictureBox.Location = new System.Drawing.Point(823, 342);
             this.BiomePictureBox.Name = "BiomePictureBox";
-            this.BiomePictureBox.Size = new System.Drawing.Size(176, 176);
+            this.BiomePictureBox.Size = new System.Drawing.Size(120, 120);
             this.BiomePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BiomePictureBox.TabIndex = 6;
             this.BiomePictureBox.TabStop = false;
@@ -5600,9 +5600,9 @@ namespace Scribe
             this.CraftingPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.CraftingPictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
             this.CraftingPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("CraftingPictureBox.Image")));
-            this.CraftingPictureBox.Location = new System.Drawing.Point(767, 286);
+            this.CraftingPictureBox.Location = new System.Drawing.Point(824, 339);
             this.CraftingPictureBox.Name = "CraftingPictureBox";
-            this.CraftingPictureBox.Size = new System.Drawing.Size(176, 176);
+            this.CraftingPictureBox.Size = new System.Drawing.Size(120, 120);
             this.CraftingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.CraftingPictureBox.TabIndex = 6;
             this.CraftingPictureBox.TabStop = false;
@@ -6152,9 +6152,9 @@ namespace Scribe
             this.RoomPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.RoomPictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
             this.RoomPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("RoomPictureBox.Image")));
-            this.RoomPictureBox.Location = new System.Drawing.Point(767, 286);
+            this.RoomPictureBox.Location = new System.Drawing.Point(823, 342);
             this.RoomPictureBox.Name = "RoomPictureBox";
-            this.RoomPictureBox.Size = new System.Drawing.Size(176, 176);
+            this.RoomPictureBox.Size = new System.Drawing.Size(120, 120);
             this.RoomPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.RoomPictureBox.TabIndex = 6;
             this.RoomPictureBox.TabStop = false;
