@@ -21,9 +21,7 @@ In addition to standard CSV rules, some [additional delimiters](https://github.c
 
 # Goals
 
-I'd say the killer features are improved **map and inventory editing**.
-
-While most Parquet data is easily edited in any spreadsheet program, data with nested elements is cumbersome to work with that way.  The purpose of this project is to improve that workflow.
+While most Parquet data is easily edited in any spreadsheet program, data with nested elements can be cumbersome to work with.  The purpose of this project is to improve **map and inventory editing** workflow.
 
 # Repository Structure
 
