@@ -25,8 +25,8 @@ While most Parquet data is easily edited in any spreadsheet program, data with n
 
 # Repository Structure
 
-The solution two related projects.
-The C# employs the convention whereby every namespace gets its own folder.
+The solution contains two related projects.
+Every C# namespace is located in its own folder.
 
 - **Roller**
     - A command line tool for working with Parquet CSV files.
