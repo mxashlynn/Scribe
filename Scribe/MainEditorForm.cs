@@ -1196,7 +1196,7 @@ namespace Scribe
                 if (picturebox != null)
                 {
                     picturebox.Image?.Dispose();
-                    picturebox.Image = Resources.ImageNotFoundGraphic;
+                    picturebox.Image = Resources.ImageNotFound;
                     picturebox.Update();
                 }
             }
@@ -1304,7 +1304,7 @@ namespace Scribe
             }
             else
             {
-                inPictureBox.Image = Resources.ImageNotFoundGraphic;
+                inPictureBox.Image = Resources.ImageNotFound;
             }
         }
 
@@ -1417,7 +1417,7 @@ namespace Scribe
                 GameEpisodeNumberTextBox.Text = "";
                 GamePlayerCharacterComboBox.SelectedItem = null;
                 GameFirstScriptComboBox.SelectedItem = null;
-                GameIconPixelBox.Image = Resources.ImageNotFoundGraphic;
+                GameIconPixelBox.Image = Resources.ImageNotFound;
             }
             else if (GameListBox.SelectedItem is GameModel model
                     && null != model)
@@ -1463,7 +1463,7 @@ namespace Scribe
                 BlockIsFlammableCheckBox.Checked = false;
                 BlockIsLiquidCheckBox.Checked = false;
                 BlockMaxToughnessTextBox.Text = "";
-                BlockPixelBox.Image = Resources.ImageNotFoundGraphic;
+                BlockPixelBox.Image = Resources.ImageNotFound;
             }
             else if (BlockListBox.SelectedItem is BlockModel model
                     && null != model)
@@ -1508,8 +1508,8 @@ namespace Scribe
                 FloorAddsToRoomListBox.Items.Clear();
                 FloorModificationToolComboBox.SelectedItem = ModificationTool.None;
                 FloorTrenchNameTextBox.Text = "";
-                FloorDugOutPixelBox.Image = Resources.ImageNotFoundGraphic;
-                FloorFilledInPixelBox.Image = Resources.ImageNotFoundGraphic;
+                FloorDugOutPixelBox.Image = Resources.ImageNotFound;
+                FloorFilledInPixelBox.Image = Resources.ImageNotFound;
             }
             else if (FloorListBox.SelectedItem is FloorModel model
                     && null != model)
@@ -1554,7 +1554,7 @@ namespace Scribe
                 FurnishingIsEnclosingCheckBox.Checked = false;
                 FurnishingIsFlammableCheckBox.Checked = false;
                 FurnishingSwapWithFurnishingComboBox.SelectedItem = null;
-                FurnishingPixelBox.Image = Resources.ImageNotFoundGraphic;
+                FurnishingPixelBox.Image = Resources.ImageNotFound;
             }
             else if (FurnishingListBox.SelectedItem is FurnishingModel model
                     && null != model)
@@ -1599,7 +1599,7 @@ namespace Scribe
                 CollectibleAddsToRoomListBox.Items.Clear();
                 CollectibleCollectionEffectComboBox.SelectedItem = null;
                 CollectibleEffectAmountTextBox.Text = "";
-                CollectiblePixelBox.Image = Resources.ImageNotFoundGraphic;
+                CollectiblePixelBox.Image = Resources.ImageNotFound;
             }
             else if (CollectibleListBox.SelectedItem is CollectibleModel model
                     && null != model)
@@ -1641,7 +1641,7 @@ namespace Scribe
                 CharacterStartingQuestsListBox.Items.Clear();
                 CharacterStartingDialogueComboBox.SelectedItem = null;
                 CharacterStartingInventoryExample.Text = "0 Items";
-                CharacterPixelBox.Image = Resources.ImageNotFoundGraphic;
+                CharacterPixelBox.Image = Resources.ImageNotFound;
             }
             else if (CharacterListBox.SelectedItem is CharacterModel model
                      && null != model)
@@ -1718,7 +1718,7 @@ namespace Scribe
                 CritterCommentTextBox.Text = "";
                 CritterNativeBiomeComboBox.SelectedItem = null;
                 CritterPrimaryBehaviorComboBox.SelectedItem = null;
-                CritterPixelBox.Image = Resources.ImageNotFoundGraphic;
+                CritterPixelBox.Image = Resources.ImageNotFound;
             }
             else if (CritterListBox.SelectedItem is CritterModel model
                      && null != model)
@@ -1759,7 +1759,7 @@ namespace Scribe
                 ItemEffectWhenUsedComboBox.SelectedItem = null;
                 ItemEquivalentParquetComboBox.SelectedItem = null;
                 ItemTagListBox.Items.Clear();
-                ItemPixelBox.Image = Resources.ImageNotFoundGraphic;
+                ItemPixelBox.Image = Resources.ImageNotFound;
             }
             else if (ItemListBox.SelectedItem is ItemModel model
                     && null != model)
@@ -1805,7 +1805,7 @@ namespace Scribe
                 BiomeIsLiquidBasedCheckBox.Checked = false;
                 BiomeParquetCriteriaTextBox.Text = "";
                 BiomeEntryRequirementsListBox.Items.Clear();
-                BiomePixelBox.Image = Resources.ImageNotFoundGraphic;
+                BiomePixelBox.Image = Resources.ImageNotFound;
             }
             else if (BiomeListBox.SelectedItem is BiomeRecipe recipe
                     && null != recipe)
@@ -1841,7 +1841,7 @@ namespace Scribe
                 CraftingProductsListBox.Items.Clear();
                 CraftingIngredientsListBox.Items.Clear();
                 CraftingPanelsCountExample.Text = $"0 Panels";
-                CraftingPixelBox.Image = Resources.ImageNotFoundGraphic;
+                CraftingPixelBox.Image = Resources.ImageNotFound;
             }
             else if (CraftingListBox.SelectedItem is CraftingRecipe recipe
                     && null != recipe)
@@ -1877,7 +1877,7 @@ namespace Scribe
                 RoomRequiredFurnishingsListBox.Items.Clear();
                 RoomRequiredFloorsListBox.Items.Clear();
                 RoomRequiredBlocksListBox.Items.Clear();
-                RoomPixelBox.Image = Resources.ImageNotFoundGraphic;
+                RoomPixelBox.Image = Resources.ImageNotFound;
             }
             else if (RoomListBox.SelectedItem is RoomRecipe recipe
                     && null != recipe)
@@ -3323,7 +3323,7 @@ namespace Scribe
                 var imagePathAndFilename = Path.Combine(EditorCommands.GetGraphicsPathForModelID(id), $"{id}.png");
                 if (!File.Exists(imagePathAndFilename))
                 {
-                    Resources.ImageNotFoundGraphic.Save(imagePathAndFilename, ImageFormat.Png);
+                    Resources.ImageNotFound.Save(imagePathAndFilename, ImageFormat.Png);
                 }
                 _ = Settings.Default.EditInApp
                     ? Process.Start(Settings.Default.ImageEditor, $"\"{imagePathAndFilename}\"")

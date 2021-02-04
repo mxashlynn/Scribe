@@ -452,6 +452,16 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImageNotFound {
+            get {
+                object obj = ResourceManager.GetObject("ImageNotFound", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ID Copied.
         /// </summary>
         internal static string InfoIDCopied {
@@ -622,16 +632,6 @@ namespace Scribe.Properties {
         internal static System.Drawing.Bitmap New {
             get {
                 object obj = ResourceManager.GetObject("New", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap NotFound {
-            get {
-                object obj = ResourceManager.GetObject("NotFound", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
