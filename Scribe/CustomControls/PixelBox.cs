@@ -4,7 +4,7 @@ using System.Windows.Forms;
 namespace Scribe.CustomControls
 {
     /// <summary>
-    /// Represents a Windows picture box for displaying pixel art.
+    /// Represents a Windows picture box for displaying pixel art images.
     /// </summary>
     public partial class PixelBox : PictureBox
     {
