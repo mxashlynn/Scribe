@@ -115,7 +115,7 @@ namespace Scribe
             this.GamesTabPage = new System.Windows.Forms.TabPage();
             this.GameRemoveGameButton = new System.Windows.Forms.Button();
             this.GameIconEditButton = new System.Windows.Forms.Button();
-            this.GameIconPictureBox = new System.Windows.Forms.PictureBox();
+            this.GameIconPixelBox = new Scribe.CustomControls.PixelBox();
             this.GameTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.GameNameLabel = new System.Windows.Forms.Label();
             this.GameDescriptionLabel = new System.Windows.Forms.Label();
@@ -165,7 +165,7 @@ namespace Scribe
             this.FloorEditFilledInImageButton = new System.Windows.Forms.Button();
             this.FloorFilledInLabel = new System.Windows.Forms.Label();
             this.FloorDugOutLabel = new System.Windows.Forms.Label();
-            this.FloorFilledInPictureBox = new System.Windows.Forms.PictureBox();
+            this.FloorFilledInPixelBox = new Scribe.CustomControls.PixelBox();
             this.FloorRemoveFloorButton = new System.Windows.Forms.Button();
             this.FloorLayoutTabelPanel = new System.Windows.Forms.TableLayoutPanel();
             this.FloorRemoveRoomTagButton = new System.Windows.Forms.Button();
@@ -193,7 +193,7 @@ namespace Scribe
             this.FloorListBox = new System.Windows.Forms.ListBox();
             this.FloorIDLabel = new System.Windows.Forms.Label();
             this.FloorEditDugOutImageButton = new System.Windows.Forms.Button();
-            this.FloorDugOutPictureBox = new System.Windows.Forms.PictureBox();
+            this.FloorDugOutPixelBox = new Scribe.CustomControls.PixelBox();
             this.FloorConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.BlocksTabPage = new System.Windows.Forms.TabPage();
             this.BlockTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -225,7 +225,7 @@ namespace Scribe
             this.BlockRemoveRoomTagButton = new System.Windows.Forms.Button();
             this.BlockAddsToBiomeLabel = new System.Windows.Forms.Label();
             this.BlockAddsToRoomLabel = new System.Windows.Forms.Label();
-            this.BlockPictureBox = new System.Windows.Forms.PictureBox();
+            this.BlockPixelBox = new Scribe.CustomControls.PixelBox();
             this.BlockEditImageButton = new System.Windows.Forms.Button();
             this.BlockIDLabel = new System.Windows.Forms.Label();
             this.BlockListBox = new System.Windows.Forms.ListBox();
@@ -265,7 +265,7 @@ namespace Scribe
             this.FurnishingListBox = new System.Windows.Forms.ListBox();
             this.FurnishingIDLabel = new System.Windows.Forms.Label();
             this.FurnishingEditImageButton = new System.Windows.Forms.Button();
-            this.FurnishingPictureBox = new System.Windows.Forms.PictureBox();
+            this.FurnishingPixelBox = new Scribe.CustomControls.PixelBox();
             this.FurnishingConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CollectiblesTabPage = new System.Windows.Forms.TabPage();
             this.CollectibleTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -293,7 +293,7 @@ namespace Scribe
             this.CollectibleListBox = new System.Windows.Forms.ListBox();
             this.CollectibleIDLabel = new System.Windows.Forms.Label();
             this.CollectibleEditImageButton = new System.Windows.Forms.Button();
-            this.CollectiblePictureBox = new System.Windows.Forms.PictureBox();
+            this.CollectiblePixelBox = new Scribe.CustomControls.PixelBox();
             this.CollectibleConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CrittersTabPage = new System.Windows.Forms.TabPage();
             this.CritterTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -311,7 +311,7 @@ namespace Scribe
             this.CritterPendingDesignLabel1 = new System.Windows.Forms.Label();
             this.CritterParquetsSoughtLabel = new System.Windows.Forms.Label();
             this.CritterPendingDesignLabel2 = new System.Windows.Forms.Label();
-            this.CritterPictureBox = new System.Windows.Forms.PictureBox();
+            this.CritterPixelBox = new Scribe.CustomControls.PixelBox();
             this.CritterEditImageButton = new System.Windows.Forms.Button();
             this.CritterIDLabel = new System.Windows.Forms.Label();
             this.CritterListBox = new System.Windows.Forms.ListBox();
@@ -372,7 +372,7 @@ namespace Scribe
             this.CharacterListBox = new System.Windows.Forms.ListBox();
             this.CharacterIDLabel = new System.Windows.Forms.Label();
             this.CharacterEditImageButton = new System.Windows.Forms.Button();
-            this.CharacterPictureBox = new System.Windows.Forms.PictureBox();
+            this.CharacterPixelBox = new Scribe.CustomControls.PixelBox();
             this.ItemsTabPage = new System.Windows.Forms.TabPage();
             this.ItemRemoveItemButton = new System.Windows.Forms.Button();
             this.ItemAddTagButton = new System.Windows.Forms.Button();
@@ -405,7 +405,7 @@ namespace Scribe
             this.ItemParquetLabel = new System.Windows.Forms.Label();
             this.ItemEffectWhileHeldComboBox = new System.Windows.Forms.ComboBox();
             this.ItemEquivalentParquetComboBox = new System.Windows.Forms.ComboBox();
-            this.ItemPictureBox = new System.Windows.Forms.PictureBox();
+            this.ItemPixelBox = new Scribe.CustomControls.PixelBox();
             this.ItemIDLabel = new System.Windows.Forms.Label();
             this.ItemAddNewItemButton = new System.Windows.Forms.Button();
             this.ItemIDExample = new System.Windows.Forms.Label();
@@ -440,7 +440,7 @@ namespace Scribe
             this.BiomeDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.BiomeCommentTextBox = new System.Windows.Forms.TextBox();
             this.BiomeTierTextBox = new System.Windows.Forms.TextBox();
-            this.BiomePictureBox = new System.Windows.Forms.PictureBox();
+            this.BiomePixelBox = new Scribe.CustomControls.PixelBox();
             this.BiomeIDLabel = new System.Windows.Forms.Label();
             this.BiomeAddNewBiomeButton = new System.Windows.Forms.Button();
             this.BiomeIDExample = new System.Windows.Forms.Label();
@@ -466,7 +466,7 @@ namespace Scribe
             this.CraftingProductsLabel = new System.Windows.Forms.Label();
             this.CraftingProductsListBox = new System.Windows.Forms.ListBox();
             this.CraftingStrikePatternLabel = new System.Windows.Forms.Label();
-            this.CraftingPictureBox = new System.Windows.Forms.PictureBox();
+            this.CraftingPixelBox = new Scribe.CustomControls.PixelBox();
             this.CraftingIDLabel = new System.Windows.Forms.Label();
             this.CraftingAddNewCraftingButton = new System.Windows.Forms.Button();
             this.CraftingIDExample = new System.Windows.Forms.Label();
@@ -513,7 +513,7 @@ namespace Scribe
             this.RoomMinimumWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
             this.RoomRequiredFurnishingsLabel = new System.Windows.Forms.Label();
             this.RoomRequiredFurnishingsListBox = new System.Windows.Forms.ListBox();
-            this.RoomPictureBox = new System.Windows.Forms.PictureBox();
+            this.RoomPixelBox = new Scribe.CustomControls.PixelBox();
             this.RoomIDLabel = new System.Windows.Forms.Label();
             this.RoomAddNewRoomButton = new System.Windows.Forms.Button();
             this.RoomIDExample = new System.Windows.Forms.Label();
@@ -532,52 +532,52 @@ namespace Scribe
             this.FlavorsTableLayoutPanel.SuspendLayout();
             this.EditorTabs.SuspendLayout();
             this.GamesTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GameIconPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GameIconPixelBox)).BeginInit();
             this.GameTableLayoutPanel.SuspendLayout();
             this.FileFormatGroupBox.SuspendLayout();
             this.FileFormatTableLayoutPanel.SuspendLayout();
             this.LibraryInfoGroupBox.SuspendLayout();
             this.LibraryInfoTableLayoutPanel.SuspendLayout();
             this.FloorsTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FloorFilledInPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FloorFilledInPixelBox)).BeginInit();
             this.FloorLayoutTabelPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FloorDugOutPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FloorDugOutPixelBox)).BeginInit();
             this.BlocksTabPage.SuspendLayout();
             this.BlockTableLayoutPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BlockPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlockPixelBox)).BeginInit();
             this.FurnishingsTabPage.SuspendLayout();
             this.FurnishingTableLayoutPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FurnishingPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FurnishingPixelBox)).BeginInit();
             this.CollectiblesTabPage.SuspendLayout();
             this.CollectibleTableLayoutPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CollectiblePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CollectiblePixelBox)).BeginInit();
             this.CrittersTabPage.SuspendLayout();
             this.CritterTableLayoutPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CritterPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CritterPixelBox)).BeginInit();
             this.CharactersTabPage.SuspendLayout();
             this.CharacterPronounGroupBox.SuspendLayout();
             this.CharacterPronounTableLayoutPanel.SuspendLayout();
             this.CharacterTableLayoutPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CharacterPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CharacterPixelBox)).BeginInit();
             this.ItemsTabPage.SuspendLayout();
             this.ItemInventoriesGroupBox.SuspendLayout();
             this.ItemTableLayoutPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemPixelBox)).BeginInit();
             this.BiomesTabPage.SuspendLayout();
             this.BiomeConfigGroupBox.SuspendLayout();
             this.BiomeConfigTableLayoutPanel.SuspendLayout();
             this.BiomeTableLayoutPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BiomePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BiomePixelBox)).BeginInit();
             this.CraftingRecipesTabPage.SuspendLayout();
             this.CraftingTableLayoutPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CraftingPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CraftingPixelBox)).BeginInit();
             this.CraftingConfigGroupBox.SuspendLayout();
             this.CraftingConfigTableLayoutPanel.SuspendLayout();
             this.RoomRecipesTabPage.SuspendLayout();
             this.RoomConfigGroupBox.SuspendLayout();
             this.RoomConfigTableLayoutPanel.SuspendLayout();
             this.RoomTableLayoutPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RoomPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RoomPixelBox)).BeginInit();
             this.MapsTabPage.SuspendLayout();
             this.ScriptsTabPage.SuspendLayout();
             this.SuspendLayout();
@@ -965,7 +965,7 @@ namespace Scribe
             this.ToolStripMenuItemReloadImage.Name = "ToolStripMenuItemReloadImage";
             this.ToolStripMenuItemReloadImage.Size = new System.Drawing.Size(201, 22);
             this.ToolStripMenuItemReloadImage.Text = "Reload from Disk";
-            this.ToolStripMenuItemReloadImage.Click += new System.EventHandler(this.PictureBoxReload_Click);
+            this.ToolStripMenuItemReloadImage.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
             // ContextMenuStripIDExamples
             // 
@@ -1442,7 +1442,7 @@ namespace Scribe
             // 
             this.GamesTabPage.Controls.Add(this.GameRemoveGameButton);
             this.GamesTabPage.Controls.Add(this.GameIconEditButton);
-            this.GamesTabPage.Controls.Add(this.GameIconPictureBox);
+            this.GamesTabPage.Controls.Add(this.GameIconPixelBox);
             this.GamesTabPage.Controls.Add(this.GameTableLayoutPanel);
             this.GamesTabPage.Controls.Add(this.GameIDLabel);
             this.GamesTabPage.Controls.Add(this.GameIDExample);
@@ -1481,19 +1481,19 @@ namespace Scribe
             this.GameIconEditButton.UseVisualStyleBackColor = false;
             this.GameIconEditButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
-            // GameIconPictureBox
+            // GameIconPixelBox
             // 
-            this.GameIconPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.GameIconPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.GameIconPictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
-            this.GameIconPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("GameIconPictureBox.Image")));
-            this.GameIconPictureBox.Location = new System.Drawing.Point(824, 342);
-            this.GameIconPictureBox.Name = "GameIconPictureBox";
-            this.GameIconPictureBox.Size = new System.Drawing.Size(120, 120);
-            this.GameIconPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.GameIconPictureBox.TabIndex = 6;
-            this.GameIconPictureBox.TabStop = false;
-            this.GameIconPictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
+            this.GameIconPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.GameIconPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.GameIconPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
+            this.GameIconPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("GameIconPixelBox.Image")));
+            this.GameIconPixelBox.Location = new System.Drawing.Point(824, 342);
+            this.GameIconPixelBox.Name = "GameIconPixelBox";
+            this.GameIconPixelBox.Size = new System.Drawing.Size(120, 120);
+            this.GameIconPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.GameIconPixelBox.TabIndex = 6;
+            this.GameIconPixelBox.TabStop = false;
+            this.GameIconPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
             // GameTableLayoutPanel
             // 
@@ -2019,7 +2019,7 @@ namespace Scribe
             this.FloorsTabPage.Controls.Add(this.FloorEditFilledInImageButton);
             this.FloorsTabPage.Controls.Add(this.FloorFilledInLabel);
             this.FloorsTabPage.Controls.Add(this.FloorDugOutLabel);
-            this.FloorsTabPage.Controls.Add(this.FloorFilledInPictureBox);
+            this.FloorsTabPage.Controls.Add(this.FloorFilledInPixelBox);
             this.FloorsTabPage.Controls.Add(this.FloorRemoveFloorButton);
             this.FloorsTabPage.Controls.Add(this.FloorLayoutTabelPanel);
             this.FloorsTabPage.Controls.Add(this.FloorIDExample);
@@ -2027,7 +2027,7 @@ namespace Scribe
             this.FloorsTabPage.Controls.Add(this.FloorListBox);
             this.FloorsTabPage.Controls.Add(this.FloorIDLabel);
             this.FloorsTabPage.Controls.Add(this.FloorEditDugOutImageButton);
-            this.FloorsTabPage.Controls.Add(this.FloorDugOutPictureBox);
+            this.FloorsTabPage.Controls.Add(this.FloorDugOutPixelBox);
             this.FloorsTabPage.Controls.Add(this.FloorConfigGroupBox);
             this.FloorsTabPage.Location = new System.Drawing.Point(4, 22);
             this.FloorsTabPage.Name = "FloorsTabPage";
@@ -2065,19 +2065,19 @@ namespace Scribe
             this.FloorDugOutLabel.TabIndex = 9;
             this.FloorDugOutLabel.Text = "Dug Out";
             // 
-            // FloorFilledInPictureBox
+            // FloorFilledInPixelBox
             // 
-            this.FloorFilledInPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorFilledInPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FloorFilledInPictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
-            this.FloorFilledInPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("FloorFilledInPictureBox.Image")));
-            this.FloorFilledInPictureBox.Location = new System.Drawing.Point(823, 128);
-            this.FloorFilledInPictureBox.Name = "FloorFilledInPictureBox";
-            this.FloorFilledInPictureBox.Size = new System.Drawing.Size(120, 120);
-            this.FloorFilledInPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.FloorFilledInPictureBox.TabIndex = 8;
-            this.FloorFilledInPictureBox.TabStop = false;
-            this.FloorFilledInPictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
+            this.FloorFilledInPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorFilledInPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorFilledInPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
+            this.FloorFilledInPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("FloorFilledInPixelBox.Image")));
+            this.FloorFilledInPixelBox.Location = new System.Drawing.Point(823, 128);
+            this.FloorFilledInPixelBox.Name = "FloorFilledInPixelBox";
+            this.FloorFilledInPixelBox.Size = new System.Drawing.Size(120, 120);
+            this.FloorFilledInPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.FloorFilledInPixelBox.TabIndex = 8;
+            this.FloorFilledInPixelBox.TabStop = false;
+            this.FloorFilledInPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
             // FloorRemoveFloorButton
             // 
@@ -2397,19 +2397,19 @@ namespace Scribe
             this.FloorEditDugOutImageButton.UseVisualStyleBackColor = false;
             this.FloorEditDugOutImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
-            // FloorDugOutPictureBox
+            // FloorDugOutPixelBox
             // 
-            this.FloorDugOutPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorDugOutPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FloorDugOutPictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
-            this.FloorDugOutPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("FloorDugOutPictureBox.Image")));
-            this.FloorDugOutPictureBox.Location = new System.Drawing.Point(823, 342);
-            this.FloorDugOutPictureBox.Name = "FloorDugOutPictureBox";
-            this.FloorDugOutPictureBox.Size = new System.Drawing.Size(120, 120);
-            this.FloorDugOutPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.FloorDugOutPictureBox.TabIndex = 6;
-            this.FloorDugOutPictureBox.TabStop = false;
-            this.FloorDugOutPictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
+            this.FloorDugOutPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorDugOutPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorDugOutPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
+            this.FloorDugOutPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("FloorDugOutPixelBox.Image")));
+            this.FloorDugOutPixelBox.Location = new System.Drawing.Point(823, 342);
+            this.FloorDugOutPixelBox.Name = "FloorDugOutPixelBox";
+            this.FloorDugOutPixelBox.Size = new System.Drawing.Size(120, 120);
+            this.FloorDugOutPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.FloorDugOutPixelBox.TabIndex = 6;
+            this.FloorDugOutPixelBox.TabStop = false;
+            this.FloorDugOutPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
             // FloorConfigGroupBox
             // 
@@ -2424,7 +2424,7 @@ namespace Scribe
             // BlocksTabPage
             // 
             this.BlocksTabPage.Controls.Add(this.BlockTableLayoutPanel);
-            this.BlocksTabPage.Controls.Add(this.BlockPictureBox);
+            this.BlocksTabPage.Controls.Add(this.BlockPixelBox);
             this.BlocksTabPage.Controls.Add(this.BlockEditImageButton);
             this.BlocksTabPage.Controls.Add(this.BlockIDLabel);
             this.BlocksTabPage.Controls.Add(this.BlockListBox);
@@ -2766,19 +2766,19 @@ namespace Scribe
             this.BlockAddsToRoomLabel.TabIndex = 40;
             this.BlockAddsToRoomLabel.Text = "Adds to Room";
             // 
-            // BlockPictureBox
+            // BlockPixelBox
             // 
-            this.BlockPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlockPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BlockPictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
-            this.BlockPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("BlockPictureBox.Image")));
-            this.BlockPictureBox.Location = new System.Drawing.Point(823, 342);
-            this.BlockPictureBox.Name = "BlockPictureBox";
-            this.BlockPictureBox.Size = new System.Drawing.Size(120, 120);
-            this.BlockPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.BlockPictureBox.TabIndex = 6;
-            this.BlockPictureBox.TabStop = false;
-            this.BlockPictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
+            this.BlockPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlockPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BlockPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
+            this.BlockPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("BlockPixelBox.Image")));
+            this.BlockPixelBox.Location = new System.Drawing.Point(823, 342);
+            this.BlockPixelBox.Name = "BlockPixelBox";
+            this.BlockPixelBox.Size = new System.Drawing.Size(120, 120);
+            this.BlockPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BlockPixelBox.TabIndex = 6;
+            this.BlockPixelBox.TabStop = false;
+            this.BlockPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
             // BlockEditImageButton
             // 
@@ -2870,7 +2870,7 @@ namespace Scribe
             this.FurnishingsTabPage.Controls.Add(this.FurnishingListBox);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingIDLabel);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingEditImageButton);
-            this.FurnishingsTabPage.Controls.Add(this.FurnishingPictureBox);
+            this.FurnishingsTabPage.Controls.Add(this.FurnishingPixelBox);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingConfigGroupBox);
             this.FurnishingsTabPage.Location = new System.Drawing.Point(4, 22);
             this.FurnishingsTabPage.Name = "FurnishingsTabPage";
@@ -3240,19 +3240,19 @@ namespace Scribe
             this.FurnishingEditImageButton.UseVisualStyleBackColor = false;
             this.FurnishingEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
-            // FurnishingPictureBox
+            // FurnishingPixelBox
             // 
-            this.FurnishingPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.FurnishingPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FurnishingPictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
-            this.FurnishingPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("FurnishingPictureBox.Image")));
-            this.FurnishingPictureBox.Location = new System.Drawing.Point(823, 342);
-            this.FurnishingPictureBox.Name = "FurnishingPictureBox";
-            this.FurnishingPictureBox.Size = new System.Drawing.Size(120, 120);
-            this.FurnishingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.FurnishingPictureBox.TabIndex = 6;
-            this.FurnishingPictureBox.TabStop = false;
-            this.FurnishingPictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
+            this.FurnishingPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
+            this.FurnishingPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("FurnishingPixelBox.Image")));
+            this.FurnishingPixelBox.Location = new System.Drawing.Point(823, 342);
+            this.FurnishingPixelBox.Name = "FurnishingPixelBox";
+            this.FurnishingPixelBox.Size = new System.Drawing.Size(120, 120);
+            this.FurnishingPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.FurnishingPixelBox.TabIndex = 6;
+            this.FurnishingPixelBox.TabStop = false;
+            this.FurnishingPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
             // FurnishingConfigGroupBox
             // 
@@ -3273,7 +3273,7 @@ namespace Scribe
             this.CollectiblesTabPage.Controls.Add(this.CollectibleListBox);
             this.CollectiblesTabPage.Controls.Add(this.CollectibleIDLabel);
             this.CollectiblesTabPage.Controls.Add(this.CollectibleEditImageButton);
-            this.CollectiblesTabPage.Controls.Add(this.CollectiblePictureBox);
+            this.CollectiblesTabPage.Controls.Add(this.CollectiblePixelBox);
             this.CollectiblesTabPage.Controls.Add(this.CollectibleConfigGroupBox);
             this.CollectiblesTabPage.Location = new System.Drawing.Point(4, 22);
             this.CollectiblesTabPage.Name = "CollectiblesTabPage";
@@ -3579,19 +3579,19 @@ namespace Scribe
             this.CollectibleEditImageButton.UseVisualStyleBackColor = false;
             this.CollectibleEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
-            // CollectiblePictureBox
+            // CollectiblePixelBox
             // 
-            this.CollectiblePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectiblePictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CollectiblePictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
-            this.CollectiblePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("CollectiblePictureBox.Image")));
-            this.CollectiblePictureBox.Location = new System.Drawing.Point(823, 342);
-            this.CollectiblePictureBox.Name = "CollectiblePictureBox";
-            this.CollectiblePictureBox.Size = new System.Drawing.Size(120, 120);
-            this.CollectiblePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.CollectiblePictureBox.TabIndex = 6;
-            this.CollectiblePictureBox.TabStop = false;
-            this.CollectiblePictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
+            this.CollectiblePixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectiblePixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CollectiblePixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
+            this.CollectiblePixelBox.Image = ((System.Drawing.Image)(resources.GetObject("CollectiblePixelBox.Image")));
+            this.CollectiblePixelBox.Location = new System.Drawing.Point(823, 342);
+            this.CollectiblePixelBox.Name = "CollectiblePixelBox";
+            this.CollectiblePixelBox.Size = new System.Drawing.Size(120, 120);
+            this.CollectiblePixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CollectiblePixelBox.TabIndex = 6;
+            this.CollectiblePixelBox.TabStop = false;
+            this.CollectiblePixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
             // CollectibleConfigGroupBox
             // 
@@ -3606,7 +3606,7 @@ namespace Scribe
             // CrittersTabPage
             // 
             this.CrittersTabPage.Controls.Add(this.CritterTableLayoutPanel);
-            this.CrittersTabPage.Controls.Add(this.CritterPictureBox);
+            this.CrittersTabPage.Controls.Add(this.CritterPixelBox);
             this.CrittersTabPage.Controls.Add(this.CritterEditImageButton);
             this.CrittersTabPage.Controls.Add(this.CritterIDLabel);
             this.CrittersTabPage.Controls.Add(this.CritterListBox);
@@ -3789,19 +3789,19 @@ namespace Scribe
             this.CritterPendingDesignLabel2.TabIndex = 34;
             this.CritterPendingDesignLabel2.Text = "Pending Design";
             // 
-            // CritterPictureBox
+            // CritterPixelBox
             // 
-            this.CritterPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CritterPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CritterPictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
-            this.CritterPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("CritterPictureBox.Image")));
-            this.CritterPictureBox.Location = new System.Drawing.Point(823, 342);
-            this.CritterPictureBox.Name = "CritterPictureBox";
-            this.CritterPictureBox.Size = new System.Drawing.Size(120, 120);
-            this.CritterPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.CritterPictureBox.TabIndex = 6;
-            this.CritterPictureBox.TabStop = false;
-            this.CritterPictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
+            this.CritterPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CritterPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CritterPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
+            this.CritterPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("CritterPixelBox.Image")));
+            this.CritterPixelBox.Location = new System.Drawing.Point(823, 342);
+            this.CritterPixelBox.Name = "CritterPixelBox";
+            this.CritterPixelBox.Size = new System.Drawing.Size(120, 120);
+            this.CritterPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CritterPixelBox.TabIndex = 6;
+            this.CritterPixelBox.TabStop = false;
+            this.CritterPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
             // CritterEditImageButton
             // 
@@ -3894,7 +3894,7 @@ namespace Scribe
             this.CharactersTabPage.Controls.Add(this.CharacterListBox);
             this.CharactersTabPage.Controls.Add(this.CharacterIDLabel);
             this.CharactersTabPage.Controls.Add(this.CharacterEditImageButton);
-            this.CharactersTabPage.Controls.Add(this.CharacterPictureBox);
+            this.CharactersTabPage.Controls.Add(this.CharacterPixelBox);
             this.CharactersTabPage.Location = new System.Drawing.Point(4, 22);
             this.CharactersTabPage.Name = "CharactersTabPage";
             this.CharactersTabPage.Size = new System.Drawing.Size(953, 599);
@@ -4481,19 +4481,19 @@ namespace Scribe
             this.CharacterEditImageButton.UseVisualStyleBackColor = false;
             this.CharacterEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
-            // CharacterPictureBox
+            // CharacterPixelBox
             // 
-            this.CharacterPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CharacterPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CharacterPictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
-            this.CharacterPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("CharacterPictureBox.Image")));
-            this.CharacterPictureBox.Location = new System.Drawing.Point(823, 342);
-            this.CharacterPictureBox.Name = "CharacterPictureBox";
-            this.CharacterPictureBox.Size = new System.Drawing.Size(120, 120);
-            this.CharacterPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.CharacterPictureBox.TabIndex = 6;
-            this.CharacterPictureBox.TabStop = false;
-            this.CharacterPictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
+            this.CharacterPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CharacterPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CharacterPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
+            this.CharacterPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("CharacterPixelBox.Image")));
+            this.CharacterPixelBox.Location = new System.Drawing.Point(823, 342);
+            this.CharacterPixelBox.Name = "CharacterPixelBox";
+            this.CharacterPixelBox.Size = new System.Drawing.Size(120, 120);
+            this.CharacterPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CharacterPixelBox.TabIndex = 6;
+            this.CharacterPixelBox.TabStop = false;
+            this.CharacterPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
             // ItemsTabPage
             // 
@@ -4504,7 +4504,7 @@ namespace Scribe
             this.ItemsTabPage.Controls.Add(this.ItemInventoriesGroupBox);
             this.ItemsTabPage.Controls.Add(this.ItemPictureEditButton);
             this.ItemsTabPage.Controls.Add(this.ItemTableLayoutPanel);
-            this.ItemsTabPage.Controls.Add(this.ItemPictureBox);
+            this.ItemsTabPage.Controls.Add(this.ItemPixelBox);
             this.ItemsTabPage.Controls.Add(this.ItemIDLabel);
             this.ItemsTabPage.Controls.Add(this.ItemAddNewItemButton);
             this.ItemsTabPage.Controls.Add(this.ItemIDExample);
@@ -4854,19 +4854,19 @@ namespace Scribe
             this.ItemEquivalentParquetComboBox.Size = new System.Drawing.Size(144, 21);
             this.ItemEquivalentParquetComboBox.TabIndex = 35;
             // 
-            // ItemPictureBox
+            // ItemPixelBox
             // 
-            this.ItemPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ItemPictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
-            this.ItemPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ItemPictureBox.Image")));
-            this.ItemPictureBox.Location = new System.Drawing.Point(823, 342);
-            this.ItemPictureBox.Name = "ItemPictureBox";
-            this.ItemPictureBox.Size = new System.Drawing.Size(120, 120);
-            this.ItemPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ItemPictureBox.TabIndex = 6;
-            this.ItemPictureBox.TabStop = false;
-            this.ItemPictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
+            this.ItemPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ItemPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
+            this.ItemPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("ItemPixelBox.Image")));
+            this.ItemPixelBox.Location = new System.Drawing.Point(823, 342);
+            this.ItemPixelBox.Name = "ItemPixelBox";
+            this.ItemPixelBox.Size = new System.Drawing.Size(120, 120);
+            this.ItemPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ItemPixelBox.TabIndex = 6;
+            this.ItemPixelBox.TabStop = false;
+            this.ItemPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
             // ItemIDLabel
             // 
@@ -4911,7 +4911,7 @@ namespace Scribe
             this.BiomesTabPage.Controls.Add(this.BiomeConfigGroupBox);
             this.BiomesTabPage.Controls.Add(this.BiomePictureEditButton);
             this.BiomesTabPage.Controls.Add(this.BiomeTableLayoutPanel);
-            this.BiomesTabPage.Controls.Add(this.BiomePictureBox);
+            this.BiomesTabPage.Controls.Add(this.BiomePixelBox);
             this.BiomesTabPage.Controls.Add(this.BiomeIDLabel);
             this.BiomesTabPage.Controls.Add(this.BiomeAddNewBiomeButton);
             this.BiomesTabPage.Controls.Add(this.BiomeIDExample);
@@ -5269,19 +5269,19 @@ namespace Scribe
             this.BiomeTierTextBox.Size = new System.Drawing.Size(144, 20);
             this.BiomeTierTextBox.TabIndex = 26;
             // 
-            // BiomePictureBox
+            // BiomePixelBox
             // 
-            this.BiomePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BiomePictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BiomePictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
-            this.BiomePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("BiomePictureBox.Image")));
-            this.BiomePictureBox.Location = new System.Drawing.Point(823, 342);
-            this.BiomePictureBox.Name = "BiomePictureBox";
-            this.BiomePictureBox.Size = new System.Drawing.Size(120, 120);
-            this.BiomePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.BiomePictureBox.TabIndex = 6;
-            this.BiomePictureBox.TabStop = false;
-            this.BiomePictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
+            this.BiomePixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiomePixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BiomePixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
+            this.BiomePixelBox.Image = ((System.Drawing.Image)(resources.GetObject("BiomePixelBox.Image")));
+            this.BiomePixelBox.Location = new System.Drawing.Point(823, 342);
+            this.BiomePixelBox.Name = "BiomePixelBox";
+            this.BiomePixelBox.Size = new System.Drawing.Size(120, 120);
+            this.BiomePixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BiomePixelBox.TabIndex = 6;
+            this.BiomePixelBox.TabStop = false;
+            this.BiomePixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
             // BiomeIDLabel
             // 
@@ -5323,7 +5323,7 @@ namespace Scribe
             this.CraftingRecipesTabPage.Controls.Add(this.CraftingListBox);
             this.CraftingRecipesTabPage.Controls.Add(this.CraftingPictureEditButton);
             this.CraftingRecipesTabPage.Controls.Add(this.CraftingTableLayoutPanel);
-            this.CraftingRecipesTabPage.Controls.Add(this.CraftingPictureBox);
+            this.CraftingRecipesTabPage.Controls.Add(this.CraftingPixelBox);
             this.CraftingRecipesTabPage.Controls.Add(this.CraftingIDLabel);
             this.CraftingRecipesTabPage.Controls.Add(this.CraftingAddNewCraftingButton);
             this.CraftingRecipesTabPage.Controls.Add(this.CraftingIDExample);
@@ -5594,19 +5594,19 @@ namespace Scribe
             this.CraftingStrikePatternLabel.TabIndex = 31;
             this.CraftingStrikePatternLabel.Text = "Crafting Strike Pattern";
             // 
-            // CraftingPictureBox
+            // CraftingPixelBox
             // 
-            this.CraftingPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CraftingPictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
-            this.CraftingPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("CraftingPictureBox.Image")));
-            this.CraftingPictureBox.Location = new System.Drawing.Point(824, 339);
-            this.CraftingPictureBox.Name = "CraftingPictureBox";
-            this.CraftingPictureBox.Size = new System.Drawing.Size(120, 120);
-            this.CraftingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.CraftingPictureBox.TabIndex = 6;
-            this.CraftingPictureBox.TabStop = false;
-            this.CraftingPictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
+            this.CraftingPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CraftingPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CraftingPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
+            this.CraftingPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("CraftingPixelBox.Image")));
+            this.CraftingPixelBox.Location = new System.Drawing.Point(824, 339);
+            this.CraftingPixelBox.Name = "CraftingPixelBox";
+            this.CraftingPixelBox.Size = new System.Drawing.Size(120, 120);
+            this.CraftingPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CraftingPixelBox.TabIndex = 6;
+            this.CraftingPixelBox.TabStop = false;
+            this.CraftingPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
             // CraftingIDLabel
             // 
@@ -5775,7 +5775,7 @@ namespace Scribe
             this.RoomRecipesTabPage.Controls.Add(this.RoomConfigGroupBox);
             this.RoomRecipesTabPage.Controls.Add(this.RoomPictureEditButton);
             this.RoomRecipesTabPage.Controls.Add(this.RoomTableLayoutPanel);
-            this.RoomRecipesTabPage.Controls.Add(this.RoomPictureBox);
+            this.RoomRecipesTabPage.Controls.Add(this.RoomPixelBox);
             this.RoomRecipesTabPage.Controls.Add(this.RoomIDLabel);
             this.RoomRecipesTabPage.Controls.Add(this.RoomAddNewRoomButton);
             this.RoomRecipesTabPage.Controls.Add(this.RoomIDExample);
@@ -6146,19 +6146,19 @@ namespace Scribe
             this.RoomRequiredFurnishingsListBox.Size = new System.Drawing.Size(279, 69);
             this.RoomRequiredFurnishingsListBox.TabIndex = 28;
             // 
-            // RoomPictureBox
+            // RoomPixelBox
             // 
-            this.RoomPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomPictureBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.RoomPictureBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
-            this.RoomPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("RoomPictureBox.Image")));
-            this.RoomPictureBox.Location = new System.Drawing.Point(823, 342);
-            this.RoomPictureBox.Name = "RoomPictureBox";
-            this.RoomPictureBox.Size = new System.Drawing.Size(120, 120);
-            this.RoomPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.RoomPictureBox.TabIndex = 6;
-            this.RoomPictureBox.TabStop = false;
-            this.RoomPictureBox.Click += new System.EventHandler(this.PictureBoxReload_Click);
+            this.RoomPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.RoomPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RoomPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
+            this.RoomPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("RoomPixelBox.Image")));
+            this.RoomPixelBox.Location = new System.Drawing.Point(823, 342);
+            this.RoomPixelBox.Name = "RoomPixelBox";
+            this.RoomPixelBox.Size = new System.Drawing.Size(120, 120);
+            this.RoomPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RoomPixelBox.TabIndex = 6;
+            this.RoomPixelBox.TabStop = false;
+            this.RoomPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
             // RoomIDLabel
             // 
@@ -6272,7 +6272,7 @@ namespace Scribe
             this.EditorTabs.ResumeLayout(false);
             this.GamesTabPage.ResumeLayout(false);
             this.GamesTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GameIconPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GameIconPixelBox)).EndInit();
             this.GameTableLayoutPanel.ResumeLayout(false);
             this.GameTableLayoutPanel.PerformLayout();
             this.FileFormatGroupBox.ResumeLayout(false);
@@ -6283,30 +6283,30 @@ namespace Scribe
             this.LibraryInfoTableLayoutPanel.PerformLayout();
             this.FloorsTabPage.ResumeLayout(false);
             this.FloorsTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FloorFilledInPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FloorFilledInPixelBox)).EndInit();
             this.FloorLayoutTabelPanel.ResumeLayout(false);
             this.FloorLayoutTabelPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FloorDugOutPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FloorDugOutPixelBox)).EndInit();
             this.BlocksTabPage.ResumeLayout(false);
             this.BlocksTabPage.PerformLayout();
             this.BlockTableLayoutPanel.ResumeLayout(false);
             this.BlockTableLayoutPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BlockPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlockPixelBox)).EndInit();
             this.FurnishingsTabPage.ResumeLayout(false);
             this.FurnishingsTabPage.PerformLayout();
             this.FurnishingTableLayoutPanel.ResumeLayout(false);
             this.FurnishingTableLayoutPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FurnishingPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FurnishingPixelBox)).EndInit();
             this.CollectiblesTabPage.ResumeLayout(false);
             this.CollectiblesTabPage.PerformLayout();
             this.CollectibleTableLayoutPanel.ResumeLayout(false);
             this.CollectibleTableLayoutPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CollectiblePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CollectiblePixelBox)).EndInit();
             this.CrittersTabPage.ResumeLayout(false);
             this.CrittersTabPage.PerformLayout();
             this.CritterTableLayoutPanel.ResumeLayout(false);
             this.CritterTableLayoutPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CritterPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CritterPixelBox)).EndInit();
             this.CharactersTabPage.ResumeLayout(false);
             this.CharactersTabPage.PerformLayout();
             this.CharacterPronounGroupBox.ResumeLayout(false);
@@ -6314,13 +6314,13 @@ namespace Scribe
             this.CharacterPronounTableLayoutPanel.PerformLayout();
             this.CharacterTableLayoutPanel.ResumeLayout(false);
             this.CharacterTableLayoutPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CharacterPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CharacterPixelBox)).EndInit();
             this.ItemsTabPage.ResumeLayout(false);
             this.ItemsTabPage.PerformLayout();
             this.ItemInventoriesGroupBox.ResumeLayout(false);
             this.ItemTableLayoutPanel.ResumeLayout(false);
             this.ItemTableLayoutPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemPixelBox)).EndInit();
             this.BiomesTabPage.ResumeLayout(false);
             this.BiomesTabPage.PerformLayout();
             this.BiomeConfigGroupBox.ResumeLayout(false);
@@ -6328,12 +6328,12 @@ namespace Scribe
             this.BiomeConfigTableLayoutPanel.PerformLayout();
             this.BiomeTableLayoutPanel.ResumeLayout(false);
             this.BiomeTableLayoutPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BiomePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BiomePixelBox)).EndInit();
             this.CraftingRecipesTabPage.ResumeLayout(false);
             this.CraftingRecipesTabPage.PerformLayout();
             this.CraftingTableLayoutPanel.ResumeLayout(false);
             this.CraftingTableLayoutPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CraftingPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CraftingPixelBox)).EndInit();
             this.CraftingConfigGroupBox.ResumeLayout(false);
             this.CraftingConfigTableLayoutPanel.ResumeLayout(false);
             this.CraftingConfigTableLayoutPanel.PerformLayout();
@@ -6344,7 +6344,7 @@ namespace Scribe
             this.RoomConfigTableLayoutPanel.PerformLayout();
             this.RoomTableLayoutPanel.ResumeLayout(false);
             this.RoomTableLayoutPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RoomPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RoomPixelBox)).EndInit();
             this.MapsTabPage.ResumeLayout(false);
             this.MapsTabPage.PerformLayout();
             this.ScriptsTabPage.ResumeLayout(false);
@@ -6488,7 +6488,7 @@ namespace Scribe
         private System.Windows.Forms.ComboBox GamePlayerCharacterComboBox;
         private System.Windows.Forms.ComboBox GameFirstScriptComboBox;
         private System.Windows.Forms.Button GameIconEditButton;
-        private System.Windows.Forms.PictureBox GameIconPictureBox;
+        private Scribe.CustomControls.PixelBox GameIconPixelBox;
 
         private System.Windows.Forms.TabPage BlocksTabPage;
         private System.Windows.Forms.TableLayoutPanel BlockTableLayoutPanel;
@@ -6510,7 +6510,7 @@ namespace Scribe
         private System.Windows.Forms.TextBox BlockNameTextBox;
         private System.Windows.Forms.TextBox BlockDescriptionTextBox;
         private System.Windows.Forms.TextBox BlockCommentTextBox;
-        private System.Windows.Forms.PictureBox BlockPictureBox;
+        private Scribe.CustomControls.PixelBox BlockPixelBox;
         private System.Windows.Forms.Button BlockEditImageButton;
         private System.Windows.Forms.ListBox BlockListBox;
         private System.Windows.Forms.Button BlockAddNewBlockButton;
@@ -6542,11 +6542,11 @@ namespace Scribe
         private System.Windows.Forms.TextBox FloorNameTextBox;
         private System.Windows.Forms.TextBox FloorDescriptionTextBox;
         private System.Windows.Forms.TextBox FloorCommentTextBox;
-        private System.Windows.Forms.PictureBox FloorDugOutPictureBox;
+        private Scribe.CustomControls.PixelBox FloorDugOutPixelBox;
         private System.Windows.Forms.Button FloorEditFilledInImageButton;
         private System.Windows.Forms.Label FloorFilledInLabel;
         private System.Windows.Forms.Label FloorDugOutLabel;
-        private System.Windows.Forms.PictureBox FloorFilledInPictureBox;
+        private Scribe.CustomControls.PixelBox FloorFilledInPixelBox;
         private System.Windows.Forms.Button FloorAddNewFloorButton;
         private System.Windows.Forms.Button FloorRemoveFloorButton;
         private System.Windows.Forms.GroupBox FloorConfigGroupBox;
@@ -6587,7 +6587,7 @@ namespace Scribe
         private System.Windows.Forms.Button FurnishingAddNewFurnishingButton;
         private System.Windows.Forms.ListBox FurnishingListBox;
         private System.Windows.Forms.Button FurnishingEditImageButton;
-        private System.Windows.Forms.PictureBox FurnishingPictureBox;
+        private Scribe.CustomControls.PixelBox FurnishingPixelBox;
         private System.Windows.Forms.ComboBox FurnishingEntryTypeComboBox;
         private System.Windows.Forms.Label FurnishingEntryTypeLabel;
         private System.Windows.Forms.Label FurnishingIsWalkableLabel;
@@ -6626,7 +6626,7 @@ namespace Scribe
         private System.Windows.Forms.Button CollectibleAddNewCollectibleButton;
         private System.Windows.Forms.ListBox CollectibleListBox;
         private System.Windows.Forms.Button CollectibleEditImageButton;
-        private System.Windows.Forms.PictureBox CollectiblePictureBox;
+        private Scribe.CustomControls.PixelBox CollectiblePixelBox;
 
         private System.Windows.Forms.TabPage CharactersTabPage;
         private System.Windows.Forms.GroupBox CharacterPronounGroupBox;
@@ -6652,7 +6652,7 @@ namespace Scribe
         private System.Windows.Forms.Button CharacterAddNewCharacterButton;
         private System.Windows.Forms.ListBox CharacterListBox;
         private System.Windows.Forms.Button CharacterEditImageButton;
-        private System.Windows.Forms.PictureBox CharacterPictureBox;
+        private Scribe.CustomControls.PixelBox CharacterPixelBox;
         private System.Windows.Forms.TextBox CharacterStoryIDTextBox;
         private System.Windows.Forms.Button CharacterOpenInventoryEditorButton;
         private System.Windows.Forms.Label CharacterPronounLabel;
@@ -6702,7 +6702,7 @@ namespace Scribe
         private System.Windows.Forms.Label CritterPendingDesignLabel1;
         private System.Windows.Forms.Label CritterParquetsSoughtLabel;
         private System.Windows.Forms.Label CritterPendingDesignLabel2;
-        private System.Windows.Forms.PictureBox CritterPictureBox;
+        private Scribe.CustomControls.PixelBox CritterPixelBox;
         private System.Windows.Forms.Button CritterEditImageButton;
         private System.Windows.Forms.Button CritterAddNewCritterButton;
         private System.Windows.Forms.GroupBox CritterConfigGroupBox;
@@ -6726,7 +6726,7 @@ namespace Scribe
         private System.Windows.Forms.TextBox ItemDescriptionTextBox;
         private System.Windows.Forms.TextBox ItemCommentTextBox;
         private System.Windows.Forms.TextBox ItemPriceTextBox;
-        private System.Windows.Forms.PictureBox ItemPictureBox;
+        private Scribe.CustomControls.PixelBox ItemPixelBox;
         private System.Windows.Forms.Label ItemIDLabel;
         private System.Windows.Forms.Button ItemAddNewItemButton;
         private System.Windows.Forms.Button ItemRemoveItemButton;
@@ -6764,7 +6764,7 @@ namespace Scribe
         private System.Windows.Forms.TextBox BiomeDescriptionTextBox;
         private System.Windows.Forms.TextBox BiomeCommentTextBox;
         private System.Windows.Forms.TextBox BiomeTierTextBox;
-        private System.Windows.Forms.PictureBox BiomePictureBox;
+        private Scribe.CustomControls.PixelBox BiomePixelBox;
         private System.Windows.Forms.Button BiomeAddNewBiomeButton;
         private System.Windows.Forms.Button BiomeRemoveBiomeButton;
         private System.Windows.Forms.CheckBox BiomeIsLiquidBasedCheckBox;
@@ -6796,7 +6796,7 @@ namespace Scribe
         private System.Windows.Forms.TextBox CraftingNameTextBox;
         private System.Windows.Forms.TextBox CraftingDescriptionTextBox;
         private System.Windows.Forms.TextBox CraftingCommentTextBox;
-        private System.Windows.Forms.PictureBox CraftingPictureBox;
+        private Scribe.CustomControls.PixelBox CraftingPixelBox;
         private System.Windows.Forms.Button CraftingAddNewCraftingButton;
         private System.Windows.Forms.Button CraftingRemoveCraftingButton;
         private System.Windows.Forms.Button CraftingOpenPatternEditorButton;
@@ -6837,7 +6837,7 @@ namespace Scribe
         private System.Windows.Forms.TextBox RoomDescriptionTextBox;
         private System.Windows.Forms.TextBox RoomCommentTextBox;
         private System.Windows.Forms.TextBox RoomMinimumWalkableSpacesTextBox;
-        private System.Windows.Forms.PictureBox RoomPictureBox;
+        private Scribe.CustomControls.PixelBox RoomPixelBox;
         private System.Windows.Forms.Button RoomAddNewRoomButton;
         private System.Windows.Forms.Button RoomRemoveRoomButton;
         private System.Windows.Forms.Button RoomAddBlockButton;

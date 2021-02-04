@@ -554,17 +554,17 @@ namespace Scribe
         private PictureBox GetPictureBoxForTab(int inTabIndex)
             => inTabIndex switch
             {
-                GamesTabIndex => GameIconPictureBox,
-                BlocksTabIndex => BlockPictureBox,
-                FloorsTabIndex => FloorDugOutPictureBox,
-                FurnishingsTabIndex => FurnishingPictureBox,
-                CollectiblesTabIndex => CollectiblePictureBox,
-                CharactersTabIndex => CharacterPictureBox,
-                CrittersTabIndex => CritterPictureBox,
-                ItemsTabIndex => ItemPictureBox,
-                BiomeRecipesTabIndex => BiomePictureBox,
-                CraftingRecipesTabIndex => CraftingPictureBox,
-                RoomRecipesTabIndex => RoomPictureBox,
+                GamesTabIndex => GameIconPixelBox,
+                BlocksTabIndex => BlockPixelBox,
+                FloorsTabIndex => FloorDugOutPixelBox,
+                FurnishingsTabIndex => FurnishingPixelBox,
+                CollectiblesTabIndex => CollectiblePixelBox,
+                CharactersTabIndex => CharacterPixelBox,
+                CrittersTabIndex => CritterPixelBox,
+                ItemsTabIndex => ItemPixelBox,
+                BiomeRecipesTabIndex => BiomePixelBox,
+                CraftingRecipesTabIndex => CraftingPixelBox,
+                RoomRecipesTabIndex => RoomPixelBox,
                 MapsTabIndex => null,
                 ScriptsTabIndex => null,
                 _ => null,
@@ -1417,7 +1417,7 @@ namespace Scribe
                 GameEpisodeNumberTextBox.Text = "";
                 GamePlayerCharacterComboBox.SelectedItem = null;
                 GameFirstScriptComboBox.SelectedItem = null;
-                GameIconPictureBox.Image = Resources.ImageNotFoundGraphic;
+                GameIconPixelBox.Image = Resources.ImageNotFoundGraphic;
             }
             else if (GameListBox.SelectedItem is GameModel model
                     && null != model)
@@ -1435,7 +1435,7 @@ namespace Scribe
                 GameFirstScriptComboBox.SelectedItem = model.FirstScriptID == ModelID.None
                     ? null
                     : All.Scripts.GetOrNull<ScriptModel>(model.FirstScriptID);
-                PictureBoxLoadFromStorage(GameIconPictureBox, model.ID);
+                PictureBoxLoadFromStorage(GameIconPixelBox, model.ID);
             }
         }
 
@@ -1463,7 +1463,7 @@ namespace Scribe
                 BlockIsFlammableCheckBox.Checked = false;
                 BlockIsLiquidCheckBox.Checked = false;
                 BlockMaxToughnessTextBox.Text = "";
-                BlockPictureBox.Image = Resources.ImageNotFoundGraphic;
+                BlockPixelBox.Image = Resources.ImageNotFoundGraphic;
             }
             else if (BlockListBox.SelectedItem is BlockModel model
                     && null != model)
@@ -1484,7 +1484,7 @@ namespace Scribe
                 BlockIsFlammableCheckBox.Checked = model.IsFlammable;
                 BlockIsLiquidCheckBox.Checked = model.IsLiquid;
                 BlockMaxToughnessTextBox.Text = model.MaxToughness.ToString();
-                PictureBoxLoadFromStorage(BlockPictureBox, model.ID);
+                PictureBoxLoadFromStorage(BlockPixelBox, model.ID);
             }
         }
 
@@ -1508,7 +1508,8 @@ namespace Scribe
                 FloorAddsToRoomListBox.Items.Clear();
                 FloorModificationToolComboBox.SelectedItem = ModificationTool.None;
                 FloorTrenchNameTextBox.Text = "";
-                FloorDugOutPictureBox.Image = Resources.ImageNotFoundGraphic;
+                FloorDugOutPixelBox.Image = Resources.ImageNotFoundGraphic;
+                FloorFilledInPixelBox.Image = Resources.ImageNotFoundGraphic;
             }
             else if (FloorListBox.SelectedItem is FloorModel model
                     && null != model)
@@ -1524,7 +1525,9 @@ namespace Scribe
                 RepopulateListBox(FloorAddsToRoomListBox, model.AddsToRoom);
                 FloorModificationToolComboBox.SelectedItem = model.ModTool;
                 FloorTrenchNameTextBox.Text = model.TrenchName;
-                PictureBoxLoadFromStorage(FloorDugOutPictureBox, model.ID);
+                // TODO: Fix this for Floors!
+                PictureBoxLoadFromStorage(FloorDugOutPixelBox, model.ID);
+                // PictureBoxLoadFromStorage(FloorFilledInPixelBox, model.ID);
             }
         }
 
@@ -1551,7 +1554,7 @@ namespace Scribe
                 FurnishingIsEnclosingCheckBox.Checked = false;
                 FurnishingIsFlammableCheckBox.Checked = false;
                 FurnishingSwapWithFurnishingComboBox.SelectedItem = null;
-                FurnishingPictureBox.Image = Resources.ImageNotFoundGraphic;
+                FurnishingPixelBox.Image = Resources.ImageNotFoundGraphic;
             }
             else if (FurnishingListBox.SelectedItem is FurnishingModel model
                     && null != model)
@@ -1572,7 +1575,7 @@ namespace Scribe
                 FurnishingSwapWithFurnishingComboBox.SelectedItem = model.SwapID == ModelID.None
                     ? null
                     : All.Furnishings.GetOrNull<FurnishingModel>(model.SwapID);
-                PictureBoxLoadFromStorage(FurnishingPictureBox, model.ID);
+                PictureBoxLoadFromStorage(FurnishingPixelBox, model.ID);
             }
         }
 
@@ -1596,7 +1599,7 @@ namespace Scribe
                 CollectibleAddsToRoomListBox.Items.Clear();
                 CollectibleCollectionEffectComboBox.SelectedItem = null;
                 CollectibleEffectAmountTextBox.Text = "";
-                CollectiblePictureBox.Image = Resources.ImageNotFoundGraphic;
+                CollectiblePixelBox.Image = Resources.ImageNotFoundGraphic;
             }
             else if (CollectibleListBox.SelectedItem is CollectibleModel model
                     && null != model)
@@ -1612,7 +1615,7 @@ namespace Scribe
                 RepopulateListBox(CollectibleAddsToRoomListBox, model.AddsToRoom);
                 CollectibleCollectionEffectComboBox.SelectedItem = model.CollectionEffect;
                 CollectibleEffectAmountTextBox.Text = model.EffectAmount.ToString();
-                PictureBoxLoadFromStorage(CollectiblePictureBox, model.ID);
+                PictureBoxLoadFromStorage(CollectiblePixelBox, model.ID);
             }
         }
 
@@ -1638,7 +1641,7 @@ namespace Scribe
                 CharacterStartingQuestsListBox.Items.Clear();
                 CharacterStartingDialogueComboBox.SelectedItem = null;
                 CharacterStartingInventoryExample.Text = "0 Items";
-                CharacterPictureBox.Image = Resources.ImageNotFoundGraphic;
+                CharacterPixelBox.Image = Resources.ImageNotFoundGraphic;
             }
             else if (CharacterListBox.SelectedItem is CharacterModel model
                      && null != model)
@@ -1668,7 +1671,7 @@ namespace Scribe
                         ? null
                         : All.Interactions.GetOrNull<InteractionModel>(model.StartingDialogueID);
                 CharacterStartingInventoryExample.Text = $"{model.StartingInventory?.ItemCount ?? 0} Items";
-                PictureBoxLoadFromStorage(CharacterPictureBox, model.ID);
+                PictureBoxLoadFromStorage(CharacterPixelBox, model.ID);
             }
         }
 
@@ -1715,7 +1718,7 @@ namespace Scribe
                 CritterCommentTextBox.Text = "";
                 CritterNativeBiomeComboBox.SelectedItem = null;
                 CritterPrimaryBehaviorComboBox.SelectedItem = null;
-                CritterPictureBox.Image = Resources.ImageNotFoundGraphic;
+                CritterPixelBox.Image = Resources.ImageNotFoundGraphic;
             }
             else if (CritterListBox.SelectedItem is CritterModel model
                      && null != model)
@@ -1730,7 +1733,7 @@ namespace Scribe
                 CritterPrimaryBehaviorComboBox.SelectedItem = model.PrimaryBehaviorID == ModelID.None
                     ? null
                     : All.Scripts.GetOrNull<ScriptModel>(model.PrimaryBehaviorID);
-                PictureBoxLoadFromStorage(CritterPictureBox, model.ID);
+                PictureBoxLoadFromStorage(CritterPixelBox, model.ID);
             }
         }
 
@@ -1756,7 +1759,7 @@ namespace Scribe
                 ItemEffectWhenUsedComboBox.SelectedItem = null;
                 ItemEquivalentParquetComboBox.SelectedItem = null;
                 ItemTagListBox.Items.Clear();
-                ItemPictureBox.Image = Resources.ImageNotFoundGraphic;
+                ItemPixelBox.Image = Resources.ImageNotFoundGraphic;
             }
             else if (ItemListBox.SelectedItem is ItemModel model
                     && null != model)
@@ -1779,7 +1782,7 @@ namespace Scribe
                     ? null
                     : All.Parquets.GetOrNull<ParquetModel>(model.ParquetID);
                 RepopulateListBox(ItemTagListBox, model.ItemTags);
-                PictureBoxLoadFromStorage(ItemPictureBox, model.ID);
+                PictureBoxLoadFromStorage(ItemPixelBox, model.ID);
             }
         }
 
@@ -1802,7 +1805,7 @@ namespace Scribe
                 BiomeIsLiquidBasedCheckBox.Checked = false;
                 BiomeParquetCriteriaTextBox.Text = "";
                 BiomeEntryRequirementsListBox.Items.Clear();
-                BiomePictureBox.Image = Resources.ImageNotFoundGraphic;
+                BiomePixelBox.Image = Resources.ImageNotFoundGraphic;
             }
             else if (BiomeListBox.SelectedItem is BiomeRecipe recipe
                     && null != recipe)
@@ -1816,7 +1819,7 @@ namespace Scribe
                 BiomeIsLiquidBasedCheckBox.Checked = recipe.IsLiquidBased;
                 BiomeParquetCriteriaTextBox.Text = recipe.ParquetCriteria;
                 RepopulateListBox(BiomeEntryRequirementsListBox, recipe.EntryRequirements);
-                PictureBoxLoadFromStorage(BiomePictureBox, recipe.ID);
+                PictureBoxLoadFromStorage(BiomePixelBox, recipe.ID);
             }
         }
 
@@ -1838,7 +1841,7 @@ namespace Scribe
                 CraftingProductsListBox.Items.Clear();
                 CraftingIngredientsListBox.Items.Clear();
                 CraftingPanelsCountExample.Text = $"0 Panels";
-                CraftingPictureBox.Image = Resources.ImageNotFoundGraphic;
+                CraftingPixelBox.Image = Resources.ImageNotFoundGraphic;
             }
             else if (CraftingListBox.SelectedItem is CraftingRecipe recipe
                     && null != recipe)
@@ -1850,7 +1853,7 @@ namespace Scribe
                 RepopulateListBox(CraftingProductsListBox, recipe.Products);
                 RepopulateListBox(CraftingIngredientsListBox, recipe.Ingredients);
                 CraftingPanelsCountExample.Text = $"{recipe.PanelPattern?.Count ?? 0} Panels";
-                PictureBoxLoadFromStorage(CraftingPictureBox, recipe.ID);
+                PictureBoxLoadFromStorage(CraftingPixelBox, recipe.ID);
             }
         }
 
@@ -1874,7 +1877,7 @@ namespace Scribe
                 RoomRequiredFurnishingsListBox.Items.Clear();
                 RoomRequiredFloorsListBox.Items.Clear();
                 RoomRequiredBlocksListBox.Items.Clear();
-                RoomPictureBox.Image = Resources.ImageNotFoundGraphic;
+                RoomPixelBox.Image = Resources.ImageNotFoundGraphic;
             }
             else if (RoomListBox.SelectedItem is RoomRecipe recipe
                     && null != recipe)
@@ -1887,7 +1890,7 @@ namespace Scribe
                 RepopulateListBox(RoomRequiredFurnishingsListBox, recipe.OptionallyRequiredFurnishings);
                 RepopulateListBox(RoomRequiredFloorsListBox, recipe.OptionallyRequiredWalkableFloors);
                 RepopulateListBox(RoomRequiredBlocksListBox, recipe.OptionallyRequiredPerimeterBlocks);
-                PictureBoxLoadFromStorage(RoomPictureBox, recipe.ID);
+                PictureBoxLoadFromStorage(RoomPixelBox, recipe.ID);
             }
         }
 
@@ -3337,7 +3340,7 @@ namespace Scribe
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="eventArguments">Ignored.</param>
-        private void PictureBoxReload_Click(object sender, EventArgs eventArguments)
+        private void PixelBoxReload_Click(object sender, EventArgs eventArguments)
             => PictureBoxLoadFromStorage(GetPictureBoxForTab(EditorTabs.SelectedIndex),
                                          GetSelectedModelIDForTab(EditorTabs.SelectedIndex));
 
