@@ -478,9 +478,6 @@ namespace Roller
             }
 
             return ExitCode.Success;
-
-            Console.WriteLine(Resources.ErrorEditorSupport);
-            return ExitCode.NotSupported;
         }
 
         /// <summary>
