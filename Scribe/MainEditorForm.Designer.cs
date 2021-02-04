@@ -1,5 +1,3 @@
-using System;
-
 namespace Scribe
 {
     partial class MainEditorForm
@@ -1487,7 +1485,7 @@ namespace Scribe
             this.GameIconPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.GameIconPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
             this.GameIconPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("GameIconPixelBox.Image")));
-            this.GameIconPixelBox.Location = new System.Drawing.Point(824, 342);
+            this.GameIconPixelBox.Location = new System.Drawing.Point(823, 342);
             this.GameIconPixelBox.Name = "GameIconPixelBox";
             this.GameIconPixelBox.Size = new System.Drawing.Size(120, 120);
             this.GameIconPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -5600,7 +5598,7 @@ namespace Scribe
             this.CraftingPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.CraftingPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
             this.CraftingPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("CraftingPixelBox.Image")));
-            this.CraftingPixelBox.Location = new System.Drawing.Point(824, 339);
+            this.CraftingPixelBox.Location = new System.Drawing.Point(823, 342);
             this.CraftingPixelBox.Name = "CraftingPixelBox";
             this.CraftingPixelBox.Size = new System.Drawing.Size(120, 120);
             this.CraftingPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
