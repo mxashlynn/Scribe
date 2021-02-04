@@ -103,7 +103,7 @@ namespace Scribe
             this.PictureBoxLogo.Name = "PictureBoxLogo";
             this.TableLayoutPanelSplashScreen.SetRowSpan(this.PictureBoxLogo, 2);
             this.PictureBoxLogo.Size = new System.Drawing.Size(242, 231);
-            this.PictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PictureBoxLogo.TabIndex = 0;
             this.PictureBoxLogo.TabStop = false;
             // 
