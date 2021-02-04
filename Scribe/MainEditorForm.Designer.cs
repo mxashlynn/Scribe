@@ -1,3 +1,5 @@
+using Scribe.CustomControls;
+
 namespace Scribe
 {
     partial class MainEditorForm

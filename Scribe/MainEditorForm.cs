@@ -24,6 +24,7 @@ using Parquet.Scripts;
 using Roller;
 using Scribe.ChangeHistory;
 using Scribe.Properties;
+using Scribe.CustomControls;
 
 namespace Scribe
 {
