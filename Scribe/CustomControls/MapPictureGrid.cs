@@ -17,13 +17,13 @@ namespace Scribe.CustomControls
         public const int TargetResolutionScalingFactor = 4;
 
         /// <summary>How many pixels per axis on each parquet target render.</summary>
-        private const int TargetParquetDimensionInPixels = SourceParquetDimensionInPixels * TargetResolutionScalingFactor;
+        public const int TargetParquetDimensionInPixels = SourceParquetDimensionInPixels * TargetResolutionScalingFactor;
 
         /// <summary>How many parquets wide per <see cref="MapPictureGrid"/>.</summary>
-        private const int MapWidthInParquets = 32;
+        public const int MapWidthInParquets = 32;
 
         /// <summary>How many parquets high per <see cref="MapPictureGrid"/>.</summary>
-        private const int MapHeightInParquets = 18;
+        public const int MapHeightInParquets = 18;
 
         /// <summary>The resolution at which the entire <see cref="MapPictureGrid"/> will be rendered.</summary>
         public static readonly Size TargetResolution =
