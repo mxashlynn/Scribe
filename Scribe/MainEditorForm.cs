@@ -17,16 +17,14 @@ using Parquet.Crafts;
 using Parquet.EditorSupport;
 using Parquet.Games;
 using Parquet.Items;
-using Parquet.Maps;
 using Parquet.Parquets;
 using Parquet.Rooms;
 using Parquet.Scripts;
 using Roller;
 using Scribe.ChangeHistory;
 using Scribe.Properties;
-using Scribe.CustomControls;
 
-namespace Scribe
+namespace Scribe.Forms
 {
     /// <summary>
     /// The primary editing interface.

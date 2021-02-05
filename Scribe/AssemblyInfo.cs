@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices;
+using Scribe.Forms;
 
 // Make no promises to maintain public services.
 [assembly: ComVisible(false)]

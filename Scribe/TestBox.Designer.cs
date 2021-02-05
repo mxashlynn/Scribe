@@ -1,5 +1,5 @@
 
-namespace Scribe
+namespace Scribe.Forms
 {
     partial class TestBox
     {

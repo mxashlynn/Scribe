@@ -10,7 +10,7 @@ using Parquet.EditorSupport;
 using Parquet.Items;
 using Scribe.Properties;
 
-namespace Scribe
+namespace Scribe.Forms
 {
     /// <summary>
     /// A modal form that enables the user to edit a given <see cref="Inventory"/>.

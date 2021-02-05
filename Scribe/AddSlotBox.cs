@@ -6,7 +6,7 @@ using Parquet;
 using Parquet.Items;
 using Scribe.Properties;
 
-namespace Scribe
+namespace Scribe.Forms
 {
     /// <summary>
     /// A modal dialogue enabling users to add new <see cref="Parquet.Items.InventorySlot"/>s.

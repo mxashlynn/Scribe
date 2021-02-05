@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace Scribe
+namespace Scribe.Forms
 {
     partial class RollerOutputBox : Form
     {

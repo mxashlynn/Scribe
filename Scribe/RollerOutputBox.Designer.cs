@@ -1,5 +1,4 @@
-
-namespace Scribe
+namespace Scribe.Forms
 {
     partial class RollerOutputBox
     {

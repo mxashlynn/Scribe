@@ -8,7 +8,7 @@ using Parquet.Crafts;
 using Parquet.EditorSupport;
 using Scribe.Properties;
 
-namespace Scribe
+namespace Scribe.Forms
 {
     /// <summary>
     /// A form that enables the user to edit a given <see cref="Parquet.Crafts.StrikePanelGrid"/>.

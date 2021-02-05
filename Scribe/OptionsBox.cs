@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using Parquet;
 using Scribe.Properties;
 
-namespace Scribe
+namespace Scribe.Forms
 {
     /// <summary>
     /// A modal dialogue that enables the user to adjust application behavior.

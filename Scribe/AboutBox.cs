@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Scribe.Properties;
 
-namespace Scribe
+namespace Scribe.Forms
 {
     /// <summary>
     /// A modal dialogue that presents descriptive information about the application and library.
