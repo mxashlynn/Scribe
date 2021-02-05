@@ -41,16 +41,6 @@ namespace Scribe.CustomControls
         #endregion
 
         #region Displaying Graphics
-        // TODO: Uncomment this or remove it.
-        // / <summary>
-        // / Leaves the background of the <see cref="Control"/> empty.
-        // / </summary>
-        // / <param name="paintArguments">Configuration used by the painting routine.</param>
-        //protected override void OnPaintBackground(PaintEventArgs paintArguments)
-        //{
-            // To support layering, don't paint anything.
-        //}
-
         /// <summary>
         /// Paints multiple images without anti-aliasing or other distortion.
         /// </summary>
