@@ -24,6 +24,7 @@ namespace Scribe.CustomControls
             paintArguments.Graphics.PixelOffsetMode = PixelOffsetMode.Half;
             paintArguments.Graphics.SmoothingMode = SmoothingMode.None;
             paintArguments.Graphics.CompositingQuality = CompositingQuality.HighQuality;
+
             base.OnPaint(paintArguments);
         }
     }
