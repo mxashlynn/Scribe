@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using Parquet;
 using Scribe.Properties;
 
-namespace Scribe
+namespace Scribe.Forms
 {
     /// <summary>
     /// Presents <see cref="MessageBox"/>es to the user when needed while creating new project files.
