@@ -33,6 +33,7 @@ Every C# namespace is located in its own folder.
 - **Scribe**
     - A GUI Editor for working with Parquet game definitions.
     - **ChangeHistory**, an undo/redo implementation.
+    - **CustomControls**, user controls for displaying pixel art.
 - **TestProject**
     - A minimal example of a Parquet dataset.  This is not a full game, just some samples used in developing Scribe and Roller.
 
