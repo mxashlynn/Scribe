@@ -92,7 +92,7 @@ namespace Scribe
             this.LogoPictureBox.Name = "LogoPictureBox";
             this.AboutTableLayoutPanel.SetRowSpan(this.LogoPictureBox, 5);
             this.LogoPictureBox.Size = new System.Drawing.Size(192, 190);
-            this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.LogoPictureBox.TabIndex = 12;
             this.LogoPictureBox.TabStop = false;
             // 
