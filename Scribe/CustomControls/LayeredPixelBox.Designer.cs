@@ -28,13 +28,11 @@ namespace Scribe.CustomControls
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LayeredPixelBox));
             this.SuspendLayout();
             // 
             // LayeredPixelBox
             // 
             this.Name = "LayeredPixelBox";
-            this.Image = ((System.Drawing.Image)(resources.GetObject("LayeredPixelBox.Image")));
             this.Size = new System.Drawing.Size(40, 40);
             this.ResumeLayout(false);
         }
