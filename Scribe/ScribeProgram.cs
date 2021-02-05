@@ -45,7 +45,8 @@ namespace Scribe
             _ = Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Context.MainForm = new SplashScreen();
+            // TOTO Context.MainForm = new SplashScreen();
+            Context.MainForm = new TestBox();
             Application.Run(Context);
         }
 
