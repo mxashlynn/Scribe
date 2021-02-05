@@ -43,10 +43,10 @@ namespace Scribe
             // 
             // TestPixelBox
             // 
-            this.TestPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.TestPixelBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TestPixelBox.BackColor = System.Drawing.Color.Transparent;
             this.TestPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("TestPixelBox.Image")));
-            this.TestPixelBox.Location = new System.Drawing.Point(434, 254);
+            this.TestPixelBox.Location = new System.Drawing.Point(131, 60);
             this.TestPixelBox.Name = "TestPixelBox";
             this.TestPixelBox.Size = new System.Drawing.Size(60, 60);
             this.TestPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -101,7 +101,7 @@ namespace Scribe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 327);
+            this.ClientSize = new System.Drawing.Size(206, 131);
             this.Controls.Add(this.TestLayeredPixelBox4);
             this.Controls.Add(this.TestLayeredPixelBox3);
             this.Controls.Add(this.TestLayeredPixelBox2);
