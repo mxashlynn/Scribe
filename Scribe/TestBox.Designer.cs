@@ -49,7 +49,7 @@ namespace Scribe
             // 
             // TestLayeredPixelBox1
             // 
-            this.TestLayeredPixelBox1.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.TestLayeredPixelBox1.BackColor = System.Drawing.Color.Transparent;
             this.TestLayeredPixelBox1.Image = ((System.Drawing.Image)(resources.GetObject("TestLayeredPixelBox1.Image")));
             this.TestLayeredPixelBox1.Location = new System.Drawing.Point(13, 13);
             this.TestLayeredPixelBox1.Name = "TestLayeredPixelBox1";

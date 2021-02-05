@@ -33,7 +33,6 @@ namespace Scribe.CustomControls
             // 
             // LayeredPixelBox
             // 
-            this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.Name = "LayeredPixelBox";
             this.Image = ((System.Drawing.Image)(resources.GetObject("LayeredPixelBox.Image")));
             this.Size = new System.Drawing.Size(40, 40);
