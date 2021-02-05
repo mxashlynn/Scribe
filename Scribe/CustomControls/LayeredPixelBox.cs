@@ -50,16 +50,6 @@ namespace Scribe.CustomControls
 
         #region Displaying Graphics
         /// <summary>
-        /// Leaves the background of the <see cref="Control"/> empty.
-        /// </summary>
-        /// <param name="paintArguments">Configuration used by the painting routine.</param>
-        protected override void OnPaintBackground(PaintEventArgs paintArguments)
-        {
-            base.OnPaintBackground(paintArguments);
-            paintArguments.Graphics.FillRectangle(new SolidBrush(Color.Transparent), ClientRectangle);
-        }
-
-        /// <summary>
         /// Paints multiple images without anti-aliasing or other distortion.
         /// </summary>
         /// <param name="paintArguments">Configuration used by the painting routine.</param>
