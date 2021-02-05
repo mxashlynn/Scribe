@@ -18,9 +18,13 @@ namespace Scribe.CustomControls
 
         /// <summary>How many pixels wide the target image is.</summary>
         private const int TargetDimensionInPixels = SourceDimensionInPixels * TargetResolutionScalingFactor;
+
+        /// <summary>How many images to layer.</summary>
+        public const int LayerCount = 4;
         #endregion
 
         #region Characteristics
+        public Image[] ImageLayers = new Image[LayerCount];
         #endregion
 
         #region Initialization
@@ -42,6 +46,16 @@ namespace Scribe.CustomControls
 
         #region Displaying Graphics
         /// <summary>
+        /// Leaves the background of the <see cref="Control"/> empty.
+        /// </summary>
+        /// <param name="paintArguments">Configuration used by the painting routine.</param>
+        protected override void OnPaintBackground(PaintEventArgs paintArguments)
+        {
+            base.OnPaintBackground(paintArguments);
+            paintArguments.Graphics.FillRectangle(new SolidBrush(Color.Transparent), ClientRectangle);
+        }
+
+        /// <summary>
         /// Paints multiple images without anti-aliasing or other distortion.
         /// </summary>
         /// <param name="paintArguments">Configuration used by the painting routine.</param>
@@ -53,9 +67,13 @@ namespace Scribe.CustomControls
             paintArguments.Graphics.CompositingQuality = CompositingQuality.HighQuality;
 
             // Paint the images, scaled, using the painter's algorithm.
-            if (Image is not null)
+            for (var layerIndex = 0; layerIndex < LayerCount; layerIndex++)
             {
-                paintArguments.Graphics.DrawImage(Image, 0, 0, TargetDimensionInPixels, TargetDimensionInPixels);
+                if (ImageLayers[layerIndex] is not null)
+                {
+                    paintArguments.Graphics.DrawImage(ImageLayers[layerIndex], 0, 0,
+                                                      TargetDimensionInPixels, TargetDimensionInPixels);
+                }
             }
         }
         #endregion
