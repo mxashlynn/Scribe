@@ -53,7 +53,10 @@ namespace Scribe.CustomControls
             paintArguments.Graphics.CompositingQuality = CompositingQuality.HighQuality;
 
             // Paint the images, scaled, using the painter's algorithm.
-            paintArguments.Graphics.DrawImage(Image, 0, 0, TargetDimensionInPixels, TargetDimensionInPixels);
+            if (Image is not null)
+            {
+                paintArguments.Graphics.DrawImage(Image, 0, 0, TargetDimensionInPixels, TargetDimensionInPixels);
+            }
         }
         #endregion
     }
