@@ -31,8 +31,10 @@ namespace Scribe
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TestBox));
             this.TestPixelBox = new Scribe.CustomControls.PixelBox();
             this.TestLayeredPixelBox1 = new Scribe.CustomControls.LayeredPixelBox();
+            this.TestLayeredPixelBox2 = new Scribe.CustomControls.LayeredPixelBox();
             ((System.ComponentModel.ISupportInitialize)(this.TestPixelBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestLayeredPixelBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TestLayeredPixelBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // TestPixelBox
@@ -58,11 +60,23 @@ namespace Scribe
             this.TestLayeredPixelBox1.TabIndex = 1;
             this.TestLayeredPixelBox1.TabStop = false;
             // 
+            // TestLayeredPixelBox2
+            // 
+            this.TestLayeredPixelBox2.BackColor = System.Drawing.Color.Transparent;
+            this.TestLayeredPixelBox2.Image = ((System.Drawing.Image)(resources.GetObject("TestLayeredPixelBox2.Image")));
+            this.TestLayeredPixelBox2.Location = new System.Drawing.Point(59, 13);
+            this.TestLayeredPixelBox2.Name = "TestLayeredPixelBox2";
+            this.TestLayeredPixelBox2.Size = new System.Drawing.Size(40, 40);
+            this.TestLayeredPixelBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.TestLayeredPixelBox2.TabIndex = 2;
+            this.TestLayeredPixelBox2.TabStop = false;
+            // 
             // TestBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(507, 327);
+            this.Controls.Add(this.TestLayeredPixelBox2);
             this.Controls.Add(this.TestLayeredPixelBox1);
             this.Controls.Add(this.TestPixelBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -77,6 +91,7 @@ namespace Scribe
             this.Text = "TestBox";
             ((System.ComponentModel.ISupportInitialize)(this.TestPixelBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestLayeredPixelBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TestLayeredPixelBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -85,5 +100,6 @@ namespace Scribe
 
         private CustomControls.PixelBox TestPixelBox;
         private CustomControls.LayeredPixelBox TestLayeredPixelBox1;
+        private CustomControls.LayeredPixelBox TestLayeredPixelBox2;
     }
 }
