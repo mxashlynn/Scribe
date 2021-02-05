@@ -77,4 +77,16 @@
         GG7gP5GY4X+ZUxdeTEOFhDHDfwDNIU//H2S0oQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="TestLayeredPixelBox3.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABGdBTUEAALGPC/xhBQAAAC1JREFUKFNj
+        oAv4D8V4wf/n/5eBMYgNEcIEcEWEFBOtEASIUgQDRCmiFDAwAACQrzZ5JA7D0wAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="TestLayeredPixelBox4.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABGdBTUEAALGPC/xhBQAAABtJREFUKFNj
+        GKLg/38ghrLxApAiohQOLsDAAAAMxwT86q4NcwAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

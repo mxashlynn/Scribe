@@ -32,9 +32,13 @@ namespace Scribe
             this.TestPixelBox = new Scribe.CustomControls.PixelBox();
             this.TestLayeredPixelBox1 = new Scribe.CustomControls.LayeredPixelBox();
             this.TestLayeredPixelBox2 = new Scribe.CustomControls.LayeredPixelBox();
+            this.TestLayeredPixelBox3 = new Scribe.CustomControls.LayeredPixelBox();
+            this.TestLayeredPixelBox4 = new Scribe.CustomControls.LayeredPixelBox();
             ((System.ComponentModel.ISupportInitialize)(this.TestPixelBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestLayeredPixelBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestLayeredPixelBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TestLayeredPixelBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TestLayeredPixelBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // TestPixelBox
@@ -71,11 +75,35 @@ namespace Scribe
             this.TestLayeredPixelBox2.TabIndex = 2;
             this.TestLayeredPixelBox2.TabStop = false;
             // 
+            // TestLayeredPixelBox3
+            // 
+            this.TestLayeredPixelBox3.BackColor = System.Drawing.Color.Transparent;
+            this.TestLayeredPixelBox3.Image = ((System.Drawing.Image)(resources.GetObject("TestLayeredPixelBox3.Image")));
+            this.TestLayeredPixelBox3.Location = new System.Drawing.Point(105, 13);
+            this.TestLayeredPixelBox3.Name = "TestLayeredPixelBox3";
+            this.TestLayeredPixelBox3.Size = new System.Drawing.Size(40, 40);
+            this.TestLayeredPixelBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.TestLayeredPixelBox3.TabIndex = 3;
+            this.TestLayeredPixelBox3.TabStop = false;
+            // 
+            // TestLayeredPixelBox4
+            // 
+            this.TestLayeredPixelBox4.BackColor = System.Drawing.Color.Transparent;
+            this.TestLayeredPixelBox4.Image = ((System.Drawing.Image)(resources.GetObject("TestLayeredPixelBox4.Image")));
+            this.TestLayeredPixelBox4.Location = new System.Drawing.Point(151, 13);
+            this.TestLayeredPixelBox4.Name = "TestLayeredPixelBox4";
+            this.TestLayeredPixelBox4.Size = new System.Drawing.Size(40, 40);
+            this.TestLayeredPixelBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.TestLayeredPixelBox4.TabIndex = 4;
+            this.TestLayeredPixelBox4.TabStop = false;
+            // 
             // TestBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(507, 327);
+            this.Controls.Add(this.TestLayeredPixelBox4);
+            this.Controls.Add(this.TestLayeredPixelBox3);
             this.Controls.Add(this.TestLayeredPixelBox2);
             this.Controls.Add(this.TestLayeredPixelBox1);
             this.Controls.Add(this.TestPixelBox);
@@ -92,6 +120,8 @@ namespace Scribe
             ((System.ComponentModel.ISupportInitialize)(this.TestPixelBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestLayeredPixelBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestLayeredPixelBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TestLayeredPixelBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TestLayeredPixelBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -101,5 +131,7 @@ namespace Scribe
         private CustomControls.PixelBox TestPixelBox;
         private CustomControls.LayeredPixelBox TestLayeredPixelBox1;
         private CustomControls.LayeredPixelBox TestLayeredPixelBox2;
+        private CustomControls.LayeredPixelBox TestLayeredPixelBox3;
+        private CustomControls.LayeredPixelBox TestLayeredPixelBox4;
     }
 }
