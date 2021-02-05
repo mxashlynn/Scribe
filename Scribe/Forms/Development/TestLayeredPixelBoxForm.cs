@@ -1,6 +1,6 @@
 using System.Windows.Forms;
 
-namespace Scribe.Forms
+namespace Scribe.Forms.Development
 {
     partial class TestLayeredPixelBoxForm : Form
     {

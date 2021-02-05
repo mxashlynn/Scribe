@@ -2,7 +2,7 @@ using System;
 using System.Windows.Forms;
 using Scribe.ChangeHistory;
 
-namespace Scribe.Forms
+namespace Scribe.Forms.Development
 {
     /// <summary>
     /// A simple form used to test the undo feature before data-binding is finished.
