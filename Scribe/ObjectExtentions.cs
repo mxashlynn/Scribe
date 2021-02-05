@@ -16,7 +16,7 @@ namespace Scribe
         /// </summary>
         /// <param name="input">The object in question.</param>
         public static IEnumerable<T> ToEnumerable<T>(this object input)
-            => null == input
+            => input is null
                 ? Enumerable.Empty<T>()
                 : input is IEnumerable<T> collection
                     ? collection
