@@ -34,11 +34,13 @@ namespace Scribe
             this.TestLayeredPixelBox2 = new Scribe.CustomControls.LayeredPixelBox();
             this.TestLayeredPixelBox3 = new Scribe.CustomControls.LayeredPixelBox();
             this.TestLayeredPixelBox4 = new Scribe.CustomControls.LayeredPixelBox();
+            this.TestPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.TestPixelBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestLayeredPixelBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestLayeredPixelBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestLayeredPixelBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestLayeredPixelBox4)).BeginInit();
+            this.TestPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // TestPixelBox
@@ -68,7 +70,7 @@ namespace Scribe
             // 
             this.TestLayeredPixelBox2.BackColor = System.Drawing.Color.Transparent;
             this.TestLayeredPixelBox2.Image = ((System.Drawing.Image)(resources.GetObject("TestLayeredPixelBox2.Image")));
-            this.TestLayeredPixelBox2.Location = new System.Drawing.Point(59, 13);
+            this.TestLayeredPixelBox2.Location = new System.Drawing.Point(59, -10);
             this.TestLayeredPixelBox2.Name = "TestLayeredPixelBox2";
             this.TestLayeredPixelBox2.Size = new System.Drawing.Size(40, 40);
             this.TestLayeredPixelBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -79,7 +81,7 @@ namespace Scribe
             // 
             this.TestLayeredPixelBox3.BackColor = System.Drawing.Color.Transparent;
             this.TestLayeredPixelBox3.Image = ((System.Drawing.Image)(resources.GetObject("TestLayeredPixelBox3.Image")));
-            this.TestLayeredPixelBox3.Location = new System.Drawing.Point(105, 13);
+            this.TestLayeredPixelBox3.Location = new System.Drawing.Point(105, -10);
             this.TestLayeredPixelBox3.Name = "TestLayeredPixelBox3";
             this.TestLayeredPixelBox3.Size = new System.Drawing.Size(40, 40);
             this.TestLayeredPixelBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -90,23 +92,33 @@ namespace Scribe
             // 
             this.TestLayeredPixelBox4.BackColor = System.Drawing.Color.Transparent;
             this.TestLayeredPixelBox4.Image = ((System.Drawing.Image)(resources.GetObject("TestLayeredPixelBox4.Image")));
-            this.TestLayeredPixelBox4.Location = new System.Drawing.Point(151, 13);
+            this.TestLayeredPixelBox4.Location = new System.Drawing.Point(151, -9);
             this.TestLayeredPixelBox4.Name = "TestLayeredPixelBox4";
             this.TestLayeredPixelBox4.Size = new System.Drawing.Size(40, 40);
             this.TestLayeredPixelBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.TestLayeredPixelBox4.TabIndex = 4;
             this.TestLayeredPixelBox4.TabStop = false;
             // 
+            // TestPanel
+            // 
+            this.TestPanel.BackColor = System.Drawing.Color.PeachPuff;
+            this.TestPanel.Controls.Add(this.TestLayeredPixelBox2);
+            this.TestPanel.Controls.Add(this.TestLayeredPixelBox3);
+            this.TestPanel.Controls.Add(this.TestLayeredPixelBox4);
+            this.TestPanel.Location = new System.Drawing.Point(0, 23);
+            this.TestPanel.Name = "TestPanel";
+            this.TestPanel.Size = new System.Drawing.Size(205, 57);
+            this.TestPanel.TabIndex = 5;
+            // 
             // TestBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(206, 131);
-            this.Controls.Add(this.TestLayeredPixelBox4);
-            this.Controls.Add(this.TestLayeredPixelBox3);
-            this.Controls.Add(this.TestLayeredPixelBox2);
             this.Controls.Add(this.TestLayeredPixelBox1);
             this.Controls.Add(this.TestPixelBox);
+            this.Controls.Add(this.TestPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
@@ -122,6 +134,7 @@ namespace Scribe
             ((System.ComponentModel.ISupportInitialize)(this.TestLayeredPixelBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestLayeredPixelBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestLayeredPixelBox4)).EndInit();
+            this.TestPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -133,5 +146,6 @@ namespace Scribe
         private CustomControls.LayeredPixelBox TestLayeredPixelBox2;
         private CustomControls.LayeredPixelBox TestLayeredPixelBox3;
         private CustomControls.LayeredPixelBox TestLayeredPixelBox4;
+        private System.Windows.Forms.Panel TestPanel;
     }
 }
