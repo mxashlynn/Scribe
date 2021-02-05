@@ -30,7 +30,9 @@ namespace Scribe
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TestBox));
             this.TestPixelBox = new Scribe.CustomControls.PixelBox();
+            this.TestLayeredPixelBox1 = new Scribe.CustomControls.LayeredPixelBox();
             ((System.ComponentModel.ISupportInitialize)(this.TestPixelBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TestLayeredPixelBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // TestPixelBox
@@ -45,11 +47,23 @@ namespace Scribe
             this.TestPixelBox.TabIndex = 0;
             this.TestPixelBox.TabStop = false;
             // 
+            // TestLayeredPixelBox1
+            // 
+            this.TestLayeredPixelBox1.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.TestLayeredPixelBox1.Image = ((System.Drawing.Image)(resources.GetObject("TestLayeredPixelBox1.Image")));
+            this.TestLayeredPixelBox1.Location = new System.Drawing.Point(13, 13);
+            this.TestLayeredPixelBox1.Name = "TestLayeredPixelBox1";
+            this.TestLayeredPixelBox1.Size = new System.Drawing.Size(40, 40);
+            this.TestLayeredPixelBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.TestLayeredPixelBox1.TabIndex = 1;
+            this.TestLayeredPixelBox1.TabStop = false;
+            // 
             // TestBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(507, 327);
+            this.Controls.Add(this.TestLayeredPixelBox1);
             this.Controls.Add(this.TestPixelBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -62,6 +76,7 @@ namespace Scribe
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "TestBox";
             ((System.ComponentModel.ISupportInitialize)(this.TestPixelBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TestLayeredPixelBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -69,5 +84,6 @@ namespace Scribe
         #endregion
 
         private CustomControls.PixelBox TestPixelBox;
+        private CustomControls.LayeredPixelBox TestLayeredPixelBox1;
     }
 }
