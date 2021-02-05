@@ -28,22 +28,22 @@ namespace Scribe.Forms.Development
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TestMapGridForm));
-            this.GridPanel = new System.Windows.Forms.Panel();
+            this.MapGrid = new Scribe.CustomControls.MapPictureGrid();
             this.SuspendLayout();
             // 
-            // GridPanel
+            // MapGrid
             // 
-            this.GridPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.GridPanel.BackColor = System.Drawing.Color.Snow;
-            this.GridPanel.Location = new System.Drawing.Point(10, 10);
-            this.GridPanel.Name = "GridPanel";
-            this.GridPanel.Size = new System.Drawing.Size(1280, 720);
-            this.GridPanel.TabIndex = 0;
+            this.MapGrid.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.MapGrid.BackColor = System.Drawing.Color.Transparent;
+            this.MapGrid.Location = new System.Drawing.Point(10, 10);
+            this.MapGrid.Name = "MapGrid";
+            this.MapGrid.Size = new System.Drawing.Size(1280, 720);
+            this.MapGrid.TabIndex = 0;
             // 
             // TestMapGridForm
             // 
             this.ClientSize = new System.Drawing.Size(1300, 740);
-            this.Controls.Add(this.GridPanel);
+            this.Controls.Add(this.MapGrid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TestMapGridForm";
@@ -55,6 +55,6 @@ namespace Scribe.Forms.Development
 
         #endregion
 
-        private System.Windows.Forms.Panel GridPanel;
+        private Scribe.CustomControls.MapPictureGrid MapGrid;
     }
 }

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -44,7 +43,7 @@ namespace Scribe.CustomControls
         public Image ImageLoader { get; } = new Bitmap(SourceParquetDimensionInPixels, SourceParquetDimensionInPixels);
 
         /// <summary>All graphics needed to render this <see cref="MapPictureGrid"/>.</summary>
-        public Dictionary<int, Bitmap> GraphicsByID { get; } = new Dictionary<int, Bitmap>();
+        public Dictionary<int, Bitmap> ImageByID { get; } = new Dictionary<int, Bitmap>();
 
         /// <summary>Each cell corresponds to a set of IDs representing each pack on the map.</summary>
         public int[,,] IDMap { get; } = new int[MapHeightInParquets, MapWidthInParquets, ParquetLayerCount];
@@ -62,22 +61,6 @@ namespace Scribe.CustomControls
             Debug.Assert(TargetResolution == new Size(1280, 720));
             Debug.Assert(TargetResolution == new Size(Width, Height));
         }
-
-        /// <summary>
-        /// Loads test patterns.
-        /// </summary>
-        /// <param name="EventData">Handled by parent.</param>
-        protected override void OnLoad(EventArgs EventData)
-        {
-            base.OnLoad(EventData);
-
-            // Load Test Patterns
-            GraphicsByID[1] = (Bitmap)Image.FromFile("ParquetTest1.png");
-            GraphicsByID[2] = (Bitmap)Image.FromFile("ParquetTest2.png");
-            GraphicsByID[3] = (Bitmap)Image.FromFile("ParquetTest3.png");
-            GraphicsByID[4] = (Bitmap)Image.FromFile("ParquetTest4.png");
-        }
-
         #endregion
 
         #region Displaying Graphics
@@ -119,9 +102,9 @@ namespace Scribe.CustomControls
                 var TargetID = IDMap[inY, inX, layerIndex];
 
                 if (0 != TargetID
-                    && GraphicsByID.ContainsKey(TargetID))
+                    && ImageByID.ContainsKey(TargetID))
                 {
-                    inPaintArguments.Graphics.DrawImage(GraphicsByID[TargetID], TargetLocation.Y, TargetLocation.X,
+                    inPaintArguments.Graphics.DrawImage(ImageByID[TargetID], TargetLocation.Y, TargetLocation.X,
                                                         TargetParquetDimensionInPixels, TargetParquetDimensionInPixels);
                 }
             }
