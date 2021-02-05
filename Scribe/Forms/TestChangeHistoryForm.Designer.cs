@@ -1,6 +1,6 @@
 namespace Scribe.Forms
 {
-    partial class ChangeTestForm
+    partial class TestChangeHistoryForm
     {
         /// <summary>
         /// Required designer variable.

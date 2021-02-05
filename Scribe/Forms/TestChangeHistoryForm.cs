@@ -7,7 +7,7 @@ namespace Scribe.Forms
     /// <summary>
     /// A simple form used to test the undo feature before data-binding is finished.
     /// </summary>
-    public partial class ChangeTestForm : Form
+    public partial class TestChangeHistoryForm : Form
     {
         /// <summary>The backing field for <see cref="OldValue"/>.</summary>
         private string _oldValue = "";
@@ -51,7 +51,7 @@ namespace Scribe.Forms
         /// <summary>
         /// Initializes a new instance of UndoTestForm.
         /// </summary>        
-        public ChangeTestForm()
+        public TestChangeHistoryForm()
             => InitializeComponent();
 
         /// <summary>

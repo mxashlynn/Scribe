@@ -2,14 +2,14 @@ using System.Windows.Forms;
 
 namespace Scribe.Forms
 {
-    partial class TestBox : Form
+    partial class TestLayeredPixelBoxForm : Form
     {
-        public TestBox()
+        public TestLayeredPixelBoxForm()
         {
             InitializeComponent();
 
             // Dynamically load the test patterns.
-            var resources = new System.ComponentModel.ComponentResourceManager(typeof(TestBox));
+            var resources = new System.ComponentModel.ComponentResourceManager(typeof(TestLayeredPixelBoxForm));
             TestLayeredPixelBox1.ImageLayers[0] = (System.Drawing.Image)resources.GetObject("TestLayeredPixelBox1.Image");
             TestLayeredPixelBox1.ImageLayers[1] = (System.Drawing.Image)resources.GetObject("TestLayeredPixelBox2.Image");
             TestLayeredPixelBox1.ImageLayers[2] = (System.Drawing.Image)resources.GetObject("TestLayeredPixelBox3.Image");

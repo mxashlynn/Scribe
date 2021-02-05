@@ -1,7 +1,7 @@
 
 namespace Scribe.Forms
 {
-    partial class TestBox
+    partial class TestLayeredPixelBoxForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@ namespace Scribe.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TestBox));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TestLayeredPixelBoxForm));
             this.TestPixelBox = new Scribe.CustomControls.PixelBox();
             this.TestLayeredPixelBox1 = new Scribe.CustomControls.LayeredPixelBox();
             this.TestLayeredPixelBox2 = new Scribe.CustomControls.LayeredPixelBox();
@@ -110,7 +110,7 @@ namespace Scribe.Forms
             this.TestPanel.Size = new System.Drawing.Size(205, 57);
             this.TestPanel.TabIndex = 5;
             // 
-            // TestBox
+            // TestLayeredPixelBoxForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -123,12 +123,12 @@ namespace Scribe.Forms
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "TestBox";
+            this.Name = "TestLayeredPixelBoxForm";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "TestBox";
+            this.Text = "TestLayeredPixelBoxForm";
             ((System.ComponentModel.ISupportInitialize)(this.TestPixelBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestLayeredPixelBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestLayeredPixelBox2)).EndInit();
