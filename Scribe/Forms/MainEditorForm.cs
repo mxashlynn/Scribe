@@ -146,7 +146,7 @@ namespace Scribe.Forms
         private readonly RollerOutputBox RollerResultsBox = new RollerOutputBox();
         #endregion
 
-        #region UI Miscellany
+        #region Logging
         /// <summary>Logs messages to file and presents them to the user when necessary.</summary>
         private LoggerUI UILogger { get; init; }
 
@@ -270,7 +270,7 @@ namespace Scribe.Forms
         {
             InitializeComponent();
 
-            #region UI Miscellany
+            #region Logging
             UILogger = new LoggerUI(new StreamWriter("scribe.log", false, new UTF8Encoding(true, true)),
                                     MainToolStripStatusLabel);
             Logger.SetLogger(UILogger);
