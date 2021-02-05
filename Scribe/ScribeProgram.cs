@@ -46,7 +46,8 @@ namespace Scribe
             _ = Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Context.MainForm = new SplashScreen();
+            // TODO Context.MainForm = new SplashScreen();
+            Context.MainForm = new Forms.Development.TestMapGridForm();
             Application.Run(Context);
         }
 
