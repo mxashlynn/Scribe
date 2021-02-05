@@ -24,6 +24,10 @@ namespace Scribe.CustomControls
         #endregion
 
         #region Characteristics
+        /// <summary>
+        /// All <see cref="Image"/>s in this <see cref="LayeredPixelBox"/>, in order.
+        /// Index 0 is the furthest back; index <see cref="LayerCount"/> - 1 is the foremost.
+        /// </summary>
         public Image[] ImageLayers = new Image[LayerCount];
         #endregion
 
@@ -61,6 +65,7 @@ namespace Scribe.CustomControls
         /// <param name="paintArguments">Configuration used by the painting routine.</param>
         protected override void OnPaint(PaintEventArgs paintArguments)
         {
+            // Set up pixel art-style rendering.
             paintArguments.Graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
             paintArguments.Graphics.PixelOffsetMode = PixelOffsetMode.Half;
             paintArguments.Graphics.SmoothingMode = SmoothingMode.None;
