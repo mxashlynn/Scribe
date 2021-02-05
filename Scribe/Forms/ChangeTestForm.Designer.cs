@@ -1,4 +1,4 @@
-namespace Scribe.ChangeHistory
+namespace Scribe.Forms
 {
     partial class ChangeTestForm
     {
