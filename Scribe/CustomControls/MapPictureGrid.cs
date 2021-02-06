@@ -86,7 +86,7 @@ namespace Scribe.CustomControls
             {
                 for (var x = 0; x < MapWidthInParquets; x++)
                 {
-                        PaintPack(inPaintArguments, x, y);
+                    PaintPack(inPaintArguments, x, y);
                 }
             }
 
