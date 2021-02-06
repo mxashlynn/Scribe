@@ -66,6 +66,16 @@ namespace Scribe.CustomControls
             Debug.Assert(TargetResolution == new Size(1280, 720));
             Debug.Assert(TargetResolution == new Size(Width, Height));
         }
+
+        /// <summary>
+        /// Sets up the map editor UI.
+        /// </summary>
+        /// <param name="EventData">Handled by parent.</param>
+        protected override void OnLoad(EventArgs EventData)
+        {
+            base.OnLoad(EventData);
+            SetStyle(ControlStyles.FixedHeight | ControlStyles.FixedWidth, true);
+        }
         #endregion
 
         #region Displaying Graphics

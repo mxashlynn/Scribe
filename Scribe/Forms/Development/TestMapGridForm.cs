@@ -27,6 +27,21 @@ namespace Scribe.Forms.Development
 
         /// <summary>Most recent set of FPS calculations.</summary>
         private readonly double[] FPSCalculations = new double[NumberOfSamples];
+        */
+        #endregion
+
+        #region Optimizations
+        /// <summary>Encapsulates the information needed when creating a control.</summary>
+        /// <remarks>In this instance, composited mode is turned on to improve framerate.</remarks>
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
+        }
         #endregion
 
         #region Initialization
