@@ -31,7 +31,7 @@ namespace Scribe.Forms.Development
 
         #region Optimizations
         /// <summary>Encapsulates the information needed when creating a control.</summary>
-        /// <remarks>In this instance, composited mode is turned on to improve framerate.</remarks>
+        /// <remarks>In this instance, composited mode is turned on to improve frame rate.</remarks>
         protected override CreateParams CreateParams
         {
             get
