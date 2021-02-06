@@ -8,6 +8,9 @@ using System.Windows.Forms;
 
 namespace Scribe.CustomControls
 {
+    /// <summary>
+    /// Displays a grid of multi-layered images corresponding to a map of parquet packs.
+    /// </summary>
     public partial class MapPictureGrid : UserControl
     {
         #region Class Defaults
