@@ -75,6 +75,8 @@ namespace Scribe.Forms.Development
             MapGrid.IDMap[0, 1, 1] = 0;
             MapGrid.IDMap[0, 1, 2] = 0;
             MapGrid.IDMap[0, 1, 3] = 0;
+
+            CalculateFPSTimer.Start();
         }
         #endregion
 
