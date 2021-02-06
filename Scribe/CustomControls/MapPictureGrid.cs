@@ -75,6 +75,8 @@ namespace Scribe.CustomControls
         {
             base.OnLoad(EventData);
             SetStyle(ControlStyles.FixedHeight | ControlStyles.FixedWidth, true);
+
+            FPSStopWatch.Start();
         }
         #endregion
 
@@ -100,7 +102,7 @@ namespace Scribe.CustomControls
                 }
             }
 
-            Interlocked.Increment(ref FrameCount);
+            MeasureFPS();
         }
 
         /// <summary>
@@ -129,24 +131,56 @@ namespace Scribe.CustomControls
         #endregion
 
         #region Performance Verification
-        /// <summary>When the most recent FPS calculation was performed.</summary>
-        private DateTime LastTimeChecked = DateTime.Now;
+        /// <summary>Used to calculate FPS.</summary>
+        private readonly Stopwatch FPSStopWatch = new Stopwatch();
 
-        /// <summary>How many frames have been painted since the last FPS computation.</summary>
-        private long FrameCount = 0;
+        /// <summary>How often to report the FPS measurements, in milliseconds.</summary>
+        private const double MillisecondsBetweenReports = 1000.0;
+
+        /// <summary>How long it has been since FPS was measured.</summary>
+        private double MillisecondsSinceLastReport = 0.0;
+
+        /// <summary>A point in time noted during the prior frame.</summary>
+        private double CheckInPointLastFrame = 0.0;
+
+        /// <summary>How many frames have been painted since the last FPS measurement.</summary>
+        private int FrameCount = 0;
+
+        /// <summary>How many times to calculate FPS before reporting.</summary>
+        private const int NumberOfSamples = 10;
+
+        /// <summary>The current calculation being performed.</summary>
+        private int CalculationIndex = 0;
+
+        /// <summary>Most recent set of FPS calculations.</summary>
+        private readonly int[] FPSCalculations = new int[NumberOfSamples];
 
         /// <summary>
-        /// Provides the <see cref="MapPictureGrid"/>'s current FPS.
+        /// Measures the <see cref="MapPictureGrid"/>'s current FPS, reporting once a several samples have been taken..
         /// </summary>
-        /// <returns>A report on the map's performance.</returns>
-        public double GetFramesPerSecond()
+        public void MeasureFPS()
         {
-            var secondsElapsed = (DateTime.Now - LastTimeChecked).TotalSeconds;
-            var count = Interlocked.Exchange(ref FrameCount, 0);
-            var fps = count / secondsElapsed;
-            LastTimeChecked = DateTime.Now;
+            TimeSpan elapsed = FPSStopWatch.Elapsed;
+            MillisecondsSinceLastReport += elapsed.TotalMilliseconds - CheckInPointLastFrame;
+            CheckInPointLastFrame = elapsed.TotalMilliseconds;
+            FrameCount++;
+            if (MillisecondsSinceLastReport >= MillisecondsBetweenReports)
+            {
+                FPSCalculations[CalculationIndex] = FrameCount;
+                FrameCount = 0;
+                MillisecondsSinceLastReport = 0;
 
-            return fps;
+                CalculationIndex = (CalculationIndex + 1) % NumberOfSamples;
+                if (CalculationIndex == 0)
+                {
+                    var sum = 0;
+                    for (var i = 0; i < NumberOfSamples; i++)
+                    {
+                        sum += FPSCalculations[i];
+                    }
+                    Text = $"Map Grid Test ~ Average FPS: {sum / NumberOfSamples}";
+                }
+            }
         }
         #endregion
     }
