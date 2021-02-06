@@ -104,7 +104,7 @@ namespace Scribe.CustomControls
                 if (0 != TargetID
                     && ImageByID.ContainsKey(TargetID))
                 {
-                    inPaintArguments.Graphics.DrawImage(ImageByID[TargetID], TargetLocation.Y, TargetLocation.X,
+                    inPaintArguments.Graphics.DrawImage(ImageByID[TargetID], TargetLocation.X, TargetLocation.Y,
                                                         TargetParquetDimensionInPixels, TargetParquetDimensionInPixels);
                 }
             }
