@@ -1,4 +1,4 @@
-﻿
+
 namespace Scribe.CustomControls
 {
     partial class MapPictureGrid
@@ -31,12 +31,16 @@ namespace Scribe.CustomControls
         {
             this.SuspendLayout();
             // 
-            // MapGrid
+            // MapPictureGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Transparent;
-            this.Name = "MapGrid";
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.Lavender;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.DoubleBuffered = true;
+            this.MaximumSize = new System.Drawing.Size(1280, 720);
+            this.MinimumSize = new System.Drawing.Size(1280, 720);
+            this.Name = "MapPictureGrid";
             this.Size = new System.Drawing.Size(1280, 720);
             this.ResumeLayout(false);
 
