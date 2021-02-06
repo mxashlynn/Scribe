@@ -27,7 +27,6 @@ namespace Scribe.Forms.Development
 
         /// <summary>Most recent set of FPS calculations.</summary>
         private readonly double[] FPSCalculations = new double[NumberOfSamples];
-        */
         #endregion
 
         #region Optimizations
