@@ -82,11 +82,11 @@ namespace Scribe.CustomControls
             inPaintArguments.Graphics.CompositingQuality = CompositingQuality.HighQuality;
 
             // Paint each set of images.
-            for (var x = 0; x < MapWidthInParquets; x++)
+            for (var y = 0; y < MapHeightInParquets; y++)
             {
-                for (var y = 0; y < MapHeightInParquets; y++)
+                for (var x = 0; x < MapWidthInParquets; x++)
                 {
-                    PaintPack(inPaintArguments, x, y);
+                        PaintPack(inPaintArguments, x, y);
                 }
             }
 
