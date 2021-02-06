@@ -34,14 +34,18 @@ namespace Scribe.Forms.Development
             // MapGrid
             // 
             this.MapGrid.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.MapGrid.BackColor = System.Drawing.Color.Transparent;
+            this.MapGrid.BackColor = System.Drawing.Color.Lavender;
+            this.MapGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.MapGrid.Location = new System.Drawing.Point(10, 10);
+            this.MapGrid.MaximumSize = new System.Drawing.Size(1280, 720);
+            this.MapGrid.MinimumSize = new System.Drawing.Size(1280, 720);
             this.MapGrid.Name = "MapGrid";
             this.MapGrid.Size = new System.Drawing.Size(1280, 720);
             this.MapGrid.TabIndex = 0;
             // 
             // TestMapGridForm
             // 
+            this.BackColor = System.Drawing.Color.FromArgb(206, 200, 239);
             this.ClientSize = new System.Drawing.Size(1300, 740);
             this.Controls.Add(this.MapGrid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
