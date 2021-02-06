@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Scribe.CustomControls
@@ -84,6 +86,8 @@ namespace Scribe.CustomControls
                     PaintPack(inPaintArguments, x, y);
                 }
             }
+
+            Interlocked.Increment(ref FrameCount);
         }
 
         /// <summary>
@@ -110,5 +114,27 @@ namespace Scribe.CustomControls
             }
         }
         #endregion
+
+        #region Performance Verification
+        /// <summary>When the most recent FPS calculation was performed.</summary>
+        private DateTime LastTimeChecked = DateTime.Now;
+
+        /// <summary>How many frames have been painted since the last FPS computation.</summary>
+        private long FrameCount = 0;
+
+        /// <summary>
+        /// Provides the <see cref="MapPictureGrid"/>'s current FPS.
+        /// </summary>
+        /// <returns>A report on the map's performance.</returns>
+        public double GetFramesPerSecond()
+        {
+            var secondsElapsed = (DateTime.Now - LastTimeChecked).TotalSeconds;
+            var count = Interlocked.Exchange(ref FrameCount, 0);
+            var fps = count / secondsElapsed;
+            LastTimeChecked = DateTime.Now;
+
+            return fps;
+        }
+        #region
     }
 }

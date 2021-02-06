@@ -7,13 +7,39 @@ namespace Scribe.Forms.Development
 {
     partial class TestMapGridForm : Form
     {
+        #region Class Defaults
+        /// <summary>Pseudo-Random Number Generator, used in creating the test pattern.</summary>
         private readonly Random PRNG = new Random();
 
+        /// <summary>Periodically calculate the map's FPS.</summary>
+        private readonly Timer CalculateFPSTimer = new Timer();
+
+        /// <summary>How many times to calculate FPS before reporting.</summary>
+        private const int NumberOfSamples = 100;
+
+        /// <summary>How often, in milliseconds, to calculate FPS.</summary>
+        private const int CalculationInterval = 30;
+        #endregion
+
+        #region Characteristics
+        /// <summary>The current calculation being performed.</summary>
+        private int CalculationIndex = 0;
+
+        /// <summary>Most recent set of FPS calculations.</summary>
+        private readonly double[] FPSCalculations = new double[NumberOfSamples];
+        #endregion
+
+        #region Initialization
         /// <summary>
         /// Initializes a new instance of <see cref="TestMapGridForm"/>.
         /// </summary>
         public TestMapGridForm()
-            => InitializeComponent();
+        {
+            InitializeComponent();
+
+            CalculateFPSTimer.Tick += CalculateAndReportFPS;
+            CalculateFPSTimer.Interval = CalculationInterval;
+        }
 
         /// <summary>
         /// Sets up the map.
@@ -50,6 +76,29 @@ namespace Scribe.Forms.Development
             MapGrid.IDMap[0, 1, 2] = 0;
             MapGrid.IDMap[0, 1, 3] = 0;
         }
+        #endregion
+
+        #region Utilities
+        /// <summary>
+        /// Calculates the average FPS according and reports once enough samples have been made.
+        /// </summary>
+        /// <param name="inSender">Ignored.</param>
+        /// <param name="inArguments">Ignored.</param>
+        private void CalculateAndReportFPS(object inSender, EventArgs inArguments)
+        {
+            FPSCalculations[CalculationIndex] = MapGrid.GetFramesPerSecond();
+            CalculationIndex = (CalculationIndex + 1) % NumberOfSamples;
+
+            if (CalculationIndex == 0)
+            {
+                var sum = 0d;
+                for (var i = 0; i < NumberOfSamples; i++)
+                {
+                    sum += FPSCalculations[i];
+                }
+                Text = $"{Name} - Average FPS: {sum / NumberOfSamples}";
+            }
+        }
 
         /// <summary>
         /// Returns a boolean value according to .Net's default pseudo-random number generator.
@@ -57,5 +106,6 @@ namespace Scribe.Forms.Development
         /// <returns><c>true</c> or <c>false</c></returns>
         private bool RandomBool()
             => PRNG.Next(2) > 0;
+        #endregion
     }
 }
