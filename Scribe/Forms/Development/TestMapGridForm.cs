@@ -98,7 +98,7 @@ namespace Scribe.Forms.Development
                 {
                     sum += FPSCalculations[i];
                 }
-                Text = $"{Name} - Average FPS: {sum / NumberOfSamples}";
+                Text = $"Map Grid Test ~ Average FPS: {sum / NumberOfSamples}";
             }
         }
 
