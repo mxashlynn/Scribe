@@ -135,6 +135,6 @@ namespace Scribe.CustomControls
 
             return fps;
         }
-        #region
+        #endregion
     }
 }
