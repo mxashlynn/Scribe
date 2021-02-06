@@ -44,14 +44,14 @@ namespace Scribe.CustomControls
         #endregion
 
         #region Characteristics
-        /// <summary>Provides routines for loading graphics from file.</summary>
-        public Image ImageLoader { get; } = new Bitmap(SourceParquetDimensionInPixels, SourceParquetDimensionInPixels);
-
         /// <summary>All graphics needed to render this <see cref="MapPictureGrid"/>.</summary>
         public Dictionary<int, Bitmap> ImageByID { get; } = new Dictionary<int, Bitmap>();
 
         /// <summary>Each cell corresponds to a set of IDs representing each pack on the map.</summary>
         public int[,,] IDMap { get; } = new int[MapHeightInParquets, MapWidthInParquets, ParquetLayerCount];
+
+        /// <summary>When <c>true</c>, no repainting is needed.</summary>
+        private bool IsRendering = false;
         #endregion
 
         #region Initialization
@@ -87,22 +87,28 @@ namespace Scribe.CustomControls
         /// <param name="inPaintArguments">Configuration used by the painting routine.</param>
         protected override void OnPaint(PaintEventArgs inPaintArguments)
         {
-            // Set up pixel art-style rendering.
-            inPaintArguments.Graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
-            inPaintArguments.Graphics.PixelOffsetMode = PixelOffsetMode.Half;
-            inPaintArguments.Graphics.SmoothingMode = SmoothingMode.None;
-            inPaintArguments.Graphics.CompositingQuality = CompositingQuality.HighQuality;
-
-            // Paint each set of images.
-            for (var y = 0; y < MapHeightInParquets; y++)
+            if (!IsRendering)
             {
-                for (var x = 0; x < MapWidthInParquets; x++)
-                {
-                    PaintPack(inPaintArguments, x, y);
-                }
-            }
+                IsRendering = true;
 
-            MeasureFPS();
+                // Set up pixel art-style rendering.
+                inPaintArguments.Graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
+                inPaintArguments.Graphics.PixelOffsetMode = PixelOffsetMode.Half;
+                inPaintArguments.Graphics.SmoothingMode = SmoothingMode.None;
+                inPaintArguments.Graphics.CompositingQuality = CompositingQuality.HighQuality;
+
+                // Paint each set of images.
+                for (var y = 0; y < MapHeightInParquets; y++)
+                {
+                    for (var x = 0; x < MapWidthInParquets; x++)
+                    {
+                        PaintPack(inPaintArguments, x, y);
+                    }
+                }
+
+                MeasureFPS();
+                IsRendering = false;
+            }
         }
 
         /// <summary>
