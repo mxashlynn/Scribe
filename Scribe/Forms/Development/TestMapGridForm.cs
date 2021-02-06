@@ -24,10 +24,10 @@ namespace Scribe.Forms.Development
             base.OnLoad(EventData);
 
             // Load Test Patterns
-            MapGrid.ImageByID[1] = (Bitmap)Image.FromFile("ParquetTest1.png");
-            MapGrid.ImageByID[2] = (Bitmap)Image.FromFile("ParquetTest2.png");
-            MapGrid.ImageByID[3] = (Bitmap)Image.FromFile("ParquetTest3.png");
-            MapGrid.ImageByID[4] = (Bitmap)Image.FromFile("ParquetTest4.png");
+            MapGrid.ImageByID[1] = (Bitmap)Image.FromFile("../../../Resources/ParquetTest1.png");
+            MapGrid.ImageByID[2] = (Bitmap)Image.FromFile("../../../Resources/ParquetTest2.png");
+            MapGrid.ImageByID[3] = (Bitmap)Image.FromFile("../../../Resources/ParquetTest3.png");
+            MapGrid.ImageByID[4] = (Bitmap)Image.FromFile("../../../Resources/ParquetTest4.png");
 
             // Create Test Map
             // Paint each set of images.
@@ -52,7 +52,7 @@ namespace Scribe.Forms.Development
         }
 
         /// <summary>
-        /// Returns a boolean value according to .Net's default psuedo-random number generator.
+        /// Returns a boolean value according to .Net's default pseudo-random number generator.
         /// </summary>
         /// <returns><c>true</c> or <c>false</c></returns>
         private bool RandomBool()
