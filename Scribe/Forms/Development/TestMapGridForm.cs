@@ -46,6 +46,7 @@ namespace Scribe.Forms.Development
             RefreshMapTimer.Tick += (object sender, EventArgs arguments) =>
             {
                 MapGrid.Refresh();
+                Text = MapGrid.Text;
             };
             RefreshMapTimer.Interval = RefreshInterval;
         }
