@@ -15,10 +15,7 @@ namespace Scribe.Forms.Development
         private readonly Timer RefreshMapTimer = new Timer();
 
         /// <summary>How often, in milliseconds, to redraw the map.</summary>
-        private const int RefreshInterval = 34;
-
-        /// <summary>The frames per second we are hoping to achieve.</summary>
-        private const int TargetFPS = 1000 / RefreshInterval;
+        private const int RefreshInterval = 30;
         #endregion
 
         #region Optimizations
