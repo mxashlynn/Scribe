@@ -519,10 +519,10 @@ namespace Scribe.Forms
             this.MapIDLabel = new System.Windows.Forms.Label();
             this.MapIDExample = new System.Windows.Forms.Label();
             this.MapListBox = new System.Windows.Forms.ListBox();
-            this.RemoveMapButton = new System.Windows.Forms.Button();
-            this.AddNewMapButton = new System.Windows.Forms.Button();
+            this.MapRemoveButton = new System.Windows.Forms.Button();
+            this.MapAddNewButton = new System.Windows.Forms.Button();
             this.MapPixelBox = new Scribe.CustomControls.PixelBox();
-            this.EditMapImageButton = new System.Windows.Forms.Button();
+            this.MapEditButton = new System.Windows.Forms.Button();
             this.MapTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.MapNameLabel = new System.Windows.Forms.Label();
             this.MapNameTextBox = new System.Windows.Forms.TextBox();
@@ -538,12 +538,12 @@ namespace Scribe.Forms
             this.MapExitWestLabel = new System.Windows.Forms.Label();
             this.MapExitUpLabel = new System.Windows.Forms.Label();
             this.MapExitDownLabel = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.MapExitNorthComboBox = new System.Windows.Forms.ComboBox();
+            this.MapExitSouthComboBox = new System.Windows.Forms.ComboBox();
+            this.MapExitEastComboBox = new System.Windows.Forms.ComboBox();
+            this.MapExitWestComboBox = new System.Windows.Forms.ComboBox();
+            this.MapExitUpComboBox = new System.Windows.Forms.ComboBox();
+            this.MapExitDownComboBox = new System.Windows.Forms.ComboBox();
             this.ScriptsTabPage = new System.Windows.Forms.TabPage();
             this.ScriptingPendingDesignLabel = new System.Windows.Forms.Label();
             this.EditorStatusStrip.SuspendLayout();
@@ -6226,10 +6226,10 @@ namespace Scribe.Forms
             this.MapsTabPage.Controls.Add(this.MapIDLabel);
             this.MapsTabPage.Controls.Add(this.MapIDExample);
             this.MapsTabPage.Controls.Add(this.MapListBox);
-            this.MapsTabPage.Controls.Add(this.RemoveMapButton);
-            this.MapsTabPage.Controls.Add(this.AddNewMapButton);
+            this.MapsTabPage.Controls.Add(this.MapRemoveButton);
+            this.MapsTabPage.Controls.Add(this.MapAddNewButton);
             this.MapsTabPage.Controls.Add(this.MapPixelBox);
-            this.MapsTabPage.Controls.Add(this.EditMapImageButton);
+            this.MapsTabPage.Controls.Add(this.MapEditButton);
             this.MapsTabPage.Controls.Add(this.MapTableLayoutPanel);
             this.MapsTabPage.Location = new System.Drawing.Point(4, 22);
             this.MapsTabPage.Name = "MapsTabPage";
@@ -6250,27 +6250,27 @@ namespace Scribe.Forms
             this.MapPixelBox.TabIndex = 14;
             this.MapPixelBox.TabStop = false;
             // 
-            // RemoveMapButton
+            // MapRemoveButton
             // 
-            this.RemoveMapButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.RemoveMapButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RemoveMapButton.Location = new System.Drawing.Point(24, 468);
-            this.RemoveMapButton.Name = "RemoveMapButton";
-            this.RemoveMapButton.Size = new System.Drawing.Size(129, 23);
-            this.RemoveMapButton.TabIndex = 9;
-            this.RemoveMapButton.Text = "Remove Game";
-            this.RemoveMapButton.UseVisualStyleBackColor = false;
+            this.MapRemoveButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.MapRemoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MapRemoveButton.Location = new System.Drawing.Point(24, 468);
+            this.MapRemoveButton.Name = "MapRemoveButton";
+            this.MapRemoveButton.Size = new System.Drawing.Size(129, 23);
+            this.MapRemoveButton.TabIndex = 9;
+            this.MapRemoveButton.Text = "Remove Game";
+            this.MapRemoveButton.UseVisualStyleBackColor = false;
             // 
-            // EditMapImageButton
+            // MapEditButton
             // 
-            this.EditMapImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.EditMapImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditMapImageButton.Location = new System.Drawing.Point(815, 468);
-            this.EditMapImageButton.Name = "EditMapImageButton";
-            this.EditMapImageButton.Size = new System.Drawing.Size(128, 23);
-            this.EditMapImageButton.TabIndex = 15;
-            this.EditMapImageButton.Text = "Edit Image";
-            this.EditMapImageButton.UseVisualStyleBackColor = false;
+            this.MapEditButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.MapEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MapEditButton.Location = new System.Drawing.Point(815, 468);
+            this.MapEditButton.Name = "MapEditButton";
+            this.MapEditButton.Size = new System.Drawing.Size(128, 23);
+            this.MapEditButton.TabIndex = 15;
+            this.MapEditButton.Text = "Edit Image";
+            this.MapEditButton.UseVisualStyleBackColor = false;
             // 
             // MapTableLayoutPanel
             // 
@@ -6294,12 +6294,12 @@ namespace Scribe.Forms
             this.MapTableLayoutPanel.Controls.Add(this.MapExitWestLabel, 0, 7);
             this.MapTableLayoutPanel.Controls.Add(this.MapExitUpLabel, 0, 8);
             this.MapTableLayoutPanel.Controls.Add(this.MapExitDownLabel, 0, 9);
-            this.MapTableLayoutPanel.Controls.Add(this.comboBox1, 1, 4);
-            this.MapTableLayoutPanel.Controls.Add(this.comboBox2, 1, 5);
-            this.MapTableLayoutPanel.Controls.Add(this.comboBox3, 1, 6);
-            this.MapTableLayoutPanel.Controls.Add(this.comboBox4, 1, 7);
-            this.MapTableLayoutPanel.Controls.Add(this.comboBox5, 1, 8);
-            this.MapTableLayoutPanel.Controls.Add(this.comboBox6, 1, 9);
+            this.MapTableLayoutPanel.Controls.Add(this.MapExitNorthComboBox, 1, 4);
+            this.MapTableLayoutPanel.Controls.Add(this.MapExitSouthComboBox, 1, 5);
+            this.MapTableLayoutPanel.Controls.Add(this.MapExitEastComboBox, 1, 6);
+            this.MapTableLayoutPanel.Controls.Add(this.MapExitWestComboBox, 1, 7);
+            this.MapTableLayoutPanel.Controls.Add(this.MapExitUpComboBox, 1, 8);
+            this.MapTableLayoutPanel.Controls.Add(this.MapExitDownComboBox, 1, 9);
             this.MapTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
             this.MapTableLayoutPanel.Name = "MapTableLayoutPanel";
             this.MapTableLayoutPanel.RowCount = 11;
@@ -6419,53 +6419,53 @@ namespace Scribe.Forms
             this.MapCommentTextBox.Size = new System.Drawing.Size(295, 49);
             this.MapCommentTextBox.TabIndex = 25;
             // 
-            // comboBox1
+            // MapExitNorthComboBox
             // 
-            this.comboBox1.DisplayMember = "Name";
-            this.comboBox1.Location = new System.Drawing.Point(131, 213);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(147, 21);
-            this.comboBox1.TabIndex = 28;
+            this.MapExitNorthComboBox.DisplayMember = "Name";
+            this.MapExitNorthComboBox.Location = new System.Drawing.Point(131, 213);
+            this.MapExitNorthComboBox.Name = "MapExitNorthComboBox";
+            this.MapExitNorthComboBox.Size = new System.Drawing.Size(147, 21);
+            this.MapExitNorthComboBox.TabIndex = 28;
             // 
-            // comboBox2
+            // MapExitSouthComboBox
             // 
-            this.comboBox2.DisplayMember = "Name";
-            this.comboBox2.Location = new System.Drawing.Point(131, 238);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(147, 21);
-            this.comboBox2.TabIndex = 29;
+            this.MapExitSouthComboBox.DisplayMember = "Name";
+            this.MapExitSouthComboBox.Location = new System.Drawing.Point(131, 238);
+            this.MapExitSouthComboBox.Name = "MapExitSouthComboBox";
+            this.MapExitSouthComboBox.Size = new System.Drawing.Size(147, 21);
+            this.MapExitSouthComboBox.TabIndex = 29;
             // 
-            // comboBox3
+            // MapExitEastComboBox
             // 
-            this.comboBox1.DisplayMember = "Name";
-            this.comboBox1.Location = new System.Drawing.Point(131, 213);
-            this.comboBox1.Name = "comboBox3";
-            this.comboBox1.Size = new System.Drawing.Size(147, 21);
-            this.comboBox1.TabIndex = 28;
+            this.MapExitNorthComboBox.DisplayMember = "Name";
+            this.MapExitNorthComboBox.Location = new System.Drawing.Point(131, 213);
+            this.MapExitNorthComboBox.Name = "MapExitEastComboBox";
+            this.MapExitNorthComboBox.Size = new System.Drawing.Size(147, 21);
+            this.MapExitNorthComboBox.TabIndex = 28;
             // 
-            // comboBox4
+            // MapExitWestComboBox
             // 
-            this.comboBox2.DisplayMember = "Name";
-            this.comboBox2.Location = new System.Drawing.Point(131, 238);
-            this.comboBox2.Name = "comboBox4";
-            this.comboBox2.Size = new System.Drawing.Size(147, 21);
-            this.comboBox2.TabIndex = 29;
+            this.MapExitSouthComboBox.DisplayMember = "Name";
+            this.MapExitSouthComboBox.Location = new System.Drawing.Point(131, 238);
+            this.MapExitSouthComboBox.Name = "MapExitWestComboBox";
+            this.MapExitSouthComboBox.Size = new System.Drawing.Size(147, 21);
+            this.MapExitSouthComboBox.TabIndex = 29;
             // 
-            // comboBox5
+            // MapExitUpComboBox
             // 
-            this.comboBox1.DisplayMember = "Name";
-            this.comboBox1.Location = new System.Drawing.Point(131, 213);
-            this.comboBox1.Name = "comboBox5";
-            this.comboBox1.Size = new System.Drawing.Size(147, 21);
-            this.comboBox1.TabIndex = 28;
+            this.MapExitNorthComboBox.DisplayMember = "Name";
+            this.MapExitNorthComboBox.Location = new System.Drawing.Point(131, 213);
+            this.MapExitNorthComboBox.Name = "MapExitUpComboBox";
+            this.MapExitNorthComboBox.Size = new System.Drawing.Size(147, 21);
+            this.MapExitNorthComboBox.TabIndex = 28;
             // 
-            // comboBox6
+            // MapExitDownComboBox
             // 
-            this.comboBox2.DisplayMember = "Name";
-            this.comboBox2.Location = new System.Drawing.Point(131, 238);
-            this.comboBox2.Name = "comboBox6";
-            this.comboBox2.Size = new System.Drawing.Size(147, 21);
-            this.comboBox2.TabIndex = 29;
+            this.MapExitSouthComboBox.DisplayMember = "Name";
+            this.MapExitSouthComboBox.Location = new System.Drawing.Point(131, 238);
+            this.MapExitSouthComboBox.Name = "MapExitDownComboBox";
+            this.MapExitSouthComboBox.Size = new System.Drawing.Size(147, 21);
+            this.MapExitSouthComboBox.TabIndex = 29;
             // 
             // MapBackgroundColorLabel
             // 
@@ -6519,16 +6519,16 @@ namespace Scribe.Forms
             this.MapIDExample.Tag = "Themed";
             this.MapIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // AddNewMapButton
+            // MapAddNewButton
             // 
-            this.AddNewMapButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.AddNewMapButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddNewMapButton.Location = new System.Drawing.Point(159, 468);
-            this.AddNewMapButton.Name = "AddNewMapButton";
-            this.AddNewMapButton.Size = new System.Drawing.Size(129, 23);
-            this.AddNewMapButton.TabIndex = 10;
-            this.AddNewMapButton.Text = "Add New Game";
-            this.AddNewMapButton.UseVisualStyleBackColor = false;
+            this.MapAddNewButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.MapAddNewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MapAddNewButton.Location = new System.Drawing.Point(159, 468);
+            this.MapAddNewButton.Name = "MapAddNewButton";
+            this.MapAddNewButton.Size = new System.Drawing.Size(129, 23);
+            this.MapAddNewButton.TabIndex = 10;
+            this.MapAddNewButton.Text = "Add New Game";
+            this.MapAddNewButton.UseVisualStyleBackColor = false;
             // 
             // MapListBox
             // 
@@ -7192,10 +7192,10 @@ namespace Scribe.Forms
         private System.Windows.Forms.Label MapIDLabel;
         private System.Windows.Forms.Label MapIDExample;
         private System.Windows.Forms.ListBox MapListBox;
-        private System.Windows.Forms.Button RemoveMapButton;
-        private System.Windows.Forms.Button AddNewMapButton;
+        private System.Windows.Forms.Button MapRemoveButton;
+        private System.Windows.Forms.Button MapAddNewButton;
         private CustomControls.PixelBox MapPixelBox;
-        private System.Windows.Forms.Button EditMapImageButton;
+        private System.Windows.Forms.Button MapEditButton;
         private System.Windows.Forms.TableLayoutPanel MapTableLayoutPanel;
         private System.Windows.Forms.Label MapNameLabel;
         private System.Windows.Forms.TextBox MapNameTextBox;
@@ -7211,12 +7211,12 @@ namespace Scribe.Forms
         private System.Windows.Forms.Label MapExitWestLabel;
         private System.Windows.Forms.Label MapExitUpLabel;
         private System.Windows.Forms.Label MapExitDownLabel;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox MapExitNorthComboBox;
+        private System.Windows.Forms.ComboBox MapExitSouthComboBox;
+        private System.Windows.Forms.ComboBox MapExitEastComboBox;
+        private System.Windows.Forms.ComboBox MapExitWestComboBox;
+        private System.Windows.Forms.ComboBox MapExitUpComboBox;
+        private System.Windows.Forms.ComboBox MapExitDownComboBox;
 
         private System.Windows.Forms.TabPage ScriptsTabPage;
         private System.Windows.Forms.Label ScriptingPendingDesignLabel;
