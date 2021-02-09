@@ -1754,9 +1754,9 @@ namespace Scribe.Forms
             this.FileFormatGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FileFormatGroupBox.Controls.Add(this.FileFormatTableLayoutPanel);
-            this.FileFormatGroupBox.Location = new System.Drawing.Point(301, 499);
+            this.FileFormatGroupBox.Location = new System.Drawing.Point(301, 496);
             this.FileFormatGroupBox.Name = "FileFormatGroupBox";
-            this.FileFormatGroupBox.Size = new System.Drawing.Size(646, 97);
+            this.FileFormatGroupBox.Size = new System.Drawing.Size(646, 100);
             this.FileFormatGroupBox.TabIndex = 0;
             this.FileFormatGroupBox.TabStop = false;
             this.FileFormatGroupBox.Text = "File Format";
@@ -1795,7 +1795,7 @@ namespace Scribe.Forms
             this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.FileFormatTableLayoutPanel.Size = new System.Drawing.Size(634, 72);
+            this.FileFormatTableLayoutPanel.Size = new System.Drawing.Size(634, 75);
             this.FileFormatTableLayoutPanel.TabIndex = 1;
             // 
             // FileFormatPrimaryDelimiterLabel
@@ -1861,7 +1861,7 @@ namespace Scribe.Forms
             // FileFormatElementDelimiterLabel
             // 
             this.FileFormatElementDelimiterLabel.AutoSize = true;
-            this.FileFormatElementDelimiterLabel.Location = new System.Drawing.Point(50, 28);
+            this.FileFormatElementDelimiterLabel.Location = new System.Drawing.Point(50, 29);
             this.FileFormatElementDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
             this.FileFormatElementDelimiterLabel.Name = "FileFormatElementDelimiterLabel";
             this.FileFormatElementDelimiterLabel.Size = new System.Drawing.Size(89, 13);
@@ -1871,7 +1871,7 @@ namespace Scribe.Forms
             // FileFormatElementDelimiterStatic
             // 
             this.FileFormatElementDelimiterStatic.AutoSize = true;
-            this.FileFormatElementDelimiterStatic.Location = new System.Drawing.Point(179, 28);
+            this.FileFormatElementDelimiterStatic.Location = new System.Drawing.Point(179, 29);
             this.FileFormatElementDelimiterStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.FileFormatElementDelimiterStatic.Name = "FileFormatElementDelimiterStatic";
             this.FileFormatElementDelimiterStatic.Size = new System.Drawing.Size(11, 13);
@@ -1881,7 +1881,7 @@ namespace Scribe.Forms
             // FileFormatNameDelimiterLabel
             // 
             this.FileFormatNameDelimiterLabel.AutoSize = true;
-            this.FileFormatNameDelimiterLabel.Location = new System.Drawing.Point(260, 28);
+            this.FileFormatNameDelimiterLabel.Location = new System.Drawing.Point(260, 29);
             this.FileFormatNameDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
             this.FileFormatNameDelimiterLabel.Name = "FileFormatNameDelimiterLabel";
             this.FileFormatNameDelimiterLabel.Size = new System.Drawing.Size(78, 13);
@@ -1891,7 +1891,7 @@ namespace Scribe.Forms
             // FileFormatNameDelimiterStatic
             // 
             this.FileFormatNameDelimiterStatic.AutoSize = true;
-            this.FileFormatNameDelimiterStatic.Location = new System.Drawing.Point(389, 28);
+            this.FileFormatNameDelimiterStatic.Location = new System.Drawing.Point(389, 29);
             this.FileFormatNameDelimiterStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.FileFormatNameDelimiterStatic.Name = "FileFormatNameDelimiterStatic";
             this.FileFormatNameDelimiterStatic.Size = new System.Drawing.Size(11, 13);
@@ -1901,7 +1901,7 @@ namespace Scribe.Forms
             // FileFormatPronounDelimiterLabel
             // 
             this.FileFormatPronounDelimiterLabel.AutoSize = true;
-            this.FileFormatPronounDelimiterLabel.Location = new System.Drawing.Point(470, 28);
+            this.FileFormatPronounDelimiterLabel.Location = new System.Drawing.Point(470, 29);
             this.FileFormatPronounDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
             this.FileFormatPronounDelimiterLabel.Name = "FileFormatPronounDelimiterLabel";
             this.FileFormatPronounDelimiterLabel.Size = new System.Drawing.Size(91, 13);
@@ -1911,7 +1911,7 @@ namespace Scribe.Forms
             // FileFormatPronounDelimiterStatic
             // 
             this.FileFormatPronounDelimiterStatic.AutoSize = true;
-            this.FileFormatPronounDelimiterStatic.Location = new System.Drawing.Point(599, 28);
+            this.FileFormatPronounDelimiterStatic.Location = new System.Drawing.Point(599, 29);
             this.FileFormatPronounDelimiterStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.FileFormatPronounDelimiterStatic.Name = "FileFormatPronounDelimiterStatic";
             this.FileFormatPronounDelimiterStatic.Size = new System.Drawing.Size(11, 13);
@@ -1921,7 +1921,7 @@ namespace Scribe.Forms
             // FileFormatDimensionalDelimiterLabel
             // 
             this.FileFormatDimensionalDelimiterLabel.AutoSize = true;
-            this.FileFormatDimensionalDelimiterLabel.Location = new System.Drawing.Point(50, 51);
+            this.FileFormatDimensionalDelimiterLabel.Location = new System.Drawing.Point(50, 53);
             this.FileFormatDimensionalDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
             this.FileFormatDimensionalDelimiterLabel.Name = "FileFormatDimensionalDelimiterLabel";
             this.FileFormatDimensionalDelimiterLabel.Size = new System.Drawing.Size(107, 13);
@@ -1931,7 +1931,7 @@ namespace Scribe.Forms
             // FileFormatDimensionalDelimiterStatic
             // 
             this.FileFormatDimensionalDelimiterStatic.AutoSize = true;
-            this.FileFormatDimensionalDelimiterStatic.Location = new System.Drawing.Point(179, 51);
+            this.FileFormatDimensionalDelimiterStatic.Location = new System.Drawing.Point(179, 53);
             this.FileFormatDimensionalDelimiterStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.FileFormatDimensionalDelimiterStatic.Name = "FileFormatDimensionalDelimiterStatic";
             this.FileFormatDimensionalDelimiterStatic.Size = new System.Drawing.Size(11, 13);
@@ -1941,7 +1941,7 @@ namespace Scribe.Forms
             // FileFormatDimensionalTerminatorLabel
             // 
             this.FileFormatDimensionalTerminatorLabel.AutoSize = true;
-            this.FileFormatDimensionalTerminatorLabel.Location = new System.Drawing.Point(260, 51);
+            this.FileFormatDimensionalTerminatorLabel.Location = new System.Drawing.Point(260, 53);
             this.FileFormatDimensionalTerminatorLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
             this.FileFormatDimensionalTerminatorLabel.Name = "FileFormatDimensionalTerminatorLabel";
             this.FileFormatDimensionalTerminatorLabel.Size = new System.Drawing.Size(118, 13);
@@ -1951,7 +1951,7 @@ namespace Scribe.Forms
             // FileFormatDimensionalTerminatorStatic
             // 
             this.FileFormatDimensionalTerminatorStatic.AutoSize = true;
-            this.FileFormatDimensionalTerminatorStatic.Location = new System.Drawing.Point(389, 51);
+            this.FileFormatDimensionalTerminatorStatic.Location = new System.Drawing.Point(389, 53);
             this.FileFormatDimensionalTerminatorStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.FileFormatDimensionalTerminatorStatic.Name = "FileFormatDimensionalTerminatorStatic";
             this.FileFormatDimensionalTerminatorStatic.Size = new System.Drawing.Size(11, 13);
