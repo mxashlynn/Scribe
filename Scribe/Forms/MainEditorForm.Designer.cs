@@ -519,6 +519,7 @@ namespace Scribe.Forms
             this.RemoveMapButton = new System.Windows.Forms.Button();
             this.EditMapImageButton = new System.Windows.Forms.Button();
             this.MapTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.MapPixelBox = new Scribe.CustomControls.PixelBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
