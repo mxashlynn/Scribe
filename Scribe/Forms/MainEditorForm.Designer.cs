@@ -516,10 +516,10 @@ namespace Scribe.Forms
             this.RoomAddNewRoomButton = new System.Windows.Forms.Button();
             this.RoomIDExample = new System.Windows.Forms.Label();
             this.MapsTabPage = new System.Windows.Forms.TabPage();
+            this.MapPixelBox = new Scribe.CustomControls.PixelBox();
             this.RemoveMapButton = new System.Windows.Forms.Button();
             this.EditMapImageButton = new System.Windows.Forms.Button();
             this.MapTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.MapPixelBox = new Scribe.CustomControls.PixelBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -6219,6 +6219,7 @@ namespace Scribe.Forms
             // 
             // MapsTabPage
             // 
+            this.MapsTabPage.Controls.Add(this.MapPixelBox);
             this.MapsTabPage.Controls.Add(this.RemoveMapButton);
             this.MapsTabPage.Controls.Add(this.EditMapImageButton);
             this.MapsTabPage.Controls.Add(this.MapTableLayoutPanel);
@@ -6231,6 +6232,19 @@ namespace Scribe.Forms
             this.MapsTabPage.Size = new System.Drawing.Size(953, 599);
             this.MapsTabPage.TabIndex = 5;
             this.MapsTabPage.Text = "Maps";
+            // 
+            // MapPixelBox
+            // 
+            this.MapPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.MapPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.MapPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
+            this.MapPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("MapPixelBox.Image")));
+            this.MapPixelBox.Location = new System.Drawing.Point(823, 342);
+            this.MapPixelBox.Name = "MapPixelBox";
+            this.MapPixelBox.Size = new System.Drawing.Size(120, 120);
+            this.MapPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.MapPixelBox.TabIndex = 14;
+            this.MapPixelBox.TabStop = false;
             // 
             // RemoveMapButton
             // 
@@ -6254,20 +6268,7 @@ namespace Scribe.Forms
             this.EditMapImageButton.Text = "Edit Image";
             this.EditMapImageButton.UseVisualStyleBackColor = false;
             // 
-            // MapPixelBox
-            // 
-            this.MapPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.MapPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.MapPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
-            this.MapPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("MapPixelBox.Image")));
-            this.MapPixelBox.Location = new System.Drawing.Point(823, 342);
-            this.MapPixelBox.Name = "MapPixelBox";
-            this.MapPixelBox.Size = new System.Drawing.Size(120, 120);
-            this.MapPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.MapPixelBox.TabIndex = 14;
-            this.MapPixelBox.TabStop = false;
-            // 
-            // tableLayoutPanel1
+            // MapTableLayoutPanel
             // 
             this.MapTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
@@ -6635,6 +6636,7 @@ namespace Scribe.Forms
             ((System.ComponentModel.ISupportInitialize)(this.RoomPixelBox)).EndInit();
             this.MapsTabPage.ResumeLayout(false);
             this.MapsTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MapPixelBox)).EndInit();
             this.MapTableLayoutPanel.ResumeLayout(false);
             this.MapTableLayoutPanel.PerformLayout();
             this.ScriptsTabPage.ResumeLayout(false);
