@@ -6229,6 +6229,7 @@ namespace Scribe.Forms
             this.MapsTabPage.Controls.Add(this.MapListBox);
             this.MapsTabPage.Controls.Add(this.MapRemoveButton);
             this.MapsTabPage.Controls.Add(this.MapAddNewButton);
+            this.MapsTabPage.Controls.Add(this.MapConfigGroupBox);
             this.MapsTabPage.Controls.Add(this.MapPixelBox);
             this.MapsTabPage.Controls.Add(this.MapEditButton);
             this.MapsTabPage.Controls.Add(this.MapTableLayoutPanel);
@@ -6296,7 +6297,7 @@ namespace Scribe.Forms
             // 
             // MapConfigGroupBox
             // 
-            this.MapConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            this.MapConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MapConfigGroupBox.Location = new System.Drawing.Point(9, 497);
             this.MapConfigGroupBox.Name = "MapConfigGroupBox";
