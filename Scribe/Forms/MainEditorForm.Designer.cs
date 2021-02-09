@@ -75,7 +75,7 @@ namespace Scribe.Forms
             this.ToolStripMenuItemOpenContainingFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripSeparatorPictureBoxes = new System.Windows.Forms.ToolStripSeparator();
             this.ToolStripMenuItemReloadImage = new System.Windows.Forms.ToolStripMenuItem();
-            this.ContextMenuStripIDExamples = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ContextMenuStripIDStatics = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToolStripMenuItemCopyID = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuStripForTextEntries = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToolStripMenuItemContextCut = new System.Windows.Forms.ToolStripMenuItem();
@@ -132,33 +132,33 @@ namespace Scribe.Forms
             this.GamePlayerCharacterComboBox = new System.Windows.Forms.ComboBox();
             this.GameFirstScriptComboBox = new System.Windows.Forms.ComboBox();
             this.GameIDLabel = new System.Windows.Forms.Label();
-            this.GameIDExample = new System.Windows.Forms.Label();
+            this.GameIDStatic = new System.Windows.Forms.Label();
             this.GameAddNewGameButton = new System.Windows.Forms.Button();
             this.GameListBox = new System.Windows.Forms.ListBox();
             this.FileFormatGroupBox = new System.Windows.Forms.GroupBox();
             this.FileFormatTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.FileFormatPrimaryDelimiterLabel = new System.Windows.Forms.Label();
-            this.FileFormatPrimaryDelimiterExample = new System.Windows.Forms.Label();
+            this.FileFormatPrimaryDelimiterStatic = new System.Windows.Forms.Label();
             this.FileFormatSecondaryDelimiterLabel = new System.Windows.Forms.Label();
-            this.FileFormatSecondaryDelimiterExample = new System.Windows.Forms.Label();
+            this.FileFormatSecondaryDelimiterStatic = new System.Windows.Forms.Label();
             this.FileFormatInternalDelimiterLabel = new System.Windows.Forms.Label();
-            this.FileFormatInternalDelimiterExample = new System.Windows.Forms.Label();
+            this.FileFormatInternalDelimiterStatic = new System.Windows.Forms.Label();
             this.FileFormatElementDelimiterLabel = new System.Windows.Forms.Label();
-            this.FileFormatElementDelimiterExample = new System.Windows.Forms.Label();
+            this.FileFormatElementDelimiterStatic = new System.Windows.Forms.Label();
             this.FileFormatNameDelimiterLabel = new System.Windows.Forms.Label();
-            this.FileFormatNameDelimiterExample = new System.Windows.Forms.Label();
+            this.FileFormatNameDelimiterStatic = new System.Windows.Forms.Label();
             this.FileFormatPronounDelimiterLabel = new System.Windows.Forms.Label();
-            this.FileFormatPronounDelimiterExample = new System.Windows.Forms.Label();
+            this.FileFormatPronounDelimiterStatic = new System.Windows.Forms.Label();
             this.FileFormatDimensionalDelimiterLabel = new System.Windows.Forms.Label();
-            this.FileFormatDimensionalDelimiterExample = new System.Windows.Forms.Label();
+            this.FileFormatDimensionalDelimiterStatic = new System.Windows.Forms.Label();
             this.FileFormatDimensionalTerminatorLabel = new System.Windows.Forms.Label();
-            this.FileFormatDimensionalTerminatorExample = new System.Windows.Forms.Label();
+            this.FileFormatDimensionalTerminatorStatic = new System.Windows.Forms.Label();
             this.LibraryInfoGroupBox = new System.Windows.Forms.GroupBox();
             this.LibraryInfoTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.LibraryVersionLabel = new System.Windows.Forms.Label();
-            this.LibraryVersionExample = new System.Windows.Forms.Label();
+            this.LibraryVersionStatic = new System.Windows.Forms.Label();
             this.LibraryProjectPathLabel = new System.Windows.Forms.Label();
-            this.LibraryProjectPathExample = new System.Windows.Forms.Label();
+            this.LibraryProjectPathStatic = new System.Windows.Forms.Label();
             this.FloorsTabPage = new System.Windows.Forms.TabPage();
             this.FloorEditFilledInImageButton = new System.Windows.Forms.Button();
             this.FloorFilledInLabel = new System.Windows.Forms.Label();
@@ -186,7 +186,7 @@ namespace Scribe.Forms
             this.FloorAddsToBiomeListBox = new System.Windows.Forms.ListBox();
             this.FloorAddsToRoomListBox = new System.Windows.Forms.ListBox();
             this.FloorAddBiomeTagButton = new System.Windows.Forms.Button();
-            this.FloorIDExample = new System.Windows.Forms.Label();
+            this.FloorIDStatic = new System.Windows.Forms.Label();
             this.FloorAddNewFloorButton = new System.Windows.Forms.Button();
             this.FloorListBox = new System.Windows.Forms.ListBox();
             this.FloorIDLabel = new System.Windows.Forms.Label();
@@ -228,7 +228,7 @@ namespace Scribe.Forms
             this.BlockIDLabel = new System.Windows.Forms.Label();
             this.BlockListBox = new System.Windows.Forms.ListBox();
             this.BlockAddNewBlockButton = new System.Windows.Forms.Button();
-            this.BlockIDExample = new System.Windows.Forms.Label();
+            this.BlockIDStatic = new System.Windows.Forms.Label();
             this.BlockRemoveBlockButton = new System.Windows.Forms.Button();
             this.BlockConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.FurnishingsTabPage = new System.Windows.Forms.TabPage();
@@ -258,7 +258,7 @@ namespace Scribe.Forms
             this.FurnishingRemoveRoomTagButton = new System.Windows.Forms.Button();
             this.FurnishingRemoveBiomeTagButton = new System.Windows.Forms.Button();
             this.FurnishingRemoveFurnishingButton = new System.Windows.Forms.Button();
-            this.FurnishingIDExample = new System.Windows.Forms.Label();
+            this.FurnishingIDStatic = new System.Windows.Forms.Label();
             this.FurnishingAddNewFurnishingButton = new System.Windows.Forms.Button();
             this.FurnishingListBox = new System.Windows.Forms.ListBox();
             this.FurnishingIDLabel = new System.Windows.Forms.Label();
@@ -286,7 +286,7 @@ namespace Scribe.Forms
             this.CollectibleAddRoomTagButton = new System.Windows.Forms.Button();
             this.CollectibleRemoveRoomTagButton = new System.Windows.Forms.Button();
             this.CollectibleRemoveCollectibleButton = new System.Windows.Forms.Button();
-            this.CollectibleIDExample = new System.Windows.Forms.Label();
+            this.CollectibleIDStatic = new System.Windows.Forms.Label();
             this.CollectibleAddNewCollectibleButton = new System.Windows.Forms.Button();
             this.CollectibleListBox = new System.Windows.Forms.ListBox();
             this.CollectibleIDLabel = new System.Windows.Forms.Label();
@@ -314,7 +314,7 @@ namespace Scribe.Forms
             this.CritterIDLabel = new System.Windows.Forms.Label();
             this.CritterListBox = new System.Windows.Forms.ListBox();
             this.CritterAddNewCritterButton = new System.Windows.Forms.Button();
-            this.CritterIDExample = new System.Windows.Forms.Label();
+            this.CritterIDStatic = new System.Windows.Forms.Label();
             this.CritterRemoveCritterButton = new System.Windows.Forms.Button();
             this.CritterConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CharactersTabPage = new System.Windows.Forms.TabPage();
@@ -334,7 +334,7 @@ namespace Scribe.Forms
             this.CharacterPronounPossessiveLabel = new System.Windows.Forms.Label();
             this.CharacterPronounReflexiveLabel = new System.Windows.Forms.Label();
             this.CharacterPronounKeyLabel = new System.Windows.Forms.Label();
-            this.CharacterPronounKeyExample = new System.Windows.Forms.Label();
+            this.CharacterPronounKeyStatic = new System.Windows.Forms.Label();
             this.CharacterTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.CharacterAddQuestButton = new System.Windows.Forms.Button();
             this.CharacterRemoveQuestButton = new System.Windows.Forms.Button();
@@ -363,9 +363,9 @@ namespace Scribe.Forms
             this.CharacterStartingInventoryLabel = new System.Windows.Forms.Label();
             this.CharacterPronounComboBox = new System.Windows.Forms.ComboBox();
             this.CharacterStartingDialogueComboBox = new System.Windows.Forms.ComboBox();
-            this.CharacterStartingInventoryExample = new System.Windows.Forms.Label();
+            this.CharacterStartingInventoryStatic = new System.Windows.Forms.Label();
             this.CharacterRemoveCharacterButton = new System.Windows.Forms.Button();
-            this.CharacterIDExample = new System.Windows.Forms.Label();
+            this.CharacterIDStatic = new System.Windows.Forms.Label();
             this.CharacterAddNewCharacterButton = new System.Windows.Forms.Button();
             this.CharacterListBox = new System.Windows.Forms.ListBox();
             this.CharacterIDLabel = new System.Windows.Forms.Label();
@@ -406,7 +406,7 @@ namespace Scribe.Forms
             this.ItemPixelBox = new Scribe.CustomControls.PixelBox();
             this.ItemIDLabel = new System.Windows.Forms.Label();
             this.ItemAddNewItemButton = new System.Windows.Forms.Button();
-            this.ItemIDExample = new System.Windows.Forms.Label();
+            this.ItemIDStatic = new System.Windows.Forms.Label();
             this.BiomesTabPage = new System.Windows.Forms.TabPage();
             this.BiomeRemoveBiomeButton = new System.Windows.Forms.Button();
             this.BiomeAddEntryRequirementButton = new System.Windows.Forms.Button();
@@ -441,13 +441,13 @@ namespace Scribe.Forms
             this.BiomePixelBox = new Scribe.CustomControls.PixelBox();
             this.BiomeIDLabel = new System.Windows.Forms.Label();
             this.BiomeAddNewBiomeButton = new System.Windows.Forms.Button();
-            this.BiomeIDExample = new System.Windows.Forms.Label();
+            this.BiomeIDStatic = new System.Windows.Forms.Label();
             this.CraftingRecipesTabPage = new System.Windows.Forms.TabPage();
             this.CraftingRemoveCraftingButton = new System.Windows.Forms.Button();
             this.CraftingListBox = new System.Windows.Forms.ListBox();
             this.CraftingPictureEditButton = new System.Windows.Forms.Button();
             this.CraftingTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.CraftingPanelsCountExample = new System.Windows.Forms.Label();
+            this.CraftingPanelsCountStatic = new System.Windows.Forms.Label();
             this.CraftingOpenPatternEditorButton = new System.Windows.Forms.Button();
             this.CraftingAddProductButton = new System.Windows.Forms.Button();
             this.CraftingRemoveProductButton = new System.Windows.Forms.Button();
@@ -467,7 +467,7 @@ namespace Scribe.Forms
             this.CraftingPixelBox = new Scribe.CustomControls.PixelBox();
             this.CraftingIDLabel = new System.Windows.Forms.Label();
             this.CraftingAddNewCraftingButton = new System.Windows.Forms.Button();
-            this.CraftingIDExample = new System.Windows.Forms.Label();
+            this.CraftingIDStatic = new System.Windows.Forms.Label();
             this.CraftingConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CraftingConfigTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.CraftingMinIngredientCountLabel = new System.Windows.Forms.Label();
@@ -479,7 +479,7 @@ namespace Scribe.Forms
             this.CraftingMaxIngredientCountTextBox = new System.Windows.Forms.TextBox();
             this.CraftingMaxProductCountTextBox = new System.Windows.Forms.TextBox();
             this.CraftingStrikePatternDimensionLabelLabel = new System.Windows.Forms.Label();
-            this.CraftingStrikePatternDimensionLabelExample = new System.Windows.Forms.Label();
+            this.CraftingStrikePatternDimensionLabelStatic = new System.Windows.Forms.Label();
             this.RoomRecipesTabPage = new System.Windows.Forms.TabPage();
             this.RoomRemoveRoomButton = new System.Windows.Forms.Button();
             this.RoomAddBlockButton = new System.Windows.Forms.Button();
@@ -514,10 +514,10 @@ namespace Scribe.Forms
             this.RoomPixelBox = new Scribe.CustomControls.PixelBox();
             this.RoomIDLabel = new System.Windows.Forms.Label();
             this.RoomAddNewRoomButton = new System.Windows.Forms.Button();
-            this.RoomIDExample = new System.Windows.Forms.Label();
+            this.RoomIDStatic = new System.Windows.Forms.Label();
             this.MapsTabPage = new System.Windows.Forms.TabPage();
             this.MapIDLabel = new System.Windows.Forms.Label();
-            this.MapIDExample = new System.Windows.Forms.Label();
+            this.MapIDStatic = new System.Windows.Forms.Label();
             this.MapListBox = new System.Windows.Forms.ListBox();
             this.MapRemoveButton = new System.Windows.Forms.Button();
             this.MapAddNewButton = new System.Windows.Forms.Button();
@@ -531,7 +531,7 @@ namespace Scribe.Forms
             this.MapCommentLabel = new System.Windows.Forms.Label();
             this.MapCommentTextBox = new System.Windows.Forms.TextBox();
             this.MapBackgroundColorLabel = new System.Windows.Forms.Label();
-            this.MapBackgroundColorExample = new System.Windows.Forms.Label();
+            this.MapBackgroundColorStatic = new System.Windows.Forms.Label();
             this.MapExitNorthLabel = new System.Windows.Forms.Label();
             this.MapExitSouthLabel = new System.Windows.Forms.Label();
             this.MapExitEastLabel = new System.Windows.Forms.Label();
@@ -549,7 +549,7 @@ namespace Scribe.Forms
             this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
             this.ContextMenuStripPictureBoxes.SuspendLayout();
-            this.ContextMenuStripIDExamples.SuspendLayout();
+            this.ContextMenuStripIDStatics.SuspendLayout();
             this.ContextMenuStripForTextEntries.SuspendLayout();
             this.FiltersTableLayoutPanel.SuspendLayout();
             this.FilterGroupBox.SuspendLayout();
@@ -994,12 +994,12 @@ namespace Scribe.Forms
             this.ToolStripMenuItemReloadImage.Text = "Reload from Disk";
             this.ToolStripMenuItemReloadImage.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
-            // ContextMenuStripIDExamples
+            // ContextMenuStripIDStatics
             // 
-            this.ContextMenuStripIDExamples.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ContextMenuStripIDStatics.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItemCopyID});
-            this.ContextMenuStripIDExamples.Name = "ContextMenuStripIDExamples";
-            this.ContextMenuStripIDExamples.Size = new System.Drawing.Size(117, 26);
+            this.ContextMenuStripIDStatics.Name = "ContextMenuStripIDStatics";
+            this.ContextMenuStripIDStatics.Size = new System.Drawing.Size(117, 26);
             // 
             // ToolStripMenuItemCopyID
             // 
@@ -1472,7 +1472,7 @@ namespace Scribe.Forms
             this.GamesTabPage.Controls.Add(this.GameIconPixelBox);
             this.GamesTabPage.Controls.Add(this.GameTableLayoutPanel);
             this.GamesTabPage.Controls.Add(this.GameIDLabel);
-            this.GamesTabPage.Controls.Add(this.GameIDExample);
+            this.GamesTabPage.Controls.Add(this.GameIDStatic);
             this.GamesTabPage.Controls.Add(this.GameAddNewGameButton);
             this.GamesTabPage.Controls.Add(this.GameListBox);
             this.GamesTabPage.Controls.Add(this.FileFormatGroupBox);
@@ -1711,17 +1711,17 @@ namespace Scribe.Forms
             this.GameIDLabel.TabIndex = 4;
             this.GameIDLabel.Text = "Game ID";
             // 
-            // GameIDExample
+            // GameIDStatic
             // 
-            this.GameIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.GameIDExample.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.GameIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
-            this.GameIDExample.Location = new System.Drawing.Point(813, 16);
-            this.GameIDExample.Name = "GameIDExample";
-            this.GameIDExample.Size = new System.Drawing.Size(131, 20);
-            this.GameIDExample.TabIndex = 3;
-            this.GameIDExample.Tag = "Themed";
-            this.GameIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.GameIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.GameIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.GameIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.GameIDStatic.Location = new System.Drawing.Point(813, 16);
+            this.GameIDStatic.Name = "GameIDStatic";
+            this.GameIDStatic.Size = new System.Drawing.Size(131, 20);
+            this.GameIDStatic.TabIndex = 3;
+            this.GameIDStatic.Tag = "Themed";
+            this.GameIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // GameAddNewGameButton
             // 
@@ -1773,21 +1773,21 @@ namespace Scribe.Forms
             this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.83792F));
             this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.495411F));
             this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPrimaryDelimiterLabel, 0, 0);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPrimaryDelimiterExample, 1, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPrimaryDelimiterStatic, 1, 0);
             this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatSecondaryDelimiterLabel, 2, 0);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatSecondaryDelimiterExample, 3, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatSecondaryDelimiterStatic, 3, 0);
             this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatInternalDelimiterLabel, 4, 0);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatInternalDelimiterExample, 5, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatInternalDelimiterStatic, 5, 0);
             this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatElementDelimiterLabel, 0, 1);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatElementDelimiterExample, 1, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatElementDelimiterStatic, 1, 1);
             this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatNameDelimiterLabel, 2, 1);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatNameDelimiterExample, 3, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatNameDelimiterStatic, 3, 1);
             this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPronounDelimiterLabel, 4, 1);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPronounDelimiterExample, 5, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPronounDelimiterStatic, 5, 1);
             this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalDelimiterLabel, 0, 2);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalDelimiterExample, 1, 2);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalDelimiterStatic, 1, 2);
             this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalTerminatorLabel, 2, 2);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalTerminatorExample, 3, 2);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalTerminatorStatic, 3, 2);
             this.FileFormatTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
             this.FileFormatTableLayoutPanel.Name = "FileFormatTableLayoutPanel";
             this.FileFormatTableLayoutPanel.RowCount = 3;
@@ -1807,15 +1807,15 @@ namespace Scribe.Forms
             this.FileFormatPrimaryDelimiterLabel.TabIndex = 0;
             this.FileFormatPrimaryDelimiterLabel.Text = "Primary Delimiter";
             // 
-            // FileFormatPrimaryDelimiterExample
+            // FileFormatPrimaryDelimiterStatic
             // 
-            this.FileFormatPrimaryDelimiterExample.AutoSize = true;
-            this.FileFormatPrimaryDelimiterExample.Location = new System.Drawing.Point(179, 5);
-            this.FileFormatPrimaryDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.FileFormatPrimaryDelimiterExample.Name = "FileFormatPrimaryDelimiterExample";
-            this.FileFormatPrimaryDelimiterExample.Size = new System.Drawing.Size(11, 13);
-            this.FileFormatPrimaryDelimiterExample.TabIndex = 1;
-            this.FileFormatPrimaryDelimiterExample.Text = ";";
+            this.FileFormatPrimaryDelimiterStatic.AutoSize = true;
+            this.FileFormatPrimaryDelimiterStatic.Location = new System.Drawing.Point(179, 5);
+            this.FileFormatPrimaryDelimiterStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatPrimaryDelimiterStatic.Name = "FileFormatPrimaryDelimiterStatic";
+            this.FileFormatPrimaryDelimiterStatic.Size = new System.Drawing.Size(11, 13);
+            this.FileFormatPrimaryDelimiterStatic.TabIndex = 1;
+            this.FileFormatPrimaryDelimiterStatic.Text = ";";
             // 
             // FileFormatSecondaryDelimiterLabel
             // 
@@ -1827,15 +1827,15 @@ namespace Scribe.Forms
             this.FileFormatSecondaryDelimiterLabel.TabIndex = 2;
             this.FileFormatSecondaryDelimiterLabel.Text = "Secondary Delimiter";
             // 
-            // FileFormatSecondaryDelimiterExample
+            // FileFormatSecondaryDelimiterStatic
             // 
-            this.FileFormatSecondaryDelimiterExample.AutoSize = true;
-            this.FileFormatSecondaryDelimiterExample.Location = new System.Drawing.Point(389, 5);
-            this.FileFormatSecondaryDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.FileFormatSecondaryDelimiterExample.Name = "FileFormatSecondaryDelimiterExample";
-            this.FileFormatSecondaryDelimiterExample.Size = new System.Drawing.Size(11, 13);
-            this.FileFormatSecondaryDelimiterExample.TabIndex = 3;
-            this.FileFormatSecondaryDelimiterExample.Text = ";";
+            this.FileFormatSecondaryDelimiterStatic.AutoSize = true;
+            this.FileFormatSecondaryDelimiterStatic.Location = new System.Drawing.Point(389, 5);
+            this.FileFormatSecondaryDelimiterStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatSecondaryDelimiterStatic.Name = "FileFormatSecondaryDelimiterStatic";
+            this.FileFormatSecondaryDelimiterStatic.Size = new System.Drawing.Size(11, 13);
+            this.FileFormatSecondaryDelimiterStatic.TabIndex = 3;
+            this.FileFormatSecondaryDelimiterStatic.Text = ";";
             // 
             // FileFormatInternalDelimiterLabel
             // 
@@ -1847,15 +1847,15 @@ namespace Scribe.Forms
             this.FileFormatInternalDelimiterLabel.TabIndex = 4;
             this.FileFormatInternalDelimiterLabel.Text = "Internal Delimiter";
             // 
-            // FileFormatInternalDelimiterExample
+            // FileFormatInternalDelimiterStatic
             // 
-            this.FileFormatInternalDelimiterExample.AutoSize = true;
-            this.FileFormatInternalDelimiterExample.Location = new System.Drawing.Point(599, 5);
-            this.FileFormatInternalDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.FileFormatInternalDelimiterExample.Name = "FileFormatInternalDelimiterExample";
-            this.FileFormatInternalDelimiterExample.Size = new System.Drawing.Size(11, 13);
-            this.FileFormatInternalDelimiterExample.TabIndex = 5;
-            this.FileFormatInternalDelimiterExample.Text = ";";
+            this.FileFormatInternalDelimiterStatic.AutoSize = true;
+            this.FileFormatInternalDelimiterStatic.Location = new System.Drawing.Point(599, 5);
+            this.FileFormatInternalDelimiterStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatInternalDelimiterStatic.Name = "FileFormatInternalDelimiterStatic";
+            this.FileFormatInternalDelimiterStatic.Size = new System.Drawing.Size(11, 13);
+            this.FileFormatInternalDelimiterStatic.TabIndex = 5;
+            this.FileFormatInternalDelimiterStatic.Text = ";";
             // 
             // FileFormatElementDelimiterLabel
             // 
@@ -1867,15 +1867,15 @@ namespace Scribe.Forms
             this.FileFormatElementDelimiterLabel.TabIndex = 6;
             this.FileFormatElementDelimiterLabel.Text = "Element Delimiter";
             // 
-            // FileFormatElementDelimiterExample
+            // FileFormatElementDelimiterStatic
             // 
-            this.FileFormatElementDelimiterExample.AutoSize = true;
-            this.FileFormatElementDelimiterExample.Location = new System.Drawing.Point(179, 28);
-            this.FileFormatElementDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.FileFormatElementDelimiterExample.Name = "FileFormatElementDelimiterExample";
-            this.FileFormatElementDelimiterExample.Size = new System.Drawing.Size(11, 13);
-            this.FileFormatElementDelimiterExample.TabIndex = 7;
-            this.FileFormatElementDelimiterExample.Text = ";";
+            this.FileFormatElementDelimiterStatic.AutoSize = true;
+            this.FileFormatElementDelimiterStatic.Location = new System.Drawing.Point(179, 28);
+            this.FileFormatElementDelimiterStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatElementDelimiterStatic.Name = "FileFormatElementDelimiterStatic";
+            this.FileFormatElementDelimiterStatic.Size = new System.Drawing.Size(11, 13);
+            this.FileFormatElementDelimiterStatic.TabIndex = 7;
+            this.FileFormatElementDelimiterStatic.Text = ";";
             // 
             // FileFormatNameDelimiterLabel
             // 
@@ -1887,15 +1887,15 @@ namespace Scribe.Forms
             this.FileFormatNameDelimiterLabel.TabIndex = 8;
             this.FileFormatNameDelimiterLabel.Text = "Name Delimiter";
             // 
-            // FileFormatNameDelimiterExample
+            // FileFormatNameDelimiterStatic
             // 
-            this.FileFormatNameDelimiterExample.AutoSize = true;
-            this.FileFormatNameDelimiterExample.Location = new System.Drawing.Point(389, 28);
-            this.FileFormatNameDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.FileFormatNameDelimiterExample.Name = "FileFormatNameDelimiterExample";
-            this.FileFormatNameDelimiterExample.Size = new System.Drawing.Size(11, 13);
-            this.FileFormatNameDelimiterExample.TabIndex = 9;
-            this.FileFormatNameDelimiterExample.Text = ";";
+            this.FileFormatNameDelimiterStatic.AutoSize = true;
+            this.FileFormatNameDelimiterStatic.Location = new System.Drawing.Point(389, 28);
+            this.FileFormatNameDelimiterStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatNameDelimiterStatic.Name = "FileFormatNameDelimiterStatic";
+            this.FileFormatNameDelimiterStatic.Size = new System.Drawing.Size(11, 13);
+            this.FileFormatNameDelimiterStatic.TabIndex = 9;
+            this.FileFormatNameDelimiterStatic.Text = ";";
             // 
             // FileFormatPronounDelimiterLabel
             // 
@@ -1907,15 +1907,15 @@ namespace Scribe.Forms
             this.FileFormatPronounDelimiterLabel.TabIndex = 10;
             this.FileFormatPronounDelimiterLabel.Text = "Pronoun Delimiter";
             // 
-            // FileFormatPronounDelimiterExample
+            // FileFormatPronounDelimiterStatic
             // 
-            this.FileFormatPronounDelimiterExample.AutoSize = true;
-            this.FileFormatPronounDelimiterExample.Location = new System.Drawing.Point(599, 28);
-            this.FileFormatPronounDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.FileFormatPronounDelimiterExample.Name = "FileFormatPronounDelimiterExample";
-            this.FileFormatPronounDelimiterExample.Size = new System.Drawing.Size(11, 13);
-            this.FileFormatPronounDelimiterExample.TabIndex = 11;
-            this.FileFormatPronounDelimiterExample.Text = ";";
+            this.FileFormatPronounDelimiterStatic.AutoSize = true;
+            this.FileFormatPronounDelimiterStatic.Location = new System.Drawing.Point(599, 28);
+            this.FileFormatPronounDelimiterStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatPronounDelimiterStatic.Name = "FileFormatPronounDelimiterStatic";
+            this.FileFormatPronounDelimiterStatic.Size = new System.Drawing.Size(11, 13);
+            this.FileFormatPronounDelimiterStatic.TabIndex = 11;
+            this.FileFormatPronounDelimiterStatic.Text = ";";
             // 
             // FileFormatDimensionalDelimiterLabel
             // 
@@ -1927,15 +1927,15 @@ namespace Scribe.Forms
             this.FileFormatDimensionalDelimiterLabel.TabIndex = 12;
             this.FileFormatDimensionalDelimiterLabel.Text = "Dimensional Delimiter";
             // 
-            // FileFormatDimensionalDelimiterExample
+            // FileFormatDimensionalDelimiterStatic
             // 
-            this.FileFormatDimensionalDelimiterExample.AutoSize = true;
-            this.FileFormatDimensionalDelimiterExample.Location = new System.Drawing.Point(179, 51);
-            this.FileFormatDimensionalDelimiterExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.FileFormatDimensionalDelimiterExample.Name = "FileFormatDimensionalDelimiterExample";
-            this.FileFormatDimensionalDelimiterExample.Size = new System.Drawing.Size(11, 13);
-            this.FileFormatDimensionalDelimiterExample.TabIndex = 13;
-            this.FileFormatDimensionalDelimiterExample.Text = ";";
+            this.FileFormatDimensionalDelimiterStatic.AutoSize = true;
+            this.FileFormatDimensionalDelimiterStatic.Location = new System.Drawing.Point(179, 51);
+            this.FileFormatDimensionalDelimiterStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatDimensionalDelimiterStatic.Name = "FileFormatDimensionalDelimiterStatic";
+            this.FileFormatDimensionalDelimiterStatic.Size = new System.Drawing.Size(11, 13);
+            this.FileFormatDimensionalDelimiterStatic.TabIndex = 13;
+            this.FileFormatDimensionalDelimiterStatic.Text = ";";
             // 
             // FileFormatDimensionalTerminatorLabel
             // 
@@ -1947,15 +1947,15 @@ namespace Scribe.Forms
             this.FileFormatDimensionalTerminatorLabel.TabIndex = 14;
             this.FileFormatDimensionalTerminatorLabel.Text = "Dimensional Terminator";
             // 
-            // FileFormatDimensionalTerminatorExample
+            // FileFormatDimensionalTerminatorStatic
             // 
-            this.FileFormatDimensionalTerminatorExample.AutoSize = true;
-            this.FileFormatDimensionalTerminatorExample.Location = new System.Drawing.Point(389, 51);
-            this.FileFormatDimensionalTerminatorExample.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.FileFormatDimensionalTerminatorExample.Name = "FileFormatDimensionalTerminatorExample";
-            this.FileFormatDimensionalTerminatorExample.Size = new System.Drawing.Size(11, 13);
-            this.FileFormatDimensionalTerminatorExample.TabIndex = 15;
-            this.FileFormatDimensionalTerminatorExample.Text = ";";
+            this.FileFormatDimensionalTerminatorStatic.AutoSize = true;
+            this.FileFormatDimensionalTerminatorStatic.Location = new System.Drawing.Point(389, 51);
+            this.FileFormatDimensionalTerminatorStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatDimensionalTerminatorStatic.Name = "FileFormatDimensionalTerminatorStatic";
+            this.FileFormatDimensionalTerminatorStatic.Size = new System.Drawing.Size(11, 13);
+            this.FileFormatDimensionalTerminatorStatic.TabIndex = 15;
+            this.FileFormatDimensionalTerminatorStatic.Text = ";";
             // 
             // LibraryInfoGroupBox
             // 
@@ -1978,9 +1978,9 @@ namespace Scribe.Forms
             this.LibraryInfoTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.LibraryInfoTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
             this.LibraryInfoTableLayoutPanel.Controls.Add(this.LibraryVersionLabel, 0, 0);
-            this.LibraryInfoTableLayoutPanel.Controls.Add(this.LibraryVersionExample, 1, 0);
+            this.LibraryInfoTableLayoutPanel.Controls.Add(this.LibraryVersionStatic, 1, 0);
             this.LibraryInfoTableLayoutPanel.Controls.Add(this.LibraryProjectPathLabel, 2, 0);
-            this.LibraryInfoTableLayoutPanel.Controls.Add(this.LibraryProjectPathExample, 3, 0);
+            this.LibraryInfoTableLayoutPanel.Controls.Add(this.LibraryProjectPathStatic, 3, 0);
             this.LibraryInfoTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
             this.LibraryInfoTableLayoutPanel.Name = "LibraryInfoTableLayoutPanel";
             this.LibraryInfoTableLayoutPanel.RowCount = 2;
@@ -2002,18 +2002,18 @@ namespace Scribe.Forms
             this.LibraryVersionLabel.TabIndex = 0;
             this.LibraryVersionLabel.Text = "Version";
             // 
-            // LibraryVersionExample
+            // LibraryVersionStatic
             // 
-            this.LibraryVersionExample.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.LibraryVersionStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.LibraryVersionExample.AutoSize = true;
-            this.LibraryVersionExample.Location = new System.Drawing.Point(70, 1);
-            this.LibraryVersionExample.Margin = new System.Windows.Forms.Padding(1);
-            this.LibraryVersionExample.Name = "LibraryVersionExample";
-            this.LibraryVersionExample.Size = new System.Drawing.Size(207, 35);
-            this.LibraryVersionExample.TabIndex = 1;
-            this.LibraryVersionExample.Text = "0.0.0";
+            this.LibraryVersionStatic.AutoSize = true;
+            this.LibraryVersionStatic.Location = new System.Drawing.Point(70, 1);
+            this.LibraryVersionStatic.Margin = new System.Windows.Forms.Padding(1);
+            this.LibraryVersionStatic.Name = "LibraryVersionStatic";
+            this.LibraryVersionStatic.Size = new System.Drawing.Size(207, 35);
+            this.LibraryVersionStatic.TabIndex = 1;
+            this.LibraryVersionStatic.Text = "0.0.0";
             // 
             // LibraryProjectPathLabel
             // 
@@ -2028,18 +2028,18 @@ namespace Scribe.Forms
             this.LibraryProjectPathLabel.TabIndex = 0;
             this.LibraryProjectPathLabel.Text = "Project Path";
             // 
-            // LibraryProjectPathExample
+            // LibraryProjectPathStatic
             // 
-            this.LibraryProjectPathExample.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.LibraryProjectPathStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.LibraryProjectPathExample.AutoSize = true;
-            this.LibraryProjectPathExample.Location = new System.Drawing.Point(70, 38);
-            this.LibraryProjectPathExample.Margin = new System.Windows.Forms.Padding(1);
-            this.LibraryProjectPathExample.Name = "LibraryProjectPathExample";
-            this.LibraryProjectPathExample.Size = new System.Drawing.Size(207, 36);
-            this.LibraryProjectPathExample.TabIndex = 1;
-            this.LibraryProjectPathExample.Text = "C:\\";
+            this.LibraryProjectPathStatic.AutoSize = true;
+            this.LibraryProjectPathStatic.Location = new System.Drawing.Point(70, 38);
+            this.LibraryProjectPathStatic.Margin = new System.Windows.Forms.Padding(1);
+            this.LibraryProjectPathStatic.Name = "LibraryProjectPathStatic";
+            this.LibraryProjectPathStatic.Size = new System.Drawing.Size(207, 36);
+            this.LibraryProjectPathStatic.TabIndex = 1;
+            this.LibraryProjectPathStatic.Text = "C:\\";
             // 
             // FloorsTabPage
             // 
@@ -2049,7 +2049,7 @@ namespace Scribe.Forms
             this.FloorsTabPage.Controls.Add(this.FloorFilledInPixelBox);
             this.FloorsTabPage.Controls.Add(this.FloorRemoveFloorButton);
             this.FloorsTabPage.Controls.Add(this.FloorLayoutTabelPanel);
-            this.FloorsTabPage.Controls.Add(this.FloorIDExample);
+            this.FloorsTabPage.Controls.Add(this.FloorIDStatic);
             this.FloorsTabPage.Controls.Add(this.FloorAddNewFloorButton);
             this.FloorsTabPage.Controls.Add(this.FloorListBox);
             this.FloorsTabPage.Controls.Add(this.FloorIDLabel);
@@ -2365,17 +2365,17 @@ namespace Scribe.Forms
             this.FloorAddBiomeTagButton.UseVisualStyleBackColor = false;
             this.FloorAddBiomeTagButton.Click += new System.EventHandler(this.FloorAddBiomeTagButton_Click);
             // 
-            // FloorIDExample
+            // FloorIDStatic
             // 
-            this.FloorIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorIDExample.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FloorIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
-            this.FloorIDExample.Location = new System.Drawing.Point(812, 16);
-            this.FloorIDExample.Name = "FloorIDExample";
-            this.FloorIDExample.Size = new System.Drawing.Size(131, 20);
-            this.FloorIDExample.TabIndex = 3;
-            this.FloorIDExample.Tag = "Themed";
-            this.FloorIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FloorIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.FloorIDStatic.Location = new System.Drawing.Point(812, 16);
+            this.FloorIDStatic.Name = "FloorIDStatic";
+            this.FloorIDStatic.Size = new System.Drawing.Size(131, 20);
+            this.FloorIDStatic.TabIndex = 3;
+            this.FloorIDStatic.Tag = "Themed";
+            this.FloorIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FloorAddNewFloorButton
             // 
@@ -2456,7 +2456,7 @@ namespace Scribe.Forms
             this.BlocksTabPage.Controls.Add(this.BlockIDLabel);
             this.BlocksTabPage.Controls.Add(this.BlockListBox);
             this.BlocksTabPage.Controls.Add(this.BlockAddNewBlockButton);
-            this.BlocksTabPage.Controls.Add(this.BlockIDExample);
+            this.BlocksTabPage.Controls.Add(this.BlockIDStatic);
             this.BlocksTabPage.Controls.Add(this.BlockRemoveBlockButton);
             this.BlocksTabPage.Controls.Add(this.BlockConfigGroupBox);
             this.BlocksTabPage.Location = new System.Drawing.Point(4, 22);
@@ -2854,17 +2854,17 @@ namespace Scribe.Forms
             this.BlockAddNewBlockButton.UseVisualStyleBackColor = false;
             this.BlockAddNewBlockButton.Click += new System.EventHandler(this.BlockAddNewBlockButton_Click);
             // 
-            // BlockIDExample
+            // BlockIDStatic
             // 
-            this.BlockIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlockIDExample.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BlockIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
-            this.BlockIDExample.Location = new System.Drawing.Point(812, 16);
-            this.BlockIDExample.Name = "BlockIDExample";
-            this.BlockIDExample.Size = new System.Drawing.Size(131, 20);
-            this.BlockIDExample.TabIndex = 3;
-            this.BlockIDExample.Tag = "Themed";
-            this.BlockIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BlockIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlockIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BlockIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.BlockIDStatic.Location = new System.Drawing.Point(812, 16);
+            this.BlockIDStatic.Name = "BlockIDStatic";
+            this.BlockIDStatic.Size = new System.Drawing.Size(131, 20);
+            this.BlockIDStatic.TabIndex = 3;
+            this.BlockIDStatic.Tag = "Themed";
+            this.BlockIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BlockRemoveBlockButton
             // 
@@ -2892,7 +2892,7 @@ namespace Scribe.Forms
             // 
             this.FurnishingsTabPage.Controls.Add(this.FurnishingTableLayoutPanel);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingRemoveFurnishingButton);
-            this.FurnishingsTabPage.Controls.Add(this.FurnishingIDExample);
+            this.FurnishingsTabPage.Controls.Add(this.FurnishingIDStatic);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingAddNewFurnishingButton);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingListBox);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingIDLabel);
@@ -3207,18 +3207,18 @@ namespace Scribe.Forms
             this.FurnishingRemoveFurnishingButton.UseVisualStyleBackColor = false;
             this.FurnishingRemoveFurnishingButton.Click += new System.EventHandler(this.FurnishingRemoveFurnishingButton_Click);
             // 
-            // FurnishingIDExample
+            // FurnishingIDStatic
             // 
-            this.FurnishingIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FurnishingIDExample.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FurnishingIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
-            this.FurnishingIDExample.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FurnishingIDExample.Location = new System.Drawing.Point(812, 16);
-            this.FurnishingIDExample.Name = "FurnishingIDExample";
-            this.FurnishingIDExample.Size = new System.Drawing.Size(131, 20);
-            this.FurnishingIDExample.TabIndex = 3;
-            this.FurnishingIDExample.Tag = "Themed";
-            this.FurnishingIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FurnishingIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.FurnishingIDStatic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FurnishingIDStatic.Location = new System.Drawing.Point(812, 16);
+            this.FurnishingIDStatic.Name = "FurnishingIDStatic";
+            this.FurnishingIDStatic.Size = new System.Drawing.Size(131, 20);
+            this.FurnishingIDStatic.TabIndex = 3;
+            this.FurnishingIDStatic.Tag = "Themed";
+            this.FurnishingIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FurnishingAddNewFurnishingButton
             // 
@@ -3295,7 +3295,7 @@ namespace Scribe.Forms
             // 
             this.CollectiblesTabPage.Controls.Add(this.CollectibleTableLayoutPanel);
             this.CollectiblesTabPage.Controls.Add(this.CollectibleRemoveCollectibleButton);
-            this.CollectiblesTabPage.Controls.Add(this.CollectibleIDExample);
+            this.CollectiblesTabPage.Controls.Add(this.CollectibleIDStatic);
             this.CollectiblesTabPage.Controls.Add(this.CollectibleAddNewCollectibleButton);
             this.CollectiblesTabPage.Controls.Add(this.CollectibleListBox);
             this.CollectiblesTabPage.Controls.Add(this.CollectibleIDLabel);
@@ -3547,17 +3547,17 @@ namespace Scribe.Forms
             this.CollectibleRemoveCollectibleButton.UseVisualStyleBackColor = false;
             this.CollectibleRemoveCollectibleButton.Click += new System.EventHandler(this.CollectibleRemoveCollectibleButton_Click);
             // 
-            // CollectibleIDExample
+            // CollectibleIDStatic
             // 
-            this.CollectibleIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectibleIDExample.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CollectibleIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
-            this.CollectibleIDExample.Location = new System.Drawing.Point(812, 16);
-            this.CollectibleIDExample.Name = "CollectibleIDExample";
-            this.CollectibleIDExample.Size = new System.Drawing.Size(131, 20);
-            this.CollectibleIDExample.TabIndex = 3;
-            this.CollectibleIDExample.Tag = "Themed";
-            this.CollectibleIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CollectibleIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CollectibleIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.CollectibleIDStatic.Location = new System.Drawing.Point(812, 16);
+            this.CollectibleIDStatic.Name = "CollectibleIDStatic";
+            this.CollectibleIDStatic.Size = new System.Drawing.Size(131, 20);
+            this.CollectibleIDStatic.TabIndex = 3;
+            this.CollectibleIDStatic.Tag = "Themed";
+            this.CollectibleIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CollectibleAddNewCollectibleButton
             // 
@@ -3638,7 +3638,7 @@ namespace Scribe.Forms
             this.CrittersTabPage.Controls.Add(this.CritterIDLabel);
             this.CrittersTabPage.Controls.Add(this.CritterListBox);
             this.CrittersTabPage.Controls.Add(this.CritterAddNewCritterButton);
-            this.CrittersTabPage.Controls.Add(this.CritterIDExample);
+            this.CrittersTabPage.Controls.Add(this.CritterIDStatic);
             this.CrittersTabPage.Controls.Add(this.CritterRemoveCritterButton);
             this.CrittersTabPage.Controls.Add(this.CritterConfigGroupBox);
             this.CrittersTabPage.Location = new System.Drawing.Point(4, 22);
@@ -3877,17 +3877,17 @@ namespace Scribe.Forms
             this.CritterAddNewCritterButton.UseVisualStyleBackColor = false;
             this.CritterAddNewCritterButton.Click += new System.EventHandler(this.CritterAddNewCritterButton_Click);
             // 
-            // CritterIDExample
+            // CritterIDStatic
             // 
-            this.CritterIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CritterIDExample.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CritterIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
-            this.CritterIDExample.Location = new System.Drawing.Point(812, 16);
-            this.CritterIDExample.Name = "CritterIDExample";
-            this.CritterIDExample.Size = new System.Drawing.Size(131, 20);
-            this.CritterIDExample.TabIndex = 3;
-            this.CritterIDExample.Tag = "Themed";
-            this.CritterIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CritterIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CritterIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CritterIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.CritterIDStatic.Location = new System.Drawing.Point(812, 16);
+            this.CritterIDStatic.Name = "CritterIDStatic";
+            this.CritterIDStatic.Size = new System.Drawing.Size(131, 20);
+            this.CritterIDStatic.TabIndex = 3;
+            this.CritterIDStatic.Tag = "Themed";
+            this.CritterIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CritterRemoveCritterButton
             // 
@@ -3916,7 +3916,7 @@ namespace Scribe.Forms
             this.CharactersTabPage.Controls.Add(this.CharacterPronounGroupBox);
             this.CharactersTabPage.Controls.Add(this.CharacterTableLayoutPanel);
             this.CharactersTabPage.Controls.Add(this.CharacterRemoveCharacterButton);
-            this.CharactersTabPage.Controls.Add(this.CharacterIDExample);
+            this.CharactersTabPage.Controls.Add(this.CharacterIDStatic);
             this.CharactersTabPage.Controls.Add(this.CharacterAddNewCharacterButton);
             this.CharactersTabPage.Controls.Add(this.CharacterListBox);
             this.CharactersTabPage.Controls.Add(this.CharacterIDLabel);
@@ -3966,7 +3966,7 @@ namespace Scribe.Forms
             this.CharacterPronounTableLayoutPanel.Controls.Add(this.CharacterPronounPossessiveLabel, 4, 0);
             this.CharacterPronounTableLayoutPanel.Controls.Add(this.CharacterPronounReflexiveLabel, 5, 0);
             this.CharacterPronounTableLayoutPanel.Controls.Add(this.CharacterPronounKeyLabel, 4, 2);
-            this.CharacterPronounTableLayoutPanel.Controls.Add(this.CharacterPronounKeyExample, 5, 2);
+            this.CharacterPronounTableLayoutPanel.Controls.Add(this.CharacterPronounKeyStatic, 5, 2);
             this.CharacterPronounTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
             this.CharacterPronounTableLayoutPanel.Name = "CharacterPronounTableLayoutPanel";
             this.CharacterPronounTableLayoutPanel.RowCount = 3;
@@ -4105,15 +4105,15 @@ namespace Scribe.Forms
             this.CharacterPronounKeyLabel.TabIndex = 24;
             this.CharacterPronounKeyLabel.Text = "Key:";
             // 
-            // CharacterPronounKeyExample
+            // CharacterPronounKeyStatic
             // 
-            this.CharacterPronounKeyExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.CharacterPronounKeyExample.AutoSize = true;
-            this.CharacterPronounKeyExample.Location = new System.Drawing.Point(799, 58);
-            this.CharacterPronounKeyExample.Name = "CharacterPronounKeyExample";
-            this.CharacterPronounKeyExample.Size = new System.Drawing.Size(57, 13);
-            this.CharacterPronounKeyExample.TabIndex = 25;
-            this.CharacterPronounKeyExample.Text = "they/them";
+            this.CharacterPronounKeyStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.CharacterPronounKeyStatic.AutoSize = true;
+            this.CharacterPronounKeyStatic.Location = new System.Drawing.Point(799, 58);
+            this.CharacterPronounKeyStatic.Name = "CharacterPronounKeyStatic";
+            this.CharacterPronounKeyStatic.Size = new System.Drawing.Size(57, 13);
+            this.CharacterPronounKeyStatic.TabIndex = 25;
+            this.CharacterPronounKeyStatic.Text = "they/them";
             // 
             // CharacterTableLayoutPanel
             // 
@@ -4150,7 +4150,7 @@ namespace Scribe.Forms
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterStartingInventoryLabel, 0, 12);
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterPronounComboBox, 1, 7);
             this.CharacterTableLayoutPanel.Controls.Add(this.CharacterStartingDialogueComboBox, 1, 11);
-            this.CharacterTableLayoutPanel.Controls.Add(this.CharacterStartingInventoryExample, 1, 12);
+            this.CharacterTableLayoutPanel.Controls.Add(this.CharacterStartingInventoryStatic, 1, 12);
             this.CharacterTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
             this.CharacterTableLayoutPanel.Name = "CharacterTableLayoutPanel";
             this.CharacterTableLayoutPanel.RowCount = 13;
@@ -4425,17 +4425,17 @@ namespace Scribe.Forms
             this.CharacterStartingDialogueComboBox.Size = new System.Drawing.Size(144, 21);
             this.CharacterStartingDialogueComboBox.TabIndex = 42;
             // 
-            // CharacterStartingInventoryExample
+            // CharacterStartingInventoryStatic
             // 
-            this.CharacterStartingInventoryExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.CharacterStartingInventoryExample.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CharacterStartingInventoryExample.Location = new System.Drawing.Point(131, 421);
-            this.CharacterStartingInventoryExample.Name = "CharacterStartingInventoryExample";
-            this.CharacterStartingInventoryExample.Size = new System.Drawing.Size(144, 20);
-            this.CharacterStartingInventoryExample.TabIndex = 43;
-            this.CharacterStartingInventoryExample.Tag = "Themed";
-            this.CharacterStartingInventoryExample.Text = "0 Items";
-            this.CharacterStartingInventoryExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CharacterStartingInventoryStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CharacterStartingInventoryStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CharacterStartingInventoryStatic.Location = new System.Drawing.Point(131, 421);
+            this.CharacterStartingInventoryStatic.Name = "CharacterStartingInventoryStatic";
+            this.CharacterStartingInventoryStatic.Size = new System.Drawing.Size(144, 20);
+            this.CharacterStartingInventoryStatic.TabIndex = 43;
+            this.CharacterStartingInventoryStatic.Tag = "Themed";
+            this.CharacterStartingInventoryStatic.Text = "0 Items";
+            this.CharacterStartingInventoryStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CharacterRemoveCharacterButton
             // 
@@ -4449,17 +4449,17 @@ namespace Scribe.Forms
             this.CharacterRemoveCharacterButton.UseVisualStyleBackColor = false;
             this.CharacterRemoveCharacterButton.Click += new System.EventHandler(this.CharacterRemoveCharacterButton_Click);
             // 
-            // CharacterIDExample
+            // CharacterIDStatic
             // 
-            this.CharacterIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CharacterIDExample.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CharacterIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
-            this.CharacterIDExample.Location = new System.Drawing.Point(812, 16);
-            this.CharacterIDExample.Name = "CharacterIDExample";
-            this.CharacterIDExample.Size = new System.Drawing.Size(131, 20);
-            this.CharacterIDExample.TabIndex = 3;
-            this.CharacterIDExample.Tag = "Themed";
-            this.CharacterIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CharacterIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CharacterIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CharacterIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.CharacterIDStatic.Location = new System.Drawing.Point(812, 16);
+            this.CharacterIDStatic.Name = "CharacterIDStatic";
+            this.CharacterIDStatic.Size = new System.Drawing.Size(131, 20);
+            this.CharacterIDStatic.TabIndex = 3;
+            this.CharacterIDStatic.Tag = "Themed";
+            this.CharacterIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CharacterAddNewCharacterButton
             // 
@@ -4534,7 +4534,7 @@ namespace Scribe.Forms
             this.ItemsTabPage.Controls.Add(this.ItemPixelBox);
             this.ItemsTabPage.Controls.Add(this.ItemIDLabel);
             this.ItemsTabPage.Controls.Add(this.ItemAddNewItemButton);
-            this.ItemsTabPage.Controls.Add(this.ItemIDExample);
+            this.ItemsTabPage.Controls.Add(this.ItemIDStatic);
             this.ItemsTabPage.Location = new System.Drawing.Point(4, 22);
             this.ItemsTabPage.Name = "ItemsTabPage";
             this.ItemsTabPage.Size = new System.Drawing.Size(953, 599);
@@ -4917,17 +4917,17 @@ namespace Scribe.Forms
             this.ItemAddNewItemButton.UseVisualStyleBackColor = false;
             this.ItemAddNewItemButton.Click += new System.EventHandler(this.ItemAddNewItemButton_Click);
             // 
-            // ItemIDExample
+            // ItemIDStatic
             // 
-            this.ItemIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemIDExample.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ItemIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
-            this.ItemIDExample.Location = new System.Drawing.Point(813, 16);
-            this.ItemIDExample.Name = "ItemIDExample";
-            this.ItemIDExample.Size = new System.Drawing.Size(131, 20);
-            this.ItemIDExample.TabIndex = 3;
-            this.ItemIDExample.Tag = "Themed";
-            this.ItemIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ItemIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ItemIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.ItemIDStatic.Location = new System.Drawing.Point(813, 16);
+            this.ItemIDStatic.Name = "ItemIDStatic";
+            this.ItemIDStatic.Size = new System.Drawing.Size(131, 20);
+            this.ItemIDStatic.TabIndex = 3;
+            this.ItemIDStatic.Tag = "Themed";
+            this.ItemIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BiomesTabPage
             // 
@@ -4941,7 +4941,7 @@ namespace Scribe.Forms
             this.BiomesTabPage.Controls.Add(this.BiomePixelBox);
             this.BiomesTabPage.Controls.Add(this.BiomeIDLabel);
             this.BiomesTabPage.Controls.Add(this.BiomeAddNewBiomeButton);
-            this.BiomesTabPage.Controls.Add(this.BiomeIDExample);
+            this.BiomesTabPage.Controls.Add(this.BiomeIDStatic);
             this.BiomesTabPage.Location = new System.Drawing.Point(4, 22);
             this.BiomesTabPage.Name = "BiomesTabPage";
             this.BiomesTabPage.Size = new System.Drawing.Size(953, 599);
@@ -5332,17 +5332,17 @@ namespace Scribe.Forms
             this.BiomeAddNewBiomeButton.UseVisualStyleBackColor = false;
             this.BiomeAddNewBiomeButton.Click += new System.EventHandler(this.BiomeAddNewBiomeButton_Click);
             // 
-            // BiomeIDExample
+            // BiomeIDStatic
             // 
-            this.BiomeIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BiomeIDExample.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BiomeIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
-            this.BiomeIDExample.Location = new System.Drawing.Point(812, 16);
-            this.BiomeIDExample.Name = "BiomeIDExample";
-            this.BiomeIDExample.Size = new System.Drawing.Size(131, 20);
-            this.BiomeIDExample.TabIndex = 3;
-            this.BiomeIDExample.Tag = "Themed";
-            this.BiomeIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BiomeIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiomeIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BiomeIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.BiomeIDStatic.Location = new System.Drawing.Point(812, 16);
+            this.BiomeIDStatic.Name = "BiomeIDStatic";
+            this.BiomeIDStatic.Size = new System.Drawing.Size(131, 20);
+            this.BiomeIDStatic.TabIndex = 3;
+            this.BiomeIDStatic.Tag = "Themed";
+            this.BiomeIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CraftingRecipesTabPage
             // 
@@ -5353,7 +5353,7 @@ namespace Scribe.Forms
             this.CraftingRecipesTabPage.Controls.Add(this.CraftingPixelBox);
             this.CraftingRecipesTabPage.Controls.Add(this.CraftingIDLabel);
             this.CraftingRecipesTabPage.Controls.Add(this.CraftingAddNewCraftingButton);
-            this.CraftingRecipesTabPage.Controls.Add(this.CraftingIDExample);
+            this.CraftingRecipesTabPage.Controls.Add(this.CraftingIDStatic);
             this.CraftingRecipesTabPage.Controls.Add(this.CraftingConfigGroupBox);
             this.CraftingRecipesTabPage.Location = new System.Drawing.Point(4, 22);
             this.CraftingRecipesTabPage.Name = "CraftingRecipesTabPage";
@@ -5406,7 +5406,7 @@ namespace Scribe.Forms
             this.CraftingTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.CraftingTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.CraftingTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.CraftingTableLayoutPanel.Controls.Add(this.CraftingPanelsCountExample, 1, 7);
+            this.CraftingTableLayoutPanel.Controls.Add(this.CraftingPanelsCountStatic, 1, 7);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingOpenPatternEditorButton, 2, 7);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingAddProductButton, 2, 4);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingRemoveProductButton, 1, 4);
@@ -5438,17 +5438,17 @@ namespace Scribe.Forms
             this.CraftingTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.CraftingTableLayoutPanel.TabIndex = 5;
             // 
-            // CraftingPanelsCountExample
+            // CraftingPanelsCountStatic
             // 
-            this.CraftingPanelsCountExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingPanelsCountExample.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CraftingPanelsCountExample.Location = new System.Drawing.Point(146, 415);
-            this.CraftingPanelsCountExample.Name = "CraftingPanelsCountExample";
-            this.CraftingPanelsCountExample.Size = new System.Drawing.Size(137, 20);
-            this.CraftingPanelsCountExample.TabIndex = 43;
-            this.CraftingPanelsCountExample.Tag = "Themed";
-            this.CraftingPanelsCountExample.Text = "0 Panels";
-            this.CraftingPanelsCountExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CraftingPanelsCountStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CraftingPanelsCountStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CraftingPanelsCountStatic.Location = new System.Drawing.Point(146, 415);
+            this.CraftingPanelsCountStatic.Name = "CraftingPanelsCountStatic";
+            this.CraftingPanelsCountStatic.Size = new System.Drawing.Size(137, 20);
+            this.CraftingPanelsCountStatic.TabIndex = 43;
+            this.CraftingPanelsCountStatic.Tag = "Themed";
+            this.CraftingPanelsCountStatic.Text = "0 Panels";
+            this.CraftingPanelsCountStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CraftingOpenPatternEditorButton
             // 
@@ -5657,17 +5657,17 @@ namespace Scribe.Forms
             this.CraftingAddNewCraftingButton.UseVisualStyleBackColor = false;
             this.CraftingAddNewCraftingButton.Click += new System.EventHandler(this.CraftingAddNewCraftingButton_Click);
             // 
-            // CraftingIDExample
+            // CraftingIDStatic
             // 
-            this.CraftingIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingIDExample.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CraftingIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
-            this.CraftingIDExample.Location = new System.Drawing.Point(813, 16);
-            this.CraftingIDExample.Name = "CraftingIDExample";
-            this.CraftingIDExample.Size = new System.Drawing.Size(131, 20);
-            this.CraftingIDExample.TabIndex = 3;
-            this.CraftingIDExample.Tag = "Themed";
-            this.CraftingIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CraftingIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CraftingIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CraftingIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.CraftingIDStatic.Location = new System.Drawing.Point(813, 16);
+            this.CraftingIDStatic.Name = "CraftingIDStatic";
+            this.CraftingIDStatic.Size = new System.Drawing.Size(131, 20);
+            this.CraftingIDStatic.TabIndex = 3;
+            this.CraftingIDStatic.Tag = "Themed";
+            this.CraftingIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CraftingConfigGroupBox
             // 
@@ -5701,7 +5701,7 @@ namespace Scribe.Forms
             this.CraftingConfigTableLayoutPanel.Controls.Add(this.CraftingMaxIngredientCountTextBox, 3, 0);
             this.CraftingConfigTableLayoutPanel.Controls.Add(this.CraftingMaxProductCountTextBox, 3, 1);
             this.CraftingConfigTableLayoutPanel.Controls.Add(this.CraftingStrikePatternDimensionLabelLabel, 0, 2);
-            this.CraftingConfigTableLayoutPanel.Controls.Add(this.CraftingStrikePatternDimensionLabelExample, 1, 2);
+            this.CraftingConfigTableLayoutPanel.Controls.Add(this.CraftingStrikePatternDimensionLabelStatic, 1, 2);
             this.CraftingConfigTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
             this.CraftingConfigTableLayoutPanel.Name = "CraftingConfigTableLayoutPanel";
             this.CraftingConfigTableLayoutPanel.RowCount = 3;
@@ -5784,14 +5784,14 @@ namespace Scribe.Forms
             this.CraftingStrikePatternDimensionLabelLabel.TabIndex = 8;
             this.CraftingStrikePatternDimensionLabelLabel.Text = "Strike Pattern Dimensions";
             // 
-            // CraftingStrikePatternDimensionLabelExample
+            // CraftingStrikePatternDimensionLabelStatic
             // 
-            this.CraftingStrikePatternDimensionLabelExample.AutoSize = true;
-            this.CraftingStrikePatternDimensionLabelExample.Location = new System.Drawing.Point(160, 48);
-            this.CraftingStrikePatternDimensionLabelExample.Name = "CraftingStrikePatternDimensionLabelExample";
-            this.CraftingStrikePatternDimensionLabelExample.Size = new System.Drawing.Size(31, 13);
-            this.CraftingStrikePatternDimensionLabelExample.TabIndex = 9;
-            this.CraftingStrikePatternDimensionLabelExample.Text = "2 x 2";
+            this.CraftingStrikePatternDimensionLabelStatic.AutoSize = true;
+            this.CraftingStrikePatternDimensionLabelStatic.Location = new System.Drawing.Point(160, 48);
+            this.CraftingStrikePatternDimensionLabelStatic.Name = "CraftingStrikePatternDimensionLabelStatic";
+            this.CraftingStrikePatternDimensionLabelStatic.Size = new System.Drawing.Size(31, 13);
+            this.CraftingStrikePatternDimensionLabelStatic.TabIndex = 9;
+            this.CraftingStrikePatternDimensionLabelStatic.Text = "2 x 2";
             // 
             // RoomRecipesTabPage
             // 
@@ -5805,7 +5805,7 @@ namespace Scribe.Forms
             this.RoomRecipesTabPage.Controls.Add(this.RoomPixelBox);
             this.RoomRecipesTabPage.Controls.Add(this.RoomIDLabel);
             this.RoomRecipesTabPage.Controls.Add(this.RoomAddNewRoomButton);
-            this.RoomRecipesTabPage.Controls.Add(this.RoomIDExample);
+            this.RoomRecipesTabPage.Controls.Add(this.RoomIDStatic);
             this.RoomRecipesTabPage.Location = new System.Drawing.Point(4, 22);
             this.RoomRecipesTabPage.Name = "RoomRecipesTabPage";
             this.RoomRecipesTabPage.Size = new System.Drawing.Size(953, 599);
@@ -6209,22 +6209,22 @@ namespace Scribe.Forms
             this.RoomAddNewRoomButton.UseVisualStyleBackColor = false;
             this.RoomAddNewRoomButton.Click += new System.EventHandler(this.RoomAddNewRoomButton_Click);
             // 
-            // RoomIDExample
+            // RoomIDStatic
             // 
-            this.RoomIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomIDExample.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.RoomIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
-            this.RoomIDExample.Location = new System.Drawing.Point(813, 16);
-            this.RoomIDExample.Name = "RoomIDExample";
-            this.RoomIDExample.Size = new System.Drawing.Size(131, 20);
-            this.RoomIDExample.TabIndex = 3;
-            this.RoomIDExample.Tag = "Themed";
-            this.RoomIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RoomIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RoomIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RoomIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.RoomIDStatic.Location = new System.Drawing.Point(813, 16);
+            this.RoomIDStatic.Name = "RoomIDStatic";
+            this.RoomIDStatic.Size = new System.Drawing.Size(131, 20);
+            this.RoomIDStatic.TabIndex = 3;
+            this.RoomIDStatic.Tag = "Themed";
+            this.RoomIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MapsTabPage
             // 
             this.MapsTabPage.Controls.Add(this.MapIDLabel);
-            this.MapsTabPage.Controls.Add(this.MapIDExample);
+            this.MapsTabPage.Controls.Add(this.MapIDStatic);
             this.MapsTabPage.Controls.Add(this.MapListBox);
             this.MapsTabPage.Controls.Add(this.MapRemoveButton);
             this.MapsTabPage.Controls.Add(this.MapAddNewButton);
@@ -6247,17 +6247,17 @@ namespace Scribe.Forms
             this.MapIDLabel.TabIndex = 12;
             this.MapIDLabel.Text = "Region ID";
             // 
-            // MapIDExample
+            // MapIDStatic
             // 
-            this.MapIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MapIDExample.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.MapIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
-            this.MapIDExample.Location = new System.Drawing.Point(813, 16);
-            this.MapIDExample.Name = "MapIDExample";
-            this.MapIDExample.Size = new System.Drawing.Size(131, 20);
-            this.MapIDExample.TabIndex = 11;
-            this.MapIDExample.Tag = "Themed";
-            this.MapIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.MapIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MapIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.MapIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.MapIDStatic.Location = new System.Drawing.Point(813, 16);
+            this.MapIDStatic.Name = "MapIDStatic";
+            this.MapIDStatic.Size = new System.Drawing.Size(131, 20);
+            this.MapIDStatic.TabIndex = 11;
+            this.MapIDStatic.Tag = "Themed";
+            this.MapIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MapListBox
             // 
@@ -6332,7 +6332,7 @@ namespace Scribe.Forms
             this.MapTableLayoutPanel.Controls.Add(this.MapCommentLabel, 0, 2);
             this.MapTableLayoutPanel.Controls.Add(this.MapCommentTextBox, 1, 2);
             this.MapTableLayoutPanel.Controls.Add(this.MapBackgroundColorLabel, 0, 3);
-            this.MapTableLayoutPanel.Controls.Add(this.MapBackgroundColorExample, 1, 3);
+            this.MapTableLayoutPanel.Controls.Add(this.MapBackgroundColorStatic, 1, 3);
             this.MapTableLayoutPanel.Controls.Add(this.MapExitNorthLabel, 0, 4);
             this.MapTableLayoutPanel.Controls.Add(this.MapExitSouthLabel, 0, 5);
             this.MapTableLayoutPanel.Controls.Add(this.MapExitEastLabel, 0, 6);
@@ -6428,17 +6428,17 @@ namespace Scribe.Forms
             this.MapBackgroundColorLabel.TabIndex = 30;
             this.MapBackgroundColorLabel.Text = "Background Color";
             // 
-            // MapBackgroundColorExample
+            // MapBackgroundColorStatic
             // 
-            this.MapBackgroundColorExample.BackColor = System.Drawing.Color.White;
-            this.MapBackgroundColorExample.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MapBackgroundColorExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
-            this.MapBackgroundColorExample.Location = new System.Drawing.Point(131, 135);
-            this.MapBackgroundColorExample.Name = "MapBackgroundColorExample";
-            this.MapBackgroundColorExample.Size = new System.Drawing.Size(24, 24);
-            this.MapBackgroundColorExample.TabIndex = 31;
-            this.MapBackgroundColorExample.Tag = "";
-            this.MapBackgroundColorExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.MapBackgroundColorStatic.BackColor = System.Drawing.Color.White;
+            this.MapBackgroundColorStatic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MapBackgroundColorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.MapBackgroundColorStatic.Location = new System.Drawing.Point(131, 135);
+            this.MapBackgroundColorStatic.Name = "MapBackgroundColorStatic";
+            this.MapBackgroundColorStatic.Size = new System.Drawing.Size(24, 24);
+            this.MapBackgroundColorStatic.TabIndex = 31;
+            this.MapBackgroundColorStatic.Tag = "";
+            this.MapBackgroundColorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MapExitNorthLabel
             // 
@@ -6586,7 +6586,7 @@ namespace Scribe.Forms
             this.MainMenuBar.ResumeLayout(false);
             this.MainMenuBar.PerformLayout();
             this.ContextMenuStripPictureBoxes.ResumeLayout(false);
-            this.ContextMenuStripIDExamples.ResumeLayout(false);
+            this.ContextMenuStripIDStatics.ResumeLayout(false);
             this.ContextMenuStripForTextEntries.ResumeLayout(false);
             this.FiltersTableLayoutPanel.ResumeLayout(false);
             this.FiltersTableLayoutPanel.PerformLayout();
@@ -6730,7 +6730,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemEditExternal;
         private System.Windows.Forms.ToolStripSeparator ToolStripSeparatorPictureBoxes;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemReloadImage;
-        private System.Windows.Forms.ContextMenuStrip ContextMenuStripIDExamples;
+        private System.Windows.Forms.ContextMenuStrip ContextMenuStripIDStatics;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemCopyID;
         private System.Windows.Forms.ContextMenuStrip ContextMenuStripForTextEntries;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemContextCut;
@@ -6774,29 +6774,29 @@ namespace Scribe.Forms
         private System.Windows.Forms.TableLayoutPanel LibraryInfoTableLayoutPanel;
         private System.Windows.Forms.TableLayoutPanel FileFormatTableLayoutPanel;
         private System.Windows.Forms.Label LibraryVersionLabel;
-        private System.Windows.Forms.Label LibraryVersionExample;
+        private System.Windows.Forms.Label LibraryVersionStatic;
         private System.Windows.Forms.Label LibraryProjectPathLabel;
-        private System.Windows.Forms.Label LibraryProjectPathExample;
+        private System.Windows.Forms.Label LibraryProjectPathStatic;
         private System.Windows.Forms.Label FileFormatPrimaryDelimiterLabel;
-        private System.Windows.Forms.Label FileFormatPrimaryDelimiterExample;
+        private System.Windows.Forms.Label FileFormatPrimaryDelimiterStatic;
         private System.Windows.Forms.Label FileFormatSecondaryDelimiterLabel;
-        private System.Windows.Forms.Label FileFormatSecondaryDelimiterExample;
+        private System.Windows.Forms.Label FileFormatSecondaryDelimiterStatic;
         private System.Windows.Forms.Label FileFormatInternalDelimiterLabel;
-        private System.Windows.Forms.Label FileFormatInternalDelimiterExample;
+        private System.Windows.Forms.Label FileFormatInternalDelimiterStatic;
         private System.Windows.Forms.Label FileFormatElementDelimiterLabel;
-        private System.Windows.Forms.Label FileFormatElementDelimiterExample;
+        private System.Windows.Forms.Label FileFormatElementDelimiterStatic;
         private System.Windows.Forms.Label FileFormatNameDelimiterLabel;
-        private System.Windows.Forms.Label FileFormatNameDelimiterExample;
+        private System.Windows.Forms.Label FileFormatNameDelimiterStatic;
         private System.Windows.Forms.Label FileFormatPronounDelimiterLabel;
-        private System.Windows.Forms.Label FileFormatPronounDelimiterExample;
+        private System.Windows.Forms.Label FileFormatPronounDelimiterStatic;
         private System.Windows.Forms.Label FileFormatDimensionalDelimiterLabel;
-        private System.Windows.Forms.Label FileFormatDimensionalDelimiterExample;
+        private System.Windows.Forms.Label FileFormatDimensionalDelimiterStatic;
         private System.Windows.Forms.Label FileFormatDimensionalTerminatorLabel;
-        private System.Windows.Forms.Label FileFormatDimensionalTerminatorExample;
+        private System.Windows.Forms.Label FileFormatDimensionalTerminatorStatic;
         private System.Windows.Forms.TableLayoutPanel GameTableLayoutPanel;
         private System.Windows.Forms.Label GameIDLabel;
         private System.Windows.Forms.ListBox GameListBox;
-        private System.Windows.Forms.Label GameIDExample;
+        private System.Windows.Forms.Label GameIDStatic;
         private System.Windows.Forms.Button GameAddNewGameButton;
         private System.Windows.Forms.Button GameRemoveGameButton;
         private System.Windows.Forms.Label GameNameLabel;
@@ -6821,7 +6821,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.TabPage BlocksTabPage;
         private System.Windows.Forms.TableLayoutPanel BlockTableLayoutPanel;
         private System.Windows.Forms.Label BlockIDLabel;
-        private System.Windows.Forms.Label BlockIDExample;
+        private System.Windows.Forms.Label BlockIDStatic;
         private System.Windows.Forms.Label BlockNameLabel;
         private System.Windows.Forms.Label BlockDescriptionLabel;
         private System.Windows.Forms.Label BlockCommentLabel;
@@ -6860,7 +6860,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.TabPage FloorsTabPage;
         private System.Windows.Forms.TableLayoutPanel FloorLayoutTabelPanel;
         private System.Windows.Forms.Label FloorIDLabel;
-        private System.Windows.Forms.Label FloorIDExample;
+        private System.Windows.Forms.Label FloorIDStatic;
         private System.Windows.Forms.Button FloorEditDugOutImageButton;
         private System.Windows.Forms.Label FloorNameLabel;
         private System.Windows.Forms.Label FloorDescriptionLabel;
@@ -6895,7 +6895,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.TabPage FurnishingsTabPage;
         private System.Windows.Forms.TableLayoutPanel FurnishingTableLayoutPanel;
         private System.Windows.Forms.Label FurnishingIDLabel;
-        private System.Windows.Forms.Label FurnishingIDExample;
+        private System.Windows.Forms.Label FurnishingIDStatic;
         private System.Windows.Forms.Label FurnishingNameLabel;
         private System.Windows.Forms.Label FurnishingDescriptionLabel;
         private System.Windows.Forms.Label FurnishingCommentLabel;
@@ -6930,7 +6930,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.TabPage CollectiblesTabPage;
         private System.Windows.Forms.TableLayoutPanel CollectibleTableLayoutPanel;
         private System.Windows.Forms.Label CollectibleIDLabel;
-        private System.Windows.Forms.Label CollectibleIDExample;
+        private System.Windows.Forms.Label CollectibleIDStatic;
         private System.Windows.Forms.Label CollectibleNameLabel;
         private System.Windows.Forms.Label CollectibleDescriptionLabel;
         private System.Windows.Forms.Label CollectibleCommentLabel;
@@ -6960,7 +6960,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.GroupBox CharacterPronounGroupBox;
         private System.Windows.Forms.TableLayoutPanel CharacterTableLayoutPanel;
         private System.Windows.Forms.Label CharacterIDLabel;
-        private System.Windows.Forms.Label CharacterIDExample;
+        private System.Windows.Forms.Label CharacterIDStatic;
         private System.Windows.Forms.ComboBox CharacterPrimaryBehaviorComboBox;
         private System.Windows.Forms.Label CharacterNameLabel;
         private System.Windows.Forms.Label CharacterDescriptionLabel;
@@ -6990,7 +6990,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.Label CharacterStartingInventoryLabel;
         private System.Windows.Forms.ComboBox CharacterPronounComboBox;
         private System.Windows.Forms.ComboBox CharacterStartingDialogueComboBox;
-        private System.Windows.Forms.Label CharacterStartingInventoryExample;
+        private System.Windows.Forms.Label CharacterStartingInventoryStatic;
         private System.Windows.Forms.ListBox CharacterStartingQuestsListBox;
         private System.Windows.Forms.Button CharacterAddQuestButton;
         private System.Windows.Forms.Button CharacterRemoveQuestButton;
@@ -7009,13 +7009,13 @@ namespace Scribe.Forms
         private System.Windows.Forms.Button CharacterPronounRemovePronoungGroupButton;
         private System.Windows.Forms.TextBox CharacterPronounPossessiveTextBox;
         private System.Windows.Forms.Label CharacterPronounKeyLabel;
-        private System.Windows.Forms.Label CharacterPronounKeyExample;
+        private System.Windows.Forms.Label CharacterPronounKeyStatic;
 
         private System.Windows.Forms.TabPage CrittersTabPage;
         private System.Windows.Forms.TableLayoutPanel CritterTableLayoutPanel;
         private System.Windows.Forms.Label CritterIDLabel;
         private System.Windows.Forms.ListBox CritterListBox;
-        private System.Windows.Forms.Label CritterIDExample;
+        private System.Windows.Forms.Label CritterIDStatic;
         private System.Windows.Forms.ComboBox CritterPrimaryBehaviorComboBox;
         private System.Windows.Forms.Label CritterNameLabel;
         private System.Windows.Forms.Label CritterDescriptionLabel;
@@ -7039,7 +7039,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.TabPage ItemsTabPage;
         private System.Windows.Forms.ListBox ItemListBox;
         private System.Windows.Forms.Label ItemNameLabel;
-        private System.Windows.Forms.Label ItemIDExample;
+        private System.Windows.Forms.Label ItemIDStatic;
         private System.Windows.Forms.GroupBox ItemInventoriesGroupBox;
         private System.Windows.Forms.Button ItemPictureEditButton;
         private System.Windows.Forms.TableLayoutPanel ItemTableLayoutPanel;
@@ -7076,7 +7076,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.TabPage BiomesTabPage;
         private System.Windows.Forms.ListBox BiomeListBox;
         private System.Windows.Forms.Label BiomeIDLabel;
-        private System.Windows.Forms.Label BiomeIDExample;
+        private System.Windows.Forms.Label BiomeIDStatic;
         private System.Windows.Forms.GroupBox BiomeConfigGroupBox;
         private System.Windows.Forms.Button BiomePictureEditButton;
         private System.Windows.Forms.TableLayoutPanel BiomeTableLayoutPanel;
@@ -7112,7 +7112,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.TabPage CraftingRecipesTabPage;
         private System.Windows.Forms.ListBox CraftingListBox;
         private System.Windows.Forms.Label CraftingIDLabel;
-        private System.Windows.Forms.Label CraftingIDExample;
+        private System.Windows.Forms.Label CraftingIDStatic;
         private System.Windows.Forms.TableLayoutPanel CraftingConfigTableLayoutPanel;
         private System.Windows.Forms.GroupBox CraftingConfigGroupBox;
         private System.Windows.Forms.Button CraftingPictureEditButton;
@@ -7143,15 +7143,15 @@ namespace Scribe.Forms
         private System.Windows.Forms.TextBox CraftingMaxIngredientCountTextBox;
         private System.Windows.Forms.TextBox CraftingMaxProductCountTextBox;
         private System.Windows.Forms.ListBox CraftingProductsListBox;
-        private System.Windows.Forms.Label CraftingPanelsCountExample;
+        private System.Windows.Forms.Label CraftingPanelsCountStatic;
         private System.Windows.Forms.Label CraftingStrikePatternDimensionLabelLabel;
-        private System.Windows.Forms.Label CraftingStrikePatternDimensionLabelExample;
+        private System.Windows.Forms.Label CraftingStrikePatternDimensionLabelStatic;
         private System.Windows.Forms.Label CraftingStrikePatternLabel;
 
         private System.Windows.Forms.TabPage RoomRecipesTabPage;
         private System.Windows.Forms.ListBox RoomListBox;
         private System.Windows.Forms.Label RoomIDLabel;
-        private System.Windows.Forms.Label RoomIDExample;
+        private System.Windows.Forms.Label RoomIDStatic;
         private System.Windows.Forms.GroupBox RoomConfigGroupBox;
         private System.Windows.Forms.Button RoomPictureEditButton;
         private System.Windows.Forms.TableLayoutPanel RoomTableLayoutPanel;
@@ -7186,7 +7186,7 @@ namespace Scribe.Forms
 
         private System.Windows.Forms.TabPage MapsTabPage;
         private System.Windows.Forms.Label MapIDLabel;
-        private System.Windows.Forms.Label MapIDExample;
+        private System.Windows.Forms.Label MapIDStatic;
         private System.Windows.Forms.ListBox MapListBox;
         private System.Windows.Forms.Button MapRemoveButton;
         private System.Windows.Forms.Button MapAddNewButton;
@@ -7200,7 +7200,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.Label MapCommentLabel;
         private System.Windows.Forms.TextBox MapCommentTextBox;
         private System.Windows.Forms.Label MapBackgroundColorLabel;
-        private System.Windows.Forms.Label MapBackgroundColorExample;
+        private System.Windows.Forms.Label MapBackgroundColorStatic;
         private System.Windows.Forms.Label MapExitNorthLabel;
         private System.Windows.Forms.Label MapExitSouthLabel;
         private System.Windows.Forms.Label MapExitEastLabel;

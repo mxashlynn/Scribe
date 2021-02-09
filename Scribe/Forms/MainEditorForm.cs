@@ -397,7 +397,7 @@ namespace Scribe.Forms
             };
             themed[typeof(ToolStripItem)].AddRange(MainMenuBar.Items.GetAllChildren());
             themed[typeof(ToolStripItem)].AddRange(ContextMenuStripPictureBoxes.Items.GetAllChildren());
-            themed[typeof(ToolStripItem)].AddRange(ContextMenuStripIDExamples.Items.GetAllChildren());
+            themed[typeof(ToolStripItem)].AddRange(ContextMenuStripIDStatics.Items.GetAllChildren());
             themed[typeof(GroupBox)].AddRange(this.GetAllChildrenExactlyOfType<GroupBox>()
                                     .Where(groupBox => null == groupBox.Tag || !groupBox.Tag.ToString().Contains(UnthemedControl)));
             themed[typeof(ListBox)].AddRange(this.GetAllChildrenExactlyOfType<ListBox>()
@@ -1134,14 +1134,14 @@ namespace Scribe.Forms
         /// </summary>
         private void UpdateFileFormatDisplay()
         {
-            FileFormatPrimaryDelimiterExample.Text = Delimiters.PrimaryDelimiter;
-            FileFormatSecondaryDelimiterExample.Text = Delimiters.SecondaryDelimiter;
-            FileFormatInternalDelimiterExample.Text = Delimiters.InternalDelimiter;
-            FileFormatElementDelimiterExample.Text = Delimiters.ElementDelimiter;
-            FileFormatNameDelimiterExample.Text = Delimiters.NameDelimiter;
-            FileFormatPronounDelimiterExample.Text = Delimiters.PronounDelimiter;
-            FileFormatDimensionalDelimiterExample.Text = Delimiters.DimensionalDelimiter;
-            FileFormatDimensionalTerminatorExample.Text = Delimiters.DimensionalTerminator;
+            FileFormatPrimaryDelimiterStatic.Text = Delimiters.PrimaryDelimiter;
+            FileFormatSecondaryDelimiterStatic.Text = Delimiters.SecondaryDelimiter;
+            FileFormatInternalDelimiterStatic.Text = Delimiters.InternalDelimiter;
+            FileFormatElementDelimiterStatic.Text = Delimiters.ElementDelimiter;
+            FileFormatNameDelimiterStatic.Text = Delimiters.NameDelimiter;
+            FileFormatPronounDelimiterStatic.Text = Delimiters.PronounDelimiter;
+            FileFormatDimensionalDelimiterStatic.Text = Delimiters.DimensionalDelimiter;
+            FileFormatDimensionalTerminatorStatic.Text = Delimiters.DimensionalTerminator;
         }
 
         /// <summary>
@@ -1149,8 +1149,8 @@ namespace Scribe.Forms
         /// </summary>
         private void UpdateLibraryDataDisplay()
         {
-            LibraryVersionExample.Text = Parquet.AssemblyInfo.LibraryVersion;
-            LibraryProjectPathExample.Text = All.ProjectDirectory;
+            LibraryVersionStatic.Text = Parquet.AssemblyInfo.LibraryVersion;
+            LibraryProjectPathStatic.Text = All.ProjectDirectory;
         }
 
         /// <summary>
@@ -1407,7 +1407,7 @@ namespace Scribe.Forms
         {
             if (null == GameListBox.SelectedItem)
             {
-                GameIDExample.Text = ModelID.None.ToString();
+                GameIDStatic.Text = ModelID.None.ToString();
                 GameNameTextBox.Text = "";
                 GameDescriptionTextBox.Text = "";
                 GameCommentTextBox.Text = "";
@@ -1421,7 +1421,7 @@ namespace Scribe.Forms
             else if (GameListBox.SelectedItem is GameModel model
                     && null != model)
             {
-                GameIDExample.Text = model.ID.ToString();
+                GameIDStatic.Text = model.ID.ToString();
                 GameNameTextBox.Text = model.Name;
                 GameDescriptionTextBox.Text = model.Description;
                 GameCommentTextBox.Text = model.Comment;
@@ -1449,7 +1449,7 @@ namespace Scribe.Forms
             BlockAddsToRoomListBox.SelectedItem = null;
             if (null == BlockListBox.SelectedItem)
             {
-                BlockIDExample.Text = ModelID.None.ToString();
+                BlockIDStatic.Text = ModelID.None.ToString();
                 BlockNameTextBox.Text = "";
                 BlockDescriptionTextBox.Text = "";
                 BlockCommentTextBox.Text = "";
@@ -1467,7 +1467,7 @@ namespace Scribe.Forms
             else if (BlockListBox.SelectedItem is BlockModel model
                     && null != model)
             {
-                BlockIDExample.Text = model.ID.ToString();
+                BlockIDStatic.Text = model.ID.ToString();
                 BlockNameTextBox.Text = model.Name;
                 BlockDescriptionTextBox.Text = model.Description;
                 BlockCommentTextBox.Text = model.Comment;
@@ -1498,7 +1498,7 @@ namespace Scribe.Forms
             FloorAddsToRoomListBox.SelectedItem = null;
             if (null == FloorListBox.SelectedItem)
             {
-                FloorIDExample.Text = ModelID.None.ToString();
+                FloorIDStatic.Text = ModelID.None.ToString();
                 FloorNameTextBox.Text = "";
                 FloorDescriptionTextBox.Text = "";
                 FloorCommentTextBox.Text = "";
@@ -1513,7 +1513,7 @@ namespace Scribe.Forms
             else if (FloorListBox.SelectedItem is FloorModel model
                     && null != model)
             {
-                FloorIDExample.Text = model.ID.ToString();
+                FloorIDStatic.Text = model.ID.ToString();
                 FloorNameTextBox.Text = model.Name;
                 FloorDescriptionTextBox.Text = model.Description;
                 FloorCommentTextBox.Text = model.Comment;
@@ -1541,7 +1541,7 @@ namespace Scribe.Forms
             FurnishingAddsToRoomListBox.SelectedItem = null;
             if (null == FurnishingListBox.SelectedItem)
             {
-                FurnishingIDExample.Text = ModelID.None.ToString();
+                FurnishingIDStatic.Text = ModelID.None.ToString();
                 FurnishingNameTextBox.Text = "";
                 FurnishingDescriptionTextBox.Text = "";
                 FurnishingCommentTextBox.Text = "";
@@ -1558,7 +1558,7 @@ namespace Scribe.Forms
             else if (FurnishingListBox.SelectedItem is FurnishingModel model
                     && null != model)
             {
-                FurnishingIDExample.Text = model.ID.ToString();
+                FurnishingIDStatic.Text = model.ID.ToString();
                 FurnishingNameTextBox.Text = model.Name;
                 FurnishingDescriptionTextBox.Text = model.Description;
                 FurnishingCommentTextBox.Text = model.Comment;
@@ -1589,7 +1589,7 @@ namespace Scribe.Forms
             CollectibleAddsToRoomListBox.SelectedItem = null;
             if (null == CollectibleListBox.SelectedItem)
             {
-                CollectibleIDExample.Text = ModelID.None.ToString();
+                CollectibleIDStatic.Text = ModelID.None.ToString();
                 CollectibleNameTextBox.Text = "";
                 CollectibleDescriptionTextBox.Text = "";
                 CollectibleCommentTextBox.Text = "";
@@ -1603,7 +1603,7 @@ namespace Scribe.Forms
             else if (CollectibleListBox.SelectedItem is CollectibleModel model
                     && null != model)
             {
-                CollectibleIDExample.Text = model.ID.ToString();
+                CollectibleIDStatic.Text = model.ID.ToString();
                 CollectibleNameTextBox.Text = model.Name;
                 CollectibleDescriptionTextBox.Text = model.Description;
                 CollectibleCommentTextBox.Text = model.Comment;
@@ -1628,7 +1628,7 @@ namespace Scribe.Forms
             CharacterStartingQuestsListBox.SelectedItem = null;
             if (null == CharacterListBox.SelectedItem)
             {
-                CharacterIDExample.Text = ModelID.None.ToString();
+                CharacterIDStatic.Text = ModelID.None.ToString();
                 CharacterPersonalNameTextBox.Text = "";
                 CharacterFamilyNameTextBox.Text = "";
                 CharacterDescriptionTextBox.Text = "";
@@ -1639,13 +1639,13 @@ namespace Scribe.Forms
                 CharacterStoryIDTextBox.Text = "";
                 CharacterStartingQuestsListBox.Items.Clear();
                 CharacterStartingDialogueComboBox.SelectedItem = null;
-                CharacterStartingInventoryExample.Text = "0 Items";
+                CharacterStartingInventoryStatic.Text = "0 Items";
                 CharacterPixelBox.Image = Resources.ImageNotFound;
             }
             else if (CharacterListBox.SelectedItem is CharacterModel model
                      && null != model)
             {
-                CharacterIDExample.Text = model.ID.ToString();
+                CharacterIDStatic.Text = model.ID.ToString();
                 CharacterPersonalNameTextBox.Text = model.PersonalName;
                 CharacterFamilyNameTextBox.Text = model.FamilyName;
                 CharacterDescriptionTextBox.Text = model.Description;
@@ -1669,7 +1669,7 @@ namespace Scribe.Forms
                     ModelID.None == model.StartingDialogueID
                         ? null
                         : All.Interactions.GetOrNull<InteractionModel>(model.StartingDialogueID);
-                CharacterStartingInventoryExample.Text = $"{model.StartingInventory?.ItemCount ?? 0} Items";
+                CharacterStartingInventoryStatic.Text = $"{model.StartingInventory?.ItemCount ?? 0} Items";
                 PictureBoxLoadFromStorage(CharacterPixelBox, model.ID);
             }
         }
@@ -1683,7 +1683,7 @@ namespace Scribe.Forms
         {
             if (null == CharacterPronounListBox.SelectedItem)
             {
-                CharacterPronounKeyExample.Text = PronounGroup.DefaultKey;
+                CharacterPronounKeyStatic.Text = PronounGroup.DefaultKey;
                 CharacterPronounSubjectiveTextBox.Text = "";
                 CharacterPronounObjectiveTextBox.Text = "";
                 CharacterPronounDeterminerTextBox.Text = "";
@@ -1693,7 +1693,7 @@ namespace Scribe.Forms
             else if (CharacterPronounListBox.SelectedItem is PronounGroup group
                      && null != group)
             {
-                CharacterPronounKeyExample.Text = group.Key;
+                CharacterPronounKeyStatic.Text = group.Key;
                 CharacterPronounSubjectiveTextBox.Text = group.Subjective;
                 CharacterPronounObjectiveTextBox.Text = group.Objective;
                 CharacterPronounDeterminerTextBox.Text = group.Determiner;
@@ -1711,7 +1711,7 @@ namespace Scribe.Forms
         {
             if (null == CritterListBox.SelectedItem)
             {
-                CritterIDExample.Text = ModelID.None.ToString();
+                CritterIDStatic.Text = ModelID.None.ToString();
                 CritterNameTextBox.Text = "";
                 CritterDescriptionTextBox.Text = "";
                 CritterCommentTextBox.Text = "";
@@ -1722,7 +1722,7 @@ namespace Scribe.Forms
             else if (CritterListBox.SelectedItem is CritterModel model
                      && null != model)
             {
-                CritterIDExample.Text = model.ID.ToString();
+                CritterIDStatic.Text = model.ID.ToString();
                 CritterNameTextBox.Text = model.Name;
                 CritterDescriptionTextBox.Text = model.Description;
                 CritterCommentTextBox.Text = model.Comment;
@@ -1746,7 +1746,7 @@ namespace Scribe.Forms
             ItemTagListBox.SelectedItem = null;
             if (null == ItemListBox.SelectedItem)
             {
-                ItemIDExample.Text = ModelID.None.ToString();
+                ItemIDStatic.Text = ModelID.None.ToString();
                 ItemNameTextBox.Text = "";
                 ItemDescriptionTextBox.Text = "";
                 ItemCommentTextBox.Text = "";
@@ -1763,7 +1763,7 @@ namespace Scribe.Forms
             else if (ItemListBox.SelectedItem is ItemModel model
                     && null != model)
             {
-                ItemIDExample.Text = model.ID.ToString();
+                ItemIDStatic.Text = model.ID.ToString();
                 ItemNameTextBox.Text = model.Name;
                 ItemDescriptionTextBox.Text = model.Description;
                 ItemCommentTextBox.Text = model.Comment;
@@ -1795,7 +1795,7 @@ namespace Scribe.Forms
             BiomeEntryRequirementsListBox.SelectedItem = null;
             if (null == BiomeListBox.SelectedItem)
             {
-                BiomeIDExample.Text = ModelID.None.ToString();
+                BiomeIDStatic.Text = ModelID.None.ToString();
                 BiomeNameTextBox.Text = "";
                 BiomeDescriptionTextBox.Text = "";
                 BiomeCommentTextBox.Text = "";
@@ -1809,7 +1809,7 @@ namespace Scribe.Forms
             else if (BiomeListBox.SelectedItem is BiomeRecipe recipe
                     && null != recipe)
             {
-                BiomeIDExample.Text = recipe.ID.ToString();
+                BiomeIDStatic.Text = recipe.ID.ToString();
                 BiomeNameTextBox.Text = recipe.Name;
                 BiomeDescriptionTextBox.Text = recipe.Description;
                 BiomeCommentTextBox.Text = recipe.Comment;
@@ -1833,25 +1833,25 @@ namespace Scribe.Forms
             CraftingIngredientsListBox.SelectedItem = null;
             if (null == CraftingListBox.SelectedItem)
             {
-                CraftingIDExample.Text = ModelID.None.ToString();
+                CraftingIDStatic.Text = ModelID.None.ToString();
                 CraftingNameTextBox.Text = "";
                 CraftingDescriptionTextBox.Text = "";
                 CraftingCommentTextBox.Text = "";
                 CraftingProductsListBox.Items.Clear();
                 CraftingIngredientsListBox.Items.Clear();
-                CraftingPanelsCountExample.Text = $"0 Panels";
+                CraftingPanelsCountStatic.Text = $"0 Panels";
                 CraftingPixelBox.Image = Resources.ImageNotFound;
             }
             else if (CraftingListBox.SelectedItem is CraftingRecipe recipe
                     && null != recipe)
             {
-                CraftingIDExample.Text = recipe.ID.ToString();
+                CraftingIDStatic.Text = recipe.ID.ToString();
                 CraftingNameTextBox.Text = recipe.Name;
                 CraftingDescriptionTextBox.Text = recipe.Description;
                 CraftingCommentTextBox.Text = recipe.Comment;
                 RepopulateListBox(CraftingProductsListBox, recipe.Products);
                 RepopulateListBox(CraftingIngredientsListBox, recipe.Ingredients);
-                CraftingPanelsCountExample.Text = $"{recipe.PanelPattern?.Count ?? 0} Panels";
+                CraftingPanelsCountStatic.Text = $"{recipe.PanelPattern?.Count ?? 0} Panels";
                 PictureBoxLoadFromStorage(CraftingPixelBox, recipe.ID);
             }
         }
@@ -1868,7 +1868,7 @@ namespace Scribe.Forms
             RoomRequiredBlocksListBox.SelectedItem = null;
             if (null == RoomListBox.SelectedItem)
             {
-                RoomIDExample.Text = ModelID.None.ToString();
+                RoomIDStatic.Text = ModelID.None.ToString();
                 RoomNameTextBox.Text = "";
                 RoomDescriptionTextBox.Text = "";
                 RoomCommentTextBox.Text = "";
@@ -1881,7 +1881,7 @@ namespace Scribe.Forms
             else if (RoomListBox.SelectedItem is RoomRecipe recipe
                     && null != recipe)
             {
-                RoomIDExample.Text = recipe.ID.ToString();
+                RoomIDStatic.Text = recipe.ID.ToString();
                 RoomNameTextBox.Text = recipe.Name;
                 RoomDescriptionTextBox.Text = recipe.Description;
                 RoomCommentTextBox.Text = recipe.Comment;
@@ -2588,7 +2588,7 @@ namespace Scribe.Forms
             var result = InventoryEditorWindow.ShowDialog();
             if (result == DialogResult.OK)
             {
-                CharacterStartingInventoryExample.Text = $"{currentCharacter.StartingInventory?.ItemCount ?? 0} Items";
+                CharacterStartingInventoryStatic.Text = $"{currentCharacter.StartingInventory?.ItemCount ?? 0} Items";
             }
             else if (result == DialogResult.Abort)
             {
