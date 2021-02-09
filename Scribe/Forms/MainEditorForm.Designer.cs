@@ -6243,9 +6243,9 @@ namespace Scribe.Forms
             this.MapIDLabel.AutoSize = true;
             this.MapIDLabel.Location = new System.Drawing.Point(759, 19);
             this.MapIDLabel.Name = "MapIDLabel";
-            this.MapIDLabel.Size = new System.Drawing.Size(48, 13);
+            this.MapIDLabel.Size = new System.Drawing.Size(54, 13);
             this.MapIDLabel.TabIndex = 12;
-            this.MapIDLabel.Text = "Game ID";
+            this.MapIDLabel.Text = "Region ID";
             // 
             // MapIDExample
             // 
@@ -6279,7 +6279,7 @@ namespace Scribe.Forms
             this.MapRemoveButton.Name = "MapRemoveButton";
             this.MapRemoveButton.Size = new System.Drawing.Size(129, 23);
             this.MapRemoveButton.TabIndex = 9;
-            this.MapRemoveButton.Text = "Remove Game";
+            this.MapRemoveButton.Text = "Remove Region";
             this.MapRemoveButton.UseVisualStyleBackColor = false;
             // 
             // MapAddNewButton
@@ -6290,7 +6290,7 @@ namespace Scribe.Forms
             this.MapAddNewButton.Name = "MapAddNewButton";
             this.MapAddNewButton.Size = new System.Drawing.Size(129, 23);
             this.MapAddNewButton.TabIndex = 10;
-            this.MapAddNewButton.Text = "Add New Game";
+            this.MapAddNewButton.Text = "Add New Region";
             this.MapAddNewButton.UseVisualStyleBackColor = false;
             // 
             // MapPixelBox
@@ -6499,7 +6499,7 @@ namespace Scribe.Forms
             this.MapExitNorthComboBox.DisplayMember = "Name";
             this.MapExitNorthComboBox.Location = new System.Drawing.Point(131, 163);
             this.MapExitNorthComboBox.Name = "MapExitNorthComboBox";
-            this.MapExitNorthComboBox.Size = new System.Drawing.Size(147, 21);
+            this.MapExitNorthComboBox.Size = new System.Drawing.Size(121, 21);
             this.MapExitNorthComboBox.TabIndex = 28;
             // 
             // MapExitSouthComboBox
@@ -6507,7 +6507,7 @@ namespace Scribe.Forms
             this.MapExitSouthComboBox.DisplayMember = "Name";
             this.MapExitSouthComboBox.Location = new System.Drawing.Point(131, 188);
             this.MapExitSouthComboBox.Name = "MapExitSouthComboBox";
-            this.MapExitSouthComboBox.Size = new System.Drawing.Size(147, 21);
+            this.MapExitSouthComboBox.Size = new System.Drawing.Size(121, 21);
             this.MapExitSouthComboBox.TabIndex = 29;
             // 
             // MapExitEastComboBox
