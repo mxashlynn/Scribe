@@ -5,7 +5,7 @@ using Scribe.CustomControls;
 
 namespace Scribe.Forms.Development
 {
-    partial class TestMapGridForm : Form
+    partial class TestMapGridForm : Form, IMapController
     {
         #region Class Defaults
         /// <summary>Pseudo-Random Number Generator, used in creating the test pattern.</summary>
@@ -84,6 +84,33 @@ namespace Scribe.Forms.Development
             MapGrid.IDMap[0, 1, 3] = 0;
 
             RefreshMapTimer.Start();
+        }
+        #endregion
+
+        #region IMapController Implementation
+        /// <summary>
+        /// Occurs when the mouse hovers over a particular cell on the <see cref="MapPictureGrid"/>.
+        /// </summary>
+        /// <param name="inSender">The <see cref="MapPictureGrid"/> being hovered over.</param>
+        /// <param name="inEventArguments">Arguments from the original event.</param>
+        /// <param name="gridRestingLocation">The grid coordinates of the cell being hovered over.</param>
+        /// <param name="screenRestingLocation">The screen coordinates of the cell being hovered over.</param>
+        public void MapHover(object inSender, EventArgs inEventArguments, Point gridRestingLocation, Point screenRestingLocation)
+        {
+            var pixelRestingLocation = PointToClient(screenRestingLocation);
+            MessageBox.Show($"Hovering over ({gridRestingLocation.X}, {gridRestingLocation.Y}) at {pixelRestingLocation}.");
+        }
+
+        /// <summary>
+        /// Occurs when the is released over the <see cref="MapPictureGrid"/>.
+        /// </summary>
+        /// <param name="inSender">The <see cref="MapPictureGrid"/> being hovered over.</param>
+        /// <param name="inMouseArguments">Arguments from the original event.</param>
+        /// <param name="clickStartLocation">The grid coordinates of the cell over which the click began.</param>
+        /// <param name="clickEndLocation">The grid coordinates of the cell over which the click ended.</param>
+        public void MapUp(object inSender, MouseEventArgs inMouseArguments, Point clickStartLocation, Point clickEndLocation)
+        {
+            MessageBox.Show($"Clicked starting at ({clickStartLocation.X}, {clickStartLocation.Y}) at ending at ({clickEndLocation.X}, {clickEndLocation.Y}).");
         }
         #endregion
 

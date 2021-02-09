@@ -33,7 +33,6 @@ namespace Scribe.CustomControls
             // 
             // MapPictureGrid
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Lavender;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -42,6 +41,9 @@ namespace Scribe.CustomControls
             this.MinimumSize = new System.Drawing.Size(1280, 720);
             this.Name = "MapPictureGrid";
             this.Size = new System.Drawing.Size(1280, 720);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MapPictureGrid_MouseDown);
+            this.MouseHover += new System.EventHandler(this.MapPictureGrid_MouseHover);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MapPictureGrid_MouseUp);
             this.ResumeLayout(false);
 
         }

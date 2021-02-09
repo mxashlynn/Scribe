@@ -44,6 +44,9 @@ namespace Scribe.CustomControls
         #endregion
 
         #region Characteristics
+        /// <summary>The <see cref="IMapController"/> responsible for handling map-related events.</summary>
+        private readonly IMapController Controller;
+
         /// <summary>All graphics needed to render this <see cref="MapPictureGrid"/>.</summary>
         public Dictionary<int, Bitmap> ImageByID { get; } = new Dictionary<int, Bitmap>();
 
@@ -52,15 +55,23 @@ namespace Scribe.CustomControls
 
         /// <summary>When <c>true</c>, no repainting is needed.</summary>
         private bool IsRendering = false;
+
+        /// <summary>Indicates if a click event is currently in progress.</summary>
+        private bool IsMidClick = false;
+
+        /// <summary>Where the current click event began, or <see cref="Point.Empty"/> if no such event is in progress.</summary>
+        private Point ClickStartLocation = Point.Empty;
         #endregion
 
         #region Initialization
         /// <summary>
         /// Initializes a new <see cref="MapPictureGrid"/>.
         /// </summary>
-        public MapPictureGrid()
+        public MapPictureGrid(IMapController inController = null)
         {
             InitializeComponent();
+
+            Controller = inController;
 
             // Check my math and that Windows Forms Designer hasn't broken anything.
             Debug.Assert(TargetResolution == new Size(1280, 720));
@@ -134,6 +145,73 @@ namespace Scribe.CustomControls
                 }
             }
         }
+        #endregion
+
+        #region Process Input
+        /// <summary>
+        /// Computers the location of the specified client <see cref="Point"/> in terms of grid coordinates.
+        /// </summary>
+        /// <param name="inLocation">
+        /// A location on the <see cref="MapPictureGrid"/> relative to the upper left corner of the control.
+        /// </param>
+        /// <returns>The given <see cref="Point"/> in terms of grid coordinates.</returns>
+        private static Point PointToGrid(Point inLocation)
+            => new Point(inLocation.X / TargetParquetDimensionInPixels, inLocation.Y / TargetParquetDimensionInPixels);
+
+        /// <summary>
+        /// Computers the location of the specified grid <see cref="Point"/> in terms of client coordinates.
+        /// </summary>
+        /// <param name="inLocation">
+        /// A location on the <see cref="MapPictureGrid"/> relative to the upper left corner of the control.
+        /// </param>
+        /// <returns>The given <see cref="Point"/> in terms of client coordinates.</returns>
+        private static Point PointToPixel(Point inLocation)
+            => new Point(inLocation.X * TargetParquetDimensionInPixels, inLocation.Y * TargetParquetDimensionInPixels);
+
+        /// <summary>
+        /// Occurs when the mouse pointer rests on the control.
+        /// </summary>
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Information about the event.</param>
+        private void MapPictureGrid_MouseHover(object inSender, EventArgs inEventArguments)
+        {
+            if (!IsMidClick)
+            {
+                var gridLocation = PointToGrid(PointToClient(Cursor.Position));
+                var screenLocation = PointToScreen(PointToPixel(gridLocation));
+                Controller.MapHover(inSender, inEventArguments, gridLocation, screenLocation);
+            }
+        }
+
+        /// <summary>
+        /// Occurs when the mouse pointer is over the control and a mouse button is pressed.
+        /// </summary>
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inMouseArguments">Information about the event.</param>
+        private void MapPictureGrid_MouseDown(object inSender, MouseEventArgs inMouseArguments)
+        {
+            if (!IsMidClick)
+            {
+                ClickStartLocation = PointToGrid(inMouseArguments.Location);
+                IsMidClick = true;
+            }
+        }
+
+        /// <summary>
+        /// Occurs when the mouse pointer is over the control and a mouse button is released.
+        /// </summary>
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inMouseArguments">Information about the event.</param>
+        private void MapPictureGrid_MouseUp(object inSender, MouseEventArgs inMouseArguments)
+        {
+            if (IsMidClick)
+            {
+                var clickEndLocation = PointToGrid(inMouseArguments.Location);
+                IsMidClick = false;
+                Controller.MapUp(inSender, inMouseArguments, ClickStartLocation, clickEndLocation);
+            }
+        }
+
         #endregion
 
         #region Performance Verification
