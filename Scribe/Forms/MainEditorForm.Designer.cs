@@ -519,15 +519,17 @@ namespace Scribe.Forms
             this.RemoveMapButton = new System.Windows.Forms.Button();
             this.EditMapImageButton = new System.Windows.Forms.Button();
             this.MapTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.MapNameLabel = new System.Windows.Forms.Label();
             this.MapDescriptionLabel = new System.Windows.Forms.Label();
             this.MapCommentLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.MapNameTextBox = new System.Windows.Forms.TextBox();
+            this.MapDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.MapCommentTextBox = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.MapBackgroundColorLabel = new System.Windows.Forms.Label();
@@ -598,6 +600,7 @@ namespace Scribe.Forms
             ((System.ComponentModel.ISupportInitialize)(this.RoomPixelBox)).BeginInit();
             this.MapsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MapPixelBox)).BeginInit();
+            this.MapTableLayoutPanel.SuspendLayout();
             this.ScriptsTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -6271,15 +6274,17 @@ namespace Scribe.Forms
             this.MapTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.MapTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.MapTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.MapTableLayoutPanel.Controls.Add(this.label4, 0, 8);
+            this.MapTableLayoutPanel.Controls.Add(this.label3, 0, 9);
             this.MapTableLayoutPanel.Controls.Add(this.label2, 0, 5);
             this.MapTableLayoutPanel.Controls.Add(this.MapNameLabel, 0, 0);
             this.MapTableLayoutPanel.Controls.Add(this.MapDescriptionLabel, 0, 1);
             this.MapTableLayoutPanel.Controls.Add(this.MapCommentLabel, 0, 2);
             this.MapTableLayoutPanel.Controls.Add(this.label7, 0, 6);
             this.MapTableLayoutPanel.Controls.Add(this.label8, 0, 7);
-            this.MapTableLayoutPanel.Controls.Add(this.textBox1, 1, 0);
-            this.MapTableLayoutPanel.Controls.Add(this.textBox2, 1, 1);
-            this.MapTableLayoutPanel.Controls.Add(this.textBox3, 1, 2);
+            this.MapTableLayoutPanel.Controls.Add(this.MapNameTextBox, 1, 0);
+            this.MapTableLayoutPanel.Controls.Add(this.MapDescriptionTextBox, 1, 1);
+            this.MapTableLayoutPanel.Controls.Add(this.MapCommentTextBox, 1, 2);
             this.MapTableLayoutPanel.Controls.Add(this.comboBox1, 1, 6);
             this.MapTableLayoutPanel.Controls.Add(this.comboBox2, 1, 7);
             this.MapTableLayoutPanel.Controls.Add(this.MapBackgroundColorLabel, 0, 3);
@@ -6301,6 +6306,24 @@ namespace Scribe.Forms
             this.MapTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.MapTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.MapTableLayoutPanel.TabIndex = 13;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 260);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 13);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "Player Character";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 285);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 13);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "Player Character";
             // 
             // label2
             // 
@@ -6356,34 +6379,35 @@ namespace Scribe.Forms
             this.label8.TabIndex = 21;
             this.label8.Text = "First Script";
             // 
-            // textBox1
+            // MapNameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(131, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(147, 20);
-            this.textBox1.TabIndex = 23;
+            this.MapNameTextBox.Location = new System.Drawing.Point(131, 3);
+            this.MapNameTextBox.Name = "MapNameTextBox";
+            this.MapNameTextBox.Size = new System.Drawing.Size(147, 20);
+            this.MapNameTextBox.TabIndex = 23;
             // 
-            // textBox2
+            // MapDescriptionTextBox
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.MapDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(131, 28);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(295, 49);
-            this.textBox2.TabIndex = 24;
+            this.MapDescriptionTextBox.Location = new System.Drawing.Point(131, 28);
+            this.MapDescriptionTextBox.Multiline = true;
+            this.MapDescriptionTextBox.Name = "MapDescriptionTextBox";
+            this.MapDescriptionTextBox.Size = new System.Drawing.Size(295, 49);
+            this.MapDescriptionTextBox.TabIndex = 24;
             // 
-            // textBox3
+            // MapCommentTextBox
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.MapCommentTextBox.AccessibleDescription = "";
+            this.MapCommentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(131, 83);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(295, 49);
-            this.textBox3.TabIndex = 25;
+            this.MapCommentTextBox.Location = new System.Drawing.Point(131, 83);
+            this.MapCommentTextBox.Multiline = true;
+            this.MapCommentTextBox.Name = "MapCommentTextBox";
+            this.MapCommentTextBox.Size = new System.Drawing.Size(295, 49);
+            this.MapCommentTextBox.TabIndex = 25;
             // 
             // comboBox1
             // 
@@ -7134,8 +7158,8 @@ namespace Scribe.Forms
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox MapDescriptionTextBox;
+        private System.Windows.Forms.TextBox MapCommentTextBox;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label MapIDLabel;
@@ -7151,5 +7175,8 @@ namespace Scribe.Forms
 
         private System.Windows.Forms.TabPage ScriptsTabPage;
         private System.Windows.Forms.Label ScriptingPendingDesignLabel;
+        private System.Windows.Forms.TextBox MapNameTextBox;
+        private System.Windows.Forms.TextBox MapDescription;
+        private System.Windows.Forms.Label label4;
     }
 }
