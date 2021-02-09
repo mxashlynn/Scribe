@@ -45,7 +45,7 @@ namespace Scribe.CustomControls
 
         #region Characteristics
         /// <summary>The <see cref="IMapController"/> responsible for handling map-related events.</summary>
-        private readonly IMapController Controller;
+        public IMapController Controller { get; set; }
 
         /// <summary>All graphics needed to render this <see cref="MapPictureGrid"/>.</summary>
         public Dictionary<int, Bitmap> ImageByID { get; } = new Dictionary<int, Bitmap>();
@@ -67,11 +67,9 @@ namespace Scribe.CustomControls
         /// <summary>
         /// Initializes a new <see cref="MapPictureGrid"/>.
         /// </summary>
-        public MapPictureGrid(IMapController inController = null)
+        public MapPictureGrid()
         {
             InitializeComponent();
-
-            Controller = inController;
 
             // Check my math and that Windows Forms Designer hasn't broken anything.
             Debug.Assert(TargetResolution == new Size(1280, 720));

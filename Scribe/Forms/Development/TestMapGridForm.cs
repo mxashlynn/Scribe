@@ -39,6 +39,7 @@ namespace Scribe.Forms.Development
         public TestMapGridForm()
         {
             InitializeComponent();
+            MapGrid.Controller = this;
 
             RefreshMapTimer.Tick += (object sender, EventArgs arguments) =>
             {
