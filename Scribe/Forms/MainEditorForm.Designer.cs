@@ -521,6 +521,7 @@ namespace Scribe.Forms
             this.MapListBox = new System.Windows.Forms.ListBox();
             this.MapRemoveButton = new System.Windows.Forms.Button();
             this.MapAddNewButton = new System.Windows.Forms.Button();
+            this.MapConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.MapPixelBox = new Scribe.CustomControls.PixelBox();
             this.MapEditButton = new System.Windows.Forms.Button();
             this.MapTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -6293,6 +6294,16 @@ namespace Scribe.Forms
             this.MapAddNewButton.Text = "Add New Region";
             this.MapAddNewButton.UseVisualStyleBackColor = false;
             // 
+            // MapConfigGroupBox
+            // 
+            this.MapConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MapConfigGroupBox.Location = new System.Drawing.Point(9, 497);
+            this.MapConfigGroupBox.Name = "MapConfigGroupBox";
+            this.MapConfigGroupBox.Size = new System.Drawing.Size(938, 96);
+            this.MapConfigGroupBox.TabIndex = 0;
+            this.MapConfigGroupBox.TabStop = false;
+            // 
             // MapPixelBox
             // 
             this.MapPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -7190,6 +7201,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.ListBox MapListBox;
         private System.Windows.Forms.Button MapRemoveButton;
         private System.Windows.Forms.Button MapAddNewButton;
+        private System.Windows.Forms.GroupBox MapConfigGroupBox;
         private CustomControls.PixelBox MapPixelBox;
         private System.Windows.Forms.Button MapEditButton;
         private System.Windows.Forms.TableLayoutPanel MapTableLayoutPanel;
