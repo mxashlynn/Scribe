@@ -6299,9 +6299,9 @@ namespace Scribe.Forms
             this.MapPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.MapPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
             this.MapPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("MapPixelBox.Image")));
-            this.MapPixelBox.Location = new System.Drawing.Point(823, 342);
+            this.MapPixelBox.Location = new System.Drawing.Point(751, 354);
             this.MapPixelBox.Name = "MapPixelBox";
-            this.MapPixelBox.Size = new System.Drawing.Size(120, 120);
+            this.MapPixelBox.Size = new System.Drawing.Size(192, 108);
             this.MapPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.MapPixelBox.TabIndex = 14;
             this.MapPixelBox.TabStop = false;
@@ -6314,7 +6314,7 @@ namespace Scribe.Forms
             this.MapEditButton.Name = "MapEditButton";
             this.MapEditButton.Size = new System.Drawing.Size(128, 23);
             this.MapEditButton.TabIndex = 15;
-            this.MapEditButton.Text = "Edit Image";
+            this.MapEditButton.Text = "Edit Map";
             this.MapEditButton.UseVisualStyleBackColor = false;
             // 
             // MapTableLayoutPanel
