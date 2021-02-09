@@ -516,7 +516,27 @@ namespace Scribe.Forms
             this.RoomAddNewRoomButton = new System.Windows.Forms.Button();
             this.RoomIDExample = new System.Windows.Forms.Label();
             this.MapsTabPage = new System.Windows.Forms.TabPage();
-            this.MapPendingDesignLabel = new System.Windows.Forms.Label();
+            this.RemoveMapButton = new System.Windows.Forms.Button();
+            this.EditMapImageButton = new System.Windows.Forms.Button();
+            this.MapTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.MapNameLabel = new System.Windows.Forms.Label();
+            this.MapDescriptionLabel = new System.Windows.Forms.Label();
+            this.MapCommentLabel = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.MapBackgroundColorLabel = new System.Windows.Forms.Label();
+            this.MapBackgroundColorExample = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.MapIDLabel = new System.Windows.Forms.Label();
+            this.MapIDExample = new System.Windows.Forms.Label();
+            this.AddNewMapButton = new System.Windows.Forms.Button();
+            this.MapListBox = new System.Windows.Forms.ListBox();
             this.ScriptsTabPage = new System.Windows.Forms.TabPage();
             this.ScriptingPendingDesignLabel = new System.Windows.Forms.Label();
             this.EditorStatusStrip.SuspendLayout();
@@ -577,6 +597,7 @@ namespace Scribe.Forms
             this.RoomTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPixelBox)).BeginInit();
             this.MapsTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MapPixelBox)).BeginInit();
             this.ScriptsTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -6194,22 +6215,266 @@ namespace Scribe.Forms
             // 
             // MapsTabPage
             // 
-            this.MapsTabPage.Controls.Add(this.MapPendingDesignLabel);
+            this.MapsTabPage.Controls.Add(this.RemoveMapButton);
+            this.MapsTabPage.Controls.Add(this.EditMapImageButton);
+            this.MapsTabPage.Controls.Add(this.MapTableLayoutPanel);
+            this.MapsTabPage.Controls.Add(this.MapIDLabel);
+            this.MapsTabPage.Controls.Add(this.MapIDExample);
+            this.MapsTabPage.Controls.Add(this.AddNewMapButton);
+            this.MapsTabPage.Controls.Add(this.MapListBox);
             this.MapsTabPage.Location = new System.Drawing.Point(4, 22);
             this.MapsTabPage.Name = "MapsTabPage";
             this.MapsTabPage.Size = new System.Drawing.Size(953, 599);
             this.MapsTabPage.TabIndex = 5;
             this.MapsTabPage.Text = "Maps";
             // 
-            // MapPendingDesignLabel
+            // RemoveMapButton
             // 
-            this.MapPendingDesignLabel.AutoSize = true;
-            this.MapPendingDesignLabel.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MapPendingDesignLabel.Location = new System.Drawing.Point(420, 278);
-            this.MapPendingDesignLabel.Name = "MapPendingDesignLabel";
-            this.MapPendingDesignLabel.Size = new System.Drawing.Size(158, 25);
-            this.MapPendingDesignLabel.TabIndex = 0;
-            this.MapPendingDesignLabel.Text = "Pending Design";
+            this.RemoveMapButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RemoveMapButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RemoveMapButton.Location = new System.Drawing.Point(24, 468);
+            this.RemoveMapButton.Name = "RemoveMapButton";
+            this.RemoveMapButton.Size = new System.Drawing.Size(129, 23);
+            this.RemoveMapButton.TabIndex = 9;
+            this.RemoveMapButton.Text = "Remove Game";
+            this.RemoveMapButton.UseVisualStyleBackColor = false;
+            // 
+            // EditMapImageButton
+            // 
+            this.EditMapImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.EditMapImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditMapImageButton.Location = new System.Drawing.Point(815, 468);
+            this.EditMapImageButton.Name = "EditMapImageButton";
+            this.EditMapImageButton.Size = new System.Drawing.Size(128, 23);
+            this.EditMapImageButton.TabIndex = 15;
+            this.EditMapImageButton.Text = "Edit Image";
+            this.EditMapImageButton.UseVisualStyleBackColor = false;
+            // 
+            // MapPixelBox
+            // 
+            this.MapPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.MapPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.MapPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
+            this.MapPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("MapPixelBox.Image")));
+            this.MapPixelBox.Location = new System.Drawing.Point(823, 342);
+            this.MapPixelBox.Name = "MapPixelBox";
+            this.MapPixelBox.Size = new System.Drawing.Size(120, 120);
+            this.MapPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.MapPixelBox.TabIndex = 14;
+            this.MapPixelBox.TabStop = false;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.MapTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.MapTableLayoutPanel.ColumnCount = 2;
+            this.MapTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.MapTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.MapTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.MapTableLayoutPanel.Controls.Add(this.label2, 0, 5);
+            this.MapTableLayoutPanel.Controls.Add(this.MapNameLabel, 0, 0);
+            this.MapTableLayoutPanel.Controls.Add(this.MapDescriptionLabel, 0, 1);
+            this.MapTableLayoutPanel.Controls.Add(this.MapCommentLabel, 0, 2);
+            this.MapTableLayoutPanel.Controls.Add(this.label7, 0, 6);
+            this.MapTableLayoutPanel.Controls.Add(this.label8, 0, 7);
+            this.MapTableLayoutPanel.Controls.Add(this.textBox1, 1, 0);
+            this.MapTableLayoutPanel.Controls.Add(this.textBox2, 1, 1);
+            this.MapTableLayoutPanel.Controls.Add(this.textBox3, 1, 2);
+            this.MapTableLayoutPanel.Controls.Add(this.comboBox1, 1, 6);
+            this.MapTableLayoutPanel.Controls.Add(this.comboBox2, 1, 7);
+            this.MapTableLayoutPanel.Controls.Add(this.MapBackgroundColorLabel, 0, 3);
+            this.MapTableLayoutPanel.Controls.Add(this.MapBackgroundColorExample, 1, 3);
+            this.MapTableLayoutPanel.Controls.Add(this.label1, 0, 4);
+            this.MapTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
+            this.MapTableLayoutPanel.Name = "MapTableLayoutPanel";
+            this.MapTableLayoutPanel.RowCount = 11;
+            this.MapTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.MapTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.MapTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.MapTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.MapTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.MapTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.MapTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.MapTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.MapTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.MapTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.MapTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.MapTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
+            this.MapTableLayoutPanel.TabIndex = 13;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 185);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 13);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "Player Character";
+            // 
+            // MapNameLabel
+            // 
+            this.MapNameLabel.AutoSize = true;
+            this.MapNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.MapNameLabel.Name = "MapNameLabel";
+            this.MapNameLabel.Size = new System.Drawing.Size(34, 13);
+            this.MapNameLabel.TabIndex = 0;
+            this.MapNameLabel.Text = "Name";
+            // 
+            // MapDescriptionLabel
+            // 
+            this.MapDescriptionLabel.AutoSize = true;
+            this.MapDescriptionLabel.Location = new System.Drawing.Point(3, 25);
+            this.MapDescriptionLabel.Name = "MapDescriptionLabel";
+            this.MapDescriptionLabel.Size = new System.Drawing.Size(60, 13);
+            this.MapDescriptionLabel.TabIndex = 3;
+            this.MapDescriptionLabel.Text = "Description";
+            // 
+            // MapCommentLabel
+            // 
+            this.MapCommentLabel.AutoSize = true;
+            this.MapCommentLabel.Location = new System.Drawing.Point(3, 80);
+            this.MapCommentLabel.Name = "MapCommentLabel";
+            this.MapCommentLabel.Size = new System.Drawing.Size(52, 13);
+            this.MapCommentLabel.TabIndex = 6;
+            this.MapCommentLabel.Text = "Comment";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 210);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(88, 13);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Player Character";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 235);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(58, 13);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "First Script";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(131, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(147, 20);
+            this.textBox1.TabIndex = 23;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.Location = new System.Drawing.Point(131, 28);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(295, 49);
+            this.textBox2.TabIndex = 24;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox3.Location = new System.Drawing.Point(131, 83);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(295, 49);
+            this.textBox3.TabIndex = 25;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DisplayMember = "Name";
+            this.comboBox1.Location = new System.Drawing.Point(131, 213);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(147, 21);
+            this.comboBox1.TabIndex = 28;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DisplayMember = "Name";
+            this.comboBox2.Location = new System.Drawing.Point(131, 238);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(147, 21);
+            this.comboBox2.TabIndex = 29;
+            // 
+            // MapBackgroundColorLabel
+            // 
+            this.MapBackgroundColorLabel.AutoSize = true;
+            this.MapBackgroundColorLabel.Location = new System.Drawing.Point(3, 135);
+            this.MapBackgroundColorLabel.Name = "MapBackgroundColorLabel";
+            this.MapBackgroundColorLabel.Size = new System.Drawing.Size(91, 13);
+            this.MapBackgroundColorLabel.TabIndex = 30;
+            this.MapBackgroundColorLabel.Text = "Background Color";
+            // 
+            // MapBackgroundColorExample
+            // 
+            this.MapBackgroundColorExample.BackColor = System.Drawing.Color.White;
+            this.MapBackgroundColorExample.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MapBackgroundColorExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
+            this.MapBackgroundColorExample.Location = new System.Drawing.Point(131, 135);
+            this.MapBackgroundColorExample.Name = "MapBackgroundColorExample";
+            this.MapBackgroundColorExample.Size = new System.Drawing.Size(24, 24);
+            this.MapBackgroundColorExample.TabIndex = 31;
+            this.MapBackgroundColorExample.Tag = "";
+            this.MapBackgroundColorExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 160);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 13);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Player Character";
+            // 
+            // MapIDLabel
+            // 
+            this.MapIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MapIDLabel.AutoSize = true;
+            this.MapIDLabel.Location = new System.Drawing.Point(759, 19);
+            this.MapIDLabel.Name = "MapIDLabel";
+            this.MapIDLabel.Size = new System.Drawing.Size(48, 13);
+            this.MapIDLabel.TabIndex = 12;
+            this.MapIDLabel.Text = "Game ID";
+            // 
+            // MapIDExample
+            // 
+            this.MapIDExample.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MapIDExample.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.MapIDExample.ContextMenuStrip = this.ContextMenuStripIDExamples;
+            this.MapIDExample.Location = new System.Drawing.Point(813, 16);
+            this.MapIDExample.Name = "MapIDExample";
+            this.MapIDExample.Size = new System.Drawing.Size(131, 20);
+            this.MapIDExample.TabIndex = 11;
+            this.MapIDExample.Tag = "Themed";
+            this.MapIDExample.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // AddNewMapButton
+            // 
+            this.AddNewMapButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.AddNewMapButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddNewMapButton.Location = new System.Drawing.Point(159, 468);
+            this.AddNewMapButton.Name = "AddNewMapButton";
+            this.AddNewMapButton.Size = new System.Drawing.Size(129, 23);
+            this.AddNewMapButton.TabIndex = 10;
+            this.AddNewMapButton.Text = "Add New Game";
+            this.AddNewMapButton.UseVisualStyleBackColor = false;
+            // 
+            // MapListBox
+            // 
+            this.MapListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.MapListBox.DisplayMember = "Name";
+            this.MapListBox.FormattingEnabled = true;
+            this.MapListBox.Location = new System.Drawing.Point(9, 16);
+            this.MapListBox.Name = "MapListBox";
+            this.MapListBox.Size = new System.Drawing.Size(279, 446);
+            this.MapListBox.TabIndex = 8;
+            this.MapListBox.Tag = "Untracked Control";
             // 
             // ScriptsTabPage
             // 
@@ -6345,6 +6610,8 @@ namespace Scribe.Forms
             ((System.ComponentModel.ISupportInitialize)(this.RoomPixelBox)).EndInit();
             this.MapsTabPage.ResumeLayout(false);
             this.MapsTabPage.PerformLayout();
+            this.MapTableLayoutPanel.ResumeLayout(false);
+            this.MapTableLayoutPanel.PerformLayout();
             this.ScriptsTabPage.ResumeLayout(false);
             this.ScriptsTabPage.PerformLayout();
             this.ResumeLayout(false);
@@ -6855,7 +7122,32 @@ namespace Scribe.Forms
         private System.Windows.Forms.TextBox RoomMaxWalkableSpacesTextBox;
 
         private System.Windows.Forms.TabPage MapsTabPage;
-        private System.Windows.Forms.Label MapPendingDesignLabel;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button;
+        private CustomControls.PixelBox MapPixelBox;
+        private System.Windows.Forms.Button EditMapImageButton;
+        private System.Windows.Forms.TableLayoutPanel MapTableLayoutPanel;
+        private System.Windows.Forms.Label MapNameLabel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label MapIDLabel;
+        private System.Windows.Forms.Label MapIDExample;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ListBox MapListBox;
+        private System.Windows.Forms.Button RemoveMapButton;
+        private System.Windows.Forms.Button AddNewMapButton;
+        private System.Windows.Forms.Label MapDescriptionLabel;
+        private System.Windows.Forms.Label MapCommentLabel;
+        private System.Windows.Forms.Label MapBackgroundColorLabel;
+        private System.Windows.Forms.Label MapBackgroundColorExample;
 
         private System.Windows.Forms.TabPage ScriptsTabPage;
         private System.Windows.Forms.Label ScriptingPendingDesignLabel;
