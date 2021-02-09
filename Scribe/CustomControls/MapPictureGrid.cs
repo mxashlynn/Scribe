@@ -175,7 +175,8 @@ namespace Scribe.CustomControls
         /// <param name="inEventArguments">Information about the event.</param>
         private void MapPictureGrid_MouseHover(object inSender, EventArgs inEventArguments)
         {
-            if (!IsMidClick)
+            if (!IsMidClick
+                && Controller is not null)
             {
                 var gridLocation = PointToGrid(PointToClient(Cursor.Position));
                 var screenLocation = PointToScreen(PointToPixel(gridLocation));
@@ -190,7 +191,8 @@ namespace Scribe.CustomControls
         /// <param name="inMouseArguments">Information about the event.</param>
         private void MapPictureGrid_MouseDown(object inSender, MouseEventArgs inMouseArguments)
         {
-            if (!IsMidClick)
+            if (!IsMidClick
+                && Controller is not null)
             {
                 ClickStartLocation = PointToGrid(inMouseArguments.Location);
                 IsMidClick = true;
@@ -204,7 +206,8 @@ namespace Scribe.CustomControls
         /// <param name="inMouseArguments">Information about the event.</param>
         private void MapPictureGrid_MouseUp(object inSender, MouseEventArgs inMouseArguments)
         {
-            if (IsMidClick)
+            if (IsMidClick
+                && Controller is not null)
             {
                 var clickEndLocation = PointToGrid(inMouseArguments.Location);
                 IsMidClick = false;
