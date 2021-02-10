@@ -25,6 +25,11 @@ using Roller;
 using Scribe.ChangeHistory;
 using Scribe.Properties;
 
+// TODO 1) Resolve API issues with Maps in Parquet -- this is a big topic.
+// TODO 2) Add missing UI to adjust tags for each type of model.
+// TODO 3) Add missing UI to adjust flavor tags for each type of model.
+
+
 namespace Scribe.Forms
 {
     /// <summary>
@@ -542,7 +547,7 @@ namespace Scribe.Forms
                 CraftingRecipesTabIndex => "crafts",
                 RoomRecipesTabIndex => "rooms",
                 MapsTabIndex => "maps",
-                ScriptsTabIndex => "", // TODO: add SCRIPTS to Roller!!
+                ScriptsTabIndex => "", // TODO: add SCRIPTS and GAMES to Roller!!
                 _ => "",
             };
 
