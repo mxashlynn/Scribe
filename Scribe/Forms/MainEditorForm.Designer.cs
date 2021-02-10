@@ -545,6 +545,7 @@ namespace Scribe.Forms
             this.MapExitWestComboBox = new System.Windows.Forms.ComboBox();
             this.MapExitUpComboBox = new System.Windows.Forms.ComboBox();
             this.MapExitDownComboBox = new System.Windows.Forms.ComboBox();
+            this.MapBackgroundColorNameStatic = new System.Windows.Forms.Label();
             this.ScriptsTabPage = new System.Windows.Forms.TabPage();
             this.ScriptingPendingDesignLabel = new System.Windows.Forms.Label();
             this.EditorStatusStrip.SuspendLayout();
@@ -6333,10 +6334,10 @@ namespace Scribe.Forms
             // 
             this.MapTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.MapTableLayoutPanel.ColumnCount = 2;
+            this.MapTableLayoutPanel.ColumnCount = 3;
             this.MapTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.MapTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.MapTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.MapTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.MapTableLayoutPanel.Controls.Add(this.MapNameLabel, 0, 0);
             this.MapTableLayoutPanel.Controls.Add(this.MapNameTextBox, 1, 0);
             this.MapTableLayoutPanel.Controls.Add(this.MapDescriptionLabel, 0, 1);
@@ -6357,6 +6358,7 @@ namespace Scribe.Forms
             this.MapTableLayoutPanel.Controls.Add(this.MapExitWestComboBox, 1, 7);
             this.MapTableLayoutPanel.Controls.Add(this.MapExitUpComboBox, 1, 8);
             this.MapTableLayoutPanel.Controls.Add(this.MapExitDownComboBox, 1, 9);
+            this.MapTableLayoutPanel.Controls.Add(this.MapBackgroundColorNameStatic, 2, 3);
             this.MapTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
             this.MapTableLayoutPanel.Name = "MapTableLayoutPanel";
             this.MapTableLayoutPanel.RowCount = 11;
@@ -6385,7 +6387,8 @@ namespace Scribe.Forms
             // 
             // MapNameTextBox
             // 
-            this.MapNameTextBox.Location = new System.Drawing.Point(131, 3);
+            this.MapTableLayoutPanel.SetColumnSpan(this.MapNameTextBox, 2);
+            this.MapNameTextBox.Location = new System.Drawing.Point(122, 3);
             this.MapNameTextBox.Name = "MapNameTextBox";
             this.MapNameTextBox.Size = new System.Drawing.Size(147, 20);
             this.MapNameTextBox.TabIndex = 23;
@@ -6404,10 +6407,11 @@ namespace Scribe.Forms
             this.MapDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.MapDescriptionTextBox.Location = new System.Drawing.Point(131, 28);
+            this.MapTableLayoutPanel.SetColumnSpan(this.MapDescriptionTextBox, 2);
+            this.MapDescriptionTextBox.Location = new System.Drawing.Point(122, 28);
             this.MapDescriptionTextBox.Multiline = true;
             this.MapDescriptionTextBox.Name = "MapDescriptionTextBox";
-            this.MapDescriptionTextBox.Size = new System.Drawing.Size(295, 49);
+            this.MapDescriptionTextBox.Size = new System.Drawing.Size(304, 49);
             this.MapDescriptionTextBox.TabIndex = 24;
             // 
             // MapCommentLabel
@@ -6425,10 +6429,11 @@ namespace Scribe.Forms
             this.MapCommentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.MapCommentTextBox.Location = new System.Drawing.Point(131, 83);
+            this.MapTableLayoutPanel.SetColumnSpan(this.MapCommentTextBox, 2);
+            this.MapCommentTextBox.Location = new System.Drawing.Point(122, 83);
             this.MapCommentTextBox.Multiline = true;
             this.MapCommentTextBox.Name = "MapCommentTextBox";
-            this.MapCommentTextBox.Size = new System.Drawing.Size(295, 49);
+            this.MapCommentTextBox.Size = new System.Drawing.Size(304, 49);
             this.MapCommentTextBox.TabIndex = 25;
             // 
             // MapBackgroundColorLabel
@@ -6445,7 +6450,7 @@ namespace Scribe.Forms
             this.MapBackgroundColorStatic.BackColor = System.Drawing.Color.White;
             this.MapBackgroundColorStatic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MapBackgroundColorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.MapBackgroundColorStatic.Location = new System.Drawing.Point(131, 135);
+            this.MapBackgroundColorStatic.Location = new System.Drawing.Point(122, 135);
             this.MapBackgroundColorStatic.Name = "MapBackgroundColorStatic";
             this.MapBackgroundColorStatic.Size = new System.Drawing.Size(24, 24);
             this.MapBackgroundColorStatic.TabIndex = 31;
@@ -6508,47 +6513,64 @@ namespace Scribe.Forms
             // 
             // MapExitNorthComboBox
             // 
+            this.MapTableLayoutPanel.SetColumnSpan(this.MapExitNorthComboBox, 2);
             this.MapExitNorthComboBox.DisplayMember = "Name";
-            this.MapExitNorthComboBox.Location = new System.Drawing.Point(131, 163);
+            this.MapExitNorthComboBox.Location = new System.Drawing.Point(122, 163);
             this.MapExitNorthComboBox.Name = "MapExitNorthComboBox";
-            this.MapExitNorthComboBox.Size = new System.Drawing.Size(121, 21);
+            this.MapExitNorthComboBox.Size = new System.Drawing.Size(147, 21);
             this.MapExitNorthComboBox.TabIndex = 28;
             // 
             // MapExitSouthComboBox
             // 
+            this.MapTableLayoutPanel.SetColumnSpan(this.MapExitSouthComboBox, 2);
             this.MapExitSouthComboBox.DisplayMember = "Name";
-            this.MapExitSouthComboBox.Location = new System.Drawing.Point(131, 188);
+            this.MapExitSouthComboBox.Location = new System.Drawing.Point(122, 188);
             this.MapExitSouthComboBox.Name = "MapExitSouthComboBox";
-            this.MapExitSouthComboBox.Size = new System.Drawing.Size(121, 21);
+            this.MapExitSouthComboBox.Size = new System.Drawing.Size(147, 21);
             this.MapExitSouthComboBox.TabIndex = 29;
             // 
             // MapExitEastComboBox
             // 
-            this.MapExitEastComboBox.Location = new System.Drawing.Point(131, 213);
+            this.MapTableLayoutPanel.SetColumnSpan(this.MapExitEastComboBox, 2);
+            this.MapExitEastComboBox.Location = new System.Drawing.Point(122, 213);
             this.MapExitEastComboBox.Name = "MapExitEastComboBox";
-            this.MapExitEastComboBox.Size = new System.Drawing.Size(121, 21);
+            this.MapExitEastComboBox.Size = new System.Drawing.Size(147, 21);
             this.MapExitEastComboBox.TabIndex = 36;
             // 
             // MapExitWestComboBox
             // 
-            this.MapExitWestComboBox.Location = new System.Drawing.Point(131, 238);
+            this.MapTableLayoutPanel.SetColumnSpan(this.MapExitWestComboBox, 2);
+            this.MapExitWestComboBox.Location = new System.Drawing.Point(122, 238);
             this.MapExitWestComboBox.Name = "MapExitWestComboBox";
-            this.MapExitWestComboBox.Size = new System.Drawing.Size(121, 21);
+            this.MapExitWestComboBox.Size = new System.Drawing.Size(147, 21);
             this.MapExitWestComboBox.TabIndex = 37;
             // 
             // MapExitUpComboBox
             // 
-            this.MapExitUpComboBox.Location = new System.Drawing.Point(131, 263);
+            this.MapTableLayoutPanel.SetColumnSpan(this.MapExitUpComboBox, 2);
+            this.MapExitUpComboBox.Location = new System.Drawing.Point(122, 263);
             this.MapExitUpComboBox.Name = "MapExitUpComboBox";
-            this.MapExitUpComboBox.Size = new System.Drawing.Size(121, 21);
+            this.MapExitUpComboBox.Size = new System.Drawing.Size(147, 21);
             this.MapExitUpComboBox.TabIndex = 38;
             // 
             // MapExitDownComboBox
             // 
-            this.MapExitDownComboBox.Location = new System.Drawing.Point(131, 288);
+            this.MapTableLayoutPanel.SetColumnSpan(this.MapExitDownComboBox, 2);
+            this.MapExitDownComboBox.Location = new System.Drawing.Point(122, 288);
             this.MapExitDownComboBox.Name = "MapExitDownComboBox";
-            this.MapExitDownComboBox.Size = new System.Drawing.Size(121, 21);
+            this.MapExitDownComboBox.Size = new System.Drawing.Size(147, 21);
             this.MapExitDownComboBox.TabIndex = 39;
+            // 
+            // MapBackgroundColorNameStatic
+            // 
+            this.MapBackgroundColorNameStatic.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.MapBackgroundColorNameStatic.AutoSize = true;
+            this.MapBackgroundColorNameStatic.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.MapBackgroundColorNameStatic.Location = new System.Drawing.Point(152, 141);
+            this.MapBackgroundColorNameStatic.Name = "MapBackgroundColorNameStatic";
+            this.MapBackgroundColorNameStatic.Size = new System.Drawing.Size(40, 13);
+            this.MapBackgroundColorNameStatic.TabIndex = 40;
+            this.MapBackgroundColorNameStatic.Text = "White";
             // 
             // ScriptsTabPage
             // 
@@ -7214,6 +7236,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.TextBox MapCommentTextBox;
         private System.Windows.Forms.Label MapBackgroundColorLabel;
         private System.Windows.Forms.Label MapBackgroundColorStatic;
+        private System.Windows.Forms.Label MapBackgroundColorNameStatic;
         private System.Windows.Forms.Label MapExitNorthLabel;
         private System.Windows.Forms.Label MapExitSouthLabel;
         private System.Windows.Forms.Label MapExitEastLabel;
