@@ -1294,7 +1294,7 @@ namespace Scribe.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FlavorPungentSelector.AutoSize = true;
-            this.FlavorPungentSelector.BackColor = System.Drawing.Color.Pink;
+            this.FlavorPungentSelector.BackColor = System.Drawing.Color.LightSalmon;
             this.FlavorPungentSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FlavorPungentSelector.Location = new System.Drawing.Point(71, 26);
             this.FlavorPungentSelector.Name = "FlavorPungentSelector";
@@ -1342,7 +1342,7 @@ namespace Scribe.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FlavorAstringentSelector.AutoSize = true;
-            this.FlavorAstringentSelector.BackColor = System.Drawing.Color.Moccasin;
+            this.FlavorAstringentSelector.BackColor = System.Drawing.Color.LightPink;
             this.FlavorAstringentSelector.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FlavorAstringentSelector.Location = new System.Drawing.Point(275, 26);
             this.FlavorAstringentSelector.Name = "FlavorAstringentSelector";
