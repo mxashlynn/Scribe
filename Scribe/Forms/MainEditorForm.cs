@@ -17,6 +17,7 @@ using Parquet.Crafts;
 using Parquet.EditorSupport;
 using Parquet.Games;
 using Parquet.Items;
+using Parquet.Maps;
 using Parquet.Parquets;
 using Parquet.Rooms;
 using Parquet.Scripts;
@@ -334,8 +335,8 @@ namespace Scribe.Forms
                 [BiomeNameTextBox] = BiomeListBox,
                 [CraftingNameTextBox] = CraftingListBox,
                 [RoomNameTextBox] = RoomListBox,
-                // TODO Maps?
-                // TODO Scripts?
+                [MapNameTextBox] = MapListBox,
+                // TODO Scripts
             };
             #endregion
 
@@ -612,7 +613,7 @@ namespace Scribe.Forms
                 BiomeRecipesTabIndex => (BiomeListBox.SelectedItem as BiomeRecipe)?.ID ?? ModelID.None,
                 CraftingRecipesTabIndex => (CraftingListBox.SelectedItem as CraftingRecipe)?.ID ?? ModelID.None,
                 RoomRecipesTabIndex => (RoomListBox.SelectedItem as RoomRecipe)?.ID ?? ModelID.None,
-                MapsTabIndex => throw new NotImplementedException(),
+                MapsTabIndex => (MapListBox.SelectedItem as MapModel)?.ID ?? ModelID.None,
                 ScriptsTabIndex => throw new NotImplementedException(),
                 _ => ModelID.None,
             };
@@ -637,7 +638,7 @@ namespace Scribe.Forms
                 BiomeRecipesTabIndex => (BiomeRecipe)BiomeListBox.SelectedItem,
                 CraftingRecipesTabIndex => (CraftingRecipe)CraftingListBox.SelectedItem,
                 RoomRecipesTabIndex => (RoomRecipe)RoomListBox.SelectedItem,
-                MapsTabIndex => throw new NotImplementedException(),
+                MapsTabIndex => (MapModel)MapListBox.SelectedItem,
                 ScriptsTabIndex => throw new NotImplementedException(),
                 _ => null,
             };
@@ -943,8 +944,26 @@ namespace Scribe.Forms
                 #endregion
 
                 #region Mapping
-                // TODO Implement Maps.
-                (MapsTabIndex, _) => throw new NotImplementedException(),
+                (MapsTabIndex, "MapNameTextBox")
+                    => (input) => ((IMutableMapRecipe)inModel).Name = input.ToString(),
+                (MapsTabIndex, "MapDescriptionTextBox")
+                    => (input) => ((IMutableMapRecipe)inModel).Description = input.ToString(),
+                (MapsTabIndex, "MapCommentTextBox")
+                    => (input) => ((IMutableMapRecipe)inModel).Comment = input.ToString(),
+                (MapsTabIndex, "MapBackgroundColorStatic")
+                    => (input) => ((IMutableMapRecipe)inModel).BackgroundColor = ValueToColorHexString(input),
+                (MapsTabIndex, "MapExitNorthComboBox")
+                    => (input) => ((IMutableMapRecipe)inModel).RegionToTheNorth = ValueToID(input),
+                (MapsTabIndex, "MapExitSouthComboBox")
+                    => (input) => ((IMutableMapRecipe)inModel).RegionToTheSouth = ValueToID(input),
+                (MapsTabIndex, "MapExitEastComboBox")
+                    => (input) => ((IMutableMapRecipe)inModel).RegionToTheEast = ValueToID(input),
+                (MapsTabIndex, "MapExitWestComboBox")
+                    => (input) => ((IMutableMapRecipe)inModel).RegionToTheWest = ValueToID(input),
+                (MapsTabIndex, "MapExitUpComboBox")
+                    => (input) => ((IMutableMapRecipe)inModel).RegionToTheAbove = ValueToID(input),
+                (MapsTabIndex, "MapExitDownComboBox")
+                    => (input) => ((IMutableMapRecipe)inModel).RegionToTheBelow = ValueToID(input),
                 #endregion
 
                 #region Scripting
@@ -1382,7 +1401,13 @@ namespace Scribe.Forms
                     RoomMaxWalkableSpacesTextBox.Text = RoomConfiguration.MaxWalkableSpaces.ToString();
                     break;
                 case MapsTabIndex:
-                    // TODO Maps
+                    RepopulateListBox(MapListBox, All.Maps);
+                    RepopulateComboBox(MapExitNorthComboBox, All.Maps);
+                    RepopulateComboBox(MapExitSouthComboBox, All.Maps);
+                    RepopulateComboBox(MapExitEastComboBox, All.Maps);
+                    RepopulateComboBox(MapExitWestComboBox, All.Maps);
+                    RepopulateComboBox(MapExitUpComboBox, All.Maps);
+                    RepopulateComboBox(MapExitDownComboBox, All.Maps);
                     break;
                 case ScriptsTabIndex:
                     // TODO Scripts
@@ -1893,7 +1918,64 @@ namespace Scribe.Forms
             }
         }
 
-        // TODO Maps
+        /// <summary>
+        /// Populates the Maps tab when a <see cref="MapModel"/> is selected in the RoomListBox.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="eventArguments">Ignored.</param>
+        private void MapListBox_SelectedValueChanged(object sender, EventArgs eventArguments)
+        {
+            if (null == MapListBox.SelectedItem)
+            {
+                MapIDStatic.Text = ModelID.None.ToString();
+                MapNameTextBox.Text = "";
+                MapDescriptionTextBox.Text = "";
+                MapCommentTextBox.Text = "";
+                MapBackgroundColorStatic.BackColor = ColorTranslator.FromHtml(MapRegionModel.DefaultColor);
+                MapBackgroundColorNameStatic.Text = MapRegionModel.DefaultColor;
+                MapExitNorthComboBox.SelectedItem = null;
+                MapExitSouthComboBox.SelectedItem = null;
+                MapExitEastComboBox.SelectedItem = null;
+                MapExitWestComboBox.SelectedItem = null;
+                MapExitUpComboBox.SelectedItem = null;
+                MapExitDownComboBox.SelectedItem = null;
+                MapPixelBox.Image = Resources.Map;
+            }
+            else if (MapListBox.SelectedItem is MapRegionModel model
+                    && null != model)
+            {
+                RoomIDStatic.Text = model.ID.ToString();
+                RoomNameTextBox.Text = model.Name;
+                RoomDescriptionTextBox.Text = model.Description;
+                RoomCommentTextBox.Text = model.Comment;
+                MapIDStatic.Text = model.ID.ToString();
+                MapNameTextBox.Text = model.Name;
+                MapDescriptionTextBox.Text = model.Description;
+                MapCommentTextBox.Text = model.Comment;
+                MapBackgroundColorStatic.BackColor = ColorTranslator.FromHtml(model.BackgroundColor);
+                MapBackgroundColorNameStatic.Text = model.BackgroundColor;
+                MapExitNorthComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
+                    ? null
+                    : All.Maps.GetOrNull<MapModel>(model.RegionToTheNorth);
+                MapExitSouthComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
+                    ? null
+                    : All.Maps.GetOrNull<MapModel>(model.RegionToTheNorth);
+                MapExitEastComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
+                    ? null
+                    : All.Maps.GetOrNull<MapModel>(model.RegionToTheNorth);
+                MapExitWestComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
+                    ? null
+                    : All.Maps.GetOrNull<MapModel>(model.RegionToTheNorth);
+                MapExitUpComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
+                    ? null
+                    : All.Maps.GetOrNull<MapModel>(model.RegionToTheNorth);
+                MapExitDownComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
+                    ? null
+                    : All.Maps.GetOrNull<MapModel>(model.RegionToTheNorth);
+                // TODO: PictureGenerateFromMap(MapPixelBox, model.ID);
+            }
+        }
+
         // TODO Scripts
         #endregion
 
@@ -2889,7 +2971,40 @@ namespace Scribe.Forms
         #endregion
 
         #region Maps Tab
-        // TODO Maps
+        // TODO Wire these map-related methods up!  (There may be other map items needing wiring.)
+        /// <summary>
+        /// Responds to the user clicking "Add New Map" on the Maps tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="eventArguments">Ignored.</param>
+        private void MapAddNewItemButton_Click(object sender, EventArgs eventArguments)
+            => AddNewModel(All.Maps, (ModelID id) => new MapRegionSketch(id, "New Map", "", ""), All.MapRegionIDs, MapListBox, "Map");
+
+        /// <summary>
+        /// Responds to the user clicking "Remove Map" on the Maps tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="eventArguments">Ignored.</param>
+        private void MapRemoveItemButton_Click(object sender, EventArgs eventArguments)
+            => RemoveModel(All.Maps, MapListBox, "Map");
+
+        /// <summary>
+        /// Invokes the <see cref="MapEditorForm"/> for the currently selected <see cref="MapModel"/>.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="eventArguments">Ignored</param>
+        private void MapOpenEditorButton_Click(object sender, EventArgs eventArguments)
+        {
+            // TODO Implement this!
+            //MapEditorWindow.CurrentMap = (MapModel)MapListBox.SelectedItem;
+            //if (null == MapEditorWindow.CurrentMap ||
+            //    MapEditorWindow.ShowDialog() == DialogResult.Abort)
+            //{
+            //    SystemSounds.Beep.Play();
+            //    Logger.Log(LogLevel.Warning, Resources.WarningNothingSelected);
+            //}
+            SystemSounds.Beep.Play();
+        }
         #endregion
 
         #region Scripting Tab
