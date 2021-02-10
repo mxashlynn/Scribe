@@ -530,7 +530,7 @@ namespace Scribe.Forms
         private static string GetRollerArgumentForTab(int inTabIndex)
             => inTabIndex switch
             {
-                GamesTabIndex => "", // TODO, add GAMES to Roller!!
+                GamesTabIndex => "all",
                 BlocksTabIndex => "blocks",
                 FloorsTabIndex => "floors",
                 FurnishingsTabIndex => "furnishings",
