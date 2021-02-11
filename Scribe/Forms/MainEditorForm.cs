@@ -949,6 +949,7 @@ namespace Scribe.Forms
                 #endregion
 
                 #region Mapping
+                /* TODO Finish these! (MAP-related)
                 (MapsTabIndex, "MapNameTextBox")
                     => (input) => ((IMutableMapRecipe)inModel).Name = input.ToString(),
                 (MapsTabIndex, "MapDescriptionTextBox")
@@ -969,6 +970,7 @@ namespace Scribe.Forms
                     => (input) => ((IMutableMapRecipe)inModel).RegionToTheAbove = ValueToID(input),
                 (MapsTabIndex, "MapExitDownComboBox")
                     => (input) => ((IMutableMapRecipe)inModel).RegionToTheBelow = ValueToID(input),
+                */
                 #endregion
 
                 #region Scripting
