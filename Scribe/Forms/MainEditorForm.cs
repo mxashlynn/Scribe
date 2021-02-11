@@ -2273,6 +2273,25 @@ namespace Scribe.Forms
                 flavorStatic.BackgroundColor = GetColorForFlavor(FlavorsDialogue.ReturnUpdatedFlavor);
                 HasUnsavedChanges = true;
             }
+
+            // Given the name of a flavor, return the color used to represent it.
+            Color GetColorForFlavor(string inFlavorName)
+                => inFlavorName switch
+                {
+                    "bland" => FlavorBlandSelector.BackColor,
+                    "sweet" => FlavorSweetSelector.BackColor,
+                    "salty" => FlavorSaltySelector.BackColor,
+                    "savoury" => FlavorSavourySelector.BackColor,
+                    "astringent" => FlavorAstringentSelector.BackColor,
+                    "numbing" => FlavorNumbingSelector.BackColor,
+                    "bitter" => FlavorBitterSelector.BackColor,
+                    "sour" => FlavorSourSelector.BackColor,
+                    "fresh" => FlavorFreshSelector.BackColor,
+                    "pungent" => FlavorPungentSelector.BackColor,
+                    "metallic" => FlavorMetallicSelector.BackColor,
+                    "chemical" => FlavorChemicalSelector.BackColor,
+                    _ => FlavorNoFlavorsSelector.BackColor,
+                };
         }
 
         private void EditFunctionButton_Click(object sender, EventArgs e)
