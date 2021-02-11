@@ -1523,6 +1523,7 @@ namespace Scribe.Forms
             this.GameEditTagsButton.TabIndex = 20;
             this.GameEditTagsButton.Text = "Edit Tags";
             this.GameEditTagsButton.UseVisualStyleBackColor = false;
+            this.GameEditTagsButton.Click += new System.EventHandler(this.EditTagsAndFlavorButton_Click);
             // 
             // GameRemoveGameButton
             // 

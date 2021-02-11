@@ -2246,6 +2246,38 @@ namespace Scribe.Forms
                                             }));
             }
         }
+
+        /// <summary>
+        /// Raises a <see cref="TagsAndFlavorsBox"/> to adjust the tagging on the current <see cref="Model"/>.
+        /// </summary>
+        /// <param name="inSender">Originator of the event.</param>
+        /// <param name="inArguments">Additional event data.</param>
+        private void EditTagsAndFlavorButton_Click(object inSender, EventArgs inArguments)
+        {
+            if (!All.CollectionsHaveBeenInitialized)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            // TODO Currently this is not hooked into the undo system.  In order to hook it in,
+            // we need to create a more robust UI that can treat tag changes atomically, instead
+            // of treating them as one giant glob.
+
+            if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is IMutableModel model
+                && TagsAndFlavorsDialogue.ShowDialog() == DialogResult.OK)
+            {
+                model.Tags = TagsAndFlavorsDialogue.ReturnUpdatedTags;
+                var flavorStatic = GetCurrentFlavorStatic(EditorTabs.SelectedIndex);
+                if (flavorStatic is not null)
+                {
+                    flavorStatic.Text = TagsAndFlavorsDialogue.ReturnUpdatedFlavor;
+                    flavorStatic.BackgroundColor = GetColorForFlavor(TagsAndFlavorsDialogue.ReturnUpdatedFlavor);
+                }
+                HasUnsavedChanges = true;
+            }
+        }
+
         #endregion
 
         #region Recipe Element Adjustments
