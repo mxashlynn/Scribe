@@ -2252,7 +2252,7 @@ namespace Scribe.Forms
         /// </summary>
         /// <param name="inSender">Originator of the event.</param>
         /// <param name="inArguments">Additional event data.</param>
-        private void EditTagsAndFlavorButton_Click(object inSender, EventArgs inArguments)
+        private void EditFlavorButton_Click(object inSender, EventArgs inArguments)
         {
             if (!All.CollectionsHaveBeenInitialized)
             {
@@ -2265,15 +2265,12 @@ namespace Scribe.Forms
             // of treating them as one giant glob.
 
             if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is IMutableModel model
-                && TagsAndFlavorsDialogue.ShowDialog() == DialogResult.OK)
+                && FlavorsDialogue.ShowDialog() == DialogResult.OK)
             {
-                model.Tags = TagsAndFlavorsDialogue.ReturnUpdatedTags;
+                model.Tags = FlavorsDialogue.ReturnNewFlavor;
                 var flavorStatic = GetCurrentFlavorStatic(EditorTabs.SelectedIndex);
-                if (flavorStatic is not null)
-                {
-                    flavorStatic.Text = TagsAndFlavorsDialogue.ReturnUpdatedFlavor;
-                    flavorStatic.BackgroundColor = GetColorForFlavor(TagsAndFlavorsDialogue.ReturnUpdatedFlavor);
-                }
+                flavorStatic.Text = FlavorsDialogue.ReturnUpdatedFlavor;
+                flavorStatic.BackgroundColor = GetColorForFlavor(TagsAndFlavorsDialogue.ReturnUpdatedFlavor);
                 HasUnsavedChanges = true;
             }
         }

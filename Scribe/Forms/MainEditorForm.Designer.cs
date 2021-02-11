@@ -111,7 +111,6 @@ namespace Scribe.Forms
             this.FlavorNoFlavorsSelector = new System.Windows.Forms.Label();
             this.EditorTabs = new System.Windows.Forms.TabControl();
             this.GamesTabPage = new System.Windows.Forms.TabPage();
-            this.GameEditTagsButton = new System.Windows.Forms.Button();
             this.GameRemoveGameButton = new System.Windows.Forms.Button();
             this.GameIconEditButton = new System.Windows.Forms.Button();
             this.GameIconPixelBox = new Scribe.CustomControls.PixelBox();
@@ -198,7 +197,7 @@ namespace Scribe.Forms
             this.FloorDugOutPixelBox = new Scribe.CustomControls.PixelBox();
             this.FloorConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.BlocksTabPage = new System.Windows.Forms.TabPage();
-            this.BlockEditTagsAndFlavorButton = new System.Windows.Forms.Button();
+            this.BlockEditFlavorButton = new System.Windows.Forms.Button();
             this.BlockFlavorStatic = new System.Windows.Forms.Label();
             this.BlockFlavorLabel = new System.Windows.Forms.Label();
             this.BlockTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -239,7 +238,7 @@ namespace Scribe.Forms
             this.BlockRemoveBlockButton = new System.Windows.Forms.Button();
             this.BlockConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.FurnishingsTabPage = new System.Windows.Forms.TabPage();
-            this.FurnishingEditTagsAndFlavorButton = new System.Windows.Forms.Button();
+            this.FurnishingEditFlavorButton = new System.Windows.Forms.Button();
             this.FurnishingFlavorStatic = new System.Windows.Forms.Label();
             this.FurnishingFlavorLabel = new System.Windows.Forms.Label();
             this.FurnishingTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -276,7 +275,7 @@ namespace Scribe.Forms
             this.FurnishingPixelBox = new Scribe.CustomControls.PixelBox();
             this.FurnishingConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CollectiblesTabPage = new System.Windows.Forms.TabPage();
-            this.CollectibleEditTagsAndFlavorButton = new System.Windows.Forms.Button();
+            this.CollectibleEditFlavorButton = new System.Windows.Forms.Button();
             this.CollectibleFlavorStatic = new System.Windows.Forms.Label();
             this.CollectibleFlavorLabel = new System.Windows.Forms.Label();
             this.CollectibleTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -307,7 +306,7 @@ namespace Scribe.Forms
             this.CollectiblePixelBox = new Scribe.CustomControls.PixelBox();
             this.CollectibleConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CrittersTabPage = new System.Windows.Forms.TabPage();
-            this.CritterEditTagsAndFlavorButton = new System.Windows.Forms.Button();
+            this.CritterEditFlavorButton = new System.Windows.Forms.Button();
             this.CritterFlavorStatic = new System.Windows.Forms.Label();
             this.CritterFlavorLabel = new System.Windows.Forms.Label();
             this.CritterTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -334,7 +333,7 @@ namespace Scribe.Forms
             this.CritterRemoveCritterButton = new System.Windows.Forms.Button();
             this.CritterConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CharactersTabPage = new System.Windows.Forms.TabPage();
-            this.CharacterEditTagsAndFlavorButton = new System.Windows.Forms.Button();
+            this.CharacterEditFlavorButton = new System.Windows.Forms.Button();
             this.CharacterFlavorStatic = new System.Windows.Forms.Label();
             this.CharacterFlavorLabel = new System.Windows.Forms.Label();
             this.CharacterPronounGroupBox = new System.Windows.Forms.GroupBox();
@@ -391,7 +390,7 @@ namespace Scribe.Forms
             this.CharacterEditImageButton = new System.Windows.Forms.Button();
             this.CharacterPixelBox = new Scribe.CustomControls.PixelBox();
             this.ItemsTabPage = new System.Windows.Forms.TabPage();
-            this.ItemEditTagsAndFlavorButton = new System.Windows.Forms.Button();
+            this.ItemEditFlavorButton = new System.Windows.Forms.Button();
             this.ItemFlavorStatic = new System.Windows.Forms.Label();
             this.ItemFlavorLabel = new System.Windows.Forms.Label();
             this.ItemRemoveItemButton = new System.Windows.Forms.Button();
@@ -430,7 +429,6 @@ namespace Scribe.Forms
             this.ItemAddNewItemButton = new System.Windows.Forms.Button();
             this.ItemIDStatic = new System.Windows.Forms.Label();
             this.BiomesTabPage = new System.Windows.Forms.TabPage();
-            this.BiomeEditTagsButton = new System.Windows.Forms.Button();
             this.BiomeRemoveBiomeButton = new System.Windows.Forms.Button();
             this.BiomeAddEntryRequirementButton = new System.Windows.Forms.Button();
             this.BiomeRemoveEntryRequirementButton = new System.Windows.Forms.Button();
@@ -466,7 +464,6 @@ namespace Scribe.Forms
             this.BiomeAddNewBiomeButton = new System.Windows.Forms.Button();
             this.BiomeIDStatic = new System.Windows.Forms.Label();
             this.CraftingRecipesTabPage = new System.Windows.Forms.TabPage();
-            this.CraftingEditTagsButton = new System.Windows.Forms.Button();
             this.CraftingRemoveCraftingButton = new System.Windows.Forms.Button();
             this.CraftingListBox = new System.Windows.Forms.ListBox();
             this.CraftingPictureEditButton = new System.Windows.Forms.Button();
@@ -505,7 +502,6 @@ namespace Scribe.Forms
             this.CraftingStrikePatternDimensionLabelLabel = new System.Windows.Forms.Label();
             this.CraftingStrikePatternDimensionLabelStatic = new System.Windows.Forms.Label();
             this.RoomRecipesTabPage = new System.Windows.Forms.TabPage();
-            this.RoomEditTagsButton = new System.Windows.Forms.Button();
             this.RoomRemoveRoomButton = new System.Windows.Forms.Button();
             this.RoomAddBlockButton = new System.Windows.Forms.Button();
             this.RoomRemoveBlockButton = new System.Windows.Forms.Button();
@@ -541,7 +537,6 @@ namespace Scribe.Forms
             this.RoomAddNewRoomButton = new System.Windows.Forms.Button();
             this.RoomIDStatic = new System.Windows.Forms.Label();
             this.MapsTabPage = new System.Windows.Forms.TabPage();
-            this.MapEditTagsButton = new System.Windows.Forms.Button();
             this.MapIDLabel = new System.Windows.Forms.Label();
             this.MapIDStatic = new System.Windows.Forms.Label();
             this.MapListBox = new System.Windows.Forms.ListBox();
@@ -1495,7 +1490,6 @@ namespace Scribe.Forms
             // 
             // GamesTabPage
             // 
-            this.GamesTabPage.Controls.Add(this.GameEditTagsButton);
             this.GamesTabPage.Controls.Add(this.GameRemoveGameButton);
             this.GamesTabPage.Controls.Add(this.GameIconEditButton);
             this.GamesTabPage.Controls.Add(this.GameIconPixelBox);
@@ -1512,18 +1506,6 @@ namespace Scribe.Forms
             this.GamesTabPage.Size = new System.Drawing.Size(953, 599);
             this.GamesTabPage.TabIndex = 0;
             this.GamesTabPage.Text = "Games";
-            // 
-            // GameEditTagsButton
-            // 
-            this.GameEditTagsButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.GameEditTagsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.GameEditTagsButton.Location = new System.Drawing.Point(815, 70);
-            this.GameEditTagsButton.Name = "GameEditTagsButton";
-            this.GameEditTagsButton.Size = new System.Drawing.Size(128, 23);
-            this.GameEditTagsButton.TabIndex = 20;
-            this.GameEditTagsButton.Text = "Edit Tags";
-            this.GameEditTagsButton.UseVisualStyleBackColor = false;
-            this.GameEditTagsButton.Click += new System.EventHandler(this.EditTagsAndFlavorButton_Click);
             // 
             // GameRemoveGameButton
             // 
@@ -2114,7 +2096,7 @@ namespace Scribe.Forms
             this.FloorEditTagsFlavorButton.Name = "FloorEditTagsFlavorButton";
             this.FloorEditTagsFlavorButton.Size = new System.Drawing.Size(128, 23);
             this.FloorEditTagsFlavorButton.TabIndex = 14;
-            this.FloorEditTagsFlavorButton.Text = "Edit Tags And Flavor";
+            this.FloorEditTagsFlavorButton.Text = "Edit Flavor";
             this.FloorEditTagsFlavorButton.UseVisualStyleBackColor = false;
             // 
             // FloorFlavorStatic
@@ -2144,7 +2126,7 @@ namespace Scribe.Forms
             // 
             this.FloorEditFilledInImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.FloorEditFilledInImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FloorEditFilledInImageButton.Location = new System.Drawing.Point(815, 254);
+            this.FloorEditFilledInImageButton.Location = new System.Drawing.Point(815, 300);
             this.FloorEditFilledInImageButton.Name = "FloorEditFilledInImageButton";
             this.FloorEditFilledInImageButton.Size = new System.Drawing.Size(128, 23);
             this.FloorEditFilledInImageButton.TabIndex = 11;
@@ -2155,7 +2137,7 @@ namespace Scribe.Forms
             // FloorFilledInLabel
             // 
             this.FloorFilledInLabel.AutoSize = true;
-            this.FloorFilledInLabel.Location = new System.Drawing.Point(823, 112);
+            this.FloorFilledInLabel.Location = new System.Drawing.Point(823, 158);
             this.FloorFilledInLabel.Name = "FloorFilledInLabel";
             this.FloorFilledInLabel.Size = new System.Drawing.Size(44, 13);
             this.FloorFilledInLabel.TabIndex = 10;
@@ -2176,7 +2158,7 @@ namespace Scribe.Forms
             this.FloorFilledInPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.FloorFilledInPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
             this.FloorFilledInPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("FloorFilledInPixelBox.Image")));
-            this.FloorFilledInPixelBox.Location = new System.Drawing.Point(823, 128);
+            this.FloorFilledInPixelBox.Location = new System.Drawing.Point(823, 174);
             this.FloorFilledInPixelBox.Name = "FloorFilledInPixelBox";
             this.FloorFilledInPixelBox.Size = new System.Drawing.Size(120, 120);
             this.FloorFilledInPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -2528,7 +2510,7 @@ namespace Scribe.Forms
             // 
             // BlocksTabPage
             // 
-            this.BlocksTabPage.Controls.Add(this.BlockEditTagsAndFlavorButton);
+            this.BlocksTabPage.Controls.Add(this.BlockEditFlavorButton);
             this.BlocksTabPage.Controls.Add(this.BlockFlavorStatic);
             this.BlocksTabPage.Controls.Add(this.BlockFlavorLabel);
             this.BlocksTabPage.Controls.Add(this.BlockTableLayoutPanel);
@@ -2546,16 +2528,16 @@ namespace Scribe.Forms
             this.BlocksTabPage.TabIndex = 9;
             this.BlocksTabPage.Text = "Blocks";
             // 
-            // BlockEditTagsAndFlavorButton
+            // BlockEditFlavorButton
             // 
-            this.BlockEditTagsAndFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BlockEditTagsAndFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BlockEditTagsAndFlavorButton.Location = new System.Drawing.Point(815, 70);
-            this.BlockEditTagsAndFlavorButton.Name = "BlockEditTagsAndFlavorButton";
-            this.BlockEditTagsAndFlavorButton.Size = new System.Drawing.Size(128, 23);
-            this.BlockEditTagsAndFlavorButton.TabIndex = 17;
-            this.BlockEditTagsAndFlavorButton.Text = "Edit Tags And Flavor";
-            this.BlockEditTagsAndFlavorButton.UseVisualStyleBackColor = false;
+            this.BlockEditFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BlockEditFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BlockEditFlavorButton.Location = new System.Drawing.Point(815, 70);
+            this.BlockEditFlavorButton.Name = "BlockEditFlavorButton";
+            this.BlockEditFlavorButton.Size = new System.Drawing.Size(128, 23);
+            this.BlockEditFlavorButton.TabIndex = 17;
+            this.BlockEditFlavorButton.Text = "Edit Flavor";
+            this.BlockEditFlavorButton.UseVisualStyleBackColor = false;
             // 
             // BlockFlavorStatic
             // 
@@ -3005,7 +2987,7 @@ namespace Scribe.Forms
             // 
             // FurnishingsTabPage
             // 
-            this.FurnishingsTabPage.Controls.Add(this.FurnishingEditTagsAndFlavorButton);
+            this.FurnishingsTabPage.Controls.Add(this.FurnishingEditFlavorButton);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingFlavorStatic);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingFlavorLabel);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingTableLayoutPanel);
@@ -3023,16 +3005,16 @@ namespace Scribe.Forms
             this.FurnishingsTabPage.TabIndex = 10;
             this.FurnishingsTabPage.Text = "Furnishings";
             // 
-            // FurnishingEditTagsAndFlavorButton
+            // FurnishingEditFlavorButton
             // 
-            this.FurnishingEditTagsAndFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FurnishingEditTagsAndFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FurnishingEditTagsAndFlavorButton.Location = new System.Drawing.Point(815, 70);
-            this.FurnishingEditTagsAndFlavorButton.Name = "FurnishingEditTagsAndFlavorButton";
-            this.FurnishingEditTagsAndFlavorButton.Size = new System.Drawing.Size(128, 23);
-            this.FurnishingEditTagsAndFlavorButton.TabIndex = 17;
-            this.FurnishingEditTagsAndFlavorButton.Text = "Edit Tags And Flavor";
-            this.FurnishingEditTagsAndFlavorButton.UseVisualStyleBackColor = false;
+            this.FurnishingEditFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingEditFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FurnishingEditFlavorButton.Location = new System.Drawing.Point(815, 70);
+            this.FurnishingEditFlavorButton.Name = "FurnishingEditFlavorButton";
+            this.FurnishingEditFlavorButton.Size = new System.Drawing.Size(128, 23);
+            this.FurnishingEditFlavorButton.TabIndex = 17;
+            this.FurnishingEditFlavorButton.Text = "Edit Flavor";
+            this.FurnishingEditFlavorButton.UseVisualStyleBackColor = false;
             // 
             // FurnishingFlavorStatic
             // 
@@ -3445,7 +3427,7 @@ namespace Scribe.Forms
             // 
             // CollectiblesTabPage
             // 
-            this.CollectiblesTabPage.Controls.Add(this.CollectibleEditTagsAndFlavorButton);
+            this.CollectiblesTabPage.Controls.Add(this.CollectibleEditFlavorButton);
             this.CollectiblesTabPage.Controls.Add(this.CollectibleFlavorStatic);
             this.CollectiblesTabPage.Controls.Add(this.CollectibleFlavorLabel);
             this.CollectiblesTabPage.Controls.Add(this.CollectibleTableLayoutPanel);
@@ -3463,16 +3445,16 @@ namespace Scribe.Forms
             this.CollectiblesTabPage.TabIndex = 11;
             this.CollectiblesTabPage.Text = "Collectibles";
             // 
-            // CollectibleEditTagsAndFlavorButton
+            // CollectibleEditFlavorButton
             // 
-            this.CollectibleEditTagsAndFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CollectibleEditTagsAndFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CollectibleEditTagsAndFlavorButton.Location = new System.Drawing.Point(815, 70);
-            this.CollectibleEditTagsAndFlavorButton.Name = "CollectibleEditTagsAndFlavorButton";
-            this.CollectibleEditTagsAndFlavorButton.Size = new System.Drawing.Size(128, 23);
-            this.CollectibleEditTagsAndFlavorButton.TabIndex = 17;
-            this.CollectibleEditTagsAndFlavorButton.Text = "Edit Tags And Flavor";
-            this.CollectibleEditTagsAndFlavorButton.UseVisualStyleBackColor = false;
+            this.CollectibleEditFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CollectibleEditFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CollectibleEditFlavorButton.Location = new System.Drawing.Point(815, 70);
+            this.CollectibleEditFlavorButton.Name = "CollectibleEditFlavorButton";
+            this.CollectibleEditFlavorButton.Size = new System.Drawing.Size(128, 23);
+            this.CollectibleEditFlavorButton.TabIndex = 17;
+            this.CollectibleEditFlavorButton.Text = "Edit Flavor";
+            this.CollectibleEditFlavorButton.UseVisualStyleBackColor = false;
             // 
             // CollectibleFlavorStatic
             // 
@@ -3821,7 +3803,7 @@ namespace Scribe.Forms
             // 
             // CrittersTabPage
             // 
-            this.CrittersTabPage.Controls.Add(this.CritterEditTagsAndFlavorButton);
+            this.CrittersTabPage.Controls.Add(this.CritterEditFlavorButton);
             this.CrittersTabPage.Controls.Add(this.CritterFlavorStatic);
             this.CrittersTabPage.Controls.Add(this.CritterFlavorLabel);
             this.CrittersTabPage.Controls.Add(this.CritterTableLayoutPanel);
@@ -3840,16 +3822,16 @@ namespace Scribe.Forms
             this.CrittersTabPage.TabIndex = 1;
             this.CrittersTabPage.Text = "Critters";
             // 
-            // CritterEditTagsAndFlavorButton
+            // CritterEditFlavorButton
             // 
-            this.CritterEditTagsAndFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CritterEditTagsAndFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CritterEditTagsAndFlavorButton.Location = new System.Drawing.Point(815, 70);
-            this.CritterEditTagsAndFlavorButton.Name = "CritterEditTagsAndFlavorButton";
-            this.CritterEditTagsAndFlavorButton.Size = new System.Drawing.Size(128, 23);
-            this.CritterEditTagsAndFlavorButton.TabIndex = 17;
-            this.CritterEditTagsAndFlavorButton.Text = "Edit Tags And Flavor";
-            this.CritterEditTagsAndFlavorButton.UseVisualStyleBackColor = false;
+            this.CritterEditFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CritterEditFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CritterEditFlavorButton.Location = new System.Drawing.Point(815, 70);
+            this.CritterEditFlavorButton.Name = "CritterEditFlavorButton";
+            this.CritterEditFlavorButton.Size = new System.Drawing.Size(128, 23);
+            this.CritterEditFlavorButton.TabIndex = 17;
+            this.CritterEditFlavorButton.Text = "Edit Flavor";
+            this.CritterEditFlavorButton.UseVisualStyleBackColor = false;
             // 
             // CritterFlavorStatic
             // 
@@ -4139,7 +4121,7 @@ namespace Scribe.Forms
             // 
             // CharactersTabPage
             // 
-            this.CharactersTabPage.Controls.Add(this.CharacterEditTagsAndFlavorButton);
+            this.CharactersTabPage.Controls.Add(this.CharacterEditFlavorButton);
             this.CharactersTabPage.Controls.Add(this.CharacterFlavorStatic);
             this.CharactersTabPage.Controls.Add(this.CharacterFlavorLabel);
             this.CharactersTabPage.Controls.Add(this.CharacterPronounGroupBox);
@@ -4157,16 +4139,16 @@ namespace Scribe.Forms
             this.CharactersTabPage.TabIndex = 12;
             this.CharactersTabPage.Text = "Characters";
             // 
-            // CharacterEditTagsAndFlavorButton
+            // CharacterEditFlavorButton
             // 
-            this.CharacterEditTagsAndFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CharacterEditTagsAndFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CharacterEditTagsAndFlavorButton.Location = new System.Drawing.Point(815, 70);
-            this.CharacterEditTagsAndFlavorButton.Name = "CharacterEditTagsAndFlavorButton";
-            this.CharacterEditTagsAndFlavorButton.Size = new System.Drawing.Size(128, 23);
-            this.CharacterEditTagsAndFlavorButton.TabIndex = 17;
-            this.CharacterEditTagsAndFlavorButton.Text = "Edit Tags And Flavor";
-            this.CharacterEditTagsAndFlavorButton.UseVisualStyleBackColor = false;
+            this.CharacterEditFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CharacterEditFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CharacterEditFlavorButton.Location = new System.Drawing.Point(815, 70);
+            this.CharacterEditFlavorButton.Name = "CharacterEditFlavorButton";
+            this.CharacterEditFlavorButton.Size = new System.Drawing.Size(128, 23);
+            this.CharacterEditFlavorButton.TabIndex = 17;
+            this.CharacterEditFlavorButton.Text = "Edit Flavor";
+            this.CharacterEditFlavorButton.UseVisualStyleBackColor = false;
             // 
             // CharacterFlavorStatic
             // 
@@ -4787,7 +4769,7 @@ namespace Scribe.Forms
             // 
             // ItemsTabPage
             // 
-            this.ItemsTabPage.Controls.Add(this.ItemEditTagsAndFlavorButton);
+            this.ItemsTabPage.Controls.Add(this.ItemEditFlavorButton);
             this.ItemsTabPage.Controls.Add(this.ItemFlavorStatic);
             this.ItemsTabPage.Controls.Add(this.ItemFlavorLabel);
             this.ItemsTabPage.Controls.Add(this.ItemRemoveItemButton);
@@ -4807,16 +4789,16 @@ namespace Scribe.Forms
             this.ItemsTabPage.TabIndex = 4;
             this.ItemsTabPage.Text = "Items";
             // 
-            // ItemEditTagsAndFlavorButton
+            // ItemEditFlavorButton
             // 
-            this.ItemEditTagsAndFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ItemEditTagsAndFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ItemEditTagsAndFlavorButton.Location = new System.Drawing.Point(815, 70);
-            this.ItemEditTagsAndFlavorButton.Name = "ItemEditTagsAndFlavorButton";
-            this.ItemEditTagsAndFlavorButton.Size = new System.Drawing.Size(128, 23);
-            this.ItemEditTagsAndFlavorButton.TabIndex = 17;
-            this.ItemEditTagsAndFlavorButton.Text = "Edit Tags And Flavor";
-            this.ItemEditTagsAndFlavorButton.UseVisualStyleBackColor = false;
+            this.ItemEditFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ItemEditFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ItemEditFlavorButton.Location = new System.Drawing.Point(815, 70);
+            this.ItemEditFlavorButton.Name = "ItemEditFlavorButton";
+            this.ItemEditFlavorButton.Size = new System.Drawing.Size(128, 23);
+            this.ItemEditFlavorButton.TabIndex = 17;
+            this.ItemEditFlavorButton.Text = "Edit Flavor";
+            this.ItemEditFlavorButton.UseVisualStyleBackColor = false;
             // 
             // ItemFlavorStatic
             // 
@@ -5231,7 +5213,6 @@ namespace Scribe.Forms
             // 
             // BiomesTabPage
             // 
-            this.BiomesTabPage.Controls.Add(this.BiomeEditTagsButton);
             this.BiomesTabPage.Controls.Add(this.BiomeRemoveBiomeButton);
             this.BiomesTabPage.Controls.Add(this.BiomeAddEntryRequirementButton);
             this.BiomesTabPage.Controls.Add(this.BiomeRemoveEntryRequirementButton);
@@ -5248,17 +5229,6 @@ namespace Scribe.Forms
             this.BiomesTabPage.Size = new System.Drawing.Size(953, 599);
             this.BiomesTabPage.TabIndex = 2;
             this.BiomesTabPage.Text = "Biomes";
-            // 
-            // BiomeEditTagsButton
-            // 
-            this.BiomeEditTagsButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BiomeEditTagsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BiomeEditTagsButton.Location = new System.Drawing.Point(815, 70);
-            this.BiomeEditTagsButton.Name = "BiomeEditTagsButton";
-            this.BiomeEditTagsButton.Size = new System.Drawing.Size(128, 23);
-            this.BiomeEditTagsButton.TabIndex = 18;
-            this.BiomeEditTagsButton.Text = "Edit Tags";
-            this.BiomeEditTagsButton.UseVisualStyleBackColor = false;
             // 
             // BiomeRemoveBiomeButton
             // 
@@ -5658,7 +5628,6 @@ namespace Scribe.Forms
             // 
             // CraftingRecipesTabPage
             // 
-            this.CraftingRecipesTabPage.Controls.Add(this.CraftingEditTagsButton);
             this.CraftingRecipesTabPage.Controls.Add(this.CraftingRemoveCraftingButton);
             this.CraftingRecipesTabPage.Controls.Add(this.CraftingListBox);
             this.CraftingRecipesTabPage.Controls.Add(this.CraftingPictureEditButton);
@@ -5673,17 +5642,6 @@ namespace Scribe.Forms
             this.CraftingRecipesTabPage.Size = new System.Drawing.Size(953, 599);
             this.CraftingRecipesTabPage.TabIndex = 3;
             this.CraftingRecipesTabPage.Text = "Crafts";
-            // 
-            // CraftingEditTagsButton
-            // 
-            this.CraftingEditTagsButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CraftingEditTagsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CraftingEditTagsButton.Location = new System.Drawing.Point(815, 70);
-            this.CraftingEditTagsButton.Name = "CraftingEditTagsButton";
-            this.CraftingEditTagsButton.Size = new System.Drawing.Size(128, 23);
-            this.CraftingEditTagsButton.TabIndex = 19;
-            this.CraftingEditTagsButton.Text = "Edit Tags";
-            this.CraftingEditTagsButton.UseVisualStyleBackColor = false;
             // 
             // CraftingRemoveCraftingButton
             // 
@@ -6119,7 +6077,6 @@ namespace Scribe.Forms
             // 
             // RoomRecipesTabPage
             // 
-            this.RoomRecipesTabPage.Controls.Add(this.RoomEditTagsButton);
             this.RoomRecipesTabPage.Controls.Add(this.RoomRemoveRoomButton);
             this.RoomRecipesTabPage.Controls.Add(this.RoomAddBlockButton);
             this.RoomRecipesTabPage.Controls.Add(this.RoomRemoveBlockButton);
@@ -6136,17 +6093,6 @@ namespace Scribe.Forms
             this.RoomRecipesTabPage.Size = new System.Drawing.Size(953, 599);
             this.RoomRecipesTabPage.TabIndex = 7;
             this.RoomRecipesTabPage.Text = "Rooms";
-            // 
-            // RoomEditTagsButton
-            // 
-            this.RoomEditTagsButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.RoomEditTagsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RoomEditTagsButton.Location = new System.Drawing.Point(815, 70);
-            this.RoomEditTagsButton.Name = "RoomEditTagsButton";
-            this.RoomEditTagsButton.Size = new System.Drawing.Size(128, 23);
-            this.RoomEditTagsButton.TabIndex = 19;
-            this.RoomEditTagsButton.Text = "Edit Tags";
-            this.RoomEditTagsButton.UseVisualStyleBackColor = false;
             // 
             // RoomRemoveRoomButton
             // 
@@ -6559,7 +6505,6 @@ namespace Scribe.Forms
             // 
             // MapsTabPage
             // 
-            this.MapsTabPage.Controls.Add(this.MapEditTagsButton);
             this.MapsTabPage.Controls.Add(this.MapIDLabel);
             this.MapsTabPage.Controls.Add(this.MapIDStatic);
             this.MapsTabPage.Controls.Add(this.MapListBox);
@@ -6574,17 +6519,6 @@ namespace Scribe.Forms
             this.MapsTabPage.Size = new System.Drawing.Size(953, 599);
             this.MapsTabPage.TabIndex = 5;
             this.MapsTabPage.Text = "Maps";
-            // 
-            // MapEditTagsButton
-            // 
-            this.MapEditTagsButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.MapEditTagsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MapEditTagsButton.Location = new System.Drawing.Point(815, 70);
-            this.MapEditTagsButton.Name = "MapEditTagsButton";
-            this.MapEditTagsButton.Size = new System.Drawing.Size(128, 23);
-            this.MapEditTagsButton.TabIndex = 19;
-            this.MapEditTagsButton.Text = "Edit Tags";
-            this.MapEditTagsButton.UseVisualStyleBackColor = false;
             // 
             // MapIDLabel
             // 
@@ -7177,7 +7111,6 @@ namespace Scribe.Forms
         private System.Windows.Forms.Label GameIDLabel;
         private System.Windows.Forms.ListBox GameListBox;
         private System.Windows.Forms.Label GameIDStatic;
-        private System.Windows.Forms.Button GameEditTagsButton;
         private System.Windows.Forms.Button GameAddNewGameButton;
         private System.Windows.Forms.Button GameRemoveGameButton;
         private System.Windows.Forms.Label GameNameLabel;
@@ -7203,7 +7136,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.TableLayoutPanel BlockTableLayoutPanel;
         private System.Windows.Forms.Label BlockIDLabel;
         private System.Windows.Forms.Label BlockIDStatic;
-        private System.Windows.Forms.Button BlockEditTagsAndFlavorButton;
+        private System.Windows.Forms.Button BlockEditFlavorButton;
         private System.Windows.Forms.Label BlockFlavorStatic;
         private System.Windows.Forms.Label BlockFlavorLabel;
         private System.Windows.Forms.Label BlockNameLabel;
@@ -7283,7 +7216,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.TableLayoutPanel FurnishingTableLayoutPanel;
         private System.Windows.Forms.Label FurnishingIDLabel;
         private System.Windows.Forms.Label FurnishingIDStatic;
-        private System.Windows.Forms.Button FurnishingEditTagsAndFlavorButton;
+        private System.Windows.Forms.Button FurnishingEditFlavorButton;
         private System.Windows.Forms.Label FurnishingFlavorStatic;
         private System.Windows.Forms.Label FurnishingFlavorLabel;
         private System.Windows.Forms.Label FurnishingNameLabel;
@@ -7321,7 +7254,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.TableLayoutPanel CollectibleTableLayoutPanel;
         private System.Windows.Forms.Label CollectibleIDLabel;
         private System.Windows.Forms.Label CollectibleIDStatic;
-        private System.Windows.Forms.Button CollectibleEditTagsAndFlavorButton;
+        private System.Windows.Forms.Button CollectibleEditFlavorButton;
         private System.Windows.Forms.Label CollectibleFlavorStatic;
         private System.Windows.Forms.Label CollectibleFlavorLabel;
         private System.Windows.Forms.Label CollectibleNameLabel;
@@ -7354,7 +7287,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.TableLayoutPanel CharacterTableLayoutPanel;
         private System.Windows.Forms.Label CharacterIDLabel;
         private System.Windows.Forms.Label CharacterIDStatic;
-        private System.Windows.Forms.Button CharacterEditTagsAndFlavorButton;
+        private System.Windows.Forms.Button CharacterEditFlavorButton;
         private System.Windows.Forms.Label CharacterFlavorStatic;
         private System.Windows.Forms.Label CharacterFlavorLabel;
         private System.Windows.Forms.ComboBox CharacterPrimaryBehaviorComboBox;
@@ -7412,7 +7345,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.Label CritterIDLabel;
         private System.Windows.Forms.ListBox CritterListBox;
         private System.Windows.Forms.Label CritterIDStatic;
-        private System.Windows.Forms.Button CritterEditTagsAndFlavorButton;
+        private System.Windows.Forms.Button CritterEditFlavorButton;
         private System.Windows.Forms.Label CritterFlavorStatic;
         private System.Windows.Forms.Label CritterFlavorLabel;
         private System.Windows.Forms.ComboBox CritterPrimaryBehaviorComboBox;
@@ -7439,7 +7372,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.ListBox ItemListBox;
         private System.Windows.Forms.Label ItemNameLabel;
         private System.Windows.Forms.Label ItemIDStatic;
-        private System.Windows.Forms.Button ItemEditTagsAndFlavorButton;
+        private System.Windows.Forms.Button ItemEditFlavorButton;
         private System.Windows.Forms.Label ItemFlavorStatic;
         private System.Windows.Forms.Label ItemFlavorLabel;
         private System.Windows.Forms.GroupBox ItemInventoriesGroupBox;
@@ -7479,7 +7412,6 @@ namespace Scribe.Forms
         private System.Windows.Forms.ListBox BiomeListBox;
         private System.Windows.Forms.Label BiomeIDLabel;
         private System.Windows.Forms.Label BiomeIDStatic;
-        private System.Windows.Forms.Button BiomeEditTagsButton;
         private System.Windows.Forms.GroupBox BiomeConfigGroupBox;
         private System.Windows.Forms.Button BiomePictureEditButton;
         private System.Windows.Forms.TableLayoutPanel BiomeTableLayoutPanel;
@@ -7516,7 +7448,6 @@ namespace Scribe.Forms
         private System.Windows.Forms.ListBox CraftingListBox;
         private System.Windows.Forms.Label CraftingIDLabel;
         private System.Windows.Forms.Label CraftingIDStatic;
-        private System.Windows.Forms.Button CraftingEditTagsButton;
         private System.Windows.Forms.TableLayoutPanel CraftingConfigTableLayoutPanel;
         private System.Windows.Forms.GroupBox CraftingConfigGroupBox;
         private System.Windows.Forms.Button CraftingPictureEditButton;
@@ -7556,7 +7487,6 @@ namespace Scribe.Forms
         private System.Windows.Forms.ListBox RoomListBox;
         private System.Windows.Forms.Label RoomIDLabel;
         private System.Windows.Forms.Label RoomIDStatic;
-        private System.Windows.Forms.Button RoomEditTagsButton;
         private System.Windows.Forms.GroupBox RoomConfigGroupBox;
         private System.Windows.Forms.Button RoomPictureEditButton;
         private System.Windows.Forms.TableLayoutPanel RoomTableLayoutPanel;
@@ -7592,7 +7522,6 @@ namespace Scribe.Forms
         private System.Windows.Forms.TabPage MapsTabPage;
         private System.Windows.Forms.Label MapIDLabel;
         private System.Windows.Forms.Label MapIDStatic;
-        private System.Windows.Forms.Button MapEditTagsButton;
         private System.Windows.Forms.ListBox MapListBox;
         private System.Windows.Forms.Button MapRemoveButton;
         private System.Windows.Forms.Button MapAddNewButton;
