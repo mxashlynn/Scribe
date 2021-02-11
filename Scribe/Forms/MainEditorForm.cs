@@ -2281,7 +2281,7 @@ namespace Scribe.Forms
                     "bland" => FlavorBlandSelector.BackColor,
                     "sweet" => FlavorSweetSelector.BackColor,
                     "salty" => FlavorSaltySelector.BackColor,
-                    "savoury" => FlavorSavourySelector.BackColor,
+                    "savory" => FlavorSavorySelector.BackColor,
                     "astringent" => FlavorAstringentSelector.BackColor,
                     "numbing" => FlavorNumbingSelector.BackColor,
                     "bitter" => FlavorBitterSelector.BackColor,

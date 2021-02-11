@@ -98,7 +98,7 @@ namespace Scribe.Forms
             this.FlavorBlandSelector = new System.Windows.Forms.Label();
             this.FlavorSweetSelector = new System.Windows.Forms.Label();
             this.FlavorSaltySelector = new System.Windows.Forms.Label();
-            this.FlavorSavourySelector = new System.Windows.Forms.Label();
+            this.FlavorSavorySelector = new System.Windows.Forms.Label();
             this.FlavorAstringentSelector = new System.Windows.Forms.Label();
             this.FlavorNumbingSelector = new System.Windows.Forms.Label();
             this.FlavorAllFlavorsSelector = new System.Windows.Forms.Label();
@@ -1231,7 +1231,7 @@ namespace Scribe.Forms
             this.FlavorsTableLayoutPanel.Controls.Add(this.FlavorBlandSelector, 0, 0);
             this.FlavorsTableLayoutPanel.Controls.Add(this.FlavorSweetSelector, 1, 0);
             this.FlavorsTableLayoutPanel.Controls.Add(this.FlavorSaltySelector, 2, 0);
-            this.FlavorsTableLayoutPanel.Controls.Add(this.FlavorSavourySelector, 3, 0);
+            this.FlavorsTableLayoutPanel.Controls.Add(this.FlavorSavorySelector, 3, 0);
             this.FlavorsTableLayoutPanel.Controls.Add(this.FlavorAstringentSelector, 4, 0);
             this.FlavorsTableLayoutPanel.Controls.Add(this.FlavorNumbingSelector, 5, 0);
             this.FlavorsTableLayoutPanel.Controls.Add(this.FlavorAllFlavorsSelector, 6, 0);
@@ -1298,21 +1298,21 @@ namespace Scribe.Forms
             this.FlavorSaltySelector.Tag = "Unthemed Control";
             this.FlavorSaltySelector.Text = "Salty";
             // 
-            // FlavorSavourySelector
+            // FlavorSavorySelector
             // 
-            this.FlavorSavourySelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.FlavorSavorySelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.FlavorSavourySelector.AutoSize = true;
-            this.FlavorSavourySelector.BackColor = System.Drawing.Color.PapayaWhip;
-            this.FlavorSavourySelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FlavorSavourySelector.Location = new System.Drawing.Point(207, 0);
-            this.FlavorSavourySelector.Name = "FlavorSavourySelector";
-            this.FlavorSavourySelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.FlavorSavourySelector.Size = new System.Drawing.Size(62, 26);
-            this.FlavorSavourySelector.TabIndex = 0;
-            this.FlavorSavourySelector.Tag = "Unthemed Control";
-            this.FlavorSavourySelector.Text = "Savoury";
+            this.FlavorSavorySelector.AutoSize = true;
+            this.FlavorSavorySelector.BackColor = System.Drawing.Color.PapayaWhip;
+            this.FlavorSavorySelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorSavorySelector.Location = new System.Drawing.Point(207, 0);
+            this.FlavorSavorySelector.Name = "FlavorSavorySelector";
+            this.FlavorSavorySelector.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.FlavorSavorySelector.Size = new System.Drawing.Size(62, 26);
+            this.FlavorSavorySelector.TabIndex = 0;
+            this.FlavorSavorySelector.Tag = "Unthemed Control";
+            this.FlavorSavorySelector.Text = "Savory";
             // 
             // FlavorAstringentSelector
             // 
@@ -7269,7 +7269,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.Label FlavorBlandSelector;
         private System.Windows.Forms.Label FlavorSweetSelector;
         private System.Windows.Forms.Label FlavorSaltySelector;
-        private System.Windows.Forms.Label FlavorSavourySelector;
+        private System.Windows.Forms.Label FlavorSavorySelector;
         private System.Windows.Forms.Label FlavorAstringentSelector;
         private System.Windows.Forms.Label FlavorNumbingSelector;
         private System.Windows.Forms.Label FlavorAllFlavorsSelector;
