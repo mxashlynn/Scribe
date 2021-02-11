@@ -18,8 +18,8 @@ namespace Scribe
         /// false otherwise.
         /// </summary>
         internal bool IsEditable
-            => null != EditableTextBox
-            || null != EditableComboBox;
+            => EditableTextBox is not null
+            || EditableComboBox is not null;
 
         /// <summary>
         /// The text contained in the <see cref="EditableBox"/>.
@@ -60,14 +60,14 @@ namespace Scribe
         /// <returns>The <see cref="TextBox"/> or <see cref="ComboBox"/> that was edited, or <c>null</c> if no edits occurred.</returns>
         internal Control Cut()
         {
-            if (null != EditableTextBox
+            if (EditableTextBox is not null
                 && !string.IsNullOrEmpty(EditableTextBox.SelectedText))
             {
                 Clipboard.SetText(EditableTextBox.SelectedText);
                 EditableTextBox.Text = EditableTextBox.Text.Replace(EditableTextBox.SelectedText, "");
                 return EditableTextBox;
             }
-            else if (null != EditableComboBox
+            else if (EditableComboBox is not null
                     && !string.IsNullOrEmpty(EditableComboBox.SelectedText))
             {
                 Clipboard.SetText(EditableComboBox.SelectedText);
@@ -89,14 +89,14 @@ namespace Scribe
         /// <returns>The <see cref="TextBox"/> or <see cref="ComboBox"/> that was edited, or <c>null</c> if no edits occurred.</returns>
         internal Control Paste()
         {
-            if (null != EditableTextBox)
+            if (EditableTextBox is not null)
             {
                 EditableTextBox.Text = string.IsNullOrEmpty(SelectedText)
                     ? EditableTextBox.Text.Insert(EditableTextBox.SelectionStart, Clipboard.GetText())
                     : EditableTextBox.Text.Replace(EditableTextBox.SelectedText, Clipboard.GetText());
                 return EditableTextBox;
             }
-            else if (null != EditableComboBox)
+            else if (EditableComboBox is not null)
             {
                 EditableComboBox.Text = string.IsNullOrEmpty(SelectedText)
                     ? EditableComboBox.Text.Insert(EditableComboBox.SelectionStart, Clipboard.GetText())
@@ -112,12 +112,12 @@ namespace Scribe
         /// <returns>The <see cref="TextBox"/> or <see cref="ComboBox"/> that was edited, or <c>null</c> if no edits occurred.</returns>
         internal Control ClearAll()
         {
-            if (null != EditableTextBox)
+            if (EditableTextBox is not null)
             {
                 EditableTextBox.Clear();
                 return EditableTextBox;
             }
-            else if (null != EditableComboBox)
+            else if (EditableComboBox is not null)
             {
                 EditableComboBox.SelectedItem = null;
                 EditableComboBox.Text = "";
@@ -131,12 +131,12 @@ namespace Scribe
         /// </summary>
         internal void SelectAll()
         {
-            if (null != EditableTextBox)
+            if (EditableTextBox is not null)
             {
                 EditableTextBox.SelectAll();
                 EditableTextBox.Focus();
             }
-            else if (null != EditableComboBox)
+            else if (EditableComboBox is not null)
             {
                 EditableComboBox.SelectAll();
                 EditableComboBox.Focus();

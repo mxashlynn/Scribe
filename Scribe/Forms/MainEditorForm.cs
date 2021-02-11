@@ -405,17 +405,17 @@ namespace Scribe.Forms
             themed[typeof(ToolStripItem)].AddRange(ContextMenuStripPictureBoxes.Items.GetAllChildren());
             themed[typeof(ToolStripItem)].AddRange(ContextMenuStripIDStatics.Items.GetAllChildren());
             themed[typeof(GroupBox)].AddRange(this.GetAllChildrenExactlyOfType<GroupBox>()
-                                    .Where(groupBox => null == groupBox.Tag || !groupBox.Tag.ToString().Contains(UnthemedControl)));
+                                    .Where(groupBox => groupBox.Tag is null || !groupBox.Tag.ToString().Contains(UnthemedControl)));
             themed[typeof(ListBox)].AddRange(this.GetAllChildrenExactlyOfType<ListBox>()
-                                    .Where(listbox => null == listbox.Tag || !listbox.Tag.ToString().Contains(UnthemedControl)));
+                                    .Where(listbox => listbox.Tag is null || !listbox.Tag.ToString().Contains(UnthemedControl)));
             themed[typeof(ComboBox)].AddRange(this.GetAllChildrenExactlyOfType<ComboBox>()
-                                    .Where(combobox => null == combobox.Tag || !combobox.Tag.ToString().Contains(UnthemedControl)));
+                                    .Where(combobox => combobox.Tag is null || !combobox.Tag.ToString().Contains(UnthemedControl)));
             themed[typeof(TextBox)].AddRange(this.GetAllChildrenExactlyOfType<TextBox>()
-                                    .Where(textbox => null == textbox.Tag || !textbox.Tag.ToString().Contains(UnthemedControl)));
+                                    .Where(textbox => textbox.Tag is null || !textbox.Tag.ToString().Contains(UnthemedControl)));
             themed[typeof(Label)].AddRange(this.GetAllChildrenExactlyOfType<Label>()
-                                    .Where(label => null != label.Tag && label.Tag.ToString().Contains(ThemedLabel)));
+                                    .Where(label => label.Tag is not null && label.Tag.ToString().Contains(ThemedLabel)));
             themed[typeof(Button)].AddRange(this.GetAllChildrenExactlyOfType<Button>()
-                                    .Where(button => null == button.Tag || !button.Tag.ToString().Contains(UnthemedControl)));
+                                    .Where(button => button.Tag is null || !button.Tag.ToString().Contains(UnthemedControl)));
             return themed;
         }
 
@@ -653,7 +653,7 @@ namespace Scribe.Forms
         /// <param name="inControl">The <see cref="Control"/> corresponding to the property sought.</param>
         /// <returns>A method for editing the property's value, or <c>null</c> if the input combination is not defined.</returns>
         private Action<object> GetPropertyAccessorForTabAndControl(int inTabIndex, Control inControl)
-            => null == inControl
+            => inControl is null
             ? null
             : (inTabIndex, inControl.Name) switch
             {
@@ -705,7 +705,7 @@ namespace Scribe.Forms
         /// <returns>A method for editing the property's value, or <c>null</c> if the input combination is not defined.</returns>
         /// <remarks>This method binds data in models to controls in the user interface.</remarks>
         private static Action<object> GetPropertyAccessorForModelAndTabAndControl(Model inModel, int inTabIndex, Control inControl)
-            => null == inModel
+            => inModel is null
             ? (Action<object>)null
             : (inTabIndex, inControl.Name) switch
             {
@@ -1001,10 +1001,10 @@ namespace Scribe.Forms
             #endregion
 
             #region Select Default Model
-            if (null == GetSelectedModelForTab(EditorTabs.SelectedIndex))
+            if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is null)
             {
                 var selectedListBox = GetPrimaryListBoxForTab(EditorTabs.SelectedIndex);
-                if (null != selectedListBox)
+                if (selectedListBox is not null)
                 {
                     selectedListBox.SelectedItem = selectedListBox.Items.Cast<Model>().ElementAtOrDefault(0);
                 }
@@ -1192,7 +1192,7 @@ namespace Scribe.Forms
             foreach (var checkbox in EditableControls[typeof(CheckBox)])
             {
                 var nonNullCheckbox = (CheckBox)checkbox.Key;
-                if (nonNullCheckbox != null)
+                if (nonNullCheckbox is not null)
                 {
                     nonNullCheckbox.Checked = false;
                 }
@@ -1200,7 +1200,7 @@ namespace Scribe.Forms
             foreach (var combobox in EditableControls[typeof(ComboBox)])
             {
                 var nonNullCombobox = (ComboBox)combobox.Key;
-                if (nonNullCombobox != null)
+                if (nonNullCombobox is not null)
                 {
                     nonNullCombobox.SelectedItem = null;
                     nonNullCombobox.Items.Clear();
@@ -1209,7 +1209,7 @@ namespace Scribe.Forms
             foreach (var listbox in EditableControls[typeof(ListBox)])
             {
                 var nonNullListbox = (ListBox)listbox.Key;
-                if (nonNullListbox != null)
+                if (nonNullListbox is not null)
                 {
                     nonNullListbox.SelectedItem = null;
                     nonNullListbox.Items.Clear();
@@ -1218,7 +1218,7 @@ namespace Scribe.Forms
 
             foreach (var picturebox in PictureBoxes)
             {
-                if (picturebox != null)
+                if (picturebox is not null)
                 {
                     picturebox.Image?.Dispose();
                     picturebox.Image = Resources.ImageNotFound;
@@ -1238,7 +1238,7 @@ namespace Scribe.Forms
         /// <remarks>This should only be called if <see cref="All"/> has actually changed.</remarks>
         private static void RepopulateListBox(ListBox inListBox, IEnumerable<Model> inSource)
         {
-            if (null != inSource)
+            if (inSource is not null)
             {
                 inListBox.SelectedItem = null;
                 inListBox.BeginUpdate();
@@ -1256,7 +1256,7 @@ namespace Scribe.Forms
         /// <remarks>This should only be called if <see cref="All"/> has actually changed.</remarks>
         private static void RepopulateListBox(ListBox inListBox, IEnumerable<object> inSource)
         {
-            if (null != inSource)
+            if (inSource is not null)
             {
                 inListBox.SelectedItem = null;
                 inListBox.BeginUpdate();
@@ -1279,7 +1279,7 @@ namespace Scribe.Forms
         /// <remarks>This should only be called if <see cref="All"/> has actually changed.</remarks>
         private static void RepopulateComboBox(ComboBox inComboBox, IEnumerable<object> inSource)
         {
-            if (null != inSource)
+            if (inSource is not null)
             {
                 inComboBox.SelectedItem = null;
                 inComboBox.BeginUpdate();
@@ -1437,7 +1437,7 @@ namespace Scribe.Forms
         /// <param name="eventArguments">Ignored.</param>
         private void GameListBox_SelectedValueChanged(object sender, EventArgs eventArguments)
         {
-            if (null == GameListBox.SelectedItem)
+            if (GameListBox.SelectedItem is null)
             {
                 GameIDStatic.Text = ModelID.None.ToString();
                 GameNameTextBox.Text = "";
@@ -1451,7 +1451,7 @@ namespace Scribe.Forms
                 GameIconPixelBox.Image = Resources.ImageNotFound;
             }
             else if (GameListBox.SelectedItem is GameModel model
-                    && null != model)
+                    && model is not null)
             {
                 GameIDStatic.Text = model.ID.ToString();
                 GameNameTextBox.Text = model.Name;
@@ -1479,7 +1479,7 @@ namespace Scribe.Forms
         {
             BlockAddsToBiomeListBox.SelectedItem = null;
             BlockAddsToRoomListBox.SelectedItem = null;
-            if (null == BlockListBox.SelectedItem)
+            if (BlockListBox.SelectedItem is null)
             {
                 BlockIDStatic.Text = ModelID.None.ToString();
                 BlockNameTextBox.Text = "";
@@ -1497,7 +1497,7 @@ namespace Scribe.Forms
                 BlockPixelBox.Image = Resources.ImageNotFound;
             }
             else if (BlockListBox.SelectedItem is BlockModel model
-                    && null != model)
+                    && model is not null)
             {
                 BlockIDStatic.Text = model.ID.ToString();
                 BlockNameTextBox.Text = model.Name;
@@ -1528,7 +1528,7 @@ namespace Scribe.Forms
         {
             FloorAddsToBiomeListBox.SelectedItem = null;
             FloorAddsToRoomListBox.SelectedItem = null;
-            if (null == FloorListBox.SelectedItem)
+            if (FloorListBox.SelectedItem is null)
             {
                 FloorIDStatic.Text = ModelID.None.ToString();
                 FloorNameTextBox.Text = "";
@@ -1543,7 +1543,7 @@ namespace Scribe.Forms
                 FloorFilledInPixelBox.Image = Resources.ImageNotFound;
             }
             else if (FloorListBox.SelectedItem is FloorModel model
-                    && null != model)
+                    && model is not null)
             {
                 FloorIDStatic.Text = model.ID.ToString();
                 FloorNameTextBox.Text = model.Name;
@@ -1571,7 +1571,7 @@ namespace Scribe.Forms
         {
             FurnishingAddsToBiomeListBox.SelectedItem = null;
             FurnishingAddsToRoomListBox.SelectedItem = null;
-            if (null == FurnishingListBox.SelectedItem)
+            if (FurnishingListBox.SelectedItem is null)
             {
                 FurnishingIDStatic.Text = ModelID.None.ToString();
                 FurnishingNameTextBox.Text = "";
@@ -1588,7 +1588,7 @@ namespace Scribe.Forms
                 FurnishingPixelBox.Image = Resources.ImageNotFound;
             }
             else if (FurnishingListBox.SelectedItem is FurnishingModel model
-                    && null != model)
+                    && model is not null)
             {
                 FurnishingIDStatic.Text = model.ID.ToString();
                 FurnishingNameTextBox.Text = model.Name;
@@ -1619,7 +1619,7 @@ namespace Scribe.Forms
         {
             CollectibleAddsToBiomeListBox.SelectedItem = null;
             CollectibleAddsToRoomListBox.SelectedItem = null;
-            if (null == CollectibleListBox.SelectedItem)
+            if (CollectibleListBox.SelectedItem is null)
             {
                 CollectibleIDStatic.Text = ModelID.None.ToString();
                 CollectibleNameTextBox.Text = "";
@@ -1633,7 +1633,7 @@ namespace Scribe.Forms
                 CollectiblePixelBox.Image = Resources.ImageNotFound;
             }
             else if (CollectibleListBox.SelectedItem is CollectibleModel model
-                    && null != model)
+                    && model is not null)
             {
                 CollectibleIDStatic.Text = model.ID.ToString();
                 CollectibleNameTextBox.Text = model.Name;
@@ -1658,7 +1658,7 @@ namespace Scribe.Forms
         private void CharacterListBox_SelectedValueChanged(object sender, EventArgs eventArguments)
         {
             CharacterStartingQuestsListBox.SelectedItem = null;
-            if (null == CharacterListBox.SelectedItem)
+            if (CharacterListBox.SelectedItem is null)
             {
                 CharacterIDStatic.Text = ModelID.None.ToString();
                 CharacterPersonalNameTextBox.Text = "";
@@ -1675,7 +1675,7 @@ namespace Scribe.Forms
                 CharacterPixelBox.Image = Resources.ImageNotFound;
             }
             else if (CharacterListBox.SelectedItem is CharacterModel model
-                     && null != model)
+                     && model is not null)
             {
                 CharacterIDStatic.Text = model.ID.ToString();
                 CharacterPersonalNameTextBox.Text = model.PersonalName;
@@ -1713,7 +1713,7 @@ namespace Scribe.Forms
         /// <param name="eventArguments">Ignored.</param>
         private void CharacterPronounListBox_SelectedIndexChanged(object sender, EventArgs eventArguments)
         {
-            if (null == CharacterPronounListBox.SelectedItem)
+            if (CharacterPronounListBox.SelectedItem is null)
             {
                 CharacterPronounKeyStatic.Text = PronounGroup.DefaultKey;
                 CharacterPronounSubjectiveTextBox.Text = "";
@@ -1723,7 +1723,7 @@ namespace Scribe.Forms
                 CharacterPronounReflexiveTextBox.Text = "";
             }
             else if (CharacterPronounListBox.SelectedItem is PronounGroup group
-                     && null != group)
+                     && group is not null)
             {
                 CharacterPronounKeyStatic.Text = group.Key;
                 CharacterPronounSubjectiveTextBox.Text = group.Subjective;
@@ -1741,7 +1741,7 @@ namespace Scribe.Forms
         /// <param name="eventArguments">Ignored.</param>
         private void CritterListBox_SelectedValueChanged(object sender, EventArgs eventArguments)
         {
-            if (null == CritterListBox.SelectedItem)
+            if (CritterListBox.SelectedItem is null)
             {
                 CritterIDStatic.Text = ModelID.None.ToString();
                 CritterNameTextBox.Text = "";
@@ -1752,7 +1752,7 @@ namespace Scribe.Forms
                 CritterPixelBox.Image = Resources.ImageNotFound;
             }
             else if (CritterListBox.SelectedItem is CritterModel model
-                     && null != model)
+                     && model is not null)
             {
                 CritterIDStatic.Text = model.ID.ToString();
                 CritterNameTextBox.Text = model.Name;
@@ -1776,7 +1776,7 @@ namespace Scribe.Forms
         private void ItemListBox_SelectedValueChanged(object sender, EventArgs eventArguments)
         {
             ItemTagListBox.SelectedItem = null;
-            if (null == ItemListBox.SelectedItem)
+            if (ItemListBox.SelectedItem is null)
             {
                 ItemIDStatic.Text = ModelID.None.ToString();
                 ItemNameTextBox.Text = "";
@@ -1793,7 +1793,7 @@ namespace Scribe.Forms
                 ItemPixelBox.Image = Resources.ImageNotFound;
             }
             else if (ItemListBox.SelectedItem is ItemModel model
-                    && null != model)
+                    && model is not null)
             {
                 ItemIDStatic.Text = model.ID.ToString();
                 ItemNameTextBox.Text = model.Name;
@@ -1825,7 +1825,7 @@ namespace Scribe.Forms
         private void BiomeListBox_SelectedValueChanged(object sender, EventArgs eventArguments)
         {
             BiomeEntryRequirementsListBox.SelectedItem = null;
-            if (null == BiomeListBox.SelectedItem)
+            if (BiomeListBox.SelectedItem is null)
             {
                 BiomeIDStatic.Text = ModelID.None.ToString();
                 BiomeNameTextBox.Text = "";
@@ -1839,7 +1839,7 @@ namespace Scribe.Forms
                 BiomePixelBox.Image = Resources.ImageNotFound;
             }
             else if (BiomeListBox.SelectedItem is BiomeRecipe recipe
-                    && null != recipe)
+                    && recipe is not null)
             {
                 BiomeIDStatic.Text = recipe.ID.ToString();
                 BiomeNameTextBox.Text = recipe.Name;
@@ -1863,7 +1863,7 @@ namespace Scribe.Forms
         {
             CraftingProductsListBox.SelectedItem = null;
             CraftingIngredientsListBox.SelectedItem = null;
-            if (null == CraftingListBox.SelectedItem)
+            if (CraftingListBox.SelectedItem is null)
             {
                 CraftingIDStatic.Text = ModelID.None.ToString();
                 CraftingNameTextBox.Text = "";
@@ -1875,7 +1875,7 @@ namespace Scribe.Forms
                 CraftingPixelBox.Image = Resources.ImageNotFound;
             }
             else if (CraftingListBox.SelectedItem is CraftingRecipe recipe
-                    && null != recipe)
+                    && recipe is not null)
             {
                 CraftingIDStatic.Text = recipe.ID.ToString();
                 CraftingNameTextBox.Text = recipe.Name;
@@ -1898,7 +1898,7 @@ namespace Scribe.Forms
             RoomRequiredFurnishingsListBox.SelectedItem = null;
             RoomRequiredFloorsListBox.SelectedItem = null;
             RoomRequiredBlocksListBox.SelectedItem = null;
-            if (null == RoomListBox.SelectedItem)
+            if (RoomListBox.SelectedItem is null)
             {
                 RoomIDStatic.Text = ModelID.None.ToString();
                 RoomNameTextBox.Text = "";
@@ -1911,7 +1911,7 @@ namespace Scribe.Forms
                 RoomPixelBox.Image = Resources.ImageNotFound;
             }
             else if (RoomListBox.SelectedItem is RoomRecipe recipe
-                    && null != recipe)
+                    && recipe is not null)
             {
                 RoomIDStatic.Text = recipe.ID.ToString();
                 RoomNameTextBox.Text = recipe.Name;
@@ -1932,7 +1932,7 @@ namespace Scribe.Forms
         /// <param name="eventArguments">Ignored.</param>
         private void MapListBox_SelectedValueChanged(object sender, EventArgs eventArguments)
         {
-            if (null == MapListBox.SelectedItem)
+            if (MapListBox.SelectedItem is null)
             {
                 MapIDStatic.Text = ModelID.None.ToString();
                 MapNameTextBox.Text = "";
@@ -1949,7 +1949,7 @@ namespace Scribe.Forms
                 MapPixelBox.Image = Resources.Map;
             }
             else if (MapListBox.SelectedItem is MapRegionModel model
-                    && null != model)
+                    && model is not null)
             {
                 RoomIDStatic.Text = model.ID.ToString();
                 RoomNameTextBox.Text = model.Name;
@@ -2000,7 +2000,7 @@ namespace Scribe.Forms
                 return;
             }
             var PropertyAccessor = GetPropertyAccessorForTabAndControl(EditorTabs.SelectedIndex, alteredControl);
-            if (null == PropertyAccessor)
+            if (PropertyAccessor is null)
             {
                 // Silently return if no model is selected or if the Control is unsupported.
                 return;
@@ -2143,7 +2143,7 @@ namespace Scribe.Forms
             }
 
             var modelToRemove = (TModel)GetSelectedModelForTab(EditorTabs.SelectedIndex);
-            if (null == modelToRemove)
+            if (modelToRemove is null)
             {
                 SystemSounds.Beep.Play();
                 return;
@@ -2220,7 +2220,7 @@ namespace Scribe.Forms
         private void RemoveTag<TInterface>(ListBox inAddsToListBox, Func<TInterface, ICollection<ModelTag>> inGetTagListFromModel)
             where TInterface : IMutableModel
         {
-            if (!All.CollectionsHaveBeenInitialized || null == inAddsToListBox.SelectedItem)
+            if (!All.CollectionsHaveBeenInitialized || inAddsToListBox.SelectedItem is null)
             {
                 SystemSounds.Beep.Play();
                 return;
@@ -2304,7 +2304,7 @@ namespace Scribe.Forms
                                                      Func<TInterface, ICollection<RecipeElement>> inGetElementListFromRecipe)
             where TInterface : IMutableModel
         {
-            if (!All.CollectionsHaveBeenInitialized || null == inAddsToListBox.SelectedItem)
+            if (!All.CollectionsHaveBeenInitialized || inAddsToListBox.SelectedItem is null)
             {
                 SystemSounds.Beep.Play();
                 return;
@@ -2384,7 +2384,7 @@ namespace Scribe.Forms
         /// <param name="inGetTagListFromModel">The means, given a Model, to find the correct ID collection.</param>
         private void RemoveQuest(ListBox inAddsToListBox, Func<IMutableCharacterModel, ICollection<ModelID>> inGetTagListFromModel)
         {
-            if (!All.CollectionsHaveBeenInitialized || null == inAddsToListBox.SelectedItem)
+            if (!All.CollectionsHaveBeenInitialized || inAddsToListBox.SelectedItem is null)
             {
                 SystemSounds.Beep.Play();
                 return;
@@ -2822,7 +2822,7 @@ namespace Scribe.Forms
         {
             var currentCharacter = (CharacterModel)ItemInventoryListBox.SelectedItem;
             InventoryEditorWindow.CurrentCharacter = currentCharacter;
-            if (null == currentCharacter ||
+            if (currentCharacter is null ||
                 InventoryEditorWindow.ShowDialog() == DialogResult.Abort)
             {
                 SystemSounds.Beep.Play();
@@ -3004,7 +3004,7 @@ namespace Scribe.Forms
         {
             // TODO Implement this!
             //MapEditorWindow.CurrentMap = (MapModel)MapListBox.SelectedItem;
-            //if (null == MapEditorWindow.CurrentMap ||
+            //if (MapEditorWindow.CurrentMap is null ||
             //    MapEditorWindow.ShowDialog() == DialogResult.Abort)
             //{
             //    SystemSounds.Beep.Play();

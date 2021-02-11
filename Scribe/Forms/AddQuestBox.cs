@@ -72,7 +72,7 @@ namespace Scribe.Forms
         /// <param name="eventArguments">Additional event data.</param>
         private void OkayButton_Click(object sender, EventArgs eventArguments)
         {
-            (ReturnNewQuestID, DialogResult) = null == AddQuestComboBox.SelectedItem
+            (ReturnNewQuestID, DialogResult) = AddQuestComboBox.SelectedItem is null
                 ? (ModelID.None, DialogResult.Cancel)
                 : (((InteractionModel)AddQuestComboBox.SelectedItem).ID, DialogResult.OK);
             Close();

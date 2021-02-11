@@ -47,7 +47,7 @@ namespace Scribe.Forms
         /// <param name="eventArguments">Ignored.</param>
         private void InventoryEditorForm_Load(object sender, EventArgs eventArguments)
         {
-            if (null == CurrentCharacter)
+            if (CurrentCharacter is null)
             {
                 DialogResult = DialogResult.Abort;
                 Close();

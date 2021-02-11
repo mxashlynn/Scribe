@@ -67,7 +67,7 @@ namespace Scribe.Forms
         /// <param name="eventArguments">Ignored.</param>
         private void StrikePatternEditorForm_Load(object sender, EventArgs eventArguments)
         {
-            if (null == CurrentCraft)
+            if (CurrentCraft is null)
             {
                 DialogResult = DialogResult.Abort;
                 Close();

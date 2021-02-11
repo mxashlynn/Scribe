@@ -34,7 +34,7 @@ namespace Scribe.Forms
         /// <param name="eventArguments">Ignored.</param>
         private void AddRecipeElementBox_Load(object sender, EventArgs eventArguments)
         {
-            if (null != ReturnNewRecipeElement)
+            if (ReturnNewRecipeElement is not null)
             {
                 ReturnNewRecipeElement = null;
                 newTag = "";
