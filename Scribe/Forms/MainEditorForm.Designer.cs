@@ -4978,6 +4978,7 @@ namespace Scribe.Forms
             this.ItemEditFunctionButton.TabIndex = 20;
             this.ItemEditFunctionButton.Text = "Edit Function";
             this.ItemEditFunctionButton.UseVisualStyleBackColor = false;
+            this.ItemEditFunctionButton.Click += new System.EventHandler(this.EditFunctionButton_Click);
             // 
             // ItemFunctionLabel
             // 

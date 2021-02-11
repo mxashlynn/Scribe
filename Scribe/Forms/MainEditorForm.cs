@@ -2260,21 +2260,42 @@ namespace Scribe.Forms
                 return;
             }
 
-            // TODO Currently this is not hooked into the undo system.  In order to hook it in,
-            // we need to create a more robust UI that can treat tag changes atomically, instead
-            // of treating them as one giant glob.
+            // TODO Currently this is not hooked into the undo system.
+            // Tag changes must be treated atomically instead of as a giant glob.
 
             if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is IMutableModel model
-                && FlavorsDialogue.ShowDialog() == DialogResult.OK)
+                && FlavorDialogue.ShowDialog() == DialogResult.OK)
             {
-                model.Tags = FlavorsDialogue.ReturnNewFlavor;
+                model.Tags.Remove(model.CurrentFlavor);
+                model.Tags.Add(FlavorDialogue.ReturnNewFlavor);
                 var flavorStatic = GetCurrentFlavorStatic(EditorTabs.SelectedIndex);
                 flavorStatic.Text = FlavorsDialogue.ReturnUpdatedFlavor;
-                flavorStatic.BackgroundColor = GetColorForFlavor(TagsAndFlavorsDialogue.ReturnUpdatedFlavor);
+                flavorStatic.BackgroundColor = GetColorForFlavor(FlavorsDialogue.ReturnUpdatedFlavor);
                 HasUnsavedChanges = true;
             }
         }
 
+        private void EditFunctionButton_Click(object sender, EventArgs e)
+        {
+            if (!All.CollectionsHaveBeenInitialized)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            // TODO Currently this is not hooked into the undo system.
+            // Tag changes must be treated atomically instead of as a giant glob.
+
+            if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is IMutableModel model
+                && FunctionDialogue.ShowDialog() == DialogResult.OK)
+            {
+                model.Tags.Remove(model.CurrentFunction);
+                model.Tags.Add(FunctionDialogue.ReturnNewFunction);
+                var flavorStatic = GetCurrentFunctionStatic(EditorTabs.SelectedIndex);
+                flavorStatic.Text = FunctionDialogue.ReturnNewFunction;
+                HasUnsavedChanges = true;
+            }
+        }
         #endregion
 
         #region Recipe Element Adjustments
