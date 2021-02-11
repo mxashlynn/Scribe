@@ -160,7 +160,10 @@ namespace Scribe.Forms
             this.LibraryProjectPathLabel = new System.Windows.Forms.Label();
             this.LibraryProjectPathStatic = new System.Windows.Forms.Label();
             this.FloorsTabPage = new System.Windows.Forms.TabPage();
-            this.FloorEditTagsFlavorButton = new System.Windows.Forms.Button();
+            this.FloorFunctionStatic = new System.Windows.Forms.Label();
+            this.FloorEditFunctionButton = new System.Windows.Forms.Button();
+            this.FloorFunctionLabel = new System.Windows.Forms.Label();
+            this.FloorEditFlavorButton = new System.Windows.Forms.Button();
             this.FloorFlavorStatic = new System.Windows.Forms.Label();
             this.FloorFlavorLabel = new System.Windows.Forms.Label();
             this.FloorEditFilledInImageButton = new System.Windows.Forms.Button();
@@ -197,6 +200,9 @@ namespace Scribe.Forms
             this.FloorDugOutPixelBox = new Scribe.CustomControls.PixelBox();
             this.FloorConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.BlocksTabPage = new System.Windows.Forms.TabPage();
+            this.BlockFunctionStatic = new System.Windows.Forms.Label();
+            this.BlockEditFunctionButton = new System.Windows.Forms.Button();
+            this.BlockFunctionLabel = new System.Windows.Forms.Label();
             this.BlockEditFlavorButton = new System.Windows.Forms.Button();
             this.BlockFlavorStatic = new System.Windows.Forms.Label();
             this.BlockFlavorLabel = new System.Windows.Forms.Label();
@@ -238,6 +244,9 @@ namespace Scribe.Forms
             this.BlockRemoveBlockButton = new System.Windows.Forms.Button();
             this.BlockConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.FurnishingsTabPage = new System.Windows.Forms.TabPage();
+            this.FurnishingFunctionStatic = new System.Windows.Forms.Label();
+            this.FurnishingEditFunctionButton = new System.Windows.Forms.Button();
+            this.FurnishingFunctionLabel = new System.Windows.Forms.Label();
             this.FurnishingEditFlavorButton = new System.Windows.Forms.Button();
             this.FurnishingFlavorStatic = new System.Windows.Forms.Label();
             this.FurnishingFlavorLabel = new System.Windows.Forms.Label();
@@ -275,6 +284,9 @@ namespace Scribe.Forms
             this.FurnishingPixelBox = new Scribe.CustomControls.PixelBox();
             this.FurnishingConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CollectiblesTabPage = new System.Windows.Forms.TabPage();
+            this.CollectibleFunctionStatic = new System.Windows.Forms.Label();
+            this.CollectibleEditFunctionButton = new System.Windows.Forms.Button();
+            this.CollectibleFunctionLabel = new System.Windows.Forms.Label();
             this.CollectibleEditFlavorButton = new System.Windows.Forms.Button();
             this.CollectibleFlavorStatic = new System.Windows.Forms.Label();
             this.CollectibleFlavorLabel = new System.Windows.Forms.Label();
@@ -390,6 +402,9 @@ namespace Scribe.Forms
             this.CharacterEditImageButton = new System.Windows.Forms.Button();
             this.CharacterPixelBox = new Scribe.CustomControls.PixelBox();
             this.ItemsTabPage = new System.Windows.Forms.TabPage();
+            this.ItemFunctionStatic = new System.Windows.Forms.Label();
+            this.ItemEditFunctionButton = new System.Windows.Forms.Button();
+            this.ItemFunctionLabel = new System.Windows.Forms.Label();
             this.ItemEditFlavorButton = new System.Windows.Forms.Button();
             this.ItemFlavorStatic = new System.Windows.Forms.Label();
             this.ItemFlavorLabel = new System.Windows.Forms.Label();
@@ -2066,7 +2081,10 @@ namespace Scribe.Forms
             // 
             // FloorsTabPage
             // 
-            this.FloorsTabPage.Controls.Add(this.FloorEditTagsFlavorButton);
+            this.FloorsTabPage.Controls.Add(this.FloorFunctionStatic);
+            this.FloorsTabPage.Controls.Add(this.FloorEditFunctionButton);
+            this.FloorsTabPage.Controls.Add(this.FloorFunctionLabel);
+            this.FloorsTabPage.Controls.Add(this.FloorEditFlavorButton);
             this.FloorsTabPage.Controls.Add(this.FloorFlavorStatic);
             this.FloorsTabPage.Controls.Add(this.FloorFlavorLabel);
             this.FloorsTabPage.Controls.Add(this.FloorEditFilledInImageButton);
@@ -2088,16 +2106,50 @@ namespace Scribe.Forms
             this.FloorsTabPage.TabIndex = 6;
             this.FloorsTabPage.Text = "Floors";
             // 
-            // FloorEditTagsFlavorButton
+            // FloorFunctionStatic
             // 
-            this.FloorEditTagsFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FloorEditTagsFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FloorEditTagsFlavorButton.Location = new System.Drawing.Point(815, 70);
-            this.FloorEditTagsFlavorButton.Name = "FloorEditTagsFlavorButton";
-            this.FloorEditTagsFlavorButton.Size = new System.Drawing.Size(128, 23);
-            this.FloorEditTagsFlavorButton.TabIndex = 14;
-            this.FloorEditTagsFlavorButton.Text = "Edit Flavor";
-            this.FloorEditTagsFlavorButton.UseVisualStyleBackColor = false;
+            this.FloorFunctionStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorFunctionStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorFunctionStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.FloorFunctionStatic.Location = new System.Drawing.Point(812, 99);
+            this.FloorFunctionStatic.Name = "FloorFunctionStatic";
+            this.FloorFunctionStatic.Size = new System.Drawing.Size(131, 20);
+            this.FloorFunctionStatic.TabIndex = 24;
+            this.FloorFunctionStatic.Tag = "Themed";
+            this.FloorFunctionStatic.Text = "(None)";
+            this.FloorFunctionStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FloorEditFunctionButton
+            // 
+            this.FloorEditFunctionButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorEditFunctionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FloorEditFunctionButton.Location = new System.Drawing.Point(815, 125);
+            this.FloorEditFunctionButton.Name = "FloorEditFunctionButton";
+            this.FloorEditFunctionButton.Size = new System.Drawing.Size(128, 23);
+            this.FloorEditFunctionButton.TabIndex = 23;
+            this.FloorEditFunctionButton.Text = "Edit Function";
+            this.FloorEditFunctionButton.UseVisualStyleBackColor = false;
+            // 
+            // FloorFunctionLabel
+            // 
+            this.FloorFunctionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorFunctionLabel.AutoSize = true;
+            this.FloorFunctionLabel.Location = new System.Drawing.Point(761, 102);
+            this.FloorFunctionLabel.Name = "FloorFunctionLabel";
+            this.FloorFunctionLabel.Size = new System.Drawing.Size(48, 13);
+            this.FloorFunctionLabel.TabIndex = 22;
+            this.FloorFunctionLabel.Text = "Function";
+            // 
+            // FloorEditFlavorButton
+            // 
+            this.FloorEditFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorEditFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FloorEditFlavorButton.Location = new System.Drawing.Point(815, 70);
+            this.FloorEditFlavorButton.Name = "FloorEditFlavorButton";
+            this.FloorEditFlavorButton.Size = new System.Drawing.Size(128, 23);
+            this.FloorEditFlavorButton.TabIndex = 14;
+            this.FloorEditFlavorButton.Text = "Edit Flavor";
+            this.FloorEditFlavorButton.UseVisualStyleBackColor = false;
             // 
             // FloorFlavorStatic
             // 
@@ -2510,6 +2562,9 @@ namespace Scribe.Forms
             // 
             // BlocksTabPage
             // 
+            this.BlocksTabPage.Controls.Add(this.BlockFunctionStatic);
+            this.BlocksTabPage.Controls.Add(this.BlockEditFunctionButton);
+            this.BlocksTabPage.Controls.Add(this.BlockFunctionLabel);
             this.BlocksTabPage.Controls.Add(this.BlockEditFlavorButton);
             this.BlocksTabPage.Controls.Add(this.BlockFlavorStatic);
             this.BlocksTabPage.Controls.Add(this.BlockFlavorLabel);
@@ -2527,6 +2582,40 @@ namespace Scribe.Forms
             this.BlocksTabPage.Size = new System.Drawing.Size(953, 599);
             this.BlocksTabPage.TabIndex = 9;
             this.BlocksTabPage.Text = "Blocks";
+            // 
+            // BlockFunctionStatic
+            // 
+            this.BlockFunctionStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlockFunctionStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BlockFunctionStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.BlockFunctionStatic.Location = new System.Drawing.Point(812, 99);
+            this.BlockFunctionStatic.Name = "BlockFunctionStatic";
+            this.BlockFunctionStatic.Size = new System.Drawing.Size(131, 20);
+            this.BlockFunctionStatic.TabIndex = 24;
+            this.BlockFunctionStatic.Tag = "Themed";
+            this.BlockFunctionStatic.Text = "(None)";
+            this.BlockFunctionStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // BlockEditFunctionButton
+            // 
+            this.BlockEditFunctionButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BlockEditFunctionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BlockEditFunctionButton.Location = new System.Drawing.Point(815, 125);
+            this.BlockEditFunctionButton.Name = "BlockEditFunctionButton";
+            this.BlockEditFunctionButton.Size = new System.Drawing.Size(128, 23);
+            this.BlockEditFunctionButton.TabIndex = 23;
+            this.BlockEditFunctionButton.Text = "Edit Function";
+            this.BlockEditFunctionButton.UseVisualStyleBackColor = false;
+            // 
+            // BlockFunctionLabel
+            // 
+            this.BlockFunctionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlockFunctionLabel.AutoSize = true;
+            this.BlockFunctionLabel.Location = new System.Drawing.Point(761, 102);
+            this.BlockFunctionLabel.Name = "BlockFunctionLabel";
+            this.BlockFunctionLabel.Size = new System.Drawing.Size(48, 13);
+            this.BlockFunctionLabel.TabIndex = 22;
+            this.BlockFunctionLabel.Text = "Function";
             // 
             // BlockEditFlavorButton
             // 
@@ -2987,6 +3076,9 @@ namespace Scribe.Forms
             // 
             // FurnishingsTabPage
             // 
+            this.FurnishingsTabPage.Controls.Add(this.FurnishingFunctionStatic);
+            this.FurnishingsTabPage.Controls.Add(this.FurnishingEditFunctionButton);
+            this.FurnishingsTabPage.Controls.Add(this.FurnishingFunctionLabel);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingEditFlavorButton);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingFlavorStatic);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingFlavorLabel);
@@ -3004,6 +3096,40 @@ namespace Scribe.Forms
             this.FurnishingsTabPage.Size = new System.Drawing.Size(953, 599);
             this.FurnishingsTabPage.TabIndex = 10;
             this.FurnishingsTabPage.Text = "Furnishings";
+            // 
+            // FurnishingFunctionStatic
+            // 
+            this.FurnishingFunctionStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingFunctionStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingFunctionStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.FurnishingFunctionStatic.Location = new System.Drawing.Point(812, 99);
+            this.FurnishingFunctionStatic.Name = "FurnishingFunctionStatic";
+            this.FurnishingFunctionStatic.Size = new System.Drawing.Size(131, 20);
+            this.FurnishingFunctionStatic.TabIndex = 24;
+            this.FurnishingFunctionStatic.Tag = "Themed";
+            this.FurnishingFunctionStatic.Text = "(None)";
+            this.FurnishingFunctionStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FurnishingEditFunctionButton
+            // 
+            this.FurnishingEditFunctionButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingEditFunctionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FurnishingEditFunctionButton.Location = new System.Drawing.Point(815, 125);
+            this.FurnishingEditFunctionButton.Name = "FurnishingEditFunctionButton";
+            this.FurnishingEditFunctionButton.Size = new System.Drawing.Size(128, 23);
+            this.FurnishingEditFunctionButton.TabIndex = 23;
+            this.FurnishingEditFunctionButton.Text = "Edit Function";
+            this.FurnishingEditFunctionButton.UseVisualStyleBackColor = false;
+            // 
+            // FurnishingFunctionLabel
+            // 
+            this.FurnishingFunctionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingFunctionLabel.AutoSize = true;
+            this.FurnishingFunctionLabel.Location = new System.Drawing.Point(761, 102);
+            this.FurnishingFunctionLabel.Name = "FurnishingFunctionLabel";
+            this.FurnishingFunctionLabel.Size = new System.Drawing.Size(48, 13);
+            this.FurnishingFunctionLabel.TabIndex = 22;
+            this.FurnishingFunctionLabel.Text = "Function";
             // 
             // FurnishingEditFlavorButton
             // 
@@ -3427,6 +3553,9 @@ namespace Scribe.Forms
             // 
             // CollectiblesTabPage
             // 
+            this.CollectiblesTabPage.Controls.Add(this.CollectibleFunctionStatic);
+            this.CollectiblesTabPage.Controls.Add(this.CollectibleEditFunctionButton);
+            this.CollectiblesTabPage.Controls.Add(this.CollectibleFunctionLabel);
             this.CollectiblesTabPage.Controls.Add(this.CollectibleEditFlavorButton);
             this.CollectiblesTabPage.Controls.Add(this.CollectibleFlavorStatic);
             this.CollectiblesTabPage.Controls.Add(this.CollectibleFlavorLabel);
@@ -3444,6 +3573,40 @@ namespace Scribe.Forms
             this.CollectiblesTabPage.Size = new System.Drawing.Size(953, 599);
             this.CollectiblesTabPage.TabIndex = 11;
             this.CollectiblesTabPage.Text = "Collectibles";
+            // 
+            // CollectibleFunctionStatic
+            // 
+            this.CollectibleFunctionStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleFunctionStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CollectibleFunctionStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.CollectibleFunctionStatic.Location = new System.Drawing.Point(812, 99);
+            this.CollectibleFunctionStatic.Name = "CollectibleFunctionStatic";
+            this.CollectibleFunctionStatic.Size = new System.Drawing.Size(131, 20);
+            this.CollectibleFunctionStatic.TabIndex = 24;
+            this.CollectibleFunctionStatic.Tag = "Themed";
+            this.CollectibleFunctionStatic.Text = "(None)";
+            this.CollectibleFunctionStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CollectibleEditFunctionButton
+            // 
+            this.CollectibleEditFunctionButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CollectibleEditFunctionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CollectibleEditFunctionButton.Location = new System.Drawing.Point(815, 125);
+            this.CollectibleEditFunctionButton.Name = "CollectibleEditFunctionButton";
+            this.CollectibleEditFunctionButton.Size = new System.Drawing.Size(128, 23);
+            this.CollectibleEditFunctionButton.TabIndex = 23;
+            this.CollectibleEditFunctionButton.Text = "Edit Function";
+            this.CollectibleEditFunctionButton.UseVisualStyleBackColor = false;
+            // 
+            // CollectibleFunctionLabel
+            // 
+            this.CollectibleFunctionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleFunctionLabel.AutoSize = true;
+            this.CollectibleFunctionLabel.Location = new System.Drawing.Point(761, 102);
+            this.CollectibleFunctionLabel.Name = "CollectibleFunctionLabel";
+            this.CollectibleFunctionLabel.Size = new System.Drawing.Size(48, 13);
+            this.CollectibleFunctionLabel.TabIndex = 22;
+            this.CollectibleFunctionLabel.Text = "Function";
             // 
             // CollectibleEditFlavorButton
             // 
@@ -4769,6 +4932,9 @@ namespace Scribe.Forms
             // 
             // ItemsTabPage
             // 
+            this.ItemsTabPage.Controls.Add(this.ItemFunctionStatic);
+            this.ItemsTabPage.Controls.Add(this.ItemEditFunctionButton);
+            this.ItemsTabPage.Controls.Add(this.ItemFunctionLabel);
             this.ItemsTabPage.Controls.Add(this.ItemEditFlavorButton);
             this.ItemsTabPage.Controls.Add(this.ItemFlavorStatic);
             this.ItemsTabPage.Controls.Add(this.ItemFlavorLabel);
@@ -4788,6 +4954,40 @@ namespace Scribe.Forms
             this.ItemsTabPage.Size = new System.Drawing.Size(953, 599);
             this.ItemsTabPage.TabIndex = 4;
             this.ItemsTabPage.Text = "Items";
+            // 
+            // ItemFunctionStatic
+            // 
+            this.ItemFunctionStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemFunctionStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ItemFunctionStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.ItemFunctionStatic.Location = new System.Drawing.Point(812, 99);
+            this.ItemFunctionStatic.Name = "ItemFunctionStatic";
+            this.ItemFunctionStatic.Size = new System.Drawing.Size(131, 20);
+            this.ItemFunctionStatic.TabIndex = 21;
+            this.ItemFunctionStatic.Tag = "Themed";
+            this.ItemFunctionStatic.Text = "(None)";
+            this.ItemFunctionStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ItemEditFunctionButton
+            // 
+            this.ItemEditFunctionButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ItemEditFunctionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ItemEditFunctionButton.Location = new System.Drawing.Point(815, 125);
+            this.ItemEditFunctionButton.Name = "ItemEditFunctionButton";
+            this.ItemEditFunctionButton.Size = new System.Drawing.Size(128, 23);
+            this.ItemEditFunctionButton.TabIndex = 20;
+            this.ItemEditFunctionButton.Text = "Edit Function";
+            this.ItemEditFunctionButton.UseVisualStyleBackColor = false;
+            // 
+            // ItemFunctionLabel
+            // 
+            this.ItemFunctionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemFunctionLabel.AutoSize = true;
+            this.ItemFunctionLabel.Location = new System.Drawing.Point(761, 102);
+            this.ItemFunctionLabel.Name = "ItemFunctionLabel";
+            this.ItemFunctionLabel.Size = new System.Drawing.Size(48, 13);
+            this.ItemFunctionLabel.TabIndex = 19;
+            this.ItemFunctionLabel.Text = "Function";
             // 
             // ItemEditFlavorButton
             // 
@@ -7139,6 +7339,9 @@ namespace Scribe.Forms
         private System.Windows.Forms.Button BlockEditFlavorButton;
         private System.Windows.Forms.Label BlockFlavorStatic;
         private System.Windows.Forms.Label BlockFlavorLabel;
+        private System.Windows.Forms.Label BlockFunctionStatic;
+        private System.Windows.Forms.Button BlockEditFunctionButton;
+        private System.Windows.Forms.Label BlockFunctionLabel;
         private System.Windows.Forms.Label BlockNameLabel;
         private System.Windows.Forms.Label BlockDescriptionLabel;
         private System.Windows.Forms.Label BlockCommentLabel;
@@ -7180,7 +7383,10 @@ namespace Scribe.Forms
         private System.Windows.Forms.Label FloorIDStatic;
         private System.Windows.Forms.Label FloorFlavorLabel;
         private System.Windows.Forms.Label FloorFlavorStatic;
-        private System.Windows.Forms.Button FloorEditTagsFlavorButton;
+        private System.Windows.Forms.Button FloorEditFlavorButton;
+        private System.Windows.Forms.Label FloorFunctionStatic;
+        private System.Windows.Forms.Button FloorEditFunctionButton;
+        private System.Windows.Forms.Label FloorFunctionLabel;
         private System.Windows.Forms.Button FloorEditDugOutImageButton;
         private System.Windows.Forms.Label FloorNameLabel;
         private System.Windows.Forms.Label FloorDescriptionLabel;
@@ -7219,6 +7425,9 @@ namespace Scribe.Forms
         private System.Windows.Forms.Button FurnishingEditFlavorButton;
         private System.Windows.Forms.Label FurnishingFlavorStatic;
         private System.Windows.Forms.Label FurnishingFlavorLabel;
+        private System.Windows.Forms.Label FurnishingFunctionStatic;
+        private System.Windows.Forms.Button FurnishingEditFunctionButton;
+        private System.Windows.Forms.Label FurnishingFunctionLabel;
         private System.Windows.Forms.Label FurnishingNameLabel;
         private System.Windows.Forms.Label FurnishingDescriptionLabel;
         private System.Windows.Forms.Label FurnishingCommentLabel;
@@ -7257,6 +7466,9 @@ namespace Scribe.Forms
         private System.Windows.Forms.Button CollectibleEditFlavorButton;
         private System.Windows.Forms.Label CollectibleFlavorStatic;
         private System.Windows.Forms.Label CollectibleFlavorLabel;
+        private System.Windows.Forms.Label CollectibleFunctionStatic;
+        private System.Windows.Forms.Button CollectibleEditFunctionButton;
+        private System.Windows.Forms.Label CollectibleFunctionLabel;
         private System.Windows.Forms.Label CollectibleNameLabel;
         private System.Windows.Forms.Label CollectibleDescriptionLabel;
         private System.Windows.Forms.Label CollectibleCommentLabel;
@@ -7375,6 +7587,9 @@ namespace Scribe.Forms
         private System.Windows.Forms.Button ItemEditFlavorButton;
         private System.Windows.Forms.Label ItemFlavorStatic;
         private System.Windows.Forms.Label ItemFlavorLabel;
+        private System.Windows.Forms.Label ItemFunctionStatic;
+        private System.Windows.Forms.Button ItemEditFunctionButton;
+        private System.Windows.Forms.Label ItemFunctionLabel;
         private System.Windows.Forms.GroupBox ItemInventoriesGroupBox;
         private System.Windows.Forms.Button ItemPictureEditButton;
         private System.Windows.Forms.TableLayoutPanel ItemTableLayoutPanel;
