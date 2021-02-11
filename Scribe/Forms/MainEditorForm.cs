@@ -1938,8 +1938,8 @@ namespace Scribe.Forms
                 MapNameTextBox.Text = "";
                 MapDescriptionTextBox.Text = "";
                 MapCommentTextBox.Text = "";
-                MapBackgroundColorStatic.BackColor = ColorTranslator.FromHtml(MapRegionModel.DefaultColor);
-                MapBackgroundColorNameStatic.Text = MapRegionModel.DefaultColor;
+                // TODO FIX ME MAPS MapBackgroundColorStatic.BackColor = ColorTranslator.FromHtml(MapRegionModel.DefaultColor);
+                // TODO FIX ME MAPS MapBackgroundColorNameStatic.Text = MapRegionModel.DefaultColor;
                 MapExitNorthComboBox.SelectedItem = null;
                 MapExitSouthComboBox.SelectedItem = null;
                 MapExitEastComboBox.SelectedItem = null;
