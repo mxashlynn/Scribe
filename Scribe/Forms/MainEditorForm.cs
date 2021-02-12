@@ -570,7 +570,7 @@ namespace Scribe.Forms
                 BiomeRecipesTabIndex => BiomePixelBox,
                 CraftingRecipesTabIndex => CraftingPixelBox,
                 RoomRecipesTabIndex => RoomPixelBox,
-                MapsTabIndex => null,
+                MapsTabIndex => MapPixelBox,
                 ScriptsTabIndex => null,
                 _ => null,
             };
