@@ -2248,13 +2248,14 @@ namespace Scribe.Forms
         }
 
         /// <summary>
-        /// Raises a <see cref="TagsAndFlavorsBox"/> to adjust the tagging on the current <see cref="Model"/>.
+        /// Raises a <see cref="FlavorsBox"/> to adjust the tagging on the current <see cref="Model"/>.
         /// </summary>
         /// <param name="inSender">Originator of the event.</param>
         /// <param name="inArguments">Additional event data.</param>
         private void EditFlavorButton_Click(object inSender, EventArgs inArguments)
         {
-            if (!All.CollectionsHaveBeenInitialized)
+            if (!All.CollectionsHaveBeenInitialized
+                || GetSelectedModelForTab(EditorTabs.SelectedIndex) is not IMutableModel model)
             {
                 SystemSounds.Beep.Play();
                 return;
@@ -2265,7 +2266,6 @@ namespace Scribe.Forms
 
             var flavorStatic = GetFlavorStaticForTab(EditorTabs.SelectedIndex);
             if (flavorStatic is not null
-                && GetSelectedModelForTab(EditorTabs.SelectedIndex) is IMutableModel model
                 && FlavorDialogue.ShowDialog() == DialogResult.OK)
             {
                 model.Tags.Remove(model.CurrentFlavor);
@@ -2311,7 +2311,8 @@ namespace Scribe.Forms
 
         private void EditFunctionButton_Click(object sender, EventArgs e)
         {
-            if (!All.CollectionsHaveBeenInitialized)
+            if (!All.CollectionsHaveBeenInitialized
+                || GetSelectedModelForTab(EditorTabs.SelectedIndex) is not IMutableModel model)
             {
                 SystemSounds.Beep.Play();
                 return;
@@ -2322,7 +2323,6 @@ namespace Scribe.Forms
 
             var flavorStatic = GetFunctionStaticForTab(EditorTabs.SelectedIndex);
             if (flavorStatic is not null &&
-                GetSelectedModelForTab(EditorTabs.SelectedIndex) is IMutableModel model
                 && FunctionDialogue.ShowDialog() == DialogResult.OK)
             {
                 model.Tags.Remove(model.CurrentFunction);
