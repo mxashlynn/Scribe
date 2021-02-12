@@ -2263,19 +2263,34 @@ namespace Scribe.Forms
             // TODO Currently this is not hooked into the undo system.
             // Tag changes must be treated atomically instead of as a giant glob.
 
-            if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is IMutableModel model
+            var flavorStatic = GetFlavorStaticForTab(EditorTabs.SelectedIndex);
+            if (flavorStatic is not null
+                && GetSelectedModelForTab(EditorTabs.SelectedIndex) is IMutableModel model
                 && FlavorDialogue.ShowDialog() == DialogResult.OK)
             {
                 model.Tags.Remove(model.CurrentFlavor);
                 model.Tags.Add(FlavorDialogue.ReturnNewFlavor);
-                var flavorStatic = GetCurrentFlavorStatic(EditorTabs.SelectedIndex);
                 flavorStatic.Text = FlavorsDialogue.ReturnUpdatedFlavor;
-                flavorStatic.BackgroundColor = GetColorForFlavor(FlavorsDialogue.ReturnUpdatedFlavor);
+                flavorStatic.BackColor = GetColorForFlavorName(FlavorsDialogue.ReturnUpdatedFlavor);
                 HasUnsavedChanges = true;
             }
 
+            // Given the index of an editor tab, return the corresponding flavor display.
+            Label GetFlavorStaticForTab(int inTabIndex)
+                => inTabIndex switch
+                {
+                    BlocksTabIndex => BlockFlavorStatic,
+                    FloorsTabIndex => FloorFlavorStatic,
+                    FurnishingsTabIndex => FurnishingFlavorStatic,
+                    CollectiblesTabIndex => CollectibleFlavorStatic,
+                    CharactersTabIndex => CharacterFlavorStatic,
+                    CrittersTabIndex => CritterFlavorStatic,
+                    ItemsTabIndex => ItemFlavorStatic,
+                    _ => null,
+                };
+
             // Given the name of a flavor, return the color used to represent it.
-            Color GetColorForFlavor(string inFlavorName)
+            Color GetColorForFlavorName(string inFlavorName)
                 => inFlavorName switch
                 {
                     "bland" => FlavorBlandSelector.BackColor,
@@ -2305,15 +2320,28 @@ namespace Scribe.Forms
             // TODO Currently this is not hooked into the undo system.
             // Tag changes must be treated atomically instead of as a giant glob.
 
-            if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is IMutableModel model
+            var flavorStatic = GetFunctionStaticForTab(EditorTabs.SelectedIndex);
+            if (flavorStatic is not null &&
+                GetSelectedModelForTab(EditorTabs.SelectedIndex) is IMutableModel model
                 && FunctionDialogue.ShowDialog() == DialogResult.OK)
             {
                 model.Tags.Remove(model.CurrentFunction);
                 model.Tags.Add(FunctionDialogue.ReturnNewFunction);
-                var flavorStatic = GetCurrentFunctionStatic(EditorTabs.SelectedIndex);
                 flavorStatic.Text = FunctionDialogue.ReturnNewFunction;
                 HasUnsavedChanges = true;
             }
+
+            // Given the index of an editor tab, return the corresponding function display.
+            Label GetFunctionStaticForTab(int inTabIndex)
+                => inTabIndex switch
+                {
+                    BlocksTabIndex => BlockFunctionStatic,
+                    FloorsTabIndex => FloorFunctionStatic,
+                    FurnishingsTabIndex => FurnishingFunctionStatic,
+                    CollectiblesTabIndex => CollectibleFunctionStatic,
+                    ItemsTabIndex => ItemFunctionStatic,
+                    _ => null,
+                };
         }
         #endregion
 
