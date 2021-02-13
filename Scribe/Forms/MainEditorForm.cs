@@ -2322,7 +2322,7 @@ namespace Scribe.Forms
             // Tag changes must be treated atomically instead of as a giant glob.
 
             var flavorStatic = GetFunctionStaticForTab(EditorTabs.SelectedIndex);
-            if (flavorStatic is not null &&
+            if (flavorStatic is not null
                 && FunctionDialogue.ShowDialog() == DialogResult.OK)
             {
                 model.Tags.Remove(model.CurrentFunction);
