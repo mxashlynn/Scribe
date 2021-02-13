@@ -857,7 +857,7 @@ namespace Scribe.Forms
                 (ItemsTabIndex, "ItemPriceTextBox")
                     => (input) => ((IMutableItemModel)inModel).Price = ValueToInt(input),
                 (ItemsTabIndex, "ItemTagListBox")
-                    => (input) => ((IMutableItemModel)inModel).ItemTags.ToList().Add((ModelTag)input),
+                    => (input) => ((IMutableItemModel)inModel).Tags.ToList().Add((ModelTag)input),
                 (ItemsTabIndex, "ItemStackMaxTextBox")
                     => (input) => ((IMutableItemModel)inModel).StackMax = ValueToInt(input),
                 (ItemsTabIndex, "ItemRarityTextBox")
@@ -1812,7 +1812,7 @@ namespace Scribe.Forms
                 ItemEquivalentParquetComboBox.SelectedItem = model.ParquetID == ModelID.None
                     ? null
                     : All.Parquets.GetOrNull<ParquetModel>(model.ParquetID);
-                RepopulateListBox(ItemTagListBox, model.ItemTags);
+                RepopulateListBox(ItemTagListBox, model.Tags);
                 PictureBoxLoadFromStorage(ItemPixelBox, model.ID);
             }
         }
@@ -2900,7 +2900,7 @@ namespace Scribe.Forms
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
         private void ItemAddTagButton_Click(object sender, EventArgs eventArguments)
-            => AddTag(ItemTagListBox, (IMutableItemModel model) => model.ItemTags);
+            => AddTag(ItemTagListBox, (IMutableItemModel model) => model.Tags);
 
         /// <summary>
         /// Registers the user command to remove the selected tag from the current item.
@@ -2908,7 +2908,7 @@ namespace Scribe.Forms
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
         private void ItemRemoveTagButton_Click(object sender, EventArgs eventArguments)
-            => RemoveTag(ItemTagListBox, (IMutableItemModel model) => model.ItemTags);
+            => RemoveTag(ItemTagListBox, (IMutableItemModel model) => model.Tags);
 
         /// <summary>
         /// Invokes the <see cref="InventoryEditorForm"/> for the currently selected <see cref="CharacterModel"/>.
