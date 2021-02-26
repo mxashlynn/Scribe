@@ -4,34 +4,41 @@
     <AssemblyName>Scribe</AssemblyName>
 
     <Product>Scribe</Product>
-    <RootNamespace>Scribe</RootNamespace>
-    <Version>0.3.52.0</Version>
-    <AssemblyVersion>0.3.52.0</AssemblyVersion>
-    <FileVersion>0.3.52.0</FileVersion>
+    <PackageId>Scribe</PackageId>
+    <Version>0.4.0.0</Version>
+    <AssemblyVersion>0.4.0.0</AssemblyVersion>
+    <FileVersion>0.4.0.0</FileVersion>
+
+    <Authors>Paige Ashlynn</Authors>
     <Company>Girl Potion</Company>
-    <Authors>Paige Ashlynn and contributors</Authors>
-    <Copyright>2018-2021 Paige Ashlynn</Copyright>
     <Description>An editor for Parquet-based games.</Description>
+    <Copyright>2018-2021 Paige Ashlynn</Copyright>
+    <ApplicationIcon>ParquetIcon.ico</ApplicationIcon>
+    <PackageIcon>Resources\ParquetIcon.ico</PackageIcon>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageProjectUrl>http://parquet.gay/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/mxashlynn/Scribe</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-    <PackageId>Scribe_GirlPotion</PackageId>
     <PackageTags>C# .net5 net5 game editor</PackageTags>
     <PackageReleaseNotes>Code and documentation are incomplete and under rapid development. Expect frequent breaking changes.</PackageReleaseNotes>
-    <ApplicationIcon>ParquetIcon.ico</ApplicationIcon>
+    <NeutralLanguage>en-US</NeutralLanguage>
 
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <LangVersion>latest</LangVersion>
-    <NeutralLanguage>en-US</NeutralLanguage>
     <NoWarn>CS1701;CS1702</NoWarn>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <WarningsAsErrors>NU1605;CS1591</WarningsAsErrors>
-
-    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <RootNamespace>Scribe</RootNamespace>
     <StartupObject>Scribe.ScribeProgram</StartupObject>
-    <PackageIcon>Resources\ParquetIcon.ico</PackageIcon>
+
+    <IsPackable>false</IsPackable>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <Configurations>Debug;Release</Configurations>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -71,7 +78,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Parquet" Version="0.3.56" />
+    <PackageReference Include="Parquet" Version="0.4.0" />
   </ItemGroup>
 
   <ItemGroup>

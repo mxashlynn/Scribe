@@ -4,31 +4,40 @@
     <AssemblyName>Roller</AssemblyName>
 
     <Product>Roller</Product>
-    <Version>0.3.54.0</Version>
+    <PackageId>Roller</PackageId>
+    <Version>0.4.0.0</Version>
+    <AssemblyVersion>0.4.0.0</AssemblyVersion>
+    <FileVersion>0.4.0.0</FileVersion>
+
     <Company>Girl Potion</Company>
     <Authors>Paige Ashlynn</Authors>
-    <Copyright>2018-2021 Paige Ashlynn</Copyright>
     <Description>Command line tool for working with Parquet data and configuration files.</Description>
-    <RepositoryUrl>https://github.com/mxashlynn/Parquet</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
+    <Copyright>2018-2021 Paige Ashlynn</Copyright>
+    <ApplicationIcon>ParquetIcon.ico</ApplicationIcon>
+    <PackageIcon>ParquetIcon.ico</PackageIcon>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-    <PackageId>Roller</PackageId>
+    <PackageProjectUrl>http://parquet.gay/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/mxashlynn/Scribe</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <PackageTags>C# .net5 net5 command game</PackageTags>
     <PackageReleaseNotes>Code and documentation are incomplete and under rapid development. Expect frequent breaking changes.</PackageReleaseNotes>
+    <NeutralLanguage>en-US</NeutralLanguage>
 
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
     <LangVersion>latest</LangVersion>
-    <NeutralLanguage>en-US</NeutralLanguage>
     <NoWarn>CS1701;CS1702</NoWarn>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <WarningsAsErrors>NU1605;CS1591</WarningsAsErrors>
-
+    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <RootNamespace>Roller</RootNamespace>
     <StartupObject>Roller.Roller</StartupObject>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+    <IsPackable>false</IsPackable>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <Configurations>Debug;Release</Configurations>
-    <PackageProjectUrl>http://parquet.gay/</PackageProjectUrl>
-    <ApplicationIcon>ParquetIcon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

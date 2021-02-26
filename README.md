@@ -8,7 +8,7 @@ A command line tool for preparing, inspecting, and verifying Parquet data files.
 
 This small tool is integrated into Scribe, and may also be used on its own.
 
-## Version 0.3 Warning
+## Version 0.4 Warning
 This editor is incomplete, non-functional, and not yet ready for use.
 
 Development milestone deadlines are tentative right now, but I'm hoping to have this usable by mid 2021.
