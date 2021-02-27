@@ -25,11 +25,7 @@ using Roller;
 using Scribe.ChangeHistory;
 using Scribe.Properties;
 
-// TODO 0) UPDATE PARQUET 0.4.1:
-//          0.1) All.RegionModels ==> All.Regions;
-//          0.2) Add Model convenience property CurrentFlavor;
-//          0.3) Add Model convenience property CurrentFunction;
-//          0.4) Move CheckExitConsistency from RegionStatus to RegionModel.
+// TODO 0) For Flavor and Function tags, use Model.AttributeTag(inPrefix)
 // TODO 1) Fix remaining analyzer warnings.
 // TODO 2) [UI] [TAGS] Add missing UI to adjust tags for each type of model.
 // TODO 3) [UI] [TAGS] Add missing UI to adjust flavor tags for each type of model.
@@ -1462,13 +1458,13 @@ namespace Scribe.Forms
                     RoomMaxWalkableSpacesTextBox.Text = RoomConfiguration.MaxWalkableSpaces.ToString(CultureInfo.InvariantCulture);
                     break;
                 case MapsTabIndex:
-                    RepopulateListBox(MapListBox, All.RegionModels);
-                    RepopulateComboBox(MapExitNorthComboBox, All.RegionModels);
-                    RepopulateComboBox(MapExitSouthComboBox, All.RegionModels);
-                    RepopulateComboBox(MapExitEastComboBox, All.RegionModels);
-                    RepopulateComboBox(MapExitWestComboBox, All.RegionModels);
-                    RepopulateComboBox(MapExitUpComboBox, All.RegionModels);
-                    RepopulateComboBox(MapExitDownComboBox, All.RegionModels);
+                    RepopulateListBox(MapListBox, All.Regions);
+                    RepopulateComboBox(MapExitNorthComboBox, All.Regions);
+                    RepopulateComboBox(MapExitSouthComboBox, All.Regions);
+                    RepopulateComboBox(MapExitEastComboBox, All.Regions);
+                    RepopulateComboBox(MapExitWestComboBox, All.Regions);
+                    RepopulateComboBox(MapExitUpComboBox, All.Regions);
+                    RepopulateComboBox(MapExitDownComboBox, All.Regions);
                     break;
                 case ScriptsTabIndex:
                     // TODO [SCRIPTS] [UI] Add scripts tab to RepopulateVisibleControls
@@ -2010,22 +2006,22 @@ namespace Scribe.Forms
                 MapBackgroundColorNameStatic.Text = model.BackgroundColor;
                 MapExitNorthComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
                     ? null
-                    : All.RegionModels.GetOrNull<RegionModel>(model.RegionToTheNorth);
+                    : All.Regions.GetOrNull<RegionModel>(model.RegionToTheNorth);
                 MapExitSouthComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
                     ? null
-                    : All.RegionModels.GetOrNull<RegionModel>(model.RegionToTheNorth);
+                    : All.Regions.GetOrNull<RegionModel>(model.RegionToTheNorth);
                 MapExitEastComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
                     ? null
-                    : All.RegionModels.GetOrNull<RegionModel>(model.RegionToTheNorth);
+                    : All.Regions.GetOrNull<RegionModel>(model.RegionToTheNorth);
                 MapExitWestComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
                     ? null
-                    : All.RegionModels.GetOrNull<RegionModel>(model.RegionToTheNorth);
+                    : All.Regions.GetOrNull<RegionModel>(model.RegionToTheNorth);
                 MapExitUpComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
                     ? null
-                    : All.RegionModels.GetOrNull<RegionModel>(model.RegionToTheNorth);
+                    : All.Regions.GetOrNull<RegionModel>(model.RegionToTheNorth);
                 MapExitDownComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
                     ? null
-                    : All.RegionModels.GetOrNull<RegionModel>(model.RegionToTheNorth);
+                    : All.Regions.GetOrNull<RegionModel>(model.RegionToTheNorth);
                 // TODO: [MAPS] Fix this: PictureGenerateFromMap(MapPixelBox, model.ID);
             }
         }
@@ -3131,7 +3127,7 @@ namespace Scribe.Forms
         /// <param name="sender">Ignored.</param>
         /// <param name="eventArguments">Ignored.</param>
         private void MapAddNewItemButton_Click(object sender, EventArgs eventArguments)
-            => AddNewModel(All.RegionModels, (ModelID id) => new RegionModel(id, "New Region", "", ""), All.RegionIDs, MapListBox, "Region");
+            => AddNewModel(All.Regions, (ModelID id) => new RegionModel(id, "New Region", "", ""), All.RegionIDs, MapListBox, "Region");
 
         /// <summary>
         /// Responds to the user clicking "Remove Map" on the Maps tab.
@@ -3139,7 +3135,7 @@ namespace Scribe.Forms
         /// <param name="sender">Ignored.</param>
         /// <param name="eventArguments">Ignored.</param>
         private void MapRemoveItemButton_Click(object sender, EventArgs eventArguments)
-            => RemoveModel(All.RegionModels, MapListBox, "Region");
+            => RemoveModel(All.Regions, MapListBox, "Region");
 
         /// <summary>
         /// Invokes the <see cref="MapEditorForm"/> for the currently selected <see cref="MapModel"/>.
