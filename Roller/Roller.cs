@@ -32,7 +32,7 @@ namespace Roller
         /// <summary>
         /// A flag indicating that a subcommand must be executed.
         /// </summary>
-        private static Command ListPropertyForCategory { get; } = null;
+        private static Command ListPropertyForCategory { get; }
 
         /// <summary>
         /// A command line tool for working with Parquet configuration files.
@@ -41,13 +41,13 @@ namespace Roller
         internal static int Main(string[] args)
         {
             var optionText = args.Length > 0
-                ? args[0].ToLower()
+                ? args[0].ToLower(CultureInfo.CurrentCulture)
                 : "";
             var property = args.Length > 1
-                ? args[1].ToLower()
+                ? args[1].ToLower(CultureInfo.CurrentCulture)
                 : "";
             var category = args.Length > 2
-                ? args[2].ToLower()
+                ? args[2].ToLower(CultureInfo.CurrentCulture)
                 : "";
 
             var command = ParseCommand(optionText);
