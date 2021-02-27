@@ -1,3 +1,4 @@
+using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -52,21 +53,26 @@ namespace Scribe.CustomControls
         /// <summary>
         /// Paints multiple images without anti-aliasing or other distortion.
         /// </summary>
-        /// <param name="paintArguments">Configuration used by the painting routine.</param>
-        protected override void OnPaint(PaintEventArgs paintArguments)
+        /// <param name="inPaintArguments">Configuration used by the painting routine.</param>
+        protected override void OnPaint(PaintEventArgs inPaintArguments)
         {
+            if (inPaintArguments is null)
+            {
+                throw new ArgumentException("PaintEventArguments cannot be null");
+            }
+
             // Set up pixel art-style rendering.
-            paintArguments.Graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
-            paintArguments.Graphics.PixelOffsetMode = PixelOffsetMode.Half;
-            paintArguments.Graphics.SmoothingMode = SmoothingMode.None;
-            paintArguments.Graphics.CompositingQuality = CompositingQuality.HighQuality;
+            inPaintArguments.Graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
+            inPaintArguments.Graphics.PixelOffsetMode = PixelOffsetMode.Half;
+            inPaintArguments.Graphics.SmoothingMode = SmoothingMode.None;
+            inPaintArguments.Graphics.CompositingQuality = CompositingQuality.HighQuality;
 
             // Paint the images, scaled, using the painter's algorithm.
             for (var layerIndex = 0; layerIndex < LayerCount; layerIndex++)
             {
                 if (ImageLayers[layerIndex] is not null)
                 {
-                    paintArguments.Graphics.DrawImage(ImageLayers[layerIndex], 0, 0,
+                    inPaintArguments.Graphics.DrawImage(ImageLayers[layerIndex], 0, 0,
                                                       TargetDimensionInPixels, TargetDimensionInPixels);
                 }
             }

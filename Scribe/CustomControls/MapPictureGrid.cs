@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -50,13 +51,13 @@ namespace Scribe.CustomControls
         public Dictionary<int, Bitmap> ImageByID { get; } = new Dictionary<int, Bitmap>();
 
         /// <summary>Each cell corresponds to a set of IDs representing each pack on the map.</summary>
-        public int[,,] IDMap { get; } = new int[MapHeightInParquets, MapWidthInParquets, ParquetLayerCount];
+        public int[,,] IDMap = new int[MapHeightInParquets, MapWidthInParquets, ParquetLayerCount];
 
         /// <summary>When <c>true</c>, no repainting is needed.</summary>
-        private bool IsRendering = false;
+        private bool IsRendering;
 
         /// <summary>Indicates if a click event is currently in progress.</summary>
-        private bool IsMidClick = false;
+        private bool IsMidClick;
 
         /// <summary>Where the current click event began, or <see cref="Point.Empty"/> if no such event is in progress.</summary>
         private Point ClickStartLocation = Point.Empty;
@@ -95,6 +96,11 @@ namespace Scribe.CustomControls
         /// <param name="inPaintArguments">Configuration used by the painting routine.</param>
         protected override void OnPaint(PaintEventArgs inPaintArguments)
         {
+            if (inPaintArguments is null)
+            {
+                throw new ArgumentException("PaintEventArguments cannot be null");
+            }
+
             if (!IsRendering)
             {
                 IsRendering = true;
@@ -222,19 +228,19 @@ namespace Scribe.CustomControls
         private const double MillisecondsBetweenReports = 1000.0;
 
         /// <summary>How long it has been since FPS was measured.</summary>
-        private double MillisecondsSinceLastReport = 0.0;
+        private double MillisecondsSinceLastReport;
 
         /// <summary>A point in time noted during the prior frame.</summary>
-        private double CheckInPointLastFrame = 0.0;
+        private double CheckInPointLastFrame;
 
         /// <summary>How many frames have been painted since the last FPS measurement.</summary>
-        private int FrameCount = 0;
+        private int FrameCount;
 
         /// <summary>How many times to calculate FPS before reporting.</summary>
         private const int NumberOfSamples = 10;
 
         /// <summary>The current calculation being performed.</summary>
-        private int CalculationIndex = 0;
+        private int CalculationIndex;
 
         /// <summary>Most recent set of FPS calculations.</summary>
         private readonly int[] FPSCalculations = new int[NumberOfSamples];

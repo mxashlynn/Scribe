@@ -1,3 +1,4 @@
+using System;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
@@ -18,15 +19,20 @@ namespace Scribe.CustomControls
         /// <summary>
         /// Paints image without anti-aliasing or other distortion.
         /// </summary>
-        /// <param name="paintArguments">Configuration used by the painting routine.</param>
-        protected override void OnPaint(PaintEventArgs paintArguments)
+        /// <param name="inPaintArguments">Configuration used by the painting routine.</param>
+        protected override void OnPaint(PaintEventArgs inPaintArguments)
         {
-            paintArguments.Graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
-            paintArguments.Graphics.PixelOffsetMode = PixelOffsetMode.Half;
-            paintArguments.Graphics.SmoothingMode = SmoothingMode.None;
-            paintArguments.Graphics.CompositingQuality = CompositingQuality.HighQuality;
+            if (inPaintArguments is null)
+            {
+                throw new ArgumentException("PaintEventArguments cannot be null");
+            }
 
-            base.OnPaint(paintArguments);
+            inPaintArguments.Graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
+            inPaintArguments.Graphics.PixelOffsetMode = PixelOffsetMode.Half;
+            inPaintArguments.Graphics.SmoothingMode = SmoothingMode.None;
+            inPaintArguments.Graphics.CompositingQuality = CompositingQuality.HighQuality;
+
+            base.OnPaint(inPaintArguments);
         }
     }
 }
