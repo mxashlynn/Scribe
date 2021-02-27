@@ -1,8 +1,7 @@
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-// TODO It would be best from a maintenance perspective to move this namespace into its own project.
-
+// TODO [CUSTOM CONTROLS] Move this namespace into its own project.
 namespace Scribe.CustomControls
 {
     /// <summary>

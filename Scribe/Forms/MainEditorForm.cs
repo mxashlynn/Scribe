@@ -25,9 +25,11 @@ using Roller;
 using Scribe.ChangeHistory;
 using Scribe.Properties;
 
-// TODO 1) Resolve API issues with Maps in Parquet -- this is a big topic.
-// TODO 2) Add missing UI to adjust tags for each type of model.
-// TODO 3) Add missing UI to adjust flavor tags for each type of model.
+// TODO 1) [MAP] Update API to Parquet 0.4.
+// TODO 2.1) [GLOBALIZATION] Make sure we are using ToString in an Ordinal way.
+// TODO 2.2) [GLOBALIZATION] Make sure we are using String.Compare(OrdinalCaseInsensitive) wherever needed.
+// TODO 3) [UI] [TAGS] Add missing UI to adjust tags for each type of model.
+// TODO 4) [UI] [TAGS] Add missing UI to adjust flavor tags for each type of model.
 
 
 namespace Scribe.Forms
@@ -39,7 +41,7 @@ namespace Scribe.Forms
     {
         #region Roller Dependency
         /// <summary>Full command to invoke Roller.</summary>
-        // TODO It would be nice to make this adjustable from the options menu.
+        // [ROLLER] [UI] Add option to specify Roller's path from the options menu.
         internal static string RollerCommand { get; } = Path.Combine(GetRollerFullPath(), "roller.exe");
 
         /// <summary>
@@ -341,7 +343,7 @@ namespace Scribe.Forms
                 [CraftingNameTextBox] = CraftingListBox,
                 [RoomNameTextBox] = RoomListBox,
                 [MapNameTextBox] = MapListBox,
-                // TODO Scripts
+                // TODO [SCRIPTS] [UI] Add Scripts tab to ControlsWhoseContentIsListed.
             };
             #endregion
 
@@ -547,7 +549,7 @@ namespace Scribe.Forms
                 CraftingRecipesTabIndex => "crafts",
                 RoomRecipesTabIndex => "rooms",
                 MapsTabIndex => "maps",
-                ScriptsTabIndex => "", // TODO: add SCRIPTS and GAMES to Roller!!
+                ScriptsTabIndex => "", // TODO [SCRIPTS] [ROLLER] Add Games and Scripts categories to Roller.
                 _ => "",
             };
 
@@ -949,7 +951,7 @@ namespace Scribe.Forms
                 #endregion
 
                 #region Mapping
-                /* TODO Finish these! (MAP-related)
+                /* TODO [MAP] Set up GetPropertyAccessor for Maps tab.
                 (MapsTabIndex, "MapNameTextBox")
                     => (input) => ((IMutableMapRecipe)inModel).Name = input.ToString(),
                 (MapsTabIndex, "MapDescriptionTextBox")
@@ -974,7 +976,7 @@ namespace Scribe.Forms
                 #endregion
 
                 #region Scripting
-                // TODO Implement Scripts and Interactions.
+                // TODO [SCRIPTS] Set up GetPropertyAccessor for Scripts tab.
                 (ScriptsTabIndex, _) => throw new NotImplementedException(),
                 #endregion
 
@@ -1020,12 +1022,13 @@ namespace Scribe.Forms
         private void MainToolStripStatusLabel_TextChanged(object sender, EventArgs eventArguments)
         {
             // Paints manually so that the label has the correct theme color.
-            // TODO Do we need this?
+            // TODO [UI] Verify that EditorStatusStrip.Update is actually needed on StripLabel_TextChanged.
             // EditorStatusStrip.Update();
 
             // Also restarts the text-clearing timer.
             if (sender is ToolStripStatusLabel statusLabel
                 && !string.IsNullOrEmpty(statusLabel.Text)
+                // TODO [GLOBALIZATION] Make sure we are using String.Compate(Ordinal) or whichever is appropriate in this instance.
                 && statusLabel.Text.CompareTo(Resources.LogReady) != 0)
             {
                 ClearStatusTimer.Stop();
@@ -1417,7 +1420,7 @@ namespace Scribe.Forms
                     RepopulateComboBox(MapExitDownComboBox, All.Maps);
                     break;
                 case ScriptsTabIndex:
-                    // TODO Scripts
+                    // TODO [SCRIPTS] [UI] Add scripts tab to RepopulateVisibleControls
                     break;
             }
         }
@@ -1556,7 +1559,8 @@ namespace Scribe.Forms
                 RepopulateListBox(FloorAddsToRoomListBox, model.AddsToRoom);
                 FloorModificationToolComboBox.SelectedItem = model.ModTool;
                 FloorTrenchNameTextBox.Text = model.TrenchName;
-                // TODO: Fix this for Floors!
+                // TODO: [FLOORS] Fix PictureBoxLoadFromStorage since there are two images for each floor.
+                // TODO: [FLOORS] We might have to also adjust the way new projects populate the graphics folder....
                 PictureBoxLoadFromStorage(FloorDugOutPixelBox, model.ID);
                 // PictureBoxLoadFromStorage(FloorFilledInPixelBox, model.ID);
             }
@@ -1938,8 +1942,8 @@ namespace Scribe.Forms
                 MapNameTextBox.Text = "";
                 MapDescriptionTextBox.Text = "";
                 MapCommentTextBox.Text = "";
-                // TODO FIX ME MAPS MapBackgroundColorStatic.BackColor = ColorTranslator.FromHtml(MapRegionModel.DefaultColor);
-                // TODO FIX ME MAPS MapBackgroundColorNameStatic.Text = MapRegionModel.DefaultColor;
+                // TODO [MAPS] Fix this: MapBackgroundColorStatic.BackColor = ColorTranslator.FromHtml(MapRegionModel.DefaultColor);
+                // TODO [MAPS] Fix this: MapBackgroundColorNameStatic.Text = MapRegionModel.DefaultColor;
                 MapExitNorthComboBox.SelectedItem = null;
                 MapExitSouthComboBox.SelectedItem = null;
                 MapExitEastComboBox.SelectedItem = null;
@@ -1979,11 +1983,11 @@ namespace Scribe.Forms
                 MapExitDownComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
                     ? null
                     : All.Maps.GetOrNull<MapModel>(model.RegionToTheNorth);
-                // TODO: PictureGenerateFromMap(MapPixelBox, model.ID);
+                // TODO: [MAPS] Fix this: PictureGenerateFromMap(MapPixelBox, model.ID);
             }
         }
 
-        // TODO Scripts
+        // TODO [SCRIPTS] Add a ScriptListBox_SelectedValueChanged or similar callback.
         #endregion
 
         #region Handle Changes to Data
@@ -3028,16 +3032,16 @@ namespace Scribe.Forms
                 Logger.Log(LogLevel.Warning, Resources.WarningNothingSelected);
             }
             */
-        }
+            }
 
         #endregion
 
-        #region Rooms Tab
-        /// <summary>
-        /// Responds to the user clicking "Add New Room" on the Rooms tab.
-        /// </summary>
-        /// <param name="sender">Ignored.</param>
-        /// <param name="eventArguments">Ignored.</param>
+            #region Rooms Tab
+            /// <summary>
+            /// Responds to the user clicking "Add New Room" on the Rooms tab.
+            /// </summary>
+            /// <param name="sender">Ignored.</param>
+            /// <param name="eventArguments">Ignored.</param>
         private void RoomAddNewRoomButton_Click(object sender, EventArgs eventArguments)
             => AddNewModel(All.RoomRecipes, (ModelID id) => new RoomRecipe(id, "New Room Recipe", "", ""), All.RoomRecipeIDs, RoomListBox, "Room Recipe");
 

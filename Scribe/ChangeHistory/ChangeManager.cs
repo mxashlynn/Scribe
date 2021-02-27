@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Parquet;
 
+// TODO [UNDO] Move this namespace into its own project.
 namespace Scribe.ChangeHistory
 {
     /// <summary>
@@ -46,7 +47,7 @@ namespace Scribe.ChangeHistory
         /// </summary>
         internal static void Clear()
         {
-            // TODO: Ideally this log dependency would be injected.
+            // TODO [UNDO] Inject this log dependency.
             Logger.Log(LogLevel.Info, $"{nameof(Clear)} {nameof(ChangeHistory)}");
             Changes.Clear();
             CurrentChangeIndex = -1;
@@ -58,7 +59,7 @@ namespace Scribe.ChangeHistory
         /// <param name="inChange">The change to add and act on.</param>
         internal static void AddAndExecute(Change inChange)
         {
-            // TODO: Ideally this log dependency would be injected.
+            // TODO [UNDO] Inject this log dependency.
             Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {inChange.Description}");
 
             CurrentChangeIndex++;
@@ -84,7 +85,7 @@ namespace Scribe.ChangeHistory
         {
             if (CurrentChangeIndex > -1)
             {
-                // TODO: Ideally this log dependency would be injected.
+                // TODO [UNDO] Inject this log dependency.
                 Logger.Log(LogLevel.Info, $"{nameof(Undo)} {Changes[CurrentChangeIndex].Description}");
                 Changes[CurrentChangeIndex].Reverse();
                 CurrentChangeIndex--;
@@ -99,7 +100,7 @@ namespace Scribe.ChangeHistory
             if (CurrentChangeIndex < Count - 1)
             {
                 CurrentChangeIndex++;
-                // TODO: Ideally this log dependency would be injected.
+                // TODO [UNDO] Inject this log dependency.
                 Logger.Log(LogLevel.Info, $"{nameof(Redo)} {Changes[CurrentChangeIndex].Description}");
                 Changes[CurrentChangeIndex].Execute();
             }
