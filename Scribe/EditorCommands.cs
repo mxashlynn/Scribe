@@ -219,9 +219,7 @@ namespace Scribe
             ModelCollection<BiomeRecipe>.Default.PutRecordsForType<BiomeRecipe>();
             ModelCollection<CraftingRecipe>.Default.PutRecordsForType<CraftingRecipe>();
             ModelCollection<RoomRecipe>.Default.PutRecordsForType<RoomRecipe>();
-            ModelCollection<MapModel>.Default.PutRecordsForType<MapChunkModel>();
-            ModelCollection<MapModel>.Default.PutRecordsForType<MapRegionSketch>();
-            ModelCollection<MapModel>.Default.PutRecordsForType<MapRegionModel>();
+            ModelCollection<RegionModel>.Default.PutRecordsForType<RegionModel>();
             ModelCollection<ScriptModel>.Default.PutRecordsForType<ScriptModel>();
             ModelCollection<InteractionModel>.Default.PutRecordsForType<InteractionModel>();
             ModelCollection<ItemModel>.Default.PutRecordsForType<ItemModel>();

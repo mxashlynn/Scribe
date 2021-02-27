@@ -619,7 +619,7 @@ namespace Scribe.Forms
                 BiomeRecipesTabIndex => (BiomeListBox.SelectedItem as BiomeRecipe)?.ID ?? ModelID.None,
                 CraftingRecipesTabIndex => (CraftingListBox.SelectedItem as CraftingRecipe)?.ID ?? ModelID.None,
                 RoomRecipesTabIndex => (RoomListBox.SelectedItem as RoomRecipe)?.ID ?? ModelID.None,
-                MapsTabIndex => (MapListBox.SelectedItem as MapModel)?.ID ?? ModelID.None,
+                MapsTabIndex => (MapListBox.SelectedItem as RegionModel)?.ID ?? ModelID.None,
                 ScriptsTabIndex => throw new NotImplementedException(),
                 _ => ModelID.None,
             };
@@ -644,7 +644,7 @@ namespace Scribe.Forms
                 BiomeRecipesTabIndex => (BiomeRecipe)BiomeListBox.SelectedItem,
                 CraftingRecipesTabIndex => (CraftingRecipe)CraftingListBox.SelectedItem,
                 RoomRecipesTabIndex => (RoomRecipe)RoomListBox.SelectedItem,
-                MapsTabIndex => (MapModel)MapListBox.SelectedItem,
+                MapsTabIndex => (RegionModel)MapListBox.SelectedItem,
                 ScriptsTabIndex => throw new NotImplementedException(),
                 _ => null,
             };
@@ -1966,22 +1966,22 @@ namespace Scribe.Forms
                 MapBackgroundColorNameStatic.Text = model.BackgroundColor;
                 MapExitNorthComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
                     ? null
-                    : All.Maps.GetOrNull<MapModel>(model.RegionToTheNorth);
+                    : All.RegionModels.GetOrNull<RegionModel>(model.RegionToTheNorth);
                 MapExitSouthComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
                     ? null
-                    : All.Maps.GetOrNull<MapModel>(model.RegionToTheNorth);
+                    : All.RegionModels.GetOrNull<RegionModel>(model.RegionToTheNorth);
                 MapExitEastComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
                     ? null
-                    : All.Maps.GetOrNull<MapModel>(model.RegionToTheNorth);
+                    : All.RegionModels.GetOrNull<RegionModel>(model.RegionToTheNorth);
                 MapExitWestComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
                     ? null
-                    : All.Maps.GetOrNull<MapModel>(model.RegionToTheNorth);
+                    : All.RegionModels.GetOrNull<RegionModel>(model.RegionToTheNorth);
                 MapExitUpComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
                     ? null
-                    : All.Maps.GetOrNull<MapModel>(model.RegionToTheNorth);
+                    : All.RegionModels.GetOrNull<RegionModel>(model.RegionToTheNorth);
                 MapExitDownComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
                     ? null
-                    : All.Maps.GetOrNull<MapModel>(model.RegionToTheNorth);
+                    : All.RegionModels.GetOrNull<RegionModel>(model.RegionToTheNorth);
                 // TODO: [MAPS] Fix this: PictureGenerateFromMap(MapPixelBox, model.ID);
             }
         }
@@ -3085,7 +3085,7 @@ namespace Scribe.Forms
         /// <param name="sender">Ignored.</param>
         /// <param name="eventArguments">Ignored.</param>
         private void MapAddNewItemButton_Click(object sender, EventArgs eventArguments)
-            => AddNewModel(All.Maps, (ModelID id) => new MapRegionSketch(id, "New Map", "", ""), All.MapRegionIDs, MapListBox, "Map");
+            => AddNewModel(All.RegionModels, (ModelID id) => new RegionModel(id, "New Region", "", ""), All.RegionIDs, MapListBox, "Region");
 
         /// <summary>
         /// Responds to the user clicking "Remove Map" on the Maps tab.
@@ -3093,7 +3093,7 @@ namespace Scribe.Forms
         /// <param name="sender">Ignored.</param>
         /// <param name="eventArguments">Ignored.</param>
         private void MapRemoveItemButton_Click(object sender, EventArgs eventArguments)
-            => RemoveModel(All.Maps, MapListBox, "Map");
+            => RemoveModel(All.RegionModels, MapListBox, "Region");
 
         /// <summary>
         /// Invokes the <see cref="MapEditorForm"/> for the currently selected <see cref="MapModel"/>.

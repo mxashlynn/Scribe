@@ -29,7 +29,7 @@ namespace Scribe.Forms
         /// An <see cref="Inventory"/> that the user interacts with in this form.
         /// It is only attached to the <see cref="CharacterModel"/> if the user selects the <see cref="OkayButton"/>.
         /// </summary>
-        private Inventory WorkingInventory { get; set; }
+        private InventoryCollection WorkingInventory { get; set; }
         #endregion
 
         #region Initialization
@@ -54,7 +54,7 @@ namespace Scribe.Forms
             else
             {
                 ApplyCurrentTheme();
-                WorkingInventory = ((Inventory)CurrentCharacter.StartingInventory).Clone();
+                WorkingInventory = CurrentCharacter.StartingInventory.DeepClone();
                 UpdateControls();
             }
         }
@@ -257,7 +257,7 @@ namespace Scribe.Forms
             {
                 CurrentCharacter.StartingInventory.Give(inventorySlot);
             }
-            WorkingInventory = Inventory.Empty;
+            WorkingInventory = InventoryCollection.Empty.DeepClone();
             DialogResult = DialogResult.OK;
             Close();
         }
@@ -269,7 +269,7 @@ namespace Scribe.Forms
         /// <param name="eventArguments">Additional event data.</param>
         private void CancelButtonControl_Click(object sender, EventArgs eventArguments)
         {
-            WorkingInventory = Inventory.Empty;
+            WorkingInventory = InventoryCollection.Empty.DeepClone();
             DialogResult = DialogResult.Cancel;
             Close();
         }

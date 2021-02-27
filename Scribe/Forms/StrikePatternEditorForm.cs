@@ -74,7 +74,7 @@ namespace Scribe.Forms
             else
             {
                 ApplyCurrentTheme();
-                WorkingGrid = (StrikePanelGrid)CurrentCraft.PanelPattern.Clone();
+                WorkingGrid = (StrikePanelGrid)CurrentCraft.PanelPattern.DeepClone();
                 UpdateControlsBasedOnModel();
             }
         }
