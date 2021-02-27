@@ -1,14 +1,21 @@
+using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using Scribe.Forms;
 
 // Make no promises to maintain public services.
 [assembly: ComVisible(false)]
 
+// Scribe is an API consumer, not an API provider, so CLS Compliance is not needed.
+[assembly: CLSCompliant(true)]
+
 namespace Scribe
 {
     /// <summary>
     /// Provides assembly-wide information.
     /// </summary>
+    [SuppressMessage("Performance", "CA1815:Override equals and operator equals on value types",
+        Justification = "Comparing two AssemblyInfos makes no sense.")]
     public readonly struct AssemblyInfo
     {
         /// <summary>Describes the version of the editor.</summary>
