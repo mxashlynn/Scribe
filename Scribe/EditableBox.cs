@@ -1,3 +1,4 @@
+using System;
 using System.Windows.Forms;
 
 namespace Scribe
@@ -64,14 +65,14 @@ namespace Scribe
                 && !string.IsNullOrEmpty(EditableTextBox.SelectedText))
             {
                 Clipboard.SetText(EditableTextBox.SelectedText);
-                EditableTextBox.Text = EditableTextBox.Text.Replace(EditableTextBox.SelectedText, "");
+                EditableTextBox.Text = EditableTextBox.Text.Replace(EditableTextBox.SelectedText, "", StringComparison.OrdinalIgnoreCase);
                 return EditableTextBox;
             }
             else if (EditableComboBox is not null
                     && !string.IsNullOrEmpty(EditableComboBox.SelectedText))
             {
                 Clipboard.SetText(EditableComboBox.SelectedText);
-                EditableComboBox.Text = EditableComboBox.Text.Replace(EditableComboBox.SelectedText, "");
+                EditableComboBox.Text = EditableComboBox.Text.Replace(EditableComboBox.SelectedText, "", StringComparison.OrdinalIgnoreCase);
                 return EditableComboBox;
             }
             return null;
@@ -93,14 +94,14 @@ namespace Scribe
             {
                 EditableTextBox.Text = string.IsNullOrEmpty(SelectedText)
                     ? EditableTextBox.Text.Insert(EditableTextBox.SelectionStart, Clipboard.GetText())
-                    : EditableTextBox.Text.Replace(EditableTextBox.SelectedText, Clipboard.GetText());
+                    : EditableTextBox.Text.Replace(EditableTextBox.SelectedText, Clipboard.GetText(), StringComparison.OrdinalIgnoreCase);
                 return EditableTextBox;
             }
             else if (EditableComboBox is not null)
             {
                 EditableComboBox.Text = string.IsNullOrEmpty(SelectedText)
                     ? EditableComboBox.Text.Insert(EditableComboBox.SelectionStart, Clipboard.GetText())
-                    : EditableComboBox.Text.Replace(EditableComboBox.SelectedText, Clipboard.GetText());
+                    : EditableComboBox.Text.Replace(EditableComboBox.SelectedText, Clipboard.GetText(), StringComparison.OrdinalIgnoreCase);
                 return EditableComboBox;
             }
             return null;

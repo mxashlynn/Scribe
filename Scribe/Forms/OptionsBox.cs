@@ -65,7 +65,7 @@ namespace Scribe.Forms
             {
                 OldTheme = EditorTheme.OSDefault;
                 SystemSounds.Beep.Play();
-                Logger.Log(LogLevel.Error, string.Format(CultureInfo.CurrentCulture, Resources.ErrorParseFailed,
+                Logger.Log(LogLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ErrorParseFailed,
                                                          nameof(Settings.Default.CurrentEditorTheme)));
             }
             foreach (var radioButton in ThemeRadioButtons.Values)
@@ -83,7 +83,7 @@ namespace Scribe.Forms
             CheckBoxFlavorFilters.Checked = Settings.Default.UseFlavorFilters;
             CheckBoxSuggestStoryIDs.Checked = Settings.Default.SuggestStoryIDs;
             NewAutoSaveInterval = Settings.Default.AutoSaveInterval;
-            TextBoxAutoSaveInterval.Text = NewAutoSaveInterval.ToString();
+            TextBoxAutoSaveInterval.Text = NewAutoSaveInterval.ToString(CultureInfo.InvariantCulture);
             RadioButtonEditInCustomApp.Checked = Settings.Default.EditInApp;
             RadioButtonEditInOSDefault.Checked = !Settings.Default.EditInApp;
             TextBoxImageEditorPath.Text = Settings.Default.ImageEditor;
@@ -104,7 +104,7 @@ namespace Scribe.Forms
             if (int.TryParse(TextBoxAutoSaveInterval.Text, out var newInterval))
             {
                 NewAutoSaveInterval = Math.Clamp(newInterval, MinimumInterval, MaximumInterval);
-                TextBoxAutoSaveInterval.Text = NewAutoSaveInterval.ToString();
+                TextBoxAutoSaveInterval.Text = NewAutoSaveInterval.ToString(CultureInfo.InvariantCulture);
                 ErrorProvider.SetError(TextBoxAutoSaveInterval, "");
             }
             else

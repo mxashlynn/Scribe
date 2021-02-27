@@ -42,7 +42,7 @@ namespace Scribe.Forms.Development
             get => _databaseValue;
             set
             {
-                _databaseValue = value.ToString();
+                _databaseValue = value?.ToString() ?? "";
                 LabelDBValue.Text = $"Database Value: {value}";
                 LabelStoredChanges.Text = $"Stored Changes: {ChangeManager.Count}";
             }

@@ -180,25 +180,25 @@ namespace Scribe.Forms
                                               .First()
                                               .Enabled = panelIsActive;
                     var textBoxes = EditableGroupBoxes[(y, x)].GetAllChildrenExactlyOfType<TextBox>();
-                    textBoxes.Where(control => control.Name.StartsWith("RangeStart"))
+                    textBoxes.Where(control => control.Name.StartsWith("RangeStart", StringComparison.OrdinalIgnoreCase))
                                 .First()
                                 .Text = panelIsActive
-                                ? WorkingGrid[y, x].WorkingRange.Minimum.ToString()
+                                ? WorkingGrid[y, x].WorkingRange.Minimum.ToString(CultureInfo.InvariantCulture)
                                 : "";
-                    textBoxes.Where(control => control.Name.StartsWith("RangeEnd"))
+                    textBoxes.Where(control => control.Name.StartsWith("RangeEnd", StringComparison.OrdinalIgnoreCase))
                                 .First()
                                 .Text = panelIsActive
-                                ? WorkingGrid[y, x].WorkingRange.Maximum.ToString()
+                                ? WorkingGrid[y, x].WorkingRange.Maximum.ToString(CultureInfo.InvariantCulture)
                                 : "";
-                    textBoxes.Where(control => control.Name.StartsWith("GoalStart"))
+                    textBoxes.Where(control => control.Name.StartsWith("GoalStart", StringComparison.OrdinalIgnoreCase))
                                 .First()
                                 .Text = panelIsActive
-                                ? WorkingGrid[y, x].IdealRange.Minimum.ToString()
+                                ? WorkingGrid[y, x].IdealRange.Minimum.ToString(CultureInfo.InvariantCulture)
                                 : "";
-                    textBoxes.Where(control => control.Name.StartsWith("GoalEnd"))
+                    textBoxes.Where(control => control.Name.StartsWith("GoalEnd", StringComparison.OrdinalIgnoreCase))
                                 .First()
                                 .Text = panelIsActive
-                                ? WorkingGrid[y, x].IdealRange.Maximum.ToString()
+                                ? WorkingGrid[y, x].IdealRange.Maximum.ToString(CultureInfo.InvariantCulture)
                                 : "";
                 }
             }
@@ -246,7 +246,7 @@ namespace Scribe.Forms
                     WorkingGrid = new StrikePanelGrid(WorkingGrid, y + 1, WorkingGrid.Columns);
                 }
 
-                if (textBox.Name.StartsWith("RangeStart"))
+                if (textBox.Name.StartsWith("RangeStart", StringComparison.OrdinalIgnoreCase))
                 {
                     var newMax = parsedInt < WorkingGrid[y, x].WorkingRange.Maximum
                         ? WorkingGrid[y, x].WorkingRange.Maximum
@@ -254,7 +254,7 @@ namespace Scribe.Forms
                     WorkingGrid[y, x].WorkingRange =
                         new Parquet.Range<int>(parsedInt, newMax);
                 }
-                else if (textBox.Name.StartsWith("RangeEnd"))
+                else if (textBox.Name.StartsWith("RangeEnd", StringComparison.OrdinalIgnoreCase))
                 {
                     var newMin = WorkingGrid[y, x].WorkingRange.Minimum < parsedInt
                         ? WorkingGrid[y, x].WorkingRange.Minimum
@@ -262,7 +262,7 @@ namespace Scribe.Forms
                     WorkingGrid[y, x].WorkingRange =
                         new Parquet.Range<int>(newMin, parsedInt);
                 }
-                else if (textBox.Name.StartsWith("GoalStart"))
+                else if (textBox.Name.StartsWith("GoalStart", StringComparison.OrdinalIgnoreCase))
                 {
                     var newMax = parsedInt < WorkingGrid[y, x].IdealRange.Maximum
                         ? WorkingGrid[y, x].IdealRange.Maximum
@@ -270,7 +270,7 @@ namespace Scribe.Forms
                     WorkingGrid[y, x].IdealRange =
                         new Parquet.Range<int>(parsedInt, newMax);
                 }
-                else if (textBox.Name.StartsWith("GoalEnd"))
+                else if (textBox.Name.StartsWith("GoalEnd", StringComparison.OrdinalIgnoreCase))
                 {
                     var newMin = WorkingGrid[y, x].IdealRange.Minimum < parsedInt
                         ? WorkingGrid[y, x].IdealRange.Minimum

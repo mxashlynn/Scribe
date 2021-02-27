@@ -89,6 +89,22 @@ namespace Scribe.Forms.Development
         }
         #endregion
 
+        #region Disposal
+        /// <summary> 
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            RefreshMapTimer.Dispose();
+            base.Dispose(disposing);
+        }
+        #endregion
+
         #region IMapController Implementation
         /// <summary>
         /// Occurs when the mouse hovers over a particular cell on the <see cref="MapPictureGrid"/>.
@@ -100,7 +116,7 @@ namespace Scribe.Forms.Development
         public void MapHover(object inSender, EventArgs inEventArguments, Point gridRestingLocation, Point screenRestingLocation)
         {
             var pixelRestingLocation = PointToClient(screenRestingLocation);
-            MessageBox.Show($"Hovering over ({gridRestingLocation.X}, {gridRestingLocation.Y}) at {pixelRestingLocation}.");
+            _ = MessageBox.Show($"Hovering over ({gridRestingLocation.X}, {gridRestingLocation.Y}) at {pixelRestingLocation}.");
         }
 
         /// <summary>
@@ -111,9 +127,7 @@ namespace Scribe.Forms.Development
         /// <param name="clickStartLocation">The grid coordinates of the cell over which the click began.</param>
         /// <param name="clickEndLocation">The grid coordinates of the cell over which the click ended.</param>
         public void MapUp(object inSender, MouseEventArgs inMouseArguments, Point clickStartLocation, Point clickEndLocation)
-        {
-            MessageBox.Show($"Clicked starting at ({clickStartLocation.X}, {clickStartLocation.Y}) at ending at ({clickEndLocation.X}, {clickEndLocation.Y}).");
-        }
+            => _ = MessageBox.Show($"Clicked starting at ({clickStartLocation.X}, {clickStartLocation.Y}) at ending at ({clickEndLocation.X}, {clickEndLocation.Y}).");
         #endregion
 
         #region Utilities

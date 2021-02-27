@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Globalization;
@@ -24,11 +25,11 @@ using Roller;
 using Scribe.ChangeHistory;
 using Scribe.Properties;
 
-// TODO 0) Work through analyzer warnings.
-// TODO 1) [GLOBALIZATION] Make sure we are using ToString in an Ordinal way.
-// TODO 2) [GLOBALIZATION] Make sure we are using String.Compare(OrdinalCaseInsensitive) wherever needed.
-// TODO 3) [UI] [TAGS] Add missing UI to adjust tags for each type of model.
-// TODO 4) [UI] [TAGS] Add missing UI to adjust flavor tags for each type of model.
+// TODO 1) Fix remaining analyzer warnings.
+// TODO 2) [UI] [TAGS] Add missing UI to adjust tags for each type of model.
+// TODO 3) [UI] [TAGS] Add missing UI to adjust flavor tags for each type of model.
+// TODO 4) Fix remaining issues with Map/Region (search for map and replace it as needed).
+// TODO 5) Finish implementing the maps tab.
 
 
 namespace Scribe.Forms
@@ -121,7 +122,7 @@ namespace Scribe.Forms
             }
             catch (Win32Exception winException)
             {
-                Logger.Log(LogLevel.Error, string.Format(CultureInfo.CurrentCulture, Resources.ErrorAccessingRoller,
+                Logger.Log(LogLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ErrorAccessingRoller,
                                                          winException.Message), winException);
             }
         }
@@ -177,7 +178,7 @@ namespace Scribe.Forms
         /// <summary>
         /// A collection of all editable <see cref="PictureBox"/>es in the <see cref="MainEditorForm"/>.
         /// </summary>
-        private readonly List<PictureBox> PictureBoxes;
+        private readonly IList<PictureBox> PictureBoxes;
 
         /// <summary>
         /// A collection of all themed <see cref="Component"/>s in the <see cref="MainEditorForm"/>.
@@ -356,7 +357,7 @@ namespace Scribe.Forms
             else
             {
                 SystemSounds.Beep.Play();
-                Logger.Log(LogLevel.Error, string.Format(CultureInfo.CurrentCulture, Resources.ErrorParseFailed,
+                Logger.Log(LogLevel.Error, string.Format(CultureInfo.InvariantCulture, Resources.ErrorParseFailed,
                                                            nameof(Settings.Default.CurrentEditorTheme)));
             }
             #endregion
@@ -406,17 +407,35 @@ namespace Scribe.Forms
             themed[typeof(ToolStripItem)].AddRange(ContextMenuStripPictureBoxes.Items.GetAllChildren());
             themed[typeof(ToolStripItem)].AddRange(ContextMenuStripIDStatics.Items.GetAllChildren());
             themed[typeof(GroupBox)].AddRange(this.GetAllChildrenExactlyOfType<GroupBox>()
-                                    .Where(groupBox => groupBox.Tag is null || !groupBox.Tag.ToString().Contains(UnthemedControl)));
+                                    .Where(groupBox => groupBox.Tag is null
+                                                    || !groupBox.Tag
+                                                                .ToString()
+                                                                .Contains(UnthemedControl, StringComparison.OrdinalIgnoreCase)));
             themed[typeof(ListBox)].AddRange(this.GetAllChildrenExactlyOfType<ListBox>()
-                                    .Where(listbox => listbox.Tag is null || !listbox.Tag.ToString().Contains(UnthemedControl)));
+                                    .Where(listbox => listbox.Tag is null
+                                                   || !listbox.Tag
+                                                              .ToString()
+                                                              .Contains(UnthemedControl, StringComparison.OrdinalIgnoreCase)));
             themed[typeof(ComboBox)].AddRange(this.GetAllChildrenExactlyOfType<ComboBox>()
-                                    .Where(combobox => combobox.Tag is null || !combobox.Tag.ToString().Contains(UnthemedControl)));
+                                    .Where(combobox => combobox.Tag is null
+                                                    || !combobox.Tag
+                                                                .ToString()
+                                                                .Contains(UnthemedControl, StringComparison.OrdinalIgnoreCase)));
             themed[typeof(TextBox)].AddRange(this.GetAllChildrenExactlyOfType<TextBox>()
-                                    .Where(textbox => textbox.Tag is null || !textbox.Tag.ToString().Contains(UnthemedControl)));
+                                    .Where(textbox => textbox.Tag is null
+                                                   || !textbox.Tag
+                                                              .ToString()
+                                                              .Contains(UnthemedControl, StringComparison.OrdinalIgnoreCase)));
             themed[typeof(Label)].AddRange(this.GetAllChildrenExactlyOfType<Label>()
-                                    .Where(label => label.Tag is not null && label.Tag.ToString().Contains(ThemedLabel)));
+                                    .Where(label => label.Tag is not null
+                                                 && label.Tag
+                                                         .ToString()
+                                                         .Contains(ThemedLabel, StringComparison.OrdinalIgnoreCase)));
             themed[typeof(Button)].AddRange(this.GetAllChildrenExactlyOfType<Button>()
-                                    .Where(button => button.Tag is null || !button.Tag.ToString().Contains(UnthemedControl)));
+                                    .Where(button => button.Tag is null
+                                                  || !button.Tag
+                                                            .ToString()
+                                                            .Contains(UnthemedControl, StringComparison.OrdinalIgnoreCase)));
             return themed;
         }
 
@@ -435,16 +454,28 @@ namespace Scribe.Forms
             };
 
             editables[typeof(ListBox)].CacheControlsWithText(EditorTabs.GetAllChildrenExactlyOfType<ListBox>()
-                                      .Where(listbox => null == listbox.Tag || !listbox.Tag.ToString().Contains(UntrackedControl))
+                                      .Where(listbox => null == listbox.Tag
+                                                     || !listbox.Tag
+                                                                .ToString()
+                                                                .Contains(UntrackedControl, StringComparison.OrdinalIgnoreCase))
                                       .Cast<Control>());
             editables[typeof(ComboBox)].CacheControlsWithText(EditorTabs.GetAllChildrenExactlyOfType<ComboBox>()
-                                       .Where(combobox => null == combobox.Tag || !combobox.Tag.ToString().Contains(UntrackedControl))
+                                       .Where(combobox => null == combobox.Tag
+                                                       || !combobox.Tag
+                                                                   .ToString()
+                                                                   .Contains(UntrackedControl, StringComparison.OrdinalIgnoreCase))
                                        .Cast<Control>());
             editables[typeof(TextBox)].CacheControlsWithText(EditorTabs.GetAllChildrenExactlyOfType<TextBox>()
-                                      .Where(textbox => null == textbox.Tag || !textbox.Tag.ToString().Contains(UntrackedControl))
+                                      .Where(textbox => null == textbox.Tag
+                                                     || !textbox.Tag
+                                                                .ToString()
+                                                                .Contains(UntrackedControl, StringComparison.OrdinalIgnoreCase))
                                       .Cast<Control>());
             editables[typeof(CheckBox)].CacheCheckBoxes(EditorTabs.GetAllChildrenExactlyOfType<CheckBox>()
-                                       .Where(checkbox => null == checkbox.Tag || !checkbox.Tag.ToString().Contains(UntrackedControl))
+                                       .Where(checkbox => null == checkbox.Tag
+                                                       || !checkbox.Tag
+                                                                   .ToString()
+                                                                   .Contains(UntrackedControl, StringComparison.OrdinalIgnoreCase))
                                        .Cast<Control>());
             return editables;
         }
@@ -474,8 +505,9 @@ namespace Scribe.Forms
         /// <param name="input">A boxed <c>bool</c> or a <c>string</c> representing an <c>bool</c>.</param>
         /// <returns>The Boolean value given, or <c>false</c> if no value could be parsed.</returns>
         private static bool ValueToBool(object input)
-            => input as bool?
-            ?? (bool.TryParse(input?.ToString() ?? "", out var parsedBool) && parsedBool);
+            => input is bool boxedBool
+                ? boxedBool
+                : bool.TryParse(input?.ToString() ?? "", out var parsedBool) && parsedBool;
 
         /// <summary>
         /// Transforms an <c>object</c> into an <c>int</c>, parsing if needed.
@@ -483,10 +515,11 @@ namespace Scribe.Forms
         /// <param name="input">A boxed <c>int</c> or a <c>string</c> representing an <c>int</c>.</param>
         /// <returns>The integer value given, or 0 if no value could be parsed.</returns>
         private static int ValueToInt(object input)
-            => input as int?
-            ?? (int.TryParse(input?.ToString() ?? "", NumberStyles.Integer, null, out var parsedInt)
-                ? parsedInt
-                : 0);
+            => input is int boxedInt
+                ? boxedInt
+                : (int.TryParse(input?.ToString() ?? "", NumberStyles.Integer, null, out var parsedInt)
+                    ? parsedInt
+                    : 0);
 
         /// <summary>
         /// Transforms an <c>object</c> into a <c>double</c>, parsing if needed.
@@ -494,10 +527,11 @@ namespace Scribe.Forms
         /// <param name="input">A boxed <c>double</c> or a <c>string</c> representing a <c>double</c>.</param>
         /// <returns>The integer value given, or 0.0 if no value could be parsed.</returns>
         private static double ValueToDouble(object input)
-            => input as double?
-            ?? (double.TryParse(input?.ToString() ?? "", NumberStyles.Number, null, out var parsedDouble)
-                ? parsedDouble
-                : 0.0);
+            => input is double boxedDouble
+                ? boxedDouble
+                : (double.TryParse(input?.ToString() ?? "", NumberStyles.Number, null, out var parsedDouble)
+                    ? parsedDouble
+                    : 0.0);
 
         /// <summary>
         /// Transforms an <c>object</c> into an <see cref="ModelID">, parsing if needed.
@@ -505,12 +539,15 @@ namespace Scribe.Forms
         /// <param name="input">A boxed <see cref="ModelID.None"> or a <c>string</c> representing an <see cref="ModelID">.</param>
         /// <returns>The identifier given, or <see cref="ModelID.None"> if no ID could be parsed.</returns>
         private static ModelID ValueToID(object input)
-            => (input as Model)?.ID
-            ?? input as ModelID?
-            ?? input as int?
-            ?? (int.TryParse(input?.ToString() ?? "", NumberStyles.Integer, null, out var parsedInt)
-                ? (ModelID)parsedInt
-                : ModelID.None);
+            => input is Model model
+                ? model.ID
+                : input is ModelID modelID
+                    ? modelID
+                    : input is int boxedInt
+                        ? boxedInt
+                        : (int.TryParse(input?.ToString() ?? "", NumberStyles.Integer, null, out var parsedInt)
+                            ? (ModelID)parsedInt
+                            : ModelID.None);
 
         /// <summary>
         /// Transforms an <c>object</c> into an <c>enum</c>, parsing if needed.
@@ -520,12 +557,11 @@ namespace Scribe.Forms
         /// <returns>The enumeration value given, or the default value for that enumeration if no value could be parsed.</returns>
         private static TEnum ValueToEnum<TEnum>(object input)
             where TEnum : struct, Enum, IConvertible
-            => input as TEnum?
-            ?? (input is TEnum enumerationValue
+            => input is TEnum enumerationValue
                 ? enumerationValue
                 : (Enum.TryParse<TEnum>(input?.ToString() ?? "", true, out var parsedInt)
                     ? parsedInt
-                    : default(TEnum)));
+                    : default);
         #endregion
 
         /// <summary>
@@ -1027,8 +1063,7 @@ namespace Scribe.Forms
             // Also restarts the text-clearing timer.
             if (sender is ToolStripStatusLabel statusLabel
                 && !string.IsNullOrEmpty(statusLabel.Text)
-                // TODO [GLOBALIZATION] Make sure we are using String.Compate(Ordinal) or whichever is appropriate in this instance.
-                && statusLabel.Text.CompareTo(Resources.LogReady) != 0)
+                && string.Compare(statusLabel.Text, Resources.LogReady, StringComparison.OrdinalIgnoreCase) != 0)
             {
                 ClearStatusTimer.Stop();
                 ClearStatusTimer.Start();
@@ -1132,10 +1167,13 @@ namespace Scribe.Forms
         private void ToolStripSeparator_Paint(object sender, PaintEventArgs eventArguments)
         {
             var separator = (ToolStripSeparator)sender;
+            // TODO [OPTIMIZATION] Can we store these objects somewhere so that we don't have to allocate and dispose of them every frame?
             var backgroundBrush = new SolidBrush(CurrentTheme.ControlBackgroundColor);
             var foregroundPen = new Pen(CurrentTheme.ControlForegroundColor);
             eventArguments.Graphics.FillRectangle(backgroundBrush, 0, 0, separator.Width, separator.Height);
             eventArguments.Graphics.DrawLine(foregroundPen, 30, separator.Height / 2, separator.Width - 4, separator.Height / 2);
+            backgroundBrush.Dispose();
+            foregroundPen.Dispose();
         }
 
         /// <summary>
@@ -1146,6 +1184,7 @@ namespace Scribe.Forms
         /// <param name="eventArguments">Used to draw the bar.</param>
         private void ProgressBar_Paint(object sender, PaintEventArgs eventArguments)
         {
+            // TODO [OPTIMIZATION] Can we store these objects somewhere so that we don't have to allocate and dispose of them every frame?
             var highlightBrush = new SolidBrush(CurrentTheme.HighlightColor);
             var uneditableBackgroundBrush = new SolidBrush(CurrentTheme.UneditableBackgroundColor);
             var bar = (ProgressBar)sender;
@@ -1155,11 +1194,16 @@ namespace Scribe.Forms
             eventArguments.Graphics.FillRectangle(uneditableBackgroundBrush, 0, 0, bar.Width, bar.Height);
             eventArguments.Graphics.FillRectangle(highlightBrush, filledRectangle);
             ControlPaint.DrawBorder3D(eventArguments.Graphics, bar.ClientRectangle, Border3DStyle.SunkenOuter);
+            highlightBrush.Dispose();
+            uneditableBackgroundBrush.Dispose();
         }
+
 
         /// <summary>
         /// Sets the text used to describe the format of the saved data files the editor works with.
         /// </summary>
+        [SuppressMessage("Globalization", "CA1303:Do not pass literals as localized parameters",
+            Justification = "Because these are file formatting characters, we must present the exact literal string.")]
         private void UpdateFileFormatDisplay()
         {
             FileFormatPrimaryDelimiterStatic.Text = Delimiters.PrimaryDelimiter;
@@ -1311,9 +1355,12 @@ namespace Scribe.Forms
             var textOffsetY = (eventArguments.State == DrawItemState.Selected)
                 ? -2
                 : 1;
-            eventArguments.Graphics.FillRectangle(new SolidBrush(tab.BackColor), eventArguments.Bounds);
+            // TODO [OPTIMIZATION] Can we store this brush somewhere so it's not allocated and disposed every frame?
+            var backgroundBrush = new SolidBrush(tab.BackColor);
+            eventArguments.Graphics.FillRectangle(backgroundBrush, eventArguments.Bounds);
             textBounds.Offset(1, textOffsetY);
             TextRenderer.DrawText(eventArguments.Graphics, tab.Text, eventArguments.Font, textBounds, tab.ForeColor);
+            backgroundBrush.Dispose();
         }
 
         /// <summary>
@@ -1393,21 +1440,21 @@ namespace Scribe.Forms
                     break;
                 case BiomeRecipesTabIndex:
                     RepopulateListBox(BiomeListBox, All.BiomeRecipes);
-                    BiomeLandThresholdTextBox.Text = BiomeConfiguration.LandThresholdFactor.ToString();
-                    BiomeLiquidThresholdFactorTextBox.Text = BiomeConfiguration.LiquidThresholdFactor.ToString();
-                    BiomeRoomThresholdFactorTextBox.Text = BiomeConfiguration.RoomThresholdFactor.ToString();
+                    BiomeLandThresholdTextBox.Text = BiomeConfiguration.LandThresholdFactor.ToString(CultureInfo.InvariantCulture);
+                    BiomeLiquidThresholdFactorTextBox.Text = BiomeConfiguration.LiquidThresholdFactor.ToString(CultureInfo.InvariantCulture);
+                    BiomeRoomThresholdFactorTextBox.Text = BiomeConfiguration.RoomThresholdFactor.ToString(CultureInfo.InvariantCulture);
                     break;
                 case CraftingRecipesTabIndex:
                     RepopulateListBox(CraftingListBox, All.CraftingRecipes);
-                    CraftingMinIngredientCountTextBox.Text = CraftConfiguration.IngredientCount.Minimum.ToString();
-                    CraftingMaxIngredientCountTextBox.Text = CraftConfiguration.IngredientCount.Maximum.ToString();
-                    CraftingMinProductCountTextBox.Text = CraftConfiguration.ProductCount.Minimum.ToString();
-                    CraftingMaxProductCountTextBox.Text = CraftConfiguration.ProductCount.Maximum.ToString();
+                    CraftingMinIngredientCountTextBox.Text = CraftConfiguration.IngredientCount.Minimum.ToString(CultureInfo.InvariantCulture);
+                    CraftingMaxIngredientCountTextBox.Text = CraftConfiguration.IngredientCount.Maximum.ToString(CultureInfo.InvariantCulture);
+                    CraftingMinProductCountTextBox.Text = CraftConfiguration.ProductCount.Minimum.ToString(CultureInfo.InvariantCulture);
+                    CraftingMaxProductCountTextBox.Text = CraftConfiguration.ProductCount.Maximum.ToString(CultureInfo.InvariantCulture);
                     break;
                 case RoomRecipesTabIndex:
                     RepopulateListBox(RoomListBox, All.RoomRecipes);
-                    RoomMinWalkableSpacesTextBox.Text = RoomConfiguration.MinWalkableSpaces.ToString();
-                    RoomMaxWalkableSpacesTextBox.Text = RoomConfiguration.MaxWalkableSpaces.ToString();
+                    RoomMinWalkableSpacesTextBox.Text = RoomConfiguration.MinWalkableSpaces.ToString(CultureInfo.InvariantCulture);
+                    RoomMaxWalkableSpacesTextBox.Text = RoomConfiguration.MaxWalkableSpaces.ToString(CultureInfo.InvariantCulture);
                     break;
                 case MapsTabIndex:
                     RepopulateListBox(MapListBox, All.RegionModels);
@@ -1452,8 +1499,7 @@ namespace Scribe.Forms
                 GameFirstScriptComboBox.SelectedItem = null;
                 GameIconPixelBox.Image = Resources.ImageNotFound;
             }
-            else if (GameListBox.SelectedItem is GameModel model
-                    && model is not null)
+            else if (GameListBox.SelectedItem is GameModel model)
             {
                 GameIDStatic.Text = model.ID.ToString();
                 GameNameTextBox.Text = model.Name;
@@ -1461,7 +1507,7 @@ namespace Scribe.Forms
                 GameCommentTextBox.Text = model.Comment;
                 GameIsEpisodeCheckBox.Checked = model.IsEpisode;
                 GameEpisodeTitleTextBox.Text = model.EpisodeTitle;
-                GameEpisodeNumberTextBox.Text = model.EpisodeNumber.ToString();
+                GameEpisodeNumberTextBox.Text = model.EpisodeNumber.ToString(CultureInfo.InvariantCulture);
                 GamePlayerCharacterComboBox.SelectedItem = model.PlayerCharacterID == ModelID.None
                     ? null
                     : All.Characters.GetOrNull<CharacterModel>(model.PlayerCharacterID);
@@ -1498,8 +1544,7 @@ namespace Scribe.Forms
                 BlockMaxToughnessTextBox.Text = "";
                 BlockPixelBox.Image = Resources.ImageNotFound;
             }
-            else if (BlockListBox.SelectedItem is BlockModel model
-                    && model is not null)
+            else if (BlockListBox.SelectedItem is BlockModel model)
             {
                 BlockIDStatic.Text = model.ID.ToString();
                 BlockNameTextBox.Text = model.Name;
@@ -1516,7 +1561,7 @@ namespace Scribe.Forms
                     All.Collectibles.GetOrNull<CollectibleModel>(model.CollectibleID);
                 BlockIsFlammableCheckBox.Checked = model.IsFlammable;
                 BlockIsLiquidCheckBox.Checked = model.IsLiquid;
-                BlockMaxToughnessTextBox.Text = model.MaxToughness.ToString();
+                BlockMaxToughnessTextBox.Text = model.MaxToughness.ToString(CultureInfo.InvariantCulture);
                 PictureBoxLoadFromStorage(BlockPixelBox, model.ID);
             }
         }
@@ -1544,8 +1589,7 @@ namespace Scribe.Forms
                 FloorDugOutPixelBox.Image = Resources.ImageNotFound;
                 FloorFilledInPixelBox.Image = Resources.ImageNotFound;
             }
-            else if (FloorListBox.SelectedItem is FloorModel model
-                    && model is not null)
+            else if (FloorListBox.SelectedItem is FloorModel model)
             {
                 FloorIDStatic.Text = model.ID.ToString();
                 FloorNameTextBox.Text = model.Name;
@@ -1590,8 +1634,7 @@ namespace Scribe.Forms
                 FurnishingSwapWithFurnishingComboBox.SelectedItem = null;
                 FurnishingPixelBox.Image = Resources.ImageNotFound;
             }
-            else if (FurnishingListBox.SelectedItem is FurnishingModel model
-                    && model is not null)
+            else if (FurnishingListBox.SelectedItem is FurnishingModel model)
             {
                 FurnishingIDStatic.Text = model.ID.ToString();
                 FurnishingNameTextBox.Text = model.Name;
@@ -1635,8 +1678,7 @@ namespace Scribe.Forms
                 CollectibleEffectAmountTextBox.Text = "";
                 CollectiblePixelBox.Image = Resources.ImageNotFound;
             }
-            else if (CollectibleListBox.SelectedItem is CollectibleModel model
-                    && model is not null)
+            else if (CollectibleListBox.SelectedItem is CollectibleModel model)
             {
                 CollectibleIDStatic.Text = model.ID.ToString();
                 CollectibleNameTextBox.Text = model.Name;
@@ -1648,7 +1690,7 @@ namespace Scribe.Forms
                 RepopulateListBox(CollectibleAddsToBiomeListBox, model.AddsToBiome);
                 RepopulateListBox(CollectibleAddsToRoomListBox, model.AddsToRoom);
                 CollectibleCollectionEffectComboBox.SelectedItem = model.CollectionEffect;
-                CollectibleEffectAmountTextBox.Text = model.EffectAmount.ToString();
+                CollectibleEffectAmountTextBox.Text = model.EffectAmount.ToString(CultureInfo.InvariantCulture);
                 PictureBoxLoadFromStorage(CollectiblePixelBox, model.ID);
             }
         }
@@ -1674,11 +1716,11 @@ namespace Scribe.Forms
                 CharacterStoryIDTextBox.Text = "";
                 CharacterStartingQuestsListBox.Items.Clear();
                 CharacterStartingDialogueComboBox.SelectedItem = null;
-                CharacterStartingInventoryStatic.Text = "0 Items";
+                // TODO [UI] Localize this string.
+                CharacterStartingInventoryStatic.Text = $"0 Items";
                 CharacterPixelBox.Image = Resources.ImageNotFound;
             }
-            else if (CharacterListBox.SelectedItem is CharacterModel model
-                     && model is not null)
+            else if (CharacterListBox.SelectedItem is CharacterModel model)
             {
                 CharacterIDStatic.Text = model.ID.ToString();
                 CharacterPersonalNameTextBox.Text = model.PersonalName;
@@ -1709,11 +1751,14 @@ namespace Scribe.Forms
             }
         }
 
+
         /// <summary>
         /// Populates the Pronouns panel when a <see cref="PronounGroup"/> is selected in the CharacterPronounListBox.
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="eventArguments">Ignored.</param>
+        [SuppressMessage("Globalization", "CA1303:Do not pass literals as localized parameters",
+            Justification = "Because this is a scripting tag, we must provide the exact literal string.")]
         private void CharacterPronounListBox_SelectedIndexChanged(object sender, EventArgs eventArguments)
         {
             if (CharacterPronounListBox.SelectedItem is null)
@@ -1725,8 +1770,7 @@ namespace Scribe.Forms
                 CharacterPronounPossessiveTextBox.Text = "";
                 CharacterPronounReflexiveTextBox.Text = "";
             }
-            else if (CharacterPronounListBox.SelectedItem is PronounGroup group
-                     && group is not null)
+            else if (CharacterPronounListBox.SelectedItem is PronounGroup group)
             {
                 CharacterPronounKeyStatic.Text = group.Key;
                 CharacterPronounSubjectiveTextBox.Text = group.Subjective;
@@ -1754,8 +1798,7 @@ namespace Scribe.Forms
                 CritterPrimaryBehaviorComboBox.SelectedItem = null;
                 CritterPixelBox.Image = Resources.ImageNotFound;
             }
-            else if (CritterListBox.SelectedItem is CritterModel model
-                     && model is not null)
+            else if (CritterListBox.SelectedItem is CritterModel model)
             {
                 CritterIDStatic.Text = model.ID.ToString();
                 CritterNameTextBox.Text = model.Name;
@@ -1795,17 +1838,16 @@ namespace Scribe.Forms
                 ItemTagListBox.Items.Clear();
                 ItemPixelBox.Image = Resources.ImageNotFound;
             }
-            else if (ItemListBox.SelectedItem is ItemModel model
-                    && model is not null)
+            else if (ItemListBox.SelectedItem is ItemModel model)
             {
                 ItemIDStatic.Text = model.ID.ToString();
                 ItemNameTextBox.Text = model.Name;
                 ItemDescriptionTextBox.Text = model.Description;
                 ItemCommentTextBox.Text = model.Comment;
                 ItemSubtypeComboBox.SelectedItem = model.Subtype;
-                ItemPriceTextBox.Text = model.Price.ToString();
-                ItemRarityTextBox.Text = model.Rarity.ToString();
-                ItemStackMaxTextBox.Text = model.StackMax.ToString();
+                ItemPriceTextBox.Text = model.Price.ToString(CultureInfo.InvariantCulture);
+                ItemRarityTextBox.Text = model.Rarity.ToString(CultureInfo.InvariantCulture);
+                ItemStackMaxTextBox.Text = model.StackMax.ToString(CultureInfo.InvariantCulture);
                 ItemEffectWhileHeldComboBox.SelectedItem = model.EffectWhileHeldID == ModelID.None
                     ? null
                     : All.Scripts.GetOrNull<ScriptModel>(model.EffectWhileHeldID);
@@ -1841,14 +1883,13 @@ namespace Scribe.Forms
                 BiomeEntryRequirementsListBox.Items.Clear();
                 BiomePixelBox.Image = Resources.ImageNotFound;
             }
-            else if (BiomeListBox.SelectedItem is BiomeRecipe recipe
-                    && recipe is not null)
+            else if (BiomeListBox.SelectedItem is BiomeRecipe recipe)
             {
                 BiomeIDStatic.Text = recipe.ID.ToString();
                 BiomeNameTextBox.Text = recipe.Name;
                 BiomeDescriptionTextBox.Text = recipe.Description;
                 BiomeCommentTextBox.Text = recipe.Comment;
-                BiomeTierTextBox.Text = recipe.Tier.ToString();
+                BiomeTierTextBox.Text = recipe.Tier.ToString(CultureInfo.InvariantCulture);
                 BiomeIsRoomBasedCheckBox.Checked = recipe.IsRoomBased;
                 BiomeIsLiquidBasedCheckBox.Checked = recipe.IsLiquidBased;
                 BiomeParquetCriteriaTextBox.Text = recipe.ParquetCriteria;
@@ -1874,11 +1915,11 @@ namespace Scribe.Forms
                 CraftingCommentTextBox.Text = "";
                 CraftingProductsListBox.Items.Clear();
                 CraftingIngredientsListBox.Items.Clear();
+                // TODO [UI] Localize this string.
                 CraftingPanelsCountStatic.Text = $"0 Panels";
                 CraftingPixelBox.Image = Resources.ImageNotFound;
             }
-            else if (CraftingListBox.SelectedItem is CraftingRecipe recipe
-                    && recipe is not null)
+            else if (CraftingListBox.SelectedItem is CraftingRecipe recipe)
             {
                 CraftingIDStatic.Text = recipe.ID.ToString();
                 CraftingNameTextBox.Text = recipe.Name;
@@ -1913,14 +1954,13 @@ namespace Scribe.Forms
                 RoomRequiredBlocksListBox.Items.Clear();
                 RoomPixelBox.Image = Resources.ImageNotFound;
             }
-            else if (RoomListBox.SelectedItem is RoomRecipe recipe
-                    && recipe is not null)
+            else if (RoomListBox.SelectedItem is RoomRecipe recipe)
             {
                 RoomIDStatic.Text = recipe.ID.ToString();
                 RoomNameTextBox.Text = recipe.Name;
                 RoomDescriptionTextBox.Text = recipe.Description;
                 RoomCommentTextBox.Text = recipe.Comment;
-                RoomMinimumWalkableSpacesTextBox.Text = recipe.MinimumWalkableSpaces.ToString();
+                RoomMinimumWalkableSpacesTextBox.Text = recipe.MinimumWalkableSpaces.ToString(CultureInfo.InvariantCulture);
                 RepopulateListBox(RoomRequiredFurnishingsListBox, recipe.OptionallyRequiredFurnishings);
                 RepopulateListBox(RoomRequiredFloorsListBox, recipe.OptionallyRequiredWalkableFloors);
                 RepopulateListBox(RoomRequiredBlocksListBox, recipe.OptionallyRequiredPerimeterBlocks);
@@ -1951,8 +1991,7 @@ namespace Scribe.Forms
                 MapExitDownComboBox.SelectedItem = null;
                 MapPixelBox.Image = Resources.Map;
             }
-            else if (MapListBox.SelectedItem is RegionModel model
-                    && model is not null)
+            else if (MapListBox.SelectedItem is RegionModel model)
             {
                 RoomIDStatic.Text = model.ID.ToString();
                 RoomNameTextBox.Text = model.Name;
@@ -2050,8 +2089,8 @@ namespace Scribe.Forms
 
             // Suggest a StoryCharacterID if needed and requested.
             // For timing reasons, this must happen before updating the model's ListBox.
-            if ((alteredControl.Name.Equals(CharacterPersonalNameTextBox.Name)
-                || alteredControl.Name.Equals(CharacterFamilyNameTextBox.Name))
+            if ((string.Compare(alteredControl.Name, CharacterPersonalNameTextBox.Name, StringComparison.OrdinalIgnoreCase) == 0
+                || string.Compare(alteredControl.Name, CharacterFamilyNameTextBox.Name, StringComparison.OrdinalIgnoreCase) == 0)
                 && Settings.Default.SuggestStoryIDs
                 && string.IsNullOrEmpty(CharacterStoryIDTextBox.Text))
             {
@@ -2188,10 +2227,12 @@ namespace Scribe.Forms
             if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is TInterface model
                 && AddTagDialogue.ShowDialog() == DialogResult.OK)
             {
-                if (inGetTagListFromModel(model).Any(tag => ((string)AddTagDialogue.ReturnNewTag).Equals(tag)))
+                if (inGetTagListFromModel(model).Any(tag => string.Compare(AddTagDialogue.ReturnNewTag,
+                                                                           tag,
+                                                                           StringComparison.OrdinalIgnoreCase) == 0))
                 {
                     SystemSounds.Beep.Play();
-                    Logger.Log(LogLevel.Warning, string.Format(CultureInfo.CurrentCulture, Resources.WarningNotAddingDuplicate,
+                    Logger.Log(LogLevel.Warning, string.Format(CultureInfo.InvariantCulture, Resources.WarningNotAddingDuplicate,
                                                                nameof(ModelTag)));
                     return;
                 }
@@ -2370,7 +2411,7 @@ namespace Scribe.Forms
                 if (inGetElementListFromRecipe(recipe).Any(element => AddRecipeElementDialogue.ReturnNewRecipeElement == element))
                 {
                     SystemSounds.Beep.Play();
-                    Logger.Log(LogLevel.Warning, string.Format(CultureInfo.CurrentCulture, Resources.WarningNotAddingDuplicate,
+                    Logger.Log(LogLevel.Warning, string.Format(CultureInfo.InvariantCulture, Resources.WarningNotAddingDuplicate,
                                                                nameof(ModelTag)));
                     return;
                 }
@@ -2452,7 +2493,7 @@ namespace Scribe.Forms
                 if (inGetQuestListFromModel(character).Contains(AddQuestDialogue.ReturnNewQuestID))
                 {
                     SystemSounds.Beep.Play();
-                    Logger.Log(LogLevel.Warning, string.Format(CultureInfo.CurrentCulture, Resources.WarningNotAddingDuplicate,
+                    Logger.Log(LogLevel.Warning, string.Format(CultureInfo.InvariantCulture, Resources.WarningNotAddingDuplicate,
                                                                nameof(ModelTag)));
                     return;
                 }

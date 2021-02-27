@@ -41,13 +41,13 @@ namespace Roller
         internal static int Main(string[] args)
         {
             var optionText = args.Length > 0
-                ? args[0].ToLower(CultureInfo.CurrentCulture)
+                ? args[0].ToLower(CultureInfo.InvariantCulture)
                 : "";
             var property = args.Length > 1
-                ? args[1].ToLower(CultureInfo.CurrentCulture)
+                ? args[1].ToLower(CultureInfo.InvariantCulture)
                 : "";
             var category = args.Length > 2
-                ? args[2].ToLower(CultureInfo.CurrentCulture)
+                ? args[2].ToLower(CultureInfo.InvariantCulture)
                 : "";
 
             var command = ParseCommand(optionText);
@@ -143,7 +143,7 @@ namespace Roller
                     }
                     else
                     {
-                        Console.WriteLine(string.Format(CultureInfo.CurrentCulture, Resources.ErrorUnknownProperty, inProperty));
+                        Console.WriteLine(string.Format(CultureInfo.InvariantCulture, Resources.ErrorUnknownProperty, inProperty));
                     }
                     return DisplayBadArguments;
             }
@@ -268,7 +268,7 @@ namespace Roller
                     workload = new ModelCollection<Model>(All.RoomRecipeIDs, All.RoomRecipes);
                     break;
                 default:
-                    Console.WriteLine(string.Format(CultureInfo.CurrentCulture, Resources.ErrorUnknownCategory, inCategory));
+                    Console.WriteLine(string.Format(CultureInfo.InvariantCulture, Resources.ErrorUnknownCategory, inCategory));
                     break;
             }
 
@@ -306,7 +306,7 @@ namespace Roller
         /// <returns><see cref="ExitCode.Success"/></returns>
         private static ExitCode DisplayVersion(ModelCollection<Model> inWorkload)
         {
-            Console.WriteLine(string.Format(CultureInfo.CurrentCulture, Resources.MessageVersion,
+            Console.WriteLine(string.Format(CultureInfo.InvariantCulture, Resources.MessageVersion,
                                             AssemblyInfo.LibraryVersion.Remove(AssemblyInfo.LibraryVersion.Length - 2),
                                             AssemblyInfo.LibraryVersion));
             return ExitCode.Success;
@@ -434,7 +434,7 @@ namespace Roller
             }
 
             var orderedWorkload = All.RegionModels.OrderBy(x => x.ID);
-            Console.WriteLine(string.Format(CultureInfo.CurrentCulture, Resources.MessageChecking,
+            Console.WriteLine(string.Format(CultureInfo.InvariantCulture, Resources.MessageChecking,
                                             $"{nameof(RegionModel)}s"));
             foreach (var model in orderedWorkload)
             {
@@ -597,12 +597,12 @@ namespace Roller
             var IDs = new Dictionary<string, ModelID>();
             foreach (var range in inWorkload.Bounds)
             {
-                Console.WriteLine(string.Format(CultureInfo.CurrentCulture, Resources.InfoCollisionsHeader, range));
+                Console.WriteLine(string.Format(CultureInfo.InvariantCulture, Resources.InfoCollisionsHeader, range));
                 foreach (var model in inWorkload.Where(x => x.ID >= range.Minimum && x.ID <= range.Maximum))
                 {
                     if (IDs.ContainsKey(model.Name))
                     {
-                        Console.WriteLine(string.Format(CultureInfo.CurrentCulture, Resources.InfoCollision,
+                        Console.WriteLine(string.Format(CultureInfo.InvariantCulture, Resources.InfoCollision,
                                                         model.Name, model.ID, IDs[model.Name]));
                     }
                     else

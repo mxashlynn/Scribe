@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -25,7 +26,7 @@ namespace Scribe
     internal static class EditorCommands
     {
         /// <summary>Children of the <see cref="Model"/> class that do not have a graphical representation.</summary>
-        private static readonly List<string> TypeNamesWithoutGraphics;
+        private static readonly IList<string> TypeNamesWithoutGraphics;
 
         /// <summary>Children of the <see cref="Model"/> class that have a graphical representation, and the path to those assets.</summary>
         private static readonly Dictionary<Range<ModelID>, string> GraphicalAssetPaths;
@@ -37,7 +38,7 @@ namespace Scribe
         private static readonly FolderBrowserDialog FolderBrowserDialogue;
 
         /// <summary>Texts that cannot be used as <see cref="ModelTag"/>s.</summary>
-        private static readonly List<string> ReservedWorldList;
+        private static readonly IList<string> ReservedWorldList;
 
         /// <summary>Indicates to the user that the text entered cannot be used as a <see cref="ModelTag"/>.</summary>
         internal static readonly string ReservedWordMessage;
@@ -46,6 +47,8 @@ namespace Scribe
         /// <summary>
         /// Initializes <see cref="EditorCommands"/> asset collections.
         /// </summary>
+        [SuppressMessage("Performance", "CA1810:Initialize reference type static fields inline",
+            Justification = "Not possible, we need to force load the Parquet assembly.")]
         static EditorCommands()
         {
             FolderBrowserDialogue = new FolderBrowserDialog();
@@ -64,7 +67,7 @@ namespace Scribe
                 Delimiters.DimensionalDelimiter,
                 Delimiters.DimensionalTerminator,
             };
-            ReservedWordMessage = string.Format(CultureInfo.CurrentCulture, Resources.ErrorReservedWord,
+            ReservedWordMessage = string.Format(CultureInfo.InvariantCulture, Resources.ErrorReservedWord,
                                                 string.Join(", ", ReservedWorldList));
 
             // This comparison forces the Parquet assembly to load.
@@ -75,17 +78,26 @@ namespace Scribe
             }
             else
             {
-                TypeNamesWithoutGraphics = new List<string> { "Interaction", "Map", "Script" };
+                TypeNamesWithoutGraphics = new List<string> { "Interaction", "Region", "Script" };
                 GraphicalAssetPaths = AppDomain.CurrentDomain.GetAssemblies()
-                                               .Where(myassembly => string.Equals(myassembly.GetName().Name, "Parquet"))
+                                               .Where(myassembly => string.Equals(myassembly.GetName().Name,
+                                                                                  "Parquet",
+                                                                                  StringComparison.OrdinalIgnoreCase))
                                                .SelectMany(myassembly => myassembly.GetExportedTypes())
                                                .Where(type => typeof(Model).IsAssignableFrom(type)
                                                            && !type.IsInterface
                                                            && !type.IsAbstract
-                                                           && !TypeNamesWithoutGraphics.Any(name => type.Name.Contains(name)))
+                                                           && !TypeNamesWithoutGraphics
+                                                                .Any(name => type.Name
+                                                                                 .Contains(name,
+                                                                                           StringComparison.OrdinalIgnoreCase)))
                                                .ToDictionary(type => All.GetIDRangeForType(type),
                                                              type => Path.Combine(GraphicsFolderName,
-                                                                                  type.Name.Replace("Model", "s").Replace("Recipe", "Recipes")));
+                                                                                  type.Name
+                                                                                      .Replace("Model", "s",
+                                                                                               StringComparison.OrdinalIgnoreCase)
+                                                                                      .Replace("Recipe", "Recipes",
+                                                                                               StringComparison.OrdinalIgnoreCase)));
             }
         }
         #endregion

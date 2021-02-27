@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Media;
 using System.Windows.Forms;
@@ -107,8 +108,8 @@ namespace Scribe.Forms
         /// <remarks>This should only be called if the WorkingInventory has actually changed.</remarks>
         private void UpdateControls()
         {
-            DefaultCapacityTextBox.Text = InventoryConfiguration.DefaultCapacity.ToString();
-            CapacityTextBox.Text = WorkingInventory?.Capacity.ToString() ?? "";
+            DefaultCapacityTextBox.Text = InventoryConfiguration.DefaultCapacity.ToString(CultureInfo.InvariantCulture);
+            CapacityTextBox.Text = WorkingInventory?.Capacity.ToString(CultureInfo.InvariantCulture) ?? "";
             if (WorkingInventory?.Count > 0)
             {
                 SlotsListBox.SelectedItem = null;
@@ -213,7 +214,7 @@ namespace Scribe.Forms
                 if (WorkingInventory.Count + 1 > WorkingInventory.Capacity)
                 {
                     WorkingInventory.Capacity++;
-                    CapacityTextBox.Text = WorkingInventory.Capacity.ToString();
+                    CapacityTextBox.Text = WorkingInventory.Capacity.ToString(CultureInfo.InvariantCulture);
                 }
 
                 if (0 == WorkingInventory.Give(AddSlotDialogue.ReturnNewSlot))
