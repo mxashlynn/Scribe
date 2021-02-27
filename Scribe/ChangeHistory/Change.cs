@@ -6,7 +6,7 @@ namespace Scribe.ChangeHistory
     internal abstract class Change
     {
         /// <summary>A summary of the action.</summary>
-        internal string Description;
+        internal string Description { get; set; }
 
         /// <summary>
         /// Make the change.

@@ -9,13 +9,13 @@ namespace Scribe.ChangeHistory
     internal class ChangeList : Change
     {
         /// <summary>The value being added or removed.</summary>
-        protected object Value;
+        protected object Value { get; }
 
         /// <summary>What to do when making the change.</summary>
-        protected readonly Action<object> OnExecute;
+        protected Action<object> OnExecute { get; }
 
         /// <summary>What to do when reversing the change.</summary>
-        protected readonly Action<object> OnReverse;
+        protected Action<object> OnReverse { get; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ChangeList"/> class.

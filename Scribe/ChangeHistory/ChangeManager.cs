@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using Parquet;
 
 // TODO [UNDO] Move this namespace into its own project.
@@ -10,6 +11,8 @@ namespace Scribe.ChangeHistory
     internal static class ChangeManager
     {
         /// <summary>A history of actions taken.</summary>
+        [SuppressMessage("Design", "CA1002:Do not expose generic lists",
+            Justification = "Erroneous detection -- Changes is private.")]
         private static List<Change> Changes = new List<Change>();
 
         /// <summary>The index of the <see cref="Change"/> that will be Undone next.</summary>

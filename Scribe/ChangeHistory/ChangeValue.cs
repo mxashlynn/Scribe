@@ -9,20 +9,20 @@ namespace Scribe.ChangeHistory
     internal class ChangeValue : Change
     {
         /// <summary>State before change.</summary>
-        protected object OldState;
+        protected object OldState { get; }
 
         /// <summary>State after change.</summary>
-        protected object NewState;
+        protected object NewState { get; }
 
         /// <summary>The means to set the state in the backing store.</summary>
-        protected readonly Action<object> SetDatabaseValue;
+        protected Action<object> SetDatabaseValue { get; }
 
         /// <summary>The means to set the state in the UI.</summary>
-        protected readonly Action<object> SetDisplayValue;
+        protected Action<object> SetDisplayValue { get; }
 
         /// <summary>The means to set the state in an external request-tracker.</summary>
         /// <remarks>Calling code uses this to evaluate if a change is substantive or not.</remarks>
-        protected readonly Action<object> SetOldValue;
+        protected Action<object> SetOldValue { get; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ChangeValue"/> class.
