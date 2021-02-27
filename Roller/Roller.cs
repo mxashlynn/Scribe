@@ -41,13 +41,13 @@ namespace Roller
         internal static int Main(string[] args)
         {
             var optionText = args.Length > 0
-                ? args[0].ToLower(CultureInfo.InvariantCulture)
+                ? args[0].ToUpperInvariant()
                 : "";
             var property = args.Length > 1
-                ? args[1].ToLower(CultureInfo.InvariantCulture)
+                ? args[1].ToUpperInvariant()
                 : "";
             var category = args.Length > 2
-                ? args[2].ToLower(CultureInfo.InvariantCulture)
+                ? args[2].ToUpperInvariant()
                 : "";
 
             var command = ParseCommand(optionText);
@@ -79,32 +79,32 @@ namespace Roller
                 "-?" or
                 "/h" or
                 "-h" or
-                "--help" or
-                "help" => DisplayHelp,
+                "--HELP" or
+                "HELP" => DisplayHelp,
 
                 "-v" or
-                "--version" or
-                "version" => DisplayVersion,
+                "--VERSION" or
+                "VERSION" => DisplayVersion,
 
-                "-t" or
-                "--template" or
-                "--templates" or
-                "template" or
-                "templates" => CreateTemplates,
+                "-T" or
+                "--TEMPLATE" or
+                "--TEMPLATES" or
+                "TEMPLATE" or
+                "TEMPLATES" => CreateTemplates,
 
-                "-r" or
-                "--roll" or
-                "roll" => RollCSVs,
+                "-R" or
+                "--ROLL" or
+                "ROLL" => RollCSVs,
 
-                "-c" or
-                "--check" or
-                "check" => CheckAdjacency,
+                "-C" or
+                "--CHECK" or
+                "CHECK" => CheckAdjacency,
 
-                "-p" => ListPronouns,
+                "-P" => ListPronouns,
 
-                "-l" or
-                "--list" or
-                "list" => ListPropertyForCategory,
+                "-L" or
+                "--LIST" or
+                "LIST" => ListPropertyForCategory,
 
                 _ => DisplayDefault,
             };
@@ -118,23 +118,23 @@ namespace Roller
         {
             switch (inProperty)
             {
-                case "pronoun":
-                case "pronouns":
+                case "PRONOUN":
+                case "PRONOUNS":
                     return ListPronouns;
-                case "range":
-                case "ranges":
+                case "RANGE":
+                case "RANGES":
                     return ListRanges;
-                case "maxid":
-                case "maxids":
+                case "MAXID":
+                case "MAXIDS":
                     return ListMaxIDs;
-                case "tag":
-                case "tags":
+                case "TAG":
+                case "TAGS":
                     return ListTags;
-                case "name":
-                case "names":
+                case "NAME":
+                case "NAMES":
                     return ListNames;
-                case "collision":
-                case "collisions":
+                case "COLLISION":
+                case "COLLISIONS":
                     return ListCollisions;
                 default:
                     if (string.IsNullOrEmpty(inProperty))
@@ -161,7 +161,7 @@ namespace Roller
             // Default to everything.
             if (string.IsNullOrEmpty(inCategory))
             {
-                inCategory = "all";
+                inCategory = "ALL";
             }
 
             if (!All.LoadFromCSVs())
@@ -172,7 +172,7 @@ namespace Roller
             // Advertise plural categories but accept singular
             switch (inCategory)
             {
-                case "all":
+                case "ALL":
                     var entireRange = new List<Range<ModelID>>
                     {
                         All.CritterIDs,
@@ -201,70 +201,70 @@ namespace Roller
                                                                        .Concat(All.RoomRecipes)
                                                                        .Concat(All.Items));
                     break;
-                case "being":
-                case "beings":
+                case "BEING":
+                case "BEINGS":
                     workload = new ModelCollection<Model>(All.BeingIDs, All.Beings);
                     break;
-                case "critter":
-                case "critters":
+                case "CRITTER":
+                case "CRITTERS":
                     workload = new ModelCollection<Model>(All.CritterIDs, All.Critters);
                     break;
-                case "character":
-                case "characters":
+                case "CHARACTER":
+                case "CHARACTERS":
                     workload = new ModelCollection<Model>(All.CharacterIDs, All.Characters);
                     break;
-                case "biome":
-                case "biomes":
+                case "BIOME":
+                case "BIOMES":
                     workload = new ModelCollection<Model>(All.BiomeRecipeIDs, All.BiomeRecipes);
                     break;
-                case "craft":
-                case "crafts":
+                case "CRAFT":
+                case "CRAFTS":
                     workload = new ModelCollection<Model>(All.CraftingRecipeIDs, All.CraftingRecipes);
                     break;
-                case "interaction":
-                case "interactions":
+                case "INTERACTION":
+                case "INTERACTIONS":
                     workload = new ModelCollection<Model>(All.InteractionIDs, All.Interactions);
                     break;
-                case "item":
-                case "items":
+                case "ITEM":
+                case "ITEMS":
                     workload = new ModelCollection<Model>(All.ItemIDs, All.Items);
                     break;
-                case "p-item":
-                case "p-items":
+                case "P-ITEM":
+                case "P-ITEMS":
                     var pitems = All.Items.Where(model => model.ParquetID != ModelID.None);
                     workload = new ModelCollection<Model>(All.ItemIDs, pitems);
                     break;
-                case "n-item":
-                case "n-items":
+                case "N-ITEM":
+                case "N-ITEMS":
                     var nitems = All.Items.Where(model => model.ParquetID == ModelID.None);
                     workload = new ModelCollection<Model>(All.ItemIDs, nitems);
                     break;
-                case "region":
-                case "regions":
+                case "REGION":
+                case "REGIONS":
                     workload = new ModelCollection<Model>(All.RegionIDs, All.RegionModels);
                     break;
-                case "parquet":
-                case "parquets":
+                case "PARQUET":
+                case "PARQUETS":
                     workload = new ModelCollection<Model>(All.ParquetIDs, All.Parquets);
                     break;
-                case "floor":
-                case "floors":
+                case "FLOOR":
+                case "FLOORS":
                     workload = new ModelCollection<Model>(All.FloorIDs, All.Floors);
                     break;
-                case "block":
-                case "blocks":
+                case "BLOCK":
+                case "BLOCKS":
                     workload = new ModelCollection<Model>(All.BlockIDs, All.Blocks);
                     break;
-                case "furnishing":
-                case "furnishings":
+                case "FURNISHING":
+                case "FURNISHINGS":
                     workload = new ModelCollection<Model>(All.FurnishingIDs, All.Furnishings);
                     break;
-                case "collectible":
-                case "collectibles":
+                case "COLLECTIBLE":
+                case "COLLECTIBLES":
                     workload = new ModelCollection<Model>(All.CollectibleIDs, All.Collectibles);
                     break;
-                case "room":
-                case "rooms":
+                case "ROOM":
+                case "ROOMS":
                     workload = new ModelCollection<Model>(All.RoomRecipeIDs, All.RoomRecipes);
                     break;
                 default:
