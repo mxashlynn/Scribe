@@ -25,6 +25,11 @@ using Roller;
 using Scribe.ChangeHistory;
 using Scribe.Properties;
 
+// TODO 0) UPDATE PARQUET 0.4.1:
+//          0.1) All.RegionModels ==> All.Regions;
+//          0.2) Add Model convenience property CurrentFlavor;
+//          0.3) Add Model convenience property CurrentFunction;
+//          0.4) Move CheckExitConsistency from RegionStatus to RegionModel.
 // TODO 1) Fix remaining analyzer warnings.
 // TODO 2) [UI] [TAGS] Add missing UI to adjust tags for each type of model.
 // TODO 3) [UI] [TAGS] Add missing UI to adjust flavor tags for each type of model.

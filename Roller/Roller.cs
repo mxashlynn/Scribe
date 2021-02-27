@@ -438,7 +438,6 @@ namespace Roller
                                             $"{nameof(RegionModel)}s"));
             foreach (var model in orderedWorkload)
             {
-                // TODO [PARQUET] In the library, CheckExitConsistency should be part of RegionModel not RegionStatus.
                 var results = RegionStatus.CheckExitConsistency(model.ID);
                 foreach (var result in results)
                 {
