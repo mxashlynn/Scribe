@@ -24,9 +24,9 @@ using Roller;
 using Scribe.ChangeHistory;
 using Scribe.Properties;
 
-// TODO 1) [MAP] Update API to Parquet 0.4.
-// TODO 2.1) [GLOBALIZATION] Make sure we are using ToString in an Ordinal way.
-// TODO 2.2) [GLOBALIZATION] Make sure we are using String.Compare(OrdinalCaseInsensitive) wherever needed.
+// TODO 0) Work through analyzer warnings.
+// TODO 1) [GLOBALIZATION] Make sure we are using ToString in an Ordinal way.
+// TODO 2) [GLOBALIZATION] Make sure we are using String.Compare(OrdinalCaseInsensitive) wherever needed.
 // TODO 3) [UI] [TAGS] Add missing UI to adjust tags for each type of model.
 // TODO 4) [UI] [TAGS] Add missing UI to adjust flavor tags for each type of model.
 
@@ -1951,7 +1951,7 @@ namespace Scribe.Forms
                 MapExitDownComboBox.SelectedItem = null;
                 MapPixelBox.Image = Resources.Map;
             }
-            else if (MapListBox.SelectedItem is MapRegionModel model
+            else if (MapListBox.SelectedItem is RegionModel model
                     && model is not null)
             {
                 RoomIDStatic.Text = model.ID.ToString();
