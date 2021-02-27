@@ -180,8 +180,7 @@ namespace Roller
                         All.BiomeRecipeIDs,
                         All.CraftingRecipeIDs,
                         All.InteractionIDs,
-                        All.MapChunkIDs,
-                        All.MapRegionIDs,
+                        All.RegionIDs,
                         All.FloorIDs,
                         All.BlockIDs,
                         All.FurnishingIDs,
@@ -240,17 +239,9 @@ namespace Roller
                     var nitems = All.Items.Where(model => model.ParquetID == ModelID.None);
                     workload = new ModelCollection<Model>(All.ItemIDs, nitems);
                     break;
-                case "map":
-                case "maps":
-                    workload = new ModelCollection<Model>(All.MapIDs, All.Maps);
-                    break;
-                case "chunk":
-                case "chunks":
-                    workload = new ModelCollection<Model>(All.MapChunkIDs, All.Maps);
-                    break;
                 case "region":
                 case "regions":
-                    workload = new ModelCollection<Model>(All.MapRegionIDs, All.Maps);
+                    workload = new ModelCollection<Model>(All.RegionIDs, All.RegionModels);
                     break;
                 case "parquet":
                 case "parquets":
@@ -369,17 +360,9 @@ namespace Roller
             {
                 ModelCollection<InteractionModel>.Default.PutRecordsForType<InteractionModel>();
             }
-            if (!File.Exists(ModelCollection.GetFilePath<MapChunkModel>()))
+            if (!File.Exists(ModelCollection.GetFilePath<RegionModel>()))
             {
-                ModelCollection<MapModel>.Default.PutRecordsForType<MapChunkModel>();
-            }
-            if (!File.Exists(ModelCollection.GetFilePath<MapRegionSketch>()))
-            {
-                ModelCollection<MapModel>.Default.PutRecordsForType<MapRegionSketch>();
-            }
-            if (!File.Exists(ModelCollection.GetFilePath<MapRegionModel>()))
-            {
-                ModelCollection<MapModel>.Default.PutRecordsForType<MapRegionModel>();
+                ModelCollection<RegionModel>.Default.PutRecordsForType<RegionModel>();
             }
             if (!File.Exists(ModelCollection.GetFilePath<FloorModel>()))
             {
@@ -438,7 +421,7 @@ namespace Roller
         }
 
         /// <summary>
-        /// Check for inconsistent adjacency information in all defined <see cref="MapRegionModel"/>s and <see cref="MapRegionSketch"/>es.
+        /// Check for inconsistent adjacency information in all defined <see cref="RegionModel"/>s.
         /// </summary>
         /// <param name="inWorkload">Ignored.</param>
         /// <returns>A value indicating success or the nature of the failure.</returns>
@@ -450,26 +433,13 @@ namespace Roller
                 return ExitCode.ReadFault;
             }
 
-            var sketches = new ModelCollection<Model>(All.MapRegionIDs, All.Maps.Where(map => map is MapRegionSketch));
-            var orderedWorkload = sketches.OrderBy(x => x.ID);
+            var orderedWorkload = All.RegionModels.OrderBy(x => x.ID);
             Console.WriteLine(string.Format(CultureInfo.CurrentCulture, Resources.MessageChecking,
-                                            $"{nameof(MapRegionSketch)}es"));
+                                            $"{nameof(RegionModel)}s"));
             foreach (var model in orderedWorkload)
             {
-                var results = MapAnalysis.CheckExitConsistency<MapRegionSketch>(model.ID);
-                foreach (var result in results)
-                {
-                    Console.WriteLine(result);
-                }
-            }
-
-            var regions = new ModelCollection<Model>(All.MapRegionIDs, All.Maps.Where(map => map is MapRegionModel));
-            orderedWorkload = regions.OrderBy(x => x.ID);
-            Console.WriteLine(string.Format(CultureInfo.CurrentCulture, Resources.MessageChecking,
-                                            $"{nameof(MapRegionModel)}s"));
-            foreach (var model in orderedWorkload)
-            {
-                var results = MapAnalysis.CheckExitConsistency<MapRegionModel>(model.ID);
+                // TODO [PARQUET] In the library, CheckExitConsistency should be part of RegionModel not RegionStatus.
+                var results = RegionStatus.CheckExitConsistency(model.ID);
                 foreach (var result in results)
                 {
                     Console.WriteLine(result);
