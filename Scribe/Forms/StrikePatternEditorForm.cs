@@ -16,13 +16,13 @@ namespace Scribe.Forms
     {
         #region Form Details
         /// <summary>How many <see cref="GroupBox"/>es are arranged horizontally across the <see cref="Form"/>.</summary>
-        private int FormMaxRows = 0;
+        private int FormMaxRows;
 
         /// <summary>How many <see cref="GroupBox"/>es are arranged vertically down the <see cref="Form"/>.</summary>
-        private int FormMaxColumns = 0;
+        private int FormMaxColumns;
 
         /// <summary>When <c>true</c> it is not necessary to validate input.</summary>
-        private bool IsUpdating = false;
+        private bool IsUpdating;
         #endregion
 
         #region Cached Controls

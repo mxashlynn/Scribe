@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Windows.Forms;
 using Scribe.CustomControls;
@@ -120,6 +121,8 @@ namespace Scribe.Forms.Development
         /// Returns a boolean value according to .Net's default pseudo-random number generator.
         /// </summary>
         /// <returns><c>true</c> or <c>false</c></returns>
+        [SuppressMessage("Security", "CA5394:Do not use insecure randomness",
+            Justification = "This usage has nothing to do with security.")]
         private bool RandomBool()
             => PRNG.Next(2) > 0;
         #endregion

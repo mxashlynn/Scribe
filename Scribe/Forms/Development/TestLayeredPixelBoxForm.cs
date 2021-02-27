@@ -2,7 +2,7 @@ using System.Windows.Forms;
 
 namespace Scribe.Forms.Development
 {
-    partial class TestLayeredPixelBoxForm : Form
+    public partial class TestLayeredPixelBoxForm : Form
     {
         public TestLayeredPixelBoxForm()
         {
