@@ -1,5 +1,4 @@
 using System;
-using System.Diagnostics;
 using System.Windows.Forms;
 using Scribe.Forms;
 
@@ -12,29 +11,15 @@ namespace Scribe
     {
         #region Characteristics
         /// <summary>Used to handle switching between <see cref="SplashScreen"/> and <see cref="MainEditorForm"/>.</summary>
-        private static readonly ApplicationContext Context;
+        private static readonly ApplicationContext Context = new ApplicationContext();
 
         /// <summary><c>true</c> if Scribe was compiled with the DEBUG symbol defined; <c>false</c> otherwise.</summary>
-        public static readonly bool IsDebugMode;
-        #endregion
-
-        #region Initialization
-        /// <summary>
-        /// Initializes the program.
-        /// </summary>
-        static ScribeProgram()
-        {
-            Context = new ApplicationContext();
-            GetDebugMode(ref IsDebugMode);
-        }
-
-        /// <summary>
-        /// This routine only runs if the program was compiled in debug mode.
-        /// </summary>
-        /// <param name="refIsDebugMode">Set to <c>true</c>.</param>
-        [Conditional("DEBUG")]
-        private static void GetDebugMode(ref bool refIsDebugMode)
-            => refIsDebugMode = true;
+        internal static bool IsDebugMode
+#if DEBUG
+            => true;
+#else
+            => false;
+#endif
         #endregion
 
         /// <summary>
