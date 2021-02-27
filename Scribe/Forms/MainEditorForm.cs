@@ -1411,13 +1411,13 @@ namespace Scribe.Forms
                     RoomMaxWalkableSpacesTextBox.Text = RoomConfiguration.MaxWalkableSpaces.ToString();
                     break;
                 case MapsTabIndex:
-                    RepopulateListBox(MapListBox, All.Maps);
-                    RepopulateComboBox(MapExitNorthComboBox, All.Maps);
-                    RepopulateComboBox(MapExitSouthComboBox, All.Maps);
-                    RepopulateComboBox(MapExitEastComboBox, All.Maps);
-                    RepopulateComboBox(MapExitWestComboBox, All.Maps);
-                    RepopulateComboBox(MapExitUpComboBox, All.Maps);
-                    RepopulateComboBox(MapExitDownComboBox, All.Maps);
+                    RepopulateListBox(MapListBox, All.RegionModels);
+                    RepopulateComboBox(MapExitNorthComboBox, All.RegionModels);
+                    RepopulateComboBox(MapExitSouthComboBox, All.RegionModels);
+                    RepopulateComboBox(MapExitEastComboBox, All.RegionModels);
+                    RepopulateComboBox(MapExitWestComboBox, All.RegionModels);
+                    RepopulateComboBox(MapExitUpComboBox, All.RegionModels);
+                    RepopulateComboBox(MapExitDownComboBox, All.RegionModels);
                     break;
                 case ScriptsTabIndex:
                     // TODO [SCRIPTS] [UI] Add scripts tab to RepopulateVisibleControls
