@@ -5,7 +5,6 @@ using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using Parquet.Crafts;
-using Parquet.EditorSupport;
 using Scribe.Properties;
 
 namespace Scribe.Forms

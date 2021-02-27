@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace Scribe.CustomControls

@@ -6,7 +6,6 @@ using System.Media;
 using System.Windows.Forms;
 using Parquet;
 using Parquet.Beings;
-using Parquet.EditorSupport;
 using Parquet.Items;
 using Scribe.Properties;
 
