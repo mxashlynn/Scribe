@@ -25,14 +25,13 @@ using Roller;
 using Scribe.ChangeHistory;
 using Scribe.Properties;
 
-// TODO-1) Add FurnishingStatus to Parquet, to manage Open/Closed
-//              ==> Furnishnig may also need two graphics, like Floor, to reflect open/closed state
-// TODO 0) For Flavor and Function tags, use Model.AttributeTag(inPrefix)
+// TODO 0) For Flavor and Function tags, use Model.AttributeTag(inPrefix).
 // TODO 1) Fix remaining analyzer warnings.
 // TODO 2) [UI] [TAGS] Add missing UI to adjust tags for each type of model.
 // TODO 3) [UI] [TAGS] Add missing UI to adjust flavor tags for each type of model.
 // TODO 4) Fix remaining issues with Map/Region (search for map and replace it as needed).
-// TODO 5) Finish implementing the maps tab.
+// TODO 5) Change Furnishing tab to support IsOpenable and support two graphics, like Floor.
+// TODO 6) Finish implementing the maps tab.
 
 
 namespace Scribe.Forms

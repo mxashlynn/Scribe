@@ -241,7 +241,7 @@ namespace Roller
                     break;
                 case "REGION":
                 case "REGIONS":
-                    workload = new ModelCollection<Model>(All.RegionIDs, All.RegionModels);
+                    workload = new ModelCollection<Model>(All.RegionIDs, All.Regions);
                     break;
                 case "PARQUET":
                 case "PARQUETS":
@@ -433,12 +433,12 @@ namespace Roller
                 return ExitCode.ReadFault;
             }
 
-            var orderedWorkload = All.RegionModels.OrderBy(x => x.ID);
+            var orderedWorkload = All.Regions.OrderBy(x => x.ID);
             Console.WriteLine(string.Format(CultureInfo.InvariantCulture, Resources.MessageChecking,
                                             $"{nameof(RegionModel)}s"));
             foreach (var model in orderedWorkload)
             {
-                var results = RegionStatus.CheckExitConsistency(model.ID);
+                var results = RegionModel.CheckExitConsistency(model.ID);
                 foreach (var result in results)
                 {
                     Console.WriteLine(result);
