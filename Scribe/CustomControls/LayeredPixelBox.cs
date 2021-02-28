@@ -25,11 +25,15 @@ namespace Scribe.CustomControls
         #endregion
 
         #region Characteristics
+        /// <summary>Image layers backing array.</summary>
+        private readonly Image[] ImageArray = new Image[LayerCount];
+
         /// <summary>
         /// All <see cref="Image"/>s in this <see cref="LayeredPixelBox"/>, in order.
         /// Index 0 is the furthest back; index <see cref="LayerCount"/> - 1 is the foremost.
         /// </summary>
-        public Image[] ImageLayers = new Image[LayerCount];
+        public ref Image this[int i]
+            => ref ImageArray[i];
         #endregion
 
         #region Initialization
@@ -70,9 +74,9 @@ namespace Scribe.CustomControls
             // Paint the images, scaled, using the painter's algorithm.
             for (var layerIndex = 0; layerIndex < LayerCount; layerIndex++)
             {
-                if (ImageLayers[layerIndex] is not null)
+                if (ImageArray[layerIndex] is not null)
                 {
-                    inPaintArguments.Graphics.DrawImage(ImageLayers[layerIndex], 0, 0,
+                    inPaintArguments.Graphics.DrawImage(ImageArray[layerIndex], 0, 0,
                                                       TargetDimensionInPixels, TargetDimensionInPixels);
                 }
             }

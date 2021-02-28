@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using Parquet;
+using Parquet.Parquets;
+using Parquet.Regions;
 
 namespace Scribe.CustomControls
 {
@@ -48,10 +50,11 @@ namespace Scribe.CustomControls
         public IMapController Controller { get; set; }
 
         /// <summary>All graphics needed to render this <see cref="MapPictureGrid"/>.</summary>
-        public Dictionary<int, Bitmap> ImageByID { get; } = new Dictionary<int, Bitmap>();
+        public Dictionary<ModelID, Bitmap> ImageByID { get; } = new Dictionary<ModelID, Bitmap>();
 
         /// <summary>Each cell corresponds to a set of IDs representing each pack on the map.</summary>
-        public int[,,] IDMap = new int[MapHeightInParquets, MapWidthInParquets, ParquetLayerCount];
+        public ParquetModelPackGrid PackMap { get; set; } = new ParquetModelPackGrid(RegionStatus.ParquetsPerRegionDimension,
+                                                                                     RegionStatus.ParquetsPerRegionDimension);
 
         /// <summary>When <c>true</c>, no repainting is needed.</summary>
         private bool IsRendering;
@@ -136,14 +139,17 @@ namespace Scribe.CustomControls
             var TargetLocation = new Point(inX * TargetParquetDimensionInPixels,
                                            inY * TargetParquetDimensionInPixels);
 
-            for (var layerIndex = 0; layerIndex < ParquetLayerCount; layerIndex++)
-            {
-                var TargetID = IDMap[inY, inX, layerIndex];
+            PaintTarget(inPaintArguments, TargetLocation, PackMap[inY, inX].FloorID);
+            PaintTarget(inPaintArguments, TargetLocation, PackMap[inY, inX].BlockID);
+            PaintTarget(inPaintArguments, TargetLocation, PackMap[inY, inX].FurnishingID);
+            PaintTarget(inPaintArguments, TargetLocation, PackMap[inY, inX].CollectibleID);
 
-                if (0 != TargetID
-                    && ImageByID.ContainsKey(TargetID))
+            void PaintTarget(PaintEventArgs inPaintArguments, Point TargetLocation, ModelID targetID)
+            {
+                if (targetID != ModelID.None
+                    && ImageByID.ContainsKey(targetID))
                 {
-                    inPaintArguments.Graphics.DrawImage(ImageByID[TargetID], TargetLocation.X, TargetLocation.Y,
+                    inPaintArguments.Graphics.DrawImage(ImageByID[targetID], TargetLocation.X, TargetLocation.Y,
                                                         TargetParquetDimensionInPixels, TargetParquetDimensionInPixels);
                 }
             }

@@ -70,20 +70,20 @@ namespace Scribe.Forms.Development
             {
                 for (var y = 0; y < MapPictureGrid.MapHeightInParquets; y++)
                 {
-                    MapGrid.IDMap[y, x, 0] = RandomBool() ? 0 : 1;
-                    MapGrid.IDMap[y, x, 1] = RandomBool() ? 0 : 2;
-                    MapGrid.IDMap[y, x, 2] = RandomBool() ? 0 : 3;
-                    MapGrid.IDMap[y, x, 3] = RandomBool() ? 0 : 4;
+                    MapGrid.PackMap[y, x].FloorID = RandomBool() ? 0 : 1;
+                    MapGrid.PackMap[y, x].BlockID = RandomBool() ? 0 : 2;
+                    MapGrid.PackMap[y, x].FurnishingID = RandomBool() ? 0 : 3;
+                    MapGrid.PackMap[y, x].CollectibleID = RandomBool() ? 0 : 4;
                 }
             }
-            MapGrid.IDMap[0, 0, 0] = 1;
-            MapGrid.IDMap[0, 0, 1] = 2;
-            MapGrid.IDMap[0, 0, 2] = 3;
-            MapGrid.IDMap[0, 0, 3] = 4;
-            MapGrid.IDMap[0, 1, 0] = 0;
-            MapGrid.IDMap[0, 1, 1] = 0;
-            MapGrid.IDMap[0, 1, 2] = 0;
-            MapGrid.IDMap[0, 1, 3] = 0;
+            MapGrid.PackMap[0, 0].FloorID = 1;
+            MapGrid.PackMap[0, 0].BlockID = 2;
+            MapGrid.PackMap[0, 0].FurnishingID = 3;
+            MapGrid.PackMap[0, 0].CollectibleID = 4;
+            MapGrid.PackMap[0, 1].FloorID = 0;
+            MapGrid.PackMap[0, 1].BlockID = 0;
+            MapGrid.PackMap[0, 1].FurnishingID = 0;
+            MapGrid.PackMap[0, 1].CollectibleID = 0;
 
             RefreshMapTimer.Start();
         }
