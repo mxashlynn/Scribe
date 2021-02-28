@@ -796,6 +796,24 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to flavor:.
+        /// </summary>
+        internal static string TagPrefixFlavor {
+            get {
+                return ResourceManager.GetString("TagPrefixFlavor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to function:.
+        /// </summary>
+        internal static string TagPrefixFunction {
+            get {
+                return ResourceManager.GetString("TagPrefixFunction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Tags {

@@ -25,7 +25,6 @@ using Roller;
 using Scribe.ChangeHistory;
 using Scribe.Properties;
 
-// TODO 0) For Flavor and Function tags, use Model.AttributeTag(inPrefix).
 // TODO 1) Fix remaining analyzer warnings.
 // TODO 2) [UI] [TAGS] Add missing UI to adjust tags for each type of model.
 // TODO 3) [UI] [TAGS] Add missing UI to adjust flavor tags for each type of model.
@@ -2314,7 +2313,7 @@ namespace Scribe.Forms
             if (flavorStatic is not null
                 && FlavorDialogue.ShowDialog() == DialogResult.OK)
             {
-                model.Tags.Remove(model.CurrentFlavor);
+                model.Tags.Remove(((Model)model).AttributeTag(Resources.TagPrefixFlavor));
                 model.Tags.Add(FlavorDialogue.ReturnNewFlavor);
                 flavorStatic.Text = FlavorsDialogue.ReturnUpdatedFlavor;
                 flavorStatic.BackColor = GetColorForFlavorName(FlavorsDialogue.ReturnUpdatedFlavor);
@@ -2371,7 +2370,7 @@ namespace Scribe.Forms
             if (flavorStatic is not null
                 && FunctionDialogue.ShowDialog() == DialogResult.OK)
             {
-                model.Tags.Remove(model.CurrentFunction);
+                model.Tags.Remove(((Model)model).AttributeTag(Resources.TagPrefixFunction));
                 model.Tags.Add(FunctionDialogue.ReturnNewFunction);
                 flavorStatic.Text = FunctionDialogue.ReturnNewFunction;
                 HasUnsavedChanges = true;
