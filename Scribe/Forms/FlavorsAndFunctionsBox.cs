@@ -7,7 +7,7 @@ namespace Scribe.Forms
         public FlavorsAndFunctions()
         {
             InitializeComponent();
-            Text = $"TODO: Functions and flavors!";
+            // TODO: [TAGS] Functions and flavors!
         }
     }
 }

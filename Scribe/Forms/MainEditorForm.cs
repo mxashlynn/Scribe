@@ -25,12 +25,11 @@ using Roller;
 using Scribe.ChangeHistory;
 using Scribe.Properties;
 
-// TODO 1) Fix remaining analyzer warnings.
-// TODO 2) [UI] [TAGS] Add missing UI to adjust tags for each type of model.
-// TODO 3) [UI] [TAGS] Add missing UI to adjust flavor tags for each type of model.
-// TODO 4) Fix remaining issues with Map/Region (search for map and replace it as needed).
-// TODO 5) Change Furnishing tab to support IsOpenable and support two graphics, like Floor.
-// TODO 6) Finish implementing the maps tab.
+// TODO 1) [UI] [TAGS] Add missing UI to adjust tags for each type of model.
+// TODO 2) [UI] [TAGS] Add missing UI to adjust flavor tags for each type of model.
+// TODO 3) Fix remaining issues with Map/Region (search for map and replace it as needed).
+// TODO 4) Change Furnishing tab to support IsOpenable and support two graphics, like Floor.
+// TODO 5) Finish implementing the maps tab.
 
 
 namespace Scribe.Forms
@@ -1717,8 +1716,7 @@ namespace Scribe.Forms
                 CharacterStoryIDTextBox.Text = "";
                 CharacterStartingQuestsListBox.Items.Clear();
                 CharacterStartingDialogueComboBox.SelectedItem = null;
-                // TODO [UI] Localize this string.
-                CharacterStartingInventoryStatic.Text = $"0 Items";
+                CharacterStartingInventoryStatic.Text = $"{0} Items";
                 CharacterPixelBox.Image = Resources.ImageNotFound;
             }
             else if (CharacterListBox.SelectedItem is CharacterModel model)
@@ -1916,8 +1914,7 @@ namespace Scribe.Forms
                 CraftingCommentTextBox.Text = "";
                 CraftingProductsListBox.Items.Clear();
                 CraftingIngredientsListBox.Items.Clear();
-                // TODO [UI] Localize this string.
-                CraftingPanelsCountStatic.Text = $"0 Panels";
+                CraftingPanelsCountStatic.Text = $"{0} Panels";
                 CraftingPixelBox.Image = Resources.ImageNotFound;
             }
             else if (CraftingListBox.SelectedItem is CraftingRecipe recipe)
