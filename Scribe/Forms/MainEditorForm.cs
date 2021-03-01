@@ -26,7 +26,6 @@ using Scribe.ChangeHistory;
 using Scribe.Properties;
 
 // TODO 1) [UI] [TAGS] Add missing UI to adjust tags for each type of model.
-// TODO 2) [UI] [TAGS] Add missing UI to adjust flavor tags for each type of model.
 // TODO 3) Fix remaining issues with Map/Region (search for map and replace it as needed).
 // TODO 4) Change Furnishing tab to support IsOpenable and support two graphics, like Floor.
 // TODO 5) Finish implementing the maps tab.
@@ -2297,8 +2296,6 @@ namespace Scribe.Forms
         /// </summary>
         /// <param name="inSender">Originator of the event.</param>
         /// <param name="inArguments">Additional event data.</param>
-        [SuppressMessage("Globalization", "CA1308:Normalize strings to uppercase",
-            Justification = "The string so lowered is generated and consumed only by the API; it is not user-facing.")]
         private void EditFlavorButton_Click(object inSender, EventArgs inArguments)
         {
             if (!All.CollectionsHaveBeenInitialized
@@ -2310,28 +2307,25 @@ namespace Scribe.Forms
 
             // TODO [UNDO] Currently this is not hooked into the undo system.
             // Tag changes must be treated atomically instead of as a giant glob.
-
             var flavorStatic = GetFlavorStaticForTab(EditorTabs.SelectedIndex);
             if (flavorStatic is not null
                 && FlavorDialogue.ShowDialog() == DialogResult.OK)
             {
                 ModelTag oldFlavorEncoding = ((Model)model).AttributeTag(Resources.TagPrefixFlavor);
                 string chosenFlavorName = FlavorDialogue.ReturnNewFlavor;
-                ModelTag chosenFlavorEncoding = FlavorDialogue.NoFlavorChosen
-                    ? ModelTag.None
-                    : $"{Resources.TagPrefixFlavor}{chosenFlavorName.ToLowerInvariant()}";
 
-
+                flavorStatic.Text = chosenFlavorName;
+                flavorStatic.BackColor = GetColorForFlavorName(chosenFlavorName);
                 if (oldFlavorEncoding != ModelTag.None)
                 {
                     model.Tags.Remove(oldFlavorEncoding);
                 }
-                if (chosenFlavorEncoding != ModelTag.None)
+                if (!FlavorDialogue.NoFlavorChosen)
                 {
+                    ModelTag chosenFlavorEncoding = $"{Resources.TagPrefixFlavor}{chosenFlavorName.ToUpperInvariant()}";
                     model.Tags.Add(chosenFlavorEncoding);
                 }
-                flavorStatic.Text = chosenFlavorName;
-                flavorStatic.BackColor = GetColorForFlavorName(chosenFlavorName);
+
                 HasUnsavedChanges = true;
             }
 
