@@ -106,6 +106,7 @@ namespace Scribe.Forms
             this.FlavorBlandSelector.Tag = "Unthemed Control";
             this.FlavorBlandSelector.Text = "Bland";
             this.FlavorBlandSelector.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.FlavorBlandSelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorSweetSelector
             // 
@@ -123,6 +124,7 @@ namespace Scribe.Forms
             this.FlavorSweetSelector.Tag = "Unthemed Control";
             this.FlavorSweetSelector.Text = "Sweet";
             this.FlavorSweetSelector.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.FlavorSweetSelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorSaltySelector
             // 
@@ -140,6 +142,7 @@ namespace Scribe.Forms
             this.FlavorSaltySelector.Tag = "Unthemed Control";
             this.FlavorSaltySelector.Text = "Salty";
             this.FlavorSaltySelector.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.FlavorSaltySelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorSavorySelector
             // 
@@ -157,6 +160,7 @@ namespace Scribe.Forms
             this.FlavorSavorySelector.Tag = "Unthemed Control";
             this.FlavorSavorySelector.Text = "Savory";
             this.FlavorSavorySelector.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.FlavorSavorySelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorAstringentSelector
             // 
@@ -174,6 +178,7 @@ namespace Scribe.Forms
             this.FlavorAstringentSelector.Tag = "Unthemed Control";
             this.FlavorAstringentSelector.Text = "Astringent";
             this.FlavorAstringentSelector.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.FlavorAstringentSelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorNumbingSelector
             // 
@@ -191,6 +196,7 @@ namespace Scribe.Forms
             this.FlavorNumbingSelector.Tag = "Unthemed Control";
             this.FlavorNumbingSelector.Text = "Numbing";
             this.FlavorNumbingSelector.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.FlavorNumbingSelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorBitterSelector
             // 
@@ -208,6 +214,7 @@ namespace Scribe.Forms
             this.FlavorBitterSelector.Tag = "Unthemed Control";
             this.FlavorBitterSelector.Text = "Bitter";
             this.FlavorBitterSelector.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.FlavorBitterSelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorSourSelector
             // 
@@ -225,6 +232,7 @@ namespace Scribe.Forms
             this.FlavorSourSelector.Tag = "Unthemed Control";
             this.FlavorSourSelector.Text = "Sour";
             this.FlavorSourSelector.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.FlavorSourSelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorFreshSelector
             // 
@@ -242,6 +250,7 @@ namespace Scribe.Forms
             this.FlavorFreshSelector.Tag = "Unthemed Control";
             this.FlavorFreshSelector.Text = "Fresh";
             this.FlavorFreshSelector.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.FlavorFreshSelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorPungentSelector
             // 
@@ -259,6 +268,7 @@ namespace Scribe.Forms
             this.FlavorPungentSelector.Tag = "Unthemed Control";
             this.FlavorPungentSelector.Text = "Pungent";
             this.FlavorPungentSelector.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.FlavorPungentSelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorMetallicSelector
             // 
@@ -276,6 +286,7 @@ namespace Scribe.Forms
             this.FlavorMetallicSelector.Tag = "Unthemed Control";
             this.FlavorMetallicSelector.Text = "Metallic";
             this.FlavorMetallicSelector.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.FlavorMetallicSelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorChemicalSelector
             // 
@@ -293,6 +304,7 @@ namespace Scribe.Forms
             this.FlavorChemicalSelector.Tag = "Unthemed Control";
             this.FlavorChemicalSelector.Text = "Chemical";
             this.FlavorChemicalSelector.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.FlavorChemicalSelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorNoFlavorsSelector
             // 
@@ -310,6 +322,7 @@ namespace Scribe.Forms
             this.FlavorNoFlavorsSelector.Tag = "Unthemed Control";
             this.FlavorNoFlavorsSelector.Text = "(None)";
             this.FlavorNoFlavorsSelector.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.FlavorNoFlavorsSelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorCancelButton
             // 
@@ -323,8 +336,9 @@ namespace Scribe.Forms
             this.FlavorCancelButton.TabIndex = 1;
             this.FlavorCancelButton.Text = "Cancel";
             this.FlavorCancelButton.UseVisualStyleBackColor = true;
+            this.FlavorCancelButton.Click += new System.EventHandler(this.FlavorCancelButton_Click);
             // 
-            // SelectFlavor
+            // SelectFlavorBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -338,12 +352,13 @@ namespace Scribe.Forms
             this.MaximumSize = new System.Drawing.Size(508, 116);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(508, 116);
-            this.Name = "SelectFlavor";
+            this.Name = "SelectFlavorBox";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Select Flavor";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.SelectFlavorBox_Load);
             this.FlavorFilterGroupBox.ResumeLayout(false);
             this.FlavorsTableLayoutPanel.ResumeLayout(false);
             this.FlavorsTableLayoutPanel.PerformLayout();

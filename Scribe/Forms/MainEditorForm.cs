@@ -2297,6 +2297,8 @@ namespace Scribe.Forms
         /// </summary>
         /// <param name="inSender">Originator of the event.</param>
         /// <param name="inArguments">Additional event data.</param>
+        [SuppressMessage("Globalization", "CA1308:Normalize strings to uppercase",
+            Justification = "The string so lowered is generated and consumed only by the API; it is not user-facing.")]
         private void EditFlavorButton_Click(object inSender, EventArgs inArguments)
         {
             if (!All.CollectionsHaveBeenInitialized
@@ -2306,17 +2308,30 @@ namespace Scribe.Forms
                 return;
             }
 
-            // TODO Currently this is not hooked into the undo system.
+            // TODO [UNDO] Currently this is not hooked into the undo system.
             // Tag changes must be treated atomically instead of as a giant glob.
 
             var flavorStatic = GetFlavorStaticForTab(EditorTabs.SelectedIndex);
             if (flavorStatic is not null
                 && FlavorDialogue.ShowDialog() == DialogResult.OK)
             {
-                model.Tags.Remove(((Model)model).AttributeTag(Resources.TagPrefixFlavor));
-                model.Tags.Add(FlavorDialogue.ReturnNewFlavor);
-                flavorStatic.Text = FlavorsDialogue.ReturnUpdatedFlavor;
-                flavorStatic.BackColor = GetColorForFlavorName(FlavorsDialogue.ReturnUpdatedFlavor);
+                ModelTag oldFlavorEncoding = ((Model)model).AttributeTag(Resources.TagPrefixFlavor);
+                string chosenFlavorName = FlavorDialogue.ReturnNewFlavor;
+                ModelTag chosenFlavorEncoding = FlavorDialogue.NoFlavorChosen
+                    ? ModelTag.None
+                    : $"{Resources.TagPrefixFlavor}{chosenFlavorName.ToLowerInvariant()}";
+
+
+                if (oldFlavorEncoding != ModelTag.None)
+                {
+                    model.Tags.Remove(oldFlavorEncoding);
+                }
+                if (chosenFlavorEncoding != ModelTag.None)
+                {
+                    model.Tags.Add(chosenFlavorEncoding);
+                }
+                flavorStatic.Text = chosenFlavorName;
+                flavorStatic.BackColor = GetColorForFlavorName(chosenFlavorName);
                 HasUnsavedChanges = true;
             }
 
@@ -2336,20 +2351,20 @@ namespace Scribe.Forms
 
             // Given the name of a flavor, return the color used to represent it.
             Color GetColorForFlavorName(string inFlavorName)
-                => inFlavorName switch
+                => inFlavorName.ToUpperInvariant() switch
                 {
-                    "bland" => FlavorBlandSelector.BackColor,
-                    "sweet" => FlavorSweetSelector.BackColor,
-                    "salty" => FlavorSaltySelector.BackColor,
-                    "savory" => FlavorSavorySelector.BackColor,
-                    "astringent" => FlavorAstringentSelector.BackColor,
-                    "numbing" => FlavorNumbingSelector.BackColor,
-                    "bitter" => FlavorBitterSelector.BackColor,
-                    "sour" => FlavorSourSelector.BackColor,
-                    "fresh" => FlavorFreshSelector.BackColor,
-                    "pungent" => FlavorPungentSelector.BackColor,
-                    "metallic" => FlavorMetallicSelector.BackColor,
-                    "chemical" => FlavorChemicalSelector.BackColor,
+                    "BLAND" => FlavorBlandSelector.BackColor,
+                    "SWEET" => FlavorSweetSelector.BackColor,
+                    "SALTY" => FlavorSaltySelector.BackColor,
+                    "SAVORY" => FlavorSavorySelector.BackColor,
+                    "ASTRINGENT" => FlavorAstringentSelector.BackColor,
+                    "NUMBING" => FlavorNumbingSelector.BackColor,
+                    "BITTER" => FlavorBitterSelector.BackColor,
+                    "SOUR" => FlavorSourSelector.BackColor,
+                    "FRESH" => FlavorFreshSelector.BackColor,
+                    "PUNGENT" => FlavorPungentSelector.BackColor,
+                    "METALLIC" => FlavorMetallicSelector.BackColor,
+                    "CHEMICAL" => FlavorChemicalSelector.BackColor,
                     _ => FlavorNoFlavorsSelector.BackColor,
                 };
         }
