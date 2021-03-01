@@ -2374,14 +2374,24 @@ namespace Scribe.Forms
 
             // TODO Currently this is not hooked into the undo system.
             // Tag changes must be treated atomically instead of as a giant glob.
-
-            var flavorStatic = GetFunctionStaticForTab(EditorTabs.SelectedIndex);
-            if (flavorStatic is not null
+            var functionStatic = GetFunctionStaticForTab(EditorTabs.SelectedIndex);
+            if (functionStatic is not null
                 && FunctionDialogue.ShowDialog() == DialogResult.OK)
             {
-                model.Tags.Remove(((Model)model).AttributeTag(Resources.TagPrefixFunction));
-                model.Tags.Add(FunctionDialogue.ReturnNewFunction);
-                flavorStatic.Text = FunctionDialogue.ReturnNewFunction;
+                string chosenFunctionName = FunctionDialogue.ReturnNewFunction;
+                functionStatic.Text = chosenFunctionName;
+
+                ModelTag oldFunctionEncoding = ((Model)model).AttributeTag(Resources.TagPrefixFunction);
+                if (oldFunctionEncoding != ModelTag.None)
+                {
+                    model.Tags.Remove(oldFunctionEncoding);
+                }
+                if (FunctionDialogue.SpecificFunctionChosen)
+                {
+                    ModelTag chosenFunctionEncoding = $"{Resources.TagPrefixFunction}{chosenFunctionName.ToUpperInvariant()}";
+                    model.Tags.Add(chosenFunctionEncoding);
+                }
+
                 HasUnsavedChanges = true;
             }
 
