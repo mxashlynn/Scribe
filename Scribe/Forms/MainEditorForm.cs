@@ -25,7 +25,6 @@ using Roller;
 using Scribe.ChangeHistory;
 using Scribe.Properties;
 
-// TODO 1) [UI] [TAGS] Add missing UI to adjust tags for each type of model.
 // TODO 3) Fix remaining issues with Map/Region (search for map and replace it as needed).
 // TODO 4) Change Furnishing tab to support IsOpenable and support two graphics, like Floor.
 // TODO 5) Finish implementing the maps tab.
@@ -142,6 +141,9 @@ namespace Scribe.Forms
 
         /// <summary>Dialogue for selecting a flavor tag.</summary>
         private readonly SelectFlavorBox FlavorDialogue = new SelectFlavorBox();
+
+        /// <summary>Dialogue for selecting a function tag.</summary>
+        private readonly SelectFunctionBox FunctionDialogue = new SelectFunctionBox();
 
         /// <summary>Window for editing an <see cref="Inventory"/>.</summary>
         private readonly InventoryEditorForm InventoryEditorWindow = new InventoryEditorForm();
