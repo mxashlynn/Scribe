@@ -2,9 +2,9 @@ using System.Windows.Forms;
 
 namespace Scribe.Forms
 {
-    partial class SelectFlavor : Form
+    partial class SelectFlavorBox : Form
     {
-        public SelectFlavor()
+        public SelectFlavorBox()
         {
             InitializeComponent();
             // TODO: [TAGS] Functions and flavors!
