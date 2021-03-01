@@ -141,6 +141,9 @@ namespace Scribe.Forms
         /// <summary>Dialogue for adding a <see cref="ModelTag"/> to a collection.</summary>
         private readonly AddTagBox AddTagDialogue = new AddTagBox();
 
+        /// <summary>Dialogue for selecting a flavor tag.</summary>
+        private readonly SelectFlavorBox FlavorDialogue = new SelectFlavorBox();
+
         /// <summary>Window for editing an <see cref="Inventory"/>.</summary>
         private readonly InventoryEditorForm InventoryEditorWindow = new InventoryEditorForm();
 
