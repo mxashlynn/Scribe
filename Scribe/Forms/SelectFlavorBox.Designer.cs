@@ -1,7 +1,7 @@
 
 namespace Scribe.Forms
 {
-    partial class FlavorsAndFunctions
+    partial class SelectFlavor
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace Scribe.Forms
         {
             this.SuspendLayout();
             // 
-            // TagsAndFlavorsBox
+            // SelectFlavor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -39,12 +39,12 @@ namespace Scribe.Forms
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "TagsAndFlavorsBox";
-            this.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.Name = "SelectFlavor";
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "TagsAndFlavorsBox";
+            this.Text = "Select Flavor";
             this.ResumeLayout(false);
 
         }
