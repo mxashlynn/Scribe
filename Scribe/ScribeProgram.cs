@@ -31,7 +31,7 @@ namespace Scribe
             _ = Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Context.MainForm = new SplashScreen();
+            Context.MainForm = new SelectFlavorBox(); // new SplashScreen();
             Application.Run(Context);
         }
 
