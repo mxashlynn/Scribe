@@ -3092,12 +3092,12 @@ namespace Scribe.Forms
 
         #endregion
 
-            #region Rooms Tab
-            /// <summary>
-            /// Responds to the user clicking "Add New Room" on the Rooms tab.
-            /// </summary>
-            /// <param name="sender">Ignored.</param>
-            /// <param name="eventArguments">Ignored.</param>
+        #region Rooms Tab
+        /// <summary>
+        /// Responds to the user clicking "Add New Room" on the Rooms tab.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="eventArguments">Ignored.</param>
         private void RoomAddNewRoomButton_Click(object sender, EventArgs eventArguments)
             => AddNewModel(All.RoomRecipes, (ModelID id) => new RoomRecipe(id, "New Room Recipe", "", ""), All.RoomRecipeIDs, RoomListBox, "Room Recipe");
 
