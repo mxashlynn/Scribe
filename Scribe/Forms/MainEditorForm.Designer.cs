@@ -5115,7 +5115,7 @@ namespace Scribe.Forms
             // 
             this.ItemPictureEditButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ItemPictureEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ItemPictureEditButton.Location = new System.Drawing.Point(816, 468);
+            this.ItemPictureEditButton.Location = new System.Drawing.Point(815, 468);
             this.ItemPictureEditButton.Name = "ItemPictureEditButton";
             this.ItemPictureEditButton.Size = new System.Drawing.Size(128, 23);
             this.ItemPictureEditButton.TabIndex = 7;
@@ -5873,7 +5873,7 @@ namespace Scribe.Forms
             // 
             this.CraftingPictureEditButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.CraftingPictureEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CraftingPictureEditButton.Location = new System.Drawing.Point(816, 465);
+            this.CraftingPictureEditButton.Location = new System.Drawing.Point(815, 468);
             this.CraftingPictureEditButton.Name = "CraftingPictureEditButton";
             this.CraftingPictureEditButton.Size = new System.Drawing.Size(128, 23);
             this.CraftingPictureEditButton.TabIndex = 7;
