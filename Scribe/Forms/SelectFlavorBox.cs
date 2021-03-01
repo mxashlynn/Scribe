@@ -1,8 +1,6 @@
 using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Windows.Forms;
 using Parquet;
-using Scribe.Properties;
 
 namespace Scribe.Forms
 {
@@ -72,7 +70,7 @@ namespace Scribe.Forms
         /// <param name="eventArguments">Additional event data.</param>
         private void FlavorCancelButton_Click(object sender, EventArgs eventArguments)
         {
-            ReturnNewFlavor = Resources.TagPrefixFlavor;
+            ReturnNewFlavor = "";
             SpecificFlavorChosen = false;
             DialogResult = DialogResult.Cancel;
             Close();
