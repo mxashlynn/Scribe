@@ -2311,16 +2311,16 @@ namespace Scribe.Forms
             if (flavorStatic is not null
                 && FlavorDialogue.ShowDialog() == DialogResult.OK)
             {
-                ModelTag oldFlavorEncoding = ((Model)model).AttributeTag(Resources.TagPrefixFlavor);
                 string chosenFlavorName = FlavorDialogue.ReturnNewFlavor;
-
                 flavorStatic.Text = chosenFlavorName;
                 flavorStatic.BackColor = GetColorForFlavorName(chosenFlavorName);
+
+                ModelTag oldFlavorEncoding = ((Model)model).AttributeTag(Resources.TagPrefixFlavor);
                 if (oldFlavorEncoding != ModelTag.None)
                 {
                     model.Tags.Remove(oldFlavorEncoding);
                 }
-                if (!FlavorDialogue.NoFlavorChosen)
+                if (FlavorDialogue.SpecificFlavorChosen)
                 {
                     ModelTag chosenFlavorEncoding = $"{Resources.TagPrefixFlavor}{chosenFlavorName.ToUpperInvariant()}";
                     model.Tags.Add(chosenFlavorEncoding);

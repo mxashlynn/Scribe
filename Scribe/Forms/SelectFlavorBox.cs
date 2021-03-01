@@ -11,8 +11,8 @@ namespace Scribe.Forms
     /// </summary>
     partial class SelectFlavorBox : Form
     {
-        /// <summary>When <c>true</c> the selection was lack-of-flavor.</summary>
-        public bool NoFlavorChosen { get; set; }
+        /// <summary>When <c>true</c> a flavor was selected.</summary>
+        public bool SpecificFlavorChosen { get; set; }
 
         /// <summary>The flavor that the user selected, if any.</summary>
         public ModelTag ReturnNewFlavor { get; set; }
@@ -59,7 +59,7 @@ namespace Scribe.Forms
         private void FlavorSelector_Click(object sender, EventArgs eventArguments)
         {
             var chosenControl = sender as Label;
-            NoFlavorChosen = chosenControl == FlavorNoFlavorsSelector;
+            SpecificFlavorChosen = chosenControl != FlavorNoFlavorsSelector;
             ReturnNewFlavor = chosenControl.Text;
             DialogResult = DialogResult.OK;
             Close();
@@ -73,6 +73,7 @@ namespace Scribe.Forms
         private void FlavorCancelButton_Click(object sender, EventArgs eventArguments)
         {
             ReturnNewFlavor = Resources.TagPrefixFlavor;
+            SpecificFlavorChosen = false;
             DialogResult = DialogResult.Cancel;
             Close();
         }
