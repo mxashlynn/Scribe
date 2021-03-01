@@ -7,7 +7,7 @@ namespace Scribe.Forms
         public SelectFlavorBox()
         {
             InitializeComponent();
-            // TODO: [TAGS] Functions and flavors!
+            // TODO: [TAGS] Fill in missing wiring based on existing forms.
         }
     }
 }
