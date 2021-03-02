@@ -25,12 +25,12 @@ using Roller;
 using Scribe.ChangeHistory;
 using Scribe.Properties;
 
-// TODO 4) Change Furnishing:
+// TODO 1) Move custom controls into separate project.
+// TODO 2) Change Furnishing:
 //          - remove SwapID
 //          - add IsOpenable
 //          - two graphics, like Floor
-
-// TODO 5) Finish implementing the regions tab.
+// TODO 3) Finish implementing the regions tab.
 
 namespace Scribe.Forms
 {
