@@ -288,7 +288,6 @@ namespace Scribe.Forms
             AddSlotDialogue.Dispose();
             base.Dispose(disposing);
         }
-
         #endregion
     }
 }
