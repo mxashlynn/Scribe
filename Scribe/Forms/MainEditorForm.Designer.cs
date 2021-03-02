@@ -56,7 +56,7 @@ namespace Scribe.Forms
             this.SelectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RollerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CheckMapStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CheckRegionStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ListNameCollisionsStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.ListIDRangesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -551,37 +551,37 @@ namespace Scribe.Forms
             this.RoomIDLabel = new System.Windows.Forms.Label();
             this.RoomAddNewRoomButton = new System.Windows.Forms.Button();
             this.RoomIDStatic = new System.Windows.Forms.Label();
-            this.MapsTabPage = new System.Windows.Forms.TabPage();
-            this.MapIDLabel = new System.Windows.Forms.Label();
-            this.MapIDStatic = new System.Windows.Forms.Label();
-            this.MapListBox = new System.Windows.Forms.ListBox();
-            this.MapRemoveButton = new System.Windows.Forms.Button();
-            this.MapAddNewButton = new System.Windows.Forms.Button();
-            this.MapConfigGroupBox = new System.Windows.Forms.GroupBox();
-            this.MapPixelBox = new Scribe.CustomControls.PixelBox();
-            this.MapEditButton = new System.Windows.Forms.Button();
-            this.MapTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.MapNameLabel = new System.Windows.Forms.Label();
-            this.MapNameTextBox = new System.Windows.Forms.TextBox();
-            this.MapDescriptionLabel = new System.Windows.Forms.Label();
-            this.MapDescriptionTextBox = new System.Windows.Forms.TextBox();
-            this.MapCommentLabel = new System.Windows.Forms.Label();
-            this.MapCommentTextBox = new System.Windows.Forms.TextBox();
-            this.MapBackgroundColorLabel = new System.Windows.Forms.Label();
-            this.MapBackgroundColorStatic = new System.Windows.Forms.Label();
-            this.MapExitNorthLabel = new System.Windows.Forms.Label();
-            this.MapExitSouthLabel = new System.Windows.Forms.Label();
-            this.MapExitEastLabel = new System.Windows.Forms.Label();
-            this.MapExitWestLabel = new System.Windows.Forms.Label();
-            this.MapExitUpLabel = new System.Windows.Forms.Label();
-            this.MapExitDownLabel = new System.Windows.Forms.Label();
-            this.MapExitNorthComboBox = new System.Windows.Forms.ComboBox();
-            this.MapExitSouthComboBox = new System.Windows.Forms.ComboBox();
-            this.MapExitEastComboBox = new System.Windows.Forms.ComboBox();
-            this.MapExitWestComboBox = new System.Windows.Forms.ComboBox();
-            this.MapExitUpComboBox = new System.Windows.Forms.ComboBox();
-            this.MapExitDownComboBox = new System.Windows.Forms.ComboBox();
-            this.MapBackgroundColorNameStatic = new System.Windows.Forms.Label();
+            this.RegionsTabPage = new System.Windows.Forms.TabPage();
+            this.RegionIDLabel = new System.Windows.Forms.Label();
+            this.RegionIDStatic = new System.Windows.Forms.Label();
+            this.RegionListBox = new System.Windows.Forms.ListBox();
+            this.RegionRemoveButton = new System.Windows.Forms.Button();
+            this.RegionAddNewButton = new System.Windows.Forms.Button();
+            this.RegionConfigGroupBox = new System.Windows.Forms.GroupBox();
+            this.RegionPixelBox = new Scribe.CustomControls.PixelBox();
+            this.RegionEditButton = new System.Windows.Forms.Button();
+            this.RegionTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.RegionNameLabel = new System.Windows.Forms.Label();
+            this.RegionNameTextBox = new System.Windows.Forms.TextBox();
+            this.RegionDescriptionLabel = new System.Windows.Forms.Label();
+            this.RegionDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.RegionCommentLabel = new System.Windows.Forms.Label();
+            this.RegionCommentTextBox = new System.Windows.Forms.TextBox();
+            this.RegionBackgroundColorLabel = new System.Windows.Forms.Label();
+            this.RegionBackgroundColorStatic = new System.Windows.Forms.Label();
+            this.RegionExitNorthLabel = new System.Windows.Forms.Label();
+            this.RegionExitSouthLabel = new System.Windows.Forms.Label();
+            this.RegionExitEastLabel = new System.Windows.Forms.Label();
+            this.RegionExitWestLabel = new System.Windows.Forms.Label();
+            this.RegionExitUpLabel = new System.Windows.Forms.Label();
+            this.RegionExitDownLabel = new System.Windows.Forms.Label();
+            this.RegionExitNorthComboBox = new System.Windows.Forms.ComboBox();
+            this.RegionExitSouthComboBox = new System.Windows.Forms.ComboBox();
+            this.RegionExitEastComboBox = new System.Windows.Forms.ComboBox();
+            this.RegionExitWestComboBox = new System.Windows.Forms.ComboBox();
+            this.RegionExitUpComboBox = new System.Windows.Forms.ComboBox();
+            this.RegionExitDownComboBox = new System.Windows.Forms.ComboBox();
+            this.RegionBackgroundColorNameStatic = new System.Windows.Forms.Label();
             this.ScriptsTabPage = new System.Windows.Forms.TabPage();
             this.ScriptingPendingDesignLabel = new System.Windows.Forms.Label();
             this.EditorStatusStrip.SuspendLayout();
@@ -641,9 +641,9 @@ namespace Scribe.Forms
             this.RoomConfigTableLayoutPanel.SuspendLayout();
             this.RoomTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPixelBox)).BeginInit();
-            this.MapsTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MapPixelBox)).BeginInit();
-            this.MapTableLayoutPanel.SuspendLayout();
+            this.RegionsTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RegionPixelBox)).BeginInit();
+            this.RegionTableLayoutPanel.SuspendLayout();
             this.ScriptsTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -871,7 +871,7 @@ namespace Scribe.Forms
             // RollerToolStripMenuItem
             // 
             this.RollerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CheckMapStripMenuItem,
+            this.CheckRegionStripMenuItem,
             this.ListNameCollisionsStripMenuItem,
             this.ToolStripSeparator4,
             this.ListIDRangesToolStripMenuItem,
@@ -882,14 +882,14 @@ namespace Scribe.Forms
             this.RollerToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.RollerToolStripMenuItem.Text = "&Roller";
             // 
-            // CheckMapStripMenuItem
+            // CheckRegionStripMenuItem
             // 
-            this.CheckMapStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("CheckMapStripMenuItem.Image")));
-            this.CheckMapStripMenuItem.Name = "CheckMapStripMenuItem";
-            this.CheckMapStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.CheckMapStripMenuItem.Text = "Check &Map Adjacency";
-            this.CheckMapStripMenuItem.ToolTipText = "Checks for inconsistent map adjacency.";
-            this.CheckMapStripMenuItem.Click += new System.EventHandler(this.CheckMapStripMenuItem_Click);
+            this.CheckRegionStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("CheckRegionStripMenuItem.Image")));
+            this.CheckRegionStripMenuItem.Name = "CheckRegionStripMenuItem";
+            this.CheckRegionStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.CheckRegionStripMenuItem.Text = "Check &Region Adjacency";
+            this.CheckRegionStripMenuItem.ToolTipText = "Checks for inconsistent region adjacency.";
+            this.CheckRegionStripMenuItem.Click += new System.EventHandler(this.CheckRegionStripMenuItem_Click);
             // 
             // ListNameCollisionsStripMenuItem
             // 
@@ -1490,7 +1490,7 @@ namespace Scribe.Forms
             this.EditorTabs.Controls.Add(this.BiomesTabPage);
             this.EditorTabs.Controls.Add(this.CraftingRecipesTabPage);
             this.EditorTabs.Controls.Add(this.RoomRecipesTabPage);
-            this.EditorTabs.Controls.Add(this.MapsTabPage);
+            this.EditorTabs.Controls.Add(this.RegionsTabPage);
             this.EditorTabs.Controls.Add(this.ScriptsTabPage);
             this.EditorTabs.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.EditorTabs.ItemSize = new System.Drawing.Size(73, 18);
@@ -6704,354 +6704,354 @@ namespace Scribe.Forms
             this.RoomIDStatic.Tag = "Themed";
             this.RoomIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // MapsTabPage
+            // RegionsTabPage
             // 
-            this.MapsTabPage.Controls.Add(this.MapIDLabel);
-            this.MapsTabPage.Controls.Add(this.MapIDStatic);
-            this.MapsTabPage.Controls.Add(this.MapListBox);
-            this.MapsTabPage.Controls.Add(this.MapRemoveButton);
-            this.MapsTabPage.Controls.Add(this.MapAddNewButton);
-            this.MapsTabPage.Controls.Add(this.MapConfigGroupBox);
-            this.MapsTabPage.Controls.Add(this.MapPixelBox);
-            this.MapsTabPage.Controls.Add(this.MapEditButton);
-            this.MapsTabPage.Controls.Add(this.MapTableLayoutPanel);
-            this.MapsTabPage.Location = new System.Drawing.Point(4, 22);
-            this.MapsTabPage.Name = "MapsTabPage";
-            this.MapsTabPage.Size = new System.Drawing.Size(953, 599);
-            this.MapsTabPage.TabIndex = 5;
-            this.MapsTabPage.Text = "Maps";
+            this.RegionsTabPage.Controls.Add(this.RegionIDLabel);
+            this.RegionsTabPage.Controls.Add(this.RegionIDStatic);
+            this.RegionsTabPage.Controls.Add(this.RegionListBox);
+            this.RegionsTabPage.Controls.Add(this.RegionRemoveButton);
+            this.RegionsTabPage.Controls.Add(this.RegionAddNewButton);
+            this.RegionsTabPage.Controls.Add(this.RegionConfigGroupBox);
+            this.RegionsTabPage.Controls.Add(this.RegionPixelBox);
+            this.RegionsTabPage.Controls.Add(this.RegionEditButton);
+            this.RegionsTabPage.Controls.Add(this.RegionTableLayoutPanel);
+            this.RegionsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.RegionsTabPage.Name = "RegionsTabPage";
+            this.RegionsTabPage.Size = new System.Drawing.Size(953, 599);
+            this.RegionsTabPage.TabIndex = 5;
+            this.RegionsTabPage.Text = "Regions";
             // 
-            // MapIDLabel
+            // RegionIDLabel
             // 
-            this.MapIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MapIDLabel.AutoSize = true;
-            this.MapIDLabel.Location = new System.Drawing.Point(759, 19);
-            this.MapIDLabel.Name = "MapIDLabel";
-            this.MapIDLabel.Size = new System.Drawing.Size(54, 13);
-            this.MapIDLabel.TabIndex = 12;
-            this.MapIDLabel.Text = "Region ID";
+            this.RegionIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RegionIDLabel.AutoSize = true;
+            this.RegionIDLabel.Location = new System.Drawing.Point(759, 19);
+            this.RegionIDLabel.Name = "RegionIDLabel";
+            this.RegionIDLabel.Size = new System.Drawing.Size(54, 13);
+            this.RegionIDLabel.TabIndex = 12;
+            this.RegionIDLabel.Text = "Region ID";
             // 
-            // MapIDStatic
+            // RegionIDStatic
             // 
-            this.MapIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MapIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.MapIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.MapIDStatic.Location = new System.Drawing.Point(813, 16);
-            this.MapIDStatic.Name = "MapIDStatic";
-            this.MapIDStatic.Size = new System.Drawing.Size(131, 20);
-            this.MapIDStatic.TabIndex = 11;
-            this.MapIDStatic.Tag = "Themed";
-            this.MapIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RegionIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RegionIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.RegionIDStatic.Location = new System.Drawing.Point(813, 16);
+            this.RegionIDStatic.Name = "RegionIDStatic";
+            this.RegionIDStatic.Size = new System.Drawing.Size(131, 20);
+            this.RegionIDStatic.TabIndex = 11;
+            this.RegionIDStatic.Tag = "Themed";
+            this.RegionIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // MapListBox
+            // RegionListBox
             // 
-            this.MapListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.RegionListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.MapListBox.DisplayMember = "Name";
-            this.MapListBox.FormattingEnabled = true;
-            this.MapListBox.Location = new System.Drawing.Point(9, 16);
-            this.MapListBox.Name = "MapListBox";
-            this.MapListBox.Size = new System.Drawing.Size(279, 446);
-            this.MapListBox.TabIndex = 8;
-            this.MapListBox.Tag = "Untracked Control";
+            this.RegionListBox.DisplayMember = "Name";
+            this.RegionListBox.FormattingEnabled = true;
+            this.RegionListBox.Location = new System.Drawing.Point(9, 16);
+            this.RegionListBox.Name = "RegionListBox";
+            this.RegionListBox.Size = new System.Drawing.Size(279, 446);
+            this.RegionListBox.TabIndex = 8;
+            this.RegionListBox.Tag = "Untracked Control";
             // 
-            // MapRemoveButton
+            // RegionRemoveButton
             // 
-            this.MapRemoveButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.MapRemoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MapRemoveButton.Location = new System.Drawing.Point(24, 468);
-            this.MapRemoveButton.Name = "MapRemoveButton";
-            this.MapRemoveButton.Size = new System.Drawing.Size(129, 23);
-            this.MapRemoveButton.TabIndex = 9;
-            this.MapRemoveButton.Text = "Remove Region";
-            this.MapRemoveButton.UseVisualStyleBackColor = false;
+            this.RegionRemoveButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RegionRemoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegionRemoveButton.Location = new System.Drawing.Point(24, 468);
+            this.RegionRemoveButton.Name = "RegionRemoveButton";
+            this.RegionRemoveButton.Size = new System.Drawing.Size(129, 23);
+            this.RegionRemoveButton.TabIndex = 9;
+            this.RegionRemoveButton.Text = "Remove Region";
+            this.RegionRemoveButton.UseVisualStyleBackColor = false;
             // 
-            // MapAddNewButton
+            // RegionAddNewButton
             // 
-            this.MapAddNewButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.MapAddNewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MapAddNewButton.Location = new System.Drawing.Point(159, 468);
-            this.MapAddNewButton.Name = "MapAddNewButton";
-            this.MapAddNewButton.Size = new System.Drawing.Size(129, 23);
-            this.MapAddNewButton.TabIndex = 10;
-            this.MapAddNewButton.Text = "Add New Region";
-            this.MapAddNewButton.UseVisualStyleBackColor = false;
+            this.RegionAddNewButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RegionAddNewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegionAddNewButton.Location = new System.Drawing.Point(159, 468);
+            this.RegionAddNewButton.Name = "RegionAddNewButton";
+            this.RegionAddNewButton.Size = new System.Drawing.Size(129, 23);
+            this.RegionAddNewButton.TabIndex = 10;
+            this.RegionAddNewButton.Text = "Add New Region";
+            this.RegionAddNewButton.UseVisualStyleBackColor = false;
             // 
-            // MapConfigGroupBox
+            // RegionConfigGroupBox
             // 
-            this.MapConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.RegionConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.MapConfigGroupBox.Location = new System.Drawing.Point(9, 497);
-            this.MapConfigGroupBox.Name = "MapConfigGroupBox";
-            this.MapConfigGroupBox.Size = new System.Drawing.Size(938, 96);
-            this.MapConfigGroupBox.TabIndex = 0;
-            this.MapConfigGroupBox.TabStop = false;
+            this.RegionConfigGroupBox.Location = new System.Drawing.Point(9, 497);
+            this.RegionConfigGroupBox.Name = "RegionConfigGroupBox";
+            this.RegionConfigGroupBox.Size = new System.Drawing.Size(938, 96);
+            this.RegionConfigGroupBox.TabIndex = 0;
+            this.RegionConfigGroupBox.TabStop = false;
             // 
-            // MapPixelBox
+            // RegionPixelBox
             // 
-            this.MapPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.MapPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.MapPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
-            this.MapPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("MapPixelBox.Image")));
-            this.MapPixelBox.Location = new System.Drawing.Point(751, 354);
-            this.MapPixelBox.Name = "MapPixelBox";
-            this.MapPixelBox.Size = new System.Drawing.Size(192, 108);
-            this.MapPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.MapPixelBox.TabIndex = 14;
-            this.MapPixelBox.TabStop = false;
+            this.RegionPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.RegionPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RegionPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
+            this.RegionPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("RegionPixelBox.Image")));
+            this.RegionPixelBox.Location = new System.Drawing.Point(751, 354);
+            this.RegionPixelBox.Name = "RegionPixelBox";
+            this.RegionPixelBox.Size = new System.Drawing.Size(192, 108);
+            this.RegionPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RegionPixelBox.TabIndex = 14;
+            this.RegionPixelBox.TabStop = false;
             // 
-            // MapEditButton
+            // RegionEditButton
             // 
-            this.MapEditButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.MapEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MapEditButton.Location = new System.Drawing.Point(815, 468);
-            this.MapEditButton.Name = "MapEditButton";
-            this.MapEditButton.Size = new System.Drawing.Size(128, 23);
-            this.MapEditButton.TabIndex = 15;
-            this.MapEditButton.Text = "Edit Map";
-            this.MapEditButton.UseVisualStyleBackColor = false;
+            this.RegionEditButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RegionEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegionEditButton.Location = new System.Drawing.Point(815, 468);
+            this.RegionEditButton.Name = "RegionEditButton";
+            this.RegionEditButton.Size = new System.Drawing.Size(128, 23);
+            this.RegionEditButton.TabIndex = 15;
+            this.RegionEditButton.Text = "Edit Region";
+            this.RegionEditButton.UseVisualStyleBackColor = false;
             // 
-            // MapTableLayoutPanel
+            // RegionTableLayoutPanel
             // 
-            this.MapTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.RegionTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.MapTableLayoutPanel.ColumnCount = 3;
-            this.MapTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.MapTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.MapTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.MapTableLayoutPanel.Controls.Add(this.MapNameLabel, 0, 0);
-            this.MapTableLayoutPanel.Controls.Add(this.MapNameTextBox, 1, 0);
-            this.MapTableLayoutPanel.Controls.Add(this.MapDescriptionLabel, 0, 1);
-            this.MapTableLayoutPanel.Controls.Add(this.MapDescriptionTextBox, 1, 1);
-            this.MapTableLayoutPanel.Controls.Add(this.MapCommentLabel, 0, 2);
-            this.MapTableLayoutPanel.Controls.Add(this.MapCommentTextBox, 1, 2);
-            this.MapTableLayoutPanel.Controls.Add(this.MapBackgroundColorLabel, 0, 3);
-            this.MapTableLayoutPanel.Controls.Add(this.MapBackgroundColorStatic, 1, 3);
-            this.MapTableLayoutPanel.Controls.Add(this.MapExitNorthLabel, 0, 4);
-            this.MapTableLayoutPanel.Controls.Add(this.MapExitSouthLabel, 0, 5);
-            this.MapTableLayoutPanel.Controls.Add(this.MapExitEastLabel, 0, 6);
-            this.MapTableLayoutPanel.Controls.Add(this.MapExitWestLabel, 0, 7);
-            this.MapTableLayoutPanel.Controls.Add(this.MapExitUpLabel, 0, 8);
-            this.MapTableLayoutPanel.Controls.Add(this.MapExitDownLabel, 0, 9);
-            this.MapTableLayoutPanel.Controls.Add(this.MapExitNorthComboBox, 1, 4);
-            this.MapTableLayoutPanel.Controls.Add(this.MapExitSouthComboBox, 1, 5);
-            this.MapTableLayoutPanel.Controls.Add(this.MapExitEastComboBox, 1, 6);
-            this.MapTableLayoutPanel.Controls.Add(this.MapExitWestComboBox, 1, 7);
-            this.MapTableLayoutPanel.Controls.Add(this.MapExitUpComboBox, 1, 8);
-            this.MapTableLayoutPanel.Controls.Add(this.MapExitDownComboBox, 1, 9);
-            this.MapTableLayoutPanel.Controls.Add(this.MapBackgroundColorNameStatic, 2, 3);
-            this.MapTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
-            this.MapTableLayoutPanel.Name = "MapTableLayoutPanel";
-            this.MapTableLayoutPanel.RowCount = 11;
-            this.MapTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.MapTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.MapTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.MapTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.MapTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.MapTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.MapTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.MapTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.MapTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.MapTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.MapTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.MapTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
-            this.MapTableLayoutPanel.TabIndex = 13;
+            this.RegionTableLayoutPanel.ColumnCount = 3;
+            this.RegionTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.RegionTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.RegionTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.RegionTableLayoutPanel.Controls.Add(this.RegionNameLabel, 0, 0);
+            this.RegionTableLayoutPanel.Controls.Add(this.RegionNameTextBox, 1, 0);
+            this.RegionTableLayoutPanel.Controls.Add(this.RegionDescriptionLabel, 0, 1);
+            this.RegionTableLayoutPanel.Controls.Add(this.RegionDescriptionTextBox, 1, 1);
+            this.RegionTableLayoutPanel.Controls.Add(this.RegionCommentLabel, 0, 2);
+            this.RegionTableLayoutPanel.Controls.Add(this.RegionCommentTextBox, 1, 2);
+            this.RegionTableLayoutPanel.Controls.Add(this.RegionBackgroundColorLabel, 0, 3);
+            this.RegionTableLayoutPanel.Controls.Add(this.RegionBackgroundColorStatic, 1, 3);
+            this.RegionTableLayoutPanel.Controls.Add(this.RegionExitNorthLabel, 0, 4);
+            this.RegionTableLayoutPanel.Controls.Add(this.RegionExitSouthLabel, 0, 5);
+            this.RegionTableLayoutPanel.Controls.Add(this.RegionExitEastLabel, 0, 6);
+            this.RegionTableLayoutPanel.Controls.Add(this.RegionExitWestLabel, 0, 7);
+            this.RegionTableLayoutPanel.Controls.Add(this.RegionExitUpLabel, 0, 8);
+            this.RegionTableLayoutPanel.Controls.Add(this.RegionExitDownLabel, 0, 9);
+            this.RegionTableLayoutPanel.Controls.Add(this.RegionExitNorthComboBox, 1, 4);
+            this.RegionTableLayoutPanel.Controls.Add(this.RegionExitSouthComboBox, 1, 5);
+            this.RegionTableLayoutPanel.Controls.Add(this.RegionExitEastComboBox, 1, 6);
+            this.RegionTableLayoutPanel.Controls.Add(this.RegionExitWestComboBox, 1, 7);
+            this.RegionTableLayoutPanel.Controls.Add(this.RegionExitUpComboBox, 1, 8);
+            this.RegionTableLayoutPanel.Controls.Add(this.RegionExitDownComboBox, 1, 9);
+            this.RegionTableLayoutPanel.Controls.Add(this.RegionBackgroundColorNameStatic, 2, 3);
+            this.RegionTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
+            this.RegionTableLayoutPanel.Name = "RegionTableLayoutPanel";
+            this.RegionTableLayoutPanel.RowCount = 11;
+            this.RegionTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.RegionTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.RegionTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.RegionTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.RegionTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.RegionTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.RegionTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.RegionTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.RegionTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.RegionTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.RegionTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.RegionTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
+            this.RegionTableLayoutPanel.TabIndex = 13;
             // 
-            // MapNameLabel
+            // RegionNameLabel
             // 
-            this.MapNameLabel.AutoSize = true;
-            this.MapNameLabel.Location = new System.Drawing.Point(3, 0);
-            this.MapNameLabel.Name = "MapNameLabel";
-            this.MapNameLabel.Size = new System.Drawing.Size(34, 13);
-            this.MapNameLabel.TabIndex = 0;
-            this.MapNameLabel.Text = "Name";
+            this.RegionNameLabel.AutoSize = true;
+            this.RegionNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.RegionNameLabel.Name = "RegionNameLabel";
+            this.RegionNameLabel.Size = new System.Drawing.Size(34, 13);
+            this.RegionNameLabel.TabIndex = 0;
+            this.RegionNameLabel.Text = "Name";
             // 
-            // MapNameTextBox
+            // RegionNameTextBox
             // 
-            this.MapTableLayoutPanel.SetColumnSpan(this.MapNameTextBox, 2);
-            this.MapNameTextBox.Location = new System.Drawing.Point(122, 3);
-            this.MapNameTextBox.Name = "MapNameTextBox";
-            this.MapNameTextBox.Size = new System.Drawing.Size(147, 20);
-            this.MapNameTextBox.TabIndex = 23;
+            this.RegionTableLayoutPanel.SetColumnSpan(this.RegionNameTextBox, 2);
+            this.RegionNameTextBox.Location = new System.Drawing.Point(122, 3);
+            this.RegionNameTextBox.Name = "RegionNameTextBox";
+            this.RegionNameTextBox.Size = new System.Drawing.Size(147, 20);
+            this.RegionNameTextBox.TabIndex = 23;
             // 
-            // MapDescriptionLabel
+            // RegionDescriptionLabel
             // 
-            this.MapDescriptionLabel.AutoSize = true;
-            this.MapDescriptionLabel.Location = new System.Drawing.Point(3, 25);
-            this.MapDescriptionLabel.Name = "MapDescriptionLabel";
-            this.MapDescriptionLabel.Size = new System.Drawing.Size(60, 13);
-            this.MapDescriptionLabel.TabIndex = 3;
-            this.MapDescriptionLabel.Text = "Description";
+            this.RegionDescriptionLabel.AutoSize = true;
+            this.RegionDescriptionLabel.Location = new System.Drawing.Point(3, 25);
+            this.RegionDescriptionLabel.Name = "RegionDescriptionLabel";
+            this.RegionDescriptionLabel.Size = new System.Drawing.Size(60, 13);
+            this.RegionDescriptionLabel.TabIndex = 3;
+            this.RegionDescriptionLabel.Text = "Description";
             // 
-            // MapDescriptionTextBox
+            // RegionDescriptionTextBox
             // 
-            this.MapDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.RegionDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.MapTableLayoutPanel.SetColumnSpan(this.MapDescriptionTextBox, 2);
-            this.MapDescriptionTextBox.Location = new System.Drawing.Point(122, 28);
-            this.MapDescriptionTextBox.Multiline = true;
-            this.MapDescriptionTextBox.Name = "MapDescriptionTextBox";
-            this.MapDescriptionTextBox.Size = new System.Drawing.Size(304, 49);
-            this.MapDescriptionTextBox.TabIndex = 24;
+            this.RegionTableLayoutPanel.SetColumnSpan(this.RegionDescriptionTextBox, 2);
+            this.RegionDescriptionTextBox.Location = new System.Drawing.Point(122, 28);
+            this.RegionDescriptionTextBox.Multiline = true;
+            this.RegionDescriptionTextBox.Name = "RegionDescriptionTextBox";
+            this.RegionDescriptionTextBox.Size = new System.Drawing.Size(304, 49);
+            this.RegionDescriptionTextBox.TabIndex = 24;
             // 
-            // MapCommentLabel
+            // RegionCommentLabel
             // 
-            this.MapCommentLabel.AutoSize = true;
-            this.MapCommentLabel.Location = new System.Drawing.Point(3, 80);
-            this.MapCommentLabel.Name = "MapCommentLabel";
-            this.MapCommentLabel.Size = new System.Drawing.Size(52, 13);
-            this.MapCommentLabel.TabIndex = 6;
-            this.MapCommentLabel.Text = "Comment";
+            this.RegionCommentLabel.AutoSize = true;
+            this.RegionCommentLabel.Location = new System.Drawing.Point(3, 80);
+            this.RegionCommentLabel.Name = "RegionCommentLabel";
+            this.RegionCommentLabel.Size = new System.Drawing.Size(52, 13);
+            this.RegionCommentLabel.TabIndex = 6;
+            this.RegionCommentLabel.Text = "Comment";
             // 
-            // MapCommentTextBox
+            // RegionCommentTextBox
             // 
-            this.MapCommentTextBox.AccessibleDescription = "";
-            this.MapCommentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.RegionCommentTextBox.AccessibleDescription = "";
+            this.RegionCommentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.MapTableLayoutPanel.SetColumnSpan(this.MapCommentTextBox, 2);
-            this.MapCommentTextBox.Location = new System.Drawing.Point(122, 83);
-            this.MapCommentTextBox.Multiline = true;
-            this.MapCommentTextBox.Name = "MapCommentTextBox";
-            this.MapCommentTextBox.Size = new System.Drawing.Size(304, 49);
-            this.MapCommentTextBox.TabIndex = 25;
+            this.RegionTableLayoutPanel.SetColumnSpan(this.RegionCommentTextBox, 2);
+            this.RegionCommentTextBox.Location = new System.Drawing.Point(122, 83);
+            this.RegionCommentTextBox.Multiline = true;
+            this.RegionCommentTextBox.Name = "RegionCommentTextBox";
+            this.RegionCommentTextBox.Size = new System.Drawing.Size(304, 49);
+            this.RegionCommentTextBox.TabIndex = 25;
             // 
-            // MapBackgroundColorLabel
+            // RegionBackgroundColorLabel
             // 
-            this.MapBackgroundColorLabel.AutoSize = true;
-            this.MapBackgroundColorLabel.Location = new System.Drawing.Point(3, 135);
-            this.MapBackgroundColorLabel.Name = "MapBackgroundColorLabel";
-            this.MapBackgroundColorLabel.Size = new System.Drawing.Size(91, 13);
-            this.MapBackgroundColorLabel.TabIndex = 30;
-            this.MapBackgroundColorLabel.Text = "Background Color";
+            this.RegionBackgroundColorLabel.AutoSize = true;
+            this.RegionBackgroundColorLabel.Location = new System.Drawing.Point(3, 135);
+            this.RegionBackgroundColorLabel.Name = "RegionBackgroundColorLabel";
+            this.RegionBackgroundColorLabel.Size = new System.Drawing.Size(91, 13);
+            this.RegionBackgroundColorLabel.TabIndex = 30;
+            this.RegionBackgroundColorLabel.Text = "Background Color";
             // 
-            // MapBackgroundColorStatic
+            // RegionBackgroundColorStatic
             // 
-            this.MapBackgroundColorStatic.BackColor = System.Drawing.Color.White;
-            this.MapBackgroundColorStatic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MapBackgroundColorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.MapBackgroundColorStatic.Location = new System.Drawing.Point(122, 135);
-            this.MapBackgroundColorStatic.Name = "MapBackgroundColorStatic";
-            this.MapBackgroundColorStatic.Size = new System.Drawing.Size(24, 24);
-            this.MapBackgroundColorStatic.TabIndex = 31;
-            this.MapBackgroundColorStatic.Tag = "";
-            this.MapBackgroundColorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionBackgroundColorStatic.BackColor = System.Drawing.Color.White;
+            this.RegionBackgroundColorStatic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionBackgroundColorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.RegionBackgroundColorStatic.Location = new System.Drawing.Point(122, 135);
+            this.RegionBackgroundColorStatic.Name = "RegionBackgroundColorStatic";
+            this.RegionBackgroundColorStatic.Size = new System.Drawing.Size(24, 24);
+            this.RegionBackgroundColorStatic.TabIndex = 31;
+            this.RegionBackgroundColorStatic.Tag = "";
+            this.RegionBackgroundColorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // MapExitNorthLabel
+            // RegionExitNorthLabel
             // 
-            this.MapExitNorthLabel.AutoSize = true;
-            this.MapExitNorthLabel.Location = new System.Drawing.Point(3, 160);
-            this.MapExitNorthLabel.Name = "MapExitNorthLabel";
-            this.MapExitNorthLabel.Size = new System.Drawing.Size(55, 13);
-            this.MapExitNorthLabel.TabIndex = 32;
-            this.MapExitNorthLabel.Text = "Exit North";
+            this.RegionExitNorthLabel.AutoSize = true;
+            this.RegionExitNorthLabel.Location = new System.Drawing.Point(3, 160);
+            this.RegionExitNorthLabel.Name = "RegionExitNorthLabel";
+            this.RegionExitNorthLabel.Size = new System.Drawing.Size(55, 13);
+            this.RegionExitNorthLabel.TabIndex = 32;
+            this.RegionExitNorthLabel.Text = "Exit North";
             // 
-            // MapExitSouthLabel
+            // RegionExitSouthLabel
             // 
-            this.MapExitSouthLabel.AutoSize = true;
-            this.MapExitSouthLabel.Location = new System.Drawing.Point(3, 185);
-            this.MapExitSouthLabel.Name = "MapExitSouthLabel";
-            this.MapExitSouthLabel.Size = new System.Drawing.Size(56, 13);
-            this.MapExitSouthLabel.TabIndex = 33;
-            this.MapExitSouthLabel.Text = "Exit South";
+            this.RegionExitSouthLabel.AutoSize = true;
+            this.RegionExitSouthLabel.Location = new System.Drawing.Point(3, 185);
+            this.RegionExitSouthLabel.Name = "RegionExitSouthLabel";
+            this.RegionExitSouthLabel.Size = new System.Drawing.Size(56, 13);
+            this.RegionExitSouthLabel.TabIndex = 33;
+            this.RegionExitSouthLabel.Text = "Exit South";
             // 
-            // MapExitEastLabel
+            // RegionExitEastLabel
             // 
-            this.MapExitEastLabel.AutoSize = true;
-            this.MapExitEastLabel.Location = new System.Drawing.Point(3, 210);
-            this.MapExitEastLabel.Name = "MapExitEastLabel";
-            this.MapExitEastLabel.Size = new System.Drawing.Size(49, 13);
-            this.MapExitEastLabel.TabIndex = 18;
-            this.MapExitEastLabel.Text = "Exit East";
+            this.RegionExitEastLabel.AutoSize = true;
+            this.RegionExitEastLabel.Location = new System.Drawing.Point(3, 210);
+            this.RegionExitEastLabel.Name = "RegionExitEastLabel";
+            this.RegionExitEastLabel.Size = new System.Drawing.Size(49, 13);
+            this.RegionExitEastLabel.TabIndex = 18;
+            this.RegionExitEastLabel.Text = "Exit East";
             // 
-            // MapExitWestLabel
+            // RegionExitWestLabel
             // 
-            this.MapExitWestLabel.AutoSize = true;
-            this.MapExitWestLabel.Location = new System.Drawing.Point(3, 235);
-            this.MapExitWestLabel.Name = "MapExitWestLabel";
-            this.MapExitWestLabel.Size = new System.Drawing.Size(53, 13);
-            this.MapExitWestLabel.TabIndex = 21;
-            this.MapExitWestLabel.Text = "Exit West";
+            this.RegionExitWestLabel.AutoSize = true;
+            this.RegionExitWestLabel.Location = new System.Drawing.Point(3, 235);
+            this.RegionExitWestLabel.Name = "RegionExitWestLabel";
+            this.RegionExitWestLabel.Size = new System.Drawing.Size(53, 13);
+            this.RegionExitWestLabel.TabIndex = 21;
+            this.RegionExitWestLabel.Text = "Exit West";
             // 
-            // MapExitUpLabel
+            // RegionExitUpLabel
             // 
-            this.MapExitUpLabel.AutoSize = true;
-            this.MapExitUpLabel.Location = new System.Drawing.Point(3, 260);
-            this.MapExitUpLabel.Name = "MapExitUpLabel";
-            this.MapExitUpLabel.Size = new System.Drawing.Size(41, 13);
-            this.MapExitUpLabel.TabIndex = 35;
-            this.MapExitUpLabel.Text = "Exit Up";
+            this.RegionExitUpLabel.AutoSize = true;
+            this.RegionExitUpLabel.Location = new System.Drawing.Point(3, 260);
+            this.RegionExitUpLabel.Name = "RegionExitUpLabel";
+            this.RegionExitUpLabel.Size = new System.Drawing.Size(41, 13);
+            this.RegionExitUpLabel.TabIndex = 35;
+            this.RegionExitUpLabel.Text = "Exit Up";
             // 
-            // MapExitDownLabel
+            // RegionExitDownLabel
             // 
-            this.MapExitDownLabel.AutoSize = true;
-            this.MapExitDownLabel.Location = new System.Drawing.Point(3, 285);
-            this.MapExitDownLabel.Name = "MapExitDownLabel";
-            this.MapExitDownLabel.Size = new System.Drawing.Size(55, 13);
-            this.MapExitDownLabel.TabIndex = 34;
-            this.MapExitDownLabel.Text = "Exit Down";
+            this.RegionExitDownLabel.AutoSize = true;
+            this.RegionExitDownLabel.Location = new System.Drawing.Point(3, 285);
+            this.RegionExitDownLabel.Name = "RegionExitDownLabel";
+            this.RegionExitDownLabel.Size = new System.Drawing.Size(55, 13);
+            this.RegionExitDownLabel.TabIndex = 34;
+            this.RegionExitDownLabel.Text = "Exit Down";
             // 
-            // MapExitNorthComboBox
+            // RegionExitNorthComboBox
             // 
-            this.MapTableLayoutPanel.SetColumnSpan(this.MapExitNorthComboBox, 2);
-            this.MapExitNorthComboBox.DisplayMember = "Name";
-            this.MapExitNorthComboBox.Location = new System.Drawing.Point(122, 163);
-            this.MapExitNorthComboBox.Name = "MapExitNorthComboBox";
-            this.MapExitNorthComboBox.Size = new System.Drawing.Size(147, 21);
-            this.MapExitNorthComboBox.TabIndex = 28;
+            this.RegionTableLayoutPanel.SetColumnSpan(this.RegionExitNorthComboBox, 2);
+            this.RegionExitNorthComboBox.DisplayMember = "Name";
+            this.RegionExitNorthComboBox.Location = new System.Drawing.Point(122, 163);
+            this.RegionExitNorthComboBox.Name = "RegionExitNorthComboBox";
+            this.RegionExitNorthComboBox.Size = new System.Drawing.Size(147, 21);
+            this.RegionExitNorthComboBox.TabIndex = 28;
             // 
-            // MapExitSouthComboBox
+            // RegionExitSouthComboBox
             // 
-            this.MapTableLayoutPanel.SetColumnSpan(this.MapExitSouthComboBox, 2);
-            this.MapExitSouthComboBox.DisplayMember = "Name";
-            this.MapExitSouthComboBox.Location = new System.Drawing.Point(122, 188);
-            this.MapExitSouthComboBox.Name = "MapExitSouthComboBox";
-            this.MapExitSouthComboBox.Size = new System.Drawing.Size(147, 21);
-            this.MapExitSouthComboBox.TabIndex = 29;
+            this.RegionTableLayoutPanel.SetColumnSpan(this.RegionExitSouthComboBox, 2);
+            this.RegionExitSouthComboBox.DisplayMember = "Name";
+            this.RegionExitSouthComboBox.Location = new System.Drawing.Point(122, 188);
+            this.RegionExitSouthComboBox.Name = "RegionExitSouthComboBox";
+            this.RegionExitSouthComboBox.Size = new System.Drawing.Size(147, 21);
+            this.RegionExitSouthComboBox.TabIndex = 29;
             // 
-            // MapExitEastComboBox
+            // RegionExitEastComboBox
             // 
-            this.MapTableLayoutPanel.SetColumnSpan(this.MapExitEastComboBox, 2);
-            this.MapExitEastComboBox.Location = new System.Drawing.Point(122, 213);
-            this.MapExitEastComboBox.Name = "MapExitEastComboBox";
-            this.MapExitEastComboBox.Size = new System.Drawing.Size(147, 21);
-            this.MapExitEastComboBox.TabIndex = 36;
+            this.RegionTableLayoutPanel.SetColumnSpan(this.RegionExitEastComboBox, 2);
+            this.RegionExitEastComboBox.Location = new System.Drawing.Point(122, 213);
+            this.RegionExitEastComboBox.Name = "RegionExitEastComboBox";
+            this.RegionExitEastComboBox.Size = new System.Drawing.Size(147, 21);
+            this.RegionExitEastComboBox.TabIndex = 36;
             // 
-            // MapExitWestComboBox
+            // RegionExitWestComboBox
             // 
-            this.MapTableLayoutPanel.SetColumnSpan(this.MapExitWestComboBox, 2);
-            this.MapExitWestComboBox.Location = new System.Drawing.Point(122, 238);
-            this.MapExitWestComboBox.Name = "MapExitWestComboBox";
-            this.MapExitWestComboBox.Size = new System.Drawing.Size(147, 21);
-            this.MapExitWestComboBox.TabIndex = 37;
+            this.RegionTableLayoutPanel.SetColumnSpan(this.RegionExitWestComboBox, 2);
+            this.RegionExitWestComboBox.Location = new System.Drawing.Point(122, 238);
+            this.RegionExitWestComboBox.Name = "RegionExitWestComboBox";
+            this.RegionExitWestComboBox.Size = new System.Drawing.Size(147, 21);
+            this.RegionExitWestComboBox.TabIndex = 37;
             // 
-            // MapExitUpComboBox
+            // RegionExitUpComboBox
             // 
-            this.MapTableLayoutPanel.SetColumnSpan(this.MapExitUpComboBox, 2);
-            this.MapExitUpComboBox.Location = new System.Drawing.Point(122, 263);
-            this.MapExitUpComboBox.Name = "MapExitUpComboBox";
-            this.MapExitUpComboBox.Size = new System.Drawing.Size(147, 21);
-            this.MapExitUpComboBox.TabIndex = 38;
+            this.RegionTableLayoutPanel.SetColumnSpan(this.RegionExitUpComboBox, 2);
+            this.RegionExitUpComboBox.Location = new System.Drawing.Point(122, 263);
+            this.RegionExitUpComboBox.Name = "RegionExitUpComboBox";
+            this.RegionExitUpComboBox.Size = new System.Drawing.Size(147, 21);
+            this.RegionExitUpComboBox.TabIndex = 38;
             // 
-            // MapExitDownComboBox
+            // RegionExitDownComboBox
             // 
-            this.MapTableLayoutPanel.SetColumnSpan(this.MapExitDownComboBox, 2);
-            this.MapExitDownComboBox.Location = new System.Drawing.Point(122, 288);
-            this.MapExitDownComboBox.Name = "MapExitDownComboBox";
-            this.MapExitDownComboBox.Size = new System.Drawing.Size(147, 21);
-            this.MapExitDownComboBox.TabIndex = 39;
+            this.RegionTableLayoutPanel.SetColumnSpan(this.RegionExitDownComboBox, 2);
+            this.RegionExitDownComboBox.Location = new System.Drawing.Point(122, 288);
+            this.RegionExitDownComboBox.Name = "RegionExitDownComboBox";
+            this.RegionExitDownComboBox.Size = new System.Drawing.Size(147, 21);
+            this.RegionExitDownComboBox.TabIndex = 39;
             // 
-            // MapBackgroundColorNameStatic
+            // RegionBackgroundColorNameStatic
             // 
-            this.MapBackgroundColorNameStatic.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.MapBackgroundColorNameStatic.AutoSize = true;
-            this.MapBackgroundColorNameStatic.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.MapBackgroundColorNameStatic.Location = new System.Drawing.Point(152, 141);
-            this.MapBackgroundColorNameStatic.Name = "MapBackgroundColorNameStatic";
-            this.MapBackgroundColorNameStatic.Size = new System.Drawing.Size(40, 13);
-            this.MapBackgroundColorNameStatic.TabIndex = 40;
-            this.MapBackgroundColorNameStatic.Text = "White";
+            this.RegionBackgroundColorNameStatic.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.RegionBackgroundColorNameStatic.AutoSize = true;
+            this.RegionBackgroundColorNameStatic.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionBackgroundColorNameStatic.Location = new System.Drawing.Point(152, 141);
+            this.RegionBackgroundColorNameStatic.Name = "RegionBackgroundColorNameStatic";
+            this.RegionBackgroundColorNameStatic.Size = new System.Drawing.Size(40, 13);
+            this.RegionBackgroundColorNameStatic.TabIndex = 40;
+            this.RegionBackgroundColorNameStatic.Text = "White";
             // 
             // ScriptsTabPage
             // 
@@ -7185,11 +7185,11 @@ namespace Scribe.Forms
             this.RoomTableLayoutPanel.ResumeLayout(false);
             this.RoomTableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPixelBox)).EndInit();
-            this.MapsTabPage.ResumeLayout(false);
-            this.MapsTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MapPixelBox)).EndInit();
-            this.MapTableLayoutPanel.ResumeLayout(false);
-            this.MapTableLayoutPanel.PerformLayout();
+            this.RegionsTabPage.ResumeLayout(false);
+            this.RegionsTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RegionPixelBox)).EndInit();
+            this.RegionTableLayoutPanel.ResumeLayout(false);
+            this.RegionTableLayoutPanel.PerformLayout();
             this.ScriptsTabPage.ResumeLayout(false);
             this.ScriptsTabPage.PerformLayout();
             this.ResumeLayout(false);
@@ -7232,7 +7232,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.ToolStripMenuItem DocumentationToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator ToolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem AboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem CheckMapStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CheckRegionStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ListNameCollisionsStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator ToolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem ListIDRangesToolStripMenuItem;
@@ -7735,37 +7735,37 @@ namespace Scribe.Forms
         private System.Windows.Forms.TextBox RoomMinWalkableSpacesTextBox;
         private System.Windows.Forms.TextBox RoomMaxWalkableSpacesTextBox;
 
-        private System.Windows.Forms.TabPage MapsTabPage;
-        private System.Windows.Forms.Label MapIDLabel;
-        private System.Windows.Forms.Label MapIDStatic;
-        private System.Windows.Forms.ListBox MapListBox;
-        private System.Windows.Forms.Button MapRemoveButton;
-        private System.Windows.Forms.Button MapAddNewButton;
-        private System.Windows.Forms.GroupBox MapConfigGroupBox;
-        private CustomControls.PixelBox MapPixelBox;
-        private System.Windows.Forms.Button MapEditButton;
-        private System.Windows.Forms.TableLayoutPanel MapTableLayoutPanel;
-        private System.Windows.Forms.Label MapNameLabel;
-        private System.Windows.Forms.TextBox MapNameTextBox;
-        private System.Windows.Forms.Label MapDescriptionLabel;
-        private System.Windows.Forms.TextBox MapDescriptionTextBox;
-        private System.Windows.Forms.Label MapCommentLabel;
-        private System.Windows.Forms.TextBox MapCommentTextBox;
-        private System.Windows.Forms.Label MapBackgroundColorLabel;
-        private System.Windows.Forms.Label MapBackgroundColorStatic;
-        private System.Windows.Forms.Label MapBackgroundColorNameStatic;
-        private System.Windows.Forms.Label MapExitNorthLabel;
-        private System.Windows.Forms.Label MapExitSouthLabel;
-        private System.Windows.Forms.Label MapExitEastLabel;
-        private System.Windows.Forms.Label MapExitWestLabel;
-        private System.Windows.Forms.Label MapExitUpLabel;
-        private System.Windows.Forms.Label MapExitDownLabel;
-        private System.Windows.Forms.ComboBox MapExitNorthComboBox;
-        private System.Windows.Forms.ComboBox MapExitSouthComboBox;
-        private System.Windows.Forms.ComboBox MapExitEastComboBox;
-        private System.Windows.Forms.ComboBox MapExitWestComboBox;
-        private System.Windows.Forms.ComboBox MapExitUpComboBox;
-        private System.Windows.Forms.ComboBox MapExitDownComboBox;
+        private System.Windows.Forms.TabPage RegionsTabPage;
+        private System.Windows.Forms.Label RegionIDLabel;
+        private System.Windows.Forms.Label RegionIDStatic;
+        private System.Windows.Forms.ListBox RegionListBox;
+        private System.Windows.Forms.Button RegionRemoveButton;
+        private System.Windows.Forms.Button RegionAddNewButton;
+        private System.Windows.Forms.GroupBox RegionConfigGroupBox;
+        private CustomControls.PixelBox RegionPixelBox;
+        private System.Windows.Forms.Button RegionEditButton;
+        private System.Windows.Forms.TableLayoutPanel RegionTableLayoutPanel;
+        private System.Windows.Forms.Label RegionNameLabel;
+        private System.Windows.Forms.TextBox RegionNameTextBox;
+        private System.Windows.Forms.Label RegionDescriptionLabel;
+        private System.Windows.Forms.TextBox RegionDescriptionTextBox;
+        private System.Windows.Forms.Label RegionCommentLabel;
+        private System.Windows.Forms.TextBox RegionCommentTextBox;
+        private System.Windows.Forms.Label RegionBackgroundColorLabel;
+        private System.Windows.Forms.Label RegionBackgroundColorStatic;
+        private System.Windows.Forms.Label RegionBackgroundColorNameStatic;
+        private System.Windows.Forms.Label RegionExitNorthLabel;
+        private System.Windows.Forms.Label RegionExitSouthLabel;
+        private System.Windows.Forms.Label RegionExitEastLabel;
+        private System.Windows.Forms.Label RegionExitWestLabel;
+        private System.Windows.Forms.Label RegionExitUpLabel;
+        private System.Windows.Forms.Label RegionExitDownLabel;
+        private System.Windows.Forms.ComboBox RegionExitNorthComboBox;
+        private System.Windows.Forms.ComboBox RegionExitSouthComboBox;
+        private System.Windows.Forms.ComboBox RegionExitEastComboBox;
+        private System.Windows.Forms.ComboBox RegionExitWestComboBox;
+        private System.Windows.Forms.ComboBox RegionExitUpComboBox;
+        private System.Windows.Forms.ComboBox RegionExitDownComboBox;
 
         private System.Windows.Forms.TabPage ScriptsTabPage;
         private System.Windows.Forms.Label ScriptingPendingDesignLabel;

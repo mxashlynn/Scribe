@@ -21,7 +21,7 @@ namespace Scribe
         public static Color BeingsTabColor = SystemColors.Control;
         public static Color ItemsTabColor = SystemColors.Control;
         public static Color RecipesTabColor = SystemColors.Control;
-        public static Color MapsTabColor = SystemColors.Control;
+        public static Color RegionsTabColor = SystemColors.Control;
         public static Color ScriptsTabColor = SystemColors.Control;
         #endregion
 
@@ -47,7 +47,7 @@ namespace Scribe
                     BeingsTabColor = Color.MistyRose;
                     ItemsTabColor = Color.MistyRose;
                     RecipesTabColor = Color.MistyRose;
-                    MapsTabColor = Color.MistyRose;
+                    RegionsTabColor = Color.MistyRose;
                     ScriptsTabColor = Color.MistyRose;
                     break;
                 case EditorTheme.Colorful:
@@ -64,7 +64,7 @@ namespace Scribe
                     BeingsTabColor = Color.LightPink;
                     ItemsTabColor = Color.PaleGoldenrod;
                     RecipesTabColor = Color.Plum;
-                    MapsTabColor = Color.DarkSalmon;
+                    RegionsTabColor = Color.DarkSalmon;
                     ScriptsTabColor = Color.LightSteelBlue;
                     break;
                 // EditorTheme.OSDefault:
@@ -82,7 +82,7 @@ namespace Scribe
                     BeingsTabColor = SystemColors.Control;
                     ItemsTabColor = SystemColors.Control;
                     RecipesTabColor = SystemColors.Control;
-                    MapsTabColor = SystemColors.Control;
+                    RegionsTabColor = SystemColors.Control;
                     ScriptsTabColor = SystemColors.Control;
                     break;
             }

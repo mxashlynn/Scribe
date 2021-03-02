@@ -164,7 +164,7 @@ namespace Roller.Properties {
         ///    -v|version                      Display version information.
         ///    -t|templates                    Write CSV templates to current directory.
         ///    -r|roll                         Prepare CSVs in current directory for use.
-        ///    -c|check                        Check that map adjacency is consistent.
+        ///    -c|check                        Check that region adjacency is consistent.
         ///    -p|list pronouns                List all defined pronoun groups.
         ///    -l|list (property) [category]   List various mo [rest of string was truncated]&quot;;.
         /// </summary>

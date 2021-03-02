@@ -25,9 +25,8 @@ using Roller;
 using Scribe.ChangeHistory;
 using Scribe.Properties;
 
-// TODO 3) Fix remaining issues with Map/Region (search for map and replace it as needed).
 // TODO 4) Change Furnishing tab to support IsOpenable and support two graphics, like Floor.
-// TODO 5) Finish implementing the maps tab.
+// TODO 5) Finish implementing the regions tab.
 
 
 namespace Scribe.Forms
@@ -346,7 +345,7 @@ namespace Scribe.Forms
                 [BiomeNameTextBox] = BiomeListBox,
                 [CraftingNameTextBox] = CraftingListBox,
                 [RoomNameTextBox] = RoomListBox,
-                [MapNameTextBox] = MapListBox,
+                [RegionNameTextBox] = RegionListBox,
                 // TODO [SCRIPTS] [UI] Add Scripts tab to ControlsWhoseContentIsListed.
             };
             #endregion
@@ -498,7 +497,7 @@ namespace Scribe.Forms
         private const int BiomeRecipesTabIndex = 8;
         private const int CraftingRecipesTabIndex = 9;
         private const int RoomRecipesTabIndex = 10;
-        private const int MapsTabIndex = 11;
+        private const int RegionsTabIndex = 11;
         private const int ScriptsTabIndex = 12;
         #endregion
 
@@ -587,7 +586,7 @@ namespace Scribe.Forms
                 BiomeRecipesTabIndex => "biomes",
                 CraftingRecipesTabIndex => "crafts",
                 RoomRecipesTabIndex => "rooms",
-                MapsTabIndex => "maps",
+                RegionsTabIndex => "regions",
                 ScriptsTabIndex => "", // TODO [SCRIPTS] [ROLLER] Add Games and Scripts categories to Roller.
                 _ => "",
             };
@@ -611,7 +610,7 @@ namespace Scribe.Forms
                 BiomeRecipesTabIndex => BiomePixelBox,
                 CraftingRecipesTabIndex => CraftingPixelBox,
                 RoomRecipesTabIndex => RoomPixelBox,
-                MapsTabIndex => MapPixelBox,
+                RegionsTabIndex => RegionPixelBox,
                 ScriptsTabIndex => null,
                 _ => null,
             };
@@ -635,7 +634,7 @@ namespace Scribe.Forms
                 BiomeRecipesTabIndex => BiomeListBox,
                 CraftingRecipesTabIndex => CraftingListBox,
                 RoomRecipesTabIndex => RoomListBox,
-                MapsTabIndex => null,
+                RegionsTabIndex => null,
                 ScriptsTabIndex => null,
                 _ => null,
             };
@@ -659,7 +658,7 @@ namespace Scribe.Forms
                 BiomeRecipesTabIndex => (BiomeListBox.SelectedItem as BiomeRecipe)?.ID ?? ModelID.None,
                 CraftingRecipesTabIndex => (CraftingListBox.SelectedItem as CraftingRecipe)?.ID ?? ModelID.None,
                 RoomRecipesTabIndex => (RoomListBox.SelectedItem as RoomRecipe)?.ID ?? ModelID.None,
-                MapsTabIndex => (MapListBox.SelectedItem as RegionModel)?.ID ?? ModelID.None,
+                RegionsTabIndex => (RegionListBox.SelectedItem as RegionModel)?.ID ?? ModelID.None,
                 ScriptsTabIndex => throw new NotImplementedException(),
                 _ => ModelID.None,
             };
@@ -684,7 +683,7 @@ namespace Scribe.Forms
                 BiomeRecipesTabIndex => (BiomeRecipe)BiomeListBox.SelectedItem,
                 CraftingRecipesTabIndex => (CraftingRecipe)CraftingListBox.SelectedItem,
                 RoomRecipesTabIndex => (RoomRecipe)RoomListBox.SelectedItem,
-                MapsTabIndex => (RegionModel)MapListBox.SelectedItem,
+                RegionsTabIndex => (RegionModel)RegionListBox.SelectedItem,
                 ScriptsTabIndex => throw new NotImplementedException(),
                 _ => null,
             };
@@ -989,28 +988,28 @@ namespace Scribe.Forms
                     },
                 #endregion
 
-                #region Mapping
-                /* TODO [MAP] Set up GetPropertyAccessor for Maps tab.
-                (MapsTabIndex, "MapNameTextBox")
-                    => (input) => ((IMutableMapRecipe)inModel).Name = input.ToString(),
-                (MapsTabIndex, "MapDescriptionTextBox")
-                    => (input) => ((IMutableMapRecipe)inModel).Description = input.ToString(),
-                (MapsTabIndex, "MapCommentTextBox")
-                    => (input) => ((IMutableMapRecipe)inModel).Comment = input.ToString(),
-                (MapsTabIndex, "MapBackgroundColorStatic")
-                    => (input) => ((IMutableMapRecipe)inModel).BackgroundColor = ValueToColorHexString(input),
-                (MapsTabIndex, "MapExitNorthComboBox")
-                    => (input) => ((IMutableMapRecipe)inModel).RegionToTheNorth = ValueToID(input),
-                (MapsTabIndex, "MapExitSouthComboBox")
-                    => (input) => ((IMutableMapRecipe)inModel).RegionToTheSouth = ValueToID(input),
-                (MapsTabIndex, "MapExitEastComboBox")
-                    => (input) => ((IMutableMapRecipe)inModel).RegionToTheEast = ValueToID(input),
-                (MapsTabIndex, "MapExitWestComboBox")
-                    => (input) => ((IMutableMapRecipe)inModel).RegionToTheWest = ValueToID(input),
-                (MapsTabIndex, "MapExitUpComboBox")
-                    => (input) => ((IMutableMapRecipe)inModel).RegionToTheAbove = ValueToID(input),
-                (MapsTabIndex, "MapExitDownComboBox")
-                    => (input) => ((IMutableMapRecipe)inModel).RegionToTheBelow = ValueToID(input),
+                #region Regions
+                /* TODO [MAP] Set up GetPropertyAccessor for Regions tab.
+                (RegionsTabIndex, "RegionNameTextBox")
+                    => (input) => ((IMutableRegionRecipe)inModel).Name = input.ToString(),
+                (RegionsTabIndex, "RegionDescriptionTextBox")
+                    => (input) => ((IMutableRegionRecipe)inModel).Description = input.ToString(),
+                (RegionsTabIndex, "RegionCommentTextBox")
+                    => (input) => ((IMutableRegionRecipe)inModel).Comment = input.ToString(),
+                (RegionsTabIndex, "RegionBackgroundColorStatic")
+                    => (input) => ((IMutableRegionRecipe)inModel).BackgroundColor = ValueToColorHexString(input),
+                (RegionsTabIndex, "RegionExitNorthComboBox")
+                    => (input) => ((IMutableRegionRecipe)inModel).RegionToTheNorth = ValueToID(input),
+                (RegionsTabIndex, "RegionExitSouthComboBox")
+                    => (input) => ((IMutableRegionRecipe)inModel).RegionToTheSouth = ValueToID(input),
+                (RegionsTabIndex, "RegionExitEastComboBox")
+                    => (input) => ((IMutableRegionRecipe)inModel).RegionToTheEast = ValueToID(input),
+                (RegionsTabIndex, "RegionExitWestComboBox")
+                    => (input) => ((IMutableRegionRecipe)inModel).RegionToTheWest = ValueToID(input),
+                (RegionsTabIndex, "RegionExitUpComboBox")
+                    => (input) => ((IMutableRegionRecipe)inModel).RegionToTheAbove = ValueToID(input),
+                (RegionsTabIndex, "RegionExitDownComboBox")
+                    => (input) => ((IMutableRegionRecipe)inModel).RegionToTheBelow = ValueToID(input),
                 */
                 #endregion
 
@@ -1157,7 +1156,7 @@ namespace Scribe.Forms
                 CraftingConfigGroupBox.BackColor =
                 RoomRecipesTabPage.BackColor =
                 RoomConfigGroupBox.BackColor = CurrentTheme.RecipesTabColor;
-            MapsTabPage.BackColor = CurrentTheme.MapsTabColor;
+            RegionsTabPage.BackColor = CurrentTheme.RegionsTabColor;
             ScriptsTabPage.BackColor = CurrentTheme.ScriptsTabColor;
             #endregion
         }
@@ -1460,14 +1459,14 @@ namespace Scribe.Forms
                     RoomMinWalkableSpacesTextBox.Text = RoomConfiguration.MinWalkableSpaces.ToString(CultureInfo.InvariantCulture);
                     RoomMaxWalkableSpacesTextBox.Text = RoomConfiguration.MaxWalkableSpaces.ToString(CultureInfo.InvariantCulture);
                     break;
-                case MapsTabIndex:
-                    RepopulateListBox(MapListBox, All.Regions);
-                    RepopulateComboBox(MapExitNorthComboBox, All.Regions);
-                    RepopulateComboBox(MapExitSouthComboBox, All.Regions);
-                    RepopulateComboBox(MapExitEastComboBox, All.Regions);
-                    RepopulateComboBox(MapExitWestComboBox, All.Regions);
-                    RepopulateComboBox(MapExitUpComboBox, All.Regions);
-                    RepopulateComboBox(MapExitDownComboBox, All.Regions);
+                case RegionsTabIndex:
+                    RepopulateListBox(RegionListBox, All.Regions);
+                    RepopulateComboBox(RegionExitNorthComboBox, All.Regions);
+                    RepopulateComboBox(RegionExitSouthComboBox, All.Regions);
+                    RepopulateComboBox(RegionExitEastComboBox, All.Regions);
+                    RepopulateComboBox(RegionExitWestComboBox, All.Regions);
+                    RepopulateComboBox(RegionExitUpComboBox, All.Regions);
+                    RepopulateComboBox(RegionExitDownComboBox, All.Regions);
                     break;
                 case ScriptsTabIndex:
                     // TODO [SCRIPTS] [UI] Add scripts tab to RepopulateVisibleControls
@@ -1971,59 +1970,59 @@ namespace Scribe.Forms
         }
 
         /// <summary>
-        /// Populates the Maps tab when a <see cref="MapModel"/> is selected in the RoomListBox.
+        /// Populates the Regions tab when a <see cref="RegionModel"/> is selected in the RoomListBox.
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="eventArguments">Ignored.</param>
-        private void MapListBox_SelectedValueChanged(object sender, EventArgs eventArguments)
+        private void RegionListBox_SelectedValueChanged(object sender, EventArgs eventArguments)
         {
-            if (MapListBox.SelectedItem is null)
+            if (RegionListBox.SelectedItem is null)
             {
-                MapIDStatic.Text = ModelID.None.ToString();
-                MapNameTextBox.Text = "";
-                MapDescriptionTextBox.Text = "";
-                MapCommentTextBox.Text = "";
-                // TODO [MAPS] Fix this: MapBackgroundColorStatic.BackColor = ColorTranslator.FromHtml(MapRegionModel.DefaultColor);
-                // TODO [MAPS] Fix this: MapBackgroundColorNameStatic.Text = MapRegionModel.DefaultColor;
-                MapExitNorthComboBox.SelectedItem = null;
-                MapExitSouthComboBox.SelectedItem = null;
-                MapExitEastComboBox.SelectedItem = null;
-                MapExitWestComboBox.SelectedItem = null;
-                MapExitUpComboBox.SelectedItem = null;
-                MapExitDownComboBox.SelectedItem = null;
-                MapPixelBox.Image = Resources.Map;
+                RegionIDStatic.Text = ModelID.None.ToString();
+                RegionNameTextBox.Text = "";
+                RegionDescriptionTextBox.Text = "";
+                RegionCommentTextBox.Text = "";
+                // TODO [MAPS] Fix this: RegionBackgroundColorStatic.BackColor = ColorTranslator.FromHtml(RegionRegionModel.DefaultColor);
+                // TODO [MAPS] Fix this: RegionBackgroundColorNameStatic.Text = RegionRegionModel.DefaultColor;
+                RegionExitNorthComboBox.SelectedItem = null;
+                RegionExitSouthComboBox.SelectedItem = null;
+                RegionExitEastComboBox.SelectedItem = null;
+                RegionExitWestComboBox.SelectedItem = null;
+                RegionExitUpComboBox.SelectedItem = null;
+                RegionExitDownComboBox.SelectedItem = null;
+                RegionPixelBox.Image = Resources.Region;
             }
-            else if (MapListBox.SelectedItem is RegionModel model)
+            else if (RegionListBox.SelectedItem is RegionModel model)
             {
                 RoomIDStatic.Text = model.ID.ToString();
                 RoomNameTextBox.Text = model.Name;
                 RoomDescriptionTextBox.Text = model.Description;
                 RoomCommentTextBox.Text = model.Comment;
-                MapIDStatic.Text = model.ID.ToString();
-                MapNameTextBox.Text = model.Name;
-                MapDescriptionTextBox.Text = model.Description;
-                MapCommentTextBox.Text = model.Comment;
-                MapBackgroundColorStatic.BackColor = ColorTranslator.FromHtml(model.BackgroundColor);
-                MapBackgroundColorNameStatic.Text = model.BackgroundColor;
-                MapExitNorthComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
+                RegionIDStatic.Text = model.ID.ToString();
+                RegionNameTextBox.Text = model.Name;
+                RegionDescriptionTextBox.Text = model.Description;
+                RegionCommentTextBox.Text = model.Comment;
+                RegionBackgroundColorStatic.BackColor = ColorTranslator.FromHtml(model.BackgroundColor);
+                RegionBackgroundColorNameStatic.Text = model.BackgroundColor;
+                RegionExitNorthComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
                     ? null
                     : All.Regions.GetOrNull<RegionModel>(model.RegionToTheNorth);
-                MapExitSouthComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
+                RegionExitSouthComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
                     ? null
                     : All.Regions.GetOrNull<RegionModel>(model.RegionToTheNorth);
-                MapExitEastComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
+                RegionExitEastComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
                     ? null
                     : All.Regions.GetOrNull<RegionModel>(model.RegionToTheNorth);
-                MapExitWestComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
+                RegionExitWestComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
                     ? null
                     : All.Regions.GetOrNull<RegionModel>(model.RegionToTheNorth);
-                MapExitUpComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
+                RegionExitUpComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
                     ? null
                     : All.Regions.GetOrNull<RegionModel>(model.RegionToTheNorth);
-                MapExitDownComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
+                RegionExitDownComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
                     ? null
                     : All.Regions.GetOrNull<RegionModel>(model.RegionToTheNorth);
-                // TODO: [MAPS] Fix this: PictureGenerateFromMap(MapPixelBox, model.ID);
+                // TODO: [MAPS] Fix this: PictureGenerateFromRegion(RegionPixelBox, model.ID);
             }
         }
 
@@ -3140,35 +3139,35 @@ namespace Scribe.Forms
             => AddRecipeElement(RoomRequiredFurnishingsListBox, (IMutableRoomRecipe recipe) => recipe.OptionallyRequiredPerimeterBlocks);
         #endregion
 
-        #region Maps Tab
-        // TODO Wire these map-related methods up!  (There may be other map items needing wiring.)
+        #region Regions Tab
+        // TODO Wire these region-related methods up!  (There may be other region items needing wiring.)
         /// <summary>
-        /// Responds to the user clicking "Add New Map" on the Maps tab.
+        /// Responds to the user clicking "Add New Region" on the Regions tab.
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="eventArguments">Ignored.</param>
-        private void MapAddNewItemButton_Click(object sender, EventArgs eventArguments)
-            => AddNewModel(All.Regions, (ModelID id) => new RegionModel(id, "New Region", "", ""), All.RegionIDs, MapListBox, "Region");
+        private void RegionAddNewItemButton_Click(object sender, EventArgs eventArguments)
+            => AddNewModel(All.Regions, (ModelID id) => new RegionModel(id, "New Region", "", ""), All.RegionIDs, RegionListBox, "Region");
 
         /// <summary>
-        /// Responds to the user clicking "Remove Map" on the Maps tab.
+        /// Responds to the user clicking "Remove Region" on the Regions tab.
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="eventArguments">Ignored.</param>
-        private void MapRemoveItemButton_Click(object sender, EventArgs eventArguments)
-            => RemoveModel(All.Regions, MapListBox, "Region");
+        private void RegionRemoveItemButton_Click(object sender, EventArgs eventArguments)
+            => RemoveModel(All.Regions, RegionListBox, "Region");
 
         /// <summary>
-        /// Invokes the <see cref="MapEditorForm"/> for the currently selected <see cref="MapModel"/>.
+        /// Invokes the <see cref="RegionEditorForm"/> for the currently selected <see cref="RegionModel"/>.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
         private void MapOpenEditorButton_Click(object sender, EventArgs eventArguments)
         {
             // TODO Implement this!
-            //MapEditorWindow.CurrentMap = (MapModel)MapListBox.SelectedItem;
-            //if (MapEditorWindow.CurrentMap is null ||
-            //    MapEditorWindow.ShowDialog() == DialogResult.Abort)
+            //MapEditorWindow.CurrentRegion = (RegionModel)RegionListBox.SelectedItem;
+            //if (RegionEditorWindow.CurrentRegion is null ||
+            //    RegionEditorWindow.ShowDialog() == DialogResult.Abort)
             //{
             //    SystemSounds.Beep.Play();
             //    Logger.Log(LogLevel.Warning, Resources.WarningNothingSelected);
@@ -3405,11 +3404,11 @@ namespace Scribe.Forms
         }
 
         /// <summary>
-        /// Responds to a user selecting the "Check Map" menu item.
+        /// Responds to a user selecting the "Check Region" menu item.
         /// </summary>
         /// <param name="sender">Originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>
-        private void CheckMapStripMenuItem_Click(object sender, EventArgs eventArguments)
+        private void CheckRegionStripMenuItem_Click(object sender, EventArgs eventArguments)
             => RunRoller("check");
 
         /// <summary>
