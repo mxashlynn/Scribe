@@ -2,8 +2,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using Parquet;
 
-// TODO [UNDO] Move this namespace into its own project.
-namespace Scribe.ChangeHistory
+namespace ParquetChangeManagement
 {
     /// <summary>
     /// Tracks requests to make changes and stores them as <see cref="Change"/> objects to enable Undo and Redo functionality.

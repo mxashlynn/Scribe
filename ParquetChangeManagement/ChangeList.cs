@@ -1,7 +1,7 @@
 using System;
 using Parquet;
 
-namespace Scribe.ChangeHistory
+namespace ParquetChangeManagement
 {
     /// <summary>
     /// Encapsulates a request to add an object to a list, providing both the ability to act on the request and to take it back.

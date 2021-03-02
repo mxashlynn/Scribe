@@ -1,4 +1,4 @@
-namespace Scribe.ChangeHistory
+namespace ParquetChangeManagement
 {
     /// <summary>
     /// Encapsulates a change request, providing both the ability to act on the request and to take it back.
