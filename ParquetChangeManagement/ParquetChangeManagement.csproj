@@ -2,10 +2,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyName>ChangeManagement</AssemblyName>
+    <AssemblyName>ParquetChangeManagement</AssemblyName>
 
-    <Product>ChangeManagement</Product>
-    <PackageId>ChangeManagement</PackageId>
+    <Product>ParquetChangeManagement</Product>
+    <PackageId>ParquetChangeManagement</PackageId>
     <Version>0.4.2.0</Version>
     <AssemblyVersion>0.4.2.0</AssemblyVersion>
     <FileVersion>0.4.2.0</FileVersion>
@@ -32,7 +32,7 @@
     <WarningsAsErrors>NU1605;CS1591</WarningsAsErrors>
     <AnalysisMode>AllEnabledByDefault</AnalysisMode>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-    <RootNamespace>Parquet</RootNamespace>
+    <RootNamespace>ParquetChangeManagement</RootNamespace>
 
     <IsPackable>true</IsPackable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>

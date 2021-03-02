@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Roller", "Roller\Roller.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParquetCustomControls", "ParquetCustomControls\ParquetCustomControls.csproj", "{58F76C7C-FDC2-4A31-AED8-B7DCEE87FA22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangeManagement", "ChangeManagement\ChangeManagement.csproj", "{313BC9F2-FEFC-489B-81A9-1690F3CEED6C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParquetChangeManagement", "ParquetChangeManagement\ParquetChangeManagement.csproj", "{313BC9F2-FEFC-489B-81A9-1690F3CEED6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
