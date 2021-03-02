@@ -8,7 +8,7 @@ using Parquet;
 using Parquet.Parquets;
 using Parquet.Regions;
 
-namespace Scribe.CustomControls
+namespace ParquetCustomControls
 {
     /// <summary>
     /// Displays a grid of multi-layered images corresponding to a map of parquet packs.

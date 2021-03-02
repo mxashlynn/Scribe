@@ -2,8 +2,7 @@ using System;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-// TODO [CUSTOM CONTROLS] Move this namespace into its own project.
-namespace Scribe.CustomControls
+namespace ParquetCustomControls
 {
     /// <summary>
     /// Represents a Windows picture box for displaying pixel art images.

@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-namespace Scribe.CustomControls
+namespace ParquetCustomControls
 {
     /// <summary>
     /// Represents a Windows picture box for displaying multiple layered pixel art images.
