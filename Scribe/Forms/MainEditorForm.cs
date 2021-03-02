@@ -22,15 +22,7 @@ using Parquet.Regions;
 using Parquet.Rooms;
 using Parquet.Scripts;
 using Roller;
-using Scribe.ChangeHistory;
 using Scribe.Properties;
-
-// TODO 1) Move custom controls into separate project.
-// TODO 2) Change Furnishing:
-//          - remove SwapID
-//          - add IsOpenable
-//          - two graphics, like Floor
-// TODO 3) Finish implementing the regions tab.
 
 namespace Scribe.Forms
 {
