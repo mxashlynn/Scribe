@@ -25,9 +25,12 @@ using Roller;
 using Scribe.ChangeHistory;
 using Scribe.Properties;
 
-// TODO 4) Change Furnishing tab to support IsOpenable and support two graphics, like Floor.
-// TODO 5) Finish implementing the regions tab.
+// TODO 4) Change Furnishing:
+//          - remove SwapID
+//          - add IsOpenable
+//          - two graphics, like Floor
 
+// TODO 5) Finish implementing the regions tab.
 
 namespace Scribe.Forms
 {
@@ -1990,7 +1993,7 @@ namespace Scribe.Forms
                 RegionExitWestComboBox.SelectedItem = null;
                 RegionExitUpComboBox.SelectedItem = null;
                 RegionExitDownComboBox.SelectedItem = null;
-                RegionPixelBox.Image = Resources.Region;
+                RegionPixelBox.Image = Resources.Map;
             }
             else if (RegionListBox.SelectedItem is RegionModel model)
             {
