@@ -822,8 +822,6 @@ namespace Scribe.Forms
                     => (input) => ((IMutableFurnishingModel)inModel).ItemID = ValueToID(input),
                 (FurnishingsTabIndex, "FurnishingEntryTypeComboBox")
                     => (input) => ((IMutableFurnishingModel)inModel).Entry = ValueToEnum<EntryType>(input),
-                (FurnishingsTabIndex, "FurnishingSwapWithFurnishingComboBox")
-                    => (input) => ((IMutableFurnishingModel)inModel).SwapID = ValueToID(input),
                 (FurnishingsTabIndex, "FurnishingIsEnclosingCheckBox")
                     => (input) => ((IMutableFurnishingModel)inModel).IsEnclosing = ValueToBool(input),
                 (FurnishingsTabIndex, "FurnishingIsFlammableCheckBox")
@@ -1655,9 +1653,6 @@ namespace Scribe.Forms
                 FurnishingIsWalkableCheckBox.Checked = model.IsWalkable;
                 FurnishingIsEnclosingCheckBox.Checked = model.IsEnclosing;
                 FurnishingIsFlammableCheckBox.Checked = model.IsFlammable;
-                FurnishingSwapWithFurnishingComboBox.SelectedItem = model.SwapID == ModelID.None
-                    ? null
-                    : All.Furnishings.GetOrNull<FurnishingModel>(model.SwapID);
                 PictureBoxLoadFromStorage(FurnishingPixelBox, model.ID);
             }
         }
