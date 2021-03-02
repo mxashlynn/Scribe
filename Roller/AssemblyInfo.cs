@@ -5,4 +5,4 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Roller is an API consumer, not an API provider, so CLS Compliance is not needed.
-[assembly: CLSCompliant(true)]
+[assembly: CLSCompliant(false)]
