@@ -3634,7 +3634,7 @@ namespace Scribe.Forms
             => MainToolStripStatusLabel.Text = "";
         #endregion
 
-        #region Quit Editor Event
+        #region Close Application
         /// <summary>
         /// Intercepts events that would close the editor to double-check that this is desired.
         /// </summary>
@@ -3658,6 +3658,30 @@ namespace Scribe.Forms
             Logger.Log(LogLevel.Info, Resources.LogScribeClosing);
             UILogger.Dispose();
             FormClosing -= FormClosingEventHandler;
+        }
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing"><c>true</c> if managed resources should be disposed; otherwise, <c>false</c>.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            AboutDialogue.Dispose();
+            AddQuestDialogue.Dispose();
+            AddRecipeElementDialogue.Dispose();
+            AddTagDialogue.Dispose();
+            FlavorDialogue.Dispose();
+            FunctionDialogue.Dispose();
+            InventoryEditorWindow.Dispose();
+            OptionsDialogue.Dispose();
+            StrikePatternEditorWindow.Dispose();
+            RollerResultsBox.Dispose();
+            ClearStatusTimer.Dispose();
+            base.Dispose(disposing);
         }
         #endregion
     }
