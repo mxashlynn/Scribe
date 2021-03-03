@@ -744,7 +744,7 @@ namespace Scribe.Forms
         /// <remarks>This method binds data in models to controls in the user interface.</remarks>
         private static Action<object> GetPropertyAccessorForModelAndTabAndControl(Model inModel, int inTabIndex, Control inControl)
             => inModel is null
-            ? (Action<object>)null
+            ? null
             : (inTabIndex, inControl.Name) switch
             {
                 #region GameModels
