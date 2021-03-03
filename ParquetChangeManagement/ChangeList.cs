@@ -19,7 +19,6 @@ namespace ParquetChangeManagement
         /// <summary>
         /// Initializes a new instance of the <see cref="ChangeList"/> class.
         /// </summary>
-        /// <param name="inDatabaseList">The list whose state is changing.</param>
         /// <param name="inValue">The value being added or removed.</param>
         /// <param name="inDescription">Used in constructing a summary of the change.</param>
         /// <param name="inOnExecute">The means to add the value to the list in the backing store and update the UI.</param>
