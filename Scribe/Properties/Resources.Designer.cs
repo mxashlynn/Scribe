@@ -659,9 +659,9 @@ namespace Scribe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ParquetLogoLarge {
+        internal static System.Drawing.Bitmap ParquetLogo {
             get {
-                object obj = ResourceManager.GetObject("ParquetLogoLarge", resourceCulture);
+                object obj = ResourceManager.GetObject("ParquetLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

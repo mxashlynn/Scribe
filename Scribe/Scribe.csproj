@@ -15,7 +15,7 @@
     <Description>An editor for Parquet-based games.</Description>
     <Copyright>2018-2021 Paige Ashlynn</Copyright>
     <ApplicationIcon>ParquetIcon.ico</ApplicationIcon>
-    <PackageIcon>Resources\ParquetIcon.ico</PackageIcon>
+    <PackageIcon>ParquetLogo.png</PackageIcon>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageProjectUrl>http://parquet.gay/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/mxashlynn/Scribe</RepositoryUrl>
@@ -46,10 +46,12 @@
     <ErrorReport>send</ErrorReport>
     <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
     <DefineConstants>DEBUG</DefineConstants>
+    <DocumentationFile>Scribe.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>Scribe.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

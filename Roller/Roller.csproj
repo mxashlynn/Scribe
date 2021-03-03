@@ -14,7 +14,7 @@
     <Description>Command line tool for working with Parquet data and configuration files.</Description>
     <Copyright>2018-2021 Paige Ashlynn</Copyright>
     <ApplicationIcon>ParquetIcon.ico</ApplicationIcon>
-    <PackageIcon>ParquetIcon.ico</PackageIcon>
+    <PackageIcon>ParquetLogo.png</PackageIcon>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageProjectUrl>http://parquet.gay/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/mxashlynn/Scribe</RepositoryUrl>
@@ -35,17 +35,19 @@
     <StartupObject>Roller.Roller</StartupObject>
 
     <IsPackable>false</IsPackable>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <Configurations>Debug;Release</Configurations>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DefineConstants>DEBUG</DefineConstants>
+    <DocumentationFile>Roller.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>Roller.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -65,6 +67,10 @@
 
   <ItemGroup>
     <None Include="..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\ParquetLogo.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
