@@ -873,7 +873,7 @@ namespace Scribe.Forms
             // 
             this.CheckRegionStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("CheckRegionStripMenuItem.Image")));
             this.CheckRegionStripMenuItem.Name = "CheckRegionStripMenuItem";
-            this.CheckRegionStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.CheckRegionStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.CheckRegionStripMenuItem.Text = "Check &Region Adjacency";
             this.CheckRegionStripMenuItem.ToolTipText = "Checks for inconsistent region adjacency.";
             this.CheckRegionStripMenuItem.Click += new System.EventHandler(this.CheckRegionStripMenuItem_Click);
@@ -882,7 +882,7 @@ namespace Scribe.Forms
             // 
             this.ListNameCollisionsStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ListNameCollisionsStripMenuItem.Image")));
             this.ListNameCollisionsStripMenuItem.Name = "ListNameCollisionsStripMenuItem";
-            this.ListNameCollisionsStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.ListNameCollisionsStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.ListNameCollisionsStripMenuItem.Text = "List &Name Collisions";
             this.ListNameCollisionsStripMenuItem.ToolTipText = "Lists any duplicate model names.";
             this.ListNameCollisionsStripMenuItem.Click += new System.EventHandler(this.ListNameCollisionsStripMenuItem_Click);
@@ -890,13 +890,13 @@ namespace Scribe.Forms
             // ToolStripSeparator4
             // 
             this.ToolStripSeparator4.Name = "ToolStripSeparator4";
-            this.ToolStripSeparator4.Size = new System.Drawing.Size(189, 6);
+            this.ToolStripSeparator4.Size = new System.Drawing.Size(202, 6);
             // 
             // ListIDRangesToolStripMenuItem
             // 
             this.ListIDRangesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ListIDRangesToolStripMenuItem.Image")));
             this.ListIDRangesToolStripMenuItem.Name = "ListIDRangesToolStripMenuItem";
-            this.ListIDRangesToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.ListIDRangesToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.ListIDRangesToolStripMenuItem.Text = "List ID &Ranges";
             this.ListIDRangesToolStripMenuItem.ToolTipText = "Lists model ID ranges valid for the current category.";
             this.ListIDRangesToolStripMenuItem.Click += new System.EventHandler(this.ListIDRangesToolStripMenuItem_Click);
@@ -905,7 +905,7 @@ namespace Scribe.Forms
             // 
             this.ListMaxIDsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ListMaxIDsToolStripMenuItem.Image")));
             this.ListMaxIDsToolStripMenuItem.Name = "ListMaxIDsToolStripMenuItem";
-            this.ListMaxIDsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.ListMaxIDsToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.ListMaxIDsToolStripMenuItem.Text = "List Maximum &IDs";
             this.ListMaxIDsToolStripMenuItem.ToolTipText = "Lists the highest ID currently defined in the current category.";
             this.ListMaxIDsToolStripMenuItem.Click += new System.EventHandler(this.ListMaxIDsToolStripMenuItem_Click);
@@ -914,7 +914,7 @@ namespace Scribe.Forms
             // 
             this.ListTagsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ListTagsToolStripMenuItem.Image")));
             this.ListTagsToolStripMenuItem.Name = "ListTagsToolStripMenuItem";
-            this.ListTagsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.ListTagsToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.ListTagsToolStripMenuItem.Text = "List &Tags";
             this.ListTagsToolStripMenuItem.ToolTipText = "Lists all entity tags referenced in the current category.";
             this.ListTagsToolStripMenuItem.Click += new System.EventHandler(this.ListTagsToolStripMenuItem_Click);
