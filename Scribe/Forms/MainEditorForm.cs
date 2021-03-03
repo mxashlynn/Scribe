@@ -22,7 +22,6 @@ using Parquet.Regions;
 using Parquet.Rooms;
 using Parquet.Scripts;
 using ParquetChangeManagement;
-using ParquetCustomControls;
 using Roller;
 using Scribe.Properties;
 
@@ -823,6 +822,8 @@ namespace Scribe.Forms
                     => (input) => ((IMutableFurnishingModel)inModel).IsFlammable = ValueToBool(input),
                 (FurnishingsTabIndex, "FurnishingIsWalkableCheckBox")
                     => (input) => ((IMutableFurnishingModel)inModel).IsWalkable = ValueToBool(input),
+                (FurnishingsTabIndex, "FurnishingIsOpenableCheckBox")
+                    => (input) => ((IMutableFurnishingModel)inModel).IsOpenable = ValueToBool(input),
                 #endregion
 
                 #region CollectibleModels
@@ -1409,7 +1410,6 @@ namespace Scribe.Forms
                     RepopulateListBox(FurnishingListBox, All.Furnishings);
                     RepopulateComboBox(FurnishingEquivalentItemComboBox, All.Items);
                     RepopulateComboBox(FurnishingEntryTypeComboBox, Enumerable.Cast<object>(Enum.GetValues(typeof(EntryType))));
-                    RepopulateComboBox(FurnishingSwapWithFurnishingComboBox, All.Furnishings);
                     break;
                 case CollectiblesTabIndex:
                     RepopulateListBox(CollectibleListBox, All.Collectibles);
@@ -1630,7 +1630,7 @@ namespace Scribe.Forms
                 FurnishingIsWalkableCheckBox.Checked = false;
                 FurnishingIsEnclosingCheckBox.Checked = false;
                 FurnishingIsFlammableCheckBox.Checked = false;
-                FurnishingSwapWithFurnishingComboBox.SelectedItem = null;
+                FurnishingIsOpenableCheckBox.Checked = false;
                 FurnishingPixelBox.Image = Resources.ImageNotFound;
             }
             else if (FurnishingListBox.SelectedItem is FurnishingModel model)
@@ -1648,6 +1648,7 @@ namespace Scribe.Forms
                 FurnishingIsWalkableCheckBox.Checked = model.IsWalkable;
                 FurnishingIsEnclosingCheckBox.Checked = model.IsEnclosing;
                 FurnishingIsFlammableCheckBox.Checked = model.IsFlammable;
+                FurnishingIsOpenableCheckBox.Checked = model.IsOpenable;
                 PictureBoxLoadFromStorage(FurnishingPixelBox, model.ID);
             }
         }

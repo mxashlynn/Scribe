@@ -246,8 +246,8 @@ namespace Scribe.Forms
             this.FurnishingDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.FurnishingCommentTextBox = new System.Windows.Forms.TextBox();
             this.FurnishingEquivalentItemComboBox = new System.Windows.Forms.ComboBox();
-            this.FurnishingSwapWithFurnishingComboBox = new System.Windows.Forms.ComboBox();
-            this.FurnishingSwapWithFurnishingLabel = new System.Windows.Forms.Label();
+            this.FurnishingIsOpenableCheckBox = new System.Windows.Forms.CheckBox();
+            this.FurnishingIsOpenableLabel = new System.Windows.Forms.Label();
             this.FurnishingIsFlammableCheckBox = new System.Windows.Forms.CheckBox();
             this.FurnishingIsEnclosingCheckBox = new System.Windows.Forms.CheckBox();
             this.FurnishingIsWalkableCheckBox = new System.Windows.Forms.CheckBox();
@@ -3168,8 +3168,8 @@ namespace Scribe.Forms
             this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingDescriptionTextBox, 1, 1);
             this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingCommentTextBox, 1, 2);
             this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingEquivalentItemComboBox, 1, 3);
-            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingSwapWithFurnishingComboBox, 1, 12);
-            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingSwapWithFurnishingLabel, 0, 12);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingIsOpenableCheckBox, 1, 12);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingIsOpenableLabel, 0, 12);
             this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingIsFlammableCheckBox, 1, 11);
             this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingIsEnclosingCheckBox, 1, 10);
             this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingIsWalkableCheckBox, 1, 9);
@@ -3278,22 +3278,21 @@ namespace Scribe.Forms
             this.FurnishingEquivalentItemComboBox.Size = new System.Drawing.Size(144, 21);
             this.FurnishingEquivalentItemComboBox.TabIndex = 29;
             // 
-            // FurnishingSwapWithFurnishingComboBox
+            // FurnishingIsOpenableCheckBox
             // 
-            this.FurnishingSwapWithFurnishingComboBox.FormattingEnabled = true;
-            this.FurnishingSwapWithFurnishingComboBox.Location = new System.Drawing.Point(131, 447);
-            this.FurnishingSwapWithFurnishingComboBox.Name = "FurnishingSwapWithFurnishingComboBox";
-            this.FurnishingSwapWithFurnishingComboBox.Size = new System.Drawing.Size(144, 21);
-            this.FurnishingSwapWithFurnishingComboBox.TabIndex = 29;
+            this.FurnishingIsOpenableCheckBox.Location = new System.Drawing.Point(131, 447);
+            this.FurnishingIsOpenableCheckBox.Name = "FurnishingIsOpenableCheckBox";
+            this.FurnishingIsOpenableCheckBox.Size = new System.Drawing.Size(144, 21);
+            this.FurnishingIsOpenableCheckBox.TabIndex = 29;
             // 
-            // FurnishingSwapWithFurnishingLabel
+            // FurnishingIsOpenableLabel
             // 
-            this.FurnishingSwapWithFurnishingLabel.AutoSize = true;
-            this.FurnishingSwapWithFurnishingLabel.Location = new System.Drawing.Point(3, 444);
-            this.FurnishingSwapWithFurnishingLabel.Name = "FurnishingSwapWithFurnishingLabel";
-            this.FurnishingSwapWithFurnishingLabel.Size = new System.Drawing.Size(110, 13);
-            this.FurnishingSwapWithFurnishingLabel.TabIndex = 34;
-            this.FurnishingSwapWithFurnishingLabel.Text = "Swap With Furnishing";
+            this.FurnishingIsOpenableLabel.AutoSize = true;
+            this.FurnishingIsOpenableLabel.Location = new System.Drawing.Point(3, 444);
+            this.FurnishingIsOpenableLabel.Name = "FurnishingIsOpenableLabel";
+            this.FurnishingIsOpenableLabel.Size = new System.Drawing.Size(65, 13);
+            this.FurnishingIsOpenableLabel.TabIndex = 34;
+            this.FurnishingIsOpenableLabel.Text = "Is Openable";
             // 
             // FurnishingIsFlammableCheckBox
             // 
@@ -7441,8 +7440,8 @@ namespace Scribe.Forms
         private System.Windows.Forms.Label FurnishingIsWalkableLabel;
         private System.Windows.Forms.Label FurnishingIsEnclosingLabel;
         private System.Windows.Forms.Label FurnishingIsFlammableLabel;
-        private System.Windows.Forms.Label FurnishingSwapWithFurnishingLabel;
-        private System.Windows.Forms.ComboBox FurnishingSwapWithFurnishingComboBox;
+        private System.Windows.Forms.Label FurnishingIsOpenableLabel;
+        private System.Windows.Forms.CheckBox FurnishingIsOpenableCheckBox;
         private System.Windows.Forms.CheckBox FurnishingIsWalkableCheckBox;
         private System.Windows.Forms.CheckBox FurnishingIsEnclosingCheckBox;
         private System.Windows.Forms.CheckBox FurnishingIsFlammableCheckBox;
