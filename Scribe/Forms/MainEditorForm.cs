@@ -2381,7 +2381,7 @@ namespace Scribe.Forms
                 return;
             }
 
-            // TODO Currently this is not hooked into the undo system.
+            // TODO [UNDO] Currently this is not hooked into the undo system.
             // Tag changes must be treated atomically instead of as a giant glob.
             var functionStatic = GetFunctionStaticForTab(EditorTabs.SelectedIndex);
             if (functionStatic is not null
@@ -3104,7 +3104,7 @@ namespace Scribe.Forms
         private void CraftingOpenPatternEditorButton_Click(object sender, EventArgs eventArguments)
         {
             _ = MessageBox.Show(Resources.WarningNotImplemented, Resources.CaptionWorkflow, MessageBoxButtons.OK);
-            // TODO: Reenable this once we fully implement StrikePanel-based crafting.
+            // TODO [MINI GAME] Reenable this once we fully implement StrikePanel-based crafting.
             /*
             StrikePatternEditorWindow.CurrentCraft = (CraftingRecipe)GetSelectedModelForTab(EditorTabs.SelectedIndex);
             if (StrikePatternEditorWindow.ShowDialog() == DialogResult.Abort)
@@ -3160,7 +3160,7 @@ namespace Scribe.Forms
         #endregion
 
         #region Regions Tab
-        // TODO Wire these region-related methods up!  (There may be other region items needing wiring.)
+        // TODO [MAPS] Wire these region-related methods up!  (There may be other region items needing wiring.)
         /// <summary>
         /// Responds to the user clicking "Add New Region" on the Regions tab.
         /// </summary>
@@ -3184,7 +3184,7 @@ namespace Scribe.Forms
         /// <param name="eventArguments">Ignored</param>
         private void MapOpenEditorButton_Click(object sender, EventArgs eventArguments)
         {
-            // TODO Implement this!
+            // TODO [MAPS] Implement this!
             //MapEditorWindow.CurrentRegion = (RegionModel)RegionListBox.SelectedItem;
             //if (RegionEditorWindow.CurrentRegion is null ||
             //    RegionEditorWindow.ShowDialog() == DialogResult.Abort)
@@ -3197,7 +3197,7 @@ namespace Scribe.Forms
         #endregion
 
         #region Scripting Tab
-        // TODO Scripts
+        // TODO [SCRIPTS] Wire up scripts tab.
         #endregion
         #endregion
 
