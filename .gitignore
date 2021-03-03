@@ -81,15 +81,19 @@ Thumbs.db
 Icon?
 Icons?
 
-# ====== #
-# Builds #
-# ====== #
+# =============== #
+# Build Artifacts #
+# =============== #
 *.apk
 *.app
 *.dll
 *.exe
 *.iap
 *.unitypackage
+ParquetChangeManagement/ParquetChangeManagement.xml
+ParquetCustomControls/ParquetCustomControls.xml
+Roller/Roller.xml
+Scribe/Scribe.xml
 
 # ================== #
 # Random Paige Stuff #
