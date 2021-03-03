@@ -100,7 +100,7 @@ namespace Scribe.Forms
             this.GamesTabPage = new System.Windows.Forms.TabPage();
             this.GameRemoveGameButton = new System.Windows.Forms.Button();
             this.GameIconEditButton = new System.Windows.Forms.Button();
-            this.GameIconPixelBox = new Scribe.CustomControls.PixelBox();
+            this.GameIconPixelBox = new ParquetCustomControls.PixelBox();
             this.GameTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.GameNameLabel = new System.Windows.Forms.Label();
             this.GameDescriptionLabel = new System.Windows.Forms.Label();
@@ -156,7 +156,7 @@ namespace Scribe.Forms
             this.FloorEditFilledInImageButton = new System.Windows.Forms.Button();
             this.FloorFilledInLabel = new System.Windows.Forms.Label();
             this.FloorDugOutLabel = new System.Windows.Forms.Label();
-            this.FloorFilledInPixelBox = new Scribe.CustomControls.PixelBox();
+            this.FloorFilledInPixelBox = new ParquetCustomControls.PixelBox();
             this.FloorRemoveFloorButton = new System.Windows.Forms.Button();
             this.FloorLayoutTabelPanel = new System.Windows.Forms.TableLayoutPanel();
             this.FloorRemoveRoomTagButton = new System.Windows.Forms.Button();
@@ -184,7 +184,7 @@ namespace Scribe.Forms
             this.FloorListBox = new System.Windows.Forms.ListBox();
             this.FloorIDLabel = new System.Windows.Forms.Label();
             this.FloorEditDugOutImageButton = new System.Windows.Forms.Button();
-            this.FloorDugOutPixelBox = new Scribe.CustomControls.PixelBox();
+            this.FloorDugOutPixelBox = new ParquetCustomControls.PixelBox();
             this.FloorConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.BlocksTabPage = new System.Windows.Forms.TabPage();
             this.BlockFunctionStatic = new System.Windows.Forms.Label();
@@ -222,7 +222,7 @@ namespace Scribe.Forms
             this.BlockRemoveRoomTagButton = new System.Windows.Forms.Button();
             this.BlockAddsToBiomeLabel = new System.Windows.Forms.Label();
             this.BlockAddsToRoomLabel = new System.Windows.Forms.Label();
-            this.BlockPixelBox = new Scribe.CustomControls.PixelBox();
+            this.BlockPixelBox = new ParquetCustomControls.PixelBox();
             this.BlockEditImageButton = new System.Windows.Forms.Button();
             this.BlockIDLabel = new System.Windows.Forms.Label();
             this.BlockListBox = new System.Windows.Forms.ListBox();
@@ -268,7 +268,7 @@ namespace Scribe.Forms
             this.FurnishingListBox = new System.Windows.Forms.ListBox();
             this.FurnishingIDLabel = new System.Windows.Forms.Label();
             this.FurnishingEditImageButton = new System.Windows.Forms.Button();
-            this.FurnishingPixelBox = new Scribe.CustomControls.PixelBox();
+            this.FurnishingPixelBox = new ParquetCustomControls.PixelBox();
             this.FurnishingConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CollectiblesTabPage = new System.Windows.Forms.TabPage();
             this.CollectibleFunctionStatic = new System.Windows.Forms.Label();
@@ -302,7 +302,7 @@ namespace Scribe.Forms
             this.CollectibleListBox = new System.Windows.Forms.ListBox();
             this.CollectibleIDLabel = new System.Windows.Forms.Label();
             this.CollectibleEditImageButton = new System.Windows.Forms.Button();
-            this.CollectiblePixelBox = new Scribe.CustomControls.PixelBox();
+            this.CollectiblePixelBox = new ParquetCustomControls.PixelBox();
             this.CollectibleConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CrittersTabPage = new System.Windows.Forms.TabPage();
             this.CritterEditFlavorButton = new System.Windows.Forms.Button();
@@ -323,7 +323,7 @@ namespace Scribe.Forms
             this.CritterPendingDesignLabel1 = new System.Windows.Forms.Label();
             this.CritterParquetsSoughtLabel = new System.Windows.Forms.Label();
             this.CritterPendingDesignLabel2 = new System.Windows.Forms.Label();
-            this.CritterPixelBox = new Scribe.CustomControls.PixelBox();
+            this.CritterPixelBox = new ParquetCustomControls.PixelBox();
             this.CritterEditImageButton = new System.Windows.Forms.Button();
             this.CritterIDLabel = new System.Windows.Forms.Label();
             this.CritterListBox = new System.Windows.Forms.ListBox();
@@ -387,7 +387,7 @@ namespace Scribe.Forms
             this.CharacterListBox = new System.Windows.Forms.ListBox();
             this.CharacterIDLabel = new System.Windows.Forms.Label();
             this.CharacterEditImageButton = new System.Windows.Forms.Button();
-            this.CharacterPixelBox = new Scribe.CustomControls.PixelBox();
+            this.CharacterPixelBox = new ParquetCustomControls.PixelBox();
             this.ItemsTabPage = new System.Windows.Forms.TabPage();
             this.ItemFunctionStatic = new System.Windows.Forms.Label();
             this.ItemEditFunctionButton = new System.Windows.Forms.Button();
@@ -426,7 +426,7 @@ namespace Scribe.Forms
             this.ItemParquetLabel = new System.Windows.Forms.Label();
             this.ItemEffectWhileHeldComboBox = new System.Windows.Forms.ComboBox();
             this.ItemEquivalentParquetComboBox = new System.Windows.Forms.ComboBox();
-            this.ItemPixelBox = new Scribe.CustomControls.PixelBox();
+            this.ItemPixelBox = new ParquetCustomControls.PixelBox();
             this.ItemIDLabel = new System.Windows.Forms.Label();
             this.ItemAddNewItemButton = new System.Windows.Forms.Button();
             this.ItemIDStatic = new System.Windows.Forms.Label();
@@ -461,7 +461,7 @@ namespace Scribe.Forms
             this.BiomeDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.BiomeCommentTextBox = new System.Windows.Forms.TextBox();
             this.BiomeTierTextBox = new System.Windows.Forms.TextBox();
-            this.BiomePixelBox = new Scribe.CustomControls.PixelBox();
+            this.BiomePixelBox = new ParquetCustomControls.PixelBox();
             this.BiomeIDLabel = new System.Windows.Forms.Label();
             this.BiomeAddNewBiomeButton = new System.Windows.Forms.Button();
             this.BiomeIDStatic = new System.Windows.Forms.Label();
@@ -487,7 +487,7 @@ namespace Scribe.Forms
             this.CraftingProductsLabel = new System.Windows.Forms.Label();
             this.CraftingProductsListBox = new System.Windows.Forms.ListBox();
             this.CraftingStrikePatternLabel = new System.Windows.Forms.Label();
-            this.CraftingPixelBox = new Scribe.CustomControls.PixelBox();
+            this.CraftingPixelBox = new ParquetCustomControls.PixelBox();
             this.CraftingIDLabel = new System.Windows.Forms.Label();
             this.CraftingAddNewCraftingButton = new System.Windows.Forms.Button();
             this.CraftingIDStatic = new System.Windows.Forms.Label();
@@ -534,7 +534,7 @@ namespace Scribe.Forms
             this.RoomMinimumWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
             this.RoomRequiredFurnishingsLabel = new System.Windows.Forms.Label();
             this.RoomRequiredFurnishingsListBox = new System.Windows.Forms.ListBox();
-            this.RoomPixelBox = new Scribe.CustomControls.PixelBox();
+            this.RoomPixelBox = new ParquetCustomControls.PixelBox();
             this.RoomIDLabel = new System.Windows.Forms.Label();
             this.RoomAddNewRoomButton = new System.Windows.Forms.Button();
             this.RoomIDStatic = new System.Windows.Forms.Label();
@@ -545,7 +545,7 @@ namespace Scribe.Forms
             this.RegionRemoveButton = new System.Windows.Forms.Button();
             this.RegionAddNewButton = new System.Windows.Forms.Button();
             this.RegionConfigGroupBox = new System.Windows.Forms.GroupBox();
-            this.RegionPixelBox = new Scribe.CustomControls.PixelBox();
+            this.RegionPixelBox = new ParquetCustomControls.PixelBox();
             this.RegionEditButton = new System.Windows.Forms.Button();
             this.RegionTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.RegionNameLabel = new System.Windows.Forms.Label();
@@ -7318,7 +7318,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.ComboBox GamePlayerCharacterComboBox;
         private System.Windows.Forms.ComboBox GameFirstScriptComboBox;
         private System.Windows.Forms.Button GameIconEditButton;
-        private Scribe.CustomControls.PixelBox GameIconPixelBox;
+        private ParquetCustomControls.PixelBox GameIconPixelBox;
 
         private System.Windows.Forms.TabPage BlocksTabPage;
         private System.Windows.Forms.TableLayoutPanel BlockTableLayoutPanel;
@@ -7346,7 +7346,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.TextBox BlockNameTextBox;
         private System.Windows.Forms.TextBox BlockDescriptionTextBox;
         private System.Windows.Forms.TextBox BlockCommentTextBox;
-        private Scribe.CustomControls.PixelBox BlockPixelBox;
+        private ParquetCustomControls.PixelBox BlockPixelBox;
         private System.Windows.Forms.Button BlockEditImageButton;
         private System.Windows.Forms.ListBox BlockListBox;
         private System.Windows.Forms.Button BlockAddNewBlockButton;
@@ -7384,11 +7384,11 @@ namespace Scribe.Forms
         private System.Windows.Forms.TextBox FloorNameTextBox;
         private System.Windows.Forms.TextBox FloorDescriptionTextBox;
         private System.Windows.Forms.TextBox FloorCommentTextBox;
-        private Scribe.CustomControls.PixelBox FloorDugOutPixelBox;
+        private ParquetCustomControls.PixelBox FloorDugOutPixelBox;
         private System.Windows.Forms.Button FloorEditFilledInImageButton;
         private System.Windows.Forms.Label FloorFilledInLabel;
         private System.Windows.Forms.Label FloorDugOutLabel;
-        private Scribe.CustomControls.PixelBox FloorFilledInPixelBox;
+        private ParquetCustomControls.PixelBox FloorFilledInPixelBox;
         private System.Windows.Forms.Button FloorAddNewFloorButton;
         private System.Windows.Forms.Button FloorRemoveFloorButton;
         private System.Windows.Forms.GroupBox FloorConfigGroupBox;
@@ -7435,7 +7435,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.Button FurnishingAddNewFurnishingButton;
         private System.Windows.Forms.ListBox FurnishingListBox;
         private System.Windows.Forms.Button FurnishingEditImageButton;
-        private Scribe.CustomControls.PixelBox FurnishingPixelBox;
+        private ParquetCustomControls.PixelBox FurnishingPixelBox;
         private System.Windows.Forms.ComboBox FurnishingEntryTypeComboBox;
         private System.Windows.Forms.Label FurnishingEntryTypeLabel;
         private System.Windows.Forms.Label FurnishingIsWalkableLabel;
@@ -7480,7 +7480,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.Button CollectibleAddNewCollectibleButton;
         private System.Windows.Forms.ListBox CollectibleListBox;
         private System.Windows.Forms.Button CollectibleEditImageButton;
-        private Scribe.CustomControls.PixelBox CollectiblePixelBox;
+        private ParquetCustomControls.PixelBox CollectiblePixelBox;
 
         private System.Windows.Forms.TabPage CharactersTabPage;
         private System.Windows.Forms.GroupBox CharacterPronounGroupBox;
@@ -7509,7 +7509,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.Button CharacterAddNewCharacterButton;
         private System.Windows.Forms.ListBox CharacterListBox;
         private System.Windows.Forms.Button CharacterEditImageButton;
-        private Scribe.CustomControls.PixelBox CharacterPixelBox;
+        private ParquetCustomControls.PixelBox CharacterPixelBox;
         private System.Windows.Forms.TextBox CharacterStoryIDTextBox;
         private System.Windows.Forms.Button CharacterOpenInventoryEditorButton;
         private System.Windows.Forms.Label CharacterPronounLabel;
@@ -7562,7 +7562,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.Label CritterPendingDesignLabel1;
         private System.Windows.Forms.Label CritterParquetsSoughtLabel;
         private System.Windows.Forms.Label CritterPendingDesignLabel2;
-        private Scribe.CustomControls.PixelBox CritterPixelBox;
+        private ParquetCustomControls.PixelBox CritterPixelBox;
         private System.Windows.Forms.Button CritterEditImageButton;
         private System.Windows.Forms.Button CritterAddNewCritterButton;
         private System.Windows.Forms.GroupBox CritterConfigGroupBox;
@@ -7592,7 +7592,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.TextBox ItemDescriptionTextBox;
         private System.Windows.Forms.TextBox ItemCommentTextBox;
         private System.Windows.Forms.TextBox ItemPriceTextBox;
-        private Scribe.CustomControls.PixelBox ItemPixelBox;
+        private ParquetCustomControls.PixelBox ItemPixelBox;
         private System.Windows.Forms.Label ItemIDLabel;
         private System.Windows.Forms.Button ItemAddNewItemButton;
         private System.Windows.Forms.Button ItemRemoveItemButton;
@@ -7630,7 +7630,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.TextBox BiomeDescriptionTextBox;
         private System.Windows.Forms.TextBox BiomeCommentTextBox;
         private System.Windows.Forms.TextBox BiomeTierTextBox;
-        private Scribe.CustomControls.PixelBox BiomePixelBox;
+        private ParquetCustomControls.PixelBox BiomePixelBox;
         private System.Windows.Forms.Button BiomeAddNewBiomeButton;
         private System.Windows.Forms.Button BiomeRemoveBiomeButton;
         private System.Windows.Forms.CheckBox BiomeIsLiquidBasedCheckBox;
@@ -7662,7 +7662,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.TextBox CraftingNameTextBox;
         private System.Windows.Forms.TextBox CraftingDescriptionTextBox;
         private System.Windows.Forms.TextBox CraftingCommentTextBox;
-        private Scribe.CustomControls.PixelBox CraftingPixelBox;
+        private ParquetCustomControls.PixelBox CraftingPixelBox;
         private System.Windows.Forms.Button CraftingAddNewCraftingButton;
         private System.Windows.Forms.Button CraftingRemoveCraftingButton;
         private System.Windows.Forms.Button CraftingOpenPatternEditorButton;
@@ -7703,7 +7703,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.TextBox RoomDescriptionTextBox;
         private System.Windows.Forms.TextBox RoomCommentTextBox;
         private System.Windows.Forms.TextBox RoomMinimumWalkableSpacesTextBox;
-        private Scribe.CustomControls.PixelBox RoomPixelBox;
+        private ParquetCustomControls.PixelBox RoomPixelBox;
         private System.Windows.Forms.Button RoomAddNewRoomButton;
         private System.Windows.Forms.Button RoomRemoveRoomButton;
         private System.Windows.Forms.Button RoomAddBlockButton;
@@ -7729,7 +7729,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.Button RegionRemoveButton;
         private System.Windows.Forms.Button RegionAddNewButton;
         private System.Windows.Forms.GroupBox RegionConfigGroupBox;
-        private CustomControls.PixelBox RegionPixelBox;
+        private ParquetCustomControls.PixelBox RegionPixelBox;
         private System.Windows.Forms.Button RegionEditButton;
         private System.Windows.Forms.TableLayoutPanel RegionTableLayoutPanel;
         private System.Windows.Forms.Label RegionNameLabel;
