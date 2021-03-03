@@ -94,6 +94,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ParquetChangeManagement\ParquetChangeManagement.csproj" />
+    <ProjectReference Include="..\ParquetCustomControls\ParquetCustomControls.csproj" />
     <ProjectReference Include="..\Roller\Roller.csproj" />
   </ItemGroup>
 
