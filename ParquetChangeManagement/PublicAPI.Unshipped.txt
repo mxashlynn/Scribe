@@ -1,0 +1,30 @@
+abstract ParquetChangeManagement.Change.Execute() -> void
+abstract ParquetChangeManagement.Change.Reverse() -> void
+override ParquetChangeManagement.ChangeList.Execute() -> void
+override ParquetChangeManagement.ChangeList.Reverse() -> void
+override ParquetChangeManagement.ChangeValue.Execute() -> void
+override ParquetChangeManagement.ChangeValue.Reverse() -> void
+ParquetChangeManagement.Change
+ParquetChangeManagement.Change.Change() -> void
+ParquetChangeManagement.Change.Description.get -> string
+ParquetChangeManagement.Change.Description.set -> void
+ParquetChangeManagement.ChangeList
+ParquetChangeManagement.ChangeList.ChangeList(object inValue, string inDescription, System.Action<object> inOnExecute, System.Action<object> inOnRemove) -> void
+ParquetChangeManagement.ChangeList.OnExecute.get -> System.Action<object>
+ParquetChangeManagement.ChangeList.OnReverse.get -> System.Action<object>
+ParquetChangeManagement.ChangeList.Value.get -> object
+ParquetChangeManagement.ChangeManager
+ParquetChangeManagement.ChangeValue
+ParquetChangeManagement.ChangeValue.ChangeValue(object inOldState, object inNewState, string inControlName, System.Action<object> inSetDatabaseValue, System.Action<object> inSetDisplayValue, System.Action<object> inSetOldValue) -> void
+ParquetChangeManagement.ChangeValue.NewState.get -> object
+ParquetChangeManagement.ChangeValue.OldState.get -> object
+ParquetChangeManagement.ChangeValue.SetDatabaseValue.get -> System.Action<object>
+ParquetChangeManagement.ChangeValue.SetDisplayValue.get -> System.Action<object>
+ParquetChangeManagement.ChangeValue.SetOldValue.get -> System.Action<object>
+static ParquetChangeManagement.ChangeManager.AddAndExecute(ParquetChangeManagement.Change inChange) -> void
+static ParquetChangeManagement.ChangeManager.Clear() -> void
+static ParquetChangeManagement.ChangeManager.Count.get -> int
+static ParquetChangeManagement.ChangeManager.MaximumChanges.get -> int
+static ParquetChangeManagement.ChangeManager.MaximumChanges.set -> void
+static ParquetChangeManagement.ChangeManager.Redo() -> void
+static ParquetChangeManagement.ChangeManager.Undo() -> void
