@@ -21,6 +21,8 @@ using Parquet.Parquets;
 using Parquet.Regions;
 using Parquet.Rooms;
 using Parquet.Scripts;
+using ParquetChangeManagement;
+using ParquetCustomControls;
 using Roller;
 using Scribe.Properties;
 
@@ -2044,37 +2046,45 @@ namespace Scribe.Forms
                                   (string)EditableControls[typeof(TextBox)][textbox],
                                   comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
-                ChangeManager.AddAndExecute(new ChangeValue(EditableControls[typeof(TextBox)][textbox], textbox.Text, textbox.Name,
-                                            (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
-                                            (object displayValue) => textbox.Text = displayValue.ToString(),
-                                            (object oldValue) => EditableControls[typeof(TextBox)][textbox] = oldValue));
+                var changeToExecute = new ChangeValue(EditableControls[typeof(TextBox)][textbox], textbox.Text, textbox.Name,
+                                                      (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
+                                                      (object displayValue) => textbox.Text = displayValue.ToString(),
+                                                      (object oldValue) => EditableControls[typeof(TextBox)][textbox] = oldValue);
+                Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+                ChangeManager.AddAndExecute(changeToExecute);
             }
             else if (alteredControl is CheckBox checkbox
                      && checkbox.Checked != (bool?)EditableControls[typeof(CheckBox)][checkbox])
             {
                 var oldValue = (bool?)EditableControls[typeof(CheckBox)][checkbox];
-                ChangeManager.AddAndExecute(new ChangeValue(oldValue, (bool?)checkbox.Checked, checkbox.Name,
-                                            (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
-                                            (object displayValue) => checkbox.Checked = (bool)displayValue,
-                                            (object oldValue) => EditableControls[typeof(CheckBox)][checkbox] = oldValue));
+                var changeToExecute = new ChangeValue(oldValue, (bool?)checkbox.Checked, checkbox.Name,
+                                        (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
+                                        (object displayValue) => checkbox.Checked = (bool)displayValue,
+                                        (object oldValue) => EditableControls[typeof(CheckBox)][checkbox] = oldValue);
+                Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+                ChangeManager.AddAndExecute(changeToExecute);
             }
             else if (alteredControl is ComboBox combobox
                      && combobox.SelectedItem != EditableControls[typeof(ComboBox)][combobox])
             {
                 var oldValue = EditableControls[typeof(ComboBox)][combobox];
-                ChangeManager.AddAndExecute(new ChangeValue(oldValue, combobox.SelectedItem, combobox.Name,
+                var changeToExecute = new ChangeValue(oldValue, combobox.SelectedItem, combobox.Name,
                                             (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
                                             (object displayValue) => combobox.SelectedItem = displayValue,
-                                            (object oldValue) => EditableControls[typeof(ComboBox)][combobox] = oldValue));
+                                            (object oldValue) => EditableControls[typeof(ComboBox)][combobox] = oldValue);
+                Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+                ChangeManager.AddAndExecute(changeToExecute);
             }
             else if (alteredControl is ListBox listbox
                      && listbox.SelectedItem != EditableControls[typeof(ListBox)][listbox])
             {
                 var oldValue = EditableControls[typeof(ListBox)][listbox];
-                ChangeManager.AddAndExecute(new ChangeValue(oldValue, listbox.SelectedItem, listbox.Name,
+                var changeToExecute = new ChangeValue(oldValue, listbox.SelectedItem, listbox.Name,
                                             (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
                                             (object displayValue) => listbox.SelectedItem = displayValue,
-                                            (object oldValue) => EditableControls[typeof(ListBox)][listbox] = oldValue));
+                                            (object oldValue) => EditableControls[typeof(ListBox)][listbox] = oldValue);
+                Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+                ChangeManager.AddAndExecute(changeToExecute);
             }
 
 
@@ -2142,7 +2152,7 @@ namespace Scribe.Forms
             }
 
             var modelToAdd = inAllocateNewInstance(nextID);
-            ChangeManager.AddAndExecute(new ChangeList(modelToAdd, $"add new {inModelTypeName} definition",
+            var changeToExecute = new ChangeList(modelToAdd, $"add new {inModelTypeName} definition",
                                         (object databaseValue) =>
                                         {
                                             ((IMutableModelCollection<TModel>)inDatabaseCollection).Add((TModel)databaseValue);
@@ -2156,7 +2166,9 @@ namespace Scribe.Forms
                                             inListBox.Items.Remove(databaseValue);
                                             inListBox.SelectedItem = null;
                                             HasUnsavedChanges = true;
-                                        }));
+                                        });
+            Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+            ChangeManager.AddAndExecute(changeToExecute);
         }
 
         /// <summary>
@@ -2182,7 +2194,7 @@ namespace Scribe.Forms
                 return;
             }
 
-            ChangeManager.AddAndExecute(new ChangeList(modelToRemove, $"remove {inModelTypeName} {modelToRemove.Name}",
+            var changeToExecute = new ChangeList(modelToRemove, $"remove {inModelTypeName} {modelToRemove.Name}",
                                         (object databaseValue) =>
                                         {
                                             ((IMutableModelCollection<TModel>)inDatabaseCollection).Remove((TModel)databaseValue);
@@ -2196,7 +2208,9 @@ namespace Scribe.Forms
                                             _ = inListBox.Items.Add(databaseValue);
                                             inListBox.SelectedItem = databaseValue;
                                             HasUnsavedChanges = true;
-                                        }));
+                                        });
+            Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+            ChangeManager.AddAndExecute(changeToExecute);
         }
         #endregion
 
@@ -2228,7 +2242,7 @@ namespace Scribe.Forms
                     return;
                 }
 
-                ChangeManager.AddAndExecute(new ChangeList(AddTagDialogue.ReturnNewTag,
+                var changeToExecute = new ChangeList(AddTagDialogue.ReturnNewTag,
                                             $"add tag {AddTagDialogue.ReturnNewTag} to {model.Name}",
                                             (object databaseValue) =>
                                             {
@@ -2243,7 +2257,9 @@ namespace Scribe.Forms
                                                 inAddsToListBox.Items.Remove(databaseValue);
                                                 inAddsToListBox.SelectedItem = null;
                                                 HasUnsavedChanges = true;
-                                            }));
+                                            });
+                Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+                ChangeManager.AddAndExecute(changeToExecute);
             }
         }
 
@@ -2263,7 +2279,7 @@ namespace Scribe.Forms
 
             if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is TInterface model)
             {
-                ChangeManager.AddAndExecute(new ChangeList((ModelTag)inAddsToListBox.SelectedItem,
+                var changeToExecute = new ChangeList((ModelTag)inAddsToListBox.SelectedItem,
                                             $"remove tag {inAddsToListBox.SelectedItem} from {model.Name}",
                                             (object databaseValue) =>
                                             {
@@ -2278,7 +2294,9 @@ namespace Scribe.Forms
                                                 _ = inAddsToListBox.Items.Add(databaseValue);
                                                 inAddsToListBox.SelectedItem = databaseValue;
                                                 HasUnsavedChanges = true;
-                                            }));
+                                            });
+                Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+                ChangeManager.AddAndExecute(changeToExecute);
             }
         }
 
@@ -2427,7 +2445,7 @@ namespace Scribe.Forms
                     return;
                 }
 
-                ChangeManager.AddAndExecute(new ChangeList(AddRecipeElementDialogue.ReturnNewRecipeElement,
+                var changeToExecute = new ChangeList(AddRecipeElementDialogue.ReturnNewRecipeElement,
                                             $"add recipe element {AddRecipeElementDialogue.ReturnNewRecipeElement} to {recipe.Name}",
                                             (object databaseValue) =>
                                             {
@@ -2442,7 +2460,9 @@ namespace Scribe.Forms
                                                 inAddsToListBox.Items.Remove(databaseValue);
                                                 inAddsToListBox.SelectedItem = null;
                                                 HasUnsavedChanges = true;
-                                            }));
+                                            });
+                Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+                ChangeManager.AddAndExecute(changeToExecute);
             }
         }
 
@@ -2464,7 +2484,7 @@ namespace Scribe.Forms
 
             if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is TInterface recipe)
             {
-                ChangeManager.AddAndExecute(new ChangeList((RecipeElement)inAddsToListBox.SelectedItem,
+                var changeToExecute = new ChangeList((RecipeElement)inAddsToListBox.SelectedItem,
                                             $"remove recipe element {inAddsToListBox.SelectedItem} from {recipe.Name}",
                                             (object databaseValue) =>
                                             {
@@ -2479,7 +2499,9 @@ namespace Scribe.Forms
                                                 _ = inAddsToListBox.Items.Add(databaseValue);
                                                 inAddsToListBox.SelectedItem = databaseValue;
                                                 HasUnsavedChanges = true;
-                                            }));
+                                            });
+                Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+                ChangeManager.AddAndExecute(changeToExecute);
             }
         }
         #endregion
@@ -2509,22 +2531,24 @@ namespace Scribe.Forms
                     return;
                 }
 
-                ChangeManager.AddAndExecute(new ChangeList(AddQuestDialogue.ReturnNewQuestID,
-                                            $"add tag quest to {character.Name}",
-                                            (object databaseValue) =>
-                                            {
-                                                inGetQuestListFromModel(character).Add((ModelID)databaseValue);
-                                                _ = inAddsToListBox.Items.Add(databaseValue);
-                                                inAddsToListBox.SelectedItem = databaseValue;
-                                                HasUnsavedChanges = true;
-                                            },
-                                            (object databaseValue) =>
-                                            {
-                                                inGetQuestListFromModel(character).Remove((ModelID)databaseValue);
-                                                inAddsToListBox.Items.Remove(databaseValue);
-                                                inAddsToListBox.SelectedItem = null;
-                                                HasUnsavedChanges = true;
-                                            }));
+                var changeToExecute = new ChangeList(AddQuestDialogue.ReturnNewQuestID,
+                                        $"add tag quest to {character.Name}",
+                                        (object databaseValue) =>
+                                        {
+                                            inGetQuestListFromModel(character).Add((ModelID)databaseValue);
+                                            _ = inAddsToListBox.Items.Add(databaseValue);
+                                            inAddsToListBox.SelectedItem = databaseValue;
+                                            HasUnsavedChanges = true;
+                                        },
+                                        (object databaseValue) =>
+                                        {
+                                            inGetQuestListFromModel(character).Remove((ModelID)databaseValue);
+                                            inAddsToListBox.Items.Remove(databaseValue);
+                                            inAddsToListBox.SelectedItem = null;
+                                            HasUnsavedChanges = true;
+                                        });
+                Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+                ChangeManager.AddAndExecute(changeToExecute);
             }
         }
 
@@ -2544,22 +2568,24 @@ namespace Scribe.Forms
 
             if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is IMutableCharacterModel character)
             {
-                ChangeManager.AddAndExecute(new ChangeList((ModelTag)inAddsToListBox.SelectedItem,
-                                            $"remove tag {inAddsToListBox.SelectedItem} from {character.Name}",
-                                            (object databaseValue) =>
-                                            {
-                                                inGetTagListFromModel(character).Remove((ModelID)databaseValue);
-                                                inAddsToListBox.Items.Remove(databaseValue);
-                                                inAddsToListBox.SelectedItem = null;
-                                                HasUnsavedChanges = true;
-                                            },
-                                            (object databaseValue) =>
-                                            {
-                                                inGetTagListFromModel(character).Add((ModelID)databaseValue);
-                                                _ = inAddsToListBox.Items.Add(databaseValue);
-                                                inAddsToListBox.SelectedItem = databaseValue;
-                                                HasUnsavedChanges = true;
-                                            }));
+                var changeToExecute = new ChangeList((ModelTag)inAddsToListBox.SelectedItem,
+                                        $"remove tag {inAddsToListBox.SelectedItem} from {character.Name}",
+                                        (object databaseValue) =>
+                                        {
+                                            inGetTagListFromModel(character).Remove((ModelID)databaseValue);
+                                            inAddsToListBox.Items.Remove(databaseValue);
+                                            inAddsToListBox.SelectedItem = null;
+                                            HasUnsavedChanges = true;
+                                        },
+                                        (object databaseValue) =>
+                                        {
+                                            inGetTagListFromModel(character).Add((ModelID)databaseValue);
+                                            _ = inAddsToListBox.Items.Add(databaseValue);
+                                            inAddsToListBox.SelectedItem = databaseValue;
+                                            HasUnsavedChanges = true;
+                                        });
+                Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+                ChangeManager.AddAndExecute(changeToExecute);
             }
         }
         #endregion
@@ -2852,25 +2878,27 @@ namespace Scribe.Forms
             }
 
             var groupToAdd = new PronounGroup("-", "-", "-", "-", "-");
-            ChangeManager.AddAndExecute(new ChangeList(groupToAdd, $"add new Pronoun Group definition",
-                                        (object databaseValue) =>
-                                        {
-                                            var pronounGroup = (PronounGroup)databaseValue;
-                                            ((ICollection<PronounGroup>)All.PronounGroups).Add(pronounGroup);
-                                            _ = CharacterPronounListBox.Items.Add(pronounGroup);
-                                            _ = CharacterPronounComboBox.Items.Add(pronounGroup.Key);
-                                            CharacterPronounListBox.SelectedItem = pronounGroup;
-                                            HasUnsavedChanges = true;
-                                        },
-                                        (object databaseValue) =>
-                                        {
-                                            var pronounGroup = (PronounGroup)databaseValue;
-                                            ((ICollection<PronounGroup>)All.PronounGroups).Remove(pronounGroup);
-                                            CharacterPronounListBox.Items.Remove(pronounGroup);
-                                            CharacterPronounComboBox.Items.Remove(pronounGroup.Key);
-                                            CharacterPronounListBox.SelectedItem = null;
-                                            HasUnsavedChanges = true;
-                                        }));
+            var changeToExecute = new ChangeList(groupToAdd, $"add new Pronoun Group definition",
+                                    (object databaseValue) =>
+                                    {
+                                        var pronounGroup = (PronounGroup)databaseValue;
+                                        ((ICollection<PronounGroup>)All.PronounGroups).Add(pronounGroup);
+                                        _ = CharacterPronounListBox.Items.Add(pronounGroup);
+                                        _ = CharacterPronounComboBox.Items.Add(pronounGroup.Key);
+                                        CharacterPronounListBox.SelectedItem = pronounGroup;
+                                        HasUnsavedChanges = true;
+                                    },
+                                    (object databaseValue) =>
+                                    {
+                                        var pronounGroup = (PronounGroup)databaseValue;
+                                        ((ICollection<PronounGroup>)All.PronounGroups).Remove(pronounGroup);
+                                        CharacterPronounListBox.Items.Remove(pronounGroup);
+                                        CharacterPronounComboBox.Items.Remove(pronounGroup.Key);
+                                        CharacterPronounListBox.SelectedItem = null;
+                                        HasUnsavedChanges = true;
+                                    });
+            Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+            ChangeManager.AddAndExecute(changeToExecute);
         }
 
         /// <summary>
@@ -2892,25 +2920,27 @@ namespace Scribe.Forms
                 return;
             }
 
-            ChangeManager.AddAndExecute(new ChangeList(groupToRemove, $"remove Pronoun Group {groupToRemove.Key}",
-                                        (object databaseValue) =>
-                                        {
-                                            var pronounGroup = (PronounGroup)databaseValue;
-                                            ((ICollection<PronounGroup>)All.PronounGroups).Remove(pronounGroup);
-                                            CharacterPronounListBox.Items.Remove(pronounGroup);
-                                            CharacterPronounComboBox.Items.Remove(pronounGroup.Key);
-                                            CharacterPronounListBox.SelectedItem = null;
-                                            HasUnsavedChanges = true;
-                                        },
-                                        (object databaseValue) =>
-                                        {
-                                            var pronounGroup = (PronounGroup)databaseValue;
-                                            ((ICollection<PronounGroup>)All.PronounGroups).Add(pronounGroup);
-                                            _ = CharacterPronounListBox.Items.Add(pronounGroup);
-                                            _ = CharacterPronounComboBox.Items.Add(pronounGroup.Key);
-                                            CharacterPronounListBox.SelectedItem = pronounGroup;
-                                            HasUnsavedChanges = true;
-                                        }));
+            var changeToExecute = new ChangeList(groupToRemove, $"remove Pronoun Group {groupToRemove.Key}",
+                                    (object databaseValue) =>
+                                    {
+                                        var pronounGroup = (PronounGroup)databaseValue;
+                                        ((ICollection<PronounGroup>)All.PronounGroups).Remove(pronounGroup);
+                                        CharacterPronounListBox.Items.Remove(pronounGroup);
+                                        CharacterPronounComboBox.Items.Remove(pronounGroup.Key);
+                                        CharacterPronounListBox.SelectedItem = null;
+                                        HasUnsavedChanges = true;
+                                    },
+                                    (object databaseValue) =>
+                                    {
+                                        var pronounGroup = (PronounGroup)databaseValue;
+                                        ((ICollection<PronounGroup>)All.PronounGroups).Add(pronounGroup);
+                                        _ = CharacterPronounListBox.Items.Add(pronounGroup);
+                                        _ = CharacterPronounComboBox.Items.Add(pronounGroup.Key);
+                                        CharacterPronounListBox.SelectedItem = pronounGroup;
+                                        HasUnsavedChanges = true;
+                                    });
+            Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+            ChangeManager.AddAndExecute(changeToExecute);
         }
         #endregion
 
@@ -3337,7 +3367,10 @@ namespace Scribe.Forms
         /// <param name="sender">Originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>
         private void UndoToolStripMenuItem_Click(object sender, EventArgs eventArguments)
-            => ChangeManager.Undo();
+        {
+            Logger.Log(LogLevel.Info, $"{nameof(ChangeManager.Undo)} {ChangeManager.CurrentChangeDescription}");
+            ChangeManager.Undo();
+        }
 
         /// <summary>
         /// Responds to a user selecting the "Redo" menu item.
@@ -3345,7 +3378,10 @@ namespace Scribe.Forms
         /// <param name="sender">Originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>
         private void RedoToolStripMenuItem_Click(object sender, EventArgs eventArguments)
-            => ChangeManager.Redo();
+        {
+            Logger.Log(LogLevel.Info, $"{nameof(ChangeManager.Redo)} {ChangeManager.NextChangeDescription}");
+            ChangeManager.Redo();
+        }
 
         /// <summary>
         /// Responds to a user selecting the "Cut" menu item.

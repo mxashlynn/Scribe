@@ -1,12 +1,11 @@
 using System;
-using Parquet;
 
 namespace ParquetChangeManagement
 {
     /// <summary>
     /// Encapsulates a change-of-value request, providing both the ability to act on the request and to take it back.
     /// </summary>
-    internal class ChangeValue : Change
+    public class ChangeValue : Change
     {
         /// <summary>State before change.</summary>
         protected object OldState { get; }
@@ -33,12 +32,12 @@ namespace ParquetChangeManagement
         /// <param name="inSetDatabaseValue">The means to set the state in the backing store.</param>
         /// <param name="inSetDisplayValue">The means to set the state in the UI.</param>
         /// <param name="inSetOldValue">The means to set the state in the UI request-tracker.</param>
-        internal ChangeValue(object inOldState, object inNewState, string inControlName,
-                             Action<object> inSetDatabaseValue, Action<object> inSetDisplayValue, Action<object> inSetOldValue)
+        public ChangeValue(object inOldState, object inNewState, string inControlName,
+                           Action<object> inSetDatabaseValue, Action<object> inSetDisplayValue, Action<object> inSetOldValue)
         {
-            Precondition.IsNotNull(inSetDatabaseValue, nameof(inSetDatabaseValue));
-            Precondition.IsNotNull(inSetDisplayValue, nameof(inSetDisplayValue));
-            Precondition.IsNotNull(inSetOldValue, nameof(inSetOldValue));
+            if (inSetDatabaseValue is null) { throw new ArgumentNullException(nameof(inSetDatabaseValue)); }
+            if (inSetDisplayValue is null) { throw new ArgumentNullException(nameof(inSetDisplayValue)); }
+            if (inSetOldValue is null) { throw new ArgumentNullException(nameof(inSetOldValue)); }
 
             OldState = inOldState;
             NewState = inNewState;
@@ -58,7 +57,7 @@ namespace ParquetChangeManagement
         /// <summary>
         /// Make the change.
         /// </summary>
-        internal override void Execute()
+        public override void Execute()
         {
             SetOldValue(NewState);
             SetDatabaseValue(NewState);
@@ -68,7 +67,7 @@ namespace ParquetChangeManagement
         /// <summary>
         /// Reverse the change.
         /// </summary>
-        internal override void Reverse()
+        public override void Reverse()
         {
             SetOldValue(OldState);
             SetDatabaseValue(OldState);

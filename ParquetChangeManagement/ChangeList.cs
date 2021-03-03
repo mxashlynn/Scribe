@@ -1,12 +1,11 @@
 using System;
-using Parquet;
 
 namespace ParquetChangeManagement
 {
     /// <summary>
     /// Encapsulates a request to add an object to a list, providing both the ability to act on the request and to take it back.
     /// </summary>
-    internal class ChangeList : Change
+    public class ChangeList : Change
     {
         /// <summary>The value being added or removed.</summary>
         protected object Value { get; }
@@ -25,12 +24,12 @@ namespace ParquetChangeManagement
         /// <param name="inDescription">Used in constructing a summary of the change.</param>
         /// <param name="inOnExecute">The means to add the value to the list in the backing store and update the UI.</param>
         /// <param name="inOnRemove">What to do when reversing the change.</param>
-        internal ChangeList(object inValue, string inDescription, Action<object> inOnExecute, Action<object> inOnRemove)
+        public ChangeList(object inValue, string inDescription, Action<object> inOnExecute, Action<object> inOnRemove)
         {
-            Precondition.IsNotNull(inValue, nameof(inValue));
-            Precondition.IsNotNullOrEmpty(inDescription, nameof(inDescription));
-            Precondition.IsNotNull(inOnExecute, nameof(inOnExecute));
-            Precondition.IsNotNull(inOnRemove, nameof(inOnRemove));
+            if (inValue is null) { throw new ArgumentNullException(nameof(inValue)); }
+            if (string.IsNullOrEmpty(inDescription)) { throw new ArgumentNullException(nameof(inDescription)); }
+            if (inOnExecute is null) { throw new ArgumentNullException(nameof(inOnExecute)); }
+            if (inOnRemove is null) { throw new ArgumentNullException(nameof(inOnRemove)); }
 
             Value = inValue;
             Description = inDescription;
@@ -41,13 +40,13 @@ namespace ParquetChangeManagement
         /// <summary>
         /// Make the change.
         /// </summary>
-        internal override void Execute()
+        public override void Execute()
             => OnExecute(Value);
 
         /// <summary>
         /// Reverse the change.
         /// </summary>
-        internal override void Reverse()
+        public override void Reverse()
             => OnReverse(Value);
     }
 }

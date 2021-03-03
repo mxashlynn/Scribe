@@ -24,7 +24,9 @@ ParquetChangeManagement.ChangeValue.SetOldValue.get -> System.Action<object>
 static ParquetChangeManagement.ChangeManager.AddAndExecute(ParquetChangeManagement.Change inChange) -> void
 static ParquetChangeManagement.ChangeManager.Clear() -> void
 static ParquetChangeManagement.ChangeManager.Count.get -> int
+static ParquetChangeManagement.ChangeManager.CurrentChangeDescription.get -> string
 static ParquetChangeManagement.ChangeManager.MaximumChanges.get -> int
 static ParquetChangeManagement.ChangeManager.MaximumChanges.set -> void
+static ParquetChangeManagement.ChangeManager.NextChangeDescription.get -> string
 static ParquetChangeManagement.ChangeManager.Redo() -> void
 static ParquetChangeManagement.ChangeManager.Undo() -> void

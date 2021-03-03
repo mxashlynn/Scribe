@@ -1,13 +1,12 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using Parquet;
 
 namespace ParquetChangeManagement
 {
     /// <summary>
     /// Tracks requests to make changes and stores them as <see cref="Change"/> objects to enable Undo and Redo functionality.
     /// </summary>
-    internal static class ChangeManager
+    public static class ChangeManager
     {
         /// <summary>A history of actions taken.</summary>
         [SuppressMessage("Design", "CA1002:Do not expose generic lists",
@@ -24,7 +23,7 @@ namespace ParquetChangeManagement
         /// How many levels of undo to maintain.
         /// No more than this number of <see cref="Change"/>s will ever be stored.  Cannot be less than 1.
         /// </summary>
-        internal static int MaximumChanges
+        public static int MaximumChanges
         {
             get => _maximumChanges;
             set
@@ -42,15 +41,13 @@ namespace ParquetChangeManagement
         }
 
         /// <summary>How many levels of undo are currently stored.</summary>
-        internal static int Count => Changes.Count;
+        public static int Count => Changes.Count;
 
         /// <summary>
         /// Empties the <see cref="Change"/> history and resets the manager.
         /// </summary>
-        internal static void Clear()
+        public static void Clear()
         {
-            // TODO [UNDO] Inject this log dependency.
-            Logger.Log(LogLevel.Info, $"{nameof(Clear)} {nameof(ChangeHistory)}");
             Changes.Clear();
             CurrentChangeIndex = -1;
         }
@@ -59,11 +56,8 @@ namespace ParquetChangeManagement
         /// Add a new <see cref="Change"/> to the history and immediately take action on it.
         /// </summary>
         /// <param name="inChange">The change to add and act on.</param>
-        internal static void AddAndExecute(Change inChange)
+        public static void AddAndExecute(Change inChange)
         {
-            // TODO [UNDO] Inject this log dependency.
-            Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {inChange.Description}");
-
             CurrentChangeIndex++;
             if (0 < Count && CurrentChangeIndex < Count)
             {
@@ -81,31 +75,41 @@ namespace ParquetChangeManagement
         }
 
         /// <summary>
-        /// Undo the last action done, if any.
+        /// Undo the last change done, if any.
         /// </summary>
-        internal static void Undo()
+        public static void Undo()
         {
             if (CurrentChangeIndex > -1)
             {
-                // TODO [UNDO] Inject this log dependency.
-                Logger.Log(LogLevel.Info, $"{nameof(Undo)} {Changes[CurrentChangeIndex].Description}");
                 Changes[CurrentChangeIndex].Reverse();
                 CurrentChangeIndex--;
             }
         }
 
         /// <summary>
-        /// Redo the action most recently undone, if any.
+        /// Redo the change most recently undone, if any.
         /// </summary>
-        internal static void Redo()
+        public static void Redo()
         {
             if (CurrentChangeIndex < Count - 1)
             {
                 CurrentChangeIndex++;
-                // TODO [UNDO] Inject this log dependency.
-                Logger.Log(LogLevel.Info, $"{nameof(Redo)} {Changes[CurrentChangeIndex].Description}");
                 Changes[CurrentChangeIndex].Execute();
             }
         }
+
+        /// <summary>
+        /// Description of the change most recently done.
+        /// </summary>
+        public static string CurrentChangeDescription
+            => Changes[CurrentChangeIndex].Description;
+
+        /// <summary>
+        /// Description of the change after the current change, if any.
+        /// </summary>
+        public static string NextChangeDescription
+            => CurrentChangeIndex < Count - 1
+                ? Changes[CurrentChangeIndex + 1].Description
+                : "";
     }
 }
