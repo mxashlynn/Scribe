@@ -23,7 +23,7 @@ namespace Scribe.Forms
         /// <summary>The <see cref="EditorTheme"/> that was set when the form was shown.</summary>
         private EditorTheme OldTheme;
 
-        /// <summary>User-set autosave interval.  Guaranteed to be valid when <see cref="OptionsBox.FormClosingEventHandler"/> runs.</summary>
+        /// <summary>User-set autosave interval.</summary>
         private int NewAutoSaveInterval;
 
         /// <summary>The UI elements used to represent the current <see cref="EditorTheme"/>.</summary>

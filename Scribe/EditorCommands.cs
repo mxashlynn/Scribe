@@ -148,6 +148,7 @@ namespace Scribe
         /// is <c>sealed</c> we take care of it here.
         /// </remarks>
         /// <param name="inMessage">A prompt to the user, differentiating between loading existing files and creating new blank ones.</param>
+        /// <param name="inDefaultFolderName">A folder name to suggest to the user.</param>
         /// <returns>True if the user selected a folder.</returns>
         public static bool SelectProjectFolder(string inMessage, string inDefaultFolderName)
         {

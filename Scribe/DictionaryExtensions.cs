@@ -4,7 +4,7 @@ using System.Windows.Forms;
 namespace Scribe
 {
     /// <summary>
-    /// Extension methods for <see cref="Dictionary"/>.
+    /// Extension methods for <see cref="Dictionary{K,V}"/>.
     /// </summary>
     internal static class DictionaryExtensions
     {

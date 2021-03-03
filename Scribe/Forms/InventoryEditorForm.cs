@@ -13,21 +13,21 @@ using Scribe.Properties;
 namespace Scribe.Forms
 {
     /// <summary>
-    /// A modal form that enables the user to edit a given <see cref="Inventory"/>.
+    /// A modal form that enables the user to edit a given <see cref="InventoryCollection"/>.
     /// </summary>
     internal partial class InventoryEditorForm : Form
     {
         #region Child Forms
-        /// <summary>Dialogue for adding an <see cref="InventorySlot"/> to an <see cref="Inventory"/>.</summary>
+        /// <summary>Dialogue for adding an <see cref="InventorySlot"/> to an <see cref="InventoryCollection"/>.</summary>
         private readonly AddSlotBox AddSlotDialogue = new();
         #endregion
 
         #region Content Being Edited
-        /// <summary>The <see cref="CharacterModel"/> whose <see cref="Inventory"/> might be edited.</summary>
+        /// <summary>The <see cref="CharacterModel"/> whose <see cref="InventoryCollection"/> might be edited.</summary>
         public IMutableCharacterModel CurrentCharacter { get; set; }
 
         /// <summary>
-        /// An <see cref="Inventory"/> that the user interacts with in this form.
+        /// An <see cref="InventoryCollection"/> that the user interacts with in this form.
         /// It is only attached to the <see cref="CharacterModel"/> if the user selects the <see cref="OkayButton"/>.
         /// </summary>
         private InventoryCollection WorkingInventory { get; set; }
@@ -246,7 +246,7 @@ namespace Scribe.Forms
 
         #region Closing Form
         /// <summary>
-        /// Closes the <see cref="InventoryEditorForm"/>, signaling that the edited <see cref="Inventory"/> was accepted.
+        /// Closes the <see cref="InventoryEditorForm"/>, signaling that the edited <see cref="InventoryCollection"/> was accepted.
         /// </summary>
         /// <param name="sender">The originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>
@@ -264,7 +264,7 @@ namespace Scribe.Forms
         }
 
         /// <summary>
-        /// Closes the <see cref="InventoryEditorForm"/>, signaling to abandon the edited <see cref="Inventory"/>.
+        /// Closes the <see cref="InventoryEditorForm"/>, signaling to abandon the edited <see cref="InventoryCollection"/>.
         /// </summary>
         /// <param name="sender">The originator of the event.</param>
         /// <param name="eventArguments">Additional event data.</param>

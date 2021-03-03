@@ -40,7 +40,6 @@ namespace Scribe
         /// <param name="inLogLevel">The severity of the event being logged.</param>
         /// <param name="inMessage">A message summarizing the event being logged.</param>
         /// <param name="inException">The exception related to this event, if any.</param>
-        /// <param name="inThrow">If <c>true</c> the given exception will be thrown after logging.</param>
         public void Log(LogLevel inLogLevel, string inMessage = null, Exception inException = null)
             => Log(inLogLevel, inMessage, inException, false);
 

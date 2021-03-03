@@ -141,7 +141,7 @@ namespace Scribe.Forms
         /// <summary>Dialogue for selecting a function tag.</summary>
         private readonly SelectFunctionBox FunctionDialogue = new();
 
-        /// <summary>Window for editing an <see cref="Inventory"/>.</summary>
+        /// <summary>Window for editing an <see cref="InventoryCollection"/>.</summary>
         private readonly InventoryEditorForm InventoryEditorWindow = new();
 
         /// <summary>Dialogue allowing customization of the application's behavior.</summary>
@@ -163,7 +163,7 @@ namespace Scribe.Forms
         #endregion
 
         #region Cached Controls
-        /// <summary>Tag identifying controls whose color is not managed via <see cref="Settings.Default.EditorTheme"/>.</summary>
+        /// <summary>Tag identifying controls whose color is not managed via <see cref="Settings.Default"/>.</summary>
         public const string UnthemedControl = "Unthemed Control";
 
         /// <summary>Tag identifying controls whose color indicates that its text cannot be edited.</summary>
@@ -192,7 +192,7 @@ namespace Scribe.Forms
         /// </summary>
         private readonly Dictionary<Control, ListBox> ControlsWhoseContentIsListed;
 
-        /// <summary>Used to determine if the <see cref="Settings.Default.CurrentEditorTheme"/> has changed.</summary>
+        /// <summary>Used to determine if the <see cref="Settings.Default"/> has changed.</summary>
         private static string oldTheme = "";
 
         /// <summary>
@@ -534,10 +534,10 @@ namespace Scribe.Forms
                     : 0.0);
 
         /// <summary>
-        /// Transforms an <c>object</c> into an <see cref="ModelID">, parsing if needed.
+        /// Transforms an <c>object</c> into an <see cref="ModelID"/>, parsing if needed.
         /// </summary>
-        /// <param name="input">A boxed <see cref="ModelID.None"> or a <c>string</c> representing an <see cref="ModelID">.</param>
-        /// <returns>The identifier given, or <see cref="ModelID.None"> if no ID could be parsed.</returns>
+        /// <param name="input">A boxed <see cref="ModelID.None"/> or a <c>string</c> representing an <see cref="ModelID"/>.</param>
+        /// <returns>The identifier given, or <see cref="ModelID.None"/> if no ID could be parsed.</returns>
         private static ModelID ValueToID(object input)
             => input is Model model
                 ? model.ID
@@ -553,7 +553,7 @@ namespace Scribe.Forms
         /// Transforms an <c>object</c> into an <c>enum</c>, parsing if needed.
         /// </summary>
         /// <typeparam name="TEnum">An enumeration.</typeparam>
-        /// <param name="input">A boxed <c>enum</c> or a <c>string</c> representing an <see cref="ModelID">.</param>
+        /// <param name="input">A boxed <c>enum</c> or a <c>string</c> representing an <see cref="ModelID"/>.</param>
         /// <returns>The enumeration value given, or the default value for that enumeration if no value could be parsed.</returns>
         private static TEnum ValueToEnum<TEnum>(object input)
             where TEnum : struct, Enum, IConvertible
@@ -734,9 +734,10 @@ namespace Scribe.Forms
             };
 
         /// <summary>
-        /// Given a <see cref="Model"/> and an editor <see cref="Control"/>, return the corresponding <see cref="Model"/> from
+        /// Given a <see cref="Model"/> and an editor <see cref="Control"/>, return the corresponding <see cref="Model"/>
         /// from the appropriate <see cref="ModelCollection"/> in <see cref="All"/>.
         /// </summary>
+        /// <param name="inModel">The <see cref="Model"/> whose property accessor is sought.</param>
         /// <param name="inTabIndex">The index of an editor tab.</param>
         /// <param name="inControl">The <see cref="Control"/> corresponding to the property sought.</param>
         /// <returns>A method for editing the property's value, or <c>null</c> if the input combination is not defined.</returns>
@@ -2124,9 +2125,8 @@ namespace Scribe.Forms
         /// Adds a new <see cref="Model"/> of the appropriate subtype to the given <see cref="ModelCollection"/> and <see cref="ListBox"/>.
         /// </summary>
         /// <typeparam name="TModel">The type of <see cref="Model"/> being added.</typeparam>
-        /// <typeparam name="TCollected">The type of <see cref="Model"/> being collected.</typeparam>
         /// <param name="inDatabaseCollection">The backing collection.</param>
-        /// <param name="inAllocateNewInstance">The means to produce a new <paramref="TModel"/>.</param>
+        /// <param name="inAllocateNewInstance">The means to produce the new <see cref="Model"/>.</param>
         /// <param name="inIDRange">The range over which the <see cref="ModelID"/> is defined.</param>
         /// <param name="inListBox">The UI element representing the <see cref="ModelCollection{TCollected}"/>.</param>
         /// <param name="inModelTypeName">User-facing description of the type being added.</param>
@@ -2301,7 +2301,7 @@ namespace Scribe.Forms
         }
 
         /// <summary>
-        /// Raises a <see cref="FlavorsBox"/> to adjust the tagging on the current <see cref="Model"/>.
+        /// Raises a <see cref="SelectFlavorBox"/> to adjust the tagging on the current <see cref="Model"/>.
         /// </summary>
         /// <param name="inSender">Originator of the event.</param>
         /// <param name="inArguments">Additional event data.</param>
@@ -3178,7 +3178,7 @@ namespace Scribe.Forms
             => RemoveModel(All.Regions, RegionListBox, "Region");
 
         /// <summary>
-        /// Invokes the <see cref="RegionEditorForm"/> for the currently selected <see cref="RegionModel"/>.
+        /// Invokes the <see cref="MapEditorForm"/> for the currently selected <see cref="RegionModel"/>.
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>

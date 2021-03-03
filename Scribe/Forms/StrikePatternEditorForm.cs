@@ -62,9 +62,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Resets the UI each time the <see cref="Form"/> is loaded.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
-        /// <param name="eventArguments">Ignored.</param>
-        private void StrikePatternEditorForm_Load(object sender, EventArgs eventArguments)
+        /// <param name="inSender">Ignored.</param>
+        /// <param name="inEventArguments">Ignored.</param>
+        private void StrikePatternEditorForm_Load(object inSender, EventArgs inEventArguments)
         {
             if (CurrentCraft is null)
             {
@@ -210,13 +210,13 @@ namespace Scribe.Forms
         /// <summary>
         /// Updates an editable <see cref="GroupBox"/> when its Panel Active <see cref="CheckBox"/>'s state changes.
         /// </summary>
-        /// <param name="sender">The check box that raised the event.</param>
-        /// <param name="eventArguments">Ignored.</param>
-        private void PanelActiveCheckBox_CheckedChanged(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The check box that raised the event.</param>
+        /// <param name="inEventArguments">Ignored.</param>
+        private void PanelActiveCheckBox_CheckedChanged(object inSender, EventArgs inEventArguments)
         {
             if (!IsUpdating)
             {
-                var checkBox = (CheckBox)sender;
+                var checkBox = (CheckBox)inSender;
                 checkBox.Parent
                         .GetAllChildrenExactlyOfType<TableLayoutPanel>()
                         .First()
@@ -227,11 +227,11 @@ namespace Scribe.Forms
         /// <summary>
         /// Updates the <see cref="WorkingGrid"/> when a <see cref="TextBox"/>'s contents is changed.
         /// </summary>
-        /// <param name="sender">The text box that raised the event.</param>
-        /// <param name="eventArguments">Ignored.</param>
-        private void RangeStartTextBox_TextChanged(object sender, EventArgs e)
+        /// <param name="inSender">The text box that raised the event.</param>
+        /// <param name="inEventArguments">Ignored.</param>
+        private void RangeStartTextBox_TextChanged(object inSender, EventArgs inEventArguments)
         {
-            var textBox = (TextBox)sender;
+            var textBox = (TextBox)inSender;
             if (int.TryParse(textBox.Text?.ToString() ?? "", NumberStyles.Integer, null, out var parsedInt))
             {
                 var x = CharUnicodeInfo.GetDecimalDigitValue(textBox.Parent.Parent.Name[^1]);
@@ -286,9 +286,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Intercepts keydown events to register user requests to refresh the display.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
+        /// <param name="inSender">Ignored.</param>
         /// <param name="inKeyEvents">The key that was held down.</param>
-        private void StrikePatternEditorForm_KeyDown(object sender, KeyEventArgs inKeyEvents)
+        private void StrikePatternEditorForm_KeyDown(object inSender, KeyEventArgs inKeyEvents)
         {
             if (inKeyEvents.KeyCode == Keys.F5)
             {
@@ -299,11 +299,11 @@ namespace Scribe.Forms
         /// <summary>
         /// Determines if the value entered is valid.
         /// </summary>
-        /// <param name="sender">The text box that raised the event.</param>
+        /// <param name="inSender">The text box that raised the event.</param>
         /// <param name="eventAruments">Whether or not to discard the given text.</param>
-        private void TextBox_Validating(object sender, CancelEventArgs eventAruments)
+        private void TextBox_Validating(object inSender, CancelEventArgs eventAruments)
         {
-            var textBox = (TextBox)sender;
+            var textBox = (TextBox)inSender;
             if (string.IsNullOrEmpty(textBox.Text)
                 || int.TryParse(textBox.Text, out _))
             {
@@ -321,9 +321,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Closes the <see cref="StrikePatternEditorForm"/>, accepting the edited <see cref="StrikePanelGrid"/>.
         /// </summary>
-        /// <param name="sender">The originator of the event.</param>
-        /// <param name="eventArguments">Additional event data.</param>
-        private void OkayButton_Click(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void OkayButton_Click(object inSender, EventArgs inEventArguments)
         {
             CurrentCraft.PanelPatternReplace(WorkingGrid);
             WorkingGrid = StrikePanelGrid.Empty;
@@ -332,11 +332,11 @@ namespace Scribe.Forms
         }
 
         /// <summary>
-        /// Closes the <see cref="StrikePatternEditorForm"/>, abandoning the edited <see cref="StrikePatternGrid"/>.
+        /// Closes the <see cref="StrikePatternEditorForm"/>, abandoning the edited <see cref="StrikePanelGrid"/>.
         /// </summary>
-        /// <param name="sender">The originator of the event.</param>
-        /// <param name="eventArguments">Additional event data.</param>
-        private void CancelButtonControl_Click(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void CancelButtonControl_Click(object inSender, EventArgs inEventArguments)
         {
             WorkingGrid = StrikePanelGrid.Empty;
             DialogResult = DialogResult.Cancel;
