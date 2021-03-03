@@ -124,34 +124,34 @@ namespace Scribe.Forms
 
         #region Child Forms
         /// <summary>Dialogue displaying information about the application.</summary>
-        private readonly AboutBox AboutDialogue = new AboutBox();
+        private readonly AboutBox AboutDialogue = new();
 
         /// <summary>Dialogue for adding a quest to a collection.</summary>
-        private readonly AddQuestBox AddQuestDialogue = new AddQuestBox();
+        private readonly AddQuestBox AddQuestDialogue = new();
 
         /// <summary>Dialogue for adding a <see cref="RecipeElement"/> to a collection.</summary>
-        private readonly AddRecipeElementBox AddRecipeElementDialogue = new AddRecipeElementBox();
+        private readonly AddRecipeElementBox AddRecipeElementDialogue = new();
 
         /// <summary>Dialogue for adding a <see cref="ModelTag"/> to a collection.</summary>
-        private readonly AddTagBox AddTagDialogue = new AddTagBox();
+        private readonly AddTagBox AddTagDialogue = new();
 
         /// <summary>Dialogue for selecting a flavor tag.</summary>
-        private readonly SelectFlavorBox FlavorDialogue = new SelectFlavorBox();
+        private readonly SelectFlavorBox FlavorDialogue = new();
 
         /// <summary>Dialogue for selecting a function tag.</summary>
-        private readonly SelectFunctionBox FunctionDialogue = new SelectFunctionBox();
+        private readonly SelectFunctionBox FunctionDialogue = new();
 
         /// <summary>Window for editing an <see cref="Inventory"/>.</summary>
-        private readonly InventoryEditorForm InventoryEditorWindow = new InventoryEditorForm();
+        private readonly InventoryEditorForm InventoryEditorWindow = new();
 
         /// <summary>Dialogue allowing customization of the application's behavior.</summary>
-        private readonly OptionsBox OptionsDialogue = new OptionsBox();
+        private readonly OptionsBox OptionsDialogue = new();
 
         /// <summary>Window for editing <see cref="StrikePanelGrid"/>s.</summary>
-        private readonly StrikePatternEditorForm StrikePatternEditorWindow = new StrikePatternEditorForm();
+        private readonly StrikePatternEditorForm StrikePatternEditorWindow = new();
 
         /// <summary>Dialogue displaying the results of a roller command.</summary>
-        private readonly RollerOutputBox RollerResultsBox = new RollerOutputBox();
+        private readonly RollerOutputBox RollerResultsBox = new();
         #endregion
 
         #region Logging
@@ -159,7 +159,7 @@ namespace Scribe.Forms
         private LoggerUI UILogger { get; init; }
 
         /// <summary>Clears the status text as needed from the <see cref="ToolStrip"/>.</summary>
-        private readonly Timer ClearStatusTimer = new Timer();
+        private readonly Timer ClearStatusTimer = new();
         #endregion
 
         #region Cached Controls

@@ -11,7 +11,7 @@ namespace Scribe
     {
         #region Characteristics
         /// <summary>Used to handle switching between <see cref="SplashScreen"/> and <see cref="MainEditorForm"/>.</summary>
-        private static readonly ApplicationContext Context = new ApplicationContext();
+        private static readonly ApplicationContext Context = new();
 
         /// <summary><c>true</c> if Scribe was compiled with the DEBUG symbol defined; <c>false</c> otherwise.</summary>
         internal static bool IsDebugMode

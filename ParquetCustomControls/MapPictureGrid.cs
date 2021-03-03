@@ -33,8 +33,8 @@ namespace ParquetCustomControls
 
         /// <summary>The resolution at which the entire <see cref="MapPictureGrid"/> will be rendered.</summary>
         public static readonly Size TargetResolution =
-            new Size(SourceParquetDimensionInPixels * TargetResolutionScalingFactor * MapWidthInParquets,
-                     SourceParquetDimensionInPixels * TargetResolutionScalingFactor * MapHeightInParquets);
+            new(SourceParquetDimensionInPixels * TargetResolutionScalingFactor * MapWidthInParquets,
+                SourceParquetDimensionInPixels * TargetResolutionScalingFactor * MapHeightInParquets);
 
         /// <summary>How many parquets per each map space.</summary>
         /// <remarks>
@@ -165,7 +165,7 @@ namespace ParquetCustomControls
         /// </param>
         /// <returns>The given <see cref="Point"/> in terms of grid coordinates.</returns>
         private static Point PointToGrid(Point inLocation)
-            => new Point(inLocation.X / TargetParquetDimensionInPixels, inLocation.Y / TargetParquetDimensionInPixels);
+            => new(inLocation.X / TargetParquetDimensionInPixels, inLocation.Y / TargetParquetDimensionInPixels);
 
         /// <summary>
         /// Computers the location of the specified grid <see cref="Point"/> in terms of client coordinates.
@@ -175,7 +175,7 @@ namespace ParquetCustomControls
         /// </param>
         /// <returns>The given <see cref="Point"/> in terms of client coordinates.</returns>
         private static Point PointToPixel(Point inLocation)
-            => new Point(inLocation.X * TargetParquetDimensionInPixels, inLocation.Y * TargetParquetDimensionInPixels);
+            => new(inLocation.X * TargetParquetDimensionInPixels, inLocation.Y * TargetParquetDimensionInPixels);
 
         /// <summary>
         /// Occurs when the mouse pointer rests on the control.
@@ -228,7 +228,7 @@ namespace ParquetCustomControls
 
         #region Performance Verification
         /// <summary>Used to calculate FPS.</summary>
-        private readonly Stopwatch FPSStopWatch = new Stopwatch();
+        private readonly Stopwatch FPSStopWatch = new();
 
         /// <summary>How often to report the FPS measurements, in milliseconds.</summary>
         private const double MillisecondsBetweenReports = 1000.0;

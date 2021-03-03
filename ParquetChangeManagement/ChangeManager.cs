@@ -11,7 +11,7 @@ namespace ParquetChangeManagement
         /// <summary>A history of actions taken.</summary>
         [SuppressMessage("Design", "CA1002:Do not expose generic lists",
             Justification = "Erroneous detection -- member is private.")]
-        private static List<Change> Changes = new List<Change>();
+        private static List<Change> Changes = new();
 
         /// <summary>The index of the <see cref="Change"/> that will be Undone next.</summary>
         private static int CurrentChangeIndex = -1;

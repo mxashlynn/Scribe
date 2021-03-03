@@ -19,7 +19,7 @@ namespace Scribe.Forms
     {
         #region Child Forms
         /// <summary>Dialogue for adding an <see cref="InventorySlot"/> to an <see cref="Inventory"/>.</summary>
-        private readonly AddSlotBox AddSlotDialogue = new AddSlotBox();
+        private readonly AddSlotBox AddSlotDialogue = new();
         #endregion
 
         #region Content Being Edited
