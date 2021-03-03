@@ -1,0 +1,33 @@
+const ParquetCustomControls.LayeredPixelBox.LayerCount = 4 -> int
+const ParquetCustomControls.LayeredPixelBox.SourceDimensionInPixels = 10 -> int
+const ParquetCustomControls.LayeredPixelBox.TargetResolutionScalingFactor = 4 -> int
+const ParquetCustomControls.MapPictureGrid.MapHeightInParquets = 18 -> int
+const ParquetCustomControls.MapPictureGrid.MapWidthInParquets = 32 -> int
+const ParquetCustomControls.MapPictureGrid.ParquetLayerCount = 4 -> int
+const ParquetCustomControls.MapPictureGrid.SourceParquetDimensionInPixels = 10 -> int
+const ParquetCustomControls.MapPictureGrid.TargetParquetDimensionInPixels = 40 -> int
+const ParquetCustomControls.MapPictureGrid.TargetResolutionScalingFactor = 4 -> int
+override ParquetCustomControls.LayeredPixelBox.Dispose(bool disposing) -> void
+override ParquetCustomControls.LayeredPixelBox.OnPaint(System.Windows.Forms.PaintEventArgs inPaintArguments) -> void
+override ParquetCustomControls.MapPictureGrid.Dispose(bool disposing) -> void
+override ParquetCustomControls.MapPictureGrid.OnLoad(System.EventArgs EventData) -> void
+override ParquetCustomControls.MapPictureGrid.OnPaint(System.Windows.Forms.PaintEventArgs inPaintArguments) -> void
+override ParquetCustomControls.PixelBox.Dispose(bool disposing) -> void
+override ParquetCustomControls.PixelBox.OnPaint(System.Windows.Forms.PaintEventArgs inPaintArguments) -> void
+ParquetCustomControls.IMapController
+ParquetCustomControls.IMapController.MapHover(object inSender, System.EventArgs inEventArguments, System.Drawing.Point gridRestingLocation, System.Drawing.Point screenRestingLocation) -> void
+ParquetCustomControls.IMapController.MapUp(object inSender, System.Windows.Forms.MouseEventArgs inMouseArguments, System.Drawing.Point clickStartLocation, System.Drawing.Point clickEndLocation) -> void
+ParquetCustomControls.LayeredPixelBox
+ParquetCustomControls.LayeredPixelBox.LayeredPixelBox() -> void
+ParquetCustomControls.LayeredPixelBox.this[int i].get -> System.Drawing.Image
+ParquetCustomControls.MapPictureGrid
+ParquetCustomControls.MapPictureGrid.Controller.get -> ParquetCustomControls.IMapController
+ParquetCustomControls.MapPictureGrid.Controller.set -> void
+ParquetCustomControls.MapPictureGrid.ImageByID.get -> System.Collections.Generic.Dictionary<Parquet.ModelID, System.Drawing.Bitmap>
+ParquetCustomControls.MapPictureGrid.MapPictureGrid() -> void
+ParquetCustomControls.MapPictureGrid.MeasureFPS() -> void
+ParquetCustomControls.MapPictureGrid.PackMap.get -> Parquet.Parquets.ParquetModelPackGrid
+ParquetCustomControls.MapPictureGrid.PackMap.set -> void
+ParquetCustomControls.PixelBox
+ParquetCustomControls.PixelBox.PixelBox() -> void
+static readonly ParquetCustomControls.MapPictureGrid.TargetResolution -> System.Drawing.Size
