@@ -550,7 +550,7 @@ namespace Scribe.Forms
             this.RegionAddNewButton = new System.Windows.Forms.Button();
             this.RegionConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.RegionPixelBox = new ParquetCustomControls.PixelBox();
-            this.RegionEditButton = new System.Windows.Forms.Button();
+            this.RegionMapEditButton = new System.Windows.Forms.Button();
             this.RegionTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.RegionNameLabel = new System.Windows.Forms.Label();
             this.RegionNameTextBox = new System.Windows.Forms.TextBox();
@@ -6752,7 +6752,7 @@ namespace Scribe.Forms
             this.RegionsTabPage.Controls.Add(this.RegionAddNewButton);
             this.RegionsTabPage.Controls.Add(this.RegionConfigGroupBox);
             this.RegionsTabPage.Controls.Add(this.RegionPixelBox);
-            this.RegionsTabPage.Controls.Add(this.RegionEditButton);
+            this.RegionsTabPage.Controls.Add(this.RegionMapEditButton);
             this.RegionsTabPage.Controls.Add(this.RegionTableLayoutPanel);
             this.RegionsTabPage.Location = new System.Drawing.Point(4, 22);
             this.RegionsTabPage.Name = "RegionsTabPage";
@@ -6839,16 +6839,16 @@ namespace Scribe.Forms
             this.RegionPixelBox.TabIndex = 14;
             this.RegionPixelBox.TabStop = false;
             // 
-            // RegionEditButton
+            // RegionMapEditButton
             // 
-            this.RegionEditButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.RegionEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RegionEditButton.Location = new System.Drawing.Point(815, 468);
-            this.RegionEditButton.Name = "RegionEditButton";
-            this.RegionEditButton.Size = new System.Drawing.Size(128, 23);
-            this.RegionEditButton.TabIndex = 15;
-            this.RegionEditButton.Text = "Edit Region";
-            this.RegionEditButton.UseVisualStyleBackColor = false;
+            this.RegionMapEditButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RegionMapEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegionMapEditButton.Location = new System.Drawing.Point(815, 468);
+            this.RegionMapEditButton.Name = "RegionMapEditButton";
+            this.RegionMapEditButton.Size = new System.Drawing.Size(128, 23);
+            this.RegionMapEditButton.TabIndex = 15;
+            this.RegionMapEditButton.Text = "Edit Map";
+            this.RegionMapEditButton.UseVisualStyleBackColor = false;
             // 
             // RegionTableLayoutPanel
             // 
@@ -7787,7 +7787,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.Button RegionAddNewButton;
         private System.Windows.Forms.GroupBox RegionConfigGroupBox;
         private ParquetCustomControls.PixelBox RegionPixelBox;
-        private System.Windows.Forms.Button RegionEditButton;
+        private System.Windows.Forms.Button RegionMapEditButton;
         private System.Windows.Forms.TableLayoutPanel RegionTableLayoutPanel;
         private System.Windows.Forms.Label RegionNameLabel;
         private System.Windows.Forms.TextBox RegionNameTextBox;
