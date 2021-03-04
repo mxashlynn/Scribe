@@ -598,7 +598,7 @@ namespace Scribe.Forms
                 GamesTabIndex => GameIconPixelBox,
                 BlocksTabIndex => BlockPixelBox,
                 FloorsTabIndex => FloorDugOutPixelBox,
-                FurnishingsTabIndex => FurnishingPixelBox,
+                FurnishingsTabIndex => FurnishingClosedPixelBox,
                 CollectiblesTabIndex => CollectiblePixelBox,
                 CharactersTabIndex => CharacterPixelBox,
                 CrittersTabIndex => CritterPixelBox,
@@ -1631,7 +1631,7 @@ namespace Scribe.Forms
                 FurnishingIsEnclosingCheckBox.Checked = false;
                 FurnishingIsFlammableCheckBox.Checked = false;
                 FurnishingIsOpenableCheckBox.Checked = false;
-                FurnishingPixelBox.Image = Resources.ImageNotFound;
+                FurnishingClosedPixelBox.Image = Resources.ImageNotFound;
             }
             else if (FurnishingListBox.SelectedItem is FurnishingModel model)
             {
@@ -1649,7 +1649,7 @@ namespace Scribe.Forms
                 FurnishingIsEnclosingCheckBox.Checked = model.IsEnclosing;
                 FurnishingIsFlammableCheckBox.Checked = model.IsFlammable;
                 FurnishingIsOpenableCheckBox.Checked = model.IsOpenable;
-                PictureBoxLoadFromStorage(FurnishingPixelBox, model.ID);
+                PictureBoxLoadFromStorage(FurnishingClosedPixelBox, model.ID);
             }
         }
 

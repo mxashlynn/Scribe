@@ -153,10 +153,12 @@ namespace Scribe.Forms
             this.FloorEditFlavorButton = new System.Windows.Forms.Button();
             this.FloorFlavorStatic = new System.Windows.Forms.Label();
             this.FloorFlavorLabel = new System.Windows.Forms.Label();
+            this.FloorFilledInPixelBox = new ParquetCustomControls.PixelBox();
             this.FloorEditFilledInImageButton = new System.Windows.Forms.Button();
             this.FloorFilledInLabel = new System.Windows.Forms.Label();
+            this.FloorDugOutPixelBox = new ParquetCustomControls.PixelBox();
+            this.FloorEditDugOutImageButton = new System.Windows.Forms.Button();
             this.FloorDugOutLabel = new System.Windows.Forms.Label();
-            this.FloorFilledInPixelBox = new ParquetCustomControls.PixelBox();
             this.FloorRemoveFloorButton = new System.Windows.Forms.Button();
             this.FloorLayoutTabelPanel = new System.Windows.Forms.TableLayoutPanel();
             this.FloorRemoveRoomTagButton = new System.Windows.Forms.Button();
@@ -183,8 +185,6 @@ namespace Scribe.Forms
             this.FloorAddNewFloorButton = new System.Windows.Forms.Button();
             this.FloorListBox = new System.Windows.Forms.ListBox();
             this.FloorIDLabel = new System.Windows.Forms.Label();
-            this.FloorEditDugOutImageButton = new System.Windows.Forms.Button();
-            this.FloorDugOutPixelBox = new ParquetCustomControls.PixelBox();
             this.FloorConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.BlocksTabPage = new System.Windows.Forms.TabPage();
             this.BlockFunctionStatic = new System.Windows.Forms.Label();
@@ -267,8 +267,12 @@ namespace Scribe.Forms
             this.FurnishingAddNewFurnishingButton = new System.Windows.Forms.Button();
             this.FurnishingListBox = new System.Windows.Forms.ListBox();
             this.FurnishingIDLabel = new System.Windows.Forms.Label();
-            this.FurnishingEditImageButton = new System.Windows.Forms.Button();
-            this.FurnishingPixelBox = new ParquetCustomControls.PixelBox();
+            this.FurnishingOpenPixelBox = new ParquetCustomControls.PixelBox();
+            this.FurnishingEditOpenImageButton = new System.Windows.Forms.Button();
+            this.FurnishingOpenLabel = new System.Windows.Forms.Label();
+            this.FurnishingClosedPixelBox = new ParquetCustomControls.PixelBox();
+            this.FurnishingEditClosedImageButton = new System.Windows.Forms.Button();
+            this.FurnishingClosedLabel = new System.Windows.Forms.Label();
             this.FurnishingConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CollectiblesTabPage = new System.Windows.Forms.TabPage();
             this.CollectibleFunctionStatic = new System.Windows.Forms.Label();
@@ -590,14 +594,15 @@ namespace Scribe.Forms
             this.LibraryInfoTableLayoutPanel.SuspendLayout();
             this.FloorsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FloorFilledInPixelBox)).BeginInit();
-            this.FloorLayoutTabelPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FloorDugOutPixelBox)).BeginInit();
+            this.FloorLayoutTabelPanel.SuspendLayout();
             this.BlocksTabPage.SuspendLayout();
             this.BlockTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BlockPixelBox)).BeginInit();
             this.FurnishingsTabPage.SuspendLayout();
             this.FurnishingTableLayoutPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FurnishingPixelBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FurnishingOpenPixelBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FurnishingClosedPixelBox)).BeginInit();
             this.CollectiblesTabPage.SuspendLayout();
             this.CollectibleTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CollectiblePixelBox)).BeginInit();
@@ -2074,18 +2079,18 @@ namespace Scribe.Forms
             this.FloorsTabPage.Controls.Add(this.FloorEditFlavorButton);
             this.FloorsTabPage.Controls.Add(this.FloorFlavorStatic);
             this.FloorsTabPage.Controls.Add(this.FloorFlavorLabel);
+            this.FloorsTabPage.Controls.Add(this.FloorFilledInPixelBox);
             this.FloorsTabPage.Controls.Add(this.FloorEditFilledInImageButton);
             this.FloorsTabPage.Controls.Add(this.FloorFilledInLabel);
+            this.FloorsTabPage.Controls.Add(this.FloorDugOutPixelBox);
+            this.FloorsTabPage.Controls.Add(this.FloorEditDugOutImageButton);
             this.FloorsTabPage.Controls.Add(this.FloorDugOutLabel);
-            this.FloorsTabPage.Controls.Add(this.FloorFilledInPixelBox);
             this.FloorsTabPage.Controls.Add(this.FloorRemoveFloorButton);
             this.FloorsTabPage.Controls.Add(this.FloorLayoutTabelPanel);
             this.FloorsTabPage.Controls.Add(this.FloorIDStatic);
             this.FloorsTabPage.Controls.Add(this.FloorAddNewFloorButton);
             this.FloorsTabPage.Controls.Add(this.FloorListBox);
             this.FloorsTabPage.Controls.Add(this.FloorIDLabel);
-            this.FloorsTabPage.Controls.Add(this.FloorEditDugOutImageButton);
-            this.FloorsTabPage.Controls.Add(this.FloorDugOutPixelBox);
             this.FloorsTabPage.Controls.Add(this.FloorConfigGroupBox);
             this.FloorsTabPage.Location = new System.Drawing.Point(4, 22);
             this.FloorsTabPage.Name = "FloorsTabPage";
@@ -2161,6 +2166,20 @@ namespace Scribe.Forms
             this.FloorFlavorLabel.TabIndex = 13;
             this.FloorFlavorLabel.Text = "Flavor";
             // 
+            // FloorFilledInPixelBox
+            // 
+            this.FloorFilledInPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorFilledInPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorFilledInPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
+            this.FloorFilledInPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("FloorFilledInPixelBox.Image")));
+            this.FloorFilledInPixelBox.Location = new System.Drawing.Point(823, 174);
+            this.FloorFilledInPixelBox.Name = "FloorFilledInPixelBox";
+            this.FloorFilledInPixelBox.Size = new System.Drawing.Size(120, 120);
+            this.FloorFilledInPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.FloorFilledInPixelBox.TabIndex = 8;
+            this.FloorFilledInPixelBox.TabStop = false;
+            this.FloorFilledInPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
+            // 
             // FloorEditFilledInImageButton
             // 
             this.FloorEditFilledInImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -2182,6 +2201,32 @@ namespace Scribe.Forms
             this.FloorFilledInLabel.TabIndex = 10;
             this.FloorFilledInLabel.Text = "Filled In";
             // 
+            // FloorDugOutPixelBox
+            // 
+            this.FloorDugOutPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorDugOutPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorDugOutPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
+            this.FloorDugOutPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("FloorDugOutPixelBox.Image")));
+            this.FloorDugOutPixelBox.Location = new System.Drawing.Point(823, 342);
+            this.FloorDugOutPixelBox.Name = "FloorDugOutPixelBox";
+            this.FloorDugOutPixelBox.Size = new System.Drawing.Size(120, 120);
+            this.FloorDugOutPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.FloorDugOutPixelBox.TabIndex = 6;
+            this.FloorDugOutPixelBox.TabStop = false;
+            this.FloorDugOutPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
+            // 
+            // FloorEditDugOutImageButton
+            // 
+            this.FloorEditDugOutImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorEditDugOutImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FloorEditDugOutImageButton.Location = new System.Drawing.Point(815, 468);
+            this.FloorEditDugOutImageButton.Name = "FloorEditDugOutImageButton";
+            this.FloorEditDugOutImageButton.Size = new System.Drawing.Size(128, 23);
+            this.FloorEditDugOutImageButton.TabIndex = 7;
+            this.FloorEditDugOutImageButton.Text = "Edit Dug Out Image";
+            this.FloorEditDugOutImageButton.UseVisualStyleBackColor = false;
+            this.FloorEditDugOutImageButton.Click += new System.EventHandler(this.EditImageExternally);
+            // 
             // FloorDugOutLabel
             // 
             this.FloorDugOutLabel.AutoSize = true;
@@ -2190,20 +2235,6 @@ namespace Scribe.Forms
             this.FloorDugOutLabel.Size = new System.Drawing.Size(47, 13);
             this.FloorDugOutLabel.TabIndex = 9;
             this.FloorDugOutLabel.Text = "Dug Out";
-            // 
-            // FloorFilledInPixelBox
-            // 
-            this.FloorFilledInPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorFilledInPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FloorFilledInPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
-            this.FloorFilledInPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("FloorFilledInPixelBox.Image")));
-            this.FloorFilledInPixelBox.Location = new System.Drawing.Point(823, 174);
-            this.FloorFilledInPixelBox.Name = "FloorFilledInPixelBox";
-            this.FloorFilledInPixelBox.Size = new System.Drawing.Size(120, 120);
-            this.FloorFilledInPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.FloorFilledInPixelBox.TabIndex = 8;
-            this.FloorFilledInPixelBox.TabStop = false;
-            this.FloorFilledInPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
             // FloorRemoveFloorButton
             // 
@@ -2510,32 +2541,6 @@ namespace Scribe.Forms
             this.FloorIDLabel.Size = new System.Drawing.Size(45, 13);
             this.FloorIDLabel.TabIndex = 4;
             this.FloorIDLabel.Text = "Floor ID";
-            // 
-            // FloorEditDugOutImageButton
-            // 
-            this.FloorEditDugOutImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FloorEditDugOutImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FloorEditDugOutImageButton.Location = new System.Drawing.Point(815, 468);
-            this.FloorEditDugOutImageButton.Name = "FloorEditDugOutImageButton";
-            this.FloorEditDugOutImageButton.Size = new System.Drawing.Size(128, 23);
-            this.FloorEditDugOutImageButton.TabIndex = 7;
-            this.FloorEditDugOutImageButton.Text = "Edit Dug Out Image";
-            this.FloorEditDugOutImageButton.UseVisualStyleBackColor = false;
-            this.FloorEditDugOutImageButton.Click += new System.EventHandler(this.EditImageExternally);
-            // 
-            // FloorDugOutPixelBox
-            // 
-            this.FloorDugOutPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorDugOutPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FloorDugOutPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
-            this.FloorDugOutPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("FloorDugOutPixelBox.Image")));
-            this.FloorDugOutPixelBox.Location = new System.Drawing.Point(823, 342);
-            this.FloorDugOutPixelBox.Name = "FloorDugOutPixelBox";
-            this.FloorDugOutPixelBox.Size = new System.Drawing.Size(120, 120);
-            this.FloorDugOutPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.FloorDugOutPixelBox.TabIndex = 6;
-            this.FloorDugOutPixelBox.TabStop = false;
-            this.FloorDugOutPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
             // FloorConfigGroupBox
             // 
@@ -3075,8 +3080,12 @@ namespace Scribe.Forms
             this.FurnishingsTabPage.Controls.Add(this.FurnishingAddNewFurnishingButton);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingListBox);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingIDLabel);
-            this.FurnishingsTabPage.Controls.Add(this.FurnishingEditImageButton);
-            this.FurnishingsTabPage.Controls.Add(this.FurnishingPixelBox);
+            this.FurnishingsTabPage.Controls.Add(this.FurnishingOpenPixelBox);
+            this.FurnishingsTabPage.Controls.Add(this.FurnishingEditOpenImageButton);
+            this.FurnishingsTabPage.Controls.Add(this.FurnishingOpenLabel);
+            this.FurnishingsTabPage.Controls.Add(this.FurnishingClosedPixelBox);
+            this.FurnishingsTabPage.Controls.Add(this.FurnishingEditClosedImageButton);
+            this.FurnishingsTabPage.Controls.Add(this.FurnishingClosedLabel);
             this.FurnishingsTabPage.Controls.Add(this.FurnishingConfigGroupBox);
             this.FurnishingsTabPage.Location = new System.Drawing.Point(4, 22);
             this.FurnishingsTabPage.Name = "FurnishingsTabPage";
@@ -3501,31 +3510,75 @@ namespace Scribe.Forms
             this.FurnishingIDLabel.TabIndex = 4;
             this.FurnishingIDLabel.Text = "Furnishing ID";
             // 
-            // FurnishingEditImageButton
+            // FurnishingOpenPixelBox
             // 
-            this.FurnishingEditImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FurnishingEditImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FurnishingEditImageButton.Location = new System.Drawing.Point(815, 468);
-            this.FurnishingEditImageButton.Name = "FurnishingEditImageButton";
-            this.FurnishingEditImageButton.Size = new System.Drawing.Size(128, 23);
-            this.FurnishingEditImageButton.TabIndex = 7;
-            this.FurnishingEditImageButton.Text = "Edit Image";
-            this.FurnishingEditImageButton.UseVisualStyleBackColor = false;
-            this.FurnishingEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
+            this.FurnishingOpenPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingOpenPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingOpenPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
+            this.FurnishingOpenPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("FurnishingOpenPixelBox.Image")));
+            this.FurnishingOpenPixelBox.Location = new System.Drawing.Point(823, 174);
+            this.FurnishingOpenPixelBox.Name = "FurnishingOpenPixelBox";
+            this.FurnishingOpenPixelBox.Size = new System.Drawing.Size(120, 120);
+            this.FurnishingOpenPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.FurnishingOpenPixelBox.TabIndex = 6;
+            this.FurnishingOpenPixelBox.TabStop = false;
+            this.FurnishingOpenPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
-            // FurnishingPixelBox
+            // FurnishingEditOpenImageButton
             // 
-            this.FurnishingPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.FurnishingPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FurnishingPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
-            this.FurnishingPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("FurnishingPixelBox.Image")));
-            this.FurnishingPixelBox.Location = new System.Drawing.Point(823, 342);
-            this.FurnishingPixelBox.Name = "FurnishingPixelBox";
-            this.FurnishingPixelBox.Size = new System.Drawing.Size(120, 120);
-            this.FurnishingPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.FurnishingPixelBox.TabIndex = 6;
-            this.FurnishingPixelBox.TabStop = false;
-            this.FurnishingPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
+            this.FurnishingEditOpenImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingEditOpenImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FurnishingEditOpenImageButton.Location = new System.Drawing.Point(815, 300);
+            this.FurnishingEditOpenImageButton.Name = "FurnishingEditOpenImageButton";
+            this.FurnishingEditOpenImageButton.Size = new System.Drawing.Size(128, 23);
+            this.FurnishingEditOpenImageButton.TabIndex = 7;
+            this.FurnishingEditOpenImageButton.Text = "Edit Open Image";
+            this.FurnishingEditOpenImageButton.UseVisualStyleBackColor = false;
+            this.FurnishingEditOpenImageButton.Click += new System.EventHandler(this.EditImageExternally);
+            // 
+            // FurnishingOpenLabel
+            // 
+            this.FurnishingOpenLabel.AutoSize = true;
+            this.FurnishingOpenLabel.Location = new System.Drawing.Point(823, 158);
+            this.FurnishingOpenLabel.Name = "FurnishingOpenLabel";
+            this.FurnishingOpenLabel.Size = new System.Drawing.Size(33, 13);
+            this.FurnishingOpenLabel.TabIndex = 9;
+            this.FurnishingOpenLabel.Text = "Open";
+            // 
+            // FurnishingClosedPixelBox
+            // 
+            this.FurnishingClosedPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingClosedPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingClosedPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
+            this.FurnishingClosedPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("FurnishingClosedPixelBox.Image")));
+            this.FurnishingClosedPixelBox.Location = new System.Drawing.Point(823, 342);
+            this.FurnishingClosedPixelBox.Name = "FurnishingClosedPixelBox";
+            this.FurnishingClosedPixelBox.Size = new System.Drawing.Size(120, 120);
+            this.FurnishingClosedPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.FurnishingClosedPixelBox.TabIndex = 6;
+            this.FurnishingClosedPixelBox.TabStop = false;
+            this.FurnishingClosedPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
+            // 
+            // FurnishingEditClosedImageButton
+            // 
+            this.FurnishingEditClosedImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingEditClosedImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FurnishingEditClosedImageButton.Location = new System.Drawing.Point(815, 468);
+            this.FurnishingEditClosedImageButton.Name = "FurnishingEditClosedImageButton";
+            this.FurnishingEditClosedImageButton.Size = new System.Drawing.Size(128, 23);
+            this.FurnishingEditClosedImageButton.TabIndex = 7;
+            this.FurnishingEditClosedImageButton.Text = "Edit Closed Image";
+            this.FurnishingEditClosedImageButton.UseVisualStyleBackColor = false;
+            this.FurnishingEditClosedImageButton.Click += new System.EventHandler(this.EditImageExternally);
+            // 
+            // FurnishingClosedLabel
+            // 
+            this.FurnishingClosedLabel.AutoSize = true;
+            this.FurnishingClosedLabel.Location = new System.Drawing.Point(823, 326);
+            this.FurnishingClosedLabel.Name = "FurnishingClosedLabel";
+            this.FurnishingClosedLabel.Size = new System.Drawing.Size(39, 13);
+            this.FurnishingClosedLabel.TabIndex = 10;
+            this.FurnishingClosedLabel.Text = "Closed";
             // 
             // FurnishingConfigGroupBox
             // 
@@ -7110,9 +7163,9 @@ namespace Scribe.Forms
             this.FloorsTabPage.ResumeLayout(false);
             this.FloorsTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FloorFilledInPixelBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FloorDugOutPixelBox)).EndInit();
             this.FloorLayoutTabelPanel.ResumeLayout(false);
             this.FloorLayoutTabelPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FloorDugOutPixelBox)).EndInit();
             this.BlocksTabPage.ResumeLayout(false);
             this.BlocksTabPage.PerformLayout();
             this.BlockTableLayoutPanel.ResumeLayout(false);
@@ -7122,7 +7175,8 @@ namespace Scribe.Forms
             this.FurnishingsTabPage.PerformLayout();
             this.FurnishingTableLayoutPanel.ResumeLayout(false);
             this.FurnishingTableLayoutPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FurnishingPixelBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FurnishingOpenPixelBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FurnishingClosedPixelBox)).EndInit();
             this.CollectiblesTabPage.ResumeLayout(false);
             this.CollectiblesTabPage.PerformLayout();
             this.CollectibleTableLayoutPanel.ResumeLayout(false);
@@ -7374,7 +7428,6 @@ namespace Scribe.Forms
         private System.Windows.Forms.Label FloorFunctionStatic;
         private System.Windows.Forms.Button FloorEditFunctionButton;
         private System.Windows.Forms.Label FloorFunctionLabel;
-        private System.Windows.Forms.Button FloorEditDugOutImageButton;
         private System.Windows.Forms.Label FloorNameLabel;
         private System.Windows.Forms.Label FloorDescriptionLabel;
         private System.Windows.Forms.Label FloorCommentLabel;
@@ -7384,10 +7437,11 @@ namespace Scribe.Forms
         private System.Windows.Forms.TextBox FloorDescriptionTextBox;
         private System.Windows.Forms.TextBox FloorCommentTextBox;
         private ParquetCustomControls.PixelBox FloorDugOutPixelBox;
-        private System.Windows.Forms.Button FloorEditFilledInImageButton;
-        private System.Windows.Forms.Label FloorFilledInLabel;
+        private System.Windows.Forms.Button FloorEditDugOutImageButton;
         private System.Windows.Forms.Label FloorDugOutLabel;
         private ParquetCustomControls.PixelBox FloorFilledInPixelBox;
+        private System.Windows.Forms.Button FloorEditFilledInImageButton;
+        private System.Windows.Forms.Label FloorFilledInLabel;
         private System.Windows.Forms.Button FloorAddNewFloorButton;
         private System.Windows.Forms.Button FloorRemoveFloorButton;
         private System.Windows.Forms.GroupBox FloorConfigGroupBox;
@@ -7433,8 +7487,12 @@ namespace Scribe.Forms
         private System.Windows.Forms.GroupBox FurnishingConfigGroupBox;
         private System.Windows.Forms.Button FurnishingAddNewFurnishingButton;
         private System.Windows.Forms.ListBox FurnishingListBox;
-        private System.Windows.Forms.Button FurnishingEditImageButton;
-        private ParquetCustomControls.PixelBox FurnishingPixelBox;
+        private ParquetCustomControls.PixelBox FurnishingOpenPixelBox;
+        private System.Windows.Forms.Button FurnishingEditOpenImageButton;
+        private System.Windows.Forms.Label FurnishingOpenLabel;
+        private ParquetCustomControls.PixelBox FurnishingClosedPixelBox;
+        private System.Windows.Forms.Button FurnishingEditClosedImageButton;
+        private System.Windows.Forms.Label FurnishingClosedLabel;
         private System.Windows.Forms.ComboBox FurnishingEntryTypeComboBox;
         private System.Windows.Forms.Label FurnishingEntryTypeLabel;
         private System.Windows.Forms.Label FurnishingIsWalkableLabel;
