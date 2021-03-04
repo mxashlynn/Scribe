@@ -207,6 +207,14 @@ namespace Scribe.Forms
         private readonly Dictionary<Type, Dictionary<Control, object>> EditableControls;
         #endregion
 
+        #region Cached Painting Details
+        /// <summary>The color Parquet uses behind <see cref="RegionModel"/>s when no <see cref="ParquetModel"/>s are present.</summary>
+        internal static Color DefaultMapColor { get; } = ColorTranslator.FromHtml(RegionModel.DefaultColor);
+
+        /// <summary>The human-readable name of the color Parquet uses behind <see cref="RegionModel"/>s when no <see cref="ParquetModel"/>s are present.</summary>
+        internal static string DefaultMapColorName { get; } = DefaultMapColor.Name;
+        #endregion
+
         #region Autosave and Save Tracking
         /// <summary>
         /// The moment at which the game content was most recently saved.
@@ -562,7 +570,15 @@ namespace Scribe.Forms
                     ? parsedInt
                     : default);
 
-        // TODO [MAPS] ValueToColorHexString
+
+        /// <summary>
+        /// Transforms an <c>object</c> into an <c>string</c>, parsing if needed.
+        /// </summary>
+        /// <param name="input">A <c>string</c> representing a <see cref="Color"/>.</param>
+        /// <returns>The string properly formatted, or <see cref="Color.White"/> if no value could be parsed.</returns>
+        // TODO [MAPS] I'm not really sure what this needs to do yet.
+        private static string ValueToColorHexString(object input)
+            => RegionModel.DefaultColor;
         #endregion
 
         /// <summary>
@@ -1976,8 +1992,8 @@ namespace Scribe.Forms
                 RegionNameTextBox.Text = "";
                 RegionDescriptionTextBox.Text = "";
                 RegionCommentTextBox.Text = "";
-                // TODO [MAPS] Fix this: RegionBackgroundColorStatic.BackColor = ColorTranslator.FromHtml(RegionRegionModel.DefaultColor);
-                // TODO [MAPS] Fix this: RegionBackgroundColorNameStatic.Text = RegionRegionModel.DefaultColor;
+                RegionBackgroundColorStatic.BackColor = DefaultMapColor;
+                RegionBackgroundColorNameStatic.Text = DefaultMapColorName;
                 RegionExitNorthComboBox.SelectedItem = null;
                 RegionExitSouthComboBox.SelectedItem = null;
                 RegionExitEastComboBox.SelectedItem = null;
@@ -1996,8 +2012,10 @@ namespace Scribe.Forms
                 RegionNameTextBox.Text = model.Name;
                 RegionDescriptionTextBox.Text = model.Description;
                 RegionCommentTextBox.Text = model.Comment;
-                RegionBackgroundColorStatic.BackColor = ColorTranslator.FromHtml(model.BackgroundColor);
-                RegionBackgroundColorNameStatic.Text = model.BackgroundColor;
+                var newBackColor = ColorTranslator.FromHtml(model.BackgroundColor);
+                RegionBackgroundColorStatic.BackColor = newBackColor;
+                RegionBackgroundColorNameStatic.Text = newBackColor.Name;
+
                 RegionExitNorthComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
                     ? null
                     : All.Regions.GetOrNull<RegionModel>(model.RegionToTheNorth);
@@ -3167,7 +3185,7 @@ namespace Scribe.Forms
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="eventArguments">Ignored.</param>
-        private void RegionAddNewItemButton_Click(object sender, EventArgs eventArguments)
+        private void RegionAddNewRegionButton_Click(object sender, EventArgs eventArguments)
             => AddNewModel(All.Regions, (ModelID id) => new RegionModel(id, "New Region", "", ""), All.RegionIDs, RegionListBox, "Region");
 
         /// <summary>
@@ -3175,7 +3193,7 @@ namespace Scribe.Forms
         /// </summary>
         /// <param name="sender">Ignored.</param>
         /// <param name="eventArguments">Ignored.</param>
-        private void RegionRemoveItemButton_Click(object sender, EventArgs eventArguments)
+        private void RegionRemoveRegionButton_Click(object sender, EventArgs eventArguments)
             => RemoveModel(All.Regions, RegionListBox, "Region");
 
         /// <summary>
@@ -3183,7 +3201,7 @@ namespace Scribe.Forms
         /// </summary>
         /// <param name="sender">Ignored</param>
         /// <param name="eventArguments">Ignored</param>
-        private void MapOpenEditorButton_Click(object sender, EventArgs eventArguments)
+        private void RegionOpenMapEditorButton_Click(object sender, EventArgs eventArguments)
         {
             // TODO [MAPS] Implement this!
             //MapEditorWindow.CurrentRegion = (RegionModel)RegionListBox.SelectedItem;
@@ -3193,6 +3211,17 @@ namespace Scribe.Forms
             //    SystemSounds.Beep.Play();
             //    Logger.Log(LogLevel.Warning, Resources.WarningNothingSelected);
             //}
+            SystemSounds.Beep.Play();
+        }
+
+        /// <summary>
+        /// Invokes the <see cref="WorldLayoutForm"/>, a tool to assist in designing multiple <see cref="RegionModel"/>s.
+        /// </summary>
+        /// <param name="sender">Ignored</param>
+        /// <param name="eventArguments">Ignored</param>
+        private void RegionLayOutWorldButton_Click(object sender, EventArgs eventArguments)
+        {
+            // TODO [MAPS] Implement this!
             SystemSounds.Beep.Play();
         }
         #endregion

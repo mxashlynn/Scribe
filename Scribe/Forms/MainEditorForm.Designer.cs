@@ -6788,6 +6788,7 @@ namespace Scribe.Forms
             this.RegionLayOutWorldButton.TabIndex = 17;
             this.RegionLayOutWorldButton.Text = "Lay Out World";
             this.RegionLayOutWorldButton.UseVisualStyleBackColor = false;
+            this.RegionLayOutWorldButton.Click += new System.EventHandler(this.RegionLayOutWorldButton_Click);
             // 
             // RegionIDLabel
             // 
@@ -6833,6 +6834,7 @@ namespace Scribe.Forms
             this.RegionRemoveButton.TabIndex = 9;
             this.RegionRemoveButton.Text = "Remove Region";
             this.RegionRemoveButton.UseVisualStyleBackColor = false;
+            this.RegionRemoveButton.Click += new System.EventHandler(this.RegionRemoveRegionButton_Click);
             // 
             // RegionAddNewButton
             // 
@@ -6844,6 +6846,7 @@ namespace Scribe.Forms
             this.RegionAddNewButton.TabIndex = 10;
             this.RegionAddNewButton.Text = "Add New Region";
             this.RegionAddNewButton.UseVisualStyleBackColor = false;
+            this.RegionAddNewButton.Click += new System.EventHandler(this.RegionAddNewRegionButton_Click);
             // 
             // RegionConfigGroupBox
             // 
@@ -6878,6 +6881,7 @@ namespace Scribe.Forms
             this.RegionMapEditButton.TabIndex = 15;
             this.RegionMapEditButton.Text = "Edit Map";
             this.RegionMapEditButton.UseVisualStyleBackColor = false;
+            this.RegionMapEditButton.Click += new System.EventHandler(this.RegionOpenMapEditorButton_Click);
             // 
             // RegionTableLayoutPanel
             // 
