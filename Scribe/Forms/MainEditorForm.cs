@@ -561,6 +561,8 @@ namespace Scribe.Forms
                 : (Enum.TryParse<TEnum>(input?.ToString() ?? "", true, out var parsedInt)
                     ? parsedInt
                     : default);
+
+        // TODO [MAPS] ValueToColorHexString
         #endregion
 
         /// <summary>
@@ -986,28 +988,26 @@ namespace Scribe.Forms
                 #endregion
 
                 #region Regions
-                /* TODO [MAP] Set up GetPropertyAccessor for Regions tab.
                 (RegionsTabIndex, "RegionNameTextBox")
-                    => (input) => ((IMutableRegionRecipe)inModel).Name = input.ToString(),
+                    => (input) => ((IMutableRegionModel)inModel).Name = input.ToString(),
                 (RegionsTabIndex, "RegionDescriptionTextBox")
-                    => (input) => ((IMutableRegionRecipe)inModel).Description = input.ToString(),
+                    => (input) => ((IMutableRegionModel)inModel).Description = input.ToString(),
                 (RegionsTabIndex, "RegionCommentTextBox")
-                    => (input) => ((IMutableRegionRecipe)inModel).Comment = input.ToString(),
+                    => (input) => ((IMutableRegionModel)inModel).Comment = input.ToString(),
                 (RegionsTabIndex, "RegionBackgroundColorStatic")
-                    => (input) => ((IMutableRegionRecipe)inModel).BackgroundColor = ValueToColorHexString(input),
+                    => (input) => ((IMutableRegionModel)inModel).BackgroundColor = ValueToColorHexString(input),
                 (RegionsTabIndex, "RegionExitNorthComboBox")
-                    => (input) => ((IMutableRegionRecipe)inModel).RegionToTheNorth = ValueToID(input),
+                    => (input) => ((IMutableRegionModel)inModel).RegionToTheNorthID = ValueToID(input),
                 (RegionsTabIndex, "RegionExitSouthComboBox")
-                    => (input) => ((IMutableRegionRecipe)inModel).RegionToTheSouth = ValueToID(input),
+                    => (input) => ((IMutableRegionModel)inModel).RegionToTheSouthID = ValueToID(input),
                 (RegionsTabIndex, "RegionExitEastComboBox")
-                    => (input) => ((IMutableRegionRecipe)inModel).RegionToTheEast = ValueToID(input),
+                    => (input) => ((IMutableRegionModel)inModel).RegionToTheEastID = ValueToID(input),
                 (RegionsTabIndex, "RegionExitWestComboBox")
-                    => (input) => ((IMutableRegionRecipe)inModel).RegionToTheWest = ValueToID(input),
+                    => (input) => ((IMutableRegionModel)inModel).RegionToTheWestID = ValueToID(input),
                 (RegionsTabIndex, "RegionExitUpComboBox")
-                    => (input) => ((IMutableRegionRecipe)inModel).RegionToTheAbove = ValueToID(input),
+                    => (input) => ((IMutableRegionModel)inModel).RegionAboveID = ValueToID(input),
                 (RegionsTabIndex, "RegionExitDownComboBox")
-                    => (input) => ((IMutableRegionRecipe)inModel).RegionToTheBelow = ValueToID(input),
-                */
+                    => (input) => ((IMutableRegionModel)inModel).RegionBelowID = ValueToID(input),
                 #endregion
 
                 #region Scripting

@@ -543,6 +543,8 @@ namespace Scribe.Forms
             this.RoomAddNewRoomButton = new System.Windows.Forms.Button();
             this.RoomIDStatic = new System.Windows.Forms.Label();
             this.RegionsTabPage = new System.Windows.Forms.TabPage();
+            this.RegionLayOutWorldPixelBox = new ParquetCustomControls.PixelBox();
+            this.RegionLayOutWorldButton = new System.Windows.Forms.Button();
             this.RegionIDLabel = new System.Windows.Forms.Label();
             this.RegionIDStatic = new System.Windows.Forms.Label();
             this.RegionListBox = new System.Windows.Forms.ListBox();
@@ -575,8 +577,6 @@ namespace Scribe.Forms
             this.RegionBackgroundColorNameStatic = new System.Windows.Forms.Label();
             this.ScriptsTabPage = new System.Windows.Forms.TabPage();
             this.ScriptingPendingDesignLabel = new System.Windows.Forms.Label();
-            this.RegionLayOutWorldPixelBox = new ParquetCustomControls.PixelBox();
-            this.RegionLayOutWorldButton = new System.Windows.Forms.Button();
             this.EditorStatusStrip.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
             this.ContextMenuStripPictureBoxes.SuspendLayout();
@@ -636,10 +636,10 @@ namespace Scribe.Forms
             this.RoomTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPixelBox)).BeginInit();
             this.RegionsTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RegionLayOutWorldPixelBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RegionPixelBox)).BeginInit();
             this.RegionTableLayoutPanel.SuspendLayout();
             this.ScriptsTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RegionLayOutWorldPixelBox)).BeginInit();
             this.SuspendLayout();
             // 
             // MainToolStripStatusLabel
@@ -6765,6 +6765,30 @@ namespace Scribe.Forms
             this.RegionsTabPage.TabIndex = 5;
             this.RegionsTabPage.Text = "Regions";
             // 
+            // RegionLayOutWorldPixelBox
+            // 
+            this.RegionLayOutWorldPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.RegionLayOutWorldPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RegionLayOutWorldPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
+            this.RegionLayOutWorldPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("RegionLayOutWorldPixelBox.Image")));
+            this.RegionLayOutWorldPixelBox.Location = new System.Drawing.Point(823, 180);
+            this.RegionLayOutWorldPixelBox.Name = "RegionLayOutWorldPixelBox";
+            this.RegionLayOutWorldPixelBox.Size = new System.Drawing.Size(120, 120);
+            this.RegionLayOutWorldPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RegionLayOutWorldPixelBox.TabIndex = 16;
+            this.RegionLayOutWorldPixelBox.TabStop = false;
+            // 
+            // RegionLayOutWorldButton
+            // 
+            this.RegionLayOutWorldButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RegionLayOutWorldButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegionLayOutWorldButton.Location = new System.Drawing.Point(815, 306);
+            this.RegionLayOutWorldButton.Name = "RegionLayOutWorldButton";
+            this.RegionLayOutWorldButton.Size = new System.Drawing.Size(128, 23);
+            this.RegionLayOutWorldButton.TabIndex = 17;
+            this.RegionLayOutWorldButton.Text = "Lay Out World";
+            this.RegionLayOutWorldButton.UseVisualStyleBackColor = false;
+            // 
             // RegionIDLabel
             // 
             this.RegionIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -7116,30 +7140,6 @@ namespace Scribe.Forms
             this.ScriptingPendingDesignLabel.TabIndex = 0;
             this.ScriptingPendingDesignLabel.Text = "Pending Design";
             // 
-            // RegionLayOutWorldPixelBox
-            // 
-            this.RegionLayOutWorldPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.RegionLayOutWorldPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.RegionLayOutWorldPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
-            this.RegionLayOutWorldPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("RegionLayOutWorldPixelBox.Image")));
-            this.RegionLayOutWorldPixelBox.Location = new System.Drawing.Point(823, 180);
-            this.RegionLayOutWorldPixelBox.Name = "RegionLayOutWorldPixelBox";
-            this.RegionLayOutWorldPixelBox.Size = new System.Drawing.Size(120, 120);
-            this.RegionLayOutWorldPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.RegionLayOutWorldPixelBox.TabIndex = 16;
-            this.RegionLayOutWorldPixelBox.TabStop = false;
-            // 
-            // RegionLayOutWorldButton
-            // 
-            this.RegionLayOutWorldButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.RegionLayOutWorldButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RegionLayOutWorldButton.Location = new System.Drawing.Point(815, 306);
-            this.RegionLayOutWorldButton.Name = "RegionLayOutWorldButton";
-            this.RegionLayOutWorldButton.Size = new System.Drawing.Size(128, 23);
-            this.RegionLayOutWorldButton.TabIndex = 17;
-            this.RegionLayOutWorldButton.Text = "Lay Out World";
-            this.RegionLayOutWorldButton.UseVisualStyleBackColor = false;
-            // 
             // MainEditorForm
             // 
             this.AccessibleDescription = "The primary interactive editor window.";
@@ -7256,12 +7256,12 @@ namespace Scribe.Forms
             ((System.ComponentModel.ISupportInitialize)(this.RoomPixelBox)).EndInit();
             this.RegionsTabPage.ResumeLayout(false);
             this.RegionsTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RegionLayOutWorldPixelBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RegionPixelBox)).EndInit();
             this.RegionTableLayoutPanel.ResumeLayout(false);
             this.RegionTableLayoutPanel.PerformLayout();
             this.ScriptsTabPage.ResumeLayout(false);
             this.ScriptsTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RegionLayOutWorldPixelBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

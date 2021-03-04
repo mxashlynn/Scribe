@@ -5,9 +5,9 @@
 
     <Product>Roller</Product>
     <PackageId>Roller</PackageId>
-    <Version>0.4.0.0</Version>
-    <AssemblyVersion>0.4.0.0</AssemblyVersion>
-    <FileVersion>0.4.0.0</FileVersion>
+    <Version>0.4.3.0</Version>
+    <AssemblyVersion>0.4.3.0</AssemblyVersion>
+    <FileVersion>0.4.3.0</FileVersion>
 
     <Company>Girl Potion</Company>
     <Authors>Paige Ashlynn</Authors>
@@ -81,7 +81,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Parquet" Version="0.4.2" />
+    <PackageReference Include="Parquet" Version="0.4.3" />
   </ItemGroup>
 
 </Project>
