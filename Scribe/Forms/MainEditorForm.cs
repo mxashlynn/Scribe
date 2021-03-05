@@ -151,6 +151,9 @@ namespace Scribe.Forms
 
         /// <summary>Dialogue displaying the results of a roller command.</summary>
         private readonly RollerOutputBox RollerResultsBox = new();
+
+        /// <summary>Dialogue for selecting custom <see cref="Color"/>s.</summary>
+        private readonly ColorDialog SelectColorDialogue = new();
         #endregion
 
         #region Logging
@@ -284,6 +287,9 @@ namespace Scribe.Forms
         public MainEditorForm()
         {
             InitializeComponent();
+
+            // Allows selecting a custom color.
+            SelectColorDialogue.AllowFullOpen = true;
 
             #region Logging
             UILogger = new LoggerUI(new StreamWriter("scribe.log", false, new UTF8Encoding(true, true)),
@@ -3748,6 +3754,7 @@ namespace Scribe.Forms
             OptionsDialogue.Dispose();
             StrikePatternEditorWindow.Dispose();
             RollerResultsBox.Dispose();
+            SelectColorDialogue.Dispose();
             base.Dispose(disposing);
         }
         #endregion
