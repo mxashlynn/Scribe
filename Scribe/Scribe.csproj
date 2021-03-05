@@ -31,6 +31,7 @@
     <NoWarn>CS1701;CS1702</NoWarn>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <WarningsAsErrors>NU1605;CS1591</WarningsAsErrors>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <AnalysisMode>AllEnabledByDefault</AnalysisMode>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <RootNamespace>Scribe</RootNamespace>
@@ -77,10 +78,6 @@
   <ItemGroup>
     <!--- NOTE: Updating to CSVHelper Version 20 requires major research and adjustment of CSVHelper code. -->
     <PackageReference Include="CsvHelper" Version="19.0.0" />
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.CodeStyle" Version="3.9.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
     <PackageReference Include="Parquet" Version="0.4.4" />
   </ItemGroup>
 
