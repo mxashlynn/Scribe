@@ -135,10 +135,10 @@ namespace Scribe.Forms
         private readonly AddTagBox AddTagDialogue = new();
 
         /// <summary>Dialogue for selecting a flavor tag.</summary>
-        private readonly SelectFlavorBox FlavorDialogue = new();
+        private readonly SelectFlavorBox SelectFlavorDialogue = new();
 
         /// <summary>Dialogue for selecting a function tag.</summary>
-        private readonly SelectFunctionBox FunctionDialogue = new();
+        private readonly SelectFunctionBox SelectFunctionDialogue = new();
 
         /// <summary>Window for editing an <see cref="InventoryCollection"/>.</summary>
         private readonly InventoryEditorForm InventoryEditorWindow = new();
@@ -2346,9 +2346,9 @@ namespace Scribe.Forms
             // Tag changes must be treated atomically instead of as a giant glob.
             var flavorStatic = GetFlavorStaticForTab(EditorTabs.SelectedIndex);
             if (flavorStatic is not null
-                && FlavorDialogue.ShowDialog() == DialogResult.OK)
+                && SelectFlavorDialogue.ShowDialog() == DialogResult.OK)
             {
-                string chosenFlavorName = FlavorDialogue.ReturnNewFlavor;
+                string chosenFlavorName = SelectFlavorDialogue.ReturnNewFlavor;
                 flavorStatic.Text = chosenFlavorName;
                 flavorStatic.BackColor = GetColorForFlavorName(chosenFlavorName);
 
@@ -2357,7 +2357,7 @@ namespace Scribe.Forms
                 {
                     model.Tags.Remove(oldFlavorEncoding);
                 }
-                if (FlavorDialogue.SpecificFlavorChosen)
+                if (SelectFlavorDialogue.SpecificFlavorChosen)
                 {
                     ModelTag chosenFlavorEncoding = $"{Resources.TagPrefixFlavor}{chosenFlavorName.ToUpperInvariant()}";
                     model.Tags.Add(chosenFlavorEncoding);
@@ -2413,9 +2413,9 @@ namespace Scribe.Forms
             // Tag changes must be treated atomically instead of as a giant glob.
             var functionStatic = GetFunctionStaticForTab(EditorTabs.SelectedIndex);
             if (functionStatic is not null
-                && FunctionDialogue.ShowDialog() == DialogResult.OK)
+                && SelectFunctionDialogue.ShowDialog() == DialogResult.OK)
             {
-                string chosenFunctionName = FunctionDialogue.ReturnNewFunction;
+                string chosenFunctionName = SelectFunctionDialogue.ReturnNewFunction;
                 functionStatic.Text = chosenFunctionName;
 
                 ModelTag oldFunctionEncoding = ((Model)model).AttributeTag(Resources.TagPrefixFunction);
@@ -2423,7 +2423,7 @@ namespace Scribe.Forms
                 {
                     model.Tags.Remove(oldFunctionEncoding);
                 }
-                if (FunctionDialogue.SpecificFunctionChosen)
+                if (SelectFunctionDialogue.SpecificFunctionChosen)
                 {
                     ModelTag chosenFunctionEncoding = $"{Resources.TagPrefixFunction}{chosenFunctionName.ToUpperInvariant()}";
                     model.Tags.Add(chosenFunctionEncoding);
@@ -3737,17 +3737,17 @@ namespace Scribe.Forms
             {
                 components.Dispose();
             }
+            ClearStatusTimer.Dispose();
             AboutDialogue.Dispose();
             AddQuestDialogue.Dispose();
             AddRecipeElementDialogue.Dispose();
             AddTagDialogue.Dispose();
-            FlavorDialogue.Dispose();
-            FunctionDialogue.Dispose();
+            SelectFlavorDialogue.Dispose();
+            SelectFunctionDialogue.Dispose();
             InventoryEditorWindow.Dispose();
             OptionsDialogue.Dispose();
             StrikePatternEditorWindow.Dispose();
             RollerResultsBox.Dispose();
-            ClearStatusTimer.Dispose();
             base.Dispose(disposing);
         }
         #endregion
