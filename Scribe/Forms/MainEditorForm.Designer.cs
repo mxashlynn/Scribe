@@ -7072,6 +7072,7 @@ namespace Scribe.Forms
             this.RegionExitNorthComboBox.Name = "RegionExitNorthComboBox";
             this.RegionExitNorthComboBox.Size = new System.Drawing.Size(147, 21);
             this.RegionExitNorthComboBox.TabIndex = 28;
+            this.RegionExitNorthComboBox.ValueMember = "Name";
             // 
             // RegionExitSouthComboBox
             // 
@@ -7081,38 +7082,47 @@ namespace Scribe.Forms
             this.RegionExitSouthComboBox.Name = "RegionExitSouthComboBox";
             this.RegionExitSouthComboBox.Size = new System.Drawing.Size(147, 21);
             this.RegionExitSouthComboBox.TabIndex = 29;
+            this.RegionExitSouthComboBox.ValueMember = "Name";
             // 
             // RegionExitEastComboBox
             // 
             this.RegionTableLayoutPanel.SetColumnSpan(this.RegionExitEastComboBox, 2);
+            this.RegionExitEastComboBox.DisplayMember = "Name";
             this.RegionExitEastComboBox.Location = new System.Drawing.Point(122, 213);
             this.RegionExitEastComboBox.Name = "RegionExitEastComboBox";
             this.RegionExitEastComboBox.Size = new System.Drawing.Size(147, 21);
             this.RegionExitEastComboBox.TabIndex = 36;
+            this.RegionExitEastComboBox.ValueMember = "Name";
             // 
             // RegionExitWestComboBox
             // 
             this.RegionTableLayoutPanel.SetColumnSpan(this.RegionExitWestComboBox, 2);
+            this.RegionExitWestComboBox.DisplayMember = "Name";
             this.RegionExitWestComboBox.Location = new System.Drawing.Point(122, 238);
             this.RegionExitWestComboBox.Name = "RegionExitWestComboBox";
             this.RegionExitWestComboBox.Size = new System.Drawing.Size(147, 21);
             this.RegionExitWestComboBox.TabIndex = 37;
+            this.RegionExitWestComboBox.ValueMember = "Name";
             // 
             // RegionExitUpComboBox
             // 
             this.RegionTableLayoutPanel.SetColumnSpan(this.RegionExitUpComboBox, 2);
+            this.RegionExitUpComboBox.DisplayMember = "Name";
             this.RegionExitUpComboBox.Location = new System.Drawing.Point(122, 263);
             this.RegionExitUpComboBox.Name = "RegionExitUpComboBox";
             this.RegionExitUpComboBox.Size = new System.Drawing.Size(147, 21);
             this.RegionExitUpComboBox.TabIndex = 38;
+            this.RegionExitUpComboBox.ValueMember = "Name";
             // 
             // RegionExitDownComboBox
             // 
             this.RegionTableLayoutPanel.SetColumnSpan(this.RegionExitDownComboBox, 2);
+            this.RegionExitDownComboBox.DisplayMember = "Name";
             this.RegionExitDownComboBox.Location = new System.Drawing.Point(122, 288);
             this.RegionExitDownComboBox.Name = "RegionExitDownComboBox";
             this.RegionExitDownComboBox.Size = new System.Drawing.Size(147, 21);
             this.RegionExitDownComboBox.TabIndex = 39;
+            this.RegionExitDownComboBox.ValueMember = "Name";
             // 
             // RegionBackgroundColorNameStatic
             // 
