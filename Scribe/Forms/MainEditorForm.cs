@@ -3239,6 +3239,40 @@ namespace Scribe.Forms
             // TODO [MAPS] Implement this!
             SystemSounds.Beep.Play();
         }
+
+        /// <summary>
+        /// Responds to the player clicking on the <see cref="RegionModel.BackgroundColor"/> selector.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="eventArguments">Ignored.</param>
+        private void RegionBackgroundColorStatic_Click(object sender, EventArgs eventArguments)
+        {
+            if (!All.CollectionsHaveBeenInitialized)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is IMutableRegionModel region)
+            {
+                // Sets the initial color select to the current text color.
+                var oldColor = ColorTranslator.FromHtml(region.BackgroundColor);
+                SelectColorDialogue.Color = oldColor;
+
+                if (SelectColorDialogue.ShowDialog() == DialogResult.OK)
+                {
+                    var newColor = SelectColorDialogue.Color;
+                    var propertyAccessor = GetPropertyAccessorForTabAndControl(EditorTabs.SelectedIndex, RegionBackgroundColorStatic);
+                    // TODO [MAPS] I think that ChangeValue may be used incorrectly here....
+                    var changeToExecute = new ChangeValue(oldColor, newColor, nameof(RegionModel.BackgroundColor),
+                                                          (object databaseValue) => { propertyAccessor(databaseValue); HasUnsavedChanges = true; },
+                                                          (object displayValue) => RegionBackgroundColorStatic.BackColor = (Color)displayValue,
+                                                          (object oldValue) => RegionBackgroundColorStatic.BackColor = (Color)oldValue); ;
+                    Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+                    ChangeManager.AddAndExecute(changeToExecute);
+                }
+            }
+        }
         #endregion
 
         #region Scripting Tab
