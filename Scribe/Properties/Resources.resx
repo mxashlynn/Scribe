@@ -441,4 +441,8 @@ Folder: {1}</value>
   <data name="ParquetIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\parqueticon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="WarningUnkownColor" xml:space="preserve">
+    <value>The value '{1}' could not be parsed as a Color.</value>
+    <comment>Warning string.</comment>
+  </data>
 </root>

@@ -895,5 +895,14 @@ namespace Scribe.Properties {
                 return ResourceManager.GetString("WarningNotImplemented", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value &apos;{1}&apos; could not be parsed as a Color..
+        /// </summary>
+        internal static string WarningUnkownColor {
+            get {
+                return ResourceManager.GetString("WarningUnkownColor", resourceCulture);
+            }
+        }
     }
 }

@@ -578,7 +578,17 @@ namespace Scribe.Forms
         /// <returns>The string properly formatted, or <see cref="Color.White"/> if no value could be parsed.</returns>
         // TODO [MAPS] I'm not really sure what this needs to do yet.
         private static string ValueToColorHexString(object input)
-            => RegionModel.DefaultColor;
+            => input switch
+            {
+                Color givenColor => ColorTranslator.ToHtml(givenColor),
+                string givenString => (givenString.Length, givenString[0]) switch
+                {
+                    (9, '#') => givenString,        // 9 = "#FFFFFFFF".Length
+                    (8, _) => $"#{givenString}",    // 8 = "FFFFFFFF".Length
+                    _ => LoggerExtension.DefaultWithUnknownColorLog(givenString, RegionModel.DefaultColor),
+                },
+                _ => LoggerExtension.DefaultWithUnknownColorLog(input.ToString(), RegionModel.DefaultColor),
+            };
         #endregion
 
         /// <summary>
