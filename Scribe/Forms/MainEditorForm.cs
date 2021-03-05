@@ -2024,8 +2024,7 @@ namespace Scribe.Forms
                 RegionCommentTextBox.Text = model.Comment;
                 var newBackColor = ColorTranslator.FromHtml(model.BackgroundColor);
                 RegionBackgroundColorStatic.BackColor = newBackColor;
-                RegionBackgroundColorNameStatic.Text = newBackColor.Name;
-
+                RegionBackgroundColorNameStatic.Text = $"#{newBackColor.Name}";
                 RegionExitNorthComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
                     ? null
                     : All.Regions.GetOrNull<RegionModel>(model.RegionToTheNorth);
