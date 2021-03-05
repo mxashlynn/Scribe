@@ -6823,6 +6823,7 @@ namespace Scribe.Forms
             this.RegionListBox.Size = new System.Drawing.Size(279, 446);
             this.RegionListBox.TabIndex = 8;
             this.RegionListBox.Tag = "Untracked Control";
+            this.RegionListBox.SelectedValueChanged += new System.EventHandler(this.RegionListBox_SelectedValueChanged);
             // 
             // RegionRemoveButton
             // 
