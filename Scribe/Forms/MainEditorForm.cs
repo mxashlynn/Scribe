@@ -2069,8 +2069,8 @@ namespace Scribe.Forms
                 // Silently return if nothing was modified or if sender was not a Control.
                 return;
             }
-            var PropertyAccessor = GetPropertyAccessorForTabAndControl(EditorTabs.SelectedIndex, alteredControl);
-            if (PropertyAccessor is null)
+            var propertyAccessor = GetPropertyAccessorForTabAndControl(EditorTabs.SelectedIndex, alteredControl);
+            if (propertyAccessor is null)
             {
                 // Silently return if no model is selected or if the Control is unsupported.
                 return;
@@ -2081,8 +2081,9 @@ namespace Scribe.Forms
                                   (string)EditableControls[typeof(TextBox)][textbox],
                                   comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
-                var changeToExecute = new ChangeValue(EditableControls[typeof(TextBox)][textbox], textbox.Text, textbox.Name,
-                                                      (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
+                var oldValue = EditableControls[typeof(TextBox)][textbox];
+                var changeToExecute = new ChangeValue(oldValue, textbox.Text, textbox.Name,
+                                                      (object databaseValue) => { propertyAccessor(databaseValue); HasUnsavedChanges = true; },
                                                       (object displayValue) => textbox.Text = displayValue.ToString(),
                                                       (object oldValue) => EditableControls[typeof(TextBox)][textbox] = oldValue);
                 Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
@@ -2093,9 +2094,9 @@ namespace Scribe.Forms
             {
                 var oldValue = (bool?)EditableControls[typeof(CheckBox)][checkbox];
                 var changeToExecute = new ChangeValue(oldValue, (bool?)checkbox.Checked, checkbox.Name,
-                                        (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
-                                        (object displayValue) => checkbox.Checked = (bool)displayValue,
-                                        (object oldValue) => EditableControls[typeof(CheckBox)][checkbox] = oldValue);
+                                                      (object databaseValue) => { propertyAccessor(databaseValue); HasUnsavedChanges = true; },
+                                                      (object displayValue) => checkbox.Checked = (bool)displayValue,
+                                                      (object oldValue) => EditableControls[typeof(CheckBox)][checkbox] = oldValue);
                 Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
                 ChangeManager.AddAndExecute(changeToExecute);
             }
@@ -2104,9 +2105,9 @@ namespace Scribe.Forms
             {
                 var oldValue = EditableControls[typeof(ComboBox)][combobox];
                 var changeToExecute = new ChangeValue(oldValue, combobox.SelectedItem, combobox.Name,
-                                            (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
-                                            (object displayValue) => combobox.SelectedItem = displayValue,
-                                            (object oldValue) => EditableControls[typeof(ComboBox)][combobox] = oldValue);
+                                                      (object databaseValue) => { propertyAccessor(databaseValue); HasUnsavedChanges = true; },
+                                                      (object displayValue) => combobox.SelectedItem = displayValue,
+                                                      (object oldValue) => EditableControls[typeof(ComboBox)][combobox] = oldValue);
                 Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
                 ChangeManager.AddAndExecute(changeToExecute);
             }
@@ -2115,9 +2116,9 @@ namespace Scribe.Forms
             {
                 var oldValue = EditableControls[typeof(ListBox)][listbox];
                 var changeToExecute = new ChangeValue(oldValue, listbox.SelectedItem, listbox.Name,
-                                            (object databaseValue) => { PropertyAccessor(databaseValue); HasUnsavedChanges = true; },
-                                            (object displayValue) => listbox.SelectedItem = displayValue,
-                                            (object oldValue) => EditableControls[typeof(ListBox)][listbox] = oldValue);
+                                                      (object databaseValue) => { propertyAccessor(databaseValue); HasUnsavedChanges = true; },
+                                                      (object displayValue) => listbox.SelectedItem = displayValue,
+                                                      (object oldValue) => EditableControls[typeof(ListBox)][listbox] = oldValue);
                 Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
                 ChangeManager.AddAndExecute(changeToExecute);
             }
