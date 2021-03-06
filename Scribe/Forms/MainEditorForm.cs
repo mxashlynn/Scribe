@@ -210,12 +210,15 @@ namespace Scribe.Forms
         private readonly Dictionary<Type, Dictionary<Control, object>> EditableControls;
         #endregion
 
-        #region Cached Painting Details
+        #region Cached Painting and Color Details
         /// <summary>The color Parquet uses behind <see cref="RegionModel"/>s when no <see cref="ParquetModel"/>s are present.</summary>
         internal static Color DefaultMapColor { get; } = ColorTranslator.FromHtml(RegionModel.DefaultColor);
 
         /// <summary>The human-readable name of the color Parquet uses behind <see cref="RegionModel"/>s when no <see cref="ParquetModel"/>s are present.</summary>
-        internal static string DefaultMapColorName { get; } = DefaultMapColor.Name;
+        internal static string DefaultMapColorName { get; } = FormatColorNameForDisplay(DefaultMapColor);
+
+        /// <summary>Used by <see cref="ValueToColorHexString(object)"/>.</summary>
+        private static readonly ColorConverter ObjectToColor = new();
         #endregion
 
         #region Autosave and Save Tracking
@@ -581,18 +584,14 @@ namespace Scribe.Forms
         /// Transforms an <c>object</c> into an <c>string</c>, parsing if needed.
         /// </summary>
         /// <param name="input">A <c>string</c> representing a <see cref="Color"/>.</param>
-        /// <returns>The string properly formatted, or <see cref="Color.White"/> if no value could be parsed.</returns>
-        // TODO [MAPS] I'm not really sure what this needs to do yet.
+        /// <returns>The string properly formatted, or <see cref="RegionModel.DefaultColor"/> if no value could be parsed.</returns>
         private static string ValueToColorHexString(object input)
             => input switch
             {
-                Color givenColor => ColorTranslator.ToHtml(givenColor),
-                string givenString => (givenString.Length, givenString[0]) switch
-                {
-                    (9, '#') => givenString,        // 9 = "#FFFFFFFF".Length
-                    (8, _) => $"#{givenString}",    // 8 = "FFFFFFFF".Length
-                    _ => LoggerExtension.DefaultWithUnknownColorLog(givenString, RegionModel.DefaultColor),
-                },
+                Color givenColor => givenColor.ToHexString(),
+                string givenString => givenString[0] == '#'
+                    ? ((Color)ObjectToColor.ConvertFrom(givenString)).ToHexString()
+                    : ((Color)ObjectToColor.ConvertFrom($"#{givenString}")).ToHexString(),
                 _ => LoggerExtension.DefaultWithUnknownColorLog(input.ToString(), RegionModel.DefaultColor),
             };
         #endregion
@@ -2030,7 +2029,7 @@ namespace Scribe.Forms
                 RegionCommentTextBox.Text = model.Comment;
                 var newBackColor = ColorTranslator.FromHtml(model.BackgroundColor);
                 RegionBackgroundColorStatic.BackColor = newBackColor;
-                RegionBackgroundColorNameStatic.Text = $"#{newBackColor.Name}";
+                RegionBackgroundColorNameStatic.Text = FormatColorNameForDisplay(newBackColor);
                 RegionExitNorthComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
                     ? null
                     : All.Regions.GetOrNull<RegionModel>(model.RegionToTheNorth);
@@ -3265,8 +3264,17 @@ namespace Scribe.Forms
                     var newColor = SelectColorDialogue.Color;
                     var propertyAccessor = GetPropertyAccessorForTabAndControl(EditorTabs.SelectedIndex, RegionBackgroundColorStatic);
                     var changeToExecute = new ChangeValue(oldColor, newColor, RegionBackgroundColorStatic.Name,
-                                                          (object databaseValue) => { propertyAccessor(databaseValue); HasUnsavedChanges = true; },
-                                                          (object displayValue) => RegionBackgroundColorStatic.BackColor = (Color)displayValue,
+                                                          (object databaseValue) =>
+                                                          {
+                                                              propertyAccessor(databaseValue);
+                                                              HasUnsavedChanges = true;
+                                                          },
+                                                          (object displayValue) =>
+                                                          {
+                                                              var displayColor = (Color)displayValue;
+                                                              RegionBackgroundColorStatic.BackColor = displayColor;
+                                                              RegionBackgroundColorNameStatic.Text = FormatColorNameForDisplay(displayColor);
+                                                          },
                                                           (object oldValue) => RegionBackgroundColorStatic.BackColor = (Color)oldValue);
                     Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
                     ChangeManager.AddAndExecute(changeToExecute);
@@ -3791,6 +3799,18 @@ namespace Scribe.Forms
             SelectColorDialogue.Dispose();
             base.Dispose(disposing);
         }
+        #endregion
+
+        #region Utilities
+        /// <summary>
+        /// Prepends a hash character only if the name is a hexidecimal number.
+        /// </summary>
+        /// <param name="inColor">The color or color name to format.</param>
+        /// <returns>The formatted color name.</returns>
+        private static string FormatColorNameForDisplay(Color inColor)
+            => inColor.IsNamedColor
+                ? $"{inColor.ToHexString()} ({inColor.Name})"
+                : inColor.ToHexString();
         #endregion
     }
 }
