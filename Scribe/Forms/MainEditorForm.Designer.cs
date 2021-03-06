@@ -6794,7 +6794,7 @@ namespace Scribe.Forms
             // 
             this.RegionIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RegionIDLabel.AutoSize = true;
-            this.RegionIDLabel.Location = new System.Drawing.Point(759, 19);
+            this.RegionIDLabel.Location = new System.Drawing.Point(753, 19);
             this.RegionIDLabel.Name = "RegionIDLabel";
             this.RegionIDLabel.Size = new System.Drawing.Size(54, 13);
             this.RegionIDLabel.TabIndex = 12;
