@@ -3263,11 +3263,10 @@ namespace Scribe.Forms
                 {
                     var newColor = SelectColorDialogue.Color;
                     var propertyAccessor = GetPropertyAccessorForTabAndControl(EditorTabs.SelectedIndex, RegionBackgroundColorStatic);
-                    // TODO [MAPS] I think that ChangeValue may be used incorrectly here....
-                    var changeToExecute = new ChangeValue(oldColor, newColor, nameof(RegionModel.BackgroundColor),
+                    var changeToExecute = new ChangeValue(oldColor, newColor, RegionBackgroundColorStatic.Name,
                                                           (object databaseValue) => { propertyAccessor(databaseValue); HasUnsavedChanges = true; },
                                                           (object displayValue) => RegionBackgroundColorStatic.BackColor = (Color)displayValue,
-                                                          (object oldValue) => RegionBackgroundColorStatic.BackColor = (Color)oldValue); ;
+                                                          (object oldValue) => RegionBackgroundColorStatic.BackColor = (Color)oldValue);
                     Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
                     ChangeManager.AddAndExecute(changeToExecute);
                 }
