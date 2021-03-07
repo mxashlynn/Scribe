@@ -49,18 +49,18 @@ namespace Scribe.Forms
             this.LayerLowerRadioButton = new System.Windows.Forms.RadioButton();
             this.LayerElsewhereRadioButton = new System.Windows.Forms.RadioButton();
             this.LayerUpperPixelBox = new ParquetCustomControls.PixelBox();
-            this.pixelBox1 = new ParquetCustomControls.PixelBox();
-            this.pixelBox2 = new ParquetCustomControls.PixelBox();
-            this.pixelBox3 = new ParquetCustomControls.PixelBox();
+            this.LayerMiddlePixelBox = new ParquetCustomControls.PixelBox();
+            this.LayerBottomPixelBox = new ParquetCustomControls.PixelBox();
+            this.LayerElsewherePixelBox = new ParquetCustomControls.PixelBox();
             this.HorizontalRule2 = new System.Windows.Forms.Label();
             this.LayoutRegionRemoveButton = new System.Windows.Forms.Button();
             this.LayoutRegionDuplicateButton = new System.Windows.Forms.Button();
             this.LayoutRegionAddNewButton = new System.Windows.Forms.Button();
             this.LayoutRegionListBox = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.LayerUpperPixelBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pixelBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pixelBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pixelBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LayerMiddlePixelBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LayerBottomPixelBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LayerElsewherePixelBox)).BeginInit();
             this.SuspendLayout();
             // 
             // WorldLayoutTableLayoutPanel
@@ -402,9 +402,9 @@ namespace Scribe.Forms
             this.Controls.Add(this.LayoutRegionDuplicateButton);
             this.Controls.Add(this.LayoutRegionRemoveButton);
             this.Controls.Add(this.HorizontalRule2);
-            this.Controls.Add(this.pixelBox3);
-            this.Controls.Add(this.pixelBox2);
-            this.Controls.Add(this.pixelBox1);
+            this.Controls.Add(this.LayerElsewherePixelBox);
+            this.Controls.Add(this.LayerBottomPixelBox);
+            this.Controls.Add(this.LayerMiddlePixelBox);
             this.Controls.Add(this.LayerUpperPixelBox);
             this.Controls.Add(this.LayerElsewhereRadioButton);
             this.Controls.Add(this.LayerLowerRadioButton);
@@ -428,10 +428,11 @@ namespace Scribe.Forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WorldLayoutForm";
             this.Text = "World Layout";
+            this.WorldLayoutTableLayoutPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LayerUpperPixelBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pixelBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pixelBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pixelBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LayerMiddlePixelBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LayerBottomPixelBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LayerElsewherePixelBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -458,9 +459,9 @@ namespace Scribe.Forms
         private System.Windows.Forms.RadioButton LayerLowerRadioButton;
         private System.Windows.Forms.RadioButton LayerElsewhereRadioButton;
         private ParquetCustomControls.PixelBox LayerUpperPixelBox;
-        private ParquetCustomControls.PixelBox pixelBox1;
-        private ParquetCustomControls.PixelBox pixelBox2;
-        private ParquetCustomControls.PixelBox pixelBox3;
+        private ParquetCustomControls.PixelBox LayerMiddlePixelBox;
+        private ParquetCustomControls.PixelBox LayerBottomPixelBox;
+        private ParquetCustomControls.PixelBox LayerElsewherePixelBox;
         private System.Windows.Forms.Label HorizontalRule2;
         private System.Windows.Forms.Button LayoutRegionRemoveButton;
         private System.Windows.Forms.Button LayoutRegionDuplicateButton;
