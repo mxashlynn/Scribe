@@ -65,8 +65,7 @@ namespace Scribe.Forms
             // 
             // WorldLayoutTableLayoutPanel
             // 
-            this.WorldLayoutTableLayoutPanel.ColumnCount = 25;
-            this.WorldLayoutTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.WorldLayoutTableLayoutPanel.ColumnCount = 24;
             this.WorldLayoutTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.WorldLayoutTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.WorldLayoutTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
