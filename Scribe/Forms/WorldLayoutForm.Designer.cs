@@ -63,37 +63,37 @@ namespace Scribe.Forms
             this.RegionStatic03_00 = new System.Windows.Forms.Label();
             this.RegionStatic04_00 = new System.Windows.Forms.Label();
             this.RegionStatic05_00 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
+            this.RegionStatic06_00 = new System.Windows.Forms.Label();
+            this.RegionStatic07_00 = new System.Windows.Forms.Label();
+            this.RegionStatic08_00 = new System.Windows.Forms.Label();
+            this.RegionStatic09_00 = new System.Windows.Forms.Label();
+            this.RegionStatic10_00 = new System.Windows.Forms.Label();
+            this.RegionStatic11_00 = new System.Windows.Forms.Label();
+            this.RegionStatic12_00 = new System.Windows.Forms.Label();
+            this.RegionStatic13_00 = new System.Windows.Forms.Label();
+            this.RegionStatic14_00 = new System.Windows.Forms.Label();
+            this.RegionStatic15_00 = new System.Windows.Forms.Label();
+            this.RegionStatic16_00 = new System.Windows.Forms.Label();
+            this.RegionStatic17_00 = new System.Windows.Forms.Label();
+            this.RegionStatic18_00 = new System.Windows.Forms.Label();
+            this.RegionStatic19_00 = new System.Windows.Forms.Label();
+            this.RegionStatic20_00 = new System.Windows.Forms.Label();
+            this.RegionStatic21_00 = new System.Windows.Forms.Label();
+            this.RegionStatic22_00 = new System.Windows.Forms.Label();
+            this.RegionStatic23_00 = new System.Windows.Forms.Label();
+            this.RegionStatic00_01 = new System.Windows.Forms.Label();
+            this.RegionStatic01_01 = new System.Windows.Forms.Label();
+            this.RegionStatic02_01 = new System.Windows.Forms.Label();
+            this.RegionStatic03_01 = new System.Windows.Forms.Label();
+            this.RegionStatic04_01 = new System.Windows.Forms.Label();
+            this.RegionStatic05_01 = new System.Windows.Forms.Label();
+            this.RegionStatic06_01 = new System.Windows.Forms.Label();
+            this.RegionStatic07_01 = new System.Windows.Forms.Label();
+            this.RegionStatic08_01 = new System.Windows.Forms.Label();
+            this.RegionStatic09_01 = new System.Windows.Forms.Label();
+            this.RegionStatic10_01 = new System.Windows.Forms.Label();
+            this.RegionStatic11_01 = new System.Windows.Forms.Label();
+            this.RegionStatic12_01 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
@@ -1206,37 +1206,37 @@ namespace Scribe.Forms
             this.WorldLayoutTableLayoutPanel.Controls.Add(this.label39, 15, 1);
             this.WorldLayoutTableLayoutPanel.Controls.Add(this.label38, 14, 1);
             this.WorldLayoutTableLayoutPanel.Controls.Add(this.label37, 13, 1);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label36, 12, 1);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label35, 11, 1);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label34, 10, 1);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label33, 9, 1);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label32, 8, 1);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label31, 7, 1);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label30, 6, 1);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label29, 5, 1);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label28, 4, 1);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label27, 3, 1);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label26, 2, 1);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label25, 1, 1);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label24, 0, 1);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label23, 23, 0);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label22, 22, 0);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label21, 21, 0);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label20, 20, 0);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label19, 19, 0);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label18, 18, 0);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label17, 17, 0);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label16, 16, 0);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label15, 15, 0);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label14, 14, 0);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label13, 13, 0);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label12, 12, 0);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label11, 11, 0);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label10, 10, 0);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label9, 9, 0);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label8, 8, 0);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label7, 7, 0);
-            this.WorldLayoutTableLayoutPanel.Controls.Add(this.label6, 6, 0);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic12_01, 12, 1);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic11_01, 11, 1);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic10_01, 10, 1);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic09_01, 9, 1);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic08_01, 8, 1);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic07_01, 7, 1);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic06_01, 6, 1);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic05_01, 5, 1);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic04_01, 4, 1);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic03_01, 3, 1);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic02_01, 2, 1);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic01_01, 1, 1);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic00_01, 0, 1);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic23_00, 23, 0);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic22_00, 22, 0);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic21_00, 21, 0);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic20_00, 20, 0);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic19_00, 19, 0);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic18_00, 18, 0);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic17_00, 17, 0);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic16_00, 16, 0);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic15_00, 15, 0);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic14_00, 14, 0);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic13_00, 13, 0);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic12_00, 12, 0);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic11_00, 11, 0);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic10_00, 10, 0);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic09_00, 9, 0);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic08_00, 8, 0);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic07_00, 7, 0);
+            this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic06_00, 6, 0);
             this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic05_00, 5, 0);
             this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic04_00, 4, 0);
             this.WorldLayoutTableLayoutPanel.Controls.Add(this.RegionStatic03_00, 3, 0);
@@ -1609,408 +1609,408 @@ namespace Scribe.Forms
             this.RegionStatic05_00.Tag = "";
             this.RegionStatic05_00.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // RegionStatic06_00
             // 
-            this.label6.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(150, 0);
-            this.label6.Margin = new System.Windows.Forms.Padding(0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(25, 25);
-            this.label6.TabIndex = 67;
-            this.label6.Tag = "";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic06_00.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic06_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic06_00.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic06_00.Location = new System.Drawing.Point(150, 0);
+            this.RegionStatic06_00.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic06_00.Name = "RegionStatic06_00";
+            this.RegionStatic06_00.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic06_00.TabIndex = 67;
+            this.RegionStatic06_00.Tag = "";
+            this.RegionStatic06_00.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label7
+            // RegionStatic07_00
             // 
-            this.label7.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(175, 0);
-            this.label7.Margin = new System.Windows.Forms.Padding(0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(25, 25);
-            this.label7.TabIndex = 68;
-            this.label7.Tag = "";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic07_00.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic07_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic07_00.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic07_00.Location = new System.Drawing.Point(175, 0);
+            this.RegionStatic07_00.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic07_00.Name = "RegionStatic07_00";
+            this.RegionStatic07_00.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic07_00.TabIndex = 68;
+            this.RegionStatic07_00.Tag = "";
+            this.RegionStatic07_00.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label8
+            // RegionStatic08_00
             // 
-            this.label8.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(200, 0);
-            this.label8.Margin = new System.Windows.Forms.Padding(0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(25, 25);
-            this.label8.TabIndex = 69;
-            this.label8.Tag = "";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic08_00.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic08_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic08_00.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic08_00.Location = new System.Drawing.Point(200, 0);
+            this.RegionStatic08_00.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic08_00.Name = "RegionStatic08_00";
+            this.RegionStatic08_00.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic08_00.TabIndex = 69;
+            this.RegionStatic08_00.Tag = "";
+            this.RegionStatic08_00.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label9
+            // RegionStatic09_00
             // 
-            this.label9.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(225, 0);
-            this.label9.Margin = new System.Windows.Forms.Padding(0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(25, 25);
-            this.label9.TabIndex = 70;
-            this.label9.Tag = "";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic09_00.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic09_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic09_00.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic09_00.Location = new System.Drawing.Point(225, 0);
+            this.RegionStatic09_00.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic09_00.Name = "RegionStatic09_00";
+            this.RegionStatic09_00.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic09_00.TabIndex = 70;
+            this.RegionStatic09_00.Tag = "";
+            this.RegionStatic09_00.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label10
+            // RegionStatic10_00
             // 
-            this.label10.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(250, 0);
-            this.label10.Margin = new System.Windows.Forms.Padding(0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(25, 25);
-            this.label10.TabIndex = 71;
-            this.label10.Tag = "";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic10_00.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic10_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic10_00.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic10_00.Location = new System.Drawing.Point(250, 0);
+            this.RegionStatic10_00.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic10_00.Name = "RegionStatic10_00";
+            this.RegionStatic10_00.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic10_00.TabIndex = 71;
+            this.RegionStatic10_00.Tag = "";
+            this.RegionStatic10_00.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label11
+            // RegionStatic11_00
             // 
-            this.label11.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(275, 0);
-            this.label11.Margin = new System.Windows.Forms.Padding(0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(25, 25);
-            this.label11.TabIndex = 72;
-            this.label11.Tag = "";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic11_00.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic11_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic11_00.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic11_00.Location = new System.Drawing.Point(275, 0);
+            this.RegionStatic11_00.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic11_00.Name = "RegionStatic11_00";
+            this.RegionStatic11_00.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic11_00.TabIndex = 72;
+            this.RegionStatic11_00.Tag = "";
+            this.RegionStatic11_00.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label12
+            // RegionStatic12_00
             // 
-            this.label12.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(300, 0);
-            this.label12.Margin = new System.Windows.Forms.Padding(0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(25, 25);
-            this.label12.TabIndex = 73;
-            this.label12.Tag = "";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic12_00.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic12_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic12_00.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic12_00.Location = new System.Drawing.Point(300, 0);
+            this.RegionStatic12_00.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic12_00.Name = "RegionStatic12_00";
+            this.RegionStatic12_00.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic12_00.TabIndex = 73;
+            this.RegionStatic12_00.Tag = "";
+            this.RegionStatic12_00.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label13
+            // RegionStatic13_00
             // 
-            this.label13.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(325, 0);
-            this.label13.Margin = new System.Windows.Forms.Padding(0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(25, 25);
-            this.label13.TabIndex = 74;
-            this.label13.Tag = "";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic13_00.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic13_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic13_00.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic13_00.Location = new System.Drawing.Point(325, 0);
+            this.RegionStatic13_00.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic13_00.Name = "RegionStatic13_00";
+            this.RegionStatic13_00.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic13_00.TabIndex = 74;
+            this.RegionStatic13_00.Tag = "";
+            this.RegionStatic13_00.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label14
+            // RegionStatic14_00
             // 
-            this.label14.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(350, 0);
-            this.label14.Margin = new System.Windows.Forms.Padding(0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(25, 25);
-            this.label14.TabIndex = 75;
-            this.label14.Tag = "";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic14_00.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic14_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic14_00.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic14_00.Location = new System.Drawing.Point(350, 0);
+            this.RegionStatic14_00.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic14_00.Name = "RegionStatic14_00";
+            this.RegionStatic14_00.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic14_00.TabIndex = 75;
+            this.RegionStatic14_00.Tag = "";
+            this.RegionStatic14_00.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label15
+            // RegionStatic15_00
             // 
-            this.label15.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(375, 0);
-            this.label15.Margin = new System.Windows.Forms.Padding(0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(25, 25);
-            this.label15.TabIndex = 76;
-            this.label15.Tag = "";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic15_00.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic15_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic15_00.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic15_00.Location = new System.Drawing.Point(375, 0);
+            this.RegionStatic15_00.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic15_00.Name = "RegionStatic15_00";
+            this.RegionStatic15_00.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic15_00.TabIndex = 76;
+            this.RegionStatic15_00.Tag = "";
+            this.RegionStatic15_00.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label16
+            // RegionStatic16_00
             // 
-            this.label16.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label16.Location = new System.Drawing.Point(400, 0);
-            this.label16.Margin = new System.Windows.Forms.Padding(0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(25, 25);
-            this.label16.TabIndex = 77;
-            this.label16.Tag = "";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic16_00.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic16_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic16_00.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic16_00.Location = new System.Drawing.Point(400, 0);
+            this.RegionStatic16_00.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic16_00.Name = "RegionStatic16_00";
+            this.RegionStatic16_00.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic16_00.TabIndex = 77;
+            this.RegionStatic16_00.Tag = "";
+            this.RegionStatic16_00.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label17
+            // RegionStatic17_00
             // 
-            this.label17.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label17.Location = new System.Drawing.Point(425, 0);
-            this.label17.Margin = new System.Windows.Forms.Padding(0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(25, 25);
-            this.label17.TabIndex = 78;
-            this.label17.Tag = "";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic17_00.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic17_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic17_00.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic17_00.Location = new System.Drawing.Point(425, 0);
+            this.RegionStatic17_00.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic17_00.Name = "RegionStatic17_00";
+            this.RegionStatic17_00.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic17_00.TabIndex = 78;
+            this.RegionStatic17_00.Tag = "";
+            this.RegionStatic17_00.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label18
+            // RegionStatic18_00
             // 
-            this.label18.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label18.Location = new System.Drawing.Point(450, 0);
-            this.label18.Margin = new System.Windows.Forms.Padding(0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(25, 25);
-            this.label18.TabIndex = 79;
-            this.label18.Tag = "";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic18_00.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic18_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic18_00.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic18_00.Location = new System.Drawing.Point(450, 0);
+            this.RegionStatic18_00.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic18_00.Name = "RegionStatic18_00";
+            this.RegionStatic18_00.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic18_00.TabIndex = 79;
+            this.RegionStatic18_00.Tag = "";
+            this.RegionStatic18_00.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label19
+            // RegionStatic19_00
             // 
-            this.label19.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label19.Location = new System.Drawing.Point(475, 0);
-            this.label19.Margin = new System.Windows.Forms.Padding(0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(25, 25);
-            this.label19.TabIndex = 80;
-            this.label19.Tag = "";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic19_00.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic19_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic19_00.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic19_00.Location = new System.Drawing.Point(475, 0);
+            this.RegionStatic19_00.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic19_00.Name = "RegionStatic19_00";
+            this.RegionStatic19_00.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic19_00.TabIndex = 80;
+            this.RegionStatic19_00.Tag = "";
+            this.RegionStatic19_00.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label20
+            // RegionStatic20_00
             // 
-            this.label20.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label20.Location = new System.Drawing.Point(500, 0);
-            this.label20.Margin = new System.Windows.Forms.Padding(0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(25, 25);
-            this.label20.TabIndex = 81;
-            this.label20.Tag = "";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic20_00.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic20_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic20_00.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic20_00.Location = new System.Drawing.Point(500, 0);
+            this.RegionStatic20_00.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic20_00.Name = "RegionStatic20_00";
+            this.RegionStatic20_00.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic20_00.TabIndex = 81;
+            this.RegionStatic20_00.Tag = "";
+            this.RegionStatic20_00.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label21
+            // RegionStatic21_00
             // 
-            this.label21.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label21.Location = new System.Drawing.Point(525, 0);
-            this.label21.Margin = new System.Windows.Forms.Padding(0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(25, 25);
-            this.label21.TabIndex = 82;
-            this.label21.Tag = "";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic21_00.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic21_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic21_00.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic21_00.Location = new System.Drawing.Point(525, 0);
+            this.RegionStatic21_00.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic21_00.Name = "RegionStatic21_00";
+            this.RegionStatic21_00.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic21_00.TabIndex = 82;
+            this.RegionStatic21_00.Tag = "";
+            this.RegionStatic21_00.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label22
+            // RegionStatic22_00
             // 
-            this.label22.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label22.Location = new System.Drawing.Point(550, 0);
-            this.label22.Margin = new System.Windows.Forms.Padding(0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(25, 25);
-            this.label22.TabIndex = 83;
-            this.label22.Tag = "";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic22_00.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic22_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic22_00.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic22_00.Location = new System.Drawing.Point(550, 0);
+            this.RegionStatic22_00.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic22_00.Name = "RegionStatic22_00";
+            this.RegionStatic22_00.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic22_00.TabIndex = 83;
+            this.RegionStatic22_00.Tag = "";
+            this.RegionStatic22_00.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label23
+            // RegionStatic23_00
             // 
-            this.label23.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label23.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label23.Location = new System.Drawing.Point(575, 0);
-            this.label23.Margin = new System.Windows.Forms.Padding(0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(25, 25);
-            this.label23.TabIndex = 84;
-            this.label23.Tag = "";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic23_00.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic23_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic23_00.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic23_00.Location = new System.Drawing.Point(575, 0);
+            this.RegionStatic23_00.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic23_00.Name = "RegionStatic23_00";
+            this.RegionStatic23_00.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic23_00.TabIndex = 84;
+            this.RegionStatic23_00.Tag = "";
+            this.RegionStatic23_00.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label24
+            // RegionStatic00_01
             // 
-            this.label24.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label24.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label24.Location = new System.Drawing.Point(0, 25);
-            this.label24.Margin = new System.Windows.Forms.Padding(0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(25, 25);
-            this.label24.TabIndex = 85;
-            this.label24.Tag = "";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic00_01.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic00_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic00_01.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic00_01.Location = new System.Drawing.Point(0, 25);
+            this.RegionStatic00_01.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic00_01.Name = "RegionStatic00_01";
+            this.RegionStatic00_01.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic00_01.TabIndex = 85;
+            this.RegionStatic00_01.Tag = "";
+            this.RegionStatic00_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label25
+            // RegionStatic01_01
             // 
-            this.label25.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label25.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label25.Location = new System.Drawing.Point(25, 25);
-            this.label25.Margin = new System.Windows.Forms.Padding(0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(25, 25);
-            this.label25.TabIndex = 86;
-            this.label25.Tag = "";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic01_01.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic01_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic01_01.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic01_01.Location = new System.Drawing.Point(25, 25);
+            this.RegionStatic01_01.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic01_01.Name = "RegionStatic01_01";
+            this.RegionStatic01_01.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic01_01.TabIndex = 86;
+            this.RegionStatic01_01.Tag = "";
+            this.RegionStatic01_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label26
+            // RegionStatic02_01
             // 
-            this.label26.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label26.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label26.Location = new System.Drawing.Point(50, 25);
-            this.label26.Margin = new System.Windows.Forms.Padding(0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(25, 25);
-            this.label26.TabIndex = 87;
-            this.label26.Tag = "";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic02_01.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic02_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic02_01.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic02_01.Location = new System.Drawing.Point(50, 25);
+            this.RegionStatic02_01.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic02_01.Name = "RegionStatic02_01";
+            this.RegionStatic02_01.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic02_01.TabIndex = 87;
+            this.RegionStatic02_01.Tag = "";
+            this.RegionStatic02_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label27
+            // RegionStatic03_01
             // 
-            this.label27.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label27.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label27.Location = new System.Drawing.Point(75, 25);
-            this.label27.Margin = new System.Windows.Forms.Padding(0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(25, 25);
-            this.label27.TabIndex = 88;
-            this.label27.Tag = "";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic03_01.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic03_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic03_01.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic03_01.Location = new System.Drawing.Point(75, 25);
+            this.RegionStatic03_01.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic03_01.Name = "RegionStatic03_01";
+            this.RegionStatic03_01.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic03_01.TabIndex = 88;
+            this.RegionStatic03_01.Tag = "";
+            this.RegionStatic03_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label28
+            // RegionStatic04_01
             // 
-            this.label28.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label28.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label28.Location = new System.Drawing.Point(100, 25);
-            this.label28.Margin = new System.Windows.Forms.Padding(0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(25, 25);
-            this.label28.TabIndex = 89;
-            this.label28.Tag = "";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic04_01.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic04_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic04_01.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic04_01.Location = new System.Drawing.Point(100, 25);
+            this.RegionStatic04_01.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic04_01.Name = "RegionStatic04_01";
+            this.RegionStatic04_01.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic04_01.TabIndex = 89;
+            this.RegionStatic04_01.Tag = "";
+            this.RegionStatic04_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label29
+            // RegionStatic05_01
             // 
-            this.label29.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label29.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label29.Location = new System.Drawing.Point(125, 25);
-            this.label29.Margin = new System.Windows.Forms.Padding(0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(25, 25);
-            this.label29.TabIndex = 90;
-            this.label29.Tag = "";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic05_01.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic05_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic05_01.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic05_01.Location = new System.Drawing.Point(125, 25);
+            this.RegionStatic05_01.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic05_01.Name = "RegionStatic05_01";
+            this.RegionStatic05_01.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic05_01.TabIndex = 90;
+            this.RegionStatic05_01.Tag = "";
+            this.RegionStatic05_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label30
+            // RegionStatic06_01
             // 
-            this.label30.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label30.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label30.Location = new System.Drawing.Point(150, 25);
-            this.label30.Margin = new System.Windows.Forms.Padding(0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(25, 25);
-            this.label30.TabIndex = 91;
-            this.label30.Tag = "";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic06_01.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic06_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic06_01.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic06_01.Location = new System.Drawing.Point(150, 25);
+            this.RegionStatic06_01.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic06_01.Name = "RegionStatic06_01";
+            this.RegionStatic06_01.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic06_01.TabIndex = 91;
+            this.RegionStatic06_01.Tag = "";
+            this.RegionStatic06_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label31
+            // RegionStatic07_01
             // 
-            this.label31.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label31.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label31.Location = new System.Drawing.Point(175, 25);
-            this.label31.Margin = new System.Windows.Forms.Padding(0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(25, 25);
-            this.label31.TabIndex = 92;
-            this.label31.Tag = "";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic07_01.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic07_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic07_01.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic07_01.Location = new System.Drawing.Point(175, 25);
+            this.RegionStatic07_01.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic07_01.Name = "RegionStatic07_01";
+            this.RegionStatic07_01.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic07_01.TabIndex = 92;
+            this.RegionStatic07_01.Tag = "";
+            this.RegionStatic07_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label32
+            // RegionStatic08_01
             // 
-            this.label32.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label32.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label32.Location = new System.Drawing.Point(200, 25);
-            this.label32.Margin = new System.Windows.Forms.Padding(0);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(25, 25);
-            this.label32.TabIndex = 93;
-            this.label32.Tag = "";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic08_01.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic08_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic08_01.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic08_01.Location = new System.Drawing.Point(200, 25);
+            this.RegionStatic08_01.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic08_01.Name = "RegionStatic08_01";
+            this.RegionStatic08_01.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic08_01.TabIndex = 93;
+            this.RegionStatic08_01.Tag = "";
+            this.RegionStatic08_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label33
+            // RegionStatic09_01
             // 
-            this.label33.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label33.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label33.Location = new System.Drawing.Point(225, 25);
-            this.label33.Margin = new System.Windows.Forms.Padding(0);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(25, 25);
-            this.label33.TabIndex = 94;
-            this.label33.Tag = "";
-            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic09_01.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic09_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic09_01.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic09_01.Location = new System.Drawing.Point(225, 25);
+            this.RegionStatic09_01.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic09_01.Name = "RegionStatic09_01";
+            this.RegionStatic09_01.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic09_01.TabIndex = 94;
+            this.RegionStatic09_01.Tag = "";
+            this.RegionStatic09_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label34
+            // RegionStatic10_01
             // 
-            this.label34.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label34.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label34.Location = new System.Drawing.Point(250, 25);
-            this.label34.Margin = new System.Windows.Forms.Padding(0);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(25, 25);
-            this.label34.TabIndex = 95;
-            this.label34.Tag = "";
-            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic10_01.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic10_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic10_01.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic10_01.Location = new System.Drawing.Point(250, 25);
+            this.RegionStatic10_01.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic10_01.Name = "RegionStatic10_01";
+            this.RegionStatic10_01.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic10_01.TabIndex = 95;
+            this.RegionStatic10_01.Tag = "";
+            this.RegionStatic10_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label35
+            // RegionStatic11_01
             // 
-            this.label35.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label35.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label35.Location = new System.Drawing.Point(275, 25);
-            this.label35.Margin = new System.Windows.Forms.Padding(0);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(25, 25);
-            this.label35.TabIndex = 96;
-            this.label35.Tag = "";
-            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic11_01.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic11_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic11_01.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic11_01.Location = new System.Drawing.Point(275, 25);
+            this.RegionStatic11_01.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic11_01.Name = "RegionStatic11_01";
+            this.RegionStatic11_01.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic11_01.TabIndex = 96;
+            this.RegionStatic11_01.Tag = "";
+            this.RegionStatic11_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label36
+            // RegionStatic12_01
             // 
-            this.label36.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label36.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label36.Location = new System.Drawing.Point(300, 25);
-            this.label36.Margin = new System.Windows.Forms.Padding(0);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(25, 25);
-            this.label36.TabIndex = 97;
-            this.label36.Tag = "";
-            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionStatic12_01.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.RegionStatic12_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionStatic12_01.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RegionStatic12_01.Location = new System.Drawing.Point(300, 25);
+            this.RegionStatic12_01.Margin = new System.Windows.Forms.Padding(0);
+            this.RegionStatic12_01.Name = "RegionStatic12_01";
+            this.RegionStatic12_01.Size = new System.Drawing.Size(25, 25);
+            this.RegionStatic12_01.TabIndex = 97;
+            this.RegionStatic12_01.Tag = "";
+            this.RegionStatic12_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label37
             // 
@@ -9139,37 +9139,37 @@ namespace Scribe.Forms
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label RegionStatic12_01;
+        private System.Windows.Forms.Label RegionStatic11_01;
+        private System.Windows.Forms.Label RegionStatic10_01;
+        private System.Windows.Forms.Label RegionStatic09_01;
+        private System.Windows.Forms.Label RegionStatic08_01;
+        private System.Windows.Forms.Label RegionStatic07_01;
+        private System.Windows.Forms.Label RegionStatic06_01;
+        private System.Windows.Forms.Label RegionStatic05_01;
+        private System.Windows.Forms.Label RegionStatic04_01;
+        private System.Windows.Forms.Label RegionStatic03_01;
+        private System.Windows.Forms.Label RegionStatic02_01;
+        private System.Windows.Forms.Label RegionStatic01_01;
+        private System.Windows.Forms.Label RegionStatic00_01;
+        private System.Windows.Forms.Label RegionStatic23_00;
+        private System.Windows.Forms.Label RegionStatic22_00;
+        private System.Windows.Forms.Label RegionStatic21_00;
+        private System.Windows.Forms.Label RegionStatic20_00;
+        private System.Windows.Forms.Label RegionStatic19_00;
+        private System.Windows.Forms.Label RegionStatic18_00;
+        private System.Windows.Forms.Label RegionStatic17_00;
+        private System.Windows.Forms.Label RegionStatic16_00;
+        private System.Windows.Forms.Label RegionStatic15_00;
+        private System.Windows.Forms.Label RegionStatic14_00;
+        private System.Windows.Forms.Label RegionStatic13_00;
+        private System.Windows.Forms.Label RegionStatic12_00;
+        private System.Windows.Forms.Label RegionStatic11_00;
+        private System.Windows.Forms.Label RegionStatic10_00;
+        private System.Windows.Forms.Label RegionStatic09_00;
+        private System.Windows.Forms.Label RegionStatic08_00;
+        private System.Windows.Forms.Label RegionStatic07_00;
+        private System.Windows.Forms.Label RegionStatic06_00;
         private System.Windows.Forms.Label RegionStatic05_00;
         private System.Windows.Forms.Label RegionStatic04_00;
         private System.Windows.Forms.Label RegionStatic03_00;
