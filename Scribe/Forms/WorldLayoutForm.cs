@@ -1,4 +1,7 @@
+using System;
+using System.Drawing;
 using System.Windows.Forms;
+using Parquet;
 using Parquet.Regions;
 
 namespace Scribe.Forms
@@ -43,6 +46,32 @@ namespace Scribe.Forms
 
             WorldLayoutTableLayoutPanel.ResumeLayout(false);
             #endregion
+        }
+        #endregion
+
+        #region Layout Table Click Events
+        /// <summary>
+        /// Responds to a user clicking on a region static.
+        /// </summary>
+        /// <param name="inSender">Originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void RegionStatic_Click(object inSender, EventArgs inEventArguments)
+        {
+            var regionStatic = (Label)inSender;
+            UpdateRegionAt((Point2D)regionStatic.Tag, regionStatic);
+        }
+        #endregion
+
+        #region Update Data
+        /// <summary>
+        /// Responds to a request to assign a <see cref="RegionModel"/> to a given location in the world.
+        /// </summary>
+        /// <param name="inCoordinates">The location to assign the <see cref="RegionModel"/>.</param>
+        /// <param name="inRegionStatic">The UI element reflecting that <see cref="RegionModel"/>.</param>
+        private void UpdateRegionAt(Point2D inCoordinates, Label inRegionStatic)
+        {
+            MessageBox.Show($"Assign RegionModel to ({inCoordinates.X}, {inCoordinates.Y}, UNKNOWN).");
+            inRegionStatic.BackColor = Color.AliceBlue;
         }
         #endregion
     }
