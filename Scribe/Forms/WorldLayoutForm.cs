@@ -23,11 +23,24 @@ namespace Scribe.Forms
 
         /// <summary>Index to the an unconnected layer.</summary>
         private const int ElsewhereLayer = 3;
+
+        /// <summary>How many layers of <see cref="RegionModel"/>s the <see cref="WorldLayoutForm"/> tracks.</summary>
+        private const int LayerCount = 4;
+
+        /// <summary>
+        /// How many <see cref="RegionModel"/>s in the <see cref="WorldLayoutForm"/>'s North-South/East-West dimensions.
+        /// </summary>
+        private const int WorldDimension = 24;
         #endregion
 
         #region Characteristics
         /// <summary>The <see cref="RegionModel"/> currently being worked with.</summary>
-        private ModelID CurrentModel = ModelID.None;
+        private ModelID CurrentModelID = ModelID.None;
+
+        /// <summary>
+        /// The <see cref="ModelID"/>s of the <see cref="RegionModel"/>s that the <see cref="WorldLayoutForm"/> works with.
+        /// </summary>
+        private readonly ModelID[,,] World = new ModelID[WorldDimension, WorldDimension, LayerCount];
 
         /// <summary>Backing store for the <see cref="CurrentLayer"/>.</summary>
         private int currentLayerBackingInt = MiddleLayer;
@@ -70,7 +83,6 @@ namespace Scribe.Forms
                         Name = $"RegionStatic{column:00}_{row:00}",
                         Size = new Size(25, 25),
                         Tag = new Point2D(column, row),
-                        Text = $"{row:00}",
                         TextAlign = ContentAlignment.MiddleCenter,
                     };
                     regionStatic.MouseClick += new MouseEventHandler(RegionStatic_MouseClick);
@@ -116,8 +128,55 @@ namespace Scribe.Forms
         /// <param name="inRegionStatic">The UI element reflecting that <see cref="RegionModel"/>.</param>
         private void UpdateRegionAt(Point2D inCoordinates, Label inRegionStatic)
         {
-            MessageBox.Show($"Assign RegionModel to ({inCoordinates.X}, {inCoordinates.Y}, {CurrentLayer}).");
-            inRegionStatic.BackColor = Color.AliceBlue;
+            #region Update Old Location
+            if (TryGetCoordinatesForID(CurrentModelID, out var oldCoordinates))
+            {
+                var idBeingReplaced = World[inCoordinates.Y, inCoordinates.X, CurrentLayer];
+                var staticBeingReplaced =
+                    (Label)WorldLayoutTableLayoutPanel.GetControlFromPosition(oldCoordinates.row, oldCoordinates.column);
+
+                World[oldCoordinates.row, oldCoordinates.column, oldCoordinates.layer] = idBeingReplaced;
+                staticBeingReplaced.Text = idBeingReplaced == ModelID.None
+                    ? ""
+                    : idBeingReplaced.ToString();
+                staticBeingReplaced.BackColor =
+                    ColorTranslator.FromHtml(All.Regions.GetOrNull<RegionModel>(idBeingReplaced)?.BackgroundColor
+                                             ?? RegionModel.DefaultColor);
+            }
+            #endregion
+
+            #region Update New Location
+            World[inCoordinates.Y, inCoordinates.X, CurrentLayer] = CurrentModelID;
+            inRegionStatic.Text = CurrentModelID == ModelID.None
+                ? ""
+                : CurrentModelID.ToString();
+            inRegionStatic.BackColor = RegionBackgroundColorStatic.BackColor;
+            #endregion
+
+            #region Local Helper Routines
+            // Finds the coordinates of the first occurance of the given ModelID in the World array.
+            // If the ModelID is found, returns true; otherwise returns false.
+            bool TryGetCoordinatesForID(ModelID inID, out (int row, int column, int layer) outCoordinates)
+            {
+                for (var layer = 0; layer < LayerCount; layer++)
+                {
+                    for (var column = 0; column < WorldDimension; column++)
+                    {
+                        for (var row = 0; row < WorldDimension; row++)
+                        {
+                            if (World[row, column, layer] == inID)
+                            {
+                                outCoordinates = (row, column, layer);
+                                return true;
+                            }
+                        }
+                    }
+                }
+
+                outCoordinates = (-1, -1, -1);
+                return false;
+            }
+            #endregion
         }
         #endregion
 
