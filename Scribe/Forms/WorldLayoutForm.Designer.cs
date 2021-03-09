@@ -57,7 +57,6 @@ namespace Scribe.Forms
             this.LayoutRegionDuplicateButton = new System.Windows.Forms.Button();
             this.LayoutRegionAddNewButton = new System.Windows.Forms.Button();
             this.LayoutRegionListBox = new System.Windows.Forms.ListBox();
-            this.WorldLayoutTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LayerUpperPixelBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayerMiddlePixelBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayerBottomPixelBox)).BeginInit();
@@ -237,9 +236,9 @@ namespace Scribe.Forms
             this.LayerUpperRadioButton.Name = "LayerUpperRadioButton";
             this.LayerUpperRadioButton.Size = new System.Drawing.Size(80, 24);
             this.LayerUpperRadioButton.TabIndex = 45;
-            this.LayerUpperRadioButton.TabStop = true;
             this.LayerUpperRadioButton.Text = "Upper";
             this.LayerUpperRadioButton.UseVisualStyleBackColor = true;
+            this.LayerUpperRadioButton.CheckedChanged += new System.EventHandler(this.LayerUpperRadioButton_CheckedChanged);
             // 
             // WorldLayerLabel
             // 
@@ -253,6 +252,7 @@ namespace Scribe.Forms
             // LayerMiddleRadioButton
             // 
             this.LayerMiddleRadioButton.Appearance = System.Windows.Forms.Appearance.Button;
+            this.LayerMiddleRadioButton.Checked = true;
             this.LayerMiddleRadioButton.Location = new System.Drawing.Point(772, 256);
             this.LayerMiddleRadioButton.Name = "LayerMiddleRadioButton";
             this.LayerMiddleRadioButton.Size = new System.Drawing.Size(80, 24);
@@ -260,6 +260,7 @@ namespace Scribe.Forms
             this.LayerMiddleRadioButton.TabStop = true;
             this.LayerMiddleRadioButton.Text = "Middle";
             this.LayerMiddleRadioButton.UseVisualStyleBackColor = true;
+            this.LayerMiddleRadioButton.CheckedChanged += new System.EventHandler(this.LayerMiddleRadioButton_CheckedChanged);
             // 
             // LayerLowerRadioButton
             // 
@@ -268,9 +269,9 @@ namespace Scribe.Forms
             this.LayerLowerRadioButton.Name = "LayerLowerRadioButton";
             this.LayerLowerRadioButton.Size = new System.Drawing.Size(80, 24);
             this.LayerLowerRadioButton.TabIndex = 48;
-            this.LayerLowerRadioButton.TabStop = true;
             this.LayerLowerRadioButton.Text = "Lower";
             this.LayerLowerRadioButton.UseVisualStyleBackColor = true;
+            this.LayerLowerRadioButton.CheckedChanged += new System.EventHandler(this.LayerLowerRadioButton_CheckedChanged);
             // 
             // LayerElsewhereRadioButton
             // 
@@ -279,9 +280,9 @@ namespace Scribe.Forms
             this.LayerElsewhereRadioButton.Name = "LayerElsewhereRadioButton";
             this.LayerElsewhereRadioButton.Size = new System.Drawing.Size(80, 24);
             this.LayerElsewhereRadioButton.TabIndex = 49;
-            this.LayerElsewhereRadioButton.TabStop = true;
             this.LayerElsewhereRadioButton.Text = "Elsewhere";
             this.LayerElsewhereRadioButton.UseVisualStyleBackColor = true;
+            this.LayerElsewhereRadioButton.CheckedChanged += new System.EventHandler(this.LayerElsewhereRadioButton_CheckedChanged);
             // 
             // LayerUpperPixelBox
             // 
@@ -415,7 +416,6 @@ namespace Scribe.Forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WorldLayoutForm";
             this.Text = "World Layout";
-            this.WorldLayoutTableLayoutPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LayerUpperPixelBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayerMiddlePixelBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayerBottomPixelBox)).EndInit();
