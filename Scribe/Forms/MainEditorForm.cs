@@ -212,10 +212,10 @@ namespace Scribe.Forms
 
         #region Cached Painting and Color Details
         /// <summary>The color Parquet uses behind <see cref="RegionModel"/>s when no <see cref="ParquetModel"/>s are present.</summary>
-        internal static Color DefaultMapColor { get; } = ColorTranslator.FromHtml(RegionModel.DefaultColor);
+        internal static Color DefaultRegionColor { get; } = ColorTranslator.FromHtml(RegionModel.DefaultColor);
 
         /// <summary>The human-readable name of the color Parquet uses behind <see cref="RegionModel"/>s when no <see cref="ParquetModel"/>s are present.</summary>
-        internal static string DefaultMapColorName { get; } = FormatColorNameForDisplay(DefaultMapColor);
+        internal static string DefaultRegionColorName { get; } = FormatColorNameForDisplay(DefaultRegionColor);
 
         /// <summary>Used by <see cref="ValueToColorHexString(object)"/>.</summary>
         private static readonly ColorConverter ObjectToColor = new();
@@ -2007,8 +2007,8 @@ namespace Scribe.Forms
                 RegionNameTextBox.Text = "";
                 RegionDescriptionTextBox.Text = "";
                 RegionCommentTextBox.Text = "";
-                RegionBackgroundColorStatic.BackColor = DefaultMapColor;
-                RegionBackgroundColorNameStatic.Text = DefaultMapColorName;
+                RegionBackgroundColorStatic.BackColor = DefaultRegionColor;
+                RegionBackgroundColorNameStatic.Text = DefaultRegionColorName;
                 RegionExitNorthComboBox.SelectedItem = null;
                 RegionExitSouthComboBox.SelectedItem = null;
                 RegionExitEastComboBox.SelectedItem = null;
