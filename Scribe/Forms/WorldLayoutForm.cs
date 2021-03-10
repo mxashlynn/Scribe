@@ -66,8 +66,8 @@ namespace Scribe.Forms
         {
             InitializeComponent();
 
-            // TODO [MAPS] [UI] Show a UI element informing the user that the world is being loaded here.
             #region Add Region Statics to Table
+            // TODO [MAPS] [UI] Show a UI element informing the user that the world is being loaded here.
             SuspendLayout();
             WorldLayoutTableLayoutPanel.SuspendLayout();
             for (var column = 0; column < WorldLayoutTableLayoutPanel.ColumnCount; column++)
@@ -92,8 +92,8 @@ namespace Scribe.Forms
             }
             WorldLayoutTableLayoutPanel.ResumeLayout(false);
             ResumeLayout(false);
-            #endregion
             // TODO [MAPS] [UI] Hide the UI element informing the user that the world is loading here.
+            #endregion
 
             // TODO [MAPS] These four lines should probably be moved to Form.OnFocus or something similar.
             // TODO [MAPS] [UI] Show a UI element informing the user that the world is being loaded here.
