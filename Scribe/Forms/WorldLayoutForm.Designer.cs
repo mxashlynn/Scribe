@@ -1,4 +1,4 @@
-
+﻿
 namespace Scribe.Forms
 {
     partial class WorldLayoutForm
@@ -57,6 +57,7 @@ namespace Scribe.Forms
             this.LayoutRegionDuplicateButton = new System.Windows.Forms.Button();
             this.LayoutRegionAddNewButton = new System.Windows.Forms.Button();
             this.LayoutRegionListBox = new System.Windows.Forms.ListBox();
+            this.LayoutCenterCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.LayerUpperPixelBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayerMiddlePixelBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayerBottomPixelBox)).BeginInit();
@@ -188,13 +189,13 @@ namespace Scribe.Forms
             this.RegionCommentTextBox.Location = new System.Drawing.Point(705, 119);
             this.RegionCommentTextBox.Multiline = true;
             this.RegionCommentTextBox.Name = "RegionCommentTextBox";
-            this.RegionCommentTextBox.Size = new System.Drawing.Size(141, 49);
+            this.RegionCommentTextBox.Size = new System.Drawing.Size(141, 23);
             this.RegionCommentTextBox.TabIndex = 29;
             // 
             // RegionBackgroundColorLabel
             // 
             this.RegionBackgroundColorLabel.AutoSize = true;
-            this.RegionBackgroundColorLabel.Location = new System.Drawing.Point(628, 178);
+            this.RegionBackgroundColorLabel.Location = new System.Drawing.Point(627, 153);
             this.RegionBackgroundColorLabel.Name = "RegionBackgroundColorLabel";
             this.RegionBackgroundColorLabel.Size = new System.Drawing.Size(71, 15);
             this.RegionBackgroundColorLabel.TabIndex = 41;
@@ -204,7 +205,7 @@ namespace Scribe.Forms
             // 
             this.RegionBackgroundColorStatic.BackColor = System.Drawing.Color.White;
             this.RegionBackgroundColorStatic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.RegionBackgroundColorStatic.Location = new System.Drawing.Point(705, 173);
+            this.RegionBackgroundColorStatic.Location = new System.Drawing.Point(705, 148);
             this.RegionBackgroundColorStatic.Name = "RegionBackgroundColorStatic";
             this.RegionBackgroundColorStatic.Size = new System.Drawing.Size(24, 24);
             this.RegionBackgroundColorStatic.TabIndex = 42;
@@ -215,7 +216,7 @@ namespace Scribe.Forms
             // 
             this.RegionBackgroundColorNameStatic.AutoSize = true;
             this.RegionBackgroundColorNameStatic.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.RegionBackgroundColorNameStatic.Location = new System.Drawing.Point(735, 176);
+            this.RegionBackgroundColorNameStatic.Location = new System.Drawing.Point(734, 151);
             this.RegionBackgroundColorNameStatic.Name = "RegionBackgroundColorNameStatic";
             this.RegionBackgroundColorNameStatic.Size = new System.Drawing.Size(48, 18);
             this.RegionBackgroundColorNameStatic.TabIndex = 43;
@@ -224,7 +225,7 @@ namespace Scribe.Forms
             // HorizontalRule1
             // 
             this.HorizontalRule1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.HorizontalRule1.Location = new System.Drawing.Point(626, 212);
+            this.HorizontalRule1.Location = new System.Drawing.Point(626, 213);
             this.HorizontalRule1.Name = "HorizontalRule1";
             this.HorizontalRule1.Size = new System.Drawing.Size(228, 2);
             this.HorizontalRule1.TabIndex = 44;
@@ -232,7 +233,7 @@ namespace Scribe.Forms
             // LayerUpperRadioButton
             // 
             this.LayerUpperRadioButton.Appearance = System.Windows.Forms.Appearance.Button;
-            this.LayerUpperRadioButton.Location = new System.Drawing.Point(772, 228);
+            this.LayerUpperRadioButton.Location = new System.Drawing.Point(772, 225);
             this.LayerUpperRadioButton.Name = "LayerUpperRadioButton";
             this.LayerUpperRadioButton.Size = new System.Drawing.Size(80, 24);
             this.LayerUpperRadioButton.TabIndex = 45;
@@ -243,7 +244,7 @@ namespace Scribe.Forms
             // WorldLayerLabel
             // 
             this.WorldLayerLabel.AutoSize = true;
-            this.WorldLayerLabel.Location = new System.Drawing.Point(628, 233);
+            this.WorldLayerLabel.Location = new System.Drawing.Point(628, 230);
             this.WorldLayerLabel.Name = "WorldLayerLabel";
             this.WorldLayerLabel.Size = new System.Drawing.Size(35, 15);
             this.WorldLayerLabel.TabIndex = 46;
@@ -253,7 +254,7 @@ namespace Scribe.Forms
             // 
             this.LayerMiddleRadioButton.Appearance = System.Windows.Forms.Appearance.Button;
             this.LayerMiddleRadioButton.Checked = true;
-            this.LayerMiddleRadioButton.Location = new System.Drawing.Point(772, 256);
+            this.LayerMiddleRadioButton.Location = new System.Drawing.Point(772, 253);
             this.LayerMiddleRadioButton.Name = "LayerMiddleRadioButton";
             this.LayerMiddleRadioButton.Size = new System.Drawing.Size(80, 24);
             this.LayerMiddleRadioButton.TabIndex = 47;
@@ -265,7 +266,7 @@ namespace Scribe.Forms
             // LayerLowerRadioButton
             // 
             this.LayerLowerRadioButton.Appearance = System.Windows.Forms.Appearance.Button;
-            this.LayerLowerRadioButton.Location = new System.Drawing.Point(772, 286);
+            this.LayerLowerRadioButton.Location = new System.Drawing.Point(772, 283);
             this.LayerLowerRadioButton.Name = "LayerLowerRadioButton";
             this.LayerLowerRadioButton.Size = new System.Drawing.Size(80, 24);
             this.LayerLowerRadioButton.TabIndex = 48;
@@ -276,7 +277,7 @@ namespace Scribe.Forms
             // LayerElsewhereRadioButton
             // 
             this.LayerElsewhereRadioButton.Appearance = System.Windows.Forms.Appearance.Button;
-            this.LayerElsewhereRadioButton.Location = new System.Drawing.Point(658, 286);
+            this.LayerElsewhereRadioButton.Location = new System.Drawing.Point(658, 283);
             this.LayerElsewhereRadioButton.Name = "LayerElsewhereRadioButton";
             this.LayerElsewhereRadioButton.Size = new System.Drawing.Size(80, 24);
             this.LayerElsewhereRadioButton.TabIndex = 49;
@@ -288,7 +289,7 @@ namespace Scribe.Forms
             // 
             this.LayerUpperPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.LayerUpperPixelBox.Image = global::Scribe.Properties.Resources.LayerUpper;
-            this.LayerUpperPixelBox.Location = new System.Drawing.Point(743, 230);
+            this.LayerUpperPixelBox.Location = new System.Drawing.Point(743, 227);
             this.LayerUpperPixelBox.Name = "LayerUpperPixelBox";
             this.LayerUpperPixelBox.Size = new System.Drawing.Size(20, 20);
             this.LayerUpperPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -299,7 +300,7 @@ namespace Scribe.Forms
             // 
             this.LayerMiddlePixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.LayerMiddlePixelBox.Image = global::Scribe.Properties.Resources.LayerMiddle;
-            this.LayerMiddlePixelBox.Location = new System.Drawing.Point(743, 258);
+            this.LayerMiddlePixelBox.Location = new System.Drawing.Point(743, 255);
             this.LayerMiddlePixelBox.Name = "LayerMiddlePixelBox";
             this.LayerMiddlePixelBox.Size = new System.Drawing.Size(20, 20);
             this.LayerMiddlePixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -310,7 +311,7 @@ namespace Scribe.Forms
             // 
             this.LayerBottomPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.LayerBottomPixelBox.Image = global::Scribe.Properties.Resources.LayerLower;
-            this.LayerBottomPixelBox.Location = new System.Drawing.Point(743, 288);
+            this.LayerBottomPixelBox.Location = new System.Drawing.Point(743, 285);
             this.LayerBottomPixelBox.Name = "LayerBottomPixelBox";
             this.LayerBottomPixelBox.Size = new System.Drawing.Size(20, 20);
             this.LayerBottomPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -321,7 +322,7 @@ namespace Scribe.Forms
             // 
             this.LayerElsewherePixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.LayerElsewherePixelBox.Image = global::Scribe.Properties.Resources.LayerElsewhere;
-            this.LayerElsewherePixelBox.Location = new System.Drawing.Point(629, 288);
+            this.LayerElsewherePixelBox.Location = new System.Drawing.Point(629, 285);
             this.LayerElsewherePixelBox.Name = "LayerElsewherePixelBox";
             this.LayerElsewherePixelBox.Size = new System.Drawing.Size(20, 20);
             this.LayerElsewherePixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -331,7 +332,7 @@ namespace Scribe.Forms
             // HorizontalRule2
             // 
             this.HorizontalRule2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.HorizontalRule2.Location = new System.Drawing.Point(626, 328);
+            this.HorizontalRule2.Location = new System.Drawing.Point(626, 321);
             this.HorizontalRule2.Name = "HorizontalRule2";
             this.HorizontalRule2.Size = new System.Drawing.Size(228, 2);
             this.HorizontalRule2.TabIndex = 55;
@@ -340,7 +341,7 @@ namespace Scribe.Forms
             // 
             this.LayoutRegionRemoveButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.LayoutRegionRemoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LayoutRegionRemoveButton.Location = new System.Drawing.Point(780, 346);
+            this.LayoutRegionRemoveButton.Location = new System.Drawing.Point(780, 334);
             this.LayoutRegionRemoveButton.Name = "LayoutRegionRemoveButton";
             this.LayoutRegionRemoveButton.Size = new System.Drawing.Size(70, 23);
             this.LayoutRegionRemoveButton.TabIndex = 56;
@@ -351,7 +352,7 @@ namespace Scribe.Forms
             // 
             this.LayoutRegionDuplicateButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.LayoutRegionDuplicateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LayoutRegionDuplicateButton.Location = new System.Drawing.Point(704, 346);
+            this.LayoutRegionDuplicateButton.Location = new System.Drawing.Point(704, 334);
             this.LayoutRegionDuplicateButton.Name = "LayoutRegionDuplicateButton";
             this.LayoutRegionDuplicateButton.Size = new System.Drawing.Size(70, 23);
             this.LayoutRegionDuplicateButton.TabIndex = 57;
@@ -362,7 +363,7 @@ namespace Scribe.Forms
             // 
             this.LayoutRegionAddNewButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.LayoutRegionAddNewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LayoutRegionAddNewButton.Location = new System.Drawing.Point(628, 346);
+            this.LayoutRegionAddNewButton.Location = new System.Drawing.Point(628, 334);
             this.LayoutRegionAddNewButton.Name = "LayoutRegionAddNewButton";
             this.LayoutRegionAddNewButton.Size = new System.Drawing.Size(70, 23);
             this.LayoutRegionAddNewButton.TabIndex = 58;
@@ -374,17 +375,29 @@ namespace Scribe.Forms
             this.LayoutRegionListBox.DisplayMember = "Name";
             this.LayoutRegionListBox.FormattingEnabled = true;
             this.LayoutRegionListBox.ItemHeight = 15;
-            this.LayoutRegionListBox.Location = new System.Drawing.Point(628, 384);
+            this.LayoutRegionListBox.Location = new System.Drawing.Point(628, 369);
             this.LayoutRegionListBox.Name = "LayoutRegionListBox";
-            this.LayoutRegionListBox.Size = new System.Drawing.Size(224, 229);
+            this.LayoutRegionListBox.Size = new System.Drawing.Size(224, 244);
             this.LayoutRegionListBox.TabIndex = 59;
             this.LayoutRegionListBox.Tag = "Untracked Control";
+            // 
+            // LayoutCenterCheckBox
+            // 
+            this.LayoutCenterCheckBox.Appearance = System.Windows.Forms.Appearance.Button;
+            this.LayoutCenterCheckBox.AutoSize = true;
+            this.LayoutCenterCheckBox.Location = new System.Drawing.Point(704, 177);
+            this.LayoutCenterCheckBox.Name = "LayoutCenterCheckBox";
+            this.LayoutCenterCheckBox.Size = new System.Drawing.Size(148, 25);
+            this.LayoutCenterCheckBox.TabIndex = 62;
+            this.LayoutCenterCheckBox.Text = "🟡 Mark As World Center";
+            this.LayoutCenterCheckBox.UseVisualStyleBackColor = true;
             // 
             // WorldLayoutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(864, 621);
+            this.Controls.Add(this.LayoutCenterCheckBox);
             this.Controls.Add(this.LayoutRegionListBox);
             this.Controls.Add(this.LayoutRegionAddNewButton);
             this.Controls.Add(this.LayoutRegionDuplicateButton);
@@ -454,5 +467,6 @@ namespace Scribe.Forms
         private System.Windows.Forms.Button LayoutRegionDuplicateButton;
         private System.Windows.Forms.Button LayoutRegionAddNewButton;
         private System.Windows.Forms.ListBox LayoutRegionListBox;
+        private System.Windows.Forms.CheckBox LayoutCenterCheckBox;
     }
 }
