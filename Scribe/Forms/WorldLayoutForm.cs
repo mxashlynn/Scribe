@@ -97,6 +97,7 @@ namespace Scribe.Forms
 
             // TODO [MAPS] These four lines should probably be moved to Form.OnFocus or something similar.
             // TODO [MAPS] [UI] Show a UI element informing the user that the world is being loaded here.
+            RepopulateListBox();
             LoadWorldData();
             UpdateLayerDisplay();
             // TODO [MAPS] [UI] Hide the UI element informing the user that the world is loading here.
@@ -286,7 +287,7 @@ namespace Scribe.Forms
             LayoutRegionListBox.SelectedItem = null;
             LayoutRegionListBox.BeginUpdate();
             LayoutRegionListBox.Items.Clear();
-            LayoutRegionListBox.Items.AddRange(All.Regions.Cast<RegionModelForLayoutTool>().ToArray<object>());
+            LayoutRegionListBox.Items.AddRange(All.Regions.Select(region => new RegionModelForLayoutTool(region)).ToArray<object>());
             LayoutRegionListBox.EndUpdate();
         }
 

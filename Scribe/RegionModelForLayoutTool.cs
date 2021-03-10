@@ -10,14 +10,17 @@ namespace Scribe
     /// <summary>
     /// Wrapper class for <see cref="RegionModel"/> that provides a custom <see cref="ListControl.DisplayMember"/>.
     /// </summary>
-    internal class RegionModelForLayoutTool : RegionModel
+    internal class RegionModelForLayoutTool
     {
         #region Characteristics
+        /// <summary>The <see cref="RegionModel"/> being worked with.</summary>
+        internal IMutableRegionModel Region { get; }
+
         /// <summary>
         /// Provides a <see cref="ListControl.DisplayMember"/> appropriate for the <see cref="WorldLayoutForm"/>.
         /// </summary>
         internal string LayoutToolName
-            => $"({ID}) {Name} {(Tags.Contains(ScribeTags.WorldCenter) ? "🟡" : "")}";
+            => $"({Region.ID}) {Region.Name} {(Region.Tags.Contains(ScribeTags.WorldCenter) ? "🟡" : "")}";
         #endregion
 
         #region Initialization
@@ -25,14 +28,8 @@ namespace Scribe
         /// Initializes a new instance of the <see cref="RegionModelForLayoutTool"/> class.
         /// </summary>
         /// <inheritdoc/>
-        internal RegionModelForLayoutTool(ModelID inID, string inName, string inDescription, string inComment,
-                                          IEnumerable<ModelTag> inTags = null, string inBackgroundColor = "#FFFFFFFF",
-                                          ModelID? inRegionToTheNorth = null, ModelID? inRegionToTheEast = null,
-                                          ModelID? inRegionToTheSouth = null, ModelID? inRegionToTheWest = null,
-                                          ModelID? inRegionAbove = null, ModelID? inRegionBelow = null)
-            : base(inID, inName, inDescription, inComment, inTags, inBackgroundColor, inRegionToTheNorth,
-                   inRegionToTheEast, inRegionToTheSouth, inRegionToTheWest, inRegionAbove, inRegionBelow)
-        { }
+        internal RegionModelForLayoutTool(IMutableRegionModel inRegion)
+            => Region = inRegion;
         #endregion
     }
 }
