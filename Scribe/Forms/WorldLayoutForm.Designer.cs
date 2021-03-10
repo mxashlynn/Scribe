@@ -372,7 +372,6 @@ namespace Scribe.Forms
             // 
             // LayoutRegionListBox
             // 
-            this.LayoutRegionListBox.DisplayMember = "LayoutToolName";
             this.LayoutRegionListBox.FormattingEnabled = true;
             this.LayoutRegionListBox.ItemHeight = 15;
             this.LayoutRegionListBox.Location = new System.Drawing.Point(628, 369);
