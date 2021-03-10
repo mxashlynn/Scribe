@@ -293,6 +293,8 @@ namespace Scribe.Forms
         }
 
         // TODO [MAPS] Update the state of the editor.
+
+        // TODO [MAPS] Update the region field displays when regions are selected.
         #endregion
 
         #region Update Exits
