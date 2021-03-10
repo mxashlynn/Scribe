@@ -1,5 +1,6 @@
 using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using Parquet;
 using Parquet.Regions;
@@ -65,10 +66,10 @@ namespace Scribe.Forms
         {
             InitializeComponent();
 
+            // TODO [MAPS] [UI] Show a UI element informing the user that the world is being loaded here.
             #region Add Region Statics to Table
             SuspendLayout();
             WorldLayoutTableLayoutPanel.SuspendLayout();
-
             for (var column = 0; column < WorldLayoutTableLayoutPanel.ColumnCount; column++)
             {
                 for (var row = 0; row < WorldLayoutTableLayoutPanel.RowCount; row++)
@@ -89,10 +90,36 @@ namespace Scribe.Forms
                     WorldLayoutTableLayoutPanel.Controls.Add(regionStatic, column, row);
                 }
             }
-
             WorldLayoutTableLayoutPanel.ResumeLayout(false);
             ResumeLayout(false);
             #endregion
+            // TODO [MAPS] [UI] Hide the UI element informing the user that the world is loading here.
+
+            // TODO [MAPS] These four lines should probably be moved to Form.OnFocus or something similar.
+            // TODO [MAPS] [UI] Show a UI element informing the user that the world is being loaded here.
+            LoadWorldData();
+            UpdateLayerDisplay();
+            // TODO [MAPS] [UI] Hide the UI element informing the user that the world is loading here.
+        }
+
+        /// <summary>
+        /// Computes a view of the game world and loads it into <see cref="World"/>.
+        /// </summary>
+        private void LoadWorldData()
+        {
+            // TODO [MAPS] Develop an algorithm to fit the world data into the assumptions of this tool.
+            /*
+            for (var layer = 0; layer < LayerCount; layer++)
+            {
+                for (var column = 0; column < WorldDimension; column++)
+                {
+                    for (var row = 0; row < WorldDimension; row++)
+                    {
+                        World[row, column, layer] == ????
+                    }
+                }
+            }
+            */
         }
         #endregion
 
@@ -180,7 +207,7 @@ namespace Scribe.Forms
         }
         #endregion
 
-        #region Update Model
+        #region Update RegionModel
         // TODO [MAPS] Update non-Exit properties for current model.
         #endregion
 
@@ -190,7 +217,23 @@ namespace Scribe.Forms
         /// </summary>
         private void UpdateLayerDisplay()
         {
-            // TODO [MAPS] Update the layer display for the new
+            WorldLayoutTableLayoutPanel.SuspendLayout();
+            for (var column = 0; column < WorldLayoutTableLayoutPanel.ColumnCount; column++)
+            {
+                for (var row = 0; row < WorldLayoutTableLayoutPanel.RowCount; row++)
+                {
+                    var staticBeingUpdated = (Label)WorldLayoutTableLayoutPanel.GetControlFromPosition(row, column);
+                    staticBeingUpdated.Text = World[row, column, CurrentLayer] == ModelID.None
+                        ? ""
+                        : World[row, column, CurrentLayer].ToString();
+                    staticBeingUpdated.BackColor =
+                        ColorTranslator.FromHtml(All.Regions
+                                                    .GetOrNull<RegionModel>(World[row, column, CurrentLayer])?.BackgroundColor
+                                                    ?? RegionModel.DefaultColor);
+
+                }
+            }
+            WorldLayoutTableLayoutPanel.ResumeLayout(false);
         }
 
         /// <summary>
@@ -232,6 +275,20 @@ namespace Scribe.Forms
             => CurrentLayer = LayerElsewhereRadioButton.Checked
                 ? ElsewhereLayer
                 : CurrentLayer;
+
+        /// <summary>
+        /// Repopulates the <see cref="RegionModel"/> <see cref="ListBox"/>.
+        /// </summary>
+        /// <remarks>This should only be called if <see cref="All"/> has actually changed.</remarks>
+        // TODO [MAPS] Wire this up.
+        private void RepopulateListBox()
+        {
+            LayoutRegionListBox.SelectedItem = null;
+            LayoutRegionListBox.BeginUpdate();
+            LayoutRegionListBox.Items.Clear();
+            LayoutRegionListBox.Items.AddRange(All.Regions.ToArray<object>());
+            LayoutRegionListBox.EndUpdate();
+        }
 
         // TODO [MAPS] Update the state of the editor.
         #endregion
