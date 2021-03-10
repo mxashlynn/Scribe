@@ -287,6 +287,7 @@ namespace Scribe.Forms
             LayoutRegionListBox.SelectedItem = null;
             LayoutRegionListBox.BeginUpdate();
             LayoutRegionListBox.Items.Clear();
+            LayoutRegionListBox.Items.Add(RegionModelForLayoutTool.None);
             LayoutRegionListBox.Items.AddRange(All.Regions.Select(region => new RegionModelForLayoutTool(region)).ToArray<object>());
             LayoutRegionListBox.EndUpdate();
         }

@@ -12,15 +12,30 @@ namespace Scribe
     /// </summary>
     internal class RegionModelForLayoutTool
     {
+        #region Class Defaults
+        /// <summary>Used to signal that no region is present.</summary>
+        internal static readonly RegionModelForLayoutTool None = new(null);
+        #endregion
+
         #region Characteristics
         /// <summary>The <see cref="RegionModel"/> being worked with.</summary>
         internal IMutableRegionModel Region { get; }
 
         /// <summary>
+        /// Provides a <see cref="ListControl.ValueMember"/> appropriate for the <see cref="WorldLayoutForm"/>.
+        /// </summary>
+        internal ModelID ValueID
+            => Region is null
+                ? ModelID.None
+                : Region.ID;
+
+        /// <summary>
         /// Provides a <see cref="ListControl.DisplayMember"/> appropriate for the <see cref="WorldLayoutForm"/>.
         /// </summary>
-        internal string LayoutToolName
-            => $"({Region.ID}) {Region.Name} {(Region.Tags.Contains(ScribeTags.WorldCenter) ? "🟡" : "")}";
+        internal string DisplayName
+            => Region is null
+                ? nameof(None)
+                : $"({Region.ID}) {Region.Name} {(Region.Tags.Contains(ScribeTags.WorldCenter) ? "🟡" : "")}";
         #endregion
 
         #region Initialization
