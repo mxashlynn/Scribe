@@ -286,7 +286,7 @@ namespace Scribe.Forms
             LayoutRegionListBox.SelectedItem = null;
             LayoutRegionListBox.BeginUpdate();
             LayoutRegionListBox.Items.Clear();
-            LayoutRegionListBox.Items.AddRange(All.Regions.ToArray<object>());
+            LayoutRegionListBox.Items.AddRange(All.Regions.Cast<RegionModelForLayoutTool>().ToArray<object>());
             LayoutRegionListBox.EndUpdate();
         }
 
@@ -297,8 +297,4 @@ namespace Scribe.Forms
         // TODO [MAPS] Update Exit properties for all models
         #endregion
     }
-
-    // TODO [MAPS] [UI] I would like names of RegionModels to be displayed in this Form as $"({ID}) {NAME} {IsCenterOfWorld ? "🟡" : ""}"
-    // but I cannot do this because WinForms only accepts Properties as DisplayMembers.  So, I need to subclass RegionModel and populate
-    // the ListBox using region models cast to that subtype.  Alternatively, an interface with default implementation may also work.
 }

@@ -1,4 +1,4 @@
-﻿
+
 namespace Scribe.Forms
 {
     partial class WorldLayoutForm
@@ -372,7 +372,7 @@ namespace Scribe.Forms
             // 
             // LayoutRegionListBox
             // 
-            this.LayoutRegionListBox.DisplayMember = "Name";
+            this.LayoutRegionListBox.DisplayMember = "LayoutToolName";
             this.LayoutRegionListBox.FormattingEnabled = true;
             this.LayoutRegionListBox.ItemHeight = 15;
             this.LayoutRegionListBox.Location = new System.Drawing.Point(628, 369);
