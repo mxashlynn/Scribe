@@ -31,7 +31,7 @@ namespace Scribe
             _ = Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Context.MainForm = new WorldLayoutForm(); // SplashScreen();
+            Context.MainForm = new SplashScreen();
             Application.Run(Context);
         }
 
