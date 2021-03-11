@@ -3,6 +3,8 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Parquet;
+using Parquet.Beings;
+using Parquet.Games;
 using Parquet.Regions;
 
 namespace Scribe.Forms
@@ -108,7 +110,13 @@ namespace Scribe.Forms
         /// </summary>
         private void LoadWorldData()
         {
-            // TODO [MAPS] Develop an algorithm to fit the world data into the assumptions of this tool.
+            var startingRegion = GetStartingRegion();
+            if (!startingRegion.Tags.Contains(ScribeTags.WorldCenter))
+            {
+                ((IMutableRegionModel)startingRegion).Tags.Add(ScribeTags.WorldCenter);
+            }
+
+            // TODO [MAPS] Implement algorithm to fit the world data into the assumptions of this tool.
             /*
             for (var layer = 0; layer < LayerCount; layer++)
             {
@@ -121,6 +129,43 @@ namespace Scribe.Forms
                 }
             }
             */
+
+            #region Find Starting Region
+            // Returns the world's central region, or the default region, or a region provided by the user.
+            RegionModel GetStartingRegion()
+                => All.Regions.Any(region => region.Tags.Contains(ScribeTags.WorldCenter))
+                    ? All.Regions.First(region => region.Tags.Contains(ScribeTags.WorldCenter))
+                    : GetDefaultRegionOrUserRegion();
+
+            // Returns the default region according to the default GameModel, or a region provided by the user.
+            RegionModel GetDefaultRegionOrUserRegion()
+            {
+                var gameID = All.Games.Select(game => game.ID).Min();
+                return All.Games.FirstOrDefault(game => game.ID == gameID) is GameModel game
+                    && game is not null
+                        ? GetRegionFromGame(game)
+                        : GetRegionFromUser();
+            }
+
+            // Returns the default region according to the given GameModel, or a region provided by the user.
+            RegionModel GetRegionFromGame(GameModel game)
+                => All.Characters.GetOrNull<CharacterModel>(game.PlayerCharacterID) is CharacterModel player
+                && player is not null
+                    ? GetRegionFromPlayer(player)
+                    : GetRegionFromUser();
+
+            // Returns the default region according to the given CharacterModel, or a region provided by the user.
+            RegionModel GetRegionFromPlayer(CharacterModel player)
+                => All.Regions.GetOrNull<RegionModel>(player.StartingLocation.RegionID) is RegionModel region
+                && region is not null
+                    ? region
+                    : GetRegionFromUser();
+
+            // Returns a region provided by the user.
+            RegionModel GetRegionFromUser()
+                // TODO [MAPS] [UI] Implement dialogue to get starting region.
+                => null;
+            #endregion
         }
         #endregion
 
