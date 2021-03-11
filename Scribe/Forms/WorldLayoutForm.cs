@@ -115,6 +115,13 @@ namespace Scribe.Forms
             {
                 ((IMutableRegionModel)startingRegion).Tags.Add(ScribeTags.WorldCenter);
             }
+            var currentElevation = MiddleLayer;
+            var currentCoordinates = new Point2D(WorldDimension / 2, WorldDimension / 2);
+
+
+            // TODO [MAPS] This algorithm might be improved if we stored the coordinates and elevation as ModelTags....
+            //  *****  HERE!!  ***********************************************************************************
+
 
             // TODO [MAPS] Implement algorithm to fit the world data into the assumptions of this tool.
             /*
