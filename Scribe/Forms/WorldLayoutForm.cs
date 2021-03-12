@@ -122,6 +122,7 @@ namespace Scribe.Forms
         private void LoadWorldData()
         {
             #region Pre-Process ModelTags
+            // TODO [MAPS] Is this pre-processing still needed?
             try
             {
                 // Ensure only one RegionModel is marked as the center of the world.
