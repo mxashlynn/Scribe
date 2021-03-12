@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using Parquet;
@@ -117,54 +118,47 @@ namespace Scribe.Forms
         /// <summary>
         /// Computes a view of the game world and loads it into <see cref="World"/>.
         /// </summary>
-        [SuppressMessage("Design", "CA1031:Do not catch general exception types",
-            Justification = "Exception is being reported to the user and logged.")]
         private void LoadWorldData()
         {
-            #region Pre-Process ModelTags
-            // TODO [MAPS] Is this pre-processing still needed?
-            try
+            if (All.Regions.Any(region => region.Tags.Contains(WorldCenterTag)))
             {
-                // Ensure only one RegionModel is marked as the center of the world.
-                while (All.Regions.Where(region => region.Tags.Contains(WorldCenterTag)).Count() > 1)
+                #region Load Regions With Coordinates
+                var unprocessedRegions = All.Regions.ToList();
+                for (var layer = 0; layer < LayerCount; layer++)
                 {
-                    All.Regions.Last<IMutableRegionModel>(region => region.Tags.Contains(WorldCenterTag))
-                               .Tags
-                               .Remove(WorldCenterTag);
-                }
-            }
-            catch (Exception exception)
-            {
-                Logger.Log(LogLevel.Error, Resources.ErrorProcessingTags, exception);
-            }
-            #endregion
-
-            var startingRegion = GetStartingRegion();
-            if (!startingRegion.Tags.Contains(WorldCenterTag))
-            {
-                ((IMutableRegionModel)startingRegion).Tags.Add(WorldCenterTag);
-            }
-            var currentElevation = MiddleLayer;
-            var currentCoordinates = new Point2D(WorldDimension / 2, WorldDimension / 2);
-
-
-            // TODO [MAPS] Rework this algorithm so that it uses stored coordinates.
-            //  *****  HERE!!  ***********************************************************************************
-
-
-            // TODO [MAPS] Implement algorithm to fit the world data into the assumptions of this tool.
-            /*
-            for (var layer = 0; layer < LayerCount; layer++)
-            {
-                for (var column = 0; column < WorldDimension; column++)
-                {
-                    for (var row = 0; row < WorldDimension; row++)
+                    for (var column = 0; column < WorldDimension; column++)
                     {
-                        World[row, column, layer] == ????
+                        for (var row = 0; row < WorldDimension; row++)
+                        {
+                            var coordinates = new Point3D(row, column, layer);
+                            var tag = $"{Resources.TagPrefixLayoutTool}{coordinates}";
+                            var currentRegion = unprocessedRegions.First(region => region.Tags.Contains<ModelTag>(tag));
+                            World[row, column, layer] = currentRegion?.ID ?? ModelID.None;
+                            unprocessedRegions.Remove(currentRegion);
+                        }
                     }
                 }
+                if (unprocessedRegions.Count > 0)
+                {
+                    var message = string.Format(CultureInfo.InvariantCulture,
+                                                Resources.InfoUnprocessedRegions,
+                                                unprocessedRegions.Count);
+                    Logger.Log(LogLevel.Info, message);
+                    MessageBox.Show(message, Resources.CaptionWorkflow, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                #endregion
             }
-            */
+            else
+            {
+                #region Load Regions Without Coordinates
+                var startingRegion = GetStartingRegion();
+                var currentElevation = MiddleLayer;
+                var currentCoordinates = new Point2D(WorldDimension / 2, WorldDimension / 2);
+
+                // TODO [MAPS] Implement algorithm to fit the world data into the assumptions of this tool.
+                //  *****  HERE!!  ***********************************************************************************
+                #endregion
+            }
 
             #region Find Starting Region
             // Returns the world's central region, or the default region, or a region provided by the user.

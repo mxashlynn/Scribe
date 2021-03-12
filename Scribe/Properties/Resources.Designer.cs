@@ -498,6 +498,15 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} existing regions could not being shown in this tool.  They either do not have coordinates, have coordinates outside the bounds, or have duplicate coordinates..
+        /// </summary>
+        internal static string InfoUnprocessedRegions {
+            get {
+                return ResourceManager.GetString("InfoUnprocessedRegions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap LayerElsewhere {
@@ -955,7 +964,7 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The value &apos;{1}&apos; could not be parsed as a Color..
+        ///   Looks up a localized string similar to The value &apos;{0}&apos; could not be parsed as a Color..
         /// </summary>
         internal static string WarningUnkownColor {
             get {

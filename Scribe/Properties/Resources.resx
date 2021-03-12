@@ -442,7 +442,7 @@ Folder: {1}</value>
     <value>..\parqueticon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="WarningUnkownColor" xml:space="preserve">
-    <value>The value '{1}' could not be parsed as a Color.</value>
+    <value>The value '{0}' could not be parsed as a Color.</value>
     <comment>Warning string.</comment>
   </data>
   <data name="LayerElsewhere" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -464,5 +464,9 @@ Folder: {1}</value>
   <data name="TagPrefixLayoutTool" xml:space="preserve">
     <value>scribelayout:</value>
     <comment>Tool encoding string.</comment>
+  </data>
+  <data name="InfoUnprocessedRegions" xml:space="preserve">
+    <value>{0} existing regions could not being shown in this tool.  They either do not have coordinates, have coordinates outside the bounds, or have duplicate coordinates.</value>
+    <comment>Instructions string.</comment>
   </data>
 </root>
