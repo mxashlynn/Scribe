@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Globalization;
@@ -18,14 +19,14 @@ namespace Scribe.Forms
     public partial class WorldLayoutForm : Form
     {
         #region Class Defaults
-        /// <summary>Index to the uppermost layer.</summary>
-        private const int UpperLayer = 0;
+        /// <summary>Index to the bottommost layer.</summary>
+        private const int LowerLayer = 0;
 
         /// <summary>Index to the midmost layer.</summary>
         private const int MiddleLayer = 1;
 
-        /// <summary>Index to the bottommost layer.</summary>
-        private const int LowerLayer = 2;
+        /// <summary>Index to the uppermost layer.</summary>
+        private const int UpperLayer = 2;
 
         /// <summary>Index to the an unconnected layer.</summary>
         private const int ElsewhereLayer = 3;
@@ -120,7 +121,7 @@ namespace Scribe.Forms
         /// </summary>
         private void LoadWorldData()
         {
-            if (All.Regions.Any(region => region.Tags.Contains(WorldCenterTag)))
+            if (All.Regions.Any(region => region.Tags.Any(tag => tag.StartsWithOrdinalIgnoreCase(Resources.TagPrefixLayoutTool))))
             {
                 #region Load Regions With Coordinates
                 var unprocessedRegions = All.Regions.ToList();
@@ -151,24 +152,107 @@ namespace Scribe.Forms
             else
             {
                 #region Load Regions Without Coordinates
-                var startingRegion = GetStartingRegion();
-                var currentElevation = MiddleLayer;
-                var currentCoordinates = new Point2D(WorldDimension / 2, WorldDimension / 2);
+                // Traverse all regions in breadth-first fashion.
+                var visitedRegions = new List<IMutableRegionModel>();
+                var unvisitedRegions = new Queue<IMutableRegionModel>();
 
-                // TODO [MAPS] Implement algorithm to fit the world data into the assumptions of this tool.
-                //  *****  HERE!!  ***********************************************************************************
+                var startRegion = GetDefaultRegionOrUserRegion();
+                startRegion.Tags.Add($"{Resources.TagPrefixLayoutTool}{WorldCenterCoordinates}");
+                unvisitedRegions.Enqueue(startRegion);
+
+                while (unvisitedRegions.Count > 0)
+                {
+                    var currentRegion = unvisitedRegions.Dequeue();
+                    visitedRegions.Add(currentRegion);
+                    var currentCoordinates = GetCoordinatesFromTag((RegionModel)currentRegion);
+
+                    World[currentCoordinates.Row, currentCoordinates.Column, currentCoordinates.Layer] = currentRegion.ID;
+
+                    // North
+                    if (currentCoordinates.Row > 0
+                        && currentRegion.RegionToTheNorthID != ModelID.None
+                        && !visitedRegions.Any(region => region.ID == currentRegion.RegionToTheNorthID))
+                    {
+                        var newCoordinates = new Point3D(currentCoordinates.Row - 1,
+                                                         currentCoordinates.Column,
+                                                         currentCoordinates.Layer);
+                        var newRegion = (IMutableRegionModel)All.Regions
+                                                                .GetOrNull<RegionModel>(currentRegion.RegionToTheNorthID);
+                        newRegion.Tags.Add($"{Resources.TagPrefixLayoutTool}{newCoordinates}");
+                        unvisitedRegions.Enqueue(newRegion);
+                    }
+                    // South
+                    if (currentCoordinates.Row < WorldDimension
+                        && currentRegion.RegionToTheSouthID != ModelID.None
+                        && !visitedRegions.Any(region => region.ID == currentRegion.RegionToTheSouthID))
+                    {
+                        var newCoordinates = new Point3D(currentCoordinates.Row + 1,
+                                                         currentCoordinates.Column,
+                                                         currentCoordinates.Layer);
+                        var newRegion = (IMutableRegionModel)All.Regions
+                                                                .GetOrNull<RegionModel>(currentRegion.RegionToTheSouthID);
+                        newRegion.Tags.Add($"{Resources.TagPrefixLayoutTool}{newCoordinates}");
+                        unvisitedRegions.Enqueue(newRegion);
+                    }
+                    // West
+                    if (currentCoordinates.Column > 0
+                        && currentRegion.RegionToTheWestID != ModelID.None
+                        && !visitedRegions.Any(region => region.ID == currentRegion.RegionToTheWestID))
+                    {
+                        var newCoordinates = new Point3D(currentCoordinates.Row,
+                                                         currentCoordinates.Column - 1,
+                                                         currentCoordinates.Layer);
+                        var newRegion = (IMutableRegionModel)All.Regions
+                                                                .GetOrNull<RegionModel>(currentRegion.RegionToTheWestID);
+                        newRegion.Tags.Add($"{Resources.TagPrefixLayoutTool}{newCoordinates}");
+                        unvisitedRegions.Enqueue(newRegion);
+                    }
+                    // East
+                    if (currentCoordinates.Column < WorldDimension
+                        && currentRegion.RegionToTheEastID != ModelID.None
+                        && !visitedRegions.Any(region => region.ID == currentRegion.RegionToTheEastID))
+                    {
+                        var newCoordinates = new Point3D(currentCoordinates.Row,
+                                                         currentCoordinates.Column + 1,
+                                                         currentCoordinates.Layer);
+                        var newRegion = (IMutableRegionModel)All.Regions
+                                                                .GetOrNull<RegionModel>(currentRegion.RegionToTheEastID);
+                        newRegion.Tags.Add($"{Resources.TagPrefixLayoutTool}{newCoordinates}");
+                        unvisitedRegions.Enqueue(newRegion);
+                    }
+                    // Above
+                    if (currentCoordinates.Layer < UpperLayer
+                        && currentRegion.RegionAboveID != ModelID.None
+                        && !visitedRegions.Any(region => region.ID == currentRegion.RegionAboveID))
+                    {
+                        var newCoordinates = new Point3D(currentCoordinates.Row,
+                                                         currentCoordinates.Column,
+                                                         currentCoordinates.Layer + 1);
+                        var newRegion = (IMutableRegionModel)All.Regions
+                                                                .GetOrNull<RegionModel>(currentRegion.RegionAboveID);
+                        newRegion.Tags.Add($"{Resources.TagPrefixLayoutTool}{newCoordinates}");
+                        unvisitedRegions.Enqueue(newRegion);
+                    }
+                    // Below
+                    if (currentCoordinates.Layer > LowerLayer
+                        && currentRegion.RegionBelowID != ModelID.None
+                        && !visitedRegions.Any(region => region.ID == currentRegion.RegionBelowID))
+                    {
+                        var newCoordinates = new Point3D(currentCoordinates.Row,
+                                                         currentCoordinates.Column,
+                                                         currentCoordinates.Layer - 1);
+                        var newRegion = (IMutableRegionModel)All.Regions
+                                                                .GetOrNull<RegionModel>(currentRegion.RegionBelowID);
+                        newRegion.Tags.Add($"{Resources.TagPrefixLayoutTool}{newCoordinates}");
+                        unvisitedRegions.Enqueue(newRegion);
+                    }
+                }
                 #endregion
             }
 
             #region Find Starting Region
-            // Returns the world's central region, or the default region, or a region provided by the user.
-            RegionModel GetStartingRegion()
-                => All.Regions.Any(region => region.Tags.Contains(WorldCenterTag))
-                    ? All.Regions.First(region => region.Tags.Contains(WorldCenterTag))
-                    : GetDefaultRegionOrUserRegion();
-
             // Returns the default region according to the default GameModel, or a region provided by the user.
-            RegionModel GetDefaultRegionOrUserRegion()
+            IMutableRegionModel GetDefaultRegionOrUserRegion()
             {
                 var gameID = All.Games.Select(game => game.ID).Min();
                 return All.Games.FirstOrDefault(game => game.ID == gameID) is GameModel game
@@ -178,23 +262,32 @@ namespace Scribe.Forms
             }
 
             // Returns the default region according to the given GameModel, or a region provided by the user.
-            RegionModel GetRegionFromGame(GameModel game)
+            IMutableRegionModel GetRegionFromGame(GameModel game)
                 => All.Characters.GetOrNull<CharacterModel>(game.PlayerCharacterID) is CharacterModel player
                 && player is not null
                     ? GetRegionFromPlayer(player)
                     : GetRegionFromUser();
 
             // Returns the default region according to the given CharacterModel, or a region provided by the user.
-            RegionModel GetRegionFromPlayer(CharacterModel player)
+            IMutableRegionModel GetRegionFromPlayer(CharacterModel player)
                 => All.Regions.GetOrNull<RegionModel>(player.StartingLocation.RegionID) is RegionModel region
                 && region is not null
                     ? region
                     : GetRegionFromUser();
 
             // Returns a region provided by the user.
-            RegionModel GetRegionFromUser()
+            IMutableRegionModel GetRegionFromUser()
                 // TODO [MAPS] [UI] Implement dialogue to get starting region.
                 => null;
+            #endregion
+
+            #region Parse Coordinates
+            // Returns the layout tool coordinates stored as a ModelTag on the given Region.
+            Point3D GetCoordinatesFromTag(RegionModel inRegion)
+            {
+                var serializedCoordinate = (string)inRegion.Tags.First(tag => tag.StartsWithOrdinalIgnoreCase(Resources.TagPrefixLayoutTool));
+                return new Point3D(serializedCoordinate[Resources.TagPrefixLayoutTool.Length..]);
+             }
             #endregion
         }
         #endregion
