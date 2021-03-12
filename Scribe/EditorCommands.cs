@@ -259,31 +259,10 @@ namespace Scribe
         /// <returns>
         /// <c>true</c> if no exceptions were caught; <c>false</c> otherwise.
         /// </returns>
-        [SuppressMessage("Design", "CA1031:Do not catch general exception types",
-            Justification = "Exception is being logged.")]
         internal static bool LoadDataFiles()
         {
             All.Clear();
-            var result = All.LoadFromCSVs();
-
-            #region Process Scribe ModelTags
-            try
-            {
-                // Ensure only one RegionModel is marked as the center of the world.
-                while (All.Regions.Where(region => region.Tags.Contains(ScribeTags.WorldCenter)).Count() > 1)
-                {
-                    All.Regions.Last<IMutableRegionModel>(region => region.Tags.Contains(ScribeTags.WorldCenter))
-                               .Tags
-                               .Remove(ScribeTags.WorldCenter);
-                }
-            }
-            catch (Exception exception)
-            {
-                Logger.Log(LogLevel.Error, Resources.ErrorProcessingTags, exception);
-            }
-            #endregion
-
-            return result;
+            return All.LoadFromCSVs();
         }
         #endregion
     }

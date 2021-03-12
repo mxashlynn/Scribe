@@ -863,6 +863,15 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to scribelayout:.
+        /// </summary>
+        internal static string TagPrefixLayoutTool {
+            get {
+                return ResourceManager.GetString("TagPrefixLayoutTool", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Tags {

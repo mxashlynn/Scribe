@@ -37,7 +37,7 @@ namespace Scribe
         public override string ToString()
             => Model.ID == ModelID.None
                 ? nameof(None)
-                : $"({Model.ID}) {Model.Name} {(Model.Tags.Contains(ScribeTags.WorldCenter) ? "🟡" : "")}";
+                : $"({Model.ID}) {Model.Name} {(Model.Tags.Contains(WorldLayoutForm.WorldCenterTag) ? "🟡" : "")}";
         #endregion
     }
 }

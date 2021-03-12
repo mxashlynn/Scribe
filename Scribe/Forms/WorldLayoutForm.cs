@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -6,6 +7,7 @@ using Parquet;
 using Parquet.Beings;
 using Parquet.Games;
 using Parquet.Regions;
+using Scribe.Properties;
 
 namespace Scribe.Forms
 {
@@ -34,6 +36,12 @@ namespace Scribe.Forms
         /// How many <see cref="RegionModel"/>s in the <see cref="WorldLayoutForm"/>'s North-South/East-West dimensions.
         /// </summary>
         private const int WorldDimension = 24;
+
+        /// <summary>Where to begin constructing the world graph.</summary>
+        private static readonly Point3D WorldCenterCoordinates = new(WorldDimension / 2, WorldDimension / 2, MiddleLayer);
+
+        /// <summary>Labels where to begin constructing the world graph.</summary>
+        internal static readonly ModelTag WorldCenterTag = $"{Resources.TagPrefixLayoutTool}{WorldCenterCoordinates}";
         #endregion
 
         #region Characteristics
@@ -105,21 +113,41 @@ namespace Scribe.Forms
             // TODO [MAPS] [UI] Hide the UI element informing the user that the world is loading here.
         }
 
+
         /// <summary>
         /// Computes a view of the game world and loads it into <see cref="World"/>.
         /// </summary>
+        [SuppressMessage("Design", "CA1031:Do not catch general exception types",
+            Justification = "Exception is being reported to the user and logged.")]
         private void LoadWorldData()
         {
-            var startingRegion = GetStartingRegion();
-            if (!startingRegion.Tags.Contains(ScribeTags.WorldCenter))
+            #region Pre-Process ModelTags
+            try
             {
-                ((IMutableRegionModel)startingRegion).Tags.Add(ScribeTags.WorldCenter);
+                // Ensure only one RegionModel is marked as the center of the world.
+                while (All.Regions.Where(region => region.Tags.Contains(WorldCenterTag)).Count() > 1)
+                {
+                    All.Regions.Last<IMutableRegionModel>(region => region.Tags.Contains(WorldCenterTag))
+                               .Tags
+                               .Remove(WorldCenterTag);
+                }
+            }
+            catch (Exception exception)
+            {
+                Logger.Log(LogLevel.Error, Resources.ErrorProcessingTags, exception);
+            }
+            #endregion
+
+            var startingRegion = GetStartingRegion();
+            if (!startingRegion.Tags.Contains(WorldCenterTag))
+            {
+                ((IMutableRegionModel)startingRegion).Tags.Add(WorldCenterTag);
             }
             var currentElevation = MiddleLayer;
             var currentCoordinates = new Point2D(WorldDimension / 2, WorldDimension / 2);
 
 
-            // TODO [MAPS] This algorithm might be improved if we stored the coordinates and elevation as ModelTags....
+            // TODO [MAPS] Rework this algorithm so that it uses stored coordinates.
             //  *****  HERE!!  ***********************************************************************************
 
 
@@ -140,8 +168,8 @@ namespace Scribe.Forms
             #region Find Starting Region
             // Returns the world's central region, or the default region, or a region provided by the user.
             RegionModel GetStartingRegion()
-                => All.Regions.Any(region => region.Tags.Contains(ScribeTags.WorldCenter))
-                    ? All.Regions.First(region => region.Tags.Contains(ScribeTags.WorldCenter))
+                => All.Regions.Any(region => region.Tags.Contains(WorldCenterTag))
+                    ? All.Regions.First(region => region.Tags.Contains(WorldCenterTag))
                     : GetDefaultRegionOrUserRegion();
 
             // Returns the default region according to the default GameModel, or a region provided by the user.

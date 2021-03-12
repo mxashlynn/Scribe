@@ -461,4 +461,8 @@ Folder: {1}</value>
     <value>An exception occurred while processing Scribe-specific ModelTags.</value>
     <comment>Error string.</comment>
   </data>
+  <data name="TagPrefixLayoutTool" xml:space="preserve">
+    <value>scribelayout:</value>
+    <comment>Tool encoding string.</comment>
+  </data>
 </root>
