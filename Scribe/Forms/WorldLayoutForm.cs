@@ -157,11 +157,17 @@ namespace Scribe.Forms
             }
             else
             {
+                var startRegion = GetDefaultRegion();
+                if (startRegion is null)
+                {
+                    // If no regions have been defined, we start with a blank slate.
+                    return;
+                }
+
                 #region Load Regions Without Coordinates
                 var visitedRegions = new List<IMutableRegionModel>();
                 var unvisitedRegions = new Queue<IMutableRegionModel>();
 
-                var startRegion = GetDefaultRegionOrUserRegion();
                 startRegion.Tags.Add($"{Resources.TagPrefixLayoutTool}{WorldCenterCoordinates}");
                 unvisitedRegions.Enqueue(startRegion);
 
@@ -343,34 +349,33 @@ namespace Scribe.Forms
             }
 
             #region Find Starting Region
-            // Returns the default region according to the default GameModel, or a region provided by the user.
-            IMutableRegionModel GetDefaultRegionOrUserRegion()
+            // Returns the default region.
+            IMutableRegionModel GetDefaultRegion()
             {
                 var gameID = All.Games.Select(game => game.ID).Min();
                 return All.Games.FirstOrDefault(game => game.ID == gameID) is GameModel game
                     && game is not null
                         ? GetRegionFromGame(game)
-                        : GetRegionFromUser();
+                        : GetFirstRegion();
             }
 
-            // Returns the default region according to the given GameModel, or a region provided by the user.
+            // Returns the default region according to the given GameModel, or the first region defined.
             IMutableRegionModel GetRegionFromGame(GameModel game)
                 => All.Characters.GetOrNull<CharacterModel>(game.PlayerCharacterID) is CharacterModel player
                 && player is not null
                     ? GetRegionFromPlayer(player)
-                    : GetRegionFromUser();
+                    : GetFirstRegion();
 
-            // Returns the default region according to the given CharacterModel, or a region provided by the user.
+            // Returns the default region according to the given CharacterModel, or the first region defined.
             IMutableRegionModel GetRegionFromPlayer(CharacterModel player)
                 => All.Regions.GetOrNull<RegionModel>(player.StartingLocation.RegionID) is RegionModel region
                 && region is not null
                     ? region
-                    : GetRegionFromUser();
+                    : GetFirstRegion();
 
-            // Returns a region provided by the user.
-            IMutableRegionModel GetRegionFromUser()
-                // TODO [MAPS] [UI] Implement dialogue to get starting region.
-                => throw new NotImplementedException();
+            // Returns the first region defined.
+            IMutableRegionModel GetFirstRegion()
+                => All.Regions.FirstOrDefault();
             #endregion
 
             #region Parse Coordinates
