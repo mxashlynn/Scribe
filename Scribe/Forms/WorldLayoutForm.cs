@@ -109,9 +109,9 @@ namespace Scribe.Forms
 
             // TODO [MAPS] These four lines should probably be moved to Form.OnFocus or something similar.
             // TODO [MAPS] [UI] Show a UI element informing the user that the world is being loaded here.
-            RepopulateListBox();
             LoadWorldData();
             UpdateLayerDisplay();
+            RepopulateListBox();
             // TODO [MAPS] [UI] Hide the UI element informing the user that the world is loading here.
         }
 
@@ -124,7 +124,7 @@ namespace Scribe.Forms
             if (All.Regions.Any(region => region.Tags.Any(tag => tag.StartsWithOrdinalIgnoreCase(Resources.TagPrefixLayoutTool))))
             {
                 #region Load Regions With Coordinates
-                var unprocessedRegions = All.Regions.ToList();
+                var unvisitedRegions = All.Regions.ToList();
                 for (var layer = 0; layer < LayerCount; layer++)
                 {
                     for (var column = 0; column < WorldDimension; column++)
@@ -133,17 +133,17 @@ namespace Scribe.Forms
                         {
                             var coordinates = new Point3D(row, column, layer);
                             var tag = $"{Resources.TagPrefixLayoutTool}{coordinates}";
-                            var currentRegion = unprocessedRegions.First(region => region.Tags.Contains<ModelTag>(tag));
+                            var currentRegion = unvisitedRegions.First(region => region.Tags.Contains<ModelTag>(tag));
                             World[row, column, layer] = currentRegion?.ID ?? ModelID.None;
-                            unprocessedRegions.Remove(currentRegion);
+                            unvisitedRegions.Remove(currentRegion);
                         }
                     }
                 }
-                if (unprocessedRegions.Count > 0)
+                if (unvisitedRegions.Count > 0)
                 {
                     var message = string.Format(CultureInfo.InvariantCulture,
                                                 Resources.InfoUnprocessedRegions,
-                                                unprocessedRegions.Count);
+                                                unvisitedRegions.Count);
                     Logger.Log(LogLevel.Info, message);
                     MessageBox.Show(message, Resources.CaptionWorkflow, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -152,7 +152,6 @@ namespace Scribe.Forms
             else
             {
                 #region Load Regions Without Coordinates
-                // Traverse all regions in breadth-first fashion.
                 var visitedRegions = new List<IMutableRegionModel>();
                 var unvisitedRegions = new Queue<IMutableRegionModel>();
 
@@ -160,6 +159,7 @@ namespace Scribe.Forms
                 startRegion.Tags.Add($"{Resources.TagPrefixLayoutTool}{WorldCenterCoordinates}");
                 unvisitedRegions.Enqueue(startRegion);
 
+                #region Find Elevation-Based Regions
                 while (unvisitedRegions.Count > 0)
                 {
                     var currentRegion = unvisitedRegions.Dequeue();
@@ -248,6 +248,92 @@ namespace Scribe.Forms
                     }
                 }
                 #endregion
+
+                #region Find Elsewhere Regions
+                if (All.Regions.Count > visitedRegions.Count)
+                {
+                    startRegion = All.Regions.First(region => !visitedRegions.Contains(region));
+                    var startCoordinates = new Point3D(WorldCenterCoordinates.Row,
+                                                       WorldCenterCoordinates.Column,
+                                                       ElsewhereLayer);
+                    startRegion.Tags.Add($"{Resources.TagPrefixLayoutTool}{startCoordinates}");
+                    unvisitedRegions.Enqueue(startRegion);
+
+                    while (unvisitedRegions.Count > 0)
+                    {
+                        var currentRegion = unvisitedRegions.Dequeue();
+                        visitedRegions.Add(currentRegion);
+                        var currentCoordinates = GetCoordinatesFromTag((RegionModel)currentRegion);
+
+                        World[currentCoordinates.Row, currentCoordinates.Column, currentCoordinates.Layer] = currentRegion.ID;
+
+                        // North
+                        if (currentCoordinates.Row > 0
+                            && currentRegion.RegionToTheNorthID != ModelID.None
+                            && !visitedRegions.Any(region => region.ID == currentRegion.RegionToTheNorthID))
+                        {
+                            var newCoordinates = new Point3D(currentCoordinates.Row - 1,
+                                                             currentCoordinates.Column,
+                                                             ElsewhereLayer);
+                            var newRegion = (IMutableRegionModel)All.Regions
+                                                                    .GetOrNull<RegionModel>(currentRegion.RegionToTheNorthID);
+                            newRegion.Tags.Add($"{Resources.TagPrefixLayoutTool}{newCoordinates}");
+                            unvisitedRegions.Enqueue(newRegion);
+                        }
+                        // South
+                        if (currentCoordinates.Row < WorldDimension
+                            && currentRegion.RegionToTheSouthID != ModelID.None
+                            && !visitedRegions.Any(region => region.ID == currentRegion.RegionToTheSouthID))
+                        {
+                            var newCoordinates = new Point3D(currentCoordinates.Row + 1,
+                                                             currentCoordinates.Column,
+                                                             ElsewhereLayer);
+                            var newRegion = (IMutableRegionModel)All.Regions
+                                                                    .GetOrNull<RegionModel>(currentRegion.RegionToTheSouthID);
+                            newRegion.Tags.Add($"{Resources.TagPrefixLayoutTool}{newCoordinates}");
+                            unvisitedRegions.Enqueue(newRegion);
+                        }
+                        // West
+                        if (currentCoordinates.Column > 0
+                            && currentRegion.RegionToTheWestID != ModelID.None
+                            && !visitedRegions.Any(region => region.ID == currentRegion.RegionToTheWestID))
+                        {
+                            var newCoordinates = new Point3D(currentCoordinates.Row,
+                                                             currentCoordinates.Column - 1,
+                                                             ElsewhereLayer);
+                            var newRegion = (IMutableRegionModel)All.Regions
+                                                                    .GetOrNull<RegionModel>(currentRegion.RegionToTheWestID);
+                            newRegion.Tags.Add($"{Resources.TagPrefixLayoutTool}{newCoordinates}");
+                            unvisitedRegions.Enqueue(newRegion);
+                        }
+                        // East
+                        if (currentCoordinates.Column < WorldDimension
+                            && currentRegion.RegionToTheEastID != ModelID.None
+                            && !visitedRegions.Any(region => region.ID == currentRegion.RegionToTheEastID))
+                        {
+                            var newCoordinates = new Point3D(currentCoordinates.Row,
+                                                             currentCoordinates.Column + 1,
+                                                             ElsewhereLayer);
+                            var newRegion = (IMutableRegionModel)All.Regions
+                                                                    .GetOrNull<RegionModel>(currentRegion.RegionToTheEastID);
+                            newRegion.Tags.Add($"{Resources.TagPrefixLayoutTool}{newCoordinates}");
+                            unvisitedRegions.Enqueue(newRegion);
+                        }
+                    }
+                }
+                #endregion
+
+                #region Report Unvisited Regions
+                if (All.Regions.Count > visitedRegions.Count)
+                {
+                    var message = string.Format(CultureInfo.InvariantCulture,
+                                                Resources.InfoUnprocessedRegions,
+                                                All.Regions.Count - visitedRegions.Count);
+                    Logger.Log(LogLevel.Info, message);
+                    MessageBox.Show(message, Resources.CaptionWorkflow, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                #endregion
+                #endregion
             }
 
             #region Find Starting Region
@@ -278,7 +364,7 @@ namespace Scribe.Forms
             // Returns a region provided by the user.
             IMutableRegionModel GetRegionFromUser()
                 // TODO [MAPS] [UI] Implement dialogue to get starting region.
-                => null;
+                => throw new NotImplementedException();
             #endregion
 
             #region Parse Coordinates
