@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -10,6 +9,14 @@ using Parquet.Beings;
 using Parquet.Games;
 using Parquet.Regions;
 using Scribe.Properties;
+
+// TODO [MAP] Put all MAP TODO items into ClubHouse!!
+
+// TODO [MAP] Determine why the center-of-the-world glyph is not showing up.
+// TODO [MAP] Exclude regions with negative IDs
+// TODO [MAP] Display only the 3 least significant digits of the ID number.
+// TODO [MAP] Wire things up!
+// TODO [MAP] Test things out!
 
 namespace Scribe.Forms
 {
