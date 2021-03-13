@@ -3194,7 +3194,6 @@ namespace Scribe.Forms
         #endregion
 
         #region Regions Tab
-        // TODO [MAPS] Wire these region-related methods up!  (There may be other region items needing wiring.)
         /// <summary>
         /// Responds to the user clicking "Add New Region" on the Regions tab.
         /// </summary>
@@ -3236,7 +3235,7 @@ namespace Scribe.Forms
         /// <param name="eventArguments">Ignored</param>
         private void RegionLayOutWorldButton_Click(object sender, EventArgs eventArguments)
         {
-            // TODO [MAPS] Implement this!
+            // TODO [MAPS] Wire up layout tool button.  (There may be other region items needing wiring.)
             SystemSounds.Beep.Play();
         }
 
