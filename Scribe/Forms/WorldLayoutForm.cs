@@ -106,15 +106,21 @@ namespace Scribe.Forms
             ResumeLayout(false);
             // TODO [MAPS] [UI] Hide the UI element informing the user that the world is loading here.
             #endregion
+        }
 
-            // TODO [MAPS] These four lines should probably be moved to Form.OnFocus or something similar.
+        /// <summary>
+        /// Sets up the layout tool UI.
+        /// </summary>
+        /// <param name="EventData">Handled by parent.</param>
+        protected override void OnLoad(EventArgs EventData)
+        {
+            base.OnLoad(EventData);
             // TODO [MAPS] [UI] Show a UI element informing the user that the world is being loaded here.
             LoadWorldData();
             UpdateLayerDisplay();
             RepopulateListBox();
             // TODO [MAPS] [UI] Hide the UI element informing the user that the world is loading here.
         }
-
 
         /// <summary>
         /// Computes a view of the game world and loads it into <see cref="World"/>.
