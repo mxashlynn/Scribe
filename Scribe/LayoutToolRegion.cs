@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Linq;
 using Parquet;
 using Parquet.Regions;
@@ -37,7 +38,7 @@ namespace Scribe
         public override string ToString()
             => Model.ID == ModelID.None
                 ? nameof(None)
-                : $"({Model.ID}) {Model.Name} {(Model.Tags.Contains(WorldLayoutForm.WorldCenterTag) ? "🟡" : "")}";
+                : $"({Model.ID.ToString()[^3..]}) {Model.Name} {(Model.Tags.Contains(WorldLayoutForm.WorldCenterTag) ? "🟡" : "")}";
         #endregion
     }
 }
