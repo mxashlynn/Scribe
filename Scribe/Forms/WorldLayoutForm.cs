@@ -10,14 +10,6 @@ using Parquet.Games;
 using Parquet.Regions;
 using Scribe.Properties;
 
-// TODO [MAP] Put all MAP TODO items into ClubHouse!!
-
-// TODO [MAP] Determine why the center-of-the-world glyph is not showing up.
-// TODO [MAP] Exclude regions with negative IDs
-// TODO [MAP] Display only the 3 least significant digits of the ID number.
-// TODO [MAP] Wire things up!
-// TODO [MAP] Test things out!
-
 namespace Scribe.Forms
 {
     /// <summary>
@@ -553,7 +545,6 @@ namespace Scribe.Forms
         /// Repopulates the <see cref="RegionModel"/> <see cref="ListBox"/>.
         /// </summary>
         /// <remarks>This should only be called if <see cref="All"/> has actually changed.</remarks>
-        // TODO [MAPS] Wire this up.
         private void RepopulateListBox()
         {
             LayoutRegionListBox.SelectedItem = null;
