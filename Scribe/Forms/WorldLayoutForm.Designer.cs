@@ -29,6 +29,7 @@ namespace Scribe.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorldLayoutForm));
             this.WorldLayoutTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.RegionIDLabel = new System.Windows.Forms.Label();
@@ -58,6 +59,7 @@ namespace Scribe.Forms
             this.LayoutRegionAddNewButton = new System.Windows.Forms.Button();
             this.LayoutRegionListBox = new System.Windows.Forms.ListBox();
             this.LayoutCenterCheckBox = new System.Windows.Forms.CheckBox();
+            this.LayoutToolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.LayerUpperPixelBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayerMiddlePixelBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayerBottomPixelBox)).BeginInit();
@@ -467,5 +469,6 @@ namespace Scribe.Forms
         private System.Windows.Forms.Button LayoutRegionAddNewButton;
         private System.Windows.Forms.ListBox LayoutRegionListBox;
         private System.Windows.Forms.CheckBox LayoutCenterCheckBox;
+        private System.Windows.Forms.ToolTip LayoutToolTip;
     }
 }

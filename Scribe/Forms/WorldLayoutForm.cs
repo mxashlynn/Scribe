@@ -431,9 +431,10 @@ namespace Scribe.Forms
                 staticBeingReplaced.Text = idBeingReplaced == ModelID.None
                     ? ""
                     : idBeingReplaced.ToString();
+                var regionBeingReplaced = All.Regions.GetOrNull<RegionModel>(idBeingReplaced);
                 staticBeingReplaced.BackColor =
-                    ColorTranslator.FromHtml(All.Regions.GetOrNull<RegionModel>(idBeingReplaced)?.BackgroundColor
-                                             ?? RegionModel.DefaultColor);
+                    ColorTranslator.FromHtml(regionBeingReplaced?.BackgroundColor ?? RegionModel.DefaultColor);
+                LayoutToolTip.SetToolTip(staticBeingReplaced, regionBeingReplaced?.Name);
             }
             #endregion
 
@@ -443,6 +444,7 @@ namespace Scribe.Forms
                 ? ""
                 : CurrentModelID.ToString();
             inRegionStatic.BackColor = RegionBackgroundColorStatic.BackColor;
+            LayoutToolTip.SetToolTip(inRegionStatic, RegionNameTextBox.Text);
             #endregion
 
             #region Local Helper Routines
@@ -476,7 +478,7 @@ namespace Scribe.Forms
         // TODO [MAPS] Update non-Exit properties for current model.
         #endregion
 
-        #region Update Editor
+        #region Update Display
         /// <summary>
         /// Responds to the user selecting a new layer to edit.
         /// </summary>
@@ -495,7 +497,8 @@ namespace Scribe.Forms
                         ColorTranslator.FromHtml(All.Regions
                                                     .GetOrNull<RegionModel>(World[row, column, CurrentLayer])?.BackgroundColor
                                                     ?? RegionModel.DefaultColor);
-
+                    var regionName = All.Regions.GetOrNull<RegionModel>(World[row, column, CurrentLayer])?.Name;
+                    LayoutToolTip.SetToolTip(staticBeingUpdated, regionName);
                 }
             }
             WorldLayoutTableLayoutPanel.ResumeLayout(false);
