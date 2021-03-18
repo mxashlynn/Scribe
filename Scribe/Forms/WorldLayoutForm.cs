@@ -126,10 +126,11 @@ namespace Scribe.Forms
         /// </summary>
         private void LoadWorldData()
         {
-            if (All.Regions.Any(region => region.Tags.Any(tag => tag.StartsWithOrdinalIgnoreCase(Resources.TagPrefixLayoutTool))))
+            if (All.Regions.Any(region => region.ID > 0
+                                       && region.Tags.Any(tag => tag.StartsWithOrdinalIgnoreCase(Resources.TagPrefixLayoutTool))))
             {
                 #region Load Regions With Coordinates
-                var unvisitedRegions = All.Regions.ToList();
+                var unvisitedRegions = All.Regions.Where(region => region.ID > 0).ToList();
                 for (var layer = 0; layer < LayerCount; layer++)
                 {
                     for (var column = 0; column < WorldDimension; column++)
@@ -138,7 +139,8 @@ namespace Scribe.Forms
                         {
                             var coordinates = new Point3D(row, column, layer);
                             var tag = $"{Resources.TagPrefixLayoutTool}{coordinates}";
-                            var currentRegion = unvisitedRegions.First(region => region.Tags.Contains<ModelTag>(tag));
+                            var currentRegion = unvisitedRegions.First(region => region.ID > 0
+                                                                              && region.Tags.Contains<ModelTag>(tag));
                             World[row, column, layer] = currentRegion?.ID ?? ModelID.None;
                             unvisitedRegions.Remove(currentRegion);
                         }
@@ -166,6 +168,7 @@ namespace Scribe.Forms
                 #region Load Regions Without Coordinates
                 var visitedRegions = new List<IMutableRegionModel>();
                 var unvisitedRegions = new Queue<IMutableRegionModel>();
+                var positiveRegionCount = All.Regions.Where(region => region.ID > 0).Count();
 
                 startRegion.Tags.Add($"{Resources.TagPrefixLayoutTool}{WorldCenterCoordinates}");
                 unvisitedRegions.Enqueue(startRegion);
@@ -181,7 +184,7 @@ namespace Scribe.Forms
 
                     // North
                     if (currentCoordinates.Row > 0
-                        && currentRegion.RegionToTheNorthID != ModelID.None
+                        && currentRegion.RegionToTheNorthID > 0 // Implicitly not ModelID.None
                         && !visitedRegions.Any(region => region.ID == currentRegion.RegionToTheNorthID))
                     {
                         var newCoordinates = new Point3D(currentCoordinates.Row - 1,
@@ -194,7 +197,7 @@ namespace Scribe.Forms
                     }
                     // South
                     if (currentCoordinates.Row < WorldDimension
-                        && currentRegion.RegionToTheSouthID != ModelID.None
+                        && currentRegion.RegionToTheSouthID > 0 // Implicitly not ModelID.None
                         && !visitedRegions.Any(region => region.ID == currentRegion.RegionToTheSouthID))
                     {
                         var newCoordinates = new Point3D(currentCoordinates.Row + 1,
@@ -207,7 +210,7 @@ namespace Scribe.Forms
                     }
                     // West
                     if (currentCoordinates.Column > 0
-                        && currentRegion.RegionToTheWestID != ModelID.None
+                        && currentRegion.RegionToTheWestID > 0 // Implicitly not ModelID.None
                         && !visitedRegions.Any(region => region.ID == currentRegion.RegionToTheWestID))
                     {
                         var newCoordinates = new Point3D(currentCoordinates.Row,
@@ -220,7 +223,7 @@ namespace Scribe.Forms
                     }
                     // East
                     if (currentCoordinates.Column < WorldDimension
-                        && currentRegion.RegionToTheEastID != ModelID.None
+                        && currentRegion.RegionToTheEastID > 0 // Implicitly not ModelID.None
                         && !visitedRegions.Any(region => region.ID == currentRegion.RegionToTheEastID))
                     {
                         var newCoordinates = new Point3D(currentCoordinates.Row,
@@ -233,7 +236,7 @@ namespace Scribe.Forms
                     }
                     // Above
                     if (currentCoordinates.Layer < UpperLayer
-                        && currentRegion.RegionAboveID != ModelID.None
+                        && currentRegion.RegionAboveID > 0 // Implicitly not ModelID.None
                         && !visitedRegions.Any(region => region.ID == currentRegion.RegionAboveID))
                     {
                         var newCoordinates = new Point3D(currentCoordinates.Row,
@@ -246,7 +249,7 @@ namespace Scribe.Forms
                     }
                     // Below
                     if (currentCoordinates.Layer > LowerLayer
-                        && currentRegion.RegionBelowID != ModelID.None
+                        && currentRegion.RegionBelowID > 0 // Implicitly not ModelID.None
                         && !visitedRegions.Any(region => region.ID == currentRegion.RegionBelowID))
                     {
                         var newCoordinates = new Point3D(currentCoordinates.Row,
@@ -261,7 +264,7 @@ namespace Scribe.Forms
                 #endregion
 
                 #region Find Elsewhere Regions
-                if (All.Regions.Count > visitedRegions.Count)
+                if (positiveRegionCount > visitedRegions.Count)
                 {
                     startRegion = All.Regions.First(region => !visitedRegions.Contains(region));
                     var startCoordinates = new Point3D(WorldCenterCoordinates.Row,
@@ -280,7 +283,7 @@ namespace Scribe.Forms
 
                         // North
                         if (currentCoordinates.Row > 0
-                            && currentRegion.RegionToTheNorthID != ModelID.None
+                            && currentRegion.RegionToTheNorthID > 0 // Implicitly not ModelID.None
                             && !visitedRegions.Any(region => region.ID == currentRegion.RegionToTheNorthID))
                         {
                             var newCoordinates = new Point3D(currentCoordinates.Row - 1,
@@ -293,7 +296,7 @@ namespace Scribe.Forms
                         }
                         // South
                         if (currentCoordinates.Row < WorldDimension
-                            && currentRegion.RegionToTheSouthID != ModelID.None
+                            && currentRegion.RegionToTheSouthID > 0 // Implicitly not ModelID.None
                             && !visitedRegions.Any(region => region.ID == currentRegion.RegionToTheSouthID))
                         {
                             var newCoordinates = new Point3D(currentCoordinates.Row + 1,
@@ -306,7 +309,7 @@ namespace Scribe.Forms
                         }
                         // West
                         if (currentCoordinates.Column > 0
-                            && currentRegion.RegionToTheWestID != ModelID.None
+                            && currentRegion.RegionToTheWestID > 0 // Implicitly not ModelID.None
                             && !visitedRegions.Any(region => region.ID == currentRegion.RegionToTheWestID))
                         {
                             var newCoordinates = new Point3D(currentCoordinates.Row,
@@ -319,7 +322,7 @@ namespace Scribe.Forms
                         }
                         // East
                         if (currentCoordinates.Column < WorldDimension
-                            && currentRegion.RegionToTheEastID != ModelID.None
+                            && currentRegion.RegionToTheEastID > 0 // Implicitly not ModelID.None
                             && !visitedRegions.Any(region => region.ID == currentRegion.RegionToTheEastID))
                         {
                             var newCoordinates = new Point3D(currentCoordinates.Row,
@@ -335,11 +338,11 @@ namespace Scribe.Forms
                 #endregion
 
                 #region Report Unvisited Regions
-                if (All.Regions.Count > visitedRegions.Count)
+                if (positiveRegionCount > visitedRegions.Count)
                 {
                     var message = string.Format(CultureInfo.InvariantCulture,
                                                 Resources.InfoUnprocessedRegions,
-                                                All.Regions.Count - visitedRegions.Count);
+                                                positiveRegionCount - visitedRegions.Count);
                     Logger.Log(LogLevel.Info, message);
                     MessageBox.Show(message, Resources.CaptionWorkflow, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -351,7 +354,7 @@ namespace Scribe.Forms
             // Returns the default region.
             IMutableRegionModel GetDefaultRegion()
             {
-                var gameID = All.Games.Select(game => game.ID).Min();
+                var gameID = All.Games.Where(game => game.ID > 0).Select(game => game.ID).Min();
                 return All.Games.FirstOrDefault(game => game.ID == gameID) is GameModel game
                     && game is not null
                         ? GetRegionFromGame(game)
@@ -374,7 +377,7 @@ namespace Scribe.Forms
 
             // Returns the first region defined.
             IMutableRegionModel GetFirstRegion()
-                => All.Regions.FirstOrDefault();
+                => All.Regions.Where(region => region.ID > 0).FirstOrDefault();
             #endregion
 
             #region Parse Coordinates
@@ -403,7 +406,7 @@ namespace Scribe.Forms
             }
             else
             {
-                MessageBox.Show("Right Click!!");
+                MessageBox.Show($"Select region at {(Point2D)regionStatic.Tag}");
             }
         }
         #endregion
@@ -442,7 +445,7 @@ namespace Scribe.Forms
             World[inCoordinates.Y, inCoordinates.X, CurrentLayer] = CurrentModelID;
             inRegionStatic.Text = CurrentModelID == ModelID.None
                 ? ""
-                : CurrentModelID.ToString();
+                : CurrentModelID.ToString()[^3..];
             inRegionStatic.BackColor = RegionBackgroundColorStatic.BackColor;
             LayoutToolTip.SetToolTip(inRegionStatic, RegionNameTextBox.Text);
             #endregion
@@ -554,7 +557,9 @@ namespace Scribe.Forms
             LayoutRegionListBox.BeginUpdate();
             LayoutRegionListBox.Items.Clear();
             LayoutRegionListBox.Items.Add(LayoutToolRegion.None);
-            LayoutRegionListBox.Items.AddRange(All.Regions.Select(region => new LayoutToolRegion(region)).ToArray<object>());
+            LayoutRegionListBox.Items.AddRange(All.Regions.Where(region => region.ID > 0)
+                                                          .Select(region => new LayoutToolRegion(region))
+                                                          .ToArray<object>());
             LayoutRegionListBox.EndUpdate();
         }
 
