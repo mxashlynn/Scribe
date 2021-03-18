@@ -492,7 +492,7 @@ namespace Scribe.Forms
                     var staticBeingUpdated = (Label)WorldLayoutTableLayoutPanel.GetControlFromPosition(row, column);
                     staticBeingUpdated.Text = World[row, column, CurrentLayer] == ModelID.None
                         ? ""
-                        : World[row, column, CurrentLayer].ToString();
+                        : World[row, column, CurrentLayer].ToString()[^3..];
                     staticBeingUpdated.BackColor =
                         ColorTranslator.FromHtml(All.Regions
                                                     .GetOrNull<RegionModel>(World[row, column, CurrentLayer])?.BackgroundColor
