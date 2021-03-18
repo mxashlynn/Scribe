@@ -89,10 +89,11 @@ namespace Scribe.Forms
                     {
                         BackColor = SystemColors.AppWorkspace,
                         BorderStyle = BorderStyle.FixedSingle,
-                        Font = new Font("Segoe UI", 9f, FontStyle.Regular, GraphicsUnit.Point),
+                        Font = new Font("Arial Narrow", 9f, GraphicsUnit.Point),
                         Location = new Point(0, 0),
                         Margin = new Padding(0),
                         Name = $"RegionStatic{column:00}_{row:00}",
+                        Padding = new Padding(0),
                         Size = new Size(25, 25),
                         Tag = new Point2D(column, row),
                         TextAlign = ContentAlignment.MiddleCenter,
