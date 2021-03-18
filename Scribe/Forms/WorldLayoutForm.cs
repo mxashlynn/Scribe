@@ -141,7 +141,7 @@ namespace Scribe.Forms
                             var coordinates = new Point3D(row, column, layer);
                             var tag = $"{Resources.TagPrefixLayoutTool}{coordinates}";
                             var currentRegion = unvisitedRegions.First(region => region.ID > 0
-                                                                              && region.Tags.Contains<ModelTag>(tag));
+                                                                              && region.Tags.ContainsOrdinalIgnoreCase(tag));
                             World[row, column, layer] = currentRegion?.ID ?? ModelID.None;
                             unvisitedRegions.Remove(currentRegion);
                         }
@@ -171,7 +171,7 @@ namespace Scribe.Forms
                 var unvisitedRegions = new Queue<IMutableRegionModel>();
                 var positiveRegionCount = All.Regions.Where(region => region.ID > 0).Count();
 
-                startRegion.Tags.Add($"{Resources.TagPrefixLayoutTool}{WorldCenterCoordinates}");
+                startRegion.Tags.Add($"{WorldCenterTag}");
                 unvisitedRegions.Enqueue(startRegion);
 
                 #region Find Elevation-Based Regions

@@ -1,4 +1,3 @@
-using System.Globalization;
 using System.Linq;
 using Parquet;
 using Parquet.Regions;
@@ -26,9 +25,9 @@ namespace Scribe
         /// <summary>
         /// Initializes a new instance of the <see cref="LayoutToolRegion"/> class.
         /// </summary>
-        /// <inheritdoc/>
-        internal LayoutToolRegion(RegionModel inregion)
-            => Model = inregion;
+        /// <param name="inRegion">A <see cref="RegionModel"/> being used by the <see cref="WorldLayoutForm"/>.</param>
+        internal LayoutToolRegion(RegionModel inRegion)
+            => Model = inRegion;
         #endregion
 
         #region Utilities
@@ -38,7 +37,7 @@ namespace Scribe
         public override string ToString()
             => Model.ID == ModelID.None
                 ? nameof(None)
-                : $"({Model.ID.ToString()[^3..]}) {Model.Name} {(Model.Tags.Contains(WorldLayoutForm.WorldCenterTag) ? "🟡" : "")}";
+                : $"({Model.ID.ToString()[^3..]}) {Model.Name} {(Model.Tags.ContainsOrdinalIgnoreCase(WorldLayoutForm.WorldCenterTag) ? "🟡" : "")}";
         #endregion
     }
 }
