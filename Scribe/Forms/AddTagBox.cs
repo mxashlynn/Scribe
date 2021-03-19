@@ -26,9 +26,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Resets the UI each time the dialogue box is loaded.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
-        /// <param name="eventArguments">Ignored.</param>
-        private void AddTagBox_Load(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void AddTagBox_Load(object inSender, EventArgs inEventArguments)
         {
             if (!string.IsNullOrEmpty(ReturnNewTag))
             {
@@ -67,9 +67,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Validates the <see cref="ModelTag"/> that the user added. 
         /// </summary>
-        /// <param name="sender">Ignored.</param>
-        /// <param name="eventArguments">Whether or not to discard the input.</param>
-        private void NewTagTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Whether or not to discard the input.</param>
+        private void NewTagTextBox_Validating(object inSender, System.ComponentModel.CancelEventArgs inEventArguments)
         {
             var newText = EditorCommands.NormalizeWhitespace(NewTagTextBox.Text);
             NewTagTextBox.Text = newText;
@@ -78,7 +78,7 @@ namespace Scribe.Forms
                 newText = "";
                 _ = MessageBox.Show(EditorCommands.ReservedWordMessage, Resources.CaptionWorkflow,
                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                eventArguments.Cancel = true;
+                inEventArguments.Cancel = true;
             }
             NewTag = newText;
         }
@@ -88,9 +88,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Closes the <see cref="AddTagBox"/>, signaling that the entered tag text was accepted.
         /// </summary>
-        /// <param name="sender">The originator of the event.</param>
-        /// <param name="eventArguments">Additional event data.</param>
-        private void OkayButton_Click(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void OkayButton_Click(object inSender, EventArgs inEventArguments)
         {
             (ReturnNewTag, DialogResult) = string.IsNullOrEmpty(NewTag)
                 ? ((ModelTag)"", DialogResult.Cancel)
@@ -101,9 +101,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Closes the <see cref="AddTagBox"/>, signaling to abandon any entered tag text.
         /// </summary>
-        /// <param name="sender">The originator of the event.</param>
-        /// <param name="eventArguments">Additional event data.</param>
-        private void CancelButtonControl_Click(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void CancelButtonControl_Click(object inSender, EventArgs inEventArguments)
         {
             ReturnNewTag = "";
             DialogResult = DialogResult.Cancel;

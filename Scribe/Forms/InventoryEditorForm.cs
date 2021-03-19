@@ -43,9 +43,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Resets the UI each time the <see cref="Form"/> is loaded.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
-        /// <param name="eventArguments">Ignored.</param>
-        private void InventoryEditorForm_Load(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void InventoryEditorForm_Load(object inSender, EventArgs inEventArguments)
         {
             if (CurrentCharacter is null)
             {
@@ -123,19 +123,19 @@ namespace Scribe.Forms
         /// <summary>
         /// Updates the SlotsListBox needs to render its content, to display <see cref="InventorySlot"/>s in a custom fashion.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
-        /// <param name="eventArguments">Used to render the selected item.</param>
-        private void SlotsListBox_DrawItem(object sender, DrawItemEventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Used to render the selected item.</param>
+        private void SlotsListBox_DrawItem(object inSender, DrawItemEventArgs inEventArguments)
         {
             // Determine text to represent this InventorySlot.
-            var thisSlot = (InventorySlot)SlotsListBox.Items[eventArguments.Index];
+            var thisSlot = (InventorySlot)SlotsListBox.Items[inEventArguments.Index];
             var thisSlotName = All.Items.GetOrNull<ItemModel>(thisSlot.ItemID).Name ?? nameof(InventorySlot);
             var thisSlotText = $"{thisSlot.Count} {thisSlotName}";
             // Render that text.
-            eventArguments.DrawBackground();
-            TextRenderer.DrawText(eventArguments.Graphics, thisSlotText, eventArguments.Font, eventArguments.Bounds,
+            inEventArguments.DrawBackground();
+            TextRenderer.DrawText(inEventArguments.Graphics, thisSlotText, inEventArguments.Font, inEventArguments.Bounds,
                                   SlotsListBox.ForeColor);
-            eventArguments.DrawFocusRectangle();
+            inEventArguments.DrawFocusRectangle();
         }
         #endregion
 
@@ -143,9 +143,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Intercepts key-down events to register user requests to refresh the display.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
+        /// <param name="inSender">The originator of the event.</param>
         /// <param name="inKeyEvents">The key that was held down.</param>
-        private void InventoryEditorForm_KeyDown(object sender, KeyEventArgs inKeyEvents)
+        private void InventoryEditorForm_KeyDown(object inSender, KeyEventArgs inKeyEvents)
         {
             if (inKeyEvents.KeyCode == Keys.F5)
             {
@@ -157,9 +157,9 @@ namespace Scribe.Forms
         /// Determines if the value entered is valid.
         /// Adjusts the capacity of the <see cref="WorkingInventory"/> according to valid values, otherwise signals an input error.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
+        /// <param name="inSender">The originator of the event.</param>
         /// <param name="eventAruments">Whether or not to discard the given text.</param>
-        private void CapacityTextBox_Validating(object sender, CancelEventArgs eventAruments)
+        private void CapacityTextBox_Validating(object inSender, CancelEventArgs eventAruments)
         {
             if (int.TryParse(CapacityTextBox.Text, out var parsedCapacity)
                 && parsedCapacity > 0)
@@ -178,9 +178,9 @@ namespace Scribe.Forms
         /// Determines if the value entered is valid.
         /// Adjusts the <see cref="InventoryConfiguration"/> according to valid values, otherwise signals an input error.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
-        /// <param name="eventAruments">Whether or not to discard the given text.</param>
-        private void DefaultCapacityTextBox_Validating(object sender, CancelEventArgs eventAruments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventAruments">Whether or not to discard the given text.</param>
+        private void DefaultCapacityTextBox_Validating(object inSender, CancelEventArgs inEventAruments)
         {
             if (int.TryParse(DefaultCapacityTextBox.Text, out var parsedCapacity)
                 && parsedCapacity > 0)
@@ -190,7 +190,7 @@ namespace Scribe.Forms
             }
             else
             {
-                eventAruments.Cancel = true;
+                inEventAruments.Cancel = true;
                 CapacityErrorProvider.SetError(DefaultCapacityTextBox, Resources.ErrorPositiveIntegersOnly);
             }
         }
@@ -198,9 +198,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Registers the user command to add a new <see cref="InventorySlot"/> to the <see cref="WorkingInventory"/>.
         /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="eventArguments">Ignored</param>
-        private void AddSlotButton_Click(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void AddSlotButton_Click(object inSender, EventArgs inEventArguments)
         {
             if (!All.Items.Any(itemModel => ModelID.None != itemModel.ID))
             {
@@ -232,9 +232,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Registers the user command to remove the selected <see cref="InventorySlot"/> tag from the <see cref="WorkingInventory"/>.
         /// </summary>
-        /// <param name="sender">Ignored</param>
-        /// <param name="eventArguments">Ignored</param>
-        private void RemoveSlotButton_Click(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void RemoveSlotButton_Click(object inSender, EventArgs inEventArguments)
         {
             if (SlotsListBox.SelectedItem is InventorySlot slot)
             {
@@ -248,9 +248,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Closes the <see cref="InventoryEditorForm"/>, signaling that the edited <see cref="InventoryCollection"/> was accepted.
         /// </summary>
-        /// <param name="sender">The originator of the event.</param>
-        /// <param name="eventArguments">Additional event data.</param>
-        private void OkayButton_Click(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void OkayButton_Click(object inSender, EventArgs inEventArguments)
         {
             ((ICollection<InventorySlot>)CurrentCharacter.StartingInventory).Clear();
             CurrentCharacter.StartingInventory.Capacity = WorkingInventory.Capacity;
@@ -266,9 +266,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Closes the <see cref="InventoryEditorForm"/>, signaling to abandon the edited <see cref="InventoryCollection"/>.
         /// </summary>
-        /// <param name="sender">The originator of the event.</param>
-        /// <param name="eventArguments">Additional event data.</param>
-        private void CancelButtonControl_Click(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void CancelButtonControl_Click(object inSender, EventArgs inEventArguments)
         {
             WorkingInventory = InventoryCollection.Empty.DeepClone();
             DialogResult = DialogResult.Cancel;

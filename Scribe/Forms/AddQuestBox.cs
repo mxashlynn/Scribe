@@ -24,9 +24,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Resets the UI each time the dialogue box is loaded.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
-        /// <param name="eventArguments">Ignored.</param>
-        private void AddQuestBox_Load(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void AddQuestBox_Load(object inSender, EventArgs inEventArguments)
         {
             if (ModelID.None == ReturnNewQuestID)
             {
@@ -68,9 +68,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Closes the <see cref="AddQuestBox"/>, signaling that the entered quest was accepted.
         /// </summary>
-        /// <param name="sender">The originator of the event.</param>
-        /// <param name="eventArguments">Additional event data.</param>
-        private void OkayButton_Click(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void OkayButton_Click(object inSender, EventArgs inEventArguments)
         {
             (ReturnNewQuestID, DialogResult) = AddQuestComboBox.SelectedItem is null
                 ? (ModelID.None, DialogResult.Cancel)
@@ -81,9 +81,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Closes the <see cref="AddQuestBox"/>, signaling to abandon any entered quest.
         /// </summary>
-        /// <param name="sender">The originator of the event.</param>
-        /// <param name="eventArguments">Additional event data.</param>
-        private void CancelButtonControl_Click(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void CancelButtonControl_Click(object inSender, EventArgs inEventArguments)
         {
             ReturnNewQuestID = ModelID.None;
             DialogResult = DialogResult.Cancel;

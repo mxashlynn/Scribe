@@ -62,8 +62,8 @@ namespace Scribe.Forms
         /// <summary>
         /// Resets the UI each time the <see cref="Form"/> is loaded.
         /// </summary>
-        /// <param name="inSender">Ignored.</param>
-        /// <param name="inEventArguments">Ignored.</param>
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
         private void StrikePatternEditorForm_Load(object inSender, EventArgs inEventArguments)
         {
             if (CurrentCraft is null)
@@ -211,7 +211,7 @@ namespace Scribe.Forms
         /// Updates an editable <see cref="GroupBox"/> when its Panel Active <see cref="CheckBox"/>'s state changes.
         /// </summary>
         /// <param name="inSender">The check box that raised the event.</param>
-        /// <param name="inEventArguments">Ignored.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
         private void PanelActiveCheckBox_CheckedChanged(object inSender, EventArgs inEventArguments)
         {
             if (!IsUpdating)
@@ -228,7 +228,7 @@ namespace Scribe.Forms
         /// Updates the <see cref="WorkingGrid"/> when a <see cref="TextBox"/>'s contents is changed.
         /// </summary>
         /// <param name="inSender">The text box that raised the event.</param>
-        /// <param name="inEventArguments">Ignored.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
         private void RangeStartTextBox_TextChanged(object inSender, EventArgs inEventArguments)
         {
             var textBox = (TextBox)inSender;
@@ -286,7 +286,7 @@ namespace Scribe.Forms
         /// <summary>
         /// Intercepts keydown events to register user requests to refresh the display.
         /// </summary>
-        /// <param name="inSender">Ignored.</param>
+        /// <param name="inSender">The originator of the event.</param>
         /// <param name="inKeyEvents">The key that was held down.</param>
         private void StrikePatternEditorForm_KeyDown(object inSender, KeyEventArgs inKeyEvents)
         {

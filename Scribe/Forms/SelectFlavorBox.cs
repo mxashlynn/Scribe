@@ -25,9 +25,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Resets the UI each time the dialogue box is loaded.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
-        /// <param name="eventArguments">Ignored.</param>
-        private void SelectFlavorBox_Load(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void SelectFlavorBox_Load(object inSender, EventArgs inEventArguments)
             => ApplyCurrentTheme();
         #endregion
 
@@ -52,11 +52,11 @@ namespace Scribe.Forms
         /// <summary>
         /// Closes the <see cref="SelectFlavorBox"/>, signaling that the chosen flavor was accepted.
         /// </summary>
-        /// <param name="sender">The originator of the event.</param>
-        /// <param name="eventArguments">Additional event data.</param>
-        private void FlavorSelector_Click(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void FlavorSelector_Click(object inSender, EventArgs inEventArguments)
         {
-            var chosenControl = sender as Label;
+            var chosenControl = inSender as Label;
             SpecificFlavorChosen = chosenControl != FlavorNoFlavorsSelector;
             ReturnNewFlavor = chosenControl.Text;
             DialogResult = DialogResult.OK;
@@ -66,9 +66,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Closes the <see cref="SelectFlavorBox"/>, signaling that no flavor was chosen.
         /// </summary>
-        /// <param name="sender">The originator of the event.</param>
-        /// <param name="eventArguments">Additional event data.</param>
-        private void FlavorCancelButton_Click(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void FlavorCancelButton_Click(object inSender, EventArgs inEventArguments)
         {
             ReturnNewFlavor = "";
             SpecificFlavorChosen = false;

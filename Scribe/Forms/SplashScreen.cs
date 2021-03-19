@@ -27,9 +27,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Attempts to load the most recently-edited project.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
-        /// <param name="eventArguments">Ignored.</param>
-        private void LinkLabelMostRecent_LinkClicked(object sender, LinkLabelLinkClickedEventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void LinkLabelMostRecent_LinkClicked(object inSender, LinkLabelLinkClickedEventArgs inEventArguments)
         {
             if (!string.IsNullOrEmpty(Settings.Default.MostRecentProject))
             {
@@ -50,9 +50,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Attempts to create a new project.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
-        /// <param name="eventArguments">Ignored.</param>
-        private void ButtonNewProject_Click(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void ButtonNewProject_Click(object inSender, EventArgs inEventArguments)
         {
             if (!EditorCommands.SelectProjectFolder(Resources.InfoMessageNew, Resources.FolderNameNewProject))
             {
@@ -75,9 +75,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Attempts to load a saved project.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
-        /// <param name="eventArguments">Ignored.</param>
-        private void ButtonLoadProject_Click(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void ButtonLoadProject_Click(object inSender, EventArgs inEventArguments)
         {
             if (!EditorCommands.SelectProjectFolder(Resources.InfoMessageLoad, Resources.FolderNameOldProject))
             {
@@ -99,9 +99,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Attempts to load the most recently-edited project.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
-        /// <param name="eventArguments">Ignored.</param>
-        private void ButtonExitScribe_Click(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void ButtonExitScribe_Click(object inSender, EventArgs inEventArguments)
             => Close();
     }
 }

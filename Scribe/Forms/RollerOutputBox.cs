@@ -22,9 +22,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Resets the UI each time the dialogue box is loaded.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
-        /// <param name="eventArguments">Ignored.</param>
-        private void RollerOutputBox_Load(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void RollerOutputBox_Load(object inSender, EventArgs inEventArguments)
         {
             ApplyCurrentTheme();
             OutputDisplayTextBox.Select();
@@ -52,9 +52,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Closes the <see cref="AddTagBox"/>, signaling that the entered tag text was accepted.
         /// </summary>
-        /// <param name="sender">The originator of the event.</param>
-        /// <param name="eventArguments">Additional event data.</param>
-        private void OkayButton_Click(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void OkayButton_Click(object inSender, EventArgs inEventArguments)
         {
             OutputDisplayTextBox.Clear();
             Close();

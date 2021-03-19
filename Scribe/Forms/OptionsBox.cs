@@ -97,9 +97,9 @@ namespace Scribe.Forms
         /// Determines if the value entered is valid.
         /// Stores valid values for later updating the settings, otherwise signals an input error.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
-        /// <param name="eventArguments">Whether or not to discard the text.</param>
-        private void TextBoxAutoSaveInterval_Validating(object sender, System.ComponentModel.CancelEventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Whether or not to discard the text.</param>
+        private void TextBoxAutoSaveInterval_Validating(object inSender, System.ComponentModel.CancelEventArgs inEventArguments)
         {
             if (int.TryParse(TextBoxAutoSaveInterval.Text, out var newInterval))
             {
@@ -109,7 +109,7 @@ namespace Scribe.Forms
             }
             else
             {
-                eventArguments.Cancel = true;
+                inEventArguments.Cancel = true;
                 TextBoxAutoSaveInterval.Select();
                 ErrorProvider.SetError(TextBoxAutoSaveInterval, Resources.ErrorIntegersOnly);
             }
@@ -119,9 +119,9 @@ namespace Scribe.Forms
         /// Determines if the value entered is valid.
         /// Stores valid values for later updating the settings, otherwise signals an input error.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
-        /// <param name="eventAruments">Whether or not to discard the given text.</param>
-        private void TextBoxImageEditorPath_Validating(object sender, System.ComponentModel.CancelEventArgs eventAruments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventAruments">Whether or not to discard the given text.</param>
+        private void TextBoxImageEditorPath_Validating(object inSender, System.ComponentModel.CancelEventArgs inEventAruments)
         {
             TextBoxImageEditorPath.Text = Path.GetFullPath(TextBoxImageEditorPath.Text);
             if (File.Exists(TextBoxImageEditorPath.Text))
@@ -130,7 +130,7 @@ namespace Scribe.Forms
             }
             else
             {
-                eventAruments.Cancel = true;
+                inEventAruments.Cancel = true;
                 TextBoxImageEditorPath.Select();
                 ErrorProvider.SetError(LabelImageEditorPath, Resources.ErrorImageEditorNotFound);
             }
@@ -141,11 +141,11 @@ namespace Scribe.Forms
         /// <summary>
         /// Updates <see cref="CurrentTheme"/> setting to <see cref="EditorTheme.Femme"/>.
         /// </summary>
-        /// <param name="sender">Determines if the theme is being set or unset.</param>
-        /// <param name="eventAruments">Ignored.</param>
-        private void RadioButtonFemmeTheme_CheckedChanged(object sender, EventArgs eventAruments)
+        /// <param name="inSender">Determines if the theme is being set or unset.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void RadioButtonFemmeTheme_CheckedChanged(object inSender, EventArgs inEventArguments)
         {
-            if (sender is RadioButton radioButton
+            if (inSender is RadioButton radioButton
                 && radioButton.Checked)
             {
                 CurrentTheme.SetUpTheme(EditorTheme.Femme);
@@ -156,11 +156,11 @@ namespace Scribe.Forms
         /// <summary>
         /// Updates <see cref="CurrentTheme"/> setting to <see cref="EditorTheme.Colorful"/>.
         /// </summary>
-        /// <param name="sender">Determines if the theme is being set or unset.</param>
-        /// <param name="eventAruments">Ignored.</param>
-        private void RadioButtonColorfulTheme_CheckedChanged(object sender, EventArgs eventAruments)
+        /// <param name="inSender">Determines if the theme is being set or unset.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void RadioButtonColorfulTheme_CheckedChanged(object inSender, EventArgs inEventArguments)
         {
-            if (sender is RadioButton radioButton
+            if (inSender is RadioButton radioButton
                 && radioButton.Checked)
             {
                 CurrentTheme.SetUpTheme(EditorTheme.Colorful);
@@ -171,11 +171,11 @@ namespace Scribe.Forms
         /// <summary>
         /// Updates <see cref="CurrentTheme"/> setting to <see cref="EditorTheme.OSDefault"/>.
         /// </summary>
-        /// <param name="sender">Determines if the theme is being set or unset.</param>
-        /// <param name="eventAruments">Ignored.</param>
-        private void RadioButtonOSDefaultTheme_CheckedChanged(object sender, EventArgs eventAruments)
+        /// <param name="inSender">Determines if the theme is being set or unset.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void RadioButtonOSDefaultTheme_CheckedChanged(object inSender, EventArgs inEventArguments)
         {
-            if (sender is RadioButton radioButton
+            if (inSender is RadioButton radioButton
                 && radioButton.Checked)
             {
                 CurrentTheme.SetUpTheme(EditorTheme.OSDefault);
@@ -235,9 +235,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Responds to the Okay Button to ensure that settings are saved.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
-        /// <param name="eventArguments">Ignored.</param>
-        private void OkayButton_Click(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void OkayButton_Click(object inSender, EventArgs inEventArguments)
         {
             Settings.Default.CurrentEditorTheme = RadioButtonFemmeTheme.Checked
                 ? EditorTheme.Femme.ToString()
@@ -262,9 +262,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Restores old settings on cancel.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
-        /// <param name="eventArguments">Ignored.</param>
-        private void CancelButtonControl_Click(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void CancelButtonControl_Click(object inSender, EventArgs inEventArguments)
         {
             CurrentTheme.SetUpTheme(OldTheme);
             Settings.Default.Reload();

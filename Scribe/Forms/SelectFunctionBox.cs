@@ -25,9 +25,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Resets the UI each time the dialogue box is loaded.
         /// </summary>
-        /// <param name="sender">Ignored.</param>
-        /// <param name="eventArguments">Ignored.</param>
-        private void AddTagBox_Load(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void AddTagBox_Load(object inSender, EventArgs inEventArguments)
         {
             ApplyCurrentTheme();
             if (!string.IsNullOrEmpty(ReturnNewFunction))
@@ -65,9 +65,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Closes the <see cref="SelectFlavorBox"/>, signaling that a function was accepted.
         /// </summary>
-        /// <param name="sender">The originator of the event.</param>
-        /// <param name="eventArguments">Additional event data.</param>
-        private void OkayButton_Click(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void OkayButton_Click(object inSender, EventArgs inEventArguments)
         {
             SpecificFunctionChosen = string.Compare("(None)", NewTagComboBox.SelectedText, StringComparison.OrdinalIgnoreCase) != 0;
             ReturnNewFunction = NewTagComboBox.SelectedText;
@@ -78,9 +78,9 @@ namespace Scribe.Forms
         /// <summary>
         /// Closes the <see cref="SelectFlavorBox"/>, signaling that no function was chosen.
         /// </summary>
-        /// <param name="sender">The originator of the event.</param>
-        /// <param name="eventArguments">Additional event data.</param>
-        private void CancelButtonControl_Click(object sender, EventArgs eventArguments)
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void CancelButtonControl_Click(object inSender, EventArgs inEventArguments)
         {
             ReturnNewFunction = "";
             SpecificFunctionChosen = false;
