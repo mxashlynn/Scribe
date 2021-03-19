@@ -401,15 +401,87 @@ namespace Scribe.Forms
         private void RegionStatic_MouseClick(object inSender, MouseEventArgs inEventArguments)
         {
             var regionStatic = (Label)inSender;
+            var clickedCoordinates = (Point2D)regionStatic.Tag;
             if (inEventArguments.Button == MouseButtons.Left)
             {
-                UpdateRegionAt((Point2D)regionStatic.Tag, regionStatic);
+                UpdateRegionAt(clickedCoordinates, regionStatic);
             }
             else
             {
-                MessageBox.Show($"Select region at {(Point2D)regionStatic.Tag}");
+                CurrentModelID = World[clickedCoordinates.Y, clickedCoordinates.X, CurrentLayer];
+                SelectCurrentModel();
+                UpdateRegionPropertiesUI();
             }
         }
+
+        /// <summary>
+        /// Finds and selects the <see cref="LayoutToolRegion"/> whose <see cref="Model.ID"/> equals <see cref="CurrentModelID"/>.
+        /// </summary>
+        private void SelectCurrentModel()
+        {
+            for (int index = 0; index < LayoutRegionListBox.Items.Count; index++)
+            {
+                var region = (LayoutToolRegion)LayoutRegionListBox.Items[index];
+                if (region.Model.ID == CurrentModelID)
+                {
+                    LayoutRegionListBox.SetSelected(index, true);
+                    break;
+                }
+            }
+        }
+        #endregion
+
+        #region Sidebar Click Events
+        /// <summary>
+        /// Responds to a RegionModel being selected in the <see cref="LayoutRegionListBox"/>.
+        /// </summary>
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void LayoutRegionListBox_SelectedValueChanged(object inSender, EventArgs inEventArguments)
+        {
+            CurrentModelID = ((LayoutToolRegion)LayoutRegionListBox.SelectedItem).Model.ID;
+            UpdateRegionPropertiesUI();
+        }
+
+        /// <summary>
+        /// Responds to the user selecting the Upper layer.
+        /// </summary>
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional data about the event.</param>
+        private void LayerUpperRadioButton_CheckedChanged(object inSender, EventArgs inEventArguments)
+            => CurrentLayer = LayerUpperRadioButton.Checked
+                ? UpperLayer
+                : CurrentLayer;
+
+        /// <summary>
+        /// Responds to the user selecting the Middle layer.
+        /// </summary>
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional data about the event.</param>
+        private void LayerMiddleRadioButton_CheckedChanged(object inSender, EventArgs inEventArguments)
+            => CurrentLayer = LayerMiddleRadioButton.Checked
+                ? MiddleLayer
+                : CurrentLayer;
+
+        /// <summary>
+        /// Responds to the user selecting the Lower layer.
+        /// </summary>
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional data about the event.</param>
+        private void LayerLowerRadioButton_CheckedChanged(object inSender, EventArgs inEventArguments)
+            => CurrentLayer = LayerLowerRadioButton.Checked
+                ? LowerLayer
+                : CurrentLayer;
+
+        /// <summary>
+        /// Responds to the user selecting the Elsewhere layer.
+        /// </summary>
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional data about the event.</param>
+        private void LayerElsewhereRadioButton_CheckedChanged(object inSender, EventArgs inEventArguments)
+            => CurrentLayer = LayerElsewhereRadioButton.Checked
+                ? ElsewhereLayer
+                : CurrentLayer;
         #endregion
 
         #region Update World Data
@@ -484,11 +556,9 @@ namespace Scribe.Forms
 
         #region Update Display
         /// <summary>
-        /// Populates the UI for <see cref="RegionModel"/> properties when a RegionModel is selected in the <see cref="LayoutRegionListBox"/>.
+        /// Populates the UI for current <see cref="RegionModel"/>.
         /// </summary>
-        /// <param name="inSender">The originator of the event.</param>
-        /// <param name="inEventArguments">Additional event data.</param>
-        private void LayoutRegionListBox_SelectedValueChanged(object inSender, EventArgs inEventArguments)
+        private void UpdateRegionPropertiesUI()
         {
             if (LayoutRegionListBox.SelectedItem is null)
             {
@@ -537,46 +607,6 @@ namespace Scribe.Forms
         }
 
         /// <summary>
-        /// Responds to the user selecting the Upper layer.
-        /// </summary>
-        /// <param name="inSender">The originator of the event.</param>
-        /// <param name="inEventArguments">Additional data about the event.</param>
-        private void LayerUpperRadioButton_CheckedChanged(object inSender, EventArgs inEventArguments)
-            => CurrentLayer = LayerUpperRadioButton.Checked
-                ? UpperLayer
-                : CurrentLayer;
-
-        /// <summary>
-        /// Responds to the user selecting the Middle layer.
-        /// </summary>
-        /// <param name="inSender">The originator of the event.</param>
-        /// <param name="inEventArguments">Additional data about the event.</param>
-        private void LayerMiddleRadioButton_CheckedChanged(object inSender, EventArgs inEventArguments)
-            => CurrentLayer = LayerMiddleRadioButton.Checked
-                ? MiddleLayer
-                : CurrentLayer;
-
-        /// <summary>
-        /// Responds to the user selecting the Lower layer.
-        /// </summary>
-        /// <param name="inSender">The originator of the event.</param>
-        /// <param name="inEventArguments">Additional data about the event.</param>
-        private void LayerLowerRadioButton_CheckedChanged(object inSender, EventArgs inEventArguments)
-            => CurrentLayer = LayerLowerRadioButton.Checked
-                ? LowerLayer
-                : CurrentLayer;
-
-        /// <summary>
-        /// Responds to the user selecting the Elsewhere layer.
-        /// </summary>
-        /// <param name="inSender">The originator of the event.</param>
-        /// <param name="inEventArguments">Additional data about the event.</param>
-        private void LayerElsewhereRadioButton_CheckedChanged(object inSender, EventArgs inEventArguments)
-            => CurrentLayer = LayerElsewhereRadioButton.Checked
-                ? ElsewhereLayer
-                : CurrentLayer;
-
-        /// <summary>
         /// Repopulates the <see cref="RegionModel"/> <see cref="ListBox"/>.
         /// </summary>
         /// <remarks>This should only be called if <see cref="All"/> has actually changed.</remarks>
@@ -591,10 +621,6 @@ namespace Scribe.Forms
                                                           .ToArray<object>());
             LayoutRegionListBox.EndUpdate();
         }
-
-        // TODO [MAPS] Update the state of the editor.
-
-        // TODO [MAPS] Update the region field displays when regions are selected.
         #endregion
 
         #region Update Exits
