@@ -2013,10 +2013,6 @@ namespace Scribe.Forms
             }
             else if (RegionListBox.SelectedItem is RegionModel model)
             {
-                RoomIDStatic.Text = model.ID.ToString();
-                RoomNameTextBox.Text = model.Name;
-                RoomDescriptionTextBox.Text = model.Description;
-                RoomCommentTextBox.Text = model.Comment;
                 RegionIDStatic.Text = model.ID.ToString();
                 RegionNameTextBox.Text = model.Name;
                 RegionDescriptionTextBox.Text = model.Description;
