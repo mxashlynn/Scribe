@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace Scribe
     /// </summary>
     internal static class EditorCommands
     {
+        #region Private Data
         /// <summary>Children of the <see cref="Model"/> class that do not have a graphical representation.</summary>
         private static readonly IList<string> TypeNamesWithoutGraphics;
 
@@ -39,9 +41,18 @@ namespace Scribe
 
         /// <summary>Texts that cannot be used as <see cref="ModelTag"/>s.</summary>
         private static readonly IList<string> ReservedWorldList;
+        #endregion
 
+        #region Shared Data
         /// <summary>Indicates to the user that the text entered cannot be used as a <see cref="ModelTag"/>.</summary>
         internal static readonly string ReservedWordMessage;
+
+        /// <summary>The color Parquet uses behind <see cref="RegionModel"/>s when no <see cref="ParquetModel"/>s are present.</summary>
+        internal static Color DefaultRegionColor { get; } = ColorTranslator.FromHtml(RegionModel.DefaultColor);
+
+        /// <summary>The human-readable name of the color Parquet uses behind <see cref="RegionModel"/>s when no <see cref="ParquetModel"/>s are present.</summary>
+        internal static string DefaultRegionColorName { get; } = EditorCommands.FormatColorNameForDisplay(DefaultRegionColor);
+        #endregion
 
         #region Initialization
         /// <summary>
@@ -264,6 +275,18 @@ namespace Scribe
             All.Clear();
             return All.LoadFromCSVs();
         }
+        #endregion
+
+        #region Utilities
+        /// <summary>
+        /// Prepends a hash character only if the name is a hexidecimal number.
+        /// </summary>
+        /// <param name="inColor">The color or color name to format.</param>
+        /// <returns>The formatted color name.</returns>
+        internal static string FormatColorNameForDisplay(Color inColor)
+            => inColor.IsNamedColor
+                ? $"{inColor.ToHexString()} ({inColor.Name})"
+                : inColor.ToHexString();
         #endregion
     }
 }

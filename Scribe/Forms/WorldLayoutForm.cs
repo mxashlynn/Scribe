@@ -387,7 +387,7 @@ namespace Scribe.Forms
             {
                 var serializedCoordinate = (string)inRegion.Tags.First(tag => tag.StartsWithOrdinalIgnoreCase(Resources.TagPrefixLayoutTool));
                 return new Point3D(serializedCoordinate[Resources.TagPrefixLayoutTool.Length..]);
-             }
+            }
             #endregion
         }
         #endregion
@@ -483,7 +483,33 @@ namespace Scribe.Forms
         #endregion
 
         #region Update Display
-
+        /// <summary>
+        /// Populates the UI for <see cref="RegionModel"/> properties when a RegionModel is selected in the <see cref="LayoutRegionListBox"/>.
+        /// </summary>
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void LayoutRegionListBox_SelectedValueChanged(object inSender, EventArgs inEventArguments)
+        {
+            if (LayoutRegionListBox.SelectedItem is null)
+            {
+                RegionIDStatic.Text = ModelID.None.ToString();
+                RegionNameTextBox.Text = "";
+                RegionDescriptionTextBox.Text = "";
+                RegionCommentTextBox.Text = "";
+                RegionBackgroundColorStatic.BackColor = EditorCommands.DefaultRegionColor;
+                RegionBackgroundColorNameStatic.Text = EditorCommands.DefaultRegionColorName;
+            }
+            else if (LayoutRegionListBox.SelectedItem is LayoutToolRegion region)
+            {
+                RegionIDStatic.Text = region.Model.ID.ToString();
+                RegionNameTextBox.Text = region.Model.Name;
+                RegionDescriptionTextBox.Text = region.Model.Description;
+                RegionCommentTextBox.Text = region.Model.Comment;
+                var newBackColor = ColorTranslator.FromHtml(region.Model.BackgroundColor);
+                RegionBackgroundColorStatic.BackColor = newBackColor;
+                RegionBackgroundColorNameStatic.Text = EditorCommands.FormatColorNameForDisplay(newBackColor);
+            }
+        }
 
         /// <summary>
         /// Updates the content of the <see cref="WorldLayoutTableLayoutPanel"/> according to the <see cref="CurrentLayer"/>.

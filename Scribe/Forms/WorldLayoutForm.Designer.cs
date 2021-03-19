@@ -380,6 +380,7 @@ namespace Scribe.Forms
             this.LayoutRegionListBox.Size = new System.Drawing.Size(224, 274);
             this.LayoutRegionListBox.TabIndex = 59;
             this.LayoutRegionListBox.Tag = "Untracked Control";
+            this.LayoutRegionListBox.SelectedValueChanged += new System.EventHandler(this.LayoutRegionListBox_SelectedValueChanged);
             // 
             // WorldLayoutForm
             // 

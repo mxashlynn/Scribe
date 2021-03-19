@@ -211,12 +211,6 @@ namespace Scribe.Forms
         #endregion
 
         #region Cached Painting and Color Details
-        /// <summary>The color Parquet uses behind <see cref="RegionModel"/>s when no <see cref="ParquetModel"/>s are present.</summary>
-        internal static Color DefaultRegionColor { get; } = ColorTranslator.FromHtml(RegionModel.DefaultColor);
-
-        /// <summary>The human-readable name of the color Parquet uses behind <see cref="RegionModel"/>s when no <see cref="ParquetModel"/>s are present.</summary>
-        internal static string DefaultRegionColorName { get; } = FormatColorNameForDisplay(DefaultRegionColor);
-
         /// <summary>Used by <see cref="ValueToColorHexString(object)"/>.</summary>
         private static readonly ColorConverter ObjectToColor = new();
         #endregion
@@ -2007,8 +2001,8 @@ namespace Scribe.Forms
                 RegionNameTextBox.Text = "";
                 RegionDescriptionTextBox.Text = "";
                 RegionCommentTextBox.Text = "";
-                RegionBackgroundColorStatic.BackColor = DefaultRegionColor;
-                RegionBackgroundColorNameStatic.Text = DefaultRegionColorName;
+                RegionBackgroundColorStatic.BackColor = EditorCommands.DefaultRegionColor;
+                RegionBackgroundColorNameStatic.Text = EditorCommands.DefaultRegionColorName;
                 RegionExitNorthComboBox.SelectedItem = null;
                 RegionExitSouthComboBox.SelectedItem = null;
                 RegionExitEastComboBox.SelectedItem = null;
@@ -2029,7 +2023,7 @@ namespace Scribe.Forms
                 RegionCommentTextBox.Text = model.Comment;
                 var newBackColor = ColorTranslator.FromHtml(model.BackgroundColor);
                 RegionBackgroundColorStatic.BackColor = newBackColor;
-                RegionBackgroundColorNameStatic.Text = FormatColorNameForDisplay(newBackColor);
+                RegionBackgroundColorNameStatic.Text = EditorCommands.FormatColorNameForDisplay(newBackColor);
                 RegionExitNorthComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
                     ? null
                     : All.Regions.GetOrNull<RegionModel>(model.RegionToTheNorth);
@@ -3272,7 +3266,7 @@ namespace Scribe.Forms
                                                           {
                                                               var displayColor = (Color)displayValue;
                                                               RegionBackgroundColorStatic.BackColor = displayColor;
-                                                              RegionBackgroundColorNameStatic.Text = FormatColorNameForDisplay(displayColor);
+                                                              RegionBackgroundColorNameStatic.Text = EditorCommands.FormatColorNameForDisplay(displayColor);
                                                           },
                                                           (object oldValue) => RegionBackgroundColorStatic.BackColor = (Color)oldValue);
                     Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
@@ -3798,18 +3792,6 @@ namespace Scribe.Forms
             SelectColorDialogue.Dispose();
             base.Dispose(disposing);
         }
-        #endregion
-
-        #region Utilities
-        /// <summary>
-        /// Prepends a hash character only if the name is a hexidecimal number.
-        /// </summary>
-        /// <param name="inColor">The color or color name to format.</param>
-        /// <returns>The formatted color name.</returns>
-        private static string FormatColorNameForDisplay(Color inColor)
-            => inColor.IsNamedColor
-                ? $"{inColor.ToHexString()} ({inColor.Name})"
-                : inColor.ToHexString();
         #endregion
     }
 }
