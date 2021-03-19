@@ -483,8 +483,10 @@ namespace Scribe.Forms
         #endregion
 
         #region Update Display
+
+
         /// <summary>
-        /// Responds to the user selecting a new layer to edit.
+        /// Updates the content of the <see cref="WorldLayoutTableLayoutPanel"/> according to the <see cref="CurrentLayer"/>.
         /// </summary>
         private void UpdateLayerDisplay()
         {
