@@ -469,4 +469,8 @@ Folder: {1}</value>
     <value>{0} existing regions could not being shown in this tool.  They either do not have coordinates, have coordinates outside the bounds, or have duplicate coordinates.</value>
     <comment>Instructions string.</comment>
   </data>
+  <data name="ErrorNullEditor" xml:space="preserve">
+    <value>During initialization a tool window was passed null instead of a reference to the main editor.</value>
+    <comment>Error string.</comment>
+  </data>
 </root>

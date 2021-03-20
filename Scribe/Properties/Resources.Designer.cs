@@ -339,6 +339,15 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to During initialization a tool window was passed null instead of a reference to the main editor..
+        /// </summary>
+        internal static string ErrorNullEditor {
+            get {
+                return ResourceManager.GetString("ErrorNullEditor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The logger was passed null during initialization..
         /// </summary>
         internal static string ErrorNullLogger {

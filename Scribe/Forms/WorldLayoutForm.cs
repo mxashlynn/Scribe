@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Media;
 using System.Windows.Forms;
 using Parquet;
 using Parquet.Beings;
 using Parquet.Games;
 using Parquet.Regions;
+using ParquetChangeManagement;
 using Scribe.Properties;
 
 namespace Scribe.Forms
@@ -46,6 +48,9 @@ namespace Scribe.Forms
         #endregion
 
         #region Characteristics
+        /// <summary>The <see cref="MainEditorForm"/> that launches this <see cref="WorldLayoutForm"/>.</summary>
+        private readonly MainEditorForm MainForm;
+
         /// <summary>The <see cref="RegionModel"/> currently being worked with.</summary>
         private ModelID CurrentModelID = ModelID.None;
 
@@ -73,8 +78,18 @@ namespace Scribe.Forms
         /// <summary>
         /// Initializes a new instance of the <see cref="WorldLayoutForm"/> class.
         /// </summary>
-        public WorldLayoutForm()
+        /// <param name="inMainForm">The <see cref="MainEditorForm"/> that launches this <see cref="WorldLayoutForm"/>.</param>
+        public WorldLayoutForm(MainEditorForm inMainForm)
         {
+            if (inMainForm is null)
+            {
+                Logger.Log(LogLevel.Fatal, Resources.ErrorNullEditor);
+            }
+            else
+            {
+                MainForm = inMainForm;
+            }
+
             InitializeComponent();
 
             #region Add Region Statics to Table
@@ -484,6 +499,91 @@ namespace Scribe.Forms
                 : CurrentLayer;
         #endregion
 
+
+        /// <summary>
+        /// Responds to the user clicking "Add New Region".
+        /// Adds a new <see cref="LayoutToolRegion"/> to <see cref="All.Regions"/> and the <see cref="LayoutRegionListBox"/>.
+        /// </summary>
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void RegionAddNewRegionButton_Click(object inSender, EventArgs inEventArguments)
+        {
+            if (!All.CollectionsHaveBeenInitialized)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            var nextID = All.Regions.Any()
+                ? (ModelID)(All.Regions.Max(model => model?.ID ?? All.RegionIDs.Minimum) + 1)
+                : All.RegionIDs.Minimum;
+            if (nextID > All.RegionIDs.Maximum)
+            {
+                SystemSounds.Beep.Play();
+                Logger.Log(LogLevel.Warning, Resources.ErrorMaximumIDReached);
+                return;
+            }
+
+            var regionToAdd = new LayoutToolRegion(new RegionModel(nextID, "New Region", "", ""));
+            var changeToExecute = new ChangeList(regionToAdd, $"add new Region definition",
+                                        (object databaseValue) =>
+                                        {
+                                            ((IMutableModelCollection<RegionModel>)All.Regions).Add(((LayoutToolRegion)databaseValue).Model);
+                                            _ = LayoutRegionListBox.Items.Add(databaseValue);
+                                            LayoutRegionListBox.SelectedItem = databaseValue;
+                                            MainForm.HasUnsavedChanges = true;
+                                        },
+                                        (object databaseValue) =>
+                                        {
+                                            ((IMutableModelCollection<RegionModel>)All.Regions).Remove(((LayoutToolRegion)databaseValue).Model);
+                                            LayoutRegionListBox.Items.Remove(databaseValue);
+                                            LayoutRegionListBox.SelectedItem = null;
+                                            MainForm.HasUnsavedChanges = true;
+                                        });
+            Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+            ChangeManager.AddAndExecute(changeToExecute);
+        }
+
+        /// <summary>
+        /// Responds to the user clicking "Remove Region".
+        /// Removes a <see cref="LayoutToolRegion"/> from <see cref="All.Regions"/> and the <see cref="LayoutRegionListBox"/>.
+        /// </summary>
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void RegionRemoveRegionButton_Click(object inSender, EventArgs inEventArguments)
+        {
+            if (!All.CollectionsHaveBeenInitialized || LayoutRegionListBox.SelectedIndex == -1)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            var regionToRemove = ((LayoutToolRegion)LayoutRegionListBox.SelectedItem).Model;
+            if (regionToRemove is null
+                || regionToRemove.ID == ModelID.None)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            var changeToExecute = new ChangeList(regionToRemove, $"remove Region {regionToRemove.Name}",
+                                        (object databaseValue) =>
+                                        {
+                                            ((IMutableModelCollection<RegionModel>)All.Regions).Remove(((LayoutToolRegion)databaseValue).Model);
+                                            LayoutRegionListBox.Items.Remove(databaseValue);
+                                            LayoutRegionListBox.SelectedItem = null;
+                                            MainForm.HasUnsavedChanges = true;
+                                        },
+                                        (object databaseValue) =>
+                                        {
+                                            ((IMutableModelCollection<RegionModel>)All.Regions).Add(((LayoutToolRegion)databaseValue).Model);
+                                            _ = LayoutRegionListBox.Items.Add(databaseValue);
+                                            LayoutRegionListBox.SelectedItem = databaseValue;
+                                            MainForm.HasUnsavedChanges = true;
+                                        });
+            Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+            ChangeManager.AddAndExecute(changeToExecute);
+        }
         #region Update World Data
         // TODO [MAPS] WorldLayourForm.RegionListBox needs to be updated when the regions listbox in MainEditorForm is updated.
         // Maybe this can be done simply by refreshing data when the form is selected/becomes active?

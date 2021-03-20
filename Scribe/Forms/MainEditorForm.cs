@@ -154,6 +154,9 @@ namespace Scribe.Forms
 
         /// <summary>Dialogue for selecting custom <see cref="Color"/>s.</summary>
         private readonly ColorDialog SelectColorDialogue = new();
+
+        /// <summary>Window for laying out <see cref="RegionModel"/>s in relation to one another.</summary>
+        private readonly WorldLayoutForm LayoutToolWindow;
         #endregion
 
         #region Logging
@@ -238,7 +241,7 @@ namespace Scribe.Forms
         public bool HasUnsavedChanges
         {
             get => _hasUnsavedChanges;
-            private set
+            internal set
             {
                 if (value)
                 {
@@ -284,6 +287,9 @@ namespace Scribe.Forms
         public MainEditorForm()
         {
             InitializeComponent();
+
+            // Create layout tool form with reference to the main editor form, for integration of Undo/Redo.
+            LayoutToolWindow = new(this);
 
             // Allows selecting a custom color.
             SelectColorDialogue.AllowFullOpen = true;
@@ -3786,6 +3792,7 @@ namespace Scribe.Forms
             StrikePatternEditorWindow.Dispose();
             RollerResultsBox.Dispose();
             SelectColorDialogue.Dispose();
+            LayoutToolWindow.Dispose();
             base.Dispose(disposing);
         }
         #endregion

@@ -40,7 +40,7 @@ namespace Scribe
         /// </summary>
         public static void ShowEditor()
         {
-            Context.MainForm = new WorldLayoutForm(); // TODO [MAPS] MainEditorForm();
+            Context.MainForm = new MainEditorForm();
             Context.MainForm.Show();
         }
     }
