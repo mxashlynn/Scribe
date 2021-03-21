@@ -447,6 +447,63 @@ namespace Scribe.Forms
         #endregion
 
         #region Sidebar Click Events
+        #region Region Properties
+        /// <summary>
+        /// Responds to the text being changed in the <see cref="RegionNameTextBox"/>.
+        /// </summary>
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void RegionNameTextBox_Validated(object inSender, EventArgs inEventArguments)
+        {
+            var model = ((LayoutToolRegion)LayoutRegionListBox.SelectedItem)?.Model ?? LayoutToolRegion.None.Model;
+            if (model.ID == ModelID.None)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            if (string.Compare(RegionNameTextBox.Text, model.Name, comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
+            {
+                var mutableModel = (IMutableRegionModel)model;
+                var oldValue = model.Name;
+                var changeToExecute = new ChangeValue(oldValue, RegionNameTextBox.Text, nameof(RegionModel.Name),
+                                                      (object databaseValue) =>
+                                                      {
+                                                          mutableModel.Name = databaseValue.ToString();
+                                                          MainForm.HasUnsavedChanges = true;
+                                                      },
+                                                      (object displayValue) => RegionNameTextBox.Text = displayValue.ToString(),
+                                                      (object oldValue) => RegionNameTextBox.Text = oldValue.ToString());
+                Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+                ChangeManager.AddAndExecute(changeToExecute);
+
+                // For the name value, the display in the list must also be updated.
+                LayoutRegionListBox.Items[LayoutRegionListBox.SelectedIndex] = LayoutRegionListBox.SelectedItem;
+            }
+        }
+
+        /// <summary>
+        /// Responds to the text being changed in the <see cref="RegionDescriptionTextBox"/>.
+        /// </summary>
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void RegionDescriptionTextBox_Validated(object inSender, EventArgs inEventArguments)
+        {
+            // TODO [MAPS] ***** HERE!! ****************************************************************************************
+        }
+
+        /// <summary>
+        /// Responds to the text being changed in the <see cref="RegionCommentTextBox"/>.
+        /// </summary>
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void RegionCommentTextBox_Validated(object inSender, EventArgs inEventArguments)
+        {
+            // TODO [MAPS] Implement this.
+        }
+        #endregion
+
+        #region Layer Visibility
         /// <summary>
         /// Responds to a RegionModel being selected in the <see cref="LayoutRegionListBox"/>.
         /// </summary>
@@ -499,14 +556,46 @@ namespace Scribe.Forms
                 : CurrentLayer;
         #endregion
 
-        #region Handle Changes to Region Data
+        #region Region List
         /// <summary>
         /// Responds to the user clicking "Add New Region".
-        /// Adds a new <see cref="LayoutToolRegion"/> to <see cref="All.Regions"/> and the <see cref="LayoutRegionListBox"/>.
         /// </summary>
         /// <param name="inSender">The originator of the event.</param>
         /// <param name="inEventArguments">Additional event data.</param>
-        private void RegionAddNewRegionButton_Click(object inSender, EventArgs inEventArguments)
+        private void LayoutRegionAddNewButton_Click(object inSender, EventArgs inEventArguments)
+            => AddNewRegion();
+
+        /// <summary>
+        /// Responds to the user clicking "Duplicate Region".
+        /// </summary>
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void LayoutRegionDuplicateButton_Click(object inSender, EventArgs inEventArguments)
+            => DuplicateRegion();
+
+        /// <summary>
+        /// Responds to the user clicking "Remove Region".
+        /// </summary>
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void LayoutRegionRemoveButton_Click(object inSender, EventArgs inEventArguments)
+            => RemoveRegion();
+
+        /// <summary>
+        /// Responds to the player clicking on the <see cref="RegionModel.BackgroundColor"/> selector.
+        /// </summary>
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void RegionBackgroundColorStatic_Click(object inSender, EventArgs inEventArguments)
+            => SelectBackgroundColor();
+        #endregion
+        #endregion
+
+        #region Handle Changes to Region Data
+        /// <summary>
+        /// Adds a new <see cref="LayoutToolRegion"/> to <see cref="All.Regions"/> and the <see cref="LayoutRegionListBox"/>.
+        /// </summary>
+        private void AddNewRegion()
         {
             if (!All.CollectionsHaveBeenInitialized)
             {
@@ -545,12 +634,16 @@ namespace Scribe.Forms
         }
 
         /// <summary>
-        /// Responds to the user clicking "Remove Region".
+        /// Adds a new <see cref="LayoutToolRegion"/> with properties and status identicle to those of the currently selected region.
+        /// </summary>
+        private void DuplicateRegion()
+            // TODO [MAPS] Implement region duplication.
+            => throw new NotImplementedException();
+
+        /// <summary>
         /// Removes a <see cref="LayoutToolRegion"/> from <see cref="All.Regions"/> and the <see cref="LayoutRegionListBox"/>.
         /// </summary>
-        /// <param name="inSender">The originator of the event.</param>
-        /// <param name="inEventArguments">Additional event data.</param>
-        private void RegionRemoveRegionButton_Click(object inSender, EventArgs inEventArguments)
+        private void RemoveRegion()
         {
             if (!All.CollectionsHaveBeenInitialized || LayoutRegionListBox.SelectedIndex == -1)
             {
@@ -586,11 +679,9 @@ namespace Scribe.Forms
         }
 
         /// <summary>
-        /// Responds to the player clicking on the <see cref="RegionModel.BackgroundColor"/> selector.
+        /// Raises a dialogue from which the user can select a <see cref="Color"/> for the current <see cref="RegionModel.BackgroundColor"/>.
         /// </summary>
-        /// <param name="inSender">The originator of the event.</param>
-        /// <param name="inEventArguments">Additional event data.</param>
-        private void RegionBackgroundColorStatic_Click(object inSender, EventArgs inEventArguments)
+        private void SelectBackgroundColor()
         {
             if (!All.CollectionsHaveBeenInitialized)
             {

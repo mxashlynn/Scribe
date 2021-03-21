@@ -157,6 +157,7 @@ namespace Scribe.Forms
             this.RegionNameTextBox.Name = "RegionNameTextBox";
             this.RegionNameTextBox.Size = new System.Drawing.Size(141, 23);
             this.RegionNameTextBox.TabIndex = 25;
+            this.RegionNameTextBox.Validated += new System.EventHandler(this.RegionNameTextBox_Validated);
             // 
             // RegionDescriptionLabel
             // 
@@ -174,6 +175,7 @@ namespace Scribe.Forms
             this.RegionDescriptionTextBox.Name = "RegionDescriptionTextBox";
             this.RegionDescriptionTextBox.Size = new System.Drawing.Size(141, 49);
             this.RegionDescriptionTextBox.TabIndex = 28;
+            this.RegionDescriptionTextBox.Validated += new System.EventHandler(this.RegionDescriptionTextBox_Validated);
             // 
             // RegionCommentLabel
             // 
@@ -192,6 +194,7 @@ namespace Scribe.Forms
             this.RegionCommentTextBox.Name = "RegionCommentTextBox";
             this.RegionCommentTextBox.Size = new System.Drawing.Size(141, 23);
             this.RegionCommentTextBox.TabIndex = 29;
+            this.RegionCommentTextBox.Validated += new System.EventHandler(this.RegionCommentTextBox_Validated);
             // 
             // RegionBackgroundColorLabel
             // 
@@ -349,6 +352,7 @@ namespace Scribe.Forms
             this.LayoutRegionRemoveButton.TabIndex = 56;
             this.LayoutRegionRemoveButton.Text = "Remove";
             this.LayoutRegionRemoveButton.UseVisualStyleBackColor = false;
+            this.LayoutRegionRemoveButton.Click += new System.EventHandler(this.LayoutRegionRemoveButton_Click);
             // 
             // LayoutRegionDuplicateButton
             // 
@@ -360,6 +364,7 @@ namespace Scribe.Forms
             this.LayoutRegionDuplicateButton.TabIndex = 57;
             this.LayoutRegionDuplicateButton.Text = "Duplicate";
             this.LayoutRegionDuplicateButton.UseVisualStyleBackColor = false;
+            this.LayoutRegionDuplicateButton.Click += new System.EventHandler(this.LayoutRegionDuplicateButton_Click);
             // 
             // LayoutRegionAddNewButton
             // 
@@ -371,6 +376,7 @@ namespace Scribe.Forms
             this.LayoutRegionAddNewButton.TabIndex = 58;
             this.LayoutRegionAddNewButton.Text = "Add New";
             this.LayoutRegionAddNewButton.UseVisualStyleBackColor = false;
+            this.LayoutRegionAddNewButton.Click += new System.EventHandler(this.LayoutRegionAddNewButton_Click);
             // 
             // LayoutRegionListBox
             // 
