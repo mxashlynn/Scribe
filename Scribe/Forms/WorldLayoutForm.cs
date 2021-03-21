@@ -499,7 +499,7 @@ namespace Scribe.Forms
                 : CurrentLayer;
         #endregion
 
-
+        #region Handle Changes to Region Data
         /// <summary>
         /// Responds to the user clicking "Add New Region".
         /// Adds a new <see cref="LayoutToolRegion"/> to <see cref="All.Regions"/> and the <see cref="LayoutRegionListBox"/>.
@@ -590,7 +590,7 @@ namespace Scribe.Forms
         /// </summary>
         /// <param name="inSender">The originator of the event.</param>
         /// <param name="inEventArguments">Additional event data.</param>
-        private void BackgroundColorStatic_Click(object inSender, EventArgs inEventArguments)
+        private void RegionBackgroundColorStatic_Click(object inSender, EventArgs inEventArguments)
         {
             if (!All.CollectionsHaveBeenInitialized)
             {

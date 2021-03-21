@@ -212,6 +212,7 @@ namespace Scribe.Forms
             this.RegionBackgroundColorStatic.TabIndex = 42;
             this.RegionBackgroundColorStatic.Tag = "";
             this.RegionBackgroundColorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RegionBackgroundColorStatic.Click += new System.EventHandler(this.RegionBackgroundColorStatic_Click);
             // 
             // RegionBackgroundColorNameStatic
             // 
