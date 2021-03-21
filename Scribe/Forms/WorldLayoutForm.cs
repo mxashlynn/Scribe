@@ -584,6 +584,49 @@ namespace Scribe.Forms
             Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
             ChangeManager.AddAndExecute(changeToExecute);
         }
+
+        /// <summary>
+        /// Responds to the player clicking on the <see cref="RegionModel.BackgroundColor"/> selector.
+        /// </summary>
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void BackgroundColorStatic_Click(object inSender, EventArgs inEventArguments)
+        {
+            if (!All.CollectionsHaveBeenInitialized)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            if ((((LayoutToolRegion)LayoutRegionListBox.SelectedItem)?.Model) is IMutableRegionModel region)
+            {
+                // Sets the initial color select to the current text color.
+                var oldColor = ColorTranslator.FromHtml(region.BackgroundColor);
+                MainForm.SelectColorDialogue.Color = oldColor;
+
+                if (MainForm.SelectColorDialogue.ShowDialog() == DialogResult.OK)
+                {
+                    var newColor = MainForm.SelectColorDialogue.Color;
+                    var changeToExecute = new ChangeValue(oldColor, newColor, RegionBackgroundColorStatic.Name,
+                                                          (object databaseValue) =>
+                                                          {
+                                                              region.BackgroundColor = MainEditorForm.ValueToColorHexString(databaseValue);
+                                                              MainForm.HasUnsavedChanges = true;
+                                                          },
+                                                          (object displayValue) =>
+                                                          {
+                                                              var displayColor = (Color)displayValue;
+                                                              RegionBackgroundColorStatic.BackColor = displayColor;
+                                                              RegionBackgroundColorNameStatic.Text = EditorCommands.FormatColorNameForDisplay(displayColor);
+                                                          },
+                                                          (object oldValue) => RegionBackgroundColorStatic.BackColor = (Color)oldValue);
+                    Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+                    ChangeManager.AddAndExecute(changeToExecute);
+                }
+            }
+        }
+        #endregion
+
         #region Update World Data
         // TODO [MAPS] WorldLayourForm.RegionListBox needs to be updated when the regions listbox in MainEditorForm is updated.
         // Maybe this can be done simply by refreshing data when the form is selected/becomes active?

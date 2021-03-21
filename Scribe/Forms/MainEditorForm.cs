@@ -153,7 +153,8 @@ namespace Scribe.Forms
         private readonly RollerOutputBox RollerResultsBox = new();
 
         /// <summary>Dialogue for selecting custom <see cref="Color"/>s.</summary>
-        private readonly ColorDialog SelectColorDialogue = new();
+        // NOTE: An internal property so that the world layout tool can borrow it.
+        internal ColorDialog SelectColorDialogue { get; } = new();
 
         /// <summary>Window for laying out <see cref="RegionModel"/>s in relation to one another.</summary>
         private readonly WorldLayoutForm LayoutToolWindow;
@@ -585,7 +586,8 @@ namespace Scribe.Forms
         /// </summary>
         /// <param name="input">A <c>string</c> representing a <see cref="Color"/>.</param>
         /// <returns>The string properly formatted, or <see cref="RegionModel.DefaultColor"/> if no value could be parsed.</returns>
-        private static string ValueToColorHexString(object input)
+        // NOTE: Internal so that the region layout tool can borrow it.
+        internal static string ValueToColorHexString(object input)
             => input switch
             {
                 Color givenColor => givenColor.ToHexString(),
