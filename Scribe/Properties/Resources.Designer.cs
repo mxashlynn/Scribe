@@ -928,6 +928,15 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The currently selected model was not found in the model database.  Please let Paige know this happened!.
+        /// </summary>
+        internal static string WarningCurrentModelNull {
+            get {
+                return ResourceManager.GetString("WarningCurrentModelNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Really quit?  Unsaved changes will be lost!.
         /// </summary>
         internal static string WarningMessageExit {

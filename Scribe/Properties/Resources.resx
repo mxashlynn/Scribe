@@ -473,4 +473,8 @@ Folder: {1}</value>
     <value>During initialization a tool window was passed null instead of a reference to the main editor.</value>
     <comment>Error string.</comment>
   </data>
+  <data name="WarningCurrentModelNull" xml:space="preserve">
+    <value>The currently selected model was not found in the model database.  Please let Paige know this happened!</value>
+    <comment>Warning string.</comment>
+  </data>
 </root>

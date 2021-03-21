@@ -72,6 +72,9 @@ namespace Scribe.Forms
                 UpdateLayerDisplay();
             }
         }
+
+        /// <summary>The coordinates of every possible location in the world.</summary>
+        private readonly IReadOnlyList<Point3D> AllCoordinates;
         #endregion
 
         #region Initialization
@@ -91,9 +94,9 @@ namespace Scribe.Forms
             }
 
             InitializeComponent();
+            // TODO [MAPS] [UI] Make sure the UI element informing the user that the world is being loaded is visible during init.
 
             #region Add Region Statics to Table
-            // TODO [MAPS] [UI] Show a UI element informing the user that the world is being loaded here.
             SuspendLayout();
             WorldLayoutTableLayoutPanel.SuspendLayout();
             for (var column = 0; column < WorldLayoutTableLayoutPanel.ColumnCount; column++)
@@ -119,7 +122,21 @@ namespace Scribe.Forms
             }
             WorldLayoutTableLayoutPanel.ResumeLayout(false);
             ResumeLayout(false);
-            // TODO [MAPS] [UI] Hide the UI element informing the user that the world is loading here.
+            #endregion
+
+            #region Cache Coordinates
+            var allCoordinates = new List<Point3D>();
+            for (var layer = 0; layer < LayerCount; layer++)
+            {
+                for (var column = 0; column < WorldLayoutTableLayoutPanel.ColumnCount; column++)
+                {
+                    for (var row = 0; row < WorldLayoutTableLayoutPanel.RowCount; row++)
+                    {
+                        allCoordinates.Add(new Point3D(row, column, layer));
+                    }
+                }
+            }
+            AllCoordinates = allCoordinates;
             #endregion
         }
 
@@ -132,6 +149,7 @@ namespace Scribe.Forms
             base.OnLoad(EventData);
             // TODO [MAPS] [UI] Show a UI element informing the user that the world is being loaded here.
             LoadWorldData();
+            UpdateAllExits();
             UpdateLayerDisplay();
             RepopulateListBox();
             // TODO [MAPS] [UI] Hide the UI element informing the user that the world is loading here.
@@ -420,7 +438,9 @@ namespace Scribe.Forms
             var clickedCoordinates = (Point2D)regionStatic.Tag;
             if (inEventArguments.Button == MouseButtons.Left)
             {
-                UpdateRegionAt(clickedCoordinates, regionStatic);
+                var oldCoordinates = UpdateRegionAt(clickedCoordinates, regionStatic);
+                var newCoordinates = new Point3D(clickedCoordinates.Y, clickedCoordinates.X, CurrentLayer);
+                UpdateExitsAt(new List<Point3D> { newCoordinates, oldCoordinates });
             }
             else
             {
@@ -653,8 +673,81 @@ namespace Scribe.Forms
         }
         #endregion
 
-        #region Update Exits
-        // TODO [MAPS] Update Exit properties for all models
+        #region Update Region Exits
+        /// <summary>
+        /// Updates the exits for every possible location in the world.
+        /// </summary>
+        private void UpdateAllExits()
+            => UpdateExitsAt(AllCoordinates);
+
+        /// <summary>
+        /// Recomputes the exits for all <see cref="RegionModel"/>s at the given locations in the world.
+        /// </summary>
+        /// <param name="inCoordinateList">The locations whose exits need to be updated.</param>
+        private void UpdateExitsAt(IEnumerable<Point3D> inCoordinateList)
+        {
+            foreach (var coordinates in inCoordinateList ?? Enumerable.Empty<Point3D>())
+            {
+                #region Acquire Region Models
+                var modelCenter = (IMutableRegionModel)All.Regions.GetOrNull<RegionModel>(World[coordinates.Row,
+                                                                                                coordinates.Column,
+                                                                                                coordinates.Layer]);
+                if (modelCenter is null)
+                {
+                    // If there is no region at the current coordinates, there is no work to be done.
+                    continue;
+                }
+
+                var modelNorth = coordinates.Row > 0
+                    ? (IMutableRegionModel)All.Regions.GetOrNull<RegionModel>(World[coordinates.Row - 1,
+                                                                                    coordinates.Column,
+                                                                                    coordinates.Layer])
+                    : null;
+                var modelSouth = coordinates.Row < WorldDimension
+                    ? (IMutableRegionModel)All.Regions.GetOrNull<RegionModel>(World[coordinates.Row + 1,
+                                                                                    coordinates.Column,
+                                                                                    coordinates.Layer])
+                    : null;
+                var modelWest = coordinates.Column > 0
+                    ? (IMutableRegionModel)All.Regions.GetOrNull<RegionModel>(World[coordinates.Row,
+                                                                                    coordinates.Column - 1,
+                                                                                    coordinates.Layer])
+                    : null;
+                var modelEast = coordinates.Column < WorldDimension
+                    ? (IMutableRegionModel)All.Regions.GetOrNull<RegionModel>(World[coordinates.Row,
+                                                                                    coordinates.Column + 1,
+                                                                                    coordinates.Layer])
+                    : null;
+                var modelBelow = coordinates.Layer != ElsewhereLayer
+                                 && coordinates.Layer > 0
+                    ? (IMutableRegionModel)All.Regions.GetOrNull<RegionModel>(World[coordinates.Row,
+                                                                                    coordinates.Column,
+                                                                                    coordinates.Layer - 1])
+                    : null;
+                var modelAbove = coordinates.Layer < ElsewhereLayer
+                    ? (IMutableRegionModel)All.Regions.GetOrNull<RegionModel>(World[coordinates.Row,
+                                                                                    coordinates.Column,
+                                                                                    coordinates.Layer + 1])
+                    : null;
+                #endregion
+
+                #region Assign Exits
+                modelCenter.RegionToTheNorthID = modelNorth?.ID ?? ModelID.None;
+                modelCenter.RegionToTheSouthID = modelSouth?.ID ?? ModelID.None;
+                modelCenter.RegionToTheEastID = modelEast?.ID ?? ModelID.None;
+                modelCenter.RegionToTheWestID = modelWest?.ID ?? ModelID.None;
+                modelCenter.RegionAboveID = modelAbove?.ID ?? ModelID.None;
+                modelCenter.RegionBelowID = modelBelow?.ID ?? ModelID.None;
+
+                if (modelNorth is not null) { modelNorth.RegionToTheSouthID = modelCenter.ID; }
+                if (modelSouth is not null) { modelSouth.RegionToTheNorthID = modelCenter.ID; }
+                if (modelEast is not null) { modelEast.RegionToTheWestID = modelCenter.ID; }
+                if (modelWest is not null) { modelWest.RegionToTheEastID = modelCenter.ID; }
+                if (modelAbove is not null) { modelAbove.RegionBelowID = modelCenter.ID; }
+                if (modelBelow is not null) { modelBelow.RegionAboveID = modelCenter.ID; }
+                #endregion
+            }
+        }
         #endregion
 
         #region Update Region List
@@ -789,12 +882,15 @@ namespace Scribe.Forms
         // Maybe this can be done simply by refreshing data when the form is selected/becomes active?
         // If so, that would be an easy addition to the MainEditorForm, too.
 
+        // TODO [MAPS] Similarly, the world array itself needs to be updated any time a RegionExitID is changed in the main editor.
+
         /// <summary>
-        /// Responds to a request to assign a <see cref="RegionModel"/> to a given location in the world.
+        /// Assigns a <see cref="RegionModel"/> to a given location in the world.
         /// </summary>
         /// <param name="inCoordinates">The location to assign the <see cref="RegionModel"/>.</param>
         /// <param name="inRegionStatic">The UI element reflecting that <see cref="RegionModel"/>.</param>
-        private void UpdateRegionAt(Point2D inCoordinates, Label inRegionStatic)
+        /// <returns>Another <see cref="World"/> location updated as a result of updating this one.</returns>
+        private Point3D UpdateRegionAt(Point2D inCoordinates, Label inRegionStatic)
         {
             #region Update Old Location
             if (TryGetCoordinatesForID(CurrentModelID, out var oldCoordinates))
@@ -822,6 +918,8 @@ namespace Scribe.Forms
             inRegionStatic.BackColor = RegionBackgroundColorStatic.BackColor;
             LayoutToolTip.SetToolTip(inRegionStatic, RegionNameTextBox.Text);
             #endregion
+
+            return new Point3D(oldCoordinates);
 
             #region Local Helper Routines
             // Finds the coordinates of the first occurance of the given ModelID in the World array.
