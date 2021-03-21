@@ -692,7 +692,8 @@ namespace Scribe.Forms
                 var modelCenter = (IMutableRegionModel)All.Regions.GetOrNull<RegionModel>(World[coordinates.Row,
                                                                                                 coordinates.Column,
                                                                                                 coordinates.Layer]);
-                if (modelCenter is null)
+                if (modelCenter is null
+                    || modelCenter.ID == ModelID.None)
                 {
                     // If there is no region at the current coordinates, there is no work to be done.
                     continue;
