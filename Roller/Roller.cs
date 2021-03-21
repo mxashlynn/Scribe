@@ -403,13 +403,20 @@ namespace Roller
         /// <returns>A value indicating success or the nature of the failure.</returns>
         private static ExitCode RollCSVs(ModelCollection<Model> inWorkload)
         {
-            // Currently, all that has to be done is assigning ModelIDs.  Loading and saving will accomplish this.
+            // Assign ModelIDs.  Loading and saving will accomplish this.
             if (!All.LoadFromCSVs())
             {
                 Console.WriteLine(Resources.ErrorLoading);
                 return ExitCode.ReadFault;
             }
-            else if (!All.SaveToCSVs())
+
+            // Remove models with negative IDs.
+            // TODO [ROLLER] Implement removing models with IDs < 0.
+
+            // Remove Scribe-specific tags.
+            // TODO [ROLLER] Implement removing tags used by Scribe.
+
+            if (!All.SaveToCSVs())
             {
                 Console.WriteLine(Resources.ErrorSaving);
                 return ExitCode.WriteFault;
