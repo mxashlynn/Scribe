@@ -407,7 +407,8 @@ namespace Scribe.Forms
         }
         #endregion
 
-        #region Layout Table Click Events
+        #region Click Events
+        #region Layout Table
         /// <summary>
         /// Responds to a user clicking on a region static.
         /// </summary>
@@ -446,7 +447,6 @@ namespace Scribe.Forms
         }
         #endregion
 
-        #region Sidebar Click Events
         #region Region Properties
         /// <summary>
         /// Responds to the text being changed in the <see cref="RegionNameTextBox"/>.
@@ -454,33 +454,7 @@ namespace Scribe.Forms
         /// <param name="inSender">The originator of the event.</param>
         /// <param name="inEventArguments">Additional event data.</param>
         private void RegionNameTextBox_Validated(object inSender, EventArgs inEventArguments)
-        {
-            var model = ((LayoutToolRegion)LayoutRegionListBox.SelectedItem)?.Model ?? LayoutToolRegion.None.Model;
-            if (model.ID == ModelID.None)
-            {
-                SystemSounds.Beep.Play();
-                return;
-            }
-
-            if (string.Compare(RegionNameTextBox.Text, model.Name, comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
-            {
-                var mutableModel = (IMutableRegionModel)model;
-                var oldValue = model.Name;
-                var changeToExecute = new ChangeValue(oldValue, RegionNameTextBox.Text, nameof(RegionModel.Name),
-                                                      (object databaseValue) =>
-                                                      {
-                                                          mutableModel.Name = databaseValue.ToString();
-                                                          MainForm.HasUnsavedChanges = true;
-                                                      },
-                                                      (object displayValue) => RegionNameTextBox.Text = displayValue.ToString(),
-                                                      (object oldValue) => RegionNameTextBox.Text = oldValue.ToString());
-                Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
-                ChangeManager.AddAndExecute(changeToExecute);
-
-                // For the name value, the display in the list must also be updated.
-                LayoutRegionListBox.Items[LayoutRegionListBox.SelectedIndex] = LayoutRegionListBox.SelectedItem;
-            }
-        }
+            => UpdateName();
 
         /// <summary>
         /// Responds to the text being changed in the <see cref="RegionDescriptionTextBox"/>.
@@ -488,9 +462,7 @@ namespace Scribe.Forms
         /// <param name="inSender">The originator of the event.</param>
         /// <param name="inEventArguments">Additional event data.</param>
         private void RegionDescriptionTextBox_Validated(object inSender, EventArgs inEventArguments)
-        {
-            // TODO [MAPS] ***** HERE!! ****************************************************************************************
-        }
+            => UpdateDescription();
 
         /// <summary>
         /// Responds to the text being changed in the <see cref="RegionCommentTextBox"/>.
@@ -498,9 +470,7 @@ namespace Scribe.Forms
         /// <param name="inSender">The originator of the event.</param>
         /// <param name="inEventArguments">Additional event data.</param>
         private void RegionCommentTextBox_Validated(object inSender, EventArgs inEventArguments)
-        {
-            // TODO [MAPS] Implement this.
-        }
+            => UpdateComment();
         #endregion
 
         #region Layer Visibility
@@ -591,7 +561,103 @@ namespace Scribe.Forms
         #endregion
         #endregion
 
-        #region Handle Changes to Region Data
+        #region Update Region Properties
+        /// <summary>
+        /// Changes the <see cref="Model.Name"/> of the current <see cref="LayoutToolRegion"/>.
+        /// </summary>
+        private void UpdateName()
+        {
+            var model = ((LayoutToolRegion)LayoutRegionListBox.SelectedItem)?.Model ?? LayoutToolRegion.None.Model;
+            if (model.ID == ModelID.None)
+            {
+                // Silently abort if no model is selected.
+                return;
+            }
+
+            if (string.Compare(RegionNameTextBox.Text, model.Name, StringComparison.OrdinalIgnoreCase) != 0)
+            {
+                var mutableModel = (IMutableRegionModel)model;
+                var oldValue = model.Name;
+                var changeToExecute = new ChangeValue(oldValue, RegionNameTextBox.Text, nameof(RegionModel.Name),
+                                                      (object databaseValue) =>
+                                                      {
+                                                          mutableModel.Name = databaseValue.ToString();
+                                                          MainForm.HasUnsavedChanges = true;
+                                                      },
+                                                      (object displayValue) => RegionNameTextBox.Text = displayValue.ToString(),
+                                                      (object oldValue) => RegionNameTextBox.Text = oldValue.ToString());
+                Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+                ChangeManager.AddAndExecute(changeToExecute);
+
+                // For the name value, the display in the list must also be updated.
+                LayoutRegionListBox.Items[LayoutRegionListBox.SelectedIndex] = LayoutRegionListBox.SelectedItem;
+            }
+        }
+
+        /// <summary>
+        /// Changes the <see cref="Model.Description"/> of the current <see cref="LayoutToolRegion"/>.
+        /// </summary>
+        private void UpdateDescription()
+        {
+            var model = ((LayoutToolRegion)LayoutRegionListBox.SelectedItem)?.Model ?? LayoutToolRegion.None.Model;
+            if (model.ID == ModelID.None)
+            {
+                // Silently abort if no model is selected.
+                return;
+            }
+
+            if (string.Compare(RegionDescriptionTextBox.Text, model.Description, StringComparison.OrdinalIgnoreCase) != 0)
+            {
+                var mutableModel = (IMutableRegionModel)model;
+                var oldValue = model.Description;
+                var changeToExecute = new ChangeValue(oldValue, RegionDescriptionTextBox.Text, nameof(RegionModel.Description),
+                                                      (object databaseValue) =>
+                                                      {
+                                                          mutableModel.Description = databaseValue.ToString();
+                                                          MainForm.HasUnsavedChanges = true;
+                                                      },
+                                                      (object displayValue) => RegionDescriptionTextBox.Text = displayValue.ToString(),
+                                                      (object oldValue) => RegionDescriptionTextBox.Text = oldValue.ToString());
+                Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+                ChangeManager.AddAndExecute(changeToExecute);
+            }
+        }
+
+        /// <summary>
+        /// Changes the <see cref="Model.Comment"/> of the current <see cref="LayoutToolRegion"/>.
+        /// </summary>
+        private void UpdateComment()
+        {
+            var model = ((LayoutToolRegion)LayoutRegionListBox.SelectedItem)?.Model ?? LayoutToolRegion.None.Model;
+            if (model.ID == ModelID.None)
+            {
+                // Silently abort if no model is selected.
+                return;
+            }
+
+            if (string.Compare(RegionCommentTextBox.Text, model.Comment, StringComparison.OrdinalIgnoreCase) != 0)
+            {
+                var mutableModel = (IMutableRegionModel)model;
+                var oldValue = model.Comment;
+                var changeToExecute = new ChangeValue(oldValue, RegionCommentTextBox.Text, nameof(RegionModel.Comment),
+                                                      (object databaseValue) =>
+                                                      {
+                                                          mutableModel.Comment = databaseValue.ToString();
+                                                          MainForm.HasUnsavedChanges = true;
+                                                      },
+                                                      (object displayValue) => RegionCommentTextBox.Text = displayValue.ToString(),
+                                                      (object oldValue) => RegionCommentTextBox.Text = oldValue.ToString());
+                Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+                ChangeManager.AddAndExecute(changeToExecute);
+            }
+        }
+        #endregion
+
+        #region Update Exits
+        // TODO [MAPS] Update Exit properties for all models
+        #endregion
+
+        #region Update Region List
         /// <summary>
         /// Adds a new <see cref="LayoutToolRegion"/> to <see cref="All.Regions"/> and the <see cref="LayoutRegionListBox"/>.
         /// </summary>
@@ -718,7 +784,7 @@ namespace Scribe.Forms
         }
         #endregion
 
-        #region Update World Data
+        #region Update World Array
         // TODO [MAPS] WorldLayourForm.RegionListBox needs to be updated when the regions listbox in MainEditorForm is updated.
         // Maybe this can be done simply by refreshing data when the form is selected/becomes active?
         // If so, that would be an easy addition to the MainEditorForm, too.
@@ -782,10 +848,6 @@ namespace Scribe.Forms
             }
             #endregion
         }
-        #endregion
-
-        #region Update RegionModel
-        // TODO [MAPS] Update non-Exit properties for current model.
         #endregion
 
         #region Update Display
@@ -855,10 +917,6 @@ namespace Scribe.Forms
                                                           .ToArray<object>());
             LayoutRegionListBox.EndUpdate();
         }
-        #endregion
-
-        #region Update Exits
-        // TODO [MAPS] Update Exit properties for all models
         #endregion
     }
 }
