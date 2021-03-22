@@ -397,12 +397,16 @@ namespace Scribe.Forms
         }
 
         /// <summary>
-        /// Updates the form when it receives focus, for example after closing the options dialogue box.
+        /// Updates the form when it receives focus, for example after closing the <see cref="OptionsDialogue"/>
+        /// or when clicking away from the <see cref="LayoutToolWindow"/>.
         /// </summary>
         /// <param name="inSender">The originator of the event.</param>
         /// <param name="inEventArguments">Additional event data.</param>
         private void MainEditorForm_Activated(object inSender, EventArgs inEventArguments)
-            => UpdateFromSettings();
+        {
+            RepopulateListBox(RegionListBox, All.Regions);
+            UpdateFromSettings();
+        }
 
         /// <summary>
         /// Finds all themed <see cref="Component"/>s in the <see cref="MainEditorForm"/>.
