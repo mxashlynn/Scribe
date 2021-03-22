@@ -425,6 +425,23 @@ namespace Scribe.Forms
         }
         #endregion
 
+        #region Focus Events
+        /// <summary>
+        /// Responds to the <see cref="WorldLayoutForm"/> becoming the foremost, focused form.
+        /// </summary>
+        /// <param name="inSender">Originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        /// <remarks>
+        /// This event is used instead of <see cref="Control.GotFocus"/> because GotFocus does not report
+        /// clicks directly onto contained controls, only clicks on the form itself.
+        /// </remarks>
+        private void WorldLayoutForm_Activated(object inSender, EventArgs inEventArguments)
+        {
+            UpdateLayerDisplay();
+            RepopulateListBox();
+        }
+        #endregion
+
         #region Click Events
         #region Layout Table
         /// <summary>
