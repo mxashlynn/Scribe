@@ -3232,10 +3232,7 @@ namespace Scribe.Forms
         /// <param name="inSender">The originator of the event.</param>
         /// <param name="inEventArguments">Additional event data.</param>
         private void RegionLayOutWorldButton_Click(object inSender, EventArgs inEventArguments)
-        {
-            // TODO [MAPS] Wire up layout tool button.  (There may be other region items needing wiring.)
-            SystemSounds.Beep.Play();
-        }
+            => LayoutToolWindow.Show();
 
         /// <summary>
         /// Responds to the player clicking on the <see cref="RegionModel.BackgroundColor"/> selector.
