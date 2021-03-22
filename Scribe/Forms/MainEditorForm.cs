@@ -1310,10 +1310,10 @@ namespace Scribe.Forms
         }
 
         /// <summary>
-        /// Repopulates the given list box with the given collection of <see cref="object"/>s.
+        /// Repopulates the given list box with the given collection of <see cref="Model"/>s.
         /// </summary>
         /// <param name="inListBox">The UI to repopulate.</param>
-        /// <param name="inSource">The objects to populate the UI with.</param>
+        /// <param name="inSource">The <see cref="Model"/>s to populate the UI with.</param>
         /// <remarks>This should only be called if <see cref="All"/> has actually changed.</remarks>
         private static void RepopulateListBox(ListBox inListBox, IEnumerable<Model> inSource)
         {
