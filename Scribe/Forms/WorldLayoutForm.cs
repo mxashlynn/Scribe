@@ -501,7 +501,13 @@ namespace Scribe.Forms
         /// <param name="inEventArguments">Additional event data.</param>
         private void LayoutRegionListBox_SelectedValueChanged(object inSender, EventArgs inEventArguments)
         {
-            CurrentModelID = ((LayoutToolRegion)LayoutRegionListBox.SelectedItem).Model.ID;
+            CurrentModelID = ((LayoutToolRegion)LayoutRegionListBox.SelectedItem)?.Model.ID ?? ModelID.None;
+            var propertiesCanBeEdited = CurrentModelID != ModelID.None;
+
+            RegionNameTextBox.Enabled = propertiesCanBeEdited;
+            RegionDescriptionTextBox.Enabled = propertiesCanBeEdited;
+            RegionCommentTextBox.Enabled = propertiesCanBeEdited;
+            RegionBackgroundColorStatic.Enabled = propertiesCanBeEdited;
             UpdateRegionPropertiesUI();
         }
 
