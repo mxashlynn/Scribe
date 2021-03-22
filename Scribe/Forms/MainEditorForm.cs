@@ -1340,11 +1340,7 @@ namespace Scribe.Forms
                 inListBox.SelectedItem = null;
                 inListBox.BeginUpdate();
                 inListBox.Items.Clear();
-                // Ignore any input value that evaluates to "None".
-                inListBox.Items.AddRange(inSource.Where(value => value is not null
-                                                               && 0 != string.Compare(value.ToString(),
-                                                                                     nameof(ModelID.None),
-                                                                                     comparisonType: StringComparison.OrdinalIgnoreCase))
+                inListBox.Items.AddRange(inSource.Where(value => value is not null && !EditorCommands.TextIsReserved(value.ToString()))
                                                  .ToArray());
                 inListBox.EndUpdate();
             }
