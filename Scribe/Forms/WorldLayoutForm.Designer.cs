@@ -59,6 +59,7 @@ namespace Scribe.Forms
             this.LayoutRegionAddNewButton = new System.Windows.Forms.Button();
             this.LayoutRegionListBox = new System.Windows.Forms.ListBox();
             this.LayoutToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.RegionMapEditButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LayerUpperPixelBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayerMiddlePixelBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayerBottomPixelBox)).BeginInit();
@@ -384,16 +385,29 @@ namespace Scribe.Forms
             this.LayoutRegionListBox.ItemHeight = 15;
             this.LayoutRegionListBox.Location = new System.Drawing.Point(628, 339);
             this.LayoutRegionListBox.Name = "LayoutRegionListBox";
-            this.LayoutRegionListBox.Size = new System.Drawing.Size(224, 274);
+            this.LayoutRegionListBox.Size = new System.Drawing.Size(224, 244);
             this.LayoutRegionListBox.TabIndex = 59;
             this.LayoutRegionListBox.Tag = "Untracked Control";
             this.LayoutRegionListBox.SelectedValueChanged += new System.EventHandler(this.LayoutRegionListBox_SelectedValueChanged);
+            // 
+            // RegionMapEditButton
+            // 
+            this.RegionMapEditButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RegionMapEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegionMapEditButton.Location = new System.Drawing.Point(723, 590);
+            this.RegionMapEditButton.Name = "RegionMapEditButton";
+            this.RegionMapEditButton.Size = new System.Drawing.Size(128, 23);
+            this.RegionMapEditButton.TabIndex = 60;
+            this.RegionMapEditButton.Text = "Edit Map";
+            this.RegionMapEditButton.UseVisualStyleBackColor = false;
+            this.RegionMapEditButton.Click += new System.EventHandler(this.RegionMapEditButton_Click);
             // 
             // WorldLayoutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(864, 621);
+            this.Controls.Add(this.RegionMapEditButton);
             this.Controls.Add(this.LayoutRegionListBox);
             this.Controls.Add(this.LayoutRegionAddNewButton);
             this.Controls.Add(this.LayoutRegionDuplicateButton);
@@ -464,5 +478,6 @@ namespace Scribe.Forms
         private System.Windows.Forms.Button LayoutRegionAddNewButton;
         private System.Windows.Forms.ListBox LayoutRegionListBox;
         private System.Windows.Forms.ToolTip LayoutToolTip;
+        private System.Windows.Forms.Button RegionMapEditButton;
     }
 }

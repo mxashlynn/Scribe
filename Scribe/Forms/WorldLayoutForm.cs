@@ -578,6 +578,24 @@ namespace Scribe.Forms
         /// <param name="inEventArguments">Additional event data.</param>
         private void RegionBackgroundColorStatic_Click(object inSender, EventArgs inEventArguments)
             => SelectBackgroundColor();
+
+        /// <summary>
+        /// Invokes the <see cref="MapEditorForm"/> for the currently selected <see cref="LayoutToolRegion"/>.
+        /// </summary>
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void RegionMapEditButton_Click(object inSender, EventArgs inEventArguments)
+        {
+            // TODO [MAPS] Implement this!
+            //MapEditorWindow.CurrentRegion = (RegionModel)RegionListBox.SelectedItem;
+            //if (RegionEditorWindow.CurrentRegion is null ||
+            //    RegionEditorWindow.ShowDialog() == DialogResult.Abort)
+            //{
+            //    SystemSounds.Beep.Play();
+            //    Logger.Log(LogLevel.Warning, Resources.WarningNothingSelected);
+            //}
+            SystemSounds.Beep.Play();
+        }
         #endregion
         #endregion
 
