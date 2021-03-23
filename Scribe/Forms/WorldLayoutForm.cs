@@ -840,8 +840,64 @@ namespace Scribe.Forms
         /// Adds a new <see cref="LayoutToolRegion"/> with properties and status identicle to those of the currently selected region.
         /// </summary>
         private void DuplicateRegion()
-            // TODO [MAPS] Implement region duplication.
-            => throw new NotImplementedException();
+        {
+            if (!All.CollectionsHaveBeenInitialized)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            var nextID = All.Regions.Any()
+                ? (ModelID)(All.Regions.Max(model => model?.ID ?? All.RegionIDs.Minimum) + 1)
+                : All.RegionIDs.Minimum;
+            if (nextID > All.RegionIDs.Maximum)
+            {
+                SystemSounds.Beep.Play();
+                Logger.Log(LogLevel.Warning, Resources.ErrorMaximumIDReached);
+                return;
+            }
+
+            var regionToDuplicate = ((LayoutToolRegion)LayoutRegionListBox.SelectedItem).Model;
+            if (regionToDuplicate is null
+                || regionToDuplicate.ID == ModelID.None)
+            {
+                SystemSounds.Beep.Play();
+                return;
+            }
+
+            var regionToAdd = new LayoutToolRegion(new RegionModel(nextID,
+                                                                   $"{regionToDuplicate.Name} (Duplicate)",
+                                                                   regionToDuplicate.Description,
+                                                                   regionToDuplicate.Comment,
+                                                                   new List<ModelTag>(regionToDuplicate.Tags),
+                                                                   regionToDuplicate.BackgroundColor,
+                                                                   regionToDuplicate.RegionToTheNorth,
+                                                                   regionToDuplicate.RegionToTheEast,
+                                                                   regionToDuplicate.RegionToTheSouth,
+                                                                   regionToDuplicate.RegionToTheWest,
+                                                                   regionToDuplicate.RegionAbove,
+                                                                   regionToDuplicate.RegionBelow));
+
+            // TODO [MAPS] Also duplicate RegionStatus once Map Editor is implemented.
+
+            var changeToExecute = new ChangeList(regionToAdd, $"add duplicate Region definition",
+                                        (object databaseValue) =>
+                                        {
+                                            ((IMutableModelCollection<RegionModel>)All.Regions).Add(((LayoutToolRegion)databaseValue).Model);
+                                            _ = LayoutRegionListBox.Items.Add(databaseValue);
+                                            LayoutRegionListBox.SelectedItem = databaseValue;
+                                            MainForm.HasUnsavedChanges = true;
+                                        },
+                                        (object databaseValue) =>
+                                        {
+                                            ((IMutableModelCollection<RegionModel>)All.Regions).Remove(((LayoutToolRegion)databaseValue).Model);
+                                            LayoutRegionListBox.Items.Remove(databaseValue);
+                                            LayoutRegionListBox.SelectedItem = null;
+                                            MainForm.HasUnsavedChanges = true;
+                                        });
+            Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+            ChangeManager.AddAndExecute(changeToExecute);
+        }
 
         /// <summary>
         /// Removes a <see cref="LayoutToolRegion"/> from <see cref="All.Regions"/> and the <see cref="LayoutRegionListBox"/>.
