@@ -437,8 +437,11 @@ namespace Scribe.Forms
         /// </remarks>
         private void WorldLayoutForm_Activated(object inSender, EventArgs inEventArguments)
         {
+            // TODO [MAPS] [UI] Show a UI element informing the user that the world is being loaded here.
+            LoadWorldData();
             UpdateLayerDisplay();
             RepopulateListBox();
+            // TODO [MAPS] [UI] Hide the UI element informing the user that the world is loading here.
         }
         #endregion
 
@@ -920,12 +923,6 @@ namespace Scribe.Forms
         #endregion
 
         #region Update World Array
-        // TODO [MAPS] WorldLayourForm.RegionListBox needs to be updated when the regions listbox in MainEditorForm is updated.
-        // Maybe this can be done simply by refreshing data when the form is selected/becomes active?
-        // If so, that would be an easy addition to the MainEditorForm, too.
-
-        // TODO [MAPS] Similarly, the world array itself needs to be updated any time a RegionExitID is changed in the main editor.
-
         /// <summary>
         /// Assigns a <see cref="RegionModel"/> to a given location in the world.
         /// </summary>

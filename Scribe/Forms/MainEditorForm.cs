@@ -405,6 +405,13 @@ namespace Scribe.Forms
         private void MainEditorForm_Activated(object inSender, EventArgs inEventArguments)
         {
             RepopulateListBox(RegionListBox, All.Regions);
+            RepopulateComboBox(RegionExitNorthComboBox, All.Regions);
+            RepopulateComboBox(RegionExitSouthComboBox, All.Regions);
+            RepopulateComboBox(RegionExitEastComboBox, All.Regions);
+            RepopulateComboBox(RegionExitWestComboBox, All.Regions);
+            RepopulateComboBox(RegionExitUpComboBox, All.Regions);
+            RepopulateComboBox(RegionExitDownComboBox, All.Regions);
+            RegionListBox.SelectedIndex = -1;
             UpdateFromSettings();
         }
 
