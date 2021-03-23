@@ -1370,6 +1370,10 @@ namespace Scribe.Forms
                 inComboBox.SelectedItem = null;
                 inComboBox.BeginUpdate();
                 inComboBox.Items.Clear();
+                if (inSource.FirstOrDefault() is Model)
+                {
+                    inComboBox.Items.Add("");
+                }
                 inComboBox.Items.AddRange(inSource.Where(value => value is not null && !EditorCommands.TextIsReserved(value.ToString()))
                                                  .ToArray());
                 inComboBox.EndUpdate();
