@@ -60,10 +60,13 @@ namespace Scribe.Forms
             this.LayoutRegionListBox = new System.Windows.Forms.ListBox();
             this.LayoutToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.RegionMapEditButton = new System.Windows.Forms.Button();
+            this.LoadingPanel = new System.Windows.Forms.Panel();
+            this.LoadingLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.LayerUpperPixelBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayerMiddlePixelBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayerBottomPixelBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayerElsewherePixelBox)).BeginInit();
+            this.LoadingPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // WorldLayoutTableLayoutPanel
@@ -402,11 +405,33 @@ namespace Scribe.Forms
             this.RegionMapEditButton.UseVisualStyleBackColor = false;
             this.RegionMapEditButton.Click += new System.EventHandler(this.RegionMapEditButton_Click);
             // 
+            // LoadingPanel
+            // 
+            this.LoadingPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LoadingPanel.Controls.Add(this.LoadingLabel);
+            this.LoadingPanel.Location = new System.Drawing.Point(12, 12);
+            this.LoadingPanel.Name = "LoadingPanel";
+            this.LoadingPanel.Size = new System.Drawing.Size(842, 601);
+            this.LoadingPanel.TabIndex = 61;
+            // 
+            // LoadingLabel
+            // 
+            this.LoadingLabel.AutoSize = true;
+            this.LoadingLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LoadingLabel.Location = new System.Drawing.Point(388, 281);
+            this.LoadingLabel.Name = "LoadingLabel";
+            this.LoadingLabel.Size = new System.Drawing.Size(69, 21);
+            this.LoadingLabel.TabIndex = 0;
+            this.LoadingLabel.Text = "Loading";
+            // 
             // WorldLayoutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(864, 621);
+            this.Controls.Add(this.LoadingPanel);
             this.Controls.Add(this.RegionMapEditButton);
             this.Controls.Add(this.LayoutRegionListBox);
             this.Controls.Add(this.LayoutRegionAddNewButton);
@@ -444,6 +469,8 @@ namespace Scribe.Forms
             ((System.ComponentModel.ISupportInitialize)(this.LayerMiddlePixelBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayerBottomPixelBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayerElsewherePixelBox)).EndInit();
+            this.LoadingPanel.ResumeLayout(false);
+            this.LoadingPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -480,5 +507,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.ListBox LayoutRegionListBox;
         private System.Windows.Forms.ToolTip LayoutToolTip;
         private System.Windows.Forms.Button RegionMapEditButton;
+        private System.Windows.Forms.Panel LoadingPanel;
+        private System.Windows.Forms.Label LoadingLabel;
     }
 }

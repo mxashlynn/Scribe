@@ -94,7 +94,6 @@ namespace Scribe.Forms
             }
 
             InitializeComponent();
-            // TODO [MAPS] [UI] Make sure the UI element informing the user that the world is being loaded is visible during init.
 
             #region Add Region Statics to Table
             SuspendLayout();
@@ -147,12 +146,12 @@ namespace Scribe.Forms
         protected override void OnLoad(EventArgs EventData)
         {
             base.OnLoad(EventData);
-            // TODO [MAPS] [UI] Show a UI element informing the user that the world is being loaded here.
+            LoadingPanel.Visible = true;
             LoadWorldData();
             UpdateAllExits();
             UpdateLayerDisplay();
             RepopulateListBox();
-            // TODO [MAPS] [UI] Hide the UI element informing the user that the world is loading here.
+            LoadingPanel.Visible = false;
         }
 
         /// <summary>
@@ -437,11 +436,11 @@ namespace Scribe.Forms
         /// </remarks>
         private void WorldLayoutForm_Activated(object inSender, EventArgs inEventArguments)
         {
-            // TODO [MAPS] [UI] Show a UI element informing the user that the world is being loaded here.
+            LoadingPanel.Visible = true;
             LoadWorldData();
             UpdateLayerDisplay();
             RepopulateListBox();
-            // TODO [MAPS] [UI] Hide the UI element informing the user that the world is loading here.
+            LoadingPanel.Visible = false;
         }
         #endregion
 
