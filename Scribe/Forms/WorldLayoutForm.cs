@@ -611,7 +611,7 @@ namespace Scribe.Forms
         /// <param name="inEventArguments">Additional event data.</param>
         private void RegionMapEditButton_Click(object inSender, EventArgs inEventArguments)
         {
-            // TODO [MAPS] Implement this!
+            // TODO [MAPS] Wire up launching map editor.
             //MapEditorWindow.CurrentRegion = (RegionModel)RegionListBox.SelectedItem;
             //if (RegionEditorWindow.CurrentRegion is null ||
             //    RegionEditorWindow.ShowDialog() == DialogResult.Abort)
