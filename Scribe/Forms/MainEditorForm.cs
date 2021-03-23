@@ -156,6 +156,9 @@ namespace Scribe.Forms
         // NOTE: An internal property so that the world layout tool can borrow it.
         internal ColorDialog SelectColorDialogue { get; } = new();
 
+        /// <summary>If <c>true</c>, then the <see cref="MainEditorForm"/> should not update when a window closes.</summary>
+        private bool SelectingColor;
+
         /// <summary>Window for laying out <see cref="RegionModel"/>s in relation to one another.</summary>
         private readonly WorldLayoutForm LayoutToolWindow;
         #endregion
@@ -404,15 +407,18 @@ namespace Scribe.Forms
         /// <param name="inEventArguments">Additional event data.</param>
         private void MainEditorForm_Activated(object inSender, EventArgs inEventArguments)
         {
-            RepopulateListBox(RegionListBox, All.Regions);
-            RepopulateComboBox(RegionExitNorthComboBox, All.Regions);
-            RepopulateComboBox(RegionExitSouthComboBox, All.Regions);
-            RepopulateComboBox(RegionExitEastComboBox, All.Regions);
-            RepopulateComboBox(RegionExitWestComboBox, All.Regions);
-            RepopulateComboBox(RegionExitUpComboBox, All.Regions);
-            RepopulateComboBox(RegionExitDownComboBox, All.Regions);
-            RegionListBox.SelectedIndex = -1;
-            UpdateFromSettings();
+            if (!SelectingColor)
+            {
+                RepopulateListBox(RegionListBox, All.Regions);
+                RepopulateComboBox(RegionExitNorthComboBox, All.Regions);
+                RepopulateComboBox(RegionExitSouthComboBox, All.Regions);
+                RepopulateComboBox(RegionExitEastComboBox, All.Regions);
+                RepopulateComboBox(RegionExitWestComboBox, All.Regions);
+                RepopulateComboBox(RegionExitUpComboBox, All.Regions);
+                RepopulateComboBox(RegionExitDownComboBox, All.Regions);
+                RegionListBox.SelectedIndex = -1;
+                UpdateFromSettings();
+            }
         }
 
         /// <summary>
@@ -3264,6 +3270,7 @@ namespace Scribe.Forms
                 var oldColor = ColorTranslator.FromHtml(region.BackgroundColor);
                 SelectColorDialogue.Color = oldColor;
 
+                SelectingColor = true;
                 if (SelectColorDialogue.ShowDialog() == DialogResult.OK)
                 {
                     var newColor = SelectColorDialogue.Color;
@@ -3284,6 +3291,7 @@ namespace Scribe.Forms
                     Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
                     ChangeManager.AddAndExecute(changeToExecute);
                 }
+                SelectingColor = false;
             }
         }
         #endregion

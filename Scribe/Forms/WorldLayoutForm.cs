@@ -75,6 +75,9 @@ namespace Scribe.Forms
 
         /// <summary>The coordinates of every possible location in the world.</summary>
         private readonly IReadOnlyList<Point3D> AllCoordinates;
+
+        /// <summary>If <c>true</c>, then the <see cref="MainEditorForm"/> should not update when a window closes.</summary>
+        private bool SelectingColor;
         #endregion
 
         #region Initialization
@@ -436,11 +439,14 @@ namespace Scribe.Forms
         /// </remarks>
         private void WorldLayoutForm_Activated(object inSender, EventArgs inEventArguments)
         {
-            LoadingPanel.Visible = true;
-            LoadWorldData();
-            UpdateLayerDisplay();
-            RepopulateListBox();
-            LoadingPanel.Visible = false;
+            if (!SelectingColor)
+            {
+                LoadingPanel.Visible = true;
+                LoadWorldData();
+                UpdateLayerDisplay();
+                RepopulateListBox();
+                LoadingPanel.Visible = false;
+            }
         }
         #endregion
 
@@ -954,6 +960,7 @@ namespace Scribe.Forms
                 var oldColor = ColorTranslator.FromHtml(region.BackgroundColor);
                 MainForm.SelectColorDialogue.Color = oldColor;
 
+                SelectingColor = true;
                 if (MainForm.SelectColorDialogue.ShowDialog() == DialogResult.OK)
                 {
                     var newColor = MainForm.SelectColorDialogue.Color;
@@ -973,6 +980,7 @@ namespace Scribe.Forms
                     Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
                     ChangeManager.AddAndExecute(changeToExecute);
                 }
+                SelectingColor = false;
             }
         }
         #endregion
