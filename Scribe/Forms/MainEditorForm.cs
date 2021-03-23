@@ -2038,21 +2038,21 @@ namespace Scribe.Forms
                 RegionExitNorthComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
                     ? null
                     : All.Regions.GetOrNull<RegionModel>(model.RegionToTheNorth);
-                RegionExitSouthComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
+                RegionExitSouthComboBox.SelectedItem = model.RegionToTheSouth == ModelID.None
                     ? null
-                    : All.Regions.GetOrNull<RegionModel>(model.RegionToTheNorth);
-                RegionExitEastComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
+                    : All.Regions.GetOrNull<RegionModel>(model.RegionToTheSouth);
+                RegionExitEastComboBox.SelectedItem = model.RegionToTheEast == ModelID.None
                     ? null
-                    : All.Regions.GetOrNull<RegionModel>(model.RegionToTheNorth);
-                RegionExitWestComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
+                    : All.Regions.GetOrNull<RegionModel>(model.RegionToTheEast);
+                RegionExitWestComboBox.SelectedItem = model.RegionToTheWest == ModelID.None
                     ? null
-                    : All.Regions.GetOrNull<RegionModel>(model.RegionToTheNorth);
-                RegionExitUpComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
+                    : All.Regions.GetOrNull<RegionModel>(model.RegionToTheWest);
+                RegionExitUpComboBox.SelectedItem = model.RegionAbove == ModelID.None
                     ? null
-                    : All.Regions.GetOrNull<RegionModel>(model.RegionToTheNorth);
-                RegionExitDownComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
+                    : All.Regions.GetOrNull<RegionModel>(model.RegionAbove);
+                RegionExitDownComboBox.SelectedItem = model.RegionBelow == ModelID.None
                     ? null
-                    : All.Regions.GetOrNull<RegionModel>(model.RegionToTheNorth);
+                    : All.Regions.GetOrNull<RegionModel>(model.RegionBelow);
                 // TODO: [MAPS] Fix this: PictureGenerateFromRegion(RegionPixelBox, model.ID);
             }
         }
