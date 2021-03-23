@@ -1363,11 +1363,7 @@ namespace Scribe.Forms
                 inComboBox.SelectedItem = null;
                 inComboBox.BeginUpdate();
                 inComboBox.Items.Clear();
-                // Ignore any input value that evaluates to "None".
-                inComboBox.Items.AddRange(inSource.Where(value => value is not null
-                                                               && 0 != string.Compare(value.ToString(),
-                                                                                     nameof(ModelID.None),
-                                                                                     comparisonType: StringComparison.OrdinalIgnoreCase))
+                inComboBox.Items.AddRange(inSource.Where(value => value is not null && !EditorCommands.TextIsReserved(value.ToString()))
                                                  .ToArray());
                 inComboBox.EndUpdate();
             }
