@@ -566,6 +566,7 @@ namespace Scribe.Forms
         /// </summary>
         /// <param name="input">A boxed <see cref="ModelID.None"/> or a <c>string</c> representing an <see cref="ModelID"/>.</param>
         /// <returns>The identifier given, or <see cref="ModelID.None"/> if no ID could be parsed.</returns>
+        [SuppressMessage("Maintainability", "CA1508:Avoid dead conditional code", Justification = "False positive.")]
         private static ModelID ValueToID(object input)
             => input is Model model
                 ? model.ID
@@ -573,9 +574,12 @@ namespace Scribe.Forms
                     ? modelID
                     : input is int boxedInt
                         ? boxedInt
-                        : (int.TryParse(input?.ToString() ?? "", NumberStyles.Integer, null, out var parsedInt)
-                            ? (ModelID)parsedInt
-                            : ModelID.None);
+                        : input is string stringValue
+                          && string.IsNullOrEmpty(stringValue)
+                            ? ModelID.None
+                            : (int.TryParse(input?.ToString() ?? "", NumberStyles.Integer, null, out var parsedInt)
+                                ? (ModelID)parsedInt
+                                : ModelID.None);
 
         /// <summary>
         /// Transforms an <c>object</c> into an <c>enum</c>, parsing if needed.
