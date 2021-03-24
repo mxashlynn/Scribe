@@ -1,2 +1,2 @@
-﻿ID,Name,Description,Comment,Tags,BackgroundColor,RegionToTheNorth,RegionToTheEast,RegionToTheSouth,RegionToTheWest,RegionAbove,RegionBelow
+ID,Name,Description,Comment,Tags,BackgroundColor,RegionToTheNorth,RegionToTheEast,RegionToTheSouth,RegionToTheWest,RegionAbove,RegionBelow
 110000,Simple Map,Test description.,I love Parquet!,,#FFFF80C0,110000,None,None,None,None,None
