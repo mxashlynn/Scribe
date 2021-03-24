@@ -740,6 +740,15 @@ namespace Scribe.Forms
             foreach (var coordinates in inCoordinateList ?? Enumerable.Empty<Point3D>())
             {
                 #region Acquire Region Models
+                if (coordinates.Row < 0 || coordinates.Row > WorldDimension
+                    || coordinates.Column < 0 || coordinates.Column > WorldDimension
+                    || coordinates.Layer < 0 || coordinates.Layer > LayerCount)
+                {
+                    // Skip any regions whose coordinates are out of bounds.
+                    // This might happen, for example, if the ModelID being replaced was not found in the layout panel.
+                    continue;
+                }
+
                 var modelCenter = (IMutableRegionModel)All.Regions.GetOrNull<RegionModel>(World[coordinates.Row,
                                                                                                 coordinates.Column,
                                                                                                 coordinates.Layer]);
