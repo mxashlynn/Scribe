@@ -78,6 +78,9 @@ namespace Scribe.Forms
 
         /// <summary>If <c>true</c>, then the <see cref="MainEditorForm"/> should not update when a window closes.</summary>
         private bool SelectingColor;
+
+        /// <summary>If <c>true</c>, exit information will be updated once region data is loaded.</summary>
+        private bool NeedToInitializeExits;
         #endregion
 
         #region Initialization
@@ -149,12 +152,7 @@ namespace Scribe.Forms
         protected override void OnLoad(EventArgs EventData)
         {
             base.OnLoad(EventData);
-            LoadingPanel.Visible = true;
-            LoadWorldData();
-            UpdateAllExits();
-            UpdateLayerDisplay();
-            RepopulateListBox();
-            LoadingPanel.Visible = false;
+            NeedToInitializeExits = true;
         }
 
         /// <summary>
@@ -175,8 +173,8 @@ namespace Scribe.Forms
                         {
                             var coordinates = new Point3D(row, column, layer);
                             var tag = $"{Resources.TagPrefixLayoutTool}{coordinates}";
-                            var currentRegion = unvisitedRegions.First(region => region.ID > 0
-                                                                              && region.Tags.ContainsOrdinalIgnoreCase(tag));
+                            var currentRegion = unvisitedRegions.FirstOrDefault(region => region.ID > 0
+                                                                                        && region.Tags.ContainsOrdinalIgnoreCase(tag));
                             World[row, column, layer] = currentRegion?.ID ?? ModelID.None;
                             unvisitedRegions.Remove(currentRegion);
                         }
@@ -443,6 +441,10 @@ namespace Scribe.Forms
             {
                 LoadingPanel.Visible = true;
                 LoadWorldData();
+                if (NeedToInitializeExits)
+                {
+                    UpdateAllExits();
+                }
                 UpdateLayerDisplay();
                 RepopulateListBox();
                 LoadingPanel.Visible = false;
