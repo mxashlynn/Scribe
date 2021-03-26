@@ -446,7 +446,7 @@ namespace Scribe.Forms
                                                                 .ToString()
                                                                 .Contains(UnthemedControl, StringComparison.OrdinalIgnoreCase)));
             themed[typeof(ListBox)].AddRange(this.GetAllChildrenExactlyOfType<ListBox>()
-                                    .Where(listbox => listbox.Tag is null
+                                   .Where(listbox => listbox.Tag is null
                                                    || !listbox.Tag
                                                               .ToString()
                                                               .Contains(UnthemedControl, StringComparison.OrdinalIgnoreCase)));
@@ -456,20 +456,20 @@ namespace Scribe.Forms
                                                                 .ToString()
                                                                 .Contains(UnthemedControl, StringComparison.OrdinalIgnoreCase)));
             themed[typeof(TextBox)].AddRange(this.GetAllChildrenExactlyOfType<TextBox>()
-                                    .Where(textbox => textbox.Tag is null
+                                   .Where(textbox => textbox.Tag is null
                                                    || !textbox.Tag
                                                               .ToString()
                                                               .Contains(UnthemedControl, StringComparison.OrdinalIgnoreCase)));
             themed[typeof(Label)].AddRange(this.GetAllChildrenExactlyOfType<Label>()
-                                    .Where(label => label.Tag is not null
-                                                 && label.Tag
-                                                         .ToString()
-                                                         .Contains(ThemedLabel, StringComparison.OrdinalIgnoreCase)));
+                                 .Where(label => label.Tag is not null
+                                              && label.Tag
+                                                      .ToString()
+                                                      .Contains(ThemedLabel, StringComparison.OrdinalIgnoreCase)));
             themed[typeof(Button)].AddRange(this.GetAllChildrenExactlyOfType<Button>()
-                                    .Where(button => button.Tag is null
-                                                  || !button.Tag
-                                                            .ToString()
-                                                            .Contains(UnthemedControl, StringComparison.OrdinalIgnoreCase)));
+                                  .Where(button => button.Tag is null
+                                                || !button.Tag
+                                                          .ToString()
+                                                          .Contains(UnthemedControl, StringComparison.OrdinalIgnoreCase)));
             return themed;
         }
 
