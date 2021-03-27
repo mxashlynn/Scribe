@@ -75,12 +75,6 @@ namespace Scribe.Forms
 
         /// <summary>The coordinates of every possible location in the world.</summary>
         private readonly IReadOnlyList<Point3D> AllCoordinates;
-
-        /// <summary>If <c>true</c>, then the <see cref="MainEditorForm"/> should not update when a window closes.</summary>
-        private bool SelectingColor;
-
-        /// <summary>If <c>true</c>, exit information will be updated once region data is loaded.</summary>
-        private bool NeedToInitializeExits;
         #endregion
 
         #region Initialization
@@ -143,6 +137,10 @@ namespace Scribe.Forms
             }
             AllCoordinates = allCoordinates;
             #endregion
+
+            #region Subscribe to Events
+            All.Regions.VisibleDataChanged += Regions_VisibleDataChanged;
+            #endregion
         }
 
         /// <summary>
@@ -152,7 +150,12 @@ namespace Scribe.Forms
         protected override void OnLoad(EventArgs EventData)
         {
             base.OnLoad(EventData);
-            NeedToInitializeExits = true;
+            LoadingPanel.Visible = true;
+            LoadWorldData();
+            UpdateAllExits();
+            UpdateLayerDisplay();
+            RepopulateListBox();
+            LoadingPanel.Visible = false;
         }
 
         /// <summary>
@@ -425,33 +428,6 @@ namespace Scribe.Forms
         }
         #endregion
 
-        #region Focus Events
-        /// <summary>
-        /// Responds to the <see cref="WorldLayoutForm"/> becoming the foremost, focused form.
-        /// </summary>
-        /// <param name="inSender">Originator of the event.</param>
-        /// <param name="inEventArguments">Additional event data.</param>
-        /// <remarks>
-        /// This event is used instead of <see cref="Control.GotFocus"/> because GotFocus does not report
-        /// clicks directly onto contained controls, only clicks on the form itself.
-        /// </remarks>
-        private void WorldLayoutForm_Activated(object inSender, EventArgs inEventArguments)
-        {
-            if (!SelectingColor)
-            {
-                LoadingPanel.Visible = true;
-                LoadWorldData();
-                if (NeedToInitializeExits)
-                {
-                    UpdateAllExits();
-                }
-                UpdateLayerDisplay();
-                RepopulateListBox();
-                LoadingPanel.Visible = false;
-            }
-        }
-        #endregion
-
         #region Click Events
         #region Layout Table
         /// <summary>
@@ -632,6 +608,30 @@ namespace Scribe.Forms
         #endregion
         #endregion
 
+        #region Other Events
+        /// <summary>
+        /// Responds to external changes to the <see cref="ModelCollection{RegionModel}"/>.
+        /// </summary>
+        /// <param name="inSender">
+        /// The instance that raised the event.  If a <see cref="ModelCollection{TModel}"/>, then the collection itself changed;
+        /// if a <see cref="RegionModel"/>, then one of the visible properties of the RegionModel changed.</param>
+        /// <param name="inEventData">Additional information about the event.</param>
+        /// <returns><c>true</c> if an update was performed; otherwise, <c>false</c>.</returns>
+        private bool Regions_VisibleDataChanged(object inSender, EventArgs inEventData)
+        {
+            if (ScribeProgram.MostRecentUpdateSource == this)
+            {
+                return false;
+            }
+
+            UpdateLayerDisplay();
+            RepopulateListBox();
+            ScribeProgram.MostRecentUpdateSource = null;
+            return true;
+        }
+
+        #endregion
+
         #region Update Region Properties
         /// <summary>
         /// Changes the <see cref="Model.Name"/> of the current <see cref="LayoutToolRegion"/>.
@@ -647,6 +647,8 @@ namespace Scribe.Forms
 
             if (string.Compare(RegionNameTextBox.Text, model.Name, StringComparison.OrdinalIgnoreCase) != 0)
             {
+                ScribeProgram.MostRecentUpdateSource = this;
+
                 var mutableModel = (IMutableRegionModel)model;
                 var oldValue = model.Name;
                 var changeToExecute = new ChangeValue(oldValue, RegionNameTextBox.Text, nameof(RegionModel.Name),
@@ -833,6 +835,8 @@ namespace Scribe.Forms
                 return;
             }
 
+            ScribeProgram.MostRecentUpdateSource = this;
+
             var regionToAdd = new LayoutToolRegion(new RegionModel(nextID, "New Region", "", ""));
             var changeToExecute = new ChangeList(regionToAdd, $"add new Region definition",
                                         (object databaseValue) =>
@@ -881,6 +885,8 @@ namespace Scribe.Forms
                 SystemSounds.Beep.Play();
                 return;
             }
+
+            ScribeProgram.MostRecentUpdateSource = this;
 
             var regionToAdd = new LayoutToolRegion(new RegionModel(nextID,
                                                                    $"{regionToDuplicate.Name} (Duplicate)",
@@ -935,6 +941,8 @@ namespace Scribe.Forms
                 return;
             }
 
+            ScribeProgram.MostRecentUpdateSource = this;
+
             var changeToExecute = new ChangeList(regionToRemove, $"remove Region {regionToRemove.Name}",
                                         (object databaseValue) =>
                                         {
@@ -965,13 +973,14 @@ namespace Scribe.Forms
                 return;
             }
 
+            ScribeProgram.MostRecentUpdateSource = this;
+
             if ((((LayoutToolRegion)LayoutRegionListBox.SelectedItem)?.Model) is IMutableRegionModel region)
             {
                 // Sets the initial color select to the current text color.
                 var oldColor = ColorTranslator.FromHtml(region.BackgroundColor);
                 MainForm.SelectColorDialogue.Color = oldColor;
 
-                SelectingColor = true;
                 if (MainForm.SelectColorDialogue.ShowDialog() == DialogResult.OK)
                 {
                     var newColor = MainForm.SelectColorDialogue.Color;
@@ -991,7 +1000,6 @@ namespace Scribe.Forms
                     Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
                     ChangeManager.AddAndExecute(changeToExecute);
                 }
-                SelectingColor = false;
             }
         }
         #endregion

@@ -20,6 +20,11 @@ namespace Scribe
 #else
             => false;
 #endif
+
+        /// <summary>Used to track which editor most recently updated <see cref="Parquet.All"/>.</summary>
+        // NOTE I feel like there has to be a better, more automatic way to track this, but
+        // I have yet found one that fits all constraints.
+        internal static Form MostRecentUpdateSource;
         #endregion
 
         /// <summary>

@@ -7179,7 +7179,6 @@ namespace Scribe.Forms
             this.Name = "MainEditorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scribe";
-            this.Activated += new System.EventHandler(this.MainEditorForm_Activated);
             this.EditorStatusStrip.ResumeLayout(false);
             this.EditorStatusStrip.PerformLayout();
             this.MainMenuBar.ResumeLayout(false);

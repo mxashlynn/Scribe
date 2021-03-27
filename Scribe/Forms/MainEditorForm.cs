@@ -156,9 +156,6 @@ namespace Scribe.Forms
         // NOTE: An internal property so that the world layout tool can borrow it.
         internal ColorDialog SelectColorDialogue { get; } = new();
 
-        /// <summary>If <c>true</c>, then the <see cref="MainEditorForm"/> should not update when a window closes.</summary>
-        private bool SelectingColor;
-
         /// <summary>Window for laying out <see cref="RegionModel"/>s in relation to one another.</summary>
         private readonly WorldLayoutForm LayoutToolWindow;
         #endregion
@@ -367,7 +364,10 @@ namespace Scribe.Forms
             };
             #endregion
 
+            #region Subscribe to Events
+            All.Regions.VisibleDataChanged += Regions_VisibleDataChanged;
             FormClosing += FormClosingEventHandler;
+            #endregion
 
             #region Set Up Current Theme
             if (Enum.TryParse<EditorTheme>(Settings.Default.CurrentEditorTheme, out var theme))
@@ -397,28 +397,6 @@ namespace Scribe.Forms
             // NOTE: Currently the progress bar doesn't do anything.
             // If any task ever becomes slow or blocks the GUI thread, it should be implemented.
             Logger.Log(LogLevel.Info, Resources.LogReady);
-        }
-
-        /// <summary>
-        /// Updates the form when it receives focus, for example after closing the <see cref="OptionsDialogue"/>
-        /// or when clicking away from the <see cref="LayoutToolWindow"/>.
-        /// </summary>
-        /// <param name="inSender">The originator of the event.</param>
-        /// <param name="inEventArguments">Additional event data.</param>
-        private void MainEditorForm_Activated(object inSender, EventArgs inEventArguments)
-        {
-            if (!SelectingColor)
-            {
-                RepopulateListBox(RegionListBox, All.Regions);
-                RepopulateComboBox(RegionExitNorthComboBox, All.Regions);
-                RepopulateComboBox(RegionExitSouthComboBox, All.Regions);
-                RepopulateComboBox(RegionExitEastComboBox, All.Regions);
-                RepopulateComboBox(RegionExitWestComboBox, All.Regions);
-                RepopulateComboBox(RegionExitUpComboBox, All.Regions);
-                RepopulateComboBox(RegionExitDownComboBox, All.Regions);
-                RegionListBox.SelectedIndex = -1;
-                UpdateFromSettings();
-            }
         }
 
         /// <summary>
@@ -2072,6 +2050,34 @@ namespace Scribe.Forms
 
         #region Handle Changes to Data
         /// <summary>
+        /// Responds to external changes to the <see cref="ModelCollection{RegionModel}"/>.
+        /// </summary>
+        /// <param name="inSender">
+        /// The instance that raised the event.  If a <see cref="ModelCollection{TModel}"/>, then the collection itself changed;
+        /// if a <see cref="RegionModel"/>, then one of the visible properties of the RegionModel changed.</param>
+        /// <param name="inEventData">Additional information about the event.</param>
+        /// <returns><c>true</c> if an update was performed; otherwise, <c>false</c>.</returns>
+        private bool Regions_VisibleDataChanged(object inSender, EventArgs inEventData)
+        {
+            if (ScribeProgram.MostRecentUpdateSource == this)
+            {
+                return false;
+            }
+
+            RepopulateListBox(RegionListBox, All.Regions);
+            RepopulateComboBox(RegionExitNorthComboBox, All.Regions);
+            RepopulateComboBox(RegionExitSouthComboBox, All.Regions);
+            RepopulateComboBox(RegionExitEastComboBox, All.Regions);
+            RepopulateComboBox(RegionExitWestComboBox, All.Regions);
+            RepopulateComboBox(RegionExitUpComboBox, All.Regions);
+            RepopulateComboBox(RegionExitDownComboBox, All.Regions);
+            RegionListBox.SelectedIndex = -1;
+            UpdateFromSettings();
+            ScribeProgram.MostRecentUpdateSource = null;
+            return true;
+        }
+
+        /// <summary>
         /// Autosaves and/or marks the form dirty after an update.
         /// </summary>
         /// <param name="inSender">The control whose content was changed.</param>
@@ -2089,6 +2095,8 @@ namespace Scribe.Forms
                 // Silently return if no model is selected or if the Control is unsupported.
                 return;
             }
+
+            ScribeProgram.MostRecentUpdateSource = this;
 
             if (alteredControl is TextBox textbox
                 && string.Compare(textbox.Text,
@@ -2136,7 +2144,6 @@ namespace Scribe.Forms
                 Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
                 ChangeManager.AddAndExecute(changeToExecute);
             }
-
 
             // Suggest a StoryCharacterID if needed and requested.
             // For timing reasons, this must happen before updating the model's ListBox.
@@ -3270,7 +3277,6 @@ namespace Scribe.Forms
                 var oldColor = ColorTranslator.FromHtml(region.BackgroundColor);
                 SelectColorDialogue.Color = oldColor;
 
-                SelectingColor = true;
                 if (SelectColorDialogue.ShowDialog() == DialogResult.OK)
                 {
                     var newColor = SelectColorDialogue.Color;
@@ -3291,7 +3297,6 @@ namespace Scribe.Forms
                     Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
                     ChangeManager.AddAndExecute(changeToExecute);
                 }
-                SelectingColor = false;
             }
         }
         #endregion
