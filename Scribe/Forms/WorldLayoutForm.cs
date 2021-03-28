@@ -10,6 +10,7 @@ using Parquet.Beings;
 using Parquet.Games;
 using Parquet.Regions;
 using ParquetChangeManagement;
+using ParquetCustomControls;
 using Scribe.Properties;
 
 namespace Scribe.Forms
@@ -102,18 +103,10 @@ namespace Scribe.Forms
             {
                 for (var row = 0; row < WorldLayoutTableLayoutPanel.RowCount; row++)
                 {
-                    var regionStatic = new Label
+                    var regionStatic = new DoubleBufferedStatic
                     {
-                        BackColor = SystemColors.AppWorkspace,
-                        BorderStyle = BorderStyle.FixedSingle,
-                        Font = new Font("Arial Narrow", 9f, GraphicsUnit.Point),
-                        Location = new Point(0, 0),
-                        Margin = new Padding(0),
                         Name = $"RegionStatic{column:00}_{row:00}",
-                        Padding = new Padding(0),
-                        Size = new Size(25, 25),
                         Tag = new Point2D(column, row),
-                        TextAlign = ContentAlignment.MiddleCenter,
                     };
                     regionStatic.MouseClick += new MouseEventHandler(RegionStatic_MouseClick);
                     WorldLayoutTableLayoutPanel.Controls.Add(regionStatic, column, row);
