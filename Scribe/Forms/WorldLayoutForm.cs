@@ -1137,5 +1137,22 @@ namespace Scribe.Forms
             LayoutRegionListBox.EndUpdate();
         }
         #endregion
+
+        #region Close Tool
+        /// <summary>
+        /// Closes or hides the form as appropriate.
+        /// </summary>
+        /// <param name="inEventData">Data about the event.</param>
+        protected override void OnFormClosing(FormClosingEventArgs inEventData)
+        {
+            base.OnFormClosing(inEventData);
+            if (inEventData is not null
+                && inEventData.CloseReason == CloseReason.UserClosing)
+            {
+                inEventData.Cancel = true;
+                Hide();
+            }
+        }
+        #endregion
     }
 }
