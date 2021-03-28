@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Media;
-using System.Reflection;
 using System.Windows.Forms;
 using Parquet;
 using Parquet.Beings;
@@ -117,16 +116,6 @@ namespace Scribe.Forms
             ResumeLayout(false);
             #endregion
 
-            #region Enable Double Buffering
-            // This uses reflection because the double-buffered property is private on some controls.
-            foreach (Control control in this.GetAllChildren().Concat(WorldLayoutTableLayoutPanel.GetAllChildren()))
-            {
-                _ = typeof(Control).InvokeMember("DoubleBuffered",
-                                                 BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic,
-                                                 null, control, new object[] { true }, CultureInfo.InvariantCulture);
-            }
-            #endregion
-
             #region Cache Coordinates
             var allCoordinates = new List<Point3D>();
             for (var layer = 0; layer < LayerCount; layer++)
@@ -148,31 +137,16 @@ namespace Scribe.Forms
         }
 
         /// <summary>
-        /// Encapsulates the information Windows needs to construct <see cref="WorldLayoutForm"/> controls.
-        /// </summary>
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams parms = base.CreateParams;
-                parms.ExStyle |= 0x00000020; // Turn on WS_EX_COMPOSITED to support double-buffered painter's algorithm.
-                return parms;
-            }
-        }
-
-        /// <summary>
         /// Sets up the layout tool UI.
         /// </summary>
         /// <param name="EventData">Handled by parent.</param>
         protected override void OnLoad(EventArgs EventData)
         {
-            LoadingPanel.Visible = true;
             base.OnLoad(EventData);
             LoadWorldData();
             UpdateAllExits();
             UpdateLayerDisplay();
             RepopulateListBox();
-            LoadingPanel.Visible = false;
         }
 
         /// <summary>

@@ -11,9 +11,6 @@ namespace ParquetCustomControls
         /// Initializes a new instance of the <see cref="DoubleBufferedStatic"/> class.
         /// </summary>
         public DoubleBufferedStatic()
-        {
-            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
-            InitializeComponent();
-        }
+            => InitializeComponent();
     }
 }
