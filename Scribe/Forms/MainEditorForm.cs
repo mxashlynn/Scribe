@@ -153,7 +153,7 @@ namespace Scribe.Forms
         private readonly RollerOutputBox RollerResultsBox = new();
 
         /// <summary>Dialogue for selecting custom <see cref="Color"/>s.</summary>
-        // NOTE: An internal property so that the world layout tool can borrow it.
+        // NOTE that this is an internal property so that the world layout tool can borrow it.
         internal ColorDialog SelectColorDialogue { get; } = new();
 
         /// <summary>Window for laying out <see cref="RegionModel"/>s in relation to one another.</summary>
@@ -394,7 +394,7 @@ namespace Scribe.Forms
             UpdateFileFormatDisplay();
             UpdateDisplay();
             UpdateFromSettings();
-            // NOTE: Currently the progress bar doesn't do anything.
+            // NOTE that currently the progress bar doesn't do anything.
             // If any task ever becomes slow or blocks the GUI thread, it should be implemented.
             Logger.Log(LogLevel.Info, Resources.LogReady);
         }
@@ -585,7 +585,7 @@ namespace Scribe.Forms
         /// </summary>
         /// <param name="input">A <c>string</c> representing a <see cref="Color"/>.</param>
         /// <returns>The string properly formatted, or <see cref="RegionModel.DefaultColor"/> if no value could be parsed.</returns>
-        // NOTE: Internal so that the region layout tool can borrow it.
+        // NOTE this is internal so that the region layout tool can borrow it.
         internal static string ValueToColorHexString(object input)
             => input switch
             {
@@ -1763,8 +1763,8 @@ namespace Scribe.Forms
                         ? $"{model.PersonalName.ToUpperInvariant()}_{model.FamilyName.ToUpperInvariant()}"
                         : model.StoryCharacterID;
                 RepopulateListBox(CharacterStartingQuestsListBox, model.StartingQuestIDs
-                                                                       // Note: I am not 100% certain what happens if GetOrNull returns null here.
-                                                                       // In any case, that would be an error state.
+                                                                       // NOTE that I am not 100% certain what happens if GetOrNull
+                                                                       // returns null here.  In any case, that would be an error state.
                                                                        .Select(id => All.Interactions.GetOrNull<InteractionModel>(id)));
                 CharacterStartingDialogueComboBox.SelectedItem =
                     ModelID.None == model.StartingDialogueID
