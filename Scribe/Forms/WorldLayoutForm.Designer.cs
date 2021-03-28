@@ -1,4 +1,3 @@
-
 namespace Scribe.Forms
 {
     partial class WorldLayoutForm
@@ -31,7 +30,7 @@ namespace Scribe.Forms
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorldLayoutForm));
-            this.WorldLayoutTableLayoutPanel = new ParquetCustomControls.DoubleBufferedPanel();
+            this.WorldLayoutTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.RegionIDLabel = new System.Windows.Forms.Label();
             this.RegionIDStatic = new System.Windows.Forms.Label();
             this.RegionNameLabel = new System.Windows.Forms.Label();
@@ -478,7 +477,7 @@ namespace Scribe.Forms
 
         #endregion
 
-        private ParquetCustomControls.DoubleBufferedPanel WorldLayoutTableLayoutPanel;
+        private System.Windows.Forms.TableLayoutPanel WorldLayoutTableLayoutPanel;
         private System.Windows.Forms.Label RegionIDLabel;
         private System.Windows.Forms.Label RegionIDStatic;
         private System.Windows.Forms.Label RegionNameLabel;
