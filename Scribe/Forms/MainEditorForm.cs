@@ -3789,7 +3789,7 @@ namespace Scribe.Forms
 
             // This code should only run if the user does not cancel the close event.
             Logger.Log(LogLevel.Info, Resources.LogScribeClosing);
-            UILogger.Dispose();
+            LayoutToolWindow.Close();
             FormClosing -= FormClosingEventHandler;
         }
 
@@ -3816,6 +3816,7 @@ namespace Scribe.Forms
             RollerResultsBox.Dispose();
             SelectColorDialogue.Dispose();
             LayoutToolWindow.Dispose();
+            UILogger.Dispose();
             base.Dispose(disposing);
         }
         #endregion
