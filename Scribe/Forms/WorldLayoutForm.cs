@@ -148,6 +148,7 @@ namespace Scribe.Forms
             UpdateAllExits();
             UpdateLayerDisplay();
             RepopulateListBox();
+            LoadingPanel.Visible = false;
         }
 
         /// <summary>
