@@ -7,6 +7,7 @@ const ParquetCustomControls.MapPictureGrid.ParquetLayerCount = 4 -> int
 const ParquetCustomControls.MapPictureGrid.SourceParquetDimensionInPixels = 10 -> int
 const ParquetCustomControls.MapPictureGrid.TargetParquetDimensionInPixels = 40 -> int
 const ParquetCustomControls.MapPictureGrid.TargetResolutionScalingFactor = 4 -> int
+override ParquetCustomControls.DoubleBufferedPanel.Dispose(bool disposing) -> void
 override ParquetCustomControls.DoubleBufferedStatic.Dispose(bool disposing) -> void
 override ParquetCustomControls.LayeredPixelBox.Dispose(bool disposing) -> void
 override ParquetCustomControls.LayeredPixelBox.OnPaint(System.Windows.Forms.PaintEventArgs inPaintArguments) -> void
@@ -15,6 +16,8 @@ override ParquetCustomControls.MapPictureGrid.OnLoad(System.EventArgs EventData)
 override ParquetCustomControls.MapPictureGrid.OnPaint(System.Windows.Forms.PaintEventArgs inPaintArguments) -> void
 override ParquetCustomControls.PixelBox.Dispose(bool disposing) -> void
 override ParquetCustomControls.PixelBox.OnPaint(System.Windows.Forms.PaintEventArgs inPaintArguments) -> void
+ParquetCustomControls.DoubleBufferedPanel
+ParquetCustomControls.DoubleBufferedPanel.DoubleBufferedPanel() -> void
 ParquetCustomControls.DoubleBufferedStatic
 ParquetCustomControls.DoubleBufferedStatic.DoubleBufferedStatic() -> void
 ParquetCustomControls.IMapController
