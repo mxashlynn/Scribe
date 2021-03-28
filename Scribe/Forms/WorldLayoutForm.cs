@@ -149,13 +149,12 @@ namespace Scribe.Forms
         /// <param name="EventData">Handled by parent.</param>
         protected override void OnLoad(EventArgs EventData)
         {
-            base.OnLoad(EventData);
             LoadingPanel.Visible = true;
+            base.OnLoad(EventData);
             LoadWorldData();
             UpdateAllExits();
             UpdateLayerDisplay();
             RepopulateListBox();
-            LoadingPanel.Visible = false;
         }
 
         /// <summary>
