@@ -489,23 +489,6 @@ namespace Scribe.Forms
 
         #region Layer Visibility
         /// <summary>
-        /// Responds to a RegionModel being selected in the <see cref="LayoutRegionListBox"/>.
-        /// </summary>
-        /// <param name="inSender">The originator of the event.</param>
-        /// <param name="inEventArguments">Additional event data.</param>
-        private void LayoutRegionListBox_SelectedValueChanged(object inSender, EventArgs inEventArguments)
-        {
-            CurrentModelID = ((LayoutToolRegion)LayoutRegionListBox.SelectedItem)?.Model.ID ?? ModelID.None;
-            var propertiesCanBeEdited = CurrentModelID != ModelID.None;
-
-            RegionNameTextBox.Enabled = propertiesCanBeEdited;
-            RegionDescriptionTextBox.Enabled = propertiesCanBeEdited;
-            RegionCommentTextBox.Enabled = propertiesCanBeEdited;
-            RegionBackgroundColorStatic.Enabled = propertiesCanBeEdited;
-            UpdateRegionPropertiesUI();
-        }
-
-        /// <summary>
         /// Responds to the user selecting the Upper layer.
         /// </summary>
         /// <param name="inSender">The originator of the event.</param>
@@ -547,6 +530,23 @@ namespace Scribe.Forms
         #endregion
 
         #region Region List
+        /// <summary>
+        /// Responds to a RegionModel being selected in the <see cref="LayoutRegionListBox"/>.
+        /// </summary>
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void LayoutRegionListBox_SelectedValueChanged(object inSender, EventArgs inEventArguments)
+        {
+            CurrentModelID = ((LayoutToolRegion)LayoutRegionListBox.SelectedItem)?.Model.ID ?? ModelID.None;
+            var propertiesCanBeEdited = CurrentModelID != ModelID.None;
+
+            RegionNameTextBox.Enabled = propertiesCanBeEdited;
+            RegionDescriptionTextBox.Enabled = propertiesCanBeEdited;
+            RegionCommentTextBox.Enabled = propertiesCanBeEdited;
+            RegionBackgroundColorStatic.Enabled = propertiesCanBeEdited;
+            UpdateRegionPropertiesUI();
+        }
+
         /// <summary>
         /// Responds to the user clicking "Add New Region".
         /// </summary>
