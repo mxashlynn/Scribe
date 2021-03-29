@@ -1103,8 +1103,8 @@ namespace Scribe.Forms
                         : World[row, column, CurrentLayer].ToString()[^3..];
                     staticBeingUpdated.BackColor =
                         ColorTranslator.FromHtml(All.Regions
-                                                    .GetOrNull<RegionModel>(World[row, column, CurrentLayer])?.BackgroundColor
-                                                    ?? RegionModel.DefaultColor);
+                                                    .GetOrNull<RegionModel>(World[row, column, CurrentLayer])?
+                                                    .BackgroundColor ?? RegionModel.DefaultColor);
                     var regionName = All.Regions.GetOrNull<RegionModel>(World[row, column, CurrentLayer])?.Name;
                     LayoutToolTip.SetToolTip(staticBeingUpdated, regionName);
                 }
