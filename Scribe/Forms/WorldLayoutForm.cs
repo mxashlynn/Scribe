@@ -432,8 +432,7 @@ namespace Scribe.Forms
             var clickedCoordinates = (Point2D)regionStatic.Tag;
             if (inEventArguments.Button == MouseButtons.Left)
             {
-                var oldCoordinates = UpdateRegionAt(clickedCoordinates, regionStatic);
-                var newCoordinates = new Point3D(clickedCoordinates.Y, clickedCoordinates.X, CurrentLayer);
+                var (oldCoordinates, newCoordinates) = AssignRegionTo(clickedCoordinates, regionStatic);
                 UpdateExitsAt(new List<Point3D> { newCoordinates, oldCoordinates });
             }
             else
@@ -1001,13 +1000,15 @@ namespace Scribe.Forms
         /// </summary>
         /// <param name="inCoordinates">The location to assign the <see cref="RegionModel"/>.</param>
         /// <param name="inRegionStatic">The UI element reflecting that <see cref="RegionModel"/>.</param>
-        /// <returns>Another <see cref="World"/> location updated as a result of updating this one.</returns>
-        private Point3D UpdateRegionAt(Point2D inCoordinates, Label inRegionStatic)
+        /// <returns>The <see cref="World"/> location this RegionModel vacated, together with the location it now occupies.</returns>
+        private (Point3D oldCoordinates, Point3D newCoordinates) AssignRegionTo(Point2D inCoordinates, Label inRegionStatic)
         {
+            var newCoordinates = new Point3D(inCoordinates.Y, inCoordinates.X, CurrentLayer);
+
             #region Update Old Location
             if (TryGetCoordinatesForID(CurrentModelID, out var oldCoordinates))
             {
-                var idBeingReplaced = World[inCoordinates.Y, inCoordinates.X, CurrentLayer];
+                var idBeingReplaced = World[newCoordinates.Row, newCoordinates.Column, newCoordinates.Layer];
                 var staticBeingReplaced =
                     (Label)WorldTableLayoutPanel.GetControlFromPosition(oldCoordinates.row, oldCoordinates.column);
 
@@ -1023,7 +1024,7 @@ namespace Scribe.Forms
             #endregion
 
             #region Update New Location
-            World[inCoordinates.Y, inCoordinates.X, CurrentLayer] = CurrentModelID;
+            World[newCoordinates.Row, newCoordinates.Column, newCoordinates.Layer] = CurrentModelID;
             inRegionStatic.Text = CurrentModelID == ModelID.None
                 ? ""
                 : CurrentModelID.ToString()[^3..];
@@ -1031,7 +1032,7 @@ namespace Scribe.Forms
             LayoutToolTip.SetToolTip(inRegionStatic, RegionNameTextBox.Text);
             #endregion
 
-            return new Point3D(oldCoordinates);
+            return (new Point3D(oldCoordinates), newCoordinates);
 
             #region Local Helper Routines
             // Finds the coordinates of the first occurance of the given ModelID in the World array.
