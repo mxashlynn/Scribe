@@ -1097,7 +1097,7 @@ namespace Scribe.Forms
             {
                 for (var row = 0; row < WorldLayoutTableLayoutPanel.RowCount; row++)
                 {
-                    var staticBeingUpdated = (Label)WorldLayoutTableLayoutPanel.GetControlFromPosition(row, column);
+                    var staticBeingUpdated = (Label)WorldLayoutTableLayoutPanel.GetControlFromPosition(column, row);
                     staticBeingUpdated.Text = World[row, column, CurrentLayer] == ModelID.None
                         ? ""
                         : World[row, column, CurrentLayer].ToString()[^3..];
