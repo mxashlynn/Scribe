@@ -98,10 +98,10 @@ namespace Scribe.Forms
 
             #region Add Region Statics to Table
             SuspendLayout();
-            WorldLayoutTableLayoutPanel.SuspendLayout();
-            for (var column = 0; column < WorldLayoutTableLayoutPanel.ColumnCount; column++)
+            WorldTableLayoutPanel.SuspendLayout();
+            for (var column = 0; column < WorldTableLayoutPanel.ColumnCount; column++)
             {
-                for (var row = 0; row < WorldLayoutTableLayoutPanel.RowCount; row++)
+                for (var row = 0; row < WorldTableLayoutPanel.RowCount; row++)
                 {
                     var regionStatic = new DoubleBufferedStatic
                     {
@@ -109,10 +109,10 @@ namespace Scribe.Forms
                         Tag = new Point2D(column, row),
                     };
                     regionStatic.MouseClick += new MouseEventHandler(RegionStatic_MouseClick);
-                    WorldLayoutTableLayoutPanel.Controls.Add(regionStatic, column, row);
+                    WorldTableLayoutPanel.Controls.Add(regionStatic, column, row);
                 }
             }
-            WorldLayoutTableLayoutPanel.ResumeLayout(false);
+            WorldTableLayoutPanel.ResumeLayout(false);
             ResumeLayout(false);
             #endregion
 
@@ -120,9 +120,9 @@ namespace Scribe.Forms
             var allCoordinates = new List<Point3D>();
             for (var layer = 0; layer < LayerCount; layer++)
             {
-                for (var column = 0; column < WorldLayoutTableLayoutPanel.ColumnCount; column++)
+                for (var column = 0; column < WorldTableLayoutPanel.ColumnCount; column++)
                 {
-                    for (var row = 0; row < WorldLayoutTableLayoutPanel.RowCount; row++)
+                    for (var row = 0; row < WorldTableLayoutPanel.RowCount; row++)
                     {
                         allCoordinates.Add(new Point3D(row, column, layer));
                     }
@@ -1009,7 +1009,7 @@ namespace Scribe.Forms
             {
                 var idBeingReplaced = World[inCoordinates.Y, inCoordinates.X, CurrentLayer];
                 var staticBeingReplaced =
-                    (Label)WorldLayoutTableLayoutPanel.GetControlFromPosition(oldCoordinates.row, oldCoordinates.column);
+                    (Label)WorldTableLayoutPanel.GetControlFromPosition(oldCoordinates.row, oldCoordinates.column);
 
                 World[oldCoordinates.row, oldCoordinates.column, oldCoordinates.layer] = idBeingReplaced;
                 staticBeingReplaced.Text = idBeingReplaced == ModelID.None
@@ -1088,16 +1088,16 @@ namespace Scribe.Forms
         }
 
         /// <summary>
-        /// Updates the content of the <see cref="WorldLayoutTableLayoutPanel"/> according to the <see cref="CurrentLayer"/>.
+        /// Updates the content of the <see cref="WorldTableLayoutPanel"/> according to the <see cref="CurrentLayer"/>.
         /// </summary>
         private void UpdateLayerDisplay()
         {
-            WorldLayoutTableLayoutPanel.SuspendLayout();
-            for (var column = 0; column < WorldLayoutTableLayoutPanel.ColumnCount; column++)
+            WorldTableLayoutPanel.SuspendLayout();
+            for (var column = 0; column < WorldTableLayoutPanel.ColumnCount; column++)
             {
-                for (var row = 0; row < WorldLayoutTableLayoutPanel.RowCount; row++)
+                for (var row = 0; row < WorldTableLayoutPanel.RowCount; row++)
                 {
-                    var staticBeingUpdated = (Label)WorldLayoutTableLayoutPanel.GetControlFromPosition(column, row);
+                    var staticBeingUpdated = (Label)WorldTableLayoutPanel.GetControlFromPosition(column, row);
                     staticBeingUpdated.Text = World[row, column, CurrentLayer] == ModelID.None
                         ? ""
                         : World[row, column, CurrentLayer].ToString()[^3..];
@@ -1109,7 +1109,7 @@ namespace Scribe.Forms
                     LayoutToolTip.SetToolTip(staticBeingUpdated, regionName);
                 }
             }
-            WorldLayoutTableLayoutPanel.ResumeLayout(false);
+            WorldTableLayoutPanel.ResumeLayout(false);
         }
 
         /// <summary>
