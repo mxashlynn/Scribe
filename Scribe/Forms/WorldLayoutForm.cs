@@ -1032,6 +1032,19 @@ namespace Scribe.Forms
             LayoutToolTip.SetToolTip(inRegionStatic, RegionNameTextBox.Text);
             #endregion
 
+            #region Update Tags
+            if (CurrentModelID != ModelID.None &&
+                All.Regions.GetOrNull<RegionModel>(CurrentModelID) is IMutableRegionModel currentModel)
+            {
+                var oldCoordinatesTag = currentModel.Tags.FirstOrDefault(tag => tag.StartsWithOrdinalIgnoreCase(Resources.TagPrefixLayoutTool));
+                if (oldCoordinatesTag is not null)
+                {
+                    currentModel.Tags.Remove(oldCoordinatesTag);
+                }
+                currentModel.Tags.Add($"{Resources.TagPrefixLayoutTool}{newCoordinates}");
+            }
+            #endregion
+
             return (new Point3D(oldCoordinates), newCoordinates);
 
             #region Local Helper Routines
