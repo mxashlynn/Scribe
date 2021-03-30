@@ -238,12 +238,13 @@ namespace Scribe.Forms
             // LayerUpperRadioButton
             // 
             this.LayerUpperRadioButton.Appearance = System.Windows.Forms.Appearance.Button;
+            this.LayerUpperRadioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LayerUpperRadioButton.Location = new System.Drawing.Point(772, 196);
             this.LayerUpperRadioButton.Name = "LayerUpperRadioButton";
             this.LayerUpperRadioButton.Size = new System.Drawing.Size(80, 24);
             this.LayerUpperRadioButton.TabIndex = 45;
             this.LayerUpperRadioButton.Text = "Upper";
-            this.LayerUpperRadioButton.UseVisualStyleBackColor = true;
+            this.LayerUpperRadioButton.UseVisualStyleBackColor = false;
             this.LayerUpperRadioButton.CheckedChanged += new System.EventHandler(this.LayerUpperRadioButton_CheckedChanged);
             // 
             // WorldLayerLabel
@@ -259,35 +260,38 @@ namespace Scribe.Forms
             // 
             this.LayerMiddleRadioButton.Appearance = System.Windows.Forms.Appearance.Button;
             this.LayerMiddleRadioButton.Checked = true;
+            this.LayerMiddleRadioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LayerMiddleRadioButton.Location = new System.Drawing.Point(772, 224);
             this.LayerMiddleRadioButton.Name = "LayerMiddleRadioButton";
             this.LayerMiddleRadioButton.Size = new System.Drawing.Size(80, 24);
             this.LayerMiddleRadioButton.TabIndex = 47;
             this.LayerMiddleRadioButton.TabStop = true;
             this.LayerMiddleRadioButton.Text = "Middle";
-            this.LayerMiddleRadioButton.UseVisualStyleBackColor = true;
+            this.LayerMiddleRadioButton.UseVisualStyleBackColor = false;
             this.LayerMiddleRadioButton.CheckedChanged += new System.EventHandler(this.LayerMiddleRadioButton_CheckedChanged);
             // 
             // LayerLowerRadioButton
             // 
             this.LayerLowerRadioButton.Appearance = System.Windows.Forms.Appearance.Button;
+            this.LayerLowerRadioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LayerLowerRadioButton.Location = new System.Drawing.Point(772, 254);
             this.LayerLowerRadioButton.Name = "LayerLowerRadioButton";
             this.LayerLowerRadioButton.Size = new System.Drawing.Size(80, 24);
             this.LayerLowerRadioButton.TabIndex = 48;
             this.LayerLowerRadioButton.Text = "Lower";
-            this.LayerLowerRadioButton.UseVisualStyleBackColor = true;
+            this.LayerLowerRadioButton.UseVisualStyleBackColor = false;
             this.LayerLowerRadioButton.CheckedChanged += new System.EventHandler(this.LayerLowerRadioButton_CheckedChanged);
             // 
             // LayerElsewhereRadioButton
             // 
             this.LayerElsewhereRadioButton.Appearance = System.Windows.Forms.Appearance.Button;
+            this.LayerElsewhereRadioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LayerElsewhereRadioButton.Location = new System.Drawing.Point(658, 254);
             this.LayerElsewhereRadioButton.Name = "LayerElsewhereRadioButton";
             this.LayerElsewhereRadioButton.Size = new System.Drawing.Size(80, 24);
             this.LayerElsewhereRadioButton.TabIndex = 49;
             this.LayerElsewhereRadioButton.Text = "Elsewhere";
-            this.LayerElsewhereRadioButton.UseVisualStyleBackColor = true;
+            this.LayerElsewhereRadioButton.UseVisualStyleBackColor = false;
             this.LayerElsewhereRadioButton.CheckedChanged += new System.EventHandler(this.LayerElsewhereRadioButton_CheckedChanged);
             // 
             // LayerUpperPixelBox
