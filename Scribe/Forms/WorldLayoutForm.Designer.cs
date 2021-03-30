@@ -65,7 +65,7 @@ namespace Scribe.Forms
             ((System.ComponentModel.ISupportInitialize)(this.LayerElsewherePixelBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // WorldLayoutTableLayoutPanel
+            // WorldTableLayoutPanel
             // 
             this.WorldTableLayoutPanel.ColumnCount = 24;
             this.WorldTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 25F));
@@ -220,10 +220,10 @@ namespace Scribe.Forms
             // RegionBackgroundColorNameStatic
             // 
             this.RegionBackgroundColorNameStatic.AutoSize = true;
-            this.RegionBackgroundColorNameStatic.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.RegionBackgroundColorNameStatic.Location = new System.Drawing.Point(734, 151);
+            this.RegionBackgroundColorNameStatic.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RegionBackgroundColorNameStatic.Location = new System.Drawing.Point(733, 154);
             this.RegionBackgroundColorNameStatic.Name = "RegionBackgroundColorNameStatic";
-            this.RegionBackgroundColorNameStatic.Size = new System.Drawing.Size(48, 18);
+            this.RegionBackgroundColorNameStatic.Size = new System.Drawing.Size(42, 14);
             this.RegionBackgroundColorNameStatic.TabIndex = 43;
             this.RegionBackgroundColorNameStatic.Text = "White";
             // 
