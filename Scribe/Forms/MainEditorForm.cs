@@ -394,6 +394,7 @@ namespace Scribe.Forms
             UpdateFileFormatDisplay();
             UpdateDisplay();
             UpdateFromSettings();
+            SelectDefaultModel();
             // NOTE that currently the progress bar doesn't do anything.
             // If any task ever becomes slow or blocks the GUI thread, it should be implemented.
             Logger.Log(LogLevel.Info, Resources.LogReady);
@@ -1067,8 +1068,13 @@ namespace Scribe.Forms
                 ApplyCurrentTheme();
             }
             #endregion
+        }
 
-            #region Select Default Model
+        /// <summary>
+        /// Selects a <see cref="Model"/> for the current tab.
+        /// </summary>
+        private void SelectDefaultModel()
+        {
             if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is null)
             {
                 var selectedListBox = GetPrimaryListBoxForTab(EditorTabs.SelectedIndex);
@@ -1077,7 +1083,6 @@ namespace Scribe.Forms
                     selectedListBox.SelectedItem = selectedListBox.Items.Cast<Model>().ElementAtOrDefault(0);
                 }
             }
-            #endregion
         }
 
         /// <summary>
@@ -2071,7 +2076,7 @@ namespace Scribe.Forms
             RepopulateComboBox(RegionExitUpComboBox, All.Regions);
             RepopulateComboBox(RegionExitDownComboBox, All.Regions);
             RegionListBox.SelectedIndex = -1;
-            UpdateFromSettings();
+            SelectDefaultModel();
             ScribeProgram.MostRecentUpdateSource = null;
             return true;
         }
