@@ -147,6 +147,9 @@ namespace Scribe.Forms
             UpdateAllExits();
             UpdateLayerDisplay();
             RepopulateListBox();
+
+            ApplyCurrentTheme();
+            LayoutRegionListBox.Select();
         }
 
         /// <summary>
@@ -416,6 +419,85 @@ namespace Scribe.Forms
                 return new Point3D(serializedCoordinate[Resources.TagPrefixLayoutTool.Length..]);
             }
             #endregion
+        }
+        #endregion
+
+        #region Color Theming
+        /// <summary>
+        /// Applies the <see cref="CurrentTheme"/> to the <see cref="WorldLayoutForm"/> and its <see cref="Control"/>s.
+        /// </summary>
+        private void ApplyCurrentTheme()
+        {
+            BackColor = CurrentTheme.ControlBackgroundColor;
+            ForeColor = CurrentTheme.ControlForegroundColor;
+            WorldTableLayoutPanel.BackColor = CurrentTheme.ControlBackgroundColor;
+            WorldTableLayoutPanel.ForeColor = CurrentTheme.ControlForegroundColor;
+
+            HorizontalRule1.BackColor = CurrentTheme.ControlBackgroundColor;
+            HorizontalRule1.ForeColor = CurrentTheme.ControlForegroundColor;
+            HorizontalRule2.BackColor = CurrentTheme.ControlBackgroundColor;
+            HorizontalRule2.ForeColor = CurrentTheme.ControlForegroundColor;
+
+            RegionIDStatic.BackColor = CurrentTheme.UneditableBackgroundColor;
+            RegionIDStatic.ForeColor = CurrentTheme.ControlForegroundColor;
+
+            RegionNameTextBox.BackColor = CurrentTheme.ControlBackgroundWhite;
+            RegionNameTextBox.ForeColor = CurrentTheme.ControlForegroundColor;
+            RegionDescriptionTextBox.BackColor = CurrentTheme.ControlBackgroundWhite;
+            RegionDescriptionTextBox.ForeColor = CurrentTheme.ControlForegroundColor;
+            RegionCommentTextBox.BackColor = CurrentTheme.ControlBackgroundWhite;
+            RegionCommentTextBox.ForeColor = CurrentTheme.ControlForegroundColor;
+
+            RegionIDLabel.BackColor = CurrentTheme.ControlBackgroundColor;
+            RegionIDLabel.ForeColor = CurrentTheme.ControlForegroundColor;
+            RegionNameLabel.BackColor = CurrentTheme.ControlBackgroundColor;
+            RegionNameLabel.ForeColor = CurrentTheme.ControlForegroundColor;
+            RegionDescriptionLabel.BackColor = CurrentTheme.ControlBackgroundColor;
+            RegionDescriptionLabel.ForeColor = CurrentTheme.ControlForegroundColor;
+            RegionCommentLabel.BackColor = CurrentTheme.ControlBackgroundColor;
+            RegionCommentLabel.ForeColor = CurrentTheme.ControlForegroundColor;
+            RegionBackgroundColorLabel.BackColor = CurrentTheme.ControlBackgroundColor;
+            RegionBackgroundColorLabel.ForeColor = CurrentTheme.ControlForegroundColor;
+            RegionBackgroundColorNameStatic.BackColor = CurrentTheme.ControlBackgroundColor;
+            RegionBackgroundColorNameStatic.ForeColor = CurrentTheme.ControlForegroundColor;
+            WorldLayerLabel.BackColor = CurrentTheme.ControlBackgroundColor;
+            WorldLayerLabel.ForeColor = CurrentTheme.ControlForegroundColor;
+
+            LayerUpperRadioButton.BackColor = CurrentTheme.ControlBackgroundColor;
+            LayerUpperRadioButton.FlatAppearance.BorderColor = CurrentTheme.BorderColor;
+            LayerUpperRadioButton.FlatAppearance.MouseDownBackColor = CurrentTheme.MouseDownColor;
+            LayerUpperRadioButton.FlatAppearance.MouseOverBackColor = CurrentTheme.MouseOverColor;
+            LayerMiddleRadioButton.BackColor = CurrentTheme.ControlBackgroundColor;
+            LayerMiddleRadioButton.FlatAppearance.BorderColor = CurrentTheme.BorderColor;
+            LayerMiddleRadioButton.FlatAppearance.MouseDownBackColor = CurrentTheme.MouseDownColor;
+            LayerMiddleRadioButton.FlatAppearance.MouseOverBackColor = CurrentTheme.MouseOverColor;
+            LayerLowerRadioButton.BackColor = CurrentTheme.ControlBackgroundColor;
+            LayerLowerRadioButton.FlatAppearance.BorderColor = CurrentTheme.BorderColor;
+            LayerLowerRadioButton.FlatAppearance.MouseDownBackColor = CurrentTheme.MouseDownColor;
+            LayerLowerRadioButton.FlatAppearance.MouseOverBackColor = CurrentTheme.MouseOverColor;
+            LayerElsewhereRadioButton.BackColor = CurrentTheme.ControlBackgroundColor;
+            LayerElsewhereRadioButton.FlatAppearance.BorderColor = CurrentTheme.BorderColor;
+            LayerElsewhereRadioButton.FlatAppearance.MouseDownBackColor = CurrentTheme.MouseDownColor;
+            LayerElsewhereRadioButton.FlatAppearance.MouseOverBackColor = CurrentTheme.MouseOverColor;
+            LayoutRegionRemoveButton.BackColor = CurrentTheme.ControlBackgroundColor;
+            LayoutRegionRemoveButton.FlatAppearance.BorderColor = CurrentTheme.BorderColor;
+            LayoutRegionRemoveButton.FlatAppearance.MouseDownBackColor = CurrentTheme.MouseDownColor;
+            LayoutRegionRemoveButton.FlatAppearance.MouseOverBackColor = CurrentTheme.MouseOverColor;
+            LayoutRegionDuplicateButton.BackColor = CurrentTheme.ControlBackgroundColor;
+            LayoutRegionDuplicateButton.FlatAppearance.BorderColor = CurrentTheme.BorderColor;
+            LayoutRegionDuplicateButton.FlatAppearance.MouseDownBackColor = CurrentTheme.MouseDownColor;
+            LayoutRegionDuplicateButton.FlatAppearance.MouseOverBackColor = CurrentTheme.MouseOverColor;
+            LayoutRegionAddNewButton.BackColor = CurrentTheme.ControlBackgroundColor;
+            LayoutRegionAddNewButton.FlatAppearance.BorderColor = CurrentTheme.BorderColor;
+            LayoutRegionAddNewButton.FlatAppearance.MouseDownBackColor = CurrentTheme.MouseDownColor;
+            LayoutRegionAddNewButton.FlatAppearance.MouseOverBackColor = CurrentTheme.MouseOverColor;
+            RegionMapEditButton.BackColor = CurrentTheme.ControlBackgroundColor;
+            RegionMapEditButton.FlatAppearance.BorderColor = CurrentTheme.BorderColor;
+            RegionMapEditButton.FlatAppearance.MouseDownBackColor = CurrentTheme.MouseDownColor;
+            RegionMapEditButton.FlatAppearance.MouseOverBackColor = CurrentTheme.MouseOverColor;
+
+            LayoutRegionListBox.BackColor = CurrentTheme.ControlBackgroundWhite;
+            LayoutRegionListBox.ForeColor = CurrentTheme.ControlForegroundColor;
         }
         #endregion
 
