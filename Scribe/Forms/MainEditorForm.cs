@@ -199,7 +199,7 @@ namespace Scribe.Forms
         private readonly Dictionary<Control, ListBox> ControlsWhoseContentIsListed;
 
         /// <summary>Used to determine if the <see cref="Settings.Default"/> has changed.</summary>
-        private static string oldTheme = "";
+        private static string OldThemeName = "";
 
         /// <summary>
         /// A collection of all editable <see cref="Control"/>s in the <see cref="MainEditorForm"/>
@@ -1062,7 +1062,7 @@ namespace Scribe.Forms
             #endregion
 
             #region Update Theming
-            if (oldTheme != Settings.Default.CurrentEditorTheme)
+            if (string.Compare(OldThemeName, Settings.Default.CurrentEditorTheme, StringComparison.OrdinalIgnoreCase) != 0)
             {
                 ApplyCurrentTheme();
             }
@@ -3580,7 +3580,7 @@ namespace Scribe.Forms
         /// <param name="inEventArguments">Additional event data.</param>
         private void OptionsToolStripMenuItem_Click(object inSender, EventArgs inEventArguments)
         {
-            oldTheme = Settings.Default.CurrentEditorTheme;
+            OldThemeName = Settings.Default.CurrentEditorTheme;
             OptionsDialogue.ShowDialog();
         }
 
