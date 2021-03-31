@@ -1099,8 +1099,9 @@ namespace Scribe.Forms
                     ? ""
                     : idBeingReplaced.ToString();
                 var regionBeingReplaced = All.Regions.GetOrNull<RegionModel>(idBeingReplaced);
-                staticBeingReplaced.BackColor =
-                    ColorTranslator.FromHtml(regionBeingReplaced?.BackgroundColor ?? RegionModel.DefaultColor);
+                var backColor = ColorTranslator.FromHtml(regionBeingReplaced?.BackgroundColor ?? RegionModel.DefaultColor);
+                staticBeingReplaced.BackColor = backColor;
+                inRegionStatic.ForeColor = backColor.ForegroundFromBackground();
                 LayoutToolTip.SetToolTip(staticBeingReplaced, regionBeingReplaced?.Name);
             }
             #endregion
@@ -1111,6 +1112,7 @@ namespace Scribe.Forms
                 ? ""
                 : CurrentModelID.ToString()[^3..];
             inRegionStatic.BackColor = RegionBackgroundColorStatic.BackColor;
+            inRegionStatic.ForeColor = RegionBackgroundColorStatic.BackColor.ForegroundFromBackground();
             LayoutToolTip.SetToolTip(inRegionStatic, RegionNameTextBox.Text);
             #endregion
 
@@ -1197,10 +1199,12 @@ namespace Scribe.Forms
                     staticBeingUpdated.Text = World[row, column, CurrentLayer] == ModelID.None
                         ? ""
                         : World[row, column, CurrentLayer].ToString()[^3..];
-                    staticBeingUpdated.BackColor =
+                    var backColor =
                         ColorTranslator.FromHtml(All.Regions
                                                     .GetOrNull<RegionModel>(World[row, column, CurrentLayer])?
                                                     .BackgroundColor ?? RegionModel.DefaultColor);
+                    staticBeingUpdated.BackColor = backColor;
+                    staticBeingUpdated.ForeColor = backColor.ForegroundFromBackground();
                     var regionName = All.Regions.GetOrNull<RegionModel>(World[row, column, CurrentLayer])?.Name;
                     LayoutToolTip.SetToolTip(staticBeingUpdated, regionName);
                 }
