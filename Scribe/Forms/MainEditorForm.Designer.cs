@@ -7130,12 +7130,12 @@ namespace Scribe.Forms
             // 
             this.RegionBackgroundColorNameStatic.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.RegionBackgroundColorNameStatic.AutoSize = true;
-            this.RegionBackgroundColorNameStatic.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.RegionBackgroundColorNameStatic.Location = new System.Drawing.Point(152, 138);
+            this.RegionBackgroundColorNameStatic.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RegionBackgroundColorNameStatic.Location = new System.Drawing.Point(152, 140);
             this.RegionBackgroundColorNameStatic.Name = "RegionBackgroundColorNameStatic";
-            this.RegionBackgroundColorNameStatic.Size = new System.Drawing.Size(48, 18);
+            this.RegionBackgroundColorNameStatic.Size = new System.Drawing.Size(126, 15);
             this.RegionBackgroundColorNameStatic.TabIndex = 40;
-            this.RegionBackgroundColorNameStatic.Text = "White";
+            this.RegionBackgroundColorNameStatic.Text = "#FFFFFFFF (White)";
             // 
             // ScriptsTabPage
             // 
