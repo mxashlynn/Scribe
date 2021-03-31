@@ -1,2 +1,10 @@
-ID,Name,Description,Comment,Tags,BackgroundColor,RegionToTheNorth,RegionToTheEast,RegionToTheSouth,RegionToTheWest,RegionAbove,RegionBelow
-110000,Home,The main character's house~,I love Parquet!,scribelayout:12－12－1,#FFFF80C0,None,None,None,None,110001,None
+﻿ID,Name,Description,Comment,Tags,BackgroundColor,RegionToTheNorth,RegionToTheEast,RegionToTheSouth,RegionToTheWest,RegionAbove,RegionBelow
+110000,Home,The main character's house~,I love Parquet!,scribelayout:12－12－1,#FFFF80C0,110004,110006,110003,110005,110002,110001
+110001,Basement,The player's basement~,,scribelayout:12－12－0,#FF7FFFD4,None,None,None,None,110000,None
+110002,Attic,They player's attic~,,scribelayout:12－12－2,#FF80FFFF,None,None,None,None,None,110000
+110003,Front Yard,,So green!,scribelayout:13－12－1,#FF00FF40,110000,None,None,None,None,None
+110004,Back Yard,,,scribelayout:11－12－1,#FF008080,None,None,110000,None,None,None
+110005,Neighbour 1,To he west of home~,,scribelayout:12－11－1,#FF804000,None,110000,None,None,None,None
+110006,Neighbour 2,To the east of home~,,scribelayout:12－13－1,#FF8080FF,None,None,None,110000,None,None
+110007,Magic Realm,Elsewhere....,,scribelayout:5－4－3,#FFFF8040,None,None,None,None,None,None
+110008,Disconnected,,,scribelayout:7－7－1,#FFC0C0C0,None,None,None,None,None,None
