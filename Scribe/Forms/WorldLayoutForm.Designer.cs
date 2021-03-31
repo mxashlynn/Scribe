@@ -443,6 +443,7 @@ namespace Scribe.Forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WorldLayoutForm";
             this.Text = "World Layout";
+            this.VisibleChanged += new System.EventHandler(this.WorldLayoutForm_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.LayerUpperPixelBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayerMiddlePixelBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayerBottomPixelBox)).EndInit();

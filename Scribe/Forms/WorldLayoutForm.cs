@@ -147,10 +147,16 @@ namespace Scribe.Forms
             UpdateAllExits();
             UpdateLayerDisplay();
             RepopulateListBox();
-
-            ApplyCurrentTheme();
             LayoutRegionListBox.Select();
         }
+
+        /// <summary>
+        /// Resets the UI each time the form becomes visible.
+        /// </summary>
+        /// <param name="inSender">The originator of the event.</param>
+        /// <param name="inEventArguments">Additional event data.</param>
+        private void WorldLayoutForm_VisibleChanged(object inSender, EventArgs inEventArguments)
+            => ApplyCurrentTheme();
 
         /// <summary>
         /// Computes a view of the game world and loads it into <see cref="World"/>.
