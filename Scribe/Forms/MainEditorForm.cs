@@ -423,22 +423,22 @@ namespace Scribe.Forms
                                                   .Where(groupBox => groupBox.Tag is null
                                                                   || (groupBox.Tag is string tag
                                                                       && string.Compare(tag, UnthemedControl,
-                                                                                        StringComparison.OrdinalIgnoreCase) == 0)));
+                                                                                        StringComparison.OrdinalIgnoreCase) != 0)));
             themed[typeof(ListBox)].AddRange(this.GetAllChildrenExactlyOfType<ListBox>()
                                                  .Where(listbox => listbox.Tag is null
                                                                 || (listbox.Tag is string tag
                                                                     && string.Compare(tag, UnthemedControl,
-                                                                                      StringComparison.OrdinalIgnoreCase) == 0)));
+                                                                                      StringComparison.OrdinalIgnoreCase) != 0)));
             themed[typeof(ComboBox)].AddRange(this.GetAllChildrenExactlyOfType<ComboBox>()
                                                   .Where(combobox => combobox.Tag is null
                                                                   || (combobox.Tag is string tag
                                                                       && string.Compare(tag, UnthemedControl,
-                                                                                        StringComparison.OrdinalIgnoreCase) == 0)));
+                                                                                        StringComparison.OrdinalIgnoreCase) != 0)));
             themed[typeof(TextBox)].AddRange(this.GetAllChildrenExactlyOfType<TextBox>()
                                                  .Where(textbox => textbox.Tag is null
                                                                 || (textbox.Tag is string tag
                                                                     && string.Compare(tag, UnthemedControl,
-                                                                                      StringComparison.OrdinalIgnoreCase) == 0)));
+                                                                                      StringComparison.OrdinalIgnoreCase) != 0)));
             themed[typeof(Label)].AddRange(this.GetAllChildrenExactlyOfType<Label>()
                                                .Where(label => label.Tag is string tag
                                                             && string.Compare(tag, ThemedLabel,
@@ -447,7 +447,7 @@ namespace Scribe.Forms
                                                 .Where(button => button.Tag is null
                                                               || (button.Tag is string tag
                                                                   && string.Compare(tag, UnthemedControl,
-                                                                                    StringComparison.OrdinalIgnoreCase) == 0)));
+                                                                                    StringComparison.OrdinalIgnoreCase) != 0)));
             return themed;
         }
 
