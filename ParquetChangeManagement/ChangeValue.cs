@@ -28,11 +28,11 @@ namespace ParquetChangeManagement
         /// </summary>
         /// <param name="inOldState">State before change.</param>
         /// <param name="inNewState">State after change.</param>
-        /// <param name="inControlName">Used in constructing a summary of the change.</param>
+        /// <param name="inPropertyName">Name of variable being changed, used in constructing a summary of the change.</param>
         /// <param name="inSetDatabaseValue">The means to set the state in the backing store.</param>
         /// <param name="inSetDisplayValue">The means to set the state in the UI.</param>
         /// <param name="inSetOldValue">The means to set the state in the UI request-tracker.</param>
-        public ChangeValue(object inOldState, object inNewState, string inControlName,
+        public ChangeValue(object inOldState, object inNewState, string inPropertyName,
                            Action<object> inSetDatabaseValue, Action<object> inSetDisplayValue, Action<object> inSetOldValue)
         {
             if (inSetDatabaseValue is null) { throw new ArgumentNullException(nameof(inSetDatabaseValue)); }
@@ -51,7 +51,7 @@ namespace ParquetChangeManagement
             var displayNewState = string.IsNullOrEmpty(inNewState as string)
                 ? "null"
                 : inNewState.ToString();
-            Description = $"alter value of {inControlName} from {displayOldState} to {displayNewState}";
+            Description = $"alter value of {inPropertyName} from {displayOldState} to {displayNewState}";
         }
 
         /// <summary>
