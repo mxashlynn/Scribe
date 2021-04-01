@@ -1,4 +1,6 @@
 using System;
+using System.Globalization;
+using ParquetChangeManagement.Properties;
 
 namespace ParquetChangeManagement
 {
@@ -51,7 +53,8 @@ namespace ParquetChangeManagement
             var displayNewState = string.IsNullOrEmpty(inNewState as string)
                 ? "null"
                 : inNewState.ToString();
-            Description = $"alter value of {inPropertyName} from {displayOldState} to {displayNewState}";
+            Description = string.Format(CultureInfo.CurrentCulture, Resources.ChangeValueDescription,
+                                        inPropertyName, displayOldState, displayNewState);
         }
 
         /// <summary>

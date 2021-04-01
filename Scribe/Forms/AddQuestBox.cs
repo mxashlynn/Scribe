@@ -14,6 +14,9 @@ namespace Scribe.Forms
         /// <summary>The <see cref="ModelID"/> that the user added, if any.</summary>
         public ModelID ReturnNewQuestID { get; set; }
 
+        /// <summary>The player-facing name corresponding to the ID that the user added, if any.</summary>
+        public string ReturnNewQuestName { get; set; }
+
         #region Initialization
         /// <summary>
         /// Initialize a new <see cref="AddQuestBox"/>.
@@ -72,9 +75,11 @@ namespace Scribe.Forms
         /// <param name="inEventArguments">Additional event data.</param>
         private void OkayButton_Click(object inSender, EventArgs inEventArguments)
         {
-            (ReturnNewQuestID, DialogResult) = AddQuestComboBox.SelectedItem is null
-                ? (ModelID.None, DialogResult.Cancel)
-                : (((InteractionModel)AddQuestComboBox.SelectedItem).ID, DialogResult.OK);
+            (ReturnNewQuestID, ReturnNewQuestName, DialogResult) = AddQuestComboBox.SelectedItem is null
+                ? (ModelID.None, "", DialogResult.Cancel)
+                : (((InteractionModel)AddQuestComboBox.SelectedItem).ID,
+                   ((InteractionModel)AddQuestComboBox.SelectedItem).Name,
+                    DialogResult.OK);
             Close();
         }
 
@@ -86,6 +91,7 @@ namespace Scribe.Forms
         private void CancelButtonControl_Click(object inSender, EventArgs inEventArguments)
         {
             ReturnNewQuestID = ModelID.None;
+            ReturnNewQuestName = "";
             DialogResult = DialogResult.Cancel;
             Close();
         }

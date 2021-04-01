@@ -824,6 +824,105 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add new {0} definition..
+        /// </summary>
+        internal static string ReportAddDefinition {
+            get {
+                return ResourceManager.GetString("ReportAddDefinition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add new pronoun group definition..
+        /// </summary>
+        internal static string ReportAddPronounGroup {
+            get {
+                return ResourceManager.GetString("ReportAddPronounGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add quest {0} to {1}..
+        /// </summary>
+        internal static string ReportAddQuest {
+            get {
+                return ResourceManager.GetString("ReportAddQuest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add recipe element {0} to {1}..
+        /// </summary>
+        internal static string ReportAddRecipeElement {
+            get {
+                return ResourceManager.GetString("ReportAddRecipeElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add tag {0} to {1}..
+        /// </summary>
+        internal static string ReportAddTag {
+            get {
+                return ResourceManager.GetString("ReportAddTag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Duplicating {0} {1}..
+        /// </summary>
+        internal static string ReportDuplicateDefinition {
+            get {
+                return ResourceManager.GetString("ReportDuplicateDefinition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove {0} {1}..
+        /// </summary>
+        internal static string ReportRemoveDefinition {
+            get {
+                return ResourceManager.GetString("ReportRemoveDefinition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove pronoun group {0}..
+        /// </summary>
+        internal static string ReportRemovePronounGroup {
+            get {
+                return ResourceManager.GetString("ReportRemovePronounGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove quest {0} from {1}..
+        /// </summary>
+        internal static string ReportRemoveQuest {
+            get {
+                return ResourceManager.GetString("ReportRemoveQuest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove recipe element {0} from {1}..
+        /// </summary>
+        internal static string ReportRemoveRecipeElement {
+            get {
+                return ResourceManager.GetString("ReportRemoveRecipeElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove tag {0} from {1}..
+        /// </summary>
+        internal static string ReportRemoveTag {
+            get {
+                return ResourceManager.GetString("ReportRemoveTag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to https://github.com/mxashlynn/Scribe.
         /// </summary>
         internal static string RepositoryURL {

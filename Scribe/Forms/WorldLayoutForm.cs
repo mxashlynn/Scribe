@@ -737,7 +737,7 @@ namespace Scribe.Forms
                                                       },
                                                       (object displayValue) => RegionNameTextBox.Text = displayValue.ToString(),
                                                       (object oldValue) => RegionNameTextBox.Text = oldValue.ToString());
-                Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+                Logger.Log(LogLevel.Info, changeToExecute.Description);
                 ChangeManager.AddAndExecute(changeToExecute);
 
                 // For the name value, the display in the list must also be updated.
@@ -769,7 +769,7 @@ namespace Scribe.Forms
                                                       },
                                                       (object displayValue) => RegionDescriptionTextBox.Text = displayValue.ToString(),
                                                       (object oldValue) => RegionDescriptionTextBox.Text = oldValue.ToString());
-                Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+                Logger.Log(LogLevel.Info, changeToExecute.Description);
                 ChangeManager.AddAndExecute(changeToExecute);
             }
         }
@@ -798,7 +798,7 @@ namespace Scribe.Forms
                                                       },
                                                       (object displayValue) => RegionCommentTextBox.Text = displayValue.ToString(),
                                                       (object oldValue) => RegionCommentTextBox.Text = oldValue.ToString());
-                Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+                Logger.Log(LogLevel.Info, changeToExecute.Description);
                 ChangeManager.AddAndExecute(changeToExecute);
             }
         }
@@ -916,22 +916,24 @@ namespace Scribe.Forms
             ScribeProgram.MostRecentUpdateSource = this;
 
             var regionToAdd = new LayoutToolRegion(new RegionModel(nextID, "New Region", "", ""));
-            var changeToExecute = new ChangeList(regionToAdd, $"add new Region definition",
-                                        (object databaseValue) =>
-                                        {
-                                            ((IMutableModelCollection<RegionModel>)All.Regions).Add(((LayoutToolRegion)databaseValue).Model);
-                                            _ = LayoutRegionListBox.Items.Add(databaseValue);
-                                            LayoutRegionListBox.SelectedItem = databaseValue;
-                                            MainForm.HasUnsavedChanges = true;
-                                        },
-                                        (object databaseValue) =>
-                                        {
-                                            ((IMutableModelCollection<RegionModel>)All.Regions).Remove(((LayoutToolRegion)databaseValue).Model);
-                                            LayoutRegionListBox.Items.Remove(databaseValue);
-                                            LayoutRegionListBox.SelectedItem = null;
-                                            MainForm.HasUnsavedChanges = true;
-                                        });
-            Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+            var description = string.Format(CultureInfo.CurrentCulture, Resources.ReportAddDefinition, "Region");
+            var changeToExecute = new ChangeList(regionToAdd,
+                                                 description,
+                                                 (object databaseValue) =>
+                                                 {
+                                                     ((IMutableModelCollection<RegionModel>)All.Regions).Add(((LayoutToolRegion)databaseValue).Model);
+                                                     _ = LayoutRegionListBox.Items.Add(databaseValue);
+                                                     LayoutRegionListBox.SelectedItem = databaseValue;
+                                                     MainForm.HasUnsavedChanges = true;
+                                                 },
+                                                 (object databaseValue) =>
+                                                 {
+                                                     ((IMutableModelCollection<RegionModel>)All.Regions).Remove(((LayoutToolRegion)databaseValue).Model);
+                                                     LayoutRegionListBox.Items.Remove(databaseValue);
+                                                     LayoutRegionListBox.SelectedItem = null;
+                                                     MainForm.HasUnsavedChanges = true;
+                                                 });
+            Logger.Log(LogLevel.Info, changeToExecute.Description);
             ChangeManager.AddAndExecute(changeToExecute);
         }
 
@@ -981,22 +983,25 @@ namespace Scribe.Forms
 
             // TODO [MAPS] Also duplicate RegionStatus once Map Editor is implemented.
 
-            var changeToExecute = new ChangeList(regionToAdd, $"add duplicate Region definition",
-                                        (object databaseValue) =>
-                                        {
-                                            ((IMutableModelCollection<RegionModel>)All.Regions).Add(((LayoutToolRegion)databaseValue).Model);
-                                            _ = LayoutRegionListBox.Items.Add(databaseValue);
-                                            LayoutRegionListBox.SelectedItem = databaseValue;
-                                            MainForm.HasUnsavedChanges = true;
-                                        },
-                                        (object databaseValue) =>
-                                        {
-                                            ((IMutableModelCollection<RegionModel>)All.Regions).Remove(((LayoutToolRegion)databaseValue).Model);
-                                            LayoutRegionListBox.Items.Remove(databaseValue);
-                                            LayoutRegionListBox.SelectedItem = null;
-                                            MainForm.HasUnsavedChanges = true;
-                                        });
-            Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+            var description = string.Format(CultureInfo.CurrentCulture, Resources.ReportDuplicateDefinition,
+                                            "Region", regionToDuplicate.Name);
+            var changeToExecute = new ChangeList(regionToAdd,
+                                                 description,
+                                                 (object databaseValue) =>
+                                                 {
+                                                     ((IMutableModelCollection<RegionModel>)All.Regions).Add(((LayoutToolRegion)databaseValue).Model);
+                                                     _ = LayoutRegionListBox.Items.Add(databaseValue);
+                                                     LayoutRegionListBox.SelectedItem = databaseValue;
+                                                     MainForm.HasUnsavedChanges = true;
+                                                 },
+                                                 (object databaseValue) =>
+                                                 {
+                                                     ((IMutableModelCollection<RegionModel>)All.Regions).Remove(((LayoutToolRegion)databaseValue).Model);
+                                                     LayoutRegionListBox.Items.Remove(databaseValue);
+                                                     LayoutRegionListBox.SelectedItem = null;
+                                                     MainForm.HasUnsavedChanges = true;
+                                                 });
+            Logger.Log(LogLevel.Info, changeToExecute.Description);
             ChangeManager.AddAndExecute(changeToExecute);
         }
 
@@ -1021,22 +1026,25 @@ namespace Scribe.Forms
 
             ScribeProgram.MostRecentUpdateSource = this;
 
-            var changeToExecute = new ChangeList(regionToRemove, $"remove Region {regionToRemove.Name}",
-                                        (object databaseValue) =>
-                                        {
-                                            ((IMutableModelCollection<RegionModel>)All.Regions).Remove(((LayoutToolRegion)databaseValue).Model);
-                                            LayoutRegionListBox.Items.Remove(databaseValue);
-                                            LayoutRegionListBox.SelectedItem = null;
-                                            MainForm.HasUnsavedChanges = true;
-                                        },
-                                        (object databaseValue) =>
-                                        {
-                                            ((IMutableModelCollection<RegionModel>)All.Regions).Add(((LayoutToolRegion)databaseValue).Model);
-                                            _ = LayoutRegionListBox.Items.Add(databaseValue);
-                                            LayoutRegionListBox.SelectedItem = databaseValue;
-                                            MainForm.HasUnsavedChanges = true;
-                                        });
-            Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+            var description = string.Format(CultureInfo.CurrentCulture, Resources.ReportRemoveDefinition,
+                                            "Region", regionToRemove.Name);
+            var changeToExecute = new ChangeList(regionToRemove,
+                                                 description,
+                                                 (object databaseValue) =>
+                                                 {
+                                                     ((IMutableModelCollection<RegionModel>)All.Regions).Remove(((LayoutToolRegion)databaseValue).Model);
+                                                     LayoutRegionListBox.Items.Remove(databaseValue);
+                                                     LayoutRegionListBox.SelectedItem = null;
+                                                     MainForm.HasUnsavedChanges = true;
+                                                 },
+                                                 (object databaseValue) =>
+                                                 {
+                                                     ((IMutableModelCollection<RegionModel>)All.Regions).Add(((LayoutToolRegion)databaseValue).Model);
+                                                     _ = LayoutRegionListBox.Items.Add(databaseValue);
+                                                     LayoutRegionListBox.SelectedItem = databaseValue;
+                                                     MainForm.HasUnsavedChanges = true;
+                                                 });
+            Logger.Log(LogLevel.Info, changeToExecute.Description);
             ChangeManager.AddAndExecute(changeToExecute);
         }
 
@@ -1062,7 +1070,7 @@ namespace Scribe.Forms
                 if (MainForm.SelectColorDialogue.ShowDialog() == DialogResult.OK)
                 {
                     var newColor = MainForm.SelectColorDialogue.Color;
-                    var changeToExecute = new ChangeValue(oldColor, newColor, RegionBackgroundColorStatic.Name,
+                    var changeToExecute = new ChangeValue(oldColor, newColor, nameof(RegionModel.BackgroundColor),
                                                           (object databaseValue) =>
                                                           {
                                                               region.BackgroundColor = MainEditorForm.ValueToColorHexString(databaseValue);
@@ -1075,7 +1083,7 @@ namespace Scribe.Forms
                                                               RegionBackgroundColorNameStatic.Text = EditorCommands.FormatColorNameForDisplay(displayColor);
                                                           },
                                                           (object oldValue) => RegionBackgroundColorStatic.BackColor = (Color)oldValue);
-                    Logger.Log(LogLevel.Info, $"{nameof(Change.Execute)} {changeToExecute.Description}");
+                    Logger.Log(LogLevel.Info, changeToExecute.Description);
                     ChangeManager.AddAndExecute(changeToExecute);
                 }
             }
