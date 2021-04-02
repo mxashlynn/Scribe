@@ -2112,44 +2112,88 @@ namespace Scribe.Forms
                                   comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
             {
                 var oldValue = EditableControls[typeof(TextBox)][textbox];
-                var changeToExecute = new ChangeValue(oldValue, textbox.Text, textbox.Name[0..^nameof(TextBox).Length],
-                                                      (object databaseValue) => { propertyAccessor(databaseValue); HasUnsavedChanges = true; },
-                                                      (object displayValue) => textbox.Text = displayValue.ToString(),
-                                                      (object oldValue) => EditableControls[typeof(TextBox)][textbox] = oldValue);
-                Logger.Log(LogLevel.Info, changeToExecute.Description);
+                var newValue = textbox.Text;
+                var propertyName = textbox.Name[0..^nameof(TextBox).Length];
+                var changeToExecute = new ChangeValue(oldValue, newValue, propertyName,
+                                                      (object value, string message) =>
+                                                      {
+                                                          // Set value in cache.
+                                                          EditableControls[typeof(TextBox)][textbox] = value;
+                                                          // Set value in database.
+                                                          propertyAccessor(value);
+                                                          // Set value in display.
+                                                          textbox.Text = value.ToString();
+                                                          // Mark database as unsaved.
+                                                          HasUnsavedChanges = true;
+                                                          // Log the change.
+                                                          Logger.Log(LogLevel.Info, message);
+                                                      });
                 ChangeManager.AddAndExecute(changeToExecute);
             }
             else if (alteredControl is CheckBox checkbox
                      && checkbox.Checked != (bool?)EditableControls[typeof(CheckBox)][checkbox])
             {
                 var oldValue = (bool?)EditableControls[typeof(CheckBox)][checkbox];
-                var changeToExecute = new ChangeValue(oldValue, (bool?)checkbox.Checked, checkbox.Name[0..^nameof(CheckBox).Length],
-                                                      (object databaseValue) => { propertyAccessor(databaseValue); HasUnsavedChanges = true; },
-                                                      (object displayValue) => checkbox.Checked = (bool)displayValue,
-                                                      (object oldValue) => EditableControls[typeof(CheckBox)][checkbox] = oldValue);
-                Logger.Log(LogLevel.Info, changeToExecute.Description);
+                var newValue = (bool?)checkbox.Checked;
+                var propertyName = checkbox.Name[0..^nameof(CheckBox).Length];
+                var changeToExecute = new ChangeValue(oldValue, newValue, propertyName,
+                                                      (object value, string message) =>
+                                                      {
+                                                          // Set value in cache.
+                                                          EditableControls[typeof(CheckBox)][checkbox] = value;
+                                                          // Set value in database.
+                                                          propertyAccessor(value);
+                                                          // Set value in display.
+                                                          checkbox.Checked = (bool)value;
+                                                          // Mark database as unsaved.
+                                                          HasUnsavedChanges = true;
+                                                          // Log the change.
+                                                          Logger.Log(LogLevel.Info, message);
+                                                      });
                 ChangeManager.AddAndExecute(changeToExecute);
             }
             else if (alteredControl is ComboBox combobox
                      && combobox.SelectedItem != EditableControls[typeof(ComboBox)][combobox])
             {
                 var oldValue = EditableControls[typeof(ComboBox)][combobox];
-                var changeToExecute = new ChangeValue(oldValue, combobox.SelectedItem, combobox.Name[0..^nameof(ComboBox).Length],
-                                                      (object databaseValue) => { propertyAccessor(databaseValue); HasUnsavedChanges = true; },
-                                                      (object displayValue) => combobox.SelectedItem = displayValue,
-                                                      (object oldValue) => EditableControls[typeof(ComboBox)][combobox] = oldValue);
-                Logger.Log(LogLevel.Info, changeToExecute.Description);
+                var newValue = combobox.SelectedItem;
+                var propertyName = combobox.Name[0..^nameof(ComboBox).Length];
+                var changeToExecute = new ChangeValue(oldValue, newValue, propertyName,
+                                                      (object value, string message) =>
+                                                      {
+                                                          // Set value in cache.
+                                                          EditableControls[typeof(ComboBox)][combobox] = value;
+                                                          // Set value in database.
+                                                          propertyAccessor(value);
+                                                          // Set value in display.
+                                                          combobox.SelectedItem = (bool)value;
+                                                          // Mark database as unsaved.
+                                                          HasUnsavedChanges = true;
+                                                          // Log the change.
+                                                          Logger.Log(LogLevel.Info, message);
+                                                      });
                 ChangeManager.AddAndExecute(changeToExecute);
             }
             else if (alteredControl is ListBox listbox
                      && listbox.SelectedItem != EditableControls[typeof(ListBox)][listbox])
             {
                 var oldValue = EditableControls[typeof(ListBox)][listbox];
-                var changeToExecute = new ChangeValue(oldValue, listbox.SelectedItem, listbox.Name[0..^nameof(ListBox).Length],
-                                                      (object databaseValue) => { propertyAccessor(databaseValue); HasUnsavedChanges = true; },
-                                                      (object displayValue) => listbox.SelectedItem = displayValue,
-                                                      (object oldValue) => EditableControls[typeof(ListBox)][listbox] = oldValue);
-                Logger.Log(LogLevel.Info, changeToExecute.Description);
+                var newValue = listbox.SelectedItem;
+                var propertyName = listbox.Name[0..^nameof(ListBox).Length];
+                var changeToExecute = new ChangeValue(oldValue, newValue, propertyName,
+                                                      (object value, string message) =>
+                                                      {
+                                                          // Set value in cache.
+                                                          EditableControls[typeof(ListBox)][listbox] = value;
+                                                          // Set value in database.
+                                                          propertyAccessor(value);
+                                                          // Set value in display.
+                                                          listbox.SelectedItem = (bool)value;
+                                                          // Mark database as unsaved.
+                                                          HasUnsavedChanges = true;
+                                                          // Log the change.
+                                                          Logger.Log(LogLevel.Info, message);
+                                                      });
                 ChangeManager.AddAndExecute(changeToExecute);
             }
 
@@ -2233,7 +2277,7 @@ namespace Scribe.Forms
                                                      inListBox.SelectedItem = null;
                                                      HasUnsavedChanges = true;
                                                  });
-            Logger.Log(LogLevel.Info, changeToExecute.Description);
+            Logger.Log(LogLevel.Info, changeToExecute.DescriptionOfExecution);
             ChangeManager.AddAndExecute(changeToExecute);
         }
 
@@ -2277,7 +2321,7 @@ namespace Scribe.Forms
                                                      inListBox.SelectedItem = databaseValue;
                                                      HasUnsavedChanges = true;
                                                  });
-            Logger.Log(LogLevel.Info, changeToExecute.Description);
+            Logger.Log(LogLevel.Info, changeToExecute.DescriptionOfExecution);
             ChangeManager.AddAndExecute(changeToExecute);
         }
         #endregion
@@ -2328,7 +2372,7 @@ namespace Scribe.Forms
                                                          inTagListBox.SelectedItem = null;
                                                          HasUnsavedChanges = true;
                                                      });
-                Logger.Log(LogLevel.Info, changeToExecute.Description);
+                Logger.Log(LogLevel.Info, changeToExecute.DescriptionOfExecution);
                 ChangeManager.AddAndExecute(changeToExecute);
             }
         }
@@ -2367,7 +2411,7 @@ namespace Scribe.Forms
                                                          inTagsListBox.SelectedItem = databaseValue;
                                                          HasUnsavedChanges = true;
                                                      });
-                Logger.Log(LogLevel.Info, changeToExecute.Description);
+                Logger.Log(LogLevel.Info, changeToExecute.DescriptionOfExecution);
                 ChangeManager.AddAndExecute(changeToExecute);
             }
         }
@@ -2535,7 +2579,7 @@ namespace Scribe.Forms
                                                          inAddsToListBox.SelectedItem = null;
                                                          HasUnsavedChanges = true;
                                                      });
-                Logger.Log(LogLevel.Info, changeToExecute.Description);
+                Logger.Log(LogLevel.Info, changeToExecute.DescriptionOfExecution);
                 ChangeManager.AddAndExecute(changeToExecute);
             }
         }
@@ -2576,7 +2620,7 @@ namespace Scribe.Forms
                                                          inAddsToListBox.SelectedItem = databaseValue;
                                                          HasUnsavedChanges = true;
                                                      });
-                Logger.Log(LogLevel.Info, changeToExecute.Description);
+                Logger.Log(LogLevel.Info, changeToExecute.DescriptionOfExecution);
                 ChangeManager.AddAndExecute(changeToExecute);
             }
         }
@@ -2625,7 +2669,7 @@ namespace Scribe.Forms
                                                          inAddsToListBox.SelectedItem = null;
                                                          HasUnsavedChanges = true;
                                                      });
-                Logger.Log(LogLevel.Info, changeToExecute.Description);
+                Logger.Log(LogLevel.Info, changeToExecute.DescriptionOfExecution);
                 ChangeManager.AddAndExecute(changeToExecute);
             }
         }
@@ -2664,7 +2708,7 @@ namespace Scribe.Forms
                                                          inAddsToListBox.SelectedItem = databaseValue;
                                                          HasUnsavedChanges = true;
                                                      });
-                Logger.Log(LogLevel.Info, changeToExecute.Description);
+                Logger.Log(LogLevel.Info, changeToExecute.DescriptionOfExecution);
                 ChangeManager.AddAndExecute(changeToExecute);
             }
         }
@@ -2978,7 +3022,7 @@ namespace Scribe.Forms
                                                      CharacterPronounListBox.SelectedItem = null;
                                                      HasUnsavedChanges = true;
                                                  });
-            Logger.Log(LogLevel.Info, changeToExecute.Description);
+            Logger.Log(LogLevel.Info, changeToExecute.DescriptionOfExecution);
             ChangeManager.AddAndExecute(changeToExecute);
         }
 
@@ -3022,7 +3066,7 @@ namespace Scribe.Forms
                                                      CharacterPronounListBox.SelectedItem = pronounGroup;
                                                      HasUnsavedChanges = true;
                                                  });
-            Logger.Log(LogLevel.Info, changeToExecute.Description);
+            Logger.Log(LogLevel.Info, changeToExecute.DescriptionOfExecution);
             ChangeManager.AddAndExecute(changeToExecute);
         }
         #endregion
@@ -3309,19 +3353,21 @@ namespace Scribe.Forms
                     var newColor = SelectColorDialogue.Color;
                     var propertyAccessor = GetPropertyAccessorForTabAndControl(EditorTabs.SelectedIndex, RegionBackgroundColorStatic);
                     var changeToExecute = new ChangeValue(oldColor, newColor, nameof(RegionModel.BackgroundColor),
-                                                          (object databaseValue) =>
+                                                          (object value, string message) =>
                                                           {
-                                                              propertyAccessor(databaseValue);
-                                                              HasUnsavedChanges = true;
-                                                          },
-                                                          (object displayValue) =>
-                                                          {
-                                                              var displayColor = (Color)displayValue;
+                                                              // Set value in cache.
+                                                              RegionBackgroundColorStatic.BackColor = (Color)value;
+                                                              // Set value in database.
+                                                              propertyAccessor(value);
+                                                              // Set value in display.
+                                                              var displayColor = (Color)value;
                                                               RegionBackgroundColorStatic.BackColor = displayColor;
                                                               RegionBackgroundColorNameStatic.Text = EditorCommands.FormatColorNameForDisplay(displayColor);
-                                                          },
-                                                          (object oldValue) => RegionBackgroundColorStatic.BackColor = (Color)oldValue);
-                    Logger.Log(LogLevel.Info, changeToExecute.Description);
+                                                              // Mark database as unsaved.
+                                                              HasUnsavedChanges = true;
+                                                              // Log the change.
+                                                              Logger.Log(LogLevel.Info, message);
+                                                          });
                     ChangeManager.AddAndExecute(changeToExecute);
                 }
             }

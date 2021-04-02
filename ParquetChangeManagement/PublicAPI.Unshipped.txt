@@ -6,21 +6,21 @@ override ParquetChangeManagement.ChangeValue.Execute() -> void
 override ParquetChangeManagement.ChangeValue.Reverse() -> void
 ParquetChangeManagement.Change
 ParquetChangeManagement.Change.Change() -> void
-ParquetChangeManagement.Change.Description.get -> string
-ParquetChangeManagement.Change.Description.set -> void
+ParquetChangeManagement.Change.DescriptionOfExecution.get -> string
+ParquetChangeManagement.Change.DescriptionOfExecution.set -> void
+ParquetChangeManagement.Change.DescriptionOfReversal.get -> string
+ParquetChangeManagement.Change.DescriptionOfReversal.set -> void
 ParquetChangeManagement.ChangeList
-ParquetChangeManagement.ChangeList.ChangeList(object inValue, string inDescription, System.Action<object> inOnExecute, System.Action<object> inOnRemove) -> void
+ParquetChangeManagement.ChangeList.ChangeList(object inValue, string inDescription, System.Action<object> inOnExecute, System.Action<object> inOnReverse) -> void
 ParquetChangeManagement.ChangeList.OnExecute.get -> System.Action<object>
 ParquetChangeManagement.ChangeList.OnReverse.get -> System.Action<object>
 ParquetChangeManagement.ChangeList.Value.get -> object
 ParquetChangeManagement.ChangeManager
 ParquetChangeManagement.ChangeValue
-ParquetChangeManagement.ChangeValue.ChangeValue(object inOldState, object inNewState, string inPropertyName, System.Action<object> inSetDatabaseValue, System.Action<object> inSetDisplayValue, System.Action<object> inSetOldValue) -> void
+ParquetChangeManagement.ChangeValue.ChangeValue(object inOldState, object inNewState, string inPropertyName, System.Action<object, string> inSetState) -> void
 ParquetChangeManagement.ChangeValue.NewState.get -> object
 ParquetChangeManagement.ChangeValue.OldState.get -> object
-ParquetChangeManagement.ChangeValue.SetDatabaseValue.get -> System.Action<object>
-ParquetChangeManagement.ChangeValue.SetDisplayValue.get -> System.Action<object>
-ParquetChangeManagement.ChangeValue.SetOldValue.get -> System.Action<object>
+ParquetChangeManagement.ChangeValue.SetState.get -> System.Action<object, string>
 static ParquetChangeManagement.ChangeManager.AddAndExecute(ParquetChangeManagement.Change inChange) -> void
 static ParquetChangeManagement.ChangeManager.Clear() -> void
 static ParquetChangeManagement.ChangeManager.Count.get -> int

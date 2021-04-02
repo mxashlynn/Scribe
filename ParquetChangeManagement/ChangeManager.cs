@@ -102,14 +102,14 @@ namespace ParquetChangeManagement
         /// Description of the change most recently done.
         /// </summary>
         public static string CurrentChangeDescription
-            => Changes[CurrentChangeIndex].Description;
+            => Changes[CurrentChangeIndex].DescriptionOfExecution;
 
         /// <summary>
         /// Description of the change after the current change, if any.
         /// </summary>
         public static string NextChangeDescription
             => CurrentChangeIndex < Count - 1
-                ? Changes[CurrentChangeIndex + 1].Description
+                ? Changes[CurrentChangeIndex + 1].DescriptionOfExecution
                 : "";
     }
 }

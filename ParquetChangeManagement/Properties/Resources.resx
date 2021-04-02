@@ -117,8 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ChangeValueDescription" xml:space="preserve">
+  <data name="DoChangeValueDescription" xml:space="preserve">
     <value>Alter {0} from {1} to {2}.</value>
+    <comment>Command report string.</comment>
+  </data>
+  <data name="UndoChangeValueDescription" xml:space="preserve">
+    <value>Undo altering {0} from {1} to {2}.</value>
     <comment>Command report string.</comment>
   </data>
 </root>

@@ -729,15 +729,19 @@ namespace Scribe.Forms
 
                 var mutableModel = (IMutableRegionModel)model;
                 var oldValue = model.Name;
-                var changeToExecute = new ChangeValue(oldValue, RegionNameTextBox.Text, nameof(RegionModel.Name),
-                                                      (object databaseValue) =>
+                var newValue = RegionNameTextBox.Text;
+                var changeToExecute = new ChangeValue(oldValue, newValue, nameof(RegionModel.Name),
+                                                      (object value, string message) =>
                                                       {
-                                                          mutableModel.Name = databaseValue.ToString();
+                                                          // Set value in database.
+                                                          mutableModel.Name = value.ToString();
+                                                          // Set value in display.
+                                                          RegionNameTextBox.Text = value.ToString();
+                                                          // Mark database as unsaved.
                                                           MainForm.HasUnsavedChanges = true;
-                                                      },
-                                                      (object displayValue) => RegionNameTextBox.Text = displayValue.ToString(),
-                                                      (object oldValue) => RegionNameTextBox.Text = oldValue.ToString());
-                Logger.Log(LogLevel.Info, changeToExecute.Description);
+                                                          // Log the change.
+                                                          Logger.Log(LogLevel.Info, message);
+                                                      });
                 ChangeManager.AddAndExecute(changeToExecute);
 
                 // For the name value, the display in the list must also be updated.
@@ -761,15 +765,19 @@ namespace Scribe.Forms
             {
                 var mutableModel = (IMutableRegionModel)model;
                 var oldValue = model.Description;
-                var changeToExecute = new ChangeValue(oldValue, RegionDescriptionTextBox.Text, nameof(RegionModel.Description),
-                                                      (object databaseValue) =>
+                var newValue = RegionDescriptionTextBox.Text;
+                var changeToExecute = new ChangeValue(oldValue, newValue, nameof(RegionModel.Description),
+                                                      (object value, string message) =>
                                                       {
-                                                          mutableModel.Description = databaseValue.ToString();
+                                                          // Set value in database.
+                                                          mutableModel.Description = value.ToString();
+                                                          // Set value in display.
+                                                          RegionDescriptionTextBox.Text = value.ToString();
+                                                          // Mark database as unsaved.
                                                           MainForm.HasUnsavedChanges = true;
-                                                      },
-                                                      (object displayValue) => RegionDescriptionTextBox.Text = displayValue.ToString(),
-                                                      (object oldValue) => RegionDescriptionTextBox.Text = oldValue.ToString());
-                Logger.Log(LogLevel.Info, changeToExecute.Description);
+                                                          // Log the change.
+                                                          Logger.Log(LogLevel.Info, message);
+                                                      });
                 ChangeManager.AddAndExecute(changeToExecute);
             }
         }
@@ -790,15 +798,19 @@ namespace Scribe.Forms
             {
                 var mutableModel = (IMutableRegionModel)model;
                 var oldValue = model.Comment;
-                var changeToExecute = new ChangeValue(oldValue, RegionCommentTextBox.Text, nameof(RegionModel.Comment),
-                                                      (object databaseValue) =>
+                var newValue = RegionCommentTextBox.Text;
+                var changeToExecute = new ChangeValue(oldValue, newValue, nameof(RegionModel.Comment),
+                                                      (object value, string message) =>
                                                       {
-                                                          mutableModel.Comment = databaseValue.ToString();
+                                                          // Set value in database.
+                                                          mutableModel.Comment = value.ToString();
+                                                          // Set value in display.
+                                                          RegionCommentTextBox.Text = value.ToString();
+                                                          // Mark database as unsaved.
                                                           MainForm.HasUnsavedChanges = true;
-                                                      },
-                                                      (object displayValue) => RegionCommentTextBox.Text = displayValue.ToString(),
-                                                      (object oldValue) => RegionCommentTextBox.Text = oldValue.ToString());
-                Logger.Log(LogLevel.Info, changeToExecute.Description);
+                                                          // Log the change.
+                                                          Logger.Log(LogLevel.Info, message);
+                                                      });
                 ChangeManager.AddAndExecute(changeToExecute);
             }
         }
@@ -933,7 +945,7 @@ namespace Scribe.Forms
                                                      LayoutRegionListBox.SelectedItem = null;
                                                      MainForm.HasUnsavedChanges = true;
                                                  });
-            Logger.Log(LogLevel.Info, changeToExecute.Description);
+            Logger.Log(LogLevel.Info, changeToExecute.DescriptionOfExecution);
             ChangeManager.AddAndExecute(changeToExecute);
         }
 
@@ -1001,7 +1013,7 @@ namespace Scribe.Forms
                                                      LayoutRegionListBox.SelectedItem = null;
                                                      MainForm.HasUnsavedChanges = true;
                                                  });
-            Logger.Log(LogLevel.Info, changeToExecute.Description);
+            Logger.Log(LogLevel.Info, changeToExecute.DescriptionOfExecution);
             ChangeManager.AddAndExecute(changeToExecute);
         }
 
@@ -1044,7 +1056,7 @@ namespace Scribe.Forms
                                                      LayoutRegionListBox.SelectedItem = databaseValue;
                                                      MainForm.HasUnsavedChanges = true;
                                                  });
-            Logger.Log(LogLevel.Info, changeToExecute.Description);
+            Logger.Log(LogLevel.Info, changeToExecute.DescriptionOfExecution);
             ChangeManager.AddAndExecute(changeToExecute);
         }
 
@@ -1071,19 +1083,21 @@ namespace Scribe.Forms
                 {
                     var newColor = MainForm.SelectColorDialogue.Color;
                     var changeToExecute = new ChangeValue(oldColor, newColor, nameof(RegionModel.BackgroundColor),
-                                                          (object databaseValue) =>
+                                                          (object value, string message) =>
                                                           {
-                                                              region.BackgroundColor = MainEditorForm.ValueToColorHexString(databaseValue);
-                                                              MainForm.HasUnsavedChanges = true;
-                                                          },
-                                                          (object displayValue) =>
-                                                          {
-                                                              var displayColor = (Color)displayValue;
+                                                              // Set value in cache.
+                                                              RegionBackgroundColorStatic.BackColor = (Color)value;
+                                                              // Set value in database.
+                                                              region.BackgroundColor = MainEditorForm.ValueToColorHexString(value);
+                                                              // Set value in display.
+                                                              var displayColor = (Color)value;
                                                               RegionBackgroundColorStatic.BackColor = displayColor;
                                                               RegionBackgroundColorNameStatic.Text = EditorCommands.FormatColorNameForDisplay(displayColor);
-                                                          },
-                                                          (object oldValue) => RegionBackgroundColorStatic.BackColor = (Color)oldValue);
-                    Logger.Log(LogLevel.Info, changeToExecute.Description);
+                                                              // Mark database as unsaved.
+                                                              MainForm.HasUnsavedChanges = true;
+                                                              // Log the change.
+                                                              Logger.Log(LogLevel.Info, message);
+                                                          });
                     ChangeManager.AddAndExecute(changeToExecute);
                 }
             }

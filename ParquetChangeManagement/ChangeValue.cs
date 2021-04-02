@@ -15,15 +15,8 @@ namespace ParquetChangeManagement
         /// <summary>State after change.</summary>
         protected object NewState { get; }
 
-        /// <summary>The means to set the state in the backing store.</summary>
-        protected Action<object> SetDatabaseValue { get; }
-
-        /// <summary>The means to set the state in the UI.</summary>
-        protected Action<object> SetDisplayValue { get; }
-
-        /// <summary>The means to set the state in an external request-tracker.</summary>
-        /// <remarks>Calling code uses this to evaluate if a change is substantive or not.</remarks>
-        protected Action<object> SetOldValue { get; }
+        /// <summary>The means to set the state in the backing store, the UI, and the cache used to determine if a change is substantive.</param>
+        protected Action<object, string> SetState { get; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ChangeValue"/> class.
@@ -31,21 +24,14 @@ namespace ParquetChangeManagement
         /// <param name="inOldState">State before change.</param>
         /// <param name="inNewState">State after change.</param>
         /// <param name="inPropertyName">Name of variable being changed, used in constructing a summary of the change.</param>
-        /// <param name="inSetDatabaseValue">The means to set the state in the backing store.</param>
-        /// <param name="inSetDisplayValue">The means to set the state in the UI.</param>
-        /// <param name="inSetOldValue">The means to set the state in the UI request-tracker.</param>
-        public ChangeValue(object inOldState, object inNewState, string inPropertyName,
-                           Action<object> inSetDatabaseValue, Action<object> inSetDisplayValue, Action<object> inSetOldValue)
+        /// <param name="inSetState">The means to set the state in the backing store, the UI, and the cache used to determine if a change is substantive.</param>
+        public ChangeValue(object inOldState, object inNewState, string inPropertyName, Action<object, string> inSetState)
         {
-            if (inSetDatabaseValue is null) { throw new ArgumentNullException(nameof(inSetDatabaseValue)); }
-            if (inSetDisplayValue is null) { throw new ArgumentNullException(nameof(inSetDisplayValue)); }
-            if (inSetOldValue is null) { throw new ArgumentNullException(nameof(inSetOldValue)); }
+            if (inSetState is null) { throw new ArgumentNullException(nameof(inSetState)); }
 
             OldState = inOldState;
             NewState = inNewState;
-            SetDatabaseValue = inSetDatabaseValue;
-            SetDisplayValue = inSetDisplayValue;
-            SetOldValue = inSetOldValue;
+            SetState = inSetState;
 
             var displayOldState = string.IsNullOrEmpty(inOldState as string)
                 ? "null"
@@ -53,28 +39,22 @@ namespace ParquetChangeManagement
             var displayNewState = string.IsNullOrEmpty(inNewState as string)
                 ? "null"
                 : inNewState.ToString();
-            Description = string.Format(CultureInfo.CurrentCulture, Resources.ChangeValueDescription,
-                                        inPropertyName, displayOldState, displayNewState);
+            DescriptionOfExecution = string.Format(CultureInfo.CurrentCulture, Resources.DoChangeValueDescription,
+                                                   inPropertyName, displayOldState, displayNewState);
+            DescriptionOfReversal = string.Format(CultureInfo.CurrentCulture, Resources.UndoChangeValueDescription,
+                                                  inPropertyName, displayOldState, displayNewState);
         }
 
         /// <summary>
         /// Make the change.
         /// </summary>
         public override void Execute()
-        {
-            SetOldValue(NewState);
-            SetDatabaseValue(NewState);
-            SetDisplayValue(NewState);
-        }
+            => SetState(NewState, DescriptionOfExecution);
 
         /// <summary>
         /// Reverse the change.
         /// </summary>
         public override void Reverse()
-        {
-            SetOldValue(OldState);
-            SetDatabaseValue(OldState);
-            SetDisplayValue(OldState);
-        }
+            => SetState(OldState, DescriptionOfReversal);
     }
 }

@@ -63,9 +63,18 @@ namespace ParquetChangeManagement.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Alter {0} from {1} to {2}..
         /// </summary>
-        internal static string ChangeValueDescription {
+        internal static string DoChangeValueDescription {
             get {
-                return ResourceManager.GetString("ChangeValueDescription", resourceCulture);
+                return ResourceManager.GetString("DoChangeValueDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Undo altering {0} from {1} to {2}..
+        /// </summary>
+        internal static string UndoChangeValueDescription {
+            get {
+                return ResourceManager.GetString("UndoChangeValueDescription", resourceCulture);
             }
         }
     }
