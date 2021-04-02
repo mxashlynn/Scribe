@@ -121,6 +121,10 @@
     <value>Alter {0} from {1} to {2}.</value>
     <comment>Command report string.</comment>
   </data>
+  <data name="UndoChangeListPrefix" xml:space="preserve">
+    <value>Undo: </value>
+    <comment>Command report string.</comment>
+  </data>
   <data name="UndoChangeValueDescription" xml:space="preserve">
     <value>Undo altering {0} from {1} to {2}.</value>
     <comment>Command report string.</comment>

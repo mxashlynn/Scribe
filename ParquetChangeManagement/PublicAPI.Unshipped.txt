@@ -11,9 +11,9 @@ ParquetChangeManagement.Change.DescriptionOfExecution.set -> void
 ParquetChangeManagement.Change.DescriptionOfReversal.get -> string
 ParquetChangeManagement.Change.DescriptionOfReversal.set -> void
 ParquetChangeManagement.ChangeList
-ParquetChangeManagement.ChangeList.ChangeList(object inValue, string inDescription, System.Action<object> inOnExecute, System.Action<object> inOnReverse) -> void
-ParquetChangeManagement.ChangeList.OnExecute.get -> System.Action<object>
-ParquetChangeManagement.ChangeList.OnReverse.get -> System.Action<object>
+ParquetChangeManagement.ChangeList.ChangeList(object inValue, string inDescription, System.Action<object, string> inOnExecute, System.Action<object, string> inOnReverse) -> void
+ParquetChangeManagement.ChangeList.OnExecute.get -> System.Action<object, string>
+ParquetChangeManagement.ChangeList.OnReverse.get -> System.Action<object, string>
 ParquetChangeManagement.ChangeList.Value.get -> object
 ParquetChangeManagement.ChangeManager
 ParquetChangeManagement.ChangeValue

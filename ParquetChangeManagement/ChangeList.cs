@@ -1,4 +1,5 @@
 using System;
+using ParquetChangeManagement.Properties;
 
 namespace ParquetChangeManagement
 {
@@ -11,10 +12,10 @@ namespace ParquetChangeManagement
         protected object Value { get; }
 
         /// <summary>What to do when making the change.</summary>
-        protected Action<object> OnExecute { get; }
+        protected Action<object, string> OnExecute { get; }
 
         /// <summary>What to do when reversing the change.</summary>
-        protected Action<object> OnReverse { get; }
+        protected Action<object, string> OnReverse { get; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ChangeList"/> class.
@@ -22,30 +23,31 @@ namespace ParquetChangeManagement
         /// <param name="inValue">The value being added or removed.</param>
         /// <param name="inDescription">A summary of the change.</param>
         /// <param name="inOnExecute">The means to add the value to the list in the backing store and update the UI.</param>
-        /// <param name="inOnRemove">What to do when reversing the change.</param>
-        public ChangeList(object inValue, string inDescription, Action<object> inOnExecute, Action<object> inOnRemove)
+        /// <param name="inOnReverse">What to do when reversing the change.</param>
+        public ChangeList(object inValue, string inDescription, Action<object, string> inOnExecute, Action<object, string> inOnReverse)
         {
             if (inValue is null) { throw new ArgumentNullException(nameof(inValue)); }
             if (string.IsNullOrEmpty(inDescription)) { throw new ArgumentNullException(nameof(inDescription)); }
             if (inOnExecute is null) { throw new ArgumentNullException(nameof(inOnExecute)); }
-            if (inOnRemove is null) { throw new ArgumentNullException(nameof(inOnRemove)); }
+            if (inOnReverse is null) { throw new ArgumentNullException(nameof(inOnReverse)); }
 
             Value = inValue;
-            Description = inDescription;
+            DescriptionOfExecution = inDescription;
+            DescriptionOfReversal = $"{Resources.UndoChangeListPrefix}{inDescription}";
             OnExecute = inOnExecute;
-            OnReverse = inOnRemove;
+            OnReverse = inOnReverse;
         }
 
         /// <summary>
         /// Make the change.
         /// </summary>
         public override void Execute()
-            => OnExecute(Value);
+            => OnExecute(Value, DescriptionOfExecution);
 
         /// <summary>
         /// Reverse the change.
         /// </summary>
         public override void Reverse()
-            => OnReverse(Value);
+            => OnReverse(Value, DescriptionOfReversal);
     }
 }

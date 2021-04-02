@@ -931,19 +931,21 @@ namespace Scribe.Forms
             var description = string.Format(CultureInfo.CurrentCulture, Resources.ReportAddDefinition, "Region");
             var changeToExecute = new ChangeList(regionToAdd,
                                                  description,
-                                                 (object databaseValue) =>
+                                                 (object databaseValue, string message) =>
                                                  {
                                                      ((IMutableModelCollection<RegionModel>)All.Regions).Add(((LayoutToolRegion)databaseValue).Model);
                                                      _ = LayoutRegionListBox.Items.Add(databaseValue);
                                                      LayoutRegionListBox.SelectedItem = databaseValue;
                                                      MainForm.HasUnsavedChanges = true;
+                                                     Logger.Log(LogLevel.Info, message);
                                                  },
-                                                 (object databaseValue) =>
+                                                 (object databaseValue, string message) =>
                                                  {
                                                      ((IMutableModelCollection<RegionModel>)All.Regions).Remove(((LayoutToolRegion)databaseValue).Model);
                                                      LayoutRegionListBox.Items.Remove(databaseValue);
                                                      LayoutRegionListBox.SelectedItem = null;
                                                      MainForm.HasUnsavedChanges = true;
+                                                     Logger.Log(LogLevel.Info, message);
                                                  });
             Logger.Log(LogLevel.Info, changeToExecute.DescriptionOfExecution);
             ChangeManager.AddAndExecute(changeToExecute);
@@ -999,19 +1001,21 @@ namespace Scribe.Forms
                                             "Region", regionToDuplicate.Name);
             var changeToExecute = new ChangeList(regionToAdd,
                                                  description,
-                                                 (object databaseValue) =>
+                                                 (object databaseValue, string message) =>
                                                  {
                                                      ((IMutableModelCollection<RegionModel>)All.Regions).Add(((LayoutToolRegion)databaseValue).Model);
                                                      _ = LayoutRegionListBox.Items.Add(databaseValue);
                                                      LayoutRegionListBox.SelectedItem = databaseValue;
                                                      MainForm.HasUnsavedChanges = true;
+                                                     Logger.Log(LogLevel.Info, message);
                                                  },
-                                                 (object databaseValue) =>
+                                                 (object databaseValue, string message) =>
                                                  {
                                                      ((IMutableModelCollection<RegionModel>)All.Regions).Remove(((LayoutToolRegion)databaseValue).Model);
                                                      LayoutRegionListBox.Items.Remove(databaseValue);
                                                      LayoutRegionListBox.SelectedItem = null;
                                                      MainForm.HasUnsavedChanges = true;
+                                                     Logger.Log(LogLevel.Info, message);
                                                  });
             Logger.Log(LogLevel.Info, changeToExecute.DescriptionOfExecution);
             ChangeManager.AddAndExecute(changeToExecute);
@@ -1042,19 +1046,21 @@ namespace Scribe.Forms
                                             "Region", regionToRemove.Name);
             var changeToExecute = new ChangeList(regionToRemove,
                                                  description,
-                                                 (object databaseValue) =>
+                                                 (object databaseValue, string message) =>
                                                  {
                                                      ((IMutableModelCollection<RegionModel>)All.Regions).Remove(((LayoutToolRegion)databaseValue).Model);
                                                      LayoutRegionListBox.Items.Remove(databaseValue);
                                                      LayoutRegionListBox.SelectedItem = null;
                                                      MainForm.HasUnsavedChanges = true;
+                                                     Logger.Log(LogLevel.Info, message);
                                                  },
-                                                 (object databaseValue) =>
+                                                 (object databaseValue, string message) =>
                                                  {
                                                      ((IMutableModelCollection<RegionModel>)All.Regions).Add(((LayoutToolRegion)databaseValue).Model);
                                                      _ = LayoutRegionListBox.Items.Add(databaseValue);
                                                      LayoutRegionListBox.SelectedItem = databaseValue;
                                                      MainForm.HasUnsavedChanges = true;
+                                                     Logger.Log(LogLevel.Info, message);
                                                  });
             Logger.Log(LogLevel.Info, changeToExecute.DescriptionOfExecution);
             ChangeManager.AddAndExecute(changeToExecute);

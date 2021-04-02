@@ -70,6 +70,15 @@ namespace ParquetChangeManagement.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Undo: .
+        /// </summary>
+        internal static string UndoChangeListPrefix {
+            get {
+                return ResourceManager.GetString("UndoChangeListPrefix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Undo altering {0} from {1} to {2}..
         /// </summary>
         internal static string UndoChangeValueDescription {

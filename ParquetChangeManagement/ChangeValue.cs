@@ -15,7 +15,7 @@ namespace ParquetChangeManagement
         /// <summary>State after change.</summary>
         protected object NewState { get; }
 
-        /// <summary>The means to set the state in the backing store, the UI, and the cache used to determine if a change is substantive.</param>
+        /// <summary>The means to set the state in the backing store, the UI, and the cache used to determine if a change is substantive.</summary>
         protected Action<object, string> SetState { get; }
 
         /// <summary>
