@@ -1250,7 +1250,7 @@ namespace Scribe.Forms
             this.FlavorBlandSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FlavorBlandSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(206)))));
             this.FlavorBlandSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorBlandSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorBlandSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FlavorBlandSelector.Location = new System.Drawing.Point(3, 1);
             this.FlavorBlandSelector.Margin = new System.Windows.Forms.Padding(0);
             this.FlavorBlandSelector.Name = "FlavorBlandSelector";
@@ -1265,7 +1265,7 @@ namespace Scribe.Forms
             this.FlavorSweetSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FlavorSweetSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(216)))), ((int)(((byte)(226)))));
             this.FlavorSweetSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorSweetSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorSweetSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FlavorSweetSelector.Location = new System.Drawing.Point(71, 1);
             this.FlavorSweetSelector.Margin = new System.Windows.Forms.Padding(0);
             this.FlavorSweetSelector.Name = "FlavorSweetSelector";
@@ -1280,7 +1280,7 @@ namespace Scribe.Forms
             this.FlavorSaltySelector.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FlavorSaltySelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.FlavorSaltySelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorSaltySelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorSaltySelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FlavorSaltySelector.Location = new System.Drawing.Point(139, 1);
             this.FlavorSaltySelector.Margin = new System.Windows.Forms.Padding(0);
             this.FlavorSaltySelector.Name = "FlavorSaltySelector";
@@ -1295,7 +1295,7 @@ namespace Scribe.Forms
             this.FlavorSavorySelector.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FlavorSavorySelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(226)))), ((int)(((byte)(183)))));
             this.FlavorSavorySelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorSavorySelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorSavorySelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FlavorSavorySelector.Location = new System.Drawing.Point(207, 1);
             this.FlavorSavorySelector.Margin = new System.Windows.Forms.Padding(0);
             this.FlavorSavorySelector.Name = "FlavorSavorySelector";
@@ -1325,7 +1325,7 @@ namespace Scribe.Forms
             this.FlavorNumbingSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FlavorNumbingSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(236)))), ((int)(((byte)(252)))));
             this.FlavorNumbingSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorNumbingSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorNumbingSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FlavorNumbingSelector.Location = new System.Drawing.Point(345, 1);
             this.FlavorNumbingSelector.Margin = new System.Windows.Forms.Padding(0);
             this.FlavorNumbingSelector.Name = "FlavorNumbingSelector";
@@ -1340,7 +1340,7 @@ namespace Scribe.Forms
             this.FlavorAllFlavorsSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FlavorAllFlavorsSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.FlavorAllFlavorsSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorAllFlavorsSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorAllFlavorsSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FlavorAllFlavorsSelector.Location = new System.Drawing.Point(413, 1);
             this.FlavorAllFlavorsSelector.Margin = new System.Windows.Forms.Padding(0);
             this.FlavorAllFlavorsSelector.Name = "FlavorAllFlavorsSelector";
@@ -1355,7 +1355,7 @@ namespace Scribe.Forms
             this.FlavorBitterSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FlavorBitterSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(214)))), ((int)(((byte)(180)))));
             this.FlavorBitterSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorBitterSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorBitterSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FlavorBitterSelector.Location = new System.Drawing.Point(3, 27);
             this.FlavorBitterSelector.Margin = new System.Windows.Forms.Padding(0);
             this.FlavorBitterSelector.Name = "FlavorBitterSelector";
@@ -1370,7 +1370,7 @@ namespace Scribe.Forms
             this.FlavorSourSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FlavorSourSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(250)))), ((int)(((byte)(209)))));
             this.FlavorSourSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorSourSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorSourSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FlavorSourSelector.Location = new System.Drawing.Point(71, 27);
             this.FlavorSourSelector.Margin = new System.Windows.Forms.Padding(0);
             this.FlavorSourSelector.Name = "FlavorSourSelector";
@@ -1385,7 +1385,7 @@ namespace Scribe.Forms
             this.FlavorFreshSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FlavorFreshSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(253)))), ((int)(((byte)(236)))));
             this.FlavorFreshSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorFreshSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorFreshSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FlavorFreshSelector.Location = new System.Drawing.Point(139, 27);
             this.FlavorFreshSelector.Margin = new System.Windows.Forms.Padding(0);
             this.FlavorFreshSelector.Name = "FlavorFreshSelector";
@@ -1400,7 +1400,7 @@ namespace Scribe.Forms
             this.FlavorPungentSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FlavorPungentSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(202)))), ((int)(((byte)(235)))));
             this.FlavorPungentSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorPungentSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorPungentSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FlavorPungentSelector.Location = new System.Drawing.Point(207, 27);
             this.FlavorPungentSelector.Margin = new System.Windows.Forms.Padding(0);
             this.FlavorPungentSelector.Name = "FlavorPungentSelector";
@@ -1415,7 +1415,7 @@ namespace Scribe.Forms
             this.FlavorMetallicSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FlavorMetallicSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
             this.FlavorMetallicSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorMetallicSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorMetallicSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FlavorMetallicSelector.Location = new System.Drawing.Point(272, 27);
             this.FlavorMetallicSelector.Margin = new System.Windows.Forms.Padding(0);
             this.FlavorMetallicSelector.Name = "FlavorMetallicSelector";
@@ -1430,7 +1430,7 @@ namespace Scribe.Forms
             this.FlavorChemicalSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FlavorChemicalSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(203)))), ((int)(((byte)(248)))));
             this.FlavorChemicalSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorChemicalSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorChemicalSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FlavorChemicalSelector.Location = new System.Drawing.Point(345, 27);
             this.FlavorChemicalSelector.Margin = new System.Windows.Forms.Padding(0);
             this.FlavorChemicalSelector.Name = "FlavorChemicalSelector";
@@ -1445,7 +1445,7 @@ namespace Scribe.Forms
             this.FlavorNoFlavorsSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FlavorNoFlavorsSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.FlavorNoFlavorsSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorNoFlavorsSelector.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorNoFlavorsSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FlavorNoFlavorsSelector.Location = new System.Drawing.Point(413, 27);
             this.FlavorNoFlavorsSelector.Margin = new System.Windows.Forms.Padding(0);
             this.FlavorNoFlavorsSelector.Name = "FlavorNoFlavorsSelector";
@@ -4189,7 +4189,7 @@ namespace Scribe.Forms
             // CritterPendingDesignLabel1
             // 
             this.CritterPendingDesignLabel1.AutoSize = true;
-            this.CritterPendingDesignLabel1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CritterPendingDesignLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CritterPendingDesignLabel1.Location = new System.Drawing.Point(131, 185);
             this.CritterPendingDesignLabel1.Name = "CritterPendingDesignLabel1";
             this.CritterPendingDesignLabel1.Size = new System.Drawing.Size(105, 16);
@@ -4208,7 +4208,7 @@ namespace Scribe.Forms
             // CritterPendingDesignLabel2
             // 
             this.CritterPendingDesignLabel2.AutoSize = true;
-            this.CritterPendingDesignLabel2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CritterPendingDesignLabel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CritterPendingDesignLabel2.Location = new System.Drawing.Point(131, 210);
             this.CritterPendingDesignLabel2.Name = "CritterPendingDesignLabel2";
             this.CritterPendingDesignLabel2.Size = new System.Drawing.Size(105, 16);
@@ -4774,7 +4774,7 @@ namespace Scribe.Forms
             // CharacterPendingDesignLabel1
             // 
             this.CharacterPendingDesignLabel1.AutoSize = true;
-            this.CharacterPendingDesignLabel1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CharacterPendingDesignLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CharacterPendingDesignLabel1.Location = new System.Drawing.Point(131, 185);
             this.CharacterPendingDesignLabel1.Name = "CharacterPendingDesignLabel1";
             this.CharacterPendingDesignLabel1.Size = new System.Drawing.Size(105, 16);
@@ -4793,7 +4793,7 @@ namespace Scribe.Forms
             // CharacterPendingDesignLabel
             // 
             this.CharacterPendingDesignLabel.AutoSize = true;
-            this.CharacterPendingDesignLabel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CharacterPendingDesignLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CharacterPendingDesignLabel.Location = new System.Drawing.Point(131, 210);
             this.CharacterPendingDesignLabel.Name = "CharacterPendingDesignLabel";
             this.CharacterPendingDesignLabel.Size = new System.Drawing.Size(105, 16);
