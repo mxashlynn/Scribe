@@ -4192,7 +4192,7 @@ namespace Scribe.Forms
             this.CritterPendingDesignLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CritterPendingDesignLabel1.Location = new System.Drawing.Point(131, 185);
             this.CritterPendingDesignLabel1.Name = "CritterPendingDesignLabel1";
-            this.CritterPendingDesignLabel1.Size = new System.Drawing.Size(105, 16);
+            this.CritterPendingDesignLabel1.Size = new System.Drawing.Size(93, 15);
             this.CritterPendingDesignLabel1.TabIndex = 32;
             this.CritterPendingDesignLabel1.Text = "Pending Design";
             // 
@@ -4211,7 +4211,7 @@ namespace Scribe.Forms
             this.CritterPendingDesignLabel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CritterPendingDesignLabel2.Location = new System.Drawing.Point(131, 210);
             this.CritterPendingDesignLabel2.Name = "CritterPendingDesignLabel2";
-            this.CritterPendingDesignLabel2.Size = new System.Drawing.Size(105, 16);
+            this.CritterPendingDesignLabel2.Size = new System.Drawing.Size(93, 15);
             this.CritterPendingDesignLabel2.TabIndex = 34;
             this.CritterPendingDesignLabel2.Text = "Pending Design";
             // 
@@ -4777,7 +4777,7 @@ namespace Scribe.Forms
             this.CharacterPendingDesignLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CharacterPendingDesignLabel1.Location = new System.Drawing.Point(131, 185);
             this.CharacterPendingDesignLabel1.Name = "CharacterPendingDesignLabel1";
-            this.CharacterPendingDesignLabel1.Size = new System.Drawing.Size(105, 16);
+            this.CharacterPendingDesignLabel1.Size = new System.Drawing.Size(93, 15);
             this.CharacterPendingDesignLabel1.TabIndex = 32;
             this.CharacterPendingDesignLabel1.Text = "Pending Design";
             // 
@@ -4796,7 +4796,7 @@ namespace Scribe.Forms
             this.CharacterPendingDesignLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CharacterPendingDesignLabel.Location = new System.Drawing.Point(131, 210);
             this.CharacterPendingDesignLabel.Name = "CharacterPendingDesignLabel";
-            this.CharacterPendingDesignLabel.Size = new System.Drawing.Size(105, 16);
+            this.CharacterPendingDesignLabel.Size = new System.Drawing.Size(93, 15);
             this.CharacterPendingDesignLabel.TabIndex = 34;
             this.CharacterPendingDesignLabel.Text = "Pending Design";
             // 
