@@ -367,9 +367,6 @@ Folder: {1}</value>
   <data name="IDRange" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Menu Icons\ID Range.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ImageNotFound" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\imagenotfound.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Load" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Menu Icons\Load.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -520,5 +517,8 @@ Folder: {1}</value>
   <data name="ReportRemoveTag" xml:space="preserve">
     <value>Remove tag {0} from {1}.</value>
     <comment>Command report string.</comment>
+  </data>
+  <data name="ImageNotFound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImageNotFound.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

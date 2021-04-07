@@ -2479,18 +2479,18 @@ namespace Scribe.Forms
             Color GetColorForFlavorName(string inFlavorName)
                 => inFlavorName.ToUpperInvariant() switch
                 {
-                    "BLAND" => FlavorBlandSelector.BackColor,
-                    "SWEET" => FlavorSweetSelector.BackColor,
-                    "SALTY" => FlavorSaltySelector.BackColor,
-                    "SAVORY" => FlavorSavorySelector.BackColor,
-                    "ASTRINGENT" => FlavorAstringentSelector.BackColor,
-                    "NUMBING" => FlavorNumbingSelector.BackColor,
-                    "BITTER" => FlavorBitterSelector.BackColor,
-                    "SOUR" => FlavorSourSelector.BackColor,
-                    "FRESH" => FlavorFreshSelector.BackColor,
-                    "PUNGENT" => FlavorPungentSelector.BackColor,
-                    "METALLIC" => FlavorMetallicSelector.BackColor,
-                    "CHEMICAL" => FlavorChemicalSelector.BackColor,
+                    "ASTRINGENT" => ParquetPalette.AstringentPastel,
+                    "BITTER" => ParquetPalette.BitterPastel,
+                    "BLAND" => ParquetPalette.BlandPastel,
+                    "CHEMICAL" => ParquetPalette.ChemicalPastel,
+                    "FRESH" => ParquetPalette.FreshPastel,
+                    "METALLIC" => ParquetPalette.MetallicPastel,
+                    "NUMBING" => ParquetPalette.NumbingPastel,
+                    "PUNGENT" => ParquetPalette.PungentPastel,
+                    "SALTY" => ParquetPalette.SaltyPastel,
+                    "SAVORY" => ParquetPalette.SavouryPastel,
+                    "SOUR" => ParquetPalette.SourPastel,
+                    "SWEET" => ParquetPalette.SweetPastel,
                     _ => FlavorNoFlavorsSelector.BackColor,
                 };
         }

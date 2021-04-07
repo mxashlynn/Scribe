@@ -18,7 +18,7 @@ namespace Scribe.Forms
 
         #region Characteristics
         /// <summary>Periodically causes the map to redraw, similar to Draw events in a game loop.</summary>
-        private readonly Timer RefreshMapTimer = new Timer();
+        private readonly Timer RefreshMapTimer = new();
         #endregion
 
         #region Optimizations

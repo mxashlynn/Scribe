@@ -20,7 +20,7 @@ namespace Scribe
         /// and returns an appropriately visible foreground color based on this.
         /// </summary>
         /// <param name="inColor">The background color.</param>
-        /// <returns><see cref="Color.White"/> if the current color is dark; otherwise <see cref="Color.Black"/>.</returns>
+        /// <returns><see cref="ParquetPalette.Chalky"/> if the current color is dark; otherwise <see cref="ParquetPalette.Burnt"/>.</returns>
         public static Color ForegroundFromBackground(this Color inColor)
         {
             // Perceived lightness using the sRGB Luma method:
@@ -32,8 +32,8 @@ namespace Scribe
             const float threshold = 0.5f;
 
             return lightness > threshold
-                ? Color.Black
-                : Color.White;
+                ? ParquetPalette.Burnt
+                : ParquetPalette.Chalky;
         }
     }
 }

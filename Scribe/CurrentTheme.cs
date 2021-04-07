@@ -59,13 +59,13 @@ namespace Scribe
                     BorderColor = Color.RosyBrown;
                     MouseDownColor = Color.RosyBrown;
                     MouseOverColor = Color.Wheat;
-                    GamesTabColor = Color.NavajoWhite;
-                    ParquetsTabColor = Color.BurlyWood;
-                    BeingsTabColor = Color.LightPink;
-                    ItemsTabColor = Color.PaleGoldenrod;
-                    RecipesTabColor = Color.Plum;
-                    RegionsTabColor = Color.DarkSalmon;
-                    ScriptsTabColor = Color.LightSteelBlue;
+                    GamesTabColor = ParquetPalette.BitterPastel;
+                    ParquetsTabColor = ParquetPalette.PungentPastel;
+                    BeingsTabColor = ParquetPalette.NumbingPastel;
+                    ItemsTabColor = ParquetPalette.SavouryPastel;
+                    RecipesTabColor = ParquetPalette.ChemicalPastel;
+                    RegionsTabColor = ParquetPalette.AstringentPastel;
+                    ScriptsTabColor = ParquetPalette.FreshPastel;
                     break;
                 // EditorTheme.OSDefault:
                 default:
