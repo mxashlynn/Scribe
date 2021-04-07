@@ -22,5 +22,18 @@ namespace Scribe
                                                        inText), null);
             return inDefaultValue;
         }
+
+        /// <summary>
+        /// Convenience method that logs a <see cref="Color"/> error and returns the given default value.
+        /// </summary>
+        /// <param name="inText">The value that cannot be parsed as a <see cref="Color"/>.</param>
+        /// <param name="inDefaultValue">The default value to return.</param>
+        /// <returns>The default value given.</returns>
+        internal static Color DefaultWithUnknownColorLog(string inText, Color inDefaultValue)
+        {
+            Logger.Log(LogLevel.Warning, string.Format(CultureInfo.CurrentCulture, Resources.WarningUnkownColor,
+                                                       inText), null);
+            return inDefaultValue;
+        }
     }
 }
