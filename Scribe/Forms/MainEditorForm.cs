@@ -2166,7 +2166,7 @@ namespace Scribe.Forms
                                                           // Set value in database.
                                                           propertyAccessor(value);
                                                           // Set value in display.
-                                                          combobox.SelectedItem = (bool)value;
+                                                          combobox.SelectedItem = value;
                                                           // Mark database as unsaved.
                                                           HasUnsavedChanges = true;
                                                           // Log the change.
