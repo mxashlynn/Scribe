@@ -1,5 +1,5 @@
 ﻿ID,Name,Description,Comment,Tags,ItemID,AddsToBiome,AddsToRoom,IsWalkable,Entry,IsEnclosing,IsFlammable,IsOpenable
--30000,3 Furnishing Test Parquet,Test,Test,,-140003,,,True,Up,True,False,False
+-30000,3 Furnishing Test Parquet,Test,Test,,-140000,,,True,Up,True,False,False
 30000,Chair,,,,140003,,Usable Surface,True,None,False,True,False
 30001,Table,,,,140004,,Seating,False,None,True,True,False
-30002,Wooden Door,,,,140005,,,True,Room,True,True,True
+30002,Wooden Door,,,,140005,Rustic,Den,True,Room,True,True,True

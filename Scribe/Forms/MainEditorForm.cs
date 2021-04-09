@@ -396,7 +396,7 @@ namespace Scribe.Forms
             UpdateFromSettings();
             SelectDefaultModel();
             // NOTE that currently the progress bar doesn't do anything.
-            // If any task ever becomes slow or blocks the GUI thread, it should be implemented.
+            // If any task ever becomes slow or blocks the GUI thread, the progress bar should be implemented.
             Logger.Log(LogLevel.Info, Resources.LogReady);
         }
 
@@ -1475,21 +1475,39 @@ namespace Scribe.Forms
                     break;
                 case BiomeRecipesTabIndex:
                     RepopulateListBox(BiomeListBox, All.BiomeRecipes);
-                    BiomeLandThresholdTextBox.Text = BiomeConfiguration.LandThresholdFactor.ToString(CultureInfo.InvariantCulture);
-                    BiomeLiquidThresholdFactorTextBox.Text = BiomeConfiguration.LiquidThresholdFactor.ToString(CultureInfo.InvariantCulture);
-                    BiomeRoomThresholdFactorTextBox.Text = BiomeConfiguration.RoomThresholdFactor.ToString(CultureInfo.InvariantCulture);
+                    BiomeLandThresholdTextBox.Text =
+                        (string)(EditableControls[typeof(TextBox)][BiomeLandThresholdTextBox] =
+                            BiomeConfiguration.LandThresholdFactor.ToString(CultureInfo.InvariantCulture));
+                    BiomeLiquidThresholdFactorTextBox.Text =
+                        (string)(EditableControls[typeof(TextBox)][BiomeLiquidThresholdFactorTextBox] =
+                            BiomeConfiguration.LiquidThresholdFactor.ToString(CultureInfo.InvariantCulture));
+                    BiomeRoomThresholdFactorTextBox.Text =
+                        (string)(EditableControls[typeof(TextBox)][BiomeRoomThresholdFactorTextBox] =
+                            BiomeConfiguration.RoomThresholdFactor.ToString(CultureInfo.InvariantCulture));
                     break;
                 case CraftingRecipesTabIndex:
                     RepopulateListBox(CraftingListBox, All.CraftingRecipes);
-                    CraftingMinIngredientCountTextBox.Text = CraftConfiguration.IngredientCount.Minimum.ToString(CultureInfo.InvariantCulture);
-                    CraftingMaxIngredientCountTextBox.Text = CraftConfiguration.IngredientCount.Maximum.ToString(CultureInfo.InvariantCulture);
-                    CraftingMinProductCountTextBox.Text = CraftConfiguration.ProductCount.Minimum.ToString(CultureInfo.InvariantCulture);
-                    CraftingMaxProductCountTextBox.Text = CraftConfiguration.ProductCount.Maximum.ToString(CultureInfo.InvariantCulture);
+                    CraftingMinIngredientCountTextBox.Text =
+                        (string)(EditableControls[typeof(TextBox)][CraftingMinIngredientCountTextBox] =
+                            CraftConfiguration.IngredientCount.Minimum.ToString(CultureInfo.InvariantCulture));
+                    CraftingMaxIngredientCountTextBox.Text =
+                        (string)(EditableControls[typeof(TextBox)][CraftingMaxIngredientCountTextBox] =
+                            CraftConfiguration.IngredientCount.Maximum.ToString(CultureInfo.InvariantCulture));
+                    CraftingMinProductCountTextBox.Text =
+                        (string)(EditableControls[typeof(TextBox)][CraftingMinProductCountTextBox] =
+                            CraftConfiguration.ProductCount.Minimum.ToString(CultureInfo.InvariantCulture));
+                    CraftingMaxProductCountTextBox.Text =
+                        (string)(EditableControls[typeof(TextBox)][CraftingMaxProductCountTextBox] =
+                            CraftConfiguration.ProductCount.Maximum.ToString(CultureInfo.InvariantCulture));
                     break;
                 case RoomRecipesTabIndex:
                     RepopulateListBox(RoomListBox, All.RoomRecipes);
-                    RoomMinWalkableSpacesTextBox.Text = RoomConfiguration.MinWalkableSpaces.ToString(CultureInfo.InvariantCulture);
-                    RoomMaxWalkableSpacesTextBox.Text = RoomConfiguration.MaxWalkableSpaces.ToString(CultureInfo.InvariantCulture);
+                    RoomMinWalkableSpacesTextBox.Text =
+                        (string)(EditableControls[typeof(TextBox)][RoomMinWalkableSpacesTextBox] =
+                            RoomConfiguration.MinWalkableSpaces.ToString(CultureInfo.InvariantCulture));
+                    RoomMaxWalkableSpacesTextBox.Text =
+                        (string)(EditableControls[typeof(TextBox)][RoomMaxWalkableSpacesTextBox] =
+                            RoomConfiguration.MaxWalkableSpaces.ToString(CultureInfo.InvariantCulture));
                     break;
                 case RegionsTabIndex:
                     RepopulateListBox(RegionListBox, All.Regions);
@@ -1524,31 +1542,50 @@ namespace Scribe.Forms
             if (GameListBox.SelectedItem is null)
             {
                 GameIDStatic.Text = ModelID.None.ToString();
-                GameNameTextBox.Text = "";
-                GameDescriptionTextBox.Text = "";
-                GameCommentTextBox.Text = "";
-                GameIsEpisodeCheckBox.Checked = false;
-                GameEpisodeTitleTextBox.Text = "";
-                GameEpisodeNumberTextBox.Text = "";
-                GamePlayerCharacterComboBox.SelectedItem = null;
-                GameFirstScriptComboBox.SelectedItem = null;
+                GameNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][GameNameTextBox] = "");
+                GameDescriptionTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][GameDescriptionTextBox] = "");
+                GameCommentTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][GameCommentTextBox] = "");
+                GameIsEpisodeCheckBox.Checked =
+                    (bool)(EditableControls[typeof(CheckBox)][GameIsEpisodeCheckBox] = false);
+                GameEpisodeTitleTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][GameEpisodeTitleTextBox] = "");
+                GameEpisodeNumberTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][GameEpisodeNumberTextBox] = "");
+                GamePlayerCharacterComboBox.SelectedItem =
+                    EditableControls[typeof(ComboBox)][GamePlayerCharacterComboBox] = null;
+                GameFirstScriptComboBox.SelectedItem =
+                    EditableControls[typeof(ComboBox)][GameFirstScriptComboBox] = null;
                 GameIconPixelBox.Image = Resources.ImageNotFound;
             }
             else if (GameListBox.SelectedItem is GameModel model)
             {
                 GameIDStatic.Text = model.ID.ToString();
-                GameNameTextBox.Text = model.Name;
-                GameDescriptionTextBox.Text = model.Description;
-                GameCommentTextBox.Text = model.Comment;
-                GameIsEpisodeCheckBox.Checked = model.IsEpisode;
-                GameEpisodeTitleTextBox.Text = model.EpisodeTitle;
-                GameEpisodeNumberTextBox.Text = model.EpisodeNumber.ToString(CultureInfo.InvariantCulture);
-                GamePlayerCharacterComboBox.SelectedItem = model.PlayerCharacterID == ModelID.None
-                    ? null
-                    : All.Characters.GetOrNull<CharacterModel>(model.PlayerCharacterID);
-                GameFirstScriptComboBox.SelectedItem = model.FirstScriptID == ModelID.None
-                    ? null
-                    : All.Scripts.GetOrNull<ScriptModel>(model.FirstScriptID);
+                GameNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][GameNameTextBox] = model.Name);
+                GameDescriptionTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][GameDescriptionTextBox] = model.Description);
+                GameCommentTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][GameCommentTextBox] = model.Comment);
+                GameIsEpisodeCheckBox.Checked =
+                    (bool)(EditableControls[typeof(CheckBox)][GameIsEpisodeCheckBox] = model.IsEpisode);
+                GameEpisodeTitleTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][GameEpisodeTitleTextBox] = model.EpisodeTitle);
+                GameEpisodeNumberTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][GameEpisodeNumberTextBox] =
+                                 model.EpisodeNumber.ToString(CultureInfo.InvariantCulture));
+                GamePlayerCharacterComboBox.SelectedItem =
+                    (CharacterModel)(EditableControls[typeof(ComboBox)][GamePlayerCharacterComboBox] =
+                        model.PlayerCharacterID == ModelID.None
+                            ? null
+                            : All.Characters.GetOrNull<CharacterModel>(model.PlayerCharacterID));
+                GameFirstScriptComboBox.SelectedItem =
+                    (ScriptModel)(EditableControls[typeof(ComboBox)][GameFirstScriptComboBox] =
+                        model.FirstScriptID == ModelID.None
+                            ? null
+                            : All.Scripts.GetOrNull<ScriptModel>(model.FirstScriptID));
                 PictureBoxLoadFromStorage(GameIconPixelBox, model.ID);
             }
         }
@@ -1565,38 +1602,60 @@ namespace Scribe.Forms
             if (BlockListBox.SelectedItem is null)
             {
                 BlockIDStatic.Text = ModelID.None.ToString();
-                BlockNameTextBox.Text = "";
-                BlockDescriptionTextBox.Text = "";
-                BlockCommentTextBox.Text = "";
-                BlockEquivalentItemComboBox.SelectedItem = null;
+                BlockNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][BlockNameTextBox] = "");
+                BlockDescriptionTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][BlockDescriptionTextBox] = "");
+                BlockCommentTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][BlockCommentTextBox] = "");
+                BlockEquivalentItemComboBox.SelectedItem =
+                    EditableControls[typeof(ComboBox)][BlockEquivalentItemComboBox] = null;
                 BlockAddsToBiomeListBox.Items.Clear();
                 BlockAddsToRoomListBox.Items.Clear();
-                BlockGatherToolComboBox.SelectedItem = GatheringTool.None;
-                BlockGatherEffectComboBox.SelectedItem = GatheringEffect.None;
-                BlockDroppedCollectibleIDComboBox.SelectedItem = null;
-                BlockIsFlammableCheckBox.Checked = false;
-                BlockIsLiquidCheckBox.Checked = false;
-                BlockMaxToughnessTextBox.Text = "";
+                BlockGatherToolComboBox.SelectedItem =
+                    (GatheringTool)(EditableControls[typeof(ComboBox)][BlockGatherToolComboBox] = GatheringTool.None);
+                BlockGatherEffectComboBox.SelectedItem =
+                    (GatheringEffect)(EditableControls[typeof(ComboBox)][BlockGatherEffectComboBox] = GatheringEffect.None);
+                BlockDroppedCollectibleIDComboBox.SelectedItem =
+                    EditableControls[typeof(ComboBox)][BlockDroppedCollectibleIDComboBox] = null;
+                BlockIsFlammableCheckBox.Checked =
+                    (bool)(EditableControls[typeof(CheckBox)][BlockIsFlammableCheckBox] = false);
+                BlockIsLiquidCheckBox.Checked =
+                    (bool)(EditableControls[typeof(CheckBox)][BlockIsLiquidCheckBox] = false);
+                BlockMaxToughnessTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][BlockMaxToughnessTextBox] = "");
                 BlockPixelBox.Image = Resources.ImageNotFound;
             }
             else if (BlockListBox.SelectedItem is BlockModel model)
             {
                 BlockIDStatic.Text = model.ID.ToString();
-                BlockNameTextBox.Text = model.Name;
-                BlockDescriptionTextBox.Text = model.Description;
-                BlockCommentTextBox.Text = model.Comment;
-                BlockEquivalentItemComboBox.SelectedItem = model.ItemID == ModelID.None
-                    ? null
-                    : All.Items.GetOrNull<ItemModel>(model.ItemID);
+                BlockNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][BlockNameTextBox] = model.Name);
+                BlockDescriptionTextBox.Text =
+                                        (string)(EditableControls[typeof(TextBox)][BlockDescriptionTextBox] = model.Description);
+                BlockCommentTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][BlockCommentTextBox] = model.Comment);
+                BlockEquivalentItemComboBox.SelectedItem =
+                    (ItemModel)(EditableControls[typeof(ComboBox)][BlockEquivalentItemComboBox] =
+                        model.ItemID == ModelID.None
+                            ? null
+                            : All.Items.GetOrNull<ItemModel>(model.ItemID));
                 RepopulateListBox(BlockAddsToBiomeListBox, model.AddsToBiome);
                 RepopulateListBox(BlockAddsToRoomListBox, model.AddsToRoom);
-                BlockGatherToolComboBox.SelectedItem = model.GatherTool;
-                BlockGatherEffectComboBox.SelectedItem = model.GatherEffect;
+                BlockGatherToolComboBox.SelectedItem =
+                    (GatheringTool)(EditableControls[typeof(ComboBox)][BlockGatherToolComboBox] = model.GatherTool);
+                BlockGatherEffectComboBox.SelectedItem =
+                    (GatheringEffect)(EditableControls[typeof(ComboBox)][BlockGatherEffectComboBox] = model.GatherEffect);
                 BlockDroppedCollectibleIDComboBox.SelectedItem =
-                    All.Collectibles.GetOrNull<CollectibleModel>(model.CollectibleID);
-                BlockIsFlammableCheckBox.Checked = model.IsFlammable;
-                BlockIsLiquidCheckBox.Checked = model.IsLiquid;
-                BlockMaxToughnessTextBox.Text = model.MaxToughness.ToString(CultureInfo.InvariantCulture);
+                    (CollectibleModel)(EditableControls[typeof(ComboBox)][BlockDroppedCollectibleIDComboBox] =
+                        All.Collectibles.GetOrNull<CollectibleModel>(model.CollectibleID));
+                BlockIsFlammableCheckBox.Checked =
+                    (bool)(EditableControls[typeof(CheckBox)][BlockIsFlammableCheckBox] = model.IsFlammable);
+                BlockIsLiquidCheckBox.Checked =
+                    (bool)(EditableControls[typeof(CheckBox)][BlockIsLiquidCheckBox] = model.IsLiquid);
+                BlockMaxToughnessTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][BlockMaxToughnessTextBox] =
+                        model.MaxToughness.ToString(CultureInfo.InvariantCulture));
                 PictureBoxLoadFromStorage(BlockPixelBox, model.ID);
             }
         }
@@ -1613,30 +1672,43 @@ namespace Scribe.Forms
             if (FloorListBox.SelectedItem is null)
             {
                 FloorIDStatic.Text = ModelID.None.ToString();
-                FloorNameTextBox.Text = "";
-                FloorDescriptionTextBox.Text = "";
-                FloorCommentTextBox.Text = "";
-                FloorEquivalentItemComboBox.SelectedItem = null;
+                FloorNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][FloorNameTextBox] = "");
+                FloorDescriptionTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][FloorDescriptionTextBox] = "");
+                FloorCommentTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][FloorCommentTextBox] = "");
+                FloorEquivalentItemComboBox.SelectedItem =
+                    EditableControls[typeof(ComboBox)][FloorEquivalentItemComboBox] = null;
                 FloorAddsToBiomeListBox.Items.Clear();
                 FloorAddsToRoomListBox.Items.Clear();
-                FloorModificationToolComboBox.SelectedItem = ModificationTool.None;
-                FloorTrenchNameTextBox.Text = "";
+                FloorModificationToolComboBox.SelectedItem =
+                    (ModificationTool)(EditableControls[typeof(ComboBox)][FloorModificationToolComboBox] = ModificationTool.None);
+                FloorTrenchNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][FloorTrenchNameTextBox] = ""); // TODO [UI] Change this to: FloorModel.DefaultTrenchName);
                 FloorDugOutPixelBox.Image = Resources.ImageNotFound;
                 FloorFilledInPixelBox.Image = Resources.ImageNotFound;
             }
             else if (FloorListBox.SelectedItem is FloorModel model)
             {
                 FloorIDStatic.Text = model.ID.ToString();
-                FloorNameTextBox.Text = model.Name;
-                FloorDescriptionTextBox.Text = model.Description;
-                FloorCommentTextBox.Text = model.Comment;
-                FloorEquivalentItemComboBox.SelectedItem = model.ItemID == ModelID.None
-                    ? null
-                    : All.Items.GetOrNull<ItemModel>(model.ItemID);
+                FloorNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][FloorNameTextBox] = model.Name);
+                FloorDescriptionTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][FloorDescriptionTextBox] = model.Description);
+                FloorCommentTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][FloorCommentTextBox] = model.Comment);
+                FloorEquivalentItemComboBox.SelectedItem =
+                    (ItemModel)(EditableControls[typeof(ComboBox)][FloorEquivalentItemComboBox] =
+                        model.ItemID == ModelID.None
+                            ? null
+                            : All.Items.GetOrNull<ItemModel>(model.ItemID));
                 RepopulateListBox(FloorAddsToBiomeListBox, model.AddsToBiome);
                 RepopulateListBox(FloorAddsToRoomListBox, model.AddsToRoom);
-                FloorModificationToolComboBox.SelectedItem = model.ModTool;
-                FloorTrenchNameTextBox.Text = model.TrenchName;
+                FloorModificationToolComboBox.SelectedItem =
+                    (ModificationTool)(EditableControls[typeof(ComboBox)][FloorModificationToolComboBox] = model.ModTool);
+                FloorTrenchNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][FloorTrenchNameTextBox] = model.TrenchName);
                 // TODO: [FLOORS] Fix PictureBoxLoadFromStorage since there are two images for each floor.
                 // TODO: [FLOORS] We might have to also adjust the way new projects populate the graphics folder....
                 PictureBoxLoadFromStorage(FloorDugOutPixelBox, model.ID);
@@ -1656,35 +1728,54 @@ namespace Scribe.Forms
             if (FurnishingListBox.SelectedItem is null)
             {
                 FurnishingIDStatic.Text = ModelID.None.ToString();
-                FurnishingNameTextBox.Text = "";
-                FurnishingDescriptionTextBox.Text = "";
-                FurnishingCommentTextBox.Text = "";
-                FurnishingEquivalentItemComboBox.SelectedItem = null;
+                FurnishingNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][FurnishingNameTextBox] = "");
+                FurnishingDescriptionTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][FurnishingDescriptionTextBox] = "");
+                FurnishingCommentTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][FurnishingCommentTextBox] = "");
+                FurnishingEquivalentItemComboBox.SelectedItem =
+                    EditableControls[typeof(ComboBox)][FurnishingEquivalentItemComboBox] = null;
                 FurnishingAddsToBiomeListBox.Items.Clear();
                 FurnishingAddsToRoomListBox.Items.Clear();
-                FurnishingEntryTypeComboBox.SelectedItem = EntryType.None;
-                FurnishingIsWalkableCheckBox.Checked = false;
-                FurnishingIsEnclosingCheckBox.Checked = false;
-                FurnishingIsFlammableCheckBox.Checked = false;
-                FurnishingIsOpenableCheckBox.Checked = false;
+                FurnishingEntryTypeComboBox.SelectedItem =
+                    (EntryType)(EditableControls[typeof(ComboBox)][FurnishingEntryTypeComboBox] = EntryType.None);
+                FurnishingIsWalkableCheckBox.Checked =
+                    (bool)(EditableControls[typeof(CheckBox)][FurnishingIsWalkableCheckBox] = false);
+                FurnishingIsEnclosingCheckBox.Checked =
+                    (bool)(EditableControls[typeof(CheckBox)][FurnishingIsEnclosingCheckBox] = false);
+                FurnishingIsFlammableCheckBox.Checked =
+                    (bool)(EditableControls[typeof(CheckBox)][FurnishingIsFlammableCheckBox] = false);
+                FurnishingIsOpenableCheckBox.Checked =
+                    (bool)(EditableControls[typeof(CheckBox)][FurnishingIsOpenableCheckBox] = false);
                 FurnishingClosedPixelBox.Image = Resources.ImageNotFound;
             }
             else if (FurnishingListBox.SelectedItem is FurnishingModel model)
             {
                 FurnishingIDStatic.Text = model.ID.ToString();
-                FurnishingNameTextBox.Text = model.Name;
-                FurnishingDescriptionTextBox.Text = model.Description;
-                FurnishingCommentTextBox.Text = model.Comment;
-                FurnishingEquivalentItemComboBox.SelectedItem = model.ItemID == ModelID.None
-                    ? null
-                    : All.Items.GetOrNull<ItemModel>(model.ItemID);
+                FurnishingNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][FurnishingNameTextBox] = model.Name);
+                FurnishingDescriptionTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][FurnishingDescriptionTextBox] = model.Description);
+                FurnishingCommentTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][FurnishingCommentTextBox] = model.Comment);
+                FurnishingEquivalentItemComboBox.SelectedItem =
+                    (ItemModel)(EditableControls[typeof(ComboBox)][FurnishingEquivalentItemComboBox] =
+                        model.ItemID == ModelID.None
+                            ? null
+                            : All.Items.GetOrNull<ItemModel>(model.ItemID));
                 RepopulateListBox(FurnishingAddsToBiomeListBox, model.AddsToBiome);
                 RepopulateListBox(FurnishingAddsToRoomListBox, model.AddsToRoom);
-                FurnishingEntryTypeComboBox.SelectedItem = model.Entry;
-                FurnishingIsWalkableCheckBox.Checked = model.IsWalkable;
-                FurnishingIsEnclosingCheckBox.Checked = model.IsEnclosing;
-                FurnishingIsFlammableCheckBox.Checked = model.IsFlammable;
-                FurnishingIsOpenableCheckBox.Checked = model.IsOpenable;
+                FurnishingEntryTypeComboBox.SelectedItem =
+                    (EntryType)(EditableControls[typeof(ComboBox)][FurnishingEntryTypeComboBox] = model.Entry);
+                FurnishingIsWalkableCheckBox.Checked =
+                    (bool)(EditableControls[typeof(CheckBox)][FurnishingIsWalkableCheckBox] = model.IsWalkable);
+                FurnishingIsEnclosingCheckBox.Checked =
+                    (bool)(EditableControls[typeof(CheckBox)][FurnishingIsEnclosingCheckBox] = model.IsEnclosing);
+                FurnishingIsFlammableCheckBox.Checked =
+                    (bool)(EditableControls[typeof(CheckBox)][FurnishingIsFlammableCheckBox] = model.IsFlammable);
+                FurnishingIsOpenableCheckBox.Checked =
+                    (bool)(EditableControls[typeof(CheckBox)][FurnishingIsOpenableCheckBox] = model.IsOpenable);
                 PictureBoxLoadFromStorage(FurnishingClosedPixelBox, model.ID);
             }
         }
@@ -1701,29 +1792,43 @@ namespace Scribe.Forms
             if (CollectibleListBox.SelectedItem is null)
             {
                 CollectibleIDStatic.Text = ModelID.None.ToString();
-                CollectibleNameTextBox.Text = "";
-                CollectibleDescriptionTextBox.Text = "";
-                CollectibleCommentTextBox.Text = "";
-                CollectibleEquivalentItemComboBox.SelectedItem = null;
+                CollectibleNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CollectibleNameTextBox] = "");
+                CollectibleDescriptionTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CollectibleDescriptionTextBox] = "");
+                CollectibleCommentTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CollectibleCommentTextBox] = "");
+                CollectibleEquivalentItemComboBox.SelectedItem =
+                    EditableControls[typeof(ComboBox)][CollectibleEquivalentItemComboBox] = null;
                 CollectibleAddsToBiomeListBox.Items.Clear();
                 CollectibleAddsToRoomListBox.Items.Clear();
-                CollectibleCollectionEffectComboBox.SelectedItem = null;
-                CollectibleEffectAmountTextBox.Text = "";
+                CollectibleCollectionEffectComboBox.SelectedItem =
+                    EditableControls[typeof(ComboBox)][CollectibleCollectionEffectComboBox] = null;
+                CollectibleEffectAmountTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CollectibleEffectAmountTextBox] = "");
                 CollectiblePixelBox.Image = Resources.ImageNotFound;
             }
             else if (CollectibleListBox.SelectedItem is CollectibleModel model)
             {
                 CollectibleIDStatic.Text = model.ID.ToString();
-                CollectibleNameTextBox.Text = model.Name;
-                CollectibleDescriptionTextBox.Text = model.Description;
-                CollectibleCommentTextBox.Text = model.Comment;
-                CollectibleEquivalentItemComboBox.SelectedItem = model.ItemID == ModelID.None
-                    ? null
-                    : All.Items.GetOrNull<ItemModel>(model.ItemID);
+                CollectibleNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CollectibleNameTextBox] = model.Name);
+                CollectibleDescriptionTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CollectibleDescriptionTextBox] = model.Description);
+                CollectibleCommentTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CollectibleCommentTextBox] = model.Comment);
+                CollectibleEquivalentItemComboBox.SelectedItem =
+                    (ItemModel)(EditableControls[typeof(ComboBox)][CollectibleEquivalentItemComboBox] =
+                        model.ItemID == ModelID.None
+                            ? null
+                            : All.Items.GetOrNull<ItemModel>(model.ItemID));
                 RepopulateListBox(CollectibleAddsToBiomeListBox, model.AddsToBiome);
                 RepopulateListBox(CollectibleAddsToRoomListBox, model.AddsToRoom);
-                CollectibleCollectionEffectComboBox.SelectedItem = model.CollectionEffect;
-                CollectibleEffectAmountTextBox.Text = model.EffectAmount.ToString(CultureInfo.InvariantCulture);
+                CollectibleCollectionEffectComboBox.SelectedItem =
+                    (CollectingEffect)(EditableControls[typeof(ComboBox)][CollectibleCollectionEffectComboBox] = model.CollectionEffect);
+                CollectibleEffectAmountTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CollectibleEffectAmountTextBox] =
+                        model.EffectAmount.ToString(CultureInfo.InvariantCulture));
                 PictureBoxLoadFromStorage(CollectiblePixelBox, model.ID);
             }
         }
@@ -1739,45 +1844,65 @@ namespace Scribe.Forms
             if (CharacterListBox.SelectedItem is null)
             {
                 CharacterIDStatic.Text = ModelID.None.ToString();
-                CharacterPersonalNameTextBox.Text = "";
-                CharacterFamilyNameTextBox.Text = "";
-                CharacterDescriptionTextBox.Text = "";
-                CharacterCommentTextBox.Text = "";
-                CharacterNativeBiomeComboBox.SelectedItem = null;
-                CharacterPrimaryBehaviorComboBox.SelectedItem = null;
-                CharacterPronounComboBox.SelectedItem = null;
-                CharacterStoryIDTextBox.Text = "";
+                CharacterPersonalNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CharacterPersonalNameTextBox] = "");
+                CharacterFamilyNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CharacterFamilyNameTextBox] = "");
+                CharacterDescriptionTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CharacterDescriptionTextBox] = "");
+                CharacterCommentTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CharacterCommentTextBox] = "");
+                CharacterNativeBiomeComboBox.SelectedItem =
+                    EditableControls[typeof(ComboBox)][CharacterNativeBiomeComboBox] = null;
+                CharacterPrimaryBehaviorComboBox.SelectedItem =
+                    EditableControls[typeof(ComboBox)][CharacterPrimaryBehaviorComboBox] = null;
+                CharacterPronounComboBox.SelectedItem =
+                    EditableControls[typeof(ComboBox)][CharacterPronounComboBox] = null;
+                CharacterStoryIDTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CharacterStoryIDTextBox] = "");
                 CharacterStartingQuestsListBox.Items.Clear();
-                CharacterStartingDialogueComboBox.SelectedItem = null;
+                CharacterStartingDialogueComboBox.SelectedItem =
+                    EditableControls[typeof(ComboBox)][CharacterStartingDialogueComboBox] = null;
                 CharacterStartingInventoryStatic.Text = $"{0} Items";
                 CharacterPixelBox.Image = Resources.ImageNotFound;
             }
             else if (CharacterListBox.SelectedItem is CharacterModel model)
             {
                 CharacterIDStatic.Text = model.ID.ToString();
-                CharacterPersonalNameTextBox.Text = model.PersonalName;
-                CharacterFamilyNameTextBox.Text = model.FamilyName;
-                CharacterDescriptionTextBox.Text = model.Description;
-                CharacterCommentTextBox.Text = model.Comment;
-                CharacterNativeBiomeComboBox.SelectedItem = model.NativeBiomeID == ModelID.None
-                    ? null
-                    : All.BiomeRecipes.GetOrNull<BiomeRecipe>(model.NativeBiomeID);
-                CharacterPrimaryBehaviorComboBox.SelectedItem = model.PrimaryBehaviorID == ModelID.None
-                    ? null
-                    : All.Scripts.GetOrNull<ScriptModel>(model.PrimaryBehaviorID);
-                CharacterPronounComboBox.SelectedItem = model.PronounKey;
+                CharacterPersonalNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CharacterPersonalNameTextBox] = model.PersonalName);
+                CharacterFamilyNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CharacterFamilyNameTextBox] = model.FamilyName);
+                CharacterDescriptionTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CharacterDescriptionTextBox] = model.Description);
+                CharacterCommentTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CharacterCommentTextBox] = model.Comment);
+                CharacterNativeBiomeComboBox.SelectedItem =
+                    (BiomeRecipe)(EditableControls[typeof(ComboBox)][CharacterNativeBiomeComboBox] =
+                        model.NativeBiomeID == ModelID.None
+                            ? null
+                            : All.BiomeRecipes.GetOrNull<BiomeRecipe>(model.NativeBiomeID));
+                CharacterPrimaryBehaviorComboBox.SelectedItem =
+                    (ScriptModel)(EditableControls[typeof(ComboBox)][CharacterPrimaryBehaviorComboBox] =
+                        model.PrimaryBehaviorID == ModelID.None
+                            ? null
+                            : All.Scripts.GetOrNull<ScriptModel>(model.PrimaryBehaviorID));
+                CharacterPronounComboBox.SelectedItem =
+                    (string)(EditableControls[typeof(ComboBox)][CharacterPronounComboBox] = model.PronounKey);
                 CharacterStoryIDTextBox.Text =
-                    string.IsNullOrEmpty(model.StoryCharacterID) && Settings.Default.SuggestStoryIDs
-                        ? $"{model.PersonalName.ToUpperInvariant()}_{model.FamilyName.ToUpperInvariant()}"
-                        : model.StoryCharacterID;
+                    (string)(EditableControls[typeof(TextBox)][CharacterStoryIDTextBox] =
+                        string.IsNullOrEmpty(model.StoryCharacterID) && Settings.Default.SuggestStoryIDs
+                            ? $"{model.PersonalName.ToUpperInvariant()}_{model.FamilyName.ToUpperInvariant()}"
+                            : model.StoryCharacterID);
                 RepopulateListBox(CharacterStartingQuestsListBox, model.StartingQuestIDs
                                                                        // NOTE that I am not 100% certain what happens if GetOrNull
                                                                        // returns null here.  In any case, that would be an error state.
                                                                        .Select(id => All.Interactions.GetOrNull<InteractionModel>(id)));
                 CharacterStartingDialogueComboBox.SelectedItem =
-                    ModelID.None == model.StartingDialogueID
-                        ? null
-                        : All.Interactions.GetOrNull<InteractionModel>(model.StartingDialogueID);
+                    (InteractionModel)(EditableControls[typeof(ComboBox)][CharacterStartingDialogueComboBox] =
+                        ModelID.None == model.StartingDialogueID
+                            ? null
+                            : All.Interactions.GetOrNull<InteractionModel>(model.StartingDialogueID));
                 CharacterStartingInventoryStatic.Text = $"{model.StartingInventory?.ItemCount ?? 0} Items";
                 PictureBoxLoadFromStorage(CharacterPixelBox, model.ID);
             }
@@ -1796,20 +1921,30 @@ namespace Scribe.Forms
             if (CharacterPronounListBox.SelectedItem is null)
             {
                 CharacterPronounKeyStatic.Text = PronounGroup.DefaultKey;
-                CharacterPronounSubjectiveTextBox.Text = "";
-                CharacterPronounObjectiveTextBox.Text = "";
-                CharacterPronounDeterminerTextBox.Text = "";
-                CharacterPronounPossessiveTextBox.Text = "";
-                CharacterPronounReflexiveTextBox.Text = "";
+                CharacterPronounSubjectiveTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CharacterPronounSubjectiveTextBox] = "");
+                CharacterPronounObjectiveTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CharacterPronounObjectiveTextBox] = "");
+                CharacterPronounDeterminerTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CharacterPronounDeterminerTextBox] = "");
+                CharacterPronounPossessiveTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CharacterPronounPossessiveTextBox] = "");
+                CharacterPronounReflexiveTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CharacterPronounReflexiveTextBox] = "");
             }
             else if (CharacterPronounListBox.SelectedItem is PronounGroup group)
             {
                 CharacterPronounKeyStatic.Text = group.Key;
-                CharacterPronounSubjectiveTextBox.Text = group.Subjective;
-                CharacterPronounObjectiveTextBox.Text = group.Objective;
-                CharacterPronounDeterminerTextBox.Text = group.Determiner;
-                CharacterPronounPossessiveTextBox.Text = group.Possessive;
-                CharacterPronounReflexiveTextBox.Text = group.Reflexive;
+                CharacterPronounSubjectiveTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CharacterPronounSubjectiveTextBox] = group.Subjective);
+                CharacterPronounObjectiveTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CharacterPronounObjectiveTextBox] = group.Objective);
+                CharacterPronounDeterminerTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CharacterPronounDeterminerTextBox] = group.Determiner);
+                CharacterPronounPossessiveTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CharacterPronounPossessiveTextBox] = group.Possessive);
+                CharacterPronounReflexiveTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CharacterPronounReflexiveTextBox] = group.Reflexive);
             }
         }
 
@@ -1823,25 +1958,37 @@ namespace Scribe.Forms
             if (CritterListBox.SelectedItem is null)
             {
                 CritterIDStatic.Text = ModelID.None.ToString();
-                CritterNameTextBox.Text = "";
-                CritterDescriptionTextBox.Text = "";
-                CritterCommentTextBox.Text = "";
-                CritterNativeBiomeComboBox.SelectedItem = null;
-                CritterPrimaryBehaviorComboBox.SelectedItem = null;
+                CritterNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CritterNameTextBox] = "");
+                CritterDescriptionTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CritterDescriptionTextBox] = "");
+                CritterCommentTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CritterCommentTextBox] = "");
+                CritterNativeBiomeComboBox.SelectedItem =
+                    EditableControls[typeof(ComboBox)][CritterNativeBiomeComboBox] = null;
+                CritterPrimaryBehaviorComboBox.SelectedItem =
+                    EditableControls[typeof(ComboBox)][CritterPrimaryBehaviorComboBox] = null;
                 CritterPixelBox.Image = Resources.ImageNotFound;
             }
             else if (CritterListBox.SelectedItem is CritterModel model)
             {
                 CritterIDStatic.Text = model.ID.ToString();
-                CritterNameTextBox.Text = model.Name;
-                CritterDescriptionTextBox.Text = model.Description;
-                CritterCommentTextBox.Text = model.Comment;
-                CritterNativeBiomeComboBox.SelectedItem = model.NativeBiomeID == ModelID.None
-                    ? null
-                    : All.BiomeRecipes.GetOrNull<BiomeRecipe>(model.NativeBiomeID);
-                CritterPrimaryBehaviorComboBox.SelectedItem = model.PrimaryBehaviorID == ModelID.None
-                    ? null
-                    : All.Scripts.GetOrNull<ScriptModel>(model.PrimaryBehaviorID);
+                CritterNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CritterNameTextBox] = model.Name);
+                CritterDescriptionTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CritterDescriptionTextBox] = model.Description);
+                CritterCommentTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CritterCommentTextBox] = model.Comment);
+                CritterNativeBiomeComboBox.SelectedItem =
+                    (BiomeRecipe)(EditableControls[typeof(ComboBox)][CritterNativeBiomeComboBox] =
+                        model.NativeBiomeID == ModelID.None
+                            ? null
+                            : All.BiomeRecipes.GetOrNull<BiomeRecipe>(model.NativeBiomeID));
+                CritterPrimaryBehaviorComboBox.SelectedItem =
+                    (ScriptModel)(EditableControls[typeof(ComboBox)][CritterPrimaryBehaviorComboBox] =
+                        model.PrimaryBehaviorID == ModelID.None
+                            ? null
+                            : All.Scripts.GetOrNull<ScriptModel>(model.PrimaryBehaviorID));
                 PictureBoxLoadFromStorage(CritterPixelBox, model.ID);
             }
         }
@@ -1857,38 +2004,64 @@ namespace Scribe.Forms
             if (ItemListBox.SelectedItem is null)
             {
                 ItemIDStatic.Text = ModelID.None.ToString();
-                ItemNameTextBox.Text = "";
-                ItemDescriptionTextBox.Text = "";
-                ItemCommentTextBox.Text = "";
-                ItemSubtypeComboBox.SelectedItem = ItemType.Other;
-                ItemPriceTextBox.Text = "";
-                ItemRarityTextBox.Text = "";
-                ItemStackMaxTextBox.Text = "";
-                ItemEffectWhileHeldComboBox.SelectedItem = null;
-                ItemEffectWhenUsedComboBox.SelectedItem = null;
-                ItemEquivalentParquetComboBox.SelectedItem = null;
+                ItemNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][ItemNameTextBox] = "");
+                ItemDescriptionTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][ItemDescriptionTextBox] = "");
+                ItemCommentTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][ItemCommentTextBox] = "");
+                ItemSubtypeComboBox.SelectedItem =
+                    (ItemType)(EditableControls[typeof(ComboBox)][ItemSubtypeComboBox] = ItemType.Other);
+                ItemPriceTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][ItemPriceTextBox] = "");
+                ItemRarityTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][ItemRarityTextBox] = "");
+                ItemStackMaxTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][ItemStackMaxTextBox] = "");
+                ItemEffectWhileHeldComboBox.SelectedItem =
+                    EditableControls[typeof(ComboBox)][ItemEffectWhileHeldComboBox] = null;
+                ItemEffectWhenUsedComboBox.SelectedItem =
+                    EditableControls[typeof(ComboBox)][ItemEffectWhenUsedComboBox] = null;
+                ItemEquivalentParquetComboBox.SelectedItem =
+                    EditableControls[typeof(ComboBox)][ItemEquivalentParquetComboBox] = null;
                 ItemTagListBox.Items.Clear();
                 ItemPixelBox.Image = Resources.ImageNotFound;
             }
             else if (ItemListBox.SelectedItem is ItemModel model)
             {
                 ItemIDStatic.Text = model.ID.ToString();
-                ItemNameTextBox.Text = model.Name;
-                ItemDescriptionTextBox.Text = model.Description;
-                ItemCommentTextBox.Text = model.Comment;
-                ItemSubtypeComboBox.SelectedItem = model.Subtype;
-                ItemPriceTextBox.Text = model.Price.ToString(CultureInfo.InvariantCulture);
-                ItemRarityTextBox.Text = model.Rarity.ToString(CultureInfo.InvariantCulture);
-                ItemStackMaxTextBox.Text = model.StackMax.ToString(CultureInfo.InvariantCulture);
-                ItemEffectWhileHeldComboBox.SelectedItem = model.EffectWhileHeldID == ModelID.None
-                    ? null
-                    : All.Scripts.GetOrNull<ScriptModel>(model.EffectWhileHeldID);
-                ItemEffectWhenUsedComboBox.SelectedItem = model.EffectWhenUsedID == ModelID.None
-                    ? null
-                    : All.Scripts.GetOrNull<ScriptModel>(model.EffectWhenUsedID);
-                ItemEquivalentParquetComboBox.SelectedItem = model.ParquetID == ModelID.None
-                    ? null
-                    : All.Parquets.GetOrNull<ParquetModel>(model.ParquetID);
+                ItemNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][ItemNameTextBox] = model.Name);
+                ItemDescriptionTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][ItemDescriptionTextBox] = model.Description);
+                ItemCommentTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][ItemCommentTextBox] = model.Comment);
+                ItemSubtypeComboBox.SelectedItem =
+                    (ItemType)(EditableControls[typeof(ComboBox)][ItemSubtypeComboBox] = model.Subtype);
+                ItemPriceTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][ItemPriceTextBox] =
+                        model.Price.ToString(CultureInfo.InvariantCulture));
+                ItemRarityTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][ItemRarityTextBox] =
+                        model.Rarity.ToString(CultureInfo.InvariantCulture));
+                ItemStackMaxTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][ItemStackMaxTextBox] =
+                        model.StackMax.ToString(CultureInfo.InvariantCulture));
+                ItemEffectWhileHeldComboBox.SelectedItem =
+                    (ScriptModel)(EditableControls[typeof(ComboBox)][ItemEffectWhileHeldComboBox] =
+                        model.EffectWhileHeldID == ModelID.None
+                            ? null
+                            : All.Scripts.GetOrNull<ScriptModel>(model.EffectWhileHeldID));
+                ItemEffectWhenUsedComboBox.SelectedItem =
+                    (ScriptModel)(EditableControls[typeof(ComboBox)][ItemEffectWhenUsedComboBox] =
+                        model.EffectWhenUsedID == ModelID.None
+                            ? null
+                            : All.Scripts.GetOrNull<ScriptModel>(model.EffectWhenUsedID));
+                ItemEquivalentParquetComboBox.SelectedItem =
+                    (ParquetModel)(EditableControls[typeof(ComboBox)][ItemEquivalentParquetComboBox] =
+                        model.ParquetID == ModelID.None
+                            ? null
+                            : All.Parquets.GetOrNull<ParquetModel>(model.ParquetID));
                 RepopulateListBox(ItemTagListBox, model.Tags);
                 PictureBoxLoadFromStorage(ItemPixelBox, model.ID);
             }
@@ -1905,26 +2078,41 @@ namespace Scribe.Forms
             if (BiomeListBox.SelectedItem is null)
             {
                 BiomeIDStatic.Text = ModelID.None.ToString();
-                BiomeNameTextBox.Text = "";
-                BiomeDescriptionTextBox.Text = "";
-                BiomeCommentTextBox.Text = "";
-                BiomeTierTextBox.Text = "";
-                BiomeIsRoomBasedCheckBox.Checked = false;
-                BiomeIsLiquidBasedCheckBox.Checked = false;
-                BiomeParquetCriteriaTextBox.Text = "";
+                BiomeNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][BiomeNameTextBox] = "");
+                BiomeDescriptionTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][BiomeDescriptionTextBox] = "");
+                BiomeCommentTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][BiomeCommentTextBox] = "");
+                BiomeTierTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][BiomeTierTextBox] = "");
+                BiomeIsRoomBasedCheckBox.Checked =
+                    (bool)(EditableControls[typeof(CheckBox)][BiomeIsRoomBasedCheckBox] = false);
+                BiomeIsLiquidBasedCheckBox.Checked =
+                    (bool)(EditableControls[typeof(CheckBox)][BiomeIsLiquidBasedCheckBox] = false);
+                BiomeParquetCriteriaTextBox.Text =
+                    (ModelTag)(EditableControls[typeof(TextBox)][BiomeParquetCriteriaTextBox] = "");
                 BiomeEntryRequirementsListBox.Items.Clear();
                 BiomePixelBox.Image = Resources.ImageNotFound;
             }
             else if (BiomeListBox.SelectedItem is BiomeRecipe recipe)
             {
                 BiomeIDStatic.Text = recipe.ID.ToString();
-                BiomeNameTextBox.Text = recipe.Name;
-                BiomeDescriptionTextBox.Text = recipe.Description;
-                BiomeCommentTextBox.Text = recipe.Comment;
-                BiomeTierTextBox.Text = recipe.Tier.ToString(CultureInfo.InvariantCulture);
-                BiomeIsRoomBasedCheckBox.Checked = recipe.IsRoomBased;
-                BiomeIsLiquidBasedCheckBox.Checked = recipe.IsLiquidBased;
-                BiomeParquetCriteriaTextBox.Text = recipe.ParquetCriteria;
+                BiomeNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][BiomeNameTextBox] = recipe.Name);
+                BiomeDescriptionTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][BiomeDescriptionTextBox] = recipe.Description);
+                BiomeCommentTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][BiomeCommentTextBox] = recipe.Comment);
+                BiomeTierTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][BiomeTierTextBox] =
+                        recipe.Tier.ToString(CultureInfo.InvariantCulture));
+                BiomeIsRoomBasedCheckBox.Checked =
+                    (bool)(EditableControls[typeof(CheckBox)][BiomeIsRoomBasedCheckBox] = recipe.IsRoomBased);
+                BiomeIsLiquidBasedCheckBox.Checked =
+                    (bool)(EditableControls[typeof(CheckBox)][BiomeIsLiquidBasedCheckBox] = recipe.IsLiquidBased);
+                BiomeParquetCriteriaTextBox.Text =
+                    (ModelTag)(EditableControls[typeof(TextBox)][BiomeParquetCriteriaTextBox] = recipe.ParquetCriteria);
                 RepopulateListBox(BiomeEntryRequirementsListBox, recipe.EntryRequirements);
                 PictureBoxLoadFromStorage(BiomePixelBox, recipe.ID);
             }
@@ -1942,23 +2130,29 @@ namespace Scribe.Forms
             if (CraftingListBox.SelectedItem is null)
             {
                 CraftingIDStatic.Text = ModelID.None.ToString();
-                CraftingNameTextBox.Text = "";
-                CraftingDescriptionTextBox.Text = "";
-                CraftingCommentTextBox.Text = "";
+                CraftingNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CraftingNameTextBox] = "");
+                CraftingDescriptionTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CraftingDescriptionTextBox] = "");
+                CraftingCommentTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CraftingCommentTextBox] = "");
                 CraftingProductsListBox.Items.Clear();
                 CraftingIngredientsListBox.Items.Clear();
-                CraftingPanelsCountStatic.Text = $"{0} Panels";
+                CraftingPanelsCountStatic.Text = $"{0} {nameof(StrikePanel)}s";
                 CraftingPixelBox.Image = Resources.ImageNotFound;
             }
             else if (CraftingListBox.SelectedItem is CraftingRecipe recipe)
             {
                 CraftingIDStatic.Text = recipe.ID.ToString();
-                CraftingNameTextBox.Text = recipe.Name;
-                CraftingDescriptionTextBox.Text = recipe.Description;
-                CraftingCommentTextBox.Text = recipe.Comment;
+                CraftingNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CraftingNameTextBox] = recipe.Name);
+                CraftingDescriptionTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CraftingDescriptionTextBox] = recipe.Description);
+                CraftingCommentTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][CraftingCommentTextBox] = recipe.Comment);
                 RepopulateListBox(CraftingProductsListBox, recipe.Products);
                 RepopulateListBox(CraftingIngredientsListBox, recipe.Ingredients);
-                CraftingPanelsCountStatic.Text = $"{recipe.PanelPattern?.Count ?? 0} Panels";
+                CraftingPanelsCountStatic.Text = $"{recipe.PanelPattern?.Count ?? 0} {nameof(StrikePanel)}s";
                 PictureBoxLoadFromStorage(CraftingPixelBox, recipe.ID);
             }
         }
@@ -1976,10 +2170,14 @@ namespace Scribe.Forms
             if (RoomListBox.SelectedItem is null)
             {
                 RoomIDStatic.Text = ModelID.None.ToString();
-                RoomNameTextBox.Text = "";
-                RoomDescriptionTextBox.Text = "";
-                RoomCommentTextBox.Text = "";
-                RoomMinimumWalkableSpacesTextBox.Text = "";
+                RoomNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][RoomNameTextBox] = "");
+                RoomDescriptionTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][RoomDescriptionTextBox] = "");
+                RoomCommentTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][RoomCommentTextBox] = "");
+                RoomMinimumWalkableSpacesTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][RoomMinimumWalkableSpacesTextBox] = "");
                 RoomRequiredFurnishingsListBox.Items.Clear();
                 RoomRequiredFloorsListBox.Items.Clear();
                 RoomRequiredBlocksListBox.Items.Clear();
@@ -1988,10 +2186,15 @@ namespace Scribe.Forms
             else if (RoomListBox.SelectedItem is RoomRecipe recipe)
             {
                 RoomIDStatic.Text = recipe.ID.ToString();
-                RoomNameTextBox.Text = recipe.Name;
-                RoomDescriptionTextBox.Text = recipe.Description;
-                RoomCommentTextBox.Text = recipe.Comment;
-                RoomMinimumWalkableSpacesTextBox.Text = recipe.MinimumWalkableSpaces.ToString(CultureInfo.InvariantCulture);
+                RoomNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][RoomNameTextBox] = recipe.Name);
+                RoomDescriptionTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][RoomDescriptionTextBox] = recipe.Description);
+                RoomCommentTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][RoomCommentTextBox] = recipe.Comment);
+                RoomMinimumWalkableSpacesTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][RoomMinimumWalkableSpacesTextBox] =
+                        recipe.MinimumWalkableSpaces.ToString(CultureInfo.InvariantCulture));
                 RepopulateListBox(RoomRequiredFurnishingsListBox, recipe.OptionallyRequiredFurnishings);
                 RepopulateListBox(RoomRequiredFloorsListBox, recipe.OptionallyRequiredWalkableFloors);
                 RepopulateListBox(RoomRequiredBlocksListBox, recipe.OptionallyRequiredPerimeterBlocks);
@@ -2009,46 +2212,70 @@ namespace Scribe.Forms
             if (RegionListBox.SelectedItem is null)
             {
                 RegionIDStatic.Text = ModelID.None.ToString();
-                RegionNameTextBox.Text = "";
-                RegionDescriptionTextBox.Text = "";
-                RegionCommentTextBox.Text = "";
+                RegionNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][RegionNameTextBox] = "");
+                RegionDescriptionTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][RegionDescriptionTextBox] = "");
+                RegionCommentTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][RegionCommentTextBox] = "");
                 RegionBackgroundColorStatic.BackColor = EditorCommands.DefaultRegionColor;
                 RegionBackgroundColorNameStatic.Text = EditorCommands.DefaultRegionColorName;
-                RegionExitNorthComboBox.SelectedItem = null;
-                RegionExitSouthComboBox.SelectedItem = null;
-                RegionExitEastComboBox.SelectedItem = null;
-                RegionExitWestComboBox.SelectedItem = null;
-                RegionExitUpComboBox.SelectedItem = null;
-                RegionExitDownComboBox.SelectedItem = null;
+                RegionExitNorthComboBox.SelectedItem =
+                    EditableControls[typeof(ComboBox)][RegionExitNorthComboBox] = null;
+                RegionExitSouthComboBox.SelectedItem =
+                    EditableControls[typeof(ComboBox)][RegionExitSouthComboBox] = null;
+                RegionExitEastComboBox.SelectedItem =
+                    EditableControls[typeof(ComboBox)][RegionExitEastComboBox] = null;
+                RegionExitWestComboBox.SelectedItem =
+                    EditableControls[typeof(ComboBox)][RegionExitWestComboBox] = null;
+                RegionExitUpComboBox.SelectedItem =
+                    EditableControls[typeof(ComboBox)][RegionExitUpComboBox] = null;
+                RegionExitDownComboBox.SelectedItem =
+                    EditableControls[typeof(ComboBox)][RegionExitDownComboBox] = null;
                 RegionPixelBox.Image = Resources.Map;
             }
             else if (RegionListBox.SelectedItem is RegionModel model)
             {
                 RegionIDStatic.Text = model.ID.ToString();
-                RegionNameTextBox.Text = model.Name;
-                RegionDescriptionTextBox.Text = model.Description;
-                RegionCommentTextBox.Text = model.Comment;
+                RegionNameTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][RegionNameTextBox] = model.Name);
+                RegionDescriptionTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][RegionDescriptionTextBox] = model.Description);
+                RegionCommentTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][RegionCommentTextBox] = model.Comment);
                 var newBackColor = ColorTranslator.FromHtml(model.BackgroundColor);
                 RegionBackgroundColorStatic.BackColor = newBackColor;
                 RegionBackgroundColorNameStatic.Text = EditorCommands.FormatColorNameForDisplay(newBackColor);
-                RegionExitNorthComboBox.SelectedItem = model.RegionToTheNorth == ModelID.None
-                    ? null
-                    : All.Regions.GetOrNull<RegionModel>(model.RegionToTheNorth);
-                RegionExitSouthComboBox.SelectedItem = model.RegionToTheSouth == ModelID.None
-                    ? null
-                    : All.Regions.GetOrNull<RegionModel>(model.RegionToTheSouth);
-                RegionExitEastComboBox.SelectedItem = model.RegionToTheEast == ModelID.None
-                    ? null
-                    : All.Regions.GetOrNull<RegionModel>(model.RegionToTheEast);
-                RegionExitWestComboBox.SelectedItem = model.RegionToTheWest == ModelID.None
-                    ? null
-                    : All.Regions.GetOrNull<RegionModel>(model.RegionToTheWest);
-                RegionExitUpComboBox.SelectedItem = model.RegionAbove == ModelID.None
-                    ? null
-                    : All.Regions.GetOrNull<RegionModel>(model.RegionAbove);
-                RegionExitDownComboBox.SelectedItem = model.RegionBelow == ModelID.None
-                    ? null
-                    : All.Regions.GetOrNull<RegionModel>(model.RegionBelow);
+                RegionExitNorthComboBox.SelectedItem =
+                    (RegionModel)(EditableControls[typeof(ComboBox)][RegionExitNorthComboBox] =
+                        model.RegionToTheNorth == ModelID.None
+                            ? null
+                            : All.Regions.GetOrNull<RegionModel>(model.RegionToTheNorth));
+                RegionExitSouthComboBox.SelectedItem =
+                    (RegionModel)(EditableControls[typeof(ComboBox)][RegionExitSouthComboBox] =
+                        model.RegionToTheSouth == ModelID.None
+                            ? null
+                            : All.Regions.GetOrNull<RegionModel>(model.RegionToTheSouth));
+                RegionExitEastComboBox.SelectedItem =
+                    (RegionModel)(EditableControls[typeof(ComboBox)][RegionExitEastComboBox] =
+                        model.RegionToTheEast == ModelID.None
+                            ? null
+                            : All.Regions.GetOrNull<RegionModel>(model.RegionToTheEast));
+                RegionExitWestComboBox.SelectedItem =
+                    (RegionModel)(EditableControls[typeof(ComboBox)][RegionExitWestComboBox] =
+                        model.RegionToTheWest == ModelID.None
+                            ? null
+                            : All.Regions.GetOrNull<RegionModel>(model.RegionToTheWest));
+                RegionExitUpComboBox.SelectedItem =
+                    (RegionModel)(EditableControls[typeof(ComboBox)][RegionExitUpComboBox] =
+                        model.RegionAbove == ModelID.None
+                            ? null
+                            : All.Regions.GetOrNull<RegionModel>(model.RegionAbove));
+                RegionExitDownComboBox.SelectedItem =
+                    (RegionModel)(EditableControls[typeof(ComboBox)][RegionExitDownComboBox] =
+                        model.RegionBelow == ModelID.None
+                            ? null
+                            : All.Regions.GetOrNull<RegionModel>(model.RegionBelow));
                 // TODO: [MAPS] Fix this: PictureGenerateFromRegion(RegionPixelBox, model.ID);
             }
         }
