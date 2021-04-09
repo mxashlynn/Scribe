@@ -238,6 +238,8 @@ namespace Scribe.Forms
             this.FurnishingFlavorStatic = new System.Windows.Forms.Label();
             this.FurnishingFlavorLabel = new System.Windows.Forms.Label();
             this.FurnishingTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.FurnishingAddsToRoomLabel = new System.Windows.Forms.Label();
+            this.FurnishingAddsToBiomelabel = new System.Windows.Forms.Label();
             this.FurnishingNameLabel = new System.Windows.Forms.Label();
             this.FurnishingDescriptionLabel = new System.Windows.Forms.Label();
             this.FurnishingCommentLabel = new System.Windows.Forms.Label();
@@ -282,6 +284,8 @@ namespace Scribe.Forms
             this.CollectibleFlavorStatic = new System.Windows.Forms.Label();
             this.CollectibleFlavorLabel = new System.Windows.Forms.Label();
             this.CollectibleTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.CollectibleAddsToRoomLabel = new System.Windows.Forms.Label();
+            this.CollectibleAddsToBiomeLabel = new System.Windows.Forms.Label();
             this.CollectibleEffectAmountTextBox = new System.Windows.Forms.TextBox();
             this.CollectibleCollectionEffectComboBox = new System.Windows.Forms.ComboBox();
             this.CollectibleNameLabel = new System.Windows.Forms.Label();
@@ -3158,6 +3162,8 @@ namespace Scribe.Forms
             this.FurnishingTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.FurnishingTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.FurnishingTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingAddsToRoomLabel, 0, 6);
+            this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingAddsToBiomelabel, 0, 4);
             this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingNameLabel, 0, 0);
             this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingDescriptionLabel, 0, 1);
             this.FurnishingTableLayoutPanel.Controls.Add(this.FurnishingCommentLabel, 0, 2);
@@ -3200,6 +3206,24 @@ namespace Scribe.Forms
             this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.FurnishingTableLayoutPanel.Size = new System.Drawing.Size(429, 475);
             this.FurnishingTableLayoutPanel.TabIndex = 5;
+            // 
+            // FurnishingAddsToRoomLabel
+            // 
+            this.FurnishingAddsToRoomLabel.AutoSize = true;
+            this.FurnishingAddsToRoomLabel.Location = new System.Drawing.Point(3, 252);
+            this.FurnishingAddsToRoomLabel.Name = "FurnishingAddsToRoomLabel";
+            this.FurnishingAddsToRoomLabel.Size = new System.Drawing.Size(74, 13);
+            this.FurnishingAddsToRoomLabel.TabIndex = 41;
+            this.FurnishingAddsToRoomLabel.Text = "Adds to Room";
+            // 
+            // FurnishingAddsToBiomelabel
+            // 
+            this.FurnishingAddsToBiomelabel.AutoSize = true;
+            this.FurnishingAddsToBiomelabel.Location = new System.Drawing.Point(3, 160);
+            this.FurnishingAddsToBiomelabel.Name = "FurnishingAddsToBiomelabel";
+            this.FurnishingAddsToBiomelabel.Size = new System.Drawing.Size(75, 13);
+            this.FurnishingAddsToBiomelabel.TabIndex = 40;
+            this.FurnishingAddsToBiomelabel.Text = "Adds to Biome";
             // 
             // FurnishingNameLabel
             // 
@@ -3678,6 +3702,8 @@ namespace Scribe.Forms
             this.CollectibleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.CollectibleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.CollectibleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleAddsToRoomLabel, 0, 6);
+            this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleAddsToBiomeLabel, 0, 4);
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleEffectAmountTextBox, 1, 9);
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleCollectionEffectComboBox, 1, 8);
             this.CollectibleTableLayoutPanel.Controls.Add(this.CollectibleNameLabel, 0, 0);
@@ -3712,6 +3738,24 @@ namespace Scribe.Forms
             this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.CollectibleTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.CollectibleTableLayoutPanel.TabIndex = 5;
+            // 
+            // CollectibleAddsToRoomLabel
+            // 
+            this.CollectibleAddsToRoomLabel.AutoSize = true;
+            this.CollectibleAddsToRoomLabel.Location = new System.Drawing.Point(3, 265);
+            this.CollectibleAddsToRoomLabel.Name = "CollectibleAddsToRoomLabel";
+            this.CollectibleAddsToRoomLabel.Size = new System.Drawing.Size(74, 13);
+            this.CollectibleAddsToRoomLabel.TabIndex = 41;
+            this.CollectibleAddsToRoomLabel.Text = "Adds to Room";
+            // 
+            // CollectibleAddsToBiomeLabel
+            // 
+            this.CollectibleAddsToBiomeLabel.AutoSize = true;
+            this.CollectibleAddsToBiomeLabel.Location = new System.Drawing.Point(3, 160);
+            this.CollectibleAddsToBiomeLabel.Name = "CollectibleAddsToBiomeLabel";
+            this.CollectibleAddsToBiomeLabel.Size = new System.Drawing.Size(75, 13);
+            this.CollectibleAddsToBiomeLabel.TabIndex = 40;
+            this.CollectibleAddsToBiomeLabel.Text = "Adds to Biome";
             // 
             // CollectibleEffectAmountTextBox
             // 
@@ -7509,6 +7553,8 @@ namespace Scribe.Forms
         private System.Windows.Forms.ComboBox FurnishingEquivalentItemComboBox;
         private System.Windows.Forms.ListBox FurnishingAddsToBiomeListBox;
         private System.Windows.Forms.ListBox FurnishingAddsToRoomListBox;
+        private System.Windows.Forms.Label FurnishingAddsToBiomelabel;
+        private System.Windows.Forms.Label FurnishingAddsToRoomLabel;
         private System.Windows.Forms.Button FurnishingAddBiomeTagButton;
         private System.Windows.Forms.Button FurnishingAddRoomTagButton;
         private System.Windows.Forms.Button FurnishingRemoveRoomTagButton;
@@ -7552,6 +7598,8 @@ namespace Scribe.Forms
         private System.Windows.Forms.TextBox CollectibleDescriptionTextBox;
         private System.Windows.Forms.TextBox CollectibleCommentTextBox;
         private System.Windows.Forms.TextBox CollectibleEffectAmountTextBox;
+        private System.Windows.Forms.Label CollectibleAddsToBiomeLabel;
+        private System.Windows.Forms.Label CollectibleAddsToRoomLabel;
         private System.Windows.Forms.ListBox CollectibleAddsToBiomeListBox;
         private System.Windows.Forms.ListBox CollectibleAddsToRoomListBox;
         private System.Windows.Forms.Button CollectibleAddBiomeTagButton;
