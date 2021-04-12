@@ -21,6 +21,16 @@ namespace Scribe.Forms
             this.ToolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.EditorStatusStrip = new System.Windows.Forms.StatusStrip();
             this.EditorToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.GameNameLabel = new System.Windows.Forms.Label();
+            this.GameDescriptionLabel = new System.Windows.Forms.Label();
+            this.GameCommentLabel = new System.Windows.Forms.Label();
+            this.GameNameTextBox = new System.Windows.Forms.TextBox();
+            this.GameDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.GameCommentTextBox = new System.Windows.Forms.TextBox();
+            this.GameIDStatic = new System.Windows.Forms.Label();
+            this.ContextMenuStripIDStatics = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ToolStripMenuItemCopyID = new System.Windows.Forms.ToolStripMenuItem();
+            this.GameListBox = new System.Windows.Forms.ListBox();
             this.MainMenuBar = new System.Windows.Forms.MenuStrip();
             this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,8 +72,6 @@ namespace Scribe.Forms
             this.ToolStripMenuItemOpenContainingFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripSeparatorPictureBoxes = new System.Windows.Forms.ToolStripSeparator();
             this.ToolStripMenuItemReloadImage = new System.Windows.Forms.ToolStripMenuItem();
-            this.ContextMenuStripIDStatics = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.ToolStripMenuItemCopyID = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuStripForTextEntries = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToolStripMenuItemContextCut = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemContextCopy = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,26 +110,18 @@ namespace Scribe.Forms
             this.GameIconEditButton = new System.Windows.Forms.Button();
             this.GameIconPixelBox = new ParquetCustomControls.PixelBox();
             this.GameTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.GameNameLabel = new System.Windows.Forms.Label();
-            this.GameDescriptionLabel = new System.Windows.Forms.Label();
-            this.GameCommentLabel = new System.Windows.Forms.Label();
             this.GameIsEpisodeLabel = new System.Windows.Forms.Label();
             this.GameEpisodeTitleLabel = new System.Windows.Forms.Label();
             this.GameEpisodeNumberLabel = new System.Windows.Forms.Label();
             this.GamePlayerCharacterLabel = new System.Windows.Forms.Label();
             this.GameFirstScriptLabel = new System.Windows.Forms.Label();
             this.GameIsEpisodeCheckBox = new System.Windows.Forms.CheckBox();
-            this.GameNameTextBox = new System.Windows.Forms.TextBox();
-            this.GameDescriptionTextBox = new System.Windows.Forms.TextBox();
-            this.GameCommentTextBox = new System.Windows.Forms.TextBox();
             this.GameEpisodeTitleTextBox = new System.Windows.Forms.TextBox();
             this.GameEpisodeNumberTextBox = new System.Windows.Forms.TextBox();
             this.GamePlayerCharacterComboBox = new System.Windows.Forms.ComboBox();
             this.GameFirstScriptComboBox = new System.Windows.Forms.ComboBox();
             this.GameIDLabel = new System.Windows.Forms.Label();
-            this.GameIDStatic = new System.Windows.Forms.Label();
             this.GameAddNewGameButton = new System.Windows.Forms.Button();
-            this.GameListBox = new System.Windows.Forms.ListBox();
             this.FileFormatGroupBox = new System.Windows.Forms.GroupBox();
             this.FileFormatTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.FileFormatPrimaryDelimiterLabel = new System.Windows.Forms.Label();
@@ -582,9 +582,9 @@ namespace Scribe.Forms
             this.ScriptsTabPage = new System.Windows.Forms.TabPage();
             this.ScriptingPendingDesignLabel = new System.Windows.Forms.Label();
             this.EditorStatusStrip.SuspendLayout();
+            this.ContextMenuStripIDStatics.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
             this.ContextMenuStripPictureBoxes.SuspendLayout();
-            this.ContextMenuStripIDStatics.SuspendLayout();
             this.ContextMenuStripForTextEntries.SuspendLayout();
             this.FiltersTableLayoutPanel.SuspendLayout();
             this.FilterGroupBox.SuspendLayout();
@@ -674,6 +674,110 @@ namespace Scribe.Forms
             this.EditorStatusStrip.Size = new System.Drawing.Size(984, 22);
             this.EditorStatusStrip.SizingGrip = false;
             this.EditorStatusStrip.TabIndex = 0;
+            // 
+            // GameNameLabel
+            // 
+            this.GameNameLabel.AutoSize = true;
+            this.GameNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.GameNameLabel.Name = "GameNameLabel";
+            this.GameNameLabel.Size = new System.Drawing.Size(34, 13);
+            this.GameNameLabel.TabIndex = 0;
+            this.GameNameLabel.Text = "Name";
+            this.EditorToolTip.SetToolTip(this.GameNameLabel, "Player-facing name of this game or episode.");
+            // 
+            // GameDescriptionLabel
+            // 
+            this.GameDescriptionLabel.AutoSize = true;
+            this.GameDescriptionLabel.Location = new System.Drawing.Point(3, 25);
+            this.GameDescriptionLabel.Name = "GameDescriptionLabel";
+            this.GameDescriptionLabel.Size = new System.Drawing.Size(60, 13);
+            this.GameDescriptionLabel.TabIndex = 3;
+            this.GameDescriptionLabel.Text = "Description";
+            this.EditorToolTip.SetToolTip(this.GameDescriptionLabel, "Player-facing information about this game or episode.");
+            // 
+            // GameCommentLabel
+            // 
+            this.GameCommentLabel.AutoSize = true;
+            this.GameCommentLabel.Location = new System.Drawing.Point(3, 80);
+            this.GameCommentLabel.Name = "GameCommentLabel";
+            this.GameCommentLabel.Size = new System.Drawing.Size(52, 13);
+            this.GameCommentLabel.TabIndex = 6;
+            this.GameCommentLabel.Text = "Comment";
+            this.EditorToolTip.SetToolTip(this.GameCommentLabel, "A note to yourself about this game or episode.");
+            // 
+            // GameNameTextBox
+            // 
+            this.GameNameTextBox.Location = new System.Drawing.Point(131, 3);
+            this.GameNameTextBox.Name = "GameNameTextBox";
+            this.GameNameTextBox.Size = new System.Drawing.Size(147, 20);
+            this.GameNameTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.GameNameTextBox, "Player-facing name of this game or episode.");
+            // 
+            // GameDescriptionTextBox
+            // 
+            this.GameDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GameDescriptionTextBox.Location = new System.Drawing.Point(131, 28);
+            this.GameDescriptionTextBox.Multiline = true;
+            this.GameDescriptionTextBox.Name = "GameDescriptionTextBox";
+            this.GameDescriptionTextBox.Size = new System.Drawing.Size(295, 49);
+            this.GameDescriptionTextBox.TabIndex = 24;
+            this.EditorToolTip.SetToolTip(this.GameDescriptionTextBox, "Player-facing information about this game or episode.");
+            // 
+            // GameCommentTextBox
+            // 
+            this.GameCommentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GameCommentTextBox.Location = new System.Drawing.Point(131, 83);
+            this.GameCommentTextBox.Multiline = true;
+            this.GameCommentTextBox.Name = "GameCommentTextBox";
+            this.GameCommentTextBox.Size = new System.Drawing.Size(295, 49);
+            this.GameCommentTextBox.TabIndex = 25;
+            this.EditorToolTip.SetToolTip(this.GameCommentTextBox, "A note to yourself about this game or episode.");
+            // 
+            // GameIDStatic
+            // 
+            this.GameIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.GameIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.GameIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.GameIDStatic.Location = new System.Drawing.Point(813, 16);
+            this.GameIDStatic.Name = "GameIDStatic";
+            this.GameIDStatic.Size = new System.Drawing.Size(131, 20);
+            this.GameIDStatic.TabIndex = 3;
+            this.GameIDStatic.Tag = "Themed";
+            this.GameIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.GameIDStatic, "Project-wide unique identifier.");
+            // 
+            // ContextMenuStripIDStatics
+            // 
+            this.ContextMenuStripIDStatics.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemCopyID});
+            this.ContextMenuStripIDStatics.Name = "ContextMenuStripIDStatics";
+            this.ContextMenuStripIDStatics.Size = new System.Drawing.Size(117, 26);
+            // 
+            // ToolStripMenuItemCopyID
+            // 
+            this.ToolStripMenuItemCopyID.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemCopyID.Image")));
+            this.ToolStripMenuItemCopyID.Name = "ToolStripMenuItemCopyID";
+            this.ToolStripMenuItemCopyID.Size = new System.Drawing.Size(116, 22);
+            this.ToolStripMenuItemCopyID.Text = "Copy ID";
+            this.ToolStripMenuItemCopyID.Click += new System.EventHandler(this.CopyID_Click);
+            // 
+            // GameListBox
+            // 
+            this.GameListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.GameListBox.DisplayMember = "Name";
+            this.GameListBox.FormattingEnabled = true;
+            this.GameListBox.Location = new System.Drawing.Point(9, 16);
+            this.GameListBox.Name = "GameListBox";
+            this.GameListBox.Size = new System.Drawing.Size(279, 446);
+            this.GameListBox.TabIndex = 1;
+            this.GameListBox.Tag = "Untracked Control";
+            this.EditorToolTip.SetToolTip(this.GameListBox, "Every game and episode defined in this project.");
+            this.GameListBox.SelectedValueChanged += new System.EventHandler(this.GameListBox_SelectedValueChanged);
             // 
             // MainMenuBar
             // 
@@ -1030,21 +1134,6 @@ namespace Scribe.Forms
             this.ToolStripMenuItemReloadImage.Size = new System.Drawing.Size(201, 22);
             this.ToolStripMenuItemReloadImage.Text = "Reload from Disk";
             this.ToolStripMenuItemReloadImage.Click += new System.EventHandler(this.PixelBoxReload_Click);
-            // 
-            // ContextMenuStripIDStatics
-            // 
-            this.ContextMenuStripIDStatics.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMenuItemCopyID});
-            this.ContextMenuStripIDStatics.Name = "ContextMenuStripIDStatics";
-            this.ContextMenuStripIDStatics.Size = new System.Drawing.Size(117, 26);
-            // 
-            // ToolStripMenuItemCopyID
-            // 
-            this.ToolStripMenuItemCopyID.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemCopyID.Image")));
-            this.ToolStripMenuItemCopyID.Name = "ToolStripMenuItemCopyID";
-            this.ToolStripMenuItemCopyID.Size = new System.Drawing.Size(116, 22);
-            this.ToolStripMenuItemCopyID.Text = "Copy ID";
-            this.ToolStripMenuItemCopyID.Click += new System.EventHandler(this.CopyID_Click);
             // 
             // ContextMenuStripForTextEntries
             // 
@@ -1584,36 +1673,6 @@ namespace Scribe.Forms
             this.GameTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.GameTableLayoutPanel.TabIndex = 5;
             // 
-            // GameNameLabel
-            // 
-            this.GameNameLabel.AutoSize = true;
-            this.GameNameLabel.Location = new System.Drawing.Point(3, 0);
-            this.GameNameLabel.Name = "GameNameLabel";
-            this.GameNameLabel.Size = new System.Drawing.Size(34, 13);
-            this.GameNameLabel.TabIndex = 0;
-            this.GameNameLabel.Text = "Name";
-            this.EditorToolTip.SetToolTip(this.GameNameLabel, "Player-facing name of this game or episode.");
-            // 
-            // GameDescriptionLabel
-            // 
-            this.GameDescriptionLabel.AutoSize = true;
-            this.GameDescriptionLabel.Location = new System.Drawing.Point(3, 25);
-            this.GameDescriptionLabel.Name = "GameDescriptionLabel";
-            this.GameDescriptionLabel.Size = new System.Drawing.Size(60, 13);
-            this.GameDescriptionLabel.TabIndex = 3;
-            this.GameDescriptionLabel.Text = "Description";
-            this.EditorToolTip.SetToolTip(this.GameDescriptionLabel, "Player-facing information about the game or episode.");
-            // 
-            // GameCommentLabel
-            // 
-            this.GameCommentLabel.AutoSize = true;
-            this.GameCommentLabel.Location = new System.Drawing.Point(3, 80);
-            this.GameCommentLabel.Name = "GameCommentLabel";
-            this.GameCommentLabel.Size = new System.Drawing.Size(52, 13);
-            this.GameCommentLabel.TabIndex = 6;
-            this.GameCommentLabel.Text = "Comment";
-            this.EditorToolTip.SetToolTip(this.GameCommentLabel, "A note to yourself about the game or episode.");
-            // 
             // GameIsEpisodeLabel
             // 
             this.GameIsEpisodeLabel.AutoSize = true;
@@ -1668,38 +1727,6 @@ namespace Scribe.Forms
             this.GameIsEpisodeCheckBox.TabIndex = 22;
             this.GameIsEpisodeCheckBox.UseVisualStyleBackColor = false;
             // 
-            // GameNameTextBox
-            // 
-            this.GameNameTextBox.Location = new System.Drawing.Point(131, 3);
-            this.GameNameTextBox.Name = "GameNameTextBox";
-            this.GameNameTextBox.Size = new System.Drawing.Size(147, 20);
-            this.GameNameTextBox.TabIndex = 23;
-            this.EditorToolTip.SetToolTip(this.GameNameTextBox, "Player-facing name of this game or episode.");
-            // 
-            // GameDescriptionTextBox
-            // 
-            this.GameDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.GameDescriptionTextBox.Location = new System.Drawing.Point(131, 28);
-            this.GameDescriptionTextBox.Multiline = true;
-            this.GameDescriptionTextBox.Name = "GameDescriptionTextBox";
-            this.GameDescriptionTextBox.Size = new System.Drawing.Size(295, 49);
-            this.GameDescriptionTextBox.TabIndex = 24;
-            this.EditorToolTip.SetToolTip(this.GameDescriptionTextBox, "Player-facing information about the game or episode.");
-            // 
-            // GameCommentTextBox
-            // 
-            this.GameCommentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.GameCommentTextBox.Location = new System.Drawing.Point(131, 83);
-            this.GameCommentTextBox.Multiline = true;
-            this.GameCommentTextBox.Name = "GameCommentTextBox";
-            this.GameCommentTextBox.Size = new System.Drawing.Size(295, 49);
-            this.GameCommentTextBox.TabIndex = 25;
-            this.EditorToolTip.SetToolTip(this.GameCommentTextBox, "A note to yourself about the game or episode.");
-            // 
             // GameEpisodeTitleTextBox
             // 
             this.GameEpisodeTitleTextBox.Location = new System.Drawing.Point(131, 163);
@@ -1741,19 +1768,6 @@ namespace Scribe.Forms
             this.GameIDLabel.Text = "Game ID";
             this.EditorToolTip.SetToolTip(this.GameIDLabel, "Project-wide unique identifier.");
             // 
-            // GameIDStatic
-            // 
-            this.GameIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.GameIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.GameIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.GameIDStatic.Location = new System.Drawing.Point(813, 16);
-            this.GameIDStatic.Name = "GameIDStatic";
-            this.GameIDStatic.Size = new System.Drawing.Size(131, 20);
-            this.GameIDStatic.TabIndex = 3;
-            this.GameIDStatic.Tag = "Themed";
-            this.GameIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.GameIDStatic, "Project-wide unique identifier.");
-            // 
             // GameAddNewGameButton
             // 
             this.GameAddNewGameButton.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -1765,20 +1779,6 @@ namespace Scribe.Forms
             this.GameAddNewGameButton.Text = "Add New Game";
             this.GameAddNewGameButton.UseVisualStyleBackColor = false;
             this.GameAddNewGameButton.Click += new System.EventHandler(this.GameAddNewGameButton_Click);
-            // 
-            // GameListBox
-            // 
-            this.GameListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.GameListBox.DisplayMember = "Name";
-            this.GameListBox.FormattingEnabled = true;
-            this.GameListBox.Location = new System.Drawing.Point(9, 16);
-            this.GameListBox.Name = "GameListBox";
-            this.GameListBox.Size = new System.Drawing.Size(279, 446);
-            this.GameListBox.TabIndex = 1;
-            this.GameListBox.Tag = "Untracked Control";
-            this.EditorToolTip.SetToolTip(this.GameListBox, "Every game and episode defined in this project.");
-            this.GameListBox.SelectedValueChanged += new System.EventHandler(this.GameListBox_SelectedValueChanged);
             // 
             // FileFormatGroupBox
             // 
@@ -7242,10 +7242,10 @@ namespace Scribe.Forms
             this.Text = "Scribe";
             this.EditorStatusStrip.ResumeLayout(false);
             this.EditorStatusStrip.PerformLayout();
+            this.ContextMenuStripIDStatics.ResumeLayout(false);
             this.MainMenuBar.ResumeLayout(false);
             this.MainMenuBar.PerformLayout();
             this.ContextMenuStripPictureBoxes.ResumeLayout(false);
-            this.ContextMenuStripIDStatics.ResumeLayout(false);
             this.ContextMenuStripForTextEntries.ResumeLayout(false);
             this.FiltersTableLayoutPanel.ResumeLayout(false);
             this.FiltersTableLayoutPanel.PerformLayout();
