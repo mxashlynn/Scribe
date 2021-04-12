@@ -175,7 +175,7 @@
   </data>
   <data name="CaptionMainEditorFormDirty" xml:space="preserve">
     <value>Scribe [Unsaved Changes]</value>
-    <comment>Application title string, indicated unsaved data.</comment>
+    <comment>Application title string, indicating unsaved data.</comment>
   </data>
   <data name="CaptionReloadWarning" xml:space="preserve">
     <value>Reload</value>
