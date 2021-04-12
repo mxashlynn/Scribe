@@ -58,6 +58,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing.Common" name="System.Drawing.Common, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
+  <data name="ToolStripMenuItemCopyID.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAJtJREFUOE+N
+        jtENhDAMQ7v/CKxznzcCOzDBSRw2Dg2mBJ7kj1i22ybWQq9YHXjf+fd6RLUOPAykkXJMtQ68GIiRNHZB
+        tQ48Vx7bdIKl5TMdcpCJgdGIYvcgM9ABQ/kHWSAyAW42hex7PIObTUFz9DoEkPGbTUGzwjO42RSyd/Lr
+        +UW/2RQ0KzyDm00RRqnqBw5DFcjs0TEReFBrfwIkGEnZYFGuAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="NewToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -257,14 +265,6 @@
         wAH+QzFZ4P/L30/BGMSGCBEPwBp3/l8FxyAxiBRhgKGZFENwak4+7gvGIDUQpZjgv1qME0wBhmaYOJIa
         ggDuGhD79O0/DDBMLEAxACIEB0S5ApcB+AxGATgNAIlRbAChGAEBuE1IhsANJWgANLRRDIFhYmxHjjK4
         JhgGiYEkCAJkQ9AwtQEDAwAA+ABBhlSTSgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ToolStripMenuItemCopyID.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAJtJREFUOE+N
-        jtENhDAMQ7v/CKxznzcCOzDBSRw2Dg2mBJ7kj1i22ybWQq9YHXjf+fd6RLUOPAykkXJMtQ68GIiRNHZB
-        tQ48Vx7bdIKl5TMdcpCJgdGIYvcgM9ABQ/kHWSAyAW42hex7PIObTUFz9DoEkPGbTUGzwjO42RSyd/Lr
-        +UW/2RQ0KzyDm00RRqnqBw5DFcjs0TEReFBrfwIkGEnZYFGuAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ToolStripMenuItemContextCut.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
