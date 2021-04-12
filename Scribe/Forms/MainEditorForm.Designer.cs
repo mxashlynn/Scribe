@@ -31,6 +31,81 @@ namespace Scribe.Forms
             this.ContextMenuStripIDStatics = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToolStripMenuItemCopyID = new System.Windows.Forms.ToolStripMenuItem();
             this.GameListBox = new System.Windows.Forms.ListBox();
+            this.GameRemoveGameButton = new System.Windows.Forms.Button();
+            this.GameIconEditButton = new System.Windows.Forms.Button();
+            this.GameIconPixelBox = new ParquetCustomControls.PixelBox();
+            this.ContextMenuStripPictureBoxes = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ToolStripMenuItemEditExternal = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemOpenContainingFolder = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripSeparatorPictureBoxes = new System.Windows.Forms.ToolStripSeparator();
+            this.ToolStripMenuItemReloadImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.GameIsEpisodeLabel = new System.Windows.Forms.Label();
+            this.GameEpisodeTitleLabel = new System.Windows.Forms.Label();
+            this.GameEpisodeNumberLabel = new System.Windows.Forms.Label();
+            this.GamePlayerCharacterLabel = new System.Windows.Forms.Label();
+            this.GameFirstScriptLabel = new System.Windows.Forms.Label();
+            this.GameIsEpisodeCheckBox = new System.Windows.Forms.CheckBox();
+            this.GameEpisodeTitleTextBox = new System.Windows.Forms.TextBox();
+            this.GameEpisodeNumberTextBox = new System.Windows.Forms.TextBox();
+            this.GamePlayerCharacterComboBox = new System.Windows.Forms.ComboBox();
+            this.GameFirstScriptComboBox = new System.Windows.Forms.ComboBox();
+            this.GameIDLabel = new System.Windows.Forms.Label();
+            this.GameAddNewGameButton = new System.Windows.Forms.Button();
+            this.FileFormatTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.FileFormatPrimaryDelimiterLabel = new System.Windows.Forms.Label();
+            this.FileFormatPrimaryDelimiterStatic = new System.Windows.Forms.Label();
+            this.FileFormatSecondaryDelimiterLabel = new System.Windows.Forms.Label();
+            this.FileFormatSecondaryDelimiterStatic = new System.Windows.Forms.Label();
+            this.FileFormatInternalDelimiterLabel = new System.Windows.Forms.Label();
+            this.FileFormatInternalDelimiterStatic = new System.Windows.Forms.Label();
+            this.FileFormatElementDelimiterLabel = new System.Windows.Forms.Label();
+            this.FileFormatElementDelimiterStatic = new System.Windows.Forms.Label();
+            this.FileFormatNameDelimiterLabel = new System.Windows.Forms.Label();
+            this.FileFormatNameDelimiterStatic = new System.Windows.Forms.Label();
+            this.FileFormatPronounDelimiterLabel = new System.Windows.Forms.Label();
+            this.FileFormatPronounDelimiterStatic = new System.Windows.Forms.Label();
+            this.FileFormatDimensionalDelimiterLabel = new System.Windows.Forms.Label();
+            this.FileFormatDimensionalDelimiterStatic = new System.Windows.Forms.Label();
+            this.FileFormatDimensionalTerminatorLabel = new System.Windows.Forms.Label();
+            this.FileFormatDimensionalTerminatorStatic = new System.Windows.Forms.Label();
+            this.LibraryVersionStatic = new System.Windows.Forms.Label();
+            this.LibraryProjectPathStatic = new System.Windows.Forms.Label();
+            this.FloorEditFilledInImageButton = new System.Windows.Forms.Button();
+            this.FloorEditDugOutImageButton = new System.Windows.Forms.Button();
+            this.FloorIDStatic = new System.Windows.Forms.Label();
+            this.FloorIDLabel = new System.Windows.Forms.Label();
+            this.BlockEditImageButton = new System.Windows.Forms.Button();
+            this.BlockIDLabel = new System.Windows.Forms.Label();
+            this.BlockIDStatic = new System.Windows.Forms.Label();
+            this.FurnishingIDStatic = new System.Windows.Forms.Label();
+            this.FurnishingIDLabel = new System.Windows.Forms.Label();
+            this.FurnishingEditOpenImageButton = new System.Windows.Forms.Button();
+            this.FurnishingEditClosedImageButton = new System.Windows.Forms.Button();
+            this.CollectibleIDStatic = new System.Windows.Forms.Label();
+            this.CollectibleIDLabel = new System.Windows.Forms.Label();
+            this.CollectibleEditImageButton = new System.Windows.Forms.Button();
+            this.CritterEditImageButton = new System.Windows.Forms.Button();
+            this.CritterIDLabel = new System.Windows.Forms.Label();
+            this.CritterIDStatic = new System.Windows.Forms.Label();
+            this.CharacterIDStatic = new System.Windows.Forms.Label();
+            this.CharacterIDLabel = new System.Windows.Forms.Label();
+            this.CharacterEditImageButton = new System.Windows.Forms.Button();
+            this.ItemPictureEditButton = new System.Windows.Forms.Button();
+            this.ItemIDLabel = new System.Windows.Forms.Label();
+            this.ItemIDStatic = new System.Windows.Forms.Label();
+            this.BiomePictureEditButton = new System.Windows.Forms.Button();
+            this.BiomeIDLabel = new System.Windows.Forms.Label();
+            this.BiomeIDStatic = new System.Windows.Forms.Label();
+            this.CraftingPictureEditButton = new System.Windows.Forms.Button();
+            this.CraftingIDLabel = new System.Windows.Forms.Label();
+            this.CraftingIDStatic = new System.Windows.Forms.Label();
+            this.RoomPictureEditButton = new System.Windows.Forms.Button();
+            this.RoomIDLabel = new System.Windows.Forms.Label();
+            this.RoomIDStatic = new System.Windows.Forms.Label();
+            this.RegionLayOutWorldButton = new System.Windows.Forms.Button();
+            this.RegionIDLabel = new System.Windows.Forms.Label();
+            this.RegionIDStatic = new System.Windows.Forms.Label();
+            this.RegionMapEditButton = new System.Windows.Forms.Button();
             this.MainMenuBar = new System.Windows.Forms.MenuStrip();
             this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,11 +142,6 @@ namespace Scribe.Forms
             this.DocumentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ContextMenuStripPictureBoxes = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.ToolStripMenuItemEditExternal = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItemOpenContainingFolder = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripSeparatorPictureBoxes = new System.Windows.Forms.ToolStripSeparator();
-            this.ToolStripMenuItemReloadImage = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuStripForTextEntries = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToolStripMenuItemContextCut = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemContextCopy = new System.Windows.Forms.ToolStripMenuItem();
@@ -106,46 +176,12 @@ namespace Scribe.Forms
             this.FlavorNoFlavorsSelector = new System.Windows.Forms.Label();
             this.EditorTabs = new System.Windows.Forms.TabControl();
             this.GamesTabPage = new System.Windows.Forms.TabPage();
-            this.GameRemoveGameButton = new System.Windows.Forms.Button();
-            this.GameIconEditButton = new System.Windows.Forms.Button();
-            this.GameIconPixelBox = new ParquetCustomControls.PixelBox();
             this.GameTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.GameIsEpisodeLabel = new System.Windows.Forms.Label();
-            this.GameEpisodeTitleLabel = new System.Windows.Forms.Label();
-            this.GameEpisodeNumberLabel = new System.Windows.Forms.Label();
-            this.GamePlayerCharacterLabel = new System.Windows.Forms.Label();
-            this.GameFirstScriptLabel = new System.Windows.Forms.Label();
-            this.GameIsEpisodeCheckBox = new System.Windows.Forms.CheckBox();
-            this.GameEpisodeTitleTextBox = new System.Windows.Forms.TextBox();
-            this.GameEpisodeNumberTextBox = new System.Windows.Forms.TextBox();
-            this.GamePlayerCharacterComboBox = new System.Windows.Forms.ComboBox();
-            this.GameFirstScriptComboBox = new System.Windows.Forms.ComboBox();
-            this.GameIDLabel = new System.Windows.Forms.Label();
-            this.GameAddNewGameButton = new System.Windows.Forms.Button();
             this.FileFormatGroupBox = new System.Windows.Forms.GroupBox();
-            this.FileFormatTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.FileFormatPrimaryDelimiterLabel = new System.Windows.Forms.Label();
-            this.FileFormatPrimaryDelimiterStatic = new System.Windows.Forms.Label();
-            this.FileFormatSecondaryDelimiterLabel = new System.Windows.Forms.Label();
-            this.FileFormatSecondaryDelimiterStatic = new System.Windows.Forms.Label();
-            this.FileFormatInternalDelimiterLabel = new System.Windows.Forms.Label();
-            this.FileFormatInternalDelimiterStatic = new System.Windows.Forms.Label();
-            this.FileFormatElementDelimiterLabel = new System.Windows.Forms.Label();
-            this.FileFormatElementDelimiterStatic = new System.Windows.Forms.Label();
-            this.FileFormatNameDelimiterLabel = new System.Windows.Forms.Label();
-            this.FileFormatNameDelimiterStatic = new System.Windows.Forms.Label();
-            this.FileFormatPronounDelimiterLabel = new System.Windows.Forms.Label();
-            this.FileFormatPronounDelimiterStatic = new System.Windows.Forms.Label();
-            this.FileFormatDimensionalDelimiterLabel = new System.Windows.Forms.Label();
-            this.FileFormatDimensionalDelimiterStatic = new System.Windows.Forms.Label();
-            this.FileFormatDimensionalTerminatorLabel = new System.Windows.Forms.Label();
-            this.FileFormatDimensionalTerminatorStatic = new System.Windows.Forms.Label();
             this.LibraryInfoGroupBox = new System.Windows.Forms.GroupBox();
             this.LibraryInfoTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.LibraryVersionLabel = new System.Windows.Forms.Label();
-            this.LibraryVersionStatic = new System.Windows.Forms.Label();
             this.LibraryProjectPathLabel = new System.Windows.Forms.Label();
-            this.LibraryProjectPathStatic = new System.Windows.Forms.Label();
             this.FloorsTabPage = new System.Windows.Forms.TabPage();
             this.FloorFunctionStatic = new System.Windows.Forms.Label();
             this.FloorEditFunctionButton = new System.Windows.Forms.Button();
@@ -154,10 +190,8 @@ namespace Scribe.Forms
             this.FloorFlavorStatic = new System.Windows.Forms.Label();
             this.FloorFlavorLabel = new System.Windows.Forms.Label();
             this.FloorFilledInPixelBox = new ParquetCustomControls.PixelBox();
-            this.FloorEditFilledInImageButton = new System.Windows.Forms.Button();
             this.FloorFilledInLabel = new System.Windows.Forms.Label();
             this.FloorDugOutPixelBox = new ParquetCustomControls.PixelBox();
-            this.FloorEditDugOutImageButton = new System.Windows.Forms.Button();
             this.FloorDugOutLabel = new System.Windows.Forms.Label();
             this.FloorRemoveFloorButton = new System.Windows.Forms.Button();
             this.FloorLayoutTabelPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -181,10 +215,8 @@ namespace Scribe.Forms
             this.FloorAddsToBiomeListBox = new System.Windows.Forms.ListBox();
             this.FloorAddsToRoomListBox = new System.Windows.Forms.ListBox();
             this.FloorAddBiomeTagButton = new System.Windows.Forms.Button();
-            this.FloorIDStatic = new System.Windows.Forms.Label();
             this.FloorAddNewFloorButton = new System.Windows.Forms.Button();
             this.FloorListBox = new System.Windows.Forms.ListBox();
-            this.FloorIDLabel = new System.Windows.Forms.Label();
             this.FloorConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.BlocksTabPage = new System.Windows.Forms.TabPage();
             this.BlockFunctionStatic = new System.Windows.Forms.Label();
@@ -223,11 +255,8 @@ namespace Scribe.Forms
             this.BlockAddsToBiomeLabel = new System.Windows.Forms.Label();
             this.BlockAddsToRoomLabel = new System.Windows.Forms.Label();
             this.BlockPixelBox = new ParquetCustomControls.PixelBox();
-            this.BlockEditImageButton = new System.Windows.Forms.Button();
-            this.BlockIDLabel = new System.Windows.Forms.Label();
             this.BlockListBox = new System.Windows.Forms.ListBox();
             this.BlockAddNewBlockButton = new System.Windows.Forms.Button();
-            this.BlockIDStatic = new System.Windows.Forms.Label();
             this.BlockRemoveBlockButton = new System.Windows.Forms.Button();
             this.BlockConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.FurnishingsTabPage = new System.Windows.Forms.TabPage();
@@ -265,15 +294,11 @@ namespace Scribe.Forms
             this.FurnishingRemoveRoomTagButton = new System.Windows.Forms.Button();
             this.FurnishingRemoveBiomeTagButton = new System.Windows.Forms.Button();
             this.FurnishingRemoveFurnishingButton = new System.Windows.Forms.Button();
-            this.FurnishingIDStatic = new System.Windows.Forms.Label();
             this.FurnishingAddNewFurnishingButton = new System.Windows.Forms.Button();
             this.FurnishingListBox = new System.Windows.Forms.ListBox();
-            this.FurnishingIDLabel = new System.Windows.Forms.Label();
             this.FurnishingOpenPixelBox = new ParquetCustomControls.PixelBox();
-            this.FurnishingEditOpenImageButton = new System.Windows.Forms.Button();
             this.FurnishingOpenLabel = new System.Windows.Forms.Label();
             this.FurnishingClosedPixelBox = new ParquetCustomControls.PixelBox();
-            this.FurnishingEditClosedImageButton = new System.Windows.Forms.Button();
             this.FurnishingClosedLabel = new System.Windows.Forms.Label();
             this.FurnishingConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CollectiblesTabPage = new System.Windows.Forms.TabPage();
@@ -305,11 +330,8 @@ namespace Scribe.Forms
             this.CollectibleAddRoomTagButton = new System.Windows.Forms.Button();
             this.CollectibleRemoveRoomTagButton = new System.Windows.Forms.Button();
             this.CollectibleRemoveCollectibleButton = new System.Windows.Forms.Button();
-            this.CollectibleIDStatic = new System.Windows.Forms.Label();
             this.CollectibleAddNewCollectibleButton = new System.Windows.Forms.Button();
             this.CollectibleListBox = new System.Windows.Forms.ListBox();
-            this.CollectibleIDLabel = new System.Windows.Forms.Label();
-            this.CollectibleEditImageButton = new System.Windows.Forms.Button();
             this.CollectiblePixelBox = new ParquetCustomControls.PixelBox();
             this.CollectibleConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CrittersTabPage = new System.Windows.Forms.TabPage();
@@ -332,11 +354,8 @@ namespace Scribe.Forms
             this.CritterParquetsSoughtLabel = new System.Windows.Forms.Label();
             this.CritterPendingDesignLabel2 = new System.Windows.Forms.Label();
             this.CritterPixelBox = new ParquetCustomControls.PixelBox();
-            this.CritterEditImageButton = new System.Windows.Forms.Button();
-            this.CritterIDLabel = new System.Windows.Forms.Label();
             this.CritterListBox = new System.Windows.Forms.ListBox();
             this.CritterAddNewCritterButton = new System.Windows.Forms.Button();
-            this.CritterIDStatic = new System.Windows.Forms.Label();
             this.CritterRemoveCritterButton = new System.Windows.Forms.Button();
             this.CritterConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CharactersTabPage = new System.Windows.Forms.TabPage();
@@ -390,11 +409,8 @@ namespace Scribe.Forms
             this.CharacterStartingDialogueComboBox = new System.Windows.Forms.ComboBox();
             this.CharacterStartingInventoryStatic = new System.Windows.Forms.Label();
             this.CharacterRemoveCharacterButton = new System.Windows.Forms.Button();
-            this.CharacterIDStatic = new System.Windows.Forms.Label();
             this.CharacterAddNewCharacterButton = new System.Windows.Forms.Button();
             this.CharacterListBox = new System.Windows.Forms.ListBox();
-            this.CharacterIDLabel = new System.Windows.Forms.Label();
-            this.CharacterEditImageButton = new System.Windows.Forms.Button();
             this.CharacterPixelBox = new ParquetCustomControls.PixelBox();
             this.ItemsTabPage = new System.Windows.Forms.TabPage();
             this.ItemFunctionStatic = new System.Windows.Forms.Label();
@@ -410,7 +426,6 @@ namespace Scribe.Forms
             this.ItemInventoriesGroupBox = new System.Windows.Forms.GroupBox();
             this.ItemOpenInvetoryEditorButton = new System.Windows.Forms.Button();
             this.ItemInventoryListBox = new System.Windows.Forms.ListBox();
-            this.ItemPictureEditButton = new System.Windows.Forms.Button();
             this.ItemTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.ItemEffectWhenUsedComboBox = new System.Windows.Forms.ComboBox();
             this.ItemStackMaxTextBox = new System.Windows.Forms.TextBox();
@@ -435,9 +450,7 @@ namespace Scribe.Forms
             this.ItemEffectWhileHeldComboBox = new System.Windows.Forms.ComboBox();
             this.ItemEquivalentParquetComboBox = new System.Windows.Forms.ComboBox();
             this.ItemPixelBox = new ParquetCustomControls.PixelBox();
-            this.ItemIDLabel = new System.Windows.Forms.Label();
             this.ItemAddNewItemButton = new System.Windows.Forms.Button();
-            this.ItemIDStatic = new System.Windows.Forms.Label();
             this.BiomesTabPage = new System.Windows.Forms.TabPage();
             this.BiomeRemoveBiomeButton = new System.Windows.Forms.Button();
             this.BiomeAddEntryRequirementButton = new System.Windows.Forms.Button();
@@ -451,7 +464,6 @@ namespace Scribe.Forms
             this.BiomeLiquidThresholdFactorTextBox = new System.Windows.Forms.TextBox();
             this.BiomeRoomThresholdFactorTextBox = new System.Windows.Forms.TextBox();
             this.BiomeRoomThresholdFactorLabel = new System.Windows.Forms.Label();
-            this.BiomePictureEditButton = new System.Windows.Forms.Button();
             this.BiomeTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.BiomeEntryRequirementsListBox = new System.Windows.Forms.ListBox();
             this.BiomeParquetCriteriaTextBox = new System.Windows.Forms.TextBox();
@@ -470,13 +482,10 @@ namespace Scribe.Forms
             this.BiomeCommentTextBox = new System.Windows.Forms.TextBox();
             this.BiomeTierTextBox = new System.Windows.Forms.TextBox();
             this.BiomePixelBox = new ParquetCustomControls.PixelBox();
-            this.BiomeIDLabel = new System.Windows.Forms.Label();
             this.BiomeAddNewBiomeButton = new System.Windows.Forms.Button();
-            this.BiomeIDStatic = new System.Windows.Forms.Label();
             this.CraftingRecipesTabPage = new System.Windows.Forms.TabPage();
             this.CraftingRemoveCraftingButton = new System.Windows.Forms.Button();
             this.CraftingListBox = new System.Windows.Forms.ListBox();
-            this.CraftingPictureEditButton = new System.Windows.Forms.Button();
             this.CraftingTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.CraftingPanelsCountStatic = new System.Windows.Forms.Label();
             this.CraftingOpenPatternEditorButton = new System.Windows.Forms.Button();
@@ -496,9 +505,7 @@ namespace Scribe.Forms
             this.CraftingProductsListBox = new System.Windows.Forms.ListBox();
             this.CraftingStrikePatternLabel = new System.Windows.Forms.Label();
             this.CraftingPixelBox = new ParquetCustomControls.PixelBox();
-            this.CraftingIDLabel = new System.Windows.Forms.Label();
             this.CraftingAddNewCraftingButton = new System.Windows.Forms.Button();
-            this.CraftingIDStatic = new System.Windows.Forms.Label();
             this.CraftingConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CraftingConfigTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.CraftingMinIngredientCountLabel = new System.Windows.Forms.Label();
@@ -522,7 +529,6 @@ namespace Scribe.Forms
             this.RoomMaxWalkableSpacesLabel = new System.Windows.Forms.Label();
             this.RoomMinWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
             this.RoomMaxWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
-            this.RoomPictureEditButton = new System.Windows.Forms.Button();
             this.RoomTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.RoomAddFurnishingButton = new System.Windows.Forms.Button();
             this.RoomRemoveFurnishingButton = new System.Windows.Forms.Button();
@@ -543,20 +549,14 @@ namespace Scribe.Forms
             this.RoomRequiredFurnishingsLabel = new System.Windows.Forms.Label();
             this.RoomRequiredFurnishingsListBox = new System.Windows.Forms.ListBox();
             this.RoomPixelBox = new ParquetCustomControls.PixelBox();
-            this.RoomIDLabel = new System.Windows.Forms.Label();
             this.RoomAddNewRoomButton = new System.Windows.Forms.Button();
-            this.RoomIDStatic = new System.Windows.Forms.Label();
             this.RegionsTabPage = new System.Windows.Forms.TabPage();
             this.RegionLayOutWorldPixelBox = new ParquetCustomControls.PixelBox();
-            this.RegionLayOutWorldButton = new System.Windows.Forms.Button();
-            this.RegionIDLabel = new System.Windows.Forms.Label();
-            this.RegionIDStatic = new System.Windows.Forms.Label();
             this.RegionListBox = new System.Windows.Forms.ListBox();
             this.RegionRemoveButton = new System.Windows.Forms.Button();
             this.RegionAddNewButton = new System.Windows.Forms.Button();
             this.RegionConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.RegionPixelBox = new ParquetCustomControls.PixelBox();
-            this.RegionMapEditButton = new System.Windows.Forms.Button();
             this.RegionTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.RegionNameLabel = new System.Windows.Forms.Label();
             this.RegionNameTextBox = new System.Windows.Forms.TextBox();
@@ -583,8 +583,10 @@ namespace Scribe.Forms
             this.ScriptingPendingDesignLabel = new System.Windows.Forms.Label();
             this.EditorStatusStrip.SuspendLayout();
             this.ContextMenuStripIDStatics.SuspendLayout();
-            this.MainMenuBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GameIconPixelBox)).BeginInit();
             this.ContextMenuStripPictureBoxes.SuspendLayout();
+            this.FileFormatTableLayoutPanel.SuspendLayout();
+            this.MainMenuBar.SuspendLayout();
             this.ContextMenuStripForTextEntries.SuspendLayout();
             this.FiltersTableLayoutPanel.SuspendLayout();
             this.FilterGroupBox.SuspendLayout();
@@ -592,10 +594,8 @@ namespace Scribe.Forms
             this.FlavorsTableLayoutPanel.SuspendLayout();
             this.EditorTabs.SuspendLayout();
             this.GamesTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GameIconPixelBox)).BeginInit();
             this.GameTableLayoutPanel.SuspendLayout();
             this.FileFormatGroupBox.SuspendLayout();
-            this.FileFormatTableLayoutPanel.SuspendLayout();
             this.LibraryInfoGroupBox.SuspendLayout();
             this.LibraryInfoTableLayoutPanel.SuspendLayout();
             this.FloorsTabPage.SuspendLayout();
@@ -778,6 +778,905 @@ namespace Scribe.Forms
             this.GameListBox.Tag = "Untracked Control";
             this.EditorToolTip.SetToolTip(this.GameListBox, "Every game and episode defined in this project.");
             this.GameListBox.SelectedValueChanged += new System.EventHandler(this.GameListBox_SelectedValueChanged);
+            // 
+            // GameRemoveGameButton
+            // 
+            this.GameRemoveGameButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.GameRemoveGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GameRemoveGameButton.Location = new System.Drawing.Point(24, 468);
+            this.GameRemoveGameButton.Name = "GameRemoveGameButton";
+            this.GameRemoveGameButton.Size = new System.Drawing.Size(129, 23);
+            this.GameRemoveGameButton.TabIndex = 2;
+            this.GameRemoveGameButton.Text = "Remove Game";
+            this.EditorToolTip.SetToolTip(this.GameRemoveGameButton, "Deletes the episode or game definition currently selected.");
+            this.GameRemoveGameButton.UseVisualStyleBackColor = false;
+            this.GameRemoveGameButton.Click += new System.EventHandler(this.GameRemoveGameButton_Click);
+            // 
+            // GameIconEditButton
+            // 
+            this.GameIconEditButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.GameIconEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GameIconEditButton.Location = new System.Drawing.Point(815, 468);
+            this.GameIconEditButton.Name = "GameIconEditButton";
+            this.GameIconEditButton.Size = new System.Drawing.Size(128, 23);
+            this.GameIconEditButton.TabIndex = 7;
+            this.GameIconEditButton.Text = "Edit Image";
+            this.EditorToolTip.SetToolTip(this.GameIconEditButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
+            this.GameIconEditButton.UseVisualStyleBackColor = false;
+            this.GameIconEditButton.Click += new System.EventHandler(this.EditImageExternally);
+            // 
+            // GameIconPixelBox
+            // 
+            this.GameIconPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.GameIconPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.GameIconPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
+            this.GameIconPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("GameIconPixelBox.Image")));
+            this.GameIconPixelBox.Location = new System.Drawing.Point(823, 342);
+            this.GameIconPixelBox.Name = "GameIconPixelBox";
+            this.GameIconPixelBox.Size = new System.Drawing.Size(120, 120);
+            this.GameIconPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.GameIconPixelBox.TabIndex = 6;
+            this.GameIconPixelBox.TabStop = false;
+            this.EditorToolTip.SetToolTip(this.GameIconPixelBox, "An optional image representing this game.");
+            this.GameIconPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
+            // 
+            // ContextMenuStripPictureBoxes
+            // 
+            this.ContextMenuStripPictureBoxes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemEditExternal,
+            this.ToolStripMenuItemOpenContainingFolder,
+            this.ToolStripSeparatorPictureBoxes,
+            this.ToolStripMenuItemReloadImage});
+            this.ContextMenuStripPictureBoxes.Name = "ContextMenuStripMainMenu";
+            this.ContextMenuStripPictureBoxes.Size = new System.Drawing.Size(202, 76);
+            // 
+            // ToolStripMenuItemEditExternal
+            // 
+            this.ToolStripMenuItemEditExternal.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemEditExternal.Image")));
+            this.ToolStripMenuItemEditExternal.Name = "ToolStripMenuItemEditExternal";
+            this.ToolStripMenuItemEditExternal.Size = new System.Drawing.Size(201, 22);
+            this.ToolStripMenuItemEditExternal.Text = "Edit in External Program";
+            this.ToolStripMenuItemEditExternal.Click += new System.EventHandler(this.EditImageExternally);
+            // 
+            // ToolStripMenuItemOpenContainingFolder
+            // 
+            this.ToolStripMenuItemOpenContainingFolder.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemOpenContainingFolder.Image")));
+            this.ToolStripMenuItemOpenContainingFolder.Name = "ToolStripMenuItemOpenContainingFolder";
+            this.ToolStripMenuItemOpenContainingFolder.Size = new System.Drawing.Size(201, 22);
+            this.ToolStripMenuItemOpenContainingFolder.Text = "Open Containing Folder";
+            this.ToolStripMenuItemOpenContainingFolder.Click += new System.EventHandler(this.OpenContainingFolderMenuItem_Click);
+            // 
+            // ToolStripSeparatorPictureBoxes
+            // 
+            this.ToolStripSeparatorPictureBoxes.Name = "ToolStripSeparatorPictureBoxes";
+            this.ToolStripSeparatorPictureBoxes.Size = new System.Drawing.Size(198, 6);
+            // 
+            // ToolStripMenuItemReloadImage
+            // 
+            this.ToolStripMenuItemReloadImage.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemReloadImage.Image")));
+            this.ToolStripMenuItemReloadImage.Name = "ToolStripMenuItemReloadImage";
+            this.ToolStripMenuItemReloadImage.Size = new System.Drawing.Size(201, 22);
+            this.ToolStripMenuItemReloadImage.Text = "Reload from Disk";
+            this.ToolStripMenuItemReloadImage.Click += new System.EventHandler(this.PixelBoxReload_Click);
+            // 
+            // GameIsEpisodeLabel
+            // 
+            this.GameIsEpisodeLabel.AutoSize = true;
+            this.GameIsEpisodeLabel.Location = new System.Drawing.Point(3, 135);
+            this.GameIsEpisodeLabel.Name = "GameIsEpisodeLabel";
+            this.GameIsEpisodeLabel.Size = new System.Drawing.Size(61, 13);
+            this.GameIsEpisodeLabel.TabIndex = 9;
+            this.GameIsEpisodeLabel.Text = "Is Episode?";
+            this.EditorToolTip.SetToolTip(this.GameIsEpisodeLabel, "When checked, this game is part of a sequence of games.");
+            // 
+            // GameEpisodeTitleLabel
+            // 
+            this.GameEpisodeTitleLabel.AutoSize = true;
+            this.GameEpisodeTitleLabel.Location = new System.Drawing.Point(3, 160);
+            this.GameEpisodeTitleLabel.Name = "GameEpisodeTitleLabel";
+            this.GameEpisodeTitleLabel.Size = new System.Drawing.Size(67, 13);
+            this.GameEpisodeTitleLabel.TabIndex = 12;
+            this.GameEpisodeTitleLabel.Text = "Episode Title";
+            this.EditorToolTip.SetToolTip(this.GameEpisodeTitleLabel, "Optional.  For full games, a subtitle.  For episodes, the episode title.");
+            // 
+            // GameEpisodeNumberLabel
+            // 
+            this.GameEpisodeNumberLabel.AutoSize = true;
+            this.GameEpisodeNumberLabel.Location = new System.Drawing.Point(3, 185);
+            this.GameEpisodeNumberLabel.Name = "GameEpisodeNumberLabel";
+            this.GameEpisodeNumberLabel.Size = new System.Drawing.Size(84, 13);
+            this.GameEpisodeNumberLabel.TabIndex = 15;
+            this.GameEpisodeNumberLabel.Text = "Episode Number";
+            this.EditorToolTip.SetToolTip(this.GameEpisodeNumberLabel, "Where this game occurs in its sequence, if any.  Mostly useful for episodes.");
+            // 
+            // GamePlayerCharacterLabel
+            // 
+            this.GamePlayerCharacterLabel.AutoSize = true;
+            this.GamePlayerCharacterLabel.Location = new System.Drawing.Point(3, 210);
+            this.GamePlayerCharacterLabel.Name = "GamePlayerCharacterLabel";
+            this.GamePlayerCharacterLabel.Size = new System.Drawing.Size(88, 13);
+            this.GamePlayerCharacterLabel.TabIndex = 18;
+            this.GamePlayerCharacterLabel.Text = "Player Character";
+            this.EditorToolTip.SetToolTip(this.GamePlayerCharacterLabel, "The character that the player controls when beginning this game.");
+            // 
+            // GameFirstScriptLabel
+            // 
+            this.GameFirstScriptLabel.AutoSize = true;
+            this.GameFirstScriptLabel.Location = new System.Drawing.Point(3, 235);
+            this.GameFirstScriptLabel.Name = "GameFirstScriptLabel";
+            this.GameFirstScriptLabel.Size = new System.Drawing.Size(58, 13);
+            this.GameFirstScriptLabel.TabIndex = 21;
+            this.GameFirstScriptLabel.Text = "First Script";
+            this.EditorToolTip.SetToolTip(this.GameFirstScriptLabel, "An optional script to run the first time play begins.");
+            // 
+            // GameIsEpisodeCheckBox
+            // 
+            this.GameIsEpisodeCheckBox.AutoSize = true;
+            this.GameIsEpisodeCheckBox.Location = new System.Drawing.Point(131, 138);
+            this.GameIsEpisodeCheckBox.Name = "GameIsEpisodeCheckBox";
+            this.GameIsEpisodeCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.GameIsEpisodeCheckBox.TabIndex = 22;
+            this.EditorToolTip.SetToolTip(this.GameIsEpisodeCheckBox, "When checked, this game is part of a sequence of games.");
+            this.GameIsEpisodeCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // GameEpisodeTitleTextBox
+            // 
+            this.GameEpisodeTitleTextBox.Location = new System.Drawing.Point(131, 163);
+            this.GameEpisodeTitleTextBox.Name = "GameEpisodeTitleTextBox";
+            this.GameEpisodeTitleTextBox.Size = new System.Drawing.Size(147, 20);
+            this.GameEpisodeTitleTextBox.TabIndex = 26;
+            this.EditorToolTip.SetToolTip(this.GameEpisodeTitleTextBox, "Optional.  For full games, a subtitle.  For episodes, the episode title.");
+            // 
+            // GameEpisodeNumberTextBox
+            // 
+            this.GameEpisodeNumberTextBox.Location = new System.Drawing.Point(131, 188);
+            this.GameEpisodeNumberTextBox.Name = "GameEpisodeNumberTextBox";
+            this.GameEpisodeNumberTextBox.Size = new System.Drawing.Size(147, 20);
+            this.GameEpisodeNumberTextBox.TabIndex = 27;
+            this.EditorToolTip.SetToolTip(this.GameEpisodeNumberTextBox, "Where this game occurs in its sequence, if any.  Mostly useful for episodes.");
+            // 
+            // GamePlayerCharacterComboBox
+            // 
+            this.GamePlayerCharacterComboBox.DisplayMember = "Name";
+            this.GamePlayerCharacterComboBox.Location = new System.Drawing.Point(131, 213);
+            this.GamePlayerCharacterComboBox.Name = "GamePlayerCharacterComboBox";
+            this.GamePlayerCharacterComboBox.Size = new System.Drawing.Size(147, 21);
+            this.GamePlayerCharacterComboBox.TabIndex = 28;
+            this.EditorToolTip.SetToolTip(this.GamePlayerCharacterComboBox, "The character that the player controls when beginning this game.");
+            // 
+            // GameFirstScriptComboBox
+            // 
+            this.GameFirstScriptComboBox.DisplayMember = "Name";
+            this.GameFirstScriptComboBox.Location = new System.Drawing.Point(131, 238);
+            this.GameFirstScriptComboBox.Name = "GameFirstScriptComboBox";
+            this.GameFirstScriptComboBox.Size = new System.Drawing.Size(147, 21);
+            this.GameFirstScriptComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.GameFirstScriptComboBox, "An optional script to run the first time play begins.");
+            // 
+            // GameIDLabel
+            // 
+            this.GameIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.GameIDLabel.AutoSize = true;
+            this.GameIDLabel.Location = new System.Drawing.Point(759, 19);
+            this.GameIDLabel.Name = "GameIDLabel";
+            this.GameIDLabel.Size = new System.Drawing.Size(48, 13);
+            this.GameIDLabel.TabIndex = 4;
+            this.GameIDLabel.Text = "Game ID";
+            this.EditorToolTip.SetToolTip(this.GameIDLabel, "Project-wide unique identifier.");
+            // 
+            // GameAddNewGameButton
+            // 
+            this.GameAddNewGameButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.GameAddNewGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GameAddNewGameButton.Location = new System.Drawing.Point(159, 468);
+            this.GameAddNewGameButton.Name = "GameAddNewGameButton";
+            this.GameAddNewGameButton.Size = new System.Drawing.Size(129, 23);
+            this.GameAddNewGameButton.TabIndex = 2;
+            this.GameAddNewGameButton.Text = "Add New Game";
+            this.EditorToolTip.SetToolTip(this.GameAddNewGameButton, "Creates a new game or episode definition.");
+            this.GameAddNewGameButton.UseVisualStyleBackColor = false;
+            this.GameAddNewGameButton.Click += new System.EventHandler(this.GameAddNewGameButton_Click);
+            // 
+            // FileFormatTableLayoutPanel
+            // 
+            this.FileFormatTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FileFormatTableLayoutPanel.ColumnCount = 6;
+            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.83792F));
+            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.495411F));
+            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.83792F));
+            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.495411F));
+            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.83792F));
+            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.495411F));
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPrimaryDelimiterLabel, 0, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPrimaryDelimiterStatic, 1, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatSecondaryDelimiterLabel, 2, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatSecondaryDelimiterStatic, 3, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatInternalDelimiterLabel, 4, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatInternalDelimiterStatic, 5, 0);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatElementDelimiterLabel, 0, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatElementDelimiterStatic, 1, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatNameDelimiterLabel, 2, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatNameDelimiterStatic, 3, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPronounDelimiterLabel, 4, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPronounDelimiterStatic, 5, 1);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalDelimiterLabel, 0, 2);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalDelimiterStatic, 1, 2);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalTerminatorLabel, 2, 2);
+            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalTerminatorStatic, 3, 2);
+            this.FileFormatTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
+            this.FileFormatTableLayoutPanel.Name = "FileFormatTableLayoutPanel";
+            this.FileFormatTableLayoutPanel.RowCount = 3;
+            this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.FileFormatTableLayoutPanel.Size = new System.Drawing.Size(634, 75);
+            this.FileFormatTableLayoutPanel.TabIndex = 1;
+            // 
+            // FileFormatPrimaryDelimiterLabel
+            // 
+            this.FileFormatPrimaryDelimiterLabel.AutoSize = true;
+            this.FileFormatPrimaryDelimiterLabel.Location = new System.Drawing.Point(50, 5);
+            this.FileFormatPrimaryDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.FileFormatPrimaryDelimiterLabel.Name = "FileFormatPrimaryDelimiterLabel";
+            this.FileFormatPrimaryDelimiterLabel.Size = new System.Drawing.Size(87, 13);
+            this.FileFormatPrimaryDelimiterLabel.TabIndex = 0;
+            this.FileFormatPrimaryDelimiterLabel.Text = "Primary Delimiter";
+            this.EditorToolTip.SetToolTip(this.FileFormatPrimaryDelimiterLabel, "Just FYI, these characters are used to save project data.");
+            // 
+            // FileFormatPrimaryDelimiterStatic
+            // 
+            this.FileFormatPrimaryDelimiterStatic.AutoSize = true;
+            this.FileFormatPrimaryDelimiterStatic.Location = new System.Drawing.Point(179, 5);
+            this.FileFormatPrimaryDelimiterStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatPrimaryDelimiterStatic.Name = "FileFormatPrimaryDelimiterStatic";
+            this.FileFormatPrimaryDelimiterStatic.Size = new System.Drawing.Size(11, 13);
+            this.FileFormatPrimaryDelimiterStatic.TabIndex = 1;
+            this.FileFormatPrimaryDelimiterStatic.Text = ";";
+            this.EditorToolTip.SetToolTip(this.FileFormatPrimaryDelimiterStatic, "Just FYI, these characters are used to save project data.");
+            // 
+            // FileFormatSecondaryDelimiterLabel
+            // 
+            this.FileFormatSecondaryDelimiterLabel.AutoSize = true;
+            this.FileFormatSecondaryDelimiterLabel.Location = new System.Drawing.Point(260, 5);
+            this.FileFormatSecondaryDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.FileFormatSecondaryDelimiterLabel.Name = "FileFormatSecondaryDelimiterLabel";
+            this.FileFormatSecondaryDelimiterLabel.Size = new System.Drawing.Size(102, 13);
+            this.FileFormatSecondaryDelimiterLabel.TabIndex = 2;
+            this.FileFormatSecondaryDelimiterLabel.Text = "Secondary Delimiter";
+            this.EditorToolTip.SetToolTip(this.FileFormatSecondaryDelimiterLabel, "Just FYI, these characters are used to save project data.");
+            // 
+            // FileFormatSecondaryDelimiterStatic
+            // 
+            this.FileFormatSecondaryDelimiterStatic.AutoSize = true;
+            this.FileFormatSecondaryDelimiterStatic.Location = new System.Drawing.Point(389, 5);
+            this.FileFormatSecondaryDelimiterStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatSecondaryDelimiterStatic.Name = "FileFormatSecondaryDelimiterStatic";
+            this.FileFormatSecondaryDelimiterStatic.Size = new System.Drawing.Size(11, 13);
+            this.FileFormatSecondaryDelimiterStatic.TabIndex = 3;
+            this.FileFormatSecondaryDelimiterStatic.Text = ";";
+            this.EditorToolTip.SetToolTip(this.FileFormatSecondaryDelimiterStatic, "Just FYI, these characters are used to save project data.");
+            // 
+            // FileFormatInternalDelimiterLabel
+            // 
+            this.FileFormatInternalDelimiterLabel.AutoSize = true;
+            this.FileFormatInternalDelimiterLabel.Location = new System.Drawing.Point(470, 5);
+            this.FileFormatInternalDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.FileFormatInternalDelimiterLabel.Name = "FileFormatInternalDelimiterLabel";
+            this.FileFormatInternalDelimiterLabel.Size = new System.Drawing.Size(89, 13);
+            this.FileFormatInternalDelimiterLabel.TabIndex = 4;
+            this.FileFormatInternalDelimiterLabel.Text = "Internal Delimiter";
+            this.EditorToolTip.SetToolTip(this.FileFormatInternalDelimiterLabel, "Just FYI, these characters are used to save project data.");
+            // 
+            // FileFormatInternalDelimiterStatic
+            // 
+            this.FileFormatInternalDelimiterStatic.AutoSize = true;
+            this.FileFormatInternalDelimiterStatic.Location = new System.Drawing.Point(599, 5);
+            this.FileFormatInternalDelimiterStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatInternalDelimiterStatic.Name = "FileFormatInternalDelimiterStatic";
+            this.FileFormatInternalDelimiterStatic.Size = new System.Drawing.Size(11, 13);
+            this.FileFormatInternalDelimiterStatic.TabIndex = 5;
+            this.FileFormatInternalDelimiterStatic.Text = ";";
+            this.EditorToolTip.SetToolTip(this.FileFormatInternalDelimiterStatic, "Just FYI, these characters are used to save project data.");
+            // 
+            // FileFormatElementDelimiterLabel
+            // 
+            this.FileFormatElementDelimiterLabel.AutoSize = true;
+            this.FileFormatElementDelimiterLabel.Location = new System.Drawing.Point(50, 29);
+            this.FileFormatElementDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.FileFormatElementDelimiterLabel.Name = "FileFormatElementDelimiterLabel";
+            this.FileFormatElementDelimiterLabel.Size = new System.Drawing.Size(89, 13);
+            this.FileFormatElementDelimiterLabel.TabIndex = 6;
+            this.FileFormatElementDelimiterLabel.Text = "Element Delimiter";
+            this.EditorToolTip.SetToolTip(this.FileFormatElementDelimiterLabel, "Just FYI, these characters are used to save project data.");
+            // 
+            // FileFormatElementDelimiterStatic
+            // 
+            this.FileFormatElementDelimiterStatic.AutoSize = true;
+            this.FileFormatElementDelimiterStatic.Location = new System.Drawing.Point(179, 29);
+            this.FileFormatElementDelimiterStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatElementDelimiterStatic.Name = "FileFormatElementDelimiterStatic";
+            this.FileFormatElementDelimiterStatic.Size = new System.Drawing.Size(11, 13);
+            this.FileFormatElementDelimiterStatic.TabIndex = 7;
+            this.FileFormatElementDelimiterStatic.Text = ";";
+            this.EditorToolTip.SetToolTip(this.FileFormatElementDelimiterStatic, "Just FYI, these characters are used to save project data.");
+            // 
+            // FileFormatNameDelimiterLabel
+            // 
+            this.FileFormatNameDelimiterLabel.AutoSize = true;
+            this.FileFormatNameDelimiterLabel.Location = new System.Drawing.Point(260, 29);
+            this.FileFormatNameDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.FileFormatNameDelimiterLabel.Name = "FileFormatNameDelimiterLabel";
+            this.FileFormatNameDelimiterLabel.Size = new System.Drawing.Size(78, 13);
+            this.FileFormatNameDelimiterLabel.TabIndex = 8;
+            this.FileFormatNameDelimiterLabel.Text = "Name Delimiter";
+            this.EditorToolTip.SetToolTip(this.FileFormatNameDelimiterLabel, "Just FYI, these characters are used to save project data.");
+            // 
+            // FileFormatNameDelimiterStatic
+            // 
+            this.FileFormatNameDelimiterStatic.AutoSize = true;
+            this.FileFormatNameDelimiterStatic.Location = new System.Drawing.Point(389, 29);
+            this.FileFormatNameDelimiterStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatNameDelimiterStatic.Name = "FileFormatNameDelimiterStatic";
+            this.FileFormatNameDelimiterStatic.Size = new System.Drawing.Size(11, 13);
+            this.FileFormatNameDelimiterStatic.TabIndex = 9;
+            this.FileFormatNameDelimiterStatic.Text = ";";
+            this.EditorToolTip.SetToolTip(this.FileFormatNameDelimiterStatic, "Just FYI, these characters are used to save project data.");
+            // 
+            // FileFormatPronounDelimiterLabel
+            // 
+            this.FileFormatPronounDelimiterLabel.AutoSize = true;
+            this.FileFormatPronounDelimiterLabel.Location = new System.Drawing.Point(470, 29);
+            this.FileFormatPronounDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.FileFormatPronounDelimiterLabel.Name = "FileFormatPronounDelimiterLabel";
+            this.FileFormatPronounDelimiterLabel.Size = new System.Drawing.Size(91, 13);
+            this.FileFormatPronounDelimiterLabel.TabIndex = 10;
+            this.FileFormatPronounDelimiterLabel.Text = "Pronoun Delimiter";
+            this.EditorToolTip.SetToolTip(this.FileFormatPronounDelimiterLabel, "Just FYI, these characters are used to save project data.");
+            // 
+            // FileFormatPronounDelimiterStatic
+            // 
+            this.FileFormatPronounDelimiterStatic.AutoSize = true;
+            this.FileFormatPronounDelimiterStatic.Location = new System.Drawing.Point(599, 29);
+            this.FileFormatPronounDelimiterStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatPronounDelimiterStatic.Name = "FileFormatPronounDelimiterStatic";
+            this.FileFormatPronounDelimiterStatic.Size = new System.Drawing.Size(11, 13);
+            this.FileFormatPronounDelimiterStatic.TabIndex = 11;
+            this.FileFormatPronounDelimiterStatic.Text = ";";
+            this.EditorToolTip.SetToolTip(this.FileFormatPronounDelimiterStatic, "Just FYI, these characters are used to save project data.");
+            // 
+            // FileFormatDimensionalDelimiterLabel
+            // 
+            this.FileFormatDimensionalDelimiterLabel.AutoSize = true;
+            this.FileFormatDimensionalDelimiterLabel.Location = new System.Drawing.Point(50, 53);
+            this.FileFormatDimensionalDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.FileFormatDimensionalDelimiterLabel.Name = "FileFormatDimensionalDelimiterLabel";
+            this.FileFormatDimensionalDelimiterLabel.Size = new System.Drawing.Size(107, 13);
+            this.FileFormatDimensionalDelimiterLabel.TabIndex = 12;
+            this.FileFormatDimensionalDelimiterLabel.Text = "Dimensional Delimiter";
+            this.EditorToolTip.SetToolTip(this.FileFormatDimensionalDelimiterLabel, "Just FYI, these characters are used to save project data.");
+            // 
+            // FileFormatDimensionalDelimiterStatic
+            // 
+            this.FileFormatDimensionalDelimiterStatic.AutoSize = true;
+            this.FileFormatDimensionalDelimiterStatic.Location = new System.Drawing.Point(179, 53);
+            this.FileFormatDimensionalDelimiterStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatDimensionalDelimiterStatic.Name = "FileFormatDimensionalDelimiterStatic";
+            this.FileFormatDimensionalDelimiterStatic.Size = new System.Drawing.Size(11, 13);
+            this.FileFormatDimensionalDelimiterStatic.TabIndex = 13;
+            this.FileFormatDimensionalDelimiterStatic.Text = ";";
+            this.EditorToolTip.SetToolTip(this.FileFormatDimensionalDelimiterStatic, "Just FYI, these characters are used to save project data.");
+            // 
+            // FileFormatDimensionalTerminatorLabel
+            // 
+            this.FileFormatDimensionalTerminatorLabel.AutoSize = true;
+            this.FileFormatDimensionalTerminatorLabel.Location = new System.Drawing.Point(260, 53);
+            this.FileFormatDimensionalTerminatorLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
+            this.FileFormatDimensionalTerminatorLabel.Name = "FileFormatDimensionalTerminatorLabel";
+            this.FileFormatDimensionalTerminatorLabel.Size = new System.Drawing.Size(118, 13);
+            this.FileFormatDimensionalTerminatorLabel.TabIndex = 14;
+            this.FileFormatDimensionalTerminatorLabel.Text = "Dimensional Terminator";
+            this.EditorToolTip.SetToolTip(this.FileFormatDimensionalTerminatorLabel, "Just FYI, these characters are used to save project data.");
+            // 
+            // FileFormatDimensionalTerminatorStatic
+            // 
+            this.FileFormatDimensionalTerminatorStatic.AutoSize = true;
+            this.FileFormatDimensionalTerminatorStatic.Location = new System.Drawing.Point(389, 53);
+            this.FileFormatDimensionalTerminatorStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.FileFormatDimensionalTerminatorStatic.Name = "FileFormatDimensionalTerminatorStatic";
+            this.FileFormatDimensionalTerminatorStatic.Size = new System.Drawing.Size(11, 13);
+            this.FileFormatDimensionalTerminatorStatic.TabIndex = 15;
+            this.FileFormatDimensionalTerminatorStatic.Text = ";";
+            this.EditorToolTip.SetToolTip(this.FileFormatDimensionalTerminatorStatic, "Just FYI, these characters are used to save project data.");
+            // 
+            // LibraryVersionStatic
+            // 
+            this.LibraryVersionStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LibraryVersionStatic.AutoSize = true;
+            this.LibraryVersionStatic.Location = new System.Drawing.Point(70, 1);
+            this.LibraryVersionStatic.Margin = new System.Windows.Forms.Padding(1);
+            this.LibraryVersionStatic.Name = "LibraryVersionStatic";
+            this.LibraryVersionStatic.Size = new System.Drawing.Size(207, 35);
+            this.LibraryVersionStatic.TabIndex = 1;
+            this.LibraryVersionStatic.Text = "0.0.0";
+            this.EditorToolTip.SetToolTip(this.LibraryVersionStatic, "The version of the Parquet library being used by this instance of Scribe.");
+            // 
+            // LibraryProjectPathStatic
+            // 
+            this.LibraryProjectPathStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LibraryProjectPathStatic.AutoSize = true;
+            this.LibraryProjectPathStatic.Location = new System.Drawing.Point(70, 38);
+            this.LibraryProjectPathStatic.Margin = new System.Windows.Forms.Padding(1);
+            this.LibraryProjectPathStatic.Name = "LibraryProjectPathStatic";
+            this.LibraryProjectPathStatic.Size = new System.Drawing.Size(207, 36);
+            this.LibraryProjectPathStatic.TabIndex = 1;
+            this.LibraryProjectPathStatic.Text = "C:\\";
+            this.EditorToolTip.SetToolTip(this.LibraryProjectPathStatic, "Path to the project defintion files.");
+            // 
+            // FloorEditFilledInImageButton
+            // 
+            this.FloorEditFilledInImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorEditFilledInImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FloorEditFilledInImageButton.Location = new System.Drawing.Point(815, 300);
+            this.FloorEditFilledInImageButton.Name = "FloorEditFilledInImageButton";
+            this.FloorEditFilledInImageButton.Size = new System.Drawing.Size(128, 23);
+            this.FloorEditFilledInImageButton.TabIndex = 11;
+            this.FloorEditFilledInImageButton.Text = "Edit Filled In Image";
+            this.EditorToolTip.SetToolTip(this.FloorEditFilledInImageButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
+            this.FloorEditFilledInImageButton.UseVisualStyleBackColor = false;
+            this.FloorEditFilledInImageButton.Click += new System.EventHandler(this.EditImageExternally);
+            // 
+            // FloorEditDugOutImageButton
+            // 
+            this.FloorEditDugOutImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorEditDugOutImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FloorEditDugOutImageButton.Location = new System.Drawing.Point(815, 468);
+            this.FloorEditDugOutImageButton.Name = "FloorEditDugOutImageButton";
+            this.FloorEditDugOutImageButton.Size = new System.Drawing.Size(128, 23);
+            this.FloorEditDugOutImageButton.TabIndex = 7;
+            this.FloorEditDugOutImageButton.Text = "Edit Dug Out Image";
+            this.EditorToolTip.SetToolTip(this.FloorEditDugOutImageButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
+            this.FloorEditDugOutImageButton.UseVisualStyleBackColor = false;
+            this.FloorEditDugOutImageButton.Click += new System.EventHandler(this.EditImageExternally);
+            // 
+            // FloorIDStatic
+            // 
+            this.FloorIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.FloorIDStatic.Location = new System.Drawing.Point(812, 16);
+            this.FloorIDStatic.Name = "FloorIDStatic";
+            this.FloorIDStatic.Size = new System.Drawing.Size(131, 20);
+            this.FloorIDStatic.TabIndex = 3;
+            this.FloorIDStatic.Tag = "Themed";
+            this.FloorIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FloorIDStatic, "Project-wide unique identifier.");
+            // 
+            // FloorIDLabel
+            // 
+            this.FloorIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorIDLabel.AutoSize = true;
+            this.FloorIDLabel.Location = new System.Drawing.Point(761, 19);
+            this.FloorIDLabel.Name = "FloorIDLabel";
+            this.FloorIDLabel.Size = new System.Drawing.Size(45, 13);
+            this.FloorIDLabel.TabIndex = 4;
+            this.FloorIDLabel.Text = "Floor ID";
+            this.EditorToolTip.SetToolTip(this.FloorIDLabel, "Project-wide unique identifier.");
+            // 
+            // BlockEditImageButton
+            // 
+            this.BlockEditImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BlockEditImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BlockEditImageButton.Location = new System.Drawing.Point(815, 468);
+            this.BlockEditImageButton.Name = "BlockEditImageButton";
+            this.BlockEditImageButton.Size = new System.Drawing.Size(128, 23);
+            this.BlockEditImageButton.TabIndex = 7;
+            this.BlockEditImageButton.Text = "Edit Image";
+            this.EditorToolTip.SetToolTip(this.BlockEditImageButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
+            this.BlockEditImageButton.UseVisualStyleBackColor = false;
+            this.BlockEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
+            // 
+            // BlockIDLabel
+            // 
+            this.BlockIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlockIDLabel.AutoSize = true;
+            this.BlockIDLabel.Location = new System.Drawing.Point(761, 19);
+            this.BlockIDLabel.Name = "BlockIDLabel";
+            this.BlockIDLabel.Size = new System.Drawing.Size(45, 13);
+            this.BlockIDLabel.TabIndex = 4;
+            this.BlockIDLabel.Text = "Block ID";
+            this.EditorToolTip.SetToolTip(this.BlockIDLabel, "Project-wide unique identifier.");
+            // 
+            // BlockIDStatic
+            // 
+            this.BlockIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlockIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BlockIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.BlockIDStatic.Location = new System.Drawing.Point(812, 16);
+            this.BlockIDStatic.Name = "BlockIDStatic";
+            this.BlockIDStatic.Size = new System.Drawing.Size(131, 20);
+            this.BlockIDStatic.TabIndex = 3;
+            this.BlockIDStatic.Tag = "Themed";
+            this.BlockIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.BlockIDStatic, "Project-wide unique identifier.");
+            // 
+            // FurnishingIDStatic
+            // 
+            this.FurnishingIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.FurnishingIDStatic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FurnishingIDStatic.Location = new System.Drawing.Point(812, 16);
+            this.FurnishingIDStatic.Name = "FurnishingIDStatic";
+            this.FurnishingIDStatic.Size = new System.Drawing.Size(131, 20);
+            this.FurnishingIDStatic.TabIndex = 3;
+            this.FurnishingIDStatic.Tag = "Themed";
+            this.FurnishingIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FurnishingIDStatic, "Project-wide unique identifier.");
+            // 
+            // FurnishingIDLabel
+            // 
+            this.FurnishingIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingIDLabel.AutoSize = true;
+            this.FurnishingIDLabel.Location = new System.Drawing.Point(742, 19);
+            this.FurnishingIDLabel.Name = "FurnishingIDLabel";
+            this.FurnishingIDLabel.Size = new System.Drawing.Size(70, 13);
+            this.FurnishingIDLabel.TabIndex = 4;
+            this.FurnishingIDLabel.Text = "Furnishing ID";
+            this.EditorToolTip.SetToolTip(this.FurnishingIDLabel, "Project-wide unique identifier.");
+            // 
+            // FurnishingEditOpenImageButton
+            // 
+            this.FurnishingEditOpenImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingEditOpenImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FurnishingEditOpenImageButton.Location = new System.Drawing.Point(815, 300);
+            this.FurnishingEditOpenImageButton.Name = "FurnishingEditOpenImageButton";
+            this.FurnishingEditOpenImageButton.Size = new System.Drawing.Size(128, 23);
+            this.FurnishingEditOpenImageButton.TabIndex = 7;
+            this.FurnishingEditOpenImageButton.Text = "Edit Open Image";
+            this.EditorToolTip.SetToolTip(this.FurnishingEditOpenImageButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
+            this.FurnishingEditOpenImageButton.UseVisualStyleBackColor = false;
+            this.FurnishingEditOpenImageButton.Click += new System.EventHandler(this.EditImageExternally);
+            // 
+            // FurnishingEditClosedImageButton
+            // 
+            this.FurnishingEditClosedImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingEditClosedImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FurnishingEditClosedImageButton.Location = new System.Drawing.Point(815, 468);
+            this.FurnishingEditClosedImageButton.Name = "FurnishingEditClosedImageButton";
+            this.FurnishingEditClosedImageButton.Size = new System.Drawing.Size(128, 23);
+            this.FurnishingEditClosedImageButton.TabIndex = 7;
+            this.FurnishingEditClosedImageButton.Text = "Edit Closed Image";
+            this.EditorToolTip.SetToolTip(this.FurnishingEditClosedImageButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
+            this.FurnishingEditClosedImageButton.UseVisualStyleBackColor = false;
+            this.FurnishingEditClosedImageButton.Click += new System.EventHandler(this.EditImageExternally);
+            // 
+            // CollectibleIDStatic
+            // 
+            this.CollectibleIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CollectibleIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.CollectibleIDStatic.Location = new System.Drawing.Point(812, 16);
+            this.CollectibleIDStatic.Name = "CollectibleIDStatic";
+            this.CollectibleIDStatic.Size = new System.Drawing.Size(131, 20);
+            this.CollectibleIDStatic.TabIndex = 3;
+            this.CollectibleIDStatic.Tag = "Themed";
+            this.CollectibleIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.CollectibleIDStatic, "Project-wide unique identifier.");
+            // 
+            // CollectibleIDLabel
+            // 
+            this.CollectibleIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleIDLabel.AutoSize = true;
+            this.CollectibleIDLabel.Location = new System.Drawing.Point(742, 19);
+            this.CollectibleIDLabel.Name = "CollectibleIDLabel";
+            this.CollectibleIDLabel.Size = new System.Drawing.Size(69, 13);
+            this.CollectibleIDLabel.TabIndex = 4;
+            this.CollectibleIDLabel.Text = "Collectible ID";
+            this.EditorToolTip.SetToolTip(this.CollectibleIDLabel, "Project-wide unique identifier.");
+            // 
+            // CollectibleEditImageButton
+            // 
+            this.CollectibleEditImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CollectibleEditImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CollectibleEditImageButton.Location = new System.Drawing.Point(815, 468);
+            this.CollectibleEditImageButton.Name = "CollectibleEditImageButton";
+            this.CollectibleEditImageButton.Size = new System.Drawing.Size(128, 23);
+            this.CollectibleEditImageButton.TabIndex = 7;
+            this.CollectibleEditImageButton.Text = "Edit Image";
+            this.EditorToolTip.SetToolTip(this.CollectibleEditImageButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
+            this.CollectibleEditImageButton.UseVisualStyleBackColor = false;
+            this.CollectibleEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
+            // 
+            // CritterEditImageButton
+            // 
+            this.CritterEditImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CritterEditImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CritterEditImageButton.Location = new System.Drawing.Point(815, 468);
+            this.CritterEditImageButton.Name = "CritterEditImageButton";
+            this.CritterEditImageButton.Size = new System.Drawing.Size(128, 23);
+            this.CritterEditImageButton.TabIndex = 7;
+            this.CritterEditImageButton.Text = "Edit Image";
+            this.EditorToolTip.SetToolTip(this.CritterEditImageButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
+            this.CritterEditImageButton.UseVisualStyleBackColor = true;
+            this.CritterEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
+            // 
+            // CritterIDLabel
+            // 
+            this.CritterIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CritterIDLabel.AutoSize = true;
+            this.CritterIDLabel.Location = new System.Drawing.Point(754, 19);
+            this.CritterIDLabel.Name = "CritterIDLabel";
+            this.CritterIDLabel.Size = new System.Drawing.Size(52, 13);
+            this.CritterIDLabel.TabIndex = 4;
+            this.CritterIDLabel.Text = "Critter ID";
+            this.EditorToolTip.SetToolTip(this.CritterIDLabel, "Project-wide unique identifier.");
+            // 
+            // CritterIDStatic
+            // 
+            this.CritterIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CritterIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CritterIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.CritterIDStatic.Location = new System.Drawing.Point(812, 16);
+            this.CritterIDStatic.Name = "CritterIDStatic";
+            this.CritterIDStatic.Size = new System.Drawing.Size(131, 20);
+            this.CritterIDStatic.TabIndex = 3;
+            this.CritterIDStatic.Tag = "Themed";
+            this.CritterIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.CritterIDStatic, "Project-wide unique identifier.");
+            // 
+            // CharacterIDStatic
+            // 
+            this.CharacterIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CharacterIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CharacterIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.CharacterIDStatic.Location = new System.Drawing.Point(812, 16);
+            this.CharacterIDStatic.Name = "CharacterIDStatic";
+            this.CharacterIDStatic.Size = new System.Drawing.Size(131, 20);
+            this.CharacterIDStatic.TabIndex = 3;
+            this.CharacterIDStatic.Tag = "Themed";
+            this.CharacterIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.CharacterIDStatic, "Project-wide unique identifier.");
+            // 
+            // CharacterIDLabel
+            // 
+            this.CharacterIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CharacterIDLabel.AutoSize = true;
+            this.CharacterIDLabel.Location = new System.Drawing.Point(742, 19);
+            this.CharacterIDLabel.Name = "CharacterIDLabel";
+            this.CharacterIDLabel.Size = new System.Drawing.Size(69, 13);
+            this.CharacterIDLabel.TabIndex = 4;
+            this.CharacterIDLabel.Text = "Character ID";
+            this.EditorToolTip.SetToolTip(this.CharacterIDLabel, "Project-wide unique identifier.");
+            // 
+            // CharacterEditImageButton
+            // 
+            this.CharacterEditImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CharacterEditImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CharacterEditImageButton.Location = new System.Drawing.Point(815, 468);
+            this.CharacterEditImageButton.Name = "CharacterEditImageButton";
+            this.CharacterEditImageButton.Size = new System.Drawing.Size(128, 23);
+            this.CharacterEditImageButton.TabIndex = 7;
+            this.CharacterEditImageButton.Text = "Edit Image";
+            this.EditorToolTip.SetToolTip(this.CharacterEditImageButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
+            this.CharacterEditImageButton.UseVisualStyleBackColor = false;
+            this.CharacterEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
+            // 
+            // ItemPictureEditButton
+            // 
+            this.ItemPictureEditButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ItemPictureEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ItemPictureEditButton.Location = new System.Drawing.Point(815, 468);
+            this.ItemPictureEditButton.Name = "ItemPictureEditButton";
+            this.ItemPictureEditButton.Size = new System.Drawing.Size(128, 23);
+            this.ItemPictureEditButton.TabIndex = 7;
+            this.ItemPictureEditButton.Text = "Edit Image";
+            this.EditorToolTip.SetToolTip(this.ItemPictureEditButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
+            this.ItemPictureEditButton.UseVisualStyleBackColor = false;
+            this.ItemPictureEditButton.Click += new System.EventHandler(this.EditImageExternally);
+            // 
+            // ItemIDLabel
+            // 
+            this.ItemIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemIDLabel.AutoSize = true;
+            this.ItemIDLabel.Location = new System.Drawing.Point(759, 19);
+            this.ItemIDLabel.Name = "ItemIDLabel";
+            this.ItemIDLabel.Size = new System.Drawing.Size(43, 13);
+            this.ItemIDLabel.TabIndex = 4;
+            this.ItemIDLabel.Text = "Item ID";
+            this.EditorToolTip.SetToolTip(this.ItemIDLabel, "Project-wide unique identifier.");
+            // 
+            // ItemIDStatic
+            // 
+            this.ItemIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ItemIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.ItemIDStatic.Location = new System.Drawing.Point(813, 16);
+            this.ItemIDStatic.Name = "ItemIDStatic";
+            this.ItemIDStatic.Size = new System.Drawing.Size(131, 20);
+            this.ItemIDStatic.TabIndex = 3;
+            this.ItemIDStatic.Tag = "Themed";
+            this.ItemIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.ItemIDStatic, "Project-wide unique identifier.");
+            // 
+            // BiomePictureEditButton
+            // 
+            this.BiomePictureEditButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BiomePictureEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BiomePictureEditButton.Location = new System.Drawing.Point(815, 468);
+            this.BiomePictureEditButton.Name = "BiomePictureEditButton";
+            this.BiomePictureEditButton.Size = new System.Drawing.Size(128, 23);
+            this.BiomePictureEditButton.TabIndex = 7;
+            this.BiomePictureEditButton.Text = "Edit Image";
+            this.EditorToolTip.SetToolTip(this.BiomePictureEditButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
+            this.BiomePictureEditButton.UseVisualStyleBackColor = false;
+            this.BiomePictureEditButton.Click += new System.EventHandler(this.EditImageExternally);
+            // 
+            // BiomeIDLabel
+            // 
+            this.BiomeIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiomeIDLabel.AutoSize = true;
+            this.BiomeIDLabel.Location = new System.Drawing.Point(758, 19);
+            this.BiomeIDLabel.Name = "BiomeIDLabel";
+            this.BiomeIDLabel.Size = new System.Drawing.Size(49, 13);
+            this.BiomeIDLabel.TabIndex = 4;
+            this.BiomeIDLabel.Text = "Biome ID";
+            this.EditorToolTip.SetToolTip(this.BiomeIDLabel, "Project-wide unique identifier.");
+            // 
+            // BiomeIDStatic
+            // 
+            this.BiomeIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiomeIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BiomeIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.BiomeIDStatic.Location = new System.Drawing.Point(812, 16);
+            this.BiomeIDStatic.Name = "BiomeIDStatic";
+            this.BiomeIDStatic.Size = new System.Drawing.Size(131, 20);
+            this.BiomeIDStatic.TabIndex = 3;
+            this.BiomeIDStatic.Tag = "Themed";
+            this.BiomeIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.BiomeIDStatic, "Project-wide unique identifier.");
+            // 
+            // CraftingPictureEditButton
+            // 
+            this.CraftingPictureEditButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CraftingPictureEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CraftingPictureEditButton.Location = new System.Drawing.Point(815, 468);
+            this.CraftingPictureEditButton.Name = "CraftingPictureEditButton";
+            this.CraftingPictureEditButton.Size = new System.Drawing.Size(128, 23);
+            this.CraftingPictureEditButton.TabIndex = 7;
+            this.CraftingPictureEditButton.Text = "Edit Image";
+            this.EditorToolTip.SetToolTip(this.CraftingPictureEditButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
+            this.CraftingPictureEditButton.UseVisualStyleBackColor = false;
+            this.CraftingPictureEditButton.Click += new System.EventHandler(this.EditImageExternally);
+            // 
+            // CraftingIDLabel
+            // 
+            this.CraftingIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CraftingIDLabel.AutoSize = true;
+            this.CraftingIDLabel.Location = new System.Drawing.Point(759, 19);
+            this.CraftingIDLabel.Name = "CraftingIDLabel";
+            this.CraftingIDLabel.Size = new System.Drawing.Size(46, 13);
+            this.CraftingIDLabel.TabIndex = 4;
+            this.CraftingIDLabel.Text = "Craft ID";
+            this.EditorToolTip.SetToolTip(this.CraftingIDLabel, "Project-wide unique identifier.");
+            // 
+            // CraftingIDStatic
+            // 
+            this.CraftingIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CraftingIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CraftingIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.CraftingIDStatic.Location = new System.Drawing.Point(813, 16);
+            this.CraftingIDStatic.Name = "CraftingIDStatic";
+            this.CraftingIDStatic.Size = new System.Drawing.Size(131, 20);
+            this.CraftingIDStatic.TabIndex = 3;
+            this.CraftingIDStatic.Tag = "Themed";
+            this.CraftingIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.CraftingIDStatic, "Project-wide unique identifier.");
+            // 
+            // RoomPictureEditButton
+            // 
+            this.RoomPictureEditButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RoomPictureEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RoomPictureEditButton.Location = new System.Drawing.Point(815, 468);
+            this.RoomPictureEditButton.Name = "RoomPictureEditButton";
+            this.RoomPictureEditButton.Size = new System.Drawing.Size(128, 23);
+            this.RoomPictureEditButton.TabIndex = 7;
+            this.RoomPictureEditButton.Text = "Edit Image";
+            this.EditorToolTip.SetToolTip(this.RoomPictureEditButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
+            this.RoomPictureEditButton.UseVisualStyleBackColor = false;
+            this.RoomPictureEditButton.Click += new System.EventHandler(this.EditImageExternally);
+            // 
+            // RoomIDLabel
+            // 
+            this.RoomIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RoomIDLabel.AutoSize = true;
+            this.RoomIDLabel.Location = new System.Drawing.Point(759, 19);
+            this.RoomIDLabel.Name = "RoomIDLabel";
+            this.RoomIDLabel.Size = new System.Drawing.Size(48, 13);
+            this.RoomIDLabel.TabIndex = 4;
+            this.RoomIDLabel.Text = "Room ID";
+            this.EditorToolTip.SetToolTip(this.RoomIDLabel, "Project-wide unique identifier.");
+            // 
+            // RoomIDStatic
+            // 
+            this.RoomIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RoomIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RoomIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.RoomIDStatic.Location = new System.Drawing.Point(813, 16);
+            this.RoomIDStatic.Name = "RoomIDStatic";
+            this.RoomIDStatic.Size = new System.Drawing.Size(131, 20);
+            this.RoomIDStatic.TabIndex = 3;
+            this.RoomIDStatic.Tag = "Themed";
+            this.RoomIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.RoomIDStatic, "Project-wide unique identifier.");
+            // 
+            // RegionLayOutWorldButton
+            // 
+            this.RegionLayOutWorldButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RegionLayOutWorldButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegionLayOutWorldButton.Location = new System.Drawing.Point(815, 306);
+            this.RegionLayOutWorldButton.Name = "RegionLayOutWorldButton";
+            this.RegionLayOutWorldButton.Size = new System.Drawing.Size(128, 23);
+            this.RegionLayOutWorldButton.TabIndex = 17;
+            this.RegionLayOutWorldButton.Text = "Lay Out World";
+            this.EditorToolTip.SetToolTip(this.RegionLayOutWorldButton, "Opens the world layout editor.");
+            this.RegionLayOutWorldButton.UseVisualStyleBackColor = false;
+            this.RegionLayOutWorldButton.Click += new System.EventHandler(this.RegionLayOutWorldButton_Click);
+            // 
+            // RegionIDLabel
+            // 
+            this.RegionIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RegionIDLabel.AutoSize = true;
+            this.RegionIDLabel.Location = new System.Drawing.Point(753, 19);
+            this.RegionIDLabel.Name = "RegionIDLabel";
+            this.RegionIDLabel.Size = new System.Drawing.Size(54, 13);
+            this.RegionIDLabel.TabIndex = 12;
+            this.RegionIDLabel.Text = "Region ID";
+            this.EditorToolTip.SetToolTip(this.RegionIDLabel, "Project-wide unique identifier.");
+            // 
+            // RegionIDStatic
+            // 
+            this.RegionIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RegionIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RegionIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.RegionIDStatic.Location = new System.Drawing.Point(813, 16);
+            this.RegionIDStatic.Name = "RegionIDStatic";
+            this.RegionIDStatic.Size = new System.Drawing.Size(131, 20);
+            this.RegionIDStatic.TabIndex = 11;
+            this.RegionIDStatic.Tag = "Themed";
+            this.RegionIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.RegionIDStatic, "Project-wide unique identifier.");
+            // 
+            // RegionMapEditButton
+            // 
+            this.RegionMapEditButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RegionMapEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegionMapEditButton.Location = new System.Drawing.Point(815, 468);
+            this.RegionMapEditButton.Name = "RegionMapEditButton";
+            this.RegionMapEditButton.Size = new System.Drawing.Size(128, 23);
+            this.RegionMapEditButton.TabIndex = 15;
+            this.RegionMapEditButton.Text = "Edit Map";
+            this.EditorToolTip.SetToolTip(this.RegionMapEditButton, "Opens the map editor.");
+            this.RegionMapEditButton.UseVisualStyleBackColor = false;
+            this.RegionMapEditButton.Click += new System.EventHandler(this.RegionOpenMapEditorButton_Click);
             // 
             // MainMenuBar
             // 
@@ -1095,45 +1994,6 @@ namespace Scribe.Forms
             this.AboutToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.AboutToolStripMenuItem.Text = "&About...";
             this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutMenuItem_Click);
-            // 
-            // ContextMenuStripPictureBoxes
-            // 
-            this.ContextMenuStripPictureBoxes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMenuItemEditExternal,
-            this.ToolStripMenuItemOpenContainingFolder,
-            this.ToolStripSeparatorPictureBoxes,
-            this.ToolStripMenuItemReloadImage});
-            this.ContextMenuStripPictureBoxes.Name = "ContextMenuStripMainMenu";
-            this.ContextMenuStripPictureBoxes.Size = new System.Drawing.Size(202, 76);
-            // 
-            // ToolStripMenuItemEditExternal
-            // 
-            this.ToolStripMenuItemEditExternal.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemEditExternal.Image")));
-            this.ToolStripMenuItemEditExternal.Name = "ToolStripMenuItemEditExternal";
-            this.ToolStripMenuItemEditExternal.Size = new System.Drawing.Size(201, 22);
-            this.ToolStripMenuItemEditExternal.Text = "Edit in External Program";
-            this.ToolStripMenuItemEditExternal.Click += new System.EventHandler(this.EditImageExternally);
-            // 
-            // ToolStripMenuItemOpenContainingFolder
-            // 
-            this.ToolStripMenuItemOpenContainingFolder.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemOpenContainingFolder.Image")));
-            this.ToolStripMenuItemOpenContainingFolder.Name = "ToolStripMenuItemOpenContainingFolder";
-            this.ToolStripMenuItemOpenContainingFolder.Size = new System.Drawing.Size(201, 22);
-            this.ToolStripMenuItemOpenContainingFolder.Text = "Open Containing Folder";
-            this.ToolStripMenuItemOpenContainingFolder.Click += new System.EventHandler(this.OpenContainingFolderMenuItem_Click);
-            // 
-            // ToolStripSeparatorPictureBoxes
-            // 
-            this.ToolStripSeparatorPictureBoxes.Name = "ToolStripSeparatorPictureBoxes";
-            this.ToolStripSeparatorPictureBoxes.Size = new System.Drawing.Size(198, 6);
-            // 
-            // ToolStripMenuItemReloadImage
-            // 
-            this.ToolStripMenuItemReloadImage.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemReloadImage.Image")));
-            this.ToolStripMenuItemReloadImage.Name = "ToolStripMenuItemReloadImage";
-            this.ToolStripMenuItemReloadImage.Size = new System.Drawing.Size(201, 22);
-            this.ToolStripMenuItemReloadImage.Text = "Reload from Disk";
-            this.ToolStripMenuItemReloadImage.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
             // ContextMenuStripForTextEntries
             // 
@@ -1574,6 +2434,7 @@ namespace Scribe.Forms
             this.EditorTabs.Size = new System.Drawing.Size(961, 625);
             this.EditorTabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.EditorTabs.TabIndex = 1;
+            this.EditorToolTip.SetToolTip(this.EditorTabs, "Every critter in the project.  These are simple mobs that can roam around.");
             this.EditorTabs.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.EditorTabs_DrawItem);
             this.EditorTabs.SelectedIndexChanged += new System.EventHandler(this.EditorTabs_SelectedIndexChanged);
             // 
@@ -1595,48 +2456,6 @@ namespace Scribe.Forms
             this.GamesTabPage.Size = new System.Drawing.Size(953, 599);
             this.GamesTabPage.TabIndex = 0;
             this.GamesTabPage.Text = "Games";
-            // 
-            // GameRemoveGameButton
-            // 
-            this.GameRemoveGameButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.GameRemoveGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.GameRemoveGameButton.Location = new System.Drawing.Point(24, 468);
-            this.GameRemoveGameButton.Name = "GameRemoveGameButton";
-            this.GameRemoveGameButton.Size = new System.Drawing.Size(129, 23);
-            this.GameRemoveGameButton.TabIndex = 2;
-            this.GameRemoveGameButton.Text = "Remove Game";
-            this.EditorToolTip.SetToolTip(this.GameRemoveGameButton, "Deletes the episode or game definition currently selected.");
-            this.GameRemoveGameButton.UseVisualStyleBackColor = false;
-            this.GameRemoveGameButton.Click += new System.EventHandler(this.GameRemoveGameButton_Click);
-            // 
-            // GameIconEditButton
-            // 
-            this.GameIconEditButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.GameIconEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.GameIconEditButton.Location = new System.Drawing.Point(815, 468);
-            this.GameIconEditButton.Name = "GameIconEditButton";
-            this.GameIconEditButton.Size = new System.Drawing.Size(128, 23);
-            this.GameIconEditButton.TabIndex = 7;
-            this.GameIconEditButton.Text = "Edit Image";
-            this.EditorToolTip.SetToolTip(this.GameIconEditButton, "Launches an external program to edit the image.  If the image file does not exist" +
-        ", it will be created.");
-            this.GameIconEditButton.UseVisualStyleBackColor = false;
-            this.GameIconEditButton.Click += new System.EventHandler(this.EditImageExternally);
-            // 
-            // GameIconPixelBox
-            // 
-            this.GameIconPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.GameIconPixelBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.GameIconPixelBox.ContextMenuStrip = this.ContextMenuStripPictureBoxes;
-            this.GameIconPixelBox.Image = ((System.Drawing.Image)(resources.GetObject("GameIconPixelBox.Image")));
-            this.GameIconPixelBox.Location = new System.Drawing.Point(823, 342);
-            this.GameIconPixelBox.Name = "GameIconPixelBox";
-            this.GameIconPixelBox.Size = new System.Drawing.Size(120, 120);
-            this.GameIconPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.GameIconPixelBox.TabIndex = 6;
-            this.GameIconPixelBox.TabStop = false;
-            this.EditorToolTip.SetToolTip(this.GameIconPixelBox, "An optional image representing this game.");
-            this.GameIconPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
             // GameTableLayoutPanel
             // 
@@ -1677,124 +2496,6 @@ namespace Scribe.Forms
             this.GameTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.GameTableLayoutPanel.TabIndex = 5;
             // 
-            // GameIsEpisodeLabel
-            // 
-            this.GameIsEpisodeLabel.AutoSize = true;
-            this.GameIsEpisodeLabel.Location = new System.Drawing.Point(3, 135);
-            this.GameIsEpisodeLabel.Name = "GameIsEpisodeLabel";
-            this.GameIsEpisodeLabel.Size = new System.Drawing.Size(61, 13);
-            this.GameIsEpisodeLabel.TabIndex = 9;
-            this.GameIsEpisodeLabel.Text = "Is Episode?";
-            this.EditorToolTip.SetToolTip(this.GameIsEpisodeLabel, "When checked, this game is part of a sequence of games.");
-            // 
-            // GameEpisodeTitleLabel
-            // 
-            this.GameEpisodeTitleLabel.AutoSize = true;
-            this.GameEpisodeTitleLabel.Location = new System.Drawing.Point(3, 160);
-            this.GameEpisodeTitleLabel.Name = "GameEpisodeTitleLabel";
-            this.GameEpisodeTitleLabel.Size = new System.Drawing.Size(67, 13);
-            this.GameEpisodeTitleLabel.TabIndex = 12;
-            this.GameEpisodeTitleLabel.Text = "Episode Title";
-            this.EditorToolTip.SetToolTip(this.GameEpisodeTitleLabel, "Optional.  For full games, a subtitle.  For episodes, the episode title.");
-            // 
-            // GameEpisodeNumberLabel
-            // 
-            this.GameEpisodeNumberLabel.AutoSize = true;
-            this.GameEpisodeNumberLabel.Location = new System.Drawing.Point(3, 185);
-            this.GameEpisodeNumberLabel.Name = "GameEpisodeNumberLabel";
-            this.GameEpisodeNumberLabel.Size = new System.Drawing.Size(84, 13);
-            this.GameEpisodeNumberLabel.TabIndex = 15;
-            this.GameEpisodeNumberLabel.Text = "Episode Number";
-            this.EditorToolTip.SetToolTip(this.GameEpisodeNumberLabel, "Where this game occurs in its sequence, if any.  Mostly useful for episodes.");
-            // 
-            // GamePlayerCharacterLabel
-            // 
-            this.GamePlayerCharacterLabel.AutoSize = true;
-            this.GamePlayerCharacterLabel.Location = new System.Drawing.Point(3, 210);
-            this.GamePlayerCharacterLabel.Name = "GamePlayerCharacterLabel";
-            this.GamePlayerCharacterLabel.Size = new System.Drawing.Size(88, 13);
-            this.GamePlayerCharacterLabel.TabIndex = 18;
-            this.GamePlayerCharacterLabel.Text = "Player Character";
-            this.EditorToolTip.SetToolTip(this.GamePlayerCharacterLabel, "The Character that the player controls when beginning this game.");
-            // 
-            // GameFirstScriptLabel
-            // 
-            this.GameFirstScriptLabel.AutoSize = true;
-            this.GameFirstScriptLabel.Location = new System.Drawing.Point(3, 235);
-            this.GameFirstScriptLabel.Name = "GameFirstScriptLabel";
-            this.GameFirstScriptLabel.Size = new System.Drawing.Size(58, 13);
-            this.GameFirstScriptLabel.TabIndex = 21;
-            this.GameFirstScriptLabel.Text = "First Script";
-            this.EditorToolTip.SetToolTip(this.GameFirstScriptLabel, "An optional Script to run the first time play begins.");
-            // 
-            // GameIsEpisodeCheckBox
-            // 
-            this.GameIsEpisodeCheckBox.AutoSize = true;
-            this.GameIsEpisodeCheckBox.Location = new System.Drawing.Point(131, 138);
-            this.GameIsEpisodeCheckBox.Name = "GameIsEpisodeCheckBox";
-            this.GameIsEpisodeCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.GameIsEpisodeCheckBox.TabIndex = 22;
-            this.EditorToolTip.SetToolTip(this.GameIsEpisodeCheckBox, "When checked, this game is part of a sequence of games.");
-            this.GameIsEpisodeCheckBox.UseVisualStyleBackColor = false;
-            // 
-            // GameEpisodeTitleTextBox
-            // 
-            this.GameEpisodeTitleTextBox.Location = new System.Drawing.Point(131, 163);
-            this.GameEpisodeTitleTextBox.Name = "GameEpisodeTitleTextBox";
-            this.GameEpisodeTitleTextBox.Size = new System.Drawing.Size(147, 20);
-            this.GameEpisodeTitleTextBox.TabIndex = 26;
-            this.EditorToolTip.SetToolTip(this.GameEpisodeTitleTextBox, "Optional.  For full games, a subtitle.  For episodes, the episode title.");
-            // 
-            // GameEpisodeNumberTextBox
-            // 
-            this.GameEpisodeNumberTextBox.Location = new System.Drawing.Point(131, 188);
-            this.GameEpisodeNumberTextBox.Name = "GameEpisodeNumberTextBox";
-            this.GameEpisodeNumberTextBox.Size = new System.Drawing.Size(147, 20);
-            this.GameEpisodeNumberTextBox.TabIndex = 27;
-            this.EditorToolTip.SetToolTip(this.GameEpisodeNumberTextBox, "Where this game occurs in its sequence, if any.  Mostly useful for episodes.");
-            // 
-            // GamePlayerCharacterComboBox
-            // 
-            this.GamePlayerCharacterComboBox.DisplayMember = "Name";
-            this.GamePlayerCharacterComboBox.Location = new System.Drawing.Point(131, 213);
-            this.GamePlayerCharacterComboBox.Name = "GamePlayerCharacterComboBox";
-            this.GamePlayerCharacterComboBox.Size = new System.Drawing.Size(147, 21);
-            this.GamePlayerCharacterComboBox.TabIndex = 28;
-            this.EditorToolTip.SetToolTip(this.GamePlayerCharacterComboBox, "The Character that the player controls when beginning this game.");
-            // 
-            // GameFirstScriptComboBox
-            // 
-            this.GameFirstScriptComboBox.DisplayMember = "Name";
-            this.GameFirstScriptComboBox.Location = new System.Drawing.Point(131, 238);
-            this.GameFirstScriptComboBox.Name = "GameFirstScriptComboBox";
-            this.GameFirstScriptComboBox.Size = new System.Drawing.Size(147, 21);
-            this.GameFirstScriptComboBox.TabIndex = 29;
-            this.EditorToolTip.SetToolTip(this.GameFirstScriptComboBox, "An optional Script to run the first time play begins.");
-            // 
-            // GameIDLabel
-            // 
-            this.GameIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.GameIDLabel.AutoSize = true;
-            this.GameIDLabel.Location = new System.Drawing.Point(759, 19);
-            this.GameIDLabel.Name = "GameIDLabel";
-            this.GameIDLabel.Size = new System.Drawing.Size(48, 13);
-            this.GameIDLabel.TabIndex = 4;
-            this.GameIDLabel.Text = "Game ID";
-            this.EditorToolTip.SetToolTip(this.GameIDLabel, "Project-wide unique identifier.");
-            // 
-            // GameAddNewGameButton
-            // 
-            this.GameAddNewGameButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.GameAddNewGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.GameAddNewGameButton.Location = new System.Drawing.Point(159, 468);
-            this.GameAddNewGameButton.Name = "GameAddNewGameButton";
-            this.GameAddNewGameButton.Size = new System.Drawing.Size(129, 23);
-            this.GameAddNewGameButton.TabIndex = 2;
-            this.GameAddNewGameButton.Text = "Add New Game";
-            this.EditorToolTip.SetToolTip(this.GameAddNewGameButton, "Creates a new game or episode definition.");
-            this.GameAddNewGameButton.UseVisualStyleBackColor = false;
-            this.GameAddNewGameButton.Click += new System.EventHandler(this.GameAddNewGameButton_Click);
-            // 
             // FileFormatGroupBox
             // 
             this.FileFormatGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -1806,204 +2507,7 @@ namespace Scribe.Forms
             this.FileFormatGroupBox.TabIndex = 0;
             this.FileFormatGroupBox.TabStop = false;
             this.FileFormatGroupBox.Text = "File Format";
-            // 
-            // FileFormatTableLayoutPanel
-            // 
-            this.FileFormatTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FileFormatTableLayoutPanel.ColumnCount = 6;
-            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.83792F));
-            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.495411F));
-            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.83792F));
-            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.495411F));
-            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.83792F));
-            this.FileFormatTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.495411F));
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPrimaryDelimiterLabel, 0, 0);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPrimaryDelimiterStatic, 1, 0);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatSecondaryDelimiterLabel, 2, 0);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatSecondaryDelimiterStatic, 3, 0);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatInternalDelimiterLabel, 4, 0);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatInternalDelimiterStatic, 5, 0);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatElementDelimiterLabel, 0, 1);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatElementDelimiterStatic, 1, 1);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatNameDelimiterLabel, 2, 1);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatNameDelimiterStatic, 3, 1);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPronounDelimiterLabel, 4, 1);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatPronounDelimiterStatic, 5, 1);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalDelimiterLabel, 0, 2);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalDelimiterStatic, 1, 2);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalTerminatorLabel, 2, 2);
-            this.FileFormatTableLayoutPanel.Controls.Add(this.FileFormatDimensionalTerminatorStatic, 3, 2);
-            this.FileFormatTableLayoutPanel.Location = new System.Drawing.Point(6, 19);
-            this.FileFormatTableLayoutPanel.Name = "FileFormatTableLayoutPanel";
-            this.FileFormatTableLayoutPanel.RowCount = 3;
-            this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.FileFormatTableLayoutPanel.Size = new System.Drawing.Size(634, 75);
-            this.FileFormatTableLayoutPanel.TabIndex = 1;
-            this.EditorToolTip.SetToolTip(this.FileFormatTableLayoutPanel, "Just FYI, these characters are used to save project data.");
-            // 
-            // FileFormatPrimaryDelimiterLabel
-            // 
-            this.FileFormatPrimaryDelimiterLabel.AutoSize = true;
-            this.FileFormatPrimaryDelimiterLabel.Location = new System.Drawing.Point(50, 5);
-            this.FileFormatPrimaryDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.FileFormatPrimaryDelimiterLabel.Name = "FileFormatPrimaryDelimiterLabel";
-            this.FileFormatPrimaryDelimiterLabel.Size = new System.Drawing.Size(87, 13);
-            this.FileFormatPrimaryDelimiterLabel.TabIndex = 0;
-            this.FileFormatPrimaryDelimiterLabel.Text = "Primary Delimiter";
-            // 
-            // FileFormatPrimaryDelimiterStatic
-            // 
-            this.FileFormatPrimaryDelimiterStatic.AutoSize = true;
-            this.FileFormatPrimaryDelimiterStatic.Location = new System.Drawing.Point(179, 5);
-            this.FileFormatPrimaryDelimiterStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.FileFormatPrimaryDelimiterStatic.Name = "FileFormatPrimaryDelimiterStatic";
-            this.FileFormatPrimaryDelimiterStatic.Size = new System.Drawing.Size(11, 13);
-            this.FileFormatPrimaryDelimiterStatic.TabIndex = 1;
-            this.FileFormatPrimaryDelimiterStatic.Text = ";";
-            // 
-            // FileFormatSecondaryDelimiterLabel
-            // 
-            this.FileFormatSecondaryDelimiterLabel.AutoSize = true;
-            this.FileFormatSecondaryDelimiterLabel.Location = new System.Drawing.Point(260, 5);
-            this.FileFormatSecondaryDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.FileFormatSecondaryDelimiterLabel.Name = "FileFormatSecondaryDelimiterLabel";
-            this.FileFormatSecondaryDelimiterLabel.Size = new System.Drawing.Size(102, 13);
-            this.FileFormatSecondaryDelimiterLabel.TabIndex = 2;
-            this.FileFormatSecondaryDelimiterLabel.Text = "Secondary Delimiter";
-            // 
-            // FileFormatSecondaryDelimiterStatic
-            // 
-            this.FileFormatSecondaryDelimiterStatic.AutoSize = true;
-            this.FileFormatSecondaryDelimiterStatic.Location = new System.Drawing.Point(389, 5);
-            this.FileFormatSecondaryDelimiterStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.FileFormatSecondaryDelimiterStatic.Name = "FileFormatSecondaryDelimiterStatic";
-            this.FileFormatSecondaryDelimiterStatic.Size = new System.Drawing.Size(11, 13);
-            this.FileFormatSecondaryDelimiterStatic.TabIndex = 3;
-            this.FileFormatSecondaryDelimiterStatic.Text = ";";
-            // 
-            // FileFormatInternalDelimiterLabel
-            // 
-            this.FileFormatInternalDelimiterLabel.AutoSize = true;
-            this.FileFormatInternalDelimiterLabel.Location = new System.Drawing.Point(470, 5);
-            this.FileFormatInternalDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.FileFormatInternalDelimiterLabel.Name = "FileFormatInternalDelimiterLabel";
-            this.FileFormatInternalDelimiterLabel.Size = new System.Drawing.Size(89, 13);
-            this.FileFormatInternalDelimiterLabel.TabIndex = 4;
-            this.FileFormatInternalDelimiterLabel.Text = "Internal Delimiter";
-            // 
-            // FileFormatInternalDelimiterStatic
-            // 
-            this.FileFormatInternalDelimiterStatic.AutoSize = true;
-            this.FileFormatInternalDelimiterStatic.Location = new System.Drawing.Point(599, 5);
-            this.FileFormatInternalDelimiterStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.FileFormatInternalDelimiterStatic.Name = "FileFormatInternalDelimiterStatic";
-            this.FileFormatInternalDelimiterStatic.Size = new System.Drawing.Size(11, 13);
-            this.FileFormatInternalDelimiterStatic.TabIndex = 5;
-            this.FileFormatInternalDelimiterStatic.Text = ";";
-            // 
-            // FileFormatElementDelimiterLabel
-            // 
-            this.FileFormatElementDelimiterLabel.AutoSize = true;
-            this.FileFormatElementDelimiterLabel.Location = new System.Drawing.Point(50, 29);
-            this.FileFormatElementDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.FileFormatElementDelimiterLabel.Name = "FileFormatElementDelimiterLabel";
-            this.FileFormatElementDelimiterLabel.Size = new System.Drawing.Size(89, 13);
-            this.FileFormatElementDelimiterLabel.TabIndex = 6;
-            this.FileFormatElementDelimiterLabel.Text = "Element Delimiter";
-            // 
-            // FileFormatElementDelimiterStatic
-            // 
-            this.FileFormatElementDelimiterStatic.AutoSize = true;
-            this.FileFormatElementDelimiterStatic.Location = new System.Drawing.Point(179, 29);
-            this.FileFormatElementDelimiterStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.FileFormatElementDelimiterStatic.Name = "FileFormatElementDelimiterStatic";
-            this.FileFormatElementDelimiterStatic.Size = new System.Drawing.Size(11, 13);
-            this.FileFormatElementDelimiterStatic.TabIndex = 7;
-            this.FileFormatElementDelimiterStatic.Text = ";";
-            // 
-            // FileFormatNameDelimiterLabel
-            // 
-            this.FileFormatNameDelimiterLabel.AutoSize = true;
-            this.FileFormatNameDelimiterLabel.Location = new System.Drawing.Point(260, 29);
-            this.FileFormatNameDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.FileFormatNameDelimiterLabel.Name = "FileFormatNameDelimiterLabel";
-            this.FileFormatNameDelimiterLabel.Size = new System.Drawing.Size(78, 13);
-            this.FileFormatNameDelimiterLabel.TabIndex = 8;
-            this.FileFormatNameDelimiterLabel.Text = "Name Delimiter";
-            // 
-            // FileFormatNameDelimiterStatic
-            // 
-            this.FileFormatNameDelimiterStatic.AutoSize = true;
-            this.FileFormatNameDelimiterStatic.Location = new System.Drawing.Point(389, 29);
-            this.FileFormatNameDelimiterStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.FileFormatNameDelimiterStatic.Name = "FileFormatNameDelimiterStatic";
-            this.FileFormatNameDelimiterStatic.Size = new System.Drawing.Size(11, 13);
-            this.FileFormatNameDelimiterStatic.TabIndex = 9;
-            this.FileFormatNameDelimiterStatic.Text = ";";
-            // 
-            // FileFormatPronounDelimiterLabel
-            // 
-            this.FileFormatPronounDelimiterLabel.AutoSize = true;
-            this.FileFormatPronounDelimiterLabel.Location = new System.Drawing.Point(470, 29);
-            this.FileFormatPronounDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.FileFormatPronounDelimiterLabel.Name = "FileFormatPronounDelimiterLabel";
-            this.FileFormatPronounDelimiterLabel.Size = new System.Drawing.Size(91, 13);
-            this.FileFormatPronounDelimiterLabel.TabIndex = 10;
-            this.FileFormatPronounDelimiterLabel.Text = "Pronoun Delimiter";
-            // 
-            // FileFormatPronounDelimiterStatic
-            // 
-            this.FileFormatPronounDelimiterStatic.AutoSize = true;
-            this.FileFormatPronounDelimiterStatic.Location = new System.Drawing.Point(599, 29);
-            this.FileFormatPronounDelimiterStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.FileFormatPronounDelimiterStatic.Name = "FileFormatPronounDelimiterStatic";
-            this.FileFormatPronounDelimiterStatic.Size = new System.Drawing.Size(11, 13);
-            this.FileFormatPronounDelimiterStatic.TabIndex = 11;
-            this.FileFormatPronounDelimiterStatic.Text = ";";
-            // 
-            // FileFormatDimensionalDelimiterLabel
-            // 
-            this.FileFormatDimensionalDelimiterLabel.AutoSize = true;
-            this.FileFormatDimensionalDelimiterLabel.Location = new System.Drawing.Point(50, 53);
-            this.FileFormatDimensionalDelimiterLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.FileFormatDimensionalDelimiterLabel.Name = "FileFormatDimensionalDelimiterLabel";
-            this.FileFormatDimensionalDelimiterLabel.Size = new System.Drawing.Size(107, 13);
-            this.FileFormatDimensionalDelimiterLabel.TabIndex = 12;
-            this.FileFormatDimensionalDelimiterLabel.Text = "Dimensional Delimiter";
-            // 
-            // FileFormatDimensionalDelimiterStatic
-            // 
-            this.FileFormatDimensionalDelimiterStatic.AutoSize = true;
-            this.FileFormatDimensionalDelimiterStatic.Location = new System.Drawing.Point(179, 53);
-            this.FileFormatDimensionalDelimiterStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.FileFormatDimensionalDelimiterStatic.Name = "FileFormatDimensionalDelimiterStatic";
-            this.FileFormatDimensionalDelimiterStatic.Size = new System.Drawing.Size(11, 13);
-            this.FileFormatDimensionalDelimiterStatic.TabIndex = 13;
-            this.FileFormatDimensionalDelimiterStatic.Text = ";";
-            // 
-            // FileFormatDimensionalTerminatorLabel
-            // 
-            this.FileFormatDimensionalTerminatorLabel.AutoSize = true;
-            this.FileFormatDimensionalTerminatorLabel.Location = new System.Drawing.Point(260, 53);
-            this.FileFormatDimensionalTerminatorLabel.Margin = new System.Windows.Forms.Padding(50, 5, 3, 0);
-            this.FileFormatDimensionalTerminatorLabel.Name = "FileFormatDimensionalTerminatorLabel";
-            this.FileFormatDimensionalTerminatorLabel.Size = new System.Drawing.Size(118, 13);
-            this.FileFormatDimensionalTerminatorLabel.TabIndex = 14;
-            this.FileFormatDimensionalTerminatorLabel.Text = "Dimensional Terminator";
-            // 
-            // FileFormatDimensionalTerminatorStatic
-            // 
-            this.FileFormatDimensionalTerminatorStatic.AutoSize = true;
-            this.FileFormatDimensionalTerminatorStatic.Location = new System.Drawing.Point(389, 53);
-            this.FileFormatDimensionalTerminatorStatic.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.FileFormatDimensionalTerminatorStatic.Name = "FileFormatDimensionalTerminatorStatic";
-            this.FileFormatDimensionalTerminatorStatic.Size = new System.Drawing.Size(11, 13);
-            this.FileFormatDimensionalTerminatorStatic.TabIndex = 15;
-            this.FileFormatDimensionalTerminatorStatic.Text = ";";
+            this.EditorToolTip.SetToolTip(this.FileFormatGroupBox, "Just FYI, these characters are used to save project data.");
             // 
             // LibraryInfoGroupBox
             // 
@@ -2015,7 +2519,7 @@ namespace Scribe.Forms
             this.LibraryInfoGroupBox.Size = new System.Drawing.Size(290, 100);
             this.LibraryInfoGroupBox.TabIndex = 0;
             this.LibraryInfoGroupBox.TabStop = false;
-            this.LibraryInfoGroupBox.Text = "Library Info";
+            this.LibraryInfoGroupBox.Text = "Info";
             // 
             // LibraryInfoTableLayoutPanel
             // 
@@ -2050,20 +2554,6 @@ namespace Scribe.Forms
             this.LibraryVersionLabel.TabIndex = 0;
             this.LibraryVersionLabel.Text = "Version";
             // 
-            // LibraryVersionStatic
-            // 
-            this.LibraryVersionStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LibraryVersionStatic.AutoSize = true;
-            this.LibraryVersionStatic.Location = new System.Drawing.Point(70, 1);
-            this.LibraryVersionStatic.Margin = new System.Windows.Forms.Padding(1);
-            this.LibraryVersionStatic.Name = "LibraryVersionStatic";
-            this.LibraryVersionStatic.Size = new System.Drawing.Size(207, 35);
-            this.LibraryVersionStatic.TabIndex = 1;
-            this.LibraryVersionStatic.Text = "0.0.0";
-            this.EditorToolTip.SetToolTip(this.LibraryVersionStatic, "The version of the Parquet library being used by this instance of Scribe.");
-            // 
             // LibraryProjectPathLabel
             // 
             this.LibraryProjectPathLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -2076,20 +2566,6 @@ namespace Scribe.Forms
             this.LibraryProjectPathLabel.Size = new System.Drawing.Size(67, 36);
             this.LibraryProjectPathLabel.TabIndex = 0;
             this.LibraryProjectPathLabel.Text = "Project Path";
-            // 
-            // LibraryProjectPathStatic
-            // 
-            this.LibraryProjectPathStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LibraryProjectPathStatic.AutoSize = true;
-            this.LibraryProjectPathStatic.Location = new System.Drawing.Point(70, 38);
-            this.LibraryProjectPathStatic.Margin = new System.Windows.Forms.Padding(1);
-            this.LibraryProjectPathStatic.Name = "LibraryProjectPathStatic";
-            this.LibraryProjectPathStatic.Size = new System.Drawing.Size(207, 36);
-            this.LibraryProjectPathStatic.TabIndex = 1;
-            this.LibraryProjectPathStatic.Text = "C:\\";
-            this.EditorToolTip.SetToolTip(this.LibraryProjectPathStatic, "Path to the project defintion files.");
             // 
             // FloorsTabPage
             // 
@@ -2200,20 +2676,6 @@ namespace Scribe.Forms
             this.FloorFilledInPixelBox.TabStop = false;
             this.FloorFilledInPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
-            // FloorEditFilledInImageButton
-            // 
-            this.FloorEditFilledInImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FloorEditFilledInImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FloorEditFilledInImageButton.Location = new System.Drawing.Point(815, 300);
-            this.FloorEditFilledInImageButton.Name = "FloorEditFilledInImageButton";
-            this.FloorEditFilledInImageButton.Size = new System.Drawing.Size(128, 23);
-            this.FloorEditFilledInImageButton.TabIndex = 11;
-            this.FloorEditFilledInImageButton.Text = "Edit Filled In Image";
-            this.EditorToolTip.SetToolTip(this.FloorEditFilledInImageButton, "Launches an external program to edit the image.  If the image file does not exist" +
-        ", it will be created.");
-            this.FloorEditFilledInImageButton.UseVisualStyleBackColor = false;
-            this.FloorEditFilledInImageButton.Click += new System.EventHandler(this.EditImageExternally);
-            // 
             // FloorFilledInLabel
             // 
             this.FloorFilledInLabel.AutoSize = true;
@@ -2236,20 +2698,6 @@ namespace Scribe.Forms
             this.FloorDugOutPixelBox.TabIndex = 6;
             this.FloorDugOutPixelBox.TabStop = false;
             this.FloorDugOutPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
-            // 
-            // FloorEditDugOutImageButton
-            // 
-            this.FloorEditDugOutImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FloorEditDugOutImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FloorEditDugOutImageButton.Location = new System.Drawing.Point(815, 468);
-            this.FloorEditDugOutImageButton.Name = "FloorEditDugOutImageButton";
-            this.FloorEditDugOutImageButton.Size = new System.Drawing.Size(128, 23);
-            this.FloorEditDugOutImageButton.TabIndex = 7;
-            this.FloorEditDugOutImageButton.Text = "Edit Dug Out Image";
-            this.EditorToolTip.SetToolTip(this.FloorEditDugOutImageButton, "Launches an external program to edit the image.  If the image file does not exist" +
-        ", it will be created.");
-            this.FloorEditDugOutImageButton.UseVisualStyleBackColor = false;
-            this.FloorEditDugOutImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // FloorDugOutLabel
             // 
@@ -2519,19 +2967,6 @@ namespace Scribe.Forms
             this.FloorAddBiomeTagButton.UseVisualStyleBackColor = false;
             this.FloorAddBiomeTagButton.Click += new System.EventHandler(this.FloorAddBiomeTagButton_Click);
             // 
-            // FloorIDStatic
-            // 
-            this.FloorIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FloorIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.FloorIDStatic.Location = new System.Drawing.Point(812, 16);
-            this.FloorIDStatic.Name = "FloorIDStatic";
-            this.FloorIDStatic.Size = new System.Drawing.Size(131, 20);
-            this.FloorIDStatic.TabIndex = 3;
-            this.FloorIDStatic.Tag = "Themed";
-            this.FloorIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.FloorIDStatic, "Project-wide unique identifier.");
-            // 
             // FloorAddNewFloorButton
             // 
             this.FloorAddNewFloorButton.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -2555,18 +2990,8 @@ namespace Scribe.Forms
             this.FloorListBox.Size = new System.Drawing.Size(279, 446);
             this.FloorListBox.TabIndex = 1;
             this.FloorListBox.Tag = "Untracked Control";
+            this.EditorToolTip.SetToolTip(this.FloorListBox, "Every floor in the project.  These are available when mapping out regions.");
             this.FloorListBox.SelectedValueChanged += new System.EventHandler(this.FloorListBox_SelectedValueChanged);
-            // 
-            // FloorIDLabel
-            // 
-            this.FloorIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorIDLabel.AutoSize = true;
-            this.FloorIDLabel.Location = new System.Drawing.Point(761, 19);
-            this.FloorIDLabel.Name = "FloorIDLabel";
-            this.FloorIDLabel.Size = new System.Drawing.Size(45, 13);
-            this.FloorIDLabel.TabIndex = 4;
-            this.FloorIDLabel.Text = "Floor ID";
-            this.EditorToolTip.SetToolTip(this.FloorIDLabel, "Project-wide unique identifier.");
             // 
             // FloorConfigGroupBox
             // 
@@ -3011,31 +3436,6 @@ namespace Scribe.Forms
             this.BlockPixelBox.TabStop = false;
             this.BlockPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
-            // BlockEditImageButton
-            // 
-            this.BlockEditImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BlockEditImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BlockEditImageButton.Location = new System.Drawing.Point(815, 468);
-            this.BlockEditImageButton.Name = "BlockEditImageButton";
-            this.BlockEditImageButton.Size = new System.Drawing.Size(128, 23);
-            this.BlockEditImageButton.TabIndex = 7;
-            this.BlockEditImageButton.Text = "Edit Image";
-            this.EditorToolTip.SetToolTip(this.BlockEditImageButton, "Launches an external program to edit the image.  If the image file does not exist" +
-        ", it will be created.");
-            this.BlockEditImageButton.UseVisualStyleBackColor = false;
-            this.BlockEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
-            // 
-            // BlockIDLabel
-            // 
-            this.BlockIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlockIDLabel.AutoSize = true;
-            this.BlockIDLabel.Location = new System.Drawing.Point(761, 19);
-            this.BlockIDLabel.Name = "BlockIDLabel";
-            this.BlockIDLabel.Size = new System.Drawing.Size(45, 13);
-            this.BlockIDLabel.TabIndex = 4;
-            this.BlockIDLabel.Text = "Block ID";
-            this.EditorToolTip.SetToolTip(this.BlockIDLabel, "Project-wide unique identifier.");
-            // 
             // BlockListBox
             // 
             this.BlockListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -3047,6 +3447,7 @@ namespace Scribe.Forms
             this.BlockListBox.Size = new System.Drawing.Size(279, 446);
             this.BlockListBox.TabIndex = 1;
             this.BlockListBox.Tag = "Untracked Control";
+            this.EditorToolTip.SetToolTip(this.BlockListBox, "Every block in the project.  These are available when mapping out regions.");
             this.BlockListBox.SelectedValueChanged += new System.EventHandler(this.BlockListBox_SelectedValueChanged);
             // 
             // BlockAddNewBlockButton
@@ -3060,19 +3461,6 @@ namespace Scribe.Forms
             this.BlockAddNewBlockButton.Text = "Add New Block";
             this.BlockAddNewBlockButton.UseVisualStyleBackColor = false;
             this.BlockAddNewBlockButton.Click += new System.EventHandler(this.BlockAddNewBlockButton_Click);
-            // 
-            // BlockIDStatic
-            // 
-            this.BlockIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlockIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BlockIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.BlockIDStatic.Location = new System.Drawing.Point(812, 16);
-            this.BlockIDStatic.Name = "BlockIDStatic";
-            this.BlockIDStatic.Size = new System.Drawing.Size(131, 20);
-            this.BlockIDStatic.TabIndex = 3;
-            this.BlockIDStatic.Tag = "Themed";
-            this.BlockIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.BlockIDStatic, "Project-wide unique identifier.");
             // 
             // BlockRemoveBlockButton
             // 
@@ -3512,20 +3900,6 @@ namespace Scribe.Forms
             this.FurnishingRemoveFurnishingButton.UseVisualStyleBackColor = false;
             this.FurnishingRemoveFurnishingButton.Click += new System.EventHandler(this.FurnishingRemoveFurnishingButton_Click);
             // 
-            // FurnishingIDStatic
-            // 
-            this.FurnishingIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FurnishingIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FurnishingIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.FurnishingIDStatic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FurnishingIDStatic.Location = new System.Drawing.Point(812, 16);
-            this.FurnishingIDStatic.Name = "FurnishingIDStatic";
-            this.FurnishingIDStatic.Size = new System.Drawing.Size(131, 20);
-            this.FurnishingIDStatic.TabIndex = 3;
-            this.FurnishingIDStatic.Tag = "Themed";
-            this.FurnishingIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.FurnishingIDStatic, "Project-wide unique identifier.");
-            // 
             // FurnishingAddNewFurnishingButton
             // 
             this.FurnishingAddNewFurnishingButton.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -3549,18 +3923,8 @@ namespace Scribe.Forms
             this.FurnishingListBox.Size = new System.Drawing.Size(279, 446);
             this.FurnishingListBox.TabIndex = 1;
             this.FurnishingListBox.Tag = "Untracked Control";
+            this.EditorToolTip.SetToolTip(this.FurnishingListBox, "Every furnishing in the project.  These are available when mapping out regions.");
             this.FurnishingListBox.SelectedValueChanged += new System.EventHandler(this.FurnishingListBox_SelectedValueChanged);
-            // 
-            // FurnishingIDLabel
-            // 
-            this.FurnishingIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FurnishingIDLabel.AutoSize = true;
-            this.FurnishingIDLabel.Location = new System.Drawing.Point(742, 19);
-            this.FurnishingIDLabel.Name = "FurnishingIDLabel";
-            this.FurnishingIDLabel.Size = new System.Drawing.Size(70, 13);
-            this.FurnishingIDLabel.TabIndex = 4;
-            this.FurnishingIDLabel.Text = "Furnishing ID";
-            this.EditorToolTip.SetToolTip(this.FurnishingIDLabel, "Project-wide unique identifier.");
             // 
             // FurnishingOpenPixelBox
             // 
@@ -3575,20 +3939,6 @@ namespace Scribe.Forms
             this.FurnishingOpenPixelBox.TabIndex = 6;
             this.FurnishingOpenPixelBox.TabStop = false;
             this.FurnishingOpenPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
-            // 
-            // FurnishingEditOpenImageButton
-            // 
-            this.FurnishingEditOpenImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FurnishingEditOpenImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FurnishingEditOpenImageButton.Location = new System.Drawing.Point(815, 300);
-            this.FurnishingEditOpenImageButton.Name = "FurnishingEditOpenImageButton";
-            this.FurnishingEditOpenImageButton.Size = new System.Drawing.Size(128, 23);
-            this.FurnishingEditOpenImageButton.TabIndex = 7;
-            this.FurnishingEditOpenImageButton.Text = "Edit Open Image";
-            this.EditorToolTip.SetToolTip(this.FurnishingEditOpenImageButton, "Launches an external program to edit the image.  If the image file does not exist" +
-        ", it will be created.");
-            this.FurnishingEditOpenImageButton.UseVisualStyleBackColor = false;
-            this.FurnishingEditOpenImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // FurnishingOpenLabel
             // 
@@ -3612,20 +3962,6 @@ namespace Scribe.Forms
             this.FurnishingClosedPixelBox.TabIndex = 6;
             this.FurnishingClosedPixelBox.TabStop = false;
             this.FurnishingClosedPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
-            // 
-            // FurnishingEditClosedImageButton
-            // 
-            this.FurnishingEditClosedImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FurnishingEditClosedImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FurnishingEditClosedImageButton.Location = new System.Drawing.Point(815, 468);
-            this.FurnishingEditClosedImageButton.Name = "FurnishingEditClosedImageButton";
-            this.FurnishingEditClosedImageButton.Size = new System.Drawing.Size(128, 23);
-            this.FurnishingEditClosedImageButton.TabIndex = 7;
-            this.FurnishingEditClosedImageButton.Text = "Edit Closed Image";
-            this.EditorToolTip.SetToolTip(this.FurnishingEditClosedImageButton, "Launches an external program to edit the image.  If the image file does not exist" +
-        ", it will be created.");
-            this.FurnishingEditClosedImageButton.UseVisualStyleBackColor = false;
-            this.FurnishingEditClosedImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // FurnishingClosedLabel
             // 
@@ -3996,19 +4332,6 @@ namespace Scribe.Forms
             this.CollectibleRemoveCollectibleButton.UseVisualStyleBackColor = false;
             this.CollectibleRemoveCollectibleButton.Click += new System.EventHandler(this.CollectibleRemoveCollectibleButton_Click);
             // 
-            // CollectibleIDStatic
-            // 
-            this.CollectibleIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectibleIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CollectibleIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.CollectibleIDStatic.Location = new System.Drawing.Point(812, 16);
-            this.CollectibleIDStatic.Name = "CollectibleIDStatic";
-            this.CollectibleIDStatic.Size = new System.Drawing.Size(131, 20);
-            this.CollectibleIDStatic.TabIndex = 3;
-            this.CollectibleIDStatic.Tag = "Themed";
-            this.CollectibleIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.CollectibleIDStatic, "Project-wide unique identifier.");
-            // 
             // CollectibleAddNewCollectibleButton
             // 
             this.CollectibleAddNewCollectibleButton.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -4032,32 +4355,8 @@ namespace Scribe.Forms
             this.CollectibleListBox.Size = new System.Drawing.Size(279, 446);
             this.CollectibleListBox.TabIndex = 1;
             this.CollectibleListBox.Tag = "Untracked Control";
+            this.EditorToolTip.SetToolTip(this.CollectibleListBox, "Every collectible in the project.  These are available when mapping out regions.");
             this.CollectibleListBox.SelectedValueChanged += new System.EventHandler(this.CollectibleListBox_SelectedValueChanged);
-            // 
-            // CollectibleIDLabel
-            // 
-            this.CollectibleIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectibleIDLabel.AutoSize = true;
-            this.CollectibleIDLabel.Location = new System.Drawing.Point(742, 19);
-            this.CollectibleIDLabel.Name = "CollectibleIDLabel";
-            this.CollectibleIDLabel.Size = new System.Drawing.Size(69, 13);
-            this.CollectibleIDLabel.TabIndex = 4;
-            this.CollectibleIDLabel.Text = "Collectible ID";
-            this.EditorToolTip.SetToolTip(this.CollectibleIDLabel, "Project-wide unique identifier.");
-            // 
-            // CollectibleEditImageButton
-            // 
-            this.CollectibleEditImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CollectibleEditImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CollectibleEditImageButton.Location = new System.Drawing.Point(815, 468);
-            this.CollectibleEditImageButton.Name = "CollectibleEditImageButton";
-            this.CollectibleEditImageButton.Size = new System.Drawing.Size(128, 23);
-            this.CollectibleEditImageButton.TabIndex = 7;
-            this.CollectibleEditImageButton.Text = "Edit Image";
-            this.EditorToolTip.SetToolTip(this.CollectibleEditImageButton, "Launches an external program to edit the image.  If the image file does not exist" +
-        ", it will be created.");
-            this.CollectibleEditImageButton.UseVisualStyleBackColor = false;
-            this.CollectibleEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // CollectiblePixelBox
             // 
@@ -4320,31 +4619,6 @@ namespace Scribe.Forms
             this.CritterPixelBox.TabStop = false;
             this.CritterPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
-            // CritterEditImageButton
-            // 
-            this.CritterEditImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CritterEditImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CritterEditImageButton.Location = new System.Drawing.Point(815, 468);
-            this.CritterEditImageButton.Name = "CritterEditImageButton";
-            this.CritterEditImageButton.Size = new System.Drawing.Size(128, 23);
-            this.CritterEditImageButton.TabIndex = 7;
-            this.CritterEditImageButton.Text = "Edit Image";
-            this.EditorToolTip.SetToolTip(this.CritterEditImageButton, "Launches an external program to edit the image.  If the image file does not exist" +
-        ", it will be created.");
-            this.CritterEditImageButton.UseVisualStyleBackColor = true;
-            this.CritterEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
-            // 
-            // CritterIDLabel
-            // 
-            this.CritterIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CritterIDLabel.AutoSize = true;
-            this.CritterIDLabel.Location = new System.Drawing.Point(754, 19);
-            this.CritterIDLabel.Name = "CritterIDLabel";
-            this.CritterIDLabel.Size = new System.Drawing.Size(52, 13);
-            this.CritterIDLabel.TabIndex = 4;
-            this.CritterIDLabel.Text = "Critter ID";
-            this.EditorToolTip.SetToolTip(this.CritterIDLabel, "Project-wide unique identifier.");
-            // 
             // CritterListBox
             // 
             this.CritterListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -4369,19 +4643,6 @@ namespace Scribe.Forms
             this.CritterAddNewCritterButton.Text = "Add New Critter";
             this.CritterAddNewCritterButton.UseVisualStyleBackColor = false;
             this.CritterAddNewCritterButton.Click += new System.EventHandler(this.CritterAddNewCritterButton_Click);
-            // 
-            // CritterIDStatic
-            // 
-            this.CritterIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CritterIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CritterIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.CritterIDStatic.Location = new System.Drawing.Point(812, 16);
-            this.CritterIDStatic.Name = "CritterIDStatic";
-            this.CritterIDStatic.Size = new System.Drawing.Size(131, 20);
-            this.CritterIDStatic.TabIndex = 3;
-            this.CritterIDStatic.Tag = "Themed";
-            this.CritterIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.CritterIDStatic, "Project-wide unique identifier.");
             // 
             // CritterRemoveCritterButton
             // 
@@ -4980,19 +5241,6 @@ namespace Scribe.Forms
             this.CharacterRemoveCharacterButton.UseVisualStyleBackColor = false;
             this.CharacterRemoveCharacterButton.Click += new System.EventHandler(this.CharacterRemoveCharacterButton_Click);
             // 
-            // CharacterIDStatic
-            // 
-            this.CharacterIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CharacterIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CharacterIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.CharacterIDStatic.Location = new System.Drawing.Point(812, 16);
-            this.CharacterIDStatic.Name = "CharacterIDStatic";
-            this.CharacterIDStatic.Size = new System.Drawing.Size(131, 20);
-            this.CharacterIDStatic.TabIndex = 3;
-            this.CharacterIDStatic.Tag = "Themed";
-            this.CharacterIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.CharacterIDStatic, "Project-wide unique identifier.");
-            // 
             // CharacterAddNewCharacterButton
             // 
             this.CharacterAddNewCharacterButton.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -5016,32 +5264,9 @@ namespace Scribe.Forms
             this.CharacterListBox.Size = new System.Drawing.Size(279, 446);
             this.CharacterListBox.TabIndex = 1;
             this.CharacterListBox.Tag = "Untracked Control";
+            this.EditorToolTip.SetToolTip(this.CharacterListBox, "Every character in the project.  These are the actors that the player can control" +
+        " or interact with.");
             this.CharacterListBox.SelectedValueChanged += new System.EventHandler(this.CharacterListBox_SelectedValueChanged);
-            // 
-            // CharacterIDLabel
-            // 
-            this.CharacterIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CharacterIDLabel.AutoSize = true;
-            this.CharacterIDLabel.Location = new System.Drawing.Point(742, 19);
-            this.CharacterIDLabel.Name = "CharacterIDLabel";
-            this.CharacterIDLabel.Size = new System.Drawing.Size(69, 13);
-            this.CharacterIDLabel.TabIndex = 4;
-            this.CharacterIDLabel.Text = "Character ID";
-            this.EditorToolTip.SetToolTip(this.CharacterIDLabel, "Project-wide unique identifier.");
-            // 
-            // CharacterEditImageButton
-            // 
-            this.CharacterEditImageButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CharacterEditImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CharacterEditImageButton.Location = new System.Drawing.Point(815, 468);
-            this.CharacterEditImageButton.Name = "CharacterEditImageButton";
-            this.CharacterEditImageButton.Size = new System.Drawing.Size(128, 23);
-            this.CharacterEditImageButton.TabIndex = 7;
-            this.CharacterEditImageButton.Text = "Edit Image";
-            this.EditorToolTip.SetToolTip(this.CharacterEditImageButton, "Launches an external program to edit the image.  If the image file does not exist" +
-        ", it will be created.");
-            this.CharacterEditImageButton.UseVisualStyleBackColor = false;
-            this.CharacterEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // CharacterPixelBox
             // 
@@ -5200,6 +5425,7 @@ namespace Scribe.Forms
             this.ItemListBox.Size = new System.Drawing.Size(279, 446);
             this.ItemListBox.TabIndex = 1;
             this.ItemListBox.Tag = "Untracked Control";
+            this.EditorToolTip.SetToolTip(this.ItemListBox, "Every item in the project.  These may be carried and used by characters.");
             this.ItemListBox.SelectedValueChanged += new System.EventHandler(this.ItemListBox_SelectedValueChanged);
             // 
             // ItemInventoriesGroupBox
@@ -5237,20 +5463,6 @@ namespace Scribe.Forms
             this.ItemInventoryListBox.Size = new System.Drawing.Size(273, 82);
             this.ItemInventoryListBox.TabIndex = 2;
             this.ItemInventoryListBox.Tag = "Untracked Control";
-            // 
-            // ItemPictureEditButton
-            // 
-            this.ItemPictureEditButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ItemPictureEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ItemPictureEditButton.Location = new System.Drawing.Point(815, 468);
-            this.ItemPictureEditButton.Name = "ItemPictureEditButton";
-            this.ItemPictureEditButton.Size = new System.Drawing.Size(128, 23);
-            this.ItemPictureEditButton.TabIndex = 7;
-            this.ItemPictureEditButton.Text = "Edit Image";
-            this.EditorToolTip.SetToolTip(this.ItemPictureEditButton, "Launches an external program to edit the image.  If the image file does not exist" +
-        ", it will be created.");
-            this.ItemPictureEditButton.UseVisualStyleBackColor = false;
-            this.ItemPictureEditButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // ItemTableLayoutPanel
             // 
@@ -5507,17 +5719,6 @@ namespace Scribe.Forms
             this.ItemPixelBox.TabStop = false;
             this.ItemPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
-            // ItemIDLabel
-            // 
-            this.ItemIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemIDLabel.AutoSize = true;
-            this.ItemIDLabel.Location = new System.Drawing.Point(759, 19);
-            this.ItemIDLabel.Name = "ItemIDLabel";
-            this.ItemIDLabel.Size = new System.Drawing.Size(43, 13);
-            this.ItemIDLabel.TabIndex = 4;
-            this.ItemIDLabel.Text = "Item ID";
-            this.EditorToolTip.SetToolTip(this.ItemIDLabel, "Project-wide unique identifier.");
-            // 
             // ItemAddNewItemButton
             // 
             this.ItemAddNewItemButton.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -5529,19 +5730,6 @@ namespace Scribe.Forms
             this.ItemAddNewItemButton.Text = "Add New Item";
             this.ItemAddNewItemButton.UseVisualStyleBackColor = false;
             this.ItemAddNewItemButton.Click += new System.EventHandler(this.ItemAddNewItemButton_Click);
-            // 
-            // ItemIDStatic
-            // 
-            this.ItemIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ItemIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.ItemIDStatic.Location = new System.Drawing.Point(813, 16);
-            this.ItemIDStatic.Name = "ItemIDStatic";
-            this.ItemIDStatic.Size = new System.Drawing.Size(131, 20);
-            this.ItemIDStatic.TabIndex = 3;
-            this.ItemIDStatic.Tag = "Themed";
-            this.ItemIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.ItemIDStatic, "Project-wide unique identifier.");
             // 
             // BiomesTabPage
             // 
@@ -5611,6 +5799,8 @@ namespace Scribe.Forms
             this.BiomeListBox.Size = new System.Drawing.Size(279, 446);
             this.BiomeListBox.TabIndex = 1;
             this.BiomeListBox.Tag = "Untracked Control";
+            this.EditorToolTip.SetToolTip(this.BiomeListBox, "Every biome in the project.  The library will determine which biome a region corr" +
+        "esponds to during play.");
             this.BiomeListBox.SelectedValueChanged += new System.EventHandler(this.BiomeListBox_SelectedValueChanged);
             // 
             // BiomeConfigGroupBox
@@ -5708,20 +5898,6 @@ namespace Scribe.Forms
             this.BiomeRoomThresholdFactorLabel.Size = new System.Drawing.Size(118, 26);
             this.BiomeRoomThresholdFactorLabel.TabIndex = 5;
             this.BiomeRoomThresholdFactorLabel.Text = "Room Threshold Factor";
-            // 
-            // BiomePictureEditButton
-            // 
-            this.BiomePictureEditButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BiomePictureEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BiomePictureEditButton.Location = new System.Drawing.Point(815, 468);
-            this.BiomePictureEditButton.Name = "BiomePictureEditButton";
-            this.BiomePictureEditButton.Size = new System.Drawing.Size(128, 23);
-            this.BiomePictureEditButton.TabIndex = 7;
-            this.BiomePictureEditButton.Text = "Edit Image";
-            this.EditorToolTip.SetToolTip(this.BiomePictureEditButton, "Launches an external program to edit the image.  If the image file does not exist" +
-        ", it will be created.");
-            this.BiomePictureEditButton.UseVisualStyleBackColor = false;
-            this.BiomePictureEditButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // BiomeTableLayoutPanel
             // 
@@ -5926,17 +6102,6 @@ namespace Scribe.Forms
             this.BiomePixelBox.TabStop = false;
             this.BiomePixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
-            // BiomeIDLabel
-            // 
-            this.BiomeIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BiomeIDLabel.AutoSize = true;
-            this.BiomeIDLabel.Location = new System.Drawing.Point(758, 19);
-            this.BiomeIDLabel.Name = "BiomeIDLabel";
-            this.BiomeIDLabel.Size = new System.Drawing.Size(49, 13);
-            this.BiomeIDLabel.TabIndex = 4;
-            this.BiomeIDLabel.Text = "Biome ID";
-            this.EditorToolTip.SetToolTip(this.BiomeIDLabel, "Project-wide unique identifier.");
-            // 
             // BiomeAddNewBiomeButton
             // 
             this.BiomeAddNewBiomeButton.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -5948,19 +6113,6 @@ namespace Scribe.Forms
             this.BiomeAddNewBiomeButton.Text = "Add New Biome Recipe";
             this.BiomeAddNewBiomeButton.UseVisualStyleBackColor = false;
             this.BiomeAddNewBiomeButton.Click += new System.EventHandler(this.BiomeAddNewBiomeButton_Click);
-            // 
-            // BiomeIDStatic
-            // 
-            this.BiomeIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BiomeIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BiomeIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.BiomeIDStatic.Location = new System.Drawing.Point(812, 16);
-            this.BiomeIDStatic.Name = "BiomeIDStatic";
-            this.BiomeIDStatic.Size = new System.Drawing.Size(131, 20);
-            this.BiomeIDStatic.TabIndex = 3;
-            this.BiomeIDStatic.Tag = "Themed";
-            this.BiomeIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.BiomeIDStatic, "Project-wide unique identifier.");
             // 
             // CraftingRecipesTabPage
             // 
@@ -6002,21 +6154,9 @@ namespace Scribe.Forms
             this.CraftingListBox.Size = new System.Drawing.Size(279, 446);
             this.CraftingListBox.TabIndex = 1;
             this.CraftingListBox.Tag = "Untracked Control";
+            this.EditorToolTip.SetToolTip(this.CraftingListBox, "Every crafting recipe in the project.  The player can use these to produce new it" +
+        "em instances.");
             this.CraftingListBox.SelectedValueChanged += new System.EventHandler(this.CraftingListBox_SelectedValueChanged);
-            // 
-            // CraftingPictureEditButton
-            // 
-            this.CraftingPictureEditButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CraftingPictureEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CraftingPictureEditButton.Location = new System.Drawing.Point(815, 468);
-            this.CraftingPictureEditButton.Name = "CraftingPictureEditButton";
-            this.CraftingPictureEditButton.Size = new System.Drawing.Size(128, 23);
-            this.CraftingPictureEditButton.TabIndex = 7;
-            this.CraftingPictureEditButton.Text = "Edit Image";
-            this.EditorToolTip.SetToolTip(this.CraftingPictureEditButton, "Launches an external program to edit the image.  If the image file does not exist" +
-        ", it will be created.");
-            this.CraftingPictureEditButton.UseVisualStyleBackColor = false;
-            this.CraftingPictureEditButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // CraftingTableLayoutPanel
             // 
@@ -6255,17 +6395,6 @@ namespace Scribe.Forms
             this.CraftingPixelBox.TabStop = false;
             this.CraftingPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
-            // CraftingIDLabel
-            // 
-            this.CraftingIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingIDLabel.AutoSize = true;
-            this.CraftingIDLabel.Location = new System.Drawing.Point(759, 19);
-            this.CraftingIDLabel.Name = "CraftingIDLabel";
-            this.CraftingIDLabel.Size = new System.Drawing.Size(46, 13);
-            this.CraftingIDLabel.TabIndex = 4;
-            this.CraftingIDLabel.Text = "Craft ID";
-            this.EditorToolTip.SetToolTip(this.CraftingIDLabel, "Project-wide unique identifier.");
-            // 
             // CraftingAddNewCraftingButton
             // 
             this.CraftingAddNewCraftingButton.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -6277,19 +6406,6 @@ namespace Scribe.Forms
             this.CraftingAddNewCraftingButton.Text = "Add New Crafting Recipe";
             this.CraftingAddNewCraftingButton.UseVisualStyleBackColor = false;
             this.CraftingAddNewCraftingButton.Click += new System.EventHandler(this.CraftingAddNewCraftingButton_Click);
-            // 
-            // CraftingIDStatic
-            // 
-            this.CraftingIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CraftingIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.CraftingIDStatic.Location = new System.Drawing.Point(813, 16);
-            this.CraftingIDStatic.Name = "CraftingIDStatic";
-            this.CraftingIDStatic.Size = new System.Drawing.Size(131, 20);
-            this.CraftingIDStatic.TabIndex = 3;
-            this.CraftingIDStatic.Tag = "Themed";
-            this.CraftingIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.CraftingIDStatic, "Project-wide unique identifier.");
             // 
             // CraftingConfigGroupBox
             // 
@@ -6482,6 +6598,8 @@ namespace Scribe.Forms
             this.RoomListBox.Size = new System.Drawing.Size(279, 446);
             this.RoomListBox.TabIndex = 1;
             this.RoomListBox.Tag = "Untracked Control";
+            this.EditorToolTip.SetToolTip(this.RoomListBox, "Every room recipe in the project.  These library will find rooms matching these r" +
+        "ecipes during play.");
             this.RoomListBox.SelectedValueChanged += new System.EventHandler(this.RoomListBox_SelectedValueChanged);
             // 
             // RoomConfigGroupBox
@@ -6557,20 +6675,6 @@ namespace Scribe.Forms
             this.RoomMaxWalkableSpacesTextBox.Name = "RoomMaxWalkableSpacesTextBox";
             this.RoomMaxWalkableSpacesTextBox.Size = new System.Drawing.Size(114, 20);
             this.RoomMaxWalkableSpacesTextBox.TabIndex = 3;
-            // 
-            // RoomPictureEditButton
-            // 
-            this.RoomPictureEditButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.RoomPictureEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RoomPictureEditButton.Location = new System.Drawing.Point(815, 468);
-            this.RoomPictureEditButton.Name = "RoomPictureEditButton";
-            this.RoomPictureEditButton.Size = new System.Drawing.Size(128, 23);
-            this.RoomPictureEditButton.TabIndex = 7;
-            this.RoomPictureEditButton.Text = "Edit Image";
-            this.EditorToolTip.SetToolTip(this.RoomPictureEditButton, "Launches an external program to edit the image.  If the image file does not exist" +
-        ", it will be created.");
-            this.RoomPictureEditButton.UseVisualStyleBackColor = false;
-            this.RoomPictureEditButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
             // RoomTableLayoutPanel
             // 
@@ -6811,17 +6915,6 @@ namespace Scribe.Forms
             this.RoomPixelBox.TabStop = false;
             this.RoomPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
-            // RoomIDLabel
-            // 
-            this.RoomIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomIDLabel.AutoSize = true;
-            this.RoomIDLabel.Location = new System.Drawing.Point(759, 19);
-            this.RoomIDLabel.Name = "RoomIDLabel";
-            this.RoomIDLabel.Size = new System.Drawing.Size(48, 13);
-            this.RoomIDLabel.TabIndex = 4;
-            this.RoomIDLabel.Text = "Room ID";
-            this.EditorToolTip.SetToolTip(this.RoomIDLabel, "Project-wide unique identifier.");
-            // 
             // RoomAddNewRoomButton
             // 
             this.RoomAddNewRoomButton.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -6833,19 +6926,6 @@ namespace Scribe.Forms
             this.RoomAddNewRoomButton.Text = "Add New Room Recipe";
             this.RoomAddNewRoomButton.UseVisualStyleBackColor = false;
             this.RoomAddNewRoomButton.Click += new System.EventHandler(this.RoomAddNewRoomButton_Click);
-            // 
-            // RoomIDStatic
-            // 
-            this.RoomIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.RoomIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.RoomIDStatic.Location = new System.Drawing.Point(813, 16);
-            this.RoomIDStatic.Name = "RoomIDStatic";
-            this.RoomIDStatic.Size = new System.Drawing.Size(131, 20);
-            this.RoomIDStatic.TabIndex = 3;
-            this.RoomIDStatic.Tag = "Themed";
-            this.RoomIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.RoomIDStatic, "Project-wide unique identifier.");
             // 
             // RegionsTabPage
             // 
@@ -6879,43 +6959,6 @@ namespace Scribe.Forms
             this.RegionLayOutWorldPixelBox.TabIndex = 16;
             this.RegionLayOutWorldPixelBox.TabStop = false;
             // 
-            // RegionLayOutWorldButton
-            // 
-            this.RegionLayOutWorldButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.RegionLayOutWorldButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RegionLayOutWorldButton.Location = new System.Drawing.Point(815, 306);
-            this.RegionLayOutWorldButton.Name = "RegionLayOutWorldButton";
-            this.RegionLayOutWorldButton.Size = new System.Drawing.Size(128, 23);
-            this.RegionLayOutWorldButton.TabIndex = 17;
-            this.RegionLayOutWorldButton.Text = "Lay Out World";
-            this.EditorToolTip.SetToolTip(this.RegionLayOutWorldButton, "Opens the world layout editor.");
-            this.RegionLayOutWorldButton.UseVisualStyleBackColor = false;
-            this.RegionLayOutWorldButton.Click += new System.EventHandler(this.RegionLayOutWorldButton_Click);
-            // 
-            // RegionIDLabel
-            // 
-            this.RegionIDLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RegionIDLabel.AutoSize = true;
-            this.RegionIDLabel.Location = new System.Drawing.Point(753, 19);
-            this.RegionIDLabel.Name = "RegionIDLabel";
-            this.RegionIDLabel.Size = new System.Drawing.Size(54, 13);
-            this.RegionIDLabel.TabIndex = 12;
-            this.RegionIDLabel.Text = "Region ID";
-            this.EditorToolTip.SetToolTip(this.RegionIDLabel, "Project-wide unique identifier.");
-            // 
-            // RegionIDStatic
-            // 
-            this.RegionIDStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RegionIDStatic.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.RegionIDStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.RegionIDStatic.Location = new System.Drawing.Point(813, 16);
-            this.RegionIDStatic.Name = "RegionIDStatic";
-            this.RegionIDStatic.Size = new System.Drawing.Size(131, 20);
-            this.RegionIDStatic.TabIndex = 11;
-            this.RegionIDStatic.Tag = "Themed";
-            this.RegionIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.RegionIDStatic, "Project-wide unique identifier.");
-            // 
             // RegionListBox
             // 
             this.RegionListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -6927,6 +6970,8 @@ namespace Scribe.Forms
             this.RegionListBox.Size = new System.Drawing.Size(279, 446);
             this.RegionListBox.TabIndex = 8;
             this.RegionListBox.Tag = "Untracked Control";
+            this.EditorToolTip.SetToolTip(this.RegionListBox, "Every region in the project.  Regions can have handmade maps or be procedurally g" +
+        "enerated.");
             this.RegionListBox.SelectedValueChanged += new System.EventHandler(this.RegionListBox_SelectedValueChanged);
             // 
             // RegionRemoveButton
@@ -6975,19 +7020,6 @@ namespace Scribe.Forms
             this.RegionPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.RegionPixelBox.TabIndex = 14;
             this.RegionPixelBox.TabStop = false;
-            // 
-            // RegionMapEditButton
-            // 
-            this.RegionMapEditButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.RegionMapEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RegionMapEditButton.Location = new System.Drawing.Point(815, 468);
-            this.RegionMapEditButton.Name = "RegionMapEditButton";
-            this.RegionMapEditButton.Size = new System.Drawing.Size(128, 23);
-            this.RegionMapEditButton.TabIndex = 15;
-            this.RegionMapEditButton.Text = "Edit Map";
-            this.EditorToolTip.SetToolTip(this.RegionMapEditButton, "Opens the map editor.");
-            this.RegionMapEditButton.UseVisualStyleBackColor = false;
-            this.RegionMapEditButton.Click += new System.EventHandler(this.RegionOpenMapEditorButton_Click);
             // 
             // RegionTableLayoutPanel
             // 
@@ -7287,9 +7319,12 @@ namespace Scribe.Forms
             this.EditorStatusStrip.ResumeLayout(false);
             this.EditorStatusStrip.PerformLayout();
             this.ContextMenuStripIDStatics.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GameIconPixelBox)).EndInit();
+            this.ContextMenuStripPictureBoxes.ResumeLayout(false);
+            this.FileFormatTableLayoutPanel.ResumeLayout(false);
+            this.FileFormatTableLayoutPanel.PerformLayout();
             this.MainMenuBar.ResumeLayout(false);
             this.MainMenuBar.PerformLayout();
-            this.ContextMenuStripPictureBoxes.ResumeLayout(false);
             this.ContextMenuStripForTextEntries.ResumeLayout(false);
             this.FiltersTableLayoutPanel.ResumeLayout(false);
             this.FiltersTableLayoutPanel.PerformLayout();
@@ -7299,12 +7334,9 @@ namespace Scribe.Forms
             this.EditorTabs.ResumeLayout(false);
             this.GamesTabPage.ResumeLayout(false);
             this.GamesTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GameIconPixelBox)).EndInit();
             this.GameTableLayoutPanel.ResumeLayout(false);
             this.GameTableLayoutPanel.PerformLayout();
             this.FileFormatGroupBox.ResumeLayout(false);
-            this.FileFormatTableLayoutPanel.ResumeLayout(false);
-            this.FileFormatTableLayoutPanel.PerformLayout();
             this.LibraryInfoGroupBox.ResumeLayout(false);
             this.LibraryInfoTableLayoutPanel.ResumeLayout(false);
             this.LibraryInfoTableLayoutPanel.PerformLayout();
