@@ -1592,6 +1592,7 @@ namespace Scribe.Forms
             this.GameNameLabel.Size = new System.Drawing.Size(34, 13);
             this.GameNameLabel.TabIndex = 0;
             this.GameNameLabel.Text = "Name";
+            this.EditorToolTip.SetToolTip(this.GameNameLabel, "Player-facing name of this game or episode.");
             // 
             // GameDescriptionLabel
             // 
@@ -1601,6 +1602,7 @@ namespace Scribe.Forms
             this.GameDescriptionLabel.Size = new System.Drawing.Size(60, 13);
             this.GameDescriptionLabel.TabIndex = 3;
             this.GameDescriptionLabel.Text = "Description";
+            this.EditorToolTip.SetToolTip(this.GameDescriptionLabel, "Player-facing information about the game or episode.");
             // 
             // GameCommentLabel
             // 
@@ -1610,6 +1612,7 @@ namespace Scribe.Forms
             this.GameCommentLabel.Size = new System.Drawing.Size(52, 13);
             this.GameCommentLabel.TabIndex = 6;
             this.GameCommentLabel.Text = "Comment";
+            this.EditorToolTip.SetToolTip(this.GameCommentLabel, "A note to yourself about the game or episode.");
             // 
             // GameIsEpisodeLabel
             // 
@@ -1671,6 +1674,7 @@ namespace Scribe.Forms
             this.GameNameTextBox.Name = "GameNameTextBox";
             this.GameNameTextBox.Size = new System.Drawing.Size(147, 20);
             this.GameNameTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.GameNameTextBox, "Player-facing name of this game or episode.");
             // 
             // GameDescriptionTextBox
             // 
@@ -1682,6 +1686,7 @@ namespace Scribe.Forms
             this.GameDescriptionTextBox.Name = "GameDescriptionTextBox";
             this.GameDescriptionTextBox.Size = new System.Drawing.Size(295, 49);
             this.GameDescriptionTextBox.TabIndex = 24;
+            this.EditorToolTip.SetToolTip(this.GameDescriptionTextBox, "Player-facing information about the game or episode.");
             // 
             // GameCommentTextBox
             // 
@@ -1693,6 +1698,7 @@ namespace Scribe.Forms
             this.GameCommentTextBox.Name = "GameCommentTextBox";
             this.GameCommentTextBox.Size = new System.Drawing.Size(295, 49);
             this.GameCommentTextBox.TabIndex = 25;
+            this.EditorToolTip.SetToolTip(this.GameCommentTextBox, "A note to yourself about the game or episode.");
             // 
             // GameEpisodeTitleTextBox
             // 
@@ -1733,6 +1739,7 @@ namespace Scribe.Forms
             this.GameIDLabel.Size = new System.Drawing.Size(48, 13);
             this.GameIDLabel.TabIndex = 4;
             this.GameIDLabel.Text = "Game ID";
+            this.EditorToolTip.SetToolTip(this.GameIDLabel, "Project-wide unique identifier.");
             // 
             // GameIDStatic
             // 
@@ -1745,6 +1752,7 @@ namespace Scribe.Forms
             this.GameIDStatic.TabIndex = 3;
             this.GameIDStatic.Tag = "Themed";
             this.GameIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.GameIDStatic, "Project-wide unique identifier.");
             // 
             // GameAddNewGameButton
             // 
@@ -1769,6 +1777,7 @@ namespace Scribe.Forms
             this.GameListBox.Size = new System.Drawing.Size(279, 446);
             this.GameListBox.TabIndex = 1;
             this.GameListBox.Tag = "Untracked Control";
+            this.EditorToolTip.SetToolTip(this.GameListBox, "Every game and episode defined in this project.");
             this.GameListBox.SelectedValueChanged += new System.EventHandler(this.GameListBox_SelectedValueChanged);
             // 
             // FileFormatGroupBox
@@ -2499,6 +2508,7 @@ namespace Scribe.Forms
             this.FloorIDStatic.TabIndex = 3;
             this.FloorIDStatic.Tag = "Themed";
             this.FloorIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FloorIDStatic, "Project-wide unique identifier.");
             // 
             // FloorAddNewFloorButton
             // 
@@ -2534,6 +2544,7 @@ namespace Scribe.Forms
             this.FloorIDLabel.Size = new System.Drawing.Size(45, 13);
             this.FloorIDLabel.TabIndex = 4;
             this.FloorIDLabel.Text = "Floor ID";
+            this.EditorToolTip.SetToolTip(this.FloorIDLabel, "Project-wide unique identifier.");
             // 
             // FloorConfigGroupBox
             // 
@@ -2999,6 +3010,7 @@ namespace Scribe.Forms
             this.BlockIDLabel.Size = new System.Drawing.Size(45, 13);
             this.BlockIDLabel.TabIndex = 4;
             this.BlockIDLabel.Text = "Block ID";
+            this.EditorToolTip.SetToolTip(this.BlockIDLabel, "Project-wide unique identifier.");
             // 
             // BlockListBox
             // 
@@ -3036,6 +3048,7 @@ namespace Scribe.Forms
             this.BlockIDStatic.TabIndex = 3;
             this.BlockIDStatic.Tag = "Themed";
             this.BlockIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.BlockIDStatic, "Project-wide unique identifier.");
             // 
             // BlockRemoveBlockButton
             // 
@@ -3487,6 +3500,7 @@ namespace Scribe.Forms
             this.FurnishingIDStatic.TabIndex = 3;
             this.FurnishingIDStatic.Tag = "Themed";
             this.FurnishingIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FurnishingIDStatic, "Project-wide unique identifier.");
             // 
             // FurnishingAddNewFurnishingButton
             // 
@@ -3522,6 +3536,7 @@ namespace Scribe.Forms
             this.FurnishingIDLabel.Size = new System.Drawing.Size(70, 13);
             this.FurnishingIDLabel.TabIndex = 4;
             this.FurnishingIDLabel.Text = "Furnishing ID";
+            this.EditorToolTip.SetToolTip(this.FurnishingIDLabel, "Project-wide unique identifier.");
             // 
             // FurnishingOpenPixelBox
             // 
@@ -3964,6 +3979,7 @@ namespace Scribe.Forms
             this.CollectibleIDStatic.TabIndex = 3;
             this.CollectibleIDStatic.Tag = "Themed";
             this.CollectibleIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.CollectibleIDStatic, "Project-wide unique identifier.");
             // 
             // CollectibleAddNewCollectibleButton
             // 
@@ -3999,6 +4015,7 @@ namespace Scribe.Forms
             this.CollectibleIDLabel.Size = new System.Drawing.Size(69, 13);
             this.CollectibleIDLabel.TabIndex = 4;
             this.CollectibleIDLabel.Text = "Collectible ID";
+            this.EditorToolTip.SetToolTip(this.CollectibleIDLabel, "Project-wide unique identifier.");
             // 
             // CollectibleEditImageButton
             // 
@@ -4294,6 +4311,7 @@ namespace Scribe.Forms
             this.CritterIDLabel.Size = new System.Drawing.Size(52, 13);
             this.CritterIDLabel.TabIndex = 4;
             this.CritterIDLabel.Text = "Critter ID";
+            this.EditorToolTip.SetToolTip(this.CritterIDLabel, "Project-wide unique identifier.");
             // 
             // CritterListBox
             // 
@@ -4331,6 +4349,7 @@ namespace Scribe.Forms
             this.CritterIDStatic.TabIndex = 3;
             this.CritterIDStatic.Tag = "Themed";
             this.CritterIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.CritterIDStatic, "Project-wide unique identifier.");
             // 
             // CritterRemoveCritterButton
             // 
@@ -4940,6 +4959,7 @@ namespace Scribe.Forms
             this.CharacterIDStatic.TabIndex = 3;
             this.CharacterIDStatic.Tag = "Themed";
             this.CharacterIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.CharacterIDStatic, "Project-wide unique identifier.");
             // 
             // CharacterAddNewCharacterButton
             // 
@@ -4975,6 +4995,7 @@ namespace Scribe.Forms
             this.CharacterIDLabel.Size = new System.Drawing.Size(69, 13);
             this.CharacterIDLabel.TabIndex = 4;
             this.CharacterIDLabel.Text = "Character ID";
+            this.EditorToolTip.SetToolTip(this.CharacterIDLabel, "Project-wide unique identifier.");
             // 
             // CharacterEditImageButton
             // 
@@ -5459,6 +5480,7 @@ namespace Scribe.Forms
             this.ItemIDLabel.Size = new System.Drawing.Size(43, 13);
             this.ItemIDLabel.TabIndex = 4;
             this.ItemIDLabel.Text = "Item ID";
+            this.EditorToolTip.SetToolTip(this.ItemIDLabel, "Project-wide unique identifier.");
             // 
             // ItemAddNewItemButton
             // 
@@ -5483,6 +5505,7 @@ namespace Scribe.Forms
             this.ItemIDStatic.TabIndex = 3;
             this.ItemIDStatic.Tag = "Themed";
             this.ItemIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.ItemIDStatic, "Project-wide unique identifier.");
             // 
             // BiomesTabPage
             // 
@@ -5874,6 +5897,7 @@ namespace Scribe.Forms
             this.BiomeIDLabel.Size = new System.Drawing.Size(49, 13);
             this.BiomeIDLabel.TabIndex = 4;
             this.BiomeIDLabel.Text = "Biome ID";
+            this.EditorToolTip.SetToolTip(this.BiomeIDLabel, "Project-wide unique identifier.");
             // 
             // BiomeAddNewBiomeButton
             // 
@@ -5898,6 +5922,7 @@ namespace Scribe.Forms
             this.BiomeIDStatic.TabIndex = 3;
             this.BiomeIDStatic.Tag = "Themed";
             this.BiomeIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.BiomeIDStatic, "Project-wide unique identifier.");
             // 
             // CraftingRecipesTabPage
             // 
@@ -6199,6 +6224,7 @@ namespace Scribe.Forms
             this.CraftingIDLabel.Size = new System.Drawing.Size(46, 13);
             this.CraftingIDLabel.TabIndex = 4;
             this.CraftingIDLabel.Text = "Craft ID";
+            this.EditorToolTip.SetToolTip(this.CraftingIDLabel, "Project-wide unique identifier.");
             // 
             // CraftingAddNewCraftingButton
             // 
@@ -6223,6 +6249,7 @@ namespace Scribe.Forms
             this.CraftingIDStatic.TabIndex = 3;
             this.CraftingIDStatic.Tag = "Themed";
             this.CraftingIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.CraftingIDStatic, "Project-wide unique identifier.");
             // 
             // CraftingConfigGroupBox
             // 
@@ -6751,6 +6778,7 @@ namespace Scribe.Forms
             this.RoomIDLabel.Size = new System.Drawing.Size(48, 13);
             this.RoomIDLabel.TabIndex = 4;
             this.RoomIDLabel.Text = "Room ID";
+            this.EditorToolTip.SetToolTip(this.RoomIDLabel, "Project-wide unique identifier.");
             // 
             // RoomAddNewRoomButton
             // 
@@ -6775,6 +6803,7 @@ namespace Scribe.Forms
             this.RoomIDStatic.TabIndex = 3;
             this.RoomIDStatic.Tag = "Themed";
             this.RoomIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.RoomIDStatic, "Project-wide unique identifier.");
             // 
             // RegionsTabPage
             // 
@@ -6829,6 +6858,7 @@ namespace Scribe.Forms
             this.RegionIDLabel.Size = new System.Drawing.Size(54, 13);
             this.RegionIDLabel.TabIndex = 12;
             this.RegionIDLabel.Text = "Region ID";
+            this.EditorToolTip.SetToolTip(this.RegionIDLabel, "Project-wide unique identifier.");
             // 
             // RegionIDStatic
             // 
@@ -6841,6 +6871,7 @@ namespace Scribe.Forms
             this.RegionIDStatic.TabIndex = 11;
             this.RegionIDStatic.Tag = "Themed";
             this.RegionIDStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.RegionIDStatic, "Project-wide unique identifier.");
             // 
             // RegionListBox
             // 
