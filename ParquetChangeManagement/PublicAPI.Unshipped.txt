@@ -22,6 +22,8 @@ ParquetChangeManagement.ChangeValue.NewState.get -> object
 ParquetChangeManagement.ChangeValue.OldState.get -> object
 ParquetChangeManagement.ChangeValue.SetState.get -> System.Action<object, string>
 static ParquetChangeManagement.ChangeManager.AddAndExecute(ParquetChangeManagement.Change inChange) -> void
+static ParquetChangeManagement.ChangeManager.CanRedo.get -> bool
+static ParquetChangeManagement.ChangeManager.CanUndo.get -> bool
 static ParquetChangeManagement.ChangeManager.Clear() -> void
 static ParquetChangeManagement.ChangeManager.Count.get -> int
 static ParquetChangeManagement.ChangeManager.CurrentChangeDescription.get -> string

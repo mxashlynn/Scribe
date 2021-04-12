@@ -3792,8 +3792,16 @@ namespace Scribe.Forms
         /// <param name="inEventArguments">Additional event data.</param>
         private void UndoToolStripMenuItem_Click(object inSender, EventArgs inEventArguments)
         {
-            Logger.Log(LogLevel.Info, $"{nameof(ChangeManager.Undo)} {ChangeManager.CurrentChangeDescription}");
-            ChangeManager.Undo();
+            if (ChangeManager.CanUndo)
+            {
+                Logger.Log(LogLevel.Info, $"{nameof(ChangeManager.Undo)} {ChangeManager.CurrentChangeDescription}");
+                ChangeManager.Undo();
+            }
+            else
+            {
+                Logger.Log(LogLevel.Info, Resources.InfoCannotUndo);
+                SystemSounds.Beep.Play();
+            }
         }
 
         /// <summary>
@@ -3803,8 +3811,16 @@ namespace Scribe.Forms
         /// <param name="inEventArguments">Additional event data.</param>
         private void RedoToolStripMenuItem_Click(object inSender, EventArgs inEventArguments)
         {
-            Logger.Log(LogLevel.Info, $"{nameof(ChangeManager.Redo)} {ChangeManager.NextChangeDescription}");
-            ChangeManager.Redo();
+            if (ChangeManager.CanRedo)
+            {
+                Logger.Log(LogLevel.Info, $"{nameof(ChangeManager.Redo)} {ChangeManager.NextChangeDescription}");
+                ChangeManager.Redo();
+            }
+            else
+            {
+                Logger.Log(LogLevel.Info, Resources.InfoCannotRedo);
+                SystemSounds.Beep.Play();
+            }
         }
 
         /// <summary>

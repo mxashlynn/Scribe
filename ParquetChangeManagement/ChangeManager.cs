@@ -52,6 +52,14 @@ namespace ParquetChangeManagement
             CurrentChangeIndex = -1;
         }
 
+        /// <summary>When <c>true</c> there are <see cref="Change"/>s that can be undone.</summary>
+        public static bool CanUndo
+            => CurrentChangeIndex > -1;
+
+        /// <summary>When <c>true</c> there are <see cref="Change"/>s that can be redone.</summary>
+        public static bool CanRedo
+            => CurrentChangeIndex < Count - 1;
+
         /// <summary>
         /// Add a new <see cref="Change"/> to the history and immediately take action on it.
         /// </summary>

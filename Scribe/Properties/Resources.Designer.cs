@@ -480,6 +480,24 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No changes to redo!.
+        /// </summary>
+        internal static string InfoCannotRedo {
+            get {
+                return ResourceManager.GetString("InfoCannotRedo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No changes to undo!.
+        /// </summary>
+        internal static string InfoCannotUndo {
+            get {
+                return ResourceManager.GetString("InfoCannotUndo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ID Copied.
         /// </summary>
         internal static string InfoIDCopied {
