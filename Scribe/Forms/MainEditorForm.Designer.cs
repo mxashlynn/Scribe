@@ -1605,6 +1605,7 @@ namespace Scribe.Forms
             this.GameRemoveGameButton.Size = new System.Drawing.Size(129, 23);
             this.GameRemoveGameButton.TabIndex = 2;
             this.GameRemoveGameButton.Text = "Remove Game";
+            this.EditorToolTip.SetToolTip(this.GameRemoveGameButton, "Deletes the episode or game definition currently selected.");
             this.GameRemoveGameButton.UseVisualStyleBackColor = false;
             this.GameRemoveGameButton.Click += new System.EventHandler(this.GameRemoveGameButton_Click);
             // 
@@ -1617,6 +1618,8 @@ namespace Scribe.Forms
             this.GameIconEditButton.Size = new System.Drawing.Size(128, 23);
             this.GameIconEditButton.TabIndex = 7;
             this.GameIconEditButton.Text = "Edit Image";
+            this.EditorToolTip.SetToolTip(this.GameIconEditButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
             this.GameIconEditButton.UseVisualStyleBackColor = false;
             this.GameIconEditButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
@@ -1632,6 +1635,7 @@ namespace Scribe.Forms
             this.GameIconPixelBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.GameIconPixelBox.TabIndex = 6;
             this.GameIconPixelBox.TabStop = false;
+            this.EditorToolTip.SetToolTip(this.GameIconPixelBox, "An optional image representing this game.");
             this.GameIconPixelBox.Click += new System.EventHandler(this.PixelBoxReload_Click);
             // 
             // GameTableLayoutPanel
@@ -1681,6 +1685,7 @@ namespace Scribe.Forms
             this.GameIsEpisodeLabel.Size = new System.Drawing.Size(61, 13);
             this.GameIsEpisodeLabel.TabIndex = 9;
             this.GameIsEpisodeLabel.Text = "Is Episode?";
+            this.EditorToolTip.SetToolTip(this.GameIsEpisodeLabel, "When checked, this game is part of a sequence of games.");
             // 
             // GameEpisodeTitleLabel
             // 
@@ -1690,6 +1695,7 @@ namespace Scribe.Forms
             this.GameEpisodeTitleLabel.Size = new System.Drawing.Size(67, 13);
             this.GameEpisodeTitleLabel.TabIndex = 12;
             this.GameEpisodeTitleLabel.Text = "Episode Title";
+            this.EditorToolTip.SetToolTip(this.GameEpisodeTitleLabel, "Optional.  For full games, a subtitle.  For episodes, the episode title.");
             // 
             // GameEpisodeNumberLabel
             // 
@@ -1699,6 +1705,7 @@ namespace Scribe.Forms
             this.GameEpisodeNumberLabel.Size = new System.Drawing.Size(84, 13);
             this.GameEpisodeNumberLabel.TabIndex = 15;
             this.GameEpisodeNumberLabel.Text = "Episode Number";
+            this.EditorToolTip.SetToolTip(this.GameEpisodeNumberLabel, "Where this game occurs in its sequence, if any.  Mostly useful for episodes.");
             // 
             // GamePlayerCharacterLabel
             // 
@@ -1708,6 +1715,7 @@ namespace Scribe.Forms
             this.GamePlayerCharacterLabel.Size = new System.Drawing.Size(88, 13);
             this.GamePlayerCharacterLabel.TabIndex = 18;
             this.GamePlayerCharacterLabel.Text = "Player Character";
+            this.EditorToolTip.SetToolTip(this.GamePlayerCharacterLabel, "The Character that the player controls when beginning this game.");
             // 
             // GameFirstScriptLabel
             // 
@@ -1717,6 +1725,7 @@ namespace Scribe.Forms
             this.GameFirstScriptLabel.Size = new System.Drawing.Size(58, 13);
             this.GameFirstScriptLabel.TabIndex = 21;
             this.GameFirstScriptLabel.Text = "First Script";
+            this.EditorToolTip.SetToolTip(this.GameFirstScriptLabel, "An optional Script to run the first time play begins.");
             // 
             // GameIsEpisodeCheckBox
             // 
@@ -1725,6 +1734,7 @@ namespace Scribe.Forms
             this.GameIsEpisodeCheckBox.Name = "GameIsEpisodeCheckBox";
             this.GameIsEpisodeCheckBox.Size = new System.Drawing.Size(15, 14);
             this.GameIsEpisodeCheckBox.TabIndex = 22;
+            this.EditorToolTip.SetToolTip(this.GameIsEpisodeCheckBox, "When checked, this game is part of a sequence of games.");
             this.GameIsEpisodeCheckBox.UseVisualStyleBackColor = false;
             // 
             // GameEpisodeTitleTextBox
@@ -1733,6 +1743,7 @@ namespace Scribe.Forms
             this.GameEpisodeTitleTextBox.Name = "GameEpisodeTitleTextBox";
             this.GameEpisodeTitleTextBox.Size = new System.Drawing.Size(147, 20);
             this.GameEpisodeTitleTextBox.TabIndex = 26;
+            this.EditorToolTip.SetToolTip(this.GameEpisodeTitleTextBox, "Optional.  For full games, a subtitle.  For episodes, the episode title.");
             // 
             // GameEpisodeNumberTextBox
             // 
@@ -1740,6 +1751,7 @@ namespace Scribe.Forms
             this.GameEpisodeNumberTextBox.Name = "GameEpisodeNumberTextBox";
             this.GameEpisodeNumberTextBox.Size = new System.Drawing.Size(147, 20);
             this.GameEpisodeNumberTextBox.TabIndex = 27;
+            this.EditorToolTip.SetToolTip(this.GameEpisodeNumberTextBox, "Where this game occurs in its sequence, if any.  Mostly useful for episodes.");
             // 
             // GamePlayerCharacterComboBox
             // 
@@ -1748,6 +1760,7 @@ namespace Scribe.Forms
             this.GamePlayerCharacterComboBox.Name = "GamePlayerCharacterComboBox";
             this.GamePlayerCharacterComboBox.Size = new System.Drawing.Size(147, 21);
             this.GamePlayerCharacterComboBox.TabIndex = 28;
+            this.EditorToolTip.SetToolTip(this.GamePlayerCharacterComboBox, "The Character that the player controls when beginning this game.");
             // 
             // GameFirstScriptComboBox
             // 
@@ -1756,6 +1769,7 @@ namespace Scribe.Forms
             this.GameFirstScriptComboBox.Name = "GameFirstScriptComboBox";
             this.GameFirstScriptComboBox.Size = new System.Drawing.Size(147, 21);
             this.GameFirstScriptComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.GameFirstScriptComboBox, "An optional Script to run the first time play begins.");
             // 
             // GameIDLabel
             // 
@@ -1777,6 +1791,7 @@ namespace Scribe.Forms
             this.GameAddNewGameButton.Size = new System.Drawing.Size(129, 23);
             this.GameAddNewGameButton.TabIndex = 2;
             this.GameAddNewGameButton.Text = "Add New Game";
+            this.EditorToolTip.SetToolTip(this.GameAddNewGameButton, "Creates a new game or episode definition.");
             this.GameAddNewGameButton.UseVisualStyleBackColor = false;
             this.GameAddNewGameButton.Click += new System.EventHandler(this.GameAddNewGameButton_Click);
             // 
@@ -1828,6 +1843,7 @@ namespace Scribe.Forms
             this.FileFormatTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.FileFormatTableLayoutPanel.Size = new System.Drawing.Size(634, 75);
             this.FileFormatTableLayoutPanel.TabIndex = 1;
+            this.EditorToolTip.SetToolTip(this.FileFormatTableLayoutPanel, "Just FYI, these characters are used to save project data.");
             // 
             // FileFormatPrimaryDelimiterLabel
             // 
@@ -2046,6 +2062,7 @@ namespace Scribe.Forms
             this.LibraryVersionStatic.Size = new System.Drawing.Size(207, 35);
             this.LibraryVersionStatic.TabIndex = 1;
             this.LibraryVersionStatic.Text = "0.0.0";
+            this.EditorToolTip.SetToolTip(this.LibraryVersionStatic, "The version of the Parquet library being used by this instance of Scribe.");
             // 
             // LibraryProjectPathLabel
             // 
@@ -2072,6 +2089,7 @@ namespace Scribe.Forms
             this.LibraryProjectPathStatic.Size = new System.Drawing.Size(207, 36);
             this.LibraryProjectPathStatic.TabIndex = 1;
             this.LibraryProjectPathStatic.Text = "C:\\";
+            this.EditorToolTip.SetToolTip(this.LibraryProjectPathStatic, "Path to the project defintion files.");
             // 
             // FloorsTabPage
             // 
@@ -2191,6 +2209,8 @@ namespace Scribe.Forms
             this.FloorEditFilledInImageButton.Size = new System.Drawing.Size(128, 23);
             this.FloorEditFilledInImageButton.TabIndex = 11;
             this.FloorEditFilledInImageButton.Text = "Edit Filled In Image";
+            this.EditorToolTip.SetToolTip(this.FloorEditFilledInImageButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
             this.FloorEditFilledInImageButton.UseVisualStyleBackColor = false;
             this.FloorEditFilledInImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
@@ -2226,6 +2246,8 @@ namespace Scribe.Forms
             this.FloorEditDugOutImageButton.Size = new System.Drawing.Size(128, 23);
             this.FloorEditDugOutImageButton.TabIndex = 7;
             this.FloorEditDugOutImageButton.Text = "Edit Dug Out Image";
+            this.EditorToolTip.SetToolTip(this.FloorEditDugOutImageButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
             this.FloorEditDugOutImageButton.UseVisualStyleBackColor = false;
             this.FloorEditDugOutImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
@@ -2998,6 +3020,8 @@ namespace Scribe.Forms
             this.BlockEditImageButton.Size = new System.Drawing.Size(128, 23);
             this.BlockEditImageButton.TabIndex = 7;
             this.BlockEditImageButton.Text = "Edit Image";
+            this.EditorToolTip.SetToolTip(this.BlockEditImageButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
             this.BlockEditImageButton.UseVisualStyleBackColor = false;
             this.BlockEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
@@ -3561,6 +3585,8 @@ namespace Scribe.Forms
             this.FurnishingEditOpenImageButton.Size = new System.Drawing.Size(128, 23);
             this.FurnishingEditOpenImageButton.TabIndex = 7;
             this.FurnishingEditOpenImageButton.Text = "Edit Open Image";
+            this.EditorToolTip.SetToolTip(this.FurnishingEditOpenImageButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
             this.FurnishingEditOpenImageButton.UseVisualStyleBackColor = false;
             this.FurnishingEditOpenImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
@@ -3596,6 +3622,8 @@ namespace Scribe.Forms
             this.FurnishingEditClosedImageButton.Size = new System.Drawing.Size(128, 23);
             this.FurnishingEditClosedImageButton.TabIndex = 7;
             this.FurnishingEditClosedImageButton.Text = "Edit Closed Image";
+            this.EditorToolTip.SetToolTip(this.FurnishingEditClosedImageButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
             this.FurnishingEditClosedImageButton.UseVisualStyleBackColor = false;
             this.FurnishingEditClosedImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
@@ -4026,6 +4054,8 @@ namespace Scribe.Forms
             this.CollectibleEditImageButton.Size = new System.Drawing.Size(128, 23);
             this.CollectibleEditImageButton.TabIndex = 7;
             this.CollectibleEditImageButton.Text = "Edit Image";
+            this.EditorToolTip.SetToolTip(this.CollectibleEditImageButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
             this.CollectibleEditImageButton.UseVisualStyleBackColor = false;
             this.CollectibleEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
@@ -4299,6 +4329,8 @@ namespace Scribe.Forms
             this.CritterEditImageButton.Size = new System.Drawing.Size(128, 23);
             this.CritterEditImageButton.TabIndex = 7;
             this.CritterEditImageButton.Text = "Edit Image";
+            this.EditorToolTip.SetToolTip(this.CritterEditImageButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
             this.CritterEditImageButton.UseVisualStyleBackColor = true;
             this.CritterEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
@@ -5006,6 +5038,8 @@ namespace Scribe.Forms
             this.CharacterEditImageButton.Size = new System.Drawing.Size(128, 23);
             this.CharacterEditImageButton.TabIndex = 7;
             this.CharacterEditImageButton.Text = "Edit Image";
+            this.EditorToolTip.SetToolTip(this.CharacterEditImageButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
             this.CharacterEditImageButton.UseVisualStyleBackColor = false;
             this.CharacterEditImageButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
@@ -5213,6 +5247,8 @@ namespace Scribe.Forms
             this.ItemPictureEditButton.Size = new System.Drawing.Size(128, 23);
             this.ItemPictureEditButton.TabIndex = 7;
             this.ItemPictureEditButton.Text = "Edit Image";
+            this.EditorToolTip.SetToolTip(this.ItemPictureEditButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
             this.ItemPictureEditButton.UseVisualStyleBackColor = false;
             this.ItemPictureEditButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
@@ -5682,6 +5718,8 @@ namespace Scribe.Forms
             this.BiomePictureEditButton.Size = new System.Drawing.Size(128, 23);
             this.BiomePictureEditButton.TabIndex = 7;
             this.BiomePictureEditButton.Text = "Edit Image";
+            this.EditorToolTip.SetToolTip(this.BiomePictureEditButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
             this.BiomePictureEditButton.UseVisualStyleBackColor = false;
             this.BiomePictureEditButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
@@ -5975,6 +6013,8 @@ namespace Scribe.Forms
             this.CraftingPictureEditButton.Size = new System.Drawing.Size(128, 23);
             this.CraftingPictureEditButton.TabIndex = 7;
             this.CraftingPictureEditButton.Text = "Edit Image";
+            this.EditorToolTip.SetToolTip(this.CraftingPictureEditButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
             this.CraftingPictureEditButton.UseVisualStyleBackColor = false;
             this.CraftingPictureEditButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
@@ -6527,6 +6567,8 @@ namespace Scribe.Forms
             this.RoomPictureEditButton.Size = new System.Drawing.Size(128, 23);
             this.RoomPictureEditButton.TabIndex = 7;
             this.RoomPictureEditButton.Text = "Edit Image";
+            this.EditorToolTip.SetToolTip(this.RoomPictureEditButton, "Launches an external program to edit the image.  If the image file does not exist" +
+        ", it will be created.");
             this.RoomPictureEditButton.UseVisualStyleBackColor = false;
             this.RoomPictureEditButton.Click += new System.EventHandler(this.EditImageExternally);
             // 
@@ -6846,6 +6888,7 @@ namespace Scribe.Forms
             this.RegionLayOutWorldButton.Size = new System.Drawing.Size(128, 23);
             this.RegionLayOutWorldButton.TabIndex = 17;
             this.RegionLayOutWorldButton.Text = "Lay Out World";
+            this.EditorToolTip.SetToolTip(this.RegionLayOutWorldButton, "Opens the world layout editor.");
             this.RegionLayOutWorldButton.UseVisualStyleBackColor = false;
             this.RegionLayOutWorldButton.Click += new System.EventHandler(this.RegionLayOutWorldButton_Click);
             // 
@@ -6942,6 +6985,7 @@ namespace Scribe.Forms
             this.RegionMapEditButton.Size = new System.Drawing.Size(128, 23);
             this.RegionMapEditButton.TabIndex = 15;
             this.RegionMapEditButton.Text = "Edit Map";
+            this.EditorToolTip.SetToolTip(this.RegionMapEditButton, "Opens the map editor.");
             this.RegionMapEditButton.UseVisualStyleBackColor = false;
             this.RegionMapEditButton.Click += new System.EventHandler(this.RegionOpenMapEditorButton_Click);
             // 
