@@ -160,6 +160,24 @@ namespace Scribe.Forms
             this.RoomCommentTextBox = new System.Windows.Forms.TextBox();
             this.RegionCommentLabel = new System.Windows.Forms.Label();
             this.RegionCommentTextBox = new System.Windows.Forms.TextBox();
+            this.ItemDescriptionLabel = new System.Windows.Forms.Label();
+            this.ItemDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.BiomeDescriptionLabel = new System.Windows.Forms.Label();
+            this.BiomeDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.CraftingDescriptionLabel = new System.Windows.Forms.Label();
+            this.CraftingDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.RoomDescriptionLabel = new System.Windows.Forms.Label();
+            this.RoomDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.RegionDescriptionLabel = new System.Windows.Forms.Label();
+            this.RegionDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.FloorEquivalentItemIDLabel = new System.Windows.Forms.Label();
+            this.FloorEquivalentItemComboBox = new System.Windows.Forms.ComboBox();
+            this.BlockEquivalentItemLabel = new System.Windows.Forms.Label();
+            this.BlockEquivalentItemComboBox = new System.Windows.Forms.ComboBox();
+            this.FurnishingEquivalentItemLabel = new System.Windows.Forms.Label();
+            this.FurnishingEquivalentItemComboBox = new System.Windows.Forms.ComboBox();
+            this.CollectibleEquivalentItemLabel = new System.Windows.Forms.Label();
+            this.CollectibleEquivalentItemComboBox = new System.Windows.Forms.ComboBox();
             this.EditorTabs = new System.Windows.Forms.TabControl();
             this.GamesTabPage = new System.Windows.Forms.TabPage();
             this.GameTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -183,8 +201,6 @@ namespace Scribe.Forms
             this.FloorRemoveRoomTagButton = new System.Windows.Forms.Button();
             this.FloorRemoveBiomeTagButton = new System.Windows.Forms.Button();
             this.FloorAddRoomTagButton = new System.Windows.Forms.Button();
-            this.FloorEquivalentItemIDLabel = new System.Windows.Forms.Label();
-            this.FloorEquivalentItemComboBox = new System.Windows.Forms.ComboBox();
             this.FloorModificationToolLabel = new System.Windows.Forms.Label();
             this.FloorModificationToolComboBox = new System.Windows.Forms.ComboBox();
             this.FloorTrenchName = new System.Windows.Forms.Label();
@@ -208,8 +224,6 @@ namespace Scribe.Forms
             this.BlockDroppedCollectibleIDComboBox = new System.Windows.Forms.ComboBox();
             this.BlockGatherEffectComboBox = new System.Windows.Forms.ComboBox();
             this.BlockMaxToughnessTextBox = new System.Windows.Forms.TextBox();
-            this.BlockEquivalentItemLabel = new System.Windows.Forms.Label();
-            this.BlockEquivalentItemComboBox = new System.Windows.Forms.ComboBox();
             this.BlockGatheringToolLabel = new System.Windows.Forms.Label();
             this.BlockGatheringEffectLabel = new System.Windows.Forms.Label();
             this.BlockDroppedCollectibleLabel = new System.Windows.Forms.Label();
@@ -240,8 +254,6 @@ namespace Scribe.Forms
             this.FurnishingTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.FurnishingAddsToRoomLabel = new System.Windows.Forms.Label();
             this.FurnishingAddsToBiomelabel = new System.Windows.Forms.Label();
-            this.FurnishingEquivalentItemLabel = new System.Windows.Forms.Label();
-            this.FurnishingEquivalentItemComboBox = new System.Windows.Forms.ComboBox();
             this.FurnishingIsOpenableCheckBox = new System.Windows.Forms.CheckBox();
             this.FurnishingIsOpenableLabel = new System.Windows.Forms.Label();
             this.FurnishingIsFlammableCheckBox = new System.Windows.Forms.CheckBox();
@@ -277,8 +289,6 @@ namespace Scribe.Forms
             this.CollectibleAddsToBiomeLabel = new System.Windows.Forms.Label();
             this.CollectibleEffectAmountTextBox = new System.Windows.Forms.TextBox();
             this.CollectibleCollectionEffectComboBox = new System.Windows.Forms.ComboBox();
-            this.CollectibleEquivalentItemLabel = new System.Windows.Forms.Label();
-            this.CollectibleEquivalentItemComboBox = new System.Windows.Forms.ComboBox();
             this.CollectibleCollectionEffectLabel = new System.Windows.Forms.Label();
             this.CollectibleEffectAmountLabel = new System.Windows.Forms.Label();
             this.CollectibleAddsToBiomeListBox = new System.Windows.Forms.ListBox();
@@ -378,14 +388,12 @@ namespace Scribe.Forms
             this.ItemRarityTextBox = new System.Windows.Forms.TextBox();
             this.ItemTagListBox = new System.Windows.Forms.ListBox();
             this.ItemNameLabel = new System.Windows.Forms.Label();
-            this.ItemDescriptionLabel = new System.Windows.Forms.Label();
             this.ItemSubtypeLabel = new System.Windows.Forms.Label();
             this.ItemPriceLabel = new System.Windows.Forms.Label();
             this.ItemRarityLabel = new System.Windows.Forms.Label();
             this.ItemStackMaxLabel = new System.Windows.Forms.Label();
             this.ItemTagsLabel = new System.Windows.Forms.Label();
             this.ItemNameTextBox = new System.Windows.Forms.TextBox();
-            this.ItemDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.ItemPriceTextBox = new System.Windows.Forms.TextBox();
             this.ItemSubtypeComboBox = new System.Windows.Forms.ComboBox();
             this.ItemEffectWhileHeldLabel = new System.Windows.Forms.Label();
@@ -413,14 +421,12 @@ namespace Scribe.Forms
             this.BiomeIsLiquidBasedCheckBox = new System.Windows.Forms.CheckBox();
             this.BiomeIsRoomBasedCheckBox = new System.Windows.Forms.CheckBox();
             this.BiomeNameLabel = new System.Windows.Forms.Label();
-            this.BiomeDescriptionLabel = new System.Windows.Forms.Label();
             this.BiomeTierLabel = new System.Windows.Forms.Label();
             this.BiomeIsRoomBasedLabel = new System.Windows.Forms.Label();
             this.BiomeIsLiquidBasedLabel = new System.Windows.Forms.Label();
             this.BiomeParquetCriteriaLabel = new System.Windows.Forms.Label();
             this.BiomeEntryRequirementsLabel = new System.Windows.Forms.Label();
             this.BiomeNameTextBox = new System.Windows.Forms.TextBox();
-            this.BiomeDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.BiomeTierTextBox = new System.Windows.Forms.TextBox();
             this.BiomePixelBox = new ParquetCustomControls.PixelBox();
             this.BiomeAddNewBiomeButton = new System.Windows.Forms.Button();
@@ -435,10 +441,8 @@ namespace Scribe.Forms
             this.CraftingRemoveIngredientButton = new System.Windows.Forms.Button();
             this.CraftingIngredientsListBox = new System.Windows.Forms.ListBox();
             this.CraftingNameLabel = new System.Windows.Forms.Label();
-            this.CraftingDescriptionLabel = new System.Windows.Forms.Label();
             this.CraftingIngredientsLabel = new System.Windows.Forms.Label();
             this.CraftingNameTextBox = new System.Windows.Forms.TextBox();
-            this.CraftingDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.CraftingProductsLabel = new System.Windows.Forms.Label();
             this.CraftingProductsListBox = new System.Windows.Forms.ListBox();
             this.CraftingStrikePatternLabel = new System.Windows.Forms.Label();
@@ -474,12 +478,10 @@ namespace Scribe.Forms
             this.RoomRequiredBlocksListBox = new System.Windows.Forms.ListBox();
             this.RoomRequiredFloorsListBox = new System.Windows.Forms.ListBox();
             this.RoomNameLabel = new System.Windows.Forms.Label();
-            this.RoomDescriptionLabel = new System.Windows.Forms.Label();
             this.RoomMinimumWalkableSpaces = new System.Windows.Forms.Label();
             this.RoomRequiredFloorsLabel = new System.Windows.Forms.Label();
             this.RoomRequiredBlocksLabel = new System.Windows.Forms.Label();
             this.RoomNameTextBox = new System.Windows.Forms.TextBox();
-            this.RoomDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.RoomMinimumWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
             this.RoomRequiredFurnishingsLabel = new System.Windows.Forms.Label();
             this.RoomRequiredFurnishingsListBox = new System.Windows.Forms.ListBox();
@@ -494,8 +496,6 @@ namespace Scribe.Forms
             this.RegionTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.RegionNameLabel = new System.Windows.Forms.Label();
             this.RegionNameTextBox = new System.Windows.Forms.TextBox();
-            this.RegionDescriptionLabel = new System.Windows.Forms.Label();
-            this.RegionDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.RegionBackgroundColorLabel = new System.Windows.Forms.Label();
             this.RegionBackgroundColorStatic = new System.Windows.Forms.Label();
             this.RegionExitNorthLabel = new System.Windows.Forms.Label();
@@ -2318,6 +2318,197 @@ namespace Scribe.Forms
             this.RegionCommentTextBox.TabIndex = 25;
             this.EditorToolTip.SetToolTip(this.RegionCommentTextBox, "Optional.  Could be designer notes or an in-game dialogue.");
             // 
+            // ItemDescriptionLabel
+            // 
+            this.ItemDescriptionLabel.AutoSize = true;
+            this.ItemDescriptionLabel.Location = new System.Drawing.Point(3, 25);
+            this.ItemDescriptionLabel.Name = "ItemDescriptionLabel";
+            this.ItemDescriptionLabel.Size = new System.Drawing.Size(60, 13);
+            this.ItemDescriptionLabel.TabIndex = 3;
+            this.ItemDescriptionLabel.Text = "Description";
+            this.EditorToolTip.SetToolTip(this.ItemDescriptionLabel, "This explains to the player what this item is.");
+            // 
+            // ItemDescriptionTextBox
+            // 
+            this.ItemDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemTableLayoutPanel.SetColumnSpan(this.ItemDescriptionTextBox, 2);
+            this.ItemDescriptionTextBox.Location = new System.Drawing.Point(131, 28);
+            this.ItemDescriptionTextBox.Multiline = true;
+            this.ItemDescriptionTextBox.Name = "ItemDescriptionTextBox";
+            this.ItemDescriptionTextBox.Size = new System.Drawing.Size(295, 49);
+            this.ItemDescriptionTextBox.TabIndex = 24;
+            this.EditorToolTip.SetToolTip(this.ItemDescriptionTextBox, "This explains to the player what this item is.");
+            // 
+            // BiomeDescriptionLabel
+            // 
+            this.BiomeDescriptionLabel.AutoSize = true;
+            this.BiomeDescriptionLabel.Location = new System.Drawing.Point(3, 25);
+            this.BiomeDescriptionLabel.Name = "BiomeDescriptionLabel";
+            this.BiomeDescriptionLabel.Size = new System.Drawing.Size(60, 13);
+            this.BiomeDescriptionLabel.TabIndex = 3;
+            this.BiomeDescriptionLabel.Text = "Description";
+            this.EditorToolTip.SetToolTip(this.BiomeDescriptionLabel, "Introduces this biome to the player.");
+            // 
+            // BiomeDescriptionTextBox
+            // 
+            this.BiomeDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiomeTableLayoutPanel.SetColumnSpan(this.BiomeDescriptionTextBox, 2);
+            this.BiomeDescriptionTextBox.Location = new System.Drawing.Point(131, 28);
+            this.BiomeDescriptionTextBox.Multiline = true;
+            this.BiomeDescriptionTextBox.Name = "BiomeDescriptionTextBox";
+            this.BiomeDescriptionTextBox.Size = new System.Drawing.Size(295, 49);
+            this.BiomeDescriptionTextBox.TabIndex = 24;
+            this.EditorToolTip.SetToolTip(this.BiomeDescriptionTextBox, "Introduces this biome to the player.");
+            // 
+            // CraftingDescriptionLabel
+            // 
+            this.CraftingDescriptionLabel.AutoSize = true;
+            this.CraftingDescriptionLabel.Location = new System.Drawing.Point(3, 25);
+            this.CraftingDescriptionLabel.Name = "CraftingDescriptionLabel";
+            this.CraftingDescriptionLabel.Size = new System.Drawing.Size(60, 13);
+            this.CraftingDescriptionLabel.TabIndex = 3;
+            this.CraftingDescriptionLabel.Text = "Description";
+            this.EditorToolTip.SetToolTip(this.CraftingDescriptionLabel, "Explains this recipe\'s products.");
+            // 
+            // CraftingDescriptionTextBox
+            // 
+            this.CraftingDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CraftingTableLayoutPanel.SetColumnSpan(this.CraftingDescriptionTextBox, 2);
+            this.CraftingDescriptionTextBox.Location = new System.Drawing.Point(146, 28);
+            this.CraftingDescriptionTextBox.Multiline = true;
+            this.CraftingDescriptionTextBox.Name = "CraftingDescriptionTextBox";
+            this.CraftingDescriptionTextBox.Size = new System.Drawing.Size(280, 49);
+            this.CraftingDescriptionTextBox.TabIndex = 24;
+            this.EditorToolTip.SetToolTip(this.CraftingDescriptionTextBox, "Explains this recipe\'s products.");
+            // 
+            // RoomDescriptionLabel
+            // 
+            this.RoomDescriptionLabel.AutoSize = true;
+            this.RoomDescriptionLabel.Location = new System.Drawing.Point(3, 25);
+            this.RoomDescriptionLabel.Name = "RoomDescriptionLabel";
+            this.RoomDescriptionLabel.Size = new System.Drawing.Size(60, 13);
+            this.RoomDescriptionLabel.TabIndex = 3;
+            this.RoomDescriptionLabel.Text = "Description";
+            this.EditorToolTip.SetToolTip(this.RoomDescriptionLabel, "Introduces this type of room to the player.");
+            // 
+            // RoomDescriptionTextBox
+            // 
+            this.RoomDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RoomTableLayoutPanel.SetColumnSpan(this.RoomDescriptionTextBox, 2);
+            this.RoomDescriptionTextBox.Location = new System.Drawing.Point(146, 28);
+            this.RoomDescriptionTextBox.Multiline = true;
+            this.RoomDescriptionTextBox.Name = "RoomDescriptionTextBox";
+            this.RoomDescriptionTextBox.Size = new System.Drawing.Size(280, 49);
+            this.RoomDescriptionTextBox.TabIndex = 24;
+            this.EditorToolTip.SetToolTip(this.RoomDescriptionTextBox, "Introduces this type of room to the player.");
+            // 
+            // RegionDescriptionLabel
+            // 
+            this.RegionDescriptionLabel.AutoSize = true;
+            this.RegionDescriptionLabel.Location = new System.Drawing.Point(3, 25);
+            this.RegionDescriptionLabel.Name = "RegionDescriptionLabel";
+            this.RegionDescriptionLabel.Size = new System.Drawing.Size(60, 13);
+            this.RegionDescriptionLabel.TabIndex = 3;
+            this.RegionDescriptionLabel.Text = "Description";
+            this.EditorToolTip.SetToolTip(this.RegionDescriptionLabel, "Optional.  Could be used to catalogue region details.");
+            // 
+            // RegionDescriptionTextBox
+            // 
+            this.RegionDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RegionTableLayoutPanel.SetColumnSpan(this.RegionDescriptionTextBox, 2);
+            this.RegionDescriptionTextBox.Location = new System.Drawing.Point(122, 28);
+            this.RegionDescriptionTextBox.Multiline = true;
+            this.RegionDescriptionTextBox.Name = "RegionDescriptionTextBox";
+            this.RegionDescriptionTextBox.Size = new System.Drawing.Size(304, 49);
+            this.RegionDescriptionTextBox.TabIndex = 24;
+            this.EditorToolTip.SetToolTip(this.RegionDescriptionTextBox, "Optional.  Could be used to catalogue region details.");
+            // 
+            // FloorEquivalentItemIDLabel
+            // 
+            this.FloorEquivalentItemIDLabel.AutoSize = true;
+            this.FloorEquivalentItemIDLabel.Location = new System.Drawing.Point(3, 135);
+            this.FloorEquivalentItemIDLabel.Name = "FloorEquivalentItemIDLabel";
+            this.FloorEquivalentItemIDLabel.Size = new System.Drawing.Size(82, 13);
+            this.FloorEquivalentItemIDLabel.TabIndex = 9;
+            this.FloorEquivalentItemIDLabel.Text = "Equivalent Item";
+            this.EditorToolTip.SetToolTip(this.FloorEquivalentItemIDLabel, "An item that represents this parquet when carried by a character.");
+            // 
+            // FloorEquivalentItemComboBox
+            // 
+            this.FloorEquivalentItemComboBox.FormattingEnabled = true;
+            this.FloorEquivalentItemComboBox.Location = new System.Drawing.Point(131, 138);
+            this.FloorEquivalentItemComboBox.Name = "FloorEquivalentItemComboBox";
+            this.FloorEquivalentItemComboBox.Size = new System.Drawing.Size(144, 21);
+            this.FloorEquivalentItemComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.FloorEquivalentItemComboBox, "An item that represents this parquet when carried by a character.");
+            // 
+            // BlockEquivalentItemLabel
+            // 
+            this.BlockEquivalentItemLabel.AutoSize = true;
+            this.BlockEquivalentItemLabel.Location = new System.Drawing.Point(3, 135);
+            this.BlockEquivalentItemLabel.Name = "BlockEquivalentItemLabel";
+            this.BlockEquivalentItemLabel.Size = new System.Drawing.Size(82, 13);
+            this.BlockEquivalentItemLabel.TabIndex = 9;
+            this.BlockEquivalentItemLabel.Text = "Equivalent Item";
+            this.EditorToolTip.SetToolTip(this.BlockEquivalentItemLabel, "An item that represents this parquet when carried by a character.");
+            // 
+            // BlockEquivalentItemComboBox
+            // 
+            this.BlockEquivalentItemComboBox.FormattingEnabled = true;
+            this.BlockEquivalentItemComboBox.Location = new System.Drawing.Point(131, 138);
+            this.BlockEquivalentItemComboBox.Name = "BlockEquivalentItemComboBox";
+            this.BlockEquivalentItemComboBox.Size = new System.Drawing.Size(144, 21);
+            this.BlockEquivalentItemComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.BlockEquivalentItemComboBox, "An item that represents this parquet when carried by a character.");
+            // 
+            // FurnishingEquivalentItemLabel
+            // 
+            this.FurnishingEquivalentItemLabel.AutoSize = true;
+            this.FurnishingEquivalentItemLabel.Location = new System.Drawing.Point(3, 135);
+            this.FurnishingEquivalentItemLabel.Name = "FurnishingEquivalentItemLabel";
+            this.FurnishingEquivalentItemLabel.Size = new System.Drawing.Size(82, 13);
+            this.FurnishingEquivalentItemLabel.TabIndex = 9;
+            this.FurnishingEquivalentItemLabel.Text = "Equivalent Item";
+            this.EditorToolTip.SetToolTip(this.FurnishingEquivalentItemLabel, "An item that represents this parquet when carried by a character.");
+            // 
+            // FurnishingEquivalentItemComboBox
+            // 
+            this.FurnishingEquivalentItemComboBox.FormattingEnabled = true;
+            this.FurnishingEquivalentItemComboBox.Location = new System.Drawing.Point(131, 138);
+            this.FurnishingEquivalentItemComboBox.Name = "FurnishingEquivalentItemComboBox";
+            this.FurnishingEquivalentItemComboBox.Size = new System.Drawing.Size(144, 21);
+            this.FurnishingEquivalentItemComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.FurnishingEquivalentItemComboBox, "An item that represents this parquet when carried by a character.");
+            // 
+            // CollectibleEquivalentItemLabel
+            // 
+            this.CollectibleEquivalentItemLabel.AutoSize = true;
+            this.CollectibleEquivalentItemLabel.Location = new System.Drawing.Point(3, 135);
+            this.CollectibleEquivalentItemLabel.Name = "CollectibleEquivalentItemLabel";
+            this.CollectibleEquivalentItemLabel.Size = new System.Drawing.Size(82, 13);
+            this.CollectibleEquivalentItemLabel.TabIndex = 9;
+            this.CollectibleEquivalentItemLabel.Text = "Equivalent Item";
+            this.EditorToolTip.SetToolTip(this.CollectibleEquivalentItemLabel, "An item that represents this parquet when carried by a character.");
+            // 
+            // CollectibleEquivalentItemComboBox
+            // 
+            this.CollectibleEquivalentItemComboBox.FormattingEnabled = true;
+            this.CollectibleEquivalentItemComboBox.Location = new System.Drawing.Point(131, 138);
+            this.CollectibleEquivalentItemComboBox.Name = "CollectibleEquivalentItemComboBox";
+            this.CollectibleEquivalentItemComboBox.Size = new System.Drawing.Size(144, 21);
+            this.CollectibleEquivalentItemComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.CollectibleEquivalentItemComboBox, "An item that represents this parquet when carried by a character.");
+            // 
             // EditorTabs
             // 
             this.EditorTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -2700,23 +2891,6 @@ namespace Scribe.Forms
             this.FloorAddRoomTagButton.UseVisualStyleBackColor = false;
             this.FloorAddRoomTagButton.Click += new System.EventHandler(this.FloorAddRoomTagButton_Click);
             // 
-            // FloorEquivalentItemIDLabel
-            // 
-            this.FloorEquivalentItemIDLabel.AutoSize = true;
-            this.FloorEquivalentItemIDLabel.Location = new System.Drawing.Point(3, 135);
-            this.FloorEquivalentItemIDLabel.Name = "FloorEquivalentItemIDLabel";
-            this.FloorEquivalentItemIDLabel.Size = new System.Drawing.Size(82, 13);
-            this.FloorEquivalentItemIDLabel.TabIndex = 9;
-            this.FloorEquivalentItemIDLabel.Text = "Equivalent Item";
-            // 
-            // FloorEquivalentItemComboBox
-            // 
-            this.FloorEquivalentItemComboBox.FormattingEnabled = true;
-            this.FloorEquivalentItemComboBox.Location = new System.Drawing.Point(131, 138);
-            this.FloorEquivalentItemComboBox.Name = "FloorEquivalentItemComboBox";
-            this.FloorEquivalentItemComboBox.Size = new System.Drawing.Size(144, 21);
-            this.FloorEquivalentItemComboBox.TabIndex = 29;
-            // 
             // FloorModificationToolLabel
             // 
             this.FloorModificationToolLabel.AutoSize = true;
@@ -3005,23 +3179,6 @@ namespace Scribe.Forms
             this.BlockMaxToughnessTextBox.Size = new System.Drawing.Size(144, 20);
             this.BlockMaxToughnessTextBox.TabIndex = 23;
             // 
-            // BlockEquivalentItemLabel
-            // 
-            this.BlockEquivalentItemLabel.AutoSize = true;
-            this.BlockEquivalentItemLabel.Location = new System.Drawing.Point(3, 135);
-            this.BlockEquivalentItemLabel.Name = "BlockEquivalentItemLabel";
-            this.BlockEquivalentItemLabel.Size = new System.Drawing.Size(82, 13);
-            this.BlockEquivalentItemLabel.TabIndex = 9;
-            this.BlockEquivalentItemLabel.Text = "Equivalent Item";
-            // 
-            // BlockEquivalentItemComboBox
-            // 
-            this.BlockEquivalentItemComboBox.FormattingEnabled = true;
-            this.BlockEquivalentItemComboBox.Location = new System.Drawing.Point(131, 138);
-            this.BlockEquivalentItemComboBox.Name = "BlockEquivalentItemComboBox";
-            this.BlockEquivalentItemComboBox.Size = new System.Drawing.Size(144, 21);
-            this.BlockEquivalentItemComboBox.TabIndex = 29;
-            // 
             // BlockGatheringToolLabel
             // 
             this.BlockGatheringToolLabel.AutoSize = true;
@@ -3105,6 +3262,7 @@ namespace Scribe.Forms
             this.BlockAddsToBiomeListBox.Name = "BlockAddsToBiomeListBox";
             this.BlockAddsToBiomeListBox.Size = new System.Drawing.Size(295, 56);
             this.BlockAddsToBiomeListBox.TabIndex = 37;
+            this.EditorToolTip.SetToolTip(this.BlockAddsToBiomeListBox, "Describes the biome that this parquet helps form.");
             // 
             // BlockAddsToRoomListBox
             // 
@@ -3117,6 +3275,7 @@ namespace Scribe.Forms
             this.BlockAddsToRoomListBox.Name = "BlockAddsToRoomListBox";
             this.BlockAddsToRoomListBox.Size = new System.Drawing.Size(295, 56);
             this.BlockAddsToRoomListBox.TabIndex = 37;
+            this.EditorToolTip.SetToolTip(this.BlockAddsToRoomListBox, "Qualities that a Room Recipe may look for.");
             // 
             // BlockAddBiomeTagButton
             // 
@@ -3178,6 +3337,7 @@ namespace Scribe.Forms
             this.BlockAddsToBiomeLabel.Size = new System.Drawing.Size(75, 13);
             this.BlockAddsToBiomeLabel.TabIndex = 39;
             this.BlockAddsToBiomeLabel.Text = "Adds to Biome";
+            this.EditorToolTip.SetToolTip(this.BlockAddsToBiomeLabel, "Describes the biome that this parquet helps form.");
             // 
             // BlockAddsToRoomLabel
             // 
@@ -3187,6 +3347,7 @@ namespace Scribe.Forms
             this.BlockAddsToRoomLabel.Size = new System.Drawing.Size(74, 13);
             this.BlockAddsToRoomLabel.TabIndex = 40;
             this.BlockAddsToRoomLabel.Text = "Adds to Room";
+            this.EditorToolTip.SetToolTip(this.BlockAddsToRoomLabel, "Qualities that a Room Recipe may look for.");
             // 
             // BlockPixelBox
             // 
@@ -3392,6 +3553,7 @@ namespace Scribe.Forms
             this.FurnishingAddsToRoomLabel.Size = new System.Drawing.Size(74, 13);
             this.FurnishingAddsToRoomLabel.TabIndex = 41;
             this.FurnishingAddsToRoomLabel.Text = "Adds to Room";
+            this.EditorToolTip.SetToolTip(this.FurnishingAddsToRoomLabel, "Qualities that a Room Recipe may look for.");
             // 
             // FurnishingAddsToBiomelabel
             // 
@@ -3401,23 +3563,7 @@ namespace Scribe.Forms
             this.FurnishingAddsToBiomelabel.Size = new System.Drawing.Size(75, 13);
             this.FurnishingAddsToBiomelabel.TabIndex = 40;
             this.FurnishingAddsToBiomelabel.Text = "Adds to Biome";
-            // 
-            // FurnishingEquivalentItemLabel
-            // 
-            this.FurnishingEquivalentItemLabel.AutoSize = true;
-            this.FurnishingEquivalentItemLabel.Location = new System.Drawing.Point(3, 135);
-            this.FurnishingEquivalentItemLabel.Name = "FurnishingEquivalentItemLabel";
-            this.FurnishingEquivalentItemLabel.Size = new System.Drawing.Size(82, 13);
-            this.FurnishingEquivalentItemLabel.TabIndex = 9;
-            this.FurnishingEquivalentItemLabel.Text = "Equivalent Item";
-            // 
-            // FurnishingEquivalentItemComboBox
-            // 
-            this.FurnishingEquivalentItemComboBox.FormattingEnabled = true;
-            this.FurnishingEquivalentItemComboBox.Location = new System.Drawing.Point(131, 138);
-            this.FurnishingEquivalentItemComboBox.Name = "FurnishingEquivalentItemComboBox";
-            this.FurnishingEquivalentItemComboBox.Size = new System.Drawing.Size(144, 21);
-            this.FurnishingEquivalentItemComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.FurnishingAddsToBiomelabel, "Describes the biome that this parquet helps form.");
             // 
             // FurnishingIsOpenableCheckBox
             // 
@@ -3517,6 +3663,7 @@ namespace Scribe.Forms
             this.FurnishingAddsToBiomeListBox.Name = "FurnishingAddsToBiomeListBox";
             this.FurnishingAddsToBiomeListBox.Size = new System.Drawing.Size(295, 56);
             this.FurnishingAddsToBiomeListBox.TabIndex = 37;
+            this.EditorToolTip.SetToolTip(this.FurnishingAddsToBiomeListBox, "Describes the biome that this parquet helps form.");
             // 
             // FurnishingAddsToRoomListBox
             // 
@@ -3529,6 +3676,7 @@ namespace Scribe.Forms
             this.FurnishingAddsToRoomListBox.Name = "FurnishingAddsToRoomListBox";
             this.FurnishingAddsToRoomListBox.Size = new System.Drawing.Size(295, 56);
             this.FurnishingAddsToRoomListBox.TabIndex = 37;
+            this.EditorToolTip.SetToolTip(this.FurnishingAddsToRoomListBox, "Qualities that a Room Recipe may look for.");
             // 
             // FurnishingAddBiomeTagButton
             // 
@@ -3805,6 +3953,7 @@ namespace Scribe.Forms
             this.CollectibleAddsToRoomLabel.Name = "CollectibleAddsToRoomLabel";
             this.CollectibleAddsToRoomLabel.Size = new System.Drawing.Size(74, 13);
             this.CollectibleAddsToRoomLabel.TabIndex = 41;
+            this.CollectibleAddsToRoomLabel.Tag = "Qualities that a Room Recipe may look for.";
             this.CollectibleAddsToRoomLabel.Text = "Adds to Room";
             // 
             // CollectibleAddsToBiomeLabel
@@ -3815,6 +3964,7 @@ namespace Scribe.Forms
             this.CollectibleAddsToBiomeLabel.Size = new System.Drawing.Size(75, 13);
             this.CollectibleAddsToBiomeLabel.TabIndex = 40;
             this.CollectibleAddsToBiomeLabel.Text = "Adds to Biome";
+            this.EditorToolTip.SetToolTip(this.CollectibleAddsToBiomeLabel, "Describes the biome that this parquet helps form.");
             // 
             // CollectibleEffectAmountTextBox
             // 
@@ -3830,23 +3980,6 @@ namespace Scribe.Forms
             this.CollectibleCollectionEffectComboBox.Name = "CollectibleCollectionEffectComboBox";
             this.CollectibleCollectionEffectComboBox.Size = new System.Drawing.Size(144, 21);
             this.CollectibleCollectionEffectComboBox.TabIndex = 29;
-            // 
-            // CollectibleEquivalentItemLabel
-            // 
-            this.CollectibleEquivalentItemLabel.AutoSize = true;
-            this.CollectibleEquivalentItemLabel.Location = new System.Drawing.Point(3, 135);
-            this.CollectibleEquivalentItemLabel.Name = "CollectibleEquivalentItemLabel";
-            this.CollectibleEquivalentItemLabel.Size = new System.Drawing.Size(82, 13);
-            this.CollectibleEquivalentItemLabel.TabIndex = 9;
-            this.CollectibleEquivalentItemLabel.Text = "Equivalent Item";
-            // 
-            // CollectibleEquivalentItemComboBox
-            // 
-            this.CollectibleEquivalentItemComboBox.FormattingEnabled = true;
-            this.CollectibleEquivalentItemComboBox.Location = new System.Drawing.Point(131, 138);
-            this.CollectibleEquivalentItemComboBox.Name = "CollectibleEquivalentItemComboBox";
-            this.CollectibleEquivalentItemComboBox.Size = new System.Drawing.Size(144, 21);
-            this.CollectibleEquivalentItemComboBox.TabIndex = 29;
             // 
             // CollectibleCollectionEffectLabel
             // 
@@ -3877,6 +4010,7 @@ namespace Scribe.Forms
             this.CollectibleAddsToBiomeListBox.Name = "CollectibleAddsToBiomeListBox";
             this.CollectibleAddsToBiomeListBox.Size = new System.Drawing.Size(295, 69);
             this.CollectibleAddsToBiomeListBox.TabIndex = 37;
+            this.EditorToolTip.SetToolTip(this.CollectibleAddsToBiomeListBox, "Describes the biome that this parquet helps form.");
             // 
             // CollectibleAddsToRoomListBox
             // 
@@ -3889,6 +4023,7 @@ namespace Scribe.Forms
             this.CollectibleAddsToRoomListBox.Name = "CollectibleAddsToRoomListBox";
             this.CollectibleAddsToRoomListBox.Size = new System.Drawing.Size(295, 69);
             this.CollectibleAddsToRoomListBox.TabIndex = 37;
+            this.CollectibleAddsToRoomListBox.Tag = "Qualities that a Room Recipe may look for.";
             // 
             // CollectibleAddBiomeTagButton
             // 
@@ -5035,16 +5170,6 @@ namespace Scribe.Forms
             this.ItemNameLabel.TabIndex = 0;
             this.ItemNameLabel.Text = "Name";
             // 
-            // ItemDescriptionLabel
-            // 
-            this.ItemDescriptionLabel.AutoSize = true;
-            this.ItemDescriptionLabel.Location = new System.Drawing.Point(3, 25);
-            this.ItemDescriptionLabel.Name = "ItemDescriptionLabel";
-            this.ItemDescriptionLabel.Size = new System.Drawing.Size(60, 13);
-            this.ItemDescriptionLabel.TabIndex = 3;
-            this.ItemDescriptionLabel.Text = "Description";
-            this.EditorToolTip.SetToolTip(this.ItemDescriptionLabel, "This explains to the player what this item is.");
-            // 
             // ItemSubtypeLabel
             // 
             this.ItemSubtypeLabel.AutoSize = true;
@@ -5096,19 +5221,6 @@ namespace Scribe.Forms
             this.ItemNameTextBox.Name = "ItemNameTextBox";
             this.ItemNameTextBox.Size = new System.Drawing.Size(144, 20);
             this.ItemNameTextBox.TabIndex = 23;
-            // 
-            // ItemDescriptionTextBox
-            // 
-            this.ItemDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemTableLayoutPanel.SetColumnSpan(this.ItemDescriptionTextBox, 2);
-            this.ItemDescriptionTextBox.Location = new System.Drawing.Point(131, 28);
-            this.ItemDescriptionTextBox.Multiline = true;
-            this.ItemDescriptionTextBox.Name = "ItemDescriptionTextBox";
-            this.ItemDescriptionTextBox.Size = new System.Drawing.Size(295, 49);
-            this.ItemDescriptionTextBox.TabIndex = 24;
-            this.EditorToolTip.SetToolTip(this.ItemDescriptionTextBox, "This explains to the player what this item is.");
             // 
             // ItemPriceTextBox
             // 
@@ -5435,16 +5547,6 @@ namespace Scribe.Forms
             this.BiomeNameLabel.TabIndex = 0;
             this.BiomeNameLabel.Text = "Name";
             // 
-            // BiomeDescriptionLabel
-            // 
-            this.BiomeDescriptionLabel.AutoSize = true;
-            this.BiomeDescriptionLabel.Location = new System.Drawing.Point(3, 25);
-            this.BiomeDescriptionLabel.Name = "BiomeDescriptionLabel";
-            this.BiomeDescriptionLabel.Size = new System.Drawing.Size(60, 13);
-            this.BiomeDescriptionLabel.TabIndex = 3;
-            this.BiomeDescriptionLabel.Text = "Description";
-            this.EditorToolTip.SetToolTip(this.BiomeDescriptionLabel, "Introduces this biome to the player.");
-            // 
             // BiomeTierLabel
             // 
             this.BiomeTierLabel.AutoSize = true;
@@ -5496,19 +5598,6 @@ namespace Scribe.Forms
             this.BiomeNameTextBox.Name = "BiomeNameTextBox";
             this.BiomeNameTextBox.Size = new System.Drawing.Size(144, 20);
             this.BiomeNameTextBox.TabIndex = 23;
-            // 
-            // BiomeDescriptionTextBox
-            // 
-            this.BiomeDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.BiomeTableLayoutPanel.SetColumnSpan(this.BiomeDescriptionTextBox, 2);
-            this.BiomeDescriptionTextBox.Location = new System.Drawing.Point(131, 28);
-            this.BiomeDescriptionTextBox.Multiline = true;
-            this.BiomeDescriptionTextBox.Name = "BiomeDescriptionTextBox";
-            this.BiomeDescriptionTextBox.Size = new System.Drawing.Size(295, 49);
-            this.BiomeDescriptionTextBox.TabIndex = 24;
-            this.EditorToolTip.SetToolTip(this.BiomeDescriptionTextBox, "Introduces this biome to the player.");
             // 
             // BiomeTierTextBox
             // 
@@ -5709,16 +5798,6 @@ namespace Scribe.Forms
             this.CraftingNameLabel.TabIndex = 0;
             this.CraftingNameLabel.Text = "Name";
             // 
-            // CraftingDescriptionLabel
-            // 
-            this.CraftingDescriptionLabel.AutoSize = true;
-            this.CraftingDescriptionLabel.Location = new System.Drawing.Point(3, 25);
-            this.CraftingDescriptionLabel.Name = "CraftingDescriptionLabel";
-            this.CraftingDescriptionLabel.Size = new System.Drawing.Size(60, 13);
-            this.CraftingDescriptionLabel.TabIndex = 3;
-            this.CraftingDescriptionLabel.Text = "Description";
-            this.EditorToolTip.SetToolTip(this.CraftingDescriptionLabel, "Explains this recipe\'s products.");
-            // 
             // CraftingIngredientsLabel
             // 
             this.CraftingIngredientsLabel.AutoSize = true;
@@ -5734,19 +5813,6 @@ namespace Scribe.Forms
             this.CraftingNameTextBox.Name = "CraftingNameTextBox";
             this.CraftingNameTextBox.Size = new System.Drawing.Size(136, 20);
             this.CraftingNameTextBox.TabIndex = 23;
-            // 
-            // CraftingDescriptionTextBox
-            // 
-            this.CraftingDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingTableLayoutPanel.SetColumnSpan(this.CraftingDescriptionTextBox, 2);
-            this.CraftingDescriptionTextBox.Location = new System.Drawing.Point(146, 28);
-            this.CraftingDescriptionTextBox.Multiline = true;
-            this.CraftingDescriptionTextBox.Name = "CraftingDescriptionTextBox";
-            this.CraftingDescriptionTextBox.Size = new System.Drawing.Size(280, 49);
-            this.CraftingDescriptionTextBox.TabIndex = 24;
-            this.EditorToolTip.SetToolTip(this.CraftingDescriptionTextBox, "Explains this recipe\'s products.");
             // 
             // CraftingProductsLabel
             // 
@@ -6179,16 +6245,6 @@ namespace Scribe.Forms
             this.RoomNameLabel.TabIndex = 0;
             this.RoomNameLabel.Text = "Name";
             // 
-            // RoomDescriptionLabel
-            // 
-            this.RoomDescriptionLabel.AutoSize = true;
-            this.RoomDescriptionLabel.Location = new System.Drawing.Point(3, 25);
-            this.RoomDescriptionLabel.Name = "RoomDescriptionLabel";
-            this.RoomDescriptionLabel.Size = new System.Drawing.Size(60, 13);
-            this.RoomDescriptionLabel.TabIndex = 3;
-            this.RoomDescriptionLabel.Text = "Description";
-            this.EditorToolTip.SetToolTip(this.RoomDescriptionLabel, "Introduces this type of room to the player.");
-            // 
             // RoomMinimumWalkableSpaces
             // 
             this.RoomMinimumWalkableSpaces.AutoSize = true;
@@ -6222,19 +6278,6 @@ namespace Scribe.Forms
             this.RoomNameTextBox.Name = "RoomNameTextBox";
             this.RoomNameTextBox.Size = new System.Drawing.Size(136, 20);
             this.RoomNameTextBox.TabIndex = 23;
-            // 
-            // RoomDescriptionTextBox
-            // 
-            this.RoomDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomTableLayoutPanel.SetColumnSpan(this.RoomDescriptionTextBox, 2);
-            this.RoomDescriptionTextBox.Location = new System.Drawing.Point(146, 28);
-            this.RoomDescriptionTextBox.Multiline = true;
-            this.RoomDescriptionTextBox.Name = "RoomDescriptionTextBox";
-            this.RoomDescriptionTextBox.Size = new System.Drawing.Size(280, 49);
-            this.RoomDescriptionTextBox.TabIndex = 24;
-            this.EditorToolTip.SetToolTip(this.RoomDescriptionTextBox, "Introduces this type of room to the player.");
             // 
             // RoomMinimumWalkableSpacesTextBox
             // 
@@ -6429,29 +6472,6 @@ namespace Scribe.Forms
             this.RegionNameTextBox.Name = "RegionNameTextBox";
             this.RegionNameTextBox.Size = new System.Drawing.Size(147, 20);
             this.RegionNameTextBox.TabIndex = 23;
-            // 
-            // RegionDescriptionLabel
-            // 
-            this.RegionDescriptionLabel.AutoSize = true;
-            this.RegionDescriptionLabel.Location = new System.Drawing.Point(3, 25);
-            this.RegionDescriptionLabel.Name = "RegionDescriptionLabel";
-            this.RegionDescriptionLabel.Size = new System.Drawing.Size(60, 13);
-            this.RegionDescriptionLabel.TabIndex = 3;
-            this.RegionDescriptionLabel.Text = "Description";
-            this.EditorToolTip.SetToolTip(this.RegionDescriptionLabel, "Optional.  Could be used to catalogue region details.");
-            // 
-            // RegionDescriptionTextBox
-            // 
-            this.RegionDescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.RegionTableLayoutPanel.SetColumnSpan(this.RegionDescriptionTextBox, 2);
-            this.RegionDescriptionTextBox.Location = new System.Drawing.Point(122, 28);
-            this.RegionDescriptionTextBox.Multiline = true;
-            this.RegionDescriptionTextBox.Name = "RegionDescriptionTextBox";
-            this.RegionDescriptionTextBox.Size = new System.Drawing.Size(304, 49);
-            this.RegionDescriptionTextBox.TabIndex = 24;
-            this.EditorToolTip.SetToolTip(this.RegionDescriptionTextBox, "Optional.  Could be used to catalogue region details.");
             // 
             // RegionBackgroundColorLabel
             // 
