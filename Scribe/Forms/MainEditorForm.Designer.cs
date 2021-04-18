@@ -2862,6 +2862,7 @@ namespace Scribe.Forms
             this.FloorRemoveRoomTagButton.Size = new System.Drawing.Size(129, 23);
             this.FloorRemoveRoomTagButton.TabIndex = 38;
             this.FloorRemoveRoomTagButton.Text = "Remove Room Tag";
+            this.EditorToolTip.SetToolTip(this.FloorRemoveRoomTagButton, "Delete selected tag.");
             this.FloorRemoveRoomTagButton.UseVisualStyleBackColor = false;
             this.FloorRemoveRoomTagButton.Click += new System.EventHandler(this.FloorRemoveRoomTagButton_Click);
             // 
@@ -2875,6 +2876,7 @@ namespace Scribe.Forms
             this.FloorRemoveBiomeTagButton.Size = new System.Drawing.Size(129, 23);
             this.FloorRemoveBiomeTagButton.TabIndex = 38;
             this.FloorRemoveBiomeTagButton.Text = "Remove Biome Tag";
+            this.EditorToolTip.SetToolTip(this.FloorRemoveBiomeTagButton, "Delete selected tag.");
             this.FloorRemoveBiomeTagButton.UseVisualStyleBackColor = false;
             this.FloorRemoveBiomeTagButton.Click += new System.EventHandler(this.FloorRemoveBiomeTagButton_Click);
             // 
@@ -2888,6 +2890,7 @@ namespace Scribe.Forms
             this.FloorAddRoomTagButton.Size = new System.Drawing.Size(129, 23);
             this.FloorAddRoomTagButton.TabIndex = 38;
             this.FloorAddRoomTagButton.Text = "Add Room Tag";
+            this.EditorToolTip.SetToolTip(this.FloorAddRoomTagButton, "Add new tag.");
             this.FloorAddRoomTagButton.UseVisualStyleBackColor = false;
             this.FloorAddRoomTagButton.Click += new System.EventHandler(this.FloorAddRoomTagButton_Click);
             // 
@@ -2976,6 +2979,7 @@ namespace Scribe.Forms
             this.FloorAddBiomeTagButton.Size = new System.Drawing.Size(129, 23);
             this.FloorAddBiomeTagButton.TabIndex = 38;
             this.FloorAddBiomeTagButton.Text = "Add Biome Tag";
+            this.EditorToolTip.SetToolTip(this.FloorAddBiomeTagButton, "Add new tag.");
             this.FloorAddBiomeTagButton.UseVisualStyleBackColor = false;
             this.FloorAddBiomeTagButton.Click += new System.EventHandler(this.FloorAddBiomeTagButton_Click);
             // 
@@ -3287,6 +3291,7 @@ namespace Scribe.Forms
             this.BlockAddBiomeTagButton.Size = new System.Drawing.Size(129, 22);
             this.BlockAddBiomeTagButton.TabIndex = 38;
             this.BlockAddBiomeTagButton.Text = "Add Biome Tag";
+            this.EditorToolTip.SetToolTip(this.BlockAddBiomeTagButton, "Add new tag.");
             this.BlockAddBiomeTagButton.UseVisualStyleBackColor = false;
             this.BlockAddBiomeTagButton.Click += new System.EventHandler(this.BlockAddBiomeTagButton_Click);
             // 
@@ -3300,6 +3305,7 @@ namespace Scribe.Forms
             this.BlockAddRoomTagButton.Size = new System.Drawing.Size(129, 22);
             this.BlockAddRoomTagButton.TabIndex = 38;
             this.BlockAddRoomTagButton.Text = "Add Room Tag";
+            this.EditorToolTip.SetToolTip(this.BlockAddRoomTagButton, "Add new tag.");
             this.BlockAddRoomTagButton.UseVisualStyleBackColor = false;
             this.BlockAddRoomTagButton.Click += new System.EventHandler(this.BlockAddRoomTagButton_Click);
             // 
@@ -3313,6 +3319,7 @@ namespace Scribe.Forms
             this.BlockRemoveBiomeTagButton.Size = new System.Drawing.Size(129, 22);
             this.BlockRemoveBiomeTagButton.TabIndex = 38;
             this.BlockRemoveBiomeTagButton.Text = "Remove Biome Tag";
+            this.EditorToolTip.SetToolTip(this.BlockRemoveBiomeTagButton, "Delete selected tag.");
             this.BlockRemoveBiomeTagButton.UseVisualStyleBackColor = false;
             this.BlockRemoveBiomeTagButton.Click += new System.EventHandler(this.BlockRemoveBiomeTagButton_Click);
             // 
@@ -3326,6 +3333,7 @@ namespace Scribe.Forms
             this.BlockRemoveRoomTagButton.Size = new System.Drawing.Size(129, 22);
             this.BlockRemoveRoomTagButton.TabIndex = 38;
             this.BlockRemoveRoomTagButton.Text = "Remove Room Tag";
+            this.EditorToolTip.SetToolTip(this.BlockRemoveRoomTagButton, "Delete selected tag.");
             this.BlockRemoveRoomTagButton.UseVisualStyleBackColor = false;
             this.BlockRemoveRoomTagButton.Click += new System.EventHandler(this.BlockRemoveRoomTagButton_Click);
             // 
@@ -3688,6 +3696,7 @@ namespace Scribe.Forms
             this.FurnishingAddBiomeTagButton.Size = new System.Drawing.Size(129, 23);
             this.FurnishingAddBiomeTagButton.TabIndex = 38;
             this.FurnishingAddBiomeTagButton.Text = "Add Biome Tag";
+            this.EditorToolTip.SetToolTip(this.FurnishingAddBiomeTagButton, "Add new tag.");
             this.FurnishingAddBiomeTagButton.UseVisualStyleBackColor = false;
             this.FurnishingAddBiomeTagButton.Click += new System.EventHandler(this.FurnishingAddBiomeTagButton_Click);
             // 
@@ -3701,6 +3710,7 @@ namespace Scribe.Forms
             this.FurnishingAddRoomTagButton.Size = new System.Drawing.Size(129, 23);
             this.FurnishingAddRoomTagButton.TabIndex = 38;
             this.FurnishingAddRoomTagButton.Text = "Add Room Tag";
+            this.EditorToolTip.SetToolTip(this.FurnishingAddRoomTagButton, "Add new tag.");
             this.FurnishingAddRoomTagButton.UseVisualStyleBackColor = false;
             this.FurnishingAddRoomTagButton.Click += new System.EventHandler(this.FurnishingAddRoomTagButton_Click);
             // 
@@ -3714,6 +3724,7 @@ namespace Scribe.Forms
             this.FurnishingRemoveRoomTagButton.Size = new System.Drawing.Size(129, 23);
             this.FurnishingRemoveRoomTagButton.TabIndex = 38;
             this.FurnishingRemoveRoomTagButton.Text = "Remove Room Tag";
+            this.EditorToolTip.SetToolTip(this.FurnishingRemoveRoomTagButton, "Delete selected tag.");
             this.FurnishingRemoveRoomTagButton.UseVisualStyleBackColor = false;
             this.FurnishingRemoveRoomTagButton.Click += new System.EventHandler(this.FurnishingRemoveRoomTagButton_Click);
             // 
@@ -3727,6 +3738,7 @@ namespace Scribe.Forms
             this.FurnishingRemoveBiomeTagButton.Size = new System.Drawing.Size(129, 23);
             this.FurnishingRemoveBiomeTagButton.TabIndex = 38;
             this.FurnishingRemoveBiomeTagButton.Text = "Remove Biome Tag";
+            this.EditorToolTip.SetToolTip(this.FurnishingRemoveBiomeTagButton, "Delete selected tag.");
             this.FurnishingRemoveBiomeTagButton.UseVisualStyleBackColor = false;
             this.FurnishingRemoveBiomeTagButton.Click += new System.EventHandler(this.FurnishingRemoveBiomeTagButton_Click);
             // 
@@ -4035,6 +4047,7 @@ namespace Scribe.Forms
             this.CollectibleAddBiomeTagButton.Size = new System.Drawing.Size(129, 23);
             this.CollectibleAddBiomeTagButton.TabIndex = 38;
             this.CollectibleAddBiomeTagButton.Text = "Add Biome Tag";
+            this.EditorToolTip.SetToolTip(this.CollectibleAddBiomeTagButton, "Add new tag.");
             this.CollectibleAddBiomeTagButton.UseVisualStyleBackColor = false;
             this.CollectibleAddBiomeTagButton.Click += new System.EventHandler(this.CollectibleAddBiomeTagButton_Click);
             // 
@@ -4048,6 +4061,7 @@ namespace Scribe.Forms
             this.CollectibleRemoveBiomeTagButton.Size = new System.Drawing.Size(129, 23);
             this.CollectibleRemoveBiomeTagButton.TabIndex = 38;
             this.CollectibleRemoveBiomeTagButton.Text = "Remove Biome Tag";
+            this.EditorToolTip.SetToolTip(this.CollectibleRemoveBiomeTagButton, "Delete selected tag.");
             this.CollectibleRemoveBiomeTagButton.UseVisualStyleBackColor = false;
             this.CollectibleRemoveBiomeTagButton.Click += new System.EventHandler(this.CollectibleRemoveBiomeTagButton_Click);
             // 
@@ -4061,6 +4075,7 @@ namespace Scribe.Forms
             this.CollectibleAddRoomTagButton.Size = new System.Drawing.Size(129, 23);
             this.CollectibleAddRoomTagButton.TabIndex = 38;
             this.CollectibleAddRoomTagButton.Text = "Add Room Tag";
+            this.EditorToolTip.SetToolTip(this.CollectibleAddRoomTagButton, "Add new tag.");
             this.CollectibleAddRoomTagButton.UseVisualStyleBackColor = false;
             this.CollectibleAddRoomTagButton.Click += new System.EventHandler(this.CollectibleAddRoomTagButton_Click);
             // 
@@ -4074,6 +4089,7 @@ namespace Scribe.Forms
             this.CollectibleRemoveRoomTagButton.Size = new System.Drawing.Size(129, 23);
             this.CollectibleRemoveRoomTagButton.TabIndex = 38;
             this.CollectibleRemoveRoomTagButton.Text = "Remove Room Tag";
+            this.EditorToolTip.SetToolTip(this.CollectibleRemoveRoomTagButton, "Delete selected tag.");
             this.CollectibleRemoveRoomTagButton.UseVisualStyleBackColor = false;
             this.CollectibleRemoveRoomTagButton.Click += new System.EventHandler(this.CollectibleRemoveRoomTagButton_Click);
             // 
