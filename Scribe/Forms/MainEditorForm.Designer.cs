@@ -3790,6 +3790,7 @@ namespace Scribe.Forms
             this.FurnishingIsFlammableCheckBox.Name = "FurnishingIsFlammableCheckBox";
             this.FurnishingIsFlammableCheckBox.Size = new System.Drawing.Size(15, 14);
             this.FurnishingIsFlammableCheckBox.TabIndex = 37;
+            this.EditorToolTip.SetToolTip(this.FurnishingIsFlammableCheckBox, "If checked, this can catch fire.");
             this.FurnishingIsFlammableCheckBox.UseVisualStyleBackColor = false;
             // 
             // FurnishingIsEnclosingCheckBox
@@ -3799,6 +3800,7 @@ namespace Scribe.Forms
             this.FurnishingIsEnclosingCheckBox.Name = "FurnishingIsEnclosingCheckBox";
             this.FurnishingIsEnclosingCheckBox.Size = new System.Drawing.Size(15, 14);
             this.FurnishingIsEnclosingCheckBox.TabIndex = 36;
+            this.EditorToolTip.SetToolTip(this.FurnishingIsEnclosingCheckBox, "If checked, this will act as a wall for room-detection purposes.");
             this.FurnishingIsEnclosingCheckBox.UseVisualStyleBackColor = false;
             // 
             // FurnishingIsWalkableCheckBox
@@ -3808,6 +3810,7 @@ namespace Scribe.Forms
             this.FurnishingIsWalkableCheckBox.Name = "FurnishingIsWalkableCheckBox";
             this.FurnishingIsWalkableCheckBox.Size = new System.Drawing.Size(15, 14);
             this.FurnishingIsWalkableCheckBox.TabIndex = 35;
+            this.EditorToolTip.SetToolTip(this.FurnishingIsWalkableCheckBox, "If checked, character can walk on this.");
             this.FurnishingIsWalkableCheckBox.UseVisualStyleBackColor = false;
             // 
             // FurnishingIsFlammableLabel
@@ -3818,6 +3821,7 @@ namespace Scribe.Forms
             this.FurnishingIsFlammableLabel.Size = new System.Drawing.Size(69, 13);
             this.FurnishingIsFlammableLabel.TabIndex = 33;
             this.FurnishingIsFlammableLabel.Text = "Is Flammable";
+            this.EditorToolTip.SetToolTip(this.FurnishingIsFlammableLabel, "If checked, this can catch fire.");
             // 
             // FurnishingIsEnclosingLabel
             // 
@@ -3827,6 +3831,7 @@ namespace Scribe.Forms
             this.FurnishingIsEnclosingLabel.Size = new System.Drawing.Size(63, 13);
             this.FurnishingIsEnclosingLabel.TabIndex = 32;
             this.FurnishingIsEnclosingLabel.Text = "Is Enclosing";
+            this.EditorToolTip.SetToolTip(this.FurnishingIsEnclosingLabel, "If checked, this will act as a wall for room-detection purposes.");
             // 
             // FurnishingIsWalkableLabel
             // 
@@ -3836,6 +3841,7 @@ namespace Scribe.Forms
             this.FurnishingIsWalkableLabel.Size = new System.Drawing.Size(62, 13);
             this.FurnishingIsWalkableLabel.TabIndex = 31;
             this.FurnishingIsWalkableLabel.Text = "Is Walkable";
+            this.EditorToolTip.SetToolTip(this.FurnishingIsWalkableLabel, "If checked, character can walk on this.");
             // 
             // FurnishingEntryTypeComboBox
             // 
@@ -3844,6 +3850,7 @@ namespace Scribe.Forms
             this.FurnishingEntryTypeComboBox.Name = "FurnishingEntryTypeComboBox";
             this.FurnishingEntryTypeComboBox.Size = new System.Drawing.Size(144, 21);
             this.FurnishingEntryTypeComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.FurnishingEntryTypeComboBox, "If and how this furnishing serves as a room entry.");
             // 
             // FurnishingEntryTypeLabel
             // 
@@ -3853,6 +3860,7 @@ namespace Scribe.Forms
             this.FurnishingEntryTypeLabel.Size = new System.Drawing.Size(60, 13);
             this.FurnishingEntryTypeLabel.TabIndex = 30;
             this.FurnishingEntryTypeLabel.Text = "Entry Type";
+            this.EditorToolTip.SetToolTip(this.FurnishingEntryTypeLabel, "If and how this furnishing serves as a room entry.");
             // 
             // FurnishingRemoveFurnishingButton
             // 
