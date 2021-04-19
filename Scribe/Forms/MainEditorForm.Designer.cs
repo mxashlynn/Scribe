@@ -3572,6 +3572,7 @@ namespace Scribe.Forms
             this.BlockGatherToolComboBox.Name = "BlockGatherToolComboBox";
             this.BlockGatherToolComboBox.Size = new System.Drawing.Size(144, 21);
             this.BlockGatherToolComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.BlockGatherToolComboBox, "The tool used to remove and aquire this parquet.");
             // 
             // BlockDroppedCollectibleIDComboBox
             // 
@@ -3580,6 +3581,7 @@ namespace Scribe.Forms
             this.BlockDroppedCollectibleIDComboBox.Name = "BlockDroppedCollectibleIDComboBox";
             this.BlockDroppedCollectibleIDComboBox.Size = new System.Drawing.Size(144, 21);
             this.BlockDroppedCollectibleIDComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.BlockDroppedCollectibleIDComboBox, "What collectible, if any, to spawn when this block is gathered.");
             // 
             // BlockGatherEffectComboBox
             // 
@@ -3588,6 +3590,7 @@ namespace Scribe.Forms
             this.BlockGatherEffectComboBox.Name = "BlockGatherEffectComboBox";
             this.BlockGatherEffectComboBox.Size = new System.Drawing.Size(144, 21);
             this.BlockGatherEffectComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.BlockGatherEffectComboBox, "The effect generated when a character gathers this parquet.");
             // 
             // BlockMaxToughnessTextBox
             // 
@@ -3595,6 +3598,7 @@ namespace Scribe.Forms
             this.BlockMaxToughnessTextBox.Name = "BlockMaxToughnessTextBox";
             this.BlockMaxToughnessTextBox.Size = new System.Drawing.Size(144, 20);
             this.BlockMaxToughnessTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.BlockMaxToughnessTextBox, "How hard it is to gather or destroy this block.  Think HP.");
             // 
             // BlockGatheringToolLabel
             // 
@@ -3604,6 +3608,7 @@ namespace Scribe.Forms
             this.BlockGatheringToolLabel.Size = new System.Drawing.Size(77, 13);
             this.BlockGatheringToolLabel.TabIndex = 30;
             this.BlockGatheringToolLabel.Text = "Gathering Tool";
+            this.EditorToolTip.SetToolTip(this.BlockGatheringToolLabel, "The tool used to remove and aquire this parquet.");
             // 
             // BlockGatheringEffectLabel
             // 
@@ -3613,6 +3618,7 @@ namespace Scribe.Forms
             this.BlockGatheringEffectLabel.Size = new System.Drawing.Size(86, 13);
             this.BlockGatheringEffectLabel.TabIndex = 31;
             this.BlockGatheringEffectLabel.Text = "Gathering Effect";
+            this.EditorToolTip.SetToolTip(this.BlockGatheringEffectLabel, "The effect generated when a character gathers this parquet.");
             // 
             // BlockDroppedCollectibleLabel
             // 
@@ -3622,6 +3628,7 @@ namespace Scribe.Forms
             this.BlockDroppedCollectibleLabel.Size = new System.Drawing.Size(99, 13);
             this.BlockDroppedCollectibleLabel.TabIndex = 32;
             this.BlockDroppedCollectibleLabel.Text = "Dropped Collectible";
+            this.EditorToolTip.SetToolTip(this.BlockDroppedCollectibleLabel, "What collectible, if any, to spawn when this block is gathered.");
             // 
             // BlockIsFlammableLabel
             // 
@@ -3631,6 +3638,7 @@ namespace Scribe.Forms
             this.BlockIsFlammableLabel.Size = new System.Drawing.Size(69, 13);
             this.BlockIsFlammableLabel.TabIndex = 33;
             this.BlockIsFlammableLabel.Text = "Is Flammable";
+            this.EditorToolTip.SetToolTip(this.BlockIsFlammableLabel, "If checked, this can catch fire.");
             // 
             // BlockIsLiquidLabel
             // 
@@ -3649,6 +3657,7 @@ namespace Scribe.Forms
             this.BlockMaxToughnessLabel.Size = new System.Drawing.Size(59, 13);
             this.BlockMaxToughnessLabel.TabIndex = 35;
             this.BlockMaxToughnessLabel.Text = "Toughness";
+            this.EditorToolTip.SetToolTip(this.BlockMaxToughnessLabel, "How hard it is to gather or destroy this block.  Think HP.");
             // 
             // BlockIsFlammableCheckBox
             // 
@@ -3657,6 +3666,7 @@ namespace Scribe.Forms
             this.BlockIsFlammableCheckBox.Name = "BlockIsFlammableCheckBox";
             this.BlockIsFlammableCheckBox.Size = new System.Drawing.Size(15, 14);
             this.BlockIsFlammableCheckBox.TabIndex = 36;
+            this.EditorToolTip.SetToolTip(this.BlockIsFlammableCheckBox, "If checked, this can catch fire.");
             this.BlockIsFlammableCheckBox.UseVisualStyleBackColor = false;
             // 
             // BlockIsLiquidCheckBox
