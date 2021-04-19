@@ -4076,6 +4076,7 @@ namespace Scribe.Forms
             this.CollectibleEffectAmountTextBox.Name = "CollectibleEffectAmountTextBox";
             this.CollectibleEffectAmountTextBox.Size = new System.Drawing.Size(144, 20);
             this.CollectibleEffectAmountTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.CollectibleEffectAmountTextBox, "The scale in points of the effect.");
             // 
             // CollectibleCollectionEffectComboBox
             // 
@@ -4084,6 +4085,7 @@ namespace Scribe.Forms
             this.CollectibleCollectionEffectComboBox.Name = "CollectibleCollectionEffectComboBox";
             this.CollectibleCollectionEffectComboBox.Size = new System.Drawing.Size(144, 21);
             this.CollectibleCollectionEffectComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.CollectibleCollectionEffectComboBox, "The effect generated when a character encounters this parquet.");
             // 
             // CollectibleCollectionEffectLabel
             // 
@@ -4093,6 +4095,7 @@ namespace Scribe.Forms
             this.CollectibleCollectionEffectLabel.Size = new System.Drawing.Size(85, 13);
             this.CollectibleCollectionEffectLabel.TabIndex = 30;
             this.CollectibleCollectionEffectLabel.Text = "Collection Effect";
+            this.EditorToolTip.SetToolTip(this.CollectibleCollectionEffectLabel, "The effect generated when a character encounters this parquet.");
             // 
             // CollectibleEffectAmountLabel
             // 
@@ -4102,6 +4105,7 @@ namespace Scribe.Forms
             this.CollectibleEffectAmountLabel.Size = new System.Drawing.Size(76, 13);
             this.CollectibleEffectAmountLabel.TabIndex = 31;
             this.CollectibleEffectAmountLabel.Text = "Effect Amount";
+            this.EditorToolTip.SetToolTip(this.CollectibleEffectAmountLabel, "The scale in points of the effect.");
             // 
             // CollectibleRemoveCollectibleButton
             // 
