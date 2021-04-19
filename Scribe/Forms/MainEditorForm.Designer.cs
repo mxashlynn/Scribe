@@ -212,6 +212,18 @@ namespace Scribe.Forms
             this.FloorAddsToRoomListBox = new System.Windows.Forms.ListBox();
             this.CollectibleAddsToRoomLabel = new System.Windows.Forms.Label();
             this.CollectibleAddsToRoomListBox = new System.Windows.Forms.ListBox();
+            this.FloorTrenchName = new System.Windows.Forms.Label();
+            this.FloorTrenchNameTextBox = new System.Windows.Forms.TextBox();
+            this.CollectibleEffectAmountTextBox = new System.Windows.Forms.TextBox();
+            this.CollectibleCollectionEffectComboBox = new System.Windows.Forms.ComboBox();
+            this.CollectibleCollectionEffectLabel = new System.Windows.Forms.Label();
+            this.CollectibleEffectAmountLabel = new System.Windows.Forms.Label();
+            this.FurnishingIsFlammableCheckBox = new System.Windows.Forms.CheckBox();
+            this.FurnishingIsEnclosingCheckBox = new System.Windows.Forms.CheckBox();
+            this.FurnishingIsWalkableCheckBox = new System.Windows.Forms.CheckBox();
+            this.FurnishingIsFlammableLabel = new System.Windows.Forms.Label();
+            this.FurnishingIsEnclosingLabel = new System.Windows.Forms.Label();
+            this.FurnishingIsWalkableLabel = new System.Windows.Forms.Label();
             this.EditorTabs = new System.Windows.Forms.TabControl();
             this.GamesTabPage = new System.Windows.Forms.TabPage();
             this.GameTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -232,8 +244,6 @@ namespace Scribe.Forms
             this.FloorDugOutLabel = new System.Windows.Forms.Label();
             this.FloorRemoveFloorButton = new System.Windows.Forms.Button();
             this.FloorLayoutTabelPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.FloorTrenchName = new System.Windows.Forms.Label();
-            this.FloorTrenchNameTextBox = new System.Windows.Forms.TextBox();
             this.FloorAddNewFloorButton = new System.Windows.Forms.Button();
             this.FloorConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.BlocksTabPage = new System.Windows.Forms.TabPage();
@@ -270,12 +280,6 @@ namespace Scribe.Forms
             this.FurnishingTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.FurnishingIsOpenableCheckBox = new System.Windows.Forms.CheckBox();
             this.FurnishingIsOpenableLabel = new System.Windows.Forms.Label();
-            this.FurnishingIsFlammableCheckBox = new System.Windows.Forms.CheckBox();
-            this.FurnishingIsEnclosingCheckBox = new System.Windows.Forms.CheckBox();
-            this.FurnishingIsWalkableCheckBox = new System.Windows.Forms.CheckBox();
-            this.FurnishingIsFlammableLabel = new System.Windows.Forms.Label();
-            this.FurnishingIsEnclosingLabel = new System.Windows.Forms.Label();
-            this.FurnishingIsWalkableLabel = new System.Windows.Forms.Label();
             this.FurnishingEntryTypeComboBox = new System.Windows.Forms.ComboBox();
             this.FurnishingEntryTypeLabel = new System.Windows.Forms.Label();
             this.FurnishingRemoveFurnishingButton = new System.Windows.Forms.Button();
@@ -293,10 +297,6 @@ namespace Scribe.Forms
             this.CollectibleFlavorStatic = new System.Windows.Forms.Label();
             this.CollectibleFlavorLabel = new System.Windows.Forms.Label();
             this.CollectibleTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.CollectibleEffectAmountTextBox = new System.Windows.Forms.TextBox();
-            this.CollectibleCollectionEffectComboBox = new System.Windows.Forms.ComboBox();
-            this.CollectibleCollectionEffectLabel = new System.Windows.Forms.Label();
-            this.CollectibleEffectAmountLabel = new System.Windows.Forms.Label();
             this.CollectibleRemoveCollectibleButton = new System.Windows.Forms.Button();
             this.CollectibleAddNewCollectibleButton = new System.Windows.Forms.Button();
             this.CollectiblePixelBox = new ParquetCustomControls.PixelBox();
@@ -2938,6 +2938,121 @@ namespace Scribe.Forms
             this.CollectibleAddsToRoomListBox.Tag = "";
             this.EditorToolTip.SetToolTip(this.CollectibleAddsToRoomListBox, "Qualities that a Room Recipe may look for.");
             // 
+            // FloorTrenchName
+            // 
+            this.FloorTrenchName.AutoSize = true;
+            this.FloorTrenchName.Location = new System.Drawing.Point(3, 395);
+            this.FloorTrenchName.Name = "FloorTrenchName";
+            this.FloorTrenchName.Size = new System.Drawing.Size(70, 13);
+            this.FloorTrenchName.TabIndex = 0;
+            this.FloorTrenchName.Text = "Trench Name";
+            this.EditorToolTip.SetToolTip(this.FloorTrenchName, "Player-facing name of the parquet, used when it has been dug out.");
+            // 
+            // FloorTrenchNameTextBox
+            // 
+            this.FloorTrenchNameTextBox.Location = new System.Drawing.Point(131, 398);
+            this.FloorTrenchNameTextBox.Name = "FloorTrenchNameTextBox";
+            this.FloorTrenchNameTextBox.Size = new System.Drawing.Size(144, 20);
+            this.FloorTrenchNameTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.FloorTrenchNameTextBox, "Player-facing name of the parquet, used when it has been dug out.");
+            // 
+            // CollectibleEffectAmountTextBox
+            // 
+            this.CollectibleEffectAmountTextBox.Location = new System.Drawing.Point(131, 398);
+            this.CollectibleEffectAmountTextBox.Name = "CollectibleEffectAmountTextBox";
+            this.CollectibleEffectAmountTextBox.Size = new System.Drawing.Size(144, 20);
+            this.CollectibleEffectAmountTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.CollectibleEffectAmountTextBox, "The scale in points of the effect.");
+            // 
+            // CollectibleCollectionEffectComboBox
+            // 
+            this.CollectibleCollectionEffectComboBox.FormattingEnabled = true;
+            this.CollectibleCollectionEffectComboBox.Location = new System.Drawing.Point(131, 373);
+            this.CollectibleCollectionEffectComboBox.Name = "CollectibleCollectionEffectComboBox";
+            this.CollectibleCollectionEffectComboBox.Size = new System.Drawing.Size(144, 21);
+            this.CollectibleCollectionEffectComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.CollectibleCollectionEffectComboBox, "The effect generated when a character encounters this parquet.");
+            // 
+            // CollectibleCollectionEffectLabel
+            // 
+            this.CollectibleCollectionEffectLabel.AutoSize = true;
+            this.CollectibleCollectionEffectLabel.Location = new System.Drawing.Point(3, 370);
+            this.CollectibleCollectionEffectLabel.Name = "CollectibleCollectionEffectLabel";
+            this.CollectibleCollectionEffectLabel.Size = new System.Drawing.Size(85, 13);
+            this.CollectibleCollectionEffectLabel.TabIndex = 30;
+            this.CollectibleCollectionEffectLabel.Text = "Collection Effect";
+            this.EditorToolTip.SetToolTip(this.CollectibleCollectionEffectLabel, "The effect generated when a character encounters this parquet.");
+            // 
+            // CollectibleEffectAmountLabel
+            // 
+            this.CollectibleEffectAmountLabel.AutoSize = true;
+            this.CollectibleEffectAmountLabel.Location = new System.Drawing.Point(3, 395);
+            this.CollectibleEffectAmountLabel.Name = "CollectibleEffectAmountLabel";
+            this.CollectibleEffectAmountLabel.Size = new System.Drawing.Size(76, 13);
+            this.CollectibleEffectAmountLabel.TabIndex = 31;
+            this.CollectibleEffectAmountLabel.Text = "Effect Amount";
+            this.EditorToolTip.SetToolTip(this.CollectibleEffectAmountLabel, "The scale in points of the effect.");
+            // 
+            // FurnishingIsFlammableCheckBox
+            // 
+            this.FurnishingIsFlammableCheckBox.AutoSize = true;
+            this.FurnishingIsFlammableCheckBox.Location = new System.Drawing.Point(131, 422);
+            this.FurnishingIsFlammableCheckBox.Name = "FurnishingIsFlammableCheckBox";
+            this.FurnishingIsFlammableCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.FurnishingIsFlammableCheckBox.TabIndex = 37;
+            this.EditorToolTip.SetToolTip(this.FurnishingIsFlammableCheckBox, "If checked, this can catch fire.");
+            this.FurnishingIsFlammableCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // FurnishingIsEnclosingCheckBox
+            // 
+            this.FurnishingIsEnclosingCheckBox.AutoSize = true;
+            this.FurnishingIsEnclosingCheckBox.Location = new System.Drawing.Point(131, 397);
+            this.FurnishingIsEnclosingCheckBox.Name = "FurnishingIsEnclosingCheckBox";
+            this.FurnishingIsEnclosingCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.FurnishingIsEnclosingCheckBox.TabIndex = 36;
+            this.EditorToolTip.SetToolTip(this.FurnishingIsEnclosingCheckBox, "If checked, this will act as a wall for room-detection purposes.");
+            this.FurnishingIsEnclosingCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // FurnishingIsWalkableCheckBox
+            // 
+            this.FurnishingIsWalkableCheckBox.AutoSize = true;
+            this.FurnishingIsWalkableCheckBox.Location = new System.Drawing.Point(131, 372);
+            this.FurnishingIsWalkableCheckBox.Name = "FurnishingIsWalkableCheckBox";
+            this.FurnishingIsWalkableCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.FurnishingIsWalkableCheckBox.TabIndex = 35;
+            this.EditorToolTip.SetToolTip(this.FurnishingIsWalkableCheckBox, "If checked, character can walk on this.");
+            this.FurnishingIsWalkableCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // FurnishingIsFlammableLabel
+            // 
+            this.FurnishingIsFlammableLabel.AutoSize = true;
+            this.FurnishingIsFlammableLabel.Location = new System.Drawing.Point(3, 419);
+            this.FurnishingIsFlammableLabel.Name = "FurnishingIsFlammableLabel";
+            this.FurnishingIsFlammableLabel.Size = new System.Drawing.Size(69, 13);
+            this.FurnishingIsFlammableLabel.TabIndex = 33;
+            this.FurnishingIsFlammableLabel.Text = "Is Flammable";
+            this.EditorToolTip.SetToolTip(this.FurnishingIsFlammableLabel, "If checked, this can catch fire.");
+            // 
+            // FurnishingIsEnclosingLabel
+            // 
+            this.FurnishingIsEnclosingLabel.AutoSize = true;
+            this.FurnishingIsEnclosingLabel.Location = new System.Drawing.Point(3, 394);
+            this.FurnishingIsEnclosingLabel.Name = "FurnishingIsEnclosingLabel";
+            this.FurnishingIsEnclosingLabel.Size = new System.Drawing.Size(63, 13);
+            this.FurnishingIsEnclosingLabel.TabIndex = 32;
+            this.FurnishingIsEnclosingLabel.Text = "Is Enclosing";
+            this.EditorToolTip.SetToolTip(this.FurnishingIsEnclosingLabel, "If checked, this will act as a wall for room-detection purposes.");
+            // 
+            // FurnishingIsWalkableLabel
+            // 
+            this.FurnishingIsWalkableLabel.AutoSize = true;
+            this.FurnishingIsWalkableLabel.Location = new System.Drawing.Point(3, 369);
+            this.FurnishingIsWalkableLabel.Name = "FurnishingIsWalkableLabel";
+            this.FurnishingIsWalkableLabel.Size = new System.Drawing.Size(62, 13);
+            this.FurnishingIsWalkableLabel.TabIndex = 31;
+            this.FurnishingIsWalkableLabel.Text = "Is Walkable";
+            this.EditorToolTip.SetToolTip(this.FurnishingIsWalkableLabel, "If checked, character can walk on this.");
+            // 
             // EditorTabs
             // 
             this.EditorTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -3280,24 +3395,6 @@ namespace Scribe.Forms
             this.FloorLayoutTabelPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.FloorLayoutTabelPanel.Size = new System.Drawing.Size(429, 446);
             this.FloorLayoutTabelPanel.TabIndex = 5;
-            // 
-            // FloorTrenchName
-            // 
-            this.FloorTrenchName.AutoSize = true;
-            this.FloorTrenchName.Location = new System.Drawing.Point(3, 395);
-            this.FloorTrenchName.Name = "FloorTrenchName";
-            this.FloorTrenchName.Size = new System.Drawing.Size(70, 13);
-            this.FloorTrenchName.TabIndex = 0;
-            this.FloorTrenchName.Text = "Trench Name";
-            this.EditorToolTip.SetToolTip(this.FloorTrenchName, "Player-facing name of the parquet, used when it has been dug out.");
-            // 
-            // FloorTrenchNameTextBox
-            // 
-            this.FloorTrenchNameTextBox.Location = new System.Drawing.Point(131, 398);
-            this.FloorTrenchNameTextBox.Name = "FloorTrenchNameTextBox";
-            this.FloorTrenchNameTextBox.Size = new System.Drawing.Size(144, 20);
-            this.FloorTrenchNameTextBox.TabIndex = 23;
-            this.EditorToolTip.SetToolTip(this.FloorTrenchNameTextBox, "Player-facing name of the parquet, used when it has been dug out.");
             // 
             // FloorAddNewFloorButton
             // 
@@ -3784,66 +3881,6 @@ namespace Scribe.Forms
             this.FurnishingIsOpenableLabel.TabIndex = 34;
             this.FurnishingIsOpenableLabel.Text = "Is Openable";
             // 
-            // FurnishingIsFlammableCheckBox
-            // 
-            this.FurnishingIsFlammableCheckBox.AutoSize = true;
-            this.FurnishingIsFlammableCheckBox.Location = new System.Drawing.Point(131, 422);
-            this.FurnishingIsFlammableCheckBox.Name = "FurnishingIsFlammableCheckBox";
-            this.FurnishingIsFlammableCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.FurnishingIsFlammableCheckBox.TabIndex = 37;
-            this.EditorToolTip.SetToolTip(this.FurnishingIsFlammableCheckBox, "If checked, this can catch fire.");
-            this.FurnishingIsFlammableCheckBox.UseVisualStyleBackColor = false;
-            // 
-            // FurnishingIsEnclosingCheckBox
-            // 
-            this.FurnishingIsEnclosingCheckBox.AutoSize = true;
-            this.FurnishingIsEnclosingCheckBox.Location = new System.Drawing.Point(131, 397);
-            this.FurnishingIsEnclosingCheckBox.Name = "FurnishingIsEnclosingCheckBox";
-            this.FurnishingIsEnclosingCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.FurnishingIsEnclosingCheckBox.TabIndex = 36;
-            this.EditorToolTip.SetToolTip(this.FurnishingIsEnclosingCheckBox, "If checked, this will act as a wall for room-detection purposes.");
-            this.FurnishingIsEnclosingCheckBox.UseVisualStyleBackColor = false;
-            // 
-            // FurnishingIsWalkableCheckBox
-            // 
-            this.FurnishingIsWalkableCheckBox.AutoSize = true;
-            this.FurnishingIsWalkableCheckBox.Location = new System.Drawing.Point(131, 372);
-            this.FurnishingIsWalkableCheckBox.Name = "FurnishingIsWalkableCheckBox";
-            this.FurnishingIsWalkableCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.FurnishingIsWalkableCheckBox.TabIndex = 35;
-            this.EditorToolTip.SetToolTip(this.FurnishingIsWalkableCheckBox, "If checked, character can walk on this.");
-            this.FurnishingIsWalkableCheckBox.UseVisualStyleBackColor = false;
-            // 
-            // FurnishingIsFlammableLabel
-            // 
-            this.FurnishingIsFlammableLabel.AutoSize = true;
-            this.FurnishingIsFlammableLabel.Location = new System.Drawing.Point(3, 419);
-            this.FurnishingIsFlammableLabel.Name = "FurnishingIsFlammableLabel";
-            this.FurnishingIsFlammableLabel.Size = new System.Drawing.Size(69, 13);
-            this.FurnishingIsFlammableLabel.TabIndex = 33;
-            this.FurnishingIsFlammableLabel.Text = "Is Flammable";
-            this.EditorToolTip.SetToolTip(this.FurnishingIsFlammableLabel, "If checked, this can catch fire.");
-            // 
-            // FurnishingIsEnclosingLabel
-            // 
-            this.FurnishingIsEnclosingLabel.AutoSize = true;
-            this.FurnishingIsEnclosingLabel.Location = new System.Drawing.Point(3, 394);
-            this.FurnishingIsEnclosingLabel.Name = "FurnishingIsEnclosingLabel";
-            this.FurnishingIsEnclosingLabel.Size = new System.Drawing.Size(63, 13);
-            this.FurnishingIsEnclosingLabel.TabIndex = 32;
-            this.FurnishingIsEnclosingLabel.Text = "Is Enclosing";
-            this.EditorToolTip.SetToolTip(this.FurnishingIsEnclosingLabel, "If checked, this will act as a wall for room-detection purposes.");
-            // 
-            // FurnishingIsWalkableLabel
-            // 
-            this.FurnishingIsWalkableLabel.AutoSize = true;
-            this.FurnishingIsWalkableLabel.Location = new System.Drawing.Point(3, 369);
-            this.FurnishingIsWalkableLabel.Name = "FurnishingIsWalkableLabel";
-            this.FurnishingIsWalkableLabel.Size = new System.Drawing.Size(62, 13);
-            this.FurnishingIsWalkableLabel.TabIndex = 31;
-            this.FurnishingIsWalkableLabel.Text = "Is Walkable";
-            this.EditorToolTip.SetToolTip(this.FurnishingIsWalkableLabel, "If checked, character can walk on this.");
-            // 
             // FurnishingEntryTypeComboBox
             // 
             this.FurnishingEntryTypeComboBox.FormattingEnabled = true;
@@ -4078,43 +4115,6 @@ namespace Scribe.Forms
             this.CollectibleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.CollectibleTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.CollectibleTableLayoutPanel.TabIndex = 5;
-            // 
-            // CollectibleEffectAmountTextBox
-            // 
-            this.CollectibleEffectAmountTextBox.Location = new System.Drawing.Point(131, 398);
-            this.CollectibleEffectAmountTextBox.Name = "CollectibleEffectAmountTextBox";
-            this.CollectibleEffectAmountTextBox.Size = new System.Drawing.Size(144, 20);
-            this.CollectibleEffectAmountTextBox.TabIndex = 23;
-            this.EditorToolTip.SetToolTip(this.CollectibleEffectAmountTextBox, "The scale in points of the effect.");
-            // 
-            // CollectibleCollectionEffectComboBox
-            // 
-            this.CollectibleCollectionEffectComboBox.FormattingEnabled = true;
-            this.CollectibleCollectionEffectComboBox.Location = new System.Drawing.Point(131, 373);
-            this.CollectibleCollectionEffectComboBox.Name = "CollectibleCollectionEffectComboBox";
-            this.CollectibleCollectionEffectComboBox.Size = new System.Drawing.Size(144, 21);
-            this.CollectibleCollectionEffectComboBox.TabIndex = 29;
-            this.EditorToolTip.SetToolTip(this.CollectibleCollectionEffectComboBox, "The effect generated when a character encounters this parquet.");
-            // 
-            // CollectibleCollectionEffectLabel
-            // 
-            this.CollectibleCollectionEffectLabel.AutoSize = true;
-            this.CollectibleCollectionEffectLabel.Location = new System.Drawing.Point(3, 370);
-            this.CollectibleCollectionEffectLabel.Name = "CollectibleCollectionEffectLabel";
-            this.CollectibleCollectionEffectLabel.Size = new System.Drawing.Size(85, 13);
-            this.CollectibleCollectionEffectLabel.TabIndex = 30;
-            this.CollectibleCollectionEffectLabel.Text = "Collection Effect";
-            this.EditorToolTip.SetToolTip(this.CollectibleCollectionEffectLabel, "The effect generated when a character encounters this parquet.");
-            // 
-            // CollectibleEffectAmountLabel
-            // 
-            this.CollectibleEffectAmountLabel.AutoSize = true;
-            this.CollectibleEffectAmountLabel.Location = new System.Drawing.Point(3, 395);
-            this.CollectibleEffectAmountLabel.Name = "CollectibleEffectAmountLabel";
-            this.CollectibleEffectAmountLabel.Size = new System.Drawing.Size(76, 13);
-            this.CollectibleEffectAmountLabel.TabIndex = 31;
-            this.CollectibleEffectAmountLabel.Text = "Effect Amount";
-            this.EditorToolTip.SetToolTip(this.CollectibleEffectAmountLabel, "The scale in points of the effect.");
             // 
             // CollectibleRemoveCollectibleButton
             // 
