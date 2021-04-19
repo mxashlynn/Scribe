@@ -178,6 +178,40 @@ namespace Scribe.Forms
             this.FurnishingEquivalentItemComboBox = new System.Windows.Forms.ComboBox();
             this.CollectibleEquivalentItemLabel = new System.Windows.Forms.Label();
             this.CollectibleEquivalentItemComboBox = new System.Windows.Forms.ComboBox();
+            this.FloorRemoveRoomTagButton = new System.Windows.Forms.Button();
+            this.FloorRemoveBiomeTagButton = new System.Windows.Forms.Button();
+            this.FloorAddRoomTagButton = new System.Windows.Forms.Button();
+            this.FloorAddBiomeTagButton = new System.Windows.Forms.Button();
+            this.BlockAddsToBiomeListBox = new System.Windows.Forms.ListBox();
+            this.BlockAddsToRoomListBox = new System.Windows.Forms.ListBox();
+            this.BlockAddBiomeTagButton = new System.Windows.Forms.Button();
+            this.BlockAddRoomTagButton = new System.Windows.Forms.Button();
+            this.BlockRemoveBiomeTagButton = new System.Windows.Forms.Button();
+            this.BlockRemoveRoomTagButton = new System.Windows.Forms.Button();
+            this.BlockAddsToBiomeLabel = new System.Windows.Forms.Label();
+            this.BlockAddsToRoomLabel = new System.Windows.Forms.Label();
+            this.FurnishingAddsToRoomLabel = new System.Windows.Forms.Label();
+            this.FurnishingAddsToBiomelabel = new System.Windows.Forms.Label();
+            this.FurnishingAddsToBiomeListBox = new System.Windows.Forms.ListBox();
+            this.FurnishingAddsToRoomListBox = new System.Windows.Forms.ListBox();
+            this.FurnishingAddBiomeTagButton = new System.Windows.Forms.Button();
+            this.FurnishingAddRoomTagButton = new System.Windows.Forms.Button();
+            this.FurnishingRemoveRoomTagButton = new System.Windows.Forms.Button();
+            this.FurnishingRemoveBiomeTagButton = new System.Windows.Forms.Button();
+            this.CollectibleAddsToBiomeLabel = new System.Windows.Forms.Label();
+            this.CollectibleAddsToBiomeListBox = new System.Windows.Forms.ListBox();
+            this.CollectibleAddBiomeTagButton = new System.Windows.Forms.Button();
+            this.CollectibleRemoveBiomeTagButton = new System.Windows.Forms.Button();
+            this.CollectibleAddRoomTagButton = new System.Windows.Forms.Button();
+            this.CollectibleRemoveRoomTagButton = new System.Windows.Forms.Button();
+            this.FloorModificationToolLabel = new System.Windows.Forms.Label();
+            this.FloorModificationToolComboBox = new System.Windows.Forms.ComboBox();
+            this.FloorAddsToBiomeLabel = new System.Windows.Forms.Label();
+            this.FloorAddsToRoomLabel = new System.Windows.Forms.Label();
+            this.FloorAddsToBiomeListBox = new System.Windows.Forms.ListBox();
+            this.FloorAddsToRoomListBox = new System.Windows.Forms.ListBox();
+            this.CollectibleAddsToRoomLabel = new System.Windows.Forms.Label();
+            this.CollectibleAddsToRoomListBox = new System.Windows.Forms.ListBox();
             this.EditorTabs = new System.Windows.Forms.TabControl();
             this.GamesTabPage = new System.Windows.Forms.TabPage();
             this.GameTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -198,18 +232,8 @@ namespace Scribe.Forms
             this.FloorDugOutLabel = new System.Windows.Forms.Label();
             this.FloorRemoveFloorButton = new System.Windows.Forms.Button();
             this.FloorLayoutTabelPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.FloorRemoveRoomTagButton = new System.Windows.Forms.Button();
-            this.FloorRemoveBiomeTagButton = new System.Windows.Forms.Button();
-            this.FloorAddRoomTagButton = new System.Windows.Forms.Button();
-            this.FloorModificationToolLabel = new System.Windows.Forms.Label();
-            this.FloorModificationToolComboBox = new System.Windows.Forms.ComboBox();
             this.FloorTrenchName = new System.Windows.Forms.Label();
             this.FloorTrenchNameTextBox = new System.Windows.Forms.TextBox();
-            this.FloorAddsToBiomeLabel = new System.Windows.Forms.Label();
-            this.FloorAddsToRoomLabel = new System.Windows.Forms.Label();
-            this.FloorAddsToBiomeListBox = new System.Windows.Forms.ListBox();
-            this.FloorAddsToRoomListBox = new System.Windows.Forms.ListBox();
-            this.FloorAddBiomeTagButton = new System.Windows.Forms.Button();
             this.FloorAddNewFloorButton = new System.Windows.Forms.Button();
             this.FloorConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.BlocksTabPage = new System.Windows.Forms.TabPage();
@@ -232,14 +256,6 @@ namespace Scribe.Forms
             this.BlockMaxToughnessLabel = new System.Windows.Forms.Label();
             this.BlockIsFlammableCheckBox = new System.Windows.Forms.CheckBox();
             this.BlockIsLiquidCheckBox = new System.Windows.Forms.CheckBox();
-            this.BlockAddsToBiomeListBox = new System.Windows.Forms.ListBox();
-            this.BlockAddsToRoomListBox = new System.Windows.Forms.ListBox();
-            this.BlockAddBiomeTagButton = new System.Windows.Forms.Button();
-            this.BlockAddRoomTagButton = new System.Windows.Forms.Button();
-            this.BlockRemoveBiomeTagButton = new System.Windows.Forms.Button();
-            this.BlockRemoveRoomTagButton = new System.Windows.Forms.Button();
-            this.BlockAddsToBiomeLabel = new System.Windows.Forms.Label();
-            this.BlockAddsToRoomLabel = new System.Windows.Forms.Label();
             this.BlockPixelBox = new ParquetCustomControls.PixelBox();
             this.BlockAddNewBlockButton = new System.Windows.Forms.Button();
             this.BlockRemoveBlockButton = new System.Windows.Forms.Button();
@@ -252,8 +268,6 @@ namespace Scribe.Forms
             this.FurnishingFlavorStatic = new System.Windows.Forms.Label();
             this.FurnishingFlavorLabel = new System.Windows.Forms.Label();
             this.FurnishingTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.FurnishingAddsToRoomLabel = new System.Windows.Forms.Label();
-            this.FurnishingAddsToBiomelabel = new System.Windows.Forms.Label();
             this.FurnishingIsOpenableCheckBox = new System.Windows.Forms.CheckBox();
             this.FurnishingIsOpenableLabel = new System.Windows.Forms.Label();
             this.FurnishingIsFlammableCheckBox = new System.Windows.Forms.CheckBox();
@@ -264,12 +278,6 @@ namespace Scribe.Forms
             this.FurnishingIsWalkableLabel = new System.Windows.Forms.Label();
             this.FurnishingEntryTypeComboBox = new System.Windows.Forms.ComboBox();
             this.FurnishingEntryTypeLabel = new System.Windows.Forms.Label();
-            this.FurnishingAddsToBiomeListBox = new System.Windows.Forms.ListBox();
-            this.FurnishingAddsToRoomListBox = new System.Windows.Forms.ListBox();
-            this.FurnishingAddBiomeTagButton = new System.Windows.Forms.Button();
-            this.FurnishingAddRoomTagButton = new System.Windows.Forms.Button();
-            this.FurnishingRemoveRoomTagButton = new System.Windows.Forms.Button();
-            this.FurnishingRemoveBiomeTagButton = new System.Windows.Forms.Button();
             this.FurnishingRemoveFurnishingButton = new System.Windows.Forms.Button();
             this.FurnishingAddNewFurnishingButton = new System.Windows.Forms.Button();
             this.FurnishingOpenPixelBox = new ParquetCustomControls.PixelBox();
@@ -285,18 +293,10 @@ namespace Scribe.Forms
             this.CollectibleFlavorStatic = new System.Windows.Forms.Label();
             this.CollectibleFlavorLabel = new System.Windows.Forms.Label();
             this.CollectibleTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.CollectibleAddsToRoomLabel = new System.Windows.Forms.Label();
-            this.CollectibleAddsToBiomeLabel = new System.Windows.Forms.Label();
             this.CollectibleEffectAmountTextBox = new System.Windows.Forms.TextBox();
             this.CollectibleCollectionEffectComboBox = new System.Windows.Forms.ComboBox();
             this.CollectibleCollectionEffectLabel = new System.Windows.Forms.Label();
             this.CollectibleEffectAmountLabel = new System.Windows.Forms.Label();
-            this.CollectibleAddsToBiomeListBox = new System.Windows.Forms.ListBox();
-            this.CollectibleAddsToRoomListBox = new System.Windows.Forms.ListBox();
-            this.CollectibleAddBiomeTagButton = new System.Windows.Forms.Button();
-            this.CollectibleRemoveBiomeTagButton = new System.Windows.Forms.Button();
-            this.CollectibleAddRoomTagButton = new System.Windows.Forms.Button();
-            this.CollectibleRemoveRoomTagButton = new System.Windows.Forms.Button();
             this.CollectibleRemoveCollectibleButton = new System.Windows.Forms.Button();
             this.CollectibleAddNewCollectibleButton = new System.Windows.Forms.Button();
             this.CollectiblePixelBox = new ParquetCustomControls.PixelBox();
@@ -2509,6 +2509,435 @@ namespace Scribe.Forms
             this.CollectibleEquivalentItemComboBox.TabIndex = 29;
             this.EditorToolTip.SetToolTip(this.CollectibleEquivalentItemComboBox, "An item that represents this parquet when carried by a character.");
             // 
+            // FloorRemoveRoomTagButton
+            // 
+            this.FloorRemoveRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorRemoveRoomTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorRemoveRoomTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FloorRemoveRoomTagButton.Location = new System.Drawing.Point(146, 343);
+            this.FloorRemoveRoomTagButton.Name = "FloorRemoveRoomTagButton";
+            this.FloorRemoveRoomTagButton.Size = new System.Drawing.Size(129, 23);
+            this.FloorRemoveRoomTagButton.TabIndex = 38;
+            this.FloorRemoveRoomTagButton.Text = "Remove Room Tag";
+            this.EditorToolTip.SetToolTip(this.FloorRemoveRoomTagButton, "Delete selected tag.");
+            this.FloorRemoveRoomTagButton.UseVisualStyleBackColor = false;
+            this.FloorRemoveRoomTagButton.Click += new System.EventHandler(this.FloorRemoveRoomTagButton_Click);
+            // 
+            // FloorRemoveBiomeTagButton
+            // 
+            this.FloorRemoveBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorRemoveBiomeTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorRemoveBiomeTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FloorRemoveBiomeTagButton.Location = new System.Drawing.Point(146, 238);
+            this.FloorRemoveBiomeTagButton.Name = "FloorRemoveBiomeTagButton";
+            this.FloorRemoveBiomeTagButton.Size = new System.Drawing.Size(129, 23);
+            this.FloorRemoveBiomeTagButton.TabIndex = 38;
+            this.FloorRemoveBiomeTagButton.Text = "Remove Biome Tag";
+            this.EditorToolTip.SetToolTip(this.FloorRemoveBiomeTagButton, "Delete selected tag.");
+            this.FloorRemoveBiomeTagButton.UseVisualStyleBackColor = false;
+            this.FloorRemoveBiomeTagButton.Click += new System.EventHandler(this.FloorRemoveBiomeTagButton_Click);
+            // 
+            // FloorAddRoomTagButton
+            // 
+            this.FloorAddRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorAddRoomTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorAddRoomTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FloorAddRoomTagButton.Location = new System.Drawing.Point(297, 343);
+            this.FloorAddRoomTagButton.Name = "FloorAddRoomTagButton";
+            this.FloorAddRoomTagButton.Size = new System.Drawing.Size(129, 23);
+            this.FloorAddRoomTagButton.TabIndex = 38;
+            this.FloorAddRoomTagButton.Text = "Add Room Tag";
+            this.EditorToolTip.SetToolTip(this.FloorAddRoomTagButton, "Add new tag.");
+            this.FloorAddRoomTagButton.UseVisualStyleBackColor = false;
+            this.FloorAddRoomTagButton.Click += new System.EventHandler(this.FloorAddRoomTagButton_Click);
+            // 
+            // FloorAddBiomeTagButton
+            // 
+            this.FloorAddBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorAddBiomeTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorAddBiomeTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FloorAddBiomeTagButton.Location = new System.Drawing.Point(297, 238);
+            this.FloorAddBiomeTagButton.Name = "FloorAddBiomeTagButton";
+            this.FloorAddBiomeTagButton.Size = new System.Drawing.Size(129, 23);
+            this.FloorAddBiomeTagButton.TabIndex = 38;
+            this.FloorAddBiomeTagButton.Text = "Add Biome Tag";
+            this.EditorToolTip.SetToolTip(this.FloorAddBiomeTagButton, "Add new tag.");
+            this.FloorAddBiomeTagButton.UseVisualStyleBackColor = false;
+            this.FloorAddBiomeTagButton.Click += new System.EventHandler(this.FloorAddBiomeTagButton_Click);
+            // 
+            // BlockAddsToBiomeListBox
+            // 
+            this.BlockAddsToBiomeListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlockTableLayoutPanel.SetColumnSpan(this.BlockAddsToBiomeListBox, 2);
+            this.BlockAddsToBiomeListBox.FormattingEnabled = true;
+            this.BlockAddsToBiomeListBox.Location = new System.Drawing.Point(131, 163);
+            this.BlockAddsToBiomeListBox.Name = "BlockAddsToBiomeListBox";
+            this.BlockAddsToBiomeListBox.Size = new System.Drawing.Size(295, 56);
+            this.BlockAddsToBiomeListBox.TabIndex = 37;
+            this.EditorToolTip.SetToolTip(this.BlockAddsToBiomeListBox, "Describes the biome that this parquet helps form.");
+            // 
+            // BlockAddsToRoomListBox
+            // 
+            this.BlockAddsToRoomListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlockTableLayoutPanel.SetColumnSpan(this.BlockAddsToRoomListBox, 2);
+            this.BlockAddsToRoomListBox.FormattingEnabled = true;
+            this.BlockAddsToRoomListBox.Location = new System.Drawing.Point(131, 253);
+            this.BlockAddsToRoomListBox.Name = "BlockAddsToRoomListBox";
+            this.BlockAddsToRoomListBox.Size = new System.Drawing.Size(295, 56);
+            this.BlockAddsToRoomListBox.TabIndex = 37;
+            this.EditorToolTip.SetToolTip(this.BlockAddsToRoomListBox, "Qualities that a Room Recipe may look for.");
+            // 
+            // BlockAddBiomeTagButton
+            // 
+            this.BlockAddBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlockAddBiomeTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BlockAddBiomeTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BlockAddBiomeTagButton.Location = new System.Drawing.Point(297, 225);
+            this.BlockAddBiomeTagButton.Name = "BlockAddBiomeTagButton";
+            this.BlockAddBiomeTagButton.Size = new System.Drawing.Size(129, 22);
+            this.BlockAddBiomeTagButton.TabIndex = 38;
+            this.BlockAddBiomeTagButton.Text = "Add Biome Tag";
+            this.EditorToolTip.SetToolTip(this.BlockAddBiomeTagButton, "Add new tag.");
+            this.BlockAddBiomeTagButton.UseVisualStyleBackColor = false;
+            this.BlockAddBiomeTagButton.Click += new System.EventHandler(this.BlockAddBiomeTagButton_Click);
+            // 
+            // BlockAddRoomTagButton
+            // 
+            this.BlockAddRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlockAddRoomTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BlockAddRoomTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BlockAddRoomTagButton.Location = new System.Drawing.Point(297, 315);
+            this.BlockAddRoomTagButton.Name = "BlockAddRoomTagButton";
+            this.BlockAddRoomTagButton.Size = new System.Drawing.Size(129, 22);
+            this.BlockAddRoomTagButton.TabIndex = 38;
+            this.BlockAddRoomTagButton.Text = "Add Room Tag";
+            this.EditorToolTip.SetToolTip(this.BlockAddRoomTagButton, "Add new tag.");
+            this.BlockAddRoomTagButton.UseVisualStyleBackColor = false;
+            this.BlockAddRoomTagButton.Click += new System.EventHandler(this.BlockAddRoomTagButton_Click);
+            // 
+            // BlockRemoveBiomeTagButton
+            // 
+            this.BlockRemoveBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlockRemoveBiomeTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BlockRemoveBiomeTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BlockRemoveBiomeTagButton.Location = new System.Drawing.Point(146, 225);
+            this.BlockRemoveBiomeTagButton.Name = "BlockRemoveBiomeTagButton";
+            this.BlockRemoveBiomeTagButton.Size = new System.Drawing.Size(129, 22);
+            this.BlockRemoveBiomeTagButton.TabIndex = 38;
+            this.BlockRemoveBiomeTagButton.Text = "Remove Biome Tag";
+            this.EditorToolTip.SetToolTip(this.BlockRemoveBiomeTagButton, "Delete selected tag.");
+            this.BlockRemoveBiomeTagButton.UseVisualStyleBackColor = false;
+            this.BlockRemoveBiomeTagButton.Click += new System.EventHandler(this.BlockRemoveBiomeTagButton_Click);
+            // 
+            // BlockRemoveRoomTagButton
+            // 
+            this.BlockRemoveRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlockRemoveRoomTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BlockRemoveRoomTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BlockRemoveRoomTagButton.Location = new System.Drawing.Point(146, 315);
+            this.BlockRemoveRoomTagButton.Name = "BlockRemoveRoomTagButton";
+            this.BlockRemoveRoomTagButton.Size = new System.Drawing.Size(129, 22);
+            this.BlockRemoveRoomTagButton.TabIndex = 38;
+            this.BlockRemoveRoomTagButton.Text = "Remove Room Tag";
+            this.EditorToolTip.SetToolTip(this.BlockRemoveRoomTagButton, "Delete selected tag.");
+            this.BlockRemoveRoomTagButton.UseVisualStyleBackColor = false;
+            this.BlockRemoveRoomTagButton.Click += new System.EventHandler(this.BlockRemoveRoomTagButton_Click);
+            // 
+            // BlockAddsToBiomeLabel
+            // 
+            this.BlockAddsToBiomeLabel.AutoSize = true;
+            this.BlockAddsToBiomeLabel.Location = new System.Drawing.Point(3, 160);
+            this.BlockAddsToBiomeLabel.Name = "BlockAddsToBiomeLabel";
+            this.BlockAddsToBiomeLabel.Size = new System.Drawing.Size(75, 13);
+            this.BlockAddsToBiomeLabel.TabIndex = 39;
+            this.BlockAddsToBiomeLabel.Text = "Adds to Biome";
+            this.EditorToolTip.SetToolTip(this.BlockAddsToBiomeLabel, "Describes the biome that this parquet helps form.");
+            // 
+            // BlockAddsToRoomLabel
+            // 
+            this.BlockAddsToRoomLabel.AutoSize = true;
+            this.BlockAddsToRoomLabel.Location = new System.Drawing.Point(3, 250);
+            this.BlockAddsToRoomLabel.Name = "BlockAddsToRoomLabel";
+            this.BlockAddsToRoomLabel.Size = new System.Drawing.Size(74, 13);
+            this.BlockAddsToRoomLabel.TabIndex = 40;
+            this.BlockAddsToRoomLabel.Text = "Adds to Room";
+            this.EditorToolTip.SetToolTip(this.BlockAddsToRoomLabel, "Qualities that a Room Recipe may look for.");
+            // 
+            // FurnishingAddsToRoomLabel
+            // 
+            this.FurnishingAddsToRoomLabel.AutoSize = true;
+            this.FurnishingAddsToRoomLabel.Location = new System.Drawing.Point(3, 252);
+            this.FurnishingAddsToRoomLabel.Name = "FurnishingAddsToRoomLabel";
+            this.FurnishingAddsToRoomLabel.Size = new System.Drawing.Size(74, 13);
+            this.FurnishingAddsToRoomLabel.TabIndex = 41;
+            this.FurnishingAddsToRoomLabel.Text = "Adds to Room";
+            this.EditorToolTip.SetToolTip(this.FurnishingAddsToRoomLabel, "Qualities that a Room Recipe may look for.");
+            // 
+            // FurnishingAddsToBiomelabel
+            // 
+            this.FurnishingAddsToBiomelabel.AutoSize = true;
+            this.FurnishingAddsToBiomelabel.Location = new System.Drawing.Point(3, 160);
+            this.FurnishingAddsToBiomelabel.Name = "FurnishingAddsToBiomelabel";
+            this.FurnishingAddsToBiomelabel.Size = new System.Drawing.Size(75, 13);
+            this.FurnishingAddsToBiomelabel.TabIndex = 40;
+            this.FurnishingAddsToBiomelabel.Text = "Adds to Biome";
+            this.EditorToolTip.SetToolTip(this.FurnishingAddsToBiomelabel, "Describes the biome that this parquet helps form.");
+            // 
+            // FurnishingAddsToBiomeListBox
+            // 
+            this.FurnishingAddsToBiomeListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingTableLayoutPanel.SetColumnSpan(this.FurnishingAddsToBiomeListBox, 2);
+            this.FurnishingAddsToBiomeListBox.FormattingEnabled = true;
+            this.FurnishingAddsToBiomeListBox.Location = new System.Drawing.Point(131, 163);
+            this.FurnishingAddsToBiomeListBox.Name = "FurnishingAddsToBiomeListBox";
+            this.FurnishingAddsToBiomeListBox.Size = new System.Drawing.Size(295, 56);
+            this.FurnishingAddsToBiomeListBox.TabIndex = 37;
+            this.EditorToolTip.SetToolTip(this.FurnishingAddsToBiomeListBox, "Describes the biome that this parquet helps form.");
+            // 
+            // FurnishingAddsToRoomListBox
+            // 
+            this.FurnishingAddsToRoomListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingTableLayoutPanel.SetColumnSpan(this.FurnishingAddsToRoomListBox, 2);
+            this.FurnishingAddsToRoomListBox.FormattingEnabled = true;
+            this.FurnishingAddsToRoomListBox.Location = new System.Drawing.Point(131, 255);
+            this.FurnishingAddsToRoomListBox.Name = "FurnishingAddsToRoomListBox";
+            this.FurnishingAddsToRoomListBox.Size = new System.Drawing.Size(295, 56);
+            this.FurnishingAddsToRoomListBox.TabIndex = 37;
+            this.EditorToolTip.SetToolTip(this.FurnishingAddsToRoomListBox, "Qualities that a Room Recipe may look for.");
+            // 
+            // FurnishingAddBiomeTagButton
+            // 
+            this.FurnishingAddBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingAddBiomeTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingAddBiomeTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FurnishingAddBiomeTagButton.Location = new System.Drawing.Point(297, 225);
+            this.FurnishingAddBiomeTagButton.Name = "FurnishingAddBiomeTagButton";
+            this.FurnishingAddBiomeTagButton.Size = new System.Drawing.Size(129, 23);
+            this.FurnishingAddBiomeTagButton.TabIndex = 38;
+            this.FurnishingAddBiomeTagButton.Text = "Add Biome Tag";
+            this.EditorToolTip.SetToolTip(this.FurnishingAddBiomeTagButton, "Add new tag.");
+            this.FurnishingAddBiomeTagButton.UseVisualStyleBackColor = false;
+            this.FurnishingAddBiomeTagButton.Click += new System.EventHandler(this.FurnishingAddBiomeTagButton_Click);
+            // 
+            // FurnishingAddRoomTagButton
+            // 
+            this.FurnishingAddRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingAddRoomTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingAddRoomTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FurnishingAddRoomTagButton.Location = new System.Drawing.Point(297, 317);
+            this.FurnishingAddRoomTagButton.Name = "FurnishingAddRoomTagButton";
+            this.FurnishingAddRoomTagButton.Size = new System.Drawing.Size(129, 23);
+            this.FurnishingAddRoomTagButton.TabIndex = 38;
+            this.FurnishingAddRoomTagButton.Text = "Add Room Tag";
+            this.EditorToolTip.SetToolTip(this.FurnishingAddRoomTagButton, "Add new tag.");
+            this.FurnishingAddRoomTagButton.UseVisualStyleBackColor = false;
+            this.FurnishingAddRoomTagButton.Click += new System.EventHandler(this.FurnishingAddRoomTagButton_Click);
+            // 
+            // FurnishingRemoveRoomTagButton
+            // 
+            this.FurnishingRemoveRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingRemoveRoomTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingRemoveRoomTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FurnishingRemoveRoomTagButton.Location = new System.Drawing.Point(146, 317);
+            this.FurnishingRemoveRoomTagButton.Name = "FurnishingRemoveRoomTagButton";
+            this.FurnishingRemoveRoomTagButton.Size = new System.Drawing.Size(129, 23);
+            this.FurnishingRemoveRoomTagButton.TabIndex = 38;
+            this.FurnishingRemoveRoomTagButton.Text = "Remove Room Tag";
+            this.EditorToolTip.SetToolTip(this.FurnishingRemoveRoomTagButton, "Delete selected tag.");
+            this.FurnishingRemoveRoomTagButton.UseVisualStyleBackColor = false;
+            this.FurnishingRemoveRoomTagButton.Click += new System.EventHandler(this.FurnishingRemoveRoomTagButton_Click);
+            // 
+            // FurnishingRemoveBiomeTagButton
+            // 
+            this.FurnishingRemoveBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingRemoveBiomeTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingRemoveBiomeTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FurnishingRemoveBiomeTagButton.Location = new System.Drawing.Point(146, 225);
+            this.FurnishingRemoveBiomeTagButton.Name = "FurnishingRemoveBiomeTagButton";
+            this.FurnishingRemoveBiomeTagButton.Size = new System.Drawing.Size(129, 23);
+            this.FurnishingRemoveBiomeTagButton.TabIndex = 38;
+            this.FurnishingRemoveBiomeTagButton.Text = "Remove Biome Tag";
+            this.EditorToolTip.SetToolTip(this.FurnishingRemoveBiomeTagButton, "Delete selected tag.");
+            this.FurnishingRemoveBiomeTagButton.UseVisualStyleBackColor = false;
+            this.FurnishingRemoveBiomeTagButton.Click += new System.EventHandler(this.FurnishingRemoveBiomeTagButton_Click);
+            // 
+            // CollectibleAddsToBiomeLabel
+            // 
+            this.CollectibleAddsToBiomeLabel.AutoSize = true;
+            this.CollectibleAddsToBiomeLabel.Location = new System.Drawing.Point(3, 160);
+            this.CollectibleAddsToBiomeLabel.Name = "CollectibleAddsToBiomeLabel";
+            this.CollectibleAddsToBiomeLabel.Size = new System.Drawing.Size(75, 13);
+            this.CollectibleAddsToBiomeLabel.TabIndex = 40;
+            this.CollectibleAddsToBiomeLabel.Text = "Adds to Biome";
+            this.EditorToolTip.SetToolTip(this.CollectibleAddsToBiomeLabel, "Describes the biome that this parquet helps form.");
+            // 
+            // CollectibleAddsToBiomeListBox
+            // 
+            this.CollectibleAddsToBiomeListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleTableLayoutPanel.SetColumnSpan(this.CollectibleAddsToBiomeListBox, 2);
+            this.CollectibleAddsToBiomeListBox.FormattingEnabled = true;
+            this.CollectibleAddsToBiomeListBox.Location = new System.Drawing.Point(131, 163);
+            this.CollectibleAddsToBiomeListBox.Name = "CollectibleAddsToBiomeListBox";
+            this.CollectibleAddsToBiomeListBox.Size = new System.Drawing.Size(295, 69);
+            this.CollectibleAddsToBiomeListBox.TabIndex = 37;
+            this.EditorToolTip.SetToolTip(this.CollectibleAddsToBiomeListBox, "Describes the biome that this parquet helps form.");
+            // 
+            // CollectibleAddBiomeTagButton
+            // 
+            this.CollectibleAddBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleAddBiomeTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CollectibleAddBiomeTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CollectibleAddBiomeTagButton.Location = new System.Drawing.Point(297, 238);
+            this.CollectibleAddBiomeTagButton.Name = "CollectibleAddBiomeTagButton";
+            this.CollectibleAddBiomeTagButton.Size = new System.Drawing.Size(129, 23);
+            this.CollectibleAddBiomeTagButton.TabIndex = 38;
+            this.CollectibleAddBiomeTagButton.Text = "Add Biome Tag";
+            this.EditorToolTip.SetToolTip(this.CollectibleAddBiomeTagButton, "Add new tag.");
+            this.CollectibleAddBiomeTagButton.UseVisualStyleBackColor = false;
+            this.CollectibleAddBiomeTagButton.Click += new System.EventHandler(this.CollectibleAddBiomeTagButton_Click);
+            // 
+            // CollectibleRemoveBiomeTagButton
+            // 
+            this.CollectibleRemoveBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleRemoveBiomeTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CollectibleRemoveBiomeTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CollectibleRemoveBiomeTagButton.Location = new System.Drawing.Point(146, 238);
+            this.CollectibleRemoveBiomeTagButton.Name = "CollectibleRemoveBiomeTagButton";
+            this.CollectibleRemoveBiomeTagButton.Size = new System.Drawing.Size(129, 23);
+            this.CollectibleRemoveBiomeTagButton.TabIndex = 38;
+            this.CollectibleRemoveBiomeTagButton.Text = "Remove Biome Tag";
+            this.EditorToolTip.SetToolTip(this.CollectibleRemoveBiomeTagButton, "Delete selected tag.");
+            this.CollectibleRemoveBiomeTagButton.UseVisualStyleBackColor = false;
+            this.CollectibleRemoveBiomeTagButton.Click += new System.EventHandler(this.CollectibleRemoveBiomeTagButton_Click);
+            // 
+            // CollectibleAddRoomTagButton
+            // 
+            this.CollectibleAddRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleAddRoomTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CollectibleAddRoomTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CollectibleAddRoomTagButton.Location = new System.Drawing.Point(297, 343);
+            this.CollectibleAddRoomTagButton.Name = "CollectibleAddRoomTagButton";
+            this.CollectibleAddRoomTagButton.Size = new System.Drawing.Size(129, 23);
+            this.CollectibleAddRoomTagButton.TabIndex = 38;
+            this.CollectibleAddRoomTagButton.Text = "Add Room Tag";
+            this.EditorToolTip.SetToolTip(this.CollectibleAddRoomTagButton, "Add new tag.");
+            this.CollectibleAddRoomTagButton.UseVisualStyleBackColor = false;
+            this.CollectibleAddRoomTagButton.Click += new System.EventHandler(this.CollectibleAddRoomTagButton_Click);
+            // 
+            // CollectibleRemoveRoomTagButton
+            // 
+            this.CollectibleRemoveRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleRemoveRoomTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CollectibleRemoveRoomTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CollectibleRemoveRoomTagButton.Location = new System.Drawing.Point(146, 343);
+            this.CollectibleRemoveRoomTagButton.Name = "CollectibleRemoveRoomTagButton";
+            this.CollectibleRemoveRoomTagButton.Size = new System.Drawing.Size(129, 23);
+            this.CollectibleRemoveRoomTagButton.TabIndex = 38;
+            this.CollectibleRemoveRoomTagButton.Text = "Remove Room Tag";
+            this.EditorToolTip.SetToolTip(this.CollectibleRemoveRoomTagButton, "Delete selected tag.");
+            this.CollectibleRemoveRoomTagButton.UseVisualStyleBackColor = false;
+            this.CollectibleRemoveRoomTagButton.Click += new System.EventHandler(this.CollectibleRemoveRoomTagButton_Click);
+            // 
+            // FloorModificationToolLabel
+            // 
+            this.FloorModificationToolLabel.AutoSize = true;
+            this.FloorModificationToolLabel.Location = new System.Drawing.Point(3, 370);
+            this.FloorModificationToolLabel.Name = "FloorModificationToolLabel";
+            this.FloorModificationToolLabel.Size = new System.Drawing.Size(87, 13);
+            this.FloorModificationToolLabel.TabIndex = 12;
+            this.FloorModificationToolLabel.Text = "Modification Tool";
+            this.EditorToolTip.SetToolTip(this.FloorModificationToolLabel, "The tool used to dig out or fill in the floor.");
+            // 
+            // FloorModificationToolComboBox
+            // 
+            this.FloorModificationToolComboBox.FormattingEnabled = true;
+            this.FloorModificationToolComboBox.Location = new System.Drawing.Point(131, 373);
+            this.FloorModificationToolComboBox.Name = "FloorModificationToolComboBox";
+            this.FloorModificationToolComboBox.Size = new System.Drawing.Size(144, 21);
+            this.FloorModificationToolComboBox.TabIndex = 34;
+            this.EditorToolTip.SetToolTip(this.FloorModificationToolComboBox, "The tool used to dig out or fill in the floor.");
+            // 
+            // FloorAddsToBiomeLabel
+            // 
+            this.FloorAddsToBiomeLabel.AutoSize = true;
+            this.FloorAddsToBiomeLabel.Location = new System.Drawing.Point(3, 160);
+            this.FloorAddsToBiomeLabel.Name = "FloorAddsToBiomeLabel";
+            this.FloorAddsToBiomeLabel.Size = new System.Drawing.Size(75, 13);
+            this.FloorAddsToBiomeLabel.TabIndex = 35;
+            this.FloorAddsToBiomeLabel.Text = "Adds to Biome";
+            this.EditorToolTip.SetToolTip(this.FloorAddsToBiomeLabel, "Describes the biome that this parquet helps form.");
+            // 
+            // FloorAddsToRoomLabel
+            // 
+            this.FloorAddsToRoomLabel.AutoSize = true;
+            this.FloorAddsToRoomLabel.Location = new System.Drawing.Point(3, 265);
+            this.FloorAddsToRoomLabel.Name = "FloorAddsToRoomLabel";
+            this.FloorAddsToRoomLabel.Size = new System.Drawing.Size(74, 13);
+            this.FloorAddsToRoomLabel.TabIndex = 36;
+            this.FloorAddsToRoomLabel.Text = "Adds to Room";
+            this.EditorToolTip.SetToolTip(this.FloorAddsToRoomLabel, "Qualities that a Room Recipe may look for.");
+            // 
+            // FloorAddsToBiomeListBox
+            // 
+            this.FloorAddsToBiomeListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorLayoutTabelPanel.SetColumnSpan(this.FloorAddsToBiomeListBox, 2);
+            this.FloorAddsToBiomeListBox.FormattingEnabled = true;
+            this.FloorAddsToBiomeListBox.Location = new System.Drawing.Point(131, 163);
+            this.FloorAddsToBiomeListBox.Name = "FloorAddsToBiomeListBox";
+            this.FloorAddsToBiomeListBox.Size = new System.Drawing.Size(295, 69);
+            this.FloorAddsToBiomeListBox.TabIndex = 37;
+            this.EditorToolTip.SetToolTip(this.FloorAddsToBiomeListBox, "Describes the biome that this parquet helps form.");
+            // 
+            // FloorAddsToRoomListBox
+            // 
+            this.FloorAddsToRoomListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorLayoutTabelPanel.SetColumnSpan(this.FloorAddsToRoomListBox, 2);
+            this.FloorAddsToRoomListBox.FormattingEnabled = true;
+            this.FloorAddsToRoomListBox.Location = new System.Drawing.Point(131, 268);
+            this.FloorAddsToRoomListBox.Name = "FloorAddsToRoomListBox";
+            this.FloorAddsToRoomListBox.Size = new System.Drawing.Size(295, 69);
+            this.FloorAddsToRoomListBox.TabIndex = 37;
+            this.EditorToolTip.SetToolTip(this.FloorAddsToRoomListBox, "Qualities that a Room Recipe may look for.");
+            // 
+            // CollectibleAddsToRoomLabel
+            // 
+            this.CollectibleAddsToRoomLabel.AutoSize = true;
+            this.CollectibleAddsToRoomLabel.Location = new System.Drawing.Point(3, 265);
+            this.CollectibleAddsToRoomLabel.Name = "CollectibleAddsToRoomLabel";
+            this.CollectibleAddsToRoomLabel.Size = new System.Drawing.Size(74, 13);
+            this.CollectibleAddsToRoomLabel.TabIndex = 41;
+            this.CollectibleAddsToRoomLabel.Tag = "";
+            this.CollectibleAddsToRoomLabel.Text = "Adds to Room";
+            this.EditorToolTip.SetToolTip(this.CollectibleAddsToRoomLabel, "Qualities that a Room Recipe may look for.");
+            // 
+            // CollectibleAddsToRoomListBox
+            // 
+            this.CollectibleAddsToRoomListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleTableLayoutPanel.SetColumnSpan(this.CollectibleAddsToRoomListBox, 2);
+            this.CollectibleAddsToRoomListBox.FormattingEnabled = true;
+            this.CollectibleAddsToRoomListBox.Location = new System.Drawing.Point(131, 268);
+            this.CollectibleAddsToRoomListBox.Name = "CollectibleAddsToRoomListBox";
+            this.CollectibleAddsToRoomListBox.Size = new System.Drawing.Size(295, 69);
+            this.CollectibleAddsToRoomListBox.TabIndex = 37;
+            this.CollectibleAddsToRoomListBox.Tag = "";
+            this.EditorToolTip.SetToolTip(this.CollectibleAddsToRoomListBox, "Qualities that a Room Recipe may look for.");
+            // 
             // EditorTabs
             // 
             this.EditorTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -2852,65 +3281,6 @@ namespace Scribe.Forms
             this.FloorLayoutTabelPanel.Size = new System.Drawing.Size(429, 446);
             this.FloorLayoutTabelPanel.TabIndex = 5;
             // 
-            // FloorRemoveRoomTagButton
-            // 
-            this.FloorRemoveRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorRemoveRoomTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FloorRemoveRoomTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FloorRemoveRoomTagButton.Location = new System.Drawing.Point(146, 343);
-            this.FloorRemoveRoomTagButton.Name = "FloorRemoveRoomTagButton";
-            this.FloorRemoveRoomTagButton.Size = new System.Drawing.Size(129, 23);
-            this.FloorRemoveRoomTagButton.TabIndex = 38;
-            this.FloorRemoveRoomTagButton.Text = "Remove Room Tag";
-            this.EditorToolTip.SetToolTip(this.FloorRemoveRoomTagButton, "Delete selected tag.");
-            this.FloorRemoveRoomTagButton.UseVisualStyleBackColor = false;
-            this.FloorRemoveRoomTagButton.Click += new System.EventHandler(this.FloorRemoveRoomTagButton_Click);
-            // 
-            // FloorRemoveBiomeTagButton
-            // 
-            this.FloorRemoveBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorRemoveBiomeTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FloorRemoveBiomeTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FloorRemoveBiomeTagButton.Location = new System.Drawing.Point(146, 238);
-            this.FloorRemoveBiomeTagButton.Name = "FloorRemoveBiomeTagButton";
-            this.FloorRemoveBiomeTagButton.Size = new System.Drawing.Size(129, 23);
-            this.FloorRemoveBiomeTagButton.TabIndex = 38;
-            this.FloorRemoveBiomeTagButton.Text = "Remove Biome Tag";
-            this.EditorToolTip.SetToolTip(this.FloorRemoveBiomeTagButton, "Delete selected tag.");
-            this.FloorRemoveBiomeTagButton.UseVisualStyleBackColor = false;
-            this.FloorRemoveBiomeTagButton.Click += new System.EventHandler(this.FloorRemoveBiomeTagButton_Click);
-            // 
-            // FloorAddRoomTagButton
-            // 
-            this.FloorAddRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorAddRoomTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FloorAddRoomTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FloorAddRoomTagButton.Location = new System.Drawing.Point(297, 343);
-            this.FloorAddRoomTagButton.Name = "FloorAddRoomTagButton";
-            this.FloorAddRoomTagButton.Size = new System.Drawing.Size(129, 23);
-            this.FloorAddRoomTagButton.TabIndex = 38;
-            this.FloorAddRoomTagButton.Text = "Add Room Tag";
-            this.EditorToolTip.SetToolTip(this.FloorAddRoomTagButton, "Add new tag.");
-            this.FloorAddRoomTagButton.UseVisualStyleBackColor = false;
-            this.FloorAddRoomTagButton.Click += new System.EventHandler(this.FloorAddRoomTagButton_Click);
-            // 
-            // FloorModificationToolLabel
-            // 
-            this.FloorModificationToolLabel.AutoSize = true;
-            this.FloorModificationToolLabel.Location = new System.Drawing.Point(3, 370);
-            this.FloorModificationToolLabel.Name = "FloorModificationToolLabel";
-            this.FloorModificationToolLabel.Size = new System.Drawing.Size(87, 13);
-            this.FloorModificationToolLabel.TabIndex = 12;
-            this.FloorModificationToolLabel.Text = "Modification Tool";
-            // 
-            // FloorModificationToolComboBox
-            // 
-            this.FloorModificationToolComboBox.FormattingEnabled = true;
-            this.FloorModificationToolComboBox.Location = new System.Drawing.Point(131, 373);
-            this.FloorModificationToolComboBox.Name = "FloorModificationToolComboBox";
-            this.FloorModificationToolComboBox.Size = new System.Drawing.Size(144, 21);
-            this.FloorModificationToolComboBox.TabIndex = 34;
-            // 
             // FloorTrenchName
             // 
             this.FloorTrenchName.AutoSize = true;
@@ -2919,6 +3289,7 @@ namespace Scribe.Forms
             this.FloorTrenchName.Size = new System.Drawing.Size(70, 13);
             this.FloorTrenchName.TabIndex = 0;
             this.FloorTrenchName.Text = "Trench Name";
+            this.EditorToolTip.SetToolTip(this.FloorTrenchName, "Player-facing name of the parquet, used when it has been dug out.");
             // 
             // FloorTrenchNameTextBox
             // 
@@ -2926,62 +3297,7 @@ namespace Scribe.Forms
             this.FloorTrenchNameTextBox.Name = "FloorTrenchNameTextBox";
             this.FloorTrenchNameTextBox.Size = new System.Drawing.Size(144, 20);
             this.FloorTrenchNameTextBox.TabIndex = 23;
-            // 
-            // FloorAddsToBiomeLabel
-            // 
-            this.FloorAddsToBiomeLabel.AutoSize = true;
-            this.FloorAddsToBiomeLabel.Location = new System.Drawing.Point(3, 160);
-            this.FloorAddsToBiomeLabel.Name = "FloorAddsToBiomeLabel";
-            this.FloorAddsToBiomeLabel.Size = new System.Drawing.Size(75, 13);
-            this.FloorAddsToBiomeLabel.TabIndex = 35;
-            this.FloorAddsToBiomeLabel.Text = "Adds to Biome";
-            // 
-            // FloorAddsToRoomLabel
-            // 
-            this.FloorAddsToRoomLabel.AutoSize = true;
-            this.FloorAddsToRoomLabel.Location = new System.Drawing.Point(3, 265);
-            this.FloorAddsToRoomLabel.Name = "FloorAddsToRoomLabel";
-            this.FloorAddsToRoomLabel.Size = new System.Drawing.Size(74, 13);
-            this.FloorAddsToRoomLabel.TabIndex = 36;
-            this.FloorAddsToRoomLabel.Text = "Adds to Room";
-            // 
-            // FloorAddsToBiomeListBox
-            // 
-            this.FloorAddsToBiomeListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorLayoutTabelPanel.SetColumnSpan(this.FloorAddsToBiomeListBox, 2);
-            this.FloorAddsToBiomeListBox.FormattingEnabled = true;
-            this.FloorAddsToBiomeListBox.Location = new System.Drawing.Point(131, 163);
-            this.FloorAddsToBiomeListBox.Name = "FloorAddsToBiomeListBox";
-            this.FloorAddsToBiomeListBox.Size = new System.Drawing.Size(295, 69);
-            this.FloorAddsToBiomeListBox.TabIndex = 37;
-            // 
-            // FloorAddsToRoomListBox
-            // 
-            this.FloorAddsToRoomListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorLayoutTabelPanel.SetColumnSpan(this.FloorAddsToRoomListBox, 2);
-            this.FloorAddsToRoomListBox.FormattingEnabled = true;
-            this.FloorAddsToRoomListBox.Location = new System.Drawing.Point(131, 268);
-            this.FloorAddsToRoomListBox.Name = "FloorAddsToRoomListBox";
-            this.FloorAddsToRoomListBox.Size = new System.Drawing.Size(295, 69);
-            this.FloorAddsToRoomListBox.TabIndex = 37;
-            // 
-            // FloorAddBiomeTagButton
-            // 
-            this.FloorAddBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorAddBiomeTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FloorAddBiomeTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FloorAddBiomeTagButton.Location = new System.Drawing.Point(297, 238);
-            this.FloorAddBiomeTagButton.Name = "FloorAddBiomeTagButton";
-            this.FloorAddBiomeTagButton.Size = new System.Drawing.Size(129, 23);
-            this.FloorAddBiomeTagButton.TabIndex = 38;
-            this.FloorAddBiomeTagButton.Text = "Add Biome Tag";
-            this.EditorToolTip.SetToolTip(this.FloorAddBiomeTagButton, "Add new tag.");
-            this.FloorAddBiomeTagButton.UseVisualStyleBackColor = false;
-            this.FloorAddBiomeTagButton.Click += new System.EventHandler(this.FloorAddBiomeTagButton_Click);
+            this.EditorToolTip.SetToolTip(this.FloorTrenchNameTextBox, "Player-facing name of the parquet, used when it has been dug out.");
             // 
             // FloorAddNewFloorButton
             // 
@@ -3255,108 +3571,6 @@ namespace Scribe.Forms
             this.BlockIsLiquidCheckBox.TabIndex = 37;
             this.BlockIsLiquidCheckBox.UseVisualStyleBackColor = false;
             // 
-            // BlockAddsToBiomeListBox
-            // 
-            this.BlockAddsToBiomeListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlockTableLayoutPanel.SetColumnSpan(this.BlockAddsToBiomeListBox, 2);
-            this.BlockAddsToBiomeListBox.FormattingEnabled = true;
-            this.BlockAddsToBiomeListBox.Location = new System.Drawing.Point(131, 163);
-            this.BlockAddsToBiomeListBox.Name = "BlockAddsToBiomeListBox";
-            this.BlockAddsToBiomeListBox.Size = new System.Drawing.Size(295, 56);
-            this.BlockAddsToBiomeListBox.TabIndex = 37;
-            this.EditorToolTip.SetToolTip(this.BlockAddsToBiomeListBox, "Describes the biome that this parquet helps form.");
-            // 
-            // BlockAddsToRoomListBox
-            // 
-            this.BlockAddsToRoomListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlockTableLayoutPanel.SetColumnSpan(this.BlockAddsToRoomListBox, 2);
-            this.BlockAddsToRoomListBox.FormattingEnabled = true;
-            this.BlockAddsToRoomListBox.Location = new System.Drawing.Point(131, 253);
-            this.BlockAddsToRoomListBox.Name = "BlockAddsToRoomListBox";
-            this.BlockAddsToRoomListBox.Size = new System.Drawing.Size(295, 56);
-            this.BlockAddsToRoomListBox.TabIndex = 37;
-            this.EditorToolTip.SetToolTip(this.BlockAddsToRoomListBox, "Qualities that a Room Recipe may look for.");
-            // 
-            // BlockAddBiomeTagButton
-            // 
-            this.BlockAddBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlockAddBiomeTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BlockAddBiomeTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BlockAddBiomeTagButton.Location = new System.Drawing.Point(297, 225);
-            this.BlockAddBiomeTagButton.Name = "BlockAddBiomeTagButton";
-            this.BlockAddBiomeTagButton.Size = new System.Drawing.Size(129, 22);
-            this.BlockAddBiomeTagButton.TabIndex = 38;
-            this.BlockAddBiomeTagButton.Text = "Add Biome Tag";
-            this.EditorToolTip.SetToolTip(this.BlockAddBiomeTagButton, "Add new tag.");
-            this.BlockAddBiomeTagButton.UseVisualStyleBackColor = false;
-            this.BlockAddBiomeTagButton.Click += new System.EventHandler(this.BlockAddBiomeTagButton_Click);
-            // 
-            // BlockAddRoomTagButton
-            // 
-            this.BlockAddRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlockAddRoomTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BlockAddRoomTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BlockAddRoomTagButton.Location = new System.Drawing.Point(297, 315);
-            this.BlockAddRoomTagButton.Name = "BlockAddRoomTagButton";
-            this.BlockAddRoomTagButton.Size = new System.Drawing.Size(129, 22);
-            this.BlockAddRoomTagButton.TabIndex = 38;
-            this.BlockAddRoomTagButton.Text = "Add Room Tag";
-            this.EditorToolTip.SetToolTip(this.BlockAddRoomTagButton, "Add new tag.");
-            this.BlockAddRoomTagButton.UseVisualStyleBackColor = false;
-            this.BlockAddRoomTagButton.Click += new System.EventHandler(this.BlockAddRoomTagButton_Click);
-            // 
-            // BlockRemoveBiomeTagButton
-            // 
-            this.BlockRemoveBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlockRemoveBiomeTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BlockRemoveBiomeTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BlockRemoveBiomeTagButton.Location = new System.Drawing.Point(146, 225);
-            this.BlockRemoveBiomeTagButton.Name = "BlockRemoveBiomeTagButton";
-            this.BlockRemoveBiomeTagButton.Size = new System.Drawing.Size(129, 22);
-            this.BlockRemoveBiomeTagButton.TabIndex = 38;
-            this.BlockRemoveBiomeTagButton.Text = "Remove Biome Tag";
-            this.EditorToolTip.SetToolTip(this.BlockRemoveBiomeTagButton, "Delete selected tag.");
-            this.BlockRemoveBiomeTagButton.UseVisualStyleBackColor = false;
-            this.BlockRemoveBiomeTagButton.Click += new System.EventHandler(this.BlockRemoveBiomeTagButton_Click);
-            // 
-            // BlockRemoveRoomTagButton
-            // 
-            this.BlockRemoveRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlockRemoveRoomTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BlockRemoveRoomTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BlockRemoveRoomTagButton.Location = new System.Drawing.Point(146, 315);
-            this.BlockRemoveRoomTagButton.Name = "BlockRemoveRoomTagButton";
-            this.BlockRemoveRoomTagButton.Size = new System.Drawing.Size(129, 22);
-            this.BlockRemoveRoomTagButton.TabIndex = 38;
-            this.BlockRemoveRoomTagButton.Text = "Remove Room Tag";
-            this.EditorToolTip.SetToolTip(this.BlockRemoveRoomTagButton, "Delete selected tag.");
-            this.BlockRemoveRoomTagButton.UseVisualStyleBackColor = false;
-            this.BlockRemoveRoomTagButton.Click += new System.EventHandler(this.BlockRemoveRoomTagButton_Click);
-            // 
-            // BlockAddsToBiomeLabel
-            // 
-            this.BlockAddsToBiomeLabel.AutoSize = true;
-            this.BlockAddsToBiomeLabel.Location = new System.Drawing.Point(3, 160);
-            this.BlockAddsToBiomeLabel.Name = "BlockAddsToBiomeLabel";
-            this.BlockAddsToBiomeLabel.Size = new System.Drawing.Size(75, 13);
-            this.BlockAddsToBiomeLabel.TabIndex = 39;
-            this.BlockAddsToBiomeLabel.Text = "Adds to Biome";
-            this.EditorToolTip.SetToolTip(this.BlockAddsToBiomeLabel, "Describes the biome that this parquet helps form.");
-            // 
-            // BlockAddsToRoomLabel
-            // 
-            this.BlockAddsToRoomLabel.AutoSize = true;
-            this.BlockAddsToRoomLabel.Location = new System.Drawing.Point(3, 250);
-            this.BlockAddsToRoomLabel.Name = "BlockAddsToRoomLabel";
-            this.BlockAddsToRoomLabel.Size = new System.Drawing.Size(74, 13);
-            this.BlockAddsToRoomLabel.TabIndex = 40;
-            this.BlockAddsToRoomLabel.Text = "Adds to Room";
-            this.EditorToolTip.SetToolTip(this.BlockAddsToRoomLabel, "Qualities that a Room Recipe may look for.");
-            // 
             // BlockPixelBox
             // 
             this.BlockPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -3553,26 +3767,6 @@ namespace Scribe.Forms
             this.FurnishingTableLayoutPanel.Size = new System.Drawing.Size(429, 475);
             this.FurnishingTableLayoutPanel.TabIndex = 5;
             // 
-            // FurnishingAddsToRoomLabel
-            // 
-            this.FurnishingAddsToRoomLabel.AutoSize = true;
-            this.FurnishingAddsToRoomLabel.Location = new System.Drawing.Point(3, 252);
-            this.FurnishingAddsToRoomLabel.Name = "FurnishingAddsToRoomLabel";
-            this.FurnishingAddsToRoomLabel.Size = new System.Drawing.Size(74, 13);
-            this.FurnishingAddsToRoomLabel.TabIndex = 41;
-            this.FurnishingAddsToRoomLabel.Text = "Adds to Room";
-            this.EditorToolTip.SetToolTip(this.FurnishingAddsToRoomLabel, "Qualities that a Room Recipe may look for.");
-            // 
-            // FurnishingAddsToBiomelabel
-            // 
-            this.FurnishingAddsToBiomelabel.AutoSize = true;
-            this.FurnishingAddsToBiomelabel.Location = new System.Drawing.Point(3, 160);
-            this.FurnishingAddsToBiomelabel.Name = "FurnishingAddsToBiomelabel";
-            this.FurnishingAddsToBiomelabel.Size = new System.Drawing.Size(75, 13);
-            this.FurnishingAddsToBiomelabel.TabIndex = 40;
-            this.FurnishingAddsToBiomelabel.Text = "Adds to Biome";
-            this.EditorToolTip.SetToolTip(this.FurnishingAddsToBiomelabel, "Describes the biome that this parquet helps form.");
-            // 
             // FurnishingIsOpenableCheckBox
             // 
             this.FurnishingIsOpenableCheckBox.Location = new System.Drawing.Point(131, 447);
@@ -3659,88 +3853,6 @@ namespace Scribe.Forms
             this.FurnishingEntryTypeLabel.Size = new System.Drawing.Size(60, 13);
             this.FurnishingEntryTypeLabel.TabIndex = 30;
             this.FurnishingEntryTypeLabel.Text = "Entry Type";
-            // 
-            // FurnishingAddsToBiomeListBox
-            // 
-            this.FurnishingAddsToBiomeListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FurnishingTableLayoutPanel.SetColumnSpan(this.FurnishingAddsToBiomeListBox, 2);
-            this.FurnishingAddsToBiomeListBox.FormattingEnabled = true;
-            this.FurnishingAddsToBiomeListBox.Location = new System.Drawing.Point(131, 163);
-            this.FurnishingAddsToBiomeListBox.Name = "FurnishingAddsToBiomeListBox";
-            this.FurnishingAddsToBiomeListBox.Size = new System.Drawing.Size(295, 56);
-            this.FurnishingAddsToBiomeListBox.TabIndex = 37;
-            this.EditorToolTip.SetToolTip(this.FurnishingAddsToBiomeListBox, "Describes the biome that this parquet helps form.");
-            // 
-            // FurnishingAddsToRoomListBox
-            // 
-            this.FurnishingAddsToRoomListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FurnishingTableLayoutPanel.SetColumnSpan(this.FurnishingAddsToRoomListBox, 2);
-            this.FurnishingAddsToRoomListBox.FormattingEnabled = true;
-            this.FurnishingAddsToRoomListBox.Location = new System.Drawing.Point(131, 255);
-            this.FurnishingAddsToRoomListBox.Name = "FurnishingAddsToRoomListBox";
-            this.FurnishingAddsToRoomListBox.Size = new System.Drawing.Size(295, 56);
-            this.FurnishingAddsToRoomListBox.TabIndex = 37;
-            this.EditorToolTip.SetToolTip(this.FurnishingAddsToRoomListBox, "Qualities that a Room Recipe may look for.");
-            // 
-            // FurnishingAddBiomeTagButton
-            // 
-            this.FurnishingAddBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FurnishingAddBiomeTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FurnishingAddBiomeTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FurnishingAddBiomeTagButton.Location = new System.Drawing.Point(297, 225);
-            this.FurnishingAddBiomeTagButton.Name = "FurnishingAddBiomeTagButton";
-            this.FurnishingAddBiomeTagButton.Size = new System.Drawing.Size(129, 23);
-            this.FurnishingAddBiomeTagButton.TabIndex = 38;
-            this.FurnishingAddBiomeTagButton.Text = "Add Biome Tag";
-            this.EditorToolTip.SetToolTip(this.FurnishingAddBiomeTagButton, "Add new tag.");
-            this.FurnishingAddBiomeTagButton.UseVisualStyleBackColor = false;
-            this.FurnishingAddBiomeTagButton.Click += new System.EventHandler(this.FurnishingAddBiomeTagButton_Click);
-            // 
-            // FurnishingAddRoomTagButton
-            // 
-            this.FurnishingAddRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FurnishingAddRoomTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FurnishingAddRoomTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FurnishingAddRoomTagButton.Location = new System.Drawing.Point(297, 317);
-            this.FurnishingAddRoomTagButton.Name = "FurnishingAddRoomTagButton";
-            this.FurnishingAddRoomTagButton.Size = new System.Drawing.Size(129, 23);
-            this.FurnishingAddRoomTagButton.TabIndex = 38;
-            this.FurnishingAddRoomTagButton.Text = "Add Room Tag";
-            this.EditorToolTip.SetToolTip(this.FurnishingAddRoomTagButton, "Add new tag.");
-            this.FurnishingAddRoomTagButton.UseVisualStyleBackColor = false;
-            this.FurnishingAddRoomTagButton.Click += new System.EventHandler(this.FurnishingAddRoomTagButton_Click);
-            // 
-            // FurnishingRemoveRoomTagButton
-            // 
-            this.FurnishingRemoveRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FurnishingRemoveRoomTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FurnishingRemoveRoomTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FurnishingRemoveRoomTagButton.Location = new System.Drawing.Point(146, 317);
-            this.FurnishingRemoveRoomTagButton.Name = "FurnishingRemoveRoomTagButton";
-            this.FurnishingRemoveRoomTagButton.Size = new System.Drawing.Size(129, 23);
-            this.FurnishingRemoveRoomTagButton.TabIndex = 38;
-            this.FurnishingRemoveRoomTagButton.Text = "Remove Room Tag";
-            this.EditorToolTip.SetToolTip(this.FurnishingRemoveRoomTagButton, "Delete selected tag.");
-            this.FurnishingRemoveRoomTagButton.UseVisualStyleBackColor = false;
-            this.FurnishingRemoveRoomTagButton.Click += new System.EventHandler(this.FurnishingRemoveRoomTagButton_Click);
-            // 
-            // FurnishingRemoveBiomeTagButton
-            // 
-            this.FurnishingRemoveBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FurnishingRemoveBiomeTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FurnishingRemoveBiomeTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FurnishingRemoveBiomeTagButton.Location = new System.Drawing.Point(146, 225);
-            this.FurnishingRemoveBiomeTagButton.Name = "FurnishingRemoveBiomeTagButton";
-            this.FurnishingRemoveBiomeTagButton.Size = new System.Drawing.Size(129, 23);
-            this.FurnishingRemoveBiomeTagButton.TabIndex = 38;
-            this.FurnishingRemoveBiomeTagButton.Text = "Remove Biome Tag";
-            this.EditorToolTip.SetToolTip(this.FurnishingRemoveBiomeTagButton, "Delete selected tag.");
-            this.FurnishingRemoveBiomeTagButton.UseVisualStyleBackColor = false;
-            this.FurnishingRemoveBiomeTagButton.Click += new System.EventHandler(this.FurnishingRemoveBiomeTagButton_Click);
             // 
             // FurnishingRemoveFurnishingButton
             // 
@@ -3958,26 +4070,6 @@ namespace Scribe.Forms
             this.CollectibleTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.CollectibleTableLayoutPanel.TabIndex = 5;
             // 
-            // CollectibleAddsToRoomLabel
-            // 
-            this.CollectibleAddsToRoomLabel.AutoSize = true;
-            this.CollectibleAddsToRoomLabel.Location = new System.Drawing.Point(3, 265);
-            this.CollectibleAddsToRoomLabel.Name = "CollectibleAddsToRoomLabel";
-            this.CollectibleAddsToRoomLabel.Size = new System.Drawing.Size(74, 13);
-            this.CollectibleAddsToRoomLabel.TabIndex = 41;
-            this.CollectibleAddsToRoomLabel.Tag = "Qualities that a Room Recipe may look for.";
-            this.CollectibleAddsToRoomLabel.Text = "Adds to Room";
-            // 
-            // CollectibleAddsToBiomeLabel
-            // 
-            this.CollectibleAddsToBiomeLabel.AutoSize = true;
-            this.CollectibleAddsToBiomeLabel.Location = new System.Drawing.Point(3, 160);
-            this.CollectibleAddsToBiomeLabel.Name = "CollectibleAddsToBiomeLabel";
-            this.CollectibleAddsToBiomeLabel.Size = new System.Drawing.Size(75, 13);
-            this.CollectibleAddsToBiomeLabel.TabIndex = 40;
-            this.CollectibleAddsToBiomeLabel.Text = "Adds to Biome";
-            this.EditorToolTip.SetToolTip(this.CollectibleAddsToBiomeLabel, "Describes the biome that this parquet helps form.");
-            // 
             // CollectibleEffectAmountTextBox
             // 
             this.CollectibleEffectAmountTextBox.Location = new System.Drawing.Point(131, 398);
@@ -4010,88 +4102,6 @@ namespace Scribe.Forms
             this.CollectibleEffectAmountLabel.Size = new System.Drawing.Size(76, 13);
             this.CollectibleEffectAmountLabel.TabIndex = 31;
             this.CollectibleEffectAmountLabel.Text = "Effect Amount";
-            // 
-            // CollectibleAddsToBiomeListBox
-            // 
-            this.CollectibleAddsToBiomeListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectibleTableLayoutPanel.SetColumnSpan(this.CollectibleAddsToBiomeListBox, 2);
-            this.CollectibleAddsToBiomeListBox.FormattingEnabled = true;
-            this.CollectibleAddsToBiomeListBox.Location = new System.Drawing.Point(131, 163);
-            this.CollectibleAddsToBiomeListBox.Name = "CollectibleAddsToBiomeListBox";
-            this.CollectibleAddsToBiomeListBox.Size = new System.Drawing.Size(295, 69);
-            this.CollectibleAddsToBiomeListBox.TabIndex = 37;
-            this.EditorToolTip.SetToolTip(this.CollectibleAddsToBiomeListBox, "Describes the biome that this parquet helps form.");
-            // 
-            // CollectibleAddsToRoomListBox
-            // 
-            this.CollectibleAddsToRoomListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectibleTableLayoutPanel.SetColumnSpan(this.CollectibleAddsToRoomListBox, 2);
-            this.CollectibleAddsToRoomListBox.FormattingEnabled = true;
-            this.CollectibleAddsToRoomListBox.Location = new System.Drawing.Point(131, 268);
-            this.CollectibleAddsToRoomListBox.Name = "CollectibleAddsToRoomListBox";
-            this.CollectibleAddsToRoomListBox.Size = new System.Drawing.Size(295, 69);
-            this.CollectibleAddsToRoomListBox.TabIndex = 37;
-            this.CollectibleAddsToRoomListBox.Tag = "Qualities that a Room Recipe may look for.";
-            // 
-            // CollectibleAddBiomeTagButton
-            // 
-            this.CollectibleAddBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectibleAddBiomeTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CollectibleAddBiomeTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CollectibleAddBiomeTagButton.Location = new System.Drawing.Point(297, 238);
-            this.CollectibleAddBiomeTagButton.Name = "CollectibleAddBiomeTagButton";
-            this.CollectibleAddBiomeTagButton.Size = new System.Drawing.Size(129, 23);
-            this.CollectibleAddBiomeTagButton.TabIndex = 38;
-            this.CollectibleAddBiomeTagButton.Text = "Add Biome Tag";
-            this.EditorToolTip.SetToolTip(this.CollectibleAddBiomeTagButton, "Add new tag.");
-            this.CollectibleAddBiomeTagButton.UseVisualStyleBackColor = false;
-            this.CollectibleAddBiomeTagButton.Click += new System.EventHandler(this.CollectibleAddBiomeTagButton_Click);
-            // 
-            // CollectibleRemoveBiomeTagButton
-            // 
-            this.CollectibleRemoveBiomeTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectibleRemoveBiomeTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CollectibleRemoveBiomeTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CollectibleRemoveBiomeTagButton.Location = new System.Drawing.Point(146, 238);
-            this.CollectibleRemoveBiomeTagButton.Name = "CollectibleRemoveBiomeTagButton";
-            this.CollectibleRemoveBiomeTagButton.Size = new System.Drawing.Size(129, 23);
-            this.CollectibleRemoveBiomeTagButton.TabIndex = 38;
-            this.CollectibleRemoveBiomeTagButton.Text = "Remove Biome Tag";
-            this.EditorToolTip.SetToolTip(this.CollectibleRemoveBiomeTagButton, "Delete selected tag.");
-            this.CollectibleRemoveBiomeTagButton.UseVisualStyleBackColor = false;
-            this.CollectibleRemoveBiomeTagButton.Click += new System.EventHandler(this.CollectibleRemoveBiomeTagButton_Click);
-            // 
-            // CollectibleAddRoomTagButton
-            // 
-            this.CollectibleAddRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectibleAddRoomTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CollectibleAddRoomTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CollectibleAddRoomTagButton.Location = new System.Drawing.Point(297, 343);
-            this.CollectibleAddRoomTagButton.Name = "CollectibleAddRoomTagButton";
-            this.CollectibleAddRoomTagButton.Size = new System.Drawing.Size(129, 23);
-            this.CollectibleAddRoomTagButton.TabIndex = 38;
-            this.CollectibleAddRoomTagButton.Text = "Add Room Tag";
-            this.EditorToolTip.SetToolTip(this.CollectibleAddRoomTagButton, "Add new tag.");
-            this.CollectibleAddRoomTagButton.UseVisualStyleBackColor = false;
-            this.CollectibleAddRoomTagButton.Click += new System.EventHandler(this.CollectibleAddRoomTagButton_Click);
-            // 
-            // CollectibleRemoveRoomTagButton
-            // 
-            this.CollectibleRemoveRoomTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectibleRemoveRoomTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CollectibleRemoveRoomTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CollectibleRemoveRoomTagButton.Location = new System.Drawing.Point(146, 343);
-            this.CollectibleRemoveRoomTagButton.Name = "CollectibleRemoveRoomTagButton";
-            this.CollectibleRemoveRoomTagButton.Size = new System.Drawing.Size(129, 23);
-            this.CollectibleRemoveRoomTagButton.TabIndex = 38;
-            this.CollectibleRemoveRoomTagButton.Text = "Remove Room Tag";
-            this.EditorToolTip.SetToolTip(this.CollectibleRemoveRoomTagButton, "Delete selected tag.");
-            this.CollectibleRemoveRoomTagButton.UseVisualStyleBackColor = false;
-            this.CollectibleRemoveRoomTagButton.Click += new System.EventHandler(this.CollectibleRemoveRoomTagButton_Click);
             // 
             // CollectibleRemoveCollectibleButton
             // 
