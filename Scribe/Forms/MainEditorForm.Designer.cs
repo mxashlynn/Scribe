@@ -3769,9 +3769,10 @@ namespace Scribe.Forms
             // 
             // FurnishingIsOpenableCheckBox
             // 
+            this.FurnishingIsOpenableCheckBox.AutoSize = true;
             this.FurnishingIsOpenableCheckBox.Location = new System.Drawing.Point(131, 447);
             this.FurnishingIsOpenableCheckBox.Name = "FurnishingIsOpenableCheckBox";
-            this.FurnishingIsOpenableCheckBox.Size = new System.Drawing.Size(144, 21);
+            this.FurnishingIsOpenableCheckBox.Size = new System.Drawing.Size(15, 14);
             this.FurnishingIsOpenableCheckBox.TabIndex = 29;
             // 
             // FurnishingIsOpenableLabel
