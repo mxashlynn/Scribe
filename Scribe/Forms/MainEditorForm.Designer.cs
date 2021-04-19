@@ -224,6 +224,22 @@ namespace Scribe.Forms
             this.FurnishingIsFlammableLabel = new System.Windows.Forms.Label();
             this.FurnishingIsEnclosingLabel = new System.Windows.Forms.Label();
             this.FurnishingIsWalkableLabel = new System.Windows.Forms.Label();
+            this.BlockGatherToolComboBox = new System.Windows.Forms.ComboBox();
+            this.BlockDroppedCollectibleIDComboBox = new System.Windows.Forms.ComboBox();
+            this.BlockGatherEffectComboBox = new System.Windows.Forms.ComboBox();
+            this.BlockMaxToughnessTextBox = new System.Windows.Forms.TextBox();
+            this.BlockGatheringToolLabel = new System.Windows.Forms.Label();
+            this.BlockGatheringEffectLabel = new System.Windows.Forms.Label();
+            this.BlockDroppedCollectibleLabel = new System.Windows.Forms.Label();
+            this.BlockIsFlammableLabel = new System.Windows.Forms.Label();
+            this.BlockMaxToughnessLabel = new System.Windows.Forms.Label();
+            this.BlockIsFlammableCheckBox = new System.Windows.Forms.CheckBox();
+            this.FurnishingEntryTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.FurnishingEntryTypeLabel = new System.Windows.Forms.Label();
+            this.BlockIsLiquidLabel = new System.Windows.Forms.Label();
+            this.BlockIsLiquidCheckBox = new System.Windows.Forms.CheckBox();
+            this.FurnishingIsOpenableCheckBox = new System.Windows.Forms.CheckBox();
+            this.FurnishingIsOpenableLabel = new System.Windows.Forms.Label();
             this.EditorTabs = new System.Windows.Forms.TabControl();
             this.GamesTabPage = new System.Windows.Forms.TabPage();
             this.GameTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -254,18 +270,6 @@ namespace Scribe.Forms
             this.BlockFlavorStatic = new System.Windows.Forms.Label();
             this.BlockFlavorLabel = new System.Windows.Forms.Label();
             this.BlockTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.BlockGatherToolComboBox = new System.Windows.Forms.ComboBox();
-            this.BlockDroppedCollectibleIDComboBox = new System.Windows.Forms.ComboBox();
-            this.BlockGatherEffectComboBox = new System.Windows.Forms.ComboBox();
-            this.BlockMaxToughnessTextBox = new System.Windows.Forms.TextBox();
-            this.BlockGatheringToolLabel = new System.Windows.Forms.Label();
-            this.BlockGatheringEffectLabel = new System.Windows.Forms.Label();
-            this.BlockDroppedCollectibleLabel = new System.Windows.Forms.Label();
-            this.BlockIsFlammableLabel = new System.Windows.Forms.Label();
-            this.BlockIsLiquidLabel = new System.Windows.Forms.Label();
-            this.BlockMaxToughnessLabel = new System.Windows.Forms.Label();
-            this.BlockIsFlammableCheckBox = new System.Windows.Forms.CheckBox();
-            this.BlockIsLiquidCheckBox = new System.Windows.Forms.CheckBox();
             this.BlockPixelBox = new ParquetCustomControls.PixelBox();
             this.BlockAddNewBlockButton = new System.Windows.Forms.Button();
             this.BlockRemoveBlockButton = new System.Windows.Forms.Button();
@@ -278,10 +282,6 @@ namespace Scribe.Forms
             this.FurnishingFlavorStatic = new System.Windows.Forms.Label();
             this.FurnishingFlavorLabel = new System.Windows.Forms.Label();
             this.FurnishingTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.FurnishingIsOpenableCheckBox = new System.Windows.Forms.CheckBox();
-            this.FurnishingIsOpenableLabel = new System.Windows.Forms.Label();
-            this.FurnishingEntryTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.FurnishingEntryTypeLabel = new System.Windows.Forms.Label();
             this.FurnishingRemoveFurnishingButton = new System.Windows.Forms.Button();
             this.FurnishingAddNewFurnishingButton = new System.Windows.Forms.Button();
             this.FurnishingOpenPixelBox = new ParquetCustomControls.PixelBox();
@@ -3020,7 +3020,7 @@ namespace Scribe.Forms
             this.FurnishingIsWalkableCheckBox.Name = "FurnishingIsWalkableCheckBox";
             this.FurnishingIsWalkableCheckBox.Size = new System.Drawing.Size(15, 14);
             this.FurnishingIsWalkableCheckBox.TabIndex = 35;
-            this.EditorToolTip.SetToolTip(this.FurnishingIsWalkableCheckBox, "If checked, character can walk on this.");
+            this.EditorToolTip.SetToolTip(this.FurnishingIsWalkableCheckBox, "If checked, characters can walk on this.");
             this.FurnishingIsWalkableCheckBox.UseVisualStyleBackColor = false;
             // 
             // FurnishingIsFlammableLabel
@@ -3051,7 +3051,160 @@ namespace Scribe.Forms
             this.FurnishingIsWalkableLabel.Size = new System.Drawing.Size(62, 13);
             this.FurnishingIsWalkableLabel.TabIndex = 31;
             this.FurnishingIsWalkableLabel.Text = "Is Walkable";
-            this.EditorToolTip.SetToolTip(this.FurnishingIsWalkableLabel, "If checked, character can walk on this.");
+            this.EditorToolTip.SetToolTip(this.FurnishingIsWalkableLabel, "If checked, characters can walk on this.");
+            // 
+            // BlockGatherToolComboBox
+            // 
+            this.BlockGatherToolComboBox.FormattingEnabled = true;
+            this.BlockGatherToolComboBox.Location = new System.Drawing.Point(131, 343);
+            this.BlockGatherToolComboBox.Name = "BlockGatherToolComboBox";
+            this.BlockGatherToolComboBox.Size = new System.Drawing.Size(144, 21);
+            this.BlockGatherToolComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.BlockGatherToolComboBox, "The tool used to remove and aquire this parquet.");
+            // 
+            // BlockDroppedCollectibleIDComboBox
+            // 
+            this.BlockDroppedCollectibleIDComboBox.FormattingEnabled = true;
+            this.BlockDroppedCollectibleIDComboBox.Location = new System.Drawing.Point(131, 393);
+            this.BlockDroppedCollectibleIDComboBox.Name = "BlockDroppedCollectibleIDComboBox";
+            this.BlockDroppedCollectibleIDComboBox.Size = new System.Drawing.Size(144, 21);
+            this.BlockDroppedCollectibleIDComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.BlockDroppedCollectibleIDComboBox, "What collectible, if any, to spawn when this block is gathered.");
+            // 
+            // BlockGatherEffectComboBox
+            // 
+            this.BlockGatherEffectComboBox.FormattingEnabled = true;
+            this.BlockGatherEffectComboBox.Location = new System.Drawing.Point(131, 368);
+            this.BlockGatherEffectComboBox.Name = "BlockGatherEffectComboBox";
+            this.BlockGatherEffectComboBox.Size = new System.Drawing.Size(144, 21);
+            this.BlockGatherEffectComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.BlockGatherEffectComboBox, "The effect generated when a character gathers this parquet.");
+            // 
+            // BlockMaxToughnessTextBox
+            // 
+            this.BlockMaxToughnessTextBox.Location = new System.Drawing.Point(131, 458);
+            this.BlockMaxToughnessTextBox.Name = "BlockMaxToughnessTextBox";
+            this.BlockMaxToughnessTextBox.Size = new System.Drawing.Size(144, 20);
+            this.BlockMaxToughnessTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.BlockMaxToughnessTextBox, "How hard it is to gather or destroy this block.  Think HP.");
+            // 
+            // BlockGatheringToolLabel
+            // 
+            this.BlockGatheringToolLabel.AutoSize = true;
+            this.BlockGatheringToolLabel.Location = new System.Drawing.Point(3, 340);
+            this.BlockGatheringToolLabel.Name = "BlockGatheringToolLabel";
+            this.BlockGatheringToolLabel.Size = new System.Drawing.Size(77, 13);
+            this.BlockGatheringToolLabel.TabIndex = 30;
+            this.BlockGatheringToolLabel.Text = "Gathering Tool";
+            this.EditorToolTip.SetToolTip(this.BlockGatheringToolLabel, "The tool used to remove and aquire this parquet.");
+            // 
+            // BlockGatheringEffectLabel
+            // 
+            this.BlockGatheringEffectLabel.AutoSize = true;
+            this.BlockGatheringEffectLabel.Location = new System.Drawing.Point(3, 365);
+            this.BlockGatheringEffectLabel.Name = "BlockGatheringEffectLabel";
+            this.BlockGatheringEffectLabel.Size = new System.Drawing.Size(86, 13);
+            this.BlockGatheringEffectLabel.TabIndex = 31;
+            this.BlockGatheringEffectLabel.Text = "Gathering Effect";
+            this.EditorToolTip.SetToolTip(this.BlockGatheringEffectLabel, "The effect generated when a character gathers this parquet.");
+            // 
+            // BlockDroppedCollectibleLabel
+            // 
+            this.BlockDroppedCollectibleLabel.AutoSize = true;
+            this.BlockDroppedCollectibleLabel.Location = new System.Drawing.Point(3, 390);
+            this.BlockDroppedCollectibleLabel.Name = "BlockDroppedCollectibleLabel";
+            this.BlockDroppedCollectibleLabel.Size = new System.Drawing.Size(99, 13);
+            this.BlockDroppedCollectibleLabel.TabIndex = 32;
+            this.BlockDroppedCollectibleLabel.Text = "Dropped Collectible";
+            this.EditorToolTip.SetToolTip(this.BlockDroppedCollectibleLabel, "What collectible, if any, to spawn when this block is gathered.");
+            // 
+            // BlockIsFlammableLabel
+            // 
+            this.BlockIsFlammableLabel.AutoSize = true;
+            this.BlockIsFlammableLabel.Location = new System.Drawing.Point(3, 415);
+            this.BlockIsFlammableLabel.Name = "BlockIsFlammableLabel";
+            this.BlockIsFlammableLabel.Size = new System.Drawing.Size(69, 13);
+            this.BlockIsFlammableLabel.TabIndex = 33;
+            this.BlockIsFlammableLabel.Text = "Is Flammable";
+            this.EditorToolTip.SetToolTip(this.BlockIsFlammableLabel, "If checked, this can catch fire.");
+            // 
+            // BlockMaxToughnessLabel
+            // 
+            this.BlockMaxToughnessLabel.AutoSize = true;
+            this.BlockMaxToughnessLabel.Location = new System.Drawing.Point(3, 455);
+            this.BlockMaxToughnessLabel.Name = "BlockMaxToughnessLabel";
+            this.BlockMaxToughnessLabel.Size = new System.Drawing.Size(59, 13);
+            this.BlockMaxToughnessLabel.TabIndex = 35;
+            this.BlockMaxToughnessLabel.Text = "Toughness";
+            this.EditorToolTip.SetToolTip(this.BlockMaxToughnessLabel, "How hard it is to gather or destroy this block.  Think HP.");
+            // 
+            // BlockIsFlammableCheckBox
+            // 
+            this.BlockIsFlammableCheckBox.AutoSize = true;
+            this.BlockIsFlammableCheckBox.Location = new System.Drawing.Point(131, 418);
+            this.BlockIsFlammableCheckBox.Name = "BlockIsFlammableCheckBox";
+            this.BlockIsFlammableCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.BlockIsFlammableCheckBox.TabIndex = 36;
+            this.EditorToolTip.SetToolTip(this.BlockIsFlammableCheckBox, "If checked, this can catch fire.");
+            this.BlockIsFlammableCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // FurnishingEntryTypeComboBox
+            // 
+            this.FurnishingEntryTypeComboBox.FormattingEnabled = true;
+            this.FurnishingEntryTypeComboBox.Location = new System.Drawing.Point(131, 347);
+            this.FurnishingEntryTypeComboBox.Name = "FurnishingEntryTypeComboBox";
+            this.FurnishingEntryTypeComboBox.Size = new System.Drawing.Size(144, 21);
+            this.FurnishingEntryTypeComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.FurnishingEntryTypeComboBox, "If and how this furnishing serves as a room entry.");
+            // 
+            // FurnishingEntryTypeLabel
+            // 
+            this.FurnishingEntryTypeLabel.AutoSize = true;
+            this.FurnishingEntryTypeLabel.Location = new System.Drawing.Point(3, 344);
+            this.FurnishingEntryTypeLabel.Name = "FurnishingEntryTypeLabel";
+            this.FurnishingEntryTypeLabel.Size = new System.Drawing.Size(60, 13);
+            this.FurnishingEntryTypeLabel.TabIndex = 30;
+            this.FurnishingEntryTypeLabel.Text = "Entry Type";
+            this.EditorToolTip.SetToolTip(this.FurnishingEntryTypeLabel, "If and how this furnishing serves as a room entry.");
+            // 
+            // BlockIsLiquidLabel
+            // 
+            this.BlockIsLiquidLabel.AutoSize = true;
+            this.BlockIsLiquidLabel.Location = new System.Drawing.Point(3, 435);
+            this.BlockIsLiquidLabel.Name = "BlockIsLiquidLabel";
+            this.BlockIsLiquidLabel.Size = new System.Drawing.Size(46, 13);
+            this.BlockIsLiquidLabel.TabIndex = 34;
+            this.BlockIsLiquidLabel.Text = "Is Liquid";
+            this.EditorToolTip.SetToolTip(this.BlockIsLiquidLabel, "If checked, this can flow.");
+            // 
+            // BlockIsLiquidCheckBox
+            // 
+            this.BlockIsLiquidCheckBox.AutoSize = true;
+            this.BlockIsLiquidCheckBox.Location = new System.Drawing.Point(131, 438);
+            this.BlockIsLiquidCheckBox.Name = "BlockIsLiquidCheckBox";
+            this.BlockIsLiquidCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.BlockIsLiquidCheckBox.TabIndex = 37;
+            this.EditorToolTip.SetToolTip(this.BlockIsLiquidCheckBox, "If checked, this can flow.");
+            this.BlockIsLiquidCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // FurnishingIsOpenableCheckBox
+            // 
+            this.FurnishingIsOpenableCheckBox.AutoSize = true;
+            this.FurnishingIsOpenableCheckBox.Location = new System.Drawing.Point(131, 447);
+            this.FurnishingIsOpenableCheckBox.Name = "FurnishingIsOpenableCheckBox";
+            this.FurnishingIsOpenableCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.FurnishingIsOpenableCheckBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.FurnishingIsOpenableCheckBox, "If checked, this has open and closed states.");
+            // 
+            // FurnishingIsOpenableLabel
+            // 
+            this.FurnishingIsOpenableLabel.AutoSize = true;
+            this.FurnishingIsOpenableLabel.Location = new System.Drawing.Point(3, 444);
+            this.FurnishingIsOpenableLabel.Name = "FurnishingIsOpenableLabel";
+            this.FurnishingIsOpenableLabel.Size = new System.Drawing.Size(65, 13);
+            this.FurnishingIsOpenableLabel.TabIndex = 34;
+            this.FurnishingIsOpenableLabel.Text = "Is Openable";
+            this.EditorToolTip.SetToolTip(this.FurnishingIsOpenableLabel, "If checked, this has open and closed states.");
             // 
             // EditorTabs
             // 
@@ -3565,119 +3718,6 @@ namespace Scribe.Forms
             this.BlockTableLayoutPanel.Size = new System.Drawing.Size(429, 483);
             this.BlockTableLayoutPanel.TabIndex = 5;
             // 
-            // BlockGatherToolComboBox
-            // 
-            this.BlockGatherToolComboBox.FormattingEnabled = true;
-            this.BlockGatherToolComboBox.Location = new System.Drawing.Point(131, 343);
-            this.BlockGatherToolComboBox.Name = "BlockGatherToolComboBox";
-            this.BlockGatherToolComboBox.Size = new System.Drawing.Size(144, 21);
-            this.BlockGatherToolComboBox.TabIndex = 29;
-            this.EditorToolTip.SetToolTip(this.BlockGatherToolComboBox, "The tool used to remove and aquire this parquet.");
-            // 
-            // BlockDroppedCollectibleIDComboBox
-            // 
-            this.BlockDroppedCollectibleIDComboBox.FormattingEnabled = true;
-            this.BlockDroppedCollectibleIDComboBox.Location = new System.Drawing.Point(131, 393);
-            this.BlockDroppedCollectibleIDComboBox.Name = "BlockDroppedCollectibleIDComboBox";
-            this.BlockDroppedCollectibleIDComboBox.Size = new System.Drawing.Size(144, 21);
-            this.BlockDroppedCollectibleIDComboBox.TabIndex = 29;
-            this.EditorToolTip.SetToolTip(this.BlockDroppedCollectibleIDComboBox, "What collectible, if any, to spawn when this block is gathered.");
-            // 
-            // BlockGatherEffectComboBox
-            // 
-            this.BlockGatherEffectComboBox.FormattingEnabled = true;
-            this.BlockGatherEffectComboBox.Location = new System.Drawing.Point(131, 368);
-            this.BlockGatherEffectComboBox.Name = "BlockGatherEffectComboBox";
-            this.BlockGatherEffectComboBox.Size = new System.Drawing.Size(144, 21);
-            this.BlockGatherEffectComboBox.TabIndex = 29;
-            this.EditorToolTip.SetToolTip(this.BlockGatherEffectComboBox, "The effect generated when a character gathers this parquet.");
-            // 
-            // BlockMaxToughnessTextBox
-            // 
-            this.BlockMaxToughnessTextBox.Location = new System.Drawing.Point(131, 458);
-            this.BlockMaxToughnessTextBox.Name = "BlockMaxToughnessTextBox";
-            this.BlockMaxToughnessTextBox.Size = new System.Drawing.Size(144, 20);
-            this.BlockMaxToughnessTextBox.TabIndex = 23;
-            this.EditorToolTip.SetToolTip(this.BlockMaxToughnessTextBox, "How hard it is to gather or destroy this block.  Think HP.");
-            // 
-            // BlockGatheringToolLabel
-            // 
-            this.BlockGatheringToolLabel.AutoSize = true;
-            this.BlockGatheringToolLabel.Location = new System.Drawing.Point(3, 340);
-            this.BlockGatheringToolLabel.Name = "BlockGatheringToolLabel";
-            this.BlockGatheringToolLabel.Size = new System.Drawing.Size(77, 13);
-            this.BlockGatheringToolLabel.TabIndex = 30;
-            this.BlockGatheringToolLabel.Text = "Gathering Tool";
-            this.EditorToolTip.SetToolTip(this.BlockGatheringToolLabel, "The tool used to remove and aquire this parquet.");
-            // 
-            // BlockGatheringEffectLabel
-            // 
-            this.BlockGatheringEffectLabel.AutoSize = true;
-            this.BlockGatheringEffectLabel.Location = new System.Drawing.Point(3, 365);
-            this.BlockGatheringEffectLabel.Name = "BlockGatheringEffectLabel";
-            this.BlockGatheringEffectLabel.Size = new System.Drawing.Size(86, 13);
-            this.BlockGatheringEffectLabel.TabIndex = 31;
-            this.BlockGatheringEffectLabel.Text = "Gathering Effect";
-            this.EditorToolTip.SetToolTip(this.BlockGatheringEffectLabel, "The effect generated when a character gathers this parquet.");
-            // 
-            // BlockDroppedCollectibleLabel
-            // 
-            this.BlockDroppedCollectibleLabel.AutoSize = true;
-            this.BlockDroppedCollectibleLabel.Location = new System.Drawing.Point(3, 390);
-            this.BlockDroppedCollectibleLabel.Name = "BlockDroppedCollectibleLabel";
-            this.BlockDroppedCollectibleLabel.Size = new System.Drawing.Size(99, 13);
-            this.BlockDroppedCollectibleLabel.TabIndex = 32;
-            this.BlockDroppedCollectibleLabel.Text = "Dropped Collectible";
-            this.EditorToolTip.SetToolTip(this.BlockDroppedCollectibleLabel, "What collectible, if any, to spawn when this block is gathered.");
-            // 
-            // BlockIsFlammableLabel
-            // 
-            this.BlockIsFlammableLabel.AutoSize = true;
-            this.BlockIsFlammableLabel.Location = new System.Drawing.Point(3, 415);
-            this.BlockIsFlammableLabel.Name = "BlockIsFlammableLabel";
-            this.BlockIsFlammableLabel.Size = new System.Drawing.Size(69, 13);
-            this.BlockIsFlammableLabel.TabIndex = 33;
-            this.BlockIsFlammableLabel.Text = "Is Flammable";
-            this.EditorToolTip.SetToolTip(this.BlockIsFlammableLabel, "If checked, this can catch fire.");
-            // 
-            // BlockIsLiquidLabel
-            // 
-            this.BlockIsLiquidLabel.AutoSize = true;
-            this.BlockIsLiquidLabel.Location = new System.Drawing.Point(3, 435);
-            this.BlockIsLiquidLabel.Name = "BlockIsLiquidLabel";
-            this.BlockIsLiquidLabel.Size = new System.Drawing.Size(46, 13);
-            this.BlockIsLiquidLabel.TabIndex = 34;
-            this.BlockIsLiquidLabel.Text = "Is Liquid";
-            // 
-            // BlockMaxToughnessLabel
-            // 
-            this.BlockMaxToughnessLabel.AutoSize = true;
-            this.BlockMaxToughnessLabel.Location = new System.Drawing.Point(3, 455);
-            this.BlockMaxToughnessLabel.Name = "BlockMaxToughnessLabel";
-            this.BlockMaxToughnessLabel.Size = new System.Drawing.Size(59, 13);
-            this.BlockMaxToughnessLabel.TabIndex = 35;
-            this.BlockMaxToughnessLabel.Text = "Toughness";
-            this.EditorToolTip.SetToolTip(this.BlockMaxToughnessLabel, "How hard it is to gather or destroy this block.  Think HP.");
-            // 
-            // BlockIsFlammableCheckBox
-            // 
-            this.BlockIsFlammableCheckBox.AutoSize = true;
-            this.BlockIsFlammableCheckBox.Location = new System.Drawing.Point(131, 418);
-            this.BlockIsFlammableCheckBox.Name = "BlockIsFlammableCheckBox";
-            this.BlockIsFlammableCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.BlockIsFlammableCheckBox.TabIndex = 36;
-            this.EditorToolTip.SetToolTip(this.BlockIsFlammableCheckBox, "If checked, this can catch fire.");
-            this.BlockIsFlammableCheckBox.UseVisualStyleBackColor = false;
-            // 
-            // BlockIsLiquidCheckBox
-            // 
-            this.BlockIsLiquidCheckBox.AutoSize = true;
-            this.BlockIsLiquidCheckBox.Location = new System.Drawing.Point(131, 438);
-            this.BlockIsLiquidCheckBox.Name = "BlockIsLiquidCheckBox";
-            this.BlockIsLiquidCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.BlockIsLiquidCheckBox.TabIndex = 37;
-            this.BlockIsLiquidCheckBox.UseVisualStyleBackColor = false;
-            // 
             // BlockPixelBox
             // 
             this.BlockPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -3873,42 +3913,6 @@ namespace Scribe.Forms
             this.FurnishingTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.FurnishingTableLayoutPanel.Size = new System.Drawing.Size(429, 475);
             this.FurnishingTableLayoutPanel.TabIndex = 5;
-            // 
-            // FurnishingIsOpenableCheckBox
-            // 
-            this.FurnishingIsOpenableCheckBox.AutoSize = true;
-            this.FurnishingIsOpenableCheckBox.Location = new System.Drawing.Point(131, 447);
-            this.FurnishingIsOpenableCheckBox.Name = "FurnishingIsOpenableCheckBox";
-            this.FurnishingIsOpenableCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.FurnishingIsOpenableCheckBox.TabIndex = 29;
-            // 
-            // FurnishingIsOpenableLabel
-            // 
-            this.FurnishingIsOpenableLabel.AutoSize = true;
-            this.FurnishingIsOpenableLabel.Location = new System.Drawing.Point(3, 444);
-            this.FurnishingIsOpenableLabel.Name = "FurnishingIsOpenableLabel";
-            this.FurnishingIsOpenableLabel.Size = new System.Drawing.Size(65, 13);
-            this.FurnishingIsOpenableLabel.TabIndex = 34;
-            this.FurnishingIsOpenableLabel.Text = "Is Openable";
-            // 
-            // FurnishingEntryTypeComboBox
-            // 
-            this.FurnishingEntryTypeComboBox.FormattingEnabled = true;
-            this.FurnishingEntryTypeComboBox.Location = new System.Drawing.Point(131, 347);
-            this.FurnishingEntryTypeComboBox.Name = "FurnishingEntryTypeComboBox";
-            this.FurnishingEntryTypeComboBox.Size = new System.Drawing.Size(144, 21);
-            this.FurnishingEntryTypeComboBox.TabIndex = 29;
-            this.EditorToolTip.SetToolTip(this.FurnishingEntryTypeComboBox, "If and how this furnishing serves as a room entry.");
-            // 
-            // FurnishingEntryTypeLabel
-            // 
-            this.FurnishingEntryTypeLabel.AutoSize = true;
-            this.FurnishingEntryTypeLabel.Location = new System.Drawing.Point(3, 344);
-            this.FurnishingEntryTypeLabel.Name = "FurnishingEntryTypeLabel";
-            this.FurnishingEntryTypeLabel.Size = new System.Drawing.Size(60, 13);
-            this.FurnishingEntryTypeLabel.TabIndex = 30;
-            this.FurnishingEntryTypeLabel.Text = "Entry Type";
-            this.EditorToolTip.SetToolTip(this.FurnishingEntryTypeLabel, "If and how this furnishing serves as a room entry.");
             // 
             // FurnishingRemoveFurnishingButton
             // 
