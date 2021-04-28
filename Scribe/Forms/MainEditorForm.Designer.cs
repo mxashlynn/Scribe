@@ -244,6 +244,52 @@ namespace Scribe.Forms
             this.BlockEditFunctionButton = new System.Windows.Forms.Button();
             this.FurnishingEditFunctionButton = new System.Windows.Forms.Button();
             this.CollectibleEditFunctionButton = new System.Windows.Forms.Button();
+            this.FloorFunctionStatic = new System.Windows.Forms.Label();
+            this.FloorFunctionLabel = new System.Windows.Forms.Label();
+            this.FloorEditFlavorButton = new System.Windows.Forms.Button();
+            this.FloorFlavorStatic = new System.Windows.Forms.Label();
+            this.FloorFlavorLabel = new System.Windows.Forms.Label();
+            this.BlockFunctionStatic = new System.Windows.Forms.Label();
+            this.BlockFunctionLabel = new System.Windows.Forms.Label();
+            this.BlockEditFlavorButton = new System.Windows.Forms.Button();
+            this.BlockFlavorStatic = new System.Windows.Forms.Label();
+            this.BlockFlavorLabel = new System.Windows.Forms.Label();
+            this.FurnishingFunctionStatic = new System.Windows.Forms.Label();
+            this.FurnishingFunctionLabel = new System.Windows.Forms.Label();
+            this.FurnishingEditFlavorButton = new System.Windows.Forms.Button();
+            this.FurnishingFlavorStatic = new System.Windows.Forms.Label();
+            this.FurnishingFlavorLabel = new System.Windows.Forms.Label();
+            this.CollectibleFunctionStatic = new System.Windows.Forms.Label();
+            this.CollectibleFunctionLabel = new System.Windows.Forms.Label();
+            this.CollectibleEditFlavorButton = new System.Windows.Forms.Button();
+            this.CollectibleFlavorStatic = new System.Windows.Forms.Label();
+            this.CollectibleFlavorLabel = new System.Windows.Forms.Label();
+            this.CritterEditFlavorButton = new System.Windows.Forms.Button();
+            this.CritterFlavorStatic = new System.Windows.Forms.Label();
+            this.CritterFlavorLabel = new System.Windows.Forms.Label();
+            this.CharacterEditFlavorButton = new System.Windows.Forms.Button();
+            this.CharacterFlavorStatic = new System.Windows.Forms.Label();
+            this.CharacterFlavorLabel = new System.Windows.Forms.Label();
+            this.ItemFunctionStatic = new System.Windows.Forms.Label();
+            this.ItemEditFunctionButton = new System.Windows.Forms.Button();
+            this.ItemFunctionLabel = new System.Windows.Forms.Label();
+            this.ItemEditFlavorButton = new System.Windows.Forms.Button();
+            this.ItemFlavorStatic = new System.Windows.Forms.Label();
+            this.ItemFlavorLabel = new System.Windows.Forms.Label();
+            this.FlavorBlandSelector = new System.Windows.Forms.Label();
+            this.FlavorSweetSelector = new System.Windows.Forms.Label();
+            this.FlavorSaltySelector = new System.Windows.Forms.Label();
+            this.FlavorSavorySelector = new System.Windows.Forms.Label();
+            this.FlavorAstringentSelector = new System.Windows.Forms.Label();
+            this.FlavorNumbingSelector = new System.Windows.Forms.Label();
+            this.FlavorAllFlavorsSelector = new System.Windows.Forms.Label();
+            this.FlavorBitterSelector = new System.Windows.Forms.Label();
+            this.FlavorSourSelector = new System.Windows.Forms.Label();
+            this.FlavorFreshSelector = new System.Windows.Forms.Label();
+            this.FlavorPungentSelector = new System.Windows.Forms.Label();
+            this.FlavorMetallicSelector = new System.Windows.Forms.Label();
+            this.FlavorChemicalSelector = new System.Windows.Forms.Label();
+            this.FlavorNoFlavorsSelector = new System.Windows.Forms.Label();
             this.EditorTabs = new System.Windows.Forms.TabControl();
             this.GamesTabPage = new System.Windows.Forms.TabPage();
             this.GameTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -252,11 +298,6 @@ namespace Scribe.Forms
             this.LibraryVersionLabel = new System.Windows.Forms.Label();
             this.LibraryProjectPathLabel = new System.Windows.Forms.Label();
             this.FloorsTabPage = new System.Windows.Forms.TabPage();
-            this.FloorFunctionStatic = new System.Windows.Forms.Label();
-            this.FloorFunctionLabel = new System.Windows.Forms.Label();
-            this.FloorEditFlavorButton = new System.Windows.Forms.Button();
-            this.FloorFlavorStatic = new System.Windows.Forms.Label();
-            this.FloorFlavorLabel = new System.Windows.Forms.Label();
             this.FloorFilledInPixelBox = new ParquetCustomControls.PixelBox();
             this.FloorFilledInLabel = new System.Windows.Forms.Label();
             this.FloorDugOutPixelBox = new ParquetCustomControls.PixelBox();
@@ -266,22 +307,12 @@ namespace Scribe.Forms
             this.FloorAddNewFloorButton = new System.Windows.Forms.Button();
             this.FloorConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.BlocksTabPage = new System.Windows.Forms.TabPage();
-            this.BlockFunctionStatic = new System.Windows.Forms.Label();
-            this.BlockFunctionLabel = new System.Windows.Forms.Label();
-            this.BlockEditFlavorButton = new System.Windows.Forms.Button();
-            this.BlockFlavorStatic = new System.Windows.Forms.Label();
-            this.BlockFlavorLabel = new System.Windows.Forms.Label();
             this.BlockTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.BlockPixelBox = new ParquetCustomControls.PixelBox();
             this.BlockAddNewBlockButton = new System.Windows.Forms.Button();
             this.BlockRemoveBlockButton = new System.Windows.Forms.Button();
             this.BlockConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.FurnishingsTabPage = new System.Windows.Forms.TabPage();
-            this.FurnishingFunctionStatic = new System.Windows.Forms.Label();
-            this.FurnishingFunctionLabel = new System.Windows.Forms.Label();
-            this.FurnishingEditFlavorButton = new System.Windows.Forms.Button();
-            this.FurnishingFlavorStatic = new System.Windows.Forms.Label();
-            this.FurnishingFlavorLabel = new System.Windows.Forms.Label();
             this.FurnishingTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.FurnishingRemoveFurnishingButton = new System.Windows.Forms.Button();
             this.FurnishingAddNewFurnishingButton = new System.Windows.Forms.Button();
@@ -291,20 +322,12 @@ namespace Scribe.Forms
             this.FurnishingClosedLabel = new System.Windows.Forms.Label();
             this.FurnishingConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CollectiblesTabPage = new System.Windows.Forms.TabPage();
-            this.CollectibleFunctionStatic = new System.Windows.Forms.Label();
-            this.CollectibleFunctionLabel = new System.Windows.Forms.Label();
-            this.CollectibleEditFlavorButton = new System.Windows.Forms.Button();
-            this.CollectibleFlavorStatic = new System.Windows.Forms.Label();
-            this.CollectibleFlavorLabel = new System.Windows.Forms.Label();
             this.CollectibleTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.CollectibleRemoveCollectibleButton = new System.Windows.Forms.Button();
             this.CollectibleAddNewCollectibleButton = new System.Windows.Forms.Button();
             this.CollectiblePixelBox = new ParquetCustomControls.PixelBox();
             this.CollectibleConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CrittersTabPage = new System.Windows.Forms.TabPage();
-            this.CritterEditFlavorButton = new System.Windows.Forms.Button();
-            this.CritterFlavorStatic = new System.Windows.Forms.Label();
-            this.CritterFlavorLabel = new System.Windows.Forms.Label();
             this.CritterTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.CritterPrimaryBehaviorComboBox = new System.Windows.Forms.ComboBox();
             this.CritterNameLabel = new System.Windows.Forms.Label();
@@ -321,9 +344,6 @@ namespace Scribe.Forms
             this.CritterRemoveCritterButton = new System.Windows.Forms.Button();
             this.CritterConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CharactersTabPage = new System.Windows.Forms.TabPage();
-            this.CharacterEditFlavorButton = new System.Windows.Forms.Button();
-            this.CharacterFlavorStatic = new System.Windows.Forms.Label();
-            this.CharacterFlavorLabel = new System.Windows.Forms.Label();
             this.CharacterPronounGroupBox = new System.Windows.Forms.GroupBox();
             this.CharacterPronounTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.CharacterPronounAddNewPronoungGroupButton = new System.Windows.Forms.Button();
@@ -370,12 +390,6 @@ namespace Scribe.Forms
             this.CharacterAddNewCharacterButton = new System.Windows.Forms.Button();
             this.CharacterPixelBox = new ParquetCustomControls.PixelBox();
             this.ItemsTabPage = new System.Windows.Forms.TabPage();
-            this.ItemFunctionStatic = new System.Windows.Forms.Label();
-            this.ItemEditFunctionButton = new System.Windows.Forms.Button();
-            this.ItemFunctionLabel = new System.Windows.Forms.Label();
-            this.ItemEditFlavorButton = new System.Windows.Forms.Button();
-            this.ItemFlavorStatic = new System.Windows.Forms.Label();
-            this.ItemFlavorLabel = new System.Windows.Forms.Label();
             this.ItemRemoveItemButton = new System.Windows.Forms.Button();
             this.ItemAddTagButton = new System.Windows.Forms.Button();
             this.ItemRemoveTagButton = new System.Windows.Forms.Button();
@@ -567,20 +581,6 @@ namespace Scribe.Forms
             this.FilterGroupBox = new System.Windows.Forms.GroupBox();
             this.FlavorFilterGroupBox = new System.Windows.Forms.GroupBox();
             this.FlavorsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.FlavorBlandSelector = new System.Windows.Forms.Label();
-            this.FlavorSweetSelector = new System.Windows.Forms.Label();
-            this.FlavorSaltySelector = new System.Windows.Forms.Label();
-            this.FlavorSavorySelector = new System.Windows.Forms.Label();
-            this.FlavorAstringentSelector = new System.Windows.Forms.Label();
-            this.FlavorNumbingSelector = new System.Windows.Forms.Label();
-            this.FlavorAllFlavorsSelector = new System.Windows.Forms.Label();
-            this.FlavorBitterSelector = new System.Windows.Forms.Label();
-            this.FlavorSourSelector = new System.Windows.Forms.Label();
-            this.FlavorFreshSelector = new System.Windows.Forms.Label();
-            this.FlavorPungentSelector = new System.Windows.Forms.Label();
-            this.FlavorMetallicSelector = new System.Windows.Forms.Label();
-            this.FlavorChemicalSelector = new System.Windows.Forms.Label();
-            this.FlavorNoFlavorsSelector = new System.Windows.Forms.Label();
             this.EditorStatusStrip.SuspendLayout();
             this.ContextMenuStripIDStatics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GameIconPixelBox)).BeginInit();
@@ -3254,6 +3254,627 @@ namespace Scribe.Forms
             this.EditorToolTip.SetToolTip(this.CollectibleEditFunctionButton, "Add or remove Function tag.");
             this.CollectibleEditFunctionButton.UseVisualStyleBackColor = false;
             // 
+            // FloorFunctionStatic
+            // 
+            this.FloorFunctionStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorFunctionStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorFunctionStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.FloorFunctionStatic.Location = new System.Drawing.Point(812, 99);
+            this.FloorFunctionStatic.Name = "FloorFunctionStatic";
+            this.FloorFunctionStatic.Size = new System.Drawing.Size(131, 20);
+            this.FloorFunctionStatic.TabIndex = 24;
+            this.FloorFunctionStatic.Tag = "Themed";
+            this.FloorFunctionStatic.Text = "(None)";
+            this.FloorFunctionStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FloorFunctionStatic, "Groups parquets by purpose.");
+            // 
+            // FloorFunctionLabel
+            // 
+            this.FloorFunctionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorFunctionLabel.AutoSize = true;
+            this.FloorFunctionLabel.Location = new System.Drawing.Point(761, 102);
+            this.FloorFunctionLabel.Name = "FloorFunctionLabel";
+            this.FloorFunctionLabel.Size = new System.Drawing.Size(48, 13);
+            this.FloorFunctionLabel.TabIndex = 22;
+            this.FloorFunctionLabel.Text = "Function";
+            this.EditorToolTip.SetToolTip(this.FloorFunctionLabel, "Groups parquets by purpose.");
+            // 
+            // FloorEditFlavorButton
+            // 
+            this.FloorEditFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorEditFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FloorEditFlavorButton.Location = new System.Drawing.Point(815, 70);
+            this.FloorEditFlavorButton.Name = "FloorEditFlavorButton";
+            this.FloorEditFlavorButton.Size = new System.Drawing.Size(128, 23);
+            this.FloorEditFlavorButton.TabIndex = 14;
+            this.FloorEditFlavorButton.Text = "Edit Flavor";
+            this.EditorToolTip.SetToolTip(this.FloorEditFlavorButton, "Add or remove flavor tag.");
+            this.FloorEditFlavorButton.UseVisualStyleBackColor = false;
+            // 
+            // FloorFlavorStatic
+            // 
+            this.FloorFlavorStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorFlavorStatic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.FloorFlavorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.FloorFlavorStatic.Location = new System.Drawing.Point(812, 44);
+            this.FloorFlavorStatic.Name = "FloorFlavorStatic";
+            this.FloorFlavorStatic.Size = new System.Drawing.Size(131, 20);
+            this.FloorFlavorStatic.TabIndex = 12;
+            this.FloorFlavorStatic.Tag = "Unthemed Control";
+            this.FloorFlavorStatic.Text = "(None)";
+            this.FloorFlavorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FloorFlavorStatic, "Groups models by flavor.");
+            // 
+            // FloorFlavorLabel
+            // 
+            this.FloorFlavorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FloorFlavorLabel.AutoSize = true;
+            this.FloorFlavorLabel.Location = new System.Drawing.Point(761, 47);
+            this.FloorFlavorLabel.Name = "FloorFlavorLabel";
+            this.FloorFlavorLabel.Size = new System.Drawing.Size(37, 13);
+            this.FloorFlavorLabel.TabIndex = 13;
+            this.FloorFlavorLabel.Text = "Flavor";
+            this.EditorToolTip.SetToolTip(this.FloorFlavorLabel, "Groups models by flavor.");
+            // 
+            // BlockFunctionStatic
+            // 
+            this.BlockFunctionStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlockFunctionStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BlockFunctionStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.BlockFunctionStatic.Location = new System.Drawing.Point(812, 99);
+            this.BlockFunctionStatic.Name = "BlockFunctionStatic";
+            this.BlockFunctionStatic.Size = new System.Drawing.Size(131, 20);
+            this.BlockFunctionStatic.TabIndex = 24;
+            this.BlockFunctionStatic.Tag = "Themed";
+            this.BlockFunctionStatic.Text = "(None)";
+            this.BlockFunctionStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.BlockFunctionStatic, "Groups parquets by purpose.");
+            // 
+            // BlockFunctionLabel
+            // 
+            this.BlockFunctionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlockFunctionLabel.AutoSize = true;
+            this.BlockFunctionLabel.Location = new System.Drawing.Point(761, 102);
+            this.BlockFunctionLabel.Name = "BlockFunctionLabel";
+            this.BlockFunctionLabel.Size = new System.Drawing.Size(48, 13);
+            this.BlockFunctionLabel.TabIndex = 22;
+            this.BlockFunctionLabel.Text = "Function";
+            this.EditorToolTip.SetToolTip(this.BlockFunctionLabel, "Groups parquets by purpose.");
+            // 
+            // BlockEditFlavorButton
+            // 
+            this.BlockEditFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BlockEditFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BlockEditFlavorButton.Location = new System.Drawing.Point(815, 70);
+            this.BlockEditFlavorButton.Name = "BlockEditFlavorButton";
+            this.BlockEditFlavorButton.Size = new System.Drawing.Size(128, 23);
+            this.BlockEditFlavorButton.TabIndex = 17;
+            this.BlockEditFlavorButton.Text = "Edit Flavor";
+            this.EditorToolTip.SetToolTip(this.BlockEditFlavorButton, "Add or remove flavor tag.");
+            this.BlockEditFlavorButton.UseVisualStyleBackColor = false;
+            // 
+            // BlockFlavorStatic
+            // 
+            this.BlockFlavorStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlockFlavorStatic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.BlockFlavorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.BlockFlavorStatic.Location = new System.Drawing.Point(812, 44);
+            this.BlockFlavorStatic.Name = "BlockFlavorStatic";
+            this.BlockFlavorStatic.Size = new System.Drawing.Size(131, 20);
+            this.BlockFlavorStatic.TabIndex = 15;
+            this.BlockFlavorStatic.Tag = "Unthemed Control";
+            this.BlockFlavorStatic.Text = "(None)";
+            this.BlockFlavorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.BlockFlavorStatic, "Groups models by flavor.");
+            // 
+            // BlockFlavorLabel
+            // 
+            this.BlockFlavorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BlockFlavorLabel.AutoSize = true;
+            this.BlockFlavorLabel.Location = new System.Drawing.Point(761, 47);
+            this.BlockFlavorLabel.Name = "BlockFlavorLabel";
+            this.BlockFlavorLabel.Size = new System.Drawing.Size(37, 13);
+            this.BlockFlavorLabel.TabIndex = 16;
+            this.BlockFlavorLabel.Text = "Flavor";
+            this.EditorToolTip.SetToolTip(this.BlockFlavorLabel, "Groups models by flavor.");
+            // 
+            // FurnishingFunctionStatic
+            // 
+            this.FurnishingFunctionStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingFunctionStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingFunctionStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.FurnishingFunctionStatic.Location = new System.Drawing.Point(812, 99);
+            this.FurnishingFunctionStatic.Name = "FurnishingFunctionStatic";
+            this.FurnishingFunctionStatic.Size = new System.Drawing.Size(131, 20);
+            this.FurnishingFunctionStatic.TabIndex = 24;
+            this.FurnishingFunctionStatic.Tag = "Themed";
+            this.FurnishingFunctionStatic.Text = "(None)";
+            this.FurnishingFunctionStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FurnishingFunctionStatic, "Groups parquets by purpose.");
+            // 
+            // FurnishingFunctionLabel
+            // 
+            this.FurnishingFunctionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingFunctionLabel.AutoSize = true;
+            this.FurnishingFunctionLabel.Location = new System.Drawing.Point(761, 102);
+            this.FurnishingFunctionLabel.Name = "FurnishingFunctionLabel";
+            this.FurnishingFunctionLabel.Size = new System.Drawing.Size(48, 13);
+            this.FurnishingFunctionLabel.TabIndex = 22;
+            this.FurnishingFunctionLabel.Text = "Function";
+            this.EditorToolTip.SetToolTip(this.FurnishingFunctionLabel, "Groups parquets by purpose.");
+            // 
+            // FurnishingEditFlavorButton
+            // 
+            this.FurnishingEditFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingEditFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FurnishingEditFlavorButton.Location = new System.Drawing.Point(815, 70);
+            this.FurnishingEditFlavorButton.Name = "FurnishingEditFlavorButton";
+            this.FurnishingEditFlavorButton.Size = new System.Drawing.Size(128, 23);
+            this.FurnishingEditFlavorButton.TabIndex = 17;
+            this.FurnishingEditFlavorButton.Text = "Edit Flavor";
+            this.EditorToolTip.SetToolTip(this.FurnishingEditFlavorButton, "Add or remove flavor tag.");
+            this.FurnishingEditFlavorButton.UseVisualStyleBackColor = false;
+            // 
+            // FurnishingFlavorStatic
+            // 
+            this.FurnishingFlavorStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingFlavorStatic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.FurnishingFlavorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.FurnishingFlavorStatic.Location = new System.Drawing.Point(812, 44);
+            this.FurnishingFlavorStatic.Name = "FurnishingFlavorStatic";
+            this.FurnishingFlavorStatic.Size = new System.Drawing.Size(131, 20);
+            this.FurnishingFlavorStatic.TabIndex = 15;
+            this.FurnishingFlavorStatic.Tag = "Unthemed Control";
+            this.FurnishingFlavorStatic.Text = "(None)";
+            this.FurnishingFlavorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FurnishingFlavorStatic, "Groups models by flavor.");
+            // 
+            // FurnishingFlavorLabel
+            // 
+            this.FurnishingFlavorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FurnishingFlavorLabel.AutoSize = true;
+            this.FurnishingFlavorLabel.Location = new System.Drawing.Point(761, 47);
+            this.FurnishingFlavorLabel.Name = "FurnishingFlavorLabel";
+            this.FurnishingFlavorLabel.Size = new System.Drawing.Size(37, 13);
+            this.FurnishingFlavorLabel.TabIndex = 16;
+            this.FurnishingFlavorLabel.Text = "Flavor";
+            this.EditorToolTip.SetToolTip(this.FurnishingFlavorLabel, "Groups models by flavor.");
+            // 
+            // CollectibleFunctionStatic
+            // 
+            this.CollectibleFunctionStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleFunctionStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CollectibleFunctionStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.CollectibleFunctionStatic.Location = new System.Drawing.Point(812, 99);
+            this.CollectibleFunctionStatic.Name = "CollectibleFunctionStatic";
+            this.CollectibleFunctionStatic.Size = new System.Drawing.Size(131, 20);
+            this.CollectibleFunctionStatic.TabIndex = 24;
+            this.CollectibleFunctionStatic.Tag = "Themed";
+            this.CollectibleFunctionStatic.Text = "(None)";
+            this.CollectibleFunctionStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.CollectibleFunctionStatic, "Groups parquets by purpose.");
+            // 
+            // CollectibleFunctionLabel
+            // 
+            this.CollectibleFunctionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleFunctionLabel.AutoSize = true;
+            this.CollectibleFunctionLabel.Location = new System.Drawing.Point(761, 102);
+            this.CollectibleFunctionLabel.Name = "CollectibleFunctionLabel";
+            this.CollectibleFunctionLabel.Size = new System.Drawing.Size(48, 13);
+            this.CollectibleFunctionLabel.TabIndex = 22;
+            this.CollectibleFunctionLabel.Text = "Function";
+            this.EditorToolTip.SetToolTip(this.CollectibleFunctionLabel, "Groups parquets by purpose.");
+            // 
+            // CollectibleEditFlavorButton
+            // 
+            this.CollectibleEditFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CollectibleEditFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CollectibleEditFlavorButton.Location = new System.Drawing.Point(815, 70);
+            this.CollectibleEditFlavorButton.Name = "CollectibleEditFlavorButton";
+            this.CollectibleEditFlavorButton.Size = new System.Drawing.Size(128, 23);
+            this.CollectibleEditFlavorButton.TabIndex = 17;
+            this.CollectibleEditFlavorButton.Text = "Edit Flavor";
+            this.EditorToolTip.SetToolTip(this.CollectibleEditFlavorButton, "Add or remove flavor tag.");
+            this.CollectibleEditFlavorButton.UseVisualStyleBackColor = false;
+            // 
+            // CollectibleFlavorStatic
+            // 
+            this.CollectibleFlavorStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleFlavorStatic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.CollectibleFlavorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.CollectibleFlavorStatic.Location = new System.Drawing.Point(812, 44);
+            this.CollectibleFlavorStatic.Name = "CollectibleFlavorStatic";
+            this.CollectibleFlavorStatic.Size = new System.Drawing.Size(131, 20);
+            this.CollectibleFlavorStatic.TabIndex = 15;
+            this.CollectibleFlavorStatic.Tag = "Unthemed Control";
+            this.CollectibleFlavorStatic.Text = "(None)";
+            this.CollectibleFlavorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.CollectibleFlavorStatic, "Groups models by flavor.");
+            // 
+            // CollectibleFlavorLabel
+            // 
+            this.CollectibleFlavorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CollectibleFlavorLabel.AutoSize = true;
+            this.CollectibleFlavorLabel.Location = new System.Drawing.Point(761, 47);
+            this.CollectibleFlavorLabel.Name = "CollectibleFlavorLabel";
+            this.CollectibleFlavorLabel.Size = new System.Drawing.Size(37, 13);
+            this.CollectibleFlavorLabel.TabIndex = 16;
+            this.CollectibleFlavorLabel.Text = "Flavor";
+            this.EditorToolTip.SetToolTip(this.CollectibleFlavorLabel, "Groups models by flavor.");
+            // 
+            // CritterEditFlavorButton
+            // 
+            this.CritterEditFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CritterEditFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CritterEditFlavorButton.Location = new System.Drawing.Point(815, 70);
+            this.CritterEditFlavorButton.Name = "CritterEditFlavorButton";
+            this.CritterEditFlavorButton.Size = new System.Drawing.Size(128, 23);
+            this.CritterEditFlavorButton.TabIndex = 17;
+            this.CritterEditFlavorButton.Text = "Edit Flavor";
+            this.EditorToolTip.SetToolTip(this.CritterEditFlavorButton, "Add or remove flavor tag.");
+            this.CritterEditFlavorButton.UseVisualStyleBackColor = false;
+            // 
+            // CritterFlavorStatic
+            // 
+            this.CritterFlavorStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CritterFlavorStatic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.CritterFlavorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.CritterFlavorStatic.Location = new System.Drawing.Point(812, 44);
+            this.CritterFlavorStatic.Name = "CritterFlavorStatic";
+            this.CritterFlavorStatic.Size = new System.Drawing.Size(131, 20);
+            this.CritterFlavorStatic.TabIndex = 15;
+            this.CritterFlavorStatic.Tag = "Unthemed Control";
+            this.CritterFlavorStatic.Text = "(None)";
+            this.CritterFlavorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.CritterFlavorStatic, "Groups models by flavor.");
+            // 
+            // CritterFlavorLabel
+            // 
+            this.CritterFlavorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CritterFlavorLabel.AutoSize = true;
+            this.CritterFlavorLabel.Location = new System.Drawing.Point(761, 47);
+            this.CritterFlavorLabel.Name = "CritterFlavorLabel";
+            this.CritterFlavorLabel.Size = new System.Drawing.Size(37, 13);
+            this.CritterFlavorLabel.TabIndex = 16;
+            this.CritterFlavorLabel.Text = "Flavor";
+            this.EditorToolTip.SetToolTip(this.CritterFlavorLabel, "Groups models by flavor.");
+            // 
+            // CharacterEditFlavorButton
+            // 
+            this.CharacterEditFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CharacterEditFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CharacterEditFlavorButton.Location = new System.Drawing.Point(815, 70);
+            this.CharacterEditFlavorButton.Name = "CharacterEditFlavorButton";
+            this.CharacterEditFlavorButton.Size = new System.Drawing.Size(128, 23);
+            this.CharacterEditFlavorButton.TabIndex = 17;
+            this.CharacterEditFlavorButton.Text = "Edit Flavor";
+            this.EditorToolTip.SetToolTip(this.CharacterEditFlavorButton, "Add or remove flavor tag.");
+            this.CharacterEditFlavorButton.UseVisualStyleBackColor = false;
+            // 
+            // CharacterFlavorStatic
+            // 
+            this.CharacterFlavorStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CharacterFlavorStatic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.CharacterFlavorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.CharacterFlavorStatic.Location = new System.Drawing.Point(812, 44);
+            this.CharacterFlavorStatic.Name = "CharacterFlavorStatic";
+            this.CharacterFlavorStatic.Size = new System.Drawing.Size(131, 20);
+            this.CharacterFlavorStatic.TabIndex = 15;
+            this.CharacterFlavorStatic.Tag = "Unthemed Control";
+            this.CharacterFlavorStatic.Text = "(None)";
+            this.CharacterFlavorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.CharacterFlavorStatic, "Groups models by flavor.");
+            // 
+            // CharacterFlavorLabel
+            // 
+            this.CharacterFlavorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CharacterFlavorLabel.AutoSize = true;
+            this.CharacterFlavorLabel.Location = new System.Drawing.Point(761, 47);
+            this.CharacterFlavorLabel.Name = "CharacterFlavorLabel";
+            this.CharacterFlavorLabel.Size = new System.Drawing.Size(37, 13);
+            this.CharacterFlavorLabel.TabIndex = 16;
+            this.CharacterFlavorLabel.Text = "Flavor";
+            this.EditorToolTip.SetToolTip(this.CharacterFlavorLabel, "Groups models by flavor.");
+            // 
+            // ItemFunctionStatic
+            // 
+            this.ItemFunctionStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemFunctionStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ItemFunctionStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.ItemFunctionStatic.Location = new System.Drawing.Point(812, 99);
+            this.ItemFunctionStatic.Name = "ItemFunctionStatic";
+            this.ItemFunctionStatic.Size = new System.Drawing.Size(131, 20);
+            this.ItemFunctionStatic.TabIndex = 21;
+            this.ItemFunctionStatic.Tag = "Themed";
+            this.ItemFunctionStatic.Text = "(None)";
+            this.ItemFunctionStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.ItemFunctionStatic, "Groups models by purpose.");
+            // 
+            // ItemEditFunctionButton
+            // 
+            this.ItemEditFunctionButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ItemEditFunctionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ItemEditFunctionButton.Location = new System.Drawing.Point(815, 125);
+            this.ItemEditFunctionButton.Name = "ItemEditFunctionButton";
+            this.ItemEditFunctionButton.Size = new System.Drawing.Size(128, 23);
+            this.ItemEditFunctionButton.TabIndex = 20;
+            this.ItemEditFunctionButton.Text = "Edit Function";
+            this.EditorToolTip.SetToolTip(this.ItemEditFunctionButton, "Add or remove function tag.");
+            this.ItemEditFunctionButton.UseVisualStyleBackColor = false;
+            this.ItemEditFunctionButton.Click += new System.EventHandler(this.EditFunctionButton_Click);
+            // 
+            // ItemFunctionLabel
+            // 
+            this.ItemFunctionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemFunctionLabel.AutoSize = true;
+            this.ItemFunctionLabel.Location = new System.Drawing.Point(761, 102);
+            this.ItemFunctionLabel.Name = "ItemFunctionLabel";
+            this.ItemFunctionLabel.Size = new System.Drawing.Size(48, 13);
+            this.ItemFunctionLabel.TabIndex = 19;
+            this.ItemFunctionLabel.Text = "Function";
+            this.EditorToolTip.SetToolTip(this.ItemFunctionLabel, "Groups models by purpose.");
+            // 
+            // ItemEditFlavorButton
+            // 
+            this.ItemEditFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ItemEditFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ItemEditFlavorButton.Location = new System.Drawing.Point(815, 70);
+            this.ItemEditFlavorButton.Name = "ItemEditFlavorButton";
+            this.ItemEditFlavorButton.Size = new System.Drawing.Size(128, 23);
+            this.ItemEditFlavorButton.TabIndex = 17;
+            this.ItemEditFlavorButton.Text = "Edit Flavor";
+            this.EditorToolTip.SetToolTip(this.ItemEditFlavorButton, "Add or remove flavor tag.");
+            this.ItemEditFlavorButton.UseVisualStyleBackColor = false;
+            // 
+            // ItemFlavorStatic
+            // 
+            this.ItemFlavorStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemFlavorStatic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.ItemFlavorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.ItemFlavorStatic.Location = new System.Drawing.Point(812, 44);
+            this.ItemFlavorStatic.Name = "ItemFlavorStatic";
+            this.ItemFlavorStatic.Size = new System.Drawing.Size(131, 20);
+            this.ItemFlavorStatic.TabIndex = 15;
+            this.ItemFlavorStatic.Tag = "Unthemed Control";
+            this.ItemFlavorStatic.Text = "(None)";
+            this.ItemFlavorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.ItemFlavorStatic, "Groups models by flavor.");
+            // 
+            // ItemFlavorLabel
+            // 
+            this.ItemFlavorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemFlavorLabel.AutoSize = true;
+            this.ItemFlavorLabel.Location = new System.Drawing.Point(761, 47);
+            this.ItemFlavorLabel.Name = "ItemFlavorLabel";
+            this.ItemFlavorLabel.Size = new System.Drawing.Size(37, 13);
+            this.ItemFlavorLabel.TabIndex = 16;
+            this.ItemFlavorLabel.Text = "Flavor";
+            this.EditorToolTip.SetToolTip(this.ItemFlavorLabel, "Groups models by flavor.");
+            // 
+            // FlavorBlandSelector
+            // 
+            this.FlavorBlandSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FlavorBlandSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(206)))));
+            this.FlavorBlandSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FlavorBlandSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorBlandSelector.Location = new System.Drawing.Point(3, 1);
+            this.FlavorBlandSelector.Margin = new System.Windows.Forms.Padding(0);
+            this.FlavorBlandSelector.Name = "FlavorBlandSelector";
+            this.FlavorBlandSelector.Size = new System.Drawing.Size(62, 24);
+            this.FlavorBlandSelector.TabIndex = 0;
+            this.FlavorBlandSelector.Tag = "Unthemed Control";
+            this.FlavorBlandSelector.Text = "Bland";
+            this.FlavorBlandSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorBlandSelector, "Models with no particular taste.");
+            // 
+            // FlavorSweetSelector
+            // 
+            this.FlavorSweetSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FlavorSweetSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(216)))), ((int)(((byte)(226)))));
+            this.FlavorSweetSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FlavorSweetSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorSweetSelector.Location = new System.Drawing.Point(71, 1);
+            this.FlavorSweetSelector.Margin = new System.Windows.Forms.Padding(0);
+            this.FlavorSweetSelector.Name = "FlavorSweetSelector";
+            this.FlavorSweetSelector.Size = new System.Drawing.Size(62, 24);
+            this.FlavorSweetSelector.TabIndex = 0;
+            this.FlavorSweetSelector.Tag = "Unthemed Control";
+            this.FlavorSweetSelector.Text = "Sweet";
+            this.FlavorSweetSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorSweetSelector, "Models with a sugary, candylike taste.");
+            // 
+            // FlavorSaltySelector
+            // 
+            this.FlavorSaltySelector.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FlavorSaltySelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.FlavorSaltySelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FlavorSaltySelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorSaltySelector.Location = new System.Drawing.Point(139, 1);
+            this.FlavorSaltySelector.Margin = new System.Windows.Forms.Padding(0);
+            this.FlavorSaltySelector.Name = "FlavorSaltySelector";
+            this.FlavorSaltySelector.Size = new System.Drawing.Size(62, 24);
+            this.FlavorSaltySelector.TabIndex = 0;
+            this.FlavorSaltySelector.Tag = "Unthemed Control";
+            this.FlavorSaltySelector.Text = "Salty";
+            this.FlavorSaltySelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorSaltySelector, "Models with a brackish or briny taste.");
+            // 
+            // FlavorSavorySelector
+            // 
+            this.FlavorSavorySelector.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FlavorSavorySelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(226)))), ((int)(((byte)(183)))));
+            this.FlavorSavorySelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FlavorSavorySelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorSavorySelector.Location = new System.Drawing.Point(207, 1);
+            this.FlavorSavorySelector.Margin = new System.Windows.Forms.Padding(0);
+            this.FlavorSavorySelector.Name = "FlavorSavorySelector";
+            this.FlavorSavorySelector.Size = new System.Drawing.Size(62, 24);
+            this.FlavorSavorySelector.TabIndex = 0;
+            this.FlavorSavorySelector.Tag = "Unthemed Control";
+            this.FlavorSavorySelector.Text = "Savory";
+            this.FlavorSavorySelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorSavorySelector, "Models with a rich umami taste.");
+            // 
+            // FlavorAstringentSelector
+            // 
+            this.FlavorAstringentSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FlavorAstringentSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(252)))), ((int)(((byte)(205)))));
+            this.FlavorAstringentSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FlavorAstringentSelector.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorAstringentSelector.Location = new System.Drawing.Point(272, 1);
+            this.FlavorAstringentSelector.Margin = new System.Windows.Forms.Padding(0);
+            this.FlavorAstringentSelector.Name = "FlavorAstringentSelector";
+            this.FlavorAstringentSelector.Size = new System.Drawing.Size(70, 24);
+            this.FlavorAstringentSelector.TabIndex = 0;
+            this.FlavorAstringentSelector.Tag = "Unthemed Control";
+            this.FlavorAstringentSelector.Text = "Astringent";
+            this.FlavorAstringentSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorAstringentSelector, "Models with a dry, tannic taste.");
+            // 
+            // FlavorNumbingSelector
+            // 
+            this.FlavorNumbingSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FlavorNumbingSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(236)))), ((int)(((byte)(252)))));
+            this.FlavorNumbingSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FlavorNumbingSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorNumbingSelector.Location = new System.Drawing.Point(345, 1);
+            this.FlavorNumbingSelector.Margin = new System.Windows.Forms.Padding(0);
+            this.FlavorNumbingSelector.Name = "FlavorNumbingSelector";
+            this.FlavorNumbingSelector.Size = new System.Drawing.Size(62, 24);
+            this.FlavorNumbingSelector.TabIndex = 0;
+            this.FlavorNumbingSelector.Tag = "Unthemed Control";
+            this.FlavorNumbingSelector.Text = "Numbing";
+            this.FlavorNumbingSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorNumbingSelector, "Models that interrupt tasting.");
+            // 
+            // FlavorAllFlavorsSelector
+            // 
+            this.FlavorAllFlavorsSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FlavorAllFlavorsSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.FlavorAllFlavorsSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FlavorAllFlavorsSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorAllFlavorsSelector.Location = new System.Drawing.Point(413, 1);
+            this.FlavorAllFlavorsSelector.Margin = new System.Windows.Forms.Padding(0);
+            this.FlavorAllFlavorsSelector.Name = "FlavorAllFlavorsSelector";
+            this.FlavorAllFlavorsSelector.Size = new System.Drawing.Size(62, 24);
+            this.FlavorAllFlavorsSelector.TabIndex = 0;
+            this.FlavorAllFlavorsSelector.Tag = "Unthemed Control";
+            this.FlavorAllFlavorsSelector.Text = "(All)";
+            this.FlavorAllFlavorsSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorAllFlavorsSelector, "All models.");
+            // 
+            // FlavorBitterSelector
+            // 
+            this.FlavorBitterSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FlavorBitterSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(214)))), ((int)(((byte)(180)))));
+            this.FlavorBitterSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FlavorBitterSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorBitterSelector.Location = new System.Drawing.Point(3, 27);
+            this.FlavorBitterSelector.Margin = new System.Windows.Forms.Padding(0);
+            this.FlavorBitterSelector.Name = "FlavorBitterSelector";
+            this.FlavorBitterSelector.Size = new System.Drawing.Size(62, 24);
+            this.FlavorBitterSelector.TabIndex = 0;
+            this.FlavorBitterSelector.Tag = "Unthemed Control";
+            this.FlavorBitterSelector.Text = "Bitter";
+            this.FlavorBitterSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorBitterSelector, "Models with a vegetal or tonic taste.");
+            // 
+            // FlavorSourSelector
+            // 
+            this.FlavorSourSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FlavorSourSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(250)))), ((int)(((byte)(209)))));
+            this.FlavorSourSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FlavorSourSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorSourSelector.Location = new System.Drawing.Point(71, 27);
+            this.FlavorSourSelector.Margin = new System.Windows.Forms.Padding(0);
+            this.FlavorSourSelector.Name = "FlavorSourSelector";
+            this.FlavorSourSelector.Size = new System.Drawing.Size(62, 24);
+            this.FlavorSourSelector.TabIndex = 0;
+            this.FlavorSourSelector.Tag = "Unthemed Control";
+            this.FlavorSourSelector.Text = "Sour";
+            this.FlavorSourSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorSourSelector, "Models with a tangy, acidic taste.");
+            // 
+            // FlavorFreshSelector
+            // 
+            this.FlavorFreshSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FlavorFreshSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(253)))), ((int)(((byte)(236)))));
+            this.FlavorFreshSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FlavorFreshSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorFreshSelector.Location = new System.Drawing.Point(139, 27);
+            this.FlavorFreshSelector.Margin = new System.Windows.Forms.Padding(0);
+            this.FlavorFreshSelector.Name = "FlavorFreshSelector";
+            this.FlavorFreshSelector.Size = new System.Drawing.Size(62, 24);
+            this.FlavorFreshSelector.TabIndex = 0;
+            this.FlavorFreshSelector.Tag = "Unthemed Control";
+            this.FlavorFreshSelector.Text = "Fresh";
+            this.FlavorFreshSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorFreshSelector, "Models with a cool, minty taste.");
+            // 
+            // FlavorPungentSelector
+            // 
+            this.FlavorPungentSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FlavorPungentSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(202)))), ((int)(((byte)(235)))));
+            this.FlavorPungentSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FlavorPungentSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorPungentSelector.Location = new System.Drawing.Point(207, 27);
+            this.FlavorPungentSelector.Margin = new System.Windows.Forms.Padding(0);
+            this.FlavorPungentSelector.Name = "FlavorPungentSelector";
+            this.FlavorPungentSelector.Size = new System.Drawing.Size(62, 24);
+            this.FlavorPungentSelector.TabIndex = 0;
+            this.FlavorPungentSelector.Tag = "Unthemed Control";
+            this.FlavorPungentSelector.Text = "Pungent";
+            this.FlavorPungentSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorPungentSelector, "Models with a fiery, peppery taste.");
+            // 
+            // FlavorMetallicSelector
+            // 
+            this.FlavorMetallicSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FlavorMetallicSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
+            this.FlavorMetallicSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FlavorMetallicSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorMetallicSelector.Location = new System.Drawing.Point(272, 27);
+            this.FlavorMetallicSelector.Margin = new System.Windows.Forms.Padding(0);
+            this.FlavorMetallicSelector.Name = "FlavorMetallicSelector";
+            this.FlavorMetallicSelector.Size = new System.Drawing.Size(70, 24);
+            this.FlavorMetallicSelector.TabIndex = 0;
+            this.FlavorMetallicSelector.Tag = "Unthemed Control";
+            this.FlavorMetallicSelector.Text = "Metallic";
+            this.FlavorMetallicSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorMetallicSelector, "Models with a tinny, coppery taste.");
+            // 
+            // FlavorChemicalSelector
+            // 
+            this.FlavorChemicalSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FlavorChemicalSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(203)))), ((int)(((byte)(248)))));
+            this.FlavorChemicalSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FlavorChemicalSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorChemicalSelector.Location = new System.Drawing.Point(345, 27);
+            this.FlavorChemicalSelector.Margin = new System.Windows.Forms.Padding(0);
+            this.FlavorChemicalSelector.Name = "FlavorChemicalSelector";
+            this.FlavorChemicalSelector.Size = new System.Drawing.Size(62, 24);
+            this.FlavorChemicalSelector.TabIndex = 0;
+            this.FlavorChemicalSelector.Tag = "Unthemed Control";
+            this.FlavorChemicalSelector.Text = "Chemical";
+            this.FlavorChemicalSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorChemicalSelector, "Models with a pequliar or arteficial taste.");
+            // 
+            // FlavorNoFlavorsSelector
+            // 
+            this.FlavorNoFlavorsSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FlavorNoFlavorsSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.FlavorNoFlavorsSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FlavorNoFlavorsSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FlavorNoFlavorsSelector.Location = new System.Drawing.Point(413, 27);
+            this.FlavorNoFlavorsSelector.Margin = new System.Windows.Forms.Padding(0);
+            this.FlavorNoFlavorsSelector.Name = "FlavorNoFlavorsSelector";
+            this.FlavorNoFlavorsSelector.Size = new System.Drawing.Size(62, 24);
+            this.FlavorNoFlavorsSelector.TabIndex = 0;
+            this.FlavorNoFlavorsSelector.Tag = "Unthemed Control";
+            this.FlavorNoFlavorsSelector.Text = "(None)";
+            this.FlavorNoFlavorsSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorNoFlavorsSelector, "Models to which no flavor information.");
+            // 
             // EditorTabs
             // 
             this.EditorTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -3426,68 +4047,6 @@ namespace Scribe.Forms
             this.FloorsTabPage.TabIndex = 6;
             this.FloorsTabPage.Text = "Floors";
             // 
-            // FloorFunctionStatic
-            // 
-            this.FloorFunctionStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorFunctionStatic.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FloorFunctionStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.FloorFunctionStatic.Location = new System.Drawing.Point(812, 99);
-            this.FloorFunctionStatic.Name = "FloorFunctionStatic";
-            this.FloorFunctionStatic.Size = new System.Drawing.Size(131, 20);
-            this.FloorFunctionStatic.TabIndex = 24;
-            this.FloorFunctionStatic.Tag = "Themed";
-            this.FloorFunctionStatic.Text = "(None)";
-            this.FloorFunctionStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.FloorFunctionStatic, "Groups parquets by purpose.");
-            // 
-            // FloorFunctionLabel
-            // 
-            this.FloorFunctionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorFunctionLabel.AutoSize = true;
-            this.FloorFunctionLabel.Location = new System.Drawing.Point(761, 102);
-            this.FloorFunctionLabel.Name = "FloorFunctionLabel";
-            this.FloorFunctionLabel.Size = new System.Drawing.Size(48, 13);
-            this.FloorFunctionLabel.TabIndex = 22;
-            this.FloorFunctionLabel.Text = "Function";
-            this.EditorToolTip.SetToolTip(this.FloorFunctionLabel, "Groups parquets by purpose.");
-            // 
-            // FloorEditFlavorButton
-            // 
-            this.FloorEditFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FloorEditFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FloorEditFlavorButton.Location = new System.Drawing.Point(815, 70);
-            this.FloorEditFlavorButton.Name = "FloorEditFlavorButton";
-            this.FloorEditFlavorButton.Size = new System.Drawing.Size(128, 23);
-            this.FloorEditFlavorButton.TabIndex = 14;
-            this.FloorEditFlavorButton.Text = "Edit Flavor";
-            this.EditorToolTip.SetToolTip(this.FloorEditFlavorButton, "Add or remove flavor tag.");
-            this.FloorEditFlavorButton.UseVisualStyleBackColor = false;
-            // 
-            // FloorFlavorStatic
-            // 
-            this.FloorFlavorStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorFlavorStatic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.FloorFlavorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.FloorFlavorStatic.Location = new System.Drawing.Point(812, 44);
-            this.FloorFlavorStatic.Name = "FloorFlavorStatic";
-            this.FloorFlavorStatic.Size = new System.Drawing.Size(131, 20);
-            this.FloorFlavorStatic.TabIndex = 12;
-            this.FloorFlavorStatic.Tag = "Unthemed Control";
-            this.FloorFlavorStatic.Text = "(None)";
-            this.FloorFlavorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.FloorFlavorStatic, "Groups models by flavor.");
-            // 
-            // FloorFlavorLabel
-            // 
-            this.FloorFlavorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorFlavorLabel.AutoSize = true;
-            this.FloorFlavorLabel.Location = new System.Drawing.Point(761, 47);
-            this.FloorFlavorLabel.Name = "FloorFlavorLabel";
-            this.FloorFlavorLabel.Size = new System.Drawing.Size(37, 13);
-            this.FloorFlavorLabel.TabIndex = 13;
-            this.FloorFlavorLabel.Text = "Flavor";
-            this.EditorToolTip.SetToolTip(this.FloorFlavorLabel, "Groups models by flavor.");
-            // 
             // FloorFilledInPixelBox
             // 
             this.FloorFilledInPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -3636,68 +4195,6 @@ namespace Scribe.Forms
             this.BlocksTabPage.TabIndex = 9;
             this.BlocksTabPage.Text = "Blocks";
             // 
-            // BlockFunctionStatic
-            // 
-            this.BlockFunctionStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlockFunctionStatic.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BlockFunctionStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.BlockFunctionStatic.Location = new System.Drawing.Point(812, 99);
-            this.BlockFunctionStatic.Name = "BlockFunctionStatic";
-            this.BlockFunctionStatic.Size = new System.Drawing.Size(131, 20);
-            this.BlockFunctionStatic.TabIndex = 24;
-            this.BlockFunctionStatic.Tag = "Themed";
-            this.BlockFunctionStatic.Text = "(None)";
-            this.BlockFunctionStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.BlockFunctionStatic, "Groups parquets by purpose.");
-            // 
-            // BlockFunctionLabel
-            // 
-            this.BlockFunctionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlockFunctionLabel.AutoSize = true;
-            this.BlockFunctionLabel.Location = new System.Drawing.Point(761, 102);
-            this.BlockFunctionLabel.Name = "BlockFunctionLabel";
-            this.BlockFunctionLabel.Size = new System.Drawing.Size(48, 13);
-            this.BlockFunctionLabel.TabIndex = 22;
-            this.BlockFunctionLabel.Text = "Function";
-            this.EditorToolTip.SetToolTip(this.BlockFunctionLabel, "Groups parquets by purpose.");
-            // 
-            // BlockEditFlavorButton
-            // 
-            this.BlockEditFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BlockEditFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BlockEditFlavorButton.Location = new System.Drawing.Point(815, 70);
-            this.BlockEditFlavorButton.Name = "BlockEditFlavorButton";
-            this.BlockEditFlavorButton.Size = new System.Drawing.Size(128, 23);
-            this.BlockEditFlavorButton.TabIndex = 17;
-            this.BlockEditFlavorButton.Text = "Edit Flavor";
-            this.EditorToolTip.SetToolTip(this.BlockEditFlavorButton, "Add or remove flavor tag.");
-            this.BlockEditFlavorButton.UseVisualStyleBackColor = false;
-            // 
-            // BlockFlavorStatic
-            // 
-            this.BlockFlavorStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlockFlavorStatic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.BlockFlavorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.BlockFlavorStatic.Location = new System.Drawing.Point(812, 44);
-            this.BlockFlavorStatic.Name = "BlockFlavorStatic";
-            this.BlockFlavorStatic.Size = new System.Drawing.Size(131, 20);
-            this.BlockFlavorStatic.TabIndex = 15;
-            this.BlockFlavorStatic.Tag = "Unthemed Control";
-            this.BlockFlavorStatic.Text = "(None)";
-            this.BlockFlavorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.BlockFlavorStatic, "Groups models by flavor.");
-            // 
-            // BlockFlavorLabel
-            // 
-            this.BlockFlavorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlockFlavorLabel.AutoSize = true;
-            this.BlockFlavorLabel.Location = new System.Drawing.Point(761, 47);
-            this.BlockFlavorLabel.Name = "BlockFlavorLabel";
-            this.BlockFlavorLabel.Size = new System.Drawing.Size(37, 13);
-            this.BlockFlavorLabel.TabIndex = 16;
-            this.BlockFlavorLabel.Text = "Flavor";
-            this.EditorToolTip.SetToolTip(this.BlockFlavorLabel, "Groups models by flavor.");
-            // 
             // BlockTableLayoutPanel
             // 
             this.BlockTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -3828,68 +4325,6 @@ namespace Scribe.Forms
             this.FurnishingsTabPage.Size = new System.Drawing.Size(953, 599);
             this.FurnishingsTabPage.TabIndex = 10;
             this.FurnishingsTabPage.Text = "Furnishings";
-            // 
-            // FurnishingFunctionStatic
-            // 
-            this.FurnishingFunctionStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FurnishingFunctionStatic.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FurnishingFunctionStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.FurnishingFunctionStatic.Location = new System.Drawing.Point(812, 99);
-            this.FurnishingFunctionStatic.Name = "FurnishingFunctionStatic";
-            this.FurnishingFunctionStatic.Size = new System.Drawing.Size(131, 20);
-            this.FurnishingFunctionStatic.TabIndex = 24;
-            this.FurnishingFunctionStatic.Tag = "Themed";
-            this.FurnishingFunctionStatic.Text = "(None)";
-            this.FurnishingFunctionStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.FurnishingFunctionStatic, "Groups parquets by purpose.");
-            // 
-            // FurnishingFunctionLabel
-            // 
-            this.FurnishingFunctionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FurnishingFunctionLabel.AutoSize = true;
-            this.FurnishingFunctionLabel.Location = new System.Drawing.Point(761, 102);
-            this.FurnishingFunctionLabel.Name = "FurnishingFunctionLabel";
-            this.FurnishingFunctionLabel.Size = new System.Drawing.Size(48, 13);
-            this.FurnishingFunctionLabel.TabIndex = 22;
-            this.FurnishingFunctionLabel.Text = "Function";
-            this.EditorToolTip.SetToolTip(this.FurnishingFunctionLabel, "Groups parquets by purpose.");
-            // 
-            // FurnishingEditFlavorButton
-            // 
-            this.FurnishingEditFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FurnishingEditFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FurnishingEditFlavorButton.Location = new System.Drawing.Point(815, 70);
-            this.FurnishingEditFlavorButton.Name = "FurnishingEditFlavorButton";
-            this.FurnishingEditFlavorButton.Size = new System.Drawing.Size(128, 23);
-            this.FurnishingEditFlavorButton.TabIndex = 17;
-            this.FurnishingEditFlavorButton.Text = "Edit Flavor";
-            this.EditorToolTip.SetToolTip(this.FurnishingEditFlavorButton, "Add or remove flavor tag.");
-            this.FurnishingEditFlavorButton.UseVisualStyleBackColor = false;
-            // 
-            // FurnishingFlavorStatic
-            // 
-            this.FurnishingFlavorStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FurnishingFlavorStatic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.FurnishingFlavorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.FurnishingFlavorStatic.Location = new System.Drawing.Point(812, 44);
-            this.FurnishingFlavorStatic.Name = "FurnishingFlavorStatic";
-            this.FurnishingFlavorStatic.Size = new System.Drawing.Size(131, 20);
-            this.FurnishingFlavorStatic.TabIndex = 15;
-            this.FurnishingFlavorStatic.Tag = "Unthemed Control";
-            this.FurnishingFlavorStatic.Text = "(None)";
-            this.FurnishingFlavorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.FurnishingFlavorStatic, "Groups models by flavor.");
-            // 
-            // FurnishingFlavorLabel
-            // 
-            this.FurnishingFlavorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FurnishingFlavorLabel.AutoSize = true;
-            this.FurnishingFlavorLabel.Location = new System.Drawing.Point(761, 47);
-            this.FurnishingFlavorLabel.Name = "FurnishingFlavorLabel";
-            this.FurnishingFlavorLabel.Size = new System.Drawing.Size(37, 13);
-            this.FurnishingFlavorLabel.TabIndex = 16;
-            this.FurnishingFlavorLabel.Text = "Flavor";
-            this.EditorToolTip.SetToolTip(this.FurnishingFlavorLabel, "Groups models by flavor.");
             // 
             // FurnishingTableLayoutPanel
             // 
@@ -4047,68 +4482,6 @@ namespace Scribe.Forms
             this.CollectiblesTabPage.TabIndex = 11;
             this.CollectiblesTabPage.Text = "Collectibles";
             // 
-            // CollectibleFunctionStatic
-            // 
-            this.CollectibleFunctionStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectibleFunctionStatic.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CollectibleFunctionStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.CollectibleFunctionStatic.Location = new System.Drawing.Point(812, 99);
-            this.CollectibleFunctionStatic.Name = "CollectibleFunctionStatic";
-            this.CollectibleFunctionStatic.Size = new System.Drawing.Size(131, 20);
-            this.CollectibleFunctionStatic.TabIndex = 24;
-            this.CollectibleFunctionStatic.Tag = "Themed";
-            this.CollectibleFunctionStatic.Text = "(None)";
-            this.CollectibleFunctionStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.CollectibleFunctionStatic, "Groups parquets by purpose.");
-            // 
-            // CollectibleFunctionLabel
-            // 
-            this.CollectibleFunctionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectibleFunctionLabel.AutoSize = true;
-            this.CollectibleFunctionLabel.Location = new System.Drawing.Point(761, 102);
-            this.CollectibleFunctionLabel.Name = "CollectibleFunctionLabel";
-            this.CollectibleFunctionLabel.Size = new System.Drawing.Size(48, 13);
-            this.CollectibleFunctionLabel.TabIndex = 22;
-            this.CollectibleFunctionLabel.Text = "Function";
-            this.EditorToolTip.SetToolTip(this.CollectibleFunctionLabel, "Groups parquets by purpose.");
-            // 
-            // CollectibleEditFlavorButton
-            // 
-            this.CollectibleEditFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CollectibleEditFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CollectibleEditFlavorButton.Location = new System.Drawing.Point(815, 70);
-            this.CollectibleEditFlavorButton.Name = "CollectibleEditFlavorButton";
-            this.CollectibleEditFlavorButton.Size = new System.Drawing.Size(128, 23);
-            this.CollectibleEditFlavorButton.TabIndex = 17;
-            this.CollectibleEditFlavorButton.Text = "Edit Flavor";
-            this.EditorToolTip.SetToolTip(this.CollectibleEditFlavorButton, "Add or remove flavor tag.");
-            this.CollectibleEditFlavorButton.UseVisualStyleBackColor = false;
-            // 
-            // CollectibleFlavorStatic
-            // 
-            this.CollectibleFlavorStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectibleFlavorStatic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.CollectibleFlavorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.CollectibleFlavorStatic.Location = new System.Drawing.Point(812, 44);
-            this.CollectibleFlavorStatic.Name = "CollectibleFlavorStatic";
-            this.CollectibleFlavorStatic.Size = new System.Drawing.Size(131, 20);
-            this.CollectibleFlavorStatic.TabIndex = 15;
-            this.CollectibleFlavorStatic.Tag = "Unthemed Control";
-            this.CollectibleFlavorStatic.Text = "(None)";
-            this.CollectibleFlavorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.CollectibleFlavorStatic, "Groups models by flavor.");
-            // 
-            // CollectibleFlavorLabel
-            // 
-            this.CollectibleFlavorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectibleFlavorLabel.AutoSize = true;
-            this.CollectibleFlavorLabel.Location = new System.Drawing.Point(761, 47);
-            this.CollectibleFlavorLabel.Name = "CollectibleFlavorLabel";
-            this.CollectibleFlavorLabel.Size = new System.Drawing.Size(37, 13);
-            this.CollectibleFlavorLabel.TabIndex = 16;
-            this.CollectibleFlavorLabel.Text = "Flavor";
-            this.EditorToolTip.SetToolTip(this.CollectibleFlavorLabel, "Groups models by flavor.");
-            // 
             // CollectibleTableLayoutPanel
             // 
             this.CollectibleTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -4222,43 +4595,6 @@ namespace Scribe.Forms
             this.CrittersTabPage.Size = new System.Drawing.Size(953, 599);
             this.CrittersTabPage.TabIndex = 1;
             this.CrittersTabPage.Text = "Critters";
-            // 
-            // CritterEditFlavorButton
-            // 
-            this.CritterEditFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CritterEditFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CritterEditFlavorButton.Location = new System.Drawing.Point(815, 70);
-            this.CritterEditFlavorButton.Name = "CritterEditFlavorButton";
-            this.CritterEditFlavorButton.Size = new System.Drawing.Size(128, 23);
-            this.CritterEditFlavorButton.TabIndex = 17;
-            this.CritterEditFlavorButton.Text = "Edit Flavor";
-            this.EditorToolTip.SetToolTip(this.CritterEditFlavorButton, "Add or remove flavor tag.");
-            this.CritterEditFlavorButton.UseVisualStyleBackColor = false;
-            // 
-            // CritterFlavorStatic
-            // 
-            this.CritterFlavorStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CritterFlavorStatic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.CritterFlavorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.CritterFlavorStatic.Location = new System.Drawing.Point(812, 44);
-            this.CritterFlavorStatic.Name = "CritterFlavorStatic";
-            this.CritterFlavorStatic.Size = new System.Drawing.Size(131, 20);
-            this.CritterFlavorStatic.TabIndex = 15;
-            this.CritterFlavorStatic.Tag = "Unthemed Control";
-            this.CritterFlavorStatic.Text = "(None)";
-            this.CritterFlavorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.CritterFlavorStatic, "Groups models by flavor.");
-            // 
-            // CritterFlavorLabel
-            // 
-            this.CritterFlavorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CritterFlavorLabel.AutoSize = true;
-            this.CritterFlavorLabel.Location = new System.Drawing.Point(761, 47);
-            this.CritterFlavorLabel.Name = "CritterFlavorLabel";
-            this.CritterFlavorLabel.Size = new System.Drawing.Size(37, 13);
-            this.CritterFlavorLabel.TabIndex = 16;
-            this.CritterFlavorLabel.Text = "Flavor";
-            this.EditorToolTip.SetToolTip(this.CritterFlavorLabel, "Groups models by flavor.");
             // 
             // CritterTableLayoutPanel
             // 
@@ -4453,43 +4789,6 @@ namespace Scribe.Forms
             this.CharactersTabPage.Size = new System.Drawing.Size(953, 599);
             this.CharactersTabPage.TabIndex = 12;
             this.CharactersTabPage.Text = "Characters";
-            // 
-            // CharacterEditFlavorButton
-            // 
-            this.CharacterEditFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CharacterEditFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CharacterEditFlavorButton.Location = new System.Drawing.Point(815, 70);
-            this.CharacterEditFlavorButton.Name = "CharacterEditFlavorButton";
-            this.CharacterEditFlavorButton.Size = new System.Drawing.Size(128, 23);
-            this.CharacterEditFlavorButton.TabIndex = 17;
-            this.CharacterEditFlavorButton.Text = "Edit Flavor";
-            this.EditorToolTip.SetToolTip(this.CharacterEditFlavorButton, "Add or remove flavor tag.");
-            this.CharacterEditFlavorButton.UseVisualStyleBackColor = false;
-            // 
-            // CharacterFlavorStatic
-            // 
-            this.CharacterFlavorStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CharacterFlavorStatic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.CharacterFlavorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.CharacterFlavorStatic.Location = new System.Drawing.Point(812, 44);
-            this.CharacterFlavorStatic.Name = "CharacterFlavorStatic";
-            this.CharacterFlavorStatic.Size = new System.Drawing.Size(131, 20);
-            this.CharacterFlavorStatic.TabIndex = 15;
-            this.CharacterFlavorStatic.Tag = "Unthemed Control";
-            this.CharacterFlavorStatic.Text = "(None)";
-            this.CharacterFlavorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.CharacterFlavorStatic, "Groups models by flavor.");
-            // 
-            // CharacterFlavorLabel
-            // 
-            this.CharacterFlavorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CharacterFlavorLabel.AutoSize = true;
-            this.CharacterFlavorLabel.Location = new System.Drawing.Point(761, 47);
-            this.CharacterFlavorLabel.Name = "CharacterFlavorLabel";
-            this.CharacterFlavorLabel.Size = new System.Drawing.Size(37, 13);
-            this.CharacterFlavorLabel.TabIndex = 16;
-            this.CharacterFlavorLabel.Text = "Flavor";
-            this.EditorToolTip.SetToolTip(this.CharacterFlavorLabel, "Groups models by flavor.");
             // 
             // CharacterPronounGroupBox
             // 
@@ -5020,81 +5319,6 @@ namespace Scribe.Forms
             this.ItemsTabPage.Size = new System.Drawing.Size(953, 599);
             this.ItemsTabPage.TabIndex = 4;
             this.ItemsTabPage.Text = "Items";
-            // 
-            // ItemFunctionStatic
-            // 
-            this.ItemFunctionStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemFunctionStatic.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ItemFunctionStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.ItemFunctionStatic.Location = new System.Drawing.Point(812, 99);
-            this.ItemFunctionStatic.Name = "ItemFunctionStatic";
-            this.ItemFunctionStatic.Size = new System.Drawing.Size(131, 20);
-            this.ItemFunctionStatic.TabIndex = 21;
-            this.ItemFunctionStatic.Tag = "Themed";
-            this.ItemFunctionStatic.Text = "(None)";
-            this.ItemFunctionStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.ItemFunctionStatic, "Groups models by purpose.");
-            // 
-            // ItemEditFunctionButton
-            // 
-            this.ItemEditFunctionButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ItemEditFunctionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ItemEditFunctionButton.Location = new System.Drawing.Point(815, 125);
-            this.ItemEditFunctionButton.Name = "ItemEditFunctionButton";
-            this.ItemEditFunctionButton.Size = new System.Drawing.Size(128, 23);
-            this.ItemEditFunctionButton.TabIndex = 20;
-            this.ItemEditFunctionButton.Text = "Edit Function";
-            this.EditorToolTip.SetToolTip(this.ItemEditFunctionButton, "Add or remove function tag.");
-            this.ItemEditFunctionButton.UseVisualStyleBackColor = false;
-            this.ItemEditFunctionButton.Click += new System.EventHandler(this.EditFunctionButton_Click);
-            // 
-            // ItemFunctionLabel
-            // 
-            this.ItemFunctionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemFunctionLabel.AutoSize = true;
-            this.ItemFunctionLabel.Location = new System.Drawing.Point(761, 102);
-            this.ItemFunctionLabel.Name = "ItemFunctionLabel";
-            this.ItemFunctionLabel.Size = new System.Drawing.Size(48, 13);
-            this.ItemFunctionLabel.TabIndex = 19;
-            this.ItemFunctionLabel.Text = "Function";
-            this.EditorToolTip.SetToolTip(this.ItemFunctionLabel, "Groups models by purpose.");
-            // 
-            // ItemEditFlavorButton
-            // 
-            this.ItemEditFlavorButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ItemEditFlavorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ItemEditFlavorButton.Location = new System.Drawing.Point(815, 70);
-            this.ItemEditFlavorButton.Name = "ItemEditFlavorButton";
-            this.ItemEditFlavorButton.Size = new System.Drawing.Size(128, 23);
-            this.ItemEditFlavorButton.TabIndex = 17;
-            this.ItemEditFlavorButton.Text = "Edit Flavor";
-            this.EditorToolTip.SetToolTip(this.ItemEditFlavorButton, "Add or remove flavor tag.");
-            this.ItemEditFlavorButton.UseVisualStyleBackColor = false;
-            // 
-            // ItemFlavorStatic
-            // 
-            this.ItemFlavorStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemFlavorStatic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.ItemFlavorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.ItemFlavorStatic.Location = new System.Drawing.Point(812, 44);
-            this.ItemFlavorStatic.Name = "ItemFlavorStatic";
-            this.ItemFlavorStatic.Size = new System.Drawing.Size(131, 20);
-            this.ItemFlavorStatic.TabIndex = 15;
-            this.ItemFlavorStatic.Tag = "Unthemed Control";
-            this.ItemFlavorStatic.Text = "(None)";
-            this.ItemFlavorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.ItemFlavorStatic, "Groups models by flavor.");
-            // 
-            // ItemFlavorLabel
-            // 
-            this.ItemFlavorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemFlavorLabel.AutoSize = true;
-            this.ItemFlavorLabel.Location = new System.Drawing.Point(761, 47);
-            this.ItemFlavorLabel.Name = "ItemFlavorLabel";
-            this.ItemFlavorLabel.Size = new System.Drawing.Size(37, 13);
-            this.ItemFlavorLabel.TabIndex = 16;
-            this.ItemFlavorLabel.Text = "Flavor";
-            this.EditorToolTip.SetToolTip(this.ItemFlavorLabel, "Groups models by flavor.");
             // 
             // ItemRemoveItemButton
             // 
@@ -7247,230 +7471,6 @@ namespace Scribe.Forms
             this.FlavorsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.FlavorsTableLayoutPanel.Size = new System.Drawing.Size(479, 52);
             this.FlavorsTableLayoutPanel.TabIndex = 0;
-            // 
-            // FlavorBlandSelector
-            // 
-            this.FlavorBlandSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FlavorBlandSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(206)))));
-            this.FlavorBlandSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorBlandSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FlavorBlandSelector.Location = new System.Drawing.Point(3, 1);
-            this.FlavorBlandSelector.Margin = new System.Windows.Forms.Padding(0);
-            this.FlavorBlandSelector.Name = "FlavorBlandSelector";
-            this.FlavorBlandSelector.Size = new System.Drawing.Size(62, 24);
-            this.FlavorBlandSelector.TabIndex = 0;
-            this.FlavorBlandSelector.Tag = "Unthemed Control";
-            this.FlavorBlandSelector.Text = "Bland";
-            this.FlavorBlandSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.FlavorBlandSelector, "Models with no particular taste.");
-            // 
-            // FlavorSweetSelector
-            // 
-            this.FlavorSweetSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FlavorSweetSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(216)))), ((int)(((byte)(226)))));
-            this.FlavorSweetSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorSweetSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FlavorSweetSelector.Location = new System.Drawing.Point(71, 1);
-            this.FlavorSweetSelector.Margin = new System.Windows.Forms.Padding(0);
-            this.FlavorSweetSelector.Name = "FlavorSweetSelector";
-            this.FlavorSweetSelector.Size = new System.Drawing.Size(62, 24);
-            this.FlavorSweetSelector.TabIndex = 0;
-            this.FlavorSweetSelector.Tag = "Unthemed Control";
-            this.FlavorSweetSelector.Text = "Sweet";
-            this.FlavorSweetSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.FlavorSweetSelector, "Models with a sugary, candylike taste.");
-            // 
-            // FlavorSaltySelector
-            // 
-            this.FlavorSaltySelector.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FlavorSaltySelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.FlavorSaltySelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorSaltySelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FlavorSaltySelector.Location = new System.Drawing.Point(139, 1);
-            this.FlavorSaltySelector.Margin = new System.Windows.Forms.Padding(0);
-            this.FlavorSaltySelector.Name = "FlavorSaltySelector";
-            this.FlavorSaltySelector.Size = new System.Drawing.Size(62, 24);
-            this.FlavorSaltySelector.TabIndex = 0;
-            this.FlavorSaltySelector.Tag = "Unthemed Control";
-            this.FlavorSaltySelector.Text = "Salty";
-            this.FlavorSaltySelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.FlavorSaltySelector, "Models with a brackish or briny taste.");
-            // 
-            // FlavorSavorySelector
-            // 
-            this.FlavorSavorySelector.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FlavorSavorySelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(226)))), ((int)(((byte)(183)))));
-            this.FlavorSavorySelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorSavorySelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FlavorSavorySelector.Location = new System.Drawing.Point(207, 1);
-            this.FlavorSavorySelector.Margin = new System.Windows.Forms.Padding(0);
-            this.FlavorSavorySelector.Name = "FlavorSavorySelector";
-            this.FlavorSavorySelector.Size = new System.Drawing.Size(62, 24);
-            this.FlavorSavorySelector.TabIndex = 0;
-            this.FlavorSavorySelector.Tag = "Unthemed Control";
-            this.FlavorSavorySelector.Text = "Savory";
-            this.FlavorSavorySelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.FlavorSavorySelector, "Models with a rich umami taste.");
-            // 
-            // FlavorAstringentSelector
-            // 
-            this.FlavorAstringentSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FlavorAstringentSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(252)))), ((int)(((byte)(205)))));
-            this.FlavorAstringentSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorAstringentSelector.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FlavorAstringentSelector.Location = new System.Drawing.Point(272, 1);
-            this.FlavorAstringentSelector.Margin = new System.Windows.Forms.Padding(0);
-            this.FlavorAstringentSelector.Name = "FlavorAstringentSelector";
-            this.FlavorAstringentSelector.Size = new System.Drawing.Size(70, 24);
-            this.FlavorAstringentSelector.TabIndex = 0;
-            this.FlavorAstringentSelector.Tag = "Unthemed Control";
-            this.FlavorAstringentSelector.Text = "Astringent";
-            this.FlavorAstringentSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.FlavorAstringentSelector, "Models with a dry, tannic taste.");
-            // 
-            // FlavorNumbingSelector
-            // 
-            this.FlavorNumbingSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FlavorNumbingSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(236)))), ((int)(((byte)(252)))));
-            this.FlavorNumbingSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorNumbingSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FlavorNumbingSelector.Location = new System.Drawing.Point(345, 1);
-            this.FlavorNumbingSelector.Margin = new System.Windows.Forms.Padding(0);
-            this.FlavorNumbingSelector.Name = "FlavorNumbingSelector";
-            this.FlavorNumbingSelector.Size = new System.Drawing.Size(62, 24);
-            this.FlavorNumbingSelector.TabIndex = 0;
-            this.FlavorNumbingSelector.Tag = "Unthemed Control";
-            this.FlavorNumbingSelector.Text = "Numbing";
-            this.FlavorNumbingSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.FlavorNumbingSelector, "Models that interrupt tasting.");
-            // 
-            // FlavorAllFlavorsSelector
-            // 
-            this.FlavorAllFlavorsSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FlavorAllFlavorsSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.FlavorAllFlavorsSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorAllFlavorsSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FlavorAllFlavorsSelector.Location = new System.Drawing.Point(413, 1);
-            this.FlavorAllFlavorsSelector.Margin = new System.Windows.Forms.Padding(0);
-            this.FlavorAllFlavorsSelector.Name = "FlavorAllFlavorsSelector";
-            this.FlavorAllFlavorsSelector.Size = new System.Drawing.Size(62, 24);
-            this.FlavorAllFlavorsSelector.TabIndex = 0;
-            this.FlavorAllFlavorsSelector.Tag = "Unthemed Control";
-            this.FlavorAllFlavorsSelector.Text = "(All)";
-            this.FlavorAllFlavorsSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.FlavorAllFlavorsSelector, "All models.");
-            // 
-            // FlavorBitterSelector
-            // 
-            this.FlavorBitterSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FlavorBitterSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(214)))), ((int)(((byte)(180)))));
-            this.FlavorBitterSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorBitterSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FlavorBitterSelector.Location = new System.Drawing.Point(3, 27);
-            this.FlavorBitterSelector.Margin = new System.Windows.Forms.Padding(0);
-            this.FlavorBitterSelector.Name = "FlavorBitterSelector";
-            this.FlavorBitterSelector.Size = new System.Drawing.Size(62, 24);
-            this.FlavorBitterSelector.TabIndex = 0;
-            this.FlavorBitterSelector.Tag = "Unthemed Control";
-            this.FlavorBitterSelector.Text = "Bitter";
-            this.FlavorBitterSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.FlavorBitterSelector, "Models with a vegetal or tonic taste.");
-            // 
-            // FlavorSourSelector
-            // 
-            this.FlavorSourSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FlavorSourSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(250)))), ((int)(((byte)(209)))));
-            this.FlavorSourSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorSourSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FlavorSourSelector.Location = new System.Drawing.Point(71, 27);
-            this.FlavorSourSelector.Margin = new System.Windows.Forms.Padding(0);
-            this.FlavorSourSelector.Name = "FlavorSourSelector";
-            this.FlavorSourSelector.Size = new System.Drawing.Size(62, 24);
-            this.FlavorSourSelector.TabIndex = 0;
-            this.FlavorSourSelector.Tag = "Unthemed Control";
-            this.FlavorSourSelector.Text = "Sour";
-            this.FlavorSourSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.FlavorSourSelector, "Models with a tangy, acidic taste.");
-            // 
-            // FlavorFreshSelector
-            // 
-            this.FlavorFreshSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FlavorFreshSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(253)))), ((int)(((byte)(236)))));
-            this.FlavorFreshSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorFreshSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FlavorFreshSelector.Location = new System.Drawing.Point(139, 27);
-            this.FlavorFreshSelector.Margin = new System.Windows.Forms.Padding(0);
-            this.FlavorFreshSelector.Name = "FlavorFreshSelector";
-            this.FlavorFreshSelector.Size = new System.Drawing.Size(62, 24);
-            this.FlavorFreshSelector.TabIndex = 0;
-            this.FlavorFreshSelector.Tag = "Unthemed Control";
-            this.FlavorFreshSelector.Text = "Fresh";
-            this.FlavorFreshSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.FlavorFreshSelector, "Models with a cool, minty taste.");
-            // 
-            // FlavorPungentSelector
-            // 
-            this.FlavorPungentSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FlavorPungentSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(202)))), ((int)(((byte)(235)))));
-            this.FlavorPungentSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorPungentSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FlavorPungentSelector.Location = new System.Drawing.Point(207, 27);
-            this.FlavorPungentSelector.Margin = new System.Windows.Forms.Padding(0);
-            this.FlavorPungentSelector.Name = "FlavorPungentSelector";
-            this.FlavorPungentSelector.Size = new System.Drawing.Size(62, 24);
-            this.FlavorPungentSelector.TabIndex = 0;
-            this.FlavorPungentSelector.Tag = "Unthemed Control";
-            this.FlavorPungentSelector.Text = "Pungent";
-            this.FlavorPungentSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.FlavorPungentSelector, "Models with a fiery, peppery taste.");
-            // 
-            // FlavorMetallicSelector
-            // 
-            this.FlavorMetallicSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FlavorMetallicSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
-            this.FlavorMetallicSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorMetallicSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FlavorMetallicSelector.Location = new System.Drawing.Point(272, 27);
-            this.FlavorMetallicSelector.Margin = new System.Windows.Forms.Padding(0);
-            this.FlavorMetallicSelector.Name = "FlavorMetallicSelector";
-            this.FlavorMetallicSelector.Size = new System.Drawing.Size(70, 24);
-            this.FlavorMetallicSelector.TabIndex = 0;
-            this.FlavorMetallicSelector.Tag = "Unthemed Control";
-            this.FlavorMetallicSelector.Text = "Metallic";
-            this.FlavorMetallicSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.FlavorMetallicSelector, "Models with a tinny, coppery taste.");
-            // 
-            // FlavorChemicalSelector
-            // 
-            this.FlavorChemicalSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FlavorChemicalSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(203)))), ((int)(((byte)(248)))));
-            this.FlavorChemicalSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorChemicalSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FlavorChemicalSelector.Location = new System.Drawing.Point(345, 27);
-            this.FlavorChemicalSelector.Margin = new System.Windows.Forms.Padding(0);
-            this.FlavorChemicalSelector.Name = "FlavorChemicalSelector";
-            this.FlavorChemicalSelector.Size = new System.Drawing.Size(62, 24);
-            this.FlavorChemicalSelector.TabIndex = 0;
-            this.FlavorChemicalSelector.Tag = "Unthemed Control";
-            this.FlavorChemicalSelector.Text = "Chemical";
-            this.FlavorChemicalSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.FlavorChemicalSelector, "Models with a pequliar or arteficial taste.");
-            // 
-            // FlavorNoFlavorsSelector
-            // 
-            this.FlavorNoFlavorsSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FlavorNoFlavorsSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.FlavorNoFlavorsSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlavorNoFlavorsSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FlavorNoFlavorsSelector.Location = new System.Drawing.Point(413, 27);
-            this.FlavorNoFlavorsSelector.Margin = new System.Windows.Forms.Padding(0);
-            this.FlavorNoFlavorsSelector.Name = "FlavorNoFlavorsSelector";
-            this.FlavorNoFlavorsSelector.Size = new System.Drawing.Size(62, 24);
-            this.FlavorNoFlavorsSelector.TabIndex = 0;
-            this.FlavorNoFlavorsSelector.Tag = "Unthemed Control";
-            this.FlavorNoFlavorsSelector.Text = "(None)";
-            this.FlavorNoFlavorsSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.FlavorNoFlavorsSelector, "Models to which no flavor information.");
             // 
             // MainEditorForm
             // 
