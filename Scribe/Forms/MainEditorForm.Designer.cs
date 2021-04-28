@@ -5027,6 +5027,7 @@ namespace Scribe.Forms
             this.ItemFunctionStatic.Tag = "Themed";
             this.ItemFunctionStatic.Text = "(None)";
             this.ItemFunctionStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.ItemFunctionStatic, "Groups models by purpose.");
             // 
             // ItemEditFunctionButton
             // 
@@ -5037,6 +5038,7 @@ namespace Scribe.Forms
             this.ItemEditFunctionButton.Size = new System.Drawing.Size(128, 23);
             this.ItemEditFunctionButton.TabIndex = 20;
             this.ItemEditFunctionButton.Text = "Edit Function";
+            this.EditorToolTip.SetToolTip(this.ItemEditFunctionButton, "Add or remove function tag.");
             this.ItemEditFunctionButton.UseVisualStyleBackColor = false;
             this.ItemEditFunctionButton.Click += new System.EventHandler(this.EditFunctionButton_Click);
             // 
@@ -5049,6 +5051,7 @@ namespace Scribe.Forms
             this.ItemFunctionLabel.Size = new System.Drawing.Size(48, 13);
             this.ItemFunctionLabel.TabIndex = 19;
             this.ItemFunctionLabel.Text = "Function";
+            this.EditorToolTip.SetToolTip(this.ItemFunctionLabel, "Groups models by purpose.");
             // 
             // ItemEditFlavorButton
             // 
