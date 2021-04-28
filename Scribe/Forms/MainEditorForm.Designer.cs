@@ -311,6 +311,16 @@ namespace Scribe.Forms
             this.RoomMinimumWalkableSpaces = new System.Windows.Forms.Label();
             this.RoomNameTextBox = new System.Windows.Forms.TextBox();
             this.RoomMinimumWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
+            this.RoomAddBlockButton = new System.Windows.Forms.Button();
+            this.RoomRemoveBlockButton = new System.Windows.Forms.Button();
+            this.RoomAddFurnishingButton = new System.Windows.Forms.Button();
+            this.RoomRemoveFurnishingButton = new System.Windows.Forms.Button();
+            this.RoomAddFloorButton = new System.Windows.Forms.Button();
+            this.RoomRemoveFloorButton = new System.Windows.Forms.Button();
+            this.RoomRequiredFloorsListBox = new System.Windows.Forms.ListBox();
+            this.RoomRequiredFloorsLabel = new System.Windows.Forms.Label();
+            this.RoomRequiredFurnishingsLabel = new System.Windows.Forms.Label();
+            this.RoomRequiredFurnishingsListBox = new System.Windows.Forms.ListBox();
             this.EditorTabs = new System.Windows.Forms.TabControl();
             this.GamesTabPage = new System.Windows.Forms.TabPage();
             this.GameTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -497,8 +507,6 @@ namespace Scribe.Forms
             this.CraftingStrikePatternDimensionLabelStatic = new System.Windows.Forms.Label();
             this.RoomRecipesTabPage = new System.Windows.Forms.TabPage();
             this.RoomRemoveRoomButton = new System.Windows.Forms.Button();
-            this.RoomAddBlockButton = new System.Windows.Forms.Button();
-            this.RoomRemoveBlockButton = new System.Windows.Forms.Button();
             this.RoomConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.RoomConfigTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.RoomMinWalkableSpacesLabel = new System.Windows.Forms.Label();
@@ -506,16 +514,8 @@ namespace Scribe.Forms
             this.RoomMinWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
             this.RoomMaxWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
             this.RoomTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.RoomAddFurnishingButton = new System.Windows.Forms.Button();
-            this.RoomRemoveFurnishingButton = new System.Windows.Forms.Button();
-            this.RoomAddFloorButton = new System.Windows.Forms.Button();
-            this.RoomRemoveFloorButton = new System.Windows.Forms.Button();
             this.RoomRequiredBlocksListBox = new System.Windows.Forms.ListBox();
-            this.RoomRequiredFloorsListBox = new System.Windows.Forms.ListBox();
-            this.RoomRequiredFloorsLabel = new System.Windows.Forms.Label();
             this.RoomRequiredBlocksLabel = new System.Windows.Forms.Label();
-            this.RoomRequiredFurnishingsLabel = new System.Windows.Forms.Label();
-            this.RoomRequiredFurnishingsListBox = new System.Windows.Forms.ListBox();
             this.RoomPixelBox = new ParquetCustomControls.PixelBox();
             this.RoomAddNewRoomButton = new System.Windows.Forms.Button();
             this.RegionsTabPage = new System.Windows.Forms.TabPage();
@@ -4092,6 +4092,130 @@ namespace Scribe.Forms
             this.RoomMinimumWalkableSpacesTextBox.TabIndex = 26;
             this.EditorToolTip.SetToolTip(this.RoomMinimumWalkableSpacesTextBox, "How many open floor spaces are needed for this room type to register.");
             // 
+            // RoomAddBlockButton
+            // 
+            this.RoomAddBlockButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RoomAddBlockButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RoomAddBlockButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RoomAddBlockButton.Location = new System.Drawing.Point(605, 468);
+            this.RoomAddBlockButton.Name = "RoomAddBlockButton";
+            this.RoomAddBlockButton.Size = new System.Drawing.Size(129, 23);
+            this.RoomAddBlockButton.TabIndex = 2;
+            this.RoomAddBlockButton.Text = "Add Block";
+            this.EditorToolTip.SetToolTip(this.RoomAddBlockButton, "Add parquet tag.");
+            this.RoomAddBlockButton.UseVisualStyleBackColor = false;
+            this.RoomAddBlockButton.Click += new System.EventHandler(this.RoomAddBlockButton_Click);
+            // 
+            // RoomRemoveBlockButton
+            // 
+            this.RoomRemoveBlockButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RoomRemoveBlockButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RoomRemoveBlockButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RoomRemoveBlockButton.Location = new System.Drawing.Point(460, 468);
+            this.RoomRemoveBlockButton.Name = "RoomRemoveBlockButton";
+            this.RoomRemoveBlockButton.Size = new System.Drawing.Size(129, 23);
+            this.RoomRemoveBlockButton.TabIndex = 2;
+            this.RoomRemoveBlockButton.Text = "Remove Block";
+            this.EditorToolTip.SetToolTip(this.RoomRemoveBlockButton, "Remove parquet tag.");
+            this.RoomRemoveBlockButton.UseVisualStyleBackColor = false;
+            // 
+            // RoomAddFurnishingButton
+            // 
+            this.RoomAddFurnishingButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RoomAddFurnishingButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RoomAddFurnishingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RoomAddFurnishingButton.Location = new System.Drawing.Point(297, 238);
+            this.RoomAddFurnishingButton.Name = "RoomAddFurnishingButton";
+            this.RoomAddFurnishingButton.Size = new System.Drawing.Size(129, 23);
+            this.RoomAddFurnishingButton.TabIndex = 30;
+            this.RoomAddFurnishingButton.Text = "Add Furnishing";
+            this.EditorToolTip.SetToolTip(this.RoomAddFurnishingButton, "Add parquet tag.");
+            this.RoomAddFurnishingButton.UseVisualStyleBackColor = false;
+            this.RoomAddFurnishingButton.Click += new System.EventHandler(this.RoomAddFurnishingButton_Click);
+            // 
+            // RoomRemoveFurnishingButton
+            // 
+            this.RoomRemoveFurnishingButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RoomRemoveFurnishingButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RoomRemoveFurnishingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RoomRemoveFurnishingButton.Location = new System.Drawing.Point(154, 238);
+            this.RoomRemoveFurnishingButton.Name = "RoomRemoveFurnishingButton";
+            this.RoomRemoveFurnishingButton.Size = new System.Drawing.Size(129, 23);
+            this.RoomRemoveFurnishingButton.TabIndex = 29;
+            this.RoomRemoveFurnishingButton.Text = "Remove Furnishing";
+            this.EditorToolTip.SetToolTip(this.RoomRemoveFurnishingButton, "Remove parquet tag.");
+            this.RoomRemoveFurnishingButton.UseVisualStyleBackColor = false;
+            // 
+            // RoomAddFloorButton
+            // 
+            this.RoomAddFloorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RoomAddFloorButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RoomAddFloorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RoomAddFloorButton.Location = new System.Drawing.Point(297, 343);
+            this.RoomAddFloorButton.Name = "RoomAddFloorButton";
+            this.RoomAddFloorButton.Size = new System.Drawing.Size(129, 23);
+            this.RoomAddFloorButton.TabIndex = 2;
+            this.RoomAddFloorButton.Text = "Add Floor";
+            this.EditorToolTip.SetToolTip(this.RoomAddFloorButton, "Add parquet tag.");
+            this.RoomAddFloorButton.UseVisualStyleBackColor = false;
+            this.RoomAddFloorButton.Click += new System.EventHandler(this.RoomAddFloorButton_Click);
+            // 
+            // RoomRemoveFloorButton
+            // 
+            this.RoomRemoveFloorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RoomRemoveFloorButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.RoomRemoveFloorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RoomRemoveFloorButton.Location = new System.Drawing.Point(154, 343);
+            this.RoomRemoveFloorButton.Name = "RoomRemoveFloorButton";
+            this.RoomRemoveFloorButton.Size = new System.Drawing.Size(129, 23);
+            this.RoomRemoveFloorButton.TabIndex = 2;
+            this.RoomRemoveFloorButton.Text = "Remove Floor";
+            this.EditorToolTip.SetToolTip(this.RoomRemoveFloorButton, "Remove parquet tag.");
+            this.RoomRemoveFloorButton.UseVisualStyleBackColor = false;
+            // 
+            // RoomRequiredFloorsListBox
+            // 
+            this.RoomRequiredFloorsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.RoomTableLayoutPanel.SetColumnSpan(this.RoomRequiredFloorsListBox, 2);
+            this.RoomRequiredFloorsListBox.FormattingEnabled = true;
+            this.RoomRequiredFloorsListBox.Location = new System.Drawing.Point(146, 268);
+            this.RoomRequiredFloorsListBox.Name = "RoomRequiredFloorsListBox";
+            this.RoomRequiredFloorsListBox.Size = new System.Drawing.Size(279, 69);
+            this.RoomRequiredFloorsListBox.TabIndex = 1;
+            this.EditorToolTip.SetToolTip(this.RoomRequiredFloorsListBox, "Any Floor parquet categories this room type requires.");
+            // 
+            // RoomRequiredFloorsLabel
+            // 
+            this.RoomRequiredFloorsLabel.AutoSize = true;
+            this.RoomRequiredFloorsLabel.Location = new System.Drawing.Point(3, 265);
+            this.RoomRequiredFloorsLabel.Name = "RoomRequiredFloorsLabel";
+            this.RoomRequiredFloorsLabel.Size = new System.Drawing.Size(103, 13);
+            this.RoomRequiredFloorsLabel.TabIndex = 18;
+            this.RoomRequiredFloorsLabel.Text = "Required Floor Tags";
+            this.EditorToolTip.SetToolTip(this.RoomRequiredFloorsLabel, "Any Floor parquet categories this room type requires.");
+            // 
+            // RoomRequiredFurnishingsLabel
+            // 
+            this.RoomRequiredFurnishingsLabel.AutoSize = true;
+            this.RoomRequiredFurnishingsLabel.Location = new System.Drawing.Point(3, 160);
+            this.RoomRequiredFurnishingsLabel.Name = "RoomRequiredFurnishingsLabel";
+            this.RoomRequiredFurnishingsLabel.Size = new System.Drawing.Size(128, 13);
+            this.RoomRequiredFurnishingsLabel.TabIndex = 27;
+            this.RoomRequiredFurnishingsLabel.Text = "Required Furnishing Tags";
+            this.EditorToolTip.SetToolTip(this.RoomRequiredFurnishingsLabel, "Any Furnishing parquet categories this room type requires.");
+            // 
+            // RoomRequiredFurnishingsListBox
+            // 
+            this.RoomRequiredFurnishingsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.RoomTableLayoutPanel.SetColumnSpan(this.RoomRequiredFurnishingsListBox, 2);
+            this.RoomRequiredFurnishingsListBox.Location = new System.Drawing.Point(146, 163);
+            this.RoomRequiredFurnishingsListBox.Name = "RoomRequiredFurnishingsListBox";
+            this.RoomRequiredFurnishingsListBox.Size = new System.Drawing.Size(279, 69);
+            this.RoomRequiredFurnishingsListBox.TabIndex = 28;
+            this.EditorToolTip.SetToolTip(this.RoomRequiredFurnishingsListBox, "Any Furnishing parquet categories this room type requires.");
+            // 
             // EditorTabs
             // 
             this.EditorTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -6566,33 +6690,6 @@ namespace Scribe.Forms
             this.RoomRemoveRoomButton.UseVisualStyleBackColor = false;
             this.RoomRemoveRoomButton.Click += new System.EventHandler(this.RoomRemoveRoomButton_Click);
             // 
-            // RoomAddBlockButton
-            // 
-            this.RoomAddBlockButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomAddBlockButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.RoomAddBlockButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RoomAddBlockButton.Location = new System.Drawing.Point(605, 468);
-            this.RoomAddBlockButton.Name = "RoomAddBlockButton";
-            this.RoomAddBlockButton.Size = new System.Drawing.Size(129, 23);
-            this.RoomAddBlockButton.TabIndex = 2;
-            this.RoomAddBlockButton.Text = "Add Block";
-            this.EditorToolTip.SetToolTip(this.RoomAddBlockButton, "Add parquet tag.");
-            this.RoomAddBlockButton.UseVisualStyleBackColor = false;
-            this.RoomAddBlockButton.Click += new System.EventHandler(this.RoomAddBlockButton_Click);
-            // 
-            // RoomRemoveBlockButton
-            // 
-            this.RoomRemoveBlockButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomRemoveBlockButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.RoomRemoveBlockButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RoomRemoveBlockButton.Location = new System.Drawing.Point(460, 468);
-            this.RoomRemoveBlockButton.Name = "RoomRemoveBlockButton";
-            this.RoomRemoveBlockButton.Size = new System.Drawing.Size(129, 23);
-            this.RoomRemoveBlockButton.TabIndex = 2;
-            this.RoomRemoveBlockButton.Text = "Remove Block";
-            this.EditorToolTip.SetToolTip(this.RoomRemoveBlockButton, "Remove parquet tag.");
-            this.RoomRemoveBlockButton.UseVisualStyleBackColor = false;
-            // 
             // RoomConfigGroupBox
             // 
             this.RoomConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -6713,60 +6810,6 @@ namespace Scribe.Forms
             this.RoomTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.RoomTableLayoutPanel.TabIndex = 5;
             // 
-            // RoomAddFurnishingButton
-            // 
-            this.RoomAddFurnishingButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomAddFurnishingButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.RoomAddFurnishingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RoomAddFurnishingButton.Location = new System.Drawing.Point(297, 238);
-            this.RoomAddFurnishingButton.Name = "RoomAddFurnishingButton";
-            this.RoomAddFurnishingButton.Size = new System.Drawing.Size(129, 23);
-            this.RoomAddFurnishingButton.TabIndex = 30;
-            this.RoomAddFurnishingButton.Text = "Add Furnishing";
-            this.EditorToolTip.SetToolTip(this.RoomAddFurnishingButton, "Add parquet tag.");
-            this.RoomAddFurnishingButton.UseVisualStyleBackColor = false;
-            this.RoomAddFurnishingButton.Click += new System.EventHandler(this.RoomAddFurnishingButton_Click);
-            // 
-            // RoomRemoveFurnishingButton
-            // 
-            this.RoomRemoveFurnishingButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomRemoveFurnishingButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.RoomRemoveFurnishingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RoomRemoveFurnishingButton.Location = new System.Drawing.Point(154, 238);
-            this.RoomRemoveFurnishingButton.Name = "RoomRemoveFurnishingButton";
-            this.RoomRemoveFurnishingButton.Size = new System.Drawing.Size(129, 23);
-            this.RoomRemoveFurnishingButton.TabIndex = 29;
-            this.RoomRemoveFurnishingButton.Text = "Remove Furnishing";
-            this.EditorToolTip.SetToolTip(this.RoomRemoveFurnishingButton, "Remove parquet tag.");
-            this.RoomRemoveFurnishingButton.UseVisualStyleBackColor = false;
-            // 
-            // RoomAddFloorButton
-            // 
-            this.RoomAddFloorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomAddFloorButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.RoomAddFloorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RoomAddFloorButton.Location = new System.Drawing.Point(297, 343);
-            this.RoomAddFloorButton.Name = "RoomAddFloorButton";
-            this.RoomAddFloorButton.Size = new System.Drawing.Size(129, 23);
-            this.RoomAddFloorButton.TabIndex = 2;
-            this.RoomAddFloorButton.Text = "Add Floor";
-            this.EditorToolTip.SetToolTip(this.RoomAddFloorButton, "Add parquet tag.");
-            this.RoomAddFloorButton.UseVisualStyleBackColor = false;
-            this.RoomAddFloorButton.Click += new System.EventHandler(this.RoomAddFloorButton_Click);
-            // 
-            // RoomRemoveFloorButton
-            // 
-            this.RoomRemoveFloorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomRemoveFloorButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.RoomRemoveFloorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RoomRemoveFloorButton.Location = new System.Drawing.Point(154, 343);
-            this.RoomRemoveFloorButton.Name = "RoomRemoveFloorButton";
-            this.RoomRemoveFloorButton.Size = new System.Drawing.Size(129, 23);
-            this.RoomRemoveFloorButton.TabIndex = 2;
-            this.RoomRemoveFloorButton.Text = "Remove Floor";
-            this.EditorToolTip.SetToolTip(this.RoomRemoveFloorButton, "Remove parquet tag.");
-            this.RoomRemoveFloorButton.UseVisualStyleBackColor = false;
-            // 
             // RoomRequiredBlocksListBox
             // 
             this.RoomRequiredBlocksListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -6779,28 +6822,6 @@ namespace Scribe.Forms
             this.RoomRequiredBlocksListBox.TabIndex = 1;
             this.RoomRequiredBlocksListBox.Tag = "Any Block parquet categories this room type requires.";
             // 
-            // RoomRequiredFloorsListBox
-            // 
-            this.RoomRequiredFloorsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.RoomTableLayoutPanel.SetColumnSpan(this.RoomRequiredFloorsListBox, 2);
-            this.RoomRequiredFloorsListBox.FormattingEnabled = true;
-            this.RoomRequiredFloorsListBox.Location = new System.Drawing.Point(146, 268);
-            this.RoomRequiredFloorsListBox.Name = "RoomRequiredFloorsListBox";
-            this.RoomRequiredFloorsListBox.Size = new System.Drawing.Size(279, 69);
-            this.RoomRequiredFloorsListBox.TabIndex = 1;
-            this.EditorToolTip.SetToolTip(this.RoomRequiredFloorsListBox, "Any Floor parquet categories this room type requires.");
-            // 
-            // RoomRequiredFloorsLabel
-            // 
-            this.RoomRequiredFloorsLabel.AutoSize = true;
-            this.RoomRequiredFloorsLabel.Location = new System.Drawing.Point(3, 265);
-            this.RoomRequiredFloorsLabel.Name = "RoomRequiredFloorsLabel";
-            this.RoomRequiredFloorsLabel.Size = new System.Drawing.Size(103, 13);
-            this.RoomRequiredFloorsLabel.TabIndex = 18;
-            this.RoomRequiredFloorsLabel.Text = "Required Floor Tags";
-            this.EditorToolTip.SetToolTip(this.RoomRequiredFloorsLabel, "Any Floor parquet categories this room type requires.");
-            // 
             // RoomRequiredBlocksLabel
             // 
             this.RoomRequiredBlocksLabel.AutoSize = true;
@@ -6810,27 +6831,6 @@ namespace Scribe.Forms
             this.RoomRequiredBlocksLabel.TabIndex = 21;
             this.RoomRequiredBlocksLabel.Tag = "Any Block parquet categories this room type requires.";
             this.RoomRequiredBlocksLabel.Text = "Required Block Tags";
-            // 
-            // RoomRequiredFurnishingsLabel
-            // 
-            this.RoomRequiredFurnishingsLabel.AutoSize = true;
-            this.RoomRequiredFurnishingsLabel.Location = new System.Drawing.Point(3, 160);
-            this.RoomRequiredFurnishingsLabel.Name = "RoomRequiredFurnishingsLabel";
-            this.RoomRequiredFurnishingsLabel.Size = new System.Drawing.Size(128, 13);
-            this.RoomRequiredFurnishingsLabel.TabIndex = 27;
-            this.RoomRequiredFurnishingsLabel.Text = "Required Furnishing Tags";
-            this.EditorToolTip.SetToolTip(this.RoomRequiredFurnishingsLabel, "Any Furnishing parquet categories this room type requires.");
-            // 
-            // RoomRequiredFurnishingsListBox
-            // 
-            this.RoomRequiredFurnishingsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.RoomTableLayoutPanel.SetColumnSpan(this.RoomRequiredFurnishingsListBox, 2);
-            this.RoomRequiredFurnishingsListBox.Location = new System.Drawing.Point(146, 163);
-            this.RoomRequiredFurnishingsListBox.Name = "RoomRequiredFurnishingsListBox";
-            this.RoomRequiredFurnishingsListBox.Size = new System.Drawing.Size(279, 69);
-            this.RoomRequiredFurnishingsListBox.TabIndex = 28;
-            this.EditorToolTip.SetToolTip(this.RoomRequiredFurnishingsListBox, "Any Furnishing parquet categories this room type requires.");
             // 
             // RoomPixelBox
             // 
