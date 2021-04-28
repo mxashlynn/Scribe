@@ -28,7 +28,8 @@ namespace Scribe.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.FlavorFilterGroupBox = new System.Windows.Forms.GroupBox();
+            this.components = new System.ComponentModel.Container();
+            this.FlavorSelectorGroupBox = new System.Windows.Forms.GroupBox();
             this.FlavorsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.FlavorBlandSelector = new System.Windows.Forms.Label();
             this.FlavorSweetSelector = new System.Windows.Forms.Label();
@@ -44,19 +45,20 @@ namespace Scribe.Forms
             this.FlavorChemicalSelector = new System.Windows.Forms.Label();
             this.FlavorNoFlavorsSelector = new System.Windows.Forms.Label();
             this.FlavorCancelButton = new System.Windows.Forms.Button();
-            this.FlavorFilterGroupBox.SuspendLayout();
+            this.FlavorSelectorToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.FlavorSelectorGroupBox.SuspendLayout();
             this.FlavorsTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // FlavorFilterGroupBox
+            // FlavorSelectorGroupBox
             // 
-            this.FlavorFilterGroupBox.Controls.Add(this.FlavorsTableLayoutPanel);
-            this.FlavorFilterGroupBox.Location = new System.Drawing.Point(0, 0);
-            this.FlavorFilterGroupBox.Name = "FlavorFilterGroupBox";
-            this.FlavorFilterGroupBox.Size = new System.Drawing.Size(491, 78);
-            this.FlavorFilterGroupBox.TabIndex = 6;
-            this.FlavorFilterGroupBox.TabStop = false;
-            this.FlavorFilterGroupBox.Text = "Select Flavor";
+            this.FlavorSelectorGroupBox.Controls.Add(this.FlavorsTableLayoutPanel);
+            this.FlavorSelectorGroupBox.Location = new System.Drawing.Point(0, 0);
+            this.FlavorSelectorGroupBox.Name = "FlavorSelectorGroupBox";
+            this.FlavorSelectorGroupBox.Size = new System.Drawing.Size(491, 78);
+            this.FlavorSelectorGroupBox.TabIndex = 6;
+            this.FlavorSelectorGroupBox.TabStop = false;
+            this.FlavorSelectorGroupBox.Text = "Select Flavor";
             // 
             // FlavorsTableLayoutPanel
             // 
@@ -104,6 +106,7 @@ namespace Scribe.Forms
             this.FlavorBlandSelector.Tag = "Unthemed Control";
             this.FlavorBlandSelector.Text = "Bland";
             this.FlavorBlandSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FlavorSelectorToolTip.SetToolTip(this.FlavorBlandSelector, "Assign a lack of taste.");
             this.FlavorBlandSelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorSweetSelector
@@ -120,6 +123,7 @@ namespace Scribe.Forms
             this.FlavorSweetSelector.Tag = "Unthemed Control";
             this.FlavorSweetSelector.Text = "Sweet";
             this.FlavorSweetSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FlavorSelectorToolTip.SetToolTip(this.FlavorSweetSelector, "Assign a sugary, candylike taste.");
             this.FlavorSweetSelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorSaltySelector
@@ -136,6 +140,7 @@ namespace Scribe.Forms
             this.FlavorSaltySelector.Tag = "Unthemed Control";
             this.FlavorSaltySelector.Text = "Salty";
             this.FlavorSaltySelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FlavorSelectorToolTip.SetToolTip(this.FlavorSaltySelector, "Assign a brackish, briny taste.");
             this.FlavorSaltySelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorSavorySelector
@@ -152,6 +157,7 @@ namespace Scribe.Forms
             this.FlavorSavorySelector.Tag = "Unthemed Control";
             this.FlavorSavorySelector.Text = "Savory";
             this.FlavorSavorySelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FlavorSelectorToolTip.SetToolTip(this.FlavorSavorySelector, "Assign a rich umami taste.");
             this.FlavorSavorySelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorAstringentSelector
@@ -168,6 +174,7 @@ namespace Scribe.Forms
             this.FlavorAstringentSelector.Tag = "Unthemed Control";
             this.FlavorAstringentSelector.Text = "Astringent";
             this.FlavorAstringentSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FlavorSelectorToolTip.SetToolTip(this.FlavorAstringentSelector, "Assign a dry, tannic taste.");
             this.FlavorAstringentSelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorNumbingSelector
@@ -184,6 +191,7 @@ namespace Scribe.Forms
             this.FlavorNumbingSelector.Tag = "Unthemed Control";
             this.FlavorNumbingSelector.Text = "Numbing";
             this.FlavorNumbingSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FlavorSelectorToolTip.SetToolTip(this.FlavorNumbingSelector, "Assign a flavor that interrupts tasting.");
             this.FlavorNumbingSelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorBitterSelector
@@ -200,6 +208,7 @@ namespace Scribe.Forms
             this.FlavorBitterSelector.Tag = "Unthemed Control";
             this.FlavorBitterSelector.Text = "Bitter";
             this.FlavorBitterSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FlavorSelectorToolTip.SetToolTip(this.FlavorBitterSelector, "Assign a vegetal, tonic taste.");
             this.FlavorBitterSelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorSourSelector
@@ -216,6 +225,7 @@ namespace Scribe.Forms
             this.FlavorSourSelector.Tag = "Unthemed Control";
             this.FlavorSourSelector.Text = "Sour";
             this.FlavorSourSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FlavorSelectorToolTip.SetToolTip(this.FlavorSourSelector, "Assign a tangy, acidic taste.");
             this.FlavorSourSelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorFreshSelector
@@ -232,6 +242,7 @@ namespace Scribe.Forms
             this.FlavorFreshSelector.Tag = "Unthemed Control";
             this.FlavorFreshSelector.Text = "Fresh";
             this.FlavorFreshSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FlavorSelectorToolTip.SetToolTip(this.FlavorFreshSelector, "Assign a cool, minty taste.");
             this.FlavorFreshSelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorPungentSelector
@@ -248,6 +259,7 @@ namespace Scribe.Forms
             this.FlavorPungentSelector.Tag = "Unthemed Control";
             this.FlavorPungentSelector.Text = "Pungent";
             this.FlavorPungentSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FlavorSelectorToolTip.SetToolTip(this.FlavorPungentSelector, "Assign a fiery, peppery taste.");
             this.FlavorPungentSelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorMetallicSelector
@@ -264,6 +276,7 @@ namespace Scribe.Forms
             this.FlavorMetallicSelector.Tag = "Unthemed Control";
             this.FlavorMetallicSelector.Text = "Metallic";
             this.FlavorMetallicSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FlavorSelectorToolTip.SetToolTip(this.FlavorMetallicSelector, "Assign a tinny, coppery taste.");
             this.FlavorMetallicSelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorChemicalSelector
@@ -280,12 +293,13 @@ namespace Scribe.Forms
             this.FlavorChemicalSelector.Tag = "Unthemed Control";
             this.FlavorChemicalSelector.Text = "Chemical";
             this.FlavorChemicalSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FlavorSelectorToolTip.SetToolTip(this.FlavorChemicalSelector, "Assign a pequliar arteficial taste.");
             this.FlavorChemicalSelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorNoFlavorsSelector
             // 
             this.FlavorNoFlavorsSelector.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FlavorNoFlavorsSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.FlavorNoFlavorsSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.FlavorNoFlavorsSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.FlavorNoFlavorsSelector.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FlavorNoFlavorsSelector.Location = new System.Drawing.Point(412, 2);
@@ -296,6 +310,7 @@ namespace Scribe.Forms
             this.FlavorNoFlavorsSelector.Tag = "Unthemed Control";
             this.FlavorNoFlavorsSelector.Text = "(None)";
             this.FlavorNoFlavorsSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FlavorSelectorToolTip.SetToolTip(this.FlavorNoFlavorsSelector, "Remove flavor information.");
             this.FlavorNoFlavorsSelector.Click += new System.EventHandler(this.FlavorSelector_Click);
             // 
             // FlavorCancelButton
@@ -307,6 +322,7 @@ namespace Scribe.Forms
             this.FlavorCancelButton.Size = new System.Drawing.Size(64, 24);
             this.FlavorCancelButton.TabIndex = 1;
             this.FlavorCancelButton.Text = "Cancel";
+            this.FlavorSelectorToolTip.SetToolTip(this.FlavorCancelButton, "Make no changes.");
             this.FlavorCancelButton.UseVisualStyleBackColor = true;
             this.FlavorCancelButton.Click += new System.EventHandler(this.FlavorCancelButton_Click);
             // 
@@ -317,7 +333,7 @@ namespace Scribe.Forms
             this.CancelButton = this.FlavorCancelButton;
             this.ClientSize = new System.Drawing.Size(492, 77);
             this.ControlBox = false;
-            this.Controls.Add(this.FlavorFilterGroupBox);
+            this.Controls.Add(this.FlavorSelectorGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
@@ -331,7 +347,7 @@ namespace Scribe.Forms
             this.Text = "Select Flavor";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.SelectFlavorBox_Load);
-            this.FlavorFilterGroupBox.ResumeLayout(false);
+            this.FlavorSelectorGroupBox.ResumeLayout(false);
             this.FlavorsTableLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -339,7 +355,7 @@ namespace Scribe.Forms
 
         #endregion
 
-        private System.Windows.Forms.GroupBox FlavorFilterGroupBox;
+        private System.Windows.Forms.GroupBox FlavorSelectorGroupBox;
         private System.Windows.Forms.TableLayoutPanel FlavorsTableLayoutPanel;
         private System.Windows.Forms.Label FlavorBlandSelector;
         private System.Windows.Forms.Label FlavorSweetSelector;
@@ -355,5 +371,6 @@ namespace Scribe.Forms
         private System.Windows.Forms.Label FlavorChemicalSelector;
         private System.Windows.Forms.Label FlavorNoFlavorsSelector;
         private System.Windows.Forms.Button FlavorCancelButton;
+        private System.Windows.Forms.ToolTip FlavorSelectorToolTip;
     }
 }
