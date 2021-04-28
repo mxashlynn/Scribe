@@ -6353,6 +6353,7 @@ namespace Scribe.Forms
             this.BiomeLandThresholdFactorLabel.Size = new System.Drawing.Size(114, 23);
             this.BiomeLandThresholdFactorLabel.TabIndex = 0;
             this.BiomeLandThresholdFactorLabel.Text = "Land Threshold Factor";
+            this.EditorToolTip.SetToolTip(this.BiomeLandThresholdFactorLabel, "How many non-liquid parquets a region needs before generating land-based biomes.");
             // 
             // BiomeLiquidThresholdFactorLabel
             // 
@@ -6364,6 +6365,7 @@ namespace Scribe.Forms
             this.BiomeLiquidThresholdFactorLabel.Size = new System.Drawing.Size(118, 23);
             this.BiomeLiquidThresholdFactorLabel.TabIndex = 1;
             this.BiomeLiquidThresholdFactorLabel.Text = "Liquid Threshold Factor";
+            this.EditorToolTip.SetToolTip(this.BiomeLiquidThresholdFactorLabel, "How many liquid parquets a region needs before generating liquid-based biomes.");
             // 
             // BiomeLandThresholdTextBox
             // 
@@ -6373,6 +6375,7 @@ namespace Scribe.Forms
             this.BiomeLandThresholdTextBox.Name = "BiomeLandThresholdTextBox";
             this.BiomeLandThresholdTextBox.Size = new System.Drawing.Size(132, 20);
             this.BiomeLandThresholdTextBox.TabIndex = 2;
+            this.EditorToolTip.SetToolTip(this.BiomeLandThresholdTextBox, "How many non-liquid parquets a region needs before generating land-based biomes.");
             // 
             // BiomeLiquidThresholdFactorTextBox
             // 
@@ -6382,6 +6385,7 @@ namespace Scribe.Forms
             this.BiomeLiquidThresholdFactorTextBox.Name = "BiomeLiquidThresholdFactorTextBox";
             this.BiomeLiquidThresholdFactorTextBox.Size = new System.Drawing.Size(132, 20);
             this.BiomeLiquidThresholdFactorTextBox.TabIndex = 3;
+            this.EditorToolTip.SetToolTip(this.BiomeLiquidThresholdFactorTextBox, "How many liquid parquets a region needs before generating liquid-based biomes.");
             // 
             // BiomeRoomThresholdFactorTextBox
             // 
@@ -6391,6 +6395,8 @@ namespace Scribe.Forms
             this.BiomeRoomThresholdFactorTextBox.Name = "BiomeRoomThresholdFactorTextBox";
             this.BiomeRoomThresholdFactorTextBox.Size = new System.Drawing.Size(132, 20);
             this.BiomeRoomThresholdFactorTextBox.TabIndex = 4;
+            this.EditorToolTip.SetToolTip(this.BiomeRoomThresholdFactorTextBox, "How many parquets inside rooms a region needs before generating room-based biomes" +
+        ".");
             // 
             // BiomeRoomThresholdFactorLabel
             // 
@@ -6402,6 +6408,8 @@ namespace Scribe.Forms
             this.BiomeRoomThresholdFactorLabel.Size = new System.Drawing.Size(118, 26);
             this.BiomeRoomThresholdFactorLabel.TabIndex = 5;
             this.BiomeRoomThresholdFactorLabel.Text = "Room Threshold Factor";
+            this.EditorToolTip.SetToolTip(this.BiomeRoomThresholdFactorLabel, "How many parquets inside rooms a region needs before generating room-based biomes" +
+        ".");
             // 
             // BiomeTableLayoutPanel
             // 
