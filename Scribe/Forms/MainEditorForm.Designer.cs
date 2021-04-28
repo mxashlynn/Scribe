@@ -290,6 +290,23 @@ namespace Scribe.Forms
             this.FlavorMetallicSelector = new System.Windows.Forms.Label();
             this.FlavorChemicalSelector = new System.Windows.Forms.Label();
             this.FlavorNoFlavorsSelector = new System.Windows.Forms.Label();
+            this.RegionNameLabel = new System.Windows.Forms.Label();
+            this.RegionNameTextBox = new System.Windows.Forms.TextBox();
+            this.RegionBackgroundColorLabel = new System.Windows.Forms.Label();
+            this.RegionBackgroundColorStatic = new System.Windows.Forms.Label();
+            this.RegionExitNorthLabel = new System.Windows.Forms.Label();
+            this.RegionExitSouthLabel = new System.Windows.Forms.Label();
+            this.RegionExitEastLabel = new System.Windows.Forms.Label();
+            this.RegionExitWestLabel = new System.Windows.Forms.Label();
+            this.RegionExitUpLabel = new System.Windows.Forms.Label();
+            this.RegionExitDownLabel = new System.Windows.Forms.Label();
+            this.RegionExitNorthComboBox = new System.Windows.Forms.ComboBox();
+            this.RegionExitSouthComboBox = new System.Windows.Forms.ComboBox();
+            this.RegionExitEastComboBox = new System.Windows.Forms.ComboBox();
+            this.RegionExitWestComboBox = new System.Windows.Forms.ComboBox();
+            this.RegionExitUpComboBox = new System.Windows.Forms.ComboBox();
+            this.RegionExitDownComboBox = new System.Windows.Forms.ComboBox();
+            this.RegionBackgroundColorNameStatic = new System.Windows.Forms.Label();
             this.EditorTabs = new System.Windows.Forms.TabControl();
             this.GamesTabPage = new System.Windows.Forms.TabPage();
             this.GameTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -508,23 +525,6 @@ namespace Scribe.Forms
             this.RegionConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.RegionPixelBox = new ParquetCustomControls.PixelBox();
             this.RegionTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.RegionNameLabel = new System.Windows.Forms.Label();
-            this.RegionNameTextBox = new System.Windows.Forms.TextBox();
-            this.RegionBackgroundColorLabel = new System.Windows.Forms.Label();
-            this.RegionBackgroundColorStatic = new System.Windows.Forms.Label();
-            this.RegionExitNorthLabel = new System.Windows.Forms.Label();
-            this.RegionExitSouthLabel = new System.Windows.Forms.Label();
-            this.RegionExitEastLabel = new System.Windows.Forms.Label();
-            this.RegionExitWestLabel = new System.Windows.Forms.Label();
-            this.RegionExitUpLabel = new System.Windows.Forms.Label();
-            this.RegionExitDownLabel = new System.Windows.Forms.Label();
-            this.RegionExitNorthComboBox = new System.Windows.Forms.ComboBox();
-            this.RegionExitSouthComboBox = new System.Windows.Forms.ComboBox();
-            this.RegionExitEastComboBox = new System.Windows.Forms.ComboBox();
-            this.RegionExitWestComboBox = new System.Windows.Forms.ComboBox();
-            this.RegionExitUpComboBox = new System.Windows.Forms.ComboBox();
-            this.RegionExitDownComboBox = new System.Windows.Forms.ComboBox();
-            this.RegionBackgroundColorNameStatic = new System.Windows.Forms.Label();
             this.ScriptsTabPage = new System.Windows.Forms.TabPage();
             this.ScriptingPendingDesignLabel = new System.Windows.Forms.Label();
             this.MainMenuBar = new System.Windows.Forms.MenuStrip();
@@ -3875,6 +3875,187 @@ namespace Scribe.Forms
             this.FlavorNoFlavorsSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.EditorToolTip.SetToolTip(this.FlavorNoFlavorsSelector, "Models to which no flavor information.");
             // 
+            // RegionNameLabel
+            // 
+            this.RegionNameLabel.AutoSize = true;
+            this.RegionNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.RegionNameLabel.Name = "RegionNameLabel";
+            this.RegionNameLabel.Size = new System.Drawing.Size(34, 13);
+            this.RegionNameLabel.TabIndex = 0;
+            this.RegionNameLabel.Text = "Name";
+            this.EditorToolTip.SetToolTip(this.RegionNameLabel, "Player-facing name of the region.");
+            // 
+            // RegionNameTextBox
+            // 
+            this.RegionTableLayoutPanel.SetColumnSpan(this.RegionNameTextBox, 2);
+            this.RegionNameTextBox.Location = new System.Drawing.Point(122, 3);
+            this.RegionNameTextBox.Name = "RegionNameTextBox";
+            this.RegionNameTextBox.Size = new System.Drawing.Size(147, 20);
+            this.RegionNameTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.RegionNameTextBox, "Player-facing name of the region.");
+            // 
+            // RegionBackgroundColorLabel
+            // 
+            this.RegionBackgroundColorLabel.AutoSize = true;
+            this.RegionBackgroundColorLabel.Location = new System.Drawing.Point(3, 135);
+            this.RegionBackgroundColorLabel.Name = "RegionBackgroundColorLabel";
+            this.RegionBackgroundColorLabel.Size = new System.Drawing.Size(91, 13);
+            this.RegionBackgroundColorLabel.TabIndex = 30;
+            this.RegionBackgroundColorLabel.Text = "Background Color";
+            this.EditorToolTip.SetToolTip(this.RegionBackgroundColorLabel, "A color to display in any empty areas of the region.");
+            // 
+            // RegionBackgroundColorStatic
+            // 
+            this.RegionBackgroundColorStatic.BackColor = System.Drawing.Color.White;
+            this.RegionBackgroundColorStatic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegionBackgroundColorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
+            this.RegionBackgroundColorStatic.Location = new System.Drawing.Point(122, 135);
+            this.RegionBackgroundColorStatic.Name = "RegionBackgroundColorStatic";
+            this.RegionBackgroundColorStatic.Size = new System.Drawing.Size(24, 24);
+            this.RegionBackgroundColorStatic.TabIndex = 31;
+            this.RegionBackgroundColorStatic.Tag = "";
+            this.RegionBackgroundColorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.RegionBackgroundColorStatic, "A color to display in any empty areas of the region.");
+            this.RegionBackgroundColorStatic.Click += new System.EventHandler(this.RegionBackgroundColorStatic_Click);
+            // 
+            // RegionExitNorthLabel
+            // 
+            this.RegionExitNorthLabel.AutoSize = true;
+            this.RegionExitNorthLabel.Location = new System.Drawing.Point(3, 160);
+            this.RegionExitNorthLabel.Name = "RegionExitNorthLabel";
+            this.RegionExitNorthLabel.Size = new System.Drawing.Size(55, 13);
+            this.RegionExitNorthLabel.TabIndex = 32;
+            this.RegionExitNorthLabel.Text = "Exit North";
+            this.EditorToolTip.SetToolTip(this.RegionExitNorthLabel, "The region to the north of this one.");
+            // 
+            // RegionExitSouthLabel
+            // 
+            this.RegionExitSouthLabel.AutoSize = true;
+            this.RegionExitSouthLabel.Location = new System.Drawing.Point(3, 185);
+            this.RegionExitSouthLabel.Name = "RegionExitSouthLabel";
+            this.RegionExitSouthLabel.Size = new System.Drawing.Size(56, 13);
+            this.RegionExitSouthLabel.TabIndex = 33;
+            this.RegionExitSouthLabel.Text = "Exit South";
+            this.EditorToolTip.SetToolTip(this.RegionExitSouthLabel, "The region to the south of this one.");
+            // 
+            // RegionExitEastLabel
+            // 
+            this.RegionExitEastLabel.AutoSize = true;
+            this.RegionExitEastLabel.Location = new System.Drawing.Point(3, 210);
+            this.RegionExitEastLabel.Name = "RegionExitEastLabel";
+            this.RegionExitEastLabel.Size = new System.Drawing.Size(49, 13);
+            this.RegionExitEastLabel.TabIndex = 18;
+            this.RegionExitEastLabel.Text = "Exit East";
+            this.EditorToolTip.SetToolTip(this.RegionExitEastLabel, "The region to the east of this one.");
+            // 
+            // RegionExitWestLabel
+            // 
+            this.RegionExitWestLabel.AutoSize = true;
+            this.RegionExitWestLabel.Location = new System.Drawing.Point(3, 235);
+            this.RegionExitWestLabel.Name = "RegionExitWestLabel";
+            this.RegionExitWestLabel.Size = new System.Drawing.Size(53, 13);
+            this.RegionExitWestLabel.TabIndex = 21;
+            this.RegionExitWestLabel.Text = "Exit West";
+            this.EditorToolTip.SetToolTip(this.RegionExitWestLabel, "The region to the west of this one.");
+            // 
+            // RegionExitUpLabel
+            // 
+            this.RegionExitUpLabel.AutoSize = true;
+            this.RegionExitUpLabel.Location = new System.Drawing.Point(3, 260);
+            this.RegionExitUpLabel.Name = "RegionExitUpLabel";
+            this.RegionExitUpLabel.Size = new System.Drawing.Size(41, 13);
+            this.RegionExitUpLabel.TabIndex = 35;
+            this.RegionExitUpLabel.Text = "Exit Up";
+            this.EditorToolTip.SetToolTip(this.RegionExitUpLabel, "The region above this one.");
+            // 
+            // RegionExitDownLabel
+            // 
+            this.RegionExitDownLabel.AutoSize = true;
+            this.RegionExitDownLabel.Location = new System.Drawing.Point(3, 285);
+            this.RegionExitDownLabel.Name = "RegionExitDownLabel";
+            this.RegionExitDownLabel.Size = new System.Drawing.Size(55, 13);
+            this.RegionExitDownLabel.TabIndex = 34;
+            this.RegionExitDownLabel.Text = "Exit Down";
+            this.EditorToolTip.SetToolTip(this.RegionExitDownLabel, "The region beneath this one.");
+            // 
+            // RegionExitNorthComboBox
+            // 
+            this.RegionTableLayoutPanel.SetColumnSpan(this.RegionExitNorthComboBox, 2);
+            this.RegionExitNorthComboBox.DisplayMember = "Name";
+            this.RegionExitNorthComboBox.Location = new System.Drawing.Point(122, 163);
+            this.RegionExitNorthComboBox.Name = "RegionExitNorthComboBox";
+            this.RegionExitNorthComboBox.Size = new System.Drawing.Size(147, 21);
+            this.RegionExitNorthComboBox.TabIndex = 28;
+            this.EditorToolTip.SetToolTip(this.RegionExitNorthComboBox, "The region to the north of this one.");
+            this.RegionExitNorthComboBox.ValueMember = "Name";
+            // 
+            // RegionExitSouthComboBox
+            // 
+            this.RegionTableLayoutPanel.SetColumnSpan(this.RegionExitSouthComboBox, 2);
+            this.RegionExitSouthComboBox.DisplayMember = "Name";
+            this.RegionExitSouthComboBox.Location = new System.Drawing.Point(122, 188);
+            this.RegionExitSouthComboBox.Name = "RegionExitSouthComboBox";
+            this.RegionExitSouthComboBox.Size = new System.Drawing.Size(147, 21);
+            this.RegionExitSouthComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.RegionExitSouthComboBox, "The region to the south of this one.");
+            this.RegionExitSouthComboBox.ValueMember = "Name";
+            // 
+            // RegionExitEastComboBox
+            // 
+            this.RegionTableLayoutPanel.SetColumnSpan(this.RegionExitEastComboBox, 2);
+            this.RegionExitEastComboBox.DisplayMember = "Name";
+            this.RegionExitEastComboBox.Location = new System.Drawing.Point(122, 213);
+            this.RegionExitEastComboBox.Name = "RegionExitEastComboBox";
+            this.RegionExitEastComboBox.Size = new System.Drawing.Size(147, 21);
+            this.RegionExitEastComboBox.TabIndex = 36;
+            this.EditorToolTip.SetToolTip(this.RegionExitEastComboBox, "The region to the east of this one.");
+            this.RegionExitEastComboBox.ValueMember = "Name";
+            // 
+            // RegionExitWestComboBox
+            // 
+            this.RegionTableLayoutPanel.SetColumnSpan(this.RegionExitWestComboBox, 2);
+            this.RegionExitWestComboBox.DisplayMember = "Name";
+            this.RegionExitWestComboBox.Location = new System.Drawing.Point(122, 238);
+            this.RegionExitWestComboBox.Name = "RegionExitWestComboBox";
+            this.RegionExitWestComboBox.Size = new System.Drawing.Size(147, 21);
+            this.RegionExitWestComboBox.TabIndex = 37;
+            this.EditorToolTip.SetToolTip(this.RegionExitWestComboBox, "The region to the west of this one.");
+            this.RegionExitWestComboBox.ValueMember = "Name";
+            // 
+            // RegionExitUpComboBox
+            // 
+            this.RegionTableLayoutPanel.SetColumnSpan(this.RegionExitUpComboBox, 2);
+            this.RegionExitUpComboBox.DisplayMember = "Name";
+            this.RegionExitUpComboBox.Location = new System.Drawing.Point(122, 263);
+            this.RegionExitUpComboBox.Name = "RegionExitUpComboBox";
+            this.RegionExitUpComboBox.Size = new System.Drawing.Size(147, 21);
+            this.RegionExitUpComboBox.TabIndex = 38;
+            this.EditorToolTip.SetToolTip(this.RegionExitUpComboBox, "The region above this one.");
+            this.RegionExitUpComboBox.ValueMember = "Name";
+            // 
+            // RegionExitDownComboBox
+            // 
+            this.RegionTableLayoutPanel.SetColumnSpan(this.RegionExitDownComboBox, 2);
+            this.RegionExitDownComboBox.DisplayMember = "Name";
+            this.RegionExitDownComboBox.Location = new System.Drawing.Point(122, 288);
+            this.RegionExitDownComboBox.Name = "RegionExitDownComboBox";
+            this.RegionExitDownComboBox.Size = new System.Drawing.Size(147, 21);
+            this.RegionExitDownComboBox.TabIndex = 39;
+            this.EditorToolTip.SetToolTip(this.RegionExitDownComboBox, "The region beneath this one.");
+            this.RegionExitDownComboBox.ValueMember = "Name";
+            // 
+            // RegionBackgroundColorNameStatic
+            // 
+            this.RegionBackgroundColorNameStatic.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.RegionBackgroundColorNameStatic.AutoSize = true;
+            this.RegionBackgroundColorNameStatic.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RegionBackgroundColorNameStatic.Location = new System.Drawing.Point(152, 140);
+            this.RegionBackgroundColorNameStatic.Name = "RegionBackgroundColorNameStatic";
+            this.RegionBackgroundColorNameStatic.Size = new System.Drawing.Size(126, 15);
+            this.RegionBackgroundColorNameStatic.TabIndex = 40;
+            this.RegionBackgroundColorNameStatic.Text = "#FFFFFFFF (White)";
+            this.EditorToolTip.SetToolTip(this.RegionBackgroundColorNameStatic, "A color to display in any empty areas of the region.");
+            // 
             // EditorTabs
             // 
             this.EditorTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -6768,186 +6949,6 @@ namespace Scribe.Forms
             this.RegionTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.RegionTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.RegionTableLayoutPanel.TabIndex = 13;
-            // 
-            // RegionNameLabel
-            // 
-            this.RegionNameLabel.AutoSize = true;
-            this.RegionNameLabel.Location = new System.Drawing.Point(3, 0);
-            this.RegionNameLabel.Name = "RegionNameLabel";
-            this.RegionNameLabel.Size = new System.Drawing.Size(34, 13);
-            this.RegionNameLabel.TabIndex = 0;
-            this.RegionNameLabel.Text = "Name";
-            this.EditorToolTip.SetToolTip(this.RegionNameLabel, "Player-facing name of the region.");
-            // 
-            // RegionNameTextBox
-            // 
-            this.RegionTableLayoutPanel.SetColumnSpan(this.RegionNameTextBox, 2);
-            this.RegionNameTextBox.Location = new System.Drawing.Point(122, 3);
-            this.RegionNameTextBox.Name = "RegionNameTextBox";
-            this.RegionNameTextBox.Size = new System.Drawing.Size(147, 20);
-            this.RegionNameTextBox.TabIndex = 23;
-            this.EditorToolTip.SetToolTip(this.RegionNameTextBox, "Player-facing name of the region.");
-            // 
-            // RegionBackgroundColorLabel
-            // 
-            this.RegionBackgroundColorLabel.AutoSize = true;
-            this.RegionBackgroundColorLabel.Location = new System.Drawing.Point(3, 135);
-            this.RegionBackgroundColorLabel.Name = "RegionBackgroundColorLabel";
-            this.RegionBackgroundColorLabel.Size = new System.Drawing.Size(91, 13);
-            this.RegionBackgroundColorLabel.TabIndex = 30;
-            this.RegionBackgroundColorLabel.Text = "Background Color";
-            this.EditorToolTip.SetToolTip(this.RegionBackgroundColorLabel, "A color to display in any empty areas of the region.");
-            // 
-            // RegionBackgroundColorStatic
-            // 
-            this.RegionBackgroundColorStatic.BackColor = System.Drawing.Color.White;
-            this.RegionBackgroundColorStatic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.RegionBackgroundColorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
-            this.RegionBackgroundColorStatic.Location = new System.Drawing.Point(122, 135);
-            this.RegionBackgroundColorStatic.Name = "RegionBackgroundColorStatic";
-            this.RegionBackgroundColorStatic.Size = new System.Drawing.Size(24, 24);
-            this.RegionBackgroundColorStatic.TabIndex = 31;
-            this.RegionBackgroundColorStatic.Tag = "";
-            this.RegionBackgroundColorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.RegionBackgroundColorStatic, "A color to display in any empty areas of the region.");
-            this.RegionBackgroundColorStatic.Click += new System.EventHandler(this.RegionBackgroundColorStatic_Click);
-            // 
-            // RegionExitNorthLabel
-            // 
-            this.RegionExitNorthLabel.AutoSize = true;
-            this.RegionExitNorthLabel.Location = new System.Drawing.Point(3, 160);
-            this.RegionExitNorthLabel.Name = "RegionExitNorthLabel";
-            this.RegionExitNorthLabel.Size = new System.Drawing.Size(55, 13);
-            this.RegionExitNorthLabel.TabIndex = 32;
-            this.RegionExitNorthLabel.Text = "Exit North";
-            this.EditorToolTip.SetToolTip(this.RegionExitNorthLabel, "The region to the north of this one.");
-            // 
-            // RegionExitSouthLabel
-            // 
-            this.RegionExitSouthLabel.AutoSize = true;
-            this.RegionExitSouthLabel.Location = new System.Drawing.Point(3, 185);
-            this.RegionExitSouthLabel.Name = "RegionExitSouthLabel";
-            this.RegionExitSouthLabel.Size = new System.Drawing.Size(56, 13);
-            this.RegionExitSouthLabel.TabIndex = 33;
-            this.RegionExitSouthLabel.Text = "Exit South";
-            this.EditorToolTip.SetToolTip(this.RegionExitSouthLabel, "The region to the south of this one.");
-            // 
-            // RegionExitEastLabel
-            // 
-            this.RegionExitEastLabel.AutoSize = true;
-            this.RegionExitEastLabel.Location = new System.Drawing.Point(3, 210);
-            this.RegionExitEastLabel.Name = "RegionExitEastLabel";
-            this.RegionExitEastLabel.Size = new System.Drawing.Size(49, 13);
-            this.RegionExitEastLabel.TabIndex = 18;
-            this.RegionExitEastLabel.Text = "Exit East";
-            this.EditorToolTip.SetToolTip(this.RegionExitEastLabel, "The region to the east of this one.");
-            // 
-            // RegionExitWestLabel
-            // 
-            this.RegionExitWestLabel.AutoSize = true;
-            this.RegionExitWestLabel.Location = new System.Drawing.Point(3, 235);
-            this.RegionExitWestLabel.Name = "RegionExitWestLabel";
-            this.RegionExitWestLabel.Size = new System.Drawing.Size(53, 13);
-            this.RegionExitWestLabel.TabIndex = 21;
-            this.RegionExitWestLabel.Text = "Exit West";
-            this.EditorToolTip.SetToolTip(this.RegionExitWestLabel, "The region to the west of this one.");
-            // 
-            // RegionExitUpLabel
-            // 
-            this.RegionExitUpLabel.AutoSize = true;
-            this.RegionExitUpLabel.Location = new System.Drawing.Point(3, 260);
-            this.RegionExitUpLabel.Name = "RegionExitUpLabel";
-            this.RegionExitUpLabel.Size = new System.Drawing.Size(41, 13);
-            this.RegionExitUpLabel.TabIndex = 35;
-            this.RegionExitUpLabel.Text = "Exit Up";
-            this.EditorToolTip.SetToolTip(this.RegionExitUpLabel, "The region above this one.");
-            // 
-            // RegionExitDownLabel
-            // 
-            this.RegionExitDownLabel.AutoSize = true;
-            this.RegionExitDownLabel.Location = new System.Drawing.Point(3, 285);
-            this.RegionExitDownLabel.Name = "RegionExitDownLabel";
-            this.RegionExitDownLabel.Size = new System.Drawing.Size(55, 13);
-            this.RegionExitDownLabel.TabIndex = 34;
-            this.RegionExitDownLabel.Text = "Exit Down";
-            this.EditorToolTip.SetToolTip(this.RegionExitDownLabel, "The region beneath this one.");
-            // RegionExitNorthComboBox
-            // 
-            this.RegionTableLayoutPanel.SetColumnSpan(this.RegionExitNorthComboBox, 2);
-            this.RegionExitNorthComboBox.DisplayMember = "Name";
-            this.RegionExitNorthComboBox.Location = new System.Drawing.Point(122, 163);
-            this.RegionExitNorthComboBox.Name = "RegionExitNorthComboBox";
-            this.RegionExitNorthComboBox.Size = new System.Drawing.Size(147, 21);
-            this.RegionExitNorthComboBox.TabIndex = 28;
-            this.EditorToolTip.SetToolTip(this.RegionExitNorthComboBox, "The region to the north of this one.");
-            this.RegionExitNorthComboBox.ValueMember = "Name";
-            // 
-            // RegionExitSouthComboBox
-            // 
-            this.RegionTableLayoutPanel.SetColumnSpan(this.RegionExitSouthComboBox, 2);
-            this.RegionExitSouthComboBox.DisplayMember = "Name";
-            this.RegionExitSouthComboBox.Location = new System.Drawing.Point(122, 188);
-            this.RegionExitSouthComboBox.Name = "RegionExitSouthComboBox";
-            this.RegionExitSouthComboBox.Size = new System.Drawing.Size(147, 21);
-            this.RegionExitSouthComboBox.TabIndex = 29;
-            this.EditorToolTip.SetToolTip(this.RegionExitSouthComboBox, "The region to the south of this one.");
-            this.RegionExitSouthComboBox.ValueMember = "Name";
-            // 
-            // RegionExitEastComboBox
-            // 
-            this.RegionTableLayoutPanel.SetColumnSpan(this.RegionExitEastComboBox, 2);
-            this.RegionExitEastComboBox.DisplayMember = "Name";
-            this.RegionExitEastComboBox.Location = new System.Drawing.Point(122, 213);
-            this.RegionExitEastComboBox.Name = "RegionExitEastComboBox";
-            this.RegionExitEastComboBox.Size = new System.Drawing.Size(147, 21);
-            this.RegionExitEastComboBox.TabIndex = 36;
-            this.EditorToolTip.SetToolTip(this.RegionExitEastComboBox, "The region to the east of this one.");
-            this.RegionExitEastComboBox.ValueMember = "Name";
-            // 
-            // RegionExitWestComboBox
-            // 
-            this.RegionTableLayoutPanel.SetColumnSpan(this.RegionExitWestComboBox, 2);
-            this.RegionExitWestComboBox.DisplayMember = "Name";
-            this.RegionExitWestComboBox.Location = new System.Drawing.Point(122, 238);
-            this.RegionExitWestComboBox.Name = "RegionExitWestComboBox";
-            this.RegionExitWestComboBox.Size = new System.Drawing.Size(147, 21);
-            this.RegionExitWestComboBox.TabIndex = 37;
-            this.EditorToolTip.SetToolTip(this.RegionExitWestComboBox, "The region to the west of this one.");
-            this.RegionExitWestComboBox.ValueMember = "Name";
-            // 
-            // RegionExitUpComboBox
-            // 
-            this.RegionTableLayoutPanel.SetColumnSpan(this.RegionExitUpComboBox, 2);
-            this.RegionExitUpComboBox.DisplayMember = "Name";
-            this.RegionExitUpComboBox.Location = new System.Drawing.Point(122, 263);
-            this.RegionExitUpComboBox.Name = "RegionExitUpComboBox";
-            this.RegionExitUpComboBox.Size = new System.Drawing.Size(147, 21);
-            this.RegionExitUpComboBox.TabIndex = 38;
-            this.EditorToolTip.SetToolTip(this.RegionExitUpComboBox, "The region above this one.");
-            this.RegionExitUpComboBox.ValueMember = "Name";
-            // 
-            // RegionExitDownComboBox
-            // 
-            this.RegionTableLayoutPanel.SetColumnSpan(this.RegionExitDownComboBox, 2);
-            this.RegionExitDownComboBox.DisplayMember = "Name";
-            this.RegionExitDownComboBox.Location = new System.Drawing.Point(122, 288);
-            this.RegionExitDownComboBox.Name = "RegionExitDownComboBox";
-            this.RegionExitDownComboBox.Size = new System.Drawing.Size(147, 21);
-            this.RegionExitDownComboBox.TabIndex = 39;
-            this.EditorToolTip.SetToolTip(this.RegionExitDownComboBox, "The region beneath this one.");
-            this.RegionExitDownComboBox.ValueMember = "Name";
-            // 
-            // RegionBackgroundColorNameStatic
-            // 
-            this.RegionBackgroundColorNameStatic.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.RegionBackgroundColorNameStatic.AutoSize = true;
-            this.RegionBackgroundColorNameStatic.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.RegionBackgroundColorNameStatic.Location = new System.Drawing.Point(152, 140);
-            this.RegionBackgroundColorNameStatic.Name = "RegionBackgroundColorNameStatic";
-            this.RegionBackgroundColorNameStatic.Size = new System.Drawing.Size(126, 15);
-            this.RegionBackgroundColorNameStatic.TabIndex = 40;
-            this.RegionBackgroundColorNameStatic.Text = "#FFFFFFFF (White)";
-            this.EditorToolTip.SetToolTip(this.RegionBackgroundColorNameStatic, "A color to display in any empty areas of the region.");
             // 
             // ScriptsTabPage
             // 
