@@ -4232,6 +4232,7 @@ namespace Scribe.Forms
             this.CritterEditFlavorButton.Size = new System.Drawing.Size(128, 23);
             this.CritterEditFlavorButton.TabIndex = 17;
             this.CritterEditFlavorButton.Text = "Edit Flavor";
+            this.EditorToolTip.SetToolTip(this.CritterEditFlavorButton, "Add or remove flavor tag.");
             this.CritterEditFlavorButton.UseVisualStyleBackColor = false;
             // 
             // CritterFlavorStatic
@@ -4246,6 +4247,7 @@ namespace Scribe.Forms
             this.CritterFlavorStatic.Tag = "Unthemed Control";
             this.CritterFlavorStatic.Text = "(None)";
             this.CritterFlavorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.CritterFlavorStatic, "Groups models by flavor.");
             // 
             // CritterFlavorLabel
             // 
@@ -4256,6 +4258,7 @@ namespace Scribe.Forms
             this.CritterFlavorLabel.Size = new System.Drawing.Size(37, 13);
             this.CritterFlavorLabel.TabIndex = 16;
             this.CritterFlavorLabel.Text = "Flavor";
+            this.EditorToolTip.SetToolTip(this.CritterFlavorLabel, "Groups models by flavor.");
             // 
             // CritterTableLayoutPanel
             // 
@@ -4460,6 +4463,7 @@ namespace Scribe.Forms
             this.CharacterEditFlavorButton.Size = new System.Drawing.Size(128, 23);
             this.CharacterEditFlavorButton.TabIndex = 17;
             this.CharacterEditFlavorButton.Text = "Edit Flavor";
+            this.EditorToolTip.SetToolTip(this.CharacterEditFlavorButton, "Add or remove flavor tag.");
             this.CharacterEditFlavorButton.UseVisualStyleBackColor = false;
             // 
             // CharacterFlavorStatic
@@ -4474,6 +4478,7 @@ namespace Scribe.Forms
             this.CharacterFlavorStatic.Tag = "Unthemed Control";
             this.CharacterFlavorStatic.Text = "(None)";
             this.CharacterFlavorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.CharacterFlavorStatic, "Groups models by flavor.");
             // 
             // CharacterFlavorLabel
             // 
@@ -4484,6 +4489,7 @@ namespace Scribe.Forms
             this.CharacterFlavorLabel.Size = new System.Drawing.Size(37, 13);
             this.CharacterFlavorLabel.TabIndex = 16;
             this.CharacterFlavorLabel.Text = "Flavor";
+            this.EditorToolTip.SetToolTip(this.CharacterFlavorLabel, "Groups models by flavor.");
             // 
             // CharacterPronounGroupBox
             // 
@@ -5062,6 +5068,7 @@ namespace Scribe.Forms
             this.ItemEditFlavorButton.Size = new System.Drawing.Size(128, 23);
             this.ItemEditFlavorButton.TabIndex = 17;
             this.ItemEditFlavorButton.Text = "Edit Flavor";
+            this.EditorToolTip.SetToolTip(this.ItemEditFlavorButton, "Add or remove flavor tag.");
             this.ItemEditFlavorButton.UseVisualStyleBackColor = false;
             // 
             // ItemFlavorStatic
@@ -5076,6 +5083,7 @@ namespace Scribe.Forms
             this.ItemFlavorStatic.Tag = "Unthemed Control";
             this.ItemFlavorStatic.Text = "(None)";
             this.ItemFlavorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.ItemFlavorStatic, "Groups models by flavor.");
             // 
             // ItemFlavorLabel
             // 
@@ -5086,6 +5094,7 @@ namespace Scribe.Forms
             this.ItemFlavorLabel.Size = new System.Drawing.Size(37, 13);
             this.ItemFlavorLabel.TabIndex = 16;
             this.ItemFlavorLabel.Text = "Flavor";
+            this.EditorToolTip.SetToolTip(this.ItemFlavorLabel, "Groups models by flavor.");
             // 
             // ItemRemoveItemButton
             // 
