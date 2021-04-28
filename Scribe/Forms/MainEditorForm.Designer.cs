@@ -3460,12 +3460,13 @@ namespace Scribe.Forms
             this.FloorEditFlavorButton.Size = new System.Drawing.Size(128, 23);
             this.FloorEditFlavorButton.TabIndex = 14;
             this.FloorEditFlavorButton.Text = "Edit Flavor";
+            this.EditorToolTip.SetToolTip(this.FloorEditFlavorButton, "Add or remove flavor tag.");
             this.FloorEditFlavorButton.UseVisualStyleBackColor = false;
             // 
             // FloorFlavorStatic
             // 
             this.FloorFlavorStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FloorFlavorStatic.BackColor = System.Drawing.Color.DarkGray;
+            this.FloorFlavorStatic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.FloorFlavorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
             this.FloorFlavorStatic.Location = new System.Drawing.Point(812, 44);
             this.FloorFlavorStatic.Name = "FloorFlavorStatic";
@@ -3474,6 +3475,7 @@ namespace Scribe.Forms
             this.FloorFlavorStatic.Tag = "Unthemed Control";
             this.FloorFlavorStatic.Text = "(None)";
             this.FloorFlavorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FloorFlavorStatic, "Groups models by flavor.");
             // 
             // FloorFlavorLabel
             // 
@@ -3484,6 +3486,7 @@ namespace Scribe.Forms
             this.FloorFlavorLabel.Size = new System.Drawing.Size(37, 13);
             this.FloorFlavorLabel.TabIndex = 13;
             this.FloorFlavorLabel.Text = "Flavor";
+            this.EditorToolTip.SetToolTip(this.FloorFlavorLabel, "Groups models by flavor.");
             // 
             // FloorFilledInPixelBox
             // 
@@ -3667,12 +3670,13 @@ namespace Scribe.Forms
             this.BlockEditFlavorButton.Size = new System.Drawing.Size(128, 23);
             this.BlockEditFlavorButton.TabIndex = 17;
             this.BlockEditFlavorButton.Text = "Edit Flavor";
+            this.EditorToolTip.SetToolTip(this.BlockEditFlavorButton, "Add or remove flavor tag.");
             this.BlockEditFlavorButton.UseVisualStyleBackColor = false;
             // 
             // BlockFlavorStatic
             // 
             this.BlockFlavorStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BlockFlavorStatic.BackColor = System.Drawing.Color.DarkGray;
+            this.BlockFlavorStatic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.BlockFlavorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
             this.BlockFlavorStatic.Location = new System.Drawing.Point(812, 44);
             this.BlockFlavorStatic.Name = "BlockFlavorStatic";
@@ -3681,6 +3685,7 @@ namespace Scribe.Forms
             this.BlockFlavorStatic.Tag = "Unthemed Control";
             this.BlockFlavorStatic.Text = "(None)";
             this.BlockFlavorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.BlockFlavorStatic, "Groups models by flavor.");
             // 
             // BlockFlavorLabel
             // 
@@ -3691,6 +3696,7 @@ namespace Scribe.Forms
             this.BlockFlavorLabel.Size = new System.Drawing.Size(37, 13);
             this.BlockFlavorLabel.TabIndex = 16;
             this.BlockFlavorLabel.Text = "Flavor";
+            this.EditorToolTip.SetToolTip(this.BlockFlavorLabel, "Groups models by flavor.");
             // 
             // BlockTableLayoutPanel
             // 
@@ -3857,12 +3863,13 @@ namespace Scribe.Forms
             this.FurnishingEditFlavorButton.Size = new System.Drawing.Size(128, 23);
             this.FurnishingEditFlavorButton.TabIndex = 17;
             this.FurnishingEditFlavorButton.Text = "Edit Flavor";
+            this.EditorToolTip.SetToolTip(this.FurnishingEditFlavorButton, "Add or remove flavor tag.");
             this.FurnishingEditFlavorButton.UseVisualStyleBackColor = false;
             // 
             // FurnishingFlavorStatic
             // 
             this.FurnishingFlavorStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FurnishingFlavorStatic.BackColor = System.Drawing.Color.DarkGray;
+            this.FurnishingFlavorStatic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.FurnishingFlavorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
             this.FurnishingFlavorStatic.Location = new System.Drawing.Point(812, 44);
             this.FurnishingFlavorStatic.Name = "FurnishingFlavorStatic";
@@ -3871,6 +3878,7 @@ namespace Scribe.Forms
             this.FurnishingFlavorStatic.Tag = "Unthemed Control";
             this.FurnishingFlavorStatic.Text = "(None)";
             this.FurnishingFlavorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FurnishingFlavorStatic, "Groups models by flavor.");
             // 
             // FurnishingFlavorLabel
             // 
@@ -3881,6 +3889,7 @@ namespace Scribe.Forms
             this.FurnishingFlavorLabel.Size = new System.Drawing.Size(37, 13);
             this.FurnishingFlavorLabel.TabIndex = 16;
             this.FurnishingFlavorLabel.Text = "Flavor";
+            this.EditorToolTip.SetToolTip(this.FurnishingFlavorLabel, "Groups models by flavor.");
             // 
             // FurnishingTableLayoutPanel
             // 
@@ -4072,12 +4081,13 @@ namespace Scribe.Forms
             this.CollectibleEditFlavorButton.Size = new System.Drawing.Size(128, 23);
             this.CollectibleEditFlavorButton.TabIndex = 17;
             this.CollectibleEditFlavorButton.Text = "Edit Flavor";
+            this.EditorToolTip.SetToolTip(this.CollectibleEditFlavorButton, "Add or remove flavor tag.");
             this.CollectibleEditFlavorButton.UseVisualStyleBackColor = false;
             // 
             // CollectibleFlavorStatic
             // 
             this.CollectibleFlavorStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CollectibleFlavorStatic.BackColor = System.Drawing.Color.DarkGray;
+            this.CollectibleFlavorStatic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.CollectibleFlavorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
             this.CollectibleFlavorStatic.Location = new System.Drawing.Point(812, 44);
             this.CollectibleFlavorStatic.Name = "CollectibleFlavorStatic";
@@ -4086,6 +4096,7 @@ namespace Scribe.Forms
             this.CollectibleFlavorStatic.Tag = "Unthemed Control";
             this.CollectibleFlavorStatic.Text = "(None)";
             this.CollectibleFlavorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.CollectibleFlavorStatic, "Groups models by flavor.");
             // 
             // CollectibleFlavorLabel
             // 
@@ -4096,6 +4107,7 @@ namespace Scribe.Forms
             this.CollectibleFlavorLabel.Size = new System.Drawing.Size(37, 13);
             this.CollectibleFlavorLabel.TabIndex = 16;
             this.CollectibleFlavorLabel.Text = "Flavor";
+            this.EditorToolTip.SetToolTip(this.CollectibleFlavorLabel, "Groups models by flavor.");
             // 
             // CollectibleTableLayoutPanel
             // 
