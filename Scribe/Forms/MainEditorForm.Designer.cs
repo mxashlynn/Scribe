@@ -6242,6 +6242,7 @@ namespace Scribe.Forms
             this.CraftingPanelsCountStatic.Tag = "Themed";
             this.CraftingPanelsCountStatic.Text = "0 Panels";
             this.CraftingPanelsCountStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.CraftingPanelsCountStatic, "Number of panels used in this recipe.");
             // 
             // CraftingOpenPatternEditorButton
             // 
@@ -6253,6 +6254,7 @@ namespace Scribe.Forms
             this.CraftingOpenPatternEditorButton.Size = new System.Drawing.Size(129, 23);
             this.CraftingOpenPatternEditorButton.TabIndex = 2;
             this.CraftingOpenPatternEditorButton.Text = "Open Pattern Editor";
+            this.EditorToolTip.SetToolTip(this.CraftingOpenPatternEditorButton, "Launches the minigame editor.");
             this.CraftingOpenPatternEditorButton.UseVisualStyleBackColor = false;
             this.CraftingOpenPatternEditorButton.Click += new System.EventHandler(this.CraftingOpenPatternEditorButton_Click);
             // 
@@ -6266,6 +6268,7 @@ namespace Scribe.Forms
             this.CraftingAddProductButton.Size = new System.Drawing.Size(129, 23);
             this.CraftingAddProductButton.TabIndex = 30;
             this.CraftingAddProductButton.Text = "Add Product";
+            this.EditorToolTip.SetToolTip(this.CraftingAddProductButton, "Add item.");
             this.CraftingAddProductButton.UseVisualStyleBackColor = false;
             this.CraftingAddProductButton.Click += new System.EventHandler(this.CraftingAddProductButton_Click);
             // 
@@ -6279,6 +6282,7 @@ namespace Scribe.Forms
             this.CraftingRemoveProductButton.Size = new System.Drawing.Size(129, 23);
             this.CraftingRemoveProductButton.TabIndex = 29;
             this.CraftingRemoveProductButton.Text = "Remove Product";
+            this.EditorToolTip.SetToolTip(this.CraftingRemoveProductButton, "Remove item.");
             this.CraftingRemoveProductButton.UseVisualStyleBackColor = false;
             this.CraftingRemoveProductButton.Click += new System.EventHandler(this.CraftingRemoveProductButton_Click);
             // 
@@ -6292,6 +6296,7 @@ namespace Scribe.Forms
             this.CraftingAddIngredientButton.Size = new System.Drawing.Size(129, 23);
             this.CraftingAddIngredientButton.TabIndex = 2;
             this.CraftingAddIngredientButton.Text = "Add Ingredient";
+            this.EditorToolTip.SetToolTip(this.CraftingAddIngredientButton, "Add item.");
             this.CraftingAddIngredientButton.UseVisualStyleBackColor = false;
             this.CraftingAddIngredientButton.Click += new System.EventHandler(this.CraftingAddIngredientButton_Click);
             // 
@@ -6305,6 +6310,7 @@ namespace Scribe.Forms
             this.CraftingRemoveIngredientButton.Size = new System.Drawing.Size(129, 23);
             this.CraftingRemoveIngredientButton.TabIndex = 2;
             this.CraftingRemoveIngredientButton.Text = "Remove Ingredient";
+            this.EditorToolTip.SetToolTip(this.CraftingRemoveIngredientButton, "Remove item.");
             this.CraftingRemoveIngredientButton.UseVisualStyleBackColor = false;
             this.CraftingRemoveIngredientButton.Click += new System.EventHandler(this.CraftingRemoveIngredientButton_Click);
             // 
@@ -6318,6 +6324,7 @@ namespace Scribe.Forms
             this.CraftingIngredientsListBox.Name = "CraftingIngredientsListBox";
             this.CraftingIngredientsListBox.Size = new System.Drawing.Size(279, 95);
             this.CraftingIngredientsListBox.TabIndex = 1;
+            this.EditorToolTip.SetToolTip(this.CraftingIngredientsListBox, "Any items required to follow this recipe.");
             // 
             // CraftingNameLabel
             // 
@@ -6327,6 +6334,7 @@ namespace Scribe.Forms
             this.CraftingNameLabel.Size = new System.Drawing.Size(34, 13);
             this.CraftingNameLabel.TabIndex = 0;
             this.CraftingNameLabel.Text = "Name";
+            this.EditorToolTip.SetToolTip(this.CraftingNameLabel, "Player-facing name for this recipe.");
             // 
             // CraftingIngredientsLabel
             // 
@@ -6336,6 +6344,7 @@ namespace Scribe.Forms
             this.CraftingIngredientsLabel.Size = new System.Drawing.Size(62, 13);
             this.CraftingIngredientsLabel.TabIndex = 18;
             this.CraftingIngredientsLabel.Text = "Ingredients";
+            this.EditorToolTip.SetToolTip(this.CraftingIngredientsLabel, "Any items required to follow this recipe.");
             // 
             // CraftingNameTextBox
             // 
@@ -6343,6 +6352,7 @@ namespace Scribe.Forms
             this.CraftingNameTextBox.Name = "CraftingNameTextBox";
             this.CraftingNameTextBox.Size = new System.Drawing.Size(136, 20);
             this.CraftingNameTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.CraftingNameTextBox, "Player-facing name for this recipe.");
             // 
             // CraftingProductsLabel
             // 
@@ -6352,6 +6362,7 @@ namespace Scribe.Forms
             this.CraftingProductsLabel.Size = new System.Drawing.Size(49, 13);
             this.CraftingProductsLabel.TabIndex = 27;
             this.CraftingProductsLabel.Text = "Products";
+            this.EditorToolTip.SetToolTip(this.CraftingProductsLabel, "Any items that result from following this recipe.");
             // 
             // CraftingProductsListBox
             // 
@@ -6362,6 +6373,7 @@ namespace Scribe.Forms
             this.CraftingProductsListBox.Name = "CraftingProductsListBox";
             this.CraftingProductsListBox.Size = new System.Drawing.Size(279, 95);
             this.CraftingProductsListBox.TabIndex = 28;
+            this.EditorToolTip.SetToolTip(this.CraftingProductsListBox, "Any items that result from following this recipe.");
             // 
             // CraftingStrikePatternLabel
             // 
@@ -6371,6 +6383,7 @@ namespace Scribe.Forms
             this.CraftingStrikePatternLabel.Size = new System.Drawing.Size(115, 13);
             this.CraftingStrikePatternLabel.TabIndex = 31;
             this.CraftingStrikePatternLabel.Text = "Crafting Strike Pattern";
+            this.EditorToolTip.SetToolTip(this.CraftingStrikePatternLabel, "Definitions for a crafting minigame.");
             // 
             // CraftingPixelBox
             // 
@@ -6624,6 +6637,7 @@ namespace Scribe.Forms
             this.RoomMinWalkableSpacesLabel.Size = new System.Drawing.Size(130, 23);
             this.RoomMinWalkableSpacesLabel.TabIndex = 0;
             this.RoomMinWalkableSpacesLabel.Text = "Minimum Walkable Spaces";
+            this.EditorToolTip.SetToolTip(this.RoomMinWalkableSpacesLabel, "Smallest number of open Floor spaces allowed for any room.");
             // 
             // RoomMaxWalkableSpacesLabel
             // 
@@ -6635,6 +6649,7 @@ namespace Scribe.Forms
             this.RoomMaxWalkableSpacesLabel.Size = new System.Drawing.Size(134, 23);
             this.RoomMaxWalkableSpacesLabel.TabIndex = 1;
             this.RoomMaxWalkableSpacesLabel.Text = "Maximum Walkable Spaces";
+            this.EditorToolTip.SetToolTip(this.RoomMaxWalkableSpacesLabel, "Largest number of open Floor spaces allowed for any room.");
             // 
             // RoomMinWalkableSpacesTextBox
             // 
@@ -6644,6 +6659,7 @@ namespace Scribe.Forms
             this.RoomMinWalkableSpacesTextBox.Name = "RoomMinWalkableSpacesTextBox";
             this.RoomMinWalkableSpacesTextBox.Size = new System.Drawing.Size(114, 20);
             this.RoomMinWalkableSpacesTextBox.TabIndex = 2;
+            this.EditorToolTip.SetToolTip(this.RoomMinWalkableSpacesTextBox, "Smallest number of open Floor spaces allowed for any room.");
             // 
             // RoomMaxWalkableSpacesTextBox
             // 
@@ -6653,6 +6669,7 @@ namespace Scribe.Forms
             this.RoomMaxWalkableSpacesTextBox.Name = "RoomMaxWalkableSpacesTextBox";
             this.RoomMaxWalkableSpacesTextBox.Size = new System.Drawing.Size(114, 20);
             this.RoomMaxWalkableSpacesTextBox.TabIndex = 3;
+            this.EditorToolTip.SetToolTip(this.RoomMaxWalkableSpacesTextBox, "Largest number of open Floor spaces allowed for any room.");
             // 
             // RoomTableLayoutPanel
             // 
