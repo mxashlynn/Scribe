@@ -6777,6 +6777,7 @@ namespace Scribe.Forms
             this.RegionNameLabel.Size = new System.Drawing.Size(34, 13);
             this.RegionNameLabel.TabIndex = 0;
             this.RegionNameLabel.Text = "Name";
+            this.EditorToolTip.SetToolTip(this.RegionNameLabel, "Player-facing name of the region.");
             // 
             // RegionNameTextBox
             // 
@@ -6785,6 +6786,7 @@ namespace Scribe.Forms
             this.RegionNameTextBox.Name = "RegionNameTextBox";
             this.RegionNameTextBox.Size = new System.Drawing.Size(147, 20);
             this.RegionNameTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.RegionNameTextBox, "Player-facing name of the region.");
             // 
             // RegionBackgroundColorLabel
             // 
@@ -6794,6 +6796,7 @@ namespace Scribe.Forms
             this.RegionBackgroundColorLabel.Size = new System.Drawing.Size(91, 13);
             this.RegionBackgroundColorLabel.TabIndex = 30;
             this.RegionBackgroundColorLabel.Text = "Background Color";
+            this.EditorToolTip.SetToolTip(this.RegionBackgroundColorLabel, "A color to display in any empty areas of the region.");
             // 
             // RegionBackgroundColorStatic
             // 
@@ -6806,6 +6809,7 @@ namespace Scribe.Forms
             this.RegionBackgroundColorStatic.TabIndex = 31;
             this.RegionBackgroundColorStatic.Tag = "";
             this.RegionBackgroundColorStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.RegionBackgroundColorStatic, "A color to display in any empty areas of the region.");
             this.RegionBackgroundColorStatic.Click += new System.EventHandler(this.RegionBackgroundColorStatic_Click);
             // 
             // RegionExitNorthLabel
@@ -6816,6 +6820,7 @@ namespace Scribe.Forms
             this.RegionExitNorthLabel.Size = new System.Drawing.Size(55, 13);
             this.RegionExitNorthLabel.TabIndex = 32;
             this.RegionExitNorthLabel.Text = "Exit North";
+            this.EditorToolTip.SetToolTip(this.RegionExitNorthLabel, "The region to the north of this one.");
             // 
             // RegionExitSouthLabel
             // 
@@ -6825,6 +6830,7 @@ namespace Scribe.Forms
             this.RegionExitSouthLabel.Size = new System.Drawing.Size(56, 13);
             this.RegionExitSouthLabel.TabIndex = 33;
             this.RegionExitSouthLabel.Text = "Exit South";
+            this.EditorToolTip.SetToolTip(this.RegionExitSouthLabel, "The region to the south of this one.");
             // 
             // RegionExitEastLabel
             // 
@@ -6834,6 +6840,7 @@ namespace Scribe.Forms
             this.RegionExitEastLabel.Size = new System.Drawing.Size(49, 13);
             this.RegionExitEastLabel.TabIndex = 18;
             this.RegionExitEastLabel.Text = "Exit East";
+            this.EditorToolTip.SetToolTip(this.RegionExitEastLabel, "The region to the east of this one.");
             // 
             // RegionExitWestLabel
             // 
@@ -6843,6 +6850,7 @@ namespace Scribe.Forms
             this.RegionExitWestLabel.Size = new System.Drawing.Size(53, 13);
             this.RegionExitWestLabel.TabIndex = 21;
             this.RegionExitWestLabel.Text = "Exit West";
+            this.EditorToolTip.SetToolTip(this.RegionExitWestLabel, "The region to the west of this one.");
             // 
             // RegionExitUpLabel
             // 
@@ -6852,6 +6860,7 @@ namespace Scribe.Forms
             this.RegionExitUpLabel.Size = new System.Drawing.Size(41, 13);
             this.RegionExitUpLabel.TabIndex = 35;
             this.RegionExitUpLabel.Text = "Exit Up";
+            this.EditorToolTip.SetToolTip(this.RegionExitUpLabel, "The region above this one.");
             // 
             // RegionExitDownLabel
             // 
@@ -6861,7 +6870,7 @@ namespace Scribe.Forms
             this.RegionExitDownLabel.Size = new System.Drawing.Size(55, 13);
             this.RegionExitDownLabel.TabIndex = 34;
             this.RegionExitDownLabel.Text = "Exit Down";
-            // 
+            this.EditorToolTip.SetToolTip(this.RegionExitDownLabel, "The region beneath this one.");
             // RegionExitNorthComboBox
             // 
             this.RegionTableLayoutPanel.SetColumnSpan(this.RegionExitNorthComboBox, 2);
@@ -6870,6 +6879,7 @@ namespace Scribe.Forms
             this.RegionExitNorthComboBox.Name = "RegionExitNorthComboBox";
             this.RegionExitNorthComboBox.Size = new System.Drawing.Size(147, 21);
             this.RegionExitNorthComboBox.TabIndex = 28;
+            this.EditorToolTip.SetToolTip(this.RegionExitNorthComboBox, "The region to the north of this one.");
             this.RegionExitNorthComboBox.ValueMember = "Name";
             // 
             // RegionExitSouthComboBox
@@ -6880,6 +6890,7 @@ namespace Scribe.Forms
             this.RegionExitSouthComboBox.Name = "RegionExitSouthComboBox";
             this.RegionExitSouthComboBox.Size = new System.Drawing.Size(147, 21);
             this.RegionExitSouthComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.RegionExitSouthComboBox, "The region to the south of this one.");
             this.RegionExitSouthComboBox.ValueMember = "Name";
             // 
             // RegionExitEastComboBox
@@ -6890,6 +6901,7 @@ namespace Scribe.Forms
             this.RegionExitEastComboBox.Name = "RegionExitEastComboBox";
             this.RegionExitEastComboBox.Size = new System.Drawing.Size(147, 21);
             this.RegionExitEastComboBox.TabIndex = 36;
+            this.EditorToolTip.SetToolTip(this.RegionExitEastComboBox, "The region to the east of this one.");
             this.RegionExitEastComboBox.ValueMember = "Name";
             // 
             // RegionExitWestComboBox
@@ -6900,6 +6912,7 @@ namespace Scribe.Forms
             this.RegionExitWestComboBox.Name = "RegionExitWestComboBox";
             this.RegionExitWestComboBox.Size = new System.Drawing.Size(147, 21);
             this.RegionExitWestComboBox.TabIndex = 37;
+            this.EditorToolTip.SetToolTip(this.RegionExitWestComboBox, "The region to the west of this one.");
             this.RegionExitWestComboBox.ValueMember = "Name";
             // 
             // RegionExitUpComboBox
@@ -6910,6 +6923,7 @@ namespace Scribe.Forms
             this.RegionExitUpComboBox.Name = "RegionExitUpComboBox";
             this.RegionExitUpComboBox.Size = new System.Drawing.Size(147, 21);
             this.RegionExitUpComboBox.TabIndex = 38;
+            this.EditorToolTip.SetToolTip(this.RegionExitUpComboBox, "The region above this one.");
             this.RegionExitUpComboBox.ValueMember = "Name";
             // 
             // RegionExitDownComboBox
@@ -6920,6 +6934,7 @@ namespace Scribe.Forms
             this.RegionExitDownComboBox.Name = "RegionExitDownComboBox";
             this.RegionExitDownComboBox.Size = new System.Drawing.Size(147, 21);
             this.RegionExitDownComboBox.TabIndex = 39;
+            this.EditorToolTip.SetToolTip(this.RegionExitDownComboBox, "The region beneath this one.");
             this.RegionExitDownComboBox.ValueMember = "Name";
             // 
             // RegionBackgroundColorNameStatic
@@ -6932,6 +6947,7 @@ namespace Scribe.Forms
             this.RegionBackgroundColorNameStatic.Size = new System.Drawing.Size(126, 15);
             this.RegionBackgroundColorNameStatic.TabIndex = 40;
             this.RegionBackgroundColorNameStatic.Text = "#FFFFFFFF (White)";
+            this.EditorToolTip.SetToolTip(this.RegionBackgroundColorNameStatic, "A color to display in any empty areas of the region.");
             // 
             // ScriptsTabPage
             // 
