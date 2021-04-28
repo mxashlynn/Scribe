@@ -307,6 +307,10 @@ namespace Scribe.Forms
             this.RegionExitUpComboBox = new System.Windows.Forms.ComboBox();
             this.RegionExitDownComboBox = new System.Windows.Forms.ComboBox();
             this.RegionBackgroundColorNameStatic = new System.Windows.Forms.Label();
+            this.RoomNameLabel = new System.Windows.Forms.Label();
+            this.RoomMinimumWalkableSpaces = new System.Windows.Forms.Label();
+            this.RoomNameTextBox = new System.Windows.Forms.TextBox();
+            this.RoomMinimumWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
             this.EditorTabs = new System.Windows.Forms.TabControl();
             this.GamesTabPage = new System.Windows.Forms.TabPage();
             this.GameTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -508,12 +512,8 @@ namespace Scribe.Forms
             this.RoomRemoveFloorButton = new System.Windows.Forms.Button();
             this.RoomRequiredBlocksListBox = new System.Windows.Forms.ListBox();
             this.RoomRequiredFloorsListBox = new System.Windows.Forms.ListBox();
-            this.RoomNameLabel = new System.Windows.Forms.Label();
-            this.RoomMinimumWalkableSpaces = new System.Windows.Forms.Label();
             this.RoomRequiredFloorsLabel = new System.Windows.Forms.Label();
             this.RoomRequiredBlocksLabel = new System.Windows.Forms.Label();
-            this.RoomNameTextBox = new System.Windows.Forms.TextBox();
-            this.RoomMinimumWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
             this.RoomRequiredFurnishingsLabel = new System.Windows.Forms.Label();
             this.RoomRequiredFurnishingsListBox = new System.Windows.Forms.ListBox();
             this.RoomPixelBox = new ParquetCustomControls.PixelBox();
@@ -4056,6 +4056,42 @@ namespace Scribe.Forms
             this.RegionBackgroundColorNameStatic.Text = "#FFFFFFFF (White)";
             this.EditorToolTip.SetToolTip(this.RegionBackgroundColorNameStatic, "A color to display in any empty areas of the region.");
             // 
+            // RoomNameLabel
+            // 
+            this.RoomNameLabel.AutoSize = true;
+            this.RoomNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.RoomNameLabel.Name = "RoomNameLabel";
+            this.RoomNameLabel.Size = new System.Drawing.Size(34, 13);
+            this.RoomNameLabel.TabIndex = 0;
+            this.RoomNameLabel.Text = "Name";
+            this.EditorToolTip.SetToolTip(this.RoomNameLabel, "Player-facing name for this type of room.");
+            // 
+            // RoomMinimumWalkableSpaces
+            // 
+            this.RoomMinimumWalkableSpaces.AutoSize = true;
+            this.RoomMinimumWalkableSpaces.Location = new System.Drawing.Point(3, 135);
+            this.RoomMinimumWalkableSpaces.Name = "RoomMinimumWalkableSpaces";
+            this.RoomMinimumWalkableSpaces.Size = new System.Drawing.Size(130, 13);
+            this.RoomMinimumWalkableSpaces.TabIndex = 9;
+            this.RoomMinimumWalkableSpaces.Text = "Minimum Walkable Spaces";
+            this.EditorToolTip.SetToolTip(this.RoomMinimumWalkableSpaces, "How many open floor spaces are needed for this room type to register.");
+            // 
+            // RoomNameTextBox
+            // 
+            this.RoomNameTextBox.Location = new System.Drawing.Point(146, 3);
+            this.RoomNameTextBox.Name = "RoomNameTextBox";
+            this.RoomNameTextBox.Size = new System.Drawing.Size(136, 20);
+            this.RoomNameTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.RoomNameTextBox, "Player-facing name for this type of room.");
+            // 
+            // RoomMinimumWalkableSpacesTextBox
+            // 
+            this.RoomMinimumWalkableSpacesTextBox.Location = new System.Drawing.Point(146, 138);
+            this.RoomMinimumWalkableSpacesTextBox.Name = "RoomMinimumWalkableSpacesTextBox";
+            this.RoomMinimumWalkableSpacesTextBox.Size = new System.Drawing.Size(136, 20);
+            this.RoomMinimumWalkableSpacesTextBox.TabIndex = 26;
+            this.EditorToolTip.SetToolTip(this.RoomMinimumWalkableSpacesTextBox, "How many open floor spaces are needed for this room type to register.");
+            // 
             // EditorTabs
             // 
             this.EditorTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -6738,26 +6774,6 @@ namespace Scribe.Forms
             this.RoomRequiredFloorsListBox.TabIndex = 1;
             this.EditorToolTip.SetToolTip(this.RoomRequiredFloorsListBox, "Any Floor parquet categories this room type requires.");
             // 
-            // RoomNameLabel
-            // 
-            this.RoomNameLabel.AutoSize = true;
-            this.RoomNameLabel.Location = new System.Drawing.Point(3, 0);
-            this.RoomNameLabel.Name = "RoomNameLabel";
-            this.RoomNameLabel.Size = new System.Drawing.Size(34, 13);
-            this.RoomNameLabel.TabIndex = 0;
-            this.RoomNameLabel.Text = "Name";
-            this.EditorToolTip.SetToolTip(this.RoomNameLabel, "Player-facing name for this type of room.");
-            // 
-            // RoomMinimumWalkableSpaces
-            // 
-            this.RoomMinimumWalkableSpaces.AutoSize = true;
-            this.RoomMinimumWalkableSpaces.Location = new System.Drawing.Point(3, 135);
-            this.RoomMinimumWalkableSpaces.Name = "RoomMinimumWalkableSpaces";
-            this.RoomMinimumWalkableSpaces.Size = new System.Drawing.Size(130, 13);
-            this.RoomMinimumWalkableSpaces.TabIndex = 9;
-            this.RoomMinimumWalkableSpaces.Text = "Minimum Walkable Spaces";
-            this.EditorToolTip.SetToolTip(this.RoomMinimumWalkableSpaces, "How many open floor spaces are needed for this room type to register.");
-            // 
             // RoomRequiredFloorsLabel
             // 
             this.RoomRequiredFloorsLabel.AutoSize = true;
@@ -6777,22 +6793,6 @@ namespace Scribe.Forms
             this.RoomRequiredBlocksLabel.TabIndex = 21;
             this.RoomRequiredBlocksLabel.Tag = "Any Block parquet categories this room type requires.";
             this.RoomRequiredBlocksLabel.Text = "Required Block Tags";
-            // 
-            // RoomNameTextBox
-            // 
-            this.RoomNameTextBox.Location = new System.Drawing.Point(146, 3);
-            this.RoomNameTextBox.Name = "RoomNameTextBox";
-            this.RoomNameTextBox.Size = new System.Drawing.Size(136, 20);
-            this.RoomNameTextBox.TabIndex = 23;
-            this.EditorToolTip.SetToolTip(this.RoomNameTextBox, "Player-facing name for this type of room.");
-            // 
-            // RoomMinimumWalkableSpacesTextBox
-            // 
-            this.RoomMinimumWalkableSpacesTextBox.Location = new System.Drawing.Point(146, 138);
-            this.RoomMinimumWalkableSpacesTextBox.Name = "RoomMinimumWalkableSpacesTextBox";
-            this.RoomMinimumWalkableSpacesTextBox.Size = new System.Drawing.Size(136, 20);
-            this.RoomMinimumWalkableSpacesTextBox.TabIndex = 26;
-            this.EditorToolTip.SetToolTip(this.RoomMinimumWalkableSpacesTextBox, "How many open floor spaces are needed for this room type to register.");
             // 
             // RoomRequiredFurnishingsLabel
             // 
