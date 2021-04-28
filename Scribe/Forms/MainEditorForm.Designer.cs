@@ -3390,6 +3390,7 @@ namespace Scribe.Forms
             this.FloorFunctionStatic.Tag = "Themed";
             this.FloorFunctionStatic.Text = "(None)";
             this.FloorFunctionStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FloorFunctionStatic, "Groups parquets by purpose.");
             // 
             // FloorEditFunctionButton
             // 
@@ -3400,6 +3401,7 @@ namespace Scribe.Forms
             this.FloorEditFunctionButton.Size = new System.Drawing.Size(128, 23);
             this.FloorEditFunctionButton.TabIndex = 23;
             this.FloorEditFunctionButton.Text = "Edit Function";
+            this.EditorToolTip.SetToolTip(this.FloorEditFunctionButton, "Add or remove Function tag.");
             this.FloorEditFunctionButton.UseVisualStyleBackColor = false;
             // 
             // FloorFunctionLabel
@@ -3411,6 +3413,7 @@ namespace Scribe.Forms
             this.FloorFunctionLabel.Size = new System.Drawing.Size(48, 13);
             this.FloorFunctionLabel.TabIndex = 22;
             this.FloorFunctionLabel.Text = "Function";
+            this.EditorToolTip.SetToolTip(this.FloorFunctionLabel, "Groups parquets by purpose.");
             // 
             // FloorEditFlavorButton
             // 
@@ -3606,6 +3609,7 @@ namespace Scribe.Forms
             this.BlockFunctionStatic.Tag = "Themed";
             this.BlockFunctionStatic.Text = "(None)";
             this.BlockFunctionStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.BlockFunctionStatic, "Groups parquets by purpose.");
             // 
             // BlockEditFunctionButton
             // 
@@ -3616,6 +3620,7 @@ namespace Scribe.Forms
             this.BlockEditFunctionButton.Size = new System.Drawing.Size(128, 23);
             this.BlockEditFunctionButton.TabIndex = 23;
             this.BlockEditFunctionButton.Text = "Edit Function";
+            this.EditorToolTip.SetToolTip(this.BlockEditFunctionButton, "Add or remove Function tag.");
             this.BlockEditFunctionButton.UseVisualStyleBackColor = false;
             // 
             // BlockFunctionLabel
@@ -3627,6 +3632,7 @@ namespace Scribe.Forms
             this.BlockFunctionLabel.Size = new System.Drawing.Size(48, 13);
             this.BlockFunctionLabel.TabIndex = 22;
             this.BlockFunctionLabel.Text = "Function";
+            this.EditorToolTip.SetToolTip(this.BlockFunctionLabel, "Groups parquets by purpose.");
             // 
             // BlockEditFlavorButton
             // 
@@ -3805,6 +3811,7 @@ namespace Scribe.Forms
             this.FurnishingFunctionStatic.Tag = "Themed";
             this.FurnishingFunctionStatic.Text = "(None)";
             this.FurnishingFunctionStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FurnishingFunctionStatic, "Groups parquets by purpose.");
             // 
             // FurnishingEditFunctionButton
             // 
@@ -3815,6 +3822,7 @@ namespace Scribe.Forms
             this.FurnishingEditFunctionButton.Size = new System.Drawing.Size(128, 23);
             this.FurnishingEditFunctionButton.TabIndex = 23;
             this.FurnishingEditFunctionButton.Text = "Edit Function";
+            this.EditorToolTip.SetToolTip(this.FurnishingEditFunctionButton, "Add or remove Function tag.");
             this.FurnishingEditFunctionButton.UseVisualStyleBackColor = false;
             // 
             // FurnishingFunctionLabel
@@ -3826,6 +3834,7 @@ namespace Scribe.Forms
             this.FurnishingFunctionLabel.Size = new System.Drawing.Size(48, 13);
             this.FurnishingFunctionLabel.TabIndex = 22;
             this.FurnishingFunctionLabel.Text = "Function";
+            this.EditorToolTip.SetToolTip(this.FurnishingFunctionLabel, "Groups parquets by purpose.");
             // 
             // FurnishingEditFlavorButton
             // 
@@ -4029,6 +4038,7 @@ namespace Scribe.Forms
             this.CollectibleFunctionStatic.Tag = "Themed";
             this.CollectibleFunctionStatic.Text = "(None)";
             this.CollectibleFunctionStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.CollectibleFunctionStatic, "Groups parquets by purpose.");
             // 
             // CollectibleEditFunctionButton
             // 
@@ -4039,6 +4049,7 @@ namespace Scribe.Forms
             this.CollectibleEditFunctionButton.Size = new System.Drawing.Size(128, 23);
             this.CollectibleEditFunctionButton.TabIndex = 23;
             this.CollectibleEditFunctionButton.Text = "Edit Function";
+            this.EditorToolTip.SetToolTip(this.CollectibleEditFunctionButton, "Add or remove Function tag.");
             this.CollectibleEditFunctionButton.UseVisualStyleBackColor = false;
             // 
             // CollectibleFunctionLabel
@@ -4050,6 +4061,7 @@ namespace Scribe.Forms
             this.CollectibleFunctionLabel.Size = new System.Drawing.Size(48, 13);
             this.CollectibleFunctionLabel.TabIndex = 22;
             this.CollectibleFunctionLabel.Text = "Function";
+            this.EditorToolTip.SetToolTip(this.CollectibleFunctionLabel, "Groups parquets by purpose.");
             // 
             // CollectibleEditFlavorButton
             // 
