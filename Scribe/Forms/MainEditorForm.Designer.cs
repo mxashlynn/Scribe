@@ -240,6 +240,10 @@ namespace Scribe.Forms
             this.BlockIsLiquidCheckBox = new System.Windows.Forms.CheckBox();
             this.FurnishingIsOpenableCheckBox = new System.Windows.Forms.CheckBox();
             this.FurnishingIsOpenableLabel = new System.Windows.Forms.Label();
+            this.FloorEditFunctionButton = new System.Windows.Forms.Button();
+            this.BlockEditFunctionButton = new System.Windows.Forms.Button();
+            this.FurnishingEditFunctionButton = new System.Windows.Forms.Button();
+            this.CollectibleEditFunctionButton = new System.Windows.Forms.Button();
             this.EditorTabs = new System.Windows.Forms.TabControl();
             this.GamesTabPage = new System.Windows.Forms.TabPage();
             this.GameTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -249,7 +253,6 @@ namespace Scribe.Forms
             this.LibraryProjectPathLabel = new System.Windows.Forms.Label();
             this.FloorsTabPage = new System.Windows.Forms.TabPage();
             this.FloorFunctionStatic = new System.Windows.Forms.Label();
-            this.FloorEditFunctionButton = new System.Windows.Forms.Button();
             this.FloorFunctionLabel = new System.Windows.Forms.Label();
             this.FloorEditFlavorButton = new System.Windows.Forms.Button();
             this.FloorFlavorStatic = new System.Windows.Forms.Label();
@@ -264,7 +267,6 @@ namespace Scribe.Forms
             this.FloorConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.BlocksTabPage = new System.Windows.Forms.TabPage();
             this.BlockFunctionStatic = new System.Windows.Forms.Label();
-            this.BlockEditFunctionButton = new System.Windows.Forms.Button();
             this.BlockFunctionLabel = new System.Windows.Forms.Label();
             this.BlockEditFlavorButton = new System.Windows.Forms.Button();
             this.BlockFlavorStatic = new System.Windows.Forms.Label();
@@ -276,7 +278,6 @@ namespace Scribe.Forms
             this.BlockConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.FurnishingsTabPage = new System.Windows.Forms.TabPage();
             this.FurnishingFunctionStatic = new System.Windows.Forms.Label();
-            this.FurnishingEditFunctionButton = new System.Windows.Forms.Button();
             this.FurnishingFunctionLabel = new System.Windows.Forms.Label();
             this.FurnishingEditFlavorButton = new System.Windows.Forms.Button();
             this.FurnishingFlavorStatic = new System.Windows.Forms.Label();
@@ -291,7 +292,6 @@ namespace Scribe.Forms
             this.FurnishingConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CollectiblesTabPage = new System.Windows.Forms.TabPage();
             this.CollectibleFunctionStatic = new System.Windows.Forms.Label();
-            this.CollectibleEditFunctionButton = new System.Windows.Forms.Button();
             this.CollectibleFunctionLabel = new System.Windows.Forms.Label();
             this.CollectibleEditFlavorButton = new System.Windows.Forms.Button();
             this.CollectibleFlavorStatic = new System.Windows.Forms.Label();
@@ -3206,6 +3206,54 @@ namespace Scribe.Forms
             this.FurnishingIsOpenableLabel.Text = "Is Openable";
             this.EditorToolTip.SetToolTip(this.FurnishingIsOpenableLabel, "If checked, this has open and closed states.");
             // 
+            // FloorEditFunctionButton
+            // 
+            this.FloorEditFunctionButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FloorEditFunctionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FloorEditFunctionButton.Location = new System.Drawing.Point(815, 125);
+            this.FloorEditFunctionButton.Name = "FloorEditFunctionButton";
+            this.FloorEditFunctionButton.Size = new System.Drawing.Size(128, 23);
+            this.FloorEditFunctionButton.TabIndex = 23;
+            this.FloorEditFunctionButton.Text = "Edit Function";
+            this.EditorToolTip.SetToolTip(this.FloorEditFunctionButton, "Add or remove Function tag.");
+            this.FloorEditFunctionButton.UseVisualStyleBackColor = false;
+            // 
+            // BlockEditFunctionButton
+            // 
+            this.BlockEditFunctionButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BlockEditFunctionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BlockEditFunctionButton.Location = new System.Drawing.Point(815, 125);
+            this.BlockEditFunctionButton.Name = "BlockEditFunctionButton";
+            this.BlockEditFunctionButton.Size = new System.Drawing.Size(128, 23);
+            this.BlockEditFunctionButton.TabIndex = 23;
+            this.BlockEditFunctionButton.Text = "Edit Function";
+            this.EditorToolTip.SetToolTip(this.BlockEditFunctionButton, "Add or remove Function tag.");
+            this.BlockEditFunctionButton.UseVisualStyleBackColor = false;
+            // 
+            // FurnishingEditFunctionButton
+            // 
+            this.FurnishingEditFunctionButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.FurnishingEditFunctionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FurnishingEditFunctionButton.Location = new System.Drawing.Point(815, 125);
+            this.FurnishingEditFunctionButton.Name = "FurnishingEditFunctionButton";
+            this.FurnishingEditFunctionButton.Size = new System.Drawing.Size(128, 23);
+            this.FurnishingEditFunctionButton.TabIndex = 23;
+            this.FurnishingEditFunctionButton.Text = "Edit Function";
+            this.EditorToolTip.SetToolTip(this.FurnishingEditFunctionButton, "Add or remove Function tag.");
+            this.FurnishingEditFunctionButton.UseVisualStyleBackColor = false;
+            // 
+            // CollectibleEditFunctionButton
+            // 
+            this.CollectibleEditFunctionButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CollectibleEditFunctionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CollectibleEditFunctionButton.Location = new System.Drawing.Point(815, 125);
+            this.CollectibleEditFunctionButton.Name = "CollectibleEditFunctionButton";
+            this.CollectibleEditFunctionButton.Size = new System.Drawing.Size(128, 23);
+            this.CollectibleEditFunctionButton.TabIndex = 23;
+            this.CollectibleEditFunctionButton.Text = "Edit Function";
+            this.EditorToolTip.SetToolTip(this.CollectibleEditFunctionButton, "Add or remove Function tag.");
+            this.CollectibleEditFunctionButton.UseVisualStyleBackColor = false;
+            // 
             // EditorTabs
             // 
             this.EditorTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -3391,18 +3439,6 @@ namespace Scribe.Forms
             this.FloorFunctionStatic.Text = "(None)";
             this.FloorFunctionStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.EditorToolTip.SetToolTip(this.FloorFunctionStatic, "Groups parquets by purpose.");
-            // 
-            // FloorEditFunctionButton
-            // 
-            this.FloorEditFunctionButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FloorEditFunctionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FloorEditFunctionButton.Location = new System.Drawing.Point(815, 125);
-            this.FloorEditFunctionButton.Name = "FloorEditFunctionButton";
-            this.FloorEditFunctionButton.Size = new System.Drawing.Size(128, 23);
-            this.FloorEditFunctionButton.TabIndex = 23;
-            this.FloorEditFunctionButton.Text = "Edit Function";
-            this.EditorToolTip.SetToolTip(this.FloorEditFunctionButton, "Add or remove Function tag.");
-            this.FloorEditFunctionButton.UseVisualStyleBackColor = false;
             // 
             // FloorFunctionLabel
             // 
@@ -3611,18 +3647,6 @@ namespace Scribe.Forms
             this.BlockFunctionStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.EditorToolTip.SetToolTip(this.BlockFunctionStatic, "Groups parquets by purpose.");
             // 
-            // BlockEditFunctionButton
-            // 
-            this.BlockEditFunctionButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BlockEditFunctionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BlockEditFunctionButton.Location = new System.Drawing.Point(815, 125);
-            this.BlockEditFunctionButton.Name = "BlockEditFunctionButton";
-            this.BlockEditFunctionButton.Size = new System.Drawing.Size(128, 23);
-            this.BlockEditFunctionButton.TabIndex = 23;
-            this.BlockEditFunctionButton.Text = "Edit Function";
-            this.EditorToolTip.SetToolTip(this.BlockEditFunctionButton, "Add or remove Function tag.");
-            this.BlockEditFunctionButton.UseVisualStyleBackColor = false;
-            // 
             // BlockFunctionLabel
             // 
             this.BlockFunctionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -3812,18 +3836,6 @@ namespace Scribe.Forms
             this.FurnishingFunctionStatic.Text = "(None)";
             this.FurnishingFunctionStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.EditorToolTip.SetToolTip(this.FurnishingFunctionStatic, "Groups parquets by purpose.");
-            // 
-            // FurnishingEditFunctionButton
-            // 
-            this.FurnishingEditFunctionButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.FurnishingEditFunctionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FurnishingEditFunctionButton.Location = new System.Drawing.Point(815, 125);
-            this.FurnishingEditFunctionButton.Name = "FurnishingEditFunctionButton";
-            this.FurnishingEditFunctionButton.Size = new System.Drawing.Size(128, 23);
-            this.FurnishingEditFunctionButton.TabIndex = 23;
-            this.FurnishingEditFunctionButton.Text = "Edit Function";
-            this.EditorToolTip.SetToolTip(this.FurnishingEditFunctionButton, "Add or remove Function tag.");
-            this.FurnishingEditFunctionButton.UseVisualStyleBackColor = false;
             // 
             // FurnishingFunctionLabel
             // 
@@ -4039,18 +4051,6 @@ namespace Scribe.Forms
             this.CollectibleFunctionStatic.Text = "(None)";
             this.CollectibleFunctionStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.EditorToolTip.SetToolTip(this.CollectibleFunctionStatic, "Groups parquets by purpose.");
-            // 
-            // CollectibleEditFunctionButton
-            // 
-            this.CollectibleEditFunctionButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CollectibleEditFunctionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CollectibleEditFunctionButton.Location = new System.Drawing.Point(815, 125);
-            this.CollectibleEditFunctionButton.Name = "CollectibleEditFunctionButton";
-            this.CollectibleEditFunctionButton.Size = new System.Drawing.Size(128, 23);
-            this.CollectibleEditFunctionButton.TabIndex = 23;
-            this.CollectibleEditFunctionButton.Text = "Edit Function";
-            this.EditorToolTip.SetToolTip(this.CollectibleEditFunctionButton, "Add or remove Function tag.");
-            this.CollectibleEditFunctionButton.UseVisualStyleBackColor = false;
             // 
             // CollectibleFunctionLabel
             // 
