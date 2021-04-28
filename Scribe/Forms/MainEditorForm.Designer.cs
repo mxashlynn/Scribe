@@ -6527,6 +6527,7 @@ namespace Scribe.Forms
             this.RoomAddBlockButton.Size = new System.Drawing.Size(129, 23);
             this.RoomAddBlockButton.TabIndex = 2;
             this.RoomAddBlockButton.Text = "Add Block";
+            this.EditorToolTip.SetToolTip(this.RoomAddBlockButton, "Add parquet tag.");
             this.RoomAddBlockButton.UseVisualStyleBackColor = false;
             this.RoomAddBlockButton.Click += new System.EventHandler(this.RoomAddBlockButton_Click);
             // 
@@ -6540,6 +6541,7 @@ namespace Scribe.Forms
             this.RoomRemoveBlockButton.Size = new System.Drawing.Size(129, 23);
             this.RoomRemoveBlockButton.TabIndex = 2;
             this.RoomRemoveBlockButton.Text = "Remove Block";
+            this.EditorToolTip.SetToolTip(this.RoomRemoveBlockButton, "Remove parquet tag.");
             this.RoomRemoveBlockButton.UseVisualStyleBackColor = false;
             // 
             // RoomConfigGroupBox
@@ -6668,6 +6670,7 @@ namespace Scribe.Forms
             this.RoomAddFurnishingButton.Size = new System.Drawing.Size(129, 23);
             this.RoomAddFurnishingButton.TabIndex = 30;
             this.RoomAddFurnishingButton.Text = "Add Furnishing";
+            this.EditorToolTip.SetToolTip(this.RoomAddFurnishingButton, "Add parquet tag.");
             this.RoomAddFurnishingButton.UseVisualStyleBackColor = false;
             this.RoomAddFurnishingButton.Click += new System.EventHandler(this.RoomAddFurnishingButton_Click);
             // 
@@ -6681,6 +6684,7 @@ namespace Scribe.Forms
             this.RoomRemoveFurnishingButton.Size = new System.Drawing.Size(129, 23);
             this.RoomRemoveFurnishingButton.TabIndex = 29;
             this.RoomRemoveFurnishingButton.Text = "Remove Furnishing";
+            this.EditorToolTip.SetToolTip(this.RoomRemoveFurnishingButton, "Remove parquet tag.");
             this.RoomRemoveFurnishingButton.UseVisualStyleBackColor = false;
             // 
             // RoomAddFloorButton
@@ -6693,6 +6697,7 @@ namespace Scribe.Forms
             this.RoomAddFloorButton.Size = new System.Drawing.Size(129, 23);
             this.RoomAddFloorButton.TabIndex = 2;
             this.RoomAddFloorButton.Text = "Add Floor";
+            this.EditorToolTip.SetToolTip(this.RoomAddFloorButton, "Add parquet tag.");
             this.RoomAddFloorButton.UseVisualStyleBackColor = false;
             this.RoomAddFloorButton.Click += new System.EventHandler(this.RoomAddFloorButton_Click);
             // 
@@ -6706,6 +6711,7 @@ namespace Scribe.Forms
             this.RoomRemoveFloorButton.Size = new System.Drawing.Size(129, 23);
             this.RoomRemoveFloorButton.TabIndex = 2;
             this.RoomRemoveFloorButton.Text = "Remove Floor";
+            this.EditorToolTip.SetToolTip(this.RoomRemoveFloorButton, "Remove parquet tag.");
             this.RoomRemoveFloorButton.UseVisualStyleBackColor = false;
             // 
             // RoomRequiredBlocksListBox
@@ -6718,6 +6724,7 @@ namespace Scribe.Forms
             this.RoomRequiredBlocksListBox.Name = "RoomRequiredBlocksListBox";
             this.RoomRequiredBlocksListBox.Size = new System.Drawing.Size(279, 69);
             this.RoomRequiredBlocksListBox.TabIndex = 1;
+            this.RoomRequiredBlocksListBox.Tag = "Any Block parquet categories this room type requires.";
             // 
             // RoomRequiredFloorsListBox
             // 
@@ -6729,6 +6736,7 @@ namespace Scribe.Forms
             this.RoomRequiredFloorsListBox.Name = "RoomRequiredFloorsListBox";
             this.RoomRequiredFloorsListBox.Size = new System.Drawing.Size(279, 69);
             this.RoomRequiredFloorsListBox.TabIndex = 1;
+            this.EditorToolTip.SetToolTip(this.RoomRequiredFloorsListBox, "Any Floor parquet categories this room type requires.");
             // 
             // RoomNameLabel
             // 
@@ -6738,6 +6746,7 @@ namespace Scribe.Forms
             this.RoomNameLabel.Size = new System.Drawing.Size(34, 13);
             this.RoomNameLabel.TabIndex = 0;
             this.RoomNameLabel.Text = "Name";
+            this.EditorToolTip.SetToolTip(this.RoomNameLabel, "Player-facing name for this type of room.");
             // 
             // RoomMinimumWalkableSpaces
             // 
@@ -6747,6 +6756,7 @@ namespace Scribe.Forms
             this.RoomMinimumWalkableSpaces.Size = new System.Drawing.Size(130, 13);
             this.RoomMinimumWalkableSpaces.TabIndex = 9;
             this.RoomMinimumWalkableSpaces.Text = "Minimum Walkable Spaces";
+            this.EditorToolTip.SetToolTip(this.RoomMinimumWalkableSpaces, "How many open floor spaces are needed for this room type to register.");
             // 
             // RoomRequiredFloorsLabel
             // 
@@ -6756,6 +6766,7 @@ namespace Scribe.Forms
             this.RoomRequiredFloorsLabel.Size = new System.Drawing.Size(103, 13);
             this.RoomRequiredFloorsLabel.TabIndex = 18;
             this.RoomRequiredFloorsLabel.Text = "Required Floor Tags";
+            this.EditorToolTip.SetToolTip(this.RoomRequiredFloorsLabel, "Any Floor parquet categories this room type requires.");
             // 
             // RoomRequiredBlocksLabel
             // 
@@ -6764,6 +6775,7 @@ namespace Scribe.Forms
             this.RoomRequiredBlocksLabel.Name = "RoomRequiredBlocksLabel";
             this.RoomRequiredBlocksLabel.Size = new System.Drawing.Size(103, 13);
             this.RoomRequiredBlocksLabel.TabIndex = 21;
+            this.RoomRequiredBlocksLabel.Tag = "Any Block parquet categories this room type requires.";
             this.RoomRequiredBlocksLabel.Text = "Required Block Tags";
             // 
             // RoomNameTextBox
@@ -6772,6 +6784,7 @@ namespace Scribe.Forms
             this.RoomNameTextBox.Name = "RoomNameTextBox";
             this.RoomNameTextBox.Size = new System.Drawing.Size(136, 20);
             this.RoomNameTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.RoomNameTextBox, "Player-facing name for this type of room.");
             // 
             // RoomMinimumWalkableSpacesTextBox
             // 
@@ -6779,6 +6792,7 @@ namespace Scribe.Forms
             this.RoomMinimumWalkableSpacesTextBox.Name = "RoomMinimumWalkableSpacesTextBox";
             this.RoomMinimumWalkableSpacesTextBox.Size = new System.Drawing.Size(136, 20);
             this.RoomMinimumWalkableSpacesTextBox.TabIndex = 26;
+            this.EditorToolTip.SetToolTip(this.RoomMinimumWalkableSpacesTextBox, "How many open floor spaces are needed for this room type to register.");
             // 
             // RoomRequiredFurnishingsLabel
             // 
@@ -6788,6 +6802,7 @@ namespace Scribe.Forms
             this.RoomRequiredFurnishingsLabel.Size = new System.Drawing.Size(128, 13);
             this.RoomRequiredFurnishingsLabel.TabIndex = 27;
             this.RoomRequiredFurnishingsLabel.Text = "Required Furnishing Tags";
+            this.EditorToolTip.SetToolTip(this.RoomRequiredFurnishingsLabel, "Any Furnishing parquet categories this room type requires.");
             // 
             // RoomRequiredFurnishingsListBox
             // 
@@ -6798,6 +6813,7 @@ namespace Scribe.Forms
             this.RoomRequiredFurnishingsListBox.Name = "RoomRequiredFurnishingsListBox";
             this.RoomRequiredFurnishingsListBox.Size = new System.Drawing.Size(279, 69);
             this.RoomRequiredFurnishingsListBox.TabIndex = 28;
+            this.EditorToolTip.SetToolTip(this.RoomRequiredFurnishingsListBox, "Any Furnishing parquet categories this room type requires.");
             // 
             // RoomPixelBox
             // 
