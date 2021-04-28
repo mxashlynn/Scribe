@@ -4237,7 +4237,7 @@ namespace Scribe.Forms
             // CritterFlavorStatic
             // 
             this.CritterFlavorStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CritterFlavorStatic.BackColor = System.Drawing.Color.DarkGray;
+            this.CritterFlavorStatic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.CritterFlavorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
             this.CritterFlavorStatic.Location = new System.Drawing.Point(812, 44);
             this.CritterFlavorStatic.Name = "CritterFlavorStatic";
@@ -4465,7 +4465,7 @@ namespace Scribe.Forms
             // CharacterFlavorStatic
             // 
             this.CharacterFlavorStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CharacterFlavorStatic.BackColor = System.Drawing.Color.DarkGray;
+            this.CharacterFlavorStatic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.CharacterFlavorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
             this.CharacterFlavorStatic.Location = new System.Drawing.Point(812, 44);
             this.CharacterFlavorStatic.Name = "CharacterFlavorStatic";
@@ -5064,7 +5064,7 @@ namespace Scribe.Forms
             // ItemFlavorStatic
             // 
             this.ItemFlavorStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemFlavorStatic.BackColor = System.Drawing.Color.DarkGray;
+            this.ItemFlavorStatic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.ItemFlavorStatic.ContextMenuStrip = this.ContextMenuStripIDStatics;
             this.ItemFlavorStatic.Location = new System.Drawing.Point(812, 44);
             this.ItemFlavorStatic.Name = "ItemFlavorStatic";
