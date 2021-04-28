@@ -6831,8 +6831,9 @@ namespace Scribe.Forms
             this.RoomRequiredBlocksLabel.Name = "RoomRequiredBlocksLabel";
             this.RoomRequiredBlocksLabel.Size = new System.Drawing.Size(103, 13);
             this.RoomRequiredBlocksLabel.TabIndex = 21;
-            this.RoomRequiredBlocksLabel.Tag = "Any Block parquet categories this room type requires.";
+            this.RoomRequiredBlocksLabel.Tag = "";
             this.RoomRequiredBlocksLabel.Text = "Required Block Tags";
+            this.EditorToolTip.SetToolTip(this.RoomRequiredBlocksLabel, "Any Block parquet categories this room type requires.");
             // 
             // RoomPixelBox
             // 
