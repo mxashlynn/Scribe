@@ -7262,6 +7262,7 @@ namespace Scribe.Forms
             this.FlavorBlandSelector.Tag = "Unthemed Control";
             this.FlavorBlandSelector.Text = "Bland";
             this.FlavorBlandSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorBlandSelector, "Models with no particular taste.");
             // 
             // FlavorSweetSelector
             // 
@@ -7277,6 +7278,7 @@ namespace Scribe.Forms
             this.FlavorSweetSelector.Tag = "Unthemed Control";
             this.FlavorSweetSelector.Text = "Sweet";
             this.FlavorSweetSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorSweetSelector, "Models with a sugary, candylike taste.");
             // 
             // FlavorSaltySelector
             // 
@@ -7292,6 +7294,7 @@ namespace Scribe.Forms
             this.FlavorSaltySelector.Tag = "Unthemed Control";
             this.FlavorSaltySelector.Text = "Salty";
             this.FlavorSaltySelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorSaltySelector, "Models with a brackish or briny taste.");
             // 
             // FlavorSavorySelector
             // 
@@ -7307,6 +7310,7 @@ namespace Scribe.Forms
             this.FlavorSavorySelector.Tag = "Unthemed Control";
             this.FlavorSavorySelector.Text = "Savory";
             this.FlavorSavorySelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorSavorySelector, "Models with a rich umami taste.");
             // 
             // FlavorAstringentSelector
             // 
@@ -7322,6 +7326,7 @@ namespace Scribe.Forms
             this.FlavorAstringentSelector.Tag = "Unthemed Control";
             this.FlavorAstringentSelector.Text = "Astringent";
             this.FlavorAstringentSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorAstringentSelector, "Models with a dry, tannic taste.");
             // 
             // FlavorNumbingSelector
             // 
@@ -7337,6 +7342,7 @@ namespace Scribe.Forms
             this.FlavorNumbingSelector.Tag = "Unthemed Control";
             this.FlavorNumbingSelector.Text = "Numbing";
             this.FlavorNumbingSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorNumbingSelector, "Models that interrupt tasting.");
             // 
             // FlavorAllFlavorsSelector
             // 
@@ -7352,6 +7358,7 @@ namespace Scribe.Forms
             this.FlavorAllFlavorsSelector.Tag = "Unthemed Control";
             this.FlavorAllFlavorsSelector.Text = "(All)";
             this.FlavorAllFlavorsSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorAllFlavorsSelector, "All models.");
             // 
             // FlavorBitterSelector
             // 
@@ -7367,6 +7374,7 @@ namespace Scribe.Forms
             this.FlavorBitterSelector.Tag = "Unthemed Control";
             this.FlavorBitterSelector.Text = "Bitter";
             this.FlavorBitterSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorBitterSelector, "Models with a vegetal or tonic taste.");
             // 
             // FlavorSourSelector
             // 
@@ -7382,6 +7390,7 @@ namespace Scribe.Forms
             this.FlavorSourSelector.Tag = "Unthemed Control";
             this.FlavorSourSelector.Text = "Sour";
             this.FlavorSourSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorSourSelector, "Models with a tangy, acidic taste.");
             // 
             // FlavorFreshSelector
             // 
@@ -7397,6 +7406,7 @@ namespace Scribe.Forms
             this.FlavorFreshSelector.Tag = "Unthemed Control";
             this.FlavorFreshSelector.Text = "Fresh";
             this.FlavorFreshSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorFreshSelector, "Models with a cool, minty taste.");
             // 
             // FlavorPungentSelector
             // 
@@ -7412,6 +7422,7 @@ namespace Scribe.Forms
             this.FlavorPungentSelector.Tag = "Unthemed Control";
             this.FlavorPungentSelector.Text = "Pungent";
             this.FlavorPungentSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorPungentSelector, "Models with a fiery, peppery taste.");
             // 
             // FlavorMetallicSelector
             // 
@@ -7427,6 +7438,7 @@ namespace Scribe.Forms
             this.FlavorMetallicSelector.Tag = "Unthemed Control";
             this.FlavorMetallicSelector.Text = "Metallic";
             this.FlavorMetallicSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorMetallicSelector, "Models with a tinny, coppery taste.");
             // 
             // FlavorChemicalSelector
             // 
@@ -7442,6 +7454,7 @@ namespace Scribe.Forms
             this.FlavorChemicalSelector.Tag = "Unthemed Control";
             this.FlavorChemicalSelector.Text = "Chemical";
             this.FlavorChemicalSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorChemicalSelector, "Models with a pequliar or arteficial taste.");
             // 
             // FlavorNoFlavorsSelector
             // 
@@ -7457,6 +7470,7 @@ namespace Scribe.Forms
             this.FlavorNoFlavorsSelector.Tag = "Unthemed Control";
             this.FlavorNoFlavorsSelector.Text = "(None)";
             this.FlavorNoFlavorsSelector.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.FlavorNoFlavorsSelector, "Models to which no flavor information.");
             // 
             // MainEditorForm
             // 
