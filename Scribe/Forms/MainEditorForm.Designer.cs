@@ -321,6 +321,33 @@ namespace Scribe.Forms
             this.RoomRequiredFloorsLabel = new System.Windows.Forms.Label();
             this.RoomRequiredFurnishingsLabel = new System.Windows.Forms.Label();
             this.RoomRequiredFurnishingsListBox = new System.Windows.Forms.ListBox();
+            this.CraftingPanelsCountStatic = new System.Windows.Forms.Label();
+            this.CraftingOpenPatternEditorButton = new System.Windows.Forms.Button();
+            this.CraftingAddProductButton = new System.Windows.Forms.Button();
+            this.CraftingRemoveProductButton = new System.Windows.Forms.Button();
+            this.CraftingAddIngredientButton = new System.Windows.Forms.Button();
+            this.CraftingRemoveIngredientButton = new System.Windows.Forms.Button();
+            this.CraftingIngredientsListBox = new System.Windows.Forms.ListBox();
+            this.CraftingNameLabel = new System.Windows.Forms.Label();
+            this.CraftingIngredientsLabel = new System.Windows.Forms.Label();
+            this.CraftingNameTextBox = new System.Windows.Forms.TextBox();
+            this.CraftingProductsLabel = new System.Windows.Forms.Label();
+            this.CraftingProductsListBox = new System.Windows.Forms.ListBox();
+            this.CraftingStrikePatternLabel = new System.Windows.Forms.Label();
+            this.RoomMinWalkableSpacesLabel = new System.Windows.Forms.Label();
+            this.RoomMaxWalkableSpacesLabel = new System.Windows.Forms.Label();
+            this.RoomMinWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
+            this.RoomMaxWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
+            this.CraftingStrikePatternDimensionLabelLabel = new System.Windows.Forms.Label();
+            this.CraftingStrikePatternDimensionLabelStatic = new System.Windows.Forms.Label();
+            this.CraftingMinIngredientCountLabel = new System.Windows.Forms.Label();
+            this.CraftingMinProductCountLabel = new System.Windows.Forms.Label();
+            this.CraftingMaxIngredientCountLabel = new System.Windows.Forms.Label();
+            this.CraftingMaxProductCountLabel = new System.Windows.Forms.Label();
+            this.CraftingMinIngredientCountTextBox = new System.Windows.Forms.TextBox();
+            this.CraftingMinProductCountTextBox = new System.Windows.Forms.TextBox();
+            this.CraftingMaxIngredientCountTextBox = new System.Windows.Forms.TextBox();
+            this.CraftingMaxProductCountTextBox = new System.Windows.Forms.TextBox();
             this.EditorTabs = new System.Windows.Forms.TabControl();
             this.GamesTabPage = new System.Windows.Forms.TabPage();
             this.GameTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -478,41 +505,14 @@ namespace Scribe.Forms
             this.CraftingRecipesTabPage = new System.Windows.Forms.TabPage();
             this.CraftingRemoveCraftingButton = new System.Windows.Forms.Button();
             this.CraftingTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.CraftingPanelsCountStatic = new System.Windows.Forms.Label();
-            this.CraftingOpenPatternEditorButton = new System.Windows.Forms.Button();
-            this.CraftingAddProductButton = new System.Windows.Forms.Button();
-            this.CraftingRemoveProductButton = new System.Windows.Forms.Button();
-            this.CraftingAddIngredientButton = new System.Windows.Forms.Button();
-            this.CraftingRemoveIngredientButton = new System.Windows.Forms.Button();
-            this.CraftingIngredientsListBox = new System.Windows.Forms.ListBox();
-            this.CraftingNameLabel = new System.Windows.Forms.Label();
-            this.CraftingIngredientsLabel = new System.Windows.Forms.Label();
-            this.CraftingNameTextBox = new System.Windows.Forms.TextBox();
-            this.CraftingProductsLabel = new System.Windows.Forms.Label();
-            this.CraftingProductsListBox = new System.Windows.Forms.ListBox();
-            this.CraftingStrikePatternLabel = new System.Windows.Forms.Label();
             this.CraftingPixelBox = new ParquetCustomControls.PixelBox();
             this.CraftingAddNewCraftingButton = new System.Windows.Forms.Button();
             this.CraftingConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CraftingConfigTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.CraftingMinIngredientCountLabel = new System.Windows.Forms.Label();
-            this.CraftingMinProductCountLabel = new System.Windows.Forms.Label();
-            this.CraftingMaxIngredientCountLabel = new System.Windows.Forms.Label();
-            this.CraftingMaxProductCountLabel = new System.Windows.Forms.Label();
-            this.CraftingMinIngredientCountTextBox = new System.Windows.Forms.TextBox();
-            this.CraftingMinProductCountTextBox = new System.Windows.Forms.TextBox();
-            this.CraftingMaxIngredientCountTextBox = new System.Windows.Forms.TextBox();
-            this.CraftingMaxProductCountTextBox = new System.Windows.Forms.TextBox();
-            this.CraftingStrikePatternDimensionLabelLabel = new System.Windows.Forms.Label();
-            this.CraftingStrikePatternDimensionLabelStatic = new System.Windows.Forms.Label();
             this.RoomRecipesTabPage = new System.Windows.Forms.TabPage();
             this.RoomRemoveRoomButton = new System.Windows.Forms.Button();
             this.RoomConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.RoomConfigTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.RoomMinWalkableSpacesLabel = new System.Windows.Forms.Label();
-            this.RoomMaxWalkableSpacesLabel = new System.Windows.Forms.Label();
-            this.RoomMinWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
-            this.RoomMaxWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
             this.RoomTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.RoomRequiredBlocksListBox = new System.Windows.Forms.ListBox();
             this.RoomRequiredBlocksLabel = new System.Windows.Forms.Label();
@@ -4216,6 +4216,296 @@ namespace Scribe.Forms
             this.RoomRequiredFurnishingsListBox.TabIndex = 28;
             this.EditorToolTip.SetToolTip(this.RoomRequiredFurnishingsListBox, "Any Furnishing parquet categories this room type requires.");
             // 
+            // CraftingPanelsCountStatic
+            // 
+            this.CraftingPanelsCountStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CraftingPanelsCountStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CraftingPanelsCountStatic.Location = new System.Drawing.Point(146, 415);
+            this.CraftingPanelsCountStatic.Name = "CraftingPanelsCountStatic";
+            this.CraftingPanelsCountStatic.Size = new System.Drawing.Size(137, 20);
+            this.CraftingPanelsCountStatic.TabIndex = 43;
+            this.CraftingPanelsCountStatic.Tag = "Themed";
+            this.CraftingPanelsCountStatic.Text = "0 Panels";
+            this.CraftingPanelsCountStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.CraftingPanelsCountStatic, "Number of panels used in this recipe.");
+            // 
+            // CraftingOpenPatternEditorButton
+            // 
+            this.CraftingOpenPatternEditorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CraftingOpenPatternEditorButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CraftingOpenPatternEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CraftingOpenPatternEditorButton.Location = new System.Drawing.Point(297, 420);
+            this.CraftingOpenPatternEditorButton.Name = "CraftingOpenPatternEditorButton";
+            this.CraftingOpenPatternEditorButton.Size = new System.Drawing.Size(129, 23);
+            this.CraftingOpenPatternEditorButton.TabIndex = 2;
+            this.CraftingOpenPatternEditorButton.Text = "Open Pattern Editor";
+            this.EditorToolTip.SetToolTip(this.CraftingOpenPatternEditorButton, "Launches the minigame editor.");
+            this.CraftingOpenPatternEditorButton.UseVisualStyleBackColor = false;
+            this.CraftingOpenPatternEditorButton.Click += new System.EventHandler(this.CraftingOpenPatternEditorButton_Click);
+            // 
+            // CraftingAddProductButton
+            // 
+            this.CraftingAddProductButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CraftingAddProductButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CraftingAddProductButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CraftingAddProductButton.Location = new System.Drawing.Point(297, 243);
+            this.CraftingAddProductButton.Name = "CraftingAddProductButton";
+            this.CraftingAddProductButton.Size = new System.Drawing.Size(129, 23);
+            this.CraftingAddProductButton.TabIndex = 30;
+            this.CraftingAddProductButton.Text = "Add Product";
+            this.EditorToolTip.SetToolTip(this.CraftingAddProductButton, "Add item.");
+            this.CraftingAddProductButton.UseVisualStyleBackColor = false;
+            this.CraftingAddProductButton.Click += new System.EventHandler(this.CraftingAddProductButton_Click);
+            // 
+            // CraftingRemoveProductButton
+            // 
+            this.CraftingRemoveProductButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CraftingRemoveProductButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CraftingRemoveProductButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CraftingRemoveProductButton.Location = new System.Drawing.Point(154, 243);
+            this.CraftingRemoveProductButton.Name = "CraftingRemoveProductButton";
+            this.CraftingRemoveProductButton.Size = new System.Drawing.Size(129, 23);
+            this.CraftingRemoveProductButton.TabIndex = 29;
+            this.CraftingRemoveProductButton.Text = "Remove Product";
+            this.EditorToolTip.SetToolTip(this.CraftingRemoveProductButton, "Remove item.");
+            this.CraftingRemoveProductButton.UseVisualStyleBackColor = false;
+            this.CraftingRemoveProductButton.Click += new System.EventHandler(this.CraftingRemoveProductButton_Click);
+            // 
+            // CraftingAddIngredientButton
+            // 
+            this.CraftingAddIngredientButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CraftingAddIngredientButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CraftingAddIngredientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CraftingAddIngredientButton.Location = new System.Drawing.Point(297, 378);
+            this.CraftingAddIngredientButton.Name = "CraftingAddIngredientButton";
+            this.CraftingAddIngredientButton.Size = new System.Drawing.Size(129, 23);
+            this.CraftingAddIngredientButton.TabIndex = 2;
+            this.CraftingAddIngredientButton.Text = "Add Ingredient";
+            this.EditorToolTip.SetToolTip(this.CraftingAddIngredientButton, "Add item.");
+            this.CraftingAddIngredientButton.UseVisualStyleBackColor = false;
+            this.CraftingAddIngredientButton.Click += new System.EventHandler(this.CraftingAddIngredientButton_Click);
+            // 
+            // CraftingRemoveIngredientButton
+            // 
+            this.CraftingRemoveIngredientButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CraftingRemoveIngredientButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CraftingRemoveIngredientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CraftingRemoveIngredientButton.Location = new System.Drawing.Point(154, 378);
+            this.CraftingRemoveIngredientButton.Name = "CraftingRemoveIngredientButton";
+            this.CraftingRemoveIngredientButton.Size = new System.Drawing.Size(129, 23);
+            this.CraftingRemoveIngredientButton.TabIndex = 2;
+            this.CraftingRemoveIngredientButton.Text = "Remove Ingredient";
+            this.EditorToolTip.SetToolTip(this.CraftingRemoveIngredientButton, "Remove item.");
+            this.CraftingRemoveIngredientButton.UseVisualStyleBackColor = false;
+            this.CraftingRemoveIngredientButton.Click += new System.EventHandler(this.CraftingRemoveIngredientButton_Click);
+            // 
+            // CraftingIngredientsListBox
+            // 
+            this.CraftingIngredientsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.CraftingTableLayoutPanel.SetColumnSpan(this.CraftingIngredientsListBox, 2);
+            this.CraftingIngredientsListBox.FormattingEnabled = true;
+            this.CraftingIngredientsListBox.Location = new System.Drawing.Point(146, 273);
+            this.CraftingIngredientsListBox.Name = "CraftingIngredientsListBox";
+            this.CraftingIngredientsListBox.Size = new System.Drawing.Size(279, 95);
+            this.CraftingIngredientsListBox.TabIndex = 1;
+            this.EditorToolTip.SetToolTip(this.CraftingIngredientsListBox, "Any items required to follow this recipe.");
+            // 
+            // CraftingNameLabel
+            // 
+            this.CraftingNameLabel.AutoSize = true;
+            this.CraftingNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.CraftingNameLabel.Name = "CraftingNameLabel";
+            this.CraftingNameLabel.Size = new System.Drawing.Size(34, 13);
+            this.CraftingNameLabel.TabIndex = 0;
+            this.CraftingNameLabel.Text = "Name";
+            this.EditorToolTip.SetToolTip(this.CraftingNameLabel, "Player-facing name for this recipe.");
+            // 
+            // CraftingIngredientsLabel
+            // 
+            this.CraftingIngredientsLabel.AutoSize = true;
+            this.CraftingIngredientsLabel.Location = new System.Drawing.Point(3, 270);
+            this.CraftingIngredientsLabel.Name = "CraftingIngredientsLabel";
+            this.CraftingIngredientsLabel.Size = new System.Drawing.Size(62, 13);
+            this.CraftingIngredientsLabel.TabIndex = 18;
+            this.CraftingIngredientsLabel.Text = "Ingredients";
+            this.EditorToolTip.SetToolTip(this.CraftingIngredientsLabel, "Any items required to follow this recipe.");
+            // 
+            // CraftingNameTextBox
+            // 
+            this.CraftingNameTextBox.Location = new System.Drawing.Point(146, 3);
+            this.CraftingNameTextBox.Name = "CraftingNameTextBox";
+            this.CraftingNameTextBox.Size = new System.Drawing.Size(136, 20);
+            this.CraftingNameTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.CraftingNameTextBox, "Player-facing name for this recipe.");
+            // 
+            // CraftingProductsLabel
+            // 
+            this.CraftingProductsLabel.AutoSize = true;
+            this.CraftingProductsLabel.Location = new System.Drawing.Point(3, 135);
+            this.CraftingProductsLabel.Name = "CraftingProductsLabel";
+            this.CraftingProductsLabel.Size = new System.Drawing.Size(49, 13);
+            this.CraftingProductsLabel.TabIndex = 27;
+            this.CraftingProductsLabel.Text = "Products";
+            this.EditorToolTip.SetToolTip(this.CraftingProductsLabel, "Any items that result from following this recipe.");
+            // 
+            // CraftingProductsListBox
+            // 
+            this.CraftingProductsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.CraftingTableLayoutPanel.SetColumnSpan(this.CraftingProductsListBox, 2);
+            this.CraftingProductsListBox.Location = new System.Drawing.Point(146, 138);
+            this.CraftingProductsListBox.Name = "CraftingProductsListBox";
+            this.CraftingProductsListBox.Size = new System.Drawing.Size(279, 95);
+            this.CraftingProductsListBox.TabIndex = 28;
+            this.EditorToolTip.SetToolTip(this.CraftingProductsListBox, "Any items that result from following this recipe.");
+            // 
+            // CraftingStrikePatternLabel
+            // 
+            this.CraftingStrikePatternLabel.AutoSize = true;
+            this.CraftingStrikePatternLabel.Location = new System.Drawing.Point(3, 405);
+            this.CraftingStrikePatternLabel.Name = "CraftingStrikePatternLabel";
+            this.CraftingStrikePatternLabel.Size = new System.Drawing.Size(115, 13);
+            this.CraftingStrikePatternLabel.TabIndex = 31;
+            this.CraftingStrikePatternLabel.Text = "Crafting Strike Pattern";
+            this.EditorToolTip.SetToolTip(this.CraftingStrikePatternLabel, "Definitions for a crafting minigame.");
+            // 
+            // RoomMinWalkableSpacesLabel
+            // 
+            this.RoomMinWalkableSpacesLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RoomMinWalkableSpacesLabel.AutoSize = true;
+            this.RoomMinWalkableSpacesLabel.Location = new System.Drawing.Point(24, 0);
+            this.RoomMinWalkableSpacesLabel.Name = "RoomMinWalkableSpacesLabel";
+            this.RoomMinWalkableSpacesLabel.Size = new System.Drawing.Size(130, 23);
+            this.RoomMinWalkableSpacesLabel.TabIndex = 0;
+            this.RoomMinWalkableSpacesLabel.Text = "Minimum Walkable Spaces";
+            this.EditorToolTip.SetToolTip(this.RoomMinWalkableSpacesLabel, "Smallest number of open Floor spaces allowed for any room.");
+            // 
+            // RoomMaxWalkableSpacesLabel
+            // 
+            this.RoomMaxWalkableSpacesLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RoomMaxWalkableSpacesLabel.AutoSize = true;
+            this.RoomMaxWalkableSpacesLabel.Location = new System.Drawing.Point(20, 23);
+            this.RoomMaxWalkableSpacesLabel.Name = "RoomMaxWalkableSpacesLabel";
+            this.RoomMaxWalkableSpacesLabel.Size = new System.Drawing.Size(134, 23);
+            this.RoomMaxWalkableSpacesLabel.TabIndex = 1;
+            this.RoomMaxWalkableSpacesLabel.Text = "Maximum Walkable Spaces";
+            this.EditorToolTip.SetToolTip(this.RoomMaxWalkableSpacesLabel, "Largest number of open Floor spaces allowed for any room.");
+            // 
+            // RoomMinWalkableSpacesTextBox
+            // 
+            this.RoomMinWalkableSpacesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.RoomMinWalkableSpacesTextBox.Location = new System.Drawing.Point(160, 3);
+            this.RoomMinWalkableSpacesTextBox.Name = "RoomMinWalkableSpacesTextBox";
+            this.RoomMinWalkableSpacesTextBox.Size = new System.Drawing.Size(114, 20);
+            this.RoomMinWalkableSpacesTextBox.TabIndex = 2;
+            this.EditorToolTip.SetToolTip(this.RoomMinWalkableSpacesTextBox, "Smallest number of open Floor spaces allowed for any room.");
+            // 
+            // RoomMaxWalkableSpacesTextBox
+            // 
+            this.RoomMaxWalkableSpacesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.RoomMaxWalkableSpacesTextBox.Location = new System.Drawing.Point(160, 26);
+            this.RoomMaxWalkableSpacesTextBox.Name = "RoomMaxWalkableSpacesTextBox";
+            this.RoomMaxWalkableSpacesTextBox.Size = new System.Drawing.Size(114, 20);
+            this.RoomMaxWalkableSpacesTextBox.TabIndex = 3;
+            this.EditorToolTip.SetToolTip(this.RoomMaxWalkableSpacesTextBox, "Largest number of open Floor spaces allowed for any room.");
+            // 
+            // CraftingStrikePatternDimensionLabelLabel
+            // 
+            this.CraftingStrikePatternDimensionLabelLabel.AutoSize = true;
+            this.CraftingStrikePatternDimensionLabelLabel.Location = new System.Drawing.Point(3, 48);
+            this.CraftingStrikePatternDimensionLabelLabel.Name = "CraftingStrikePatternDimensionLabelLabel";
+            this.CraftingStrikePatternDimensionLabelLabel.Size = new System.Drawing.Size(129, 13);
+            this.CraftingStrikePatternDimensionLabelLabel.TabIndex = 8;
+            this.CraftingStrikePatternDimensionLabelLabel.Text = "Strike Pattern Dimensions";
+            this.EditorToolTip.SetToolTip(this.CraftingStrikePatternDimensionLabelLabel, "How many panels per grid in the crafting minigame.");
+            // 
+            // CraftingStrikePatternDimensionLabelStatic
+            // 
+            this.CraftingStrikePatternDimensionLabelStatic.AutoSize = true;
+            this.CraftingStrikePatternDimensionLabelStatic.Location = new System.Drawing.Point(160, 48);
+            this.CraftingStrikePatternDimensionLabelStatic.Name = "CraftingStrikePatternDimensionLabelStatic";
+            this.CraftingStrikePatternDimensionLabelStatic.Size = new System.Drawing.Size(31, 13);
+            this.CraftingStrikePatternDimensionLabelStatic.TabIndex = 9;
+            this.CraftingStrikePatternDimensionLabelStatic.Text = "2 x 2";
+            this.EditorToolTip.SetToolTip(this.CraftingStrikePatternDimensionLabelStatic, "How many panels per grid in the crafting minigame.");
+            // 
+            // CraftingMinIngredientCountLabel
+            // 
+            this.CraftingMinIngredientCountLabel.AutoSize = true;
+            this.CraftingMinIngredientCountLabel.Location = new System.Drawing.Point(3, 0);
+            this.CraftingMinIngredientCountLabel.Name = "CraftingMinIngredientCountLabel";
+            this.CraftingMinIngredientCountLabel.Size = new System.Drawing.Size(135, 13);
+            this.CraftingMinIngredientCountLabel.TabIndex = 0;
+            this.CraftingMinIngredientCountLabel.Text = "Minimum Ingredient Count ";
+            this.EditorToolTip.SetToolTip(this.CraftingMinIngredientCountLabel, "Smallest number of ingredients in any recipe.");
+            // 
+            // CraftingMinProductCountLabel
+            // 
+            this.CraftingMinProductCountLabel.AutoSize = true;
+            this.CraftingMinProductCountLabel.Location = new System.Drawing.Point(3, 24);
+            this.CraftingMinProductCountLabel.Name = "CraftingMinProductCountLabel";
+            this.CraftingMinProductCountLabel.Size = new System.Drawing.Size(119, 13);
+            this.CraftingMinProductCountLabel.TabIndex = 1;
+            this.CraftingMinProductCountLabel.Text = "Minimum Product Count";
+            this.EditorToolTip.SetToolTip(this.CraftingMinProductCountLabel, "Smallest number of products from any recipe.");
+            // 
+            // CraftingMaxIngredientCountLabel
+            // 
+            this.CraftingMaxIngredientCountLabel.AutoSize = true;
+            this.CraftingMaxIngredientCountLabel.Location = new System.Drawing.Point(280, 0);
+            this.CraftingMaxIngredientCountLabel.Name = "CraftingMaxIngredientCountLabel";
+            this.CraftingMaxIngredientCountLabel.Size = new System.Drawing.Size(139, 13);
+            this.CraftingMaxIngredientCountLabel.TabIndex = 2;
+            this.CraftingMaxIngredientCountLabel.Text = "Maximum Ingredient Count ";
+            this.EditorToolTip.SetToolTip(this.CraftingMaxIngredientCountLabel, "Largest number of ingredients in any recipe.");
+            // 
+            // CraftingMaxProductCountLabel
+            // 
+            this.CraftingMaxProductCountLabel.AutoSize = true;
+            this.CraftingMaxProductCountLabel.Location = new System.Drawing.Point(280, 24);
+            this.CraftingMaxProductCountLabel.Name = "CraftingMaxProductCountLabel";
+            this.CraftingMaxProductCountLabel.Size = new System.Drawing.Size(123, 13);
+            this.CraftingMaxProductCountLabel.TabIndex = 3;
+            this.CraftingMaxProductCountLabel.Text = "Maximum Product Count";
+            this.EditorToolTip.SetToolTip(this.CraftingMaxProductCountLabel, "Largest number of products from any recipe.");
+            // 
+            // CraftingMinIngredientCountTextBox
+            // 
+            this.CraftingMinIngredientCountTextBox.Location = new System.Drawing.Point(160, 3);
+            this.CraftingMinIngredientCountTextBox.Name = "CraftingMinIngredientCountTextBox";
+            this.CraftingMinIngredientCountTextBox.Size = new System.Drawing.Size(114, 20);
+            this.CraftingMinIngredientCountTextBox.TabIndex = 4;
+            this.EditorToolTip.SetToolTip(this.CraftingMinIngredientCountTextBox, "Smallest number of ingredients in any recipe.");
+            // 
+            // CraftingMinProductCountTextBox
+            // 
+            this.CraftingMinProductCountTextBox.Location = new System.Drawing.Point(160, 27);
+            this.CraftingMinProductCountTextBox.Name = "CraftingMinProductCountTextBox";
+            this.CraftingMinProductCountTextBox.Size = new System.Drawing.Size(114, 20);
+            this.CraftingMinProductCountTextBox.TabIndex = 5;
+            this.EditorToolTip.SetToolTip(this.CraftingMinProductCountTextBox, "Smallest number of products from any recipe.");
+            // 
+            // CraftingMaxIngredientCountTextBox
+            // 
+            this.CraftingMaxIngredientCountTextBox.Location = new System.Drawing.Point(437, 3);
+            this.CraftingMaxIngredientCountTextBox.Name = "CraftingMaxIngredientCountTextBox";
+            this.CraftingMaxIngredientCountTextBox.Size = new System.Drawing.Size(114, 20);
+            this.CraftingMaxIngredientCountTextBox.TabIndex = 6;
+            this.EditorToolTip.SetToolTip(this.CraftingMaxIngredientCountTextBox, "Largest number of ingredients in any recipe.");
+            // 
+            // CraftingMaxProductCountTextBox
+            // 
+            this.CraftingMaxProductCountTextBox.Location = new System.Drawing.Point(437, 27);
+            this.CraftingMaxProductCountTextBox.Name = "CraftingMaxProductCountTextBox";
+            this.CraftingMaxProductCountTextBox.Size = new System.Drawing.Size(114, 20);
+            this.CraftingMaxProductCountTextBox.TabIndex = 7;
+            this.EditorToolTip.SetToolTip(this.CraftingMaxProductCountTextBox, "Largest number of products from any recipe.");
+            // 
             // EditorTabs
             // 
             this.EditorTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -6355,160 +6645,6 @@ namespace Scribe.Forms
             this.CraftingTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.CraftingTableLayoutPanel.TabIndex = 5;
             // 
-            // CraftingPanelsCountStatic
-            // 
-            this.CraftingPanelsCountStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingPanelsCountStatic.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CraftingPanelsCountStatic.Location = new System.Drawing.Point(146, 415);
-            this.CraftingPanelsCountStatic.Name = "CraftingPanelsCountStatic";
-            this.CraftingPanelsCountStatic.Size = new System.Drawing.Size(137, 20);
-            this.CraftingPanelsCountStatic.TabIndex = 43;
-            this.CraftingPanelsCountStatic.Tag = "Themed";
-            this.CraftingPanelsCountStatic.Text = "0 Panels";
-            this.CraftingPanelsCountStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.CraftingPanelsCountStatic, "Number of panels used in this recipe.");
-            // 
-            // CraftingOpenPatternEditorButton
-            // 
-            this.CraftingOpenPatternEditorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingOpenPatternEditorButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CraftingOpenPatternEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CraftingOpenPatternEditorButton.Location = new System.Drawing.Point(297, 420);
-            this.CraftingOpenPatternEditorButton.Name = "CraftingOpenPatternEditorButton";
-            this.CraftingOpenPatternEditorButton.Size = new System.Drawing.Size(129, 23);
-            this.CraftingOpenPatternEditorButton.TabIndex = 2;
-            this.CraftingOpenPatternEditorButton.Text = "Open Pattern Editor";
-            this.EditorToolTip.SetToolTip(this.CraftingOpenPatternEditorButton, "Launches the minigame editor.");
-            this.CraftingOpenPatternEditorButton.UseVisualStyleBackColor = false;
-            this.CraftingOpenPatternEditorButton.Click += new System.EventHandler(this.CraftingOpenPatternEditorButton_Click);
-            // 
-            // CraftingAddProductButton
-            // 
-            this.CraftingAddProductButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingAddProductButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CraftingAddProductButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CraftingAddProductButton.Location = new System.Drawing.Point(297, 243);
-            this.CraftingAddProductButton.Name = "CraftingAddProductButton";
-            this.CraftingAddProductButton.Size = new System.Drawing.Size(129, 23);
-            this.CraftingAddProductButton.TabIndex = 30;
-            this.CraftingAddProductButton.Text = "Add Product";
-            this.EditorToolTip.SetToolTip(this.CraftingAddProductButton, "Add item.");
-            this.CraftingAddProductButton.UseVisualStyleBackColor = false;
-            this.CraftingAddProductButton.Click += new System.EventHandler(this.CraftingAddProductButton_Click);
-            // 
-            // CraftingRemoveProductButton
-            // 
-            this.CraftingRemoveProductButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingRemoveProductButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CraftingRemoveProductButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CraftingRemoveProductButton.Location = new System.Drawing.Point(154, 243);
-            this.CraftingRemoveProductButton.Name = "CraftingRemoveProductButton";
-            this.CraftingRemoveProductButton.Size = new System.Drawing.Size(129, 23);
-            this.CraftingRemoveProductButton.TabIndex = 29;
-            this.CraftingRemoveProductButton.Text = "Remove Product";
-            this.EditorToolTip.SetToolTip(this.CraftingRemoveProductButton, "Remove item.");
-            this.CraftingRemoveProductButton.UseVisualStyleBackColor = false;
-            this.CraftingRemoveProductButton.Click += new System.EventHandler(this.CraftingRemoveProductButton_Click);
-            // 
-            // CraftingAddIngredientButton
-            // 
-            this.CraftingAddIngredientButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingAddIngredientButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CraftingAddIngredientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CraftingAddIngredientButton.Location = new System.Drawing.Point(297, 378);
-            this.CraftingAddIngredientButton.Name = "CraftingAddIngredientButton";
-            this.CraftingAddIngredientButton.Size = new System.Drawing.Size(129, 23);
-            this.CraftingAddIngredientButton.TabIndex = 2;
-            this.CraftingAddIngredientButton.Text = "Add Ingredient";
-            this.EditorToolTip.SetToolTip(this.CraftingAddIngredientButton, "Add item.");
-            this.CraftingAddIngredientButton.UseVisualStyleBackColor = false;
-            this.CraftingAddIngredientButton.Click += new System.EventHandler(this.CraftingAddIngredientButton_Click);
-            // 
-            // CraftingRemoveIngredientButton
-            // 
-            this.CraftingRemoveIngredientButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingRemoveIngredientButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CraftingRemoveIngredientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CraftingRemoveIngredientButton.Location = new System.Drawing.Point(154, 378);
-            this.CraftingRemoveIngredientButton.Name = "CraftingRemoveIngredientButton";
-            this.CraftingRemoveIngredientButton.Size = new System.Drawing.Size(129, 23);
-            this.CraftingRemoveIngredientButton.TabIndex = 2;
-            this.CraftingRemoveIngredientButton.Text = "Remove Ingredient";
-            this.EditorToolTip.SetToolTip(this.CraftingRemoveIngredientButton, "Remove item.");
-            this.CraftingRemoveIngredientButton.UseVisualStyleBackColor = false;
-            this.CraftingRemoveIngredientButton.Click += new System.EventHandler(this.CraftingRemoveIngredientButton_Click);
-            // 
-            // CraftingIngredientsListBox
-            // 
-            this.CraftingIngredientsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.CraftingTableLayoutPanel.SetColumnSpan(this.CraftingIngredientsListBox, 2);
-            this.CraftingIngredientsListBox.FormattingEnabled = true;
-            this.CraftingIngredientsListBox.Location = new System.Drawing.Point(146, 273);
-            this.CraftingIngredientsListBox.Name = "CraftingIngredientsListBox";
-            this.CraftingIngredientsListBox.Size = new System.Drawing.Size(279, 95);
-            this.CraftingIngredientsListBox.TabIndex = 1;
-            this.EditorToolTip.SetToolTip(this.CraftingIngredientsListBox, "Any items required to follow this recipe.");
-            // 
-            // CraftingNameLabel
-            // 
-            this.CraftingNameLabel.AutoSize = true;
-            this.CraftingNameLabel.Location = new System.Drawing.Point(3, 0);
-            this.CraftingNameLabel.Name = "CraftingNameLabel";
-            this.CraftingNameLabel.Size = new System.Drawing.Size(34, 13);
-            this.CraftingNameLabel.TabIndex = 0;
-            this.CraftingNameLabel.Text = "Name";
-            this.EditorToolTip.SetToolTip(this.CraftingNameLabel, "Player-facing name for this recipe.");
-            // 
-            // CraftingIngredientsLabel
-            // 
-            this.CraftingIngredientsLabel.AutoSize = true;
-            this.CraftingIngredientsLabel.Location = new System.Drawing.Point(3, 270);
-            this.CraftingIngredientsLabel.Name = "CraftingIngredientsLabel";
-            this.CraftingIngredientsLabel.Size = new System.Drawing.Size(62, 13);
-            this.CraftingIngredientsLabel.TabIndex = 18;
-            this.CraftingIngredientsLabel.Text = "Ingredients";
-            this.EditorToolTip.SetToolTip(this.CraftingIngredientsLabel, "Any items required to follow this recipe.");
-            // 
-            // CraftingNameTextBox
-            // 
-            this.CraftingNameTextBox.Location = new System.Drawing.Point(146, 3);
-            this.CraftingNameTextBox.Name = "CraftingNameTextBox";
-            this.CraftingNameTextBox.Size = new System.Drawing.Size(136, 20);
-            this.CraftingNameTextBox.TabIndex = 23;
-            this.EditorToolTip.SetToolTip(this.CraftingNameTextBox, "Player-facing name for this recipe.");
-            // 
-            // CraftingProductsLabel
-            // 
-            this.CraftingProductsLabel.AutoSize = true;
-            this.CraftingProductsLabel.Location = new System.Drawing.Point(3, 135);
-            this.CraftingProductsLabel.Name = "CraftingProductsLabel";
-            this.CraftingProductsLabel.Size = new System.Drawing.Size(49, 13);
-            this.CraftingProductsLabel.TabIndex = 27;
-            this.CraftingProductsLabel.Text = "Products";
-            this.EditorToolTip.SetToolTip(this.CraftingProductsLabel, "Any items that result from following this recipe.");
-            // 
-            // CraftingProductsListBox
-            // 
-            this.CraftingProductsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.CraftingTableLayoutPanel.SetColumnSpan(this.CraftingProductsListBox, 2);
-            this.CraftingProductsListBox.Location = new System.Drawing.Point(146, 138);
-            this.CraftingProductsListBox.Name = "CraftingProductsListBox";
-            this.CraftingProductsListBox.Size = new System.Drawing.Size(279, 95);
-            this.CraftingProductsListBox.TabIndex = 28;
-            this.EditorToolTip.SetToolTip(this.CraftingProductsListBox, "Any items that result from following this recipe.");
-            // 
-            // CraftingStrikePatternLabel
-            // 
-            this.CraftingStrikePatternLabel.AutoSize = true;
-            this.CraftingStrikePatternLabel.Location = new System.Drawing.Point(3, 405);
-            this.CraftingStrikePatternLabel.Name = "CraftingStrikePatternLabel";
-            this.CraftingStrikePatternLabel.Size = new System.Drawing.Size(115, 13);
-            this.CraftingStrikePatternLabel.TabIndex = 31;
-            this.CraftingStrikePatternLabel.Text = "Crafting Strike Pattern";
-            this.EditorToolTip.SetToolTip(this.CraftingStrikePatternLabel, "Definitions for a crafting minigame.");
-            // 
             // CraftingPixelBox
             // 
             this.CraftingPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -6577,90 +6713,6 @@ namespace Scribe.Forms
             this.CraftingConfigTableLayoutPanel.Size = new System.Drawing.Size(928, 75);
             this.CraftingConfigTableLayoutPanel.TabIndex = 0;
             // 
-            // CraftingMinIngredientCountLabel
-            // 
-            this.CraftingMinIngredientCountLabel.AutoSize = true;
-            this.CraftingMinIngredientCountLabel.Location = new System.Drawing.Point(3, 0);
-            this.CraftingMinIngredientCountLabel.Name = "CraftingMinIngredientCountLabel";
-            this.CraftingMinIngredientCountLabel.Size = new System.Drawing.Size(135, 13);
-            this.CraftingMinIngredientCountLabel.TabIndex = 0;
-            this.CraftingMinIngredientCountLabel.Text = "Minimum Ingredient Count ";
-            // 
-            // CraftingMinProductCountLabel
-            // 
-            this.CraftingMinProductCountLabel.AutoSize = true;
-            this.CraftingMinProductCountLabel.Location = new System.Drawing.Point(3, 24);
-            this.CraftingMinProductCountLabel.Name = "CraftingMinProductCountLabel";
-            this.CraftingMinProductCountLabel.Size = new System.Drawing.Size(119, 13);
-            this.CraftingMinProductCountLabel.TabIndex = 1;
-            this.CraftingMinProductCountLabel.Text = "Minimum Product Count";
-            // 
-            // CraftingMaxIngredientCountLabel
-            // 
-            this.CraftingMaxIngredientCountLabel.AutoSize = true;
-            this.CraftingMaxIngredientCountLabel.Location = new System.Drawing.Point(280, 0);
-            this.CraftingMaxIngredientCountLabel.Name = "CraftingMaxIngredientCountLabel";
-            this.CraftingMaxIngredientCountLabel.Size = new System.Drawing.Size(139, 13);
-            this.CraftingMaxIngredientCountLabel.TabIndex = 2;
-            this.CraftingMaxIngredientCountLabel.Text = "Maximum Ingredient Count ";
-            // 
-            // CraftingMaxProductCountLabel
-            // 
-            this.CraftingMaxProductCountLabel.AutoSize = true;
-            this.CraftingMaxProductCountLabel.Location = new System.Drawing.Point(280, 24);
-            this.CraftingMaxProductCountLabel.Name = "CraftingMaxProductCountLabel";
-            this.CraftingMaxProductCountLabel.Size = new System.Drawing.Size(123, 13);
-            this.CraftingMaxProductCountLabel.TabIndex = 3;
-            this.CraftingMaxProductCountLabel.Text = "Maximum Product Count";
-            // 
-            // CraftingMinIngredientCountTextBox
-            // 
-            this.CraftingMinIngredientCountTextBox.Location = new System.Drawing.Point(160, 3);
-            this.CraftingMinIngredientCountTextBox.Name = "CraftingMinIngredientCountTextBox";
-            this.CraftingMinIngredientCountTextBox.Size = new System.Drawing.Size(114, 20);
-            this.CraftingMinIngredientCountTextBox.TabIndex = 4;
-            // 
-            // CraftingMinProductCountTextBox
-            // 
-            this.CraftingMinProductCountTextBox.Location = new System.Drawing.Point(160, 27);
-            this.CraftingMinProductCountTextBox.Name = "CraftingMinProductCountTextBox";
-            this.CraftingMinProductCountTextBox.Size = new System.Drawing.Size(114, 20);
-            this.CraftingMinProductCountTextBox.TabIndex = 5;
-            // 
-            // CraftingMaxIngredientCountTextBox
-            // 
-            this.CraftingMaxIngredientCountTextBox.Location = new System.Drawing.Point(437, 3);
-            this.CraftingMaxIngredientCountTextBox.Name = "CraftingMaxIngredientCountTextBox";
-            this.CraftingMaxIngredientCountTextBox.Size = new System.Drawing.Size(114, 20);
-            this.CraftingMaxIngredientCountTextBox.TabIndex = 6;
-            // 
-            // CraftingMaxProductCountTextBox
-            // 
-            this.CraftingMaxProductCountTextBox.Location = new System.Drawing.Point(437, 27);
-            this.CraftingMaxProductCountTextBox.Name = "CraftingMaxProductCountTextBox";
-            this.CraftingMaxProductCountTextBox.Size = new System.Drawing.Size(114, 20);
-            this.CraftingMaxProductCountTextBox.TabIndex = 7;
-            // 
-            // CraftingStrikePatternDimensionLabelLabel
-            // 
-            this.CraftingStrikePatternDimensionLabelLabel.AutoSize = true;
-            this.CraftingStrikePatternDimensionLabelLabel.Location = new System.Drawing.Point(3, 48);
-            this.CraftingStrikePatternDimensionLabelLabel.Name = "CraftingStrikePatternDimensionLabelLabel";
-            this.CraftingStrikePatternDimensionLabelLabel.Size = new System.Drawing.Size(129, 13);
-            this.CraftingStrikePatternDimensionLabelLabel.TabIndex = 8;
-            this.CraftingStrikePatternDimensionLabelLabel.Text = "Strike Pattern Dimensions";
-            this.EditorToolTip.SetToolTip(this.CraftingStrikePatternDimensionLabelLabel, "How many panels per grid in the crafting minigame.");
-            // 
-            // CraftingStrikePatternDimensionLabelStatic
-            // 
-            this.CraftingStrikePatternDimensionLabelStatic.AutoSize = true;
-            this.CraftingStrikePatternDimensionLabelStatic.Location = new System.Drawing.Point(160, 48);
-            this.CraftingStrikePatternDimensionLabelStatic.Name = "CraftingStrikePatternDimensionLabelStatic";
-            this.CraftingStrikePatternDimensionLabelStatic.Size = new System.Drawing.Size(31, 13);
-            this.CraftingStrikePatternDimensionLabelStatic.TabIndex = 9;
-            this.CraftingStrikePatternDimensionLabelStatic.Text = "2 x 2";
-            this.EditorToolTip.SetToolTip(this.CraftingStrikePatternDimensionLabelStatic, "How many panels per grid in the crafting minigame.");
-            // 
             // RoomRecipesTabPage
             // 
             this.RoomRecipesTabPage.Controls.Add(this.RoomRemoveRoomButton);
@@ -6725,50 +6777,6 @@ namespace Scribe.Forms
             this.RoomConfigTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.RoomConfigTableLayoutPanel.Size = new System.Drawing.Size(926, 72);
             this.RoomConfigTableLayoutPanel.TabIndex = 1;
-            // 
-            // RoomMinWalkableSpacesLabel
-            // 
-            this.RoomMinWalkableSpacesLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomMinWalkableSpacesLabel.AutoSize = true;
-            this.RoomMinWalkableSpacesLabel.Location = new System.Drawing.Point(24, 0);
-            this.RoomMinWalkableSpacesLabel.Name = "RoomMinWalkableSpacesLabel";
-            this.RoomMinWalkableSpacesLabel.Size = new System.Drawing.Size(130, 23);
-            this.RoomMinWalkableSpacesLabel.TabIndex = 0;
-            this.RoomMinWalkableSpacesLabel.Text = "Minimum Walkable Spaces";
-            this.EditorToolTip.SetToolTip(this.RoomMinWalkableSpacesLabel, "Smallest number of open Floor spaces allowed for any room.");
-            // 
-            // RoomMaxWalkableSpacesLabel
-            // 
-            this.RoomMaxWalkableSpacesLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.RoomMaxWalkableSpacesLabel.AutoSize = true;
-            this.RoomMaxWalkableSpacesLabel.Location = new System.Drawing.Point(20, 23);
-            this.RoomMaxWalkableSpacesLabel.Name = "RoomMaxWalkableSpacesLabel";
-            this.RoomMaxWalkableSpacesLabel.Size = new System.Drawing.Size(134, 23);
-            this.RoomMaxWalkableSpacesLabel.TabIndex = 1;
-            this.RoomMaxWalkableSpacesLabel.Text = "Maximum Walkable Spaces";
-            this.EditorToolTip.SetToolTip(this.RoomMaxWalkableSpacesLabel, "Largest number of open Floor spaces allowed for any room.");
-            // 
-            // RoomMinWalkableSpacesTextBox
-            // 
-            this.RoomMinWalkableSpacesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.RoomMinWalkableSpacesTextBox.Location = new System.Drawing.Point(160, 3);
-            this.RoomMinWalkableSpacesTextBox.Name = "RoomMinWalkableSpacesTextBox";
-            this.RoomMinWalkableSpacesTextBox.Size = new System.Drawing.Size(114, 20);
-            this.RoomMinWalkableSpacesTextBox.TabIndex = 2;
-            this.EditorToolTip.SetToolTip(this.RoomMinWalkableSpacesTextBox, "Smallest number of open Floor spaces allowed for any room.");
-            // 
-            // RoomMaxWalkableSpacesTextBox
-            // 
-            this.RoomMaxWalkableSpacesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.RoomMaxWalkableSpacesTextBox.Location = new System.Drawing.Point(160, 26);
-            this.RoomMaxWalkableSpacesTextBox.Name = "RoomMaxWalkableSpacesTextBox";
-            this.RoomMaxWalkableSpacesTextBox.Size = new System.Drawing.Size(114, 20);
-            this.RoomMaxWalkableSpacesTextBox.TabIndex = 3;
-            this.EditorToolTip.SetToolTip(this.RoomMaxWalkableSpacesTextBox, "Largest number of open Floor spaces allowed for any room.");
             // 
             // RoomTableLayoutPanel
             // 
