@@ -6649,6 +6649,7 @@ namespace Scribe.Forms
             this.CraftingStrikePatternDimensionLabelLabel.Size = new System.Drawing.Size(129, 13);
             this.CraftingStrikePatternDimensionLabelLabel.TabIndex = 8;
             this.CraftingStrikePatternDimensionLabelLabel.Text = "Strike Pattern Dimensions";
+            this.EditorToolTip.SetToolTip(this.CraftingStrikePatternDimensionLabelLabel, "How many panels per grid in the crafting minigame.");
             // 
             // CraftingStrikePatternDimensionLabelStatic
             // 
@@ -6658,6 +6659,7 @@ namespace Scribe.Forms
             this.CraftingStrikePatternDimensionLabelStatic.Size = new System.Drawing.Size(31, 13);
             this.CraftingStrikePatternDimensionLabelStatic.TabIndex = 9;
             this.CraftingStrikePatternDimensionLabelStatic.Text = "2 x 2";
+            this.EditorToolTip.SetToolTip(this.CraftingStrikePatternDimensionLabelStatic, "How many panels per grid in the crafting minigame.");
             // 
             // RoomRecipesTabPage
             // 
