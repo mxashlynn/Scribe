@@ -6370,6 +6370,7 @@ namespace Scribe.Forms
             this.BiomeAddEntryRequirementButton.Size = new System.Drawing.Size(129, 23);
             this.BiomeAddEntryRequirementButton.TabIndex = 2;
             this.BiomeAddEntryRequirementButton.Text = "Add Requirement Tag";
+            this.EditorToolTip.SetToolTip(this.BiomeAddEntryRequirementButton, "Add a new tag.");
             this.BiomeAddEntryRequirementButton.UseVisualStyleBackColor = false;
             this.BiomeAddEntryRequirementButton.Click += new System.EventHandler(this.BiomeAddEntryRequirementButton_Click);
             // 
@@ -6383,6 +6384,7 @@ namespace Scribe.Forms
             this.BiomeRemoveEntryRequirementButton.Size = new System.Drawing.Size(129, 23);
             this.BiomeRemoveEntryRequirementButton.TabIndex = 2;
             this.BiomeRemoveEntryRequirementButton.Text = "Remove Req. Tag";
+            this.EditorToolTip.SetToolTip(this.BiomeRemoveEntryRequirementButton, "Delete selected tag.");
             this.BiomeRemoveEntryRequirementButton.UseVisualStyleBackColor = false;
             this.BiomeRemoveEntryRequirementButton.Click += new System.EventHandler(this.BiomeRemoveEntryRequirementButton_Click);
             // 
@@ -6472,6 +6474,7 @@ namespace Scribe.Forms
             this.BiomeEntryRequirementsListBox.Name = "BiomeEntryRequirementsListBox";
             this.BiomeEntryRequirementsListBox.Size = new System.Drawing.Size(295, 95);
             this.BiomeEntryRequirementsListBox.TabIndex = 1;
+            this.EditorToolTip.SetToolTip(this.BiomeEntryRequirementsListBox, "The types of items a character needs to safely access this biome.");
             // 
             // BiomeParquetCriteriaTextBox
             // 
@@ -6482,6 +6485,7 @@ namespace Scribe.Forms
             this.BiomeParquetCriteriaTextBox.Name = "BiomeParquetCriteriaTextBox";
             this.BiomeParquetCriteriaTextBox.Size = new System.Drawing.Size(295, 20);
             this.BiomeParquetCriteriaTextBox.TabIndex = 1;
+            this.EditorToolTip.SetToolTip(this.BiomeParquetCriteriaTextBox, "A single tag describing the types of parquets making up this biome.");
             // 
             // BiomeIsLiquidBasedCheckBox
             // 
@@ -6490,6 +6494,7 @@ namespace Scribe.Forms
             this.BiomeIsLiquidBasedCheckBox.Name = "BiomeIsLiquidBasedCheckBox";
             this.BiomeIsLiquidBasedCheckBox.Size = new System.Drawing.Size(15, 14);
             this.BiomeIsLiquidBasedCheckBox.TabIndex = 22;
+            this.EditorToolTip.SetToolTip(this.BiomeIsLiquidBasedCheckBox, "When checked, this biome is made of liquid parquets.");
             this.BiomeIsLiquidBasedCheckBox.UseVisualStyleBackColor = false;
             // 
             // BiomeIsRoomBasedCheckBox
@@ -6499,6 +6504,7 @@ namespace Scribe.Forms
             this.BiomeIsRoomBasedCheckBox.Name = "BiomeIsRoomBasedCheckBox";
             this.BiomeIsRoomBasedCheckBox.Size = new System.Drawing.Size(15, 14);
             this.BiomeIsRoomBasedCheckBox.TabIndex = 22;
+            this.EditorToolTip.SetToolTip(this.BiomeIsRoomBasedCheckBox, "When checked, this biome is made up of rooms.");
             this.BiomeIsRoomBasedCheckBox.UseVisualStyleBackColor = false;
             // 
             // BiomeNameLabel
@@ -6509,6 +6515,7 @@ namespace Scribe.Forms
             this.BiomeNameLabel.Size = new System.Drawing.Size(34, 13);
             this.BiomeNameLabel.TabIndex = 0;
             this.BiomeNameLabel.Text = "Name";
+            this.EditorToolTip.SetToolTip(this.BiomeNameLabel, "Player-facing name of this biome.");
             // 
             // BiomeTierLabel
             // 
@@ -6518,6 +6525,8 @@ namespace Scribe.Forms
             this.BiomeTierLabel.Size = new System.Drawing.Size(25, 13);
             this.BiomeTierLabel.TabIndex = 9;
             this.BiomeTierLabel.Text = "Tier";
+            this.EditorToolTip.SetToolTip(this.BiomeTierLabel, "A non-negative rating indicating where this biome falls in the progression, start" +
+        "ing at zero.");
             // 
             // BiomeIsRoomBasedLabel
             // 
@@ -6527,6 +6536,7 @@ namespace Scribe.Forms
             this.BiomeIsRoomBasedLabel.Size = new System.Drawing.Size(84, 13);
             this.BiomeIsRoomBasedLabel.TabIndex = 12;
             this.BiomeIsRoomBasedLabel.Text = "Is Room-Based?";
+            this.EditorToolTip.SetToolTip(this.BiomeIsRoomBasedLabel, "When checked, this biome is made up of rooms.");
             // 
             // BiomeIsLiquidBasedLabel
             // 
@@ -6536,6 +6546,7 @@ namespace Scribe.Forms
             this.BiomeIsLiquidBasedLabel.Size = new System.Drawing.Size(84, 13);
             this.BiomeIsLiquidBasedLabel.TabIndex = 15;
             this.BiomeIsLiquidBasedLabel.Text = "Is Liquid-Based?";
+            this.EditorToolTip.SetToolTip(this.BiomeIsLiquidBasedLabel, "When checked, this biome is made of liquid parquets.");
             // 
             // BiomeParquetCriteriaLabel
             // 
@@ -6545,6 +6556,7 @@ namespace Scribe.Forms
             this.BiomeParquetCriteriaLabel.Size = new System.Drawing.Size(83, 13);
             this.BiomeParquetCriteriaLabel.TabIndex = 18;
             this.BiomeParquetCriteriaLabel.Text = "Parquet Criteria";
+            this.EditorToolTip.SetToolTip(this.BiomeParquetCriteriaLabel, "A single tag describing the types of parquets making up this biome.");
             // 
             // BiomeEntryRequirementsLabel
             // 
@@ -6554,6 +6566,7 @@ namespace Scribe.Forms
             this.BiomeEntryRequirementsLabel.Size = new System.Drawing.Size(102, 13);
             this.BiomeEntryRequirementsLabel.TabIndex = 21;
             this.BiomeEntryRequirementsLabel.Text = "Entry Requirements";
+            this.EditorToolTip.SetToolTip(this.BiomeEntryRequirementsLabel, "The types of items a character needs to safely access this biome.");
             // 
             // BiomeNameTextBox
             // 
@@ -6561,6 +6574,7 @@ namespace Scribe.Forms
             this.BiomeNameTextBox.Name = "BiomeNameTextBox";
             this.BiomeNameTextBox.Size = new System.Drawing.Size(144, 20);
             this.BiomeNameTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.BiomeNameTextBox, "Player-facing name of this biome.");
             // 
             // BiomeTierTextBox
             // 
@@ -6568,6 +6582,8 @@ namespace Scribe.Forms
             this.BiomeTierTextBox.Name = "BiomeTierTextBox";
             this.BiomeTierTextBox.Size = new System.Drawing.Size(144, 20);
             this.BiomeTierTextBox.TabIndex = 26;
+            this.EditorToolTip.SetToolTip(this.BiomeTierTextBox, "A non-negative rating indicating where this biome falls in the progression, start" +
+        "ing at zero.");
             // 
             // BiomePixelBox
             // 
