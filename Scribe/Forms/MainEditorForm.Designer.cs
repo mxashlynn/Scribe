@@ -5350,6 +5350,7 @@ namespace Scribe.Forms
             this.CritterPrimaryBehaviorComboBox.Name = "CritterPrimaryBehaviorComboBox";
             this.CritterPrimaryBehaviorComboBox.Size = new System.Drawing.Size(144, 21);
             this.CritterPrimaryBehaviorComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.CritterPrimaryBehaviorComboBox, "The script governing the way this critter normally acts.");
             // 
             // CritterNameLabel
             // 
@@ -5359,6 +5360,7 @@ namespace Scribe.Forms
             this.CritterNameLabel.Size = new System.Drawing.Size(34, 13);
             this.CritterNameLabel.TabIndex = 0;
             this.CritterNameLabel.Text = "Name";
+            this.EditorToolTip.SetToolTip(this.CritterNameLabel, "The player-facing name of this type of critter.");
             // 
             // CritterNativeBiomeLabel
             // 
@@ -5368,6 +5370,7 @@ namespace Scribe.Forms
             this.CritterNativeBiomeLabel.Size = new System.Drawing.Size(69, 13);
             this.CritterNativeBiomeLabel.TabIndex = 9;
             this.CritterNativeBiomeLabel.Text = "Native Biome";
+            this.EditorToolTip.SetToolTip(this.CritterNativeBiomeLabel, "The biome in which this critter is at home.");
             // 
             // CritterNameTextBox
             // 
@@ -5375,6 +5378,7 @@ namespace Scribe.Forms
             this.CritterNameTextBox.Name = "CritterNameTextBox";
             this.CritterNameTextBox.Size = new System.Drawing.Size(144, 20);
             this.CritterNameTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.CritterNameTextBox, "The player-facing name of this type of critter.");
             // 
             // CritterNativeBiomeComboBox
             // 
@@ -5384,6 +5388,7 @@ namespace Scribe.Forms
             this.CritterNativeBiomeComboBox.Name = "CritterNativeBiomeComboBox";
             this.CritterNativeBiomeComboBox.Size = new System.Drawing.Size(144, 21);
             this.CritterNativeBiomeComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.CritterNativeBiomeComboBox, "The biome in which this critter is at home.");
             // 
             // CritterPrimaryBehaviorLabel
             // 
@@ -5393,6 +5398,7 @@ namespace Scribe.Forms
             this.CritterPrimaryBehaviorLabel.Size = new System.Drawing.Size(88, 13);
             this.CritterPrimaryBehaviorLabel.TabIndex = 30;
             this.CritterPrimaryBehaviorLabel.Text = "Primary Behavior";
+            this.EditorToolTip.SetToolTip(this.CritterPrimaryBehaviorLabel, "The script governing the way this critter normally acts.");
             // 
             // CritterParquetAvoidsLabel
             // 
@@ -5402,6 +5408,7 @@ namespace Scribe.Forms
             this.CritterParquetAvoidsLabel.Size = new System.Drawing.Size(92, 13);
             this.CritterParquetAvoidsLabel.TabIndex = 31;
             this.CritterParquetAvoidsLabel.Text = "Parquets Avoided";
+            this.EditorToolTip.SetToolTip(this.CritterParquetAvoidsLabel, "Types of parquets this critter avoids, if any.");
             // 
             // CritterPendingDesignLabel1
             // 
@@ -5412,6 +5419,7 @@ namespace Scribe.Forms
             this.CritterPendingDesignLabel1.Size = new System.Drawing.Size(93, 15);
             this.CritterPendingDesignLabel1.TabIndex = 32;
             this.CritterPendingDesignLabel1.Text = "Pending Design";
+            this.EditorToolTip.SetToolTip(this.CritterPendingDesignLabel1, "I\'m not sure if we\'ll actually use this.");
             // 
             // CritterParquetsSoughtLabel
             // 
@@ -5421,6 +5429,7 @@ namespace Scribe.Forms
             this.CritterParquetsSoughtLabel.Size = new System.Drawing.Size(87, 13);
             this.CritterParquetsSoughtLabel.TabIndex = 33;
             this.CritterParquetsSoughtLabel.Text = "Parquets Sought";
+            this.EditorToolTip.SetToolTip(this.CritterParquetsSoughtLabel, "Types of parquets this critter seeks, if any.");
             // 
             // CritterPendingDesignLabel2
             // 
@@ -5431,6 +5440,7 @@ namespace Scribe.Forms
             this.CritterPendingDesignLabel2.Size = new System.Drawing.Size(93, 15);
             this.CritterPendingDesignLabel2.TabIndex = 34;
             this.CritterPendingDesignLabel2.Text = "Pending Design";
+            this.EditorToolTip.SetToolTip(this.CritterPendingDesignLabel2, "I\'m not sure if we\'ll actually use this.");
             // 
             // CritterPixelBox
             // 
@@ -5796,6 +5806,7 @@ namespace Scribe.Forms
             this.CharacterOpenInventoryEditorButton.Size = new System.Drawing.Size(129, 23);
             this.CharacterOpenInventoryEditorButton.TabIndex = 3;
             this.CharacterOpenInventoryEditorButton.Text = "Open Inventory Editor";
+            this.EditorToolTip.SetToolTip(this.CharacterOpenInventoryEditorButton, "Launch the inventory editor.");
             this.CharacterOpenInventoryEditorButton.UseVisualStyleBackColor = false;
             this.CharacterOpenInventoryEditorButton.Click += new System.EventHandler(this.CharacterOpenInventoryEditorButton_Click);
             // 
@@ -5815,6 +5826,7 @@ namespace Scribe.Forms
             this.CharacterNameLabel.Size = new System.Drawing.Size(34, 13);
             this.CharacterNameLabel.TabIndex = 0;
             this.CharacterNameLabel.Text = "Name";
+            this.EditorToolTip.SetToolTip(this.CharacterNameLabel, "Player-facing names of this character.");
             // 
             // CharacterNativeBiomeLabel
             // 
@@ -5831,6 +5843,7 @@ namespace Scribe.Forms
             this.CharacterPersonalNameTextBox.Name = "CharacterPersonalNameTextBox";
             this.CharacterPersonalNameTextBox.Size = new System.Drawing.Size(144, 20);
             this.CharacterPersonalNameTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.CharacterPersonalNameTextBox, "Player-facing personal name.");
             // 
             // CharacterFamilyNameTextBox
             // 
@@ -5838,6 +5851,7 @@ namespace Scribe.Forms
             this.CharacterFamilyNameTextBox.Name = "CharacterFamilyNameTextBox";
             this.CharacterFamilyNameTextBox.Size = new System.Drawing.Size(144, 20);
             this.CharacterFamilyNameTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.CharacterFamilyNameTextBox, "Player-facing family name.");
             // 
             // CharacterNativeBiomeComboBox
             // 
@@ -5864,6 +5878,7 @@ namespace Scribe.Forms
             this.CharacterParquetsAvoidedLabel.Size = new System.Drawing.Size(92, 13);
             this.CharacterParquetsAvoidedLabel.TabIndex = 31;
             this.CharacterParquetsAvoidedLabel.Text = "Parquets Avoided";
+            this.EditorToolTip.SetToolTip(this.CharacterParquetsAvoidedLabel, "Types of parquets this character dislikes, if any.");
             // 
             // CharacterPendingDesignLabel1
             // 
@@ -5883,6 +5898,7 @@ namespace Scribe.Forms
             this.CharacterParquetsSoughtLabel.Size = new System.Drawing.Size(87, 13);
             this.CharacterParquetsSoughtLabel.TabIndex = 33;
             this.CharacterParquetsSoughtLabel.Text = "Parquets Sought";
+            this.EditorToolTip.SetToolTip(this.CharacterParquetsSoughtLabel, "Types of parquets this character wants, if any.");
             // 
             // CharacterPendingDesignLabel
             // 
@@ -5938,6 +5954,7 @@ namespace Scribe.Forms
             this.CharacterStartingInventoryLabel.Size = new System.Drawing.Size(96, 13);
             this.CharacterStartingInventoryLabel.TabIndex = 39;
             this.CharacterStartingInventoryLabel.Text = "Starting Inventory";
+            this.EditorToolTip.SetToolTip(this.CharacterStartingInventoryLabel, "The belongings this character begins with.");
             // 
             // CharacterPronounComboBox
             // 
@@ -5966,6 +5983,7 @@ namespace Scribe.Forms
             this.CharacterStartingInventoryStatic.Tag = "Themed";
             this.CharacterStartingInventoryStatic.Text = "0 Items";
             this.CharacterStartingInventoryStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.CharacterStartingInventoryStatic, "The belongings this character begins with.");
             // 
             // CharacterRemoveCharacterButton
             // 
