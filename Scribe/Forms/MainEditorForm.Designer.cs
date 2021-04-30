@@ -355,6 +355,47 @@ namespace Scribe.Forms
             this.BiomeRoomThresholdFactorTextBox = new System.Windows.Forms.TextBox();
             this.BiomeRoomThresholdFactorLabel = new System.Windows.Forms.Label();
             this.RoomRequiredBlocksLabel = new System.Windows.Forms.Label();
+            this.CritterPrimaryBehaviorComboBox = new System.Windows.Forms.ComboBox();
+            this.CritterNameLabel = new System.Windows.Forms.Label();
+            this.CritterNativeBiomeLabel = new System.Windows.Forms.Label();
+            this.CritterNameTextBox = new System.Windows.Forms.TextBox();
+            this.CritterNativeBiomeComboBox = new System.Windows.Forms.ComboBox();
+            this.CritterPrimaryBehaviorLabel = new System.Windows.Forms.Label();
+            this.CritterParquetAvoidsLabel = new System.Windows.Forms.Label();
+            this.CritterPendingDesignLabel1 = new System.Windows.Forms.Label();
+            this.CritterParquetsSoughtLabel = new System.Windows.Forms.Label();
+            this.CritterPendingDesignLabel2 = new System.Windows.Forms.Label();
+            this.CharacterNameLabel = new System.Windows.Forms.Label();
+            this.CharacterPersonalNameTextBox = new System.Windows.Forms.TextBox();
+            this.CharacterFamilyNameTextBox = new System.Windows.Forms.TextBox();
+            this.CharacterParquetsAvoidedLabel = new System.Windows.Forms.Label();
+            this.CharacterParquetsSoughtLabel = new System.Windows.Forms.Label();
+            this.BiomeAddEntryRequirementButton = new System.Windows.Forms.Button();
+            this.BiomeRemoveEntryRequirementButton = new System.Windows.Forms.Button();
+            this.BiomeEntryRequirementsListBox = new System.Windows.Forms.ListBox();
+            this.BiomeParquetCriteriaTextBox = new System.Windows.Forms.TextBox();
+            this.BiomeIsLiquidBasedCheckBox = new System.Windows.Forms.CheckBox();
+            this.BiomeIsRoomBasedCheckBox = new System.Windows.Forms.CheckBox();
+            this.BiomeNameLabel = new System.Windows.Forms.Label();
+            this.BiomeTierLabel = new System.Windows.Forms.Label();
+            this.BiomeIsRoomBasedLabel = new System.Windows.Forms.Label();
+            this.BiomeIsLiquidBasedLabel = new System.Windows.Forms.Label();
+            this.BiomeParquetCriteriaLabel = new System.Windows.Forms.Label();
+            this.BiomeEntryRequirementsLabel = new System.Windows.Forms.Label();
+            this.BiomeNameTextBox = new System.Windows.Forms.TextBox();
+            this.BiomeTierTextBox = new System.Windows.Forms.TextBox();
+            this.CharacterAddQuestButton = new System.Windows.Forms.Button();
+            this.CharacterRemoveQuestButton = new System.Windows.Forms.Button();
+            this.CharacterStartingQuestsListBox = new System.Windows.Forms.ListBox();
+            this.CharacterStoryIDTextBox = new System.Windows.Forms.TextBox();
+            this.CharacterNativeBiomeLabel = new System.Windows.Forms.Label();
+            this.CharacterNativeBiomeComboBox = new System.Windows.Forms.ComboBox();
+            this.CharacterPendingDesignLabel1 = new System.Windows.Forms.Label();
+            this.CharacterPendingDesignLabel = new System.Windows.Forms.Label();
+            this.CharacterStoryIDLabel = new System.Windows.Forms.Label();
+            this.CharacterStartingQuestsLabel = new System.Windows.Forms.Label();
+            this.CharacterStartingDialogueLabel = new System.Windows.Forms.Label();
+            this.CharacterStartingDialogueComboBox = new System.Windows.Forms.ComboBox();
             this.EditorTabs = new System.Windows.Forms.TabControl();
             this.GamesTabPage = new System.Windows.Forms.TabPage();
             this.GameTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -394,16 +435,6 @@ namespace Scribe.Forms
             this.CollectibleConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.CrittersTabPage = new System.Windows.Forms.TabPage();
             this.CritterTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.CritterPrimaryBehaviorComboBox = new System.Windows.Forms.ComboBox();
-            this.CritterNameLabel = new System.Windows.Forms.Label();
-            this.CritterNativeBiomeLabel = new System.Windows.Forms.Label();
-            this.CritterNameTextBox = new System.Windows.Forms.TextBox();
-            this.CritterNativeBiomeComboBox = new System.Windows.Forms.ComboBox();
-            this.CritterPrimaryBehaviorLabel = new System.Windows.Forms.Label();
-            this.CritterParquetAvoidsLabel = new System.Windows.Forms.Label();
-            this.CritterPendingDesignLabel1 = new System.Windows.Forms.Label();
-            this.CritterParquetsSoughtLabel = new System.Windows.Forms.Label();
-            this.CritterPendingDesignLabel2 = new System.Windows.Forms.Label();
             this.CritterPixelBox = new ParquetCustomControls.PixelBox();
             this.CritterAddNewCritterButton = new System.Windows.Forms.Button();
             this.CritterRemoveCritterButton = new System.Windows.Forms.Button();
@@ -427,29 +458,12 @@ namespace Scribe.Forms
             this.CharacterPronounKeyLabel = new System.Windows.Forms.Label();
             this.CharacterPronounKeyStatic = new System.Windows.Forms.Label();
             this.CharacterTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.CharacterAddQuestButton = new System.Windows.Forms.Button();
-            this.CharacterRemoveQuestButton = new System.Windows.Forms.Button();
-            this.CharacterStartingQuestsListBox = new System.Windows.Forms.ListBox();
-            this.CharacterStoryIDTextBox = new System.Windows.Forms.TextBox();
             this.CharacterOpenInventoryEditorButton = new System.Windows.Forms.Button();
             this.CharacterPrimaryBehaviorComboBox = new System.Windows.Forms.ComboBox();
-            this.CharacterNameLabel = new System.Windows.Forms.Label();
-            this.CharacterNativeBiomeLabel = new System.Windows.Forms.Label();
-            this.CharacterPersonalNameTextBox = new System.Windows.Forms.TextBox();
-            this.CharacterFamilyNameTextBox = new System.Windows.Forms.TextBox();
-            this.CharacterNativeBiomeComboBox = new System.Windows.Forms.ComboBox();
             this.CharacterPrimaryBehaviorLabel = new System.Windows.Forms.Label();
-            this.CharacterParquetsAvoidedLabel = new System.Windows.Forms.Label();
-            this.CharacterPendingDesignLabel1 = new System.Windows.Forms.Label();
-            this.CharacterParquetsSoughtLabel = new System.Windows.Forms.Label();
-            this.CharacterPendingDesignLabel = new System.Windows.Forms.Label();
             this.CharacterPronounLabel = new System.Windows.Forms.Label();
-            this.CharacterStoryIDLabel = new System.Windows.Forms.Label();
-            this.CharacterStartingQuestsLabel = new System.Windows.Forms.Label();
-            this.CharacterStartingDialogueLabel = new System.Windows.Forms.Label();
             this.CharacterStartingInventoryLabel = new System.Windows.Forms.Label();
             this.CharacterPronounComboBox = new System.Windows.Forms.ComboBox();
-            this.CharacterStartingDialogueComboBox = new System.Windows.Forms.ComboBox();
             this.CharacterStartingInventoryStatic = new System.Windows.Forms.Label();
             this.CharacterRemoveCharacterButton = new System.Windows.Forms.Button();
             this.CharacterAddNewCharacterButton = new System.Windows.Forms.Button();
@@ -484,23 +498,9 @@ namespace Scribe.Forms
             this.ItemAddNewItemButton = new System.Windows.Forms.Button();
             this.BiomesTabPage = new System.Windows.Forms.TabPage();
             this.BiomeRemoveBiomeButton = new System.Windows.Forms.Button();
-            this.BiomeAddEntryRequirementButton = new System.Windows.Forms.Button();
-            this.BiomeRemoveEntryRequirementButton = new System.Windows.Forms.Button();
             this.BiomeConfigGroupBox = new System.Windows.Forms.GroupBox();
             this.BiomeConfigTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.BiomeTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.BiomeEntryRequirementsListBox = new System.Windows.Forms.ListBox();
-            this.BiomeParquetCriteriaTextBox = new System.Windows.Forms.TextBox();
-            this.BiomeIsLiquidBasedCheckBox = new System.Windows.Forms.CheckBox();
-            this.BiomeIsRoomBasedCheckBox = new System.Windows.Forms.CheckBox();
-            this.BiomeNameLabel = new System.Windows.Forms.Label();
-            this.BiomeTierLabel = new System.Windows.Forms.Label();
-            this.BiomeIsRoomBasedLabel = new System.Windows.Forms.Label();
-            this.BiomeIsLiquidBasedLabel = new System.Windows.Forms.Label();
-            this.BiomeParquetCriteriaLabel = new System.Windows.Forms.Label();
-            this.BiomeEntryRequirementsLabel = new System.Windows.Forms.Label();
-            this.BiomeNameTextBox = new System.Windows.Forms.TextBox();
-            this.BiomeTierTextBox = new System.Windows.Forms.TextBox();
             this.BiomePixelBox = new ParquetCustomControls.PixelBox();
             this.BiomeAddNewBiomeButton = new System.Windows.Forms.Button();
             this.CraftingRecipesTabPage = new System.Windows.Forms.TabPage();
@@ -4585,6 +4585,431 @@ namespace Scribe.Forms
             this.RoomRequiredBlocksLabel.Text = "Required Block Tags";
             this.EditorToolTip.SetToolTip(this.RoomRequiredBlocksLabel, "Any Block parquet categories this room type requires.");
             // 
+            // CritterPrimaryBehaviorComboBox
+            // 
+            this.CritterPrimaryBehaviorComboBox.DisplayMember = "Name";
+            this.CritterPrimaryBehaviorComboBox.FormattingEnabled = true;
+            this.CritterPrimaryBehaviorComboBox.Location = new System.Drawing.Point(131, 163);
+            this.CritterPrimaryBehaviorComboBox.Name = "CritterPrimaryBehaviorComboBox";
+            this.CritterPrimaryBehaviorComboBox.Size = new System.Drawing.Size(144, 21);
+            this.CritterPrimaryBehaviorComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.CritterPrimaryBehaviorComboBox, "The script governing the way this critter normally acts.");
+            // 
+            // CritterNameLabel
+            // 
+            this.CritterNameLabel.AutoSize = true;
+            this.CritterNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.CritterNameLabel.Name = "CritterNameLabel";
+            this.CritterNameLabel.Size = new System.Drawing.Size(34, 13);
+            this.CritterNameLabel.TabIndex = 0;
+            this.CritterNameLabel.Text = "Name";
+            this.EditorToolTip.SetToolTip(this.CritterNameLabel, "The player-facing name of this type of critter.");
+            // 
+            // CritterNativeBiomeLabel
+            // 
+            this.CritterNativeBiomeLabel.AutoSize = true;
+            this.CritterNativeBiomeLabel.Location = new System.Drawing.Point(3, 135);
+            this.CritterNativeBiomeLabel.Name = "CritterNativeBiomeLabel";
+            this.CritterNativeBiomeLabel.Size = new System.Drawing.Size(69, 13);
+            this.CritterNativeBiomeLabel.TabIndex = 9;
+            this.CritterNativeBiomeLabel.Text = "Native Biome";
+            this.EditorToolTip.SetToolTip(this.CritterNativeBiomeLabel, "The biome in which this critter is at home.");
+            // 
+            // CritterNameTextBox
+            // 
+            this.CritterNameTextBox.Location = new System.Drawing.Point(131, 3);
+            this.CritterNameTextBox.Name = "CritterNameTextBox";
+            this.CritterNameTextBox.Size = new System.Drawing.Size(144, 20);
+            this.CritterNameTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.CritterNameTextBox, "The player-facing name of this type of critter.");
+            // 
+            // CritterNativeBiomeComboBox
+            // 
+            this.CritterNativeBiomeComboBox.DisplayMember = "Name";
+            this.CritterNativeBiomeComboBox.FormattingEnabled = true;
+            this.CritterNativeBiomeComboBox.Location = new System.Drawing.Point(131, 138);
+            this.CritterNativeBiomeComboBox.Name = "CritterNativeBiomeComboBox";
+            this.CritterNativeBiomeComboBox.Size = new System.Drawing.Size(144, 21);
+            this.CritterNativeBiomeComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.CritterNativeBiomeComboBox, "The biome in which this critter is at home.");
+            // 
+            // CritterPrimaryBehaviorLabel
+            // 
+            this.CritterPrimaryBehaviorLabel.AutoSize = true;
+            this.CritterPrimaryBehaviorLabel.Location = new System.Drawing.Point(3, 160);
+            this.CritterPrimaryBehaviorLabel.Name = "CritterPrimaryBehaviorLabel";
+            this.CritterPrimaryBehaviorLabel.Size = new System.Drawing.Size(88, 13);
+            this.CritterPrimaryBehaviorLabel.TabIndex = 30;
+            this.CritterPrimaryBehaviorLabel.Text = "Primary Behavior";
+            this.EditorToolTip.SetToolTip(this.CritterPrimaryBehaviorLabel, "The script governing the way this critter normally acts.");
+            // 
+            // CritterParquetAvoidsLabel
+            // 
+            this.CritterParquetAvoidsLabel.AutoSize = true;
+            this.CritterParquetAvoidsLabel.Location = new System.Drawing.Point(3, 185);
+            this.CritterParquetAvoidsLabel.Name = "CritterParquetAvoidsLabel";
+            this.CritterParquetAvoidsLabel.Size = new System.Drawing.Size(92, 13);
+            this.CritterParquetAvoidsLabel.TabIndex = 31;
+            this.CritterParquetAvoidsLabel.Text = "Parquets Avoided";
+            this.EditorToolTip.SetToolTip(this.CritterParquetAvoidsLabel, "Types of parquets this critter avoids, if any.");
+            // 
+            // CritterPendingDesignLabel1
+            // 
+            this.CritterPendingDesignLabel1.AutoSize = true;
+            this.CritterPendingDesignLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CritterPendingDesignLabel1.Location = new System.Drawing.Point(131, 185);
+            this.CritterPendingDesignLabel1.Name = "CritterPendingDesignLabel1";
+            this.CritterPendingDesignLabel1.Size = new System.Drawing.Size(93, 15);
+            this.CritterPendingDesignLabel1.TabIndex = 32;
+            this.CritterPendingDesignLabel1.Text = "Pending Design";
+            this.EditorToolTip.SetToolTip(this.CritterPendingDesignLabel1, "I\'m not sure if we\'ll actually use this.");
+            // 
+            // CritterParquetsSoughtLabel
+            // 
+            this.CritterParquetsSoughtLabel.AutoSize = true;
+            this.CritterParquetsSoughtLabel.Location = new System.Drawing.Point(3, 210);
+            this.CritterParquetsSoughtLabel.Name = "CritterParquetsSoughtLabel";
+            this.CritterParquetsSoughtLabel.Size = new System.Drawing.Size(87, 13);
+            this.CritterParquetsSoughtLabel.TabIndex = 33;
+            this.CritterParquetsSoughtLabel.Text = "Parquets Sought";
+            this.EditorToolTip.SetToolTip(this.CritterParquetsSoughtLabel, "Types of parquets this critter seeks, if any.");
+            // 
+            // CritterPendingDesignLabel2
+            // 
+            this.CritterPendingDesignLabel2.AutoSize = true;
+            this.CritterPendingDesignLabel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CritterPendingDesignLabel2.Location = new System.Drawing.Point(131, 210);
+            this.CritterPendingDesignLabel2.Name = "CritterPendingDesignLabel2";
+            this.CritterPendingDesignLabel2.Size = new System.Drawing.Size(93, 15);
+            this.CritterPendingDesignLabel2.TabIndex = 34;
+            this.CritterPendingDesignLabel2.Text = "Pending Design";
+            this.EditorToolTip.SetToolTip(this.CritterPendingDesignLabel2, "I\'m not sure if we\'ll actually use this.");
+            // 
+            // CharacterNameLabel
+            // 
+            this.CharacterNameLabel.AutoSize = true;
+            this.CharacterNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.CharacterNameLabel.Name = "CharacterNameLabel";
+            this.CharacterNameLabel.Size = new System.Drawing.Size(34, 13);
+            this.CharacterNameLabel.TabIndex = 0;
+            this.CharacterNameLabel.Text = "Name";
+            this.EditorToolTip.SetToolTip(this.CharacterNameLabel, "Player-facing names of this character.");
+            // 
+            // CharacterPersonalNameTextBox
+            // 
+            this.CharacterPersonalNameTextBox.Location = new System.Drawing.Point(131, 3);
+            this.CharacterPersonalNameTextBox.Name = "CharacterPersonalNameTextBox";
+            this.CharacterPersonalNameTextBox.Size = new System.Drawing.Size(144, 20);
+            this.CharacterPersonalNameTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.CharacterPersonalNameTextBox, "Player-facing personal name.");
+            // 
+            // CharacterFamilyNameTextBox
+            // 
+            this.CharacterFamilyNameTextBox.Location = new System.Drawing.Point(281, 3);
+            this.CharacterFamilyNameTextBox.Name = "CharacterFamilyNameTextBox";
+            this.CharacterFamilyNameTextBox.Size = new System.Drawing.Size(144, 20);
+            this.CharacterFamilyNameTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.CharacterFamilyNameTextBox, "Player-facing family name.");
+            // 
+            // CharacterParquetsAvoidedLabel
+            // 
+            this.CharacterParquetsAvoidedLabel.AutoSize = true;
+            this.CharacterParquetsAvoidedLabel.Location = new System.Drawing.Point(3, 185);
+            this.CharacterParquetsAvoidedLabel.Name = "CharacterParquetsAvoidedLabel";
+            this.CharacterParquetsAvoidedLabel.Size = new System.Drawing.Size(92, 13);
+            this.CharacterParquetsAvoidedLabel.TabIndex = 31;
+            this.CharacterParquetsAvoidedLabel.Text = "Parquets Avoided";
+            this.EditorToolTip.SetToolTip(this.CharacterParquetsAvoidedLabel, "Types of parquets this character dislikes, if any.");
+            // 
+            // CharacterParquetsSoughtLabel
+            // 
+            this.CharacterParquetsSoughtLabel.AutoSize = true;
+            this.CharacterParquetsSoughtLabel.Location = new System.Drawing.Point(3, 210);
+            this.CharacterParquetsSoughtLabel.Name = "CharacterParquetsSoughtLabel";
+            this.CharacterParquetsSoughtLabel.Size = new System.Drawing.Size(87, 13);
+            this.CharacterParquetsSoughtLabel.TabIndex = 33;
+            this.CharacterParquetsSoughtLabel.Text = "Parquets Sought";
+            this.EditorToolTip.SetToolTip(this.CharacterParquetsSoughtLabel, "Types of parquets this character wants, if any.");
+            // 
+            // BiomeAddEntryRequirementButton
+            // 
+            this.BiomeAddEntryRequirementButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiomeAddEntryRequirementButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BiomeAddEntryRequirementButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BiomeAddEntryRequirementButton.Location = new System.Drawing.Point(604, 468);
+            this.BiomeAddEntryRequirementButton.Name = "BiomeAddEntryRequirementButton";
+            this.BiomeAddEntryRequirementButton.Size = new System.Drawing.Size(129, 23);
+            this.BiomeAddEntryRequirementButton.TabIndex = 2;
+            this.BiomeAddEntryRequirementButton.Text = "Add Requirement Tag";
+            this.EditorToolTip.SetToolTip(this.BiomeAddEntryRequirementButton, "Add a new tag.");
+            this.BiomeAddEntryRequirementButton.UseVisualStyleBackColor = false;
+            this.BiomeAddEntryRequirementButton.Click += new System.EventHandler(this.BiomeAddEntryRequirementButton_Click);
+            // 
+            // BiomeRemoveEntryRequirementButton
+            // 
+            this.BiomeRemoveEntryRequirementButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BiomeRemoveEntryRequirementButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BiomeRemoveEntryRequirementButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BiomeRemoveEntryRequirementButton.Location = new System.Drawing.Point(453, 468);
+            this.BiomeRemoveEntryRequirementButton.Name = "BiomeRemoveEntryRequirementButton";
+            this.BiomeRemoveEntryRequirementButton.Size = new System.Drawing.Size(129, 23);
+            this.BiomeRemoveEntryRequirementButton.TabIndex = 2;
+            this.BiomeRemoveEntryRequirementButton.Text = "Remove Req. Tag";
+            this.EditorToolTip.SetToolTip(this.BiomeRemoveEntryRequirementButton, "Delete selected tag.");
+            this.BiomeRemoveEntryRequirementButton.UseVisualStyleBackColor = false;
+            this.BiomeRemoveEntryRequirementButton.Click += new System.EventHandler(this.BiomeRemoveEntryRequirementButton_Click);
+            // 
+            // BiomeEntryRequirementsListBox
+            // 
+            this.BiomeEntryRequirementsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.BiomeTableLayoutPanel.SetColumnSpan(this.BiomeEntryRequirementsListBox, 2);
+            this.BiomeEntryRequirementsListBox.FormattingEnabled = true;
+            this.BiomeEntryRequirementsListBox.Location = new System.Drawing.Point(131, 346);
+            this.BiomeEntryRequirementsListBox.Name = "BiomeEntryRequirementsListBox";
+            this.BiomeEntryRequirementsListBox.Size = new System.Drawing.Size(295, 95);
+            this.BiomeEntryRequirementsListBox.TabIndex = 1;
+            this.EditorToolTip.SetToolTip(this.BiomeEntryRequirementsListBox, "The types of items a character needs to safely access this biome.");
+            // 
+            // BiomeParquetCriteriaTextBox
+            // 
+            this.BiomeParquetCriteriaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.BiomeTableLayoutPanel.SetColumnSpan(this.BiomeParquetCriteriaTextBox, 2);
+            this.BiomeParquetCriteriaTextBox.Location = new System.Drawing.Point(131, 213);
+            this.BiomeParquetCriteriaTextBox.Name = "BiomeParquetCriteriaTextBox";
+            this.BiomeParquetCriteriaTextBox.Size = new System.Drawing.Size(295, 20);
+            this.BiomeParquetCriteriaTextBox.TabIndex = 1;
+            this.EditorToolTip.SetToolTip(this.BiomeParquetCriteriaTextBox, "A single tag describing the types of parquets making up this biome.");
+            // 
+            // BiomeIsLiquidBasedCheckBox
+            // 
+            this.BiomeIsLiquidBasedCheckBox.AutoSize = true;
+            this.BiomeIsLiquidBasedCheckBox.Location = new System.Drawing.Point(131, 188);
+            this.BiomeIsLiquidBasedCheckBox.Name = "BiomeIsLiquidBasedCheckBox";
+            this.BiomeIsLiquidBasedCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.BiomeIsLiquidBasedCheckBox.TabIndex = 22;
+            this.EditorToolTip.SetToolTip(this.BiomeIsLiquidBasedCheckBox, "When checked, this biome is made of liquid parquets.");
+            this.BiomeIsLiquidBasedCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // BiomeIsRoomBasedCheckBox
+            // 
+            this.BiomeIsRoomBasedCheckBox.AutoSize = true;
+            this.BiomeIsRoomBasedCheckBox.Location = new System.Drawing.Point(131, 163);
+            this.BiomeIsRoomBasedCheckBox.Name = "BiomeIsRoomBasedCheckBox";
+            this.BiomeIsRoomBasedCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.BiomeIsRoomBasedCheckBox.TabIndex = 22;
+            this.EditorToolTip.SetToolTip(this.BiomeIsRoomBasedCheckBox, "When checked, this biome is made up of rooms.");
+            this.BiomeIsRoomBasedCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // BiomeNameLabel
+            // 
+            this.BiomeNameLabel.AutoSize = true;
+            this.BiomeNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.BiomeNameLabel.Name = "BiomeNameLabel";
+            this.BiomeNameLabel.Size = new System.Drawing.Size(34, 13);
+            this.BiomeNameLabel.TabIndex = 0;
+            this.BiomeNameLabel.Text = "Name";
+            this.EditorToolTip.SetToolTip(this.BiomeNameLabel, "Player-facing name of this biome.");
+            // 
+            // BiomeTierLabel
+            // 
+            this.BiomeTierLabel.AutoSize = true;
+            this.BiomeTierLabel.Location = new System.Drawing.Point(3, 135);
+            this.BiomeTierLabel.Name = "BiomeTierLabel";
+            this.BiomeTierLabel.Size = new System.Drawing.Size(25, 13);
+            this.BiomeTierLabel.TabIndex = 9;
+            this.BiomeTierLabel.Text = "Tier";
+            this.EditorToolTip.SetToolTip(this.BiomeTierLabel, "A non-negative rating indicating where this biome falls in the progression, start" +
+        "ing at zero.");
+            // 
+            // BiomeIsRoomBasedLabel
+            // 
+            this.BiomeIsRoomBasedLabel.AutoSize = true;
+            this.BiomeIsRoomBasedLabel.Location = new System.Drawing.Point(3, 160);
+            this.BiomeIsRoomBasedLabel.Name = "BiomeIsRoomBasedLabel";
+            this.BiomeIsRoomBasedLabel.Size = new System.Drawing.Size(84, 13);
+            this.BiomeIsRoomBasedLabel.TabIndex = 12;
+            this.BiomeIsRoomBasedLabel.Text = "Is Room-Based?";
+            this.EditorToolTip.SetToolTip(this.BiomeIsRoomBasedLabel, "When checked, this biome is made up of rooms.");
+            // 
+            // BiomeIsLiquidBasedLabel
+            // 
+            this.BiomeIsLiquidBasedLabel.AutoSize = true;
+            this.BiomeIsLiquidBasedLabel.Location = new System.Drawing.Point(3, 185);
+            this.BiomeIsLiquidBasedLabel.Name = "BiomeIsLiquidBasedLabel";
+            this.BiomeIsLiquidBasedLabel.Size = new System.Drawing.Size(84, 13);
+            this.BiomeIsLiquidBasedLabel.TabIndex = 15;
+            this.BiomeIsLiquidBasedLabel.Text = "Is Liquid-Based?";
+            this.EditorToolTip.SetToolTip(this.BiomeIsLiquidBasedLabel, "When checked, this biome is made of liquid parquets.");
+            // 
+            // BiomeParquetCriteriaLabel
+            // 
+            this.BiomeParquetCriteriaLabel.AutoSize = true;
+            this.BiomeParquetCriteriaLabel.Location = new System.Drawing.Point(3, 210);
+            this.BiomeParquetCriteriaLabel.Name = "BiomeParquetCriteriaLabel";
+            this.BiomeParquetCriteriaLabel.Size = new System.Drawing.Size(83, 13);
+            this.BiomeParquetCriteriaLabel.TabIndex = 18;
+            this.BiomeParquetCriteriaLabel.Text = "Parquet Criteria";
+            this.EditorToolTip.SetToolTip(this.BiomeParquetCriteriaLabel, "A single tag describing the types of parquets making up this biome.");
+            // 
+            // BiomeEntryRequirementsLabel
+            // 
+            this.BiomeEntryRequirementsLabel.AutoSize = true;
+            this.BiomeEntryRequirementsLabel.Location = new System.Drawing.Point(3, 343);
+            this.BiomeEntryRequirementsLabel.Name = "BiomeEntryRequirementsLabel";
+            this.BiomeEntryRequirementsLabel.Size = new System.Drawing.Size(102, 13);
+            this.BiomeEntryRequirementsLabel.TabIndex = 21;
+            this.BiomeEntryRequirementsLabel.Text = "Entry Requirements";
+            this.EditorToolTip.SetToolTip(this.BiomeEntryRequirementsLabel, "The types of items a character needs to safely access this biome.");
+            // 
+            // BiomeNameTextBox
+            // 
+            this.BiomeNameTextBox.Location = new System.Drawing.Point(131, 3);
+            this.BiomeNameTextBox.Name = "BiomeNameTextBox";
+            this.BiomeNameTextBox.Size = new System.Drawing.Size(144, 20);
+            this.BiomeNameTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.BiomeNameTextBox, "Player-facing name of this biome.");
+            // 
+            // BiomeTierTextBox
+            // 
+            this.BiomeTierTextBox.Location = new System.Drawing.Point(131, 138);
+            this.BiomeTierTextBox.Name = "BiomeTierTextBox";
+            this.BiomeTierTextBox.Size = new System.Drawing.Size(144, 20);
+            this.BiomeTierTextBox.TabIndex = 26;
+            this.EditorToolTip.SetToolTip(this.BiomeTierTextBox, "A non-negative rating indicating where this biome falls in the progression, start" +
+        "ing at zero.");
+            // 
+            // CharacterAddQuestButton
+            // 
+            this.CharacterAddQuestButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CharacterAddQuestButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CharacterAddQuestButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CharacterAddQuestButton.Location = new System.Drawing.Point(297, 364);
+            this.CharacterAddQuestButton.Name = "CharacterAddQuestButton";
+            this.CharacterAddQuestButton.Size = new System.Drawing.Size(129, 23);
+            this.CharacterAddQuestButton.TabIndex = 29;
+            this.CharacterAddQuestButton.Text = "Add Quest";
+            this.EditorToolTip.SetToolTip(this.CharacterAddQuestButton, "Add new quest interaction.");
+            this.CharacterAddQuestButton.UseVisualStyleBackColor = false;
+            this.CharacterAddQuestButton.Click += new System.EventHandler(this.CharacterAddQuestButton_Click);
+            // 
+            // CharacterRemoveQuestButton
+            // 
+            this.CharacterRemoveQuestButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CharacterRemoveQuestButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CharacterRemoveQuestButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CharacterRemoveQuestButton.Location = new System.Drawing.Point(146, 364);
+            this.CharacterRemoveQuestButton.Name = "CharacterRemoveQuestButton";
+            this.CharacterRemoveQuestButton.Size = new System.Drawing.Size(129, 23);
+            this.CharacterRemoveQuestButton.TabIndex = 29;
+            this.CharacterRemoveQuestButton.Text = "Remove Quest";
+            this.EditorToolTip.SetToolTip(this.CharacterRemoveQuestButton, "Delete selected interaction.");
+            this.CharacterRemoveQuestButton.UseVisualStyleBackColor = false;
+            this.CharacterRemoveQuestButton.Click += new System.EventHandler(this.CharacterRemoveQuestButton_Click);
+            // 
+            // CharacterStartingQuestsListBox
+            // 
+            this.CharacterStartingQuestsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.CharacterTableLayoutPanel.SetColumnSpan(this.CharacterStartingQuestsListBox, 2);
+            this.CharacterStartingQuestsListBox.FormattingEnabled = true;
+            this.CharacterStartingQuestsListBox.Location = new System.Drawing.Point(131, 288);
+            this.CharacterStartingQuestsListBox.Name = "CharacterStartingQuestsListBox";
+            this.CharacterStartingQuestsListBox.Size = new System.Drawing.Size(295, 69);
+            this.CharacterStartingQuestsListBox.TabIndex = 1;
+            this.EditorToolTip.SetToolTip(this.CharacterStartingQuestsListBox, "The quest interactions this character has.  NPCs offer quests, player characters " +
+        "undertake them.");
+            // 
+            // CharacterStoryIDTextBox
+            // 
+            this.CharacterStoryIDTextBox.Location = new System.Drawing.Point(131, 263);
+            this.CharacterStoryIDTextBox.Name = "CharacterStoryIDTextBox";
+            this.CharacterStoryIDTextBox.Size = new System.Drawing.Size(144, 20);
+            this.CharacterStoryIDTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.CharacterStoryIDTextBox, "An internal ID used when importing old data into a new game.");
+            // 
+            // CharacterNativeBiomeLabel
+            // 
+            this.CharacterNativeBiomeLabel.AutoSize = true;
+            this.CharacterNativeBiomeLabel.Location = new System.Drawing.Point(3, 135);
+            this.CharacterNativeBiomeLabel.Name = "CharacterNativeBiomeLabel";
+            this.CharacterNativeBiomeLabel.Size = new System.Drawing.Size(69, 13);
+            this.CharacterNativeBiomeLabel.TabIndex = 9;
+            this.CharacterNativeBiomeLabel.Text = "Native Biome";
+            this.EditorToolTip.SetToolTip(this.CharacterNativeBiomeLabel, "The biome where this character lives.");
+            // 
+            // CharacterNativeBiomeComboBox
+            // 
+            this.CharacterNativeBiomeComboBox.FormattingEnabled = true;
+            this.CharacterNativeBiomeComboBox.Location = new System.Drawing.Point(131, 138);
+            this.CharacterNativeBiomeComboBox.Name = "CharacterNativeBiomeComboBox";
+            this.CharacterNativeBiomeComboBox.Size = new System.Drawing.Size(144, 21);
+            this.CharacterNativeBiomeComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.CharacterNativeBiomeComboBox, "The biome where this character lives.");
+            // 
+            // CharacterPendingDesignLabel1
+            // 
+            this.CharacterPendingDesignLabel1.AutoSize = true;
+            this.CharacterPendingDesignLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CharacterPendingDesignLabel1.Location = new System.Drawing.Point(131, 185);
+            this.CharacterPendingDesignLabel1.Name = "CharacterPendingDesignLabel1";
+            this.CharacterPendingDesignLabel1.Size = new System.Drawing.Size(93, 15);
+            this.CharacterPendingDesignLabel1.TabIndex = 32;
+            this.CharacterPendingDesignLabel1.Text = "Pending Design";
+            this.EditorToolTip.SetToolTip(this.CharacterPendingDesignLabel1, "I\'m not sure yet if we\'ll actually use these.");
+            // 
+            // CharacterPendingDesignLabel
+            // 
+            this.CharacterPendingDesignLabel.AutoSize = true;
+            this.CharacterPendingDesignLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CharacterPendingDesignLabel.Location = new System.Drawing.Point(131, 210);
+            this.CharacterPendingDesignLabel.Name = "CharacterPendingDesignLabel";
+            this.CharacterPendingDesignLabel.Size = new System.Drawing.Size(93, 15);
+            this.CharacterPendingDesignLabel.TabIndex = 34;
+            this.CharacterPendingDesignLabel.Text = "Pending Design";
+            this.EditorToolTip.SetToolTip(this.CharacterPendingDesignLabel, "I\'m not sure yet if we\'ll actually use these.");
+            // 
+            // CharacterStoryIDLabel
+            // 
+            this.CharacterStoryIDLabel.AutoSize = true;
+            this.CharacterStoryIDLabel.Location = new System.Drawing.Point(3, 260);
+            this.CharacterStoryIDLabel.Name = "CharacterStoryIDLabel";
+            this.CharacterStoryIDLabel.Size = new System.Drawing.Size(47, 13);
+            this.CharacterStoryIDLabel.TabIndex = 36;
+            this.CharacterStoryIDLabel.Text = "Story ID";
+            this.EditorToolTip.SetToolTip(this.CharacterStoryIDLabel, "An internal ID used when importing old data into a new game.");
+            // 
+            // CharacterStartingQuestsLabel
+            // 
+            this.CharacterStartingQuestsLabel.AutoSize = true;
+            this.CharacterStartingQuestsLabel.Location = new System.Drawing.Point(3, 285);
+            this.CharacterStartingQuestsLabel.Name = "CharacterStartingQuestsLabel";
+            this.CharacterStartingQuestsLabel.Size = new System.Drawing.Size(82, 13);
+            this.CharacterStartingQuestsLabel.TabIndex = 37;
+            this.CharacterStartingQuestsLabel.Text = "Starting Quests";
+            this.EditorToolTip.SetToolTip(this.CharacterStartingQuestsLabel, "The quest interactions this character has.  NPCs offer quests, player characters " +
+        "undertake them.");
+            // 
+            // CharacterStartingDialogueLabel
+            // 
+            this.CharacterStartingDialogueLabel.AutoSize = true;
+            this.CharacterStartingDialogueLabel.Location = new System.Drawing.Point(3, 391);
+            this.CharacterStartingDialogueLabel.Name = "CharacterStartingDialogueLabel";
+            this.CharacterStartingDialogueLabel.Size = new System.Drawing.Size(89, 13);
+            this.CharacterStartingDialogueLabel.TabIndex = 38;
+            this.CharacterStartingDialogueLabel.Text = "Starting Dialogue";
+            this.EditorToolTip.SetToolTip(this.CharacterStartingDialogueLabel, "The dialogue interaction that this character starts with.");
+            // 
+            // CharacterStartingDialogueComboBox
+            // 
+            this.CharacterStartingDialogueComboBox.FormattingEnabled = true;
+            this.CharacterStartingDialogueComboBox.Location = new System.Drawing.Point(131, 394);
+            this.CharacterStartingDialogueComboBox.Name = "CharacterStartingDialogueComboBox";
+            this.CharacterStartingDialogueComboBox.Size = new System.Drawing.Size(144, 21);
+            this.CharacterStartingDialogueComboBox.TabIndex = 42;
+            this.EditorToolTip.SetToolTip(this.CharacterStartingDialogueComboBox, "The dialogue interaction that this character starts with.");
+            // 
             // EditorTabs
             // 
             this.EditorTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -5342,106 +5767,6 @@ namespace Scribe.Forms
             this.CritterTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.CritterTableLayoutPanel.TabIndex = 5;
             // 
-            // CritterPrimaryBehaviorComboBox
-            // 
-            this.CritterPrimaryBehaviorComboBox.DisplayMember = "Name";
-            this.CritterPrimaryBehaviorComboBox.FormattingEnabled = true;
-            this.CritterPrimaryBehaviorComboBox.Location = new System.Drawing.Point(131, 163);
-            this.CritterPrimaryBehaviorComboBox.Name = "CritterPrimaryBehaviorComboBox";
-            this.CritterPrimaryBehaviorComboBox.Size = new System.Drawing.Size(144, 21);
-            this.CritterPrimaryBehaviorComboBox.TabIndex = 29;
-            this.EditorToolTip.SetToolTip(this.CritterPrimaryBehaviorComboBox, "The script governing the way this critter normally acts.");
-            // 
-            // CritterNameLabel
-            // 
-            this.CritterNameLabel.AutoSize = true;
-            this.CritterNameLabel.Location = new System.Drawing.Point(3, 0);
-            this.CritterNameLabel.Name = "CritterNameLabel";
-            this.CritterNameLabel.Size = new System.Drawing.Size(34, 13);
-            this.CritterNameLabel.TabIndex = 0;
-            this.CritterNameLabel.Text = "Name";
-            this.EditorToolTip.SetToolTip(this.CritterNameLabel, "The player-facing name of this type of critter.");
-            // 
-            // CritterNativeBiomeLabel
-            // 
-            this.CritterNativeBiomeLabel.AutoSize = true;
-            this.CritterNativeBiomeLabel.Location = new System.Drawing.Point(3, 135);
-            this.CritterNativeBiomeLabel.Name = "CritterNativeBiomeLabel";
-            this.CritterNativeBiomeLabel.Size = new System.Drawing.Size(69, 13);
-            this.CritterNativeBiomeLabel.TabIndex = 9;
-            this.CritterNativeBiomeLabel.Text = "Native Biome";
-            this.EditorToolTip.SetToolTip(this.CritterNativeBiomeLabel, "The biome in which this critter is at home.");
-            // 
-            // CritterNameTextBox
-            // 
-            this.CritterNameTextBox.Location = new System.Drawing.Point(131, 3);
-            this.CritterNameTextBox.Name = "CritterNameTextBox";
-            this.CritterNameTextBox.Size = new System.Drawing.Size(144, 20);
-            this.CritterNameTextBox.TabIndex = 23;
-            this.EditorToolTip.SetToolTip(this.CritterNameTextBox, "The player-facing name of this type of critter.");
-            // 
-            // CritterNativeBiomeComboBox
-            // 
-            this.CritterNativeBiomeComboBox.DisplayMember = "Name";
-            this.CritterNativeBiomeComboBox.FormattingEnabled = true;
-            this.CritterNativeBiomeComboBox.Location = new System.Drawing.Point(131, 138);
-            this.CritterNativeBiomeComboBox.Name = "CritterNativeBiomeComboBox";
-            this.CritterNativeBiomeComboBox.Size = new System.Drawing.Size(144, 21);
-            this.CritterNativeBiomeComboBox.TabIndex = 29;
-            this.EditorToolTip.SetToolTip(this.CritterNativeBiomeComboBox, "The biome in which this critter is at home.");
-            // 
-            // CritterPrimaryBehaviorLabel
-            // 
-            this.CritterPrimaryBehaviorLabel.AutoSize = true;
-            this.CritterPrimaryBehaviorLabel.Location = new System.Drawing.Point(3, 160);
-            this.CritterPrimaryBehaviorLabel.Name = "CritterPrimaryBehaviorLabel";
-            this.CritterPrimaryBehaviorLabel.Size = new System.Drawing.Size(88, 13);
-            this.CritterPrimaryBehaviorLabel.TabIndex = 30;
-            this.CritterPrimaryBehaviorLabel.Text = "Primary Behavior";
-            this.EditorToolTip.SetToolTip(this.CritterPrimaryBehaviorLabel, "The script governing the way this critter normally acts.");
-            // 
-            // CritterParquetAvoidsLabel
-            // 
-            this.CritterParquetAvoidsLabel.AutoSize = true;
-            this.CritterParquetAvoidsLabel.Location = new System.Drawing.Point(3, 185);
-            this.CritterParquetAvoidsLabel.Name = "CritterParquetAvoidsLabel";
-            this.CritterParquetAvoidsLabel.Size = new System.Drawing.Size(92, 13);
-            this.CritterParquetAvoidsLabel.TabIndex = 31;
-            this.CritterParquetAvoidsLabel.Text = "Parquets Avoided";
-            this.EditorToolTip.SetToolTip(this.CritterParquetAvoidsLabel, "Types of parquets this critter avoids, if any.");
-            // 
-            // CritterPendingDesignLabel1
-            // 
-            this.CritterPendingDesignLabel1.AutoSize = true;
-            this.CritterPendingDesignLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CritterPendingDesignLabel1.Location = new System.Drawing.Point(131, 185);
-            this.CritterPendingDesignLabel1.Name = "CritterPendingDesignLabel1";
-            this.CritterPendingDesignLabel1.Size = new System.Drawing.Size(93, 15);
-            this.CritterPendingDesignLabel1.TabIndex = 32;
-            this.CritterPendingDesignLabel1.Text = "Pending Design";
-            this.EditorToolTip.SetToolTip(this.CritterPendingDesignLabel1, "I\'m not sure if we\'ll actually use this.");
-            // 
-            // CritterParquetsSoughtLabel
-            // 
-            this.CritterParquetsSoughtLabel.AutoSize = true;
-            this.CritterParquetsSoughtLabel.Location = new System.Drawing.Point(3, 210);
-            this.CritterParquetsSoughtLabel.Name = "CritterParquetsSoughtLabel";
-            this.CritterParquetsSoughtLabel.Size = new System.Drawing.Size(87, 13);
-            this.CritterParquetsSoughtLabel.TabIndex = 33;
-            this.CritterParquetsSoughtLabel.Text = "Parquets Sought";
-            this.EditorToolTip.SetToolTip(this.CritterParquetsSoughtLabel, "Types of parquets this critter seeks, if any.");
-            // 
-            // CritterPendingDesignLabel2
-            // 
-            this.CritterPendingDesignLabel2.AutoSize = true;
-            this.CritterPendingDesignLabel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CritterPendingDesignLabel2.Location = new System.Drawing.Point(131, 210);
-            this.CritterPendingDesignLabel2.Name = "CritterPendingDesignLabel2";
-            this.CritterPendingDesignLabel2.Size = new System.Drawing.Size(93, 15);
-            this.CritterPendingDesignLabel2.TabIndex = 34;
-            this.CritterPendingDesignLabel2.Text = "Pending Design";
-            this.EditorToolTip.SetToolTip(this.CritterPendingDesignLabel2, "I\'m not sure if we\'ll actually use this.");
-            // 
             // CritterPixelBox
             // 
             this.CritterPixelBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -5753,50 +6078,6 @@ namespace Scribe.Forms
             this.CharacterTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.CharacterTableLayoutPanel.TabIndex = 5;
             // 
-            // CharacterAddQuestButton
-            // 
-            this.CharacterAddQuestButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CharacterAddQuestButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CharacterAddQuestButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CharacterAddQuestButton.Location = new System.Drawing.Point(297, 364);
-            this.CharacterAddQuestButton.Name = "CharacterAddQuestButton";
-            this.CharacterAddQuestButton.Size = new System.Drawing.Size(129, 23);
-            this.CharacterAddQuestButton.TabIndex = 29;
-            this.CharacterAddQuestButton.Text = "Add Quest";
-            this.CharacterAddQuestButton.UseVisualStyleBackColor = false;
-            this.CharacterAddQuestButton.Click += new System.EventHandler(this.CharacterAddQuestButton_Click);
-            // 
-            // CharacterRemoveQuestButton
-            // 
-            this.CharacterRemoveQuestButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CharacterRemoveQuestButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CharacterRemoveQuestButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CharacterRemoveQuestButton.Location = new System.Drawing.Point(146, 364);
-            this.CharacterRemoveQuestButton.Name = "CharacterRemoveQuestButton";
-            this.CharacterRemoveQuestButton.Size = new System.Drawing.Size(129, 23);
-            this.CharacterRemoveQuestButton.TabIndex = 29;
-            this.CharacterRemoveQuestButton.Text = "Remove Quest";
-            this.CharacterRemoveQuestButton.UseVisualStyleBackColor = false;
-            this.CharacterRemoveQuestButton.Click += new System.EventHandler(this.CharacterRemoveQuestButton_Click);
-            // 
-            // CharacterStartingQuestsListBox
-            // 
-            this.CharacterStartingQuestsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.CharacterTableLayoutPanel.SetColumnSpan(this.CharacterStartingQuestsListBox, 2);
-            this.CharacterStartingQuestsListBox.FormattingEnabled = true;
-            this.CharacterStartingQuestsListBox.Location = new System.Drawing.Point(131, 288);
-            this.CharacterStartingQuestsListBox.Name = "CharacterStartingQuestsListBox";
-            this.CharacterStartingQuestsListBox.Size = new System.Drawing.Size(295, 69);
-            this.CharacterStartingQuestsListBox.TabIndex = 1;
-            // 
-            // CharacterStoryIDTextBox
-            // 
-            this.CharacterStoryIDTextBox.Location = new System.Drawing.Point(131, 263);
-            this.CharacterStoryIDTextBox.Name = "CharacterStoryIDTextBox";
-            this.CharacterStoryIDTextBox.Size = new System.Drawing.Size(144, 20);
-            this.CharacterStoryIDTextBox.TabIndex = 23;
-            // 
             // CharacterOpenInventoryEditorButton
             // 
             this.CharacterOpenInventoryEditorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -5818,49 +6099,6 @@ namespace Scribe.Forms
             this.CharacterPrimaryBehaviorComboBox.Size = new System.Drawing.Size(144, 21);
             this.CharacterPrimaryBehaviorComboBox.TabIndex = 29;
             // 
-            // CharacterNameLabel
-            // 
-            this.CharacterNameLabel.AutoSize = true;
-            this.CharacterNameLabel.Location = new System.Drawing.Point(3, 0);
-            this.CharacterNameLabel.Name = "CharacterNameLabel";
-            this.CharacterNameLabel.Size = new System.Drawing.Size(34, 13);
-            this.CharacterNameLabel.TabIndex = 0;
-            this.CharacterNameLabel.Text = "Name";
-            this.EditorToolTip.SetToolTip(this.CharacterNameLabel, "Player-facing names of this character.");
-            // 
-            // CharacterNativeBiomeLabel
-            // 
-            this.CharacterNativeBiomeLabel.AutoSize = true;
-            this.CharacterNativeBiomeLabel.Location = new System.Drawing.Point(3, 135);
-            this.CharacterNativeBiomeLabel.Name = "CharacterNativeBiomeLabel";
-            this.CharacterNativeBiomeLabel.Size = new System.Drawing.Size(69, 13);
-            this.CharacterNativeBiomeLabel.TabIndex = 9;
-            this.CharacterNativeBiomeLabel.Text = "Native Biome";
-            // 
-            // CharacterPersonalNameTextBox
-            // 
-            this.CharacterPersonalNameTextBox.Location = new System.Drawing.Point(131, 3);
-            this.CharacterPersonalNameTextBox.Name = "CharacterPersonalNameTextBox";
-            this.CharacterPersonalNameTextBox.Size = new System.Drawing.Size(144, 20);
-            this.CharacterPersonalNameTextBox.TabIndex = 23;
-            this.EditorToolTip.SetToolTip(this.CharacterPersonalNameTextBox, "Player-facing personal name.");
-            // 
-            // CharacterFamilyNameTextBox
-            // 
-            this.CharacterFamilyNameTextBox.Location = new System.Drawing.Point(281, 3);
-            this.CharacterFamilyNameTextBox.Name = "CharacterFamilyNameTextBox";
-            this.CharacterFamilyNameTextBox.Size = new System.Drawing.Size(144, 20);
-            this.CharacterFamilyNameTextBox.TabIndex = 23;
-            this.EditorToolTip.SetToolTip(this.CharacterFamilyNameTextBox, "Player-facing family name.");
-            // 
-            // CharacterNativeBiomeComboBox
-            // 
-            this.CharacterNativeBiomeComboBox.FormattingEnabled = true;
-            this.CharacterNativeBiomeComboBox.Location = new System.Drawing.Point(131, 138);
-            this.CharacterNativeBiomeComboBox.Name = "CharacterNativeBiomeComboBox";
-            this.CharacterNativeBiomeComboBox.Size = new System.Drawing.Size(144, 21);
-            this.CharacterNativeBiomeComboBox.TabIndex = 29;
-            // 
             // CharacterPrimaryBehaviorLabel
             // 
             this.CharacterPrimaryBehaviorLabel.AutoSize = true;
@@ -5870,46 +6108,6 @@ namespace Scribe.Forms
             this.CharacterPrimaryBehaviorLabel.TabIndex = 30;
             this.CharacterPrimaryBehaviorLabel.Text = "Primary Behavior";
             // 
-            // CharacterParquetsAvoidedLabel
-            // 
-            this.CharacterParquetsAvoidedLabel.AutoSize = true;
-            this.CharacterParquetsAvoidedLabel.Location = new System.Drawing.Point(3, 185);
-            this.CharacterParquetsAvoidedLabel.Name = "CharacterParquetsAvoidedLabel";
-            this.CharacterParquetsAvoidedLabel.Size = new System.Drawing.Size(92, 13);
-            this.CharacterParquetsAvoidedLabel.TabIndex = 31;
-            this.CharacterParquetsAvoidedLabel.Text = "Parquets Avoided";
-            this.EditorToolTip.SetToolTip(this.CharacterParquetsAvoidedLabel, "Types of parquets this character dislikes, if any.");
-            // 
-            // CharacterPendingDesignLabel1
-            // 
-            this.CharacterPendingDesignLabel1.AutoSize = true;
-            this.CharacterPendingDesignLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CharacterPendingDesignLabel1.Location = new System.Drawing.Point(131, 185);
-            this.CharacterPendingDesignLabel1.Name = "CharacterPendingDesignLabel1";
-            this.CharacterPendingDesignLabel1.Size = new System.Drawing.Size(93, 15);
-            this.CharacterPendingDesignLabel1.TabIndex = 32;
-            this.CharacterPendingDesignLabel1.Text = "Pending Design";
-            // 
-            // CharacterParquetsSoughtLabel
-            // 
-            this.CharacterParquetsSoughtLabel.AutoSize = true;
-            this.CharacterParquetsSoughtLabel.Location = new System.Drawing.Point(3, 210);
-            this.CharacterParquetsSoughtLabel.Name = "CharacterParquetsSoughtLabel";
-            this.CharacterParquetsSoughtLabel.Size = new System.Drawing.Size(87, 13);
-            this.CharacterParquetsSoughtLabel.TabIndex = 33;
-            this.CharacterParquetsSoughtLabel.Text = "Parquets Sought";
-            this.EditorToolTip.SetToolTip(this.CharacterParquetsSoughtLabel, "Types of parquets this character wants, if any.");
-            // 
-            // CharacterPendingDesignLabel
-            // 
-            this.CharacterPendingDesignLabel.AutoSize = true;
-            this.CharacterPendingDesignLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CharacterPendingDesignLabel.Location = new System.Drawing.Point(131, 210);
-            this.CharacterPendingDesignLabel.Name = "CharacterPendingDesignLabel";
-            this.CharacterPendingDesignLabel.Size = new System.Drawing.Size(93, 15);
-            this.CharacterPendingDesignLabel.TabIndex = 34;
-            this.CharacterPendingDesignLabel.Text = "Pending Design";
-            // 
             // CharacterPronounLabel
             // 
             this.CharacterPronounLabel.AutoSize = true;
@@ -5918,33 +6116,6 @@ namespace Scribe.Forms
             this.CharacterPronounLabel.Size = new System.Drawing.Size(52, 13);
             this.CharacterPronounLabel.TabIndex = 35;
             this.CharacterPronounLabel.Text = "Pronouns";
-            // 
-            // CharacterStoryIDLabel
-            // 
-            this.CharacterStoryIDLabel.AutoSize = true;
-            this.CharacterStoryIDLabel.Location = new System.Drawing.Point(3, 260);
-            this.CharacterStoryIDLabel.Name = "CharacterStoryIDLabel";
-            this.CharacterStoryIDLabel.Size = new System.Drawing.Size(47, 13);
-            this.CharacterStoryIDLabel.TabIndex = 36;
-            this.CharacterStoryIDLabel.Text = "Story ID";
-            // 
-            // CharacterStartingQuestsLabel
-            // 
-            this.CharacterStartingQuestsLabel.AutoSize = true;
-            this.CharacterStartingQuestsLabel.Location = new System.Drawing.Point(3, 285);
-            this.CharacterStartingQuestsLabel.Name = "CharacterStartingQuestsLabel";
-            this.CharacterStartingQuestsLabel.Size = new System.Drawing.Size(82, 13);
-            this.CharacterStartingQuestsLabel.TabIndex = 37;
-            this.CharacterStartingQuestsLabel.Text = "Starting Quests";
-            // 
-            // CharacterStartingDialogueLabel
-            // 
-            this.CharacterStartingDialogueLabel.AutoSize = true;
-            this.CharacterStartingDialogueLabel.Location = new System.Drawing.Point(3, 391);
-            this.CharacterStartingDialogueLabel.Name = "CharacterStartingDialogueLabel";
-            this.CharacterStartingDialogueLabel.Size = new System.Drawing.Size(89, 13);
-            this.CharacterStartingDialogueLabel.TabIndex = 38;
-            this.CharacterStartingDialogueLabel.Text = "Starting Dialogue";
             // 
             // CharacterStartingInventoryLabel
             // 
@@ -5963,14 +6134,6 @@ namespace Scribe.Forms
             this.CharacterPronounComboBox.Name = "CharacterPronounComboBox";
             this.CharacterPronounComboBox.Size = new System.Drawing.Size(144, 21);
             this.CharacterPronounComboBox.TabIndex = 40;
-            // 
-            // CharacterStartingDialogueComboBox
-            // 
-            this.CharacterStartingDialogueComboBox.FormattingEnabled = true;
-            this.CharacterStartingDialogueComboBox.Location = new System.Drawing.Point(131, 394);
-            this.CharacterStartingDialogueComboBox.Name = "CharacterStartingDialogueComboBox";
-            this.CharacterStartingDialogueComboBox.Size = new System.Drawing.Size(144, 21);
-            this.CharacterStartingDialogueComboBox.TabIndex = 42;
             // 
             // CharacterStartingInventoryStatic
             // 
@@ -6378,34 +6541,6 @@ namespace Scribe.Forms
             this.BiomeRemoveBiomeButton.UseVisualStyleBackColor = false;
             this.BiomeRemoveBiomeButton.Click += new System.EventHandler(this.BiomeRemoveBiomeButton_Click);
             // 
-            // BiomeAddEntryRequirementButton
-            // 
-            this.BiomeAddEntryRequirementButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BiomeAddEntryRequirementButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BiomeAddEntryRequirementButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BiomeAddEntryRequirementButton.Location = new System.Drawing.Point(604, 468);
-            this.BiomeAddEntryRequirementButton.Name = "BiomeAddEntryRequirementButton";
-            this.BiomeAddEntryRequirementButton.Size = new System.Drawing.Size(129, 23);
-            this.BiomeAddEntryRequirementButton.TabIndex = 2;
-            this.BiomeAddEntryRequirementButton.Text = "Add Requirement Tag";
-            this.EditorToolTip.SetToolTip(this.BiomeAddEntryRequirementButton, "Add a new tag.");
-            this.BiomeAddEntryRequirementButton.UseVisualStyleBackColor = false;
-            this.BiomeAddEntryRequirementButton.Click += new System.EventHandler(this.BiomeAddEntryRequirementButton_Click);
-            // 
-            // BiomeRemoveEntryRequirementButton
-            // 
-            this.BiomeRemoveEntryRequirementButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BiomeRemoveEntryRequirementButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BiomeRemoveEntryRequirementButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BiomeRemoveEntryRequirementButton.Location = new System.Drawing.Point(453, 468);
-            this.BiomeRemoveEntryRequirementButton.Name = "BiomeRemoveEntryRequirementButton";
-            this.BiomeRemoveEntryRequirementButton.Size = new System.Drawing.Size(129, 23);
-            this.BiomeRemoveEntryRequirementButton.TabIndex = 2;
-            this.BiomeRemoveEntryRequirementButton.Text = "Remove Req. Tag";
-            this.EditorToolTip.SetToolTip(this.BiomeRemoveEntryRequirementButton, "Delete selected tag.");
-            this.BiomeRemoveEntryRequirementButton.UseVisualStyleBackColor = false;
-            this.BiomeRemoveEntryRequirementButton.Click += new System.EventHandler(this.BiomeRemoveEntryRequirementButton_Click);
-            // 
             // BiomeConfigGroupBox
             // 
             this.BiomeConfigGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -6481,127 +6616,6 @@ namespace Scribe.Forms
             this.BiomeTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.BiomeTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.BiomeTableLayoutPanel.TabIndex = 5;
-            // 
-            // BiomeEntryRequirementsListBox
-            // 
-            this.BiomeEntryRequirementsListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.BiomeTableLayoutPanel.SetColumnSpan(this.BiomeEntryRequirementsListBox, 2);
-            this.BiomeEntryRequirementsListBox.FormattingEnabled = true;
-            this.BiomeEntryRequirementsListBox.Location = new System.Drawing.Point(131, 346);
-            this.BiomeEntryRequirementsListBox.Name = "BiomeEntryRequirementsListBox";
-            this.BiomeEntryRequirementsListBox.Size = new System.Drawing.Size(295, 95);
-            this.BiomeEntryRequirementsListBox.TabIndex = 1;
-            this.EditorToolTip.SetToolTip(this.BiomeEntryRequirementsListBox, "The types of items a character needs to safely access this biome.");
-            // 
-            // BiomeParquetCriteriaTextBox
-            // 
-            this.BiomeParquetCriteriaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.BiomeTableLayoutPanel.SetColumnSpan(this.BiomeParquetCriteriaTextBox, 2);
-            this.BiomeParquetCriteriaTextBox.Location = new System.Drawing.Point(131, 213);
-            this.BiomeParquetCriteriaTextBox.Name = "BiomeParquetCriteriaTextBox";
-            this.BiomeParquetCriteriaTextBox.Size = new System.Drawing.Size(295, 20);
-            this.BiomeParquetCriteriaTextBox.TabIndex = 1;
-            this.EditorToolTip.SetToolTip(this.BiomeParquetCriteriaTextBox, "A single tag describing the types of parquets making up this biome.");
-            // 
-            // BiomeIsLiquidBasedCheckBox
-            // 
-            this.BiomeIsLiquidBasedCheckBox.AutoSize = true;
-            this.BiomeIsLiquidBasedCheckBox.Location = new System.Drawing.Point(131, 188);
-            this.BiomeIsLiquidBasedCheckBox.Name = "BiomeIsLiquidBasedCheckBox";
-            this.BiomeIsLiquidBasedCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.BiomeIsLiquidBasedCheckBox.TabIndex = 22;
-            this.EditorToolTip.SetToolTip(this.BiomeIsLiquidBasedCheckBox, "When checked, this biome is made of liquid parquets.");
-            this.BiomeIsLiquidBasedCheckBox.UseVisualStyleBackColor = false;
-            // 
-            // BiomeIsRoomBasedCheckBox
-            // 
-            this.BiomeIsRoomBasedCheckBox.AutoSize = true;
-            this.BiomeIsRoomBasedCheckBox.Location = new System.Drawing.Point(131, 163);
-            this.BiomeIsRoomBasedCheckBox.Name = "BiomeIsRoomBasedCheckBox";
-            this.BiomeIsRoomBasedCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.BiomeIsRoomBasedCheckBox.TabIndex = 22;
-            this.EditorToolTip.SetToolTip(this.BiomeIsRoomBasedCheckBox, "When checked, this biome is made up of rooms.");
-            this.BiomeIsRoomBasedCheckBox.UseVisualStyleBackColor = false;
-            // 
-            // BiomeNameLabel
-            // 
-            this.BiomeNameLabel.AutoSize = true;
-            this.BiomeNameLabel.Location = new System.Drawing.Point(3, 0);
-            this.BiomeNameLabel.Name = "BiomeNameLabel";
-            this.BiomeNameLabel.Size = new System.Drawing.Size(34, 13);
-            this.BiomeNameLabel.TabIndex = 0;
-            this.BiomeNameLabel.Text = "Name";
-            this.EditorToolTip.SetToolTip(this.BiomeNameLabel, "Player-facing name of this biome.");
-            // 
-            // BiomeTierLabel
-            // 
-            this.BiomeTierLabel.AutoSize = true;
-            this.BiomeTierLabel.Location = new System.Drawing.Point(3, 135);
-            this.BiomeTierLabel.Name = "BiomeTierLabel";
-            this.BiomeTierLabel.Size = new System.Drawing.Size(25, 13);
-            this.BiomeTierLabel.TabIndex = 9;
-            this.BiomeTierLabel.Text = "Tier";
-            this.EditorToolTip.SetToolTip(this.BiomeTierLabel, "A non-negative rating indicating where this biome falls in the progression, start" +
-        "ing at zero.");
-            // 
-            // BiomeIsRoomBasedLabel
-            // 
-            this.BiomeIsRoomBasedLabel.AutoSize = true;
-            this.BiomeIsRoomBasedLabel.Location = new System.Drawing.Point(3, 160);
-            this.BiomeIsRoomBasedLabel.Name = "BiomeIsRoomBasedLabel";
-            this.BiomeIsRoomBasedLabel.Size = new System.Drawing.Size(84, 13);
-            this.BiomeIsRoomBasedLabel.TabIndex = 12;
-            this.BiomeIsRoomBasedLabel.Text = "Is Room-Based?";
-            this.EditorToolTip.SetToolTip(this.BiomeIsRoomBasedLabel, "When checked, this biome is made up of rooms.");
-            // 
-            // BiomeIsLiquidBasedLabel
-            // 
-            this.BiomeIsLiquidBasedLabel.AutoSize = true;
-            this.BiomeIsLiquidBasedLabel.Location = new System.Drawing.Point(3, 185);
-            this.BiomeIsLiquidBasedLabel.Name = "BiomeIsLiquidBasedLabel";
-            this.BiomeIsLiquidBasedLabel.Size = new System.Drawing.Size(84, 13);
-            this.BiomeIsLiquidBasedLabel.TabIndex = 15;
-            this.BiomeIsLiquidBasedLabel.Text = "Is Liquid-Based?";
-            this.EditorToolTip.SetToolTip(this.BiomeIsLiquidBasedLabel, "When checked, this biome is made of liquid parquets.");
-            // 
-            // BiomeParquetCriteriaLabel
-            // 
-            this.BiomeParquetCriteriaLabel.AutoSize = true;
-            this.BiomeParquetCriteriaLabel.Location = new System.Drawing.Point(3, 210);
-            this.BiomeParquetCriteriaLabel.Name = "BiomeParquetCriteriaLabel";
-            this.BiomeParquetCriteriaLabel.Size = new System.Drawing.Size(83, 13);
-            this.BiomeParquetCriteriaLabel.TabIndex = 18;
-            this.BiomeParquetCriteriaLabel.Text = "Parquet Criteria";
-            this.EditorToolTip.SetToolTip(this.BiomeParquetCriteriaLabel, "A single tag describing the types of parquets making up this biome.");
-            // 
-            // BiomeEntryRequirementsLabel
-            // 
-            this.BiomeEntryRequirementsLabel.AutoSize = true;
-            this.BiomeEntryRequirementsLabel.Location = new System.Drawing.Point(3, 343);
-            this.BiomeEntryRequirementsLabel.Name = "BiomeEntryRequirementsLabel";
-            this.BiomeEntryRequirementsLabel.Size = new System.Drawing.Size(102, 13);
-            this.BiomeEntryRequirementsLabel.TabIndex = 21;
-            this.BiomeEntryRequirementsLabel.Text = "Entry Requirements";
-            this.EditorToolTip.SetToolTip(this.BiomeEntryRequirementsLabel, "The types of items a character needs to safely access this biome.");
-            // 
-            // BiomeNameTextBox
-            // 
-            this.BiomeNameTextBox.Location = new System.Drawing.Point(131, 3);
-            this.BiomeNameTextBox.Name = "BiomeNameTextBox";
-            this.BiomeNameTextBox.Size = new System.Drawing.Size(144, 20);
-            this.BiomeNameTextBox.TabIndex = 23;
-            this.EditorToolTip.SetToolTip(this.BiomeNameTextBox, "Player-facing name of this biome.");
-            // 
-            // BiomeTierTextBox
-            // 
-            this.BiomeTierTextBox.Location = new System.Drawing.Point(131, 138);
-            this.BiomeTierTextBox.Name = "BiomeTierTextBox";
-            this.BiomeTierTextBox.Size = new System.Drawing.Size(144, 20);
-            this.BiomeTierTextBox.TabIndex = 26;
-            this.EditorToolTip.SetToolTip(this.BiomeTierTextBox, "A non-negative rating indicating where this biome falls in the progression, start" +
-        "ing at zero.");
             // 
             // BiomePixelBox
             // 
