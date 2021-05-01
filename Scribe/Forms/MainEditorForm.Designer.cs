@@ -5949,6 +5949,8 @@ namespace Scribe.Forms
             this.CharacterPronounReflexiveTextBox.Name = "CharacterPronounReflexiveTextBox";
             this.CharacterPronounReflexiveTextBox.Size = new System.Drawing.Size(124, 20);
             this.CharacterPronounReflexiveTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.CharacterPronounReflexiveTextBox, "Takes the place of a subject noun when it is repeated: herself, themselves, zirse" +
+        "lf.");
             // 
             // CharacterPronounPossessiveTextBox
             // 
@@ -5956,7 +5958,7 @@ namespace Scribe.Forms
             this.CharacterPronounPossessiveTextBox.Name = "CharacterPronounPossessiveTextBox";
             this.CharacterPronounPossessiveTextBox.Size = new System.Drawing.Size(124, 20);
             this.CharacterPronounPossessiveTextBox.TabIndex = 23;
-            // 
+            this.EditorToolTip.SetToolTip(this.CharacterPronounPossessiveTextBox, "Takes the place of a noun that expresses belonging: hers, theirs, zirs.");
             // CharacterPronounDeterminerTextBox
             // 
             this.CharacterPronounDeterminerTextBox.Location = new System.Drawing.Point(539, 19);
@@ -6028,6 +6030,7 @@ namespace Scribe.Forms
             this.CharacterPronounPossessiveLabel.Size = new System.Drawing.Size(59, 13);
             this.CharacterPronounPossessiveLabel.TabIndex = 4;
             this.CharacterPronounPossessiveLabel.Text = "Possessive";
+            this.EditorToolTip.SetToolTip(this.CharacterPronounPossessiveLabel, "Takes the place of a noun that expresses belonging: hers, theirs, zirs.");
             // 
             // CharacterPronounReflexiveLabel
             // 
@@ -6037,6 +6040,8 @@ namespace Scribe.Forms
             this.CharacterPronounReflexiveLabel.Size = new System.Drawing.Size(52, 13);
             this.CharacterPronounReflexiveLabel.TabIndex = 5;
             this.CharacterPronounReflexiveLabel.Text = "Reflexive";
+            this.EditorToolTip.SetToolTip(this.CharacterPronounReflexiveLabel, "Takes the place of a subject noun when it is repeated: herself, themselves, zirse" +
+        "lf.");
             // 
             // CharacterPronounKeyLabel
             // 
@@ -6047,6 +6052,7 @@ namespace Scribe.Forms
             this.CharacterPronounKeyLabel.Size = new System.Drawing.Size(29, 13);
             this.CharacterPronounKeyLabel.TabIndex = 24;
             this.CharacterPronounKeyLabel.Text = "Key:";
+            this.EditorToolTip.SetToolTip(this.CharacterPronounKeyLabel, "A shorthand refering to the whole group of pronouns.");
             // 
             // CharacterPronounKeyStatic
             // 
@@ -6057,6 +6063,7 @@ namespace Scribe.Forms
             this.CharacterPronounKeyStatic.Size = new System.Drawing.Size(57, 13);
             this.CharacterPronounKeyStatic.TabIndex = 25;
             this.CharacterPronounKeyStatic.Text = "they/them";
+            this.EditorToolTip.SetToolTip(this.CharacterPronounKeyStatic, "A shorthand refering to the whole group of pronouns.");
             // 
             // CharacterTableLayoutPanel
             // 
