@@ -399,6 +399,19 @@ namespace Scribe.Forms
             this.CharacterOpenInventoryEditorButton = new System.Windows.Forms.Button();
             this.CharacterStartingInventoryLabel = new System.Windows.Forms.Label();
             this.CharacterStartingInventoryStatic = new System.Windows.Forms.Label();
+            this.CharacterPronounAddNewPronoungGroupButton = new System.Windows.Forms.Button();
+            this.CharacterPronounRemovePronoungGroupButton = new System.Windows.Forms.Button();
+            this.CharacterPronounDeterminerTextBox = new System.Windows.Forms.TextBox();
+            this.CharacterPronounObjectiveTextBox = new System.Windows.Forms.TextBox();
+            this.CharacterPronounSubjectiveTextBox = new System.Windows.Forms.TextBox();
+            this.CharacterPronounListBox = new System.Windows.Forms.ListBox();
+            this.CharacterPronounSubjectiveLabel = new System.Windows.Forms.Label();
+            this.CharacterPronounObjectiveLabel = new System.Windows.Forms.Label();
+            this.CharacterPronounDeterminerLabel = new System.Windows.Forms.Label();
+            this.CharacterPrimaryBehaviorComboBox = new System.Windows.Forms.ComboBox();
+            this.CharacterPrimaryBehaviorLabel = new System.Windows.Forms.Label();
+            this.CharacterPronounLabel = new System.Windows.Forms.Label();
+            this.CharacterPronounComboBox = new System.Windows.Forms.ComboBox();
             this.EditorTabs = new System.Windows.Forms.TabControl();
             this.GamesTabPage = new System.Windows.Forms.TabPage();
             this.GameTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -445,26 +458,13 @@ namespace Scribe.Forms
             this.CharactersTabPage = new System.Windows.Forms.TabPage();
             this.CharacterPronounGroupBox = new System.Windows.Forms.GroupBox();
             this.CharacterPronounTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.CharacterPronounAddNewPronoungGroupButton = new System.Windows.Forms.Button();
-            this.CharacterPronounRemovePronoungGroupButton = new System.Windows.Forms.Button();
             this.CharacterPronounReflexiveTextBox = new System.Windows.Forms.TextBox();
             this.CharacterPronounPossessiveTextBox = new System.Windows.Forms.TextBox();
-            this.CharacterPronounDeterminerTextBox = new System.Windows.Forms.TextBox();
-            this.CharacterPronounObjectiveTextBox = new System.Windows.Forms.TextBox();
-            this.CharacterPronounSubjectiveTextBox = new System.Windows.Forms.TextBox();
-            this.CharacterPronounListBox = new System.Windows.Forms.ListBox();
-            this.CharacterPronounSubjectiveLabel = new System.Windows.Forms.Label();
-            this.CharacterPronounObjectiveLabel = new System.Windows.Forms.Label();
-            this.CharacterPronounDeterminerLabel = new System.Windows.Forms.Label();
             this.CharacterPronounPossessiveLabel = new System.Windows.Forms.Label();
             this.CharacterPronounReflexiveLabel = new System.Windows.Forms.Label();
             this.CharacterPronounKeyLabel = new System.Windows.Forms.Label();
             this.CharacterPronounKeyStatic = new System.Windows.Forms.Label();
             this.CharacterTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.CharacterPrimaryBehaviorComboBox = new System.Windows.Forms.ComboBox();
-            this.CharacterPrimaryBehaviorLabel = new System.Windows.Forms.Label();
-            this.CharacterPronounLabel = new System.Windows.Forms.Label();
-            this.CharacterPronounComboBox = new System.Windows.Forms.ComboBox();
             this.CharacterRemoveCharacterButton = new System.Windows.Forms.Button();
             this.CharacterAddNewCharacterButton = new System.Windows.Forms.Button();
             this.CharacterPixelBox = new ParquetCustomControls.PixelBox();
@@ -5046,6 +5046,140 @@ namespace Scribe.Forms
             this.CharacterStartingInventoryStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.EditorToolTip.SetToolTip(this.CharacterStartingInventoryStatic, "The belongings this character begins with.");
             // 
+            // CharacterPronounAddNewPronoungGroupButton
+            // 
+            this.CharacterPronounAddNewPronoungGroupButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CharacterPronounAddNewPronoungGroupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CharacterPronounAddNewPronoungGroupButton.Location = new System.Drawing.Point(409, 44);
+            this.CharacterPronounAddNewPronoungGroupButton.Name = "CharacterPronounAddNewPronoungGroupButton";
+            this.CharacterPronounAddNewPronoungGroupButton.Size = new System.Drawing.Size(124, 23);
+            this.CharacterPronounAddNewPronoungGroupButton.TabIndex = 2;
+            this.CharacterPronounAddNewPronoungGroupButton.Text = "Add New Group";
+            this.EditorToolTip.SetToolTip(this.CharacterPronounAddNewPronoungGroupButton, "Add a new pronoun set.");
+            this.CharacterPronounAddNewPronoungGroupButton.UseVisualStyleBackColor = false;
+            this.CharacterPronounAddNewPronoungGroupButton.Click += new System.EventHandler(this.CharacterPronounAddNewPronoungGroupButton_Click);
+            // 
+            // CharacterPronounRemovePronoungGroupButton
+            // 
+            this.CharacterPronounRemovePronoungGroupButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CharacterPronounRemovePronoungGroupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CharacterPronounRemovePronoungGroupButton.Location = new System.Drawing.Point(279, 44);
+            this.CharacterPronounRemovePronoungGroupButton.Name = "CharacterPronounRemovePronoungGroupButton";
+            this.CharacterPronounRemovePronoungGroupButton.Size = new System.Drawing.Size(124, 23);
+            this.CharacterPronounRemovePronoungGroupButton.TabIndex = 2;
+            this.CharacterPronounRemovePronoungGroupButton.Text = "Remove Group";
+            this.EditorToolTip.SetToolTip(this.CharacterPronounRemovePronoungGroupButton, "Delete the selected pronoun set.");
+            this.CharacterPronounRemovePronoungGroupButton.UseVisualStyleBackColor = false;
+            this.CharacterPronounRemovePronoungGroupButton.Click += new System.EventHandler(this.CharacterPronounRemovePronoungGroupButton_Click);
+            // 
+            // CharacterPronounDeterminerTextBox
+            // 
+            this.CharacterPronounDeterminerTextBox.Location = new System.Drawing.Point(539, 19);
+            this.CharacterPronounDeterminerTextBox.Name = "CharacterPronounDeterminerTextBox";
+            this.CharacterPronounDeterminerTextBox.Size = new System.Drawing.Size(124, 20);
+            this.CharacterPronounDeterminerTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.CharacterPronounDeterminerTextBox, "Modifies another noun to clarify relationship: her, their, zir.");
+            // 
+            // CharacterPronounObjectiveTextBox
+            // 
+            this.CharacterPronounObjectiveTextBox.Location = new System.Drawing.Point(409, 19);
+            this.CharacterPronounObjectiveTextBox.Name = "CharacterPronounObjectiveTextBox";
+            this.CharacterPronounObjectiveTextBox.Size = new System.Drawing.Size(124, 20);
+            this.CharacterPronounObjectiveTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.CharacterPronounObjectiveTextBox, "Takes the place of an object noun: her, them, zir, etc.");
+            // 
+            // CharacterPronounSubjectiveTextBox
+            // 
+            this.CharacterPronounSubjectiveTextBox.Location = new System.Drawing.Point(279, 19);
+            this.CharacterPronounSubjectiveTextBox.Name = "CharacterPronounSubjectiveTextBox";
+            this.CharacterPronounSubjectiveTextBox.Size = new System.Drawing.Size(124, 20);
+            this.CharacterPronounSubjectiveTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.CharacterPronounSubjectiveTextBox, "Takes the place of a subject noun: she, they, ze, etc.");
+            // 
+            // CharacterPronounListBox
+            // 
+            this.CharacterPronounListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CharacterPronounListBox.FormattingEnabled = true;
+            this.CharacterPronounListBox.Location = new System.Drawing.Point(0, 0);
+            this.CharacterPronounListBox.Margin = new System.Windows.Forms.Padding(0);
+            this.CharacterPronounListBox.Name = "CharacterPronounListBox";
+            this.CharacterPronounTableLayoutPanel.SetRowSpan(this.CharacterPronounListBox, 3);
+            this.CharacterPronounListBox.Size = new System.Drawing.Size(276, 69);
+            this.CharacterPronounListBox.TabIndex = 0;
+            this.CharacterPronounListBox.Tag = "Untracked Control";
+            this.EditorToolTip.SetToolTip(this.CharacterPronounListBox, "Every set of pronouns in the project.");
+            this.CharacterPronounListBox.SelectedIndexChanged += new System.EventHandler(this.CharacterPronounListBox_SelectedIndexChanged);
+            // 
+            // CharacterPronounSubjectiveLabel
+            // 
+            this.CharacterPronounSubjectiveLabel.AutoSize = true;
+            this.CharacterPronounSubjectiveLabel.Location = new System.Drawing.Point(279, 0);
+            this.CharacterPronounSubjectiveLabel.Name = "CharacterPronounSubjectiveLabel";
+            this.CharacterPronounSubjectiveLabel.Size = new System.Drawing.Size(57, 13);
+            this.CharacterPronounSubjectiveLabel.TabIndex = 1;
+            this.CharacterPronounSubjectiveLabel.Text = "Subjective";
+            this.EditorToolTip.SetToolTip(this.CharacterPronounSubjectiveLabel, "Takes the place of a subject noun: she, they, ze, etc.");
+            // 
+            // CharacterPronounObjectiveLabel
+            // 
+            this.CharacterPronounObjectiveLabel.AutoSize = true;
+            this.CharacterPronounObjectiveLabel.Location = new System.Drawing.Point(409, 0);
+            this.CharacterPronounObjectiveLabel.Name = "CharacterPronounObjectiveLabel";
+            this.CharacterPronounObjectiveLabel.Size = new System.Drawing.Size(53, 13);
+            this.CharacterPronounObjectiveLabel.TabIndex = 2;
+            this.CharacterPronounObjectiveLabel.Text = "Objective";
+            this.EditorToolTip.SetToolTip(this.CharacterPronounObjectiveLabel, "Takes the place of an object noun: her, them, zir, etc.");
+            // 
+            // CharacterPronounDeterminerLabel
+            // 
+            this.CharacterPronounDeterminerLabel.AutoSize = true;
+            this.CharacterPronounDeterminerLabel.Location = new System.Drawing.Point(539, 0);
+            this.CharacterPronounDeterminerLabel.Name = "CharacterPronounDeterminerLabel";
+            this.CharacterPronounDeterminerLabel.Size = new System.Drawing.Size(60, 13);
+            this.CharacterPronounDeterminerLabel.TabIndex = 3;
+            this.CharacterPronounDeterminerLabel.Text = "Determiner";
+            this.EditorToolTip.SetToolTip(this.CharacterPronounDeterminerLabel, "Modifies another noun to clarify relationship: her, their, zir.");
+            // 
+            // CharacterPrimaryBehaviorComboBox
+            // 
+            this.CharacterPrimaryBehaviorComboBox.FormattingEnabled = true;
+            this.CharacterPrimaryBehaviorComboBox.Location = new System.Drawing.Point(131, 163);
+            this.CharacterPrimaryBehaviorComboBox.Name = "CharacterPrimaryBehaviorComboBox";
+            this.CharacterPrimaryBehaviorComboBox.Size = new System.Drawing.Size(144, 21);
+            this.CharacterPrimaryBehaviorComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.CharacterPrimaryBehaviorComboBox, "This character\'s typical AI.");
+            // 
+            // CharacterPrimaryBehaviorLabel
+            // 
+            this.CharacterPrimaryBehaviorLabel.AutoSize = true;
+            this.CharacterPrimaryBehaviorLabel.Location = new System.Drawing.Point(3, 160);
+            this.CharacterPrimaryBehaviorLabel.Name = "CharacterPrimaryBehaviorLabel";
+            this.CharacterPrimaryBehaviorLabel.Size = new System.Drawing.Size(88, 13);
+            this.CharacterPrimaryBehaviorLabel.TabIndex = 30;
+            this.CharacterPrimaryBehaviorLabel.Text = "Primary Behavior";
+            this.EditorToolTip.SetToolTip(this.CharacterPrimaryBehaviorLabel, "This character\'s typical AI.");
+            // 
+            // CharacterPronounLabel
+            // 
+            this.CharacterPronounLabel.AutoSize = true;
+            this.CharacterPronounLabel.Location = new System.Drawing.Point(3, 235);
+            this.CharacterPronounLabel.Name = "CharacterPronounLabel";
+            this.CharacterPronounLabel.Size = new System.Drawing.Size(52, 13);
+            this.CharacterPronounLabel.TabIndex = 35;
+            this.CharacterPronounLabel.Text = "Pronouns";
+            this.EditorToolTip.SetToolTip(this.CharacterPronounLabel, "The pronouns this character uses.");
+            // 
+            // CharacterPronounComboBox
+            // 
+            this.CharacterPronounComboBox.FormattingEnabled = true;
+            this.CharacterPronounComboBox.Location = new System.Drawing.Point(131, 238);
+            this.CharacterPronounComboBox.Name = "CharacterPronounComboBox";
+            this.CharacterPronounComboBox.Size = new System.Drawing.Size(144, 21);
+            this.CharacterPronounComboBox.TabIndex = 40;
+            this.EditorToolTip.SetToolTip(this.CharacterPronounComboBox, "The pronouns this character uses.");
+            // 
             // EditorTabs
             // 
             this.EditorTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -5919,30 +6053,6 @@ namespace Scribe.Forms
             this.CharacterPronounTableLayoutPanel.Size = new System.Drawing.Size(926, 71);
             this.CharacterPronounTableLayoutPanel.TabIndex = 0;
             // 
-            // CharacterPronounAddNewPronoungGroupButton
-            // 
-            this.CharacterPronounAddNewPronoungGroupButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CharacterPronounAddNewPronoungGroupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CharacterPronounAddNewPronoungGroupButton.Location = new System.Drawing.Point(409, 44);
-            this.CharacterPronounAddNewPronoungGroupButton.Name = "CharacterPronounAddNewPronoungGroupButton";
-            this.CharacterPronounAddNewPronoungGroupButton.Size = new System.Drawing.Size(124, 23);
-            this.CharacterPronounAddNewPronoungGroupButton.TabIndex = 2;
-            this.CharacterPronounAddNewPronoungGroupButton.Text = "Add New Group";
-            this.CharacterPronounAddNewPronoungGroupButton.UseVisualStyleBackColor = false;
-            this.CharacterPronounAddNewPronoungGroupButton.Click += new System.EventHandler(this.CharacterPronounAddNewPronoungGroupButton_Click);
-            // 
-            // CharacterPronounRemovePronoungGroupButton
-            // 
-            this.CharacterPronounRemovePronoungGroupButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CharacterPronounRemovePronoungGroupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CharacterPronounRemovePronoungGroupButton.Location = new System.Drawing.Point(279, 44);
-            this.CharacterPronounRemovePronoungGroupButton.Name = "CharacterPronounRemovePronoungGroupButton";
-            this.CharacterPronounRemovePronoungGroupButton.Size = new System.Drawing.Size(124, 23);
-            this.CharacterPronounRemovePronoungGroupButton.TabIndex = 2;
-            this.CharacterPronounRemovePronoungGroupButton.Text = "Remove Group";
-            this.CharacterPronounRemovePronoungGroupButton.UseVisualStyleBackColor = false;
-            this.CharacterPronounRemovePronoungGroupButton.Click += new System.EventHandler(this.CharacterPronounRemovePronoungGroupButton_Click);
-            // 
             // CharacterPronounReflexiveTextBox
             // 
             this.CharacterPronounReflexiveTextBox.Location = new System.Drawing.Point(799, 19);
@@ -5959,68 +6069,6 @@ namespace Scribe.Forms
             this.CharacterPronounPossessiveTextBox.Size = new System.Drawing.Size(124, 20);
             this.CharacterPronounPossessiveTextBox.TabIndex = 23;
             this.EditorToolTip.SetToolTip(this.CharacterPronounPossessiveTextBox, "Takes the place of a noun that expresses belonging: hers, theirs, zirs.");
-            // CharacterPronounDeterminerTextBox
-            // 
-            this.CharacterPronounDeterminerTextBox.Location = new System.Drawing.Point(539, 19);
-            this.CharacterPronounDeterminerTextBox.Name = "CharacterPronounDeterminerTextBox";
-            this.CharacterPronounDeterminerTextBox.Size = new System.Drawing.Size(124, 20);
-            this.CharacterPronounDeterminerTextBox.TabIndex = 23;
-            // 
-            // CharacterPronounObjectiveTextBox
-            // 
-            this.CharacterPronounObjectiveTextBox.Location = new System.Drawing.Point(409, 19);
-            this.CharacterPronounObjectiveTextBox.Name = "CharacterPronounObjectiveTextBox";
-            this.CharacterPronounObjectiveTextBox.Size = new System.Drawing.Size(124, 20);
-            this.CharacterPronounObjectiveTextBox.TabIndex = 23;
-            // 
-            // CharacterPronounSubjectiveTextBox
-            // 
-            this.CharacterPronounSubjectiveTextBox.Location = new System.Drawing.Point(279, 19);
-            this.CharacterPronounSubjectiveTextBox.Name = "CharacterPronounSubjectiveTextBox";
-            this.CharacterPronounSubjectiveTextBox.Size = new System.Drawing.Size(124, 20);
-            this.CharacterPronounSubjectiveTextBox.TabIndex = 23;
-            // 
-            // CharacterPronounListBox
-            // 
-            this.CharacterPronounListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CharacterPronounListBox.FormattingEnabled = true;
-            this.CharacterPronounListBox.Location = new System.Drawing.Point(0, 0);
-            this.CharacterPronounListBox.Margin = new System.Windows.Forms.Padding(0);
-            this.CharacterPronounListBox.Name = "CharacterPronounListBox";
-            this.CharacterPronounTableLayoutPanel.SetRowSpan(this.CharacterPronounListBox, 3);
-            this.CharacterPronounListBox.Size = new System.Drawing.Size(276, 69);
-            this.CharacterPronounListBox.TabIndex = 0;
-            this.CharacterPronounListBox.Tag = "Untracked Control";
-            this.CharacterPronounListBox.SelectedIndexChanged += new System.EventHandler(this.CharacterPronounListBox_SelectedIndexChanged);
-            // 
-            // CharacterPronounSubjectiveLabel
-            // 
-            this.CharacterPronounSubjectiveLabel.AutoSize = true;
-            this.CharacterPronounSubjectiveLabel.Location = new System.Drawing.Point(279, 0);
-            this.CharacterPronounSubjectiveLabel.Name = "CharacterPronounSubjectiveLabel";
-            this.CharacterPronounSubjectiveLabel.Size = new System.Drawing.Size(57, 13);
-            this.CharacterPronounSubjectiveLabel.TabIndex = 1;
-            this.CharacterPronounSubjectiveLabel.Text = "Subjective";
-            // 
-            // CharacterPronounObjectiveLabel
-            // 
-            this.CharacterPronounObjectiveLabel.AutoSize = true;
-            this.CharacterPronounObjectiveLabel.Location = new System.Drawing.Point(409, 0);
-            this.CharacterPronounObjectiveLabel.Name = "CharacterPronounObjectiveLabel";
-            this.CharacterPronounObjectiveLabel.Size = new System.Drawing.Size(53, 13);
-            this.CharacterPronounObjectiveLabel.TabIndex = 2;
-            this.CharacterPronounObjectiveLabel.Text = "Objective";
-            // 
-            // CharacterPronounDeterminerLabel
-            // 
-            this.CharacterPronounDeterminerLabel.AutoSize = true;
-            this.CharacterPronounDeterminerLabel.Location = new System.Drawing.Point(539, 0);
-            this.CharacterPronounDeterminerLabel.Name = "CharacterPronounDeterminerLabel";
-            this.CharacterPronounDeterminerLabel.Size = new System.Drawing.Size(60, 13);
-            this.CharacterPronounDeterminerLabel.TabIndex = 3;
-            this.CharacterPronounDeterminerLabel.Text = "Determiner";
             // 
             // CharacterPronounPossessiveLabel
             // 
@@ -6120,44 +6168,6 @@ namespace Scribe.Forms
             this.CharacterTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.CharacterTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.CharacterTableLayoutPanel.TabIndex = 5;
-            // 
-            // CharacterPrimaryBehaviorComboBox
-            // 
-            this.CharacterPrimaryBehaviorComboBox.FormattingEnabled = true;
-            this.CharacterPrimaryBehaviorComboBox.Location = new System.Drawing.Point(131, 163);
-            this.CharacterPrimaryBehaviorComboBox.Name = "CharacterPrimaryBehaviorComboBox";
-            this.CharacterPrimaryBehaviorComboBox.Size = new System.Drawing.Size(144, 21);
-            this.CharacterPrimaryBehaviorComboBox.TabIndex = 29;
-            this.EditorToolTip.SetToolTip(this.CharacterPrimaryBehaviorComboBox, "This character\'s typical AI.");
-            // 
-            // CharacterPrimaryBehaviorLabel
-            // 
-            this.CharacterPrimaryBehaviorLabel.AutoSize = true;
-            this.CharacterPrimaryBehaviorLabel.Location = new System.Drawing.Point(3, 160);
-            this.CharacterPrimaryBehaviorLabel.Name = "CharacterPrimaryBehaviorLabel";
-            this.CharacterPrimaryBehaviorLabel.Size = new System.Drawing.Size(88, 13);
-            this.CharacterPrimaryBehaviorLabel.TabIndex = 30;
-            this.CharacterPrimaryBehaviorLabel.Text = "Primary Behavior";
-            this.EditorToolTip.SetToolTip(this.CharacterPrimaryBehaviorLabel, "This character\'s typical AI.");
-            // 
-            // CharacterPronounLabel
-            // 
-            this.CharacterPronounLabel.AutoSize = true;
-            this.CharacterPronounLabel.Location = new System.Drawing.Point(3, 235);
-            this.CharacterPronounLabel.Name = "CharacterPronounLabel";
-            this.CharacterPronounLabel.Size = new System.Drawing.Size(52, 13);
-            this.CharacterPronounLabel.TabIndex = 35;
-            this.CharacterPronounLabel.Text = "Pronouns";
-            this.EditorToolTip.SetToolTip(this.CharacterPronounLabel, "The pronouns this character uses.");
-            // 
-            // CharacterPronounComboBox
-            // 
-            this.CharacterPronounComboBox.FormattingEnabled = true;
-            this.CharacterPronounComboBox.Location = new System.Drawing.Point(131, 238);
-            this.CharacterPronounComboBox.Name = "CharacterPronounComboBox";
-            this.CharacterPronounComboBox.Size = new System.Drawing.Size(144, 21);
-            this.CharacterPronounComboBox.TabIndex = 40;
-            this.EditorToolTip.SetToolTip(this.CharacterPronounComboBox, "The pronouns this character uses.");
             // 
             // CharacterRemoveCharacterButton
             // 
