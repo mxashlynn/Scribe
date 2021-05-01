@@ -418,6 +418,10 @@ namespace Scribe.Forms
             this.CharacterPronounReflexiveLabel = new System.Windows.Forms.Label();
             this.CharacterPronounKeyLabel = new System.Windows.Forms.Label();
             this.CharacterPronounKeyStatic = new System.Windows.Forms.Label();
+            this.ItemNameLabel = new System.Windows.Forms.Label();
+            this.ItemSubtypeLabel = new System.Windows.Forms.Label();
+            this.ItemNameTextBox = new System.Windows.Forms.TextBox();
+            this.ItemSubtypeComboBox = new System.Windows.Forms.ComboBox();
             this.EditorTabs = new System.Windows.Forms.TabControl();
             this.GamesTabPage = new System.Windows.Forms.TabPage();
             this.GameTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -480,15 +484,11 @@ namespace Scribe.Forms
             this.ItemStackMaxTextBox = new System.Windows.Forms.TextBox();
             this.ItemRarityTextBox = new System.Windows.Forms.TextBox();
             this.ItemTagListBox = new System.Windows.Forms.ListBox();
-            this.ItemNameLabel = new System.Windows.Forms.Label();
-            this.ItemSubtypeLabel = new System.Windows.Forms.Label();
             this.ItemWorthLabel = new System.Windows.Forms.Label();
             this.ItemRarityLabel = new System.Windows.Forms.Label();
             this.ItemStackMaxLabel = new System.Windows.Forms.Label();
             this.ItemTagsLabel = new System.Windows.Forms.Label();
-            this.ItemNameTextBox = new System.Windows.Forms.TextBox();
             this.ItemWorthTextBox = new System.Windows.Forms.TextBox();
-            this.ItemSubtypeComboBox = new System.Windows.Forms.ComboBox();
             this.ItemEffectWhileHeldLabel = new System.Windows.Forms.Label();
             this.ItemEffectWhenUsedLabel = new System.Windows.Forms.Label();
             this.ItemParquetLabel = new System.Windows.Forms.Label();
@@ -5240,6 +5240,43 @@ namespace Scribe.Forms
             this.CharacterPronounKeyStatic.Text = "they/them";
             this.EditorToolTip.SetToolTip(this.CharacterPronounKeyStatic, "A shorthand refering to the whole group of pronouns.");
             // 
+            // ItemNameLabel
+            // 
+            this.ItemNameLabel.AutoSize = true;
+            this.ItemNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.ItemNameLabel.Name = "ItemNameLabel";
+            this.ItemNameLabel.Size = new System.Drawing.Size(34, 13);
+            this.ItemNameLabel.TabIndex = 0;
+            this.ItemNameLabel.Text = "Name";
+            this.EditorToolTip.SetToolTip(this.ItemNameLabel, "Player-facing name of the item.");
+            // 
+            // ItemSubtypeLabel
+            // 
+            this.ItemSubtypeLabel.AutoSize = true;
+            this.ItemSubtypeLabel.Location = new System.Drawing.Point(3, 135);
+            this.ItemSubtypeLabel.Name = "ItemSubtypeLabel";
+            this.ItemSubtypeLabel.Size = new System.Drawing.Size(47, 13);
+            this.ItemSubtypeLabel.TabIndex = 9;
+            this.ItemSubtypeLabel.Text = "Subtype";
+            this.EditorToolTip.SetToolTip(this.ItemSubtypeLabel, "The type of item this is.");
+            // 
+            // ItemNameTextBox
+            // 
+            this.ItemNameTextBox.Location = new System.Drawing.Point(131, 3);
+            this.ItemNameTextBox.Name = "ItemNameTextBox";
+            this.ItemNameTextBox.Size = new System.Drawing.Size(144, 20);
+            this.ItemNameTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.ItemNameTextBox, "Player-facing name of the item.");
+            // 
+            // ItemSubtypeComboBox
+            // 
+            this.ItemSubtypeComboBox.FormattingEnabled = true;
+            this.ItemSubtypeComboBox.Location = new System.Drawing.Point(131, 138);
+            this.ItemSubtypeComboBox.Name = "ItemSubtypeComboBox";
+            this.ItemSubtypeComboBox.Size = new System.Drawing.Size(144, 21);
+            this.ItemSubtypeComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.ItemSubtypeComboBox, "The type of item this is.");
+            // 
             // EditorTabs
             // 
             this.EditorTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -6386,32 +6423,12 @@ namespace Scribe.Forms
             this.ItemTagListBox.Size = new System.Drawing.Size(295, 121);
             this.ItemTagListBox.TabIndex = 1;
             // 
-            // ItemNameLabel
-            // 
-            this.ItemNameLabel.AutoSize = true;
-            this.ItemNameLabel.Location = new System.Drawing.Point(3, 0);
-            this.ItemNameLabel.Name = "ItemNameLabel";
-            this.ItemNameLabel.Size = new System.Drawing.Size(34, 13);
-            this.ItemNameLabel.TabIndex = 0;
-            this.ItemNameLabel.Text = "Name";
-            this.EditorToolTip.SetToolTip(this.ItemNameLabel, "Player-facing name of the item.");
-            // 
-            // ItemSubtypeLabel
-            // 
-            this.ItemSubtypeLabel.AutoSize = true;
-            this.ItemSubtypeLabel.Location = new System.Drawing.Point(3, 135);
-            this.ItemSubtypeLabel.Name = "ItemSubtypeLabel";
-            this.ItemSubtypeLabel.Size = new System.Drawing.Size(47, 13);
-            this.ItemSubtypeLabel.TabIndex = 9;
-            this.ItemSubtypeLabel.Text = "Subtype";
-            this.EditorToolTip.SetToolTip(this.ItemSubtypeLabel, "The type of item this is.");
-            // 
             // ItemWorthLabel
             // 
             this.ItemWorthLabel.AutoSize = true;
             this.ItemWorthLabel.Location = new System.Drawing.Point(3, 160);
             this.ItemWorthLabel.Name = "ItemWorthLabel";
-            this.ItemWorthLabel.Size = new System.Drawing.Size(30, 13);
+            this.ItemWorthLabel.Size = new System.Drawing.Size(37, 13);
             this.ItemWorthLabel.TabIndex = 12;
             this.ItemWorthLabel.Text = "Worth";
             // 
@@ -6442,29 +6459,12 @@ namespace Scribe.Forms
             this.ItemTagsLabel.TabIndex = 21;
             this.ItemTagsLabel.Text = "Tags";
             // 
-            // ItemNameTextBox
-            // 
-            this.ItemNameTextBox.Location = new System.Drawing.Point(131, 3);
-            this.ItemNameTextBox.Name = "ItemNameTextBox";
-            this.ItemNameTextBox.Size = new System.Drawing.Size(144, 20);
-            this.ItemNameTextBox.TabIndex = 23;
-            this.EditorToolTip.SetToolTip(this.ItemNameTextBox, "Player-facing name of the item.");
-            // 
             // ItemWorthTextBox
             // 
             this.ItemWorthTextBox.Location = new System.Drawing.Point(131, 163);
             this.ItemWorthTextBox.Name = "ItemWorthTextBox";
             this.ItemWorthTextBox.Size = new System.Drawing.Size(144, 20);
             this.ItemWorthTextBox.TabIndex = 26;
-            // 
-            // ItemSubtypeComboBox
-            // 
-            this.ItemSubtypeComboBox.FormattingEnabled = true;
-            this.ItemSubtypeComboBox.Location = new System.Drawing.Point(131, 138);
-            this.ItemSubtypeComboBox.Name = "ItemSubtypeComboBox";
-            this.ItemSubtypeComboBox.Size = new System.Drawing.Size(144, 21);
-            this.ItemSubtypeComboBox.TabIndex = 29;
-            this.EditorToolTip.SetToolTip(this.ItemSubtypeComboBox, "The type of item this is.");
             // 
             // ItemEffectWhileHeldLabel
             // 
