@@ -482,12 +482,12 @@ namespace Scribe.Forms
             this.ItemTagListBox = new System.Windows.Forms.ListBox();
             this.ItemNameLabel = new System.Windows.Forms.Label();
             this.ItemSubtypeLabel = new System.Windows.Forms.Label();
-            this.ItemPriceLabel = new System.Windows.Forms.Label();
+            this.ItemWorthLabel = new System.Windows.Forms.Label();
             this.ItemRarityLabel = new System.Windows.Forms.Label();
             this.ItemStackMaxLabel = new System.Windows.Forms.Label();
             this.ItemTagsLabel = new System.Windows.Forms.Label();
             this.ItemNameTextBox = new System.Windows.Forms.TextBox();
-            this.ItemPriceTextBox = new System.Windows.Forms.TextBox();
+            this.ItemWorthTextBox = new System.Windows.Forms.TextBox();
             this.ItemSubtypeComboBox = new System.Windows.Forms.ComboBox();
             this.ItemEffectWhileHeldLabel = new System.Windows.Forms.Label();
             this.ItemEffectWhenUsedLabel = new System.Windows.Forms.Label();
@@ -6322,14 +6322,14 @@ namespace Scribe.Forms
             this.ItemTableLayoutPanel.Controls.Add(this.ItemDescriptionLabel, 0, 1);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemCommentLabel, 0, 2);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemSubtypeLabel, 0, 3);
-            this.ItemTableLayoutPanel.Controls.Add(this.ItemPriceLabel, 0, 4);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemWorthLabel, 0, 4);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemRarityLabel, 0, 5);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemStackMaxLabel, 0, 6);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemTagsLabel, 0, 10);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemNameTextBox, 1, 0);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemDescriptionTextBox, 1, 1);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemCommentTextBox, 1, 2);
-            this.ItemTableLayoutPanel.Controls.Add(this.ItemPriceTextBox, 1, 4);
+            this.ItemTableLayoutPanel.Controls.Add(this.ItemWorthTextBox, 1, 4);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemSubtypeComboBox, 1, 3);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemEffectWhileHeldLabel, 0, 7);
             this.ItemTableLayoutPanel.Controls.Add(this.ItemEffectWhenUsedLabel, 0, 8);
@@ -6404,15 +6404,16 @@ namespace Scribe.Forms
             this.ItemSubtypeLabel.Size = new System.Drawing.Size(47, 13);
             this.ItemSubtypeLabel.TabIndex = 9;
             this.ItemSubtypeLabel.Text = "Subtype";
+            this.EditorToolTip.SetToolTip(this.ItemSubtypeLabel, "The type of item this is.");
             // 
-            // ItemPriceLabel
+            // ItemWorthLabel
             // 
-            this.ItemPriceLabel.AutoSize = true;
-            this.ItemPriceLabel.Location = new System.Drawing.Point(3, 160);
-            this.ItemPriceLabel.Name = "ItemPriceLabel";
-            this.ItemPriceLabel.Size = new System.Drawing.Size(30, 13);
-            this.ItemPriceLabel.TabIndex = 12;
-            this.ItemPriceLabel.Text = "Price";
+            this.ItemWorthLabel.AutoSize = true;
+            this.ItemWorthLabel.Location = new System.Drawing.Point(3, 160);
+            this.ItemWorthLabel.Name = "ItemWorthLabel";
+            this.ItemWorthLabel.Size = new System.Drawing.Size(30, 13);
+            this.ItemWorthLabel.TabIndex = 12;
+            this.ItemWorthLabel.Text = "Worth";
             // 
             // ItemRarityLabel
             // 
@@ -6449,12 +6450,12 @@ namespace Scribe.Forms
             this.ItemNameTextBox.TabIndex = 23;
             this.EditorToolTip.SetToolTip(this.ItemNameTextBox, "Player-facing name of the item.");
             // 
-            // ItemPriceTextBox
+            // ItemWorthTextBox
             // 
-            this.ItemPriceTextBox.Location = new System.Drawing.Point(131, 163);
-            this.ItemPriceTextBox.Name = "ItemPriceTextBox";
-            this.ItemPriceTextBox.Size = new System.Drawing.Size(144, 20);
-            this.ItemPriceTextBox.TabIndex = 26;
+            this.ItemWorthTextBox.Location = new System.Drawing.Point(131, 163);
+            this.ItemWorthTextBox.Name = "ItemWorthTextBox";
+            this.ItemWorthTextBox.Size = new System.Drawing.Size(144, 20);
+            this.ItemWorthTextBox.TabIndex = 26;
             // 
             // ItemSubtypeComboBox
             // 
@@ -6463,6 +6464,7 @@ namespace Scribe.Forms
             this.ItemSubtypeComboBox.Name = "ItemSubtypeComboBox";
             this.ItemSubtypeComboBox.Size = new System.Drawing.Size(144, 21);
             this.ItemSubtypeComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.ItemSubtypeComboBox, "The type of item this is.");
             // 
             // ItemEffectWhileHeldLabel
             // 
@@ -8145,14 +8147,14 @@ namespace Scribe.Forms
         private System.Windows.Forms.Label ItemDescriptionLabel;
         private System.Windows.Forms.Label ItemCommentLabel;
         private System.Windows.Forms.Label ItemSubtypeLabel;
-        private System.Windows.Forms.Label ItemPriceLabel;
+        private System.Windows.Forms.Label ItemWorthLabel;
         private System.Windows.Forms.Label ItemRarityLabel;
         private System.Windows.Forms.Label ItemStackMaxLabel;
         private System.Windows.Forms.Label ItemTagsLabel;
         private System.Windows.Forms.TextBox ItemNameTextBox;
         private System.Windows.Forms.TextBox ItemDescriptionTextBox;
         private System.Windows.Forms.TextBox ItemCommentTextBox;
-        private System.Windows.Forms.TextBox ItemPriceTextBox;
+        private System.Windows.Forms.TextBox ItemWorthTextBox;
         private ParquetCustomControls.PixelBox ItemPixelBox;
         private System.Windows.Forms.Label ItemIDLabel;
         private System.Windows.Forms.Button ItemAddNewItemButton;

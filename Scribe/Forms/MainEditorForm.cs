@@ -1017,8 +1017,8 @@ namespace Scribe.Forms
                     => (input) => ((IMutableItemModel)inModel).Comment = input.ToString(),
                 (ItemsTabIndex, "ItemSubtypeComboBox")
                     => (input) => ((IMutableItemModel)inModel).Subtype = ValueToEnum<ItemType>(input),
-                (ItemsTabIndex, "ItemPriceTextBox")
-                    => (input) => ((IMutableItemModel)inModel).Price = ValueToInt(input),
+                (ItemsTabIndex, "ItemWorthTextBox")
+                    => (input) => ((IMutableItemModel)inModel).Worth = ValueToInt(input),
                 (ItemsTabIndex, "ItemTagListBox")
                     => (input) => ((IMutableItemModel)inModel).Tags.ToList().Add((ModelTag)input),
                 (ItemsTabIndex, "ItemStackMaxTextBox")
@@ -2012,8 +2012,8 @@ namespace Scribe.Forms
                     (string)(EditableControls[typeof(TextBox)][ItemCommentTextBox] = "");
                 ItemSubtypeComboBox.SelectedItem =
                     (ItemType)(EditableControls[typeof(ComboBox)][ItemSubtypeComboBox] = ItemType.Other);
-                ItemPriceTextBox.Text =
-                    (string)(EditableControls[typeof(TextBox)][ItemPriceTextBox] = "");
+                ItemWorthTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][ItemWorthTextBox] = "");
                 ItemRarityTextBox.Text =
                     (string)(EditableControls[typeof(TextBox)][ItemRarityTextBox] = "");
                 ItemStackMaxTextBox.Text =
@@ -2038,8 +2038,8 @@ namespace Scribe.Forms
                     (string)(EditableControls[typeof(TextBox)][ItemCommentTextBox] = model.Comment);
                 ItemSubtypeComboBox.SelectedItem =
                     (ItemType)(EditableControls[typeof(ComboBox)][ItemSubtypeComboBox] = model.Subtype);
-                ItemPriceTextBox.Text =
-                    (string)(EditableControls[typeof(TextBox)][ItemPriceTextBox] =
+                ItemWorthTextBox.Text =
+                    (string)(EditableControls[typeof(TextBox)][ItemWorthTextBox] =
                         model.Price.ToString(CultureInfo.InvariantCulture));
                 ItemRarityTextBox.Text =
                     (string)(EditableControls[typeof(TextBox)][ItemRarityTextBox] =
