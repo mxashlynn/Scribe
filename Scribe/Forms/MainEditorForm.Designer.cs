@@ -6394,6 +6394,7 @@ namespace Scribe.Forms
             this.ItemNameLabel.Size = new System.Drawing.Size(34, 13);
             this.ItemNameLabel.TabIndex = 0;
             this.ItemNameLabel.Text = "Name";
+            this.EditorToolTip.SetToolTip(this.ItemNameLabel, "Player-facing name of the item.");
             // 
             // ItemSubtypeLabel
             // 
@@ -6446,6 +6447,7 @@ namespace Scribe.Forms
             this.ItemNameTextBox.Name = "ItemNameTextBox";
             this.ItemNameTextBox.Size = new System.Drawing.Size(144, 20);
             this.ItemNameTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.ItemNameTextBox, "Player-facing name of the item.");
             // 
             // ItemPriceTextBox
             // 
