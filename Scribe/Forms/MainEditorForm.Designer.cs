@@ -412,6 +412,12 @@ namespace Scribe.Forms
             this.CharacterPrimaryBehaviorLabel = new System.Windows.Forms.Label();
             this.CharacterPronounLabel = new System.Windows.Forms.Label();
             this.CharacterPronounComboBox = new System.Windows.Forms.ComboBox();
+            this.CharacterPronounReflexiveTextBox = new System.Windows.Forms.TextBox();
+            this.CharacterPronounPossessiveTextBox = new System.Windows.Forms.TextBox();
+            this.CharacterPronounPossessiveLabel = new System.Windows.Forms.Label();
+            this.CharacterPronounReflexiveLabel = new System.Windows.Forms.Label();
+            this.CharacterPronounKeyLabel = new System.Windows.Forms.Label();
+            this.CharacterPronounKeyStatic = new System.Windows.Forms.Label();
             this.EditorTabs = new System.Windows.Forms.TabControl();
             this.GamesTabPage = new System.Windows.Forms.TabPage();
             this.GameTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -458,12 +464,6 @@ namespace Scribe.Forms
             this.CharactersTabPage = new System.Windows.Forms.TabPage();
             this.CharacterPronounGroupBox = new System.Windows.Forms.GroupBox();
             this.CharacterPronounTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.CharacterPronounReflexiveTextBox = new System.Windows.Forms.TextBox();
-            this.CharacterPronounPossessiveTextBox = new System.Windows.Forms.TextBox();
-            this.CharacterPronounPossessiveLabel = new System.Windows.Forms.Label();
-            this.CharacterPronounReflexiveLabel = new System.Windows.Forms.Label();
-            this.CharacterPronounKeyLabel = new System.Windows.Forms.Label();
-            this.CharacterPronounKeyStatic = new System.Windows.Forms.Label();
             this.CharacterTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.CharacterRemoveCharacterButton = new System.Windows.Forms.Button();
             this.CharacterAddNewCharacterButton = new System.Windows.Forms.Button();
@@ -5180,6 +5180,66 @@ namespace Scribe.Forms
             this.CharacterPronounComboBox.TabIndex = 40;
             this.EditorToolTip.SetToolTip(this.CharacterPronounComboBox, "The pronouns this character uses.");
             // 
+            // CharacterPronounReflexiveTextBox
+            // 
+            this.CharacterPronounReflexiveTextBox.Location = new System.Drawing.Point(799, 19);
+            this.CharacterPronounReflexiveTextBox.Name = "CharacterPronounReflexiveTextBox";
+            this.CharacterPronounReflexiveTextBox.Size = new System.Drawing.Size(124, 20);
+            this.CharacterPronounReflexiveTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.CharacterPronounReflexiveTextBox, "Takes the place of a subject noun when it is repeated: herself, themselves, zirse" +
+        "lf.");
+            // 
+            // CharacterPronounPossessiveTextBox
+            // 
+            this.CharacterPronounPossessiveTextBox.Location = new System.Drawing.Point(669, 19);
+            this.CharacterPronounPossessiveTextBox.Name = "CharacterPronounPossessiveTextBox";
+            this.CharacterPronounPossessiveTextBox.Size = new System.Drawing.Size(124, 20);
+            this.CharacterPronounPossessiveTextBox.TabIndex = 23;
+            this.EditorToolTip.SetToolTip(this.CharacterPronounPossessiveTextBox, "Takes the place of a noun that expresses belonging: hers, theirs, zirs.");
+            // 
+            // CharacterPronounPossessiveLabel
+            // 
+            this.CharacterPronounPossessiveLabel.AutoSize = true;
+            this.CharacterPronounPossessiveLabel.Location = new System.Drawing.Point(669, 0);
+            this.CharacterPronounPossessiveLabel.Name = "CharacterPronounPossessiveLabel";
+            this.CharacterPronounPossessiveLabel.Size = new System.Drawing.Size(59, 13);
+            this.CharacterPronounPossessiveLabel.TabIndex = 4;
+            this.CharacterPronounPossessiveLabel.Text = "Possessive";
+            this.EditorToolTip.SetToolTip(this.CharacterPronounPossessiveLabel, "Takes the place of a noun that expresses belonging: hers, theirs, zirs.");
+            // 
+            // CharacterPronounReflexiveLabel
+            // 
+            this.CharacterPronounReflexiveLabel.AutoSize = true;
+            this.CharacterPronounReflexiveLabel.Location = new System.Drawing.Point(799, 0);
+            this.CharacterPronounReflexiveLabel.Name = "CharacterPronounReflexiveLabel";
+            this.CharacterPronounReflexiveLabel.Size = new System.Drawing.Size(52, 13);
+            this.CharacterPronounReflexiveLabel.TabIndex = 5;
+            this.CharacterPronounReflexiveLabel.Text = "Reflexive";
+            this.EditorToolTip.SetToolTip(this.CharacterPronounReflexiveLabel, "Takes the place of a subject noun when it is repeated: herself, themselves, zirse" +
+        "lf.");
+            // 
+            // CharacterPronounKeyLabel
+            // 
+            this.CharacterPronounKeyLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CharacterPronounKeyLabel.AutoSize = true;
+            this.CharacterPronounKeyLabel.Location = new System.Drawing.Point(764, 58);
+            this.CharacterPronounKeyLabel.Name = "CharacterPronounKeyLabel";
+            this.CharacterPronounKeyLabel.Size = new System.Drawing.Size(29, 13);
+            this.CharacterPronounKeyLabel.TabIndex = 24;
+            this.CharacterPronounKeyLabel.Text = "Key:";
+            this.EditorToolTip.SetToolTip(this.CharacterPronounKeyLabel, "A shorthand refering to the whole group of pronouns.");
+            // 
+            // CharacterPronounKeyStatic
+            // 
+            this.CharacterPronounKeyStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.CharacterPronounKeyStatic.AutoSize = true;
+            this.CharacterPronounKeyStatic.Location = new System.Drawing.Point(799, 58);
+            this.CharacterPronounKeyStatic.Name = "CharacterPronounKeyStatic";
+            this.CharacterPronounKeyStatic.Size = new System.Drawing.Size(57, 13);
+            this.CharacterPronounKeyStatic.TabIndex = 25;
+            this.CharacterPronounKeyStatic.Text = "they/them";
+            this.EditorToolTip.SetToolTip(this.CharacterPronounKeyStatic, "A shorthand refering to the whole group of pronouns.");
+            // 
             // EditorTabs
             // 
             this.EditorTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -6052,66 +6112,6 @@ namespace Scribe.Forms
             this.CharacterPronounTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.CharacterPronounTableLayoutPanel.Size = new System.Drawing.Size(926, 71);
             this.CharacterPronounTableLayoutPanel.TabIndex = 0;
-            // 
-            // CharacterPronounReflexiveTextBox
-            // 
-            this.CharacterPronounReflexiveTextBox.Location = new System.Drawing.Point(799, 19);
-            this.CharacterPronounReflexiveTextBox.Name = "CharacterPronounReflexiveTextBox";
-            this.CharacterPronounReflexiveTextBox.Size = new System.Drawing.Size(124, 20);
-            this.CharacterPronounReflexiveTextBox.TabIndex = 23;
-            this.EditorToolTip.SetToolTip(this.CharacterPronounReflexiveTextBox, "Takes the place of a subject noun when it is repeated: herself, themselves, zirse" +
-        "lf.");
-            // 
-            // CharacterPronounPossessiveTextBox
-            // 
-            this.CharacterPronounPossessiveTextBox.Location = new System.Drawing.Point(669, 19);
-            this.CharacterPronounPossessiveTextBox.Name = "CharacterPronounPossessiveTextBox";
-            this.CharacterPronounPossessiveTextBox.Size = new System.Drawing.Size(124, 20);
-            this.CharacterPronounPossessiveTextBox.TabIndex = 23;
-            this.EditorToolTip.SetToolTip(this.CharacterPronounPossessiveTextBox, "Takes the place of a noun that expresses belonging: hers, theirs, zirs.");
-            // 
-            // CharacterPronounPossessiveLabel
-            // 
-            this.CharacterPronounPossessiveLabel.AutoSize = true;
-            this.CharacterPronounPossessiveLabel.Location = new System.Drawing.Point(669, 0);
-            this.CharacterPronounPossessiveLabel.Name = "CharacterPronounPossessiveLabel";
-            this.CharacterPronounPossessiveLabel.Size = new System.Drawing.Size(59, 13);
-            this.CharacterPronounPossessiveLabel.TabIndex = 4;
-            this.CharacterPronounPossessiveLabel.Text = "Possessive";
-            this.EditorToolTip.SetToolTip(this.CharacterPronounPossessiveLabel, "Takes the place of a noun that expresses belonging: hers, theirs, zirs.");
-            // 
-            // CharacterPronounReflexiveLabel
-            // 
-            this.CharacterPronounReflexiveLabel.AutoSize = true;
-            this.CharacterPronounReflexiveLabel.Location = new System.Drawing.Point(799, 0);
-            this.CharacterPronounReflexiveLabel.Name = "CharacterPronounReflexiveLabel";
-            this.CharacterPronounReflexiveLabel.Size = new System.Drawing.Size(52, 13);
-            this.CharacterPronounReflexiveLabel.TabIndex = 5;
-            this.CharacterPronounReflexiveLabel.Text = "Reflexive";
-            this.EditorToolTip.SetToolTip(this.CharacterPronounReflexiveLabel, "Takes the place of a subject noun when it is repeated: herself, themselves, zirse" +
-        "lf.");
-            // 
-            // CharacterPronounKeyLabel
-            // 
-            this.CharacterPronounKeyLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CharacterPronounKeyLabel.AutoSize = true;
-            this.CharacterPronounKeyLabel.Location = new System.Drawing.Point(764, 58);
-            this.CharacterPronounKeyLabel.Name = "CharacterPronounKeyLabel";
-            this.CharacterPronounKeyLabel.Size = new System.Drawing.Size(29, 13);
-            this.CharacterPronounKeyLabel.TabIndex = 24;
-            this.CharacterPronounKeyLabel.Text = "Key:";
-            this.EditorToolTip.SetToolTip(this.CharacterPronounKeyLabel, "A shorthand refering to the whole group of pronouns.");
-            // 
-            // CharacterPronounKeyStatic
-            // 
-            this.CharacterPronounKeyStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.CharacterPronounKeyStatic.AutoSize = true;
-            this.CharacterPronounKeyStatic.Location = new System.Drawing.Point(799, 58);
-            this.CharacterPronounKeyStatic.Name = "CharacterPronounKeyStatic";
-            this.CharacterPronounKeyStatic.Size = new System.Drawing.Size(57, 13);
-            this.CharacterPronounKeyStatic.TabIndex = 25;
-            this.CharacterPronounKeyStatic.Text = "they/them";
-            this.EditorToolTip.SetToolTip(this.CharacterPronounKeyStatic, "A shorthand refering to the whole group of pronouns.");
             // 
             // CharacterTableLayoutPanel
             // 
