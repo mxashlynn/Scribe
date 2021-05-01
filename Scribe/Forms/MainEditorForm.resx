@@ -66,13 +66,6 @@
         +UW/2RQ0KzyDm00RRqnqBw5DFcjs0TEReFBrfwIkGEnZYFGuAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="GameIconPixelBox.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABGdBTUEAALGPC/xhBQAAAEBJREFUKFNj
-        uLkg7T8xGKzw3eFZYOyqYYOCYeIoCtElkfkYJiJjohQiKwJhvCYiY6wK0U0DYcoUYsNwhYRx2n8AMNkf
-        qGHJyC4AAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="ToolStripMenuItemEditExternal.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAFlJREFUOE9j
@@ -93,6 +86,13 @@
         wAH+QzFZ4P/L30/BGMSGCBEPwBp3/l8FxyAxiBRhgKGZFENwak4+7gvGIDUQpZjgv1qME0wBhmaYOJIa
         ggDuGhD79O0/DDBMLEAxACIEB0S5ApcB+AxGATgNAIlRbAChGAEBuE1IhsANJWgANLRRDIFhYmxHjjK4
         JhgGiYEkCAJkQ9AwtQEDAwAA+ABBhlSTSgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="GameIconPixelBox.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABGdBTUEAALGPC/xhBQAAAEBJREFUKFNj
+        uLkg7T8xGKzw3eFZYOyqYYOCYeIoCtElkfkYJiJjohQiKwJhvCYiY6wK0U0DYcoUYsNwhYRx2n8AMNkf
+        qGHJyC4AAAAASUVORK5CYII=
 </value>
   </data>
   <data name="FloorFilledInPixelBox.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -297,13 +297,6 @@
         SUVORK5CYII=
 </value>
   </data>
-  <data name="RollerToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAFVJREFUOE/V
-        jFEKgDAMxXr/S7sNCXtri6744wLBkrraL7g+msaK9+CRH96cj4nArN/EeEClg993nw+o4Pr+gSFIixGY
-        6dm+u0bQzqxKj8uiaax4NmYNCV4a9ONRuecAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="CheckRegionStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAJtJREFUOE9j
@@ -340,6 +333,13 @@
         GF7gPy7cUB0HogmC//8/zv3/6soqDAySgyjBD8AGIGN7DSMUQ0AAohQ7wGoAiEZyBV5DwH5FNwSEQXIQ
         JWCA0xCYQgyMJRBxGkIsoMwAqGbiDUC2jWTNUADSBwYgNkSIdECRZloBBgYA3nmiXUsFDPoAAAAASUVO
         RK5CYII=
+</value>
+  </data>
+  <data name="RollerToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAFVJREFUOE/V
+        jFEKgDAMxXr/S7sNCXtri6744wLBkrraL7g+msaK9+CRH96cj4nArN/EeEClg993nw+o4Pr+gSFIixGY
+        6dm+u0bQzqxKj8uiaax4NmYNCV4a9ONRuecAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="OptionsToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">

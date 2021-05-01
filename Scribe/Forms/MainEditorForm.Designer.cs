@@ -396,6 +396,9 @@ namespace Scribe.Forms
             this.CharacterStartingQuestsLabel = new System.Windows.Forms.Label();
             this.CharacterStartingDialogueLabel = new System.Windows.Forms.Label();
             this.CharacterStartingDialogueComboBox = new System.Windows.Forms.ComboBox();
+            this.CharacterOpenInventoryEditorButton = new System.Windows.Forms.Button();
+            this.CharacterStartingInventoryLabel = new System.Windows.Forms.Label();
+            this.CharacterStartingInventoryStatic = new System.Windows.Forms.Label();
             this.EditorTabs = new System.Windows.Forms.TabControl();
             this.GamesTabPage = new System.Windows.Forms.TabPage();
             this.GameTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -458,13 +461,10 @@ namespace Scribe.Forms
             this.CharacterPronounKeyLabel = new System.Windows.Forms.Label();
             this.CharacterPronounKeyStatic = new System.Windows.Forms.Label();
             this.CharacterTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.CharacterOpenInventoryEditorButton = new System.Windows.Forms.Button();
             this.CharacterPrimaryBehaviorComboBox = new System.Windows.Forms.ComboBox();
             this.CharacterPrimaryBehaviorLabel = new System.Windows.Forms.Label();
             this.CharacterPronounLabel = new System.Windows.Forms.Label();
-            this.CharacterStartingInventoryLabel = new System.Windows.Forms.Label();
             this.CharacterPronounComboBox = new System.Windows.Forms.ComboBox();
-            this.CharacterStartingInventoryStatic = new System.Windows.Forms.Label();
             this.CharacterRemoveCharacterButton = new System.Windows.Forms.Button();
             this.CharacterAddNewCharacterButton = new System.Windows.Forms.Button();
             this.CharacterPixelBox = new ParquetCustomControls.PixelBox();
@@ -5010,6 +5010,42 @@ namespace Scribe.Forms
             this.CharacterStartingDialogueComboBox.TabIndex = 42;
             this.EditorToolTip.SetToolTip(this.CharacterStartingDialogueComboBox, "The dialogue interaction that this character starts with.");
             // 
+            // CharacterOpenInventoryEditorButton
+            // 
+            this.CharacterOpenInventoryEditorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CharacterOpenInventoryEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CharacterOpenInventoryEditorButton.Location = new System.Drawing.Point(297, 419);
+            this.CharacterOpenInventoryEditorButton.Name = "CharacterOpenInventoryEditorButton";
+            this.CharacterOpenInventoryEditorButton.Size = new System.Drawing.Size(129, 23);
+            this.CharacterOpenInventoryEditorButton.TabIndex = 3;
+            this.CharacterOpenInventoryEditorButton.Text = "Open Inventory Editor";
+            this.EditorToolTip.SetToolTip(this.CharacterOpenInventoryEditorButton, "Launch the inventory editor.");
+            this.CharacterOpenInventoryEditorButton.UseVisualStyleBackColor = false;
+            this.CharacterOpenInventoryEditorButton.Click += new System.EventHandler(this.CharacterOpenInventoryEditorButton_Click);
+            // 
+            // CharacterStartingInventoryLabel
+            // 
+            this.CharacterStartingInventoryLabel.AutoSize = true;
+            this.CharacterStartingInventoryLabel.Location = new System.Drawing.Point(3, 416);
+            this.CharacterStartingInventoryLabel.Name = "CharacterStartingInventoryLabel";
+            this.CharacterStartingInventoryLabel.Size = new System.Drawing.Size(96, 13);
+            this.CharacterStartingInventoryLabel.TabIndex = 39;
+            this.CharacterStartingInventoryLabel.Text = "Starting Inventory";
+            this.EditorToolTip.SetToolTip(this.CharacterStartingInventoryLabel, "The belongings this character begins with.");
+            // 
+            // CharacterStartingInventoryStatic
+            // 
+            this.CharacterStartingInventoryStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CharacterStartingInventoryStatic.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CharacterStartingInventoryStatic.Location = new System.Drawing.Point(131, 421);
+            this.CharacterStartingInventoryStatic.Name = "CharacterStartingInventoryStatic";
+            this.CharacterStartingInventoryStatic.Size = new System.Drawing.Size(144, 20);
+            this.CharacterStartingInventoryStatic.TabIndex = 43;
+            this.CharacterStartingInventoryStatic.Tag = "Themed";
+            this.CharacterStartingInventoryStatic.Text = "0 Items";
+            this.CharacterStartingInventoryStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EditorToolTip.SetToolTip(this.CharacterStartingInventoryStatic, "The belongings this character begins with.");
+            // 
             // EditorTabs
             // 
             this.EditorTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -6078,19 +6114,6 @@ namespace Scribe.Forms
             this.CharacterTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.CharacterTableLayoutPanel.TabIndex = 5;
             // 
-            // CharacterOpenInventoryEditorButton
-            // 
-            this.CharacterOpenInventoryEditorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CharacterOpenInventoryEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CharacterOpenInventoryEditorButton.Location = new System.Drawing.Point(297, 419);
-            this.CharacterOpenInventoryEditorButton.Name = "CharacterOpenInventoryEditorButton";
-            this.CharacterOpenInventoryEditorButton.Size = new System.Drawing.Size(129, 23);
-            this.CharacterOpenInventoryEditorButton.TabIndex = 3;
-            this.CharacterOpenInventoryEditorButton.Text = "Open Inventory Editor";
-            this.EditorToolTip.SetToolTip(this.CharacterOpenInventoryEditorButton, "Launch the inventory editor.");
-            this.CharacterOpenInventoryEditorButton.UseVisualStyleBackColor = false;
-            this.CharacterOpenInventoryEditorButton.Click += new System.EventHandler(this.CharacterOpenInventoryEditorButton_Click);
-            // 
             // CharacterPrimaryBehaviorComboBox
             // 
             this.CharacterPrimaryBehaviorComboBox.FormattingEnabled = true;
@@ -6119,15 +6142,6 @@ namespace Scribe.Forms
             this.CharacterPronounLabel.TabIndex = 35;
             this.CharacterPronounLabel.Text = "Pronouns";
             this.EditorToolTip.SetToolTip(this.CharacterPronounLabel, "The pronouns this character uses.");
-            // CharacterStartingInventoryLabel
-            // 
-            this.CharacterStartingInventoryLabel.AutoSize = true;
-            this.CharacterStartingInventoryLabel.Location = new System.Drawing.Point(3, 416);
-            this.CharacterStartingInventoryLabel.Name = "CharacterStartingInventoryLabel";
-            this.CharacterStartingInventoryLabel.Size = new System.Drawing.Size(96, 13);
-            this.CharacterStartingInventoryLabel.TabIndex = 39;
-            this.CharacterStartingInventoryLabel.Text = "Starting Inventory";
-            this.EditorToolTip.SetToolTip(this.CharacterStartingInventoryLabel, "The belongings this character begins with.");
             // 
             // CharacterPronounComboBox
             // 
@@ -6137,18 +6151,6 @@ namespace Scribe.Forms
             this.CharacterPronounComboBox.Size = new System.Drawing.Size(144, 21);
             this.CharacterPronounComboBox.TabIndex = 40;
             this.EditorToolTip.SetToolTip(this.CharacterPronounComboBox, "The pronouns this character uses.");
-            // CharacterStartingInventoryStatic
-            // 
-            this.CharacterStartingInventoryStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.CharacterStartingInventoryStatic.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CharacterStartingInventoryStatic.Location = new System.Drawing.Point(131, 421);
-            this.CharacterStartingInventoryStatic.Name = "CharacterStartingInventoryStatic";
-            this.CharacterStartingInventoryStatic.Size = new System.Drawing.Size(144, 20);
-            this.CharacterStartingInventoryStatic.TabIndex = 43;
-            this.CharacterStartingInventoryStatic.Tag = "Themed";
-            this.CharacterStartingInventoryStatic.Text = "0 Items";
-            this.CharacterStartingInventoryStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.CharacterStartingInventoryStatic, "The belongings this character begins with.");
             // 
             // CharacterRemoveCharacterButton
             // 
