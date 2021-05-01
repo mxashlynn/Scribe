@@ -6098,6 +6098,7 @@ namespace Scribe.Forms
             this.CharacterPrimaryBehaviorComboBox.Name = "CharacterPrimaryBehaviorComboBox";
             this.CharacterPrimaryBehaviorComboBox.Size = new System.Drawing.Size(144, 21);
             this.CharacterPrimaryBehaviorComboBox.TabIndex = 29;
+            this.EditorToolTip.SetToolTip(this.CharacterPrimaryBehaviorComboBox, "This character\'s typical AI.");
             // 
             // CharacterPrimaryBehaviorLabel
             // 
@@ -6107,6 +6108,7 @@ namespace Scribe.Forms
             this.CharacterPrimaryBehaviorLabel.Size = new System.Drawing.Size(88, 13);
             this.CharacterPrimaryBehaviorLabel.TabIndex = 30;
             this.CharacterPrimaryBehaviorLabel.Text = "Primary Behavior";
+            this.EditorToolTip.SetToolTip(this.CharacterPrimaryBehaviorLabel, "This character\'s typical AI.");
             // 
             // CharacterPronounLabel
             // 
@@ -6116,7 +6118,7 @@ namespace Scribe.Forms
             this.CharacterPronounLabel.Size = new System.Drawing.Size(52, 13);
             this.CharacterPronounLabel.TabIndex = 35;
             this.CharacterPronounLabel.Text = "Pronouns";
-            // 
+            this.EditorToolTip.SetToolTip(this.CharacterPronounLabel, "The pronouns this character uses.");
             // CharacterStartingInventoryLabel
             // 
             this.CharacterStartingInventoryLabel.AutoSize = true;
@@ -6134,7 +6136,7 @@ namespace Scribe.Forms
             this.CharacterPronounComboBox.Name = "CharacterPronounComboBox";
             this.CharacterPronounComboBox.Size = new System.Drawing.Size(144, 21);
             this.CharacterPronounComboBox.TabIndex = 40;
-            // 
+            this.EditorToolTip.SetToolTip(this.CharacterPronounComboBox, "The pronouns this character uses.");
             // CharacterStartingInventoryStatic
             // 
             this.CharacterStartingInventoryStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
