@@ -6291,6 +6291,7 @@ namespace Scribe.Forms
             this.ItemAddTagButton.Size = new System.Drawing.Size(129, 23);
             this.ItemAddTagButton.TabIndex = 2;
             this.ItemAddTagButton.Text = "Add Tag";
+            this.EditorToolTip.SetToolTip(this.ItemAddTagButton, "Add new tag.");
             this.ItemAddTagButton.UseVisualStyleBackColor = false;
             this.ItemAddTagButton.Click += new System.EventHandler(this.ItemAddTagButton_Click);
             // 
@@ -6304,6 +6305,7 @@ namespace Scribe.Forms
             this.ItemRemoveTagButton.Size = new System.Drawing.Size(129, 23);
             this.ItemRemoveTagButton.TabIndex = 2;
             this.ItemRemoveTagButton.Text = "Remove Tag";
+            this.EditorToolTip.SetToolTip(this.ItemRemoveTagButton, "Delete selected tag.");
             this.ItemRemoveTagButton.UseVisualStyleBackColor = false;
             this.ItemRemoveTagButton.Click += new System.EventHandler(this.ItemRemoveTagButton_Click);
             // 
@@ -6329,6 +6331,7 @@ namespace Scribe.Forms
             this.ItemOpenInvetoryEditorButton.Size = new System.Drawing.Size(129, 23);
             this.ItemOpenInvetoryEditorButton.TabIndex = 3;
             this.ItemOpenInvetoryEditorButton.Text = "Open Inventory Editor";
+            this.EditorToolTip.SetToolTip(this.ItemOpenInvetoryEditorButton, "Launch the editor for the selected inventory.");
             this.ItemOpenInvetoryEditorButton.UseVisualStyleBackColor = false;
             this.ItemOpenInvetoryEditorButton.Click += new System.EventHandler(this.ItemOpenInvetoryEditorButton_Click);
             // 
@@ -6342,6 +6345,7 @@ namespace Scribe.Forms
             this.ItemInventoryListBox.Size = new System.Drawing.Size(273, 82);
             this.ItemInventoryListBox.TabIndex = 2;
             this.ItemInventoryListBox.Tag = "Untracked Control";
+            this.EditorToolTip.SetToolTip(this.ItemInventoryListBox, "Each character\'s starting inventory.");
             // 
             // ItemTableLayoutPanel
             // 
@@ -6397,6 +6401,7 @@ namespace Scribe.Forms
             this.ItemEffectWhenUsedComboBox.Name = "ItemEffectWhenUsedComboBox";
             this.ItemEffectWhenUsedComboBox.Size = new System.Drawing.Size(144, 21);
             this.ItemEffectWhenUsedComboBox.TabIndex = 30;
+            this.EditorToolTip.SetToolTip(this.ItemEffectWhenUsedComboBox, "A script that runs when the item is used.");
             // 
             // ItemStackMaxTextBox
             // 
@@ -6404,6 +6409,7 @@ namespace Scribe.Forms
             this.ItemStackMaxTextBox.Name = "ItemStackMaxTextBox";
             this.ItemStackMaxTextBox.Size = new System.Drawing.Size(144, 20);
             this.ItemStackMaxTextBox.TabIndex = 28;
+            this.EditorToolTip.SetToolTip(this.ItemStackMaxTextBox, "How many of these items can share a single inventory space.");
             // 
             // ItemRarityTextBox
             // 
@@ -6411,6 +6417,7 @@ namespace Scribe.Forms
             this.ItemRarityTextBox.Name = "ItemRarityTextBox";
             this.ItemRarityTextBox.Size = new System.Drawing.Size(144, 20);
             this.ItemRarityTextBox.TabIndex = 27;
+            this.EditorToolTip.SetToolTip(this.ItemRarityTextBox, "How rare this item is compared to others.");
             // 
             // ItemTagListBox
             // 
@@ -6422,6 +6429,7 @@ namespace Scribe.Forms
             this.ItemTagListBox.Name = "ItemTagListBox";
             this.ItemTagListBox.Size = new System.Drawing.Size(295, 121);
             this.ItemTagListBox.TabIndex = 1;
+            this.EditorToolTip.SetToolTip(this.ItemTagListBox, "Represents any additional functionality or characteristcs.");
             // 
             // ItemWorthLabel
             // 
@@ -6431,6 +6439,7 @@ namespace Scribe.Forms
             this.ItemWorthLabel.Size = new System.Drawing.Size(37, 13);
             this.ItemWorthLabel.TabIndex = 12;
             this.ItemWorthLabel.Text = "Worth";
+            this.EditorToolTip.SetToolTip(this.ItemWorthLabel, "Value of the item, perhaps its price.");
             // 
             // ItemRarityLabel
             // 
@@ -6440,6 +6449,7 @@ namespace Scribe.Forms
             this.ItemRarityLabel.Size = new System.Drawing.Size(36, 13);
             this.ItemRarityLabel.TabIndex = 15;
             this.ItemRarityLabel.Text = "Rarity";
+            this.EditorToolTip.SetToolTip(this.ItemRarityLabel, "How rare this item is compared to others.");
             // 
             // ItemStackMaxLabel
             // 
@@ -6449,6 +6459,7 @@ namespace Scribe.Forms
             this.ItemStackMaxLabel.Size = new System.Drawing.Size(56, 13);
             this.ItemStackMaxLabel.TabIndex = 18;
             this.ItemStackMaxLabel.Text = "Stack Max";
+            this.EditorToolTip.SetToolTip(this.ItemStackMaxLabel, "How many of these items can share a single inventory space.");
             // 
             // ItemTagsLabel
             // 
@@ -6458,6 +6469,7 @@ namespace Scribe.Forms
             this.ItemTagsLabel.Size = new System.Drawing.Size(30, 13);
             this.ItemTagsLabel.TabIndex = 21;
             this.ItemTagsLabel.Text = "Tags";
+            this.EditorToolTip.SetToolTip(this.ItemTagsLabel, "Represents any additional functionality or characteristcs.");
             // 
             // ItemWorthTextBox
             // 
@@ -6465,6 +6477,7 @@ namespace Scribe.Forms
             this.ItemWorthTextBox.Name = "ItemWorthTextBox";
             this.ItemWorthTextBox.Size = new System.Drawing.Size(144, 20);
             this.ItemWorthTextBox.TabIndex = 26;
+            this.EditorToolTip.SetToolTip(this.ItemWorthTextBox, "Value of the item, perhaps its price.");
             // 
             // ItemEffectWhileHeldLabel
             // 
@@ -6474,6 +6487,7 @@ namespace Scribe.Forms
             this.ItemEffectWhileHeldLabel.Size = new System.Drawing.Size(89, 13);
             this.ItemEffectWhileHeldLabel.TabIndex = 31;
             this.ItemEffectWhileHeldLabel.Text = "Effect While Held";
+            this.EditorToolTip.SetToolTip(this.ItemEffectWhileHeldLabel, "A script that runs while the item is kept.");
             // 
             // ItemEffectWhenUsedLabel
             // 
@@ -6483,6 +6497,7 @@ namespace Scribe.Forms
             this.ItemEffectWhenUsedLabel.Size = new System.Drawing.Size(94, 13);
             this.ItemEffectWhenUsedLabel.TabIndex = 32;
             this.ItemEffectWhenUsedLabel.Text = "Effect When Used";
+            this.EditorToolTip.SetToolTip(this.ItemEffectWhenUsedLabel, "A script that runs when the item is used.");
             // 
             // ItemParquetLabel
             // 
@@ -6492,6 +6507,7 @@ namespace Scribe.Forms
             this.ItemParquetLabel.Size = new System.Drawing.Size(98, 13);
             this.ItemParquetLabel.TabIndex = 33;
             this.ItemParquetLabel.Text = "Equivalent Parquet";
+            this.EditorToolTip.SetToolTip(this.ItemParquetLabel, "The parquet this item represents, if any.");
             // 
             // ItemEffectWhileHeldComboBox
             // 
@@ -6500,6 +6516,7 @@ namespace Scribe.Forms
             this.ItemEffectWhileHeldComboBox.Name = "ItemEffectWhileHeldComboBox";
             this.ItemEffectWhileHeldComboBox.Size = new System.Drawing.Size(144, 21);
             this.ItemEffectWhileHeldComboBox.TabIndex = 34;
+            this.EditorToolTip.SetToolTip(this.ItemEffectWhileHeldComboBox, "A script that runs while the item is kept.");
             // 
             // ItemEquivalentParquetComboBox
             // 
@@ -6508,6 +6525,7 @@ namespace Scribe.Forms
             this.ItemEquivalentParquetComboBox.Name = "ItemEquivalentParquetComboBox";
             this.ItemEquivalentParquetComboBox.Size = new System.Drawing.Size(144, 21);
             this.ItemEquivalentParquetComboBox.TabIndex = 35;
+            this.EditorToolTip.SetToolTip(this.ItemEquivalentParquetComboBox, "The parquet this item represents, if any.");
             // 
             // ItemPixelBox
             // 
