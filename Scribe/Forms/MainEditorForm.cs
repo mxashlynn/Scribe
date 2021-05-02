@@ -2040,7 +2040,7 @@ namespace Scribe.Forms
                     (ItemType)(EditableControls[typeof(ComboBox)][ItemSubtypeComboBox] = model.Subtype);
                 ItemWorthTextBox.Text =
                     (string)(EditableControls[typeof(TextBox)][ItemWorthTextBox] =
-                        model.Price.ToString(CultureInfo.InvariantCulture));
+                        model.Worth.ToString(CultureInfo.InvariantCulture));
                 ItemRarityTextBox.Text =
                     (string)(EditableControls[typeof(TextBox)][ItemRarityTextBox] =
                         model.Rarity.ToString(CultureInfo.InvariantCulture));
