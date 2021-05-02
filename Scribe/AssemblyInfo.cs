@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using Scribe.Forms;
 
 // Make no promises to maintain public services.
@@ -8,6 +9,9 @@ using Scribe.Forms;
 
 // Scribe is an API consumer, not an API provider, so CLS Compliance is not needed.
 [assembly: CLSCompliant(true)]
+
+// Windows Forms is supported only on Windows, but not all analyzers realize this.
+[assembly: SupportedOSPlatform("windows")]
 
 namespace Scribe
 {
