@@ -577,7 +577,7 @@ namespace Scribe.Forms
             this.FilterByDescriptionCheckBox = new System.Windows.Forms.CheckBox();
             this.FilterByTagsCheckBox = new System.Windows.Forms.CheckBox();
             this.FilterByCommentCheckBox = new System.Windows.Forms.CheckBox();
-            this.FilterByMoreCheckBox = new System.Windows.Forms.CheckBox();
+            this.FilterByFunctionCheckBox = new System.Windows.Forms.CheckBox();
             this.FilterGroupBox = new System.Windows.Forms.GroupBox();
             this.FlavorFilterGroupBox = new System.Windows.Forms.GroupBox();
             this.FlavorsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -7502,7 +7502,7 @@ namespace Scribe.Forms
             this.FiltersTableLayoutPanel.Controls.Add(this.FilterByDescriptionCheckBox, 2, 0);
             this.FiltersTableLayoutPanel.Controls.Add(this.FilterByTagsCheckBox, 2, 1);
             this.FiltersTableLayoutPanel.Controls.Add(this.FilterByCommentCheckBox, 3, 0);
-            this.FiltersTableLayoutPanel.Controls.Add(this.FilterByMoreCheckBox, 3, 1);
+            this.FiltersTableLayoutPanel.Controls.Add(this.FilterByFunctionCheckBox, 3, 1);
             this.FiltersTableLayoutPanel.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.FiltersTableLayoutPanel.Location = new System.Drawing.Point(6, 21);
             this.FiltersTableLayoutPanel.Name = "FiltersTableLayoutPanel";
@@ -7570,15 +7570,15 @@ namespace Scribe.Forms
             this.FilterByCommentCheckBox.Text = "Comment";
             this.FilterByCommentCheckBox.UseVisualStyleBackColor = false;
             // 
-            // FilterByMoreCheckBox
+            // FilterByFunctionCheckBox
             // 
-            this.FilterByMoreCheckBox.AutoSize = true;
-            this.FilterByMoreCheckBox.Location = new System.Drawing.Point(353, 28);
-            this.FilterByMoreCheckBox.Name = "FilterByMoreCheckBox";
-            this.FilterByMoreCheckBox.Size = new System.Drawing.Size(50, 17);
-            this.FilterByMoreCheckBox.TabIndex = 8;
-            this.FilterByMoreCheckBox.Text = "More";
-            this.FilterByMoreCheckBox.UseVisualStyleBackColor = true;
+            this.FilterByFunctionCheckBox.AutoSize = true;
+            this.FilterByFunctionCheckBox.Location = new System.Drawing.Point(353, 28);
+            this.FilterByFunctionCheckBox.Name = "FilterByFunctionCheckBox";
+            this.FilterByFunctionCheckBox.Size = new System.Drawing.Size(88, 17);
+            this.FilterByFunctionCheckBox.TabIndex = 8;
+            this.FilterByFunctionCheckBox.Text = "Function Tag";
+            this.FilterByFunctionCheckBox.UseVisualStyleBackColor = true;
             // 
             // FilterGroupBox
             // 
@@ -7822,7 +7822,7 @@ namespace Scribe.Forms
         private System.Windows.Forms.CheckBox FilterByCommentCheckBox;
         private System.Windows.Forms.CheckBox FilterByStoryIDCheckBox;
         private System.Windows.Forms.CheckBox FilterByTagsCheckBox;
-        private System.Windows.Forms.CheckBox FilterByMoreCheckBox;
+        private System.Windows.Forms.CheckBox FilterByFunctionCheckBox;
         private System.Windows.Forms.GroupBox FilterGroupBox;
         private System.Windows.Forms.GroupBox FlavorFilterGroupBox;
         private System.Windows.Forms.TableLayoutPanel FlavorsTableLayoutPanel;
