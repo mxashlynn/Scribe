@@ -7519,6 +7519,7 @@ namespace Scribe.Forms
             this.FilterTextBox.Name = "FilterTextBox";
             this.FilterTextBox.Size = new System.Drawing.Size(144, 20);
             this.FilterTextBox.TabIndex = 2;
+            this.EditorToolTip.SetToolTip(this.FilterTextBox, "Text to filter for.");
             // 
             // FilterByNameCheckBox
             // 
@@ -7528,6 +7529,7 @@ namespace Scribe.Forms
             this.FilterByNameCheckBox.Size = new System.Drawing.Size(53, 17);
             this.FilterByNameCheckBox.TabIndex = 3;
             this.FilterByNameCheckBox.Text = "Name";
+            this.EditorToolTip.SetToolTip(this.FilterByNameCheckBox, "Show models with matching names.");
             this.FilterByNameCheckBox.UseVisualStyleBackColor = false;
             // 
             // FilterByStoryIDCheckBox
@@ -7538,6 +7540,7 @@ namespace Scribe.Forms
             this.FilterByStoryIDCheckBox.Size = new System.Drawing.Size(66, 17);
             this.FilterByStoryIDCheckBox.TabIndex = 6;
             this.FilterByStoryIDCheckBox.Text = "Story ID";
+            this.EditorToolTip.SetToolTip(this.FilterByStoryIDCheckBox, "Show models with matching story identifiers.");
             this.FilterByStoryIDCheckBox.UseVisualStyleBackColor = false;
             // 
             // FilterByDescriptionCheckBox
@@ -7548,6 +7551,7 @@ namespace Scribe.Forms
             this.FilterByDescriptionCheckBox.Size = new System.Drawing.Size(79, 17);
             this.FilterByDescriptionCheckBox.TabIndex = 4;
             this.FilterByDescriptionCheckBox.Text = "Description";
+            this.EditorToolTip.SetToolTip(this.FilterByDescriptionCheckBox, "Show models with matching descriptions.");
             this.FilterByDescriptionCheckBox.UseVisualStyleBackColor = false;
             // 
             // FilterByTagsCheckBox
@@ -7558,6 +7562,7 @@ namespace Scribe.Forms
             this.FilterByTagsCheckBox.Size = new System.Drawing.Size(49, 17);
             this.FilterByTagsCheckBox.TabIndex = 7;
             this.FilterByTagsCheckBox.Text = "Tags";
+            this.EditorToolTip.SetToolTip(this.FilterByTagsCheckBox, "Show models with matching tag text.");
             this.FilterByTagsCheckBox.UseVisualStyleBackColor = false;
             // 
             // FilterByCommentCheckBox
@@ -7568,6 +7573,7 @@ namespace Scribe.Forms
             this.FilterByCommentCheckBox.Size = new System.Drawing.Size(71, 17);
             this.FilterByCommentCheckBox.TabIndex = 5;
             this.FilterByCommentCheckBox.Text = "Comment";
+            this.EditorToolTip.SetToolTip(this.FilterByCommentCheckBox, "Show models with matching comments.");
             this.FilterByCommentCheckBox.UseVisualStyleBackColor = false;
             // 
             // FilterByFunctionCheckBox
@@ -7578,6 +7584,7 @@ namespace Scribe.Forms
             this.FilterByFunctionCheckBox.Size = new System.Drawing.Size(88, 17);
             this.FilterByFunctionCheckBox.TabIndex = 8;
             this.FilterByFunctionCheckBox.Text = "Function Tag";
+            this.EditorToolTip.SetToolTip(this.FilterByFunctionCheckBox, "Show models with matching function tags.");
             this.FilterByFunctionCheckBox.UseVisualStyleBackColor = true;
             // 
             // FilterGroupBox
