@@ -422,6 +422,24 @@ namespace Scribe.Forms
             this.ItemSubtypeLabel = new System.Windows.Forms.Label();
             this.ItemNameTextBox = new System.Windows.Forms.TextBox();
             this.ItemSubtypeComboBox = new System.Windows.Forms.ComboBox();
+            this.ItemAddTagButton = new System.Windows.Forms.Button();
+            this.ItemRemoveTagButton = new System.Windows.Forms.Button();
+            this.ItemOpenInvetoryEditorButton = new System.Windows.Forms.Button();
+            this.ItemInventoryListBox = new System.Windows.Forms.ListBox();
+            this.ItemEffectWhenUsedComboBox = new System.Windows.Forms.ComboBox();
+            this.ItemStackMaxTextBox = new System.Windows.Forms.TextBox();
+            this.ItemRarityTextBox = new System.Windows.Forms.TextBox();
+            this.ItemTagListBox = new System.Windows.Forms.ListBox();
+            this.ItemWorthLabel = new System.Windows.Forms.Label();
+            this.ItemRarityLabel = new System.Windows.Forms.Label();
+            this.ItemStackMaxLabel = new System.Windows.Forms.Label();
+            this.ItemTagsLabel = new System.Windows.Forms.Label();
+            this.ItemWorthTextBox = new System.Windows.Forms.TextBox();
+            this.ItemEffectWhileHeldLabel = new System.Windows.Forms.Label();
+            this.ItemEffectWhenUsedLabel = new System.Windows.Forms.Label();
+            this.ItemParquetLabel = new System.Windows.Forms.Label();
+            this.ItemEffectWhileHeldComboBox = new System.Windows.Forms.ComboBox();
+            this.ItemEquivalentParquetComboBox = new System.Windows.Forms.ComboBox();
             this.EditorTabs = new System.Windows.Forms.TabControl();
             this.GamesTabPage = new System.Windows.Forms.TabPage();
             this.GameTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -474,26 +492,8 @@ namespace Scribe.Forms
             this.CharacterPixelBox = new ParquetCustomControls.PixelBox();
             this.ItemsTabPage = new System.Windows.Forms.TabPage();
             this.ItemRemoveItemButton = new System.Windows.Forms.Button();
-            this.ItemAddTagButton = new System.Windows.Forms.Button();
-            this.ItemRemoveTagButton = new System.Windows.Forms.Button();
             this.ItemInventoriesGroupBox = new System.Windows.Forms.GroupBox();
-            this.ItemOpenInvetoryEditorButton = new System.Windows.Forms.Button();
-            this.ItemInventoryListBox = new System.Windows.Forms.ListBox();
             this.ItemTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.ItemEffectWhenUsedComboBox = new System.Windows.Forms.ComboBox();
-            this.ItemStackMaxTextBox = new System.Windows.Forms.TextBox();
-            this.ItemRarityTextBox = new System.Windows.Forms.TextBox();
-            this.ItemTagListBox = new System.Windows.Forms.ListBox();
-            this.ItemWorthLabel = new System.Windows.Forms.Label();
-            this.ItemRarityLabel = new System.Windows.Forms.Label();
-            this.ItemStackMaxLabel = new System.Windows.Forms.Label();
-            this.ItemTagsLabel = new System.Windows.Forms.Label();
-            this.ItemWorthTextBox = new System.Windows.Forms.TextBox();
-            this.ItemEffectWhileHeldLabel = new System.Windows.Forms.Label();
-            this.ItemEffectWhenUsedLabel = new System.Windows.Forms.Label();
-            this.ItemParquetLabel = new System.Windows.Forms.Label();
-            this.ItemEffectWhileHeldComboBox = new System.Windows.Forms.ComboBox();
-            this.ItemEquivalentParquetComboBox = new System.Windows.Forms.ComboBox();
             this.ItemPixelBox = new ParquetCustomControls.PixelBox();
             this.ItemAddNewItemButton = new System.Windows.Forms.Button();
             this.BiomesTabPage = new System.Windows.Forms.TabPage();
@@ -5277,6 +5277,192 @@ namespace Scribe.Forms
             this.ItemSubtypeComboBox.TabIndex = 29;
             this.EditorToolTip.SetToolTip(this.ItemSubtypeComboBox, "The type of item this is.");
             // 
+            // ItemAddTagButton
+            // 
+            this.ItemAddTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemAddTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ItemAddTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ItemAddTagButton.Location = new System.Drawing.Point(605, 468);
+            this.ItemAddTagButton.Name = "ItemAddTagButton";
+            this.ItemAddTagButton.Size = new System.Drawing.Size(129, 23);
+            this.ItemAddTagButton.TabIndex = 2;
+            this.ItemAddTagButton.Text = "Add Tag";
+            this.EditorToolTip.SetToolTip(this.ItemAddTagButton, "Add new tag.");
+            this.ItemAddTagButton.UseVisualStyleBackColor = false;
+            this.ItemAddTagButton.Click += new System.EventHandler(this.ItemAddTagButton_Click);
+            // 
+            // ItemRemoveTagButton
+            // 
+            this.ItemRemoveTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ItemRemoveTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ItemRemoveTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ItemRemoveTagButton.Location = new System.Drawing.Point(454, 468);
+            this.ItemRemoveTagButton.Name = "ItemRemoveTagButton";
+            this.ItemRemoveTagButton.Size = new System.Drawing.Size(129, 23);
+            this.ItemRemoveTagButton.TabIndex = 2;
+            this.ItemRemoveTagButton.Text = "Remove Tag";
+            this.EditorToolTip.SetToolTip(this.ItemRemoveTagButton, "Delete selected tag.");
+            this.ItemRemoveTagButton.UseVisualStyleBackColor = false;
+            this.ItemRemoveTagButton.Click += new System.EventHandler(this.ItemRemoveTagButton_Click);
+            // 
+            // ItemOpenInvetoryEditorButton
+            // 
+            this.ItemOpenInvetoryEditorButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ItemOpenInvetoryEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ItemOpenInvetoryEditorButton.Location = new System.Drawing.Point(285, 74);
+            this.ItemOpenInvetoryEditorButton.Name = "ItemOpenInvetoryEditorButton";
+            this.ItemOpenInvetoryEditorButton.Size = new System.Drawing.Size(129, 23);
+            this.ItemOpenInvetoryEditorButton.TabIndex = 3;
+            this.ItemOpenInvetoryEditorButton.Text = "Open Inventory Editor";
+            this.EditorToolTip.SetToolTip(this.ItemOpenInvetoryEditorButton, "Launch the editor for the selected inventory.");
+            this.ItemOpenInvetoryEditorButton.UseVisualStyleBackColor = false;
+            this.ItemOpenInvetoryEditorButton.Click += new System.EventHandler(this.ItemOpenInvetoryEditorButton_Click);
+            // 
+            // ItemInventoryListBox
+            // 
+            this.ItemInventoryListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ItemInventoryListBox.FormattingEnabled = true;
+            this.ItemInventoryListBox.Location = new System.Drawing.Point(6, 15);
+            this.ItemInventoryListBox.Name = "ItemInventoryListBox";
+            this.ItemInventoryListBox.Size = new System.Drawing.Size(273, 82);
+            this.ItemInventoryListBox.TabIndex = 2;
+            this.ItemInventoryListBox.Tag = "Untracked Control";
+            this.EditorToolTip.SetToolTip(this.ItemInventoryListBox, "Each character\'s starting inventory.");
+            // 
+            // ItemEffectWhenUsedComboBox
+            // 
+            this.ItemEffectWhenUsedComboBox.FormattingEnabled = true;
+            this.ItemEffectWhenUsedComboBox.Location = new System.Drawing.Point(131, 263);
+            this.ItemEffectWhenUsedComboBox.Name = "ItemEffectWhenUsedComboBox";
+            this.ItemEffectWhenUsedComboBox.Size = new System.Drawing.Size(144, 21);
+            this.ItemEffectWhenUsedComboBox.TabIndex = 30;
+            this.EditorToolTip.SetToolTip(this.ItemEffectWhenUsedComboBox, "A script that runs when the item is used.");
+            // 
+            // ItemStackMaxTextBox
+            // 
+            this.ItemStackMaxTextBox.Location = new System.Drawing.Point(131, 213);
+            this.ItemStackMaxTextBox.Name = "ItemStackMaxTextBox";
+            this.ItemStackMaxTextBox.Size = new System.Drawing.Size(144, 20);
+            this.ItemStackMaxTextBox.TabIndex = 28;
+            this.EditorToolTip.SetToolTip(this.ItemStackMaxTextBox, "How many of these items can share a single inventory space.");
+            // 
+            // ItemRarityTextBox
+            // 
+            this.ItemRarityTextBox.Location = new System.Drawing.Point(131, 188);
+            this.ItemRarityTextBox.Name = "ItemRarityTextBox";
+            this.ItemRarityTextBox.Size = new System.Drawing.Size(144, 20);
+            this.ItemRarityTextBox.TabIndex = 27;
+            this.EditorToolTip.SetToolTip(this.ItemRarityTextBox, "How rare this item is compared to others.");
+            // 
+            // ItemTagListBox
+            // 
+            this.ItemTagListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ItemTableLayoutPanel.SetColumnSpan(this.ItemTagListBox, 2);
+            this.ItemTagListBox.FormattingEnabled = true;
+            this.ItemTagListBox.Location = new System.Drawing.Point(131, 313);
+            this.ItemTagListBox.Name = "ItemTagListBox";
+            this.ItemTagListBox.Size = new System.Drawing.Size(295, 121);
+            this.ItemTagListBox.TabIndex = 1;
+            this.EditorToolTip.SetToolTip(this.ItemTagListBox, "Represents any additional functionality or characteristcs.");
+            // 
+            // ItemWorthLabel
+            // 
+            this.ItemWorthLabel.AutoSize = true;
+            this.ItemWorthLabel.Location = new System.Drawing.Point(3, 160);
+            this.ItemWorthLabel.Name = "ItemWorthLabel";
+            this.ItemWorthLabel.Size = new System.Drawing.Size(37, 13);
+            this.ItemWorthLabel.TabIndex = 12;
+            this.ItemWorthLabel.Text = "Worth";
+            this.EditorToolTip.SetToolTip(this.ItemWorthLabel, "Value of the item, perhaps its price.");
+            // 
+            // ItemRarityLabel
+            // 
+            this.ItemRarityLabel.AutoSize = true;
+            this.ItemRarityLabel.Location = new System.Drawing.Point(3, 185);
+            this.ItemRarityLabel.Name = "ItemRarityLabel";
+            this.ItemRarityLabel.Size = new System.Drawing.Size(36, 13);
+            this.ItemRarityLabel.TabIndex = 15;
+            this.ItemRarityLabel.Text = "Rarity";
+            this.EditorToolTip.SetToolTip(this.ItemRarityLabel, "How rare this item is compared to others.");
+            // 
+            // ItemStackMaxLabel
+            // 
+            this.ItemStackMaxLabel.AutoSize = true;
+            this.ItemStackMaxLabel.Location = new System.Drawing.Point(3, 210);
+            this.ItemStackMaxLabel.Name = "ItemStackMaxLabel";
+            this.ItemStackMaxLabel.Size = new System.Drawing.Size(56, 13);
+            this.ItemStackMaxLabel.TabIndex = 18;
+            this.ItemStackMaxLabel.Text = "Stack Max";
+            this.EditorToolTip.SetToolTip(this.ItemStackMaxLabel, "How many of these items can share a single inventory space.");
+            // 
+            // ItemTagsLabel
+            // 
+            this.ItemTagsLabel.AutoSize = true;
+            this.ItemTagsLabel.Location = new System.Drawing.Point(3, 310);
+            this.ItemTagsLabel.Name = "ItemTagsLabel";
+            this.ItemTagsLabel.Size = new System.Drawing.Size(30, 13);
+            this.ItemTagsLabel.TabIndex = 21;
+            this.ItemTagsLabel.Text = "Tags";
+            this.EditorToolTip.SetToolTip(this.ItemTagsLabel, "Represents any additional functionality or characteristcs.");
+            // 
+            // ItemWorthTextBox
+            // 
+            this.ItemWorthTextBox.Location = new System.Drawing.Point(131, 163);
+            this.ItemWorthTextBox.Name = "ItemWorthTextBox";
+            this.ItemWorthTextBox.Size = new System.Drawing.Size(144, 20);
+            this.ItemWorthTextBox.TabIndex = 26;
+            this.EditorToolTip.SetToolTip(this.ItemWorthTextBox, "Value of the item, perhaps its price.");
+            // 
+            // ItemEffectWhileHeldLabel
+            // 
+            this.ItemEffectWhileHeldLabel.AutoSize = true;
+            this.ItemEffectWhileHeldLabel.Location = new System.Drawing.Point(3, 235);
+            this.ItemEffectWhileHeldLabel.Name = "ItemEffectWhileHeldLabel";
+            this.ItemEffectWhileHeldLabel.Size = new System.Drawing.Size(89, 13);
+            this.ItemEffectWhileHeldLabel.TabIndex = 31;
+            this.ItemEffectWhileHeldLabel.Text = "Effect While Held";
+            this.EditorToolTip.SetToolTip(this.ItemEffectWhileHeldLabel, "A script that runs while the item is kept.");
+            // 
+            // ItemEffectWhenUsedLabel
+            // 
+            this.ItemEffectWhenUsedLabel.AutoSize = true;
+            this.ItemEffectWhenUsedLabel.Location = new System.Drawing.Point(3, 260);
+            this.ItemEffectWhenUsedLabel.Name = "ItemEffectWhenUsedLabel";
+            this.ItemEffectWhenUsedLabel.Size = new System.Drawing.Size(94, 13);
+            this.ItemEffectWhenUsedLabel.TabIndex = 32;
+            this.ItemEffectWhenUsedLabel.Text = "Effect When Used";
+            this.EditorToolTip.SetToolTip(this.ItemEffectWhenUsedLabel, "A script that runs when the item is used.");
+            // 
+            // ItemParquetLabel
+            // 
+            this.ItemParquetLabel.AutoSize = true;
+            this.ItemParquetLabel.Location = new System.Drawing.Point(3, 285);
+            this.ItemParquetLabel.Name = "ItemParquetLabel";
+            this.ItemParquetLabel.Size = new System.Drawing.Size(98, 13);
+            this.ItemParquetLabel.TabIndex = 33;
+            this.ItemParquetLabel.Text = "Equivalent Parquet";
+            this.EditorToolTip.SetToolTip(this.ItemParquetLabel, "The parquet this item represents, if any.");
+            // 
+            // ItemEffectWhileHeldComboBox
+            // 
+            this.ItemEffectWhileHeldComboBox.FormattingEnabled = true;
+            this.ItemEffectWhileHeldComboBox.Location = new System.Drawing.Point(131, 238);
+            this.ItemEffectWhileHeldComboBox.Name = "ItemEffectWhileHeldComboBox";
+            this.ItemEffectWhileHeldComboBox.Size = new System.Drawing.Size(144, 21);
+            this.ItemEffectWhileHeldComboBox.TabIndex = 34;
+            this.EditorToolTip.SetToolTip(this.ItemEffectWhileHeldComboBox, "A script that runs while the item is kept.");
+            // 
+            // ItemEquivalentParquetComboBox
+            // 
+            this.ItemEquivalentParquetComboBox.FormattingEnabled = true;
+            this.ItemEquivalentParquetComboBox.Location = new System.Drawing.Point(131, 288);
+            this.ItemEquivalentParquetComboBox.Name = "ItemEquivalentParquetComboBox";
+            this.ItemEquivalentParquetComboBox.Size = new System.Drawing.Size(144, 21);
+            this.ItemEquivalentParquetComboBox.TabIndex = 35;
+            this.EditorToolTip.SetToolTip(this.ItemEquivalentParquetComboBox, "The parquet this item represents, if any.");
+            // 
             // EditorTabs
             // 
             this.EditorTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -6281,34 +6467,6 @@ namespace Scribe.Forms
             this.ItemRemoveItemButton.UseVisualStyleBackColor = false;
             this.ItemRemoveItemButton.Click += new System.EventHandler(this.ItemRemoveItemButton_Click);
             // 
-            // ItemAddTagButton
-            // 
-            this.ItemAddTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemAddTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ItemAddTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ItemAddTagButton.Location = new System.Drawing.Point(605, 468);
-            this.ItemAddTagButton.Name = "ItemAddTagButton";
-            this.ItemAddTagButton.Size = new System.Drawing.Size(129, 23);
-            this.ItemAddTagButton.TabIndex = 2;
-            this.ItemAddTagButton.Text = "Add Tag";
-            this.EditorToolTip.SetToolTip(this.ItemAddTagButton, "Add new tag.");
-            this.ItemAddTagButton.UseVisualStyleBackColor = false;
-            this.ItemAddTagButton.Click += new System.EventHandler(this.ItemAddTagButton_Click);
-            // 
-            // ItemRemoveTagButton
-            // 
-            this.ItemRemoveTagButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ItemRemoveTagButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ItemRemoveTagButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ItemRemoveTagButton.Location = new System.Drawing.Point(454, 468);
-            this.ItemRemoveTagButton.Name = "ItemRemoveTagButton";
-            this.ItemRemoveTagButton.Size = new System.Drawing.Size(129, 23);
-            this.ItemRemoveTagButton.TabIndex = 2;
-            this.ItemRemoveTagButton.Text = "Remove Tag";
-            this.EditorToolTip.SetToolTip(this.ItemRemoveTagButton, "Delete selected tag.");
-            this.ItemRemoveTagButton.UseVisualStyleBackColor = false;
-            this.ItemRemoveTagButton.Click += new System.EventHandler(this.ItemRemoveTagButton_Click);
-            // 
             // ItemInventoriesGroupBox
             // 
             this.ItemInventoriesGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -6321,31 +6479,6 @@ namespace Scribe.Forms
             this.ItemInventoriesGroupBox.TabIndex = 0;
             this.ItemInventoriesGroupBox.TabStop = false;
             this.ItemInventoriesGroupBox.Text = "Starting Inventories";
-            // 
-            // ItemOpenInvetoryEditorButton
-            // 
-            this.ItemOpenInvetoryEditorButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ItemOpenInvetoryEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ItemOpenInvetoryEditorButton.Location = new System.Drawing.Point(285, 74);
-            this.ItemOpenInvetoryEditorButton.Name = "ItemOpenInvetoryEditorButton";
-            this.ItemOpenInvetoryEditorButton.Size = new System.Drawing.Size(129, 23);
-            this.ItemOpenInvetoryEditorButton.TabIndex = 3;
-            this.ItemOpenInvetoryEditorButton.Text = "Open Inventory Editor";
-            this.EditorToolTip.SetToolTip(this.ItemOpenInvetoryEditorButton, "Launch the editor for the selected inventory.");
-            this.ItemOpenInvetoryEditorButton.UseVisualStyleBackColor = false;
-            this.ItemOpenInvetoryEditorButton.Click += new System.EventHandler(this.ItemOpenInvetoryEditorButton_Click);
-            // 
-            // ItemInventoryListBox
-            // 
-            this.ItemInventoryListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.ItemInventoryListBox.FormattingEnabled = true;
-            this.ItemInventoryListBox.Location = new System.Drawing.Point(6, 15);
-            this.ItemInventoryListBox.Name = "ItemInventoryListBox";
-            this.ItemInventoryListBox.Size = new System.Drawing.Size(273, 82);
-            this.ItemInventoryListBox.TabIndex = 2;
-            this.ItemInventoryListBox.Tag = "Untracked Control";
-            this.EditorToolTip.SetToolTip(this.ItemInventoryListBox, "Each character\'s starting inventory.");
             // 
             // ItemTableLayoutPanel
             // 
@@ -6393,139 +6526,6 @@ namespace Scribe.Forms
             this.ItemTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.ItemTableLayoutPanel.Size = new System.Drawing.Size(429, 446);
             this.ItemTableLayoutPanel.TabIndex = 5;
-            // 
-            // ItemEffectWhenUsedComboBox
-            // 
-            this.ItemEffectWhenUsedComboBox.FormattingEnabled = true;
-            this.ItemEffectWhenUsedComboBox.Location = new System.Drawing.Point(131, 263);
-            this.ItemEffectWhenUsedComboBox.Name = "ItemEffectWhenUsedComboBox";
-            this.ItemEffectWhenUsedComboBox.Size = new System.Drawing.Size(144, 21);
-            this.ItemEffectWhenUsedComboBox.TabIndex = 30;
-            this.EditorToolTip.SetToolTip(this.ItemEffectWhenUsedComboBox, "A script that runs when the item is used.");
-            // 
-            // ItemStackMaxTextBox
-            // 
-            this.ItemStackMaxTextBox.Location = new System.Drawing.Point(131, 213);
-            this.ItemStackMaxTextBox.Name = "ItemStackMaxTextBox";
-            this.ItemStackMaxTextBox.Size = new System.Drawing.Size(144, 20);
-            this.ItemStackMaxTextBox.TabIndex = 28;
-            this.EditorToolTip.SetToolTip(this.ItemStackMaxTextBox, "How many of these items can share a single inventory space.");
-            // 
-            // ItemRarityTextBox
-            // 
-            this.ItemRarityTextBox.Location = new System.Drawing.Point(131, 188);
-            this.ItemRarityTextBox.Name = "ItemRarityTextBox";
-            this.ItemRarityTextBox.Size = new System.Drawing.Size(144, 20);
-            this.ItemRarityTextBox.TabIndex = 27;
-            this.EditorToolTip.SetToolTip(this.ItemRarityTextBox, "How rare this item is compared to others.");
-            // 
-            // ItemTagListBox
-            // 
-            this.ItemTagListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.ItemTableLayoutPanel.SetColumnSpan(this.ItemTagListBox, 2);
-            this.ItemTagListBox.FormattingEnabled = true;
-            this.ItemTagListBox.Location = new System.Drawing.Point(131, 313);
-            this.ItemTagListBox.Name = "ItemTagListBox";
-            this.ItemTagListBox.Size = new System.Drawing.Size(295, 121);
-            this.ItemTagListBox.TabIndex = 1;
-            this.EditorToolTip.SetToolTip(this.ItemTagListBox, "Represents any additional functionality or characteristcs.");
-            // 
-            // ItemWorthLabel
-            // 
-            this.ItemWorthLabel.AutoSize = true;
-            this.ItemWorthLabel.Location = new System.Drawing.Point(3, 160);
-            this.ItemWorthLabel.Name = "ItemWorthLabel";
-            this.ItemWorthLabel.Size = new System.Drawing.Size(37, 13);
-            this.ItemWorthLabel.TabIndex = 12;
-            this.ItemWorthLabel.Text = "Worth";
-            this.EditorToolTip.SetToolTip(this.ItemWorthLabel, "Value of the item, perhaps its price.");
-            // 
-            // ItemRarityLabel
-            // 
-            this.ItemRarityLabel.AutoSize = true;
-            this.ItemRarityLabel.Location = new System.Drawing.Point(3, 185);
-            this.ItemRarityLabel.Name = "ItemRarityLabel";
-            this.ItemRarityLabel.Size = new System.Drawing.Size(36, 13);
-            this.ItemRarityLabel.TabIndex = 15;
-            this.ItemRarityLabel.Text = "Rarity";
-            this.EditorToolTip.SetToolTip(this.ItemRarityLabel, "How rare this item is compared to others.");
-            // 
-            // ItemStackMaxLabel
-            // 
-            this.ItemStackMaxLabel.AutoSize = true;
-            this.ItemStackMaxLabel.Location = new System.Drawing.Point(3, 210);
-            this.ItemStackMaxLabel.Name = "ItemStackMaxLabel";
-            this.ItemStackMaxLabel.Size = new System.Drawing.Size(56, 13);
-            this.ItemStackMaxLabel.TabIndex = 18;
-            this.ItemStackMaxLabel.Text = "Stack Max";
-            this.EditorToolTip.SetToolTip(this.ItemStackMaxLabel, "How many of these items can share a single inventory space.");
-            // 
-            // ItemTagsLabel
-            // 
-            this.ItemTagsLabel.AutoSize = true;
-            this.ItemTagsLabel.Location = new System.Drawing.Point(3, 310);
-            this.ItemTagsLabel.Name = "ItemTagsLabel";
-            this.ItemTagsLabel.Size = new System.Drawing.Size(30, 13);
-            this.ItemTagsLabel.TabIndex = 21;
-            this.ItemTagsLabel.Text = "Tags";
-            this.EditorToolTip.SetToolTip(this.ItemTagsLabel, "Represents any additional functionality or characteristcs.");
-            // 
-            // ItemWorthTextBox
-            // 
-            this.ItemWorthTextBox.Location = new System.Drawing.Point(131, 163);
-            this.ItemWorthTextBox.Name = "ItemWorthTextBox";
-            this.ItemWorthTextBox.Size = new System.Drawing.Size(144, 20);
-            this.ItemWorthTextBox.TabIndex = 26;
-            this.EditorToolTip.SetToolTip(this.ItemWorthTextBox, "Value of the item, perhaps its price.");
-            // 
-            // ItemEffectWhileHeldLabel
-            // 
-            this.ItemEffectWhileHeldLabel.AutoSize = true;
-            this.ItemEffectWhileHeldLabel.Location = new System.Drawing.Point(3, 235);
-            this.ItemEffectWhileHeldLabel.Name = "ItemEffectWhileHeldLabel";
-            this.ItemEffectWhileHeldLabel.Size = new System.Drawing.Size(89, 13);
-            this.ItemEffectWhileHeldLabel.TabIndex = 31;
-            this.ItemEffectWhileHeldLabel.Text = "Effect While Held";
-            this.EditorToolTip.SetToolTip(this.ItemEffectWhileHeldLabel, "A script that runs while the item is kept.");
-            // 
-            // ItemEffectWhenUsedLabel
-            // 
-            this.ItemEffectWhenUsedLabel.AutoSize = true;
-            this.ItemEffectWhenUsedLabel.Location = new System.Drawing.Point(3, 260);
-            this.ItemEffectWhenUsedLabel.Name = "ItemEffectWhenUsedLabel";
-            this.ItemEffectWhenUsedLabel.Size = new System.Drawing.Size(94, 13);
-            this.ItemEffectWhenUsedLabel.TabIndex = 32;
-            this.ItemEffectWhenUsedLabel.Text = "Effect When Used";
-            this.EditorToolTip.SetToolTip(this.ItemEffectWhenUsedLabel, "A script that runs when the item is used.");
-            // 
-            // ItemParquetLabel
-            // 
-            this.ItemParquetLabel.AutoSize = true;
-            this.ItemParquetLabel.Location = new System.Drawing.Point(3, 285);
-            this.ItemParquetLabel.Name = "ItemParquetLabel";
-            this.ItemParquetLabel.Size = new System.Drawing.Size(98, 13);
-            this.ItemParquetLabel.TabIndex = 33;
-            this.ItemParquetLabel.Text = "Equivalent Parquet";
-            this.EditorToolTip.SetToolTip(this.ItemParquetLabel, "The parquet this item represents, if any.");
-            // 
-            // ItemEffectWhileHeldComboBox
-            // 
-            this.ItemEffectWhileHeldComboBox.FormattingEnabled = true;
-            this.ItemEffectWhileHeldComboBox.Location = new System.Drawing.Point(131, 238);
-            this.ItemEffectWhileHeldComboBox.Name = "ItemEffectWhileHeldComboBox";
-            this.ItemEffectWhileHeldComboBox.Size = new System.Drawing.Size(144, 21);
-            this.ItemEffectWhileHeldComboBox.TabIndex = 34;
-            this.EditorToolTip.SetToolTip(this.ItemEffectWhileHeldComboBox, "A script that runs while the item is kept.");
-            // 
-            // ItemEquivalentParquetComboBox
-            // 
-            this.ItemEquivalentParquetComboBox.FormattingEnabled = true;
-            this.ItemEquivalentParquetComboBox.Location = new System.Drawing.Point(131, 288);
-            this.ItemEquivalentParquetComboBox.Name = "ItemEquivalentParquetComboBox";
-            this.ItemEquivalentParquetComboBox.Size = new System.Drawing.Size(144, 21);
-            this.ItemEquivalentParquetComboBox.TabIndex = 35;
-            this.EditorToolTip.SetToolTip(this.ItemEquivalentParquetComboBox, "The parquet this item represents, if any.");
             // 
             // ItemPixelBox
             // 
