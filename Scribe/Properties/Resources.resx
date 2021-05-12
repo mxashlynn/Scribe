@@ -435,9 +435,6 @@ Folder: {1}</value>
     <value>function:</value>
     <comment>Game encoding string.</comment>
   </data>
-  <data name="ParquetIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\parqueticon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="WarningUnkownColor" xml:space="preserve">
     <value>The value '{0}' could not be parsed as a Color.</value>
     <comment>Warning string.</comment>
@@ -528,5 +525,8 @@ Folder: {1}</value>
   <data name="InfoCannotUndo" xml:space="preserve">
     <value>No changes to undo!</value>
     <comment>Command report string.</comment>
+  </data>
+  <data name="ParquetIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>ParquetIcon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
