@@ -995,6 +995,7 @@ namespace Scribe.Forms
                                                                    regionToDuplicate.RegionAbove,
                                                                    regionToDuplicate.RegionBelow));
 
+            // TODO [MAPS] Track Statuses by their Models somehow, at least for Regions.
             // TODO [MAPS] Also duplicate RegionStatus once Map Editor is implemented.
 
             var description = string.Format(CultureInfo.CurrentCulture, Resources.ReportDuplicateDefinition,
