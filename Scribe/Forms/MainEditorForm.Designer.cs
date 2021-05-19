@@ -440,6 +440,20 @@ namespace Scribe.Forms
             this.ItemParquetLabel = new System.Windows.Forms.Label();
             this.ItemEffectWhileHeldComboBox = new System.Windows.Forms.ComboBox();
             this.ItemEquivalentParquetComboBox = new System.Windows.Forms.ComboBox();
+            this.FilterTextBox = new System.Windows.Forms.TextBox();
+            this.ContextMenuStripForTextEntries = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ToolStripMenuItemContextCut = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemContextCopy = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemContextPaste = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemContextClear = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.ToolStripMenuItemContextSelectAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.FilterByNameCheckBox = new System.Windows.Forms.CheckBox();
+            this.FilterByStoryIDCheckBox = new System.Windows.Forms.CheckBox();
+            this.FilterByDescriptionCheckBox = new System.Windows.Forms.CheckBox();
+            this.FilterByTagsCheckBox = new System.Windows.Forms.CheckBox();
+            this.FilterByCommentCheckBox = new System.Windows.Forms.CheckBox();
+            this.FilterByFunctionCheckBox = new System.Windows.Forms.CheckBox();
             this.EditorTabs = new System.Windows.Forms.TabControl();
             this.GamesTabPage = new System.Windows.Forms.TabPage();
             this.GameTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -563,21 +577,7 @@ namespace Scribe.Forms
             this.DocumentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ContextMenuStripForTextEntries = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.ToolStripMenuItemContextCut = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItemContextCopy = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItemContextPaste = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItemContextClear = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.ToolStripMenuItemContextSelectAll = new System.Windows.Forms.ToolStripMenuItem();
             this.FiltersTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.FilterTextBox = new System.Windows.Forms.TextBox();
-            this.FilterByNameCheckBox = new System.Windows.Forms.CheckBox();
-            this.FilterByStoryIDCheckBox = new System.Windows.Forms.CheckBox();
-            this.FilterByDescriptionCheckBox = new System.Windows.Forms.CheckBox();
-            this.FilterByTagsCheckBox = new System.Windows.Forms.CheckBox();
-            this.FilterByCommentCheckBox = new System.Windows.Forms.CheckBox();
-            this.FilterByFunctionCheckBox = new System.Windows.Forms.CheckBox();
             this.FilterGroupBox = new System.Windows.Forms.GroupBox();
             this.FlavorFilterGroupBox = new System.Windows.Forms.GroupBox();
             this.FlavorsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -587,6 +587,7 @@ namespace Scribe.Forms
             this.ContextMenuStripPictureBoxes.SuspendLayout();
             this.FileFormatGroupBox.SuspendLayout();
             this.FileFormatTableLayoutPanel.SuspendLayout();
+            this.ContextMenuStripForTextEntries.SuspendLayout();
             this.EditorTabs.SuspendLayout();
             this.GamesTabPage.SuspendLayout();
             this.GameTableLayoutPanel.SuspendLayout();
@@ -639,7 +640,6 @@ namespace Scribe.Forms
             this.RegionTableLayoutPanel.SuspendLayout();
             this.ScriptsTabPage.SuspendLayout();
             this.MainMenuBar.SuspendLayout();
-            this.ContextMenuStripForTextEntries.SuspendLayout();
             this.FiltersTableLayoutPanel.SuspendLayout();
             this.FilterGroupBox.SuspendLayout();
             this.FlavorFilterGroupBox.SuspendLayout();
@@ -5463,6 +5463,139 @@ namespace Scribe.Forms
             this.ItemEquivalentParquetComboBox.TabIndex = 35;
             this.EditorToolTip.SetToolTip(this.ItemEquivalentParquetComboBox, "The parquet this item represents, if any.");
             // 
+            // FilterTextBox
+            // 
+            this.FilterTextBox.ContextMenuStrip = this.ContextMenuStripForTextEntries;
+            this.FilterTextBox.Location = new System.Drawing.Point(3, 3);
+            this.FilterTextBox.Name = "FilterTextBox";
+            this.FilterTextBox.Size = new System.Drawing.Size(144, 20);
+            this.FilterTextBox.TabIndex = 2;
+            this.EditorToolTip.SetToolTip(this.FilterTextBox, "Text to filter for.");
+            // 
+            // ContextMenuStripForTextEntries
+            // 
+            this.ContextMenuStripForTextEntries.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemContextCut,
+            this.ToolStripMenuItemContextCopy,
+            this.ToolStripMenuItemContextPaste,
+            this.ToolStripMenuItemContextClear,
+            this.toolStripSeparator7,
+            this.ToolStripMenuItemContextSelectAll});
+            this.ContextMenuStripForTextEntries.Name = "ContextMenuStripForTextEntries";
+            this.ContextMenuStripForTextEntries.Size = new System.Drawing.Size(123, 120);
+            this.ContextMenuStripForTextEntries.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuStripForTextEntries_Opening);
+            // 
+            // ToolStripMenuItemContextCut
+            // 
+            this.ToolStripMenuItemContextCut.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemContextCut.Image")));
+            this.ToolStripMenuItemContextCut.Name = "ToolStripMenuItemContextCut";
+            this.ToolStripMenuItemContextCut.Size = new System.Drawing.Size(122, 22);
+            this.ToolStripMenuItemContextCut.Text = "Cut";
+            this.ToolStripMenuItemContextCut.Click += new System.EventHandler(this.ToolStripMenuItemContextCut_OnClick);
+            // 
+            // ToolStripMenuItemContextCopy
+            // 
+            this.ToolStripMenuItemContextCopy.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemContextCopy.Image")));
+            this.ToolStripMenuItemContextCopy.Name = "ToolStripMenuItemContextCopy";
+            this.ToolStripMenuItemContextCopy.Size = new System.Drawing.Size(122, 22);
+            this.ToolStripMenuItemContextCopy.Text = "Copy";
+            this.ToolStripMenuItemContextCopy.Click += new System.EventHandler(this.ToolStripMenuItemContextCopy_OnClick);
+            // 
+            // ToolStripMenuItemContextPaste
+            // 
+            this.ToolStripMenuItemContextPaste.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemContextPaste.Image")));
+            this.ToolStripMenuItemContextPaste.Name = "ToolStripMenuItemContextPaste";
+            this.ToolStripMenuItemContextPaste.Size = new System.Drawing.Size(122, 22);
+            this.ToolStripMenuItemContextPaste.Text = "Paste";
+            this.ToolStripMenuItemContextPaste.Click += new System.EventHandler(this.ToolStripMenuItemContextPaste_OnClick);
+            // 
+            // ToolStripMenuItemContextClear
+            // 
+            this.ToolStripMenuItemContextClear.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemContextClear.Image")));
+            this.ToolStripMenuItemContextClear.Name = "ToolStripMenuItemContextClear";
+            this.ToolStripMenuItemContextClear.Size = new System.Drawing.Size(122, 22);
+            this.ToolStripMenuItemContextClear.Text = "Clear";
+            this.ToolStripMenuItemContextClear.Click += new System.EventHandler(this.ToolStripMenuItemContextClear_OnClick);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(119, 6);
+            // 
+            // ToolStripMenuItemContextSelectAll
+            // 
+            this.ToolStripMenuItemContextSelectAll.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemContextSelectAll.Image")));
+            this.ToolStripMenuItemContextSelectAll.Name = "ToolStripMenuItemContextSelectAll";
+            this.ToolStripMenuItemContextSelectAll.Size = new System.Drawing.Size(122, 22);
+            this.ToolStripMenuItemContextSelectAll.Text = "Select All";
+            this.ToolStripMenuItemContextSelectAll.Click += new System.EventHandler(this.ToolStripMenuItemContextSelectAll_OnClick);
+            // 
+            // FilterByNameCheckBox
+            // 
+            this.FilterByNameCheckBox.AutoSize = true;
+            this.FilterByNameCheckBox.Location = new System.Drawing.Point(153, 3);
+            this.FilterByNameCheckBox.Name = "FilterByNameCheckBox";
+            this.FilterByNameCheckBox.Size = new System.Drawing.Size(53, 17);
+            this.FilterByNameCheckBox.TabIndex = 3;
+            this.FilterByNameCheckBox.Text = "Name";
+            this.EditorToolTip.SetToolTip(this.FilterByNameCheckBox, "Show models with matching names.");
+            this.FilterByNameCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // FilterByStoryIDCheckBox
+            // 
+            this.FilterByStoryIDCheckBox.AutoSize = true;
+            this.FilterByStoryIDCheckBox.Location = new System.Drawing.Point(153, 28);
+            this.FilterByStoryIDCheckBox.Name = "FilterByStoryIDCheckBox";
+            this.FilterByStoryIDCheckBox.Size = new System.Drawing.Size(66, 17);
+            this.FilterByStoryIDCheckBox.TabIndex = 6;
+            this.FilterByStoryIDCheckBox.Text = "Story ID";
+            this.EditorToolTip.SetToolTip(this.FilterByStoryIDCheckBox, "Show models with matching story identifiers.");
+            this.FilterByStoryIDCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // FilterByDescriptionCheckBox
+            // 
+            this.FilterByDescriptionCheckBox.AutoSize = true;
+            this.FilterByDescriptionCheckBox.Location = new System.Drawing.Point(253, 3);
+            this.FilterByDescriptionCheckBox.Name = "FilterByDescriptionCheckBox";
+            this.FilterByDescriptionCheckBox.Size = new System.Drawing.Size(79, 17);
+            this.FilterByDescriptionCheckBox.TabIndex = 4;
+            this.FilterByDescriptionCheckBox.Text = "Description";
+            this.EditorToolTip.SetToolTip(this.FilterByDescriptionCheckBox, "Show models with matching descriptions.");
+            this.FilterByDescriptionCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // FilterByTagsCheckBox
+            // 
+            this.FilterByTagsCheckBox.AutoSize = true;
+            this.FilterByTagsCheckBox.Location = new System.Drawing.Point(253, 28);
+            this.FilterByTagsCheckBox.Name = "FilterByTagsCheckBox";
+            this.FilterByTagsCheckBox.Size = new System.Drawing.Size(49, 17);
+            this.FilterByTagsCheckBox.TabIndex = 7;
+            this.FilterByTagsCheckBox.Text = "Tags";
+            this.EditorToolTip.SetToolTip(this.FilterByTagsCheckBox, "Show models with matching tag text.");
+            this.FilterByTagsCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // FilterByCommentCheckBox
+            // 
+            this.FilterByCommentCheckBox.AutoSize = true;
+            this.FilterByCommentCheckBox.Location = new System.Drawing.Point(353, 3);
+            this.FilterByCommentCheckBox.Name = "FilterByCommentCheckBox";
+            this.FilterByCommentCheckBox.Size = new System.Drawing.Size(71, 17);
+            this.FilterByCommentCheckBox.TabIndex = 5;
+            this.FilterByCommentCheckBox.Text = "Comment";
+            this.EditorToolTip.SetToolTip(this.FilterByCommentCheckBox, "Show models with matching comments.");
+            this.FilterByCommentCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // FilterByFunctionCheckBox
+            // 
+            this.FilterByFunctionCheckBox.AutoSize = true;
+            this.FilterByFunctionCheckBox.Location = new System.Drawing.Point(353, 28);
+            this.FilterByFunctionCheckBox.Name = "FilterByFunctionCheckBox";
+            this.FilterByFunctionCheckBox.Size = new System.Drawing.Size(88, 17);
+            this.FilterByFunctionCheckBox.TabIndex = 8;
+            this.FilterByFunctionCheckBox.Text = "Function Tag";
+            this.EditorToolTip.SetToolTip(this.FilterByFunctionCheckBox, "Show models with matching function tags.");
+            this.FilterByFunctionCheckBox.UseVisualStyleBackColor = true;
+            // 
             // EditorTabs
             // 
             this.EditorTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -7429,64 +7562,6 @@ namespace Scribe.Forms
             this.AboutToolStripMenuItem.Text = "&About...";
             this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutMenuItem_Click);
             // 
-            // ContextMenuStripForTextEntries
-            // 
-            this.ContextMenuStripForTextEntries.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMenuItemContextCut,
-            this.ToolStripMenuItemContextCopy,
-            this.ToolStripMenuItemContextPaste,
-            this.ToolStripMenuItemContextClear,
-            this.toolStripSeparator7,
-            this.ToolStripMenuItemContextSelectAll});
-            this.ContextMenuStripForTextEntries.Name = "ContextMenuStripForTextEntries";
-            this.ContextMenuStripForTextEntries.Size = new System.Drawing.Size(123, 120);
-            this.ContextMenuStripForTextEntries.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuStripForTextEntries_Opening);
-            // 
-            // ToolStripMenuItemContextCut
-            // 
-            this.ToolStripMenuItemContextCut.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemContextCut.Image")));
-            this.ToolStripMenuItemContextCut.Name = "ToolStripMenuItemContextCut";
-            this.ToolStripMenuItemContextCut.Size = new System.Drawing.Size(122, 22);
-            this.ToolStripMenuItemContextCut.Text = "Cut";
-            this.ToolStripMenuItemContextCut.Click += new System.EventHandler(this.ToolStripMenuItemContextCut_OnClick);
-            // 
-            // ToolStripMenuItemContextCopy
-            // 
-            this.ToolStripMenuItemContextCopy.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemContextCopy.Image")));
-            this.ToolStripMenuItemContextCopy.Name = "ToolStripMenuItemContextCopy";
-            this.ToolStripMenuItemContextCopy.Size = new System.Drawing.Size(122, 22);
-            this.ToolStripMenuItemContextCopy.Text = "Copy";
-            this.ToolStripMenuItemContextCopy.Click += new System.EventHandler(this.ToolStripMenuItemContextCopy_OnClick);
-            // 
-            // ToolStripMenuItemContextPaste
-            // 
-            this.ToolStripMenuItemContextPaste.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemContextPaste.Image")));
-            this.ToolStripMenuItemContextPaste.Name = "ToolStripMenuItemContextPaste";
-            this.ToolStripMenuItemContextPaste.Size = new System.Drawing.Size(122, 22);
-            this.ToolStripMenuItemContextPaste.Text = "Paste";
-            this.ToolStripMenuItemContextPaste.Click += new System.EventHandler(this.ToolStripMenuItemContextPaste_OnClick);
-            // 
-            // ToolStripMenuItemContextClear
-            // 
-            this.ToolStripMenuItemContextClear.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemContextClear.Image")));
-            this.ToolStripMenuItemContextClear.Name = "ToolStripMenuItemContextClear";
-            this.ToolStripMenuItemContextClear.Size = new System.Drawing.Size(122, 22);
-            this.ToolStripMenuItemContextClear.Text = "Clear";
-            this.ToolStripMenuItemContextClear.Click += new System.EventHandler(this.ToolStripMenuItemContextClear_OnClick);
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(119, 6);
-            // 
-            // ToolStripMenuItemContextSelectAll
-            // 
-            this.ToolStripMenuItemContextSelectAll.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuItemContextSelectAll.Image")));
-            this.ToolStripMenuItemContextSelectAll.Name = "ToolStripMenuItemContextSelectAll";
-            this.ToolStripMenuItemContextSelectAll.Size = new System.Drawing.Size(122, 22);
-            this.ToolStripMenuItemContextSelectAll.Text = "Select All";
-            this.ToolStripMenuItemContextSelectAll.Click += new System.EventHandler(this.ToolStripMenuItemContextSelectAll_OnClick);
-            // 
             // FiltersTableLayoutPanel
             // 
             this.FiltersTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -7511,81 +7586,6 @@ namespace Scribe.Forms
             this.FiltersTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.FiltersTableLayoutPanel.Size = new System.Drawing.Size(443, 50);
             this.FiltersTableLayoutPanel.TabIndex = 3;
-            // 
-            // FilterTextBox
-            // 
-            this.FilterTextBox.ContextMenuStrip = this.ContextMenuStripForTextEntries;
-            this.FilterTextBox.Location = new System.Drawing.Point(3, 3);
-            this.FilterTextBox.Name = "FilterTextBox";
-            this.FilterTextBox.Size = new System.Drawing.Size(144, 20);
-            this.FilterTextBox.TabIndex = 2;
-            this.EditorToolTip.SetToolTip(this.FilterTextBox, "Text to filter for.");
-            // 
-            // FilterByNameCheckBox
-            // 
-            this.FilterByNameCheckBox.AutoSize = true;
-            this.FilterByNameCheckBox.Location = new System.Drawing.Point(153, 3);
-            this.FilterByNameCheckBox.Name = "FilterByNameCheckBox";
-            this.FilterByNameCheckBox.Size = new System.Drawing.Size(53, 17);
-            this.FilterByNameCheckBox.TabIndex = 3;
-            this.FilterByNameCheckBox.Text = "Name";
-            this.EditorToolTip.SetToolTip(this.FilterByNameCheckBox, "Show models with matching names.");
-            this.FilterByNameCheckBox.UseVisualStyleBackColor = false;
-            // 
-            // FilterByStoryIDCheckBox
-            // 
-            this.FilterByStoryIDCheckBox.AutoSize = true;
-            this.FilterByStoryIDCheckBox.Location = new System.Drawing.Point(153, 28);
-            this.FilterByStoryIDCheckBox.Name = "FilterByStoryIDCheckBox";
-            this.FilterByStoryIDCheckBox.Size = new System.Drawing.Size(66, 17);
-            this.FilterByStoryIDCheckBox.TabIndex = 6;
-            this.FilterByStoryIDCheckBox.Text = "Story ID";
-            this.EditorToolTip.SetToolTip(this.FilterByStoryIDCheckBox, "Show models with matching story identifiers.");
-            this.FilterByStoryIDCheckBox.UseVisualStyleBackColor = false;
-            // 
-            // FilterByDescriptionCheckBox
-            // 
-            this.FilterByDescriptionCheckBox.AutoSize = true;
-            this.FilterByDescriptionCheckBox.Location = new System.Drawing.Point(253, 3);
-            this.FilterByDescriptionCheckBox.Name = "FilterByDescriptionCheckBox";
-            this.FilterByDescriptionCheckBox.Size = new System.Drawing.Size(79, 17);
-            this.FilterByDescriptionCheckBox.TabIndex = 4;
-            this.FilterByDescriptionCheckBox.Text = "Description";
-            this.EditorToolTip.SetToolTip(this.FilterByDescriptionCheckBox, "Show models with matching descriptions.");
-            this.FilterByDescriptionCheckBox.UseVisualStyleBackColor = false;
-            // 
-            // FilterByTagsCheckBox
-            // 
-            this.FilterByTagsCheckBox.AutoSize = true;
-            this.FilterByTagsCheckBox.Location = new System.Drawing.Point(253, 28);
-            this.FilterByTagsCheckBox.Name = "FilterByTagsCheckBox";
-            this.FilterByTagsCheckBox.Size = new System.Drawing.Size(49, 17);
-            this.FilterByTagsCheckBox.TabIndex = 7;
-            this.FilterByTagsCheckBox.Text = "Tags";
-            this.EditorToolTip.SetToolTip(this.FilterByTagsCheckBox, "Show models with matching tag text.");
-            this.FilterByTagsCheckBox.UseVisualStyleBackColor = false;
-            // 
-            // FilterByCommentCheckBox
-            // 
-            this.FilterByCommentCheckBox.AutoSize = true;
-            this.FilterByCommentCheckBox.Location = new System.Drawing.Point(353, 3);
-            this.FilterByCommentCheckBox.Name = "FilterByCommentCheckBox";
-            this.FilterByCommentCheckBox.Size = new System.Drawing.Size(71, 17);
-            this.FilterByCommentCheckBox.TabIndex = 5;
-            this.FilterByCommentCheckBox.Text = "Comment";
-            this.EditorToolTip.SetToolTip(this.FilterByCommentCheckBox, "Show models with matching comments.");
-            this.FilterByCommentCheckBox.UseVisualStyleBackColor = false;
-            // 
-            // FilterByFunctionCheckBox
-            // 
-            this.FilterByFunctionCheckBox.AutoSize = true;
-            this.FilterByFunctionCheckBox.Location = new System.Drawing.Point(353, 28);
-            this.FilterByFunctionCheckBox.Name = "FilterByFunctionCheckBox";
-            this.FilterByFunctionCheckBox.Size = new System.Drawing.Size(88, 17);
-            this.FilterByFunctionCheckBox.TabIndex = 8;
-            this.FilterByFunctionCheckBox.Text = "Function Tag";
-            this.EditorToolTip.SetToolTip(this.FilterByFunctionCheckBox, "Show models with matching function tags.");
-            this.FilterByFunctionCheckBox.UseVisualStyleBackColor = true;
             // 
             // FilterGroupBox
             // 
@@ -7670,6 +7670,7 @@ namespace Scribe.Forms
             this.FileFormatGroupBox.ResumeLayout(false);
             this.FileFormatTableLayoutPanel.ResumeLayout(false);
             this.FileFormatTableLayoutPanel.PerformLayout();
+            this.ContextMenuStripForTextEntries.ResumeLayout(false);
             this.EditorTabs.ResumeLayout(false);
             this.GamesTabPage.ResumeLayout(false);
             this.GamesTabPage.PerformLayout();
@@ -7753,7 +7754,6 @@ namespace Scribe.Forms
             this.ScriptsTabPage.PerformLayout();
             this.MainMenuBar.ResumeLayout(false);
             this.MainMenuBar.PerformLayout();
-            this.ContextMenuStripForTextEntries.ResumeLayout(false);
             this.FiltersTableLayoutPanel.ResumeLayout(false);
             this.FiltersTableLayoutPanel.PerformLayout();
             this.FilterGroupBox.ResumeLayout(false);
