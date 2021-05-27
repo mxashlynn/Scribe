@@ -17,6 +17,7 @@
     <Copyright>2018-2021 Paige Ashlynn</Copyright>
     <ApplicationIcon>ParquetIcon.ico</ApplicationIcon>
     <PackageIcon>ParquetLogo.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageProjectUrl>http://parquet.gay/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/mxashlynn/Scribe</RepositoryUrl>
@@ -69,6 +70,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Include="..\LICENSE.txt">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
