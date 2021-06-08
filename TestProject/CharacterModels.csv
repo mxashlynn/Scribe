@@ -1,4 +1,4 @@
 ﻿ID,Name,Description,Comment,Tags,NativeBiomeID,PrimaryBehaviorID,AvoidsIDs,SeeksIDs,PronounKey,StoryCharacterID,StartingLocation,StartingQuestIDs,StartingDialogueID,StartingInventory
 -60000,Test§NPC,Test,Test,Test-Tag,None,120000,,,xe/xem,TEST_NPC,None·0–0,,None,
 60000,Missy§Titan,Sharp and sweet.,Come on in!,,70004,120001,,,she/her,MISSY_TITAN,None·0–0,130000,None,
-60001,DotDot§Dot,Loves to understand how things work.,,,70010,120002,,,they/them,DOTDOT,110001·2–2,,130000,140000·5❟140001·2
+60001,DotDot§Dot,Loves to understand how things work.,,,70010,120002,,,fae/faer,DOTDOT,110001·2–2,,130000,140000·5❟140001·2
