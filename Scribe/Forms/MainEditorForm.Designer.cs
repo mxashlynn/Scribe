@@ -321,8 +321,6 @@ namespace Scribe.Forms
             this.RoomRequiredFloorsLabel = new System.Windows.Forms.Label();
             this.RoomRequiredFurnishingsLabel = new System.Windows.Forms.Label();
             this.RoomRequiredFurnishingsListBox = new System.Windows.Forms.ListBox();
-            this.CraftingPanelsCountStatic = new System.Windows.Forms.Label();
-            this.CraftingOpenPatternEditorButton = new System.Windows.Forms.Button();
             this.CraftingAddProductButton = new System.Windows.Forms.Button();
             this.CraftingRemoveProductButton = new System.Windows.Forms.Button();
             this.CraftingAddIngredientButton = new System.Windows.Forms.Button();
@@ -333,7 +331,6 @@ namespace Scribe.Forms
             this.CraftingNameTextBox = new System.Windows.Forms.TextBox();
             this.CraftingProductsLabel = new System.Windows.Forms.Label();
             this.CraftingProductsListBox = new System.Windows.Forms.ListBox();
-            this.CraftingStrikePatternLabel = new System.Windows.Forms.Label();
             this.RoomMinWalkableSpacesLabel = new System.Windows.Forms.Label();
             this.RoomMaxWalkableSpacesLabel = new System.Windows.Forms.Label();
             this.RoomMinWalkableSpacesTextBox = new System.Windows.Forms.TextBox();
@@ -4216,33 +4213,6 @@ namespace Scribe.Forms
             this.RoomRequiredFurnishingsListBox.TabIndex = 28;
             this.EditorToolTip.SetToolTip(this.RoomRequiredFurnishingsListBox, "Any Furnishing parquet categories this room type requires.");
             // 
-            // CraftingPanelsCountStatic
-            // 
-            this.CraftingPanelsCountStatic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingPanelsCountStatic.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CraftingPanelsCountStatic.Location = new System.Drawing.Point(146, 415);
-            this.CraftingPanelsCountStatic.Name = "CraftingPanelsCountStatic";
-            this.CraftingPanelsCountStatic.Size = new System.Drawing.Size(137, 20);
-            this.CraftingPanelsCountStatic.TabIndex = 43;
-            this.CraftingPanelsCountStatic.Tag = "Themed";
-            this.CraftingPanelsCountStatic.Text = "0 Panels";
-            this.CraftingPanelsCountStatic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.EditorToolTip.SetToolTip(this.CraftingPanelsCountStatic, "Number of panels used in this recipe.");
-            // 
-            // CraftingOpenPatternEditorButton
-            // 
-            this.CraftingOpenPatternEditorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CraftingOpenPatternEditorButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CraftingOpenPatternEditorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CraftingOpenPatternEditorButton.Location = new System.Drawing.Point(297, 420);
-            this.CraftingOpenPatternEditorButton.Name = "CraftingOpenPatternEditorButton";
-            this.CraftingOpenPatternEditorButton.Size = new System.Drawing.Size(129, 23);
-            this.CraftingOpenPatternEditorButton.TabIndex = 2;
-            this.CraftingOpenPatternEditorButton.Text = "Open Pattern Editor";
-            this.EditorToolTip.SetToolTip(this.CraftingOpenPatternEditorButton, "Launches the minigame editor.");
-            this.CraftingOpenPatternEditorButton.UseVisualStyleBackColor = false;
-            this.CraftingOpenPatternEditorButton.Click += new System.EventHandler(this.CraftingOpenPatternEditorButton_Click);
-            // 
             // CraftingAddProductButton
             // 
             this.CraftingAddProductButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -4359,16 +4329,6 @@ namespace Scribe.Forms
             this.CraftingProductsListBox.Size = new System.Drawing.Size(279, 95);
             this.CraftingProductsListBox.TabIndex = 28;
             this.EditorToolTip.SetToolTip(this.CraftingProductsListBox, "Any items that result from following this recipe.");
-            // 
-            // CraftingStrikePatternLabel
-            // 
-            this.CraftingStrikePatternLabel.AutoSize = true;
-            this.CraftingStrikePatternLabel.Location = new System.Drawing.Point(3, 405);
-            this.CraftingStrikePatternLabel.Name = "CraftingStrikePatternLabel";
-            this.CraftingStrikePatternLabel.Size = new System.Drawing.Size(115, 13);
-            this.CraftingStrikePatternLabel.TabIndex = 31;
-            this.CraftingStrikePatternLabel.Text = "Crafting Strike Pattern";
-            this.EditorToolTip.SetToolTip(this.CraftingStrikePatternLabel, "Definitions for a crafting minigame.");
             // 
             // RoomMinWalkableSpacesLabel
             // 
@@ -6856,8 +6816,6 @@ namespace Scribe.Forms
             this.CraftingTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.CraftingTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.CraftingTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.CraftingTableLayoutPanel.Controls.Add(this.CraftingPanelsCountStatic, 1, 7);
-            this.CraftingTableLayoutPanel.Controls.Add(this.CraftingOpenPatternEditorButton, 2, 7);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingAddProductButton, 2, 4);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingRemoveProductButton, 1, 4);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingAddIngredientButton, 2, 6);
@@ -6872,7 +6830,6 @@ namespace Scribe.Forms
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingCommentTextBox, 1, 2);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingProductsLabel, 0, 3);
             this.CraftingTableLayoutPanel.Controls.Add(this.CraftingProductsListBox, 1, 3);
-            this.CraftingTableLayoutPanel.Controls.Add(this.CraftingStrikePatternLabel, 0, 7);
             this.CraftingTableLayoutPanel.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.CraftingTableLayoutPanel.Location = new System.Drawing.Point(307, 16);
             this.CraftingTableLayoutPanel.Name = "CraftingTableLayoutPanel";
@@ -8253,7 +8210,6 @@ namespace Scribe.Forms
         private ParquetCustomControls.PixelBox CraftingPixelBox;
         private System.Windows.Forms.Button CraftingAddNewCraftingButton;
         private System.Windows.Forms.Button CraftingRemoveCraftingButton;
-        private System.Windows.Forms.Button CraftingOpenPatternEditorButton;
         private System.Windows.Forms.Button CraftingAddIngredientButton;
         private System.Windows.Forms.Button CraftingRemoveIngredientButton;
         private System.Windows.Forms.ListBox CraftingIngredientsListBox;
@@ -8269,10 +8225,8 @@ namespace Scribe.Forms
         private System.Windows.Forms.TextBox CraftingMaxIngredientCountTextBox;
         private System.Windows.Forms.TextBox CraftingMaxProductCountTextBox;
         private System.Windows.Forms.ListBox CraftingProductsListBox;
-        private System.Windows.Forms.Label CraftingPanelsCountStatic;
         private System.Windows.Forms.Label CraftingStrikePatternDimensionLabelLabel;
         private System.Windows.Forms.Label CraftingStrikePatternDimensionLabelStatic;
-        private System.Windows.Forms.Label CraftingStrikePatternLabel;
 
         private System.Windows.Forms.TabPage RoomRecipesTabPage;
         private System.Windows.Forms.ListBox RoomListBox;

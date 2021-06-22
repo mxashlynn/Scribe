@@ -146,9 +146,6 @@ namespace Scribe.Forms
         /// <summary>Dialogue allowing customization of the application's behavior.</summary>
         private readonly OptionsBox OptionsDialogue = new();
 
-        /// <summary>Window for editing <see cref="StrikePanelGrid"/>s.</summary>
-        private readonly StrikePatternEditorForm StrikePatternEditorWindow = new();
-
         /// <summary>Dialogue displaying the results of a roller command.</summary>
         private readonly RollerOutputBox RollerResultsBox = new();
 
@@ -2138,7 +2135,6 @@ namespace Scribe.Forms
                     (string)(EditableControls[typeof(TextBox)][CraftingCommentTextBox] = "");
                 CraftingProductsListBox.Items.Clear();
                 CraftingIngredientsListBox.Items.Clear();
-                CraftingPanelsCountStatic.Text = $"{0} {nameof(StrikePanel)}s";
                 CraftingPixelBox.Image = Resources.ImageNotFound;
             }
             else if (CraftingListBox.SelectedItem is CraftingRecipe recipe)
@@ -2152,7 +2148,6 @@ namespace Scribe.Forms
                     (string)(EditableControls[typeof(TextBox)][CraftingCommentTextBox] = recipe.Comment);
                 RepopulateListBox(CraftingProductsListBox, recipe.Products);
                 RepopulateListBox(CraftingIngredientsListBox, recipe.Ingredients);
-                CraftingPanelsCountStatic.Text = $"{recipe.PanelPattern?.Count ?? 0} {nameof(StrikePanel)}s";
                 PictureBoxLoadFromStorage(CraftingPixelBox, recipe.ID);
             }
         }
@@ -3468,26 +3463,6 @@ namespace Scribe.Forms
         /// <param name="inEventArguments">Additional event data.</param>
         private void CraftingRemoveIngredientButton_Click(object inSender, EventArgs inEventArguments)
             => RemoveRecipeElement(CraftingIngredientsListBox, (IMutableCraftingRecipe recipe) => recipe.Ingredients);
-
-        /// <summary>
-        /// Invokes the <see cref="StrikePatternEditorForm"/> for the currently selected <see cref="CraftingRecipe"/>.
-        /// </summary>
-        /// <param name="inSender">The originator of the event.</param>
-        /// <param name="inEventArguments">Additional event data.</param>
-        private void CraftingOpenPatternEditorButton_Click(object inSender, EventArgs inEventArguments)
-        {
-            _ = MessageBox.Show(Resources.WarningNotImplemented, Resources.CaptionWorkflow, MessageBoxButtons.OK);
-            // TODO [MINI GAME] Reenable this once we fully implement StrikePanel-based crafting.
-            /*
-            StrikePatternEditorWindow.CurrentCraft = (CraftingRecipe)GetSelectedModelForTab(EditorTabs.SelectedIndex);
-            if (StrikePatternEditorWindow.ShowDialog() == DialogResult.Abort)
-            {
-                SystemSounds.Beep.Play();
-                Logger.Log(LogLevel.Warning, Resources.WarningNothingSelected);
-            }
-            */
-            }
-
         #endregion
 
         #region Rooms Tab
@@ -4148,7 +4123,6 @@ namespace Scribe.Forms
             SelectFunctionDialogue.Dispose();
             InventoryEditorWindow.Dispose();
             OptionsDialogue.Dispose();
-            StrikePatternEditorWindow.Dispose();
             RollerResultsBox.Dispose();
             SelectColorDialogue.Dispose();
             LayoutToolWindow.Dispose();

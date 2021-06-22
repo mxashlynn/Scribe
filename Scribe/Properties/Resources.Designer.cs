@@ -970,16 +970,6 @@ namespace Scribe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap StrikeRangeDiagram {
-            get {
-                object obj = ResourceManager.GetObject("StrikeRangeDiagram", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to flavor:.
         /// </summary>
         internal static string TagPrefixFlavor {
