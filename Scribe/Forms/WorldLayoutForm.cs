@@ -723,7 +723,7 @@ namespace Scribe.Forms
                 return;
             }
 
-            if (string.Compare(RegionNameTextBox.Text, model.Name, StringComparison.OrdinalIgnoreCase) != 0)
+            if (!string.Equals(RegionNameTextBox.Text, model.Name, StringComparison.OrdinalIgnoreCase))
             {
                 ScribeProgram.MostRecentUpdateSource = this;
 
@@ -761,7 +761,7 @@ namespace Scribe.Forms
                 return;
             }
 
-            if (string.Compare(RegionDescriptionTextBox.Text, model.Description, StringComparison.OrdinalIgnoreCase) != 0)
+            if (!string.Equals(RegionDescriptionTextBox.Text, model.Description, StringComparison.OrdinalIgnoreCase))
             {
                 var mutableModel = (IMutableRegionModel)model;
                 var oldValue = model.Description;
@@ -794,7 +794,7 @@ namespace Scribe.Forms
                 return;
             }
 
-            if (string.Compare(RegionCommentTextBox.Text, model.Comment, StringComparison.OrdinalIgnoreCase) != 0)
+            if (!string.Equals(RegionCommentTextBox.Text, model.Comment, StringComparison.OrdinalIgnoreCase))
             {
                 var mutableModel = (IMutableRegionModel)model;
                 var oldValue = model.Comment;

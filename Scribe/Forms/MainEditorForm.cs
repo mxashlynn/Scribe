@@ -419,32 +419,26 @@ namespace Scribe.Forms
             themed[typeof(GroupBox)].AddRange(this.GetAllChildrenExactlyOfType<GroupBox>()
                                                   .Where(groupBox => groupBox.Tag is null
                                                                   || (groupBox.Tag is string tag
-                                                                      && string.Compare(tag, UnthemedControl,
-                                                                                        StringComparison.OrdinalIgnoreCase) != 0)));
+                                                                      && !string.Equals(tag, UnthemedControl, StringComparison.OrdinalIgnoreCase))));
             themed[typeof(ListBox)].AddRange(this.GetAllChildrenExactlyOfType<ListBox>()
                                                  .Where(listbox => listbox.Tag is null
                                                                 || (listbox.Tag is string tag
-                                                                    && string.Compare(tag, UnthemedControl,
-                                                                                      StringComparison.OrdinalIgnoreCase) != 0)));
+                                                                    && !string.Equals(tag, UnthemedControl, StringComparison.OrdinalIgnoreCase))));
             themed[typeof(ComboBox)].AddRange(this.GetAllChildrenExactlyOfType<ComboBox>()
                                                   .Where(combobox => combobox.Tag is null
                                                                   || (combobox.Tag is string tag
-                                                                      && string.Compare(tag, UnthemedControl,
-                                                                                        StringComparison.OrdinalIgnoreCase) != 0)));
+                                                                      && !string.Equals(tag, UnthemedControl, StringComparison.OrdinalIgnoreCase))));
             themed[typeof(TextBox)].AddRange(this.GetAllChildrenExactlyOfType<TextBox>()
                                                  .Where(textbox => textbox.Tag is null
                                                                 || (textbox.Tag is string tag
-                                                                    && string.Compare(tag, UnthemedControl,
-                                                                                      StringComparison.OrdinalIgnoreCase) != 0)));
+                                                                    && !string.Equals(tag, UnthemedControl, StringComparison.OrdinalIgnoreCase))));
             themed[typeof(Label)].AddRange(this.GetAllChildrenExactlyOfType<Label>()
                                                .Where(label => label.Tag is string tag
-                                                            && string.Compare(tag, ThemedLabel,
-                                                                              StringComparison.OrdinalIgnoreCase) == 0));
+                                                            && string.Equals(tag, ThemedLabel, StringComparison.OrdinalIgnoreCase)));
             themed[typeof(Button)].AddRange(this.GetAllChildrenExactlyOfType<Button>()
                                                 .Where(button => button.Tag is null
                                                               || (button.Tag is string tag
-                                                                  && string.Compare(tag, UnthemedControl,
-                                                                                    StringComparison.OrdinalIgnoreCase) != 0)));
+                                                                  && !string.Equals(tag, UnthemedControl, StringComparison.OrdinalIgnoreCase))));
             return themed;
         }
 
@@ -1152,7 +1146,7 @@ namespace Scribe.Forms
             #endregion
 
             #region Update Theming
-            if (string.Compare(OldThemeName, Settings.Default.CurrentEditorTheme, StringComparison.OrdinalIgnoreCase) != 0)
+            if (!string.Equals(OldThemeName, Settings.Default.CurrentEditorTheme, StringComparison.OrdinalIgnoreCase))
             {
                 ApplyCurrentTheme();
             }
@@ -1188,7 +1182,7 @@ namespace Scribe.Forms
             // Also restarts the text-clearing timer.
             if (inSender is ToolStripStatusLabel statusLabel
                 && !string.IsNullOrEmpty(statusLabel.Text)
-                && string.Compare(statusLabel.Text, Resources.LogReady, StringComparison.OrdinalIgnoreCase) != 0)
+                && !string.Equals(statusLabel.Text, Resources.LogReady, StringComparison.OrdinalIgnoreCase))
             {
                 ClearStatusTimer.Stop();
                 ClearStatusTimer.Start();
@@ -2329,9 +2323,7 @@ namespace Scribe.Forms
             ScribeProgram.MostRecentUpdateSource = this;
 
             if (alteredControl is TextBox textbox
-                && string.Compare(textbox.Text,
-                                  (string)EditableControls[typeof(TextBox)][textbox],
-                                  comparisonType: StringComparison.OrdinalIgnoreCase) != 0)
+                && !string.Equals(textbox.Text, (string)EditableControls[typeof(TextBox)][textbox], StringComparison.OrdinalIgnoreCase))
             {
                 var oldValue = EditableControls[typeof(TextBox)][textbox];
                 var newValue = textbox.Text;
@@ -2421,8 +2413,8 @@ namespace Scribe.Forms
 
             // Suggest a StoryCharacterID if needed and requested.
             // For timing reasons, this must happen before updating the model's ListBox.
-            if ((string.Compare(alteredControl.Name, CharacterPersonalNameTextBox.Name, StringComparison.OrdinalIgnoreCase) == 0
-                || string.Compare(alteredControl.Name, CharacterFamilyNameTextBox.Name, StringComparison.OrdinalIgnoreCase) == 0)
+            if ((string.Equals(alteredControl.Name, CharacterPersonalNameTextBox.Name, StringComparison.OrdinalIgnoreCase)
+                || string.Equals(alteredControl.Name, CharacterFamilyNameTextBox.Name, StringComparison.OrdinalIgnoreCase))
                 && Settings.Default.SuggestStoryIDs
                 && string.IsNullOrEmpty(CharacterStoryIDTextBox.Text))
             {
@@ -2569,9 +2561,7 @@ namespace Scribe.Forms
             if (GetSelectedModelForTab(EditorTabs.SelectedIndex) is TInterface model
                 && AddTagDialogue.ShowDialog() == DialogResult.OK)
             {
-                if (inGetTagListFromModel(model).Any(tag => string.Compare(AddTagDialogue.ReturnNewTag,
-                                                                           tag,
-                                                                           StringComparison.OrdinalIgnoreCase) == 0))
+                if (inGetTagListFromModel(model).Any(tag => string.Equals(AddTagDialogue.ReturnNewTag, tag, StringComparison.OrdinalIgnoreCase)))
                 {
                     SystemSounds.Beep.Play();
                     Logger.Log(LogLevel.Warning, string.Format(CultureInfo.InvariantCulture, Resources.WarningNotAddingDuplicate,

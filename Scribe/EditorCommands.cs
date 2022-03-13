@@ -125,7 +125,7 @@ namespace Scribe
         /// <returns><c>True</c> if the text is a reserved word, <c>false</c> otherwise.</returns>
         internal static bool TextIsReserved(string newText)
             => ReservedWorldList
-               .Any(reservedWord => 0 == string.Compare(newText, reservedWord, comparisonType: StringComparison.OrdinalIgnoreCase));
+               .Any(reservedWord => string.Equals(newText, reservedWord, StringComparison.OrdinalIgnoreCase));
 
         /// <summary>
         /// Replaces all whitespace in the given text with the ASCII space character.

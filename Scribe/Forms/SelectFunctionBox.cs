@@ -69,7 +69,7 @@ namespace Scribe.Forms
         /// <param name="inEventArguments">Additional event data.</param>
         private void OkayButton_Click(object inSender, EventArgs inEventArguments)
         {
-            SpecificFunctionChosen = string.Compare("(None)", NewTagComboBox.SelectedText, StringComparison.OrdinalIgnoreCase) != 0;
+            SpecificFunctionChosen = !string.Equals("(None)", NewTagComboBox.SelectedText, StringComparison.OrdinalIgnoreCase);
             ReturnNewFunction = NewTagComboBox.SelectedText;
             DialogResult = DialogResult.OK;
             Close();
