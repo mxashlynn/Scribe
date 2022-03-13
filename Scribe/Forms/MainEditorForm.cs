@@ -633,7 +633,6 @@ namespace Scribe.Forms
         /// </summary>
         /// <param name="input">A boxed <see cref="ModelID.None"/> or a <c>string</c> representing an <see cref="ModelID"/>.</param>
         /// <returns>The identifier given, or <see cref="ModelID.None"/> if no ID could be parsed.</returns>
-        [SuppressMessage("Maintainability", "CA1508:Avoid dead conditional code", Justification = "False positive.")]
         private static ModelID ValueToID(object input)
             => input is Model model
                 ? model.ID
