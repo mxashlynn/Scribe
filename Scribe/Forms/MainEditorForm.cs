@@ -71,7 +71,7 @@ namespace Scribe.Forms
 
                     var exitCode = (ExitCode)whereProcess.ExitCode;
                     return exitCode == ExitCode.Success
-                        ? output.Substring(0, output.IndexOf(Environment.NewLine, StringComparison.OrdinalIgnoreCase))
+                        ? output[..output.IndexOf(Environment.NewLine, StringComparison.OrdinalIgnoreCase)]
                         : Path.GetFullPath(Directory.GetCurrentDirectory());
                 }
                 catch (Win32Exception)
