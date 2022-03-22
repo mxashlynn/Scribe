@@ -14,7 +14,7 @@
     <Authors>Paige Ashlynn</Authors>
     <Company>Girl Potion</Company>
     <Description>A set of Windows Forms controls for the Scribe editor.</Description>
-    <Copyright>2018-2021 Paige Ashlynn</Copyright>
+    <Copyright>2018-2022 Paige Ashlynn</Copyright>
     <ApplicationIcon>ParquetIcon.ico</ApplicationIcon>
     <PackageIcon>ParquetLogo.png</PackageIcon>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
