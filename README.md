@@ -11,7 +11,8 @@ This small tool is integrated into Scribe, and may also be used on its own.
 ## Version 0.4 Warning
 This editor is incomplete, non-functional, and not yet ready for use.
 
-Development milestone deadlines are tentative right now, but I'm hoping to have this usable by mid 2021.
+Development milestone deadlines are tentative right now.
+Because this is one of several side projects that I maintain in addition to my fulltime dayjob, it will be a long time before Scribe is ready.
 
 # Parquet Game Data
 
